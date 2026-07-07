@@ -5,693 +5,483 @@
     "quests": [
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the coffee and the toast, please.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Coffee",
+                "Toast",
+                "Tea",
+                "Muffin"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l1_q1",
-            "xpReward": 3,
-            "coinReward": 5,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Coffee, Toast",
+            "hint": "Listen for the two items after 'I'll have'.",
+            "explanation": "'I'll have...' is the most common way to order in English. Two items are joined by 'and' - select both.",
+            "id": "go_l1_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the orange juice and the scrambled eggs.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Orange Juice",
+                "Scrambled Eggs",
+                "Apple Juice",
+                "Pancakes"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l1_q2",
-            "xpReward": 3,
-            "coinReward": 5,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Orange Juice, Scrambled Eggs",
+            "hint": "The two items are connected by 'and'.",
+            "explanation": "'I'll have' followed by two items with 'and' is a classic ordering pattern. Both items must be selected.",
+            "id": "go_l1_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the tea and the croissant, please.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Tea",
+                "Croissant",
+                "Coffee",
+                "Muffin"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l1_q3",
-            "xpReward": 3,
-            "coinReward": 5,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Tea, Croissant",
+            "hint": "Find the two items mentioned by name.",
+            "explanation": "A croissant is a buttery French pastry. 'Please' at the end is a politeness marker - it doesn't change the order.",
+            "id": "go_l1_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the pancakes and a coffee, please.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Pancakes",
+                "Coffee",
+                "Waffles",
+                "Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l2_q1",
-            "xpReward": 6,
-            "coinReward": 10,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Pancakes, Coffee",
+            "hint": "The customer orders something to eat and something to drink.",
+            "explanation": "'A coffee' means one cup of coffee. Using 'a' before a drink is natural when ordering in English.",
+            "id": "go_l2_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the yogurt and the apple juice.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Yogurt",
+                "Apple Juice",
+                "Oatmeal",
+                "Orange Juice"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l2_q2",
-            "xpReward": 6,
-            "coinReward": 10,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Yogurt, Apple Juice",
+            "hint": "'I'd like' is a polite way to order - listen for the two items named.",
+            "explanation": "'I'd like' is short for 'I would like' - more polite than 'I want'. It is widely used when ordering food.",
+            "id": "go_l2_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the muffin and a hot chocolate, please.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Muffin",
+                "Hot Chocolate",
+                "Croissant",
+                "Coffee"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l2_q3",
-            "xpReward": 6,
-            "coinReward": 10,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Muffin, Hot Chocolate",
+            "hint": "One item is a baked good; the other is a warm drink.",
+            "explanation": "Hot chocolate is a popular café drink ordered alongside pastries. Note how 'a hot chocolate' uses the indefinite article.",
+            "id": "go_l2_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the tomato soup and a bread roll.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Tomato Soup",
+                "Bread Roll",
+                "Onion Soup",
+                "Crackers"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l3_q1",
-            "xpReward": 9,
-            "coinReward": 15,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Tomato Soup, Bread Roll",
+            "hint": "Soup and bread are a classic lunch combination.",
+            "explanation": "The adjective 'tomato' tells you which soup. Bread rolls are a common accompaniment to soup in English-speaking countries.",
+            "id": "go_l3_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the cheese sandwich and a water, please.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Cheese Sandwich",
+                "Water",
+                "Tuna Sandwich",
+                "Juice"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l3_q2",
-            "xpReward": 9,
-            "coinReward": 15,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Cheese Sandwich, Water",
+            "hint": "The customer orders a light lunch - one sandwich and a drink.",
+            "explanation": "'A water' is an informal but natural way to order a glass of water. The adjective 'cheese' tells you the sandwich filling.",
+            "id": "go_l3_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the garden salad and a lemonade.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Garden Salad",
+                "Lemonade",
+                "Caesar Salad",
+                "Iced Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l3_q3",
-            "xpReward": 9,
-            "coinReward": 15,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Garden Salad, Lemonade",
+            "hint": "One is a salad and the other is a cold drink.",
+            "explanation": "A 'garden salad' contains fresh mixed vegetables. Lemonade is a cold sweet-citrus drink - different from iced tea.",
+            "id": "go_l3_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the burger and the fries, please.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Burger",
+                "Fries",
+                "Hot Dog",
+                "Onion Rings"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l4_q1",
-            "xpReward": 12,
-            "coinReward": 20,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Burger, Fries",
+            "hint": "This is a classic fast-food combination.",
+            "explanation": "'Fries' is American English for fried potato strips (called 'chips' in British English). Burgers and fries are a popular pair.",
+            "id": "go_l4_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the pasta and a water.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Pasta",
+                "Water",
+                "Pizza",
+                "Soda"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l4_q2",
-            "xpReward": 12,
-            "coinReward": 20,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Pasta, Water",
+            "hint": "The customer ordered an Italian dish and a simple drink.",
+            "explanation": "'Pasta' refers to any Italian noodle dish. 'A water' is a very common way to order a glass or bottle of water.",
+            "id": "go_l4_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the grilled chicken and the rice.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Grilled Chicken",
+                "Rice",
+                "Fried Chicken",
+                "Potatoes"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l4_q3",
-            "xpReward": 12,
-            "coinReward": 20,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Grilled Chicken, Rice",
+            "hint": "The cooking method 'grilled' is important - it changes the dish.",
+            "explanation": "'Grilled' means cooked on a grill without added fat - healthier than 'fried'. The adjective before the noun gives key information.",
+            "id": "go_l4_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the slice of cake and a coffee.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Slice of Cake",
+                "Coffee",
+                "Cookie",
+                "Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l5_q1",
-            "xpReward": 15,
-            "coinReward": 25,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Slice of Cake, Coffee",
+            "hint": "The customer wants a sweet treat with a hot drink.",
+            "explanation": "'A slice of cake' means one portion. 'A slice of' is more precise than just saying 'cake' - useful in café ordering.",
+            "id": "go_l5_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the ice cream and an orange juice.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Ice Cream",
+                "Orange Juice",
+                "Brownie",
+                "Apple Juice"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l5_q2",
-            "xpReward": 15,
-            "coinReward": 25,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Ice Cream, Orange Juice",
+            "hint": "Notice how 'an' is used before 'orange juice' because it starts with a vowel sound.",
+            "explanation": "In English, use 'an' before words starting with a vowel sound - 'an orange juice', not 'a orange juice'. This grammar rule applies throughout menu ordering.",
+            "id": "go_l5_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the cookie and a glass of milk.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Cookie",
+                "Milk",
+                "Muffin",
+                "Water"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l5_q3",
-            "xpReward": 15,
-            "coinReward": 25,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Cookie, Milk",
+            "hint": "Cookies and milk are a classic American combination.",
+            "explanation": "'A glass of milk' is more specific than just 'milk'. In ordering, adding 'a glass of' or 'a cup of' makes the quantity clear.",
+            "id": "go_l5_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the vegetable soup and some bread, please.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Vegetable Soup",
+                "Bread",
+                "Tomato Soup",
+                "Crackers"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l6_q1",
-            "xpReward": 18,
-            "coinReward": 30,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Vegetable Soup, Bread",
+            "hint": "'Some bread' means bread in general - it could be a roll, slice, or piece.",
+            "explanation": "'Some' is used with uncountable nouns like bread - you cannot say 'a bread'. 'I'd like' is polite and widely used in restaurants.",
+            "id": "go_l6_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the orange juice and the toast, please.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Orange Juice",
+                "Toast",
+                "Apple Juice",
+                "Muffin"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l6_q2",
-            "xpReward": 18,
-            "coinReward": 30,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Orange Juice, Toast",
+            "hint": "'Toast' is uncountable - we say 'the toast' or 'some toast', never 'a toast'.",
+            "explanation": "Toast is an uncountable noun in English - one of many important grammar points for ordering breakfast correctly.",
+            "id": "go_l6_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the tea and the biscuits, please.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Tea",
+                "Biscuits",
+                "Coffee",
+                "Cookies"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l6_q3",
-            "xpReward": 18,
-            "coinReward": 30,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Tea, Biscuits",
+            "hint": "In British English, 'biscuits' are sweet crisp items served with tea.",
+            "explanation": "In British English, 'biscuits' are what Americans call 'cookies'. Tea and biscuits is a classic British custom - important cultural vocabulary.",
+            "id": "go_l6_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the burger and a lemonade, please?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Burger",
+                "Lemonade",
+                "Chicken Sandwich",
+                "Iced Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l7_q1",
-            "xpReward": 21,
-            "coinReward": 35,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Burger, Lemonade",
+            "hint": "'Could I get...' is a casual but polite ordering phrase common in American English.",
+            "explanation": "'Could I get...' is widely used in American restaurants - it is a polite question form. The customer is asking permission to receive items.",
+            "id": "go_l7_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the fries and the milkshake?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Fries",
+                "Milkshake",
+                "Onion Rings",
+                "Juice"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l7_q2",
-            "xpReward": 21,
-            "coinReward": 35,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Fries, Milkshake",
+            "hint": "A milkshake is a cold blended dairy drink - don't confuse it with juice.",
+            "explanation": "A 'milkshake' is thick and creamy, made by blending milk and ice cream. 'Could I get' is common in fast-food and casual dining.",
+            "id": "go_l7_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the pizza and a soda, please?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Pizza",
+                "Soda",
+                "Pasta",
+                "Water"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l7_q3",
-            "xpReward": 21,
-            "coinReward": 35,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Pizza, Soda",
+            "hint": "'Soda' is American English for a fizzy drink.",
+            "explanation": "'Soda' (American English) = 'fizzy drink' or 'pop' in other varieties of English. Essential vocabulary for ordering drinks in US restaurants.",
+            "id": "go_l7_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Can I have the tuna sandwich and a coffee?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Tuna Sandwich",
+                "Coffee",
+                "Chicken Sandwich",
+                "Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l8_q1",
-            "xpReward": 24,
-            "coinReward": 40,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Tuna Sandwich, Coffee",
+            "hint": "'Can I have' is a direct, informal way to order - very natural in everyday English.",
+            "explanation": "'Can I have...' is common in British English cafés. While grammatically informal, it is perfectly normal and widely accepted.",
+            "id": "go_l8_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Can I have the soup of the day and some bread?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Soup of the Day",
+                "Bread",
+                "Garden Salad",
+                "Crackers"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l8_q2",
-            "xpReward": 24,
-            "coinReward": 40,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Soup of the Day, Bread",
+            "hint": "'Soup of the day' refers to a different soup on each day - a rotating special.",
+            "explanation": "Restaurants often offer a 'soup of the day' that changes daily. It is a common menu phrase worth knowing - the soup variety is not specified.",
+            "id": "go_l8_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Can I have the apple pie and a glass of milk?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Apple Pie",
+                "Milk",
+                "Cheesecake",
+                "Juice"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l8_q3",
-            "xpReward": 24,
-            "coinReward": 40,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Apple Pie, Milk",
+            "hint": "'A glass of milk' specifies the drink is served in a glass.",
+            "explanation": "Apple pie is a classic dessert, especially in American cuisine. 'Can I have' combined with 'a glass of' is natural everyday ordering English.",
+            "id": "go_l8_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll take the garden salad and a sparkling water.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Garden Salad",
+                "Sparkling Water",
+                "Caesar Salad",
+                "Still Water"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l9_q1",
-            "xpReward": 27,
-            "coinReward": 45,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Garden Salad, Sparkling Water",
+            "hint": "'Sparkling water' has bubbles - different from 'still water', which has none.",
+            "explanation": "'I'll take...' is another natural ordering phrase. 'Sparkling water' (carbonated) and 'still water' (flat) - restaurants always ask which you prefer.",
+            "id": "go_l9_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the chicken wrap and an iced tea.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Chicken Wrap",
+                "Iced Tea",
+                "Veggie Wrap",
+                "Lemonade"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l9_q2",
-            "xpReward": 27,
-            "coinReward": 45,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Chicken Wrap, Iced Tea",
+            "hint": "A 'wrap' is a sandwich made with flatbread rolled around a filling.",
+            "explanation": "A 'wrap' uses flatbread instead of sliced bread. 'Iced tea' is cold tea over ice - very popular in the US and increasingly in the UK.",
+            "id": "go_l9_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the oatmeal and the apple juice.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Oatmeal",
+                "Apple Juice",
+                "Pancakes",
+                "Orange Juice"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l9_q3",
-            "xpReward": 27,
-            "coinReward": 45,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Oatmeal, Apple Juice",
+            "hint": "Oatmeal is a hot breakfast cereal - don't confuse it with pancakes.",
+            "explanation": "'Oatmeal' (US) or 'porridge' (UK) is a breakfast dish made from oats cooked in water or milk. Notice 'the' is used before both items.",
+            "id": "go_l9_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the cheesecake and a hot chocolate.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Cheesecake",
+                "Hot Chocolate",
+                "Apple Pie",
+                "Coffee"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l10_q1",
-            "xpReward": 30,
-            "coinReward": 50,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Cheesecake, Hot Chocolate",
+            "hint": "Cheesecake and apple pie are both desserts - listen carefully for which one.",
+            "explanation": "Cheesecake is made with cream cheese on a biscuit base. 'Hot chocolate' is made from chocolate - completely different from coffee.",
+            "id": "go_l10_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Can I get the grilled cheese and a soda?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Grilled Cheese",
+                "Soda",
+                "Tuna Melt",
+                "Juice"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l10_q2",
-            "xpReward": 30,
-            "coinReward": 50,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Grilled Cheese, Soda",
+            "hint": "A 'grilled cheese' is a toasted sandwich with melted cheese - a classic American dish.",
+            "explanation": "A grilled cheese sandwich is toasted bread with melted cheese inside. A 'tuna melt' also has melted cheese but adds tuna - be careful not to mix these up.",
+            "id": "go_l10_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the mashed potatoes and the grilled chicken.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Mashed Potatoes",
+                "Grilled Chicken",
+                "Rice",
+                "Fried Chicken"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l10_q3",
-            "xpReward": 30,
-            "coinReward": 50,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Mashed Potatoes, Grilled Chicken",
+            "hint": "Pay attention to the cooking method - 'grilled' versus 'fried' makes a significant difference.",
+            "explanation": "The cooking method adjective ('grilled' vs 'fried') changes the dish entirely. 'Mashed potatoes' are cooked and mashed - different from roasted or fried potatoes.",
+            "id": "go_l10_q3"
         }
     ]
 }

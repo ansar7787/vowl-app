@@ -5,693 +5,483 @@
     "quests": [
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the avocado toast and a latte, please.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Avocado Toast",
+                "Latte",
+                "Sourdough Toast",
+                "Cappuccino"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l11_q1",
-            "xpReward": 33,
-            "coinReward": 55,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Avocado Toast, Latte",
+            "hint": "Avocado toast is a popular café dish - distinguish it from regular sourdough toast.",
+            "explanation": "Avocado toast is crushed avocado spread on toasted bread - a modern café staple. A 'latte' is espresso with steamed milk, creamier than a cappuccino.",
+            "id": "go_l11_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the fruit salad and a green tea.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Fruit Salad",
+                "Green Tea",
+                "Yogurt Parfait",
+                "Black Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l11_q2",
-            "xpReward": 33,
-            "coinReward": 55,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Fruit Salad, Green Tea",
+            "hint": "Green tea and black tea are both teas - listen for the colour adjective.",
+            "explanation": "'Green tea' has a lighter, grassy flavour than 'black tea'. Colour adjectives like green, black, and white distinguish tea varieties - essential café vocabulary.",
+            "id": "go_l11_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Can I have the granola bowl and an orange juice?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Granola Bowl",
+                "Orange Juice",
+                "Acai Bowl",
+                "Apple Juice"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l11_q3",
-            "xpReward": 33,
-            "coinReward": 55,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Granola Bowl, Orange Juice",
+            "hint": "A granola bowl contains granola, yogurt, and fruit topped together.",
+            "explanation": "A granola bowl is a healthy breakfast of rolled oats, yogurt, and fruit. Remember: 'an orange juice' uses 'an' because 'orange' starts with a vowel sound.",
+            "id": "go_l11_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the turkey sandwich and a coffee, please.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Turkey Sandwich",
+                "Coffee",
+                "Ham Sandwich",
+                "Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l12_q1",
-            "xpReward": 36,
-            "coinReward": 60,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Turkey Sandwich, Coffee",
+            "hint": "Listen for 'turkey' - don't confuse it with 'ham'.",
+            "explanation": "Turkey and ham are both meat sandwich fillings but from different animals. Knowing meat vocabulary is essential in cafés and delis.",
+            "id": "go_l12_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the chicken salad and a sparkling water.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Chicken Salad",
+                "Sparkling Water",
+                "Tuna Salad",
+                "Still Water"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l12_q2",
-            "xpReward": 36,
-            "coinReward": 60,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Chicken Salad, Sparkling Water",
+            "hint": "'Chicken salad' and 'tuna salad' are both protein salads - listen for which protein.",
+            "explanation": "When a waiter asks 'still or sparkling?', they mean water without bubbles or water with bubbles. This question is asked in almost every restaurant.",
+            "id": "go_l12_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Can I get the BLT and an iced tea?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "BLT",
+                "Iced Tea",
+                "Club Sandwich",
+                "Lemonade"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l12_q3",
-            "xpReward": 36,
-            "coinReward": 60,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "BLT, Iced Tea",
+            "hint": "BLT stands for Bacon, Lettuce, and Tomato - a classic American sandwich.",
+            "explanation": "A BLT is one of the most popular sandwiches in English-speaking countries. Learning sandwich abbreviations and acronyms like BLT is useful cultural knowledge.",
+            "id": "go_l12_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the margherita pizza and a soda.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Margherita Pizza",
+                "Soda",
+                "Pepperoni Pizza",
+                "Juice"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l13_q1",
-            "xpReward": 39,
-            "coinReward": 65,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Margherita Pizza, Soda",
+            "hint": "Margherita pizza has tomato and mozzarella - no meat toppings.",
+            "explanation": "A margherita pizza is a classic Italian pizza with tomato sauce, mozzarella, and basil - no meat. It differs from pepperoni pizza, which has cured meat.",
+            "id": "go_l13_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the garlic bread and a beer.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Garlic Bread",
+                "Beer",
+                "Bruschetta",
+                "Wine"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l13_q2",
-            "xpReward": 39,
-            "coinReward": 65,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Garlic Bread, Beer",
+            "hint": "Garlic bread and bruschetta are both bread-based but very different dishes.",
+            "explanation": "Garlic bread is baked bread with garlic butter. Bruschetta is an Italian starter of grilled bread with fresh tomatoes. Both use bread but are distinct dishes.",
+            "id": "go_l13_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Can I have the pepperoni pizza and a lemonade?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Pepperoni Pizza",
+                "Lemonade",
+                "Margherita Pizza",
+                "Soda"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l13_q3",
-            "xpReward": 39,
-            "coinReward": 65,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Pepperoni Pizza, Lemonade",
+            "hint": "Pepperoni is a spicy Italian-American sausage used as a pizza topping.",
+            "explanation": "'Pepperoni' is a spiced salami - a popular American pizza topping. Do not confuse it with 'peperoni', the Italian word for bell peppers.",
+            "id": "go_l13_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the cheeseburger and the onion rings.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Cheeseburger",
+                "Onion Rings",
+                "Veggie Burger",
+                "Fries"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l14_q1",
-            "xpReward": 42,
-            "coinReward": 70,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Cheeseburger, Onion Rings",
+            "hint": "Onion rings are a side dish - circular fried onion slices in batter.",
+            "explanation": "A cheeseburger is a burger with a cheese slice added. Onion rings are sliced onions coated in batter and deep-fried - a classic American side dish.",
+            "id": "go_l14_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the veggie burger and the sweet potato fries.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Veggie Burger",
+                "Sweet Potato Fries",
+                "Cheeseburger",
+                "Regular Fries"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l14_q2",
-            "xpReward": 42,
-            "coinReward": 70,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Veggie Burger, Sweet Potato Fries",
+            "hint": "Sweet potato fries are orange and slightly sweet - different from regular potato fries.",
+            "explanation": "A veggie burger uses a plant-based patty. Sweet potato fries are made from sweet potatoes - they are orange and slightly sweet, unlike regular fries.",
+            "id": "go_l14_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Can I get the chicken burger and a milkshake?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Chicken Burger",
+                "Milkshake",
+                "Beef Burger",
+                "Soda"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l14_q3",
-            "xpReward": 42,
-            "coinReward": 70,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Chicken Burger, Milkshake",
+            "hint": "The key adjective is 'chicken' - the customer specifically wants chicken, not beef.",
+            "explanation": "When ordering burgers, the adjective before 'burger' tells the kitchen the protein needed. Chicken, beef, and veggie are the most common types.",
+            "id": "go_l14_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the spring rolls and the fried rice.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Spring Rolls",
+                "Fried Rice",
+                "Dumplings",
+                "Steamed Rice"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l15_q1",
-            "xpReward": 45,
-            "coinReward": 75,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Spring Rolls, Fried Rice",
+            "hint": "'Fried rice' and 'steamed rice' are different cooking methods - listen for the adjective.",
+            "explanation": "'Fried rice' is cooked rice stir-fried with vegetables, egg, or meat. 'Steamed rice' is plain boiled rice. The cooking method adjective is crucial.",
+            "id": "go_l15_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the miso soup and the sushi platter.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Miso Soup",
+                "Sushi Platter",
+                "Edamame",
+                "Sashimi"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l15_q2",
-            "xpReward": 45,
-            "coinReward": 75,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Miso Soup, Sushi Platter",
+            "hint": "A 'platter' means a selection of multiple pieces arranged on one plate.",
+            "explanation": "Miso soup is a traditional Japanese fermented soybean soup. A 'sushi platter' contains an assortment of sushi pieces - 'platter' always indicates a variety selection.",
+            "id": "go_l15_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Can I have the pad thai and a jasmine tea?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Pad Thai",
+                "Jasmine Tea",
+                "Fried Noodles",
+                "Green Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l15_q3",
-            "xpReward": 45,
-            "coinReward": 75,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Pad Thai, Jasmine Tea",
+            "hint": "'Pad Thai' is a specific Thai noodle dish - not the same as general 'fried noodles'.",
+            "explanation": "Pad Thai is Thailand's national noodle dish made with rice noodles, bean sprouts, and eggs. 'Jasmine tea' is a specific fragrant Chinese tea variety.",
+            "id": "go_l15_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the spaghetti bolognese and a sparkling water.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Spaghetti Bolognese",
+                "Sparkling Water",
+                "Fettuccine Alfredo",
+                "Still Water"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l16_q1",
-            "xpReward": 48,
-            "coinReward": 80,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Spaghetti Bolognese, Sparkling Water",
+            "hint": "Bolognese is a meat sauce from Bologna, Italy - different from Alfredo cream sauce.",
+            "explanation": "Spaghetti bolognese (informally 'spag bol') uses a meat sauce from the Italian city of Bologna. Fettuccine alfredo uses a creamy butter sauce - very different.",
+            "id": "go_l16_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the bruschetta and the house salad.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Bruschetta",
+                "House Salad",
+                "Garlic Bread",
+                "Caesar Salad"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l16_q2",
-            "xpReward": 48,
-            "coinReward": 80,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Bruschetta, House Salad",
+            "hint": "The 'house salad' is the restaurant's own standard salad - unique to each restaurant.",
+            "explanation": "The 'house salad' varies by restaurant - usually mixed greens with house dressing. 'Bruschetta' (pronounced 'broo-SKET-ah') is grilled bread with tomatoes - a useful pronunciation to know.",
+            "id": "go_l16_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Can I get the tiramisu and a cappuccino?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Tiramisu",
+                "Cappuccino",
+                "Panna Cotta",
+                "Latte"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l16_q3",
-            "xpReward": 48,
-            "coinReward": 80,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Tiramisu, Cappuccino",
+            "hint": "Tiramisu and panna cotta are both Italian desserts but very different textures.",
+            "explanation": "Tiramisu is made with espresso-soaked ladyfinger biscuits and mascarpone cream. A cappuccino is espresso with equal parts steamed and foamed milk - the classic after-dinner Italian coffee.",
+            "id": "go_l16_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the chocolate cake and a coffee.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Chocolate Cake",
+                "Coffee",
+                "Carrot Cake",
+                "Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l17_q1",
-            "xpReward": 51,
-            "coinReward": 85,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Chocolate Cake, Coffee",
+            "hint": "Both are café classics - listen for 'chocolate' versus 'carrot'.",
+            "explanation": "Chocolate cake is a rich cocoa-based cake; carrot cake includes grated carrots and often has cream cheese frosting. They might sound similar but are completely different.",
+            "id": "go_l17_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the fruit tart and a green tea.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Fruit Tart",
+                "Green Tea",
+                "Cheesecake",
+                "Black Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l17_q2",
-            "xpReward": 51,
-            "coinReward": 85,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Fruit Tart, Green Tea",
+            "hint": "A fruit tart has a pastry base topped with cream and fresh fruit.",
+            "explanation": "A fruit tart is a pastry shell filled with custard cream and topped with glazed fruit. It is different from cheesecake, which has a cream cheese filling.",
+            "id": "go_l17_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Can I have the blueberry muffin and a latte?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Blueberry Muffin",
+                "Latte",
+                "Chocolate Muffin",
+                "Cappuccino"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l17_q3",
-            "xpReward": 51,
-            "coinReward": 85,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Blueberry Muffin, Latte",
+            "hint": "Listen for the flavour adjective before 'muffin' - blueberry or chocolate?",
+            "explanation": "Flavour adjectives - blueberry, chocolate, lemon, bran - are essential for ordering the correct baked good. A 'latte' has more milk than a cappuccino.",
+            "id": "go_l17_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the eggs Benedict and a fresh juice.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Eggs Benedict",
+                "Fresh Juice",
+                "French Toast",
+                "Coffee"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l18_q1",
-            "xpReward": 54,
-            "coinReward": 90,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Eggs Benedict, Fresh Juice",
+            "hint": "Eggs Benedict is a brunch classic - don't confuse it with French toast.",
+            "explanation": "Eggs Benedict consists of English muffins, Canadian bacon, poached eggs, and hollandaise sauce. 'Fresh juice' means just-squeezed juice, not from a carton.",
+            "id": "go_l18_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the full English breakfast and a tea.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Full English Breakfast",
+                "Tea",
+                "Continental Breakfast",
+                "Coffee"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l18_q2",
-            "xpReward": 54,
-            "coinReward": 90,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Full English Breakfast, Tea",
+            "hint": "A 'full English' includes many cooked items - much larger than a continental breakfast.",
+            "explanation": "A full English breakfast includes eggs, bacon, sausages, baked beans, toast, and grilled tomato. A continental breakfast is pastries and cold items - much lighter.",
+            "id": "go_l18_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Can I get the French toast and a cappuccino?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "French Toast",
+                "Cappuccino",
+                "Pancakes",
+                "Latte"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l18_q3",
-            "xpReward": 54,
-            "coinReward": 90,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "French Toast, Cappuccino",
+            "hint": "French toast is bread dipped in egg and fried - different from pancakes.",
+            "explanation": "French toast (pain perdu in French) is bread soaked in egg and milk, then fried until golden. Pancakes are made from batter - they are different dishes entirely.",
+            "id": "go_l18_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the quinoa bowl and a green smoothie.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Quinoa Bowl",
+                "Green Smoothie",
+                "Rice Bowl",
+                "Protein Shake"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l19_q1",
-            "xpReward": 57,
-            "coinReward": 95,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Quinoa Bowl, Green Smoothie",
+            "hint": "Quinoa (pronounced 'KEEN-wah') is a protein-rich grain popular in health cafés.",
+            "explanation": "Quinoa (pronounced 'KEEN-wah') is a nutritious grain high in protein. A 'green smoothie' blends leafy vegetables with fruit - a staple of health cafés.",
+            "id": "go_l19_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the lentil soup and the whole grain bread.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Lentil Soup",
+                "Whole Grain Bread",
+                "Tomato Soup",
+                "White Bread"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l19_q2",
-            "xpReward": 57,
-            "coinReward": 95,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Lentil Soup, Whole Grain Bread",
+            "hint": "'Whole grain' means the bread uses the whole seed - more nutritious than white bread.",
+            "explanation": "'Whole grain bread' uses the entire grain kernel, making it more nutritious than white bread. 'Lentil soup' is a hearty protein-rich soup popular in healthy cafés.",
+            "id": "go_l19_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Can I have the Greek salad and a sparkling water?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Greek Salad",
+                "Sparkling Water",
+                "Caesar Salad",
+                "Still Water"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l19_q3",
-            "xpReward": 57,
-            "coinReward": 95,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Greek Salad, Sparkling Water",
+            "hint": "A Greek salad contains tomatoes, cucumber, olives, and feta - no lettuce.",
+            "explanation": "A Greek salad (horiatiki) contains tomatoes, cucumber, olives, and feta cheese - but no lettuce. A Caesar salad uses romaine lettuce and Caesar dressing - completely different.",
+            "id": "go_l19_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the patatas bravas and the chorizo.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Patatas Bravas",
+                "Chorizo",
+                "Tortilla Española",
+                "Jamón"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l20_q1",
-            "xpReward": 60,
-            "coinReward": 100,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Patatas Bravas, Chorizo",
+            "hint": "Patatas bravas are fried potato cubes with spicy sauce - a popular Spanish tapas dish.",
+            "explanation": "Patatas bravas are fried potatoes with spicy tomato sauce. Chorizo is a seasoned Spanish sausage. These are foundational Spanish tapas vocabulary words.",
+            "id": "go_l20_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the tortilla española and a glass of sangria.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Tortilla Española",
+                "Sangria",
+                "Patatas Bravas",
+                "Red Wine"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l20_q2",
-            "xpReward": 60,
-            "coinReward": 100,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Tortilla Española, Sangria",
+            "hint": "Spanish tortilla is a thick omelette - not the same as a Mexican flour tortilla.",
+            "explanation": "Spanish 'tortilla' (tortilla española) is a thick potato omelette - completely different from Mexican flatbread tortilla. Context matters hugely in menu vocabulary.",
+            "id": "go_l20_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Can I get the jamón ibérico and a glass of white wine?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Jamón Ibérico",
+                "White Wine",
+                "Chorizo",
+                "Red Wine"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l20_q3",
-            "xpReward": 60,
-            "coinReward": 100,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Jamón Ibérico, White Wine",
+            "hint": "Jamón ibérico is premium cured ham from Spain - a celebrated luxury product.",
+            "explanation": "Jamón ibérico is cured ham from Iberian black pigs in Spain - one of the most prized foods in Spanish cuisine. White wine pairs classically with cured ham.",
+            "id": "go_l20_q3"
         }
     ]
 }

@@ -5,693 +5,483 @@
     "quests": [
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the short rib, the truffle mac and cheese, and a craft IPA if you have it.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Short Rib",
+                "Truffle Mac and Cheese",
+                "IPA Beer",
+                "Lager"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l81_q1",
-            "xpReward": 243,
-            "coinReward": 405,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Short Rib, Truffle Mac and Cheese, IPA Beer",
+            "hint": "IPA stands for India Pale Ale - a hoppy, bitter style of craft beer.",
+            "explanation": "IPA (India Pale Ale) is a hoppy style of craft beer. 'If you have it' is a polite qualifier but the customer is still ordering it. Truffle mac and cheese is a luxury upgrade of macaroni and cheese with truffle oil.",
+            "id": "go_l81_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the lobster roll, the sweet potato fries, and a frozen margarita.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Lobster Roll",
+                "Sweet Potato Fries",
+                "Frozen Margarita",
+                "Regular Margarita"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l81_q2",
-            "xpReward": 243,
-            "coinReward": 405,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Lobster Roll, Sweet Potato Fries, Frozen Margarita",
+            "hint": "A frozen margarita is blended with ice - different from a regular margarita served on the rocks.",
+            "explanation": "A lobster roll is a New England classic - chilled lobster meat in a toasted hot dog bun. A frozen margarita is blended smooth with ice; a regular margarita is mixed with ice cubes. Both contain the same ingredients but different textures.",
+            "id": "go_l81_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the crab cake, the clam chowder bread bowl, and a glass of Chardonnay?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Crab Cake",
+                "Clam Chowder Bread Bowl",
+                "Chardonnay",
+                "Pinot Grigio"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l81_q3",
-            "xpReward": 243,
-            "coinReward": 405,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Crab Cake, Clam Chowder Bread Bowl, Chardonnay",
+            "hint": "A bread bowl is a hollowed-out sourdough loaf used as a bowl for soup.",
+            "explanation": "A clam chowder bread bowl is soup served inside a hollowed sourdough loaf - an American classic. Crab cakes are pan-fried patties of crab meat. Chardonnay is full-bodied and pairs well with creamy shellfish dishes.",
+            "id": "go_l81_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll start with the yakitori, then the sashimi sharing platter, and a round of beers for the table.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Yakitori",
+                "Sashimi Sharing Platter",
+                "Beers",
+                "Sake"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l82_q1",
-            "xpReward": 246,
-            "coinReward": 410,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Yakitori, Sashimi Sharing Platter, Beers",
+            "hint": "Three items for the table: grilled skewers, raw fish selection, and beers.",
+            "explanation": "Yakitori is Japanese grilled chicken skewers glazed with tare sauce. A sashimi sharing platter contains an assortment of raw fish for the table. The customer chose beers over sake - both are common at Japanese izakayas.",
+            "id": "go_l82_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the karaage chicken, the agedashi tofu, and a cold Asahi.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Karaage Chicken",
+                "Agedashi Tofu",
+                "Cold Asahi",
+                "Sake"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l82_q2",
-            "xpReward": 246,
-            "coinReward": 410,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Karaage Chicken, Agedashi Tofu, Cold Asahi",
+            "hint": "Karaage is Japanese fried chicken - crispy, juicy, and marinated.",
+            "explanation": "Karaage is Japanese fried chicken marinated in soy and ginger - lighter and crispier than Western fried chicken. Agedashi tofu is lightly battered and deep-fried tofu in a dashi broth. Asahi is a popular Japanese lager beer.",
+            "id": "go_l82_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could we get the takoyaki, the chicken tsukune, and the house sake carafe?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Takoyaki",
+                "Chicken Tsukune",
+                "House Sake Carafe",
+                "Shochu"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l82_q3",
-            "xpReward": 246,
-            "coinReward": 410,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Takoyaki, Chicken Tsukune, House Sake Carafe",
+            "hint": "Takoyaki are octopus balls - a popular Japanese street food.",
+            "explanation": "Takoyaki are ball-shaped wheat batter snacks filled with octopus - originally from Osaka. Chicken tsukune are Japanese chicken meatball skewers glazed with sauce. A sake carafe is a serving vessel for Japanese rice wine - different from shochu, a distilled spirit.",
+            "id": "go_l82_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the ceviche clásico, the lomo saltado, and a Pisco Sour.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Ceviche Clásico",
+                "Lomo Saltado",
+                "Pisco Sour",
+                "Chicha Morada"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l83_q1",
-            "xpReward": 249,
-            "coinReward": 415,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Ceviche Clásico, Lomo Saltado, Pisco Sour",
+            "hint": "Three classic Peruvian dishes - starter, main, and national cocktail.",
+            "explanation": "Ceviche clásico is raw fish marinated in lime juice with chilli and onion - Peru's national dish. Lomo saltado is stir-fried beef with chips and rice. Pisco Sour is Peru's national cocktail made from pisco brandy, lime, and egg white.",
+            "id": "go_l83_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the tiradito, the ají de gallina, and the lucuma ice cream.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Tiradito",
+                "Ají de Gallina",
+                "Lucuma Ice Cream",
+                "Mazamorra Morada"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l83_q2",
-            "xpReward": 249,
-            "coinReward": 415,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Tiradito, Ají de Gallina, Lucuma Ice Cream",
+            "hint": "Tiradito is similar to ceviche but cut differently and without onion.",
+            "explanation": "Tiradito is Peruvian raw fish sliced thin like sashimi, dressed with ají amarillo sauce. Ají de gallina is shredded chicken in a creamy yellow pepper sauce. Lucuma is a Peruvian orange fruit - lucuma ice cream has a maple-like flavour.",
+            "id": "go_l83_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the causa rellena, the anticuchos, and a glass of chicha morada?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Causa Rellena",
+                "Anticuchos",
+                "Chicha Morada",
+                "Pisco Sour"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l83_q3",
-            "xpReward": 249,
-            "coinReward": 415,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Causa Rellena, Anticuchos, Chicha Morada",
+            "hint": "Anticuchos are Peruvian grilled beef heart skewers - a popular street food.",
+            "explanation": "Causa rellena is a chilled Peruvian potato terrine layered with fillings like tuna. Anticuchos are grilled beef heart skewers - a beloved Peruvian street food. Chicha morada is a non-alcoholic purple corn drink - different from Pisco Sour.",
+            "id": "go_l83_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll start with the mezze selection, then have the mixed grill, and finish with the knafeh.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Mezze Selection",
+                "Mixed Grill",
+                "Knafeh",
+                "Baklava"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l84_q1",
-            "xpReward": 252,
-            "coinReward": 420,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Mezze Selection, Mixed Grill, Knafeh",
+            "hint": "Three courses of Lebanese cuisine - starter mezze, grilled meats, and a cheese pastry dessert.",
+            "explanation": "Mezze is an array of small dishes served as starters in Lebanese cuisine. Mixed grill includes various meats like kafta, shish taouk, and shish kebab. Knafeh is a cheese-filled pastry soaked in syrup - different from baklava, which is nut-filled.",
+            "id": "go_l84_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the fattoush salad, the lamb shawarma, and a glass of arak.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Fattoush Salad",
+                "Lamb Shawarma",
+                "Arak",
+                "Ayran"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l84_q2",
-            "xpReward": 252,
-            "coinReward": 420,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Fattoush Salad, Lamb Shawarma, Arak",
+            "hint": "Arak is an anise-flavoured Lebanese spirit - different from ayran, a yogurt drink.",
+            "explanation": "Fattoush is a Lebanese bread salad with toasted pita and mixed vegetables. Lamb shawarma is spiced lamb slow-roasted on a vertical spit. Arak is anise-flavoured Lebanese spirit served with water. Ayran is a chilled yogurt drink - non-alcoholic.",
+            "id": "go_l84_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the kibbeh, the stuffed vine leaves, and the labneh?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Kibbeh",
+                "Stuffed Vine Leaves",
+                "Labneh",
+                "Hummus"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l84_q3",
-            "xpReward": 252,
-            "coinReward": 420,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Kibbeh, Stuffed Vine Leaves, Labneh",
+            "hint": "Three Middle Eastern dishes - a meatball dish, rice-filled leaves, and strained yogurt.",
+            "explanation": "Kibbeh is minced lamb mixed with bulgur wheat - fried or baked. Stuffed vine leaves (warak dawali) are filled with rice and herbs. Labneh is strained yogurt - thick and creamy, often served as a dip. Hummus is a different chickpea-based dip.",
+            "id": "go_l84_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "We'll take the samgyeopsal, the bulgogi, and the japchae for the table.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Samgyeopsal",
+                "Bulgogi",
+                "Japchae",
+                "Galbi"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l85_q1",
-            "xpReward": 255,
-            "coinReward": 425,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Samgyeopsal, Bulgogi, Japchae",
+            "hint": "Three classic Korean dishes - pork belly, marinated beef, and glass noodles.",
+            "explanation": "Samgyeopsal is thick slices of pork belly grilled at the table. Bulgogi is thinly sliced marinated beef, also grilled. Japchae is sweet potato glass noodles stir-fried with vegetables. Galbi is marinated short ribs - not ordered here.",
+            "id": "go_l85_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the bibimbap, the kimchi jjigae, and a cold Cass beer.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Bibimbap",
+                "Kimchi Jjigae",
+                "Cass Beer",
+                "Soju"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l85_q2",
-            "xpReward": 255,
-            "coinReward": 425,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Bibimbap, Kimchi Jjigae, Cass Beer",
+            "hint": "Bibimbap is mixed rice; kimchi jjigae is kimchi stew - both Korean staples.",
+            "explanation": "Bibimbap is rice topped with vegetables, meat, and a fried egg, mixed together with gochujang sauce. Kimchi jjigae is a spicy kimchi stew. Cass is a popular Korean lager; soju is Korea's national distilled spirit - different categories.",
+            "id": "go_l85_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the haemul pajeon, the tteokbokki, and the barley tea?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Haemul Pajeon",
+                "Tteokbokki",
+                "Barley Tea",
+                "Makgeolli"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l85_q3",
-            "xpReward": 255,
-            "coinReward": 425,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Haemul Pajeon, Tteokbokki, Barley Tea",
+            "hint": "Haemul pajeon is a Korean seafood pancake - a popular savoury snack.",
+            "explanation": "Haemul pajeon is a thick Korean pancake with seafood and spring onions. Tteokbokki are chewy rice cakes in a spicy gochujang sauce. Barley tea (boricha) is a non-caffeinated roasted grain tea served cold in Korean restaurants. Makgeolli is a milky Korean rice wine.",
+            "id": "go_l85_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like to order the mezze platter, the mixed grill plate, and the knafeh pastry, please.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Mezze Platter",
+                "Mixed Grill Plate",
+                "Knafeh Pastry",
+                "Baklava Box"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l86_q1",
-            "xpReward": 258,
-            "coinReward": 430,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Mezze Platter, Mixed Grill Plate, Knafeh Pastry",
+            "hint": "Full menu names often include a descriptor word - listen for both the dish name and its descriptor.",
+            "explanation": "Restaurant menus often use longer item names that include descriptors like 'platter', 'plate', or 'pastry'. These are part of the full item name as listed on the menu - accuracy matters when tapping items in this game.",
+            "id": "go_l86_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the fattoush, the lamb kofta, and a glass of pomegranate juice.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Fattoush",
+                "Lamb Kofta",
+                "Pomegranate Juice",
+                "Grape Juice"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l86_q2",
-            "xpReward": 258,
-            "coinReward": 430,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Fattoush, Lamb Kofta, Pomegranate Juice",
+            "hint": "Pomegranate juice is a popular Middle Eastern drink - different from grape juice.",
+            "explanation": "Lamb kofta are spiced minced lamb patties, often grilled on skewers. Fattoush is a Lebanese bread salad. Pomegranate juice is a popular drink in Lebanese and Middle Eastern cuisine - tangy and ruby-red.",
+            "id": "go_l86_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the manakeesh, the shish taouk, and an ayran?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Manakeesh",
+                "Shish Taouk",
+                "Ayran",
+                "Arak"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l86_q3",
-            "xpReward": 258,
-            "coinReward": 430,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Manakeesh, Shish Taouk, Ayran",
+            "hint": "Manakeesh is a Lebanese flatbread baked with toppings.",
+            "explanation": "Manakeesh is a Lebanese flatbread baked with za'atar (thyme and sesame), cheese, or meat. Shish taouk is marinated chicken on skewers. Ayran is a chilled yogurt drink - refreshing and non-alcoholic. Arak is alcoholic - not ordered here.",
+            "id": "go_l86_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "We'll do the churrasco, add the caipirinha for everyone, and the feijoada for the table.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Churrasco",
+                "Caipirinha",
+                "Feijoada",
+                "Pão de Queijo"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l87_q1",
-            "xpReward": 261,
-            "coinReward": 435,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Churrasco, Caipirinha, Feijoada",
+            "hint": "Three Brazilian dining elements - grilled meats, national cocktail, and bean stew.",
+            "explanation": "Churrasco is Brazilian BBQ - various meats grilled over charcoal. Caipirinha is Brazil's national cocktail, made with cachaça, lime, and sugar. Feijoada is a rich black bean and pork stew - Brazil's national dish. Pão de queijo is cheese bread, not ordered here.",
+            "id": "go_l87_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the picanha, the pão de queijo, and a caipirosca.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Picanha",
+                "Pão de Queijo",
+                "Caipirosca",
+                "Caipirinha"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l87_q2",
-            "xpReward": 261,
-            "coinReward": 435,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Picanha, Pão de Queijo, Caipirosca",
+            "hint": "A caipirosca uses vodka instead of cachaça - different from a caipirinha.",
+            "explanation": "Picanha is Brazil's most popular cut of beef - a rump cap with a thick fat cap. Pão de queijo are warm, chewy cheese bread rolls made from tapioca flour. A caipirosca uses vodka; a caipirinha uses cachaça - similar cocktails, different spirits.",
+            "id": "go_l87_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the alcatra, the farofa, and a guaraná to drink?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Alcatra",
+                "Farofa",
+                "Guaraná",
+                "Caipirosca"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l87_q3",
-            "xpReward": 261,
-            "coinReward": 435,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Alcatra, Farofa, Guaraná",
+            "hint": "Guaraná is a popular Brazilian soft drink made from the guaraná berry.",
+            "explanation": "Alcatra is a slow-cooked beef stew from the Azores. Farofa is toasted cassava flour - a classic Brazilian side dish served with meat. Guaraná is a fizzy soft drink made from the guaraná berry - Brazil's most consumed soft drink.",
+            "id": "go_l87_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll take the Korean fried chicken tacos, the elote fries, and a craft soda.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Korean Fried Chicken Tacos",
+                "Elote Fries",
+                "Craft Soda",
+                "Regular Soda"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l88_q1",
-            "xpReward": 264,
-            "coinReward": 440,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Korean Fried Chicken Tacos, Elote Fries, Craft Soda",
+            "hint": "Craft soda uses natural ingredients - different from mass-produced regular soda.",
+            "explanation": "Korean fried chicken tacos are a fusion dish combining Korean fried chicken with taco ingredients. Elote fries are fries topped with corn-elote toppings. Craft soda uses natural flavourings - more complex than regular mass-produced soda.",
+            "id": "go_l88_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the bánh mì, the summer rolls, and a Vietnamese iced coffee.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Bánh Mì",
+                "Summer Rolls",
+                "Vietnamese Iced Coffee",
+                "Thai Iced Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l88_q2",
-            "xpReward": 264,
-            "coinReward": 440,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Bánh Mì, Summer Rolls, Vietnamese Iced Coffee",
+            "hint": "Vietnamese iced coffee is brewed with a phin filter over sweetened condensed milk.",
+            "explanation": "Bánh mì is a Vietnamese baguette sandwich with pâté, meat, pickled vegetables, and herbs. Summer rolls are fresh (not fried) rice paper rolls with shrimp and vegetables. Vietnamese iced coffee is brewed dark and poured over condensed milk and ice - very sweet.",
+            "id": "go_l88_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the smash burger, the animal fries, and a chocolate shake?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Smash Burger",
+                "Animal Fries",
+                "Chocolate Shake",
+                "Vanilla Shake"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l88_q3",
-            "xpReward": 264,
-            "coinReward": 440,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Smash Burger, Animal Fries, Chocolate Shake",
+            "hint": "Animal fries are loaded fries with burger toppings - popular in California-style diners.",
+            "explanation": "A smash burger is a beef patty pressed flat on a hot griddle to create crispy edges. Animal fries are fries topped with melted cheese, special sauce, and caramelised onions - popularised by In-N-Out Burger in California. Chocolate shake, not vanilla, was ordered.",
+            "id": "go_l88_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the truffle grilled cheese, the duck fat fries, and an Old Fashioned.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Truffle Grilled Cheese",
+                "Duck Fat Fries",
+                "Old Fashioned",
+                "Manhattan"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l89_q1",
-            "xpReward": 267,
-            "coinReward": 445,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Truffle Grilled Cheese, Duck Fat Fries, Old Fashioned",
+            "hint": "An Old Fashioned is a classic whiskey cocktail - different from a Manhattan.",
+            "explanation": "Duck fat fries are cooked in rendered duck fat - richer and crispier than regular fries. An Old Fashioned is made with whiskey, bitters, and sugar. A Manhattan also uses whiskey but adds sweet vermouth - both are classic cocktails but different.",
+            "id": "go_l89_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the burrata bruschetta, the crispy squid, and a Negroni.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Burrata Bruschetta",
+                "Crispy Squid",
+                "Negroni",
+                "Aperol Spritz"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l89_q2",
-            "xpReward": 267,
-            "coinReward": 445,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Burrata Bruschetta, Crispy Squid, Negroni",
+            "hint": "A Negroni is equal parts gin, vermouth, and Campari - bold and bitter.",
+            "explanation": "A Negroni is a classic Italian cocktail - gin, sweet vermouth, and Campari - equal parts. An Aperol Spritz uses Aperol, prosecco, and soda - sweeter and lighter. Burrata bruschetta combines two Italian ingredients on grilled bread.",
+            "id": "go_l89_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the wagyu beef sliders, the parmesan frites, and a Dry Martini?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Wagyu Beef Sliders",
+                "Parmesan Frites",
+                "Dry Martini",
+                "Gin and Tonic"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l89_q3",
-            "xpReward": 267,
-            "coinReward": 445,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Wagyu Beef Sliders, Parmesan Frites, Dry Martini",
+            "hint": "A Dry Martini is gin and a very small amount of dry vermouth - different from a Gin and Tonic.",
+            "explanation": "Wagyu is a prized Japanese beef breed known for extreme marbling. Sliders are mini burgers. Parmesan frites are fries tossed with grated Parmesan. A Dry Martini uses dry vermouth and gin - different from a Gin and Tonic, which adds tonic water.",
+            "id": "go_l89_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the black truffle burger, the skin-on fries, and a craft IPA.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Black Truffle Burger",
+                "Skin-On Fries",
+                "Craft IPA",
+                "Lager"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l90_q1",
-            "xpReward": 270,
-            "coinReward": 450,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Black Truffle Burger, Skin-On Fries, Craft IPA",
+            "hint": "Skin-on fries retain their potato skin - different from peeled, standard fries.",
+            "explanation": "Skin-on fries are made with unpeeled potatoes - more rustic and flavourful than peeled fries. A black truffle burger features shaved truffle on the patty. Craft IPA is a hoppy, bitter beer - distinct from a standard lager.",
+            "id": "go_l90_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the double wagyu patty melt, the onion ring tower, and a vanilla bourbon milkshake.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Double Wagyu Patty Melt",
+                "Onion Ring Tower",
+                "Vanilla Bourbon Milkshake",
+                "Chocolate Milkshake"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l90_q2",
-            "xpReward": 270,
-            "coinReward": 450,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Double Wagyu Patty Melt, Onion Ring Tower, Vanilla Bourbon Milkshake",
+            "hint": "A patty melt is a burger on toasted rye bread - different from a standard bun burger.",
+            "explanation": "A patty melt is a burger pressed between slices of rye bread with caramelised onions. An onion ring tower is a stack of onion rings presented upright. A vanilla bourbon milkshake adds bourbon whiskey to vanilla ice cream - an adult version.",
+            "id": "go_l90_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the pulled pork double smash, the loaded cheese fries, and a root beer float?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Pulled Pork Double Smash",
+                "Loaded Cheese Fries",
+                "Root Beer Float",
+                "Regular Root Beer"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l90_q3",
-            "xpReward": 270,
-            "coinReward": 450,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Pulled Pork Double Smash, Loaded Cheese Fries, Root Beer Float",
+            "hint": "A root beer float is root beer with a scoop of vanilla ice cream - different from plain root beer.",
+            "explanation": "A root beer float (also called an ice cream soda) is root beer poured over vanilla ice cream. Loaded cheese fries have melted cheese, jalapeños, and sauce piled on top. 'Pulled pork double smash' describes the topping and the cooking method in one compound name.",
+            "id": "go_l90_q3"
         }
     ]
 }

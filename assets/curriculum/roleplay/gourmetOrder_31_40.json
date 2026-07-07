@@ -5,693 +5,483 @@
     "quests": [
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll start with the gambas al ajillo and a glass of Rioja.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Gambas al Ajillo",
+                "Rioja",
+                "Patatas Bravas",
+                "Sangria"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l31_q1",
-            "xpReward": 93,
-            "coinReward": 155,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Gambas al Ajillo, Rioja",
+            "hint": "Gambas al ajillo are garlic prawns - a popular Spanish tapa.",
+            "explanation": "Gambas al ajillo are prawns sautéed in olive oil with garlic and chilli - a classic Spanish tapa. Rioja is a renowned Spanish red wine. 'I'll start with' indicates a first course.",
+            "id": "go_l31_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the croquetas and the pan con tomate.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Croquetas",
+                "Pan con Tomate",
+                "Padron Peppers",
+                "Garlic Bread"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l31_q2",
-            "xpReward": 93,
-            "coinReward": 155,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Croquetas, Pan con Tomate",
+            "hint": "'Pan con tomate' is bread rubbed with tomato - different from garlic bread.",
+            "explanation": "Croquetas are creamy béchamel-filled fried balls. 'Pan con tomate' (bread with tomato) is bread rubbed with ripe tomato and olive oil - a Catalan classic. Both are tapas dishes.",
+            "id": "go_l31_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the albondigas and a sparkling water?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Albondigas",
+                "Sparkling Water",
+                "Chorizo",
+                "Still Water"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l31_q3",
-            "xpReward": 93,
-            "coinReward": 155,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Albondigas, Sparkling Water",
+            "hint": "Albondigas are Spanish meatballs in tomato sauce.",
+            "explanation": "Albondigas are Spanish meatballs typically served in tomato or almond sauce. This question practises recognising Spanish food names commonly found in English menus worldwide.",
+            "id": "go_l31_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the grilled sea bass and the roasted vegetables.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Grilled Sea Bass",
+                "Roasted Vegetables",
+                "Pan-Fried Salmon",
+                "Steamed Broccoli"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l32_q1",
-            "xpReward": 96,
-            "coinReward": 160,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Grilled Sea Bass, Roasted Vegetables",
+            "hint": "Both the fish type ('sea bass' vs 'salmon') and cooking method matter here.",
+            "explanation": "Sea bass is a firm, delicate white fish - different from salmon, which is pink and oilier. 'Grilled' (on a grill) differs from 'pan-fried' (in a pan with oil). Both method and ingredient are key.",
+            "id": "go_l32_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the lobster bisque and the shrimp linguine.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Lobster Bisque",
+                "Shrimp Linguine",
+                "Clam Chowder",
+                "Crab Pasta"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l32_q2",
-            "xpReward": 96,
-            "coinReward": 160,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Lobster Bisque, Shrimp Linguine",
+            "hint": "A bisque is a smooth, creamy shellfish soup - richer than chowder.",
+            "explanation": "A bisque is a rich, smooth cream soup from shellfish. Lobster bisque and clam chowder are both seafood soups but different styles. Linguine is a flat pasta - wider than spaghetti but similar.",
+            "id": "go_l32_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the oysters and a glass of Chablis?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Oysters",
+                "Chablis",
+                "Clams",
+                "Champagne"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l32_q3",
-            "xpReward": 96,
-            "coinReward": 160,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Oysters, Chablis",
+            "hint": "Chablis is a dry white wine from Burgundy - the classic pairing with oysters.",
+            "explanation": "Oysters are live molluscs served raw on the half shell. Chablis is a mineral, dry white wine from northern Burgundy - the definitive pairing with raw oysters. Wine pairing vocabulary is important in fine dining.",
+            "id": "go_l32_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the French onion soup and the croque monsieur.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "French Onion Soup",
+                "Croque Monsieur",
+                "Vichyssoise",
+                "Croque Madame"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l33_q1",
-            "xpReward": 99,
-            "coinReward": 165,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "French Onion Soup, Croque Monsieur",
+            "hint": "Croque monsieur and croque madame are similar - but croque madame has a fried egg on top.",
+            "explanation": "French onion soup is topped with bread and melted cheese. A croque monsieur is a grilled ham and cheese sandwich. A croque madame is identical but topped with a fried egg - the egg is key.",
+            "id": "go_l33_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the escargot and the duck confit.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Escargot",
+                "Duck Confit",
+                "Foie Gras",
+                "Coq au Vin"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l33_q2",
-            "xpReward": 99,
-            "coinReward": 165,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Escargot, Duck Confit",
+            "hint": "Escargot means snails in French - a classic French delicacy.",
+            "explanation": "Escargot (French for snails) are cooked in garlic butter - a classic French starter. Duck confit is duck legs slow-cooked preserved in duck fat - tender and richly flavoured. French culinary terms appear on menus worldwide.",
+            "id": "go_l33_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the ratatouille and a glass of Bordeaux?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Ratatouille",
+                "Bordeaux",
+                "Bouillabaisse",
+                "Burgundy"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l33_q3",
-            "xpReward": 99,
-            "coinReward": 165,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Ratatouille, Bordeaux",
+            "hint": "Ratatouille is a Provençal vegetable stew - Bordeaux is a French wine region.",
+            "explanation": "Ratatouille is a stewed vegetable dish from Provence in southern France. 'Bordeaux' refers to wine from the Bordeaux region of France. 'Burgundy' is a different French wine region - both appear on wine lists.",
+            "id": "go_l33_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the eggs florentine and a Bloody Mary.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Eggs Florentine",
+                "Bloody Mary",
+                "Eggs Benedict",
+                "Mimosa"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l34_q1",
-            "xpReward": 102,
-            "coinReward": 170,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Eggs Florentine, Bloody Mary",
+            "hint": "Eggs florentine has spinach; eggs Benedict has Canadian bacon - different toppings.",
+            "explanation": "Eggs florentine replaces ham with spinach compared to eggs Benedict. A Bloody Mary is a vodka and tomato juice cocktail - popular at brunch. A mimosa uses champagne with orange juice.",
+            "id": "go_l34_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the avocado toast with poached eggs and a cold brew.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Avocado Toast with Poached Eggs",
+                "Cold Brew",
+                "Plain Avocado Toast",
+                "Iced Coffee"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l34_q2",
-            "xpReward": 102,
-            "coinReward": 170,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Avocado Toast with Poached Eggs, Cold Brew",
+            "hint": "The full name 'avocado toast with poached eggs' is a distinct menu item.",
+            "explanation": "When extra items are added to a dish, the full name reflects this. This shows how English menu descriptions layer ingredients. Cold brew is smoother and less acidic than regular iced coffee.",
+            "id": "go_l34_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the smoked salmon platter and a glass of champagne?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Smoked Salmon Platter",
+                "Champagne",
+                "Lox Bagel",
+                "Prosecco"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l34_q3",
-            "xpReward": 102,
-            "coinReward": 170,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Smoked Salmon Platter, Champagne",
+            "hint": "'Lox' is an American deli word for smoked salmon - usually served on a bagel.",
+            "explanation": "'Lox' is used in American Jewish deli culture for smoked salmon. A 'platter' presents items decoratively. Champagne is French sparkling wine - Prosecco is Italian. They are not interchangeable.",
+            "id": "go_l34_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the fish and chips and a pint of lager.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Fish and Chips",
+                "Pint of Lager",
+                "Scampi and Chips",
+                "Pint of Bitter"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l35_q1",
-            "xpReward": 105,
-            "coinReward": 175,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Fish and Chips, Pint of Lager",
+            "hint": "Fish and chips is Britain's most iconic dish - chips are thick-cut fried potatoes.",
+            "explanation": "Fish and chips uses battered fish with thick-cut chips (not thin fries). A pint is a UK measure - 568ml. Scampi uses battered prawns instead of fish. Lager and bitter are different beer styles.",
+            "id": "go_l35_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the ploughman's lunch and a glass of cider.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Ploughman's Lunch",
+                "Cider",
+                "Scotch Egg",
+                "Ale"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l35_q2",
-            "xpReward": 105,
-            "coinReward": 175,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Ploughman's Lunch, Cider",
+            "hint": "A ploughman's lunch is a traditional British pub meal of bread, cheese, and pickle.",
+            "explanation": "A ploughman's lunch is a classic British pub plate: bread, cheese, pickled onions, chutney, and sometimes ham. Cider is an alcoholic drink made from fermented apples - very popular in the UK.",
+            "id": "go_l35_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the bangers and mash and a pint of bitter?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Bangers and Mash",
+                "Pint of Bitter",
+                "Shepherd's Pie",
+                "Pint of Lager"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l35_q3",
-            "xpReward": 105,
-            "coinReward": 175,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Bangers and Mash, Pint of Bitter",
+            "hint": "'Bangers' is British slang for sausages.",
+            "explanation": "'Bangers and mash' is British comfort food - pork sausages with mashed potatoes and onion gravy. 'Bitter' is an English ale with a slightly bitter hop taste - distinctly different from lager.",
+            "id": "go_l35_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the mushroom risotto and the roasted beetroot salad.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Mushroom Risotto",
+                "Roasted Beetroot Salad",
+                "Pumpkin Risotto",
+                "Rocket Salad"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l36_q1",
-            "xpReward": 108,
-            "coinReward": 180,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Mushroom Risotto, Roasted Beetroot Salad",
+            "hint": "Both mushroom and pumpkin risotto exist - listen for which vegetable is named.",
+            "explanation": "Risotto is an Italian rice dish cooked slowly with stock. 'Mushroom' or 'pumpkin' tells you the flavour. 'Beetroot' (British English) = 'beet' (American English) - a purple root vegetable.",
+            "id": "go_l36_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the lentil dahl and the garlic naan.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Lentil Dahl",
+                "Garlic Naan",
+                "Chickpea Curry",
+                "Plain Naan"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l36_q2",
-            "xpReward": 108,
-            "coinReward": 180,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Lentil Dahl, Garlic Naan",
+            "hint": "'Garlic naan' has garlic flavouring - different from plain naan.",
+            "explanation": "Dahl (also dal) is a spiced lentil dish from South Asia. Garlic naan is flatbread brushed with garlic butter - the adjective 'garlic' adds flavour. Plain naan has no additional seasoning.",
+            "id": "go_l36_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the cauliflower steak and the quinoa salad?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Cauliflower Steak",
+                "Quinoa Salad",
+                "Portobello Mushroom",
+                "Grain Bowl"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l36_q3",
-            "xpReward": 108,
-            "coinReward": 180,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Cauliflower Steak, Quinoa Salad",
+            "hint": "A 'cauliflower steak' is a thick slice of cauliflower cooked like a steak - a modern vegetarian dish.",
+            "explanation": "A cauliflower steak is a whole thick slice of cauliflower grilled as a main dish. The word 'steak' indicates how it is prepared, not that it contains meat - modern vegetarian cuisine uses meat terms for plant-based dishes.",
+            "id": "go_l36_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the continental breakfast and a pot of tea.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Continental Breakfast",
+                "Pot of Tea",
+                "Full Cooked Breakfast",
+                "Coffee"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l37_q1",
-            "xpReward": 111,
-            "coinReward": 185,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Continental Breakfast, Pot of Tea",
+            "hint": "A 'pot of tea' means a whole teapot - enough for multiple cups.",
+            "explanation": "A continental breakfast features pastries, bread, jam, and cold items - no hot cooked food. A 'pot of tea' means a teapot with enough for 2-3 cups. This vocabulary is essential for hotel travellers.",
+            "id": "go_l37_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the fresh fruit platter and a glass of freshly squeezed juice.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Fresh Fruit Platter",
+                "Freshly Squeezed Juice",
+                "Fruit Salad",
+                "Packaged Juice"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l37_q2",
-            "xpReward": 111,
-            "coinReward": 185,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Fresh Fruit Platter, Freshly Squeezed Juice",
+            "hint": "'Freshly squeezed' means the juice was just pressed - more flavourful than carton juice.",
+            "explanation": "'Freshly squeezed juice' is pressed to order with no preservatives. 'Packaged juice' comes from a carton. A 'fresh fruit platter' is whole or sliced fruits arranged on a plate - different from a fruit salad.",
+            "id": "go_l37_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the smoked salmon and cream cheese bagel and a flat white?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Smoked Salmon and Cream Cheese Bagel",
+                "Flat White",
+                "Lox Bagel",
+                "Latte"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l37_q3",
-            "xpReward": 111,
-            "coinReward": 185,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Smoked Salmon and Cream Cheese Bagel, Flat White",
+            "hint": "This is one menu item with multiple ingredients in its name.",
+            "explanation": "Some menu items have long names describing all their components - 'smoked salmon and cream cheese bagel' is one complete item. A flat white is smaller and stronger than a latte.",
+            "id": "go_l37_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the buffalo wings and a pitcher of beer.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Buffalo Wings",
+                "Pitcher of Beer",
+                "Chicken Strips",
+                "Pint of Beer"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l38_q1",
-            "xpReward": 114,
-            "coinReward": 190,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Buffalo Wings, Pitcher of Beer",
+            "hint": "A 'pitcher' is a large jug of beer to share - much more than a single pint.",
+            "explanation": "Buffalo wings are chicken wings in spicy sauce, originating from Buffalo, New York. A pitcher of beer is a large container (typically around 1.5 litres) to share - different from a single pint.",
+            "id": "go_l38_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the loaded nachos and a margarita.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Loaded Nachos",
+                "Margarita",
+                "Plain Nachos",
+                "Mojito"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l38_q2",
-            "xpReward": 114,
-            "coinReward": 190,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Loaded Nachos, Margarita",
+            "hint": "'Loaded' means the nachos have lots of toppings - cheese, jalapeños, sour cream.",
+            "explanation": "'Loaded nachos' are tortilla chips piled with many toppings. 'Loaded' is a common English modifier meaning 'with everything on top'. Plain nachos would have minimal toppings - the difference is significant.",
+            "id": "go_l38_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the BBQ ribs and a side of coleslaw?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "BBQ Ribs",
+                "Coleslaw",
+                "Pulled Pork",
+                "Side Salad"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l38_q3",
-            "xpReward": 114,
-            "coinReward": 190,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "BBQ Ribs, Coleslaw",
+            "hint": "BBQ ribs and pulled pork are both barbecued pork - but very different preparations.",
+            "explanation": "BBQ ribs are pork ribs slow-cooked in barbecue sauce. Pulled pork is slow-cooked pork that is shredded. Coleslaw is a creamy salad of shredded cabbage and carrot - a classic BBQ side.",
+            "id": "go_l38_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the burrata with heirloom tomatoes and the pan-seared chicken.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Burrata with Heirloom Tomatoes",
+                "Pan-Seared Chicken",
+                "Mozzarella Caprese",
+                "Roasted Chicken"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l39_q1",
-            "xpReward": 117,
-            "coinReward": 195,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Burrata with Heirloom Tomatoes, Pan-Seared Chicken",
+            "hint": "Burrata and mozzarella are both Italian cheeses - burrata is creamier and softer inside.",
+            "explanation": "Burrata is a fresh Italian cheese - creamy on the inside with a mozzarella shell. 'Heirloom tomatoes' are traditional varieties with different colours. 'Pan-seared' means quickly cooked in a very hot pan.",
+            "id": "go_l39_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the beef carpaccio and the risotto of the day.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Beef Carpaccio",
+                "Risotto of the Day",
+                "Steak Tartare",
+                "Pasta of the Day"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l39_q2",
-            "xpReward": 117,
-            "coinReward": 195,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Beef Carpaccio, Risotto of the Day",
+            "hint": "Carpaccio and tartare are both raw beef dishes but prepared very differently.",
+            "explanation": "Beef carpaccio is thinly sliced raw beef dressed with olive oil and lemon. Steak tartare is finely chopped raw beef mixed with seasonings. 'Risotto of the day' changes daily - different from a fixed menu item.",
+            "id": "go_l39_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the Caesar salad and the grilled swordfish?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Caesar Salad",
+                "Grilled Swordfish",
+                "Rocket Salad",
+                "Pan-Fried Halibut"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l39_q3",
-            "xpReward": 117,
-            "coinReward": 195,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Caesar Salad, Grilled Swordfish",
+            "hint": "Swordfish and halibut are both firm white fish - listen for which one was specified.",
+            "explanation": "Swordfish is a large, firm fish great for grilling. Halibut is a large flatfish - both are white fish but different species. A Caesar salad contains romaine lettuce, Caesar dressing, croutons, and Parmesan.",
+            "id": "go_l39_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll take the croque madame and a glass of white wine.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Croque Madame",
+                "White Wine",
+                "Croque Monsieur",
+                "Rosé"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l40_q1",
-            "xpReward": 120,
-            "coinReward": 200,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Croque Madame, White Wine",
+            "hint": "Croque madame has a fried egg on top - croque monsieur doesn't.",
+            "explanation": "The key difference: a croque madame has a fried egg on top; a croque monsieur doesn't. 'White wine' and 'rosé' are both lighter wines but different colours and flavour profiles.",
+            "id": "go_l40_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the tomato basil soup and the sourdough bread.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Tomato Basil Soup",
+                "Sourdough Bread",
+                "Minestrone Soup",
+                "Baguette"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l40_q2",
-            "xpReward": 120,
-            "coinReward": 200,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Tomato Basil Soup, Sourdough Bread",
+            "hint": "Tomato basil soup is smooth; minestrone is a chunky Italian vegetable soup.",
+            "explanation": "Tomato basil soup is a smooth purée. Minestrone is an Italian soup with chunks of vegetables and pasta. 'Sourdough' is bread made with a natural fermented starter - slightly tangy and chewy.",
+            "id": "go_l40_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the chicken Caesar wrap and a lemonade, please?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Chicken Caesar Wrap",
+                "Lemonade",
+                "Tuna Wrap",
+                "Iced Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l40_q3",
-            "xpReward": 120,
-            "coinReward": 200,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Chicken Caesar Wrap, Lemonade",
+            "hint": "A Caesar wrap takes Caesar salad ingredients and rolls them in a tortilla.",
+            "explanation": "A chicken Caesar wrap contains romaine lettuce, Caesar dressing, Parmesan, croutons, and grilled chicken inside a tortilla. English compound food names layer multiple ingredients into one item.",
+            "id": "go_l40_q3"
         }
     ]
 }

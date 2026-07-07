@@ -5,693 +5,483 @@
     "quests": [
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll start with the bastilla, then have the lamb tagine, and finish with the mint tea.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Bastilla",
+                "Lamb Tagine",
+                "Mint Tea",
+                "Harira"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l91_q1",
-            "xpReward": 273,
-            "coinReward": 455,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Bastilla, Lamb Tagine, Mint Tea",
+            "hint": "Three Moroccan courses - pigeon pastry starter, slow-cooked stew, and traditional tea.",
+            "explanation": "Bastilla is a Moroccan pie made from thin pastry, pigeon (or chicken), almonds, and spices - a unique sweet-savoury dish. Tagine is a slow-cooked Moroccan stew. Mint tea is the traditional Moroccan digestif served ceremonially at the end of a meal.",
+            "id": "go_l91_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the harira soup, the chicken couscous, and the honey pastilla for dessert.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Harira Soup",
+                "Chicken Couscous",
+                "Honey Pastilla",
+                "Dates"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l91_q2",
-            "xpReward": 273,
-            "coinReward": 455,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Harira Soup, Chicken Couscous, Honey Pastilla",
+            "hint": "Harira is a Moroccan tomato and lentil soup - often eaten to break the Ramadan fast.",
+            "explanation": "Harira is a thick Moroccan soup with tomatoes, lentils, chickpeas, and herbs. Couscous with chicken and vegetables is a Moroccan Friday tradition. Honey pastilla is a sweet version of the pastry - filled with almonds and cinnamon, dusted with icing sugar.",
+            "id": "go_l91_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the kefta mechoui, the rfissa, and a glass of Moroccan rosé?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Kefta Mechoui",
+                "Rfissa",
+                "Moroccan Rosé",
+                "Mint Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l91_q3",
-            "xpReward": 273,
-            "coinReward": 455,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Kefta Mechoui, Rfissa, Moroccan Rosé",
+            "hint": "Kefta mechoui is grilled spiced minced lamb - a popular Moroccan BBQ dish.",
+            "explanation": "Kefta mechoui is spiced minced lamb shaped around a skewer and grilled over charcoal. Rfissa is a traditional Moroccan dish of shredded msemen flatbread with lentils and fenugreek. Morocco produces wine - Moroccan rosé is a local wine choice alongside the local cuisine.",
+            "id": "go_l91_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the meze selection, the adana kebab, and a glass of raki.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Meze Selection",
+                "Adana Kebab",
+                "Raki",
+                "Ayran"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l92_q1",
-            "xpReward": 276,
-            "coinReward": 460,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Meze Selection, Adana Kebab, Raki",
+            "hint": "Adana kebab is a spicy minced meat kebab from the Turkish city of Adana.",
+            "explanation": "Adana kebab is named after the Turkish city - spiced minced lamb and beef on a wide skewer. Raki is Turkey's national spirit - an anise-flavoured grape brandy, typically diluted with water. Ayran is a chilled yogurt drink - non-alcoholic.",
+            "id": "go_l92_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the lahmacun, the İskender kebab, and an Efes beer.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Lahmacun",
+                "İskender Kebab",
+                "Efes Beer",
+                "Raki"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l92_q2",
-            "xpReward": 276,
-            "coinReward": 460,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Lahmacun, İskender Kebab, Efes Beer",
+            "hint": "Lahmacun is Turkish flatbread with minced meat - sometimes called Turkish pizza.",
+            "explanation": "Lahmacun is a thin flatbread topped with spiced minced meat, onion, and tomato. İskender kebab is sliced döner meat served over bread with tomato sauce and yogurt. Efes is a popular Turkish lager beer. Raki is a spirit - categorically different from beer.",
+            "id": "go_l92_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the pide, the lamb güveç, and a Turkish tea?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Pide",
+                "Lamb Güveç",
+                "Turkish Tea",
+                "Ayran"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l92_q3",
-            "xpReward": 276,
-            "coinReward": 460,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Pide, Lamb Güveç, Turkish Tea",
+            "hint": "Pide is Turkish flatbread baked in a wood-fired oven - similar to pizza in shape.",
+            "explanation": "Pide is a boat-shaped Turkish flatbread with various toppings, baked in a wood-fired oven. Güveç is a slow-cooked Turkish clay pot stew - 'lamb güveç' tells you the protein. Turkish tea (çay) is a strong black tea served in a small tulip-shaped glass.",
+            "id": "go_l92_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the potted shrimp, the lamb rump with wild garlic, and the treacle tart.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Potted Shrimp",
+                "Lamb Rump with Wild Garlic",
+                "Treacle Tart",
+                "Spotted Dick"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l93_q1",
-            "xpReward": 279,
-            "coinReward": 465,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Potted Shrimp, Lamb Rump with Wild Garlic, Treacle Tart",
+            "hint": "Three courses of classic British cooking - buttered shrimp starter, spring lamb main, and golden syrup tart.",
+            "explanation": "Potted shrimp are brown shrimp preserved in spiced butter - a British classic. Wild garlic (ramsons) is a spring ingredient foraged in British woodlands. Treacle tart is a golden syrup and breadcrumb tart - a traditional British dessert.",
+            "id": "go_l93_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the kipper pâté, the beef dripping roast, and the rhubarb fool.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Kipper Pâté",
+                "Beef Dripping Roast",
+                "Rhubarb Fool",
+                "Gooseberry Crumble"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l93_q2",
-            "xpReward": 279,
-            "coinReward": 465,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Kipper Pâté, Beef Dripping Roast, Rhubarb Fool",
+            "hint": "A rhubarb fool is a British dessert of cooked rhubarb folded into cream.",
+            "explanation": "Kipper pâté is smoked herring blended into a smooth spread - a British starter. Beef dripping roast potatoes are roasted in rendered beef fat - a traditional British technique. Rhubarb fool is tart rhubarb purée folded into whipped cream - different from crumble.",
+            "id": "go_l93_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the devilled whitebait, the venison steak with celeriac, and the burnt cream?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Devilled Whitebait",
+                "Venison Steak with Celeriac",
+                "Burnt Cream",
+                "Syllabub"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l93_q3",
-            "xpReward": 279,
-            "coinReward": 465,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Devilled Whitebait, Venison Steak with Celeriac, Burnt Cream",
+            "hint": "'Burnt cream' is the original English name for what the French called crème brûlée.",
+            "explanation": "Devilled whitebait are tiny deep-fried whole fish seasoned with cayenne - a British pub classic. Celeriac is a knobbly root vegetable with a mild celery flavour - often paired with game. 'Burnt cream' is the historical English predecessor to crème brûlée.",
+            "id": "go_l93_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the pho bo, the bánh xèo, and a coconut water.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Pho Bo",
+                "Bánh Xèo",
+                "Coconut Water",
+                "Vietnamese Iced Coffee"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l94_q1",
-            "xpReward": 282,
-            "coinReward": 470,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Pho Bo, Bánh Xèo, Coconut Water",
+            "hint": "Pho bo is Vietnamese beef noodle soup - 'bo' means beef in Vietnamese.",
+            "explanation": "Pho bo (beef pho) is Vietnam's most famous dish - a rich beef broth with rice noodles and herbs. Bánh xèo is a crispy Vietnamese sizzling rice crêpe filled with pork and shrimp. Coconut water is natural, lightly sweet - different from iced coffee.",
+            "id": "go_l94_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the gỏi cuốn, the bún bò Huế, and a sugar cane juice.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Gỏi Cuốn",
+                "Bún Bò Huế",
+                "Sugar Cane Juice",
+                "Coconut Water"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l94_q2",
-            "xpReward": 282,
-            "coinReward": 470,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Gỏi Cuốn, Bún Bò Huế, Sugar Cane Juice",
+            "hint": "Gỏi cuốn are Vietnamese fresh spring rolls - not fried.",
+            "explanation": "Gỏi cuốn are fresh (unfried) Vietnamese spring rolls wrapped in rice paper with shrimp, pork, and herbs. Bún bò Huế is a spicy beef and pork noodle soup from the city of Huế - more robust than pho. Sugar cane juice is freshly pressed from sugar cane stalks.",
+            "id": "go_l94_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the chả giò, the cơm tấm, and a Vietnamese iced coffee?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Chả Giò",
+                "Cơm Tấm",
+                "Vietnamese Iced Coffee",
+                "Coconut Water"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l94_q3",
-            "xpReward": 282,
-            "coinReward": 470,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Chả Giò, Cơm Tấm, Vietnamese Iced Coffee",
+            "hint": "Chả giò are fried Vietnamese spring rolls - unlike the fresh gỏi cuốn.",
+            "explanation": "Chả giò are deep-fried Vietnamese spring rolls - crispy outside, unlike the fresh gỏi cuốn. Cơm tấm is broken rice topped with grilled pork chop, egg meatloaf, and pickled vegetables - a beloved Southern Vietnamese street meal.",
+            "id": "go_l94_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the arancini al ragù, the spaghetti alle vongole, and the cassata.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Arancini al Ragù",
+                "Spaghetti alle Vongole",
+                "Cassata",
+                "Cannoli"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l95_q1",
-            "xpReward": 285,
-            "coinReward": 475,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Arancini al Ragù, Spaghetti alle Vongole, Cassata",
+            "hint": "Three classic Sicilian dishes - rice balls, clam pasta, and a ricotta cake.",
+            "explanation": "Arancini al ragù are rice balls filled with meat ragù. Spaghetti alle vongole is pasta with clams in white wine and garlic. Cassata is a Sicilian cake of sponge, sweet ricotta, candied fruit, and marzipan - different from the tube-shaped cannoli.",
+            "id": "go_l95_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the caponata, the pesce spada alla messinese, and the granita.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Caponata",
+                "Pesce Spada alla Messinese",
+                "Granita",
+                "Cannoli"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l95_q2",
-            "xpReward": 285,
-            "coinReward": 475,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Caponata, Pesce Spada alla Messinese, Granita",
+            "hint": "Granita is a Sicilian semi-frozen dessert - granular and refreshing.",
+            "explanation": "Caponata is a Sicilian sweet-and-sour aubergine relish - served cold as a starter. Pesce spada alla messinese is swordfish Messina-style with capers, olives, and tomatoes. Granita is a semi-frozen granular dessert made from sugar, water, and flavouring - lighter than gelato.",
+            "id": "go_l95_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the pasta alla Norma, the falsomagro, and a glass of Nero d'Avola?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Pasta alla Norma",
+                "Falsomagro",
+                "Nero d'Avola",
+                "Marsala"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l95_q3",
-            "xpReward": 285,
-            "coinReward": 475,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Pasta alla Norma, Falsomagro, Nero d'Avola",
+            "hint": "Nero d'Avola is Sicily's most important red wine grape variety.",
+            "explanation": "Pasta alla Norma is a Sicilian pasta with aubergine, tomato sauce, basil, and ricotta salata - named after Bellini's opera. Falsomagro is a Sicilian stuffed beef roll. Nero d'Avola is Sicily's flagship red wine. Marsala is a Sicilian fortified wine - different style.",
+            "id": "go_l95_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the seven-course tasting menu with the wine flight, and could I have the vegetarian option for the fish course?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Seven-Course Tasting Menu",
+                "Wine Flight",
+                "Vegetarian Fish Course",
+                "Cheese Course"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l96_q1",
-            "xpReward": 288,
-            "coinReward": 480,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Seven-Course Tasting Menu, Wine Flight, Vegetarian Fish Course",
+            "hint": "The customer orders a tasting menu with a substitution for one specific course.",
+            "explanation": "In fine dining, substituting a single course (the fish course for a vegetarian option) while keeping the rest of the menu is a common request. The wine flight is a curated matching of wines to each course - a separate supplement.",
+            "id": "go_l96_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I take the full tasting experience with the sommelier's wine pairing, and add the coffee service at the end?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Full Tasting Experience",
+                "Sommelier's Wine Pairing",
+                "Coffee Service",
+                "Cheese Course"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l96_q2",
-            "xpReward": 288,
-            "coinReward": 480,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Full Tasting Experience, Sommelier's Wine Pairing, Coffee Service",
+            "hint": "Three elements of a complete fine dining experience - the menu, the wine, and coffee.",
+            "explanation": "A sommelier (wine specialist) personally selects wines matched to each course. Adding 'coffee service at the end' means coffee with petit fours is served as a post-dessert stage. The cheese course was not ordered - listen carefully.",
+            "id": "go_l96_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll take the tasting menu, the amuse-bouche supplement, and the pre-dessert champagne pairing.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Tasting Menu",
+                "Amuse-Bouche Supplement",
+                "Pre-Dessert Champagne Pairing",
+                "Cheese Course Supplement"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l96_q3",
-            "xpReward": 288,
-            "coinReward": 480,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Tasting Menu, Amuse-Bouche Supplement, Pre-Dessert Champagne Pairing",
+            "hint": "An amuse-bouche supplement adds an extra pre-starter tasting item.",
+            "explanation": "An amuse-bouche is a tiny single-bite appetiser sent by the chef before the meal begins. A 'supplement' means an additional charge. Pre-dessert champagne pairing matches a glass of champagne to the palate-cleansing course before the main dessert.",
+            "id": "go_l96_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the charcuterie selection, the artisan cheese board, and a glass of port.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Charcuterie Selection",
+                "Artisan Cheese Board",
+                "Port",
+                "Sauternes"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l97_q1",
-            "xpReward": 291,
-            "coinReward": 485,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Charcuterie Selection, Artisan Cheese Board, Port",
+            "hint": "Port is a fortified Portuguese wine - a classic match with cheese.",
+            "explanation": "Port wine is a fortified Portuguese wine from the Douro Valley - traditionally served with cheese. Sauternes is a sweet French dessert wine - also served with cheese but a different style. A charcuterie selection and a cheese board together make a classic French-inspired evening.",
+            "id": "go_l97_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the cheese and charcuterie platter to share, with the quince jelly, and a glass of Riesling.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Cheese and Charcuterie Platter",
+                "Quince Jelly",
+                "Riesling",
+                "Sauternes"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l97_q2",
-            "xpReward": 291,
-            "coinReward": 485,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Cheese and Charcuterie Platter, Quince Jelly, Riesling",
+            "hint": "Quince jelly is a sweet fruit preserve - a traditional accompaniment to cheese.",
+            "explanation": "Quince jelly is made from quince fruit - its sweet, floral flavour complements salty cheeses perfectly. Riesling is a fragrant, high-acid white wine that cuts through the richness of cheese and charcuterie. It can range from dry to sweet.",
+            "id": "go_l97_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the aged Comté, the jambon de Bayonne, and a glass of Côtes du Rhône?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Aged Comté",
+                "Jambon de Bayonne",
+                "Côtes du Rhône",
+                "Bordeaux"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l97_q3",
-            "xpReward": 291,
-            "coinReward": 485,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Aged Comté, Jambon de Bayonne, Côtes du Rhône",
+            "hint": "Comté is a French mountain cheese aged for months - nutty and complex.",
+            "explanation": "Comté is a French Alpine cheese made from raw cow's milk and aged for at least four months. Jambon de Bayonne is a French cured ham from the Basque region - similar to Parma ham. Côtes du Rhône is a reliable red Rhône wine; Bordeaux is a different region.",
+            "id": "go_l97_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "For the fish course I'd like the sea trout, for the meat course the Hereford beef, and for dessert the chocolate delice.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Sea Trout",
+                "Hereford Beef",
+                "Chocolate Delice",
+                "Lemon Tart"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l98_q1",
-            "xpReward": 294,
-            "coinReward": 490,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Sea Trout, Hereford Beef, Chocolate Delice",
+            "hint": "The customer names three courses explicitly - fish, meat, and dessert.",
+            "explanation": "Sea trout is a sea-run form of brown trout - with pink flesh like salmon. Hereford beef refers to cattle from the Herefordshire breed - named for provenance. A chocolate delice is a smooth, rich, dense chocolate tart - different from a lemon tart.",
+            "id": "go_l98_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll substitute the duck for chicken in the second course, keep the fish course as it is, and add the cheese course at the end.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Chicken (Second Course)",
+                "Fish Course",
+                "Cheese Course",
+                "Duck"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l98_q2",
-            "xpReward": 294,
-            "coinReward": 490,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Chicken (Second Course), Fish Course, Cheese Course",
+            "hint": "Two items are kept as-is, one is substituted, and one new course is added.",
+            "explanation": "This complex order involves substitution and addition. The customer swaps duck for chicken in course two, keeps the fish course unchanged, and adds a cheese course at the end. Duck is the distractor - it is being replaced, not ordered.",
+            "id": "go_l98_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll take the full menu but replace the foie gras with the burrata - otherwise the same.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Full Menu",
+                "Burrata (Instead of Foie Gras)",
+                "Foie Gras",
+                "Standard Course"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l98_q3",
-            "xpReward": 294,
-            "coinReward": 490,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Full Menu, Burrata (Instead of Foie Gras)",
+            "hint": "Two items: the complete menu, and a single dish substitution.",
+            "explanation": "Foie gras is fattened duck or goose liver - some diners prefer to substitute it for ethical reasons. 'Otherwise the same' means all other courses stay identical. Only two items are ordered here - the menu and the substitution. Foie gras is the distractor - it is being replaced.",
+            "id": "go_l98_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "It's quite late, so I'll just have the charcuterie, the cheese, and a glass of Sauternes.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Charcuterie",
+                "Cheese",
+                "Sauternes",
+                "Port"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l99_q1",
-            "xpReward": 297,
-            "coinReward": 495,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Charcuterie, Cheese, Sauternes",
+            "hint": "Sauternes is a sweet French white wine - traditionally served with foie gras or cheese.",
+            "explanation": "Sauternes is a lusciously sweet white wine from the Graves region of Bordeaux - made from botrytised grapes. It pairs superbly with both foie gras and cheese. Port is also served with cheese but is red and fortified - a different experience.",
+            "id": "go_l99_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like something light - the soup of the day, the baguette, and a glass of house white.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Soup of the Day",
+                "Baguette",
+                "House White",
+                "House Red"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l99_q2",
-            "xpReward": 297,
-            "coinReward": 495,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Soup of the Day, Baguette, House White",
+            "hint": "A simple, light late-evening order - soup, bread, and a white wine.",
+            "explanation": "House white is a lighter wine choice than house red - appropriate with a light soup dinner. The customer specifically says 'house white', not red. 'Something light' signals they want a simple, less heavy meal.",
+            "id": "go_l99_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "After the theatre, I'll just have the Welsh rarebit, a glass of port, and the crème caramel.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Welsh Rarebit",
+                "Port",
+                "Crème Caramel",
+                "Eton Mess"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l99_q3",
-            "xpReward": 297,
-            "coinReward": 495,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Welsh Rarebit, Port, Crème Caramel",
+            "hint": "Welsh rarebit is melted cheese sauce on toast - a classic British savoury.",
+            "explanation": "Welsh rarebit is toasted bread covered in a rich melted cheese sauce - often with mustard and Worcestershire sauce. It is a satisfying savoury snack. Crème caramel is a custard set in caramel - different from Eton mess, which uses meringue and strawberries.",
+            "id": "go_l99_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll take the tasting menu, the sommelier's wine pairing, and the truffle supplement added to the risotto course.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Tasting Menu",
+                "Sommelier's Wine Pairing",
+                "Truffle Supplement",
+                "Cheese Course"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l100_q1",
-            "xpReward": 300,
-            "coinReward": 500,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Tasting Menu, Sommelier's Wine Pairing, Truffle Supplement",
+            "hint": "Three fine dining elements - a full menu, a wine pairing, and a luxury supplement.",
+            "explanation": "This order combines three premium dining elements. The truffle supplement adds fresh truffle to a specific course for an extra charge. The cheese course was not ordered - only the three specified items. This is a signature fine dining experience.",
+            "id": "go_l100_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "We'll share a bottle of Barolo, and for me the game terrine to start and the venison for my main.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Barolo",
+                "Game Terrine",
+                "Venison",
+                "Duck Breast"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l100_q2",
-            "xpReward": 300,
-            "coinReward": 500,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Barolo, Game Terrine, Venison",
+            "hint": "Three items: shared wine, customer's starter, and customer's main.",
+            "explanation": "Game terrine is a cold pressed preparation of game meats like rabbit, pheasant, or hare. Venison (deer) is a game meat that pairs classically with Barolo. Duck breast would also pair well but was not ordered - listen carefully.",
+            "id": "go_l100_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "For my last meal here, I'd like the signature tartare, the Wagyu fillet, and the Grand Marnier soufflé.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Signature Tartare",
+                "Wagyu Fillet",
+                "Grand Marnier Soufflé",
+                "Chocolate Fondant"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l100_q3",
-            "xpReward": 300,
-            "coinReward": 500,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Signature Tartare, Wagyu Fillet, Grand Marnier Soufflé",
+            "hint": "A celebratory final meal - three signature dishes from the restaurant's menu.",
+            "explanation": "Wagyu is a Japanese cattle breed producing beef with exceptional marbling - one of the world's most prized meats. A Grand Marnier soufflé is a light, airy baked dessert flavoured with orange liqueur - it must be pre-ordered as it cannot be rushed.",
+            "id": "go_l100_q3"
         }
     ]
 }

@@ -5,693 +5,483 @@
     "quests": [
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "For my starter I think I'll go with the scallops, and for my main the venison.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Scallops",
+                "Venison",
+                "Foie Gras",
+                "Duck Breast"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l61_q1",
-            "xpReward": 183,
-            "coinReward": 305,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Scallops, Venison",
+            "hint": "The customer uses the course structure - 'for my starter' and 'for my main'.",
+            "explanation": "'For my starter... for my main' is a natural indirect way to place a restaurant order. The customer does not say 'I'll have' directly but the meaning is clear from context.",
+            "id": "go_l61_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "We'd like to share the seafood tower, and then I'll have the lamb while my partner has the turbot.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Seafood Tower",
+                "Lamb",
+                "Turbot",
+                "Salmon"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l61_q2",
-            "xpReward": 183,
-            "coinReward": 305,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Seafood Tower, Lamb, Turbot",
+            "hint": "The customer orders one shared item and two individual mains - three items total.",
+            "explanation": "When two people order together, listen for the shared item and both individual choices. 'While my partner has...' introduces the second person's main - all three items are being ordered.",
+            "id": "go_l61_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I think I'll start with the soup and then the sea bass, followed by the cheese selection.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Soup of the Day",
+                "Sea Bass",
+                "Cheese Selection",
+                "Crème Brûlée"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l61_q3",
-            "xpReward": 183,
-            "coinReward": 305,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Soup of the Day, Sea Bass, Cheese Selection",
+            "hint": "Three courses: starter soup, fish main, and cheese in place of dessert.",
+            "explanation": "In fine dining, a cheese course can replace dessert. 'Start with... then... followed by' is a sophisticated ordering sequence. The customer orders a complete three-course meal using varied transitional language.",
+            "id": "go_l61_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'm vegetarian, so I'll have the garden risotto, the truffle arancini, and the green salad.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Garden Risotto",
+                "Truffle Arancini",
+                "Green Salad",
+                "Caesar Salad"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l62_q1",
-            "xpReward": 186,
-            "coinReward": 310,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Garden Risotto, Truffle Arancini, Green Salad",
+            "hint": "The customer identifies a dietary preference before ordering - all three items must be selected.",
+            "explanation": "Customers often state dietary preferences before ordering: 'I'm vegetarian, so...' This context does not reduce the items ordered - all three must still be selected. Green salad and Caesar salad are both salads but different.",
+            "id": "go_l62_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'm gluten-free, so I'll take the grilled salmon, the roasted vegetables, and a sparkling water.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Grilled Salmon",
+                "Roasted Vegetables",
+                "Sparkling Water",
+                "Still Water"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l62_q2",
-            "xpReward": 186,
-            "coinReward": 310,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Grilled Salmon, Roasted Vegetables, Sparkling Water",
+            "hint": "The dietary mention ('I'm gluten-free') is a context clue, not an item to select.",
+            "explanation": "'I'm gluten-free' explains the ordering choices but is not itself an item. The customer still orders three items. Sparkling and still water are distinct - 'sparkling' has been specifically requested.",
+            "id": "go_l62_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Since I don't eat red meat, I'll have the chicken breast, the ratatouille, and the lemon tart.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Chicken Breast",
+                "Ratatouille",
+                "Lemon Tart",
+                "Chocolate Tart"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l62_q3",
-            "xpReward": 186,
-            "coinReward": 310,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Chicken Breast, Ratatouille, Lemon Tart",
+            "hint": "Three items from a customer who avoids red meat - listen for each item.",
+            "explanation": "The phrase 'since I don't eat red meat' explains the choice of chicken. Ratatouille is a Provençal stewed vegetable dish. Lemon tart and chocolate tart are both tarts - listen carefully for the flavour adjective.",
+            "id": "go_l62_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "For our table, I'll order the sharing board, three portions of the market fish, and a bottle of still water.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Sharing Board",
+                "Market Fish",
+                "Still Water",
+                "Sparkling Water"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l63_q1",
-            "xpReward": 189,
-            "coinReward": 315,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Sharing Board, Market Fish, Still Water",
+            "hint": "The customer orders for a group - listen for the key menu items, not the quantities.",
+            "explanation": "When ordering for a group, quantities (three portions, a bottle) are specified but the menu items themselves are what matter. 'Market fish' refers to the freshest fish available that day.",
+            "id": "go_l63_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "We'll all take the set lunch menu, and could you also bring us the bread basket and the wine list?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Set Lunch Menu",
+                "Bread Basket",
+                "Wine List",
+                "Dessert Menu"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l63_q2",
-            "xpReward": 189,
-            "coinReward": 315,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Set Lunch Menu, Bread Basket, Wine List",
+            "hint": "Three things are requested: a menu type, a bread service, and the wine list.",
+            "explanation": "A 'set lunch menu' is a fixed-price menu with limited choices. Requesting the wine list is a standard restaurant interaction - the customer wants to choose wine separately. The bread basket is a side service.",
+            "id": "go_l63_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the niçoise salad and my colleague will have the club sandwich - we'll share a sparkling water.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Niçoise Salad",
+                "Club Sandwich",
+                "Sparkling Water",
+                "Still Water"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l63_q3",
-            "xpReward": 189,
-            "coinReward": 315,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Niçoise Salad, Club Sandwich, Sparkling Water",
+            "hint": "The customer orders for both themselves and a colleague - all three items are being ordered.",
+            "explanation": "A niçoise salad is a French salad with tuna, green beans, olives, and hard-boiled eggs. Two people ordering together - listen for both meals plus the shared drink. 'Sparkling' is specifically requested here.",
+            "id": "go_l63_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "We're celebrating tonight - could we have the Krug Champagne, the tasting menu for two, and the birthday dessert?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Krug Champagne",
+                "Tasting Menu for Two",
+                "Birthday Dessert",
+                "Champagne Toast"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l64_q1",
-            "xpReward": 192,
-            "coinReward": 320,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Krug Champagne, Tasting Menu for Two, Birthday Dessert",
+            "hint": "The celebration context tells you this is a special occasion order - three premium items.",
+            "explanation": "Krug is a prestigious Champagne house. 'Tasting menu for two' is a fixed multi-course meal for two people. The birthday dessert is a separate item that must be pre-arranged. A champagne toast is a service, not a separate menu item.",
+            "id": "go_l64_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "For our anniversary, I'd like the champagne, the five-course menu, and could you arrange the rose petals on the table?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Champagne",
+                "Five-Course Menu",
+                "Rose Petals",
+                "Chocolates"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l64_q2",
-            "xpReward": 192,
-            "coinReward": 320,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Champagne, Five-Course Menu, Rose Petals",
+            "hint": "Even non-food requests like 'rose petals' are items to fulfil in this special occasion order.",
+            "explanation": "In fine dining, special occasion requests include table decoration like rose petals. The customer orders three distinct things - a drink, a meal structure, and a decoration. All three must be fulfilled.",
+            "id": "go_l64_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could you bring out the birthday cake, a bottle of sparkling wine, and the dessert tasting plate?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Birthday Cake",
+                "Sparkling Wine",
+                "Dessert Tasting Plate",
+                "Cheese Board"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l64_q3",
-            "xpReward": 192,
-            "coinReward": 320,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Birthday Cake, Sparkling Wine, Dessert Tasting Plate",
+            "hint": "Three items for a birthday celebration - cake, wine, and a dessert selection.",
+            "explanation": "A 'dessert tasting plate' features small portions of several desserts - different from a single dessert. Distinguishing 'sparkling wine' from 'cheese board' requires careful listening to both items in context.",
+            "id": "go_l64_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like to order room service - the club sandwich, a bottle of still water, and the Caesar salad, please.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Club Sandwich",
+                "Still Water",
+                "Caesar Salad",
+                "Sparkling Water"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l65_q1",
-            "xpReward": 195,
-            "coinReward": 325,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Club Sandwich, Still Water, Caesar Salad",
+            "hint": "Room service orders follow the same pattern - listen for the three menu items.",
+            "explanation": "Room service ordering uses identical language to restaurant ordering. A club sandwich is a triple-decker with chicken, bacon, lettuce, and tomato. Still water (no bubbles) was specifically requested - not sparkling.",
+            "id": "go_l65_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the continental breakfast, a pot of English breakfast tea, and the morning newspaper?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Continental Breakfast",
+                "English Breakfast Tea",
+                "Morning Newspaper",
+                "Coffee"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l65_q2",
-            "xpReward": 195,
-            "coinReward": 325,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Continental Breakfast, English Breakfast Tea, Morning Newspaper",
+            "hint": "The morning newspaper is also an item to fulfil in this hotel room service order.",
+            "explanation": "Hotel room service can include non-food items like newspapers. English breakfast tea is a specific strong black tea blend. Continental breakfast includes pastries and cold items - no cooked food.",
+            "id": "go_l65_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the cheeseburger, the truffle fries, and a chocolate milkshake, please.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Cheeseburger",
+                "Truffle Fries",
+                "Chocolate Milkshake",
+                "Vanilla Milkshake"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l65_q3",
-            "xpReward": 195,
-            "coinReward": 325,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Cheeseburger, Truffle Fries, Chocolate Milkshake",
+            "hint": "Three classic items - listen carefully for 'chocolate' versus 'vanilla' milkshake.",
+            "explanation": "The flavour adjective distinguishes identical products: chocolate milkshake versus vanilla milkshake. Truffle fries are an upgraded version of fries with truffle oil. All three items form a classic (but upscale) burger meal.",
+            "id": "go_l65_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "For my business lunch, I'll have the Caesar salad, the grilled sea bass, and a still water.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Caesar Salad",
+                "Grilled Sea Bass",
+                "Still Water",
+                "Sparkling Water"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l66_q1",
-            "xpReward": 198,
-            "coinReward": 330,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Caesar Salad, Grilled Sea Bass, Still Water",
+            "hint": "A business lunch order - professional language, three standard items.",
+            "explanation": "Business lunches typically involve lighter, professional choices. The customer specifies 'still' water - this distinction is important in a restaurant setting. Sea bass and Caesar salad are both classic business lunch choices.",
+            "id": "go_l66_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "My colleague will have the soup of the day, the risotto, and a glass of white wine.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Soup of the Day",
+                "Risotto",
+                "White Wine",
+                "Red Wine"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l66_q2",
-            "xpReward": 198,
-            "coinReward": 330,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Soup of the Day, Risotto, White Wine",
+            "hint": "The customer is ordering on behalf of a colleague - all three items are still ordered.",
+            "explanation": "When ordering for someone else, the language changes to 'my colleague will have'. The items ordered are identical in nature to ordering for yourself. White wine was specifically requested - not red.",
+            "id": "go_l66_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the smoked salmon starter, the chicken supreme, and an espresso to finish?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Smoked Salmon",
+                "Chicken Supreme",
+                "Espresso",
+                "Cappuccino"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l66_q3",
-            "xpReward": 198,
-            "coinReward": 330,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Smoked Salmon, Chicken Supreme, Espresso",
+            "hint": "Three courses with 'to finish' indicating the espresso comes last.",
+            "explanation": "Chicken supreme is a classic French dish - a skin-on chicken breast in a cream sauce. 'To finish' indicates the espresso is the final course. Espresso and cappuccino are both coffee but espresso is pure and black - cappuccino has milk foam.",
+            "id": "go_l66_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "For the pairing dinner, I'll have the oysters, the Chablis, and the duck breast.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Oysters",
+                "Chablis",
+                "Duck Breast",
+                "Burgundy"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l67_q1",
-            "xpReward": 201,
-            "coinReward": 335,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Oysters, Chablis, Duck Breast",
+            "hint": "A pairing dinner combines food and wine - listen for both the food items and the wine.",
+            "explanation": "A 'pairing dinner' matches specific wines with food courses. Oysters are classically paired with Chablis. Duck breast is ordered as a second course. Burgundy is another wine region - not ordered here.",
+            "id": "go_l67_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the salmon with the Chardonnay, and the risotto as a side.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Salmon",
+                "Chardonnay",
+                "Risotto",
+                "Pinot Grigio"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l67_q2",
-            "xpReward": 201,
-            "coinReward": 335,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Salmon, Chardonnay, Risotto",
+            "hint": "Three items: fish main, white wine pairing, and a side dish.",
+            "explanation": "Chardonnay is a full-bodied white wine that pairs classically with salmon. Pinot Grigio is a lighter alternative. 'As a side' means the risotto accompanies the main - it is still an item to be ordered.",
+            "id": "go_l67_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I get the duck pâté, the Sancerre, and the cheese board?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Duck Pâté",
+                "Sancerre",
+                "Cheese Board",
+                "Bordeaux"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l67_q3",
-            "xpReward": 201,
-            "coinReward": 335,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Duck Pâté, Sancerre, Cheese Board",
+            "hint": "Sancerre is a crisp white wine from the Loire Valley - different from Bordeaux (red).",
+            "explanation": "Sancerre is a crisp, dry white wine from the Loire Valley - excellent with pâté. Bordeaux is predominantly red wine from southwest France. Duck pâté is a smooth, rich liver preparation served as a starter.",
+            "id": "go_l67_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the finger sandwiches, the scones with clotted cream, and an Earl Grey tea.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Finger Sandwiches",
+                "Scones with Clotted Cream",
+                "Earl Grey Tea",
+                "Darjeeling Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l68_q1",
-            "xpReward": 204,
-            "coinReward": 340,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Finger Sandwiches, Scones with Clotted Cream, Earl Grey Tea",
+            "hint": "Three classic afternoon tea items - sandwich course, scone course, and a specific tea.",
+            "explanation": "Afternoon tea follows a specific structure: small sandwiches first, then scones with clotted cream and jam, then pastries. Earl Grey is a black tea with bergamot oil - different from Darjeeling, which is a floral tea from India.",
+            "id": "go_l68_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the pastry selection, the miniature cakes, and a pot of Darjeeling.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Pastry Selection",
+                "Miniature Cakes",
+                "Darjeeling",
+                "Assam Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l68_q2",
-            "xpReward": 204,
-            "coinReward": 340,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Pastry Selection, Miniature Cakes, Darjeeling",
+            "hint": "Three afternoon tea items - two food courses and a specific tea variety.",
+            "explanation": "Darjeeling is a delicate, floral tea from the Darjeeling region of India - often called the 'champagne of teas'. Assam is a bolder, maltier Indian tea. A pastry selection includes multiple items; miniature cakes are the sweet finale.",
+            "id": "go_l68_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the cucumber sandwiches, the Victoria sponge, and the Lapsang Souchong tea?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Cucumber Sandwiches",
+                "Victoria Sponge",
+                "Lapsang Souchong",
+                "Chamomile Tea"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l68_q3",
-            "xpReward": 204,
-            "coinReward": 340,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Cucumber Sandwiches, Victoria Sponge, Lapsang Souchong",
+            "hint": "Lapsang Souchong is a smoky Chinese tea - very different from chamomile.",
+            "explanation": "Cucumber sandwiches are a classic British afternoon tea item - delicate white bread with butter and cucumber. Victoria sponge is a British classic with jam and cream. Lapsang Souchong is a distinctive smoky tea from Fujian, China.",
+            "id": "go_l68_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "We'll take the full omakase, the sake pairing, and the extra nigiri course, please.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Omakase Menu",
+                "Sake Pairing",
+                "Extra Nigiri Course",
+                "Wagyu Course"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l69_q1",
-            "xpReward": 207,
-            "coinReward": 345,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Omakase Menu, Sake Pairing, Extra Nigiri Course",
+            "hint": "'Omakase' means 'I'll leave it to you' in Japanese - the chef chooses each course.",
+            "explanation": "Omakase (I'll leave it to you) is a Japanese dining style where the chef selects each course based on seasonal ingredients. A sake pairing matches different sake varieties to each dish. The extra nigiri course is a supplement.",
+            "id": "go_l69_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the seven-course tasting menu, the wine flight, and the cheese course supplement.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Seven-Course Tasting Menu",
+                "Wine Flight",
+                "Cheese Course Supplement",
+                "Amuse-Bouche Supplement"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l69_q2",
-            "xpReward": 207,
-            "coinReward": 345,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Seven-Course Tasting Menu, Wine Flight, Cheese Course Supplement",
+            "hint": "A wine flight is a curated selection of wines matched to each course.",
+            "explanation": "A wine flight is a curated selection of different wines paired with each course - different from ordering a single bottle. A cheese course supplement is an optional extra added to a fixed tasting menu.",
+            "id": "go_l69_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I take the chef's menu, the truffle supplement, and the wine pairing, please?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Chef's Menu",
+                "Truffle Supplement",
+                "Wine Pairing",
+                "Non-Alcoholic Pairing"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l69_q3",
-            "xpReward": 207,
-            "coinReward": 345,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Chef's Menu, Truffle Supplement, Wine Pairing",
+            "hint": "A truffle supplement adds fresh truffle shavings to specific courses for an extra charge.",
+            "explanation": "Premium ingredients like truffles are often offered as a supplement - an optional extra for an additional charge. The customer chose the wine pairing over the non-alcoholic pairing - the distinction matters.",
+            "id": "go_l69_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "For our private dinner, we'd like the pre-set menu, the cocktail reception, and the champagne on arrival.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Pre-Set Menu",
+                "Cocktail Reception",
+                "Champagne on Arrival",
+                "Wine Service"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l70_q1",
-            "xpReward": 210,
-            "coinReward": 350,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Pre-Set Menu, Cocktail Reception, Champagne on Arrival",
+            "hint": "Private dining orders often include reception drinks and pre-arranged menus.",
+            "explanation": "Private dining events are pre-arranged in advance. A cocktail reception is a drinks service before the meal. Champagne on arrival is served when guests enter - different from general wine service during dinner.",
+            "id": "go_l70_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the canapés, the five-course meal, and the after-dinner liqueurs for our party.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Canapés",
+                "Five-Course Meal",
+                "After-Dinner Liqueurs",
+                "Digestif Board"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l70_q2",
-            "xpReward": 210,
-            "coinReward": 350,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Canapés, Five-Course Meal, After-Dinner Liqueurs",
+            "hint": "Three elements of a private dining experience - pre-dinner snacks, the meal, and post-dinner drinks.",
+            "explanation": "Canapés are small, elegant pre-dinner snacks. A five-course meal has five distinct courses. After-dinner liqueurs are spirits served at the end of the meal - different from a digestif board, which might include port or brandy only.",
+            "id": "go_l70_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could we arrange the welcome drinks, the sharing starters, and the dessert buffet for the guests?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Welcome Drinks",
+                "Sharing Starters",
+                "Dessert Buffet",
+                "Cheese Course"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l70_q3",
-            "xpReward": 210,
-            "coinReward": 350,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Welcome Drinks, Sharing Starters, Dessert Buffet",
+            "hint": "Three event catering elements - arrival drinks, shared starters, and a dessert station.",
+            "explanation": "Welcome drinks are served as guests arrive. Sharing starters are placed in the centre of the table for everyone. A dessert buffet allows guests to choose freely - different from a single cheese course at the end.",
+            "id": "go_l70_q3"
         }
     ]
 }

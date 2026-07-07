@@ -5,693 +5,483 @@
     "quests": [
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll take the tasting menu carte blanche, the extended Krug Champagne pairing throughout, and the cheese trolley and petit fours at the conclusion.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Tasting Menu Carte Blanche",
+                "Extended Krug Champagne Pairing",
+                "Cheese Trolley and Petit Fours",
+                "Wine Flight"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l151_q1",
-            "xpReward": 453,
-            "coinReward": 755,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Tasting Menu Carte Blanche, Extended Krug Champagne Pairing, Cheese Trolley and Petit Fours",
+            "hint": "'Carte blanche' means complete creative freedom - the chef decides everything.",
+            "explanation": "Carte blanche (French: white card) means giving the chef unlimited creative freedom - no preferences specified. Extended Krug pairing means Krug Champagne is poured throughout the entire meal. Cheese trolley and petit fours at the conclusion means a cheese course then coffee with tiny confections. Wine flight is not ordered.",
+            "id": "go_l151_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the seasonal tasting menu with zero-waste supplementary course, the natural wine pairing from independent producers, and the pre-dessert and dessert sequence.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Seasonal Tasting Menu with Zero-Waste Course",
+                "Natural Wine Pairing from Independent Producers",
+                "Pre-Dessert and Dessert Sequence",
+                "Cheese Course"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l151_q2",
-            "xpReward": 453,
-            "coinReward": 755,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Seasonal Tasting Menu with Zero-Waste Course, Natural Wine Pairing from Independent Producers, Pre-Dessert and Dessert Sequence",
+            "hint": "Natural wines are made without additives - from certified organic or biodynamic vineyards.",
+            "explanation": "Zero-waste cooking uses every part of each ingredient - bones, skins, and trimmings all find purpose. Natural wine is made with minimal intervention - no added sulphites, natural yeasts only. A pre-dessert is a small sweet bite before the main dessert - often a palate-refreshing sorbet or granita.",
+            "id": "go_l151_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the theatre-of-the-table whole roasted turbot, the cheese soufflé as an intermezzo, and the liquid nitrogen dessert presentation?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Theatre-of-the-Table Whole Roasted Turbot",
+                "Cheese Soufflé as Intermezzo",
+                "Liquid Nitrogen Dessert Presentation",
+                "Cheese Board"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l151_q3",
-            "xpReward": 453,
-            "coinReward": 755,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Theatre-of-the-Table Whole Roasted Turbot, Cheese Soufflé as Intermezzo, Liquid Nitrogen Dessert Presentation",
+            "hint": "An intermezzo is a palate-cleanser served between courses - unusual to have a full soufflé here.",
+            "explanation": "Theatre-of-the-table means dishes are presented and carved/prepared in front of diners - highly theatrical fine dining. An intermezzo is usually a small sorbet but a cheese soufflé as intermezzo is an unusual elevated version. Liquid nitrogen desserts are prepared tableside with dramatic smoke effects.",
+            "id": "go_l151_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the fifty-year aged Aceto Balsamico Tradizionale over a fresh Parmigiano-Reggiano frangipane, the braised Maremmana ox cheek with pappardelle and black truffle, and the zuppa inglese alla ferrarese.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Fifty-Year Aceto Balsamico with Parmigiano Frangipane",
+                "Braised Maremmana Ox Cheek with Pappardelle and Black Truffle",
+                "Zuppa Inglese alla Ferrarese",
+                "Tiramisù"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l152_q1",
-            "xpReward": 456,
-            "coinReward": 760,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Fifty-Year Aceto Balsamico with Parmigiano Frangipane, Braised Maremmana Ox Cheek with Pappardelle and Black Truffle, Zuppa Inglese alla Ferrarese",
+            "hint": "Fifty-year Aceto Balsamico Tradizionale is worth more by weight than gold - used in drops.",
+            "explanation": "Aceto Balsamico Tradizionale from Modena or Reggio Emilia is aged for 25 or 50+ years in a series of diminishing wooden barrels - its price reflects this extraordinary craftsmanship. Zuppa inglese is an Italian trifle - from Ferrara, a regional variation uses alchermes liqueur.",
+            "id": "go_l152_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the tortelli di zucca with brown butter and mostarda di Cremona, the risotto alla pilota con salamella, and the torta sbrisolona with zabaione.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Tortelli di Zucca with Brown Butter and Mostarda di Cremona",
+                "Risotto alla Pilota con Salamella",
+                "Torta Sbrisolona with Zabaione",
+                "Budino di Riso"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l152_q2",
-            "xpReward": 456,
-            "coinReward": 760,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Tortelli di Zucca with Brown Butter and Mostarda di Cremona, Risotto alla Pilota con Salamella, Torta Sbrisolona with Zabaione",
+            "hint": "Mostarda di Cremona is a Northern Italian condiment of candied fruit in a mustard oil syrup.",
+            "explanation": "Tortelli di zucca are Mantuan pumpkin-filled pasta - a sweet-savoury combination with mostarda. Risotto alla pilota is a Mantuan style using a specific dry technique. Salamella is a Mantuan fresh pork sausage. Sbrisolona is a crumbly almond cake. Zabaione is a warm egg, sugar, and Marsala custard. Budino di riso is a rice pudding - different.",
+            "id": "go_l152_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the antipasto of Valle d'Aosta lardo, fontina, and mocetta, the carbonade valdostana with polenta, and the mont blanc glacé?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Antipasto of Valle d'Aosta Lardo Fontina and Mocetta",
+                "Carbonade Valdostana with Polenta",
+                "Mont Blanc Glacé",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l152_q3",
-            "xpReward": 456,
-            "coinReward": 760,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Antipasto of Valle d'Aosta Lardo Fontina and Mocetta, Carbonade Valdostana with Polenta, Mont Blanc Glacé",
+            "hint": "Mocetta is a cured chamois or beef meat from the Valle d'Aosta - a mountain charcuterie.",
+            "explanation": "The Valle d'Aosta in the Italian Alps has a distinct Franco-Italian food culture. Fontina DOP is its celebrated cheese. Mocetta is dried cured meat from chamois or beef. Carbonade is a red wine beef stew - the local version uses Aosta Valley red wine. Mont Blanc glacé is a chestnut and cream dessert mountain - a more elaborate version than the classic.",
+            "id": "go_l152_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll take the wild Alaskan king crab with Meyer lemon brown butter, the prime dry-aged heritage breed beef with foraged mushrooms, and the Tahitian vanilla bean cheesecake.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Wild Alaskan King Crab with Meyer Lemon Brown Butter",
+                "Prime Dry-Aged Heritage Breed Beef with Foraged Mushrooms",
+                "Tahitian Vanilla Bean Cheesecake",
+                "Key Lime Pie"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l153_q1",
-            "xpReward": 459,
-            "coinReward": 765,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Wild Alaskan King Crab with Meyer Lemon Brown Butter, Prime Dry-Aged Heritage Breed Beef with Foraged Mushrooms, Tahitian Vanilla Bean Cheesecake",
+            "hint": "Tahitian vanilla is different from Madagascar vanilla - more floral and less sweet.",
+            "explanation": "Wild Alaskan king crab (Paralithodes camtschaticus) has exceptionally large, sweet legs. Meyer lemon is a cross between a lemon and orange - sweeter and more fragrant. Tahitian vanilla has a more floral, anise-like character than the sweeter Madagascar vanilla. Both are premium vanilla varieties.",
+            "id": "go_l153_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the Jonah crab claws with drawn butter and Old Bay aioli, the roasted whole Maine lobster with tarragon compound butter, and the Boston cream pie.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Jonah Crab Claws with Drawn Butter and Old Bay Aioli",
+                "Roasted Whole Maine Lobster with Tarragon Compound Butter",
+                "Boston Cream Pie",
+                "New York Cheesecake"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l153_q2",
-            "xpReward": 459,
-            "coinReward": 765,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Jonah Crab Claws with Drawn Butter and Old Bay Aioli, Roasted Whole Maine Lobster with Tarragon Compound Butter, Boston Cream Pie",
+            "hint": "Boston cream pie is actually a cake - named 'pie' because early American bakers used pie tins for cakes.",
+            "explanation": "Jonah crab is an Atlantic deep-water crab - less well-known than king crab but equally sweet. Drawn butter is simply melted clarified butter. Maine lobster is the definitive American lobster. Boston cream pie is a yellow sponge cake with custard filling and chocolate glaze - the naming confusion is a historical artefact.",
+            "id": "go_l153_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the Chesapeake blue crab imperial, the whole roasted Virginia ham with red-eye gravy, and the Lane cake?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Chesapeake Blue Crab Imperial",
+                "Whole Roasted Virginia Ham with Red-Eye Gravy",
+                "Lane Cake",
+                "Hummingbird Cake"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l153_q3",
-            "xpReward": 459,
-            "coinReward": 765,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Chesapeake Blue Crab Imperial, Whole Roasted Virginia Ham with Red-Eye Gravy, Lane Cake",
+            "hint": "Crab imperial is a Chesapeake Bay classic - blue crab in a creamy imperial sauce.",
+            "explanation": "Blue crab from the Chesapeake Bay is iconic to Maryland and Virginia. Crab imperial uses a sauce of mayonnaise, egg, and spices. Virginia ham is a distinctive dry-cured ham with a stronger flavour than Smithfield. Red-eye gravy is made from ham drippings and black coffee. Lane cake is a Southern celebration cake with a fruit and nut filling.",
+            "id": "go_l153_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the century egg congee with pickled ginger and crispy shallots, the char siu pork ribs with preserved vegetable, and the steamed milk pudding with ginger syrup.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Century Egg Congee with Pickled Ginger and Crispy Shallots",
+                "Char Siu Pork Ribs with Preserved Vegetable",
+                "Steamed Milk Pudding with Ginger Syrup",
+                "Almond Jelly"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l154_q1",
-            "xpReward": 462,
-            "coinReward": 770,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Century Egg Congee with Pickled Ginger and Crispy Shallots, Char Siu Pork Ribs with Preserved Vegetable, Steamed Milk Pudding with Ginger Syrup",
+            "hint": "Century eggs are duck eggs preserved for months in ash, clay, and salt - an acquired taste.",
+            "explanation": "Century eggs are duck eggs preserved in clay and salt for 100 days or more - the white becomes a dark jelly and the yolk turns creamy. Congee is rice porridge. Char siu are Cantonese BBQ pork ribs glazed in a sweet red sauce. Steamed milk pudding (double-skin milk) is a Cantonese silky custard dessert.",
+            "id": "go_l154_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the yunnan ham and bamboo pith soup, the ants climbing a tree, and the Yunnan wild mushroom clay pot.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Yunnan Ham and Bamboo Pith Soup",
+                "Ants Climbing a Tree",
+                "Yunnan Wild Mushroom Clay Pot",
+                "Mapo Tofu"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l154_q2",
-            "xpReward": 462,
-            "coinReward": 770,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Yunnan Ham and Bamboo Pith Soup, Ants Climbing a Tree, Yunnan Wild Mushroom Clay Pot",
+            "hint": "Ants climbing a tree is a Sichuan dish of glass noodles with minced pork - the name is visual.",
+            "explanation": "Yunnan ham (xuanwei) is China's most prestigious cured ham - comparable to prosciutto. Bamboo pith is the spongy interior of bamboo shoots. 'Ants climbing a tree' (mayi shang shu) is a vivid name - the minced pork clings to glass noodles like ants on branches. Yunnan province has extraordinary mushroom biodiversity.",
+            "id": "go_l154_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the Shanghainese glutinous rice stuffed with eight treasures, the braised lion's head meatballs in broth, and the red bean soup with lotus seeds?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Shanghainese Glutinous Rice Stuffed with Eight Treasures",
+                "Braised Lion's Head Meatballs in Broth",
+                "Red Bean Soup with Lotus Seeds",
+                "Almond Tofu"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l154_q3",
-            "xpReward": 462,
-            "coinReward": 770,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Shanghainese Glutinous Rice Stuffed with Eight Treasures, Braised Lion's Head Meatballs in Broth, Red Bean Soup with Lotus Seeds",
+            "hint": "Eight treasures glutinous rice is a festive dish with eight different fruit and nut fillings.",
+            "explanation": "Eight treasures rice (babao fan) is a festive glutinous rice dish arranged with eight symbolic ingredients - often served at New Year. Lion's head meatballs are enormous pork meatballs braised in broth - a Jiangnan speciality. Red bean soup with lotus seeds is a classic Chinese sweet soup dessert.",
+            "id": "go_l154_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll take the caviar of Oscietra and blini with potato cream and horseradish, the whole roasted native lobster in a bisque with cognac, and the dessert sequence of five preparations.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Oscietra Caviar and Blini with Potato Cream and Horseradish",
+                "Whole Roasted Native Lobster in Bisque with Cognac",
+                "Dessert Sequence of Five Preparations",
+                "Cheese Course"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l155_q1",
-            "xpReward": 465,
-            "coinReward": 775,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Oscietra Caviar and Blini with Potato Cream and Horseradish, Whole Roasted Native Lobster in Bisque with Cognac, Dessert Sequence of Five Preparations",
+            "hint": "A dessert sequence presents five interpretations of related flavours across multiple dishes.",
+            "explanation": "A dessert sequence is a modern fine dining concept - five small dessert preparations exploring a theme or flavour combination. This offers breadth instead of one large dessert. Oscietra caviar is medium-sized sturgeon roe with a nutty, briny flavour - served classically with blini and crème fraîche.",
+            "id": "go_l155_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the hand-dived scallop with apple, truffle, and sea buckthorn, the venison sirloin with celeriac, sloe, and game consommé, and the hazelnut praline soufflé.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Hand-Dived Scallop with Apple Truffle and Sea Buckthorn",
+                "Venison Sirloin with Celeriac Sloe and Game Consommé",
+                "Hazelnut Praline Soufflé",
+                "Chocolate Fondant"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l155_q2",
-            "xpReward": 465,
-            "coinReward": 775,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Hand-Dived Scallop with Apple Truffle and Sea Buckthorn, Venison Sirloin with Celeriac Sloe and Game Consommé, Hazelnut Praline Soufflé",
+            "hint": "Sea buckthorn is a British coastal berry - intensely tart and orange.",
+            "explanation": "Sea buckthorn berries grow on British coastal dunes - they have an extraordinary tartness and tropical-like aroma. Sloe is a small, intensely tart hedgerow berry used to flavour sloe gin. A game consommé is a crystal-clear stock made from game carcasses - served alongside the venison as a sauce.",
+            "id": "go_l155_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the Périgord black truffle en croûte with leek fondue, the salt marsh lamb en cocotte with spring garlic and sweetbreads, and the strawberry and cream composition?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Périgord Black Truffle en Croûte with Leek Fondue",
+                "Salt Marsh Lamb en Cocotte with Spring Garlic and Sweetbreads",
+                "Strawberry and Cream Composition",
+                "Tarte Tatin"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l155_q3",
-            "xpReward": 465,
-            "coinReward": 775,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Périgord Black Truffle en Croûte with Leek Fondue, Salt Marsh Lamb en Cocotte with Spring Garlic and Sweetbreads, Strawberry and Cream Composition",
+            "hint": "Truffle en croûte wraps the whole truffle in pastry - it steams inside and perfumes the pastry.",
+            "explanation": "Truffle en croûte wraps a whole truffle in pastry with other aromatics - as it bakes, the truffle steams inside and its aroma permeates the pastry. En cocotte means cooked and served in a casserole dish. A 'composition' presents a dessert as multiple elements arranged thoughtfully on the plate.",
+            "id": "go_l155_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the miso-glazed foie gras with dashi jelly and nashi pear, the charcoal-roasted duck breast with fermented black garlic and chrysanthemum, and the sake kasu ice cream with sesame brittle.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Miso-Glazed Foie Gras with Dashi Jelly and Nashi Pear",
+                "Charcoal-Roasted Duck Breast with Fermented Black Garlic and Chrysanthemum",
+                "Sake Kasu Ice Cream with Sesame Brittle",
+                "Matcha Panna Cotta"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l156_q1",
-            "xpReward": 468,
-            "coinReward": 780,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Miso-Glazed Foie Gras with Dashi Jelly and Nashi Pear, Charcoal-Roasted Duck Breast with Fermented Black Garlic and Chrysanthemum, Sake Kasu Ice Cream with Sesame Brittle",
+            "hint": "Sake kasu is the pressed lees remaining after sake production - it has a rich, yeasty character.",
+            "explanation": "Sake kasu (sake lees) is the compressed solid remaining after sake is filtered - used in cooking and recently in pastry for its complex fermented flavour. Chrysanthemum petals are edible and used in East Asian cooking. Nashi pear is an Asian pear with a crisp, juicy texture. Miso-glazed foie gras is an East-West fusion.",
+            "id": "go_l156_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the yuzu kosho-cured salmon with cucumber dashi and sansho oil, the poached chicken in a classic French pot-au-feu style with Asian aromatics, and the black sesame panna cotta.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Yuzu Kosho-Cured Salmon with Cucumber Dashi and Sansho Oil",
+                "Poached Chicken in Classic Pot-au-Feu Style with Asian Aromatics",
+                "Black Sesame Panna Cotta",
+                "Vanilla Panna Cotta"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l156_q2",
-            "xpReward": 468,
-            "coinReward": 780,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Yuzu Kosho-Cured Salmon with Cucumber Dashi and Sansho Oil, Poached Chicken in Classic Pot-au-Feu Style with Asian Aromatics, Black Sesame Panna Cotta",
+            "hint": "Sansho is the Japanese version of Sichuan pepper - producing a similar numbing effect.",
+            "explanation": "Sansho is the Japanese prickly ash berry - similar to Sichuan pepper, it produces a numbing sensation but with a more citrusy, floral character. Pot-au-feu is a classic French boiled dinner - here reinterpreted with ginger, star anise, and Asian aromatics. Black sesame has a nutty, roasted character very different from vanilla panna cotta.",
+            "id": "go_l156_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the tartare of Highland venison with pickled blackberries and smoked juniper oil, the braised native lobster in a bisque of its own shell, and the raspberry soufflé with lavender custard?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Tartare of Highland Venison with Pickled Blackberries and Smoked Juniper Oil",
+                "Braised Native Lobster in a Bisque of Its Own Shell",
+                "Raspberry Soufflé with Lavender Custard",
+                "Eton Mess"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l156_q3",
-            "xpReward": 468,
-            "coinReward": 780,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Tartare of Highland Venison with Pickled Blackberries and Smoked Juniper Oil, Braised Native Lobster in a Bisque of Its Own Shell, Raspberry Soufflé with Lavender Custard",
+            "hint": "Bisque of its own shell means the sauce is made from roasting the lobster shell itself.",
+            "explanation": "Making a bisque from the lobster's own roasted shell produces an intensely flavourful sauce that perfectly complements the lobster meat. Smoked juniper oil adds a subtle pine-like, slightly resinous aroma. Lavender custard for a raspberry soufflé creates a Provençal combination - floral and fruity.",
+            "id": "go_l156_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll take the cured Shetland halibut with Champagne and caviar cream, the dry-aged Dexter short rib with pickled walnuts and smoked anchovy butter, and the bitter orange and almond financier.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Cured Shetland Halibut with Champagne and Caviar Cream",
+                "Dry-Aged Dexter Short Rib with Pickled Walnuts and Smoked Anchovy Butter",
+                "Bitter Orange and Almond Financier",
+                "Chocolate Tart"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l157_q1",
-            "xpReward": 471,
-            "coinReward": 785,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Cured Shetland Halibut with Champagne and Caviar Cream, Dry-Aged Dexter Short Rib with Pickled Walnuts and Smoked Anchovy Butter, Bitter Orange and Almond Financier",
+            "hint": "Shetland halibut is a premium Scottish flatfish from the cold, clear Shetland waters.",
+            "explanation": "Shetland halibut grows more slowly in colder waters - developing firmer, sweeter flesh than southern varieties. Pickled walnuts are a Victorian British condiment - earthy and tangy. Smoked anchovy butter melts into the short rib providing deep umami. Financiers are small French almond butter cakes - here flavoured with bitter orange.",
+            "id": "go_l157_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the pressed terrine of confit rabbit with tarragon, the pan-fried gurnard with bouillabaisse and rouille, and the gariguette strawberry and fromage blanc tart.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Pressed Terrine of Confit Rabbit with Tarragon",
+                "Pan-Fried Gurnard with Bouillabaisse and Rouille",
+                "Gariguette Strawberry and Fromage Blanc Tart",
+                "Lemon Tart"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l157_q2",
-            "xpReward": 471,
-            "coinReward": 785,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Pressed Terrine of Confit Rabbit with Tarragon, Pan-Fried Gurnard with Bouillabaisse and Rouille, Gariguette Strawberry and Fromage Blanc Tart",
+            "hint": "Gariguette strawberries are an elongated French variety - intensely perfumed and delicate.",
+            "explanation": "Gurnard is an underutilised but excellent fish - firm and sweet-fleshed. Rouille is the saffron, garlic, and olive oil mayonnaise served with bouillabaisse. Gariguette is the first French strawberry of the season - elongated, deep red, and intensely fragrant. Fromage blanc is a fresh French soft cheese used in desserts.",
+            "id": "go_l157_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the hand-rolled pasta with ricotta and truffle, the braised neck of lamb with salsa verde and anchovy, and the bomboloni with custard and limoncello?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Hand-Rolled Pasta with Ricotta and Truffle",
+                "Braised Neck of Lamb with Salsa Verde and Anchovy",
+                "Bomboloni with Custard and Limoncello",
+                "Cannoli"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l157_q3",
-            "xpReward": 471,
-            "coinReward": 785,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Hand-Rolled Pasta with Ricotta and Truffle, Braised Neck of Lamb with Salsa Verde and Anchovy, Bomboloni with Custard and Limoncello",
+            "hint": "Bomboloni are Italian filled doughnuts - a Tuscan bakery staple.",
+            "explanation": "Bomboloni are round Italian doughnuts filled with custard or jam - a Florentine and Tuscan bakery classic. Limoncello is an Italian lemon liqueur - its tartness balances the custard's richness. Braised lamb neck is collagen-rich and becomes extraordinarily gelatinous with long cooking. Cannoli are Sicilian - different from bomboloni.",
+            "id": "go_l157_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the pickled Cornish oyster with apple, celery, and horseradish mignonette, the braised lamb sweetbreads with artichoke and caper, and the pear and roquefort tarte fine.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Pickled Cornish Oyster with Apple Celery and Horseradish Mignonette",
+                "Braised Lamb Sweetbreads with Artichoke and Caper",
+                "Pear and Roquefort Tarte Fine",
+                "Cheese Board"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l158_q1",
-            "xpReward": 474,
-            "coinReward": 790,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Pickled Cornish Oyster with Apple Celery and Horseradish Mignonette, Braised Lamb Sweetbreads with Artichoke and Caper, Pear and Roquefort Tarte Fine",
+            "hint": "Roquefort is France's most famous blue cheese - made from sheep's milk in the Combalou caves.",
+            "explanation": "Roquefort has Protected Designation of Origin status - it must be made from Lacaune sheep's milk and matured in the Combalou caves of Roquefort-sur-Soulzon. Sweetbreads (thymus or pancreas) are a classical offal preparation - braised until silky. A tarte fine is an elegantly thin pastry - pear and Roquefort is a sophisticated sweet-savoury combination.",
+            "id": "go_l158_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the isle of Skye scallop with sea buckthorn, caviar, and seaweed butter, the Herdwick lamb loin with nettle, goat's curd, and wild garlic oil, and the whisky and marmalade steamed pudding.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Isle of Skye Scallop with Sea Buckthorn Caviar and Seaweed Butter",
+                "Herdwick Lamb Loin with Nettle Goat's Curd and Wild Garlic Oil",
+                "Whisky and Marmalade Steamed Pudding",
+                "Cranachan"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l158_q2",
-            "xpReward": 474,
-            "coinReward": 790,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Isle of Skye Scallop with Sea Buckthorn Caviar and Seaweed Butter, Herdwick Lamb Loin with Nettle Goat's Curd and Wild Garlic Oil, Whisky and Marmalade Steamed Pudding",
+            "hint": "Whisky and marmalade steamed pudding is a specifically Scottish winter dessert combination.",
+            "explanation": "Isle of Skye scallops from the Hebridean waters are hand-dived and cold-water sweet. Seaweed butter incorporates blended dried seaweed into butter - a umami-rich compound. Whisky and marmalade steamed pudding combines two iconic Scottish and British flavours. Cranachan is a different Scottish dessert - using oats and raspberries.",
+            "id": "go_l158_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the baked Vacherin Mont d'Or with truffle and walnuts, the roe deer loin with sweet cicely and bilberry, and the Yorkshire forced rhubarb with custard tart?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Baked Vacherin Mont d'Or with Truffle and Walnuts",
+                "Roe Deer Loin with Sweet Cicely and Bilberry",
+                "Yorkshire Forced Rhubarb with Custard Tart",
+                "Treacle Tart"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l158_q3",
-            "xpReward": 474,
-            "coinReward": 790,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Baked Vacherin Mont d'Or with Truffle and Walnuts, Roe Deer Loin with Sweet Cicely and Bilberry, Yorkshire Forced Rhubarb with Custard Tart",
+            "hint": "Vacherin Mont d'Or is a seasonal winter cheese baked in its spruce bark box.",
+            "explanation": "Vacherin Mont d'Or is only available from September to March - a runny, seasonal Swiss-French cheese baked in its spruce wood box. Sweet cicely is an anise-flavoured herb - used sparingly to reduce the amount of sugar needed in desserts. Yorkshire forced rhubarb is grown in heated sheds in the dark - it is more tender and pink than outdoor rhubarb.",
+            "id": "go_l158_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll take the poached native lobster with green asparagus and saffron velouté, the wild wood pigeon with shallot tarte tatin and redcurrant jus, and the soufflé aux myrtilles with vanilla ice cream.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Poached Native Lobster with Green Asparagus and Saffron Velouté",
+                "Wild Wood Pigeon with Shallot Tarte Tatin and Redcurrant Jus",
+                "Soufflé aux Myrtilles with Vanilla Ice Cream",
+                "Paris-Brest"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l159_q1",
-            "xpReward": 477,
-            "coinReward": 795,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Poached Native Lobster with Green Asparagus and Saffron Velouté, Wild Wood Pigeon with Shallot Tarte Tatin and Redcurrant Jus, Soufflé aux Myrtilles with Vanilla Ice Cream",
+            "hint": "Myrtilles are bilberries - the wild European blueberry with a more intense flavour.",
+            "explanation": "Myrtilles (bilberries) grow wild on European moorland - smaller and more intensely flavoured than cultivated blueberries. Shallot tarte tatin is an inverted caramelised shallot tart. Saffron velouté uses the world's most expensive spice - saffron threads add golden colour and a distinctive floral-hay flavour.",
+            "id": "go_l159_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the Dorset snails with garlic butter and parsley, the roast mallard with spiced plum and chicory, and the warm Eccles cake with Lancashire cheese and sloe gin jelly.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Dorset Snails with Garlic Butter and Parsley",
+                "Roast Mallard with Spiced Plum and Chicory",
+                "Warm Eccles Cake with Lancashire Cheese and Sloe Gin Jelly",
+                "Sticky Toffee Pudding"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l159_q2",
-            "xpReward": 477,
-            "coinReward": 795,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Dorset Snails with Garlic Butter and Parsley, Roast Mallard with Spiced Plum and Chicory, Warm Eccles Cake with Lancashire Cheese and Sloe Gin Jelly",
+            "hint": "Dorset snails are British-farmed Roman snails - a sustainable and local alternative to French escargot.",
+            "explanation": "Dorset snails are Roman snails (Helix pomatia) farmed sustainably in Dorset - a patriotic alternative to French escargot prepared identically with garlic butter. An Eccles cake is a Lancashire pastry of flaky pastry filled with currants - traditionally eaten with Lancashire cheese, a striking sweet-savoury pairing.",
+            "id": "go_l159_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the chicken liver parfait with Sauternes jelly and brioche soldiers, the roasted Cornish lobster with sauce cardinal, and the Paris-Brest with Breton salted caramel?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Chicken Liver Parfait with Sauternes Jelly and Brioche Soldiers",
+                "Roasted Cornish Lobster with Sauce Cardinal",
+                "Paris-Brest with Breton Salted Caramel",
+                "Praline Millefeuille"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l159_q3",
-            "xpReward": 477,
-            "coinReward": 795,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Chicken Liver Parfait with Sauternes Jelly and Brioche Soldiers, Roasted Cornish Lobster with Sauce Cardinal, Paris-Brest with Breton Salted Caramel",
+            "hint": "Sauce cardinal is a rich shellfish cream sauce - named for the cardinal-red colour.",
+            "explanation": "Sauce cardinal is a classical French sauce - béchamel enriched with lobster coral and cream, producing a vivid orange-red colour. Brioche soldiers are fingers of toasted brioche for dipping into the parfait. Breton salted caramel - from Brittany - uses fleur de sel for a pronounced salt flavour in the caramel.",
+            "id": "go_l159_q3"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'll have the warm salad of pigeon with hazelnuts and endive, the grilled côte de veau with herb gnocchi and morel cream, and the iced parfait of prune and Armagnac.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Warm Salad of Pigeon with Hazelnuts and Endive",
+                "Grilled Côte de Veau with Herb Gnocchi and Morel Cream",
+                "Iced Parfait of Prune and Armagnac",
+                "Rum Baba"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l160_q1",
-            "xpReward": 480,
-            "coinReward": 800,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Warm Salad of Pigeon with Hazelnuts and Endive, Grilled Côte de Veau with Herb Gnocchi and Morel Cream, Iced Parfait of Prune and Armagnac",
+            "hint": "Armagnac is a French brandy from Gascony - older and more rustic than Cognac.",
+            "explanation": "Warm pigeon salad (salade tiède de pigeon) is a classic French bistro dish. Côte de veau is a veal chop - grilled and served with the classic spring combination of morel mushrooms. Prunes soaked in Armagnac from Gascony are a celebrated French pairing - used in an iced parfait for a sophisticated dessert.",
+            "id": "go_l160_q1"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "I'd like the ravioli de homard à la bisque, the noix de ris de veau poêlées aux truffes, and the mille-feuille à la vanille de Tahiti.",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Ravioli de Homard à la Bisque",
+                "Noix de Ris de Veau Poêlées aux Truffes",
+                "Mille-Feuille à la Vanille de Tahiti",
+                "Profiteroles"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l160_q2",
-            "xpReward": 480,
-            "coinReward": 800,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Ravioli de Homard à la Bisque, Noix de Ris de Veau Poêlées aux Truffes, Mille-Feuille à la Vanille de Tahiti",
+            "hint": "Noix de ris de veau are the round, most prized part of veal sweetbreads.",
+            "explanation": "Ris de veau (veal sweetbreads) noix refers to the round, thymus part - considered the finest and most delicate sweetbread. Poêlées means pan-fried. Mille-feuille à la vanille de Tahiti uses Tahitian vanilla - more floral and complex than Madagascar. This is a refined French menu in its original French terminology.",
+            "id": "go_l160_q2"
         },
         {
             "instruction": "Tap the items to fulfill the client's order.",
-            "difficulty": 1,
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the space-soup and a lunar-cake.",
+            "prompt": "Could I have the soufflé de langouste en croûte dorée, the pigeonneau rôti en cocotte avec ses abats, and the vacherin glacé aux fruits de la passion?",
             "options": [
-                "Space-Soup",
-                "Lunar-Cake",
-                "Void-Tea",
-                "Star-Fruit"
+                "Soufflé de Langouste en Croûte Dorée",
+                "Pigeonneau Rôti en Cocotte avec ses Abats",
+                "Vacherin Glacé aux Fruits de la Passion",
+                "Îles Flottantes"
             ],
-            "correctAnswer": "Space-Soup, Lunar-Cake",
-            "hint": "Select both items mentioned.",
-            "explanation": "Accuracy builds trust.",
-            "id": "go_l160_q3",
-            "xpReward": 480,
-            "coinReward": 800,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Soufflé de Langouste en Croûte Dorée, Pigeonneau Rôti en Cocotte avec ses Abats, Vacherin Glacé aux Fruits de la Passion",
+            "hint": "Langouste is spiny lobster - different from homard (clawed lobster) - common in Mediterranean cuisine.",
+            "explanation": "Langouste (spiny lobster or rock lobster) lacks the large claws of homard (clawed lobster) but has sweet, firm tail meat. En croûte dorée means enclosed in golden pastry. Pigeonneau is young pigeon - cooked with its abats (offal: liver, heart, gizzard). Vacherin glacé is a frozen dessert of meringue and ice cream.",
+            "id": "go_l160_q3"
         }
     ]
 }
