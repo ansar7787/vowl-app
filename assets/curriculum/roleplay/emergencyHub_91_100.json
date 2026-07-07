@@ -5,513 +5,303 @@
     "quests": [
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l91_q1",
-            "xpReward": 273,
-            "coinReward": 455,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Nuclear reactor loss of coolant progressing toward core damage threshold. Input code!",
+            "correctAnswer": "CORE DAMAGE PREVENT",
+            "hint": "Activate core damage prevention protocol.",
+            "explanation": "Core damage prevention combines ECCS activation, control rod insertion, and portable pump deployment simultaneously.",
+            "id": "eh_l91_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l91_q2",
-            "xpReward": 273,
-            "coinReward": 455,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Hydrogen gas accumulating in the reactor building above the explosive limit. Input code!",
+            "correctAnswer": "HYDROGEN VENT NOW",
+            "hint": "Vent hydrogen from the reactor building.",
+            "explanation": "Controlled hydrogen venting prevents the explosive buildup that caused catastrophic building damage in historic nuclear accidents.",
+            "id": "eh_l91_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l91_q3",
-            "xpReward": 273,
-            "coinReward": 455,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Site emergency declared with notification required to the national nuclear regulator. Input code!",
+            "correctAnswer": "NOTIFY REGULATOR NOW",
+            "hint": "Notify the national nuclear regulator immediately.",
+            "explanation": "Regulatory notification within 15 minutes of a site emergency is legally required and triggers national response resources.",
+            "id": "eh_l91_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l92_q1",
-            "xpReward": 276,
-            "coinReward": 460,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Cruise ship with 3,000 passengers declaring sinking emergency 50 miles offshore. Input code!",
+            "correctAnswer": "MARITIME MCI CODE",
+            "hint": "Declare a maritime mass casualty emergency code.",
+            "explanation": "Maritime MCI codes mobilize coast guard fleets, commercial rescue vessels, and naval assets for large-scale sea rescue.",
+            "id": "eh_l92_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l92_q2",
-            "xpReward": 276,
-            "coinReward": 460,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Ship listing 30 degrees with lifeboats inaccessible on the low side. Input code!",
+            "correctAnswer": "ALTERNATE EVAC SHIP",
+            "hint": "Activate the alternate ship evacuation plan.",
+            "explanation": "Alternate plans deploy inflatable life rafts from the accessible high side when standard lifeboats are blocked.",
+            "id": "eh_l92_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l92_q3",
-            "xpReward": 276,
-            "coinReward": 460,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Rescue ships 20 miles away and helicopter capacity insufficient for 3,000 people. Input code!",
+            "correctAnswer": "NAVY ASSIST REQUEST",
+            "hint": "Request naval assistance for the operation.",
+            "explanation": "Naval vessels provide the deck space and aviation assets needed for mass rescue operations at significant offshore distances.",
+            "id": "eh_l92_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l93_q1",
-            "xpReward": 279,
-            "coinReward": 465,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Active conflict requiring civilian evacuation from the urban combat zone. Input code!",
+            "correctAnswer": "CIVILIAN CORRIDOR",
+            "hint": "Establish a humanitarian civilian corridor.",
+            "explanation": "Humanitarian corridors create agreed ceasefire routes allowing civilians to move safely through active conflict areas.",
+            "id": "eh_l93_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l93_q2",
-            "xpReward": 279,
-            "coinReward": 465,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Medical facilities in the conflict zone declaring critical supply shortages. Input code!",
+            "correctAnswer": "MEDICAL RESUPPLY AIR",
+            "hint": "Order an airdrop medical resupply.",
+            "explanation": "Airborne medical resupply bypasses ground conflict to deliver essential supplies to facilities inside active zones.",
+            "id": "eh_l93_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l93_q3",
-            "xpReward": 279,
-            "coinReward": 465,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "International monitoring required to verify safe passage agreement compliance. Input code!",
+            "correctAnswer": "MONITOR TEAM DEPLOY",
+            "hint": "Deploy an international monitoring team.",
+            "explanation": "International monitors provide independent verification of safe passage agreements, reducing the risk of corridor violations.",
+            "id": "eh_l93_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l94_q1",
-            "xpReward": 282,
-            "coinReward": 470,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Pandemic operations center coordinating response across twelve health regions. Input code!",
+            "correctAnswer": "EOC PANDEMIC ACTIVE",
+            "hint": "Activate the pandemic emergency operations center.",
+            "explanation": "Pandemic EOC activation aligns all regional health authorities under centralized command and resource management.",
+            "id": "eh_l94_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l94_q2",
-            "xpReward": 282,
-            "coinReward": 470,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Hospital surge capacity reaching 95% with ICU overflow becoming critical. Input code!",
+            "correctAnswer": "FIELD HOSPITAL OPEN",
+            "hint": "Open emergency field hospital capacity.",
+            "explanation": "Field hospital activation redirects non-critical patients from overwhelmed facilities and expands treatment capacity rapidly.",
+            "id": "eh_l94_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l94_q3",
-            "xpReward": 282,
-            "coinReward": 470,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Vaccine distribution bottleneck identified in three underserved regions. Input priority code!",
+            "correctAnswer": "PRIORITY DOSE ROUTE",
+            "hint": "Route priority vaccine doses to underserved regions.",
+            "explanation": "Priority vaccine routing delivers doses to the highest-risk communities first to reduce mortality and transmission rates.",
+            "id": "eh_l94_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l95_q1",
-            "xpReward": 285,
-            "coinReward": 475,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Large space debris fragment on a collision course with an active satellite cluster. Input code!",
+            "correctAnswer": "DEBRIS TRACK ALERT",
+            "hint": "Activate the debris tracking alert system.",
+            "explanation": "Debris tracking systems compute collision probability and provide satellite operators with avoidance burn data.",
+            "id": "eh_l95_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l95_q2",
-            "xpReward": 285,
-            "coinReward": 475,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Satellite operators must maneuver assets within 90 minutes to avoid collision. Input code!",
+            "correctAnswer": "MANEUVER BURN WINDOW",
+            "hint": "Open the satellite maneuver burn window.",
+            "explanation": "Maneuver burn windows are timed orbital adjustments that move satellites out of the debris path with minimal fuel cost.",
+            "id": "eh_l95_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l95_q3",
-            "xpReward": 285,
-            "coinReward": 475,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Ground station communications lost with three satellites during the avoidance maneuver. Input code!",
+            "correctAnswer": "GROUND TRACK RECOVER",
+            "hint": "Activate ground station recovery tracking.",
+            "explanation": "Recovery tracking reacquires satellite signals using secondary ground stations when primary contact is lost.",
+            "id": "eh_l95_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l96_q1",
-            "xpReward": 288,
-            "coinReward": 480,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Cyber attack causing physical damage to industrial control systems at the power plant. Input code!",
+            "correctAnswer": "ICS ISOLATE CYBER",
+            "hint": "Isolate all industrial control systems from the cyber network.",
+            "explanation": "ICS isolation prevents cyber actors from sending further malicious commands to physical plant equipment.",
+            "id": "eh_l96_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l96_q2",
-            "xpReward": 288,
-            "coinReward": 480,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Plant operators unable to verify which systems are under attacker control. Input code!",
+            "correctAnswer": "MANUAL VERIFY ALL",
+            "hint": "Manually verify all system states.",
+            "explanation": "Physical manual verification confirms which systems are in safe states independent of potentially compromised displays.",
+            "id": "eh_l96_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l96_q3",
-            "xpReward": 288,
-            "coinReward": 480,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Malware confirmed in the plant control network and spreading to adjacent systems. Input code!",
+            "correctAnswer": "NETWORK SEGMENT NOW",
+            "hint": "Segment all network zones immediately.",
+            "explanation": "Network segmentation creates isolated barriers preventing malware from moving laterally between control system zones.",
+            "id": "eh_l96_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l97_q1",
-            "xpReward": 291,
-            "coinReward": 485,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Cascading power failure spreading across the national grid from triggered substations. Input code!",
+            "correctAnswer": "CASCADE STOP ORDER",
+            "hint": "Issue cascade stop order to all substations.",
+            "explanation": "Cascade stop orders instruct substation operators to manually open breakers and prevent the failure from spreading further.",
+            "id": "eh_l97_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l97_q2",
-            "xpReward": 291,
-            "coinReward": 485,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Frequency deviation too large to recover without emergency load shedding. Input code!",
+            "correctAnswer": "SHED LOAD NATIONAL",
+            "hint": "Implement national emergency load shedding.",
+            "explanation": "National load shedding on a defined schedule restores grid frequency balance by reducing demand faster than generation falls.",
+            "id": "eh_l97_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l97_q3",
-            "xpReward": 291,
-            "coinReward": 485,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Black start procedure required to restore power to the de-energized national grid. Input code!",
+            "correctAnswer": "BLACK START ACTIVE",
+            "hint": "Activate the national black start procedure.",
+            "explanation": "Black start procedures use self-starting generation units to rebuild the grid in sequence from isolated power islands.",
+            "id": "eh_l97_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l98_q1",
-            "xpReward": 294,
-            "coinReward": 490,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Toxic chemical cloud dispersing over 12 city blocks from an industrial accident. Input code!",
+            "correctAnswer": "TOXIC DISPERSE MAP",
+            "hint": "Generate toxic dispersion mapping.",
+            "explanation": "Atmospheric dispersion modeling predicts cloud movement and concentration, enabling precise evacuation zone delineation.",
+            "id": "eh_l98_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l98_q2",
-            "xpReward": 294,
-            "coinReward": 490,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Public shelter locations must be selected to remain upwind of the toxic cloud. Input code!",
+            "correctAnswer": "UPWIND SHELTER SITE",
+            "hint": "Designate upwind shelter sites only.",
+            "explanation": "Upwind shelter sites keep evacuating residents out of the path of toxic cloud movement during dispersion events.",
+            "id": "eh_l98_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l98_q3",
-            "xpReward": 294,
-            "coinReward": 490,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Cloud beginning to dissipate and air quality monitoring needed before return. Input code!",
+            "correctAnswer": "AIR CLEAR MONITOR",
+            "hint": "Deploy air quality clearance monitoring.",
+            "explanation": "Air quality monitoring confirms concentrations are below toxic thresholds before authorities permit residents to return.",
+            "id": "eh_l98_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l99_q1",
-            "xpReward": 297,
-            "coinReward": 495,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Mass casualty incident with 450 patients requiring advanced triage operations. Input code!",
+            "correctAnswer": "START TRIAGE SYSTEM",
+            "hint": "Implement the START triage system.",
+            "explanation": "Simple Triage and Rapid Treatment uses a 60-second assessment to categorize each patient by urgency across mass casualty events.",
+            "id": "eh_l99_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l99_q2",
-            "xpReward": 297,
-            "coinReward": 495,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Red-tagged patients exceeding hospital intensive care capacity in the region. Input code!",
+            "correctAnswer": "DIVERT CRITICAL NOW",
+            "hint": "Divert critical patients to additional facilities.",
+            "explanation": "Patient diversion protocols distribute critical cases across multiple facilities to prevent any single hospital from being overwhelmed.",
+            "id": "eh_l99_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l99_q3",
-            "xpReward": 297,
-            "coinReward": 495,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Family reunification center needed at the mass casualty site. Input code!",
+            "correctAnswer": "FAMILY UNIT ACTIVE",
+            "hint": "Activate the family reunification unit.",
+            "explanation": "Family reunification centers centralize records of admitted patients, helping families locate loved ones during chaotic events.",
+            "id": "eh_l99_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l100_q1",
-            "xpReward": 300,
-            "coinReward": 500,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "National emergency requiring coordination across all government departments. Input code!",
+            "correctAnswer": "NATIONAL EOC ACTIVE",
+            "hint": "Activate the national emergency operations center.",
+            "explanation": "National EOC activation brings all government ministries under coordinated emergency command for maximum response efficiency.",
+            "id": "eh_l100_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l100_q2",
-            "xpReward": 300,
-            "coinReward": 500,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "International mutual aid agreements being activated for the national emergency. Input code!",
+            "correctAnswer": "MUTUAL AID ENGAGE",
+            "hint": "Engage all international mutual aid agreements.",
+            "explanation": "Mutual aid engagement unlocks pre-negotiated resource sharing agreements with allied nations for large-scale disasters.",
+            "id": "eh_l100_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l100_q3",
-            "xpReward": 300,
-            "coinReward": 500,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "National recovery framework must be initiated alongside the active emergency response. Input code!",
+            "correctAnswer": "RECOVERY PHASE ONE",
+            "hint": "Initiate national recovery phase one.",
+            "explanation": "Simultaneous recovery planning ensures reconstruction resources are organized before the acute emergency phase concludes.",
+            "id": "eh_l100_q3"
         }
     ]
 }

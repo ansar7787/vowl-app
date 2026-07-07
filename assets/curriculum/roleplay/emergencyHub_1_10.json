@@ -5,513 +5,303 @@
     "quests": [
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Coolant leak detected in core reactor tank 4. Input emergency routing code now!",
+            "dispatcherQuestion": "Coolant leak detected in core reactor tank 4. Input emergency routing code!",
             "correctAnswer": "LEAK CONTAINMENT LOCKER ALPHA",
-            "hint": "Use containment locker alpha.",
-            "explanation": "Containing leak areas rapidly protects nearby team personnel.",
-            "id": "eh_l1_q1",
-            "xpReward": 3,
-            "coinReward": 5,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Route the response to containment locker alpha.",
+            "explanation": "Sealing the leak area immediately protects nearby personnel from hazardous fluid exposure.",
+            "id": "eh_l1_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Lithium batteries thermal runaway in storage bay 3. Input safety code!",
+            "dispatcherQuestion": "Lithium battery thermal runaway in storage bay 3. Input safety shutdown code!",
             "correctAnswer": "POWER TERMINATION SEQUENCE 4",
-            "hint": "Sequence number four is required.",
-            "explanation": "Shutting battery loops blocks dangerous current spread.",
-            "id": "eh_l1_q2",
-            "xpReward": 3,
-            "coinReward": 5,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The code uses termination sequence number four.",
+            "explanation": "Cutting power to battery circuits stops dangerous heat buildup from spreading to adjacent cells.",
+            "id": "eh_l1_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
             "dispatcherQuestion": "Gas cylinder pressure overload in laboratory level 2. Input routing code!",
             "correctAnswer": "PRESSURE VENT SYSTEM ACTIVE",
-            "hint": "Trigger active pressure vent.",
-            "explanation": "Venting gases keeps tank pressure in safe levels.",
-            "id": "eh_l1_q3",
-            "xpReward": 3,
-            "coinReward": 5,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Activate the pressure vent system.",
+            "explanation": "Venting excess gas safely returns tank pressure to within normal operating limits.",
+            "id": "eh_l1_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 2,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Team member touched toxic solvent in chamber 2. Input treatment room code!",
+            "dispatcherQuestion": "Team member exposed to toxic solvent in chamber 2. Input decontamination code!",
             "correctAnswer": "CHEMICAL SHOWER ROOM 3",
-            "hint": "Direct to chemical shower room three.",
-            "explanation": "Shower decontamination prevents chemical skin absorption.",
-            "id": "eh_l2_q1",
-            "xpReward": 6,
-            "coinReward": 10,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Direct the worker to chemical shower room three.",
+            "explanation": "Chemical shower decontamination removes toxic solvents from skin before they absorb into the bloodstream.",
+            "id": "eh_l2_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 2,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Critical airlock trauma reported in landing dock. Input recovery code!",
+            "dispatcherQuestion": "Decompression injury reported at the landing dock airlock. Input recovery code!",
             "correctAnswer": "PRESSURE EQUALIZATION MODE",
             "hint": "Initiate pressure equalization mode.",
-            "explanation": "Equalizing airlock pressure preserves patient oxygen balance.",
-            "id": "eh_l2_q2",
-            "xpReward": 6,
-            "coinReward": 10,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "explanation": "Gradually equalizing airlock pressure prevents further decompression trauma and stabilizes the patient.",
+            "id": "eh_l2_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 2,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Severe cardiac event on sector assembly floor. Input aid unit code!",
+            "dispatcherQuestion": "Severe cardiac event on the sector assembly floor. Input response unit code!",
             "correctAnswer": "DEFIBRILLATOR UNIT DISPATCHED",
-            "hint": "Send the defibrillator unit.",
-            "explanation": "Shocking hearts in minutes dramatically boosts survival rates.",
-            "id": "eh_l2_q3",
-            "xpReward": 6,
-            "coinReward": 10,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Dispatch the defibrillator unit immediately.",
+            "explanation": "Defibrillation within four minutes dramatically increases cardiac arrest survival rates.",
+            "id": "eh_l2_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 3,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Ground tremor shaking underground sector 7. Input shaft protocol code!",
+            "dispatcherQuestion": "Ground tremors shaking underground sector 7. Input lockdown protocol code!",
             "correctAnswer": "DRILL LOCKDOWN PROTOCOL 7",
-            "hint": "Trigger drill protocol seven.",
-            "explanation": "Locking heavy machinery protects crews from collapse risks.",
-            "id": "eh_l3_q1",
-            "xpReward": 9,
-            "coinReward": 15,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Trigger lockdown protocol for sector seven.",
+            "explanation": "Locking down heavy drilling machinery during tremors protects crews from equipment collapse and falling debris.",
+            "id": "eh_l3_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 3,
             "subtype": "emergencyHub",
             "interactionType": "typing",
             "dispatcherQuestion": "Water levels rising in deep drainage ducts. Input bypass code!",
             "correctAnswer": "DRAINAGE VALVE OPEN PHASE 2",
-            "hint": "Enter drainage valve open phase two.",
-            "explanation": "Opening extra gates prevents main elevator flooding.",
-            "id": "eh_l3_q2",
-            "xpReward": 9,
-            "coinReward": 15,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Open the drainage valve at phase two.",
+            "explanation": "Phase 2 valve opening routes floodwater away from the main elevator shaft before it becomes submerged.",
+            "id": "eh_l3_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 3,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Heavy rocks blocking main entry passage. Input clearing bot code!",
+            "dispatcherQuestion": "Heavy rock fall blocking the main entry passage. Input clearing unit code!",
             "correctAnswer": "EXCAVATOR ROBOT DISPATCHED",
-            "hint": "Send the excavator robot unit.",
-            "explanation": "Robotic loaders clear blockages safely without endangering teams.",
-            "id": "eh_l3_q3",
-            "xpReward": 9,
-            "coinReward": 15,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Dispatch the excavator robot unit.",
+            "explanation": "Robotic excavators clear debris safely without exposing rescue workers to secondary collapse risks.",
+            "id": "eh_l3_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 4,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Overload sparks on primary transformer grid. Input cutout code!",
+            "dispatcherQuestion": "Overload sparks on the primary transformer grid. Input shutdown code!",
             "correctAnswer": "GRID SHUTDOWN SWITCH BETA",
             "hint": "Select grid shutdown switch beta.",
-            "explanation": "Cutting off grids prevents fires in nearby cables.",
-            "id": "eh_l4_q1",
-            "xpReward": 12,
-            "coinReward": 20,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "explanation": "Shutting down the beta grid prevents electrical fires from spreading through the surrounding cable network.",
+            "id": "eh_l4_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 4,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "High-voltage flash near turbine generator. Input standby code!",
+            "dispatcherQuestion": "High-voltage flash near the turbine generator. Input standby code!",
             "correctAnswer": "AUXILIARY GENERATOR SWITCH",
             "hint": "Flip the auxiliary generator switch.",
-            "explanation": "Secondary switches protect local grids from blackouts.",
-            "id": "eh_l4_q2",
-            "xpReward": 12,
-            "coinReward": 20,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "explanation": "Switching to the auxiliary generator protects the local grid from a complete blackout during turbine failure.",
+            "id": "eh_l4_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 4,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Solar electromagnetic storm warning. Input protection shielding code!",
+            "dispatcherQuestion": "Solar electromagnetic storm warning detected. Input shielding code!",
             "correctAnswer": "EM SHIELD DEPLOYED NOW",
-            "hint": "Deploy EM shield now.",
-            "explanation": "Magnetic shields protect digital servers from solar shocks.",
-            "id": "eh_l4_q3",
-            "xpReward": 12,
-            "coinReward": 20,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Deploy the electromagnetic shield now.",
+            "explanation": "Electromagnetic shields protect digital servers and control systems from solar storm-induced power surges.",
+            "id": "eh_l4_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 5,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Sea water breach reported in bilge 12. Input recovery code!",
+            "dispatcherQuestion": "Seawater hull breach detected in bilge compartment 12. Input response code!",
             "correctAnswer": "AUTOMATIC BILGE COMPARTMENT",
-            "hint": "Engage automatic bilge compartment.",
-            "explanation": "Sealing bilge zones keeps vessels floating steadily.",
-            "id": "eh_l5_q1",
-            "xpReward": 15,
-            "coinReward": 25,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Engage the automatic bilge compartment seal.",
+            "explanation": "Activating the automatic bilge seal isolates the breach and keeps the vessel afloat.",
+            "id": "eh_l5_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 5,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Oil separator tank high pressure alarm. Input relief code!",
+            "dispatcherQuestion": "Oil separator tank high-pressure alarm activated. Input relief code!",
             "correctAnswer": "SAFETY RELIEF VALVE RELEASE",
-            "hint": "Initiate safety relief valve release.",
-            "explanation": "Releasing trapped oil prevents separator pipe ruptures.",
-            "id": "eh_l5_q2",
-            "xpReward": 15,
-            "coinReward": 25,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The relief system prevents separator pipe ruptures.",
+            "explanation": "Releasing trapped pressure through the relief valve prevents catastrophic pipe failure and oil spill.",
+            "id": "eh_l5_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 5,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Deep sea diver lost radio link. Input search tracker code!",
+            "dispatcherQuestion": "Deep-sea diver has lost radio contact. Input search and recovery code!",
             "correctAnswer": "SONAR LOCATOR FREQUENCY 4",
-            "hint": "Use sonar locator frequency four.",
-            "explanation": "Active sonar tracks locations using water sound waves.",
-            "id": "eh_l5_q3",
-            "xpReward": 15,
-            "coinReward": 25,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Use sonar locator at frequency four.",
+            "explanation": "Active sonar emits pulses that bounce off the diver's equipment, allowing the team to pinpoint the exact location.",
+            "id": "eh_l5_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 6,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Hydraulics lost on passenger transport. Input reserve gear code!",
+            "dispatcherQuestion": "Hydraulic system failure on passenger aircraft 7. Input landing gear code!",
             "correctAnswer": "EMERGENCY GEAR RELEASE",
-            "hint": "Initiate emergency gear release.",
-            "explanation": "Manual gear releases allow emergency belly landings.",
-            "id": "eh_l6_q1",
-            "xpReward": 18,
-            "coinReward": 30,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Trigger the emergency landing gear release.",
+            "explanation": "Emergency manual gear release deploys landing gear mechanically, allowing safe landing without hydraulic pressure.",
+            "id": "eh_l6_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 6,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Engine fire light active on jet airliner. Input fire suppression code!",
+            "dispatcherQuestion": "Engine fire warning light active on jet airliner. Input suppression code!",
             "correctAnswer": "HALON EXTINGUISHER ACTIVE",
-            "hint": "Activate the halon extinguisher.",
-            "explanation": "Halon gas stops jet engine fires in seconds.",
-            "id": "eh_l6_q2",
-            "xpReward": 18,
-            "coinReward": 30,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Activate the halon fire extinguisher system.",
+            "explanation": "Halon agents displace oxygen inside the engine nacelle, extinguishing the combustion reaction within seconds.",
+            "id": "eh_l6_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 6,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Cabin decompression at 30,000 feet. Input mask deploy code!",
-            "correctAnswer": "DECOMPRESSION SHIELD SYSTEM",
-            "hint": "Trigger decompression shield system.",
-            "explanation": "Oxygen shield deployments preserve passenger consciousness during drops.",
-            "id": "eh_l6_q3",
-            "xpReward": 18,
-            "coinReward": 30,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Cabin decompression at 30,000 feet. Input passenger oxygen code!",
+            "correctAnswer": "OXYGEN MASK DEPLOYED NOW",
+            "hint": "Deploy the passenger oxygen masks immediately.",
+            "explanation": "Oxygen masks preserve passenger consciousness during cabin decompression above safe altitude thresholds.",
+            "id": "eh_l6_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 7,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Cyber attack on water treatment controls. Input isolation code!",
+            "dispatcherQuestion": "Cyber attack detected on water treatment control systems. Input isolation code!",
             "correctAnswer": "ISOLATION SYSTEM SHIELD",
-            "hint": "Engage isolation system shield.",
-            "explanation": "Isolating networks blocks remote attackers from cutting water.",
-            "id": "eh_l7_q1",
-            "xpReward": 21,
-            "coinReward": 35,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Engage the network isolation shield.",
+            "explanation": "Network isolation severs the attack vector from water treatment controls, preventing tampering with chemical dosing.",
+            "id": "eh_l7_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 7,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "DDOS attack overloading communications tower. Input filter code!",
+            "dispatcherQuestion": "DDoS attack overloading the emergency communications tower. Input filter code!",
             "correctAnswer": "TRAFFIC DIVERTER PROTOCOL",
-            "hint": "Initiate traffic diverter protocol.",
-            "explanation": "Diverting traffic keeps essential emergency lines active.",
-            "id": "eh_l7_q2",
-            "xpReward": 21,
-            "coinReward": 35,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Initiate the traffic diverter protocol.",
+            "explanation": "Traffic diversion reroutes legitimate communications around the overloaded point, keeping emergency lines functional.",
+            "id": "eh_l7_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 7,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Intruder detected in central server room. Input lockdown code!",
+            "dispatcherQuestion": "Intruder detected in the central server room. Input physical lockdown code!",
             "correctAnswer": "SERVER AREA CONTAINMENT",
-            "hint": "Activate server area containment.",
-            "explanation": "Sealing physical server doors prevents direct network sabotage.",
-            "id": "eh_l7_q3",
-            "xpReward": 21,
-            "coinReward": 35,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Activate server area containment immediately.",
+            "explanation": "Physical containment prevents the intruder from accessing hardware to extract data or install backdoors.",
+            "id": "eh_l7_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 8,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Shield door open in radiography chamber. Input block code!",
+            "dispatcherQuestion": "Radiation shield door open in the radiography chamber. Input containment code!",
             "correctAnswer": "RADIATION CONTAINMENT DOOR",
-            "hint": "Seal the radiation containment door.",
-            "explanation": "Heavy lead doors block high exposure leaks completely.",
-            "id": "eh_l8_q1",
-            "xpReward": 24,
-            "coinReward": 40,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Seal the radiation containment door now.",
+            "explanation": "Lead-reinforced containment doors absorb radiation and prevent high-level exposure from leaving the chamber.",
+            "id": "eh_l8_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 8,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Heavy isotope temperatures rising. Input coolant dump code!",
+            "dispatcherQuestion": "Heavy isotope temperatures rising rapidly. Input cooling code!",
             "correctAnswer": "COOLANT DUMP VALVE OPEN",
-            "hint": "Open the coolant dump valve.",
-            "explanation": "Flooding chambers absorbs radiation heat quickly.",
-            "id": "eh_l8_q2",
-            "xpReward": 24,
-            "coinReward": 40,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Open the coolant dump valve immediately.",
+            "explanation": "Flooding the chamber with coolant rapidly absorbs residual heat, preventing thermal runaway.",
+            "id": "eh_l8_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 8,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Particle accelerator beam misalignment. Input backup code!",
+            "dispatcherQuestion": "Particle accelerator beam misalignment detected. Input emergency halt code!",
             "correctAnswer": "BEAM SHUTDOWN SIGNAL",
-            "hint": "Trigger the beam shutdown signal.",
-            "explanation": "Killing power immediately prevents steel pipe meltdown disasters.",
-            "id": "eh_l8_q3",
-            "xpReward": 24,
-            "coinReward": 40,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Trigger the beam shutdown signal now.",
+            "explanation": "Cutting accelerator power stops the beam instantly, preventing it from melting through misaligned target components.",
+            "id": "eh_l8_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 9,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Avalanche warning on mountain rail tracks. Input divert signal code!",
+            "dispatcherQuestion": "Avalanche warning detected on mountain rail tracks. Input divert code!",
             "correctAnswer": "TRACK DIVERT SIGNAL ACTIVE",
-            "hint": "Activate track divert signal.",
-            "explanation": "Diverting paths protects passenger trains from heavy snow blockage.",
-            "id": "eh_l9_q1",
-            "xpReward": 27,
-            "coinReward": 45,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Activate the track divert signal now.",
+            "explanation": "Diverting train paths away from avalanche zones protects passengers from heavy snow impact and burial risks.",
+            "id": "eh_l9_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 9,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Maglev train speed governor failure. Input stop backup code!",
+            "dispatcherQuestion": "Maglev train speed governor has failed. Input emergency braking code!",
             "correctAnswer": "BRAKING SYSTEM INITIATE",
-            "hint": "Trigger the braking system initiate.",
-            "explanation": "Auxiliary magnetic brakes decelerate coaches safely.",
-            "id": "eh_l9_q2",
-            "xpReward": 27,
-            "coinReward": 45,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Initiate the emergency braking system.",
+            "explanation": "Auxiliary magnetic brakes decelerate maglev coaches safely when the primary speed governor fails.",
+            "id": "eh_l9_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 9,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Landing gear stuck on cargo transport. Input foam spray code!",
+            "dispatcherQuestion": "Landing gear stuck on cargo transport aircraft. Input runway safety code!",
             "correctAnswer": "FOAM SHIELD DEPLOYED RUNWAY",
-            "hint": "Select foam shield deployed runway.",
-            "explanation": "Spraying foam cuts sparks during metal landing scrapings.",
-            "id": "eh_l9_q3",
-            "xpReward": 27,
-            "coinReward": 45,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Activate the foam runway shield.",
+            "explanation": "Runway foam coating cuts ignition sparks during a metal belly landing, reducing the risk of fire on impact.",
+            "id": "eh_l9_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 10,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Severe space radiation storm detected. Input shielding code!",
+            "dispatcherQuestion": "Severe space radiation storm detected near the station. Input shielding code!",
             "correctAnswer": "SHIELD DEFLECTOR BATTERY",
-            "hint": "Activate shield deflector battery.",
-            "explanation": "Magnetic deflectors protect crews from cosmic heavy ions.",
-            "id": "eh_l10_q1",
-            "xpReward": 30,
-            "coinReward": 50,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Activate the shield deflector battery.",
+            "explanation": "Magnetic deflector arrays protect crew from high-energy cosmic ion bombardment during solar radiation events.",
+            "id": "eh_l10_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 10,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "Micrometeoroid hull breach in greenhouse modules. Input lock code!",
+            "dispatcherQuestion": "Micrometeoroid hull breach in the greenhouse module. Input airlock code!",
             "correctAnswer": "AIRLOCK CONSOLE SECURE",
-            "hint": "Engage airlock console secure.",
-            "explanation": "Emergency airlock sealing preserves oxygen in adjacent modules.",
-            "id": "eh_l10_q2",
-            "xpReward": 30,
-            "coinReward": 50,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Engage airlock console secure mode.",
+            "explanation": "Sealing the airlock isolates the breached module and preserves the oxygen supply in adjacent crew habitation areas.",
+            "id": "eh_l10_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 10,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "High fuel line pressure in lunar propulsion system. Input vent code!",
-            "correctAnswer": "VENT VALVE INITIATED NOW",
-            "hint": "Use vent valve initiated now.",
-            "explanation": "Venting volatile gases prevents launch pad combustion risks.",
-            "id": "eh_l10_q3",
-            "xpReward": 30,
-            "coinReward": 50,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "High fuel line pressure detected in the lunar propulsion system. Input vent code!",
+            "correctAnswer": "FUEL VENT VALVE OPEN",
+            "hint": "Open the fuel vent valve immediately.",
+            "explanation": "Releasing excess pressure from fuel lines prevents catastrophic rupture or ignition during launch preparation.",
+            "id": "eh_l10_q3"
         }
     ]
 }

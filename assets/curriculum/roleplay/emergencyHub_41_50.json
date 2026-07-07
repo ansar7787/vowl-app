@@ -5,513 +5,303 @@
     "quests": [
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l41_q1",
-            "xpReward": 123,
-            "coinReward": 205,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Reactor coolant temperature rising abnormally in nuclear building 2. Input code!",
+            "correctAnswer": "COOLANT BOOST REACTOR",
+            "hint": "Activate the reactor coolant boost.",
+            "explanation": "Supplemental coolant injection keeps nuclear fuel below critical temperature thresholds during anomalous heat events.",
+            "id": "eh_l41_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l41_q2",
-            "xpReward": 123,
-            "coinReward": 205,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Emergency diesel generator failing during a mandatory test cycle. Input code!",
+            "correctAnswer": "BACKUP POWER RESTORE",
+            "hint": "Restore backup power systems now.",
+            "explanation": "Nuclear plant emergency generators must restore power within 10 seconds to prevent instrumentation and cooling blackouts.",
+            "id": "eh_l41_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l41_q3",
-            "xpReward": 123,
-            "coinReward": 205,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Containment building pressure gauge reading outside normal parameters. Input code!",
+            "correctAnswer": "CONTAINMENT CHECK NOW",
+            "hint": "Initiate an immediate containment check.",
+            "explanation": "Pressure anomalies in containment buildings require urgent inspection to rule out internal steam leaks or wall defects.",
+            "id": "eh_l41_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l42_q1",
-            "xpReward": 126,
-            "coinReward": 210,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Dam water level exceeding spillway capacity after continuous heavy rainfall. Input code!",
+            "correctAnswer": "SPILLWAY GATES OPEN",
+            "hint": "Open the spillway gates immediately.",
+            "explanation": "Opening spillway gates releases controlled water flow to prevent the dam wall from being overtopped and failing.",
+            "id": "eh_l42_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l42_q2",
-            "xpReward": 126,
-            "coinReward": 210,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Structural crack detected in the dam face at the current water level. Input code!",
+            "correctAnswer": "DOWNSTREAM WARN NOW",
+            "hint": "Warn all downstream communities now.",
+            "explanation": "Downstream warnings give residents the critical lead time needed to evacuate before a potential dam failure wave.",
+            "id": "eh_l42_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l42_q3",
-            "xpReward": 126,
-            "coinReward": 210,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Emergency pumping needed to reduce the reservoir water level quickly. Input code!",
+            "correctAnswer": "PUMP OUTFLOW MAX 3",
+            "hint": "Set outflow pump 3 to maximum capacity.",
+            "explanation": "Emergency pumping at maximum capacity reduces reservoir pressure and buys engineers time for structural repairs.",
+            "id": "eh_l42_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l43_q1",
-            "xpReward": 129,
-            "coinReward": 215,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Cargo vessel ran aground on a reef two miles offshore. Input tow code!",
+            "correctAnswer": "TUG BOAT DEPLOYED NOW",
+            "hint": "Deploy the tugboat immediately.",
+            "explanation": "Tugboats can free grounded vessels before hull stress fractures form, preventing total loss and environmental damage.",
+            "id": "eh_l43_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l43_q2",
-            "xpReward": 129,
-            "coinReward": 215,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Grounded ship reporting hull breach in cargo hold 3. Input inspection code!",
+            "correctAnswer": "COAST GUARD HULL 3",
+            "hint": "Dispatch coast guard to cargo hold 3.",
+            "explanation": "Coast guard marine engineers assess hull breach severity to determine whether patching or cargo transfer is the priority.",
+            "id": "eh_l43_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l43_q3",
-            "xpReward": 129,
-            "coinReward": 215,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Fuel oil leaking from the damaged ship hull into surrounding waters. Input code!",
+            "correctAnswer": "POLLUTION CONTROL NOW",
+            "hint": "Activate pollution control immediately.",
+            "explanation": "Rapid oil containment prevents coastal and reef contamination that can take decades to recover ecologically.",
+            "id": "eh_l43_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l44_q1",
-            "xpReward": 132,
-            "coinReward": 220,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Six-vehicle pileup blocking all motorway lanes at junction 7. Input code!",
+            "correctAnswer": "MOTORWAY CLOSE J7",
+            "hint": "Close the motorway at junction 7.",
+            "explanation": "Full motorway closure gives rescue and fire crews safe working space around a major multi-vehicle incident.",
+            "id": "eh_l44_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l44_q2",
-            "xpReward": 132,
-            "coinReward": 220,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Trapped casualties in crushed vehicles requiring specialized cutting equipment. Input code!",
+            "correctAnswer": "HEAVY RESCUE J7 NOW",
+            "hint": "Send heavy rescue to junction 7 now.",
+            "explanation": "Heavy rescue units carry hydraulic cutters and spreaders designed to open vehicle bodies for safe passenger extraction.",
+            "id": "eh_l44_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l44_q3",
-            "xpReward": 132,
-            "coinReward": 220,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Fuel tanker involved in the crash is leaking diesel with explosion risk. Input code!",
+            "correctAnswer": "FOAM UNIT TANKER NOW",
+            "hint": "Deploy the foam unit to the tanker.",
+            "explanation": "Foam blankets over diesel spills suppress vapors and reduce ignition risk near hot engine components.",
+            "id": "eh_l44_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l45_q1",
-            "xpReward": 135,
-            "coinReward": 225,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Explosion in the solvent storage section of the chemical plant. Input code!",
+            "correctAnswer": "CHEMICAL SECTOR LOCK",
+            "hint": "Lock down the chemical sector now.",
+            "explanation": "Sector lockdowns keep unauthorized personnel out and allow hazmat teams to work safely within the blast zone.",
+            "id": "eh_l45_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l45_q2",
-            "xpReward": 135,
-            "coinReward": 225,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Multiple workers have burns and chemical exposure injuries on site. Input code!",
+            "correctAnswer": "MASS CASUALTY SITE A",
+            "hint": "Declare a mass casualty incident at site A.",
+            "explanation": "MCI declarations release additional resources including specialist burn treatment teams and extra ambulances.",
+            "id": "eh_l45_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l45_q3",
-            "xpReward": 135,
-            "coinReward": 225,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Secondary explosion risk from unstable material remaining in storage tank 6. Input code!",
+            "correctAnswer": "EVACUATE 500 METER",
+            "hint": "Evacuate within a 500-meter radius.",
+            "explanation": "A 500-meter evacuation zone provides a safety buffer from shrapnel and blast overpressure if a second explosion occurs.",
+            "id": "eh_l45_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l46_q1",
-            "xpReward": 138,
-            "coinReward": 230,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Unauthorized person reported on school grounds near the main entrance. Input code!",
+            "correctAnswer": "LOCKDOWN SCHOOL NOW",
+            "hint": "Initiate school lockdown immediately.",
+            "explanation": "Lockdown procedures secure all classrooms and account for students while police respond to the intruder report.",
+            "id": "eh_l46_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l46_q2",
-            "xpReward": 138,
-            "coinReward": 230,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Intruder confirmed on school property with police en route to the scene. Input code!",
+            "correctAnswer": "HOLD ROOMS IN PLACE",
+            "hint": "Keep all rooms locked and occupants in place.",
+            "explanation": "Room-in-place procedures keep students secured, reducing exposure and helping police contain the individual.",
+            "id": "eh_l46_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l46_q3",
-            "xpReward": 138,
-            "coinReward": 230,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "All students accounted for and intruder has been detained outside the school. Input code!",
+            "correctAnswer": "ALL CLEAR SCHOOL NOW",
+            "hint": "Issue the all-clear for the school.",
+            "explanation": "A formal all-clear from law enforcement must precede any movement to ensure the threat is fully resolved.",
+            "id": "eh_l46_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l47_q1",
-            "xpReward": 141,
-            "coinReward": 235,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Complete power failure affecting the entire hospital main building. Input code!",
+            "correctAnswer": "GENERATOR START NOW",
+            "hint": "Start the emergency generator immediately.",
+            "explanation": "Hospital generators must restore power to surgical theatres and ICUs within 10 seconds to protect critical patients.",
+            "id": "eh_l47_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l47_q2",
-            "xpReward": 141,
-            "coinReward": 235,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Generator running but the intensive care ward is not receiving power. Input code!",
+            "correctAnswer": "SWITCH ICU PANEL NOW",
+            "hint": "Switch the ICU to the backup distribution panel.",
+            "explanation": "ICU backup panel switching routes generator power directly to life-support equipment, bypassing failed boards.",
+            "id": "eh_l47_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l47_q3",
-            "xpReward": 141,
-            "coinReward": 235,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Power restoration delayed over 60 minutes with blood bank refrigeration at risk. Input code!",
+            "correctAnswer": "PORTABLE COOL UNIT",
+            "hint": "Deploy the portable cooling unit.",
+            "explanation": "Portable refrigeration units maintain blood products between 2 and 6 degrees Celsius until mains power is restored.",
+            "id": "eh_l47_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l48_q1",
-            "xpReward": 144,
-            "coinReward": 240,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Pilot declaring emergency after single engine failure over the ocean. Input vectoring code!",
+            "correctAnswer": "EMERGENCY VECTOR NOW",
+            "hint": "Issue emergency vectoring to the nearest airport now.",
+            "explanation": "Emergency vectoring provides the most direct route to a suitable runway, maximizing fuel margins for a safe landing.",
+            "id": "eh_l48_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l48_q2",
-            "xpReward": 144,
-            "coinReward": 240,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Passenger in cardiac arrest onboard the aircraft at cruising altitude. Input code!",
+            "correctAnswer": "DEFIBRILLATE ONBOARD",
+            "hint": "Use the onboard automated defibrillator.",
+            "explanation": "Aviation defibrillators have voice-guided instructions that allow cabin crew without medical training to use them correctly.",
+            "id": "eh_l48_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l48_q3",
-            "xpReward": 144,
-            "coinReward": 240,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Fuel imbalance between wing tanks causing the aircraft to roll to one side. Input code!",
+            "correctAnswer": "CROSSFEED VALVE OPEN",
+            "hint": "Open the fuel crossfeed valve.",
+            "explanation": "Opening the crossfeed valve equalizes fuel load between wing tanks, restoring level flight and normal controllability.",
+            "id": "eh_l48_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l49_q1",
-            "xpReward": 147,
-            "coinReward": 245,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Vehicle trapped inside a flooded underpass with driver still inside. Input code!",
+            "correctAnswer": "DIVE TEAM UNDERPASS",
+            "hint": "Deploy the dive team to the underpass.",
+            "explanation": "Swift water dive teams are trained to locate and extract passengers from vehicles submerged in rapidly rising water.",
+            "id": "eh_l49_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l49_q2",
-            "xpReward": 147,
-            "coinReward": 245,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Drainage system overwhelmed, flooding basement apartments in the block. Input code!",
+            "correctAnswer": "PUMP BASEMENT BLOCK",
+            "hint": "Deploy pumps to the flooded basement block.",
+            "explanation": "High-capacity trailer-mounted pumps clear basement flooding before electrical systems are damaged by water contact.",
+            "id": "eh_l49_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l49_q3",
-            "xpReward": 147,
-            "coinReward": 245,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Pedestrian swept into a storm drain by fast-moving floodwater. Input rescue code!",
+            "correctAnswer": "SWIFT RESCUE DRAIN 4",
+            "hint": "Deploy swift water rescue to drain 4.",
+            "explanation": "Swift water rescuers use throw bags and rope systems to retrieve people swept into stormwater drainage channels.",
+            "id": "eh_l49_q3"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l50_q1",
-            "xpReward": 150,
-            "coinReward": 250,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Ammonia refrigerant leak detected in the industrial chiller room. Input code!",
+            "correctAnswer": "CHILLER ROOM EVACUATE",
+            "hint": "Evacuate the chiller room immediately.",
+            "explanation": "Ammonia is acutely toxic; even low concentrations cause severe respiratory damage, requiring immediate evacuation.",
+            "id": "eh_l50_q1"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l50_q2",
-            "xpReward": 150,
-            "coinReward": 250,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Ammonia cloud forming outside the plant with wind direction toward the town. Input code!",
+            "correctAnswer": "SHELTER NORTH QUARTER",
+            "hint": "Issue shelter advice for the north quarter.",
+            "explanation": "Sheltering in sealed upper-floor rooms keeps residents above ground-level ammonia concentration until the cloud disperses.",
+            "id": "eh_l50_q2"
         },
         {
             "instruction": "Dispatch the response unit immediately!",
-            "difficulty": 1,
             "subtype": "emergencyHub",
             "interactionType": "typing",
-            "dispatcherQuestion": "What is the emergency code?",
-            "correctAnswer": "CODE RED 99",
-            "hint": "Type quickly and accurately.",
-            "explanation": "Seconds count.",
-            "id": "eh_l50_q3",
-            "xpReward": 150,
-            "coinReward": 250,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "dispatcherQuestion": "Emergency repair team requires entry to the ammonia ruptured pipe zone. Input code!",
+            "correctAnswer": "SCBA SUITS REQUIRED",
+            "hint": "Require full SCBA suits for all entry personnel.",
+            "explanation": "Self-contained breathing apparatus provides the only safe respiratory protection in ammonia-saturated atmospheres.",
+            "id": "eh_l50_q3"
         }
     ]
 }
