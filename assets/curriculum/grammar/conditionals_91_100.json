@@ -4,544 +4,514 @@
     "levels": "91-100",
     "quests": [
         {
-            "id": "cl_l91_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 9) you heat ice",
-            "options": [
-                "it had melted.",
-                "it will melt.",
-                "it melts.",
-                "it would melt."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "it melts.",
-            "hint": "This is a Zero conditional challenge. (Log 9 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 9]."
-        },
-        {
-            "id": "cl_l91_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 9) they trained harder",
-            "options": [
-                "they win.",
-                "they would win.",
-                "they will win.",
-                "they would have won."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "they would win.",
-            "hint": "This is a 2nd conditional challenge. (Log 9 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 9]."
-        },
-        {
-            "id": "cl_l91_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 9) you touch a flame",
-            "options": [
-                "you got burned.",
-                "you will get burned.",
-                "you get burned.",
-                "you would get burned."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "you get burned.",
-            "hint": "This is a Zero conditional challenge. (Log 9 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 9]."
-        },
-        {
             "id": "cl_l92_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) the pilot detects the storm",
+            "question": "Unless you book the flight by midnight,",
             "options": [
-                "None of the above",
-                "he changes course.",
-                "he would change course.",
-                "he will change course."
+                "the price would go up.",
+                "the price would have gone up.",
+                "the price goes up.",
+                "the price will go up."
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "he will change course.",
-            "hint": "This is a 1st conditional challenge. (Log 9 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 9]."
+            "correctAnswer": "the price will go up.",
+            "hint": "'Unless you book' = 'if you do NOT book' - real first conditional travel warning.",
+            "explanation": "'Unless' = 'if not'. Failing to book by midnight is a real risk. 'The price will go up' (will + infinitive) - the real, imminent consequence. Airline prices genuinely rise as departure approaches."
         },
         {
             "id": "cl_l92_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) she had arrived on time",
+            "question": "If she had been more diplomatic in her response,",
             "options": [
-                "she meets him.",
-                "she would have met him.",
-                "she will meet him.",
-                "she would meet him."
+                "the client would have remained satisfied.",
+                "the client would remain satisfied.",
+                "the client remains satisfied.",
+                "the client will remain satisfied."
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "she would have met him.",
-            "hint": "This is a 3rd conditional challenge. (Log 9 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 9]."
+            "correctAnswer": "the client would remain satisfied.",
+            "hint": "Past perfect = she was too blunt - third conditional for a client communication regret.",
+            "explanation": "Third conditional = unreal past. She wasn't diplomatic enough (past perfect = the careful response that didn't happen). If she had been (imaginary), the client would have remained satisfied (would have + past participle - the preserved business relationship)."
         },
         {
             "id": "cl_l92_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) we leave now",
+            "question": "As long as he practises daily,",
             "options": [
-                "we arrived early.",
-                "we will arrive early.",
-                "we would arrive early.",
-                "we arrive early."
+                "he could achieve professional level within a year.",
+                "he would achieve.",
+                "he would have achieved.",
+                "he achieves."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we will arrive early.",
-            "hint": "This is a 1st conditional challenge. (Log 9 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "he could achieve professional level within a year.",
+            "hint": "'As long as he practises daily' = 'if he does' - 'could' for a realistic but ambitious goal.",
+            "explanation": "'As long as' = 'if'. Daily practice is a real, achievable commitment. 'He could achieve professional level' (could + infinitive) - an ambitious but realistic goal. 'Could' acknowledges this is genuinely possible but not guaranteed - practice helps but talent and context also matter."
         },
         {
             "id": "cl_l93_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) I won the lottery",
+            "question": "If the prototype had been user-tested earlier,",
             "options": [
-                "I will travel the world.",
-                "I would travel the world.",
-                "I would have traveled the world.",
-                "I travel the world."
+                "the design flaws would have been identified sooner.",
+                "the flaws would be identified sooner.",
+                "the flaws are identified sooner.",
+                "the flaws will be identified sooner."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "I would travel the world.",
-            "hint": "This is a 2nd conditional challenge. (Log 9 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "the flaws are identified sooner.",
+            "hint": "Past perfect = testing was delayed - third conditional for a product design lesson.",
+            "explanation": "Third conditional = unreal past. User testing was delayed (past perfect = earlier testing that didn't happen). If it had been tested sooner (imaginary), the design flaws would have been identified earlier (would have + passive past participle - the prevented product launch problem)."
         },
         {
             "id": "cl_l93_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) you boil water to 100 degrees",
+            "question": "Unless the board approves the budget increase,",
             "options": [
-                "it evaporated.",
-                "it will evaporate.",
-                "it evaporates.",
-                "it would evaporate."
+                "the expansion plan will have to be put on hold.",
+                "the plan would be put on hold.",
+                "the plan would have been put on hold.",
+                "the plan is put on hold."
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "it evaporates.",
-            "hint": "This is a Zero conditional challenge. (Log 9 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 9]."
+            "correctAnswer": "the plan would have been put on hold.",
+            "hint": "'Unless the board approves' = 'if it does NOT approve' - real business consequence.",
+            "explanation": "'Unless' = 'if not'. Board approval is a real requirement. 'The plan will have to be put on hold' (will + infinitive) - the real organisational consequence of the budget being denied. A real corporate governance scenario."
         },
         {
             "id": "cl_l93_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) he were taller",
+            "question": "Provided that the evidence is strong enough,",
             "options": [
-                "he will play basketball.",
-                "he plays basketball.",
-                "he would play basketball.",
-                "he would have played basketball."
+                "the case will proceed to trial.",
+                "the case would proceed.",
+                "the case would have proceeded.",
+                "the case proceeds."
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "he would play basketball.",
-            "hint": "This is a 2nd conditional challenge. (Log 9 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "the case will proceed to trial.",
+            "hint": "'Provided that evidence is strong' = 'if it is' - formal legal condition with 'will'.",
+            "explanation": "'Provided that' = 'if' (legal context). Strong evidence is a real, assessable condition. 'The case will proceed to trial' (will + infinitive) - the real legal outcome when the evidentiary standard is met. A formal legal conditional."
         },
         {
             "id": "cl_l94_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) she had studied harder",
+            "question": "If she had been promoted to director last year,",
             "options": [
-                "she will pass.",
-                "she would have passed.",
-                "she would pass.",
-                "she passes."
+                "she would be earning considerably more now.",
+                "she would have earned more.",
+                "she earns more now.",
+                "she will earn more."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "she would have passed.",
-            "hint": "This is a 3rd conditional challenge. (Log 9 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "she will earn more.",
+            "hint": "Past perfect + present salary - mixed conditional about a missed promotion.",
+            "explanation": "Mixed conditional: If + past perfect (unreal past event), would + be (present consequence). She wasn't promoted (past perfect = the missed career event). If she had been (imaginary), she would be earning more NOW (would + infinitive - the present salary she'd have). Past event → present income."
         },
         {
             "id": "cl_l94_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) he gets the promotion",
+            "question": "Unless the project manager escalates the issue,",
             "options": [
-                "he celebrated.",
-                "he will celebrate.",
-                "he would celebrate.",
-                "he celebrates."
+                "it will continue to block progress.",
+                "it would continue.",
+                "it would have continued.",
+                "it continues."
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "he will celebrate.",
-            "hint": "This is a 1st conditional challenge. (Log 9 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 9]."
+            "correctAnswer": "it would continue.",
+            "hint": "'Unless the PM escalates' = 'if they do NOT escalate' - real project management consequence.",
+            "explanation": "'Unless' = 'if not'. Failing to escalate is a real management risk. 'It will continue to block progress' (will + infinitive) - the real, ongoing consequence of inaction. A real project management warning."
         },
         {
             "id": "cl_l94_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) I had known the answer",
+            "question": "As long as the exchange rate remains favourable,",
             "options": [
-                "I tell you.",
-                "I would have told you.",
-                "I will tell you.",
-                "I would tell you."
+                "exports will remain competitive.",
+                "exports would remain competitive.",
+                "exports would have remained competitive.",
+                "exports remain competitive."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "I would have told you.",
-            "hint": "This is a 3rd conditional challenge. (Log 9 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "exports will remain competitive.",
+            "hint": "'As long as rates are favourable' = 'if they are' - real economic condition with 'will'.",
+            "explanation": "'As long as' = 'provided that'. A favourable exchange rate is a real macroeconomic condition. 'Exports will remain competitive' (will + infinitive) - the real commercial outcome. A real international trade scenario."
         },
         {
             "id": "cl_l95_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) the scientist discovers the cure",
+            "question": "If the research had been published sooner,",
             "options": [
-                "not humanity is saved.",
-                "humanity is saved yesterday.",
-                "humanity is saved soon.",
-                "humanity is saved."
+                "other scientists would have been able to build on it earlier.",
+                "they would build on it.",
+                "they build on it.",
+                "they will build on it."
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "humanity is saved.",
-            "hint": "This is a Zero conditional challenge. (Log 9 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 9]."
+            "correctAnswer": "they will build on it.",
+            "hint": "Past perfect = delayed publication - third conditional for an academic impact regret.",
+            "explanation": "Third conditional = unreal past. The research was published late (past perfect = earlier publication that didn't happen). If it had been published sooner (imaginary), other scientists would have been able to build on it earlier (would have + past participle - the missed scientific progress)."
         },
         {
             "id": "cl_l95_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) I spoke French fluently",
+            "question": "Unless the infrastructure is modernised,",
             "options": [
-                "I will move to Paris.",
-                "I move to Paris.",
-                "I would move to Paris.",
-                "I would have moved to Paris."
+                "the system will fail to cope with increased demand.",
+                "the system would fail.",
+                "the system would have failed.",
+                "the system fails."
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "I would move to Paris.",
-            "hint": "This is a 2nd conditional challenge. (Log 9 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 9]."
+            "correctAnswer": "the system would have failed.",
+            "hint": "'Unless infrastructure is modernised' = 'if it is NOT' - real capacity warning.",
+            "explanation": "'Unless' = 'if not'. Failure to modernise is a real possibility. 'The system will fail to cope' (will + infinitive) - the real, predictable capacity consequence. A real infrastructure planning warning."
         },
         {
             "id": "cl_l95_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) you drop an object",
+            "question": "Provided that volunteers arrive on time,",
             "options": [
-                "it fell to the ground.",
-                "it will fall to the ground.",
-                "it falls to the ground.",
-                "it would fall to the ground."
+                "the event will run smoothly.",
+                "the event would run smoothly.",
+                "the event would have run smoothly.",
+                "the event runs smoothly."
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "it falls to the ground.",
-            "hint": "This is a Zero conditional challenge. (Log 9 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "the event would run smoothly.",
+            "hint": "'Provided that volunteers arrive' = 'if they do' - real event management condition.",
+            "explanation": "'Provided that' = 'if'. Volunteer punctuality is a real operational condition. 'The event will run smoothly' (will + infinitive) - the real outcome when the condition is met. A practical event management scenario."
         },
         {
             "id": "cl_l96_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) you don't hurry",
+            "question": "If he had launched the product six months earlier,",
             "options": [
-                "you would miss the train.",
-                "you would have missed.",
-                "you miss the train.",
-                "you will miss the train."
+                "he would be the market leader by now.",
+                "he would have been market leader.",
+                "he is the market leader.",
+                "he will be market leader."
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "you will miss the train.",
-            "hint": "This is a 1st conditional challenge. (Log 9 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "he would have been market leader.",
+            "hint": "Past perfect + present market position - mixed conditional about a launch timing decision.",
+            "explanation": "Mixed conditional: If + past perfect (unreal past timing), would + be (present market position). He launched too late. If he had launched earlier (imaginary), he would be the market leader NOW (would + infinitive - the present competitive standing he'd have). Past timing → present position."
         },
         {
             "id": "cl_l96_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) we had taken the map",
+            "question": "Unless employees are regularly engaged in development,",
             "options": [
-                "we won't get lost.",
-                "we wouldn't have gotten lost.",
-                "we wouldn't get lost.",
-                "we don't get lost."
+                "motivation will fall and turnover will rise.",
+                "motivation would fall.",
+                "motivation would have fallen.",
+                "motivation falls."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we wouldn't have gotten lost.",
-            "hint": "This is a 3rd conditional challenge. (Log 9 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "motivation would have fallen.",
+            "hint": "'Unless employees are developed' = 'if they are NOT' - real HR consequence.",
+            "explanation": "'Unless' = 'if not'. Neglecting development is a real management risk. 'Motivation will fall and turnover will rise' (will + infinitive) - the real, predictable HR consequence. Parallel 'will' clauses show both consequences clearly."
         },
         {
             "id": "cl_l96_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) she signs the contract",
+            "question": "As long as the safety checks are completed,",
             "options": [
-                "she started next week.",
-                "she will start next week.",
-                "she would start next week.",
-                "she starts next week."
+                "the construction can begin.",
+                "the construction would begin.",
+                "the construction would have begun.",
+                "the construction begins."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "she will start next week.",
-            "hint": "This is a 1st conditional challenge. (Log 9 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "the construction can begin.",
+            "hint": "'As long as safety checks are done' = 'if they are' - 'can' shows enabled construction.",
+            "explanation": "'As long as' = 'provided that'. Completing safety checks is a real, required condition. 'The construction can begin' (can + infinitive) - the permitted activity once the safety condition is satisfied. 'Can' emphasises the enabling nature of completing the checks."
         },
         {
             "id": "cl_l97_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) the coder fixes the bug",
+            "question": "If the government hadn't subsidised renewable energy,",
             "options": [
-                "the program runs.",
-                "not the program runs.",
-                "the program runs soon.",
-                "the program runs yesterday."
+                "solar panels would cost three times as much today.",
+                "solar panels would cost three times as much.",
+                "solar panels cost three times as much.",
+                "solar panels will cost three times as much."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the program runs.",
-            "hint": "This is a Zero conditional challenge. (Log 9 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "solar panels will cost three times as much.",
+            "hint": "Negative past perfect + present cost - mixed conditional about energy policy impact.",
+            "explanation": "Mixed conditional: If + past perfect negative, would + cost (present price). The government DID subsidise (negative past perfect = the reverse). If it HADN'T (imaginary), solar panels would cost three times as much TODAY (would + infinitive - the present price impact of the missing policy)."
         },
         {
             "id": "cl_l97_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) you freeze water",
+            "question": "Unless the flooding is managed effectively,",
             "options": [
-                "it turned into ice.",
-                "it turns into ice.",
-                "it will turn into ice.",
-                "it would turn into ice."
+                "downstream communities will face serious risks.",
+                "communities would face risks.",
+                "communities would have faced risks.",
+                "communities face risks."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "it turns into ice.",
-            "hint": "This is a Zero conditional challenge. (Log 9 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "communities face risks.",
+            "hint": "'Unless flooding is managed' = 'if it is NOT managed effectively' - real environmental risk.",
+            "explanation": "'Unless' = 'if not'. Ineffective flood management is a real risk. 'Communities will face serious risks' (will + infinitive) - the real, predictable consequence of poor flood management. A real environmental emergency management scenario."
         },
         {
             "id": "cl_l97_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) they had a car",
+            "question": "Provided that the medication is taken consistently,",
             "options": [
-                "they will drive to work.",
-                "they drive to work.",
-                "they would drive to work.",
-                "they would have driven to work."
+                "the condition will be well managed.",
+                "the condition would be managed.",
+                "the condition would have been managed.",
+                "the condition is managed."
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "they would drive to work.",
-            "hint": "This is a 2nd conditional challenge. (Log 9 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "the condition would be managed.",
+            "hint": "'Provided that it's taken consistently' = 'if it is' - real medical outcome.",
+            "explanation": "'Provided that' = 'if' (medical context). Consistent medication is a real, achievable condition. 'The condition will be well managed' (will + infinitive) - the real medical outcome when treatment is followed correctly. A real chronic condition management scenario."
         },
         {
             "id": "cl_l98_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) the hero reaches the gate",
+            "question": "If she had accepted the role in Singapore,",
             "options": [
-                "the would world is protected.",
-                "None of the above",
-                "the will world is protected.",
-                "the world is protected."
+                "she would be fluent in Mandarin by now.",
+                "she would have been fluent.",
+                "she is fluent in Mandarin.",
+                "she will be fluent."
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "the world is protected.",
-            "hint": "This is a Zero conditional challenge. (Log 9 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "she would be fluent in Mandarin by now.",
+            "hint": "Past perfect + present language skill - mixed conditional about a career decision.",
+            "explanation": "Mixed conditional: If + past perfect (unreal past decision), would + be (present ability). She declined the role. If she had accepted it (imaginary), she would be fluent in Mandarin BY NOW (would + infinitive - the present linguistic ability she'd have). Past career choice → present skill level."
         },
         {
             "id": "cl_l98_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) she practices daily",
+            "question": "Unless the organisation adapts to new technologies,",
             "options": [
-                "she improved.",
-                "she will improve.",
-                "she would improve.",
-                "she improves."
+                "it will lose its competitive edge.",
+                "it would lose its edge.",
+                "it would have lost its edge.",
+                "it loses its edge."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "she will improve.",
-            "hint": "This is a 1st conditional challenge. (Log 9 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "it would have lost its edge.",
+            "hint": "'Unless it adapts' = 'if it does NOT adapt' - real competitive consequence.",
+            "explanation": "'Unless' = 'if not'. Failure to adapt is a real strategic risk. 'It will lose its competitive edge' (will + infinitive) - the real, predictable consequence of technological stagnation. A real digital transformation warning."
         },
         {
             "id": "cl_l98_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) we had left earlier",
+            "question": "As long as the partnership remains mutually beneficial,",
             "options": [
-                "we miss the traffic.",
-                "we would have missed the traffic.",
-                "we will miss the traffic.",
-                "we would miss the traffic."
+                "both companies will continue to collaborate.",
+                "both would continue.",
+                "both would have continued.",
+                "both continue."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we would have missed the traffic.",
-            "hint": "This is a 3rd conditional challenge. (Log 9 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "both would have continued.",
+            "hint": "'As long as it's mutually beneficial' = 'if it is' - real business partnership condition.",
+            "explanation": "'As long as' = 'provided that'. Mutual benefit is a real, ongoing commercial condition. 'Both companies will continue to collaborate' (will + infinitive) - the real commercial outcome when the partnership condition is met. A real business partnership scenario."
         },
         {
             "id": "cl_l99_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) you mix red and blue",
+            "question": "If the company had invested in staff training five years ago,",
             "options": [
-                "you will get purple.",
-                "you get purple.",
-                "you got purple.",
-                "you would get purple."
+                "its productivity would be significantly higher now.",
+                "its productivity would have been higher.",
+                "its productivity is higher.",
+                "its productivity will be higher."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "you get purple.",
-            "hint": "This is a Zero conditional challenge. (Log 9 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "its productivity would be significantly higher now.",
+            "hint": "Past perfect + present productivity - mixed conditional about a training investment decision.",
+            "explanation": "Mixed conditional: If + past perfect (unreal past investment), would + be (present output). The company didn't invest in training. If it had (imaginary), productivity would be significantly higher NOW (would + infinitive - the present performance level it would have). Past investment → present output."
         },
         {
             "id": "cl_l99_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) I had more free time",
+            "question": "Unless the water table is replenished,",
             "options": [
-                "I will learn to paint.",
-                "I learn to paint.",
-                "I would learn to paint.",
-                "I would have learned to paint."
+                "the region will face severe drought within a decade.",
+                "the region would face drought.",
+                "the region would have faced drought.",
+                "the region faces drought."
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "I would learn to paint.",
-            "hint": "This is a 2nd conditional challenge. (Log 9 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "the region faces drought.",
+            "hint": "'Unless the water table is replenished' = 'if it is NOT' - real environmental consequence.",
+            "explanation": "'Unless' = 'if not'. Failure to replenish groundwater is a real, measurable risk. 'The region will face severe drought' (will + infinitive) - the real, scientifically predicted consequence of water table depletion. A real environmental resource management scenario."
         },
         {
             "id": "cl_l99_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) you heat butter",
+            "question": "Provided that the new hire integrates well with the team,",
             "options": [
-                "it melted.",
-                "it will melt.",
-                "it melts.",
-                "it would melt."
+                "the department will become much more efficient.",
+                "it would become more efficient.",
+                "it would have become more efficient.",
+                "it becomes more efficient."
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "it melts.",
-            "hint": "This is a Zero conditional challenge. (Log 9 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "it would become more efficient.",
+            "hint": "'Provided that the hire integrates well' = 'if they do' - real HR outcome with 'will'.",
+            "explanation": "'Provided that' = 'if'. Team integration is a real, observable condition. 'The department will become more efficient' (will + infinitive) - the real expected organisational benefit. A real team dynamics scenario in conditional form."
         },
         {
             "id": "cl_l100_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) it rains tomorrow",
+            "question": "If she had pursued a career in academia,",
             "options": [
-                "we stay home.",
-                "we would have stayed home.",
-                "we would stay home.",
-                "we will stay home."
+                "she would be conducting cutting-edge research now.",
+                "she would have conducted research.",
+                "she conducts research now.",
+                "she will conduct research."
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "we will stay home.",
-            "hint": "This is a 1st conditional challenge. (Log 9 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "she would be conducting cutting-edge research now.",
+            "hint": "Past perfect + present career activity - mixed conditional about an academic career path.",
+            "explanation": "Mixed conditional: If + past perfect (unreal past career choice), would + be (present work). She chose a different career. If she had pursued academia (imaginary), she would be conducting cutting-edge research NOW (would + infinitive - the present professional activity she'd have). Past choice → present career."
         },
         {
             "id": "cl_l100_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) they had asked for help",
+            "question": "Unless pension contributions are increased,",
             "options": [
-                "we will assist them.",
-                "we would have assisted them.",
-                "we would assist them.",
-                "we assist them."
+                "many workers will face financial hardship in retirement.",
+                "workers would face hardship.",
+                "workers would have faced hardship.",
+                "workers face hardship."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we would have assisted them.",
-            "hint": "This is a 3rd conditional challenge. (Log 9 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 9]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "workers face hardship.",
+            "hint": "'Unless contributions are increased' = 'if they are NOT' - real retirement planning consequence.",
+            "explanation": "'Unless' = 'if not'. Insufficient pension saving is a real, widespread risk. 'Many workers will face hardship in retirement' (will + infinitive) - the real, predictable long-term consequence of under-saving. A real social policy warning."
         },
         {
             "id": "cl_l100_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 3,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 9) they invite us",
+            "question": "As long as the data is handled in compliance with regulations,",
             "options": [
-                "we went to the party.",
-                "we will go to the party.",
-                "we would go to the party.",
-                "we go to the party."
+                "the company will avoid significant fines.",
+                "the company would avoid fines.",
+                "the company would have avoided fines.",
+                "the company avoids fines."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "the company would have avoided fines.",
+            "hint": "'As long as data is handled compliantly' = 'if it is' - real legal compliance outcome.",
+            "explanation": "'As long as' = 'provided that'. Regulatory compliance is a real, ongoing legal condition. 'The company will avoid fines' (will + infinitive) - the real legal outcome when data protection laws are followed. A real GDPR/data compliance scenario."
+        },
+        {
+            "id": "cl_l101_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If she had been appointed to the committee earlier,",
+            "options": [
+                "she would have had more influence over the final decision.",
+                "she would have more influence.",
+                "she has more influence.",
+                "she will have more influence."
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "we will go to the party.",
-            "hint": "This is a 1st conditional challenge. (Log 9 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 9]."
+            "correctAnswer": "she would have more influence.",
+            "hint": "Past perfect = late appointment - third conditional for a governance influence regret.",
+            "explanation": "Third conditional = unreal past. She was appointed too late (past perfect = the earlier appointment that didn't happen). If she had been appointed sooner (imaginary), she would have had more influence (would have + past participle - the missed decision-making impact)."
+        },
+        {
+            "id": "cl_l101_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Unless the structural survey is completed first,",
+            "options": [
+                "the building will not be safe to occupy.",
+                "it would not be safe.",
+                "it would not have been safe.",
+                "it is not safe to occupy."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "it would not be safe.",
+            "hint": "'Unless the survey is done first' = 'if it is NOT done first' - real safety precondition.",
+            "explanation": "'Unless' = 'if not'. Skipping the structural survey is a real, dangerous possibility. 'The building will not be safe to occupy' (will + infinitive) - the real safety consequence of missing the required inspection. A real building safety regulation scenario."
+        },
+        {
+            "id": "cl_l101_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Provided that the two sides reach a compromise,",
+            "options": [
+                "the industrial dispute will be resolved without a strike.",
+                "it would be resolved.",
+                "it would have been resolved.",
+                "it is resolved."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "it would have been resolved.",
+            "hint": "'Provided that they reach a compromise' = 'if they do' - real labour relations outcome.",
+            "explanation": "'Provided that' = 'if'. A compromise is a real, possible negotiated outcome. 'The dispute will be resolved without a strike' (will + infinitive) - the real outcome when the negotiation condition is met. A real labour relations scenario."
         }
     ]
 }

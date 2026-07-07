@@ -4,544 +4,514 @@
     "levels": "141-150",
     "quests": [
         {
-            "id": "cl_l141_q1",
+            "id": "cl_l153_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 14) you heat ice",
+            "question": "Were the evidence stronger,",
             "options": [
-                "it had melted.",
-                "it will melt.",
-                "it melts.",
-                "it would melt."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "it melts.",
-            "hint": "This is a Zero conditional challenge. (Log 14 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l141_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) they trained harder",
-            "options": [
-                "they win.",
-                "they would win.",
-                "they will win.",
-                "they would have won."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "they would win.",
-            "hint": "This is a 2nd conditional challenge. (Log 14 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l141_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) you touch a flame",
-            "options": [
-                "you got burned.",
-                "you will get burned.",
-                "you get burned.",
-                "you would get burned."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "you get burned.",
-            "hint": "This is a Zero conditional challenge. (Log 14 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l142_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) the pilot detects the storm",
-            "options": [
-                "None of the above",
-                "he changes course.",
-                "he would change course.",
-                "he will change course."
+                "the jury would have convicted.",
+                "the jury convicts.",
+                "the jury would convict.",
+                "the jury will convict."
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "he will change course.",
-            "hint": "This is a 1st conditional challenge. (Log 14 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 14]."
+            "correctAnswer": "the jury will convict.",
+            "hint": "'Were + subject' is a formal inversion of 'If the evidence were stronger' - second conditional.",
+            "explanation": "Inverted conditional: 'Were the evidence stronger' = 'If the evidence were stronger' - formal second conditional inversion. The evidence isn't strong enough (unreal present). Result: 'the jury would convict' (would + infinitive - the imagined verdict). Inversion omits 'if' and places 'were' before the subject."
         },
         {
-            "id": "cl_l142_q2",
+            "id": "cl_l153_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 14) she had arrived on time",
+            "question": "Had she known about the hidden clause,",
             "options": [
-                "she meets him.",
-                "she would have met him.",
-                "she will meet him.",
-                "she would meet him."
+                "she would never have signed the contract.",
+                "she would never sign.",
+                "she never signs.",
+                "she will never sign."
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "she would have met him.",
-            "hint": "This is a 3rd conditional challenge. (Log 14 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 14]."
+            "correctAnswer": "she would never sign.",
+            "hint": "'Had + subject + past participle' inverts 'If she had known' - formal third conditional.",
+            "explanation": "Inverted conditional: 'Had she known' = 'If she had known' - formal third conditional inversion. She didn't know (past perfect = unreal past). Result: 'she would never have signed' (would never have + past participle - the pure third conditional result). Inversion omits 'if' and places 'had' before the subject."
         },
         {
-            "id": "cl_l142_q3",
+            "id": "cl_l153_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 14) we leave now",
+            "question": "Should the negotiations fail,",
             "options": [
-                "we arrived early.",
-                "we will arrive early.",
-                "we would arrive early.",
-                "we arrive early."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we will arrive early.",
-            "hint": "This is a 1st conditional challenge. (Log 14 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l143_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) I won the lottery",
-            "options": [
-                "I will travel the world.",
-                "I would travel the world.",
-                "I would have traveled the world.",
-                "I travel the world."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "I would travel the world.",
-            "hint": "This is a 2nd conditional challenge. (Log 14 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l143_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) you boil water to 100 degrees",
-            "options": [
-                "it evaporated.",
-                "it will evaporate.",
-                "it evaporates.",
-                "it would evaporate."
+                "the parties will need to consider alternative dispute resolution.",
+                "the parties would need to.",
+                "the parties would have needed to.",
+                "the parties need to."
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "it evaporates.",
-            "hint": "This is a Zero conditional challenge. (Log 14 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 14]."
+            "correctAnswer": "the parties would have needed to.",
+            "hint": "'Should + subject' inverts 'If the negotiations should fail' - formal first conditional.",
+            "explanation": "Inverted conditional: 'Should the negotiations fail' = 'If the negotiations fail/should fail' - formal first conditional inversion. Failure is a real (but hopefully avoidable) future possibility. Result: 'the parties will need to' (will + infinitive - a real, practical consequence). 'Should' inversion is formal English for real future possibilities."
         },
         {
-            "id": "cl_l143_q3",
+            "id": "cl_l154_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 14) he were taller",
+            "question": "Were the company to relocate,",
             "options": [
-                "he will play basketball.",
-                "he plays basketball.",
-                "he would play basketball.",
-                "he would have played basketball."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "he would play basketball.",
-            "hint": "This is a 2nd conditional challenge. (Log 14 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l144_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) she had studied harder",
-            "options": [
-                "she will pass.",
-                "she would have passed.",
-                "she would pass.",
-                "she passes."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "she would have passed.",
-            "hint": "This is a 3rd conditional challenge. (Log 14 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l144_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) he gets the promotion",
-            "options": [
-                "he celebrated.",
-                "he will celebrate.",
-                "he would celebrate.",
-                "he celebrates."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "he will celebrate.",
-            "hint": "This is a 1st conditional challenge. (Log 14 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l144_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) I had known the answer",
-            "options": [
-                "I tell you.",
-                "I would have told you.",
-                "I will tell you.",
-                "I would tell you."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "I would have told you.",
-            "hint": "This is a 3rd conditional challenge. (Log 14 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l145_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) the scientist discovers the cure",
-            "options": [
-                "not humanity is saved.",
-                "humanity is saved yesterday.",
-                "humanity is saved soon.",
-                "humanity is saved."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "humanity is saved.",
-            "hint": "This is a Zero conditional challenge. (Log 14 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l145_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) I spoke French fluently",
-            "options": [
-                "I will move to Paris.",
-                "I move to Paris.",
-                "I would move to Paris.",
-                "I would have moved to Paris."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "I would move to Paris.",
-            "hint": "This is a 2nd conditional challenge. (Log 14 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l145_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) you drop an object",
-            "options": [
-                "it fell to the ground.",
-                "it will fall to the ground.",
-                "it falls to the ground.",
-                "it would fall to the ground."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "it falls to the ground.",
-            "hint": "This is a Zero conditional challenge. (Log 14 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l146_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) you don't hurry",
-            "options": [
-                "you would miss the train.",
-                "you would have missed.",
-                "you miss the train.",
-                "you will miss the train."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "you will miss the train.",
-            "hint": "This is a 1st conditional challenge. (Log 14 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l146_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) we had taken the map",
-            "options": [
-                "we won't get lost.",
-                "we wouldn't have gotten lost.",
-                "we wouldn't get lost.",
-                "we don't get lost."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we wouldn't have gotten lost.",
-            "hint": "This is a 3rd conditional challenge. (Log 14 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l146_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) she signs the contract",
-            "options": [
-                "she started next week.",
-                "she will start next week.",
-                "she would start next week.",
-                "she starts next week."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "she will start next week.",
-            "hint": "This is a 1st conditional challenge. (Log 14 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l147_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) the coder fixes the bug",
-            "options": [
-                "the program runs.",
-                "not the program runs.",
-                "the program runs soon.",
-                "the program runs yesterday."
+                "many employees would consider leaving.",
+                "many would have considered.",
+                "many consider leaving.",
+                "many will consider leaving."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "the program runs.",
-            "hint": "This is a Zero conditional challenge. (Log 14 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 14]."
+            "correctAnswer": "many employees would consider leaving.",
+            "hint": "'Were + subject + to + infinitive' = formal second conditional inversion.",
+            "explanation": "Inverted conditional: 'Were the company to relocate' = 'If the company were to relocate' - formal second conditional. A hypothetical relocation (imaginary present/future). Result: 'many employees would consider leaving' (would + infinitive - the imagined consequence). 'Were to' + infinitive is formal English for hypothetical future events."
         },
         {
-            "id": "cl_l147_q2",
+            "id": "cl_l154_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 14) you freeze water",
+            "question": "Had the project manager raised concerns earlier,",
             "options": [
-                "it turned into ice.",
-                "it turns into ice.",
-                "it will turn into ice.",
-                "it would turn into ice."
+                "the budget overrun would have been avoided.",
+                "the overrun would be avoided.",
+                "the overrun is avoided.",
+                "the overrun will be avoided."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "it turns into ice.",
-            "hint": "This is a Zero conditional challenge. (Log 14 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 14]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "the budget overrun would have been avoided.",
+            "hint": "'Had + subject' inverts 'If the project manager had raised' - formal third conditional.",
+            "explanation": "Inverted conditional: 'Had the project manager raised concerns' = 'If the manager had raised them earlier' - formal third conditional. Concerns weren't raised in time (unreal past). Result: 'the budget overrun would have been avoided' (would have + past participle - the prevented financial failure). Formal inverted third conditional."
         },
         {
-            "id": "cl_l147_q3",
+            "id": "cl_l154_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 14) they had a car",
+            "question": "Should the application be rejected,",
             "options": [
-                "they will drive to work.",
-                "they drive to work.",
-                "they would drive to work.",
-                "they would have driven to work."
+                "the candidate will have the right to appeal.",
+                "the candidate would have the right.",
+                "the candidate would have had the right.",
+                "the candidate has the right."
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "they would drive to work.",
-            "hint": "This is a 2nd conditional challenge. (Log 14 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 14]."
+            "correctAnswer": "the candidate would have had the right.",
+            "hint": "'Should + subject' = formal first conditional inversion for a real but unwanted possibility.",
+            "explanation": "Inverted conditional: 'Should the application be rejected' = 'If the application is rejected' - formal first conditional. Rejection is a real future possibility. Result: 'the candidate will have the right to appeal' (will + infinitive - the real legal right). 'Should' inversion is used in formal/legal English for real conditional situations."
         },
         {
-            "id": "cl_l148_q1",
+            "id": "cl_l155_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 14) the hero reaches the gate",
+            "question": "Were she to accept the role,",
             "options": [
-                "the would world is protected.",
-                "None of the above",
-                "the will world is protected.",
-                "the world is protected."
+                "the board would need to approve her appointment formally.",
+                "the board would have needed to approve.",
+                "the board needs to approve.",
+                "the board will need to approve."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "the board would have needed to approve.",
+            "hint": "'Were + subject + to + infinitive' = formal hypothetical inversion.",
+            "explanation": "Inverted conditional: 'Were she to accept the role' = 'If she were to accept the role' - formal second conditional. Acceptance is hypothetical (imaginary possibility). Result: 'the board would need to approve' (would + infinitive - the formal governance requirement in this hypothetical). Very formal English, typical in business and legal contexts."
+        },
+        {
+            "id": "cl_l155_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Had the mediator been more experienced,",
+            "options": [
+                "the settlement might have been reached more quickly.",
+                "it might be reached more quickly.",
+                "it is reached more quickly.",
+                "it will be reached more quickly."
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "the world is protected.",
-            "hint": "This is a Zero conditional challenge. (Log 14 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 14]."
+            "correctAnswer": "it will be reached more quickly.",
+            "hint": "'Had + subject' inverts 'If the mediator had been' - third conditional with 'might have'.",
+            "explanation": "Inverted conditional: 'Had the mediator been more experienced' = 'If the mediator had been more experienced' - formal third conditional. The mediator lacked experience (unreal past). Result: 'the settlement might have been reached more quickly' (might have + past participle). 'Might have' acknowledges experience helps but doesn't guarantee speed."
         },
         {
-            "id": "cl_l148_q2",
+            "id": "cl_l155_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 14) she practices daily",
+            "question": "Should the forecast prove accurate,",
             "options": [
-                "she improved.",
-                "she will improve.",
-                "she would improve.",
-                "she improves."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "she will improve.",
-            "hint": "This is a 1st conditional challenge. (Log 14 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l148_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) we had left earlier",
-            "options": [
-                "we miss the traffic.",
-                "we would have missed the traffic.",
-                "we will miss the traffic.",
-                "we would miss the traffic."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we would have missed the traffic.",
-            "hint": "This is a 3rd conditional challenge. (Log 14 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l149_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) you mix red and blue",
-            "options": [
-                "you will get purple.",
-                "you get purple.",
-                "you got purple.",
-                "you would get purple."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "you get purple.",
-            "hint": "This is a Zero conditional challenge. (Log 14 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l149_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) I had more free time",
-            "options": [
-                "I will learn to paint.",
-                "I learn to paint.",
-                "I would learn to paint.",
-                "I would have learned to paint."
+                "the harvest will exceed last year's yield significantly.",
+                "it would exceed.",
+                "it would have exceeded.",
+                "it exceeds."
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "I would learn to paint.",
-            "hint": "This is a 2nd conditional challenge. (Log 14 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 14]."
+            "correctAnswer": "it would have exceeded.",
+            "hint": "'Should + subject' = formal first conditional for a real future possibility.",
+            "explanation": "Inverted conditional: 'Should the forecast prove accurate' = 'If the forecast proves accurate' - formal first conditional. Forecast accuracy is a real future possibility. Result: 'the harvest will exceed last year's yield' (will + infinitive - the real agricultural outcome). 'Should' inversion is used formally for real conditional predictions."
         },
         {
-            "id": "cl_l149_q3",
+            "id": "cl_l156_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 14) you heat butter",
+            "question": "Were the government to invest heavily in education,",
             "options": [
-                "it melted.",
-                "it will melt.",
-                "it melts.",
-                "it would melt."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "it melts.",
-            "hint": "This is a Zero conditional challenge. (Log 14 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 14]."
-        },
-        {
-            "id": "cl_l150_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 14) it rains tomorrow",
-            "options": [
-                "we stay home.",
-                "we would have stayed home.",
-                "we would stay home.",
-                "we will stay home."
+                "the long-term economic returns would be substantial.",
+                "the returns would have been substantial.",
+                "the returns are substantial.",
+                "the returns will be substantial."
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "we will stay home.",
-            "hint": "This is a 1st conditional challenge. (Log 14 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 14]."
+            "correctAnswer": "the returns will be substantial.",
+            "hint": "'Were + subject + to + infinitive' = formal hypothetical policy inversion.",
+            "explanation": "Inverted conditional: 'Were the government to invest heavily' = 'If the government were to invest heavily' - formal second conditional policy hypothesis. Heavy investment is hypothetical (not current reality). Result: 'returns would be substantial' (would + infinitive - the imagined economic benefit). Formal hypothetical policy language."
         },
         {
-            "id": "cl_l150_q2",
+            "id": "cl_l156_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 14) they had asked for help",
+            "question": "Had the early trial data been more promising,",
             "options": [
-                "we will assist them.",
-                "we would have assisted them.",
-                "we would assist them.",
-                "we assist them."
+                "the drug would have attracted far greater investment.",
+                "it would attract greater investment.",
+                "it attracts greater investment.",
+                "it will attract greater investment."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we would have assisted them.",
-            "hint": "This is a 3rd conditional challenge. (Log 14 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 14]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "the drug would have attracted far greater investment.",
+            "hint": "'Had + subject' = formal third conditional inversion about a pharmaceutical development.",
+            "explanation": "Inverted conditional: 'Had the early trial data been more promising' = 'If the early data had been more promising' - formal third conditional. The data wasn't promising enough (unreal past). Result: 'the drug would have attracted greater investment' (would have + past participle - the missed commercial outcome)."
         },
         {
-            "id": "cl_l150_q3",
+            "id": "cl_l156_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 14) they invite us",
+            "question": "Should the arbitration process be initiated,",
             "options": [
-                "we went to the party.",
-                "we will go to the party.",
-                "we would go to the party.",
-                "we go to the party."
+                "both parties will be required to submit evidence within thirty days.",
+                "they would be required to.",
+                "they would have been required to.",
+                "they are required to."
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "we will go to the party.",
-            "hint": "This is a 1st conditional challenge. (Log 14 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 14]."
+            "correctAnswer": "they would be required to.",
+            "hint": "'Should + subject' = formal legal inversion for a real procedural possibility.",
+            "explanation": "Inverted conditional: 'Should the arbitration be initiated' = 'If arbitration is initiated' - formal legal first conditional. Initiation is a real procedural possibility. Result: 'both parties will be required to submit evidence' (will + infinitive - the real legal procedural requirement). Standard legal conditional language."
+        },
+        {
+            "id": "cl_l157_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Were the proposed merger to proceed,",
+            "options": [
+                "competition in the sector would be significantly reduced.",
+                "competition would have been reduced.",
+                "competition is reduced.",
+                "competition will be reduced."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "competition would have been reduced.",
+            "hint": "'Were + subject + to + infinitive' = formal regulatory/business inversion.",
+            "explanation": "Inverted conditional: 'Were the merger to proceed' = 'If the merger were to proceed' - formal second conditional. Proceeding with the merger is hypothetical (pending regulatory review). Result: 'competition would be significantly reduced' (would + infinitive - the imagined market consequence). Formal regulatory analysis language."
+        },
+        {
+            "id": "cl_l157_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Had the crisis response been swifter,",
+            "options": [
+                "public confidence in the administration would have been restored faster.",
+                "confidence would be restored faster.",
+                "confidence is restored faster.",
+                "confidence will be restored faster."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "public confidence in the administration would have been restored faster.",
+            "hint": "'Had + subject' = formal third conditional inversion about crisis management.",
+            "explanation": "Inverted conditional: 'Had the crisis response been swifter' = 'If the response had been swifter' - formal third conditional. The response was slow (unreal past). Result: 'public confidence would have been restored faster' (would have + past participle - the missed faster recovery of trust). Crisis management lesson in formal inverted form."
+        },
+        {
+            "id": "cl_l157_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Should the defendant fail to appear in court,",
+            "options": [
+                "a warrant will be issued for their arrest.",
+                "a warrant would be issued.",
+                "a warrant would have been issued.",
+                "a warrant is issued."
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "a warrant is issued.",
+            "hint": "'Should + subject' = standard legal conditional inversion for a real procedural outcome.",
+            "explanation": "Inverted conditional: 'Should the defendant fail to appear' = 'If the defendant fails to appear' - formal legal first conditional. Non-appearance is a real, possible legal event. Result: 'a warrant will be issued' (will + infinitive - the real legal consequence). Very standard legal and judicial language."
+        },
+        {
+            "id": "cl_l158_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Were she to discover the full extent of the cover-up,",
+            "options": [
+                "she would be duty-bound to report it immediately.",
+                "she would have been duty-bound.",
+                "she is duty-bound.",
+                "she will be duty-bound."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "she is duty-bound.",
+            "hint": "'Were + subject + to + infinitive' = formal investigative scenario inversion.",
+            "explanation": "Inverted conditional: 'Were she to discover the cover-up' = 'If she were to discover it' - formal second conditional. Discovery is hypothetical (she may or may not find it). Result: 'she would be duty-bound to report it' (would + infinitive - the imagined professional obligation). Formal legal/professional duty language."
+        },
+        {
+            "id": "cl_l158_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Had the original research been properly cited,",
+            "options": [
+                "the plagiarism accusation would never have arisen.",
+                "the accusation would never arise.",
+                "the accusation never arises.",
+                "the accusation will never arise."
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "the accusation will never arise.",
+            "hint": "'Had + subject' = formal academic third conditional inversion.",
+            "explanation": "Inverted conditional: 'Had the research been properly cited' = 'If the research had been properly cited' - formal third conditional. Proper citation didn't happen (unreal past). Result: 'the plagiarism accusation would never have arisen' (would never have + past participle - the prevented academic scandal). Academic integrity lesson."
+        },
+        {
+            "id": "cl_l158_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Should the board reject the proposal,",
+            "options": [
+                "the management team will need to revise their strategy completely.",
+                "the team would need to revise.",
+                "the team would have needed to revise.",
+                "the team needs to revise."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "the team would need to revise.",
+            "hint": "'Should + subject' = formal corporate governance inversion for a real decision possibility.",
+            "explanation": "Inverted conditional: 'Should the board reject the proposal' = 'If the board rejects it' - formal first conditional. Rejection is a real governance possibility. Result: 'the management team will need to revise their strategy' (will + infinitive - the real strategic consequence). Formal corporate language for real conditional outcomes."
+        },
+        {
+            "id": "cl_l159_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Were the legislation to be repealed,",
+            "options": [
+                "many hard-won rights would be lost overnight.",
+                "many rights would have been lost.",
+                "many rights are lost.",
+                "many rights will be lost."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "many rights are lost.",
+            "hint": "'Were + subject + to + infinitive' = formal political inversion for a hypothetical legal change.",
+            "explanation": "Inverted conditional: 'Were the legislation to be repealed' = 'If the legislation were to be repealed' - formal second conditional. Repeal is hypothetical (it currently exists). Result: 'many hard-won rights would be lost' (would + infinitive - the imagined impact of a policy reversal). Formal political conditional language."
+        },
+        {
+            "id": "cl_l159_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Had the whistleblower not come forward,",
+            "options": [
+                "the corruption would have continued undetected for years.",
+                "it would continue undetected.",
+                "it continues undetected.",
+                "it will continue undetected."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "the corruption would have continued undetected for years.",
+            "hint": "'Had + subject' negative = formal third conditional for a whistleblower scenario.",
+            "explanation": "Inverted conditional: 'Had the whistleblower not come forward' = 'If the whistleblower had not come forward' - formal third conditional with negative. They DID come forward (negative past perfect = the reverse). Result: 'the corruption would have continued undetected' (would have + past participle - the prevented ongoing crime). Whistleblowers serve a crucial public function."
+        },
+        {
+            "id": "cl_l159_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Should the tests reveal any contamination,",
+            "options": [
+                "the entire batch will be quarantined immediately.",
+                "the batch would be quarantined.",
+                "the batch would have been quarantined.",
+                "the batch is quarantined."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "the entire batch will be quarantined immediately.",
+            "hint": "'Should + subject' = formal quality control inversion for a real testing possibility.",
+            "explanation": "Inverted conditional: 'Should the tests reveal contamination' = 'If the tests reveal contamination' - formal first conditional. Contamination is a real quality control risk. Result: 'the batch will be quarantined' (will + infinitive - the real, mandatory safety response). Formal quality control and food/pharmaceutical safety language."
+        },
+        {
+            "id": "cl_l160_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Were he to learn of the deception,",
+            "options": [
+                "he would terminate the partnership without hesitation.",
+                "he would have terminated it.",
+                "he terminates it.",
+                "he will terminate it."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "he terminates it.",
+            "hint": "'Were + subject + to + infinitive' = formal business relationship inversion.",
+            "explanation": "Inverted conditional: 'Were he to learn of the deception' = 'If he were to learn' - formal second conditional. Learning of the deception is hypothetical (he currently doesn't know). Result: 'he would terminate the partnership' (would + infinitive - the imagined decisive business response). Formal inverted second conditional for a business scenario."
+        },
+        {
+            "id": "cl_l160_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Had the infrastructure been properly maintained over the decades,",
+            "options": [
+                "the repair costs today would be a fraction of the current estimate.",
+                "the costs would be higher.",
+                "the costs are lower now.",
+                "the costs will be lower."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "the costs would be higher.",
+            "hint": "'Had + subject' = formal third conditional inversion about infrastructure investment.",
+            "explanation": "Inverted conditional: 'Had the infrastructure been properly maintained' = 'If it had been maintained' - formal third conditional. Maintenance was neglected (unreal past). Result: 'repair costs would be a fraction of the current estimate' (would + infinitive - present cost impact). This is a MIXED conditional: past maintenance → present cost level."
+        },
+        {
+            "id": "cl_l160_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Should interest rates fall significantly,",
+            "options": [
+                "consumer spending will increase and the economy will pick up.",
+                "spending would increase.",
+                "spending would have increased.",
+                "spending increases."
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "spending increases.",
+            "hint": "'Should + subject' = formal first conditional inversion for a real economic scenario.",
+            "explanation": "Inverted conditional: 'Should interest rates fall significantly' = 'If rates fall significantly' - formal first conditional. A significant rate fall is a real monetary policy possibility. Result: 'consumer spending will increase' (will + infinitive - the real, expected economic response). Formal economic analysis using 'should' inversion."
+        },
+        {
+            "id": "cl_l161_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Were the two nations to enter into a formal alliance,",
+            "options": [
+                "the balance of power in the region would shift dramatically.",
+                "it would have shifted.",
+                "it shifts dramatically.",
+                "it will shift dramatically."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "it shifts dramatically.",
+            "hint": "'Were + subject + to + infinitive' = formal geopolitical second conditional inversion.",
+            "explanation": "Inverted conditional: 'Were the two nations to enter an alliance' = 'If they were to form an alliance' - formal second conditional. An alliance is currently hypothetical. Result: 'the balance of power would shift dramatically' (would + infinitive - the imagined geopolitical consequence). Formal international relations language."
+        },
+        {
+            "id": "cl_l161_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Had the arbitration clause been included in the original contract,",
+            "options": [
+                "the dispute would never have escalated to litigation.",
+                "it would never escalate.",
+                "it never escalates.",
+                "it will never escalate."
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "it will never escalate.",
+            "hint": "'Had + subject' = formal legal third conditional about contract drafting.",
+            "explanation": "Inverted conditional: 'Had the arbitration clause been included' = 'If it had been included' - formal third conditional. The clause wasn't included (unreal past). Result: 'the dispute would never have escalated to litigation' (would never have + past participle - the prevented legal escalation). Contract drafting lesson in formal inverted form."
+        },
+        {
+            "id": "cl_l161_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Should the referendum produce a surprise result,",
+            "options": [
+                "the political landscape will be transformed overnight.",
+                "it would be transformed.",
+                "it would have been transformed.",
+                "it is transformed."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "the political landscape will be transformed overnight.",
+            "hint": "'Should + subject' = formal first conditional inversion for a real political scenario.",
+            "explanation": "Inverted conditional: 'Should the referendum produce a surprise result' = 'If it produces a surprise result' - formal first conditional. A surprise result is a real electoral possibility. Result: 'the political landscape will be transformed overnight' (will + infinitive - the real, expected political consequence). Formal democratic/political language."
+        },
+        {
+            "id": "cl_l162_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Were the company's accounts to be audited externally,",
+            "options": [
+                "serious irregularities would almost certainly come to light.",
+                "irregularities would have come to light.",
+                "irregularities come to light.",
+                "irregularities will come to light."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "irregularities would have come to light.",
+            "hint": "'Were + subject + to + infinitive' = formal corporate governance inversion.",
+            "explanation": "Inverted conditional: 'Were the accounts to be audited externally' = 'If an external audit were conducted' - formal second conditional. External audit is hypothetical (imaginary). Result: 'irregularities would almost certainly come to light' (would + infinitive - the imagined audit outcome). 'Almost certainly' shows high probability within an imaginary scenario."
+        },
+        {
+            "id": "cl_l162_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Had the preliminary hearing ruled differently,",
+            "options": [
+                "the entire subsequent legal process would have been altered.",
+                "it would be altered.",
+                "it is altered.",
+                "it will be altered."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "it would be altered.",
+            "hint": "'Had + subject' = formal legal third conditional inversion about a preliminary ruling.",
+            "explanation": "Inverted conditional: 'Had the preliminary hearing ruled differently' = 'If the hearing had ruled differently' - formal third conditional. The hearing ruled a certain way (unreal past = different ruling). Result: 'the entire legal process would have been altered' (would have + past participle - the past chain of consequences). Legal causality in inverted form."
+        },
+        {
+            "id": "cl_l162_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Should the clinical evidence emerge sooner than expected,",
+            "options": [
+                "regulatory bodies will fast-track the approval process.",
+                "they would fast-track it.",
+                "they would have fast-tracked it.",
+                "they fast-track it."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "regulatory bodies will fast-track the approval process.",
+            "hint": "'Should + subject' = formal first conditional inversion for a real pharmaceutical scenario.",
+            "explanation": "Inverted conditional: 'Should clinical evidence emerge sooner' = 'If evidence emerges sooner' - formal first conditional. Earlier evidence is a real, possible scenario. Result: 'regulatory bodies will fast-track approval' (will + infinitive - the real accelerated regulatory response). Formal medical/regulatory language using 'should' inversion."
         }
     ]
 }

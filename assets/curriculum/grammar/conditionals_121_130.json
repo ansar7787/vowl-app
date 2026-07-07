@@ -4,544 +4,514 @@
     "levels": "121-130",
     "quests": [
         {
-            "id": "cl_l121_q1",
+            "id": "cl_l131_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 12) you heat ice",
+            "question": "If she had studied economics at university,",
             "options": [
-                "it had melted.",
-                "it will melt.",
-                "it melts.",
-                "it would melt."
+                "she would be working in finance now.",
+                "she would have worked in finance.",
+                "she works in finance now.",
+                "she will work in finance now."
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "it melts.",
-            "hint": "This is a Zero conditional challenge. (Log 12 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 12]."
+            "correctAnswer": "she works in finance now.",
+            "hint": "Past perfect if-clause + present result - classic mixed conditional (3rd+2nd).",
+            "explanation": "Mixed conditional: If + past perfect (unreal past choice) → would + be (present consequence). She didn't study economics (past perfect = imaginary past). If she had (imaginary), she would be working in finance NOW (would + infinitive - present job). Key distinction: 'would have worked' (3rd conditional) gives a past result; 'would be working' gives a PRESENT result."
         },
         {
-            "id": "cl_l121_q2",
+            "id": "cl_l131_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 12) they trained harder",
+            "question": "If the weather had been better last summer,",
             "options": [
-                "they win.",
-                "they would win.",
-                "they will win.",
-                "they would have won."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "they would win.",
-            "hint": "This is a 2nd conditional challenge. (Log 12 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l121_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) you touch a flame",
-            "options": [
-                "you got burned.",
-                "you will get burned.",
-                "you get burned.",
-                "you would get burned."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "you get burned.",
-            "hint": "This is a Zero conditional challenge. (Log 12 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l122_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) the pilot detects the storm",
-            "options": [
-                "None of the above",
-                "he changes course.",
-                "he would change course.",
-                "he will change course."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "he will change course.",
-            "hint": "This is a 1st conditional challenge. (Log 12 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l122_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) she had arrived on time",
-            "options": [
-                "she meets him.",
-                "she would have met him.",
-                "she will meet him.",
-                "she would meet him."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "she would have met him.",
-            "hint": "This is a 3rd conditional challenge. (Log 12 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l122_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) we leave now",
-            "options": [
-                "we arrived early.",
-                "we will arrive early.",
-                "we would arrive early.",
-                "we arrive early."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we will arrive early.",
-            "hint": "This is a 1st conditional challenge. (Log 12 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l123_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) I won the lottery",
-            "options": [
-                "I will travel the world.",
-                "I would travel the world.",
-                "I would have traveled the world.",
-                "I travel the world."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "I would travel the world.",
-            "hint": "This is a 2nd conditional challenge. (Log 12 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l123_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) you boil water to 100 degrees",
-            "options": [
-                "it evaporated.",
-                "it will evaporate.",
-                "it evaporates.",
-                "it would evaporate."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "it evaporates.",
-            "hint": "This is a Zero conditional challenge. (Log 12 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l123_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) he were taller",
-            "options": [
-                "he will play basketball.",
-                "he plays basketball.",
-                "he would play basketball.",
-                "he would have played basketball."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "he would play basketball.",
-            "hint": "This is a 2nd conditional challenge. (Log 12 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l124_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) she had studied harder",
-            "options": [
-                "she will pass.",
-                "she would have passed.",
-                "she would pass.",
-                "she passes."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "she would have passed.",
-            "hint": "This is a 3rd conditional challenge. (Log 12 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l124_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) he gets the promotion",
-            "options": [
-                "he celebrated.",
-                "he will celebrate.",
-                "he would celebrate.",
-                "he celebrates."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "he will celebrate.",
-            "hint": "This is a 1st conditional challenge. (Log 12 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l124_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) I had known the answer",
-            "options": [
-                "I tell you.",
-                "I would have told you.",
-                "I will tell you.",
-                "I would tell you."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "I would have told you.",
-            "hint": "This is a 3rd conditional challenge. (Log 12 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l125_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) the scientist discovers the cure",
-            "options": [
-                "not humanity is saved.",
-                "humanity is saved yesterday.",
-                "humanity is saved soon.",
-                "humanity is saved."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "humanity is saved.",
-            "hint": "This is a Zero conditional challenge. (Log 12 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l125_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) I spoke French fluently",
-            "options": [
-                "I will move to Paris.",
-                "I move to Paris.",
-                "I would move to Paris.",
-                "I would have moved to Paris."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "I would move to Paris.",
-            "hint": "This is a 2nd conditional challenge. (Log 12 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l125_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) you drop an object",
-            "options": [
-                "it fell to the ground.",
-                "it will fall to the ground.",
-                "it falls to the ground.",
-                "it would fall to the ground."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "it falls to the ground.",
-            "hint": "This is a Zero conditional challenge. (Log 12 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l126_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) you don't hurry",
-            "options": [
-                "you would miss the train.",
-                "you would have missed.",
-                "you miss the train.",
-                "you will miss the train."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "you will miss the train.",
-            "hint": "This is a 1st conditional challenge. (Log 12 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l126_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) we had taken the map",
-            "options": [
-                "we won't get lost.",
-                "we wouldn't have gotten lost.",
-                "we wouldn't get lost.",
-                "we don't get lost."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we wouldn't have gotten lost.",
-            "hint": "This is a 3rd conditional challenge. (Log 12 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l126_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) she signs the contract",
-            "options": [
-                "she started next week.",
-                "she will start next week.",
-                "she would start next week.",
-                "she starts next week."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "she will start next week.",
-            "hint": "This is a 1st conditional challenge. (Log 12 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l127_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) the coder fixes the bug",
-            "options": [
-                "the program runs.",
-                "not the program runs.",
-                "the program runs soon.",
-                "the program runs yesterday."
+                "the harvest might have been significantly larger.",
+                "the harvest might be larger.",
+                "the harvest is larger.",
+                "the harvest will be larger."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "the program runs.",
-            "hint": "This is a Zero conditional challenge. (Log 12 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 12]."
+            "correctAnswer": "the harvest might have been significantly larger.",
+            "hint": "Past perfect = poor weather - third conditional with 'might have' for an uncertain past outcome.",
+            "explanation": "Third conditional = unreal past. Last summer's weather was poor (past perfect = better weather that didn't happen). If it had been better (imaginary), the harvest might have been larger (might have + past participle). 'Might have' rather than 'would have' acknowledges that even good weather doesn't guarantee a large harvest - other factors matter."
         },
         {
-            "id": "cl_l127_q2",
+            "id": "cl_l131_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 12) you freeze water",
+            "question": "If I had taken that job in Berlin,",
             "options": [
-                "it turned into ice.",
-                "it turns into ice.",
-                "it will turn into ice.",
-                "it would turn into ice."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "it turns into ice.",
-            "hint": "This is a Zero conditional challenge. (Log 12 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l127_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) they had a car",
-            "options": [
-                "they will drive to work.",
-                "they drive to work.",
-                "they would drive to work.",
-                "they would have driven to work."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "they would drive to work.",
-            "hint": "This is a 2nd conditional challenge. (Log 12 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l128_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) the hero reaches the gate",
-            "options": [
-                "the would world is protected.",
-                "None of the above",
-                "the will world is protected.",
-                "the world is protected."
+                "I would be speaking German fluently today.",
+                "I would have spoken German fluently.",
+                "I speak German today.",
+                "I will speak German today."
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "the world is protected.",
-            "hint": "This is a Zero conditional challenge. (Log 12 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 12]."
+            "correctAnswer": "I will speak German today.",
+            "hint": "Past perfect if-clause + present ability - mixed conditional showing how past affects present.",
+            "explanation": "Mixed conditional: If + past perfect → would + be (present skill). I didn't take the Berlin job. If I had (imaginary past), I would be speaking German fluently TODAY (would + infinitive - present linguistic ability). 'Would have spoken' (pure 3rd conditional) gives a past result; 'would be speaking' gives the current ability I'd have."
         },
         {
-            "id": "cl_l128_q2",
+            "id": "cl_l132_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 12) she practices daily",
+            "question": "If you could redesign the city from scratch,",
             "options": [
-                "she improved.",
-                "she will improve.",
-                "she would improve.",
-                "she improves."
+                "what would you change first?",
+                "what would you have changed first?",
+                "what do you change first?",
+                "what will you change first?"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "she will improve.",
-            "hint": "This is a 1st conditional challenge. (Log 12 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 12]."
+            "correctAnswer": "what would you have changed first?",
+            "hint": "Hypothetical ability 'could redesign' - second conditional question form.",
+            "explanation": "Second conditional = hypothetical present. 'Could redesign' signals an imaginary ability. The correct question form uses 'would': 'what would you change?' (would + infinitive - the imaginary choice). This is a second conditional question, not a third (no past perfect) or first (not a real future scenario)."
         },
         {
-            "id": "cl_l128_q3",
+            "id": "cl_l132_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 12) we had left earlier",
+            "question": "If the company had maintained a cash reserve,",
             "options": [
-                "we miss the traffic.",
-                "we would have missed the traffic.",
-                "we will miss the traffic.",
-                "we would miss the traffic."
+                "it would still be operating today.",
+                "it would have still been operating.",
+                "it still operates today.",
+                "it will still be operating."
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "we would have missed the traffic.",
-            "hint": "This is a 3rd conditional challenge. (Log 12 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 12]."
+            "correctAnswer": "it would have still been operating.",
+            "hint": "Past perfect + present business status - mixed conditional showing how past finance affects present.",
+            "explanation": "Mixed conditional: If + past perfect (unreal past financial discipline) → would + be (present business status). The company didn't keep a cash reserve. If it had (imaginary), it would still be operating TODAY (would + infinitive - present operational status). 'Would have still been operating' is pure 3rd conditional - past result."
         },
         {
-            "id": "cl_l129_q1",
+            "id": "cl_l132_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 12) you mix red and blue",
+            "question": "If she could choose any career,",
             "options": [
-                "you will get purple.",
-                "you get purple.",
-                "you got purple.",
-                "you would get purple."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "you get purple.",
-            "hint": "This is a Zero conditional challenge. (Log 12 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l129_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) I had more free time",
-            "options": [
-                "I will learn to paint.",
-                "I learn to paint.",
-                "I would learn to paint.",
-                "I would have learned to paint."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "I would learn to paint.",
-            "hint": "This is a 2nd conditional challenge. (Log 12 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l129_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) you heat butter",
-            "options": [
-                "it melted.",
-                "it will melt.",
-                "it melts.",
-                "it would melt."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "it melts.",
-            "hint": "This is a Zero conditional challenge. (Log 12 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 12]."
-        },
-        {
-            "id": "cl_l130_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 12) it rains tomorrow",
-            "options": [
-                "we stay home.",
-                "we would have stayed home.",
-                "we would stay home.",
-                "we will stay home."
+                "she would become a marine biologist.",
+                "she would have become a marine biologist.",
+                "she becomes a marine biologist.",
+                "she will become a marine biologist."
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "we will stay home.",
-            "hint": "This is a 1st conditional challenge. (Log 12 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 12]."
+            "correctAnswer": "she will become a marine biologist.",
+            "hint": "Hypothetical 'could choose' - second conditional for an imaginary free choice.",
+            "explanation": "Second conditional = imaginary present freedom. 'Could choose any career' signals she doesn't have total freedom in reality. If she could (imaginary), she would become a marine biologist (would + infinitive - the imagined choice). 'Would have become' is 3rd conditional (past imaginary) - not appropriate for a present 'what if'."
         },
         {
-            "id": "cl_l130_q2",
+            "id": "cl_l133_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 12) they had asked for help",
+            "question": "If he had grown up speaking two languages,",
             "options": [
-                "we will assist them.",
-                "we would have assisted them.",
-                "we would assist them.",
-                "we assist them."
+                "he would find it much easier to learn a third one now.",
+                "he would have found it easier.",
+                "he finds it easier now.",
+                "he will find it easier."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we would have assisted them.",
-            "hint": "This is a 3rd conditional challenge. (Log 12 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 12]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "he finds it easier now.",
+            "hint": "Past perfect + present learning ability - mixed conditional about bilingual upbringing.",
+            "explanation": "Mixed conditional: If + past perfect (unreal bilingual childhood) → would + find (present ease). He grew up monolingual. If he had grown up bilingual (imaginary past), he would find it much easier to learn a third language NOW (would + infinitive - present cognitive advantage). Past → present ability."
         },
         {
-            "id": "cl_l130_q3",
+            "id": "cl_l133_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 4,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 12) they invite us",
+            "question": "If the organisation had embraced diversity earlier,",
             "options": [
-                "we went to the party.",
-                "we will go to the party.",
-                "we would go to the party.",
-                "we go to the party."
+                "it would be in a stronger position today.",
+                "it would have been in a stronger position.",
+                "it is in a stronger position.",
+                "it will be in a stronger position."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "it would be in a stronger position today.",
+            "hint": "Past perfect + present competitive position - mixed conditional about DEI strategy.",
+            "explanation": "Mixed conditional: If + past perfect (unreal past strategy) → would + be (present standing). The organisation didn't embrace diversity early enough. If it had (imaginary), it would be in a stronger position TODAY (would + infinitive - present competitive strength). Past strategic choice → present competitive position."
+        },
+        {
+            "id": "cl_l133_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If I had started this business ten years ago,",
+            "options": [
+                "I might have already retired by now.",
+                "I might already retire.",
+                "I already retire now.",
+                "I will already have retired."
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "I will already have retired.",
+            "hint": "Past perfect + present life stage - mixed conditional with 'might have' for an imagined outcome.",
+            "explanation": "Mixed conditional: If + past perfect (earlier business start) → might have (present/past outcome). I didn't start ten years ago. If I had (imaginary), I might have already retired BY NOW (might have + past participle - a possible present life stage). 'Might have' acknowledges this isn't certain - business success isn't guaranteed."
+        },
+        {
+            "id": "cl_l134_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If they had resolved the dispute sooner,",
+            "options": [
+                "both companies would still be partners today.",
+                "they would have still been partners.",
+                "they are still partners today.",
+                "they will still be partners."
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "we will go to the party.",
-            "hint": "This is a 1st conditional challenge. (Log 12 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 12]."
+            "correctAnswer": "they would have still been partners.",
+            "hint": "Past perfect + present business relationship - mixed conditional about conflict resolution.",
+            "explanation": "Mixed conditional: If + past perfect (earlier resolution) → would + be (present partnership). The dispute dragged on. If it had been resolved sooner (imaginary), both companies would still be partners TODAY (would + infinitive - present relationship status). Past conflict resolution → present business relationship."
+        },
+        {
+            "id": "cl_l134_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If she could speak at the conference,",
+            "options": [
+                "she might choose to present her latest research.",
+                "she might have presented her research.",
+                "she presents her research.",
+                "she will present her research."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "she might choose to present her latest research.",
+            "hint": "Hypothetical ability - second conditional with 'might' for a possible but uncertain choice.",
+            "explanation": "Second conditional = hypothetical present. 'Could speak' signals an imaginary opportunity. If she could (imaginary), she might choose to present her research (might + infinitive - a possible but not certain choice). 'Might' rather than 'would' shows this is one possible option she might choose, not a certainty."
+        },
+        {
+            "id": "cl_l134_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If the team had prepared a contingency plan,",
+            "options": [
+                "they would be handling this crisis much more calmly now.",
+                "they would have handled it more calmly.",
+                "they handle it more calmly.",
+                "they will handle it more calmly."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "they handle it more calmly.",
+            "hint": "Past perfect + present crisis management - mixed conditional about planning.",
+            "explanation": "Mixed conditional: If + past perfect (unreal past preparation) → would + be (present crisis management). No contingency plan was made. If one had been (imaginary), they would be handling the crisis more calmly NOW (would + infinitive - present behaviour). Past preparation → present composure."
+        },
+        {
+            "id": "cl_l135_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If she had qualified as a lawyer instead,",
+            "options": [
+                "she could be earning twice her current salary.",
+                "she could have earned twice as much.",
+                "she earns twice as much.",
+                "she will earn twice as much."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "she could be earning twice her current salary.",
+            "hint": "Past perfect + present earning potential - mixed conditional with 'could be' for possibility.",
+            "explanation": "Mixed conditional with 'could': If + past perfect (different career path) → could + be (present earning possibility). She chose a different profession. If she had qualified as a lawyer (imaginary), she could be earning twice as much NOW (could + infinitive - a possible present income). 'Could be' is softer than 'would be' - legal salaries vary widely."
+        },
+        {
+            "id": "cl_l135_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If I could live anywhere in the world,",
+            "options": [
+                "I would choose a small coastal town in Italy.",
+                "I would have chosen Italy.",
+                "I choose a small town in Italy.",
+                "I will choose Italy."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "I choose a small town in Italy.",
+            "hint": "Hypothetical freedom - second conditional for an imaginary life choice.",
+            "explanation": "Second conditional = imaginary freedom. 'Could live anywhere' signals an imaginary unconstrained choice. If I could (imaginary), I would choose a small coastal town in Italy (would + infinitive - the imagined ideal). 'Would have chosen' is 3rd conditional (past imaginary) - not appropriate for a present 'what if'."
+        },
+        {
+            "id": "cl_l135_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If he had taken better care of his health in his forties,",
+            "options": [
+                "he would be far more active in his seventies now.",
+                "he would have been more active.",
+                "he is more active now.",
+                "he will be more active."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "he would have been more active.",
+            "hint": "Past health habits + present vitality - mixed conditional about long-term health choices.",
+            "explanation": "Mixed conditional: If + past perfect (better health habits) → would + be (present physical condition). He didn't prioritise his health in his forties. If he had (imaginary), he would be far more active in his seventies NOW (would + infinitive - present physical ability). Past lifestyle → present health."
+        },
+        {
+            "id": "cl_l136_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If the building had been designed with accessibility in mind,",
+            "options": [
+                "wheelchair users would be able to access every floor today.",
+                "they would have been able to access it.",
+                "they can access every floor.",
+                "they will be able to access it."
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "they will be able to access it.",
+            "hint": "Past design decision + present accessibility - mixed conditional about inclusive design.",
+            "explanation": "Mixed conditional: If + past perfect (inclusive design) → would + be able (present accessibility). The building wasn't designed accessibly. If it had been (imaginary), wheelchair users would be able to access every floor TODAY (would + infinitive - present physical accessibility). Inclusive design choices shape who can use buildings."
+        },
+        {
+            "id": "cl_l136_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If she could go back and change one decision,",
+            "options": [
+                "she would choose differently at that crossroads.",
+                "she would have chosen differently.",
+                "she chooses differently.",
+                "she will choose differently."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "she chooses differently.",
+            "hint": "Hypothetical time travel - second conditional for an imaginary revision of the past.",
+            "explanation": "Second conditional = imaginary present capacity. 'Could go back' signals a purely imaginary ability. If she could (imaginary), she would choose differently at that crossroads (would + infinitive - the imagined revision). 'Would have chosen' is 3rd conditional - but here the if-clause is 'could go back' (imaginary present ability), making this 2nd conditional."
+        },
+        {
+            "id": "cl_l136_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If I had pursued a career in music,",
+            "options": [
+                "I might be performing on stage somewhere right now.",
+                "I might have performed on stage.",
+                "I perform on stage now.",
+                "I will be performing on stage."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "I might be performing on stage somewhere right now.",
+            "hint": "Past career path + present activity - mixed conditional with 'might be' for an imagined present.",
+            "explanation": "Mixed conditional: If + past perfect (different career choice) → might + be (present imagined activity). I chose a different career. If I had pursued music (imaginary), I might be performing somewhere right now (might + infinitive - a possible present activity). 'Might' acknowledges not all music careers lead to performing."
+        },
+        {
+            "id": "cl_l137_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If the treaty had been ratified by all signatories,",
+            "options": [
+                "the conflict might never have escalated.",
+                "the conflict would escalate.",
+                "the conflict never escalates.",
+                "the conflict would never escalate."
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "the conflict would never escalate.",
+            "hint": "Past perfect = treaty not fully ratified - third conditional with 'might have' for a geopolitical outcome.",
+            "explanation": "Third conditional = unreal past. The treaty wasn't ratified by all parties (past perfect = full ratification that didn't happen). If it had been (imaginary), the conflict might never have escalated (might never have + past participle - the possibly prevented geopolitical crisis). 'Might' acknowledges that conflict can escalate for many reasons."
+        },
+        {
+            "id": "cl_l137_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If he could restructure the organisation,",
+            "options": [
+                "he would eliminate the middle management layer entirely.",
+                "he would have eliminated it.",
+                "he eliminates it.",
+                "he will eliminate it."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "he would have eliminated it.",
+            "hint": "Hypothetical authority - second conditional for an imaginary leadership scenario.",
+            "explanation": "Second conditional = imaginary present authority. 'Could restructure' signals he doesn't currently have that authority. If he could (imaginary), he would eliminate the middle management layer (would + infinitive - the imagined bold restructuring decision). 'Would have eliminated' is 3rd conditional (past imaginary)."
+        },
+        {
+            "id": "cl_l138_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If the discovery had been made two decades earlier,",
+            "options": [
+                "medical treatment for the condition would be far more advanced today.",
+                "treatment would have been more advanced.",
+                "treatment is more advanced today.",
+                "treatment will be more advanced."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "treatment would have been more advanced.",
+            "hint": "Past perfect + present medical state - mixed conditional about a scientific discovery.",
+            "explanation": "Mixed conditional: If + past perfect (earlier discovery) → would + be (present medical advancement). The discovery came too late. If it had been made earlier (imaginary), treatment would be far more advanced TODAY (would + infinitive - present medical capability). Earlier scientific breakthroughs → better present treatments."
+        },
+        {
+            "id": "cl_l138_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If she could advise her younger self,",
+            "options": [
+                "she would say to worry less and take more risks.",
+                "she would have said that.",
+                "she says that.",
+                "she will say that."
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "she will say that.",
+            "hint": "Hypothetical conversation - second conditional for an imaginary piece of life advice.",
+            "explanation": "Second conditional = imaginary capacity to communicate across time. 'Could advise her younger self' signals an imaginary scenario. If she could (imaginary), she would say to worry less and take more risks (would + infinitive - the imagined wisdom she'd share). 'Would have said' is 3rd conditional - past imaginary."
+        },
+        {
+            "id": "cl_l138_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If the expedition team had brought better equipment,",
+            "options": [
+                "they would still be alive today.",
+                "they would have survived.",
+                "they are alive today.",
+                "they will still be alive."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "they are alive today.",
+            "hint": "Past perfect + present survival - mixed conditional about a tragic expedition outcome.",
+            "explanation": "Mixed conditional: If + past perfect (better equipment) → would + be (present survival). They didn't bring adequate equipment. If they had (imaginary), they would still be alive TODAY (would + infinitive - present survival status). This powerful mixed conditional shows how past preparation decisions affect present reality."
+        },
+        {
+            "id": "cl_l139_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If I could master one skill instantly,",
+            "options": [
+                "I would choose to become fluent in Mandarin.",
+                "I would have chosen Mandarin.",
+                "I choose Mandarin.",
+                "I will choose Mandarin."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "I would choose to become fluent in Mandarin.",
+            "hint": "Hypothetical superpower - second conditional for a fantasy skill acquisition.",
+            "explanation": "Second conditional = imaginary present ability. 'Could master instantly' is purely imaginary - no one can do this. If I could (imaginary), I would choose Mandarin (would + infinitive - the imagined priority). A classic hypothetical question in second conditional form."
+        },
+        {
+            "id": "cl_l139_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If the original design specification had been followed,",
+            "options": [
+                "the software would be far more stable now.",
+                "it would have been more stable.",
+                "it is more stable now.",
+                "it will be more stable."
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "it will be more stable.",
+            "hint": "Past perfect + present software quality - mixed conditional about technical adherence.",
+            "explanation": "Mixed conditional: If + past perfect (adhering to specification) → would + be (present software quality). The specification wasn't followed. If it had been (imaginary), the software would be far more stable NOW (would + infinitive - present technical quality). Past development discipline → present system stability."
+        },
+        {
+            "id": "cl_l140_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If the researcher hadn't questioned the prevailing theory,",
+            "options": [
+                "the breakthrough would never have happened.",
+                "the breakthrough would never happen.",
+                "the breakthrough never happens.",
+                "the breakthrough will never happen."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "the breakthrough would never happen.",
+            "hint": "Negative past perfect = researcher DID question it - third conditional about scientific courage.",
+            "explanation": "Third conditional with NEGATIVE if-clause: The researcher DID question the prevailing theory (negative past perfect = the reverse). If they HADN'T (imaginary - accepted the status quo), the breakthrough would never have happened (would never have + past participle - the missed scientific advance). Intellectual courage drives progress."
+        },
+        {
+            "id": "cl_l140_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If she could redesign her entire career from the beginning,",
+            "options": [
+                "she would focus entirely on social entrepreneurship.",
+                "she would have focused on it.",
+                "she focuses on it.",
+                "she will focus on it."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "she would focus entirely on social entrepreneurship.",
+            "hint": "Hypothetical career restart - second conditional for an imaginary life revision.",
+            "explanation": "Second conditional = imaginary present freedom. 'Could redesign her career from scratch' is purely hypothetical. If she could (imaginary), she would focus on social entrepreneurship (would + infinitive - the imagined career priority). This is a 2nd conditional 'what if', not a 3rd conditional (no past perfect if-clause)."
+        },
+        {
+            "id": "cl_l140_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If the peace talks had succeeded in the 1990s,",
+            "options": [
+                "the region might be much more stable today.",
+                "it might have been more stable.",
+                "it is more stable today.",
+                "it will be more stable."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "it is more stable today.",
+            "hint": "Past perfect + present geopolitical state - mixed conditional about diplomatic history.",
+            "explanation": "Mixed conditional: If + past perfect (successful talks) → might + be (present regional stability). The talks failed. If they had succeeded (imaginary), the region might be much more stable TODAY (might + infinitive - a possible present state). 'Might be' rather than 'would be' acknowledges that stability depends on many factors."
+        },
+        {
+            "id": "cl_l141_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If he had chosen renewable energy investment a decade ago,",
+            "options": [
+                "his portfolio would be worth three times as much now.",
+                "it would have been worth more.",
+                "it is worth more now.",
+                "it will be worth more."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "his portfolio would be worth three times as much now.",
+            "hint": "Past investment decision + present portfolio value - mixed conditional about energy finance.",
+            "explanation": "Mixed conditional: If + past perfect (different investment choice) → would + be worth (present financial value). He didn't invest in renewables. If he had (imaginary), his portfolio would be worth three times as much NOW (would + infinitive - present asset value). Past investment → present wealth."
+        },
+        {
+            "id": "cl_l141_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "If I could travel back in time to any era,",
+            "options": [
+                "I would choose the Renaissance period in Florence.",
+                "I would have chosen the Renaissance.",
+                "I choose the Renaissance.",
+                "I will choose the Renaissance."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "I choose the Renaissance.",
+            "hint": "Hypothetical time travel - second conditional for an imaginary historical choice.",
+            "explanation": "Second conditional = imaginary present ability. Time travel is purely hypothetical. If I could (imaginary), I would choose the Renaissance (would + infinitive - the imagined historical destination). 'Would have chosen' is 3rd conditional (past imaginary) - not appropriate when the if-clause contains 'could' (present imaginary ability)."
         }
     ]
 }

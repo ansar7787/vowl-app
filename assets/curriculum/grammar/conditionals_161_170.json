@@ -4,544 +4,514 @@
     "levels": "161-170",
     "quests": [
         {
-            "id": "cl_l161_q1",
+            "id": "cl_l173_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 16) you heat ice",
+            "question": "Were the geopolitical situation to stabilise,",
             "options": [
-                "it had melted.",
-                "it will melt.",
-                "it melts.",
-                "it would melt."
+                "foreign direct investment might return to pre-crisis levels.",
+                "investment would return.",
+                "investment returned.",
+                "investment will return."
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "it melts.",
-            "hint": "This is a Zero conditional challenge. (Log 16 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 16]."
+            "correctAnswer": "investment returned.",
+            "hint": "Formal 'were to' inversion + 'might' - expert: uncertainty within a hypothetical scenario.",
+            "explanation": "Expert inverted conditional: 'Were the situation to stabilise' = 'If the situation were to stabilise' (formal 2nd conditional). Result: 'investment might return to pre-crisis levels' (might + infinitive). The use of 'might' rather than 'would' signals epistemic uncertainty - even if the situation stabilises, investment recovery is not guaranteed. This nuance distinguishes expert from intermediate use."
         },
         {
-            "id": "cl_l161_q2",
+            "id": "cl_l173_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 16) they trained harder",
+            "question": "Had the regulatory framework been designed with foresight,",
             "options": [
-                "they win.",
-                "they would win.",
-                "they will win.",
-                "they would have won."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "they would win.",
-            "hint": "This is a 2nd conditional challenge. (Log 16 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l161_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) you touch a flame",
-            "options": [
-                "you got burned.",
-                "you will get burned.",
-                "you get burned.",
-                "you would get burned."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "you get burned.",
-            "hint": "This is a Zero conditional challenge. (Log 16 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l162_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) the pilot detects the storm",
-            "options": [
-                "None of the above",
-                "he changes course.",
-                "he would change course.",
-                "he will change course."
+                "we would not be grappling with these compliance challenges today.",
+                "we would not have grappled.",
+                "we do not grapple.",
+                "we will not grapple."
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "he will change course.",
-            "hint": "This is a 1st conditional challenge. (Log 16 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 16]."
+            "correctAnswer": "we will not grapple.",
+            "hint": "Formal 'had' inversion + mixed result - expert: past design fault with present consequence.",
+            "explanation": "Expert mixed conditional with formal inversion: 'Had the framework been designed with foresight' (formal 3rd conditional if-clause) → 'we would NOT be grappling TODAY' (present progressive - ongoing present difficulty). The framework wasn't designed well. If it had been (imaginary), we would not be dealing with these issues NOW. Past design → present compliance burden."
         },
         {
-            "id": "cl_l162_q2",
+            "id": "cl_l173_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 16) she had arrived on time",
+            "question": "Should tensions between the two blocs escalate further,",
             "options": [
-                "she meets him.",
-                "she would have met him.",
-                "she will meet him.",
-                "she would meet him."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "she would have met him.",
-            "hint": "This is a 3rd conditional challenge. (Log 16 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l162_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) we leave now",
-            "options": [
-                "we arrived early.",
-                "we will arrive early.",
-                "we would arrive early.",
-                "we arrive early."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we will arrive early.",
-            "hint": "This is a 1st conditional challenge. (Log 16 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l163_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) I won the lottery",
-            "options": [
-                "I will travel the world.",
-                "I would travel the world.",
-                "I would have traveled the world.",
-                "I travel the world."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "I would travel the world.",
-            "hint": "This is a 2nd conditional challenge. (Log 16 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l163_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) you boil water to 100 degrees",
-            "options": [
-                "it evaporated.",
-                "it will evaporate.",
-                "it evaporates.",
-                "it would evaporate."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "it evaporates.",
-            "hint": "This is a Zero conditional challenge. (Log 16 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l163_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) he were taller",
-            "options": [
-                "he will play basketball.",
-                "he plays basketball.",
-                "he would play basketball.",
-                "he would have played basketball."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "he would play basketball.",
-            "hint": "This is a 2nd conditional challenge. (Log 16 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l164_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) she had studied harder",
-            "options": [
-                "she will pass.",
-                "she would have passed.",
-                "she would pass.",
-                "she passes."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "she would have passed.",
-            "hint": "This is a 3rd conditional challenge. (Log 16 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l164_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) he gets the promotion",
-            "options": [
-                "he celebrated.",
-                "he will celebrate.",
-                "he would celebrate.",
-                "he celebrates."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "he will celebrate.",
-            "hint": "This is a 1st conditional challenge. (Log 16 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l164_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) I had known the answer",
-            "options": [
-                "I tell you.",
-                "I would have told you.",
-                "I will tell you.",
-                "I would tell you."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "I would have told you.",
-            "hint": "This is a 3rd conditional challenge. (Log 16 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l165_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) the scientist discovers the cure",
-            "options": [
-                "not humanity is saved.",
-                "humanity is saved yesterday.",
-                "humanity is saved soon.",
-                "humanity is saved."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "humanity is saved.",
-            "hint": "This is a Zero conditional challenge. (Log 16 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l165_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) I spoke French fluently",
-            "options": [
-                "I will move to Paris.",
-                "I move to Paris.",
-                "I would move to Paris.",
-                "I would have moved to Paris."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "I would move to Paris.",
-            "hint": "This is a 2nd conditional challenge. (Log 16 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l165_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) you drop an object",
-            "options": [
-                "it fell to the ground.",
-                "it will fall to the ground.",
-                "it falls to the ground.",
-                "it would fall to the ground."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "it falls to the ground.",
-            "hint": "This is a Zero conditional challenge. (Log 16 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l166_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) you don't hurry",
-            "options": [
-                "you would miss the train.",
-                "you would have missed.",
-                "you miss the train.",
-                "you will miss the train."
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "you will miss the train.",
-            "hint": "This is a 1st conditional challenge. (Log 16 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l166_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) we had taken the map",
-            "options": [
-                "we won't get lost.",
-                "we wouldn't have gotten lost.",
-                "we wouldn't get lost.",
-                "we don't get lost."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we wouldn't have gotten lost.",
-            "hint": "This is a 3rd conditional challenge. (Log 16 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l166_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) she signs the contract",
-            "options": [
-                "she started next week.",
-                "she will start next week.",
-                "she would start next week.",
-                "she starts next week."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "she will start next week.",
-            "hint": "This is a 1st conditional challenge. (Log 16 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l167_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) the coder fixes the bug",
-            "options": [
-                "the program runs.",
-                "not the program runs.",
-                "the program runs soon.",
-                "the program runs yesterday."
+                "regional security could be jeopardised for a generation.",
+                "security would be jeopardised.",
+                "security would have been jeopardised.",
+                "security is jeopardised."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "the program runs.",
-            "hint": "This is a Zero conditional challenge. (Log 16 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 16]."
+            "correctAnswer": "regional security could be jeopardised for a generation.",
+            "hint": "'Should' inversion + 'could' - expert: formal warning with modulated certainty.",
+            "explanation": "Expert formal inversion: 'Should tensions escalate' = 'If tensions escalate' (formal 1st conditional). Result: 'regional security could be jeopardised' (could + infinitive). 'Could' rather than 'will' modulates the degree of certainty - escalation might jeopardise security but other factors (diplomacy, alliances) could mitigate it. Expert use of 'could' for epistemic modulation."
         },
         {
-            "id": "cl_l167_q2",
+            "id": "cl_l174_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 16) you freeze water",
+            "question": "Were she to reconsider her position on the matter,",
             "options": [
-                "it turned into ice.",
-                "it turns into ice.",
-                "it will turn into ice.",
-                "it would turn into ice."
+                "it might prove possible to reach a consensus after all.",
+                "a consensus would be reached.",
+                "a consensus is reached.",
+                "a consensus will be reached."
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "it turns into ice.",
-            "hint": "This is a Zero conditional challenge. (Log 16 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 16]."
+            "correctAnswer": "a consensus would be reached.",
+            "hint": "'Were to' inversion + 'might prove possible' - expert: qualified optimism within a hypothesis.",
+            "explanation": "Expert formal inversion: 'Were she to reconsider' = 'If she were to reconsider' (formal 2nd conditional). Result: 'it might prove possible to reach a consensus' (might + prove + possible). 'Might prove possible' is a carefully modulated expression - not 'would be possible' (too certain) but 'might prove possible' (qualified hope). Formal diplomatic hedging."
         },
         {
-            "id": "cl_l167_q3",
+            "id": "cl_l174_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 16) they had a car",
+            "question": "Had the diagnostic criteria been applied more rigorously,",
             "options": [
-                "they will drive to work.",
-                "they drive to work.",
-                "they would drive to work.",
-                "they would have driven to work."
+                "a significant proportion of cases would have been caught earlier.",
+                "more cases would be caught earlier.",
+                "more cases are caught earlier.",
+                "more cases will be caught earlier."
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "they would drive to work.",
-            "hint": "This is a 2nd conditional challenge. (Log 16 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 16]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "a significant proportion of cases would have been caught earlier.",
+            "hint": "Formal 'had' inversion - expert: passive perfect in both clauses for formal precision.",
+            "explanation": "Expert formal third conditional inversion: 'Had the criteria been applied more rigorously' (passive past perfect - formal) → 'a significant proportion of cases would have been caught earlier' (would have + passive past participle). Both clauses use passive voice, which is characteristic of formal academic and clinical writing. Clinical audit language."
         },
         {
-            "id": "cl_l168_q1",
+            "id": "cl_l174_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 16) the hero reaches the gate",
+            "question": "Should the proposed constitutional amendment be ratified,",
             "options": [
-                "the would world is protected.",
-                "None of the above",
-                "the will world is protected.",
-                "the world is protected."
+                "it would represent the most significant legal reform in a century.",
+                "it represents the most significant reform.",
+                "it would have represented the reform.",
+                "it will represent the reform."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "it represents the most significant reform.",
+            "hint": "'Should' inversion + 'would represent' - expert: formal political assessment with conditional result.",
+            "explanation": "Expert formal inversion: 'Should the amendment be ratified' (formal 1st conditional - passive) → 'it would represent the most significant reform in a century' (would + infinitive). Note: this uses 'would' (not 'will') because even though 'should' introduces a real possibility, the result is the expert's assessment/opinion about the significance of the change."
+        },
+        {
+            "id": "cl_l175_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Were the assumptions underlying the model to prove incorrect,",
+            "options": [
+                "the entire analytical framework would need to be rebuilt from scratch.",
+                "it would have needed rebuilding.",
+                "it needs rebuilding.",
+                "it will need rebuilding."
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "the world is protected.",
-            "hint": "This is a Zero conditional challenge. (Log 16 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 16]."
+            "correctAnswer": "it will need rebuilding.",
+            "hint": "'Were + subject + to + infinitive' - expert: formal hypothesis about analytical validity.",
+            "explanation": "Expert formal inversion: 'Were the assumptions to prove incorrect' = 'If the assumptions were to prove incorrect' (formal 2nd conditional - hypothetical). Result: 'the entire framework would need to be rebuilt' (would + passive infinitive). The passive 'to be rebuilt' adds formality appropriate to academic and analytical writing. Expert academic conditional."
         },
         {
-            "id": "cl_l168_q2",
+            "id": "cl_l175_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 16) she practices daily",
+            "question": "Had the intervention been better targeted,",
             "options": [
-                "she improved.",
-                "she will improve.",
-                "she would improve.",
-                "she improves."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "she will improve.",
-            "hint": "This is a 1st conditional challenge. (Log 16 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l168_q3",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) we had left earlier",
-            "options": [
-                "we miss the traffic.",
-                "we would have missed the traffic.",
-                "we will miss the traffic.",
-                "we would miss the traffic."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we would have missed the traffic.",
-            "hint": "This is a 3rd conditional challenge. (Log 16 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l169_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) you mix red and blue",
-            "options": [
-                "you will get purple.",
-                "you get purple.",
-                "you got purple.",
-                "you would get purple."
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "you get purple.",
-            "hint": "This is a Zero conditional challenge. (Log 16 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l169_q2",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) I had more free time",
-            "options": [
-                "I will learn to paint.",
-                "I learn to paint.",
-                "I would learn to paint.",
-                "I would have learned to paint."
+                "outcomes for the most vulnerable groups would have been considerably more positive.",
+                "outcomes would be more positive.",
+                "outcomes are more positive.",
+                "outcomes will be more positive."
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "I would learn to paint.",
-            "hint": "This is a 2nd conditional challenge. (Log 16 calibration)",
-            "explanation": "In 2nd conditionals (unreal presents), use Past Simple and 'would' + verb. [Verified in calibration unit 16]."
+            "correctAnswer": "outcomes are more positive.",
+            "hint": "Formal 'had' inversion - expert: policy evaluation with passive if-clause and nuanced result.",
+            "explanation": "Expert formal third conditional: 'Had the intervention been better targeted' (passive past perfect) → 'outcomes would have been considerably more positive' (would have + past participle). 'For the most vulnerable groups' adds policy precision. The passive if-clause ('been targeted') is formal policy evaluation language. This is how policy effectiveness is assessed in academic papers."
         },
         {
-            "id": "cl_l169_q3",
+            "id": "cl_l175_q3",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 16) you heat butter",
+            "question": "Should the court rule in favour of the claimant,",
             "options": [
-                "it melted.",
-                "it will melt.",
-                "it melts.",
-                "it would melt."
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "it melts.",
-            "hint": "This is a Zero conditional challenge. (Log 16 calibration)",
-            "explanation": "In Zero conditionals (facts), use Present Simple in both clauses. [Verified in calibration unit 16]."
-        },
-        {
-            "id": "cl_l170_q1",
-            "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
-            "subtype": "conditionals",
-            "interactionType": "Chain Link",
-            "question": "If (case 16) it rains tomorrow",
-            "options": [
-                "we stay home.",
-                "we would have stayed home.",
-                "we would stay home.",
-                "we will stay home."
+                "it would set a precedent with far-reaching implications for contract law.",
+                "it would have set a precedent.",
+                "it sets a precedent.",
+                "it will set a precedent."
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "we will stay home.",
-            "hint": "This is a 1st conditional challenge. (Log 16 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 16]."
+            "correctAnswer": "it will set a precedent.",
+            "hint": "'Should' inversion + legal consequence - expert: judicial outcome with 'would' for assessment.",
+            "explanation": "Expert formal inversion: 'Should the court rule in favour' = 'If the court rules in favour' (formal 1st conditional). Result: 'it would set a precedent' (would + infinitive). 'Would' rather than 'will' is used here because this is the lawyer's/analyst's assessment of the significance of the potential ruling - a professional opinion, not a certainty."
         },
         {
-            "id": "cl_l170_q2",
+            "id": "cl_l176_q1",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 16) they had asked for help",
+            "question": "Were linguistic relativity to be definitively demonstrated,",
             "options": [
-                "we will assist them.",
-                "we would have assisted them.",
-                "we would assist them.",
-                "we assist them."
+                "our understanding of cognition itself would be fundamentally altered.",
+                "it would have been altered.",
+                "it is altered.",
+                "it will be altered."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "we would have assisted them.",
-            "hint": "This is a 3rd conditional challenge. (Log 16 calibration)",
-            "explanation": "In 3rd conditionals (unreal pasts), use Past Perfect and 'would have' + past participle. [Verified in calibration unit 16]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "it is altered.",
+            "hint": "'Were + subject + to + infinitive' - expert: formal academic hypothesis with profound consequence.",
+            "explanation": "Expert formal inversion: 'Were linguistic relativity to be definitively demonstrated' = 'If it were to be definitively proved' (formal 2nd conditional - passive infinitive adds formality). Result: 'our understanding of cognition would be fundamentally altered' (would + passive - the imagined paradigm shift). Expert academic conditional about a disputed scientific hypothesis."
         },
         {
-            "id": "cl_l170_q3",
+            "id": "cl_l176_q2",
             "instruction": "LINK THE CONSEQUENCE",
-            "difficulty": 5,
             "subtype": "conditionals",
             "interactionType": "Chain Link",
-            "question": "If (case 16) they invite us",
+            "question": "Had the intervention study controlled for confounding variables,",
             "options": [
-                "we went to the party.",
-                "we will go to the party.",
-                "we would go to the party.",
-                "we go to the party."
+                "its conclusions would have carried considerably more scientific weight.",
+                "they would carry more weight.",
+                "they carry more weight.",
+                "they will carry more weight."
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "we will go to the party.",
-            "hint": "This is a 1st conditional challenge. (Log 16 calibration)",
-            "explanation": "In 1st conditionals (real futures), use Present Simple and 'will' + verb. [Verified in calibration unit 16]."
+            "correctAnswer": "they would carry more weight.",
+            "hint": "Formal 'had' inversion - expert: research methodology critique in third conditional.",
+            "explanation": "Expert formal third conditional: 'Had the study controlled for confounding variables' (formal if-clause about methodology) → 'conclusions would have carried considerably more weight' (would have + past participle). This is expert academic writing - critiquing a study's methodology and inferring what stronger design would have yielded. Epistemic language."
+        },
+        {
+            "id": "cl_l176_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Should the antibiotic resistance crisis be left unaddressed,",
+            "options": [
+                "the consequences for global public health would be catastrophic.",
+                "the consequences would have been catastrophic.",
+                "the consequences are catastrophic.",
+                "the consequences will be catastrophic."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "the consequences for global public health would be catastrophic.",
+            "hint": "'Should' passive inversion + 'would be' - expert: formal warning with assessed consequence.",
+            "explanation": "Expert formal inversion: 'Should the crisis be left unaddressed' (passive 'should' inversion) → 'consequences would be catastrophic' (would + infinitive). 'Would be' rather than 'will be' reflects that this is an expert assessment of a hypothetical scenario. The use of 'would' acknowledges the conditional nature of the prediction. Expert public health language."
+        },
+        {
+            "id": "cl_l177_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Were the principle of subsidiarity to be abandoned,",
+            "options": [
+                "decision-making power would be dangerously concentrated at the centre.",
+                "it would have been concentrated.",
+                "it is concentrated.",
+                "it will be concentrated."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "it would have been concentrated.",
+            "hint": "'Were to' inversion - expert: formal political theory conditional about governance principles.",
+            "explanation": "Expert formal inversion: 'Were the principle of subsidiarity to be abandoned' = 'If this political principle were to be abandoned' (formal 2nd conditional). Result: 'power would be dangerously concentrated' (would + passive - the imagined governance consequence). Expert political theory and EU governance language. 'Were to be abandoned' - passive infinitive in the if-clause."
+        },
+        {
+            "id": "cl_l177_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Had the early symptoms been recognised and treated promptly,",
+            "options": [
+                "the patient might well have achieved a full recovery.",
+                "they would have recovered.",
+                "they recover.",
+                "they will recover."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "the patient might well have achieved a full recovery.",
+            "hint": "Formal 'had' inversion + 'might well have' - expert: clinical regret with calibrated certainty.",
+            "explanation": "Expert formal third conditional: 'Had the symptoms been recognised and treated promptly' (passive past perfect - clinical language) → 'might well have achieved a full recovery' (might well have + past participle). 'Might well have' is more confident than 'might have' but less certain than 'would have' - appropriate clinical language when recovery was likely but not guaranteed."
+        },
+        {
+            "id": "cl_l177_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Should the preliminary findings be confirmed by the larger study,",
+            "options": [
+                "this could represent a watershed moment in the treatment of the condition.",
+                "it would represent a watershed.",
+                "it would have represented a watershed.",
+                "it represents a watershed."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "it would have represented a watershed.",
+            "hint": "'Should' inversion + 'could represent' - expert: epistemic caution in scientific assessment.",
+            "explanation": "Expert formal inversion: 'Should the findings be confirmed' (formal 1st conditional - passive) → 'this could represent a watershed moment' (could + infinitive). 'Could represent' is deliberately hedged - expert scientists use 'could' rather than 'would' to signal they are not overstating their conclusion. Scientific epistemic caution in formal conditional language."
+        },
+        {
+            "id": "cl_l178_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Were the current economic model to continue unchallenged,",
+            "options": [
+                "inequality would almost certainly deepen to socially destabilising levels.",
+                "inequality would have deepened.",
+                "inequality deepens.",
+                "inequality will deepen."
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "inequality will deepen.",
+            "hint": "'Were to' inversion + 'would almost certainly' - expert: probabilistic assessment in a hypothesis.",
+            "explanation": "Expert formal inversion: 'Were the model to continue unchallenged' (formal 2nd conditional) → 'inequality would almost certainly deepen' (would + adverb 'almost certainly'). 'Would almost certainly' is stronger than 'might' but softer than pure 'would' - it signals high probability within the hypothetical. Expert economic analysis with probabilistic hedging."
+        },
+        {
+            "id": "cl_l178_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Had the original settlement been more equitable,",
+            "options": [
+                "subsequent social tensions might never have reached their current intensity.",
+                "tensions would never have reached it.",
+                "tensions never reach it.",
+                "tensions will never reach it."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "tensions never reach it.",
+            "hint": "Formal 'had' inversion + 'might never have' - expert: historical counterfactual with caution.",
+            "explanation": "Expert formal mixed conditional: 'Had the settlement been more equitable' (formal 3rd conditional if-clause) → 'social tensions might never have reached their current intensity' (might never have + past participle - present resonance). 'Might never have' rather than 'would never have' acknowledges that social tensions have multiple causes - the settlement is one important factor."
+        },
+        {
+            "id": "cl_l178_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Should the data breach be disclosed to the regulator within seventy-two hours,",
+            "options": [
+                "the organisation may avoid the most severe penalties.",
+                "it would avoid penalties.",
+                "it would have avoided penalties.",
+                "it avoids penalties."
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "it avoids penalties.",
+            "hint": "'Should' inversion + 'may avoid' - expert: legal compliance language with realistic modal.",
+            "explanation": "Expert formal inversion: 'Should the breach be disclosed within 72 hours' (formal 1st conditional - GDPR requirement) → 'the organisation may avoid the most severe penalties' (may + infinitive). 'May avoid' rather than 'will avoid' is legally precise - timely disclosure is necessary but not sufficient to guarantee avoiding all penalties. Expert GDPR compliance language."
+        },
+        {
+            "id": "cl_l179_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Were a comprehensive peace settlement to be negotiated,",
+            "options": [
+                "it would need to address deep structural inequalities to be sustainable.",
+                "it would have needed to address them.",
+                "it needs to address them.",
+                "it will need to address them."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "it would need to address deep structural inequalities to be sustainable.",
+            "hint": "'Were to' inversion with passive - expert: formal peace process conditional with nuanced result.",
+            "explanation": "Expert formal inversion: 'Were a settlement to be negotiated' (formal 2nd conditional - passive infinitive) → 'it would need to address deep structural inequalities to be sustainable' (would + infinitive with added condition 'to be sustainable'). The result clause itself contains a conditional quality - even a settlement needs certain features to work. Expert diplomatic language."
+        },
+        {
+            "id": "cl_l179_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Had the neural network been trained on a more diverse dataset,",
+            "options": [
+                "its outputs would have been considerably less biased.",
+                "they would be less biased.",
+                "they are less biased.",
+                "they will be less biased."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "they would be less biased.",
+            "hint": "Formal 'had' inversion - expert: AI/ML critique in formal third conditional.",
+            "explanation": "Expert formal third conditional: 'Had the network been trained on more diverse data' (passive past perfect - ML language) → 'its outputs would have been considerably less biased' (would have + past participle). The passive if-clause is standard ML/AI research language when analysing model behaviour. Expert AI ethics and machine learning evaluation."
+        },
+        {
+            "id": "cl_l179_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Should the proposed tariffs be enacted,",
+            "options": [
+                "retaliatory measures from trading partners will almost inevitably follow.",
+                "they would follow.",
+                "they would have followed.",
+                "they follow."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "retaliatory measures from trading partners will almost inevitably follow.",
+            "hint": "'Should' inversion + 'will almost inevitably' - expert: strong prediction within formal conditional.",
+            "explanation": "Expert formal inversion: 'Should the tariffs be enacted' (formal 1st conditional - passive) → 'retaliatory measures will almost inevitably follow' (will + adverb). 'Almost inevitably' within a 'should' conditional is strong but not absolute - expert trade economists signal high confidence while acknowledging diplomatic variables. Expert international trade policy language."
+        },
+        {
+            "id": "cl_l180_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Were the hypothesis to be supported by the longitudinal data,",
+            "options": [
+                "it would challenge several established paradigms in developmental psychology.",
+                "it would have challenged them.",
+                "it challenges them.",
+                "it will challenge them."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "it would have challenged them.",
+            "hint": "'Were to' inversion - expert: academic hypothesis about paradigm-challenging research.",
+            "explanation": "Expert formal inversion: 'Were the hypothesis to be supported by longitudinal data' (formal 2nd conditional - passive) → 'it would challenge several established paradigms' (would + infinitive). The 'would challenge' result acknowledges this is the researcher's assessment of what the data would mean - appropriately hedged scientific language. Expert academic psychology conditional."
+        },
+        {
+            "id": "cl_l180_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Had the architect consulted with future users of the building,",
+            "options": [
+                "the design flaws that became apparent after occupation might have been anticipated.",
+                "they would have been anticipated.",
+                "they are anticipated.",
+                "they will be anticipated."
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "they will be anticipated.",
+            "hint": "Formal 'had' inversion + 'might have been anticipated' - expert: passive and 'might' for nuance.",
+            "explanation": "Expert formal third conditional: 'Had the architect consulted with future users' → 'design flaws might have been anticipated' (might have + passive past participle). 'Might have been anticipated' rather than 'would have been anticipated' acknowledges that consultation is valuable but doesn't guarantee identifying all design problems. Expert architecture and human-centred design language."
+        },
+        {
+            "id": "cl_l180_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Should the audit committee find evidence of financial irregularities,",
+            "options": [
+                "it will be obligated to report them to the relevant authorities without delay.",
+                "it would be obligated.",
+                "it would have been obligated.",
+                "it is obligated."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "it would have been obligated.",
+            "hint": "'Should' inversion + 'will be obligated' - expert: formal legal obligation within conditional.",
+            "explanation": "Expert formal inversion: 'Should the audit committee find irregularities' (formal 1st conditional) → 'it will be obligated to report' (will + passive infinitive). 'Will be obligated' rather than 'would be obligated' because this is a real, legal, first conditional situation - if they find evidence, they WILL have a legal duty. 'Should' inversion makes it formal, 'will' confirms the real legal obligation."
+        },
+        {
+            "id": "cl_l181_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Were the ethical constraints on the research to be removed,",
+            "options": [
+                "experiments could be designed that might yield transformative but deeply troubling results.",
+                "experiments would yield.",
+                "experiments yield.",
+                "experiments will yield."
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "experiments will yield.",
+            "hint": "'Were to' inversion - expert: research ethics conditional with double-modulated result.",
+            "explanation": "Expert formal inversion: 'Were the ethical constraints to be removed' (formal 2nd conditional - passive 'were to') → 'experiments could be designed that might yield...results' (could + passive infinitive + relative clause with 'might'). Two modals: 'could be designed' (capability) and 'might yield' (uncertain outcome). Expert research ethics language with careful epistemic modulation."
+        },
+        {
+            "id": "cl_l181_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Had the colonial administration maintained better records,",
+            "options": [
+                "historians would have a far more complete picture of the period today.",
+                "they would have had a better picture.",
+                "they have a better picture.",
+                "they will have a better picture."
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "they have a better picture.",
+            "hint": "Formal 'had' inversion + mixed result - expert: historical counterfactual with present scholarship impact.",
+            "explanation": "Expert formal MIXED conditional: 'Had the administration maintained better records' (formal 3rd conditional if-clause) → 'historians would have a far more complete picture TODAY' (present scholarly access - 2nd conditional result with 'today'). Past archival practice → present historical knowledge. The 'today' signals this is a mixed conditional with ongoing present consequences."
+        },
+        {
+            "id": "cl_l181_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Should the international community fail to agree on binding emissions targets,",
+            "options": [
+                "the window for limiting warming to 1.5°C will have effectively closed.",
+                "the window would close.",
+                "the window would have closed.",
+                "the window closes."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "the window would close.",
+            "hint": "'Should' inversion + future perfect - expert: climate deadline with future perfect consequence.",
+            "explanation": "Expert formal inversion: 'Should the community fail to agree' (formal 1st conditional) → 'the window will have effectively closed' (FUTURE PERFECT - will have + past participle). The future perfect 'will have closed' is precise - it means by the time the consequence is felt, the window will already have shut. This temporal precision characterises expert climate policy language."
+        },
+        {
+            "id": "cl_l182_q1",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Were the proposed algorithm to be deployed at scale,",
+            "options": [
+                "it would likely amplify existing biases rather than eliminate them.",
+                "it would have amplified biases.",
+                "it amplifies biases.",
+                "it will amplify biases."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "it would likely amplify existing biases rather than eliminate them.",
+            "hint": "'Were to' inversion + 'would likely' - expert: probabilistic modal in AI ethics conditional.",
+            "explanation": "Expert formal inversion: 'Were the algorithm to be deployed at scale' (formal 2nd conditional) → 'it would likely amplify existing biases' (would + 'likely' adverb). 'Would likely' is more nuanced than plain 'would' - it signals high probability while acknowledging the outcome is not certain. Expert AI ethics language with probabilistic hedging."
+        },
+        {
+            "id": "cl_l182_q2",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Had the public health infrastructure been properly funded over the preceding decades,",
+            "options": [
+                "the pandemic response capacity would have been immeasurably stronger.",
+                "it would be stronger.",
+                "it is stronger.",
+                "it will be stronger."
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "it would be stronger.",
+            "hint": "Formal 'had' inversion - expert: pandemic preparedness counterfactual with precise language.",
+            "explanation": "Expert formal third conditional: 'Had the public health infrastructure been properly funded' (passive past perfect - formal) → 'response capacity would have been immeasurably stronger' (would have + past participle + adverb 'immeasurably'). 'Immeasurably' is a carefully chosen adverb - it suggests the difference would be vast and hard to quantify. Expert public health policy evaluation."
+        },
+        {
+            "id": "cl_l182_q3",
+            "instruction": "LINK THE CONSEQUENCE",
+            "subtype": "conditionals",
+            "interactionType": "Chain Link",
+            "question": "Should the evidence of misconduct prove sufficient,",
+            "options": [
+                "disciplinary proceedings will be initiated under the relevant professional code.",
+                "they would be initiated.",
+                "they would have been initiated.",
+                "they are initiated."
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "disciplinary proceedings will be initiated under the relevant professional code.",
+            "hint": "'Should' inversion + passive future - expert: formal professional discipline language.",
+            "explanation": "Expert formal inversion: 'Should the evidence prove sufficient' (formal 1st conditional) → 'disciplinary proceedings will be initiated under the relevant professional code' (will + passive - formal procedural language). The full formal phrase 'under the relevant professional code' adds legal precision. Expert professional accountability language."
         }
     ]
 }
