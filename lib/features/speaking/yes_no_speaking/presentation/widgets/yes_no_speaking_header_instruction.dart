@@ -4,10 +4,13 @@ class YesNoSpeakingHeaderInstruction extends StatelessWidget {
   final Color primaryColor;
   final bool isSnapped;
 
+  final String? instruction;
+
   const YesNoSpeakingHeaderInstruction({
     super.key,
     required this.primaryColor,
     required this.isSnapped,
+    this.instruction,
   });
 
   @override
@@ -42,7 +45,7 @@ class YesNoSpeakingHeaderInstruction extends StatelessWidget {
         Text(
           isSnapped
               ? "Alignment locked! Hold the recording lens and read the target sentence aloud!"
-              : "Compare the spoken audio prompt with the written card below and slide to YES or NO!",
+              : instruction ?? "Compare the spoken audio prompt with the written card below and slide to YES or NO!",
           textAlign: TextAlign.center,
           style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 14.sp,
