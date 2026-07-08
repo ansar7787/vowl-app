@@ -263,13 +263,13 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen> with Sing
                                             fit: BoxFit.scaleDown,
                                             child: DailyExpressionHeader(
                                               primaryColor: theme.primaryColor,
-                                              instruction: quest.instruction ?? "Speak the expression",
+                                              instruction: quest.instruction,
                                             ),
                                           ),
                                         )
                                       : DailyExpressionHeader(
                                           primaryColor: theme.primaryColor,
-                                          instruction: quest.instruction ?? "Speak the expression",
+                                          instruction: quest.instruction,
                                         ),
                                     SizedBox(height: gapInstruction),
                                     
