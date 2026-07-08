@@ -6,572 +6,542 @@
         {
             "id": "ai_l51_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He is ___ honest merchant in sector 3.",
-            "sentence": "He is ___ honest merchant in sector 3.",
+            "question": "She booked ___ Airbnb near the city center.",
+            "sentence": "She booked ___ Airbnb near the city center.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Silent 'h' in honest starts with a vowel sound. (Sector 3 calibration)",
-            "explanation": "'an' is correct for vowel-sound words. [Verified in sector 3]."
+            "hint": "'Airbnb' begins with the vowel sound 'air'.",
+            "explanation": "Use 'an' before words starting with a vowel sound. 'Airbnb' is pronounced 'AIR-bee-en-bee', so it begins with the vowel sound 'air'. Use 'an Airbnb'."
         },
         {
             "id": "ai_l51_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "I need ___ honest truth in sector 3.",
-            "sentence": "I need ___ honest truth in sector 3.",
+            "question": "They sailed across ___ Mediterranean Sea.",
+            "sentence": "They sailed across ___ Mediterranean Sea.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific absolute truth requested. (Sector 3 calibration)",
-            "explanation": "Points to specific truth. [Verified in sector 3]."
+            "hint": "Named seas always take 'the'.",
+            "explanation": "All named seas use 'the': the Mediterranean Sea, the Red Sea, the Black Sea, the Caribbean Sea. The same rule applies to oceans (the Pacific) and named rivers (the Thames)."
         },
         {
             "id": "ai_l51_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ honor is all that matters in sector 3.",
-            "sentence": "___ honor is all that matters in sector 3.",
+            "question": "She dreams of visiting ___ Japan someday.",
+            "sentence": "She dreams of visiting ___ Japan someday.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General abstract noun. (Sector 3 calibration)",
-            "explanation": "Abstract nouns have no article. [Verified in sector 3]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "Standard country names take no article.",
+            "explanation": "Most country names take no article: Japan, Brazil, Kenya, Australia, Canada. Exceptions are countries whose names include a common noun (the United States, the United Kingdom, the Netherlands)."
         },
         {
             "id": "ai_l52_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It takes ___ hour to recharge in sector 3.",
-            "sentence": "It takes ___ hour to recharge in sector 3.",
+            "question": "They chartered ___ private boat for the island tour.",
+            "sentence": "They chartered ___ private boat for the island tour.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "Silent 'h' starts with a vowel sound. (Sector 3 calibration)",
-            "explanation": "Vowel sound hour requires 'an'. [Verified in sector 3]."
+            "correctAnswer": "a",
+            "hint": "'Private' begins with the consonant sound 'p'.",
+            "explanation": "Use 'a' before consonant sounds. 'Private' starts with 'p', so we write 'a private boat'."
         },
         {
             "id": "ai_l52_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ only way out in sector 3.",
-            "sentence": "This is ___ only way out in sector 3.",
+            "question": "He visited ___ Vatican during his trip to Rome.",
+            "sentence": "He visited ___ Vatican during his trip to Rome.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Use 'the' with unique modifiers like 'only'. (Sector 3 calibration)",
-            "explanation": "'the' is used with exclusive modifiers. [Verified in sector 3]."
+            "hint": "The Vatican is a unique, named institution - it always takes 'the'.",
+            "explanation": "Unique named institutions, states, and landmark complexes use 'the': the Vatican, the Kremlin, the Pentagon, the White House. They are one-of-a-kind places."
         },
         {
             "id": "ai_l52_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They value ___ honesty above gold in sector 3.",
-            "sentence": "They value ___ honesty above gold in sector 3.",
+            "question": "She has traveled to ___ Southeast Asia twice.",
+            "sentence": "She has traveled to ___ Southeast Asia twice.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General abstract noun. (Sector 3 calibration)",
-            "explanation": "Zero article for general honesty. [Verified in sector 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "Broad geographic regions used as names generally take no article.",
+            "explanation": "Wide geographic regions used as proper names take no article: Southeast Asia, Central America, East Africa, Western Europe. These regions are treated like continents."
         },
         {
             "id": "ai_l53_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ unique design in sector 3.",
-            "sentence": "This is ___ unique design in sector 3.",
+            "question": "He took ___ overnight train from Paris to Vienna.",
+            "sentence": "He took ___ overnight train from Paris to Vienna.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "a",
-            "hint": "Initial 'u' sounds like a consonant 'y' (yoo-nique). (Sector 3 calibration)",
-            "explanation": "Consonant sound 'y' requires 'a'. [Verified in sector 3]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "an",
+            "hint": "'Overnight' begins with the vowel sound 'o'.",
+            "explanation": "Use 'an' before vowel sounds. 'Overnight' starts with the vowel 'o', so we write 'an overnight train'."
         },
         {
             "id": "ai_l53_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ universe is expanding in sector 3.",
-            "sentence": "___ universe is expanding in sector 3.",
+            "question": "He arrived at ___ Eiffel Tower just before closing time.",
+            "sentence": "He arrived at ___ Eiffel Tower just before closing time.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Unique entity 'universe'. (Sector 3 calibration)",
-            "explanation": "'the' matches unique things. [Verified in sector 3]."
+            "hint": "Famous, unique named landmarks always take 'the'.",
+            "explanation": "Unique named structures and monuments take 'the': the Eiffel Tower, the Great Wall, the Colosseum, the Statue of Liberty. They are famous, one-of-a-kind places."
         },
         {
             "id": "ai_l53_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ unity brings strength in sector 3.",
-            "sentence": "___ unity brings strength in sector 3.",
+            "question": "She plans to visit ___ Italy in the spring.",
+            "sentence": "She plans to visit ___ Italy in the spring.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General abstract noun. (Sector 3 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 3]."
+            "correctAnswer": "(no article)",
+            "hint": "Standard country names take no article.",
+            "explanation": "Country names take no article: Italy, Spain, Portugal, Greece, Germany. Always check if the country name includes a common noun - if not, use no article."
         },
         {
             "id": "ai_l54_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They formed ___ unified front in sector 3.",
-            "sentence": "They formed ___ unified front in sector 3.",
+            "question": "They rented ___ small cottage in the countryside.",
+            "sentence": "They rented ___ small cottage in the countryside.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Initial 'u' sounds like 'y' (yoo-nified). (Sector 3 calibration)",
-            "explanation": "Consonant sound yoo- requires 'a'. [Verified in sector 3]."
+            "hint": "'Small' begins with the consonant sound 's'.",
+            "explanation": "Use 'a' before consonant sounds. 'Small' starts with 's', so we write 'a small cottage'."
         },
         {
             "id": "ai_l54_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ unity of the fleet was lost in sector 3.",
-            "sentence": "___ unity of the fleet was lost in sector 3.",
+            "question": "___ hotel lobby was crowded with arriving guests.",
+            "sentence": "___ hotel lobby was crowded with arriving guests.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific abstract noun with a modifier. (Sector 3 calibration)",
-            "explanation": "The unity of [something]. [Verified in sector 3]."
+            "hint": "The hotel's lobby is the specific, identifiable entrance area.",
+            "explanation": "Use 'the' for a specific, known place within a known building. A hotel has one lobby, so 'the hotel lobby' is naturally definite."
         },
         {
             "id": "ai_l54_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They learn ___ utility operations in sector 3.",
-            "sentence": "They learn ___ utility operations in sector 3.",
+            "question": "___ tourism is an important source of income for many nations.",
+            "sentence": "___ tourism is an important source of income for many nations.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Plural nouns in general. (Sector 3 calibration)",
-            "explanation": "General plurals take zero article. [Verified in sector 3]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "'Tourism' is an uncountable concept used in a general economic statement.",
+            "explanation": "Uncountable nouns for industries and sectors (tourism, agriculture, manufacturing, trade) take no article in general statements about their role or importance."
         },
         {
             "id": "ai_l55_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He has ___ honorable discharge in sector 3.",
-            "sentence": "He has ___ honorable discharge in sector 3.",
+            "question": "She had ___ incredible view from her room.",
+            "sentence": "She had ___ incredible view from her room.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Silent 'h' starts with vowel sound. (Sector 3 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 3]."
+            "hint": "'Incredible' begins with the vowel sound 'in'.",
+            "explanation": "Use 'an' before vowel sounds. 'Incredible' starts with the vowel 'i', so we write 'an incredible view'."
         },
         {
             "id": "ai_l55_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ heir apparent is preparing in sector 3.",
-            "sentence": "___ heir apparent is preparing in sector 3.",
+            "question": "She photographed ___ view every morning of the trip.",
+            "sentence": "She photographed ___ view every morning of the trip.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific unique heir. (Sector 3 calibration)",
-            "explanation": "'the' points to the specific person. [Verified in sector 3]."
+            "hint": "The specific, unique view from her room - already known.",
+            "explanation": "Use 'the' when both parties know which specific view is meant. Her room has one view, so 'the view' is definite and specific."
         },
         {
             "id": "ai_l55_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ hour meters are broken in sector 3.",
-            "sentence": "___ hour meters are broken in sector 3.",
+            "question": "___ mountains look especially beautiful at sunrise.",
+            "sentence": "___ mountains look especially beautiful at sunrise.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Plural nouns in general. (Sector 3 calibration)",
-            "explanation": "General plurals take zero article. [Verified in sector 3]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "Plural nouns in a general observation take no article.",
+            "explanation": "Plural nouns in general statements or observations take no article. 'Mountains look beautiful' refers to mountains in general, not specific peaks."
         },
         {
             "id": "ai_l56_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ universal protocol in sector 3.",
-            "sentence": "This is ___ universal protocol in sector 3.",
+            "question": "He bought ___ round-trip ticket at the counter.",
+            "sentence": "He bought ___ round-trip ticket at the counter.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Initial 'u' sounds like consonant 'y'. (Sector 3 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 3]."
+            "hint": "'Round-trip' begins with the consonant sound 'r'.",
+            "explanation": "Use 'a' before consonant sounds. 'Round-trip' starts with 'r', so we write 'a round-trip ticket'."
         },
         {
             "id": "ai_l56_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ honorable choice in sector 3.",
-            "sentence": "It was ___ honorable choice in sector 3.",
+            "question": "His flight landed at ___ wrong terminal.",
+            "sentence": "His flight landed at ___ wrong terminal.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "We are pointing to a specific choice made. (Sector 3 calibration)",
-            "explanation": "Points to the specific historical choice. [Verified in sector 3]."
+            "hint": "The specific, identifiable terminal - the wrong one he ended up at.",
+            "explanation": "Use 'the' when the noun refers to a specific, identifiable place. 'The wrong terminal' identifies the particular terminal where his plane landed by mistake."
         },
         {
             "id": "ai_l56_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We seek ___ harmony in space in sector 3.",
-            "sentence": "We seek ___ harmony in space in sector 3.",
+            "question": "___ air travel has become far more affordable in recent years.",
+            "sentence": "___ air travel has become far more affordable in recent years.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General abstract noun. (Sector 3 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Air travel' is an uncountable concept used in a general statement.",
+            "explanation": "Compound noun phrases for types of transport or activity (air travel, road transport, sea freight) take no article in general statements."
         },
         {
             "id": "ai_l57_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She has ___ hourly schedule in sector 3.",
-            "sentence": "She has ___ hourly schedule in sector 3.",
+            "question": "The airline issued ___ urgent boarding call.",
+            "sentence": "The airline issued ___ urgent boarding call.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "Silent 'h' in hourly. (Sector 3 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 3]."
+            "hint": "'Urgent' begins with the vowel sound 'ur'.",
+            "explanation": "Use 'an' before vowel sounds. 'Urgent' starts with the vowel 'u' (sound 'ur'), so we write 'an urgent boarding call'."
         },
         {
             "id": "ai_l57_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ hour has finally arrived in sector 3.",
-            "sentence": "___ hour has finally arrived in sector 3.",
+            "question": "She realized she had left ___ passport at the hotel.",
+            "sentence": "She realized she had left ___ passport at the hotel.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Specific awaited hour. (Sector 3 calibration)",
-            "explanation": "'the' matches specific event times. [Verified in sector 3]."
+            "hint": "Her own passport - she only has one, so it is uniquely hers.",
+            "explanation": "Use 'the' when referring to something the listener understands is unique to a specific person. Each person has one passport, so 'the passport' is naturally definite."
         },
         {
             "id": "ai_l57_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ health is essential for cadets in sector 3.",
-            "sentence": "___ health is essential for cadets in sector 3.",
+            "question": "___ customs can take a long time at busy international airports.",
+            "sentence": "___ customs can take a long time at busy international airports.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General state noun. (Sector 3 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 3]."
+            "correctAnswer": "(no article)",
+            "hint": "'Customs' refers to the general process or service - used institutionally.",
+            "explanation": "When referring to a general process or institutional service (customs, immigration, security), no article is used: 'going through customs', 'clearing customs'."
         },
         {
             "id": "ai_l58_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They entered ___ futuristic utopia in sector 3.",
-            "sentence": "They entered ___ futuristic utopia in sector 3.",
+            "question": "She stopped at ___ famous café in Vienna.",
+            "sentence": "She stopped at ___ famous café in Vienna.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "'utopia' starts with 'yoo' sound. (Sector 3 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 3]."
+            "hint": "'Famous' begins with the consonant sound 'f'.",
+            "explanation": "Use 'a' before consonant sounds. 'Famous' starts with 'f', so we write 'a famous café'."
         },
         {
             "id": "ai_l58_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We crossed ___ unique nebula in sector 3.",
-            "sentence": "We crossed ___ unique nebula in sector 3.",
+            "question": "She ordered ___ coffee she had been recommended.",
+            "sentence": "She ordered ___ coffee she had been recommended.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific unique nebula in discussion. (Sector 3 calibration)",
-            "explanation": "Specifies a particular nebula. [Verified in sector 3]."
+            "hint": "The specific coffee that was recommended to her - identified by the clause.",
+            "explanation": "A defining clause ('she had been recommended') makes the noun specific. 'The coffee she had been recommended' refers to the one particular drink suggested to her."
         },
         {
             "id": "ai_l58_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They study ___ human behavior in sector 3.",
-            "sentence": "They study ___ human behavior in sector 3.",
+            "question": "___ coffee culture in Vienna is world-famous.",
+            "sentence": "___ coffee culture in Vienna is world-famous.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General discipline/field. (Sector 3 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 3]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "'Coffee culture' here refers to a general social phenomenon, not a specific cup.",
+            "explanation": "When an uncountable noun like 'coffee' refers to the cultural practice or concept in general (coffee culture, tea ceremony, wine tradition), no article is needed."
         },
         {
             "id": "ai_l59_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He was ___ heir to the throne in sector 3.",
-            "sentence": "He was ___ heir to the throne in sector 3.",
+            "question": "It turned out to be ___ amazing adventure.",
+            "sentence": "It turned out to be ___ amazing adventure.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Silent 'h' in heir. (Sector 3 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 3]."
+            "hint": "'Amazing' begins with the vowel sound 'uh'.",
+            "explanation": "Use 'an' before vowel sounds. 'Amazing' starts with the vowel 'a', so we write 'an amazing adventure'."
         },
         {
             "id": "ai_l59_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ utility deck is offline in sector 3.",
-            "sentence": "___ utility deck is offline in sector 3.",
+            "question": "That was ___ best trip they had ever taken.",
+            "sentence": "That was ___ best trip they had ever taken.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific section on the ship. (Sector 3 calibration)",
-            "explanation": "'the' matches a specific deck. [Verified in sector 3]."
+            "hint": "'Best' is a superlative - superlatives always take 'the'.",
+            "explanation": "Superlative adjectives (the best, the worst, the most exciting, the most beautiful) always use 'the' because they identify something as the unique top or bottom of its category."
         },
         {
             "id": "ai_l59_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ uranium is radioactive in sector 3.",
-            "sentence": "___ uranium is radioactive in sector 3.",
+            "question": "___ travel broadens your understanding of the world.",
+            "sentence": "___ travel broadens your understanding of the world.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Mass chemical element. (Sector 3 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 3]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Travel' as an uncountable concept in a philosophical statement takes no article.",
+            "explanation": "When 'travel' refers to the activity or experience in a general, philosophical sense, no article is needed: 'Travel is enriching', 'Travel opens your mind'."
         },
         {
             "id": "ai_l60_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ useless gadget in sector 3.",
-            "sentence": "This is ___ useless gadget in sector 3.",
+            "question": "He preferred ___ window seat on the long flight.",
+            "sentence": "He preferred ___ window seat on the long flight.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "'useless' starts with consonant 'y' sound. (Sector 3 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 3]."
+            "hint": "'Window' begins with the consonant sound 'w'.",
+            "explanation": "Use 'a' before consonant sounds. 'Window' starts with 'w', so we write 'a window seat'."
         },
         {
             "id": "ai_l60_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They explored ___ outer reaches in sector 3.",
-            "sentence": "They explored ___ outer reaches in sector 3.",
+            "question": "The attendant led him to ___ front of the plane.",
+            "sentence": "The attendant led him to ___ front of the plane.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific spatial zone. (Sector 3 calibration)",
-            "explanation": "Specifies the particular region. [Verified in sector 3]."
+            "hint": "'The front' refers to a specific, unique part of a known thing.",
+            "explanation": "Use 'the' for unique parts of a known whole: the front, the back, the top, the bottom, the middle. 'The front of the plane' is one specific area."
         },
         {
             "id": "ai_l60_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ universal laws are constant in sector 3.",
-            "sentence": "___ universal laws are constant in sector 3.",
+            "question": "___ jet lag is a common problem for long-haul travelers.",
+            "sentence": "___ jet lag is a common problem for long-haul travelers.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General plural concepts. (Sector 3 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Jet lag' is an uncountable condition used in a general statement.",
+            "explanation": "Conditions and phenomena (jet lag, homesickness, culture shock, seasickness) take no article when used in general statements: 'Jet lag is exhausting'."
         }
     ]
 }

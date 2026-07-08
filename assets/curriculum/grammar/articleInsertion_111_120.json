@@ -6,572 +6,542 @@
         {
             "id": "ai_l111_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She ordered ___ elegant dinner in sector 9.",
-            "sentence": "She ordered ___ elegant dinner in sector 9.",
+            "question": "She enrolled in ___ undergraduate degree program.",
+            "sentence": "She enrolled in ___ undergraduate degree program.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'e' in elegant. (Sector 9 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 9]."
+            "hint": "'Undergraduate' begins with the vowel sound 'un'.",
+            "explanation": "Use 'an' before vowel sounds. 'Undergraduate' starts with the vowel 'u', so we write 'an undergraduate degree program'."
         },
         {
             "id": "ai_l111_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "I really enjoyed ___ lunch they prepared in sector 9.",
-            "sentence": "I really enjoyed ___ lunch they prepared in sector 9.",
+            "question": "She chose ___ program that focused on environmental science.",
+            "sentence": "She chose ___ program that focused on environmental science.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific meal that was prepared. (Sector 9 calibration)",
-            "explanation": "Points to a particular meal. [Verified in sector 9]."
+            "hint": "The relative clause 'that focused on environmental science' specifies which program.",
+            "explanation": "A defining relative clause makes a noun definite. 'The program that focused on environmental science' identifies the specific one she selected."
         },
         {
             "id": "ai_l111_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They speak ___ English fluently in sector 9.",
-            "sentence": "They speak ___ English fluently in sector 9.",
+            "question": "___ higher education is essential for career development in many fields.",
+            "sentence": "___ higher education is essential for career development in many fields.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Languages alone do not take articles. (Sector 9 calibration)",
-            "explanation": "Zero article for languages without 'language'. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Higher education' as an institutional concept takes no article.",
+            "explanation": "Educational institutions and systems (higher education, secondary education, vocational training) take no article when used in a general statement about their role or value."
         },
         {
             "id": "ai_l112_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They prepared ___ fast lunch in sector 9.",
-            "sentence": "They prepared ___ fast lunch in sector 9.",
+            "question": "He borrowed ___ library book on quantum mechanics.",
+            "sentence": "He borrowed ___ library book on quantum mechanics.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'f'. (Sector 9 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 9]."
+            "hint": "'Library' begins with the consonant sound 'l'.",
+            "explanation": "Use 'a' before consonant sounds. 'Library' starts with 'l', so we write 'a library book'."
         },
         {
             "id": "ai_l112_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ English language is expressive in sector 9.",
-            "sentence": "___ English language is expressive in sector 9.",
+            "question": "He returned ___ book three days before the due date.",
+            "sentence": "He returned ___ book three days before the due date.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific language followed by the word 'language'. (Sector 9 calibration)",
-            "explanation": "The word 'language' triggers 'the'. [Verified in sector 9]."
+            "hint": "The specific library book he borrowed - now a known item.",
+            "explanation": "Use 'the' to refer to the specific book already mentioned. 'The book' = the quantum mechanics library book he borrowed."
         },
         {
             "id": "ai_l112_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We usually have ___ breakfast at dawn in sector 9.",
-            "sentence": "We usually have ___ breakfast at dawn in sector 9.",
+            "question": "___ physics is considered one of the most challenging school subjects.",
+            "sentence": "___ physics is considered one of the most challenging school subjects.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Standard meals have no article. (Sector 9 calibration)",
-            "explanation": "Zero article for general meals. [Verified in sector 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Physics' is an academic discipline - no article needed.",
+            "explanation": "Academic disciplines and school subjects take no article: physics, chemistry, mathematics, biology, history, geography."
         },
         {
             "id": "ai_l113_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He wanted ___ apple juice in sector 9.",
-            "sentence": "He wanted ___ apple juice in sector 9.",
+            "question": "The university offers ___ exchange program with partner colleges.",
+            "sentence": "The university offers ___ exchange program with partner colleges.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'a' in apple. (Sector 9 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 9]."
+            "hint": "'Exchange' begins with the vowel sound 'ex'.",
+            "explanation": "Use 'an' before vowel sounds. 'Exchange' starts with the vowel 'e', so we write 'an exchange program'."
         },
         {
             "id": "ai_l113_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He watched ___ game last night in sector 9.",
-            "sentence": "He watched ___ game last night in sector 9.",
+            "question": "She applied for ___ exchange program in her second year.",
+            "sentence": "She applied for ___ exchange program in her second year.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Specific match they discussed. (Sector 9 calibration)",
-            "explanation": "Points to the specific game. [Verified in sector 9]."
+            "hint": "The specific exchange program the university offers - already known.",
+            "explanation": "Use 'the' when the noun refers to a specific, previously identified program. Both the student and the reader know which exchange program is meant."
         },
         {
             "id": "ai_l113_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She plays ___ tennis every morning in sector 9.",
-            "sentence": "She plays ___ tennis every morning in sector 9.",
+            "question": "___ international experience broadens students' academic and personal horizons.",
+            "sentence": "___ international experience broadens students' academic and personal horizons.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Sports do not take articles. (Sector 9 calibration)",
-            "explanation": "Zero article for sports. [Verified in sector 9]."
+            "correctAnswer": "(no article)",
+            "hint": "'International experience' as an uncountable concept takes no article.",
+            "explanation": "Abstract, uncountable concepts related to learning (international experience, cultural awareness, critical thinking) take no article in general educational statements."
         },
         {
             "id": "ai_l114_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ delicious breakfast in sector 9.",
-            "sentence": "It was ___ delicious breakfast in sector 9.",
+            "question": "He won ___ scholarship to study medicine abroad.",
+            "sentence": "He won ___ scholarship to study medicine abroad.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'd'. (Sector 9 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 9]."
+            "hint": "'Scholarship' begins with the consonant sound 's'.",
+            "explanation": "Use 'a' before consonant sounds. 'Scholarship' starts with 's', so we write 'a scholarship'."
         },
         {
             "id": "ai_l114_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ French they speak is fluent in sector 9.",
-            "sentence": "___ French they speak is fluent in sector 9.",
+            "question": "___ scholarship covered all his tuition and living costs.",
+            "sentence": "___ scholarship covered all his tuition and living costs.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific variety of language. (Sector 9 calibration)",
-            "explanation": "Points to the specific French spoken. [Verified in sector 9]."
+            "hint": "The specific scholarship he won - now a known financial award.",
+            "explanation": "Use 'the' to refer to the specific scholarship already mentioned. 'The scholarship' = the one he won to study medicine abroad."
         },
         {
             "id": "ai_l114_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He studied ___ Spanish in school in sector 9.",
-            "sentence": "He studied ___ Spanish in school in sector 9.",
+            "question": "___ scholarships allow talented students from all backgrounds to succeed.",
+            "sentence": "___ scholarships allow talented students from all backgrounds to succeed.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Language name alone. (Sector 9 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "Plural noun in a general statement about scholarships as a system.",
+            "explanation": "Plural nouns in general statements take no article. 'Scholarships allow talented students' refers to all scholarships in general."
         },
         {
             "id": "ai_l115_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She played ___ intensive match in sector 9.",
-            "sentence": "She played ___ intensive match in sector 9.",
+            "question": "She gave ___ excellent speech at the graduation ceremony.",
+            "sentence": "She gave ___ excellent speech at the graduation ceremony.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'i'. (Sector 9 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 9]."
+            "hint": "'Excellent' begins with the vowel sound 'ex'.",
+            "explanation": "Use 'an' before vowel sounds. 'Excellent' starts with the vowel 'e', so we write 'an excellent speech'."
         },
         {
             "id": "ai_l115_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They won ___ final match in sector 9.",
-            "sentence": "They won ___ final match in sector 9.",
+            "question": "Everyone rose to applaud ___ speech at the end.",
+            "sentence": "Everyone rose to applaud ___ speech at the end.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific unique match. (Sector 9 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 9]."
+            "hint": "The specific speech she gave at the ceremony - now a known event.",
+            "explanation": "Use 'the' to refer to the specific speech already described. 'The speech' = the excellent graduation one she delivered."
         },
         {
             "id": "ai_l115_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They serves ___ dinner at eight in sector 9.",
-            "sentence": "They serves ___ dinner at eight in sector 9.",
+            "question": "___ public speaking is a skill that can be learned and improved.",
+            "sentence": "___ public speaking is a skill that can be learned and improved.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Meal name alone. (Sector 9 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Public speaking' as an uncountable skill takes no article.",
+            "explanation": "Uncountable skills (public speaking, active listening, creative writing, critical thinking) take no article in general statements about what they are or how they work."
         },
         {
             "id": "ai_l116_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He joined ___ football club in sector 9.",
-            "sentence": "He joined ___ football club in sector 9.",
+            "question": "She was assigned ___ research project on renewable energy.",
+            "sentence": "She was assigned ___ research project on renewable energy.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'f'. (Sector 9 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 9]."
+            "hint": "'Research' begins with the consonant sound 'r'.",
+            "explanation": "Use 'a' before consonant sounds. 'Research' starts with 'r', so we write 'a research project'."
         },
         {
             "id": "ai_l116_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ breakfast at the academy is free in sector 9.",
-            "sentence": "___ breakfast at the academy is free in sector 9.",
+            "question": "She spent four months completing ___ project.",
+            "sentence": "She spent four months completing ___ project.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific breakfast at the academy. (Sector 9 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 9]."
+            "hint": "The specific research project she was assigned - now a known task.",
+            "explanation": "Use 'the' to refer to the specific project already introduced. 'The project' = the renewable energy research one she was given."
         },
         {
             "id": "ai_l116_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "I enjoy playing ___ chess in sector 9.",
-            "sentence": "I enjoy playing ___ chess in sector 9.",
+            "question": "___ research on renewable energy is crucial for addressing climate change.",
+            "sentence": "___ research on renewable energy is crucial for addressing climate change.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Games have no article. (Sector 9 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Research' is uncountable and used in a general scientific statement.",
+            "explanation": "Uncountable nouns for academic work (research, study, analysis, investigation) take no article in general statements: 'Research shows', 'Study reveals'."
         },
         {
             "id": "ai_l117_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ English textbook in sector 9.",
-            "sentence": "This is ___ English textbook in sector 9.",
+            "question": "He failed ___ important exam and had to resit it.",
+            "sentence": "He failed ___ important exam and had to resit it.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'e'. (Sector 9 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 9]."
+            "hint": "'Important' begins with the vowel sound 'im'.",
+            "explanation": "Use 'an' before vowel sounds. 'Important' starts with the vowel 'i', so we write 'an important exam'."
         },
         {
             "id": "ai_l117_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She plays ___ violin beautifully in sector 9.",
-            "sentence": "She plays ___ violin beautifully in sector 9.",
+            "question": "He passed ___ exam with a much higher score the second time.",
+            "sentence": "He passed ___ exam with a much higher score the second time.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Musical instruments take 'the' in general usage. (Sector 9 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 9]."
+            "hint": "The specific exam he failed and had to resit - now a known test.",
+            "explanation": "Use 'the' to refer to the specific exam already introduced. 'The exam' = the important one he originally failed."
         },
         {
             "id": "ai_l117_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She teaches ___ Russian in sector 9.",
-            "sentence": "She teaches ___ Russian in sector 9.",
+            "question": "___ exams test memorisation but not always deep understanding.",
+            "sentence": "___ exams test memorisation but not always deep understanding.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Language alone. (Sector 9 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 9]."
+            "correctAnswer": "(no article)",
+            "hint": "Plural noun in a general observation about the nature of exams.",
+            "explanation": "Plural nouns in general, critical or philosophical statements take no article: 'Exams test memorisation', 'Tests create anxiety', 'Grades motivate some students'."
         },
         {
             "id": "ai_l118_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They built ___ sports stadium in sector 9.",
-            "sentence": "They built ___ sports stadium in sector 9.",
+            "question": "The students formed ___ study group to prepare for finals.",
+            "sentence": "The students formed ___ study group to prepare for finals.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Consonant sound 's'. (Sector 9 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 9]."
+            "hint": "'Study' begins with the consonant sound 's'.",
+            "explanation": "Use 'a' before consonant sounds. 'Study' starts with 's', so we write 'a study group'."
         },
         {
             "id": "ai_l118_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They translate ___ ancient text in sector 9.",
-            "sentence": "They translate ___ ancient text in sector 9.",
+            "question": "___ group met three times a week in the library.",
+            "sentence": "___ group met three times a week in the library.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific text they are looking at. (Sector 9 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 9]."
+            "hint": "The specific study group they already formed - now a known entity.",
+            "explanation": "Use 'the' to refer to the specific group already introduced. 'The group' = the study group the students formed."
         },
         {
             "id": "ai_l118_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We love ___ lunch in the open in sector 9.",
-            "sentence": "We love ___ lunch in the open in sector 9.",
+            "question": "___ teamwork makes learning more effective and enjoyable.",
+            "sentence": "___ teamwork makes learning more effective and enjoyable.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General meal category. (Sector 9 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "'Teamwork' is an abstract, uncountable concept used in a general statement.",
+            "explanation": "Abstract collaborative concepts (teamwork, cooperation, peer learning, group work) take no article in general educational statements."
         },
         {
             "id": "ai_l119_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She wants ___ orange beverage in sector 9.",
-            "sentence": "She wants ___ orange beverage in sector 9.",
+            "question": "She wrote ___ essay on the ethics of genetic engineering.",
+            "sentence": "She wrote ___ essay on the ethics of genetic engineering.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'o'. (Sector 9 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 9]."
+            "hint": "'Essay' begins with the vowel sound 'es'.",
+            "explanation": "Use 'an' before vowel sounds. 'Essay' starts with the vowel 'e', so we write 'an essay'."
         },
         {
             "id": "ai_l119_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ dinner was delicious in sector 9.",
-            "sentence": "___ dinner was delicious in sector 9.",
+            "question": "___ essay impressed her professor and earned top marks.",
+            "sentence": "___ essay impressed her professor and earned top marks.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific meal they just ate. (Sector 9 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 9]."
+            "hint": "The specific essay she wrote - now a known document.",
+            "explanation": "Use 'the' to refer to the specific essay already mentioned. 'The essay' = the one on genetics ethics that she wrote."
         },
         {
             "id": "ai_l119_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They practice ___ soccer daily in sector 9.",
-            "sentence": "They practice ___ soccer daily in sector 9.",
+            "question": "___ academic writing requires precision, clarity, and a formal tone.",
+            "sentence": "___ academic writing requires precision, clarity, and a formal tone.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Sport alone. (Sector 9 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Academic writing' as an uncountable skill takes no article.",
+            "explanation": "Writing types used as uncountable skills or concepts (academic writing, creative writing, technical writing) take no article in general statements."
         },
         {
             "id": "ai_l120_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ long game in sector 9.",
-            "sentence": "It was ___ long game in sector 9.",
+            "question": "He joined ___ debate club to sharpen his argument skills.",
+            "sentence": "He joined ___ debate club to sharpen his argument skills.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'l'. (Sector 9 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 9]."
+            "hint": "'Debate' begins with the consonant sound 'd'.",
+            "explanation": "Use 'a' before consonant sounds. 'Debate' starts with 'd', so we write 'a debate club'."
         },
         {
             "id": "ai_l120_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We supported ___ local team in sector 9.",
-            "sentence": "We supported ___ local team in sector 9.",
+            "question": "___ club met every week in the school's main hall.",
+            "sentence": "___ club met every week in the school's main hall.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific local team. (Sector 9 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 9]."
+            "hint": "The specific debate club he just joined - now a known organization.",
+            "explanation": "Use 'the' to refer to the specific club already introduced. 'The club' = the debate one he joined."
         },
         {
             "id": "ai_l120_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He plays ___ golf on weekends in sector 9.",
-            "sentence": "He plays ___ golf on weekends in sector 9.",
+            "question": "___ critical thinking is the most transferable skill education can provide.",
+            "sentence": "___ critical thinking is the most transferable skill education can provide.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Sport alone. (Sector 9 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 9]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Critical thinking' as an abstract cognitive skill takes no article.",
+            "explanation": "Abstract cognitive skills (critical thinking, analytical reasoning, problem-solving) take no article in general statements about their value in education."
         }
     ]
 }

@@ -6,572 +6,542 @@
         {
             "id": "ai_l21_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "A ship crossed ___ active volcano.",
-            "sentence": "A ship crossed ___ active volcano.",
+            "question": "The pilot spotted ___ active volcano below.",
+            "sentence": "The pilot spotted ___ active volcano below.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'a' in active.",
-            "explanation": "'an' is correct."
+            "hint": "'Active' begins with the vowel sound 'ac'.",
+            "explanation": "Use 'an' before vowel sounds. 'Active' starts with the vowel 'a', so we write 'an active volcano'."
         },
         {
             "id": "ai_l21_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
             "question": "We sailed across ___ Pacific Ocean.",
             "sentence": "We sailed across ___ Pacific Ocean.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Oceans require the definite article 'the'.",
-            "explanation": "'the' is used for oceans, seas, and rivers."
+            "hint": "Oceans always take 'the' - they are named bodies of water.",
+            "explanation": "All named oceans use 'the': the Pacific Ocean, the Atlantic Ocean, the Indian Ocean. The same rule applies to seas (the Red Sea, the Caribbean Sea)."
         },
         {
             "id": "ai_l21_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They landed on ___ Mount Everest.",
-            "sentence": "They landed on ___ Mount Everest.",
+            "question": "They climbed ___ Mount Everest last spring.",
+            "sentence": "They climbed ___ Mount Everest last spring.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Individual mountains take zero article.",
-            "explanation": "Zero article for single mountains."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "Single, individually named mountains take no article.",
+            "explanation": "Individual mountains with 'Mount' or 'Mt.' in their name take no article: Mount Everest, Mount Fuji, Mount Kilimanjaro. But mountain ranges take 'the': the Alps, the Himalayas."
         },
         {
             "id": "ai_l22_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They discovered ___ oasis.",
-            "sentence": "They discovered ___ oasis.",
+            "question": "They discovered ___ oasis in the desert.",
+            "sentence": "They discovered ___ oasis in the desert.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'o' in oasis.",
-            "explanation": "'an' is correct."
+            "hint": "'Oasis' begins with the vowel sound 'o'.",
+            "explanation": "Use 'an' before vowel sounds. 'Oasis' starts with the vowel 'o', so we write 'an oasis'."
         },
         {
             "id": "ai_l22_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They crossed ___ Sahara Desert.",
-            "sentence": "They crossed ___ Sahara Desert.",
+            "question": "The caravan crossed ___ Sahara Desert.",
+            "sentence": "The caravan crossed ___ Sahara Desert.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Deserts require 'the'.",
-            "explanation": "'the' is correct for deserts."
+            "hint": "Named deserts take 'the'.",
+            "explanation": "Named deserts always use 'the': the Sahara Desert, the Gobi Desert, the Atacama Desert. They follow the same rule as oceans and mountain ranges."
         },
         {
             "id": "ai_l22_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He lives in ___ France.",
-            "sentence": "He lives in ___ France.",
+            "question": "She was born in ___ France.",
+            "sentence": "She was born in ___ France.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Single countries have no article.",
-            "explanation": "Zero article for standard country names."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "Standard country names take no article.",
+            "explanation": "Most country names take no article: France, Brazil, Japan, Australia, India. Exceptions include countries with 'the' built into their name (the USA, the UK, the Netherlands)."
         },
         {
             "id": "ai_l23_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He mapped ___ frozen planet.",
-            "sentence": "He mapped ___ frozen planet.",
+            "question": "He mapped ___ frozen landscape.",
+            "sentence": "He mapped ___ frozen landscape.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'f'.",
-            "explanation": "'a' is correct."
+            "hint": "'Frozen' begins with the consonant sound 'f'.",
+            "explanation": "Use 'a' before consonant sounds. 'Frozen' starts with 'f', so we write 'a frozen landscape'."
         },
         {
             "id": "ai_l23_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We climbed ___ highest peak.",
-            "sentence": "We climbed ___ highest peak.",
+            "question": "We reached ___ highest point on the trail.",
+            "sentence": "We reached ___ highest point on the trail.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Superlatives take 'the'.",
-            "explanation": "'the' is correct for superlatives."
+            "hint": "Superlatives like 'highest' always take 'the'.",
+            "explanation": "Superlative adjectives (the highest, the deepest, the longest, the best) always use 'the' because they identify something unique - the one that is most extreme."
         },
         {
             "id": "ai_l23_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They visited ___ Asia.",
-            "sentence": "They visited ___ Asia.",
+            "question": "They spent the summer in ___ Asia.",
+            "sentence": "They spent the summer in ___ Asia.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Continents take zero article.",
-            "explanation": "Zero article for continents."
+            "correctAnswer": "(no article)",
+            "hint": "Continents take no article.",
+            "explanation": "Continents take no article: Asia, Europe, Africa, North America, South America, Australia, Antarctica."
         },
         {
             "id": "ai_l24_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They live in ___ humid dome.",
-            "sentence": "They live in ___ humid dome.",
+            "question": "They live in ___ humid climate.",
+            "sentence": "They live in ___ humid climate.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Voiced 'h' starts with consonant sound.",
-            "explanation": "'a' is correct."
+            "hint": "'Humid' begins with the pronounced consonant 'h'.",
+            "explanation": "Use 'a' before consonant sounds. In 'humid', the 'h' is fully pronounced (unlike in 'honest' or 'hour'), so use 'a humid climate'."
         },
         {
             "id": "ai_l24_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They visited ___ Alps.",
-            "sentence": "They visited ___ Alps.",
+            "question": "They trekked through ___ Alps.",
+            "sentence": "They trekked through ___ Alps.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Mountain ranges (plural) take 'the'.",
-            "explanation": "Plural ranges take 'the'."
+            "hint": "Mountain ranges (plural names) always take 'the'.",
+            "explanation": "Mountain ranges take 'the': the Alps, the Himalayas, the Andes, the Rockies. Individual mountains do not: Mount Everest, Ben Nevis, Kilimanjaro."
         },
         {
             "id": "ai_l24_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We traveled to ___ Mars.",
-            "sentence": "We traveled to ___ Mars.",
+            "question": "A probe was sent to study ___ Mars.",
+            "sentence": "A probe was sent to study ___ Mars.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Individual planets take zero article.",
-            "explanation": "Zero article for single planets."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "Individual planet names take no article.",
+            "explanation": "Planets named after classical figures take no article: Mars, Venus, Jupiter, Saturn, Neptune. Note: Earth sometimes uses 'the' (the Earth), but other planets do not."
         },
         {
             "id": "ai_l25_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ alpine landscape.",
-            "sentence": "This is ___ alpine landscape.",
+            "question": "It was ___ alpine environment.",
+            "sentence": "It was ___ alpine environment.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'a' in alpine.",
-            "explanation": "'an' is correct."
+            "hint": "'Alpine' begins with the vowel sound 'al'.",
+            "explanation": "Use 'an' before vowel sounds. 'Alpine' starts with the vowel 'a', so we write 'an alpine environment'."
         },
         {
             "id": "ai_l25_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He explored ___ Nile River.",
-            "sentence": "He explored ___ Nile River.",
+            "question": "He explored ___ Amazon River.",
+            "sentence": "He explored ___ Amazon River.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Rivers take 'the'.",
-            "explanation": "'the' is correct."
+            "hint": "Named rivers always take 'the'.",
+            "explanation": "All named rivers use 'the': the Amazon, the Nile, the Thames, the Mississippi, the Danube."
         },
         {
             "id": "ai_l25_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
             "question": "They sailed to ___ Madagascar.",
             "sentence": "They sailed to ___ Madagascar.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Single islands take zero article.",
-            "explanation": "Zero article is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "Single, individually named islands take no article.",
+            "explanation": "Single named islands take no article: Madagascar, Cuba, Iceland, Greenland, Bali. Island groups (plural) take 'the': the Bahamas, the Philippines, the Maldives."
         },
         {
             "id": "ai_l26_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He spotted ___ rocky moon.",
-            "sentence": "He spotted ___ rocky moon.",
+            "question": "He spotted ___ rocky island ahead.",
+            "sentence": "He spotted ___ rocky island ahead.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'r'.",
-            "explanation": "'a' is correct."
+            "hint": "'Rocky' begins with the consonant sound 'r'.",
+            "explanation": "Use 'a' before consonant sounds. 'Rocky' starts with 'r', so we write 'a rocky island'."
         },
         {
             "id": "ai_l26_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We crossed ___ equator.",
-            "sentence": "We crossed ___ equator.",
+            "question": "The ship crossed ___ equator.",
+            "sentence": "The ship crossed ___ equator.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Unique geographical lines take 'the'.",
-            "explanation": "'the' is correct."
+            "hint": "The equator is a unique geographical line - there is only one.",
+            "explanation": "Unique geographical lines and zones take 'the': the equator, the North Pole, the South Pole, the Arctic Circle, the Tropic of Cancer."
         },
         {
             "id": "ai_l26_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She studied ___ geology.",
-            "sentence": "She studied ___ geology.",
+            "question": "She studied ___ biology.",
+            "sentence": "She studied ___ biology.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General fields of science.",
-            "explanation": "Zero article is correct."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "Academic disciplines take no article.",
+            "explanation": "Scientific and academic subjects take no article: biology, chemistry, mathematics, history, geography, economics."
         },
         {
             "id": "ai_l27_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They found ___ inland lake.",
-            "sentence": "They found ___ inland lake.",
+            "question": "They found ___ inland route.",
+            "sentence": "They found ___ inland route.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'i' in inland.",
-            "explanation": "'an' is correct."
+            "hint": "'Inland' begins with the vowel sound 'in'.",
+            "explanation": "Use 'an' before vowel sounds. 'Inland' starts with the vowel 'i', so we write 'an inland route'."
         },
         {
             "id": "ai_l27_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They orbited ___ Earth.",
-            "sentence": "They orbited ___ Earth.",
+            "question": "The satellite orbited ___ Earth.",
+            "sentence": "The satellite orbited ___ Earth.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Planet Earth takes 'the' in many astronomical references.",
-            "explanation": "'the' is correct."
+            "hint": "In an astronomical context, Earth is referred to as 'the Earth'.",
+            "explanation": "When 'Earth' is used in an astronomical or scientific context - especially with a verb like 'orbit' - it takes 'the'. Compare: 'Earth is a planet' (no article, planet name) vs. 'orbiting the Earth' (the, referring to our specific world)."
         },
         {
             "id": "ai_l27_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ nature is beautiful here.",
-            "sentence": "___ nature is beautiful here.",
+            "question": "___ nature has a way of healing itself.",
+            "sentence": "___ nature has a way of healing itself.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "'Nature' in general has no article.",
-            "explanation": "Zero article is correct."
+            "correctAnswer": "(no article)",
+            "hint": "'Nature' used as a general, abstract concept takes no article.",
+            "explanation": "When 'nature' refers to the natural world in a general, philosophical sense, no article is used: 'Nature is beautiful', 'Respect nature'. Compare: 'the nature of the problem' (the, with a modifier)."
         },
         {
             "id": "ai_l28_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She wants ___ green garden.",
-            "sentence": "She wants ___ green garden.",
+            "question": "She designed ___ green rooftop garden.",
+            "sentence": "She designed ___ green rooftop garden.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'g'.",
-            "explanation": "'a' is correct."
+            "hint": "'Green' begins with the consonant sound 'g'.",
+            "explanation": "Use 'a' before consonant sounds. 'Green' starts with 'g', so we write 'a green rooftop garden'."
         },
         {
             "id": "ai_l28_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They sailed ___ Suez Canal.",
-            "sentence": "They sailed ___ Suez Canal.",
+            "question": "A tanker navigated ___ Suez Canal.",
+            "sentence": "A tanker navigated ___ Suez Canal.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Canals take 'the'.",
-            "explanation": "'the' is correct."
+            "hint": "Named canals always take 'the'.",
+            "explanation": "Named canals take 'the': the Suez Canal, the Panama Canal, the English Channel. They follow the same rule as rivers and oceans."
         },
         {
             "id": "ai_l28_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He climbed ___ Mount Fuji.",
-            "sentence": "He climbed ___ Mount Fuji.",
+            "question": "Tourists often visit ___ Mount Fuji.",
+            "sentence": "Tourists often visit ___ Mount Fuji.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Single peak.",
-            "explanation": "Zero article is correct."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "Individual mountains with 'Mount' in their name take no article.",
+            "explanation": "No article is used with 'Mount' + proper name: Mount Fuji, Mount Rushmore, Mount Olympus. Remember: mountain ranges take 'the' (the Alps), but individual peaks do not."
         },
         {
             "id": "ai_l29_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ enormous crater.",
-            "sentence": "It was ___ enormous crater.",
+            "question": "It was ___ enormous challenge.",
+            "sentence": "It was ___ enormous challenge.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'e'.",
-            "explanation": "'an' is correct."
+            "hint": "'Enormous' begins with the vowel sound 'en'.",
+            "explanation": "Use 'an' before vowel sounds. 'Enormous' starts with the vowel 'e', so we write 'an enormous challenge'."
         },
         {
             "id": "ai_l29_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We visited ___ Bahamas.",
-            "sentence": "We visited ___ Bahamas.",
+            "question": "We visited ___ Bahamas last winter.",
+            "sentence": "We visited ___ Bahamas last winter.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Island groups (plural) take 'the'.",
-            "explanation": "'the' is correct."
+            "hint": "Groups of islands with a plural name take 'the'.",
+            "explanation": "Island groups and archipelagos with plural names take 'the': the Bahamas, the Maldives, the Philippines, the Canary Islands. Single islands do not: Cuba, Iceland, Bali."
         },
         {
             "id": "ai_l29_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They explored ___ Lake Victoria.",
-            "sentence": "They explored ___ Lake Victoria.",
+            "question": "They camped beside ___ Lake Baikal.",
+            "sentence": "They camped beside ___ Lake Baikal.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Individual lakes take zero article.",
-            "explanation": "Zero article is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "Individual lakes named with 'Lake' + proper name take no article.",
+            "explanation": "Individual named lakes take no article when 'Lake' comes first: Lake Baikal, Lake Victoria, Lake Superior. Compare rivers, which always take 'the': the Thames, the Nile."
         },
         {
             "id": "ai_l30_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ dry desert.",
-            "sentence": "This is ___ dry desert.",
+            "question": "This is ___ dry and dusty region.",
+            "sentence": "This is ___ dry and dusty region.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'd'.",
-            "explanation": "'a' is correct."
+            "hint": "'Dry' begins with the consonant sound 'd'.",
+            "explanation": "Use 'a' before consonant sounds. 'Dry' starts with 'd', so we write 'a dry and dusty region'."
         },
         {
             "id": "ai_l30_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ North Pole is freezing.",
-            "sentence": "___ North Pole is freezing.",
+            "question": "___ North Pole is covered in ice.",
+            "sentence": "___ North Pole is covered in ice.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Unique poles take 'the'.",
-            "explanation": "'the' is correct."
+            "hint": "The North Pole is a unique geographical point - there is only one.",
+            "explanation": "Unique geographical poles and extreme points take 'the': the North Pole, the South Pole. They are one-of-a-kind locations."
         },
         {
             "id": "ai_l30_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We live in ___ London.",
-            "sentence": "We live in ___ London.",
+            "question": "She grew up in ___ London.",
+            "sentence": "She grew up in ___ London.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Cities have no article.",
-            "explanation": "Zero article is correct."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "City names take no article.",
+            "explanation": "Cities and towns never take an article: London, Paris, Tokyo, Cairo, Sydney. The same rule applies to villages, towns, and most named settlements."
         }
     ]
 }

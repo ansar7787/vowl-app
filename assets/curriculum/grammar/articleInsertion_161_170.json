@@ -6,572 +6,542 @@
         {
             "id": "ai_l161_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "I saw ___ asteroid flying past in sector 14.",
-            "sentence": "I saw ___ asteroid flying past in sector 14.",
+            "question": "He delivered ___ extraordinary lecture on moral philosophy.",
+            "sentence": "He delivered ___ extraordinary lecture on moral philosophy.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'a' in asteroid requires 'an'. (Sector 14 calibration)",
-            "explanation": "Use 'an' before vowel sounds. [Verified in sector 14]."
+            "hint": "'Extraordinary' begins with the vowel sound 'ex'.",
+            "explanation": "Use 'an' before vowel sounds. 'Extraordinary' starts with 'e', a vowel, so we write 'an extraordinary lecture'."
         },
         {
             "id": "ai_l161_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ sun is blazing fiercely today in sector 14.",
-            "sentence": "___ sun is blazing fiercely today in sector 14.",
+            "question": "___ lecture challenged every assumption the audience held.",
+            "sentence": "___ lecture challenged every assumption the audience held.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Use 'the' for unique singular entities. (Sector 14 calibration)",
-            "explanation": "The sun is unique in this context. [Verified in sector 14]."
+            "hint": "The specific lecture he delivered - now a known event with a known audience.",
+            "explanation": "Use 'the' to refer to the specific lecture already introduced. 'The lecture' = the extraordinary moral philosophy one he gave."
         },
         {
             "id": "ai_l161_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ titanium is a vital metal in sector 14.",
-            "sentence": "___ titanium is a vital metal in sector 14.",
+            "question": "___ philosophy encourages us to question what we assume to be true.",
+            "sentence": "___ philosophy encourages us to question what we assume to be true.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Uncountable mass noun in general. (Sector 14 calibration)",
-            "explanation": "Mass nouns in general require zero article. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Philosophy' as an academic discipline and intellectual tradition takes no article.",
+            "explanation": "Academic disciplines in their broadest sense (philosophy, economics, law, literature, theology) take no article when used to describe the field as a whole."
         },
         {
             "id": "ai_l162_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The scout pilot bought ___ new helm in sector 14.",
-            "sentence": "The scout pilot bought ___ new helm in sector 14.",
+            "question": "She wrote ___ award-winning novel about diaspora identity.",
+            "sentence": "She wrote ___ award-winning novel about diaspora identity.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "a",
-            "hint": "Consonant sound 'n' in new requires 'a'. (Sector 14 calibration)",
-            "explanation": "Use 'a' before consonant sounds. [Verified in sector 14]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "an",
+            "hint": "'Award-winning' begins with the vowel sound 'aw'.",
+            "explanation": "Use 'an' before vowel sounds. 'Award-winning' starts with the vowel 'a' (sound 'aw'), so we write 'an award-winning novel'."
         },
         {
             "id": "ai_l162_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Look at ___ moon revolving in sector 14.",
-            "sentence": "Look at ___ moon revolving in sector 14.",
+            "question": "___ novel explored themes of belonging and cultural loss.",
+            "sentence": "___ novel explored themes of belonging and cultural loss.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Unique astronomical object. (Sector 14 calibration)",
-            "explanation": "'the' is used for unique celestial bodies. [Verified in sector 14]."
+            "hint": "The specific award-winning novel she wrote - now a known literary work.",
+            "explanation": "Use 'the' to refer to the specific novel already introduced. 'The novel' = the award-winning one about diaspora identity."
         },
         {
             "id": "ai_l162_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ hydrogen fuels the reactor in sector 14.",
-            "sentence": "___ hydrogen fuels the reactor in sector 14.",
+            "question": "___ literature has the power to build empathy across cultural boundaries.",
+            "sentence": "___ literature has the power to build empathy across cultural boundaries.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Chemical elements in general use zero article. (Sector 14 calibration)",
-            "explanation": "Zero article 'Ø' is correct for general elements. [Verified in sector 14]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Literature' as a general art form and concept takes no article.",
+            "explanation": "Art forms used in general philosophical statements (literature, music, cinema, theatre, poetry) take no article: 'Literature builds empathy', 'Music transcends language'."
         },
         {
             "id": "ai_l163_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They deployed ___ auxiliary probe in sector 14.",
-            "sentence": "They deployed ___ auxiliary probe in sector 14.",
+            "question": "The committee reached ___ unanimous decision after three hours.",
+            "sentence": "The committee reached ___ unanimous decision after three hours.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "Vowel sound 'a' in auxiliary. (Sector 14 calibration)",
-            "explanation": "Vowel sounds take 'an'. [Verified in sector 14]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "a",
+            "hint": "'Unanimous' begins with the consonant sound 'yoo'.",
+            "explanation": "Although 'unanimous' begins with the vowel letter 'u', it is pronounced 'yoo-NAN-ih-mus'. The initial sound is the consonant 'yoo', so use 'a unanimous decision'."
         },
         {
             "id": "ai_l163_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They docked at ___ primary station in sector 14.",
-            "sentence": "They docked at ___ primary station in sector 14.",
+            "question": "___ decision was announced to the public the following morning.",
+            "sentence": "___ decision was announced to the public the following morning.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Specific, unique station. (Sector 14 calibration)",
-            "explanation": "'the' points to a specific unique station. [Verified in sector 14]."
+            "hint": "The specific unanimous decision the committee reached - now a known outcome.",
+            "explanation": "Use 'the' to refer to the specific decision already introduced. 'The decision' = the unanimous one announced after three hours of deliberation."
         },
         {
             "id": "ai_l163_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We breath ___ oxygen here in sector 14.",
-            "sentence": "We breath ___ oxygen here in sector 14.",
+            "question": "___ consensus is rarely achieved in deeply polarised societies.",
+            "sentence": "___ consensus is rarely achieved in deeply polarised societies.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Uncountable general gas. (Sector 14 calibration)",
-            "explanation": "Zero article is used for gases in general. [Verified in sector 14]."
+            "correctAnswer": "(no article)",
+            "hint": "'Consensus' as an abstract political concept takes no article.",
+            "explanation": "Abstract political and social concepts (consensus, compromise, dialogue, unity) take no article in general observations about how societies function."
         },
         {
             "id": "ai_l164_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We need ___ battery replacement in sector 14.",
-            "sentence": "We need ___ battery replacement in sector 14.",
+            "question": "She held ___ opposing view on the matter.",
+            "sentence": "She held ___ opposing view on the matter.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "a",
-            "hint": "Consonant sound 'b'. (Sector 14 calibration)",
-            "explanation": "Consonant sounds take 'a'. [Verified in sector 14]."
+            "correctAnswer": "an",
+            "hint": "'Opposing' begins with the vowel sound 'uh'.",
+            "explanation": "Use 'an' before vowel sounds. 'Opposing' starts with the vowel 'o', so we write 'an opposing view'."
         },
         {
             "id": "ai_l164_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ captain ordered a silent run in sector 14.",
-            "sentence": "___ captain ordered a silent run in sector 14.",
+            "question": "She presented ___ opposing view clearly and calmly.",
+            "sentence": "She presented ___ opposing view clearly and calmly.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific known person in charge. (Sector 14 calibration)",
-            "explanation": "'the' identifies the specific captain. [Verified in sector 14]."
+            "hint": "The specific opposing view she held - now a known intellectual position.",
+            "explanation": "Use 'the' to refer to the specific view already mentioned. 'The opposing view' = the particular counter-argument she held on the matter."
         },
         {
             "id": "ai_l164_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ space is vast and endless in sector 14.",
-            "sentence": "___ space is vast and endless in sector 14.",
+            "question": "___ intellectual humility allows people to revise their beliefs in light of evidence.",
+            "sentence": "___ intellectual humility allows people to revise their beliefs in light of evidence.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "'Space' in general has no article. (Sector 14 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 14]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "'Intellectual humility' as a cognitive virtue takes no article.",
+            "explanation": "Cognitive and character virtues used in general statements (intellectual humility, critical thinking, emotional intelligence) take no article."
         },
         {
             "id": "ai_l165_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She wants ___ upgrade for her suit in sector 14.",
-            "sentence": "She wants ___ upgrade for her suit in sector 14.",
+            "question": "He made ___ offhand remark that caused significant controversy.",
+            "sentence": "He made ___ offhand remark that caused significant controversy.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'u' in upgrade. (Sector 14 calibration)",
-            "explanation": "Vowel sounds take 'an'. [Verified in sector 14]."
+            "hint": "'Offhand' begins with the vowel sound 'off'.",
+            "explanation": "Use 'an' before vowel sounds. 'Offhand' starts with the vowel 'o', so we write 'an offhand remark'."
         },
         {
             "id": "ai_l165_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Turn on ___ hyperdrive system in sector 14.",
-            "sentence": "Turn on ___ hyperdrive system in sector 14.",
+            "question": "___ remark was widely reported in the international press.",
+            "sentence": "___ remark was widely reported in the international press.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific ship component. (Sector 14 calibration)",
-            "explanation": "'the' matches the specific system. [Verified in sector 14]."
+            "hint": "The specific offhand remark he made - now a widely known statement.",
+            "explanation": "Use 'the' to refer to the specific remark already mentioned. 'The remark' = the offhand one he made that caused controversy."
         },
         {
             "id": "ai_l165_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He studies ___ stellar physics in sector 14.",
-            "sentence": "He studies ___ stellar physics in sector 14.",
+            "question": "___ words have the power to inspire or to destroy.",
+            "sentence": "___ words have the power to inspire or to destroy.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Academic subjects have no article. (Sector 14 calibration)",
-            "explanation": "Zero article 'Ø' is correct for disciplines. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "Plural noun in a general philosophical statement about language.",
+            "explanation": "Plural nouns used in broad, philosophical statements take no article: 'Words have power', 'Ideas change the world', 'Actions speak louder than words'."
         },
         {
             "id": "ai_l166_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "A droid found ___ capsule in the sand in sector 14.",
-            "sentence": "A droid found ___ capsule in the sand in sector 14.",
+            "question": "The board approved ___ ambitious five-year strategy.",
+            "sentence": "The board approved ___ ambitious five-year strategy.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "a",
-            "hint": "Consonant sound 'c'. (Sector 14 calibration)",
-            "explanation": "Consonant sounds take 'a'. [Verified in sector 14]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "an",
+            "hint": "'Ambitious' begins with the vowel sound 'am'.",
+            "explanation": "Use 'an' before vowel sounds. 'Ambitious' starts with the vowel 'a', so we write 'an ambitious five-year strategy'."
         },
         {
             "id": "ai_l166_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He verified ___ launch coordinates in sector 14.",
-            "sentence": "He verified ___ launch coordinates in sector 14.",
+            "question": "___ strategy aims to double the organisation's global reach.",
+            "sentence": "___ strategy aims to double the organisation's global reach.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific parameters. (Sector 14 calibration)",
-            "explanation": "'the' refers to specific coordinates. [Verified in sector 14]."
+            "hint": "The specific five-year strategy the board approved - now a known plan.",
+            "explanation": "Use 'the' to refer to the specific strategy already introduced. 'The strategy' = the ambitious five-year one the board approved."
         },
         {
             "id": "ai_l166_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ data flows through the node in sector 14.",
-            "sentence": "___ data flows through the node in sector 14.",
+            "question": "___ long-term thinking is essential for building sustainable institutions.",
+            "sentence": "___ long-term thinking is essential for building sustainable institutions.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Uncountable data in general. (Sector 14 calibration)",
-            "explanation": "General uncountable nouns take no article. [Verified in sector 14]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Long-term thinking' as an abstract cognitive orientation takes no article.",
+            "explanation": "Abstract cognitive orientations and approaches (long-term thinking, strategic vision, growth mindset) take no article in general statements about leadership."
         },
         {
             "id": "ai_l167_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He received ___ encrypted alert in sector 14.",
-            "sentence": "He received ___ encrypted alert in sector 14.",
+            "question": "She proposed ___ ethical framework for AI development.",
+            "sentence": "She proposed ___ ethical framework for AI development.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'e' in encrypted. (Sector 14 calibration)",
-            "explanation": "Vowel sounds take 'an'. [Verified in sector 14]."
+            "hint": "'Ethical' begins with the vowel sound 'eh'.",
+            "explanation": "Use 'an' before vowel sounds. 'Ethical' starts with the vowel 'e', so we write 'an ethical framework'. (Note: 'ethical' has a pronounced 'e' - unlike 'euphemism' which sounds like 'yoo'.)"
         },
         {
             "id": "ai_l167_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They entered ___ galaxy center in sector 14.",
-            "sentence": "They entered ___ galaxy center in sector 14.",
+            "question": "___ framework she proposed was adopted by three leading tech firms.",
+            "sentence": "___ framework she proposed was adopted by three leading tech firms.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Unique spatial destination. (Sector 14 calibration)",
-            "explanation": "'the' refers to a specific geographic/astral region. [Verified in sector 14]."
+            "hint": "The specific ethical framework she proposed - identified by 'she proposed'.",
+            "explanation": "A defining clause ('she proposed') specifies which framework. 'The framework she proposed' = the one particular ethical structure she created for AI development."
         },
         {
             "id": "ai_l167_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They trade ___ quantum dust in sector 14.",
-            "sentence": "They trade ___ quantum dust in sector 14.",
+            "question": "___ ethics in technology must be addressed before harmful systems are deployed.",
+            "sentence": "___ ethics in technology must be addressed before harmful systems are deployed.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Uncountable general trade item. (Sector 14 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 14]."
+            "correctAnswer": "(no article)",
+            "hint": "'Ethics in technology' as a general philosophical domain takes no article.",
+            "explanation": "Philosophical domains (ethics in technology, morality in law, equity in education) take no article in general statements about what needs to be addressed."
         },
         {
             "id": "ai_l168_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They established ___ frontier base in sector 14.",
-            "sentence": "They established ___ frontier base in sector 14.",
+            "question": "He discovered ___ overlooked manuscript in the university archive.",
+            "sentence": "He discovered ___ overlooked manuscript in the university archive.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "a",
-            "hint": "Consonant sound 'f'. (Sector 14 calibration)",
-            "explanation": "Consonant sounds take 'a'. [Verified in sector 14]."
+            "correctAnswer": "an",
+            "hint": "'Overlooked' begins with the vowel sound 'o'.",
+            "explanation": "Use 'an' before vowel sounds. 'Overlooked' starts with the vowel 'o', so we write 'an overlooked manuscript'."
         },
         {
             "id": "ai_l168_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ shield is holding up in sector 14.",
-            "sentence": "___ shield is holding up in sector 14.",
+            "question": "___ manuscript had been sitting in storage for over two centuries.",
+            "sentence": "___ manuscript had been sitting in storage for over two centuries.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific shield on our vessel. (Sector 14 calibration)",
-            "explanation": "Refers to the specific active shield. [Verified in sector 14]."
+            "hint": "The specific overlooked manuscript he discovered - now a known historical item.",
+            "explanation": "Use 'the' to refer to the specific item already introduced. 'The manuscript' = the overlooked one discovered in the university archive."
         },
         {
             "id": "ai_l168_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ code is hard to read in sector 14.",
-            "sentence": "___ code is hard to read in sector 14.",
+            "question": "___ history is not always written by those with the clearest view of events.",
+            "sentence": "___ history is not always written by those with the clearest view of events.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General code concept. (Sector 14 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 14]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "'History' as a discipline and abstract concept takes no article in a philosophical statement.",
+            "explanation": "Academic disciplines and abstract concepts used in broad philosophical statements (history, science, art) take no article: 'History is written by the victors'."
         },
         {
             "id": "ai_l169_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She wore ___ thermal layer in sector 14.",
-            "sentence": "She wore ___ thermal layer in sector 14.",
+            "question": "She made ___ astute observation about the structural flaws in the bill.",
+            "sentence": "She made ___ astute observation about the structural flaws in the bill.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "a",
-            "hint": "Consonant sound 't'. (Sector 14 calibration)",
-            "explanation": "Consonant sounds take 'a'. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "an",
+            "hint": "'Astute' begins with the vowel sound 'uh'.",
+            "explanation": "Use 'an' before vowel sounds. 'Astute' starts with the vowel 'a', so we write 'an astute observation'."
         },
         {
             "id": "ai_l169_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Check ___ lock code on the terminal in sector 14.",
-            "sentence": "Check ___ lock code on the terminal in sector 14.",
+            "question": "___ observation prompted a complete redraft of the legislation.",
+            "sentence": "___ observation prompted a complete redraft of the legislation.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific lock code. (Sector 14 calibration)",
-            "explanation": "Points to a particular unique lock code. [Verified in sector 14]."
+            "hint": "The specific astute observation she made - now a known analytical comment.",
+            "explanation": "Use 'the' to refer to the specific observation already introduced. 'The observation' = the astute one she made about the bill's structural flaws."
         },
         {
             "id": "ai_l169_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She loves ___ engineering in sector 14.",
-            "sentence": "She loves ___ engineering in sector 14.",
+            "question": "___ good legislation requires extensive consultation with those it will affect.",
+            "sentence": "___ good legislation requires extensive consultation with those it will affect.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General abstract field. (Sector 14 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 14]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Good legislation' as a concept in a general policy statement takes no article.",
+            "explanation": "Policy concepts used in general statements (good legislation, sound policy, effective regulation) take no article when making broad claims about what they require."
         },
         {
             "id": "ai_l170_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ unexpected trajectory in sector 14.",
-            "sentence": "It was ___ unexpected trajectory in sector 14.",
+            "question": "She delivered ___ impassioned speech on prison reform.",
+            "sentence": "She delivered ___ impassioned speech on prison reform.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'u' in unexpected. (Sector 14 calibration)",
-            "explanation": "Vowel sounds take 'an'. [Verified in sector 14]."
+            "hint": "'Impassioned' begins with the vowel sound 'im'.",
+            "explanation": "Use 'an' before vowel sounds. 'Impassioned' starts with the vowel 'i', so we write 'an impassioned speech'."
         },
         {
             "id": "ai_l170_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ command deck is fully crewed in sector 14.",
-            "sentence": "___ command deck is fully crewed in sector 14.",
+            "question": "___ speech moved many members of the parliamentary committee.",
+            "sentence": "___ speech moved many members of the parliamentary committee.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific command deck. (Sector 14 calibration)",
-            "explanation": "Identifies the particular command deck. [Verified in sector 14]."
+            "hint": "The specific impassioned speech she delivered - now a known address.",
+            "explanation": "Use 'the' to refer to the specific speech already mentioned. 'The speech' = the impassioned one she gave on prison reform."
         },
         {
             "id": "ai_l170_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 5,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ gravity here is standard in sector 14.",
-            "sentence": "___ gravity here is standard in sector 14.",
+            "question": "___ criminal justice reform is long overdue in many democratic nations.",
+            "sentence": "___ criminal justice reform is long overdue in many democratic nations.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General physical property. (Sector 14 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 14]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Criminal justice reform' as a policy concept takes no article.",
+            "explanation": "Policy reform concepts (criminal justice reform, tax reform, healthcare reform, electoral reform) take no article in general statements about their necessity."
         }
     ]
 }

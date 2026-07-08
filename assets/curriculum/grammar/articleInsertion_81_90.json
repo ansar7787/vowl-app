@@ -6,572 +6,542 @@
         {
             "id": "ai_l81_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "I saw ___ asteroid flying past in sector 6.",
-            "sentence": "I saw ___ asteroid flying past in sector 6.",
+            "question": "She was taken to ___ emergency room right away.",
+            "sentence": "She was taken to ___ emergency room right away.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'a' in asteroid requires 'an'. (Sector 6 calibration)",
-            "explanation": "Use 'an' before vowel sounds. [Verified in sector 6]."
+            "hint": "'Emergency' begins with the vowel sound 'ee'.",
+            "explanation": "Use 'an' before vowel sounds. 'Emergency' starts with the vowel 'e', so we write 'an emergency room'."
         },
         {
             "id": "ai_l81_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ sun is blazing fiercely today in sector 6.",
-            "sentence": "___ sun is blazing fiercely today in sector 6.",
+            "question": "Paramedics rushed her to ___ nearest hospital.",
+            "sentence": "Paramedics rushed her to ___ nearest hospital.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Use 'the' for unique singular entities. (Sector 6 calibration)",
-            "explanation": "The sun is unique in this context. [Verified in sector 6]."
+            "hint": "'Nearest' is a superlative modifier - superlatives always take 'the'.",
+            "explanation": "Superlative adjectives (nearest, closest, largest, most advanced) always require 'the' because they identify the unique extreme of a category."
         },
         {
             "id": "ai_l81_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ titanium is a vital metal in sector 6.",
-            "sentence": "___ titanium is a vital metal in sector 6.",
+            "question": "___ regular exercise is the best way to maintain good health.",
+            "sentence": "___ regular exercise is the best way to maintain good health.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Uncountable mass noun in general. (Sector 6 calibration)",
-            "explanation": "Mass nouns in general require zero article. [Verified in sector 6]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Regular exercise' as an uncountable concept in a general health statement.",
+            "explanation": "Uncountable health concepts (regular exercise, good nutrition, adequate sleep, stress management) take no article in general health statements."
         },
         {
             "id": "ai_l82_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The scout pilot bought ___ new helm in sector 6.",
-            "sentence": "The scout pilot bought ___ new helm in sector 6.",
+            "question": "The patient had ___ severe allergic reaction.",
+            "sentence": "The patient had ___ severe allergic reaction.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'n' in new requires 'a'. (Sector 6 calibration)",
-            "explanation": "Use 'a' before consonant sounds. [Verified in sector 6]."
+            "hint": "'Severe' begins with the consonant sound 's'.",
+            "explanation": "Use 'a' before consonant sounds. 'Severe' starts with 's', so we write 'a severe allergic reaction'."
         },
         {
             "id": "ai_l82_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Look at ___ moon revolving in sector 6.",
-            "sentence": "Look at ___ moon revolving in sector 6.",
+            "question": "The doctor treated ___ reaction with antihistamines.",
+            "sentence": "The doctor treated ___ reaction with antihistamines.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Unique astronomical object. (Sector 6 calibration)",
-            "explanation": "'the' is used for unique celestial bodies. [Verified in sector 6]."
+            "hint": "The specific allergic reaction already described - now a known medical event.",
+            "explanation": "Use 'the' to refer to the specific condition already introduced. 'The reaction' refers to the severe allergic one mentioned in the previous sentence."
         },
         {
             "id": "ai_l82_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ hydrogen fuels the reactor in sector 6.",
-            "sentence": "___ hydrogen fuels the reactor in sector 6.",
+            "question": "___ allergies are becoming more prevalent worldwide.",
+            "sentence": "___ allergies are becoming more prevalent worldwide.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Chemical elements in general use zero article. (Sector 6 calibration)",
-            "explanation": "Zero article 'Ø' is correct for general elements. [Verified in sector 6]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "Plural noun in a general medical or epidemiological statement.",
+            "explanation": "Plural nouns in general medical observations take no article. 'Allergies are becoming more common' refers to allergies as a category, not specific ones."
         },
         {
             "id": "ai_l83_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They deployed ___ auxiliary probe in sector 6.",
-            "sentence": "They deployed ___ auxiliary probe in sector 6.",
+            "question": "He made ___ appointment with his doctor.",
+            "sentence": "He made ___ appointment with his doctor.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'a' in auxiliary. (Sector 6 calibration)",
-            "explanation": "Vowel sounds take 'an'. [Verified in sector 6]."
+            "hint": "'Appointment' begins with the vowel sound 'uh'.",
+            "explanation": "Use 'an' before vowel sounds. 'Appointment' starts with the vowel 'a', so we write 'an appointment'."
         },
         {
             "id": "ai_l83_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They docked at ___ primary station in sector 6.",
-            "sentence": "They docked at ___ primary station in sector 6.",
+            "question": "He arrived a few minutes early for ___ appointment.",
+            "sentence": "He arrived a few minutes early for ___ appointment.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Specific, unique station. (Sector 6 calibration)",
-            "explanation": "'the' points to a specific unique station. [Verified in sector 6]."
+            "hint": "The specific appointment he already made - now a known event.",
+            "explanation": "After introducing a noun ('an appointment'), use 'the' in subsequent references ('the appointment'). The reader knows exactly which one."
         },
         {
             "id": "ai_l83_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We breath ___ oxygen here in sector 6.",
-            "sentence": "We breath ___ oxygen here in sector 6.",
+            "question": "___ regular medical checkups can detect problems early.",
+            "sentence": "___ regular medical checkups can detect problems early.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Uncountable general gas. (Sector 6 calibration)",
-            "explanation": "Zero article is used for gases in general. [Verified in sector 6]."
+            "correctAnswer": "(no article)",
+            "hint": "Plural noun in a general health recommendation.",
+            "explanation": "Plural nouns in general recommendations take no article: 'Regular checkups detect problems', 'Healthy habits prevent illness'."
         },
         {
             "id": "ai_l84_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We need ___ battery replacement in sector 6.",
-            "sentence": "We need ___ battery replacement in sector 6.",
+            "question": "She was prescribed ___ strict low-sodium diet.",
+            "sentence": "She was prescribed ___ strict low-sodium diet.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'b'. (Sector 6 calibration)",
-            "explanation": "Consonant sounds take 'a'. [Verified in sector 6]."
+            "hint": "'Strict' begins with the consonant sound 's'.",
+            "explanation": "Use 'a' before consonant sounds. 'Strict' starts with 's', so we write 'a strict diet'."
         },
         {
             "id": "ai_l84_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ captain ordered a silent run in sector 6.",
-            "sentence": "___ captain ordered a silent run in sector 6.",
+            "question": "She followed ___ diet carefully for three months.",
+            "sentence": "She followed ___ diet carefully for three months.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific known person in charge. (Sector 6 calibration)",
-            "explanation": "'the' identifies the specific captain. [Verified in sector 6]."
+            "hint": "The specific diet her doctor prescribed - now a known plan.",
+            "explanation": "Use 'the' to refer to the specific diet already introduced. 'The diet' = the strict low-sodium one she was prescribed."
         },
         {
             "id": "ai_l84_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ space is vast and endless in sector 6.",
-            "sentence": "___ space is vast and endless in sector 6.",
+            "question": "___ good nutrition is essential for long-term health.",
+            "sentence": "___ good nutrition is essential for long-term health.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "'Space' in general has no article. (Sector 6 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "'Good nutrition' as an uncountable concept takes no article.",
+            "explanation": "Uncountable health concepts (good nutrition, proper hydration, adequate rest) take no article in general statements about healthy living."
         },
         {
             "id": "ai_l85_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She wants ___ upgrade for her suit in sector 6.",
-            "sentence": "She wants ___ upgrade for her suit in sector 6.",
+            "question": "She underwent ___ operation on her lower back.",
+            "sentence": "She underwent ___ operation on her lower back.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'u' in upgrade. (Sector 6 calibration)",
-            "explanation": "Vowel sounds take 'an'. [Verified in sector 6]."
+            "hint": "'Operation' begins with the vowel sound 'aw'.",
+            "explanation": "Use 'an' before vowel sounds. 'Operation' starts with the vowel 'o', so we write 'an operation'."
         },
         {
             "id": "ai_l85_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Turn on ___ hyperdrive system in sector 6.",
-            "sentence": "Turn on ___ hyperdrive system in sector 6.",
+            "question": "She recovered quickly after ___ operation.",
+            "sentence": "She recovered quickly after ___ operation.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific ship component. (Sector 6 calibration)",
-            "explanation": "'the' matches the specific system. [Verified in sector 6]."
+            "hint": "The specific operation she already underwent - now a known event.",
+            "explanation": "Use 'the' to refer back to a specific medical event already introduced. 'The operation' = the lower back procedure mentioned earlier."
         },
         {
             "id": "ai_l85_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He studies ___ stellar physics in sector 6.",
-            "sentence": "He studies ___ stellar physics in sector 6.",
+            "question": "___ minimally invasive surgery has transformed modern medicine.",
+            "sentence": "___ minimally invasive surgery has transformed modern medicine.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Academic subjects have no article. (Sector 6 calibration)",
-            "explanation": "Zero article 'Ø' is correct for disciplines. [Verified in sector 6]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Minimally invasive surgery' as a medical technique takes no article.",
+            "explanation": "Medical techniques and procedures used as general concepts (minimally invasive surgery, robotic surgery, gene therapy) take no article in general medical statements."
         },
         {
             "id": "ai_l86_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "A droid found ___ capsule in the sand in sector 6.",
-            "sentence": "A droid found ___ capsule in the sand in sector 6.",
+            "question": "He has ___ great family doctor.",
+            "sentence": "He has ___ great family doctor.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'c'. (Sector 6 calibration)",
-            "explanation": "Consonant sounds take 'a'. [Verified in sector 6]."
+            "hint": "'Great' begins with the consonant sound 'g'.",
+            "explanation": "Use 'a' before consonant sounds. 'Great' starts with 'g', so we write 'a great family doctor'."
         },
         {
             "id": "ai_l86_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He verified ___ launch coordinates in sector 6.",
-            "sentence": "He verified ___ launch coordinates in sector 6.",
+            "question": "___ doctor advised him to cut back on sugar.",
+            "sentence": "___ doctor advised him to cut back on sugar.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific parameters. (Sector 6 calibration)",
-            "explanation": "'the' refers to specific coordinates. [Verified in sector 6]."
+            "hint": "The specific doctor he has - already known from the previous sentence.",
+            "explanation": "Use 'the' when referring to a specific, known person. 'The doctor' = his great family doctor mentioned before."
         },
         {
             "id": "ai_l86_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ data flows through the node in sector 6.",
-            "sentence": "___ data flows through the node in sector 6.",
+            "question": "___ doctors in rural areas often serve many communities.",
+            "sentence": "___ doctors in rural areas often serve many communities.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Uncountable data in general. (Sector 6 calibration)",
-            "explanation": "General uncountable nouns take no article. [Verified in sector 6]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "Plural noun in a general statement about doctors as a group.",
+            "explanation": "Plural nouns in general statements take no article. 'Doctors in rural areas' refers to doctors as a professional group in that setting."
         },
         {
             "id": "ai_l87_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He received ___ encrypted alert in sector 6.",
-            "sentence": "He received ___ encrypted alert in sector 6.",
+            "question": "She takes ___ over-the-counter painkiller for headaches.",
+            "sentence": "She takes ___ over-the-counter painkiller for headaches.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'e' in encrypted. (Sector 6 calibration)",
-            "explanation": "Vowel sounds take 'an'. [Verified in sector 6]."
+            "hint": "'Over-the-counter' begins with the vowel sound 'o'.",
+            "explanation": "Use 'an' before vowel sounds. 'Over-the-counter' starts with 'o', a vowel, so we write 'an over-the-counter painkiller'."
         },
         {
             "id": "ai_l87_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They entered ___ galaxy center in sector 6.",
-            "sentence": "They entered ___ galaxy center in sector 6.",
+            "question": "She took ___ painkiller before the long meeting.",
+            "sentence": "She took ___ painkiller before the long meeting.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Unique spatial destination. (Sector 6 calibration)",
-            "explanation": "'the' refers to a specific geographic/astral region. [Verified in sector 6]."
+            "hint": "The specific over-the-counter painkiller she takes - now a known item.",
+            "explanation": "Use 'the' to refer to the specific type of painkiller already introduced. 'The painkiller' refers to the one she uses for headaches."
         },
         {
             "id": "ai_l87_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They trade ___ quantum dust in sector 6.",
-            "sentence": "They trade ___ quantum dust in sector 6.",
+            "question": "___ medication must always be taken as directed.",
+            "sentence": "___ medication must always be taken as directed.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Uncountable general trade item. (Sector 6 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 6]."
+            "correctAnswer": "(no article)",
+            "hint": "'Medication' is uncountable and used in a general safety instruction.",
+            "explanation": "Uncountable nouns for medical substances (medication, antibiotics as a concept, treatment) take no article in general advisory statements."
         },
         {
             "id": "ai_l88_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They established ___ frontier base in sector 6.",
-            "sentence": "They established ___ frontier base in sector 6.",
+            "question": "He developed ___ chronic back problem from poor posture.",
+            "sentence": "He developed ___ chronic back problem from poor posture.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'f'. (Sector 6 calibration)",
-            "explanation": "Consonant sounds take 'a'. [Verified in sector 6]."
+            "hint": "'Chronic' begins with the consonant sound 'k'.",
+            "explanation": "Use 'a' before consonant sounds. 'Chronic' starts with the 'k' sound (cr-), so we write 'a chronic back problem'."
         },
         {
             "id": "ai_l88_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ shield is holding up in sector 6.",
-            "sentence": "___ shield is holding up in sector 6.",
+            "question": "He saw a specialist about ___ back problem.",
+            "sentence": "He saw a specialist about ___ back problem.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific shield on our vessel. (Sector 6 calibration)",
-            "explanation": "Refers to the specific active shield. [Verified in sector 6]."
+            "hint": "The specific back problem he developed - now a known condition.",
+            "explanation": "Use 'the' to refer to the specific health problem already introduced. 'The back problem' = the chronic one caused by poor posture."
         },
         {
             "id": "ai_l88_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ code is hard to read in sector 6.",
-            "sentence": "___ code is hard to read in sector 6.",
+            "question": "___ good posture reduces strain on the spine and muscles.",
+            "sentence": "___ good posture reduces strain on the spine and muscles.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General code concept. (Sector 6 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 6]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "'Good posture' as a general health concept takes no article.",
+            "explanation": "Health concepts used as general principles (good posture, proper form, healthy weight) take no article in general health guidance."
         },
         {
             "id": "ai_l89_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She wore ___ thermal layer in sector 6.",
-            "sentence": "She wore ___ thermal layer in sector 6.",
+            "question": "She experienced ___ intense migraine before the exam.",
+            "sentence": "She experienced ___ intense migraine before the exam.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "a",
-            "hint": "Consonant sound 't'. (Sector 6 calibration)",
-            "explanation": "Consonant sounds take 'a'. [Verified in sector 6]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "an",
+            "hint": "'Intense' begins with the vowel sound 'in'.",
+            "explanation": "Use 'an' before vowel sounds. 'Intense' starts with the vowel 'i', so we write 'an intense migraine'."
         },
         {
             "id": "ai_l89_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Check ___ lock code on the terminal in sector 6.",
-            "sentence": "Check ___ lock code on the terminal in sector 6.",
+            "question": "She spoke to her neurologist about ___ migraine.",
+            "sentence": "She spoke to her neurologist about ___ migraine.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific lock code. (Sector 6 calibration)",
-            "explanation": "Points to a particular unique lock code. [Verified in sector 6]."
+            "hint": "The specific migraine she experienced - now a known medical event.",
+            "explanation": "Use 'the' to refer to the specific episode already described. 'The migraine' = the intense one she experienced before the exam."
         },
         {
             "id": "ai_l89_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She loves ___ engineering in sector 6.",
-            "sentence": "She loves ___ engineering in sector 6.",
+            "question": "___ mental health is just as important as physical health.",
+            "sentence": "___ mental health is just as important as physical health.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General abstract field. (Sector 6 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 6]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Mental health' as an uncountable concept takes no article in a comparison.",
+            "explanation": "Uncountable health concepts (mental health, physical health, emotional well-being) take no article in general comparative or advisory statements."
         },
         {
             "id": "ai_l90_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ unexpected trajectory in sector 6.",
-            "sentence": "It was ___ unexpected trajectory in sector 6.",
+            "question": "She joined ___ yoga class at the community center.",
+            "sentence": "She joined ___ yoga class at the community center.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "Vowel sound 'u' in unexpected. (Sector 6 calibration)",
-            "explanation": "Vowel sounds take 'an'. [Verified in sector 6]."
+            "correctAnswer": "a",
+            "hint": "'Yoga' begins with the consonant sound 'y'.",
+            "explanation": "Use 'a' before consonant sounds. 'Yoga' starts with 'y', which is a consonant sound, so we write 'a yoga class'."
         },
         {
             "id": "ai_l90_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ command deck is fully crewed in sector 6.",
-            "sentence": "___ command deck is fully crewed in sector 6.",
+            "question": "She found ___ class very relaxing and enjoyable.",
+            "sentence": "She found ___ class very relaxing and enjoyable.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific command deck. (Sector 6 calibration)",
-            "explanation": "Identifies the particular command deck. [Verified in sector 6]."
+            "hint": "The specific yoga class she just joined - now a known event.",
+            "explanation": "Use 'the' to refer to the specific class already mentioned. 'The class' = the yoga one at the community center."
         },
         {
             "id": "ai_l90_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ gravity here is standard in sector 6.",
-            "sentence": "___ gravity here is standard in sector 6.",
+            "question": "___ yoga has measurable benefits for both mind and body.",
+            "sentence": "___ yoga has measurable benefits for both mind and body.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General physical property. (Sector 6 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 6]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Yoga' as a practice or discipline takes no article in a general statement.",
+            "explanation": "Activities and practices used as general concepts (yoga, meditation, swimming, running) take no article when you talk about them in general: 'Yoga is beneficial', 'She practices meditation'."
         }
     ]
 }

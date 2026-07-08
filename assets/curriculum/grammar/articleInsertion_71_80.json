@@ -6,572 +6,542 @@
         {
             "id": "ai_l71_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She ordered ___ elegant dinner in sector 5.",
-            "sentence": "She ordered ___ elegant dinner in sector 5.",
+            "question": "She has ___ important presentation tomorrow morning.",
+            "sentence": "She has ___ important presentation tomorrow morning.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'e' in elegant. (Sector 5 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 5]."
+            "hint": "'Important' begins with the vowel sound 'im'.",
+            "explanation": "Use 'an' before vowel sounds. 'Important' starts with the vowel 'i', so we write 'an important presentation'."
         },
         {
             "id": "ai_l71_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "I really enjoyed ___ lunch they prepared in sector 5.",
-            "sentence": "I really enjoyed ___ lunch they prepared in sector 5.",
+            "question": "She stayed late to prepare for ___ presentation.",
+            "sentence": "She stayed late to prepare for ___ presentation.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific meal that was prepared. (Sector 5 calibration)",
-            "explanation": "Points to a particular meal. [Verified in sector 5]."
+            "hint": "The specific presentation already mentioned - now known.",
+            "explanation": "After introducing a noun ('an important presentation'), use 'the' in the next reference ('the presentation'). The listener knows which one you mean."
         },
         {
             "id": "ai_l71_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They speak ___ English fluently in sector 5.",
-            "sentence": "They speak ___ English fluently in sector 5.",
+            "question": "___ presentations are a core skill in business.",
+            "sentence": "___ presentations are a core skill in business.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Languages alone do not take articles. (Sector 5 calibration)",
-            "explanation": "Zero article for languages without 'language'. [Verified in sector 5]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "Plural noun in a general statement about presentations as a skill.",
+            "explanation": "Plural nouns in general statements take no article. 'Presentations are a core skill' refers to giving presentations in general."
         },
         {
             "id": "ai_l72_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They prepared ___ fast lunch in sector 5.",
-            "sentence": "They prepared ___ fast lunch in sector 5.",
+            "question": "He needs to write ___ formal report by Friday.",
+            "sentence": "He needs to write ___ formal report by Friday.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'f'. (Sector 5 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 5]."
+            "hint": "'Formal' begins with the consonant sound 'f'.",
+            "explanation": "Use 'a' before consonant sounds. 'Formal' starts with 'f', so we write 'a formal report'."
         },
         {
             "id": "ai_l72_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ English language is expressive in sector 5.",
-            "sentence": "___ English language is expressive in sector 5.",
+            "question": "___ report was submitted on time.",
+            "sentence": "___ report was submitted on time.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific language followed by the word 'language'. (Sector 5 calibration)",
-            "explanation": "The word 'language' triggers 'the'. [Verified in sector 5]."
+            "hint": "The specific report he had to write - now a known document.",
+            "explanation": "Use 'the' to refer to the specific report already introduced. The reader knows which report - the formal one due on Friday."
         },
         {
             "id": "ai_l72_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We usually have ___ breakfast at dawn in sector 5.",
-            "sentence": "We usually have ___ breakfast at dawn in sector 5.",
+            "question": "___ clear communication is essential in a professional setting.",
+            "sentence": "___ clear communication is essential in a professional setting.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Standard meals have no article. (Sector 5 calibration)",
-            "explanation": "Zero article for general meals. [Verified in sector 5]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Clear communication' as an abstract concept takes no article.",
+            "explanation": "Abstract concepts and skills (clear communication, good leadership, creative thinking) take no article in general statements about their importance."
         },
         {
             "id": "ai_l73_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He wanted ___ apple juice in sector 5.",
-            "sentence": "He wanted ___ apple juice in sector 5.",
+            "question": "She attended ___ online seminar on digital marketing.",
+            "sentence": "She attended ___ online seminar on digital marketing.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'a' in apple. (Sector 5 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 5]."
+            "hint": "'Online' begins with the vowel sound 'o'.",
+            "explanation": "Use 'an' before vowel sounds. 'Online' starts with the vowel 'o', so we write 'an online seminar'."
         },
         {
             "id": "ai_l73_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He watched ___ game last night in sector 5.",
-            "sentence": "He watched ___ game last night in sector 5.",
+            "question": "___ seminar gave her practical strategies she could use immediately.",
+            "sentence": "___ seminar gave her practical strategies she could use immediately.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Specific match they discussed. (Sector 5 calibration)",
-            "explanation": "Points to the specific game. [Verified in sector 5]."
+            "hint": "The specific seminar she attended - now a known event.",
+            "explanation": "After introducing a noun ('an online seminar'), use 'the' in the next reference ('the seminar'). This signals it is the same, known event."
         },
         {
             "id": "ai_l73_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She plays ___ tennis every morning in sector 5.",
-            "sentence": "She plays ___ tennis every morning in sector 5.",
+            "question": "___ digital marketing requires a mix of creativity and data analysis.",
+            "sentence": "___ digital marketing requires a mix of creativity and data analysis.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Sports do not take articles. (Sector 5 calibration)",
-            "explanation": "Zero article for sports. [Verified in sector 5]."
+            "correctAnswer": "(no article)",
+            "hint": "'Digital marketing' is a professional field used in a general statement.",
+            "explanation": "Professional disciplines and fields (digital marketing, project management, financial planning) take no article in general statements about what they involve."
         },
         {
             "id": "ai_l74_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ delicious breakfast in sector 5.",
-            "sentence": "It was ___ delicious breakfast in sector 5.",
+            "question": "The manager scheduled ___ team meeting for Thursday.",
+            "sentence": "The manager scheduled ___ team meeting for Thursday.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'd'. (Sector 5 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 5]."
+            "hint": "'Team' begins with the consonant sound 't'.",
+            "explanation": "Use 'a' before consonant sounds. 'Team' starts with 't', so we write 'a team meeting'."
         },
         {
             "id": "ai_l74_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ French they speak is fluent in sector 5.",
-            "sentence": "___ French they speak is fluent in sector 5.",
+            "question": "Everyone arrived on time for ___ meeting.",
+            "sentence": "Everyone arrived on time for ___ meeting.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific variety of language. (Sector 5 calibration)",
-            "explanation": "Points to the specific French spoken. [Verified in sector 5]."
+            "hint": "Both the manager and the team know which meeting - the one scheduled.",
+            "explanation": "Use 'the' when both the speaker and listener already know which specific event or thing is meant. The team knows which meeting - the one their manager scheduled."
         },
         {
             "id": "ai_l74_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He studied ___ Spanish in school in sector 5.",
-            "sentence": "He studied ___ Spanish in school in sector 5.",
+            "question": "___ well-run meetings save time and boost productivity.",
+            "sentence": "___ well-run meetings save time and boost productivity.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Language name alone. (Sector 5 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 5]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "Plural noun in a general statement about meetings as a business tool.",
+            "explanation": "Plural nouns in general statements take no article: 'Meetings save time', 'Emails keep records', 'Deadlines focus effort'."
         },
         {
             "id": "ai_l75_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She played ___ intensive match in sector 5.",
-            "sentence": "She played ___ intensive match in sector 5.",
+            "question": "She spotted ___ error in the financial report.",
+            "sentence": "She spotted ___ error in the financial report.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'i'. (Sector 5 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 5]."
+            "hint": "'Error' begins with the vowel sound 'eh'.",
+            "explanation": "Use 'an' before vowel sounds. 'Error' starts with the vowel 'e', so we write 'an error'."
         },
         {
             "id": "ai_l75_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They won ___ final match in sector 5.",
-            "sentence": "They won ___ final match in sector 5.",
+            "question": "She corrected ___ error before submitting the report.",
+            "sentence": "She corrected ___ error before submitting the report.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific unique match. (Sector 5 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 5]."
+            "hint": "The specific error she already spotted - now a known item.",
+            "explanation": "After introducing a noun ('an error'), use 'the' in the next reference ('the error'). The reader knows exactly which error - the one she found."
         },
         {
             "id": "ai_l75_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They serves ___ dinner at eight in sector 5.",
-            "sentence": "They serves ___ dinner at eight in sector 5.",
+            "question": "___ accuracy in financial reporting is non-negotiable.",
+            "sentence": "___ accuracy in financial reporting is non-negotiable.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Meal name alone. (Sector 5 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 5]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Accuracy' as an abstract quality takes no article in a general statement.",
+            "explanation": "Abstract qualities essential to a profession (accuracy, transparency, integrity, reliability) take no article in general professional statements."
         },
         {
             "id": "ai_l76_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He joined ___ football club in sector 5.",
-            "sentence": "He joined ___ football club in sector 5.",
+            "question": "He was offered ___ promotion at his firm.",
+            "sentence": "He was offered ___ promotion at his firm.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'f'. (Sector 5 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 5]."
+            "hint": "'Promotion' begins with the consonant sound 'p'.",
+            "explanation": "Use 'a' before consonant sounds. 'Promotion' starts with 'p', so we write 'a promotion'."
         },
         {
             "id": "ai_l76_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ breakfast at the academy is free in sector 5.",
-            "sentence": "___ breakfast at the academy is free in sector 5.",
+            "question": "He celebrated ___ promotion with his colleagues.",
+            "sentence": "He celebrated ___ promotion with his colleagues.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific breakfast at the academy. (Sector 5 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 5]."
+            "hint": "The specific promotion he was just offered - now a known event.",
+            "explanation": "Use 'the' to refer back to the specific promotion already mentioned. 'The promotion' is the one he was just offered at his firm."
         },
         {
             "id": "ai_l76_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "I enjoy playing ___ chess in sector 5.",
-            "sentence": "I enjoy playing ___ chess in sector 5.",
+            "question": "___ career advancement requires both skill and networking.",
+            "sentence": "___ career advancement requires both skill and networking.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Games have no article. (Sector 5 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 5]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Career advancement' is an uncountable concept used generally.",
+            "explanation": "Compound professional concepts (career advancement, professional development, skill building) take no article in general statements."
         },
         {
             "id": "ai_l77_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ English textbook in sector 5.",
-            "sentence": "This is ___ English textbook in sector 5.",
+            "question": "She gave ___ example to clarify her point.",
+            "sentence": "She gave ___ example to clarify her point.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'e'. (Sector 5 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 5]."
+            "hint": "'Example' begins with the vowel sound 'eg'.",
+            "explanation": "Use 'an' before vowel sounds. 'Example' starts with the vowel 'e' (sound 'eg'), so we write 'an example'."
         },
         {
             "id": "ai_l77_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She plays ___ violin beautifully in sector 5.",
-            "sentence": "She plays ___ violin beautifully in sector 5.",
+            "question": "___ example she gave made everything much clearer.",
+            "sentence": "___ example she gave made everything much clearer.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Musical instruments take 'the' in general usage. (Sector 5 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 5]."
+            "hint": "The specific example she just gave - identified by 'she gave'.",
+            "explanation": "A defining clause ('she gave') makes the noun specific. 'The example she gave' refers to the one particular example that was mentioned."
         },
         {
             "id": "ai_l77_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She teaches ___ Russian in sector 5.",
-            "sentence": "She teaches ___ Russian in sector 5.",
+            "question": "___ creativity is one of the most valued skills in modern workplaces.",
+            "sentence": "___ creativity is one of the most valued skills in modern workplaces.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Language alone. (Sector 5 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 5]."
+            "correctAnswer": "(no article)",
+            "hint": "'Creativity' is an abstract quality in a general professional context.",
+            "explanation": "Abstract professional qualities (creativity, adaptability, leadership, initiative) take no article in general statements about their value."
         },
         {
             "id": "ai_l78_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They built ___ sports stadium in sector 5.",
-            "sentence": "They built ___ sports stadium in sector 5.",
+            "question": "They hired ___ skilled graphic designer for the project.",
+            "sentence": "They hired ___ skilled graphic designer for the project.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Consonant sound 's'. (Sector 5 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 5]."
+            "hint": "'Skilled' begins with the consonant sound 's'.",
+            "explanation": "Use 'a' before consonant sounds. 'Skilled' starts with 's', so we write 'a skilled graphic designer'."
         },
         {
             "id": "ai_l78_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They translate ___ ancient text in sector 5.",
-            "sentence": "They translate ___ ancient text in sector 5.",
+            "question": "___ designer they hired transformed the brand's visual identity.",
+            "sentence": "___ designer they hired transformed the brand's visual identity.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific text they are looking at. (Sector 5 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 5]."
+            "hint": "The specific designer who was hired - identified by 'they hired'.",
+            "explanation": "A defining relative clause ('they hired') specifies exactly which designer. 'The designer they hired' refers to one particular person."
         },
         {
             "id": "ai_l78_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We love ___ lunch in the open in sector 5.",
-            "sentence": "We love ___ lunch in the open in sector 5.",
+            "question": "___ good design makes products more intuitive and appealing.",
+            "sentence": "___ good design makes products more intuitive and appealing.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General meal category. (Sector 5 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 5]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "'Good design' as a general concept takes no article.",
+            "explanation": "Design concepts used in a general sense (good design, strong branding, clear layout) take no article in general statements about their effect."
         },
         {
             "id": "ai_l79_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She wants ___ orange beverage in sector 5.",
-            "sentence": "She wants ___ orange beverage in sector 5.",
+            "question": "Her manager gave her ___ outstanding performance review.",
+            "sentence": "Her manager gave her ___ outstanding performance review.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'o'. (Sector 5 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 5]."
+            "hint": "'Outstanding' begins with the vowel sound 'owt'.",
+            "explanation": "Use 'an' before vowel sounds. 'Outstanding' starts with 'ou' (pronounced 'owt'), a vowel sound. Use 'an outstanding review'."
         },
         {
             "id": "ai_l79_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ dinner was delicious in sector 5.",
-            "sentence": "___ dinner was delicious in sector 5.",
+            "question": "She was thrilled by ___ review she received.",
+            "sentence": "She was thrilled by ___ review she received.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific meal they just ate. (Sector 5 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 5]."
+            "hint": "The specific review her manager gave her - now a known document.",
+            "explanation": "Use 'the' to refer to the specific review already introduced. 'The review she received' = the outstanding performance review mentioned earlier."
         },
         {
             "id": "ai_l79_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They practice ___ soccer daily in sector 5.",
-            "sentence": "They practice ___ soccer daily in sector 5.",
+            "question": "___ constructive feedback helps employees grow and improve.",
+            "sentence": "___ constructive feedback helps employees grow and improve.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Sport alone. (Sector 5 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 5]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Constructive feedback' as an uncountable concept takes no article.",
+            "explanation": "Uncountable nouns for types of communication (constructive feedback, honest criticism, clear direction) take no article in general professional statements."
         },
         {
             "id": "ai_l80_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ long game in sector 5.",
-            "sentence": "It was ___ long game in sector 5.",
+            "question": "He took ___ different approach to solving the problem.",
+            "sentence": "He took ___ different approach to solving the problem.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'l'. (Sector 5 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 5]."
+            "hint": "'Different' begins with the consonant sound 'd'.",
+            "explanation": "Use 'a' before consonant sounds. 'Different' starts with 'd', so we write 'a different approach'."
         },
         {
             "id": "ai_l80_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We supported ___ local team in sector 5.",
-            "sentence": "We supported ___ local team in sector 5.",
+            "question": "___ approach he suggested turned out to be very effective.",
+            "sentence": "___ approach he suggested turned out to be very effective.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific local team. (Sector 5 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 5]."
+            "hint": "The specific approach he just proposed - identified by 'he suggested'.",
+            "explanation": "A defining clause ('he suggested') makes the noun specific and definite. 'The approach he suggested' identifies the one particular method."
         },
         {
             "id": "ai_l80_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He plays ___ golf on weekends in sector 5.",
-            "sentence": "He plays ___ golf on weekends in sector 5.",
+            "question": "___ innovation drives progress in every competitive industry.",
+            "sentence": "___ innovation drives progress in every competitive industry.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Sport alone. (Sector 5 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 5]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Innovation' as an abstract concept takes no article in a general statement.",
+            "explanation": "Abstract concepts that drive change (innovation, competition, collaboration, ambition) take no article in general statements about their role."
         }
     ]
 }

@@ -6,159 +6,150 @@
         {
             "id": "ai_l31_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She ordered ___ elegant dinner.",
-            "sentence": "She ordered ___ elegant dinner.",
+            "question": "She ordered ___ elegant three-course meal.",
+            "sentence": "She ordered ___ elegant three-course meal.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'e' in elegant.",
-            "explanation": "'an' is correct."
+            "hint": "'Elegant' begins with the vowel sound 'el'.",
+            "explanation": "Use 'an' before vowel sounds. 'Elegant' starts with the vowel 'e', so we write 'an elegant three-course meal'."
         },
         {
             "id": "ai_l31_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "I really enjoyed ___ lunch they prepared.",
-            "sentence": "I really enjoyed ___ lunch they prepared.",
+            "question": "I really enjoyed ___ lunch they prepared for us.",
+            "sentence": "I really enjoyed ___ lunch they prepared for us.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific meal that was prepared.",
-            "explanation": "Points to a particular meal."
+            "hint": "The specific lunch already prepared - we know which one.",
+            "explanation": "Use 'the' when referring to a specific meal or event that is already known. 'The lunch they prepared' identifies this particular meal."
         },
         {
             "id": "ai_l31_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They speak ___ English fluently.",
-            "sentence": "They speak ___ English fluently.",
+            "question": "They speak ___ English very fluently.",
+            "sentence": "They speak ___ English very fluently.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Languages alone do not take articles.",
-            "explanation": "Zero article for languages without 'language'."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "Language names alone - without 'language' - take no article.",
+            "explanation": "When a language name is used alone, no article is needed: 'She speaks French', 'He studies Mandarin', 'They read Arabic'. Use 'the' only when 'language' follows: 'the English language'."
         },
         {
             "id": "ai_l32_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They prepared ___ fast lunch.",
-            "sentence": "They prepared ___ fast lunch.",
+            "question": "They prepared ___ quick meal before the game.",
+            "sentence": "They prepared ___ quick meal before the game.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'f'.",
-            "explanation": "'a' is correct."
+            "hint": "'Quick' begins with the consonant sound 'kw'.",
+            "explanation": "Use 'a' before consonant sounds. 'Quick' starts with 'qu' (pronounced 'kw'), so we write 'a quick meal'."
         },
         {
             "id": "ai_l32_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ English language is expressive.",
-            "sentence": "___ English language is expressive.",
+            "question": "___ English language is spoken on every continent.",
+            "sentence": "___ English language is spoken on every continent.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific language followed by the word 'language'.",
-            "explanation": "The word 'language' triggers 'the'."
+            "hint": "When 'language' follows the language name, use 'the'.",
+            "explanation": "The pattern '[Language name] + language' always uses 'the': the English language, the French language, the Spanish language. Without 'language', no article is used."
         },
         {
             "id": "ai_l32_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We usually have ___ breakfast at dawn.",
-            "sentence": "We usually have ___ breakfast at dawn.",
+            "question": "We usually have ___ breakfast at seven.",
+            "sentence": "We usually have ___ breakfast at seven.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Standard meals have no article.",
-            "explanation": "Zero article for general meals."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "Meal names used in a routine context take no article.",
+            "explanation": "Meal names (breakfast, lunch, dinner, supper) in general statements about habits or routines take no article: 'We have breakfast at seven', 'She skips lunch', 'They serve dinner at eight'."
         },
         {
             "id": "ai_l33_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He wanted ___ apple juice.",
-            "sentence": "He wanted ___ apple juice.",
+            "question": "He wanted ___ ice-cold lemonade.",
+            "sentence": "He wanted ___ ice-cold lemonade.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'a' in apple.",
-            "explanation": "'an' is correct."
+            "hint": "'Ice-cold' begins with the vowel sound 'eye'.",
+            "explanation": "Use 'an' before vowel sounds. 'Ice-cold' starts with the vowel 'i' (pronounced 'eye'), so we write 'an ice-cold lemonade'."
         },
         {
             "id": "ai_l33_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
             "question": "He watched ___ game last night.",
             "sentence": "He watched ___ game last night.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Specific match they discussed.",
-            "explanation": "Points to the specific game."
+            "hint": "The specific game discussed - both speakers know which one.",
+            "explanation": "Use 'the' when referring to a specific event that both the speaker and listener already know about. 'The game' means the particular match they have been discussing."
         },
         {
             "id": "ai_l33_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
             "question": "She plays ___ tennis every morning.",
@@ -167,411 +158,390 @@
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Sports do not take articles.",
-            "explanation": "Zero article for sports."
+            "correctAnswer": "(no article)",
+            "hint": "Sports and games take no article.",
+            "explanation": "Sports names take no article when used generally: 'She plays tennis', 'He loves football', 'They practice basketball'. Exception: musical instruments use 'the' - 'She plays the piano'."
         },
         {
             "id": "ai_l34_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ delicious breakfast.",
-            "sentence": "It was ___ delicious breakfast.",
+            "question": "It was ___ delicious vegetarian dish.",
+            "sentence": "It was ___ delicious vegetarian dish.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'd'.",
-            "explanation": "'a' is correct."
+            "hint": "'Delicious' begins with the consonant sound 'd'.",
+            "explanation": "Use 'a' before consonant sounds. 'Delicious' starts with 'd', so we write 'a delicious vegetarian dish'."
         },
         {
             "id": "ai_l34_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ French they speak is fluent.",
-            "sentence": "___ French they speak is fluent.",
+            "question": "___ French they speak has a Parisian accent.",
+            "sentence": "___ French they speak has a Parisian accent.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific variety of language.",
-            "explanation": "Points to the specific French spoken."
+            "hint": "The specific variety of French they speak - defined by context.",
+            "explanation": "When a language refers to a specific variety spoken by specific people, use 'the': 'The French they speak is very formal.' Compare: 'She speaks French' (general, no article)."
         },
         {
             "id": "ai_l34_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He studied ___ Spanish in school.",
-            "sentence": "He studied ___ Spanish in school.",
+            "question": "He studied ___ Spanish at university.",
+            "sentence": "He studied ___ Spanish at university.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Language name alone.",
-            "explanation": "Zero article is correct."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "Language name alone, without 'language', takes no article.",
+            "explanation": "Language names used alone take no article: 'He studied Spanish', 'She learned Mandarin', 'They teach Arabic'. Add 'the' only when 'language' follows: 'the Spanish language'."
         },
         {
             "id": "ai_l35_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She played ___ intensive match.",
-            "sentence": "She played ___ intensive match.",
+            "question": "She played ___ intense match.",
+            "sentence": "She played ___ intense match.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'i'.",
-            "explanation": "'an' is correct."
+            "hint": "'Intense' begins with the vowel sound 'in'.",
+            "explanation": "Use 'an' before vowel sounds. 'Intense' starts with the vowel 'i', so we write 'an intense match'."
         },
         {
             "id": "ai_l35_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They won ___ final match.",
-            "sentence": "They won ___ final match.",
+            "question": "They won ___ final match of the season.",
+            "sentence": "They won ___ final match of the season.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific unique match.",
-            "explanation": "'the' is correct."
+            "hint": "The specific final match - there is only one final match.",
+            "explanation": "Use 'the' with 'final', 'first', 'last', and ordinal words, as they identify a unique event: the final match, the first game, the last round."
         },
         {
             "id": "ai_l35_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They serves ___ dinner at eight.",
-            "sentence": "They serves ___ dinner at eight.",
+            "question": "They serve ___ dinner at eight o'clock.",
+            "sentence": "They serve ___ dinner at eight o'clock.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Meal name alone.",
-            "explanation": "Zero article is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "Meal names in general routine statements take no article.",
+            "explanation": "Meal names in habitual or routine contexts take no article: 'They serve dinner at eight', 'We have lunch at noon', 'She cooks breakfast on weekends'."
         },
         {
             "id": "ai_l36_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He joined ___ football club.",
-            "sentence": "He joined ___ football club.",
+            "question": "He joined ___ local football club.",
+            "sentence": "He joined ___ local football club.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'f'.",
-            "explanation": "'a' is correct."
+            "hint": "'Local' begins with the consonant sound 'l'.",
+            "explanation": "Use 'a' before consonant sounds. 'Local' starts with 'l', so we write 'a local football club'."
         },
         {
             "id": "ai_l36_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ breakfast at the academy is free.",
-            "sentence": "___ breakfast at the academy is free.",
+            "question": "___ breakfast at the hotel is included in the price.",
+            "sentence": "___ breakfast at the hotel is included in the price.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific breakfast at the academy.",
-            "explanation": "'the' is correct."
+            "hint": "The specific breakfast served at this specific hotel.",
+            "explanation": "Use 'the' when a meal refers to a specific, identifiable one. 'The breakfast at the hotel' means the particular breakfast meal served at that hotel."
         },
         {
             "id": "ai_l36_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
             "question": "I enjoy playing ___ chess.",
             "sentence": "I enjoy playing ___ chess.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Games have no article.",
-            "explanation": "Zero article is correct."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "Board games and sports take no article.",
+            "explanation": "Board games and sports take no article when used generally: 'She plays chess', 'He loves poker', 'They enjoy tennis'. Compare: 'She plays the piano' (the, for instruments)."
         },
         {
             "id": "ai_l37_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ English textbook.",
-            "sentence": "This is ___ English textbook.",
+            "question": "This is ___ English grammar book.",
+            "sentence": "This is ___ English grammar book.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'e'.",
-            "explanation": "'an' is correct."
+            "hint": "'English' begins with the vowel sound 'en'.",
+            "explanation": "Use 'an' before vowel sounds. 'English' starts with the vowel 'e', so we write 'an English grammar book'."
         },
         {
             "id": "ai_l37_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She plays ___ violin beautifully.",
-            "sentence": "She plays ___ violin beautifully.",
+            "question": "She plays ___ piano beautifully.",
+            "sentence": "She plays ___ piano beautifully.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Musical instruments take 'the' in general usage.",
-            "explanation": "'the' is correct."
+            "hint": "Musical instruments use 'the' when you mean playing the instrument as a skill.",
+            "explanation": "In English, we use 'the' before musical instruments: 'She plays the piano', 'He plays the guitar', 'She practices the violin'. This is a fixed grammatical pattern."
         },
         {
             "id": "ai_l37_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She teaches ___ Russian.",
-            "sentence": "She teaches ___ Russian.",
+            "question": "She teaches ___ Russian at the language school.",
+            "sentence": "She teaches ___ Russian at the language school.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Language alone.",
-            "explanation": "Zero article is correct."
+            "correctAnswer": "(no article)",
+            "hint": "Language name alone takes no article.",
+            "explanation": "Language names without 'language' take no article: 'She teaches Russian', 'He studies Arabic', 'They learn Mandarin'."
         },
         {
             "id": "ai_l38_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They built ___ sports stadium.",
-            "sentence": "They built ___ sports stadium.",
+            "question": "They built ___ sports arena nearby.",
+            "sentence": "They built ___ sports arena nearby.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Consonant sound 's'.",
-            "explanation": "'a' is correct."
+            "hint": "'Sports' begins with the consonant sound 's'.",
+            "explanation": "Use 'a' before consonant sounds. 'Sports' starts with 's', so we write 'a sports arena'."
         },
         {
             "id": "ai_l38_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They translate ___ ancient text.",
-            "sentence": "They translate ___ ancient text.",
+            "question": "They are translating ___ ancient manuscript.",
+            "sentence": "They are translating ___ ancient manuscript.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific text they are looking at.",
-            "explanation": "'the' is correct."
+            "hint": "The specific manuscript they are working on - we know which one.",
+            "explanation": "Use 'the' to refer to a specific, known item. 'The ancient manuscript' refers to the particular text they have been assigned to translate."
         },
         {
             "id": "ai_l38_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We love ___ lunch in the open.",
-            "sentence": "We love ___ lunch in the open.",
+            "question": "We love having ___ lunch outdoors.",
+            "sentence": "We love having ___ lunch outdoors.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General meal category.",
-            "explanation": "Zero article is correct."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "Meal names in a general preference statement take no article.",
+            "explanation": "Meal names in general statements about preferences or habits take no article: 'I love lunch outdoors', 'We enjoy breakfast together', 'He prefers dinner early'."
         },
         {
             "id": "ai_l39_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She wants ___ orange beverage.",
-            "sentence": "She wants ___ orange beverage.",
+            "question": "She wants ___ orange juice.",
+            "sentence": "She wants ___ orange juice.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'o'.",
-            "explanation": "'an' is correct."
+            "hint": "'Orange' begins with the vowel sound 'or'.",
+            "explanation": "Use 'an' before vowel sounds. 'Orange' starts with the vowel 'o', so we write 'an orange juice'."
         },
         {
             "id": "ai_l39_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ dinner was delicious.",
-            "sentence": "___ dinner was delicious.",
+            "question": "___ dinner last night was outstanding.",
+            "sentence": "___ dinner last night was outstanding.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific meal they just ate.",
-            "explanation": "'the' is correct."
+            "hint": "The specific dinner that happened last night - a known event.",
+            "explanation": "Use 'the' to refer to a specific meal that has already taken place. 'The dinner last night' identifies one particular meal."
         },
         {
             "id": "ai_l39_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They practice ___ soccer daily.",
-            "sentence": "They practice ___ soccer daily.",
+            "question": "They practice ___ soccer after school.",
+            "sentence": "They practice ___ soccer after school.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Sport alone.",
-            "explanation": "Zero article is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "Sport names used in a general routine context take no article.",
+            "explanation": "Sports take no article when used generally: 'They practice soccer', 'She plays volleyball', 'He runs track'. No article is needed."
         },
         {
             "id": "ai_l40_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ long game.",
-            "sentence": "It was ___ long game.",
+            "question": "It was ___ long and exciting game.",
+            "sentence": "It was ___ long and exciting game.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'l'.",
-            "explanation": "'a' is correct."
+            "hint": "'Long' begins with the consonant sound 'l'.",
+            "explanation": "Use 'a' before consonant sounds. 'Long' starts with 'l', so we write 'a long and exciting game'."
         },
         {
             "id": "ai_l40_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We supported ___ local team.",
-            "sentence": "We supported ___ local team.",
+            "question": "They supported ___ local team.",
+            "sentence": "They supported ___ local team.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific local team.",
-            "explanation": "'the' is correct."
+            "hint": "The specific local team - both speakers know which one they mean.",
+            "explanation": "Use 'the' when referring to a specific, known team. 'The local team' is the particular team from their area that both speakers recognize."
         },
         {
             "id": "ai_l40_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 1,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He plays ___ golf on weekends.",
-            "sentence": "He plays ___ golf on weekends.",
+            "question": "He plays ___ golf every weekend.",
+            "sentence": "He plays ___ golf every weekend.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Sport alone.",
-            "explanation": "Zero article is correct."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "Golf is a sport - sports take no article.",
+            "explanation": "Sports and games take no article when used generally: 'He plays golf', 'She surfs', 'They play cricket'. Exception: 'She plays the piano' (musical instruments use 'the')."
         }
     ]
 }

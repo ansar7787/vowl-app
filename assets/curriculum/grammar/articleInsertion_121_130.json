@@ -6,572 +6,542 @@
         {
             "id": "ai_l121_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "I saw ___ asteroid flying past in sector 10.",
-            "sentence": "I saw ___ asteroid flying past in sector 10.",
+            "question": "She found ___ affordable option at the second store she visited.",
+            "sentence": "She found ___ affordable option at the second store she visited.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'a' in asteroid requires 'an'. (Sector 10 calibration)",
-            "explanation": "Use 'an' before vowel sounds. [Verified in sector 10]."
+            "hint": "'Affordable' begins with the vowel sound 'uh'.",
+            "explanation": "Use 'an' before vowel sounds. 'Affordable' starts with the vowel 'a', so we write 'an affordable option'."
         },
         {
             "id": "ai_l121_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ sun is blazing fiercely today in sector 10.",
-            "sentence": "___ sun is blazing fiercely today in sector 10.",
+            "question": "She chose ___ option that best suited her budget.",
+            "sentence": "She chose ___ option that best suited her budget.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Use 'the' for unique singular entities. (Sector 10 calibration)",
-            "explanation": "The sun is unique in this context. [Verified in sector 10]."
+            "hint": "The defining clause 'that best suited her budget' identifies one specific option.",
+            "explanation": "A defining relative clause makes a noun definite. 'The option that best suited her budget' specifies exactly which one she chose - there is only one that fits that description."
         },
         {
             "id": "ai_l121_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ titanium is a vital metal in sector 10.",
-            "sentence": "___ titanium is a vital metal in sector 10.",
+            "question": "She believes ___ quality should never be sacrificed for price.",
+            "sentence": "She believes ___ quality should never be sacrificed for price.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Uncountable mass noun in general. (Sector 10 calibration)",
-            "explanation": "Mass nouns in general require zero article. [Verified in sector 10]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Quality' as an abstract principle takes no article in a general belief statement.",
+            "explanation": "Abstract nouns expressing principles or values (quality, value, integrity, craftsmanship) take no article in general statements about what one believes or prioritises."
         },
         {
             "id": "ai_l122_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The scout pilot bought ___ new helm in sector 10.",
-            "sentence": "The scout pilot bought ___ new helm in sector 10.",
+            "question": "He signed ___ long-term contract with a major distributor.",
+            "sentence": "He signed ___ long-term contract with a major distributor.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'n' in new requires 'a'. (Sector 10 calibration)",
-            "explanation": "Use 'a' before consonant sounds. [Verified in sector 10]."
+            "hint": "'Long-term' begins with the consonant sound 'l'.",
+            "explanation": "Use 'a' before consonant sounds. 'Long-term' starts with 'l', so we write 'a long-term contract'."
         },
         {
             "id": "ai_l122_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Look at ___ moon revolving in sector 10.",
-            "sentence": "Look at ___ moon revolving in sector 10.",
+            "question": "___ contract included strict penalty clauses for late delivery.",
+            "sentence": "___ contract included strict penalty clauses for late delivery.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Unique astronomical object. (Sector 10 calibration)",
-            "explanation": "'the' is used for unique celestial bodies. [Verified in sector 10]."
+            "hint": "The specific contract he just signed - now a known legal document.",
+            "explanation": "Use 'the' to refer to the specific contract already introduced. 'The contract' = the long-term one he signed."
         },
         {
             "id": "ai_l122_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ hydrogen fuels the reactor in sector 10.",
-            "sentence": "___ hydrogen fuels the reactor in sector 10.",
+            "question": "___ business negotiations require patience, skill, and preparation.",
+            "sentence": "___ business negotiations require patience, skill, and preparation.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Chemical elements in general use zero article. (Sector 10 calibration)",
-            "explanation": "Zero article 'Ø' is correct for general elements. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "Plural noun in a general statement about business negotiations.",
+            "explanation": "Plural nouns in general statements take no article. 'Business negotiations' here refers to the practice of negotiating in general."
         },
         {
             "id": "ai_l123_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They deployed ___ auxiliary probe in sector 10.",
-            "sentence": "They deployed ___ auxiliary probe in sector 10.",
+            "question": "She launched ___ online campaign to promote her new brand.",
+            "sentence": "She launched ___ online campaign to promote her new brand.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'a' in auxiliary. (Sector 10 calibration)",
-            "explanation": "Vowel sounds take 'an'. [Verified in sector 10]."
+            "hint": "'Online' begins with the vowel sound 'o'.",
+            "explanation": "Use 'an' before vowel sounds. 'Online' starts with the vowel 'o', so we write 'an online campaign'."
         },
         {
             "id": "ai_l123_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They docked at ___ primary station in sector 10.",
-            "sentence": "They docked at ___ primary station in sector 10.",
+            "question": "___ campaign generated over twenty thousand followers in a week.",
+            "sentence": "___ campaign generated over twenty thousand followers in a week.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Specific, unique station. (Sector 10 calibration)",
-            "explanation": "'the' points to a specific unique station. [Verified in sector 10]."
+            "hint": "The specific online campaign she launched - now a known initiative.",
+            "explanation": "Use 'the' to refer to the specific campaign already introduced. 'The campaign' = the online promotional one she launched."
         },
         {
             "id": "ai_l123_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We breath ___ oxygen here in sector 10.",
-            "sentence": "We breath ___ oxygen here in sector 10.",
+            "question": "___ branding is essential for creating lasting customer loyalty.",
+            "sentence": "___ branding is essential for creating lasting customer loyalty.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Uncountable general gas. (Sector 10 calibration)",
-            "explanation": "Zero article is used for gases in general. [Verified in sector 10]."
+            "correctAnswer": "(no article)",
+            "hint": "'Branding' as a marketing discipline takes no article.",
+            "explanation": "Marketing disciplines (branding, advertising, public relations, content marketing) take no article when used in general statements about their role."
         },
         {
             "id": "ai_l124_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We need ___ battery replacement in sector 10.",
-            "sentence": "We need ___ battery replacement in sector 10.",
+            "question": "He attended ___ trade fair to meet potential suppliers.",
+            "sentence": "He attended ___ trade fair to meet potential suppliers.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'b'. (Sector 10 calibration)",
-            "explanation": "Consonant sounds take 'a'. [Verified in sector 10]."
+            "hint": "'Trade' begins with the consonant sound 't'.",
+            "explanation": "Use 'a' before consonant sounds. 'Trade' starts with 't', so we write 'a trade fair'."
         },
         {
             "id": "ai_l124_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ captain ordered a silent run in sector 10.",
-            "sentence": "___ captain ordered a silent run in sector 10.",
+            "question": "___ fair attracted exhibitors from over forty countries.",
+            "sentence": "___ fair attracted exhibitors from over forty countries.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific known person in charge. (Sector 10 calibration)",
-            "explanation": "'the' identifies the specific captain. [Verified in sector 10]."
+            "hint": "The specific trade fair he attended - now a known event.",
+            "explanation": "Use 'the' to refer to the specific fair already mentioned. 'The fair' = the trade one he attended to meet suppliers."
         },
         {
             "id": "ai_l124_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ space is vast and endless in sector 10.",
-            "sentence": "___ space is vast and endless in sector 10.",
+            "question": "___ global trade has expanded significantly over the past three decades.",
+            "sentence": "___ global trade has expanded significantly over the past three decades.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "'Space' in general has no article. (Sector 10 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "'Global trade' as a macroeconomic concept takes no article.",
+            "explanation": "Macroeconomic concepts (global trade, international commerce, free trade, economic growth) take no article in general statements about their development."
         },
         {
             "id": "ai_l125_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She wants ___ upgrade for her suit in sector 10.",
-            "sentence": "She wants ___ upgrade for her suit in sector 10.",
+            "question": "She made ___ offer on a nearly new car.",
+            "sentence": "She made ___ offer on a nearly new car.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'u' in upgrade. (Sector 10 calibration)",
-            "explanation": "Vowel sounds take 'an'. [Verified in sector 10]."
+            "hint": "'Offer' begins with the vowel sound 'aw'.",
+            "explanation": "Use 'an' before vowel sounds. 'Offer' starts with the vowel 'o', so we write 'an offer'."
         },
         {
             "id": "ai_l125_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Turn on ___ hyperdrive system in sector 10.",
-            "sentence": "Turn on ___ hyperdrive system in sector 10.",
+            "question": "___ offer was accepted by the seller the same afternoon.",
+            "sentence": "___ offer was accepted by the seller the same afternoon.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific ship component. (Sector 10 calibration)",
-            "explanation": "'the' matches the specific system. [Verified in sector 10]."
+            "hint": "The specific offer she made - now a known proposal.",
+            "explanation": "Use 'the' to refer to the specific offer already mentioned. 'The offer' = the one she made on the nearly new car."
         },
         {
             "id": "ai_l125_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He studies ___ stellar physics in sector 10.",
-            "sentence": "He studies ___ stellar physics in sector 10.",
+            "question": "___ price negotiations are a normal part of buying and selling.",
+            "sentence": "___ price negotiations are a normal part of buying and selling.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Academic subjects have no article. (Sector 10 calibration)",
-            "explanation": "Zero article 'Ø' is correct for disciplines. [Verified in sector 10]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "Plural noun in a general statement about negotiating as a practice.",
+            "explanation": "Plural nouns in general statements take no article. 'Price negotiations' here means the process of negotiating prices in general."
         },
         {
             "id": "ai_l126_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "A droid found ___ capsule in the sand in sector 10.",
-            "sentence": "A droid found ___ capsule in the sand in sector 10.",
+            "question": "She received ___ refund for the faulty item.",
+            "sentence": "She received ___ refund for the faulty item.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'c'. (Sector 10 calibration)",
-            "explanation": "Consonant sounds take 'a'. [Verified in sector 10]."
+            "hint": "'Refund' begins with the consonant sound 'r'.",
+            "explanation": "Use 'a' before consonant sounds. 'Refund' starts with 'r', so we write 'a refund'."
         },
         {
             "id": "ai_l126_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He verified ___ launch coordinates in sector 10.",
-            "sentence": "He verified ___ launch coordinates in sector 10.",
+            "question": "She used ___ refund to buy a replacement product.",
+            "sentence": "She used ___ refund to buy a replacement product.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific parameters. (Sector 10 calibration)",
-            "explanation": "'the' refers to specific coordinates. [Verified in sector 10]."
+            "hint": "The specific refund she received - now a known amount of money.",
+            "explanation": "Use 'the' to refer to the specific refund already introduced. 'The refund' = the one she received for the faulty item."
         },
         {
             "id": "ai_l126_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ data flows through the node in sector 10.",
-            "sentence": "___ data flows through the node in sector 10.",
+            "question": "___ consumer rights vary significantly from country to country.",
+            "sentence": "___ consumer rights vary significantly from country to country.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Uncountable data in general. (Sector 10 calibration)",
-            "explanation": "General uncountable nouns take no article. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "Plural noun in a general comparative statement about consumer rights.",
+            "explanation": "Plural nouns in general comparative statements take no article. 'Consumer rights vary' refers to these rights in general, across all countries."
         },
         {
             "id": "ai_l127_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He received ___ encrypted alert in sector 10.",
-            "sentence": "He received ___ encrypted alert in sector 10.",
+            "question": "He read ___ advertisement for the new shopping center.",
+            "sentence": "He read ___ advertisement for the new shopping center.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'e' in encrypted. (Sector 10 calibration)",
-            "explanation": "Vowel sounds take 'an'. [Verified in sector 10]."
+            "hint": "'Advertisement' begins with the vowel sound 'ad'.",
+            "explanation": "Use 'an' before vowel sounds. 'Advertisement' starts with the vowel 'a', so we write 'an advertisement'."
         },
         {
             "id": "ai_l127_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They entered ___ galaxy center in sector 10.",
-            "sentence": "They entered ___ galaxy center in sector 10.",
+            "question": "___ advertisement overstated the center's size and facilities.",
+            "sentence": "___ advertisement overstated the center's size and facilities.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Unique spatial destination. (Sector 10 calibration)",
-            "explanation": "'the' refers to a specific geographic/astral region. [Verified in sector 10]."
+            "hint": "The specific advertisement he read - now a known marketing text.",
+            "explanation": "Use 'the' to refer to the specific advertisement already introduced. 'The advertisement' = the misleading one for the shopping center."
         },
         {
             "id": "ai_l127_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They trade ___ quantum dust in sector 10.",
-            "sentence": "They trade ___ quantum dust in sector 10.",
+            "question": "___ advertising shapes consumer expectations and purchasing behaviour.",
+            "sentence": "___ advertising shapes consumer expectations and purchasing behaviour.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Uncountable general trade item. (Sector 10 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 10]."
+            "correctAnswer": "(no article)",
+            "hint": "'Advertising' as an industry and concept takes no article.",
+            "explanation": "Communication industries and concepts (advertising, journalism, broadcasting, publishing) take no article in general statements about their influence."
         },
         {
             "id": "ai_l128_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They established ___ frontier base in sector 10.",
-            "sentence": "They established ___ frontier base in sector 10.",
+            "question": "She opened ___ bank account with an online-only bank.",
+            "sentence": "She opened ___ bank account with an online-only bank.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'f'. (Sector 10 calibration)",
-            "explanation": "Consonant sounds take 'a'. [Verified in sector 10]."
+            "hint": "'Bank' begins with the consonant sound 'b'.",
+            "explanation": "Use 'a' before consonant sounds. 'Bank' starts with 'b', so we write 'a bank account'."
         },
         {
             "id": "ai_l128_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ shield is holding up in sector 10.",
-            "sentence": "___ shield is holding up in sector 10.",
+            "question": "She transferred her savings into ___ account immediately.",
+            "sentence": "She transferred her savings into ___ account immediately.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific shield on our vessel. (Sector 10 calibration)",
-            "explanation": "Refers to the specific active shield. [Verified in sector 10]."
+            "hint": "The specific bank account she just opened - now a known financial product.",
+            "explanation": "Use 'the' to refer to the specific account already mentioned. 'The account' = the one she opened with the online-only bank."
         },
         {
             "id": "ai_l128_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ code is hard to read in sector 10.",
-            "sentence": "___ code is hard to read in sector 10.",
+            "question": "___ financial literacy is an essential life skill for young adults.",
+            "sentence": "___ financial literacy is an essential life skill for young adults.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General code concept. (Sector 10 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "'Financial literacy' as an abstract educational concept takes no article.",
+            "explanation": "Compound educational concepts (financial literacy, digital literacy, media literacy, civic literacy) take no article in general statements about their value."
         },
         {
             "id": "ai_l129_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She wore ___ thermal layer in sector 10.",
-            "sentence": "She wore ___ thermal layer in sector 10.",
+            "question": "She attended ___ auction at a local art gallery.",
+            "sentence": "She attended ___ auction at a local art gallery.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "a",
-            "hint": "Consonant sound 't'. (Sector 10 calibration)",
-            "explanation": "Consonant sounds take 'a'. [Verified in sector 10]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "an",
+            "hint": "'Auction' begins with the vowel sound 'aw'.",
+            "explanation": "Use 'an' before vowel sounds. 'Auction' starts with the vowel 'au' (sound 'aw'), so we write 'an auction'."
         },
         {
             "id": "ai_l129_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Check ___ lock code on the terminal in sector 10.",
-            "sentence": "Check ___ lock code on the terminal in sector 10.",
+            "question": "She won ___ auction with a last-second bid.",
+            "sentence": "She won ___ auction with a last-second bid.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific lock code. (Sector 10 calibration)",
-            "explanation": "Points to a particular unique lock code. [Verified in sector 10]."
+            "hint": "The specific auction she attended - now a known competitive event.",
+            "explanation": "Use 'the' to refer to the specific auction already mentioned. 'The auction' = the one at the local art gallery."
         },
         {
             "id": "ai_l129_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She loves ___ engineering in sector 10.",
-            "sentence": "She loves ___ engineering in sector 10.",
+            "question": "___ art markets have become increasingly global and accessible.",
+            "sentence": "___ art markets have become increasingly global and accessible.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General abstract field. (Sector 10 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "Plural noun in a general statement about art markets as an industry.",
+            "explanation": "Plural nouns in general statements take no article. 'Art markets' here refers to the global system of buying and selling art."
         },
         {
             "id": "ai_l130_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ unexpected trajectory in sector 10.",
-            "sentence": "It was ___ unexpected trajectory in sector 10.",
+            "question": "He negotiated ___ better deal with the manufacturer.",
+            "sentence": "He negotiated ___ better deal with the manufacturer.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "Vowel sound 'u' in unexpected. (Sector 10 calibration)",
-            "explanation": "Vowel sounds take 'an'. [Verified in sector 10]."
+            "correctAnswer": "a",
+            "hint": "'Better' begins with the consonant sound 'b'.",
+            "explanation": "Use 'a' before consonant sounds. 'Better' starts with 'b', so we write 'a better deal'."
         },
         {
             "id": "ai_l130_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ command deck is fully crewed in sector 10.",
-            "sentence": "___ command deck is fully crewed in sector 10.",
+            "question": "___ deal he secured saved the company a significant amount.",
+            "sentence": "___ deal he secured saved the company a significant amount.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific command deck. (Sector 10 calibration)",
-            "explanation": "Identifies the particular command deck. [Verified in sector 10]."
+            "hint": "The specific deal he negotiated - identified by 'he secured'.",
+            "explanation": "A defining clause ('he secured') makes the noun specific. 'The deal he secured' = the particular better deal he negotiated with the manufacturer."
         },
         {
             "id": "ai_l130_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 4,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ gravity here is standard in sector 10.",
-            "sentence": "___ gravity here is standard in sector 10.",
+            "question": "___ supply chain management is a complex global challenge.",
+            "sentence": "___ supply chain management is a complex global challenge.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General physical property. (Sector 10 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Supply chain management' as a professional field takes no article.",
+            "explanation": "Professional management fields (supply chain management, risk management, project management, quality control) take no article in general statements about what they involve."
         }
     ]
 }

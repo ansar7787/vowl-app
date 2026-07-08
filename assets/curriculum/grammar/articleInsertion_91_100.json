@@ -6,572 +6,542 @@
         {
             "id": "ai_l91_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He is ___ honest merchant in sector 7.",
-            "sentence": "He is ___ honest merchant in sector 7.",
+            "question": "He caught ___ early morning train to the capital.",
+            "sentence": "He caught ___ early morning train to the capital.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Silent 'h' in honest starts with a vowel sound. (Sector 7 calibration)",
-            "explanation": "'an' is correct for vowel-sound words. [Verified in sector 7]."
+            "hint": "'Early' begins with the vowel sound 'ee'.",
+            "explanation": "Use 'an' before vowel sounds. 'Early' starts with the vowel 'e', so we write 'an early morning train'."
         },
         {
             "id": "ai_l91_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "I need ___ honest truth in sector 7.",
-            "sentence": "I need ___ honest truth in sector 7.",
+            "question": "He missed ___ connecting train due to a delay.",
+            "sentence": "He missed ___ connecting train due to a delay.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific absolute truth requested. (Sector 7 calibration)",
-            "explanation": "Points to specific truth. [Verified in sector 7]."
+            "hint": "The specific connecting train on his route - a known, identified service.",
+            "explanation": "Use 'the' when the noun refers to a specific, identifiable service or event. 'The connecting train' is the particular one he needed to catch."
         },
         {
             "id": "ai_l91_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ honor is all that matters in sector 7.",
-            "sentence": "___ honor is all that matters in sector 7.",
+            "question": "___ rail travel is one of the most sustainable forms of transport.",
+            "sentence": "___ rail travel is one of the most sustainable forms of transport.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General abstract noun. (Sector 7 calibration)",
-            "explanation": "Abstract nouns have no article. [Verified in sector 7]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Rail travel' is an uncountable concept in a general environmental statement.",
+            "explanation": "Transport concepts (rail travel, air travel, road transport, sea freight) take no article in general statements about their characteristics."
         },
         {
             "id": "ai_l92_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It takes ___ hour to recharge in sector 7.",
-            "sentence": "It takes ___ hour to recharge in sector 7.",
+            "question": "She rented ___ car for the long weekend.",
+            "sentence": "She rented ___ car for the long weekend.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "Silent 'h' starts with a vowel sound. (Sector 7 calibration)",
-            "explanation": "Vowel sound hour requires 'an'. [Verified in sector 7]."
+            "correctAnswer": "a",
+            "hint": "'Car' begins with the consonant sound 'c' (like 'k').",
+            "explanation": "Use 'a' before consonant sounds. 'Car' starts with the 'k' sound, so we write 'a car'."
         },
         {
             "id": "ai_l92_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ only way out in sector 7.",
-            "sentence": "This is ___ only way out in sector 7.",
+            "question": "She returned ___ car to the rental office on Monday.",
+            "sentence": "She returned ___ car to the rental office on Monday.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Use 'the' with unique modifiers like 'only'. (Sector 7 calibration)",
-            "explanation": "'the' is used with exclusive modifiers. [Verified in sector 7]."
+            "hint": "The specific car she rented - now a known vehicle.",
+            "explanation": "Use 'the' when referring to a specific item already introduced. 'The car' = the rental car she picked up for the long weekend."
         },
         {
             "id": "ai_l92_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They value ___ honesty above gold in sector 7.",
-            "sentence": "They value ___ honesty above gold in sector 7.",
+            "question": "She usually travels to work by ___ bus.",
+            "sentence": "She usually travels to work by ___ bus.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General abstract noun. (Sector 7 calibration)",
-            "explanation": "Zero article for general honesty. [Verified in sector 7]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "Transport modes after 'by' take no article - it is a fixed expression.",
+            "explanation": "Fixed expressions with 'by' + transport never use an article: by bus, by car, by train, by plane, by bike, by foot. This is a fixed grammatical pattern."
         },
         {
             "id": "ai_l93_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ unique design in sector 7.",
-            "sentence": "This is ___ unique design in sector 7.",
+            "question": "She found ___ excellent restaurant near the station.",
+            "sentence": "She found ___ excellent restaurant near the station.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "a",
-            "hint": "Initial 'u' sounds like a consonant 'y' (yoo-nique). (Sector 7 calibration)",
-            "explanation": "Consonant sound 'y' requires 'a'. [Verified in sector 7]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "an",
+            "hint": "'Excellent' begins with the vowel sound 'ex'.",
+            "explanation": "Use 'an' before vowel sounds. 'Excellent' starts with the vowel 'e', so we write 'an excellent restaurant'."
         },
         {
             "id": "ai_l93_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ universe is expanding in sector 7.",
-            "sentence": "___ universe is expanding in sector 7.",
+            "question": "She returned to ___ restaurant the following evening.",
+            "sentence": "She returned to ___ restaurant the following evening.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Unique entity 'universe'. (Sector 7 calibration)",
-            "explanation": "'the' matches unique things. [Verified in sector 7]."
+            "hint": "The specific restaurant she found - now a known place.",
+            "explanation": "After introducing a noun ('an excellent restaurant'), refer to it as 'the restaurant' on the next mention. It is now a known, specific place."
         },
         {
             "id": "ai_l93_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ unity brings strength in sector 7.",
-            "sentence": "___ unity brings strength in sector 7.",
+            "question": "She tried ___ street food at every market she visited.",
+            "sentence": "She tried ___ street food at every market she visited.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General abstract noun. (Sector 7 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 7]."
+            "correctAnswer": "(no article)",
+            "hint": "'Street food' is an uncountable concept used in a general context.",
+            "explanation": "Uncountable food concepts (street food, fast food, local cuisine, home cooking) take no article when used in a general sense."
         },
         {
             "id": "ai_l94_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They formed ___ unified front in sector 7.",
-            "sentence": "They formed ___ unified front in sector 7.",
+            "question": "He bought ___ second-class ticket at the counter.",
+            "sentence": "He bought ___ second-class ticket at the counter.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Initial 'u' sounds like 'y' (yoo-nified). (Sector 7 calibration)",
-            "explanation": "Consonant sound yoo- requires 'a'. [Verified in sector 7]."
+            "hint": "'Second-class' begins with the consonant sound 's'.",
+            "explanation": "Use 'a' before consonant sounds. 'Second-class' starts with 's', so we write 'a second-class ticket'."
         },
         {
             "id": "ai_l94_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ unity of the fleet was lost in sector 7.",
-            "sentence": "___ unity of the fleet was lost in sector 7.",
+            "question": "The conductor checked ___ ticket and nodded.",
+            "sentence": "The conductor checked ___ ticket and nodded.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific abstract noun with a modifier. (Sector 7 calibration)",
-            "explanation": "The unity of [something]. [Verified in sector 7]."
+            "hint": "The specific ticket he just bought - now a known document.",
+            "explanation": "Use 'the' to refer to the specific ticket already introduced. 'The ticket' = the second-class one he purchased."
         },
         {
             "id": "ai_l94_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They learn ___ utility operations in sector 7.",
-            "sentence": "They learn ___ utility operations in sector 7.",
+            "question": "___ punctuality is especially important in the railway industry.",
+            "sentence": "___ punctuality is especially important in the railway industry.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Plural nouns in general. (Sector 7 calibration)",
-            "explanation": "General plurals take zero article. [Verified in sector 7]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "'Punctuality' as an abstract quality takes no article in a general statement.",
+            "explanation": "Abstract qualities (punctuality, reliability, efficiency, accuracy) take no article in general statements about professional standards."
         },
         {
             "id": "ai_l95_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He has ___ honorable discharge in sector 7.",
-            "sentence": "He has ___ honorable discharge in sector 7.",
+            "question": "She had ___ unforgettable experience in the old town.",
+            "sentence": "She had ___ unforgettable experience in the old town.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Silent 'h' starts with vowel sound. (Sector 7 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 7]."
+            "hint": "'Unforgettable' begins with the vowel sound 'un'.",
+            "explanation": "Use 'an' before vowel sounds. 'Unforgettable' starts with the vowel 'u', so we write 'an unforgettable experience'."
         },
         {
             "id": "ai_l95_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ heir apparent is preparing in sector 7.",
-            "sentence": "___ heir apparent is preparing in sector 7.",
+            "question": "She described ___ experience to everyone who would listen.",
+            "sentence": "She described ___ experience to everyone who would listen.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific unique heir. (Sector 7 calibration)",
-            "explanation": "'the' points to the specific person. [Verified in sector 7]."
+            "hint": "The specific experience she just had - now a known event.",
+            "explanation": "After introducing an experience ('an unforgettable experience'), refer to it as 'the experience' in subsequent sentences. The listener knows which one."
         },
         {
             "id": "ai_l95_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ hour meters are broken in sector 7.",
-            "sentence": "___ hour meters are broken in sector 7.",
+            "question": "___ culture shock is normal when you move to a new country.",
+            "sentence": "___ culture shock is normal when you move to a new country.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Plural nouns in general. (Sector 7 calibration)",
-            "explanation": "General plurals take zero article. [Verified in sector 7]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Culture shock' is an uncountable compound noun in a general statement.",
+            "explanation": "Compound nouns for experiences or phenomena (culture shock, homesickness, jet lag, wanderlust) take no article in general statements."
         },
         {
             "id": "ai_l96_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ universal protocol in sector 7.",
-            "sentence": "This is ___ universal protocol in sector 7.",
+            "question": "The driver made ___ wrong turn at the junction.",
+            "sentence": "The driver made ___ wrong turn at the junction.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Initial 'u' sounds like consonant 'y'. (Sector 7 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 7]."
+            "hint": "'Wrong' begins with the consonant sound 'r'.",
+            "explanation": "Use 'a' before consonant sounds. 'Wrong' starts with 'r', so we write 'a wrong turn'."
         },
         {
             "id": "ai_l96_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ honorable choice in sector 7.",
-            "sentence": "It was ___ honorable choice in sector 7.",
+            "question": "He corrected ___ wrong turn before they got too lost.",
+            "sentence": "He corrected ___ wrong turn before they got too lost.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "We are pointing to a specific choice made. (Sector 7 calibration)",
-            "explanation": "Points to the specific historical choice. [Verified in sector 7]."
+            "hint": "The specific wrong turn just mentioned - now a known event.",
+            "explanation": "Use 'the' to refer to the specific action already described. 'The wrong turn' = the one he made at the junction."
         },
         {
             "id": "ai_l96_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We seek ___ harmony in space in sector 7.",
-            "sentence": "We seek ___ harmony in space in sector 7.",
+            "question": "___ navigation has become much easier with GPS technology.",
+            "sentence": "___ navigation has become much easier with GPS technology.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General abstract noun. (Sector 7 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 7]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Navigation' as an uncountable skill or concept takes no article.",
+            "explanation": "Uncountable skills and technologies (navigation, communication, automation) take no article in general statements about their improvement."
         },
         {
             "id": "ai_l97_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She has ___ hourly schedule in sector 7.",
-            "sentence": "She has ___ hourly schedule in sector 7.",
+            "question": "She applied for ___ international driving permit.",
+            "sentence": "She applied for ___ international driving permit.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "Silent 'h' in hourly. (Sector 7 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 7]."
+            "hint": "'International' begins with the vowel sound 'in'.",
+            "explanation": "Use 'an' before vowel sounds. 'International' starts with the vowel 'i', so we write 'an international driving permit'."
         },
         {
             "id": "ai_l97_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ hour has finally arrived in sector 7.",
-            "sentence": "___ hour has finally arrived in sector 7.",
+            "question": "She kept ___ permit in her wallet at all times.",
+            "sentence": "She kept ___ permit in her wallet at all times.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Specific awaited hour. (Sector 7 calibration)",
-            "explanation": "'the' matches specific event times. [Verified in sector 7]."
+            "hint": "The specific driving permit she applied for - now a known document.",
+            "explanation": "Use 'the' to refer to the specific permit already introduced. 'The permit' = the international driving one she applied for."
         },
         {
             "id": "ai_l97_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ health is essential for cadets in sector 7.",
-            "sentence": "___ health is essential for cadets in sector 7.",
+            "question": "___ traffic congestion costs cities billions in lost productivity.",
+            "sentence": "___ traffic congestion costs cities billions in lost productivity.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General state noun. (Sector 7 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 7]."
+            "correctAnswer": "(no article)",
+            "hint": "'Traffic congestion' is an uncountable compound noun in a general statement.",
+            "explanation": "Compound noun phrases for urban problems (traffic congestion, air pollution, housing shortages) take no article in general statements."
         },
         {
             "id": "ai_l98_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They entered ___ futuristic utopia in sector 7.",
-            "sentence": "They entered ___ futuristic utopia in sector 7.",
+            "question": "She booked ___ budget hotel near the conference center.",
+            "sentence": "She booked ___ budget hotel near the conference center.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "'utopia' starts with 'yoo' sound. (Sector 7 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 7]."
+            "hint": "'Budget' begins with the consonant sound 'b'.",
+            "explanation": "Use 'a' before consonant sounds. 'Budget' starts with 'b', so we write 'a budget hotel'."
         },
         {
             "id": "ai_l98_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We crossed ___ unique nebula in sector 7.",
-            "sentence": "We crossed ___ unique nebula in sector 7.",
+            "question": "She checked into ___ hotel just before midnight.",
+            "sentence": "She checked into ___ hotel just before midnight.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Specific unique nebula in discussion. (Sector 7 calibration)",
-            "explanation": "Specifies a particular nebula. [Verified in sector 7]."
+            "hint": "The specific budget hotel she already booked - now a known place.",
+            "explanation": "Use 'the' to refer to the specific hotel already introduced. 'The hotel' = the budget one near the conference center."
         },
         {
             "id": "ai_l98_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They study ___ human behavior in sector 7.",
-            "sentence": "They study ___ human behavior in sector 7.",
+            "question": "___ accommodation in popular tourist cities is often overpriced.",
+            "sentence": "___ accommodation in popular tourist cities is often overpriced.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General discipline/field. (Sector 7 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 7]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "'Accommodation' is uncountable and used in a general observation.",
+            "explanation": "Uncountable nouns (accommodation, transport, food, entertainment) take no article in general observations about travel and cities."
         },
         {
             "id": "ai_l99_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He was ___ heir to the throne in sector 7.",
-            "sentence": "He was ___ heir to the throne in sector 7.",
+            "question": "He undertook ___ east-to-west journey across the continent.",
+            "sentence": "He undertook ___ east-to-west journey across the continent.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Silent 'h' in heir. (Sector 7 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 7]."
+            "hint": "'East-to-west' begins with the vowel sound 'ee'.",
+            "explanation": "Use 'an' before vowel sounds. 'East-to-west' starts with the vowel 'e', so we write 'an east-to-west journey'."
         },
         {
             "id": "ai_l99_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ utility deck is offline in sector 7.",
-            "sentence": "___ utility deck is offline in sector 7.",
+            "question": "He documented ___ journey in a detailed travel blog.",
+            "sentence": "He documented ___ journey in a detailed travel blog.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Specific section on the ship. (Sector 7 calibration)",
-            "explanation": "'the' matches a specific deck. [Verified in sector 7]."
+            "hint": "The specific east-to-west journey he undertook - now a known trip.",
+            "explanation": "Use 'the' to refer to the specific journey already introduced. 'The journey' = the east-to-west one across the continent."
         },
         {
             "id": "ai_l99_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ uranium is radioactive in sector 7.",
-            "sentence": "___ uranium is radioactive in sector 7.",
+            "question": "___ adventure is what most long-distance travelers are seeking.",
+            "sentence": "___ adventure is what most long-distance travelers are seeking.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Mass chemical element. (Sector 7 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 7]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Adventure' as an abstract concept takes no article in a general statement.",
+            "explanation": "Abstract nouns used in philosophical statements (adventure, freedom, discovery, excitement) take no article: 'Adventure is calling', 'She seeks adventure'."
         },
         {
             "id": "ai_l100_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ useless gadget in sector 7.",
-            "sentence": "This is ___ useless gadget in sector 7.",
+            "question": "She purchased ___ comprehensive travel insurance policy.",
+            "sentence": "She purchased ___ comprehensive travel insurance policy.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "'useless' starts with consonant 'y' sound. (Sector 7 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 7]."
+            "hint": "'Comprehensive' begins with the consonant sound 'c' (like 'k').",
+            "explanation": "Use 'a' before consonant sounds. 'Comprehensive' starts with the 'k' sound, so we write 'a comprehensive travel insurance policy'."
         },
         {
             "id": "ai_l100_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They explored ___ outer reaches in sector 7.",
-            "sentence": "They explored ___ outer reaches in sector 7.",
+            "question": "___ policy covered all her medical expenses abroad.",
+            "sentence": "___ policy covered all her medical expenses abroad.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Specific spatial zone. (Sector 7 calibration)",
-            "explanation": "Specifies the particular region. [Verified in sector 7]."
+            "hint": "The specific insurance policy she purchased - now a known document.",
+            "explanation": "Use 'the' to refer to the specific policy already mentioned. 'The policy' = the comprehensive travel insurance one she bought."
         },
         {
             "id": "ai_l100_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 3,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ universal laws are constant in sector 7.",
-            "sentence": "___ universal laws are constant in sector 7.",
+            "question": "___ travel insurance is strongly recommended for international trips.",
+            "sentence": "___ travel insurance is strongly recommended for international trips.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General plural concepts. (Sector 7 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 7]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Travel insurance' as a general concept or category takes no article.",
+            "explanation": "When a compound noun refers to a type or category of product (travel insurance, health coverage, car insurance), no article is used in a general recommendation."
         }
     ]
 }

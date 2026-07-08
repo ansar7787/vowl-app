@@ -6,572 +6,542 @@
         {
             "id": "ai_l61_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "A ship crossed ___ active volcano in sector 4.",
-            "sentence": "A ship crossed ___ active volcano in sector 4.",
+            "question": "We just bought ___ old house on Maple Street.",
+            "sentence": "We just bought ___ old house on Maple Street.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'a' in active. (Sector 4 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 4]."
+            "hint": "'Old' begins with the vowel sound 'o'.",
+            "explanation": "Use 'an' before vowel sounds. 'Old' starts with the vowel 'o', so we write 'an old house'."
         },
         {
             "id": "ai_l61_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We sailed across ___ Pacific Ocean in sector 4.",
-            "sentence": "We sailed across ___ Pacific Ocean in sector 4.",
+            "question": "They renovated ___ kitchen before moving in.",
+            "sentence": "They renovated ___ kitchen before moving in.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Oceans require the definite article 'the'. (Sector 4 calibration)",
-            "explanation": "'the' is used for oceans, seas, and rivers. [Verified in sector 4]."
+            "hint": "A house typically has one kitchen - it is unique and identifiable.",
+            "explanation": "When a noun refers to a unique part of a known whole, use 'the'. A house has one kitchen, one bathroom, one living room - they are all definite: 'the kitchen', 'the bathroom'."
         },
         {
             "id": "ai_l61_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They landed on ___ Mount Everest in sector 4.",
-            "sentence": "They landed on ___ Mount Everest in sector 4.",
+            "question": "___ home should be a place of safety and warmth.",
+            "sentence": "___ home should be a place of safety and warmth.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Individual mountains take zero article. (Sector 4 calibration)",
-            "explanation": "Zero article for single mountains. [Verified in sector 4]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Home' as an abstract concept - the ideal, not a specific house.",
+            "explanation": "When 'home' refers to the general concept (not a specific house), no article is used: 'Home is where the heart is', 'Feeling at home', 'Far from home'."
         },
         {
             "id": "ai_l62_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They discovered ___ oasis in sector 4.",
-            "sentence": "They discovered ___ oasis in sector 4.",
+            "question": "She has ___ apartment overlooking the river.",
+            "sentence": "She has ___ apartment overlooking the river.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'o' in oasis. (Sector 4 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 4]."
+            "hint": "'Apartment' begins with the vowel sound 'uh'.",
+            "explanation": "Use 'an' before vowel sounds. 'Apartment' starts with the vowel 'a', so we write 'an apartment'."
         },
         {
             "id": "ai_l62_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They crossed ___ Sahara Desert in sector 4.",
-            "sentence": "They crossed ___ Sahara Desert in sector 4.",
+            "question": "She loves ___ view from her living room window.",
+            "sentence": "She loves ___ view from her living room window.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Deserts require 'the'. (Sector 4 calibration)",
-            "explanation": "'the' is correct for deserts. [Verified in sector 4]."
+            "hint": "Her apartment has one view - it is her unique, specific view.",
+            "explanation": "Use 'the' when a noun is unique to a specific person or place. Her apartment has one view, so 'the view from her living room' is naturally definite."
         },
         {
             "id": "ai_l62_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He lives in ___ France in sector 4.",
-            "sentence": "He lives in ___ France in sector 4.",
+            "question": "___ furniture is expensive in this city.",
+            "sentence": "___ furniture is expensive in this city.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Single countries have no article. (Sector 4 calibration)",
-            "explanation": "Zero article for standard country names. [Verified in sector 4]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Furniture' is uncountable and used here in a general statement.",
+            "explanation": "Uncountable nouns (furniture, equipment, clothing, luggage) take no article in general statements: 'Furniture is expensive', 'Equipment needs maintenance'."
         },
         {
             "id": "ai_l63_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He mapped ___ frozen planet in sector 4.",
-            "sentence": "He mapped ___ frozen planet in sector 4.",
+            "question": "Her grandmother is ___ elegant woman in her nineties.",
+            "sentence": "Her grandmother is ___ elegant woman in her nineties.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "a",
-            "hint": "Consonant sound 'f'. (Sector 4 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 4]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "an",
+            "hint": "'Elegant' begins with the vowel sound 'el'.",
+            "explanation": "Use 'an' before vowel sounds. 'Elegant' starts with the vowel 'e', so we write 'an elegant woman'."
         },
         {
             "id": "ai_l63_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We climbed ___ highest peak in sector 4.",
-            "sentence": "We climbed ___ highest peak in sector 4.",
+            "question": "She is ___ oldest person in the village.",
+            "sentence": "She is ___ oldest person in the village.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Superlatives take 'the'. (Sector 4 calibration)",
-            "explanation": "'the' is correct for superlatives. [Verified in sector 4]."
+            "hint": "'Oldest' is a superlative - superlatives always take 'the'.",
+            "explanation": "Superlatives (the oldest, the tallest, the most experienced) always use 'the' because they identify the single most extreme example."
         },
         {
             "id": "ai_l63_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They visited ___ Asia in sector 4.",
-            "sentence": "They visited ___ Asia in sector 4.",
+            "question": "___ children typically learn languages faster than adults.",
+            "sentence": "___ children typically learn languages faster than adults.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Continents take zero article. (Sector 4 calibration)",
-            "explanation": "Zero article for continents. [Verified in sector 4]."
+            "correctAnswer": "(no article)",
+            "hint": "General plural noun in a scientific observation - children in general.",
+            "explanation": "Plural nouns in general, scientific, or observational statements take no article. 'Children learn languages' means all children in general, not specific ones."
         },
         {
             "id": "ai_l64_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They live in ___ humid dome in sector 4.",
-            "sentence": "They live in ___ humid dome in sector 4.",
+            "question": "She has ___ sister living in New Zealand.",
+            "sentence": "She has ___ sister living in New Zealand.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Voiced 'h' starts with consonant sound. (Sector 4 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 4]."
+            "hint": "'Sister' begins with the consonant sound 's'.",
+            "explanation": "Use 'a' before consonant sounds. 'Sister' starts with 's', so we write 'a sister'. This introduces the sister as new information."
         },
         {
             "id": "ai_l64_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They visited ___ Alps in sector 4.",
-            "sentence": "They visited ___ Alps in sector 4.",
+            "question": "She called ___ sister after hearing the news.",
+            "sentence": "She called ___ sister after hearing the news.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Mountain ranges (plural) take 'the'. (Sector 4 calibration)",
-            "explanation": "Plural ranges take 'the'. [Verified in sector 4]."
+            "hint": "The specific sister already introduced - now a known person.",
+            "explanation": "After introducing someone with 'a sister' (new), refer to her as 'the sister' (known). Both the speaker and listener now know which sister is meant."
         },
         {
             "id": "ai_l64_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We traveled to ___ Mars in sector 4.",
-            "sentence": "We traveled to ___ Mars in sector 4.",
+            "question": "She values ___ family above everything else.",
+            "sentence": "She values ___ family above everything else.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Individual planets take zero article. (Sector 4 calibration)",
-            "explanation": "Zero article for single planets. [Verified in sector 4]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "'Family' as an abstract concept or value takes no article.",
+            "explanation": "Abstract concepts (family, friendship, love, loyalty) take no article when used in general statements about values: 'Family is everything', 'She values family'."
         },
         {
             "id": "ai_l65_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ alpine landscape in sector 4.",
-            "sentence": "This is ___ alpine landscape in sector 4.",
+            "question": "He bought ___ interesting book on local history.",
+            "sentence": "He bought ___ interesting book on local history.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'a' in alpine. (Sector 4 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 4]."
+            "hint": "'Interesting' begins with the vowel sound 'in'.",
+            "explanation": "Use 'an' before vowel sounds. 'Interesting' starts with the vowel 'i', so we write 'an interesting book'."
         },
         {
             "id": "ai_l65_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He explored ___ Nile River in sector 4.",
-            "sentence": "He explored ___ Nile River in sector 4.",
+            "question": "He gave ___ book to his mother as a gift.",
+            "sentence": "He gave ___ book to his mother as a gift.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Rivers take 'the'. (Sector 4 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 4]."
+            "hint": "The specific book he just bought - now a known item.",
+            "explanation": "After a noun is introduced ('he bought an interesting book'), use 'the' for the next mention ('he gave the book to his mother'). This is the a/an → the pattern."
         },
         {
             "id": "ai_l65_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They sailed to ___ Madagascar in sector 4.",
-            "sentence": "They sailed to ___ Madagascar in sector 4.",
+            "question": "___ books are one of humanity's greatest inventions.",
+            "sentence": "___ books are one of humanity's greatest inventions.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Single islands take zero article. (Sector 4 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 4]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "Plural nouns in a general, philosophical statement take no article.",
+            "explanation": "Plural nouns in universal or philosophical statements take no article: 'Books are important', 'Libraries preserve knowledge', 'Stories connect people'."
         },
         {
             "id": "ai_l66_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He spotted ___ rocky moon in sector 4.",
-            "sentence": "He spotted ___ rocky moon in sector 4.",
+            "question": "My brother is ___ engineer at a tech firm.",
+            "sentence": "My brother is ___ engineer at a tech firm.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "a",
-            "hint": "Consonant sound 'r'. (Sector 4 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 4]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "an",
+            "hint": "'Engineer' begins with the vowel sound 'en'.",
+            "explanation": "Use 'an' before vowel sounds. 'Engineer' starts with the vowel 'e', so we write 'an engineer'."
         },
         {
             "id": "ai_l66_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We crossed ___ equator in sector 4.",
-            "sentence": "We crossed ___ equator in sector 4.",
+            "question": "He is ___ most talented engineer in his department.",
+            "sentence": "He is ___ most talented engineer in his department.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Unique geographical lines take 'the'. (Sector 4 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 4]."
+            "hint": "'Most talented' is a superlative - superlatives always take 'the'.",
+            "explanation": "Superlative adjectives always use 'the': the most talented, the best, the most skilled. They identify someone as uniquely the top of their group."
         },
         {
             "id": "ai_l66_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She studied ___ geology in sector 4.",
-            "sentence": "She studied ___ geology in sector 4.",
+            "question": "___ technology is changing how families communicate.",
+            "sentence": "___ technology is changing how families communicate.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "General fields of science. (Sector 4 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 4]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "'Technology' is uncountable and used in a general statement.",
+            "explanation": "Uncountable nouns for large abstract concepts (technology, science, medicine, art) take no article when used in general statements about their effect on society."
         },
         {
             "id": "ai_l67_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They found ___ inland lake in sector 4.",
-            "sentence": "They found ___ inland lake in sector 4.",
+            "question": "Her father is ___ open-minded person.",
+            "sentence": "Her father is ___ open-minded person.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'i' in inland. (Sector 4 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 4]."
+            "hint": "'Open-minded' begins with the vowel sound 'o'.",
+            "explanation": "Use 'an' before vowel sounds. 'Open-minded' starts with the vowel 'o', so we write 'an open-minded person'."
         },
         {
             "id": "ai_l67_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They orbited ___ Earth in sector 4.",
-            "sentence": "They orbited ___ Earth in sector 4.",
+            "question": "He is ___ only parent who attended the school meeting.",
+            "sentence": "He is ___ only parent who attended the school meeting.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Planet Earth takes 'the' in many astronomical references. (Sector 4 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 4]."
+            "hint": "'Only' makes the noun unique - there is just one person who attended.",
+            "explanation": "Words like 'only', 'first', and 'last' always trigger 'the' because they indicate a unique, one-of-a-kind entity: the only parent, the first person, the last chance."
         },
         {
             "id": "ai_l67_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ nature is beautiful here in sector 4.",
-            "sentence": "___ nature is beautiful here in sector 4.",
+            "question": "___ parents shape their children's values and outlook.",
+            "sentence": "___ parents shape their children's values and outlook.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "'Nature' in general has no article. (Sector 4 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 4]."
+            "correctAnswer": "(no article)",
+            "hint": "Plural noun in a general statement about parents as a group.",
+            "explanation": "Plural nouns in general statements about a group take no article: 'Parents shape children', 'Teachers inspire students', 'Leaders influence societies'."
         },
         {
             "id": "ai_l68_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She wants ___ green garden in sector 4.",
-            "sentence": "She wants ___ green garden in sector 4.",
+            "question": "She cooked ___ big Sunday roast for the family.",
+            "sentence": "She cooked ___ big Sunday roast for the family.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'g'. (Sector 4 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 4]."
+            "hint": "'Big' begins with the consonant sound 'b'.",
+            "explanation": "Use 'a' before consonant sounds. 'Big' starts with 'b', so we write 'a big Sunday roast'."
         },
         {
             "id": "ai_l68_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They sailed ___ Suez Canal in sector 4.",
-            "sentence": "They sailed ___ Suez Canal in sector 4.",
+            "question": "Everyone agreed ___ meal was one of the best ever.",
+            "sentence": "Everyone agreed ___ meal was one of the best ever.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Canals take 'the'. (Sector 4 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 4]."
+            "hint": "The specific meal she just cooked - now known and definite.",
+            "explanation": "After a noun is introduced ('a big Sunday roast'), subsequent references use 'the' ('the meal was one of the best'). This is the standard first-mention/second-mention pattern."
         },
         {
             "id": "ai_l68_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He climbed ___ Mount Fuji in sector 4.",
-            "sentence": "He climbed ___ Mount Fuji in sector 4.",
+            "question": "She usually makes ___ dinner on Sunday evenings.",
+            "sentence": "She usually makes ___ dinner on Sunday evenings.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Single peak. (Sector 4 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 4]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "'Dinner' in a habitual routine context takes no article.",
+            "explanation": "Meal names in habitual statements take no article: 'She makes dinner', 'He cooks breakfast', 'They skip lunch'. These refer to the meal category, not a specific event."
         },
         {
             "id": "ai_l69_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ enormous crater in sector 4.",
-            "sentence": "It was ___ enormous crater in sector 4.",
+            "question": "He gave his daughter ___ important piece of advice.",
+            "sentence": "He gave his daughter ___ important piece of advice.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "Vowel sound 'e'. (Sector 4 calibration)",
-            "explanation": "'an' is correct. [Verified in sector 4]."
+            "hint": "'Important' begins with the vowel sound 'im'.",
+            "explanation": "Use 'an' before vowel sounds. 'Important' starts with the vowel 'i', so we write 'an important piece of advice'."
         },
         {
             "id": "ai_l69_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We visited ___ Bahamas in sector 4.",
-            "sentence": "We visited ___ Bahamas in sector 4.",
+            "question": "She never forgot ___ advice her father had given her.",
+            "sentence": "She never forgot ___ advice her father had given her.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Island groups (plural) take 'the'. (Sector 4 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 4]."
+            "hint": "The specific advice already mentioned - now a known piece of guidance.",
+            "explanation": "After introducing the advice ('an important piece of advice'), refer to it as 'the advice' in later sentences. The listener now knows exactly which advice is meant."
         },
         {
             "id": "ai_l69_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They explored ___ Lake Victoria in sector 4.",
-            "sentence": "They explored ___ Lake Victoria in sector 4.",
+            "question": "___ advice from experienced people can be invaluable.",
+            "sentence": "___ advice from experienced people can be invaluable.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Individual lakes take zero article. (Sector 4 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 4]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "'Advice' is uncountable and used in a general statement.",
+            "explanation": "Uncountable nouns (advice, information, knowledge, guidance) take no article in general statements: 'Advice is valuable', 'Information is power'."
         },
         {
             "id": "ai_l70_q1",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ dry desert in sector 4.",
-            "sentence": "This is ___ dry desert in sector 4.",
+            "question": "She has ___ good relationship with her in-laws.",
+            "sentence": "She has ___ good relationship with her in-laws.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "Ø"
+                "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "Consonant sound 'd'. (Sector 4 calibration)",
-            "explanation": "'a' is correct. [Verified in sector 4]."
+            "hint": "'Good' begins with the consonant sound 'g'.",
+            "explanation": "Use 'a' before consonant sounds. 'Good' starts with 'g', so we write 'a good relationship'."
         },
         {
             "id": "ai_l70_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ North Pole is freezing in sector 4.",
-            "sentence": "___ North Pole is freezing in sector 4.",
+            "question": "She values ___ relationship she has with her neighbors.",
+            "sentence": "She values ___ relationship she has with her neighbors.",
             "options": [
                 "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Unique poles take 'the'. (Sector 4 calibration)",
-            "explanation": "'the' is correct. [Verified in sector 4]."
+            "hint": "The specific, identified relationship - made definite by 'she has'.",
+            "explanation": "Use 'the' when a noun is made specific by a possessive or relative clause. 'The relationship she has with her neighbors' identifies one particular connection."
         },
         {
             "id": "ai_l70_q3",
             "instruction": "INSERT THE CORRECT ARTICLE",
-            "difficulty": 2,
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We live in ___ London in sector 4.",
-            "sentence": "We live in ___ London in sector 4.",
+            "question": "___ relationships need trust and open communication to thrive.",
+            "sentence": "___ relationships need trust and open communication to thrive.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "Ø"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Ø",
-            "hint": "Cities have no article. (Sector 4 calibration)",
-            "explanation": "Zero article is correct. [Verified in sector 4]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "Plural noun in a general statement about relationships in general.",
+            "explanation": "Plural nouns in general statements take no article. 'Relationships need trust' refers to all relationships in general."
         }
     ]
 }
