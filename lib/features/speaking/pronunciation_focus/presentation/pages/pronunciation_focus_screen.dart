@@ -269,10 +269,16 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen> wit
                                           height: 32.h,
                                           child: FittedBox(
                                             fit: BoxFit.scaleDown,
-                                            child: PronunciationFocusHeader(primaryColor: theme.primaryColor),
+                                            child: PronunciationFocusHeader(
+                                              primaryColor: theme.primaryColor,
+                                              instruction: quest.instruction,
+                                            ),
                                           ),
                                         )
-                                      : PronunciationFocusHeader(primaryColor: theme.primaryColor),
+                                      : PronunciationFocusHeader(
+                                          primaryColor: theme.primaryColor,
+                                          instruction: quest.instruction,
+                                        ),
                                     SizedBox(height: gapInstruction),
                                     
                                     isCompact
