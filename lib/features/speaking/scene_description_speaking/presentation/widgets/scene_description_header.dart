@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class SceneDescriptionHeader extends StatelessWidget {
   final Color primaryColor;
+  final String instruction;
 
   const SceneDescriptionHeader({
     super.key,
     required this.primaryColor,
+    required this.instruction,
   });
 
   @override
@@ -23,7 +25,7 @@ class SceneDescriptionHeader extends StatelessWidget {
           Icon(Icons.gps_fixed_rounded, size: 14.r, color: Colors.cyanAccent),
           SizedBox(width: 8.w),
           Text(
-            "SCENIC SONAR BEACON MAP",
+            instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,

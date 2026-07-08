@@ -282,14 +282,20 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
                                   children: [
                                     SizedBox(height: gapTop),
                                     isCompact 
-                                      ? SizedBox(
-                                          height: 32.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SceneDescriptionHeader(primaryColor: theme.primaryColor),
-                                          ),
-                                        )
-                                      : SceneDescriptionHeader(primaryColor: theme.primaryColor),
+                                       ? SizedBox(
+                                           height: 32.h,
+                                           child: FittedBox(
+                                             fit: BoxFit.scaleDown,
+                                             child: SceneDescriptionHeader(
+                                               primaryColor: theme.primaryColor,
+                                               instruction: quest!.instruction,
+                                             ),
+                                           ),
+                                         )
+                                       : SceneDescriptionHeader(
+                                           primaryColor: theme.primaryColor,
+                                           instruction: quest!.instruction,
+                                         ),
                                     SizedBox(height: gapInstruction),
                                     
                                     isCompact
