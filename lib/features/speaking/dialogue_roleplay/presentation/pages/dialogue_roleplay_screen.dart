@@ -242,10 +242,10 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen> with Si
                                           height: 32.h,
                                           child: FittedBox(
                                             fit: BoxFit.scaleDown,
-                                            child: DialogueRoleplayHeader(primaryColor: theme.primaryColor),
+                                            child: DialogueRoleplayHeader(primaryColor: theme.primaryColor, instruction: quest.instruction),
                                           ),
                                         )
-                                      : DialogueRoleplayHeader(primaryColor: theme.primaryColor),
+                                      : DialogueRoleplayHeader(primaryColor: theme.primaryColor, instruction: quest.instruction),
                                     SizedBox(height: gapInstruction),
                                     
                                     isCompact
