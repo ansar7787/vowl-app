@@ -248,10 +248,16 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                                           height: 32.h,
                                           child: FittedBox(
                                             fit: BoxFit.scaleDown,
-                                            child: RepeatSentenceInstruction(primaryColor: theme.primaryColor),
+                                            child: RepeatSentenceInstruction(
+                                              primaryColor: theme.primaryColor,
+                                              instruction: quest.instruction,
+                                            ),
                                           ),
                                         )
-                                      : RepeatSentenceInstruction(primaryColor: theme.primaryColor),
+                                      : RepeatSentenceInstruction(
+                                          primaryColor: theme.primaryColor,
+                                          instruction: quest.instruction,
+                                        ),
                                     SizedBox(height: gapInstruction),
                                     
                                     isCompact

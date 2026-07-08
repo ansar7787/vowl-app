@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class RepeatSentenceInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String instruction;
 
   const RepeatSentenceInstruction({
     super.key,
     required this.primaryColor,
+    required this.instruction,
   });
 
   @override
@@ -38,7 +40,7 @@ class RepeatSentenceInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          "Listen to the target phrase and repeat it exactly to align the wave cores!",
+          instruction,
           textAlign: TextAlign.center,
           style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 14.sp,
