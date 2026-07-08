@@ -3,11 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class SpeakMissingWordInstruction extends StatelessWidget {
   final Color primaryColor;
   final bool isWordPlaced;
+  final String instruction;
 
   const SpeakMissingWordInstruction({
     super.key,
     required this.primaryColor,
     required this.isWordPlaced,
+    required this.instruction,
   });
 
   @override
@@ -27,7 +29,7 @@ class SpeakMissingWordInstruction extends StatelessWidget {
               Icon(Icons.auto_awesome_rounded, size: 12.r, color: primaryColor),
               SizedBox(width: 8.w),
               Text(
-                isWordPlaced ? "READ THE COMPLETED SENTENCE" : "PULL CORRECT WORD INTO VORTEX",
+                isWordPlaced ? "READ THE SENTENCE" : "FIND THE WORD",
                 style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
@@ -41,8 +43,8 @@ class SpeakMissingWordInstruction extends StatelessWidget {
         SizedBox(height: 10.h),
         Text(
           isWordPlaced
-              ? "Option aligned! Hold the recording lens and speak the full sentence aloud!"
-              : "Examine the sentence layout and hold-pull the fitting vocabulary magnetic card!",
+              ? "Read the full sentence aloud."
+              : instruction,
           textAlign: TextAlign.center,
           style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 14.sp,

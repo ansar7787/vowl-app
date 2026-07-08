@@ -340,12 +340,14 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
                                             child: SpeakMissingWordInstruction(
                                               primaryColor: theme.primaryColor,
                                               isWordPlaced: _isWordPlaced,
+                                              instruction: quest.instruction,
                                             ),
                                           ),
                                         )
                                       : SpeakMissingWordInstruction(
                                           primaryColor: theme.primaryColor,
                                           isWordPlaced: _isWordPlaced,
+                                          instruction: quest.instruction,
                                         ),
                                     SizedBox(height: gapInstruction),
                                     
