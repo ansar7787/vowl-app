@@ -288,13 +288,13 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
                                              fit: BoxFit.scaleDown,
                                              child: SceneDescriptionHeader(
                                                primaryColor: theme.primaryColor,
-                                               instruction: quest!.instruction,
+                                               instruction: quest.instruction,
                                              ),
                                            ),
                                          )
                                        : SceneDescriptionHeader(
                                            primaryColor: theme.primaryColor,
-                                           instruction: quest!.instruction,
+                                           instruction: quest.instruction,
                                          ),
                                     SizedBox(height: gapInstruction),
                                     
