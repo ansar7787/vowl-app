@@ -274,13 +274,19 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen> with SingleTick
                                     SizedBox(height: gapTop),
                                     isCompact 
                                       ? SizedBox(
-                                          height: 32.h,
+                                          height: 60.h,
                                           child: FittedBox(
                                             fit: BoxFit.scaleDown,
-                                            child: SpeakSynonymHeader(primaryColor: theme.primaryColor),
+                                            child: SpeakSynonymHeader(
+                                              primaryColor: theme.primaryColor,
+                                              instruction: quest.instruction,
+                                            ),
                                           ),
                                         )
-                                      : SpeakSynonymHeader(primaryColor: theme.primaryColor),
+                                      : SpeakSynonymHeader(
+                                          primaryColor: theme.primaryColor,
+                                          instruction: quest.instruction,
+                                        ),
                                     SizedBox(height: gapInstruction),
                                     
                                     isCompact
