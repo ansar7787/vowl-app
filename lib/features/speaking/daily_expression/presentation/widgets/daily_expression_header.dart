@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class DailyExpressionHeader extends StatelessWidget {
   final Color primaryColor;
+  final String instruction;
 
   const DailyExpressionHeader({
     super.key,
     required this.primaryColor,
+    required this.instruction,
   });
 
   @override
@@ -23,7 +26,7 @@ class DailyExpressionHeader extends StatelessWidget {
           Icon(Icons.auto_awesome_rounded, size: 14.r, color: Colors.amberAccent),
           SizedBox(width: 8.w),
           Text(
-            "TACTILE FOIL SCRATCH CARD",
+            instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,
