@@ -267,14 +267,14 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                             child: YesNoSpeakingHeaderInstruction(
                                               primaryColor: theme.primaryColor,
                                               isSnapped: _isSnapped,
-                                              instruction: quest?.instruction,
+                                              instruction: quest.instruction,
                                             ),
                                           ),
                                         )
                                       : YesNoSpeakingHeaderInstruction(
                                           primaryColor: theme.primaryColor,
                                           isSnapped: _isSnapped,
-                                          instruction: quest?.instruction,
+                                          instruction: quest.instruction,
                                         ),
                                     SizedBox(height: gapInstruction),
                                     
