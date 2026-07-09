@@ -5,663 +5,633 @@
     "quests": [
         {
             "id": "WRT_WRITINGEMAIL_L141_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 141-1] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email to a sovereign wealth fund proposing a co-investment in a real estate portfolio.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "NEXUS REAL ESTATE PROPOSES A CO-INVESTMENT OPPORTUNITY IN A PRIME LONDON OFFICE PORTFOLIO VALUED AT £400M - WE SEEK A 40% EQUITY PARTNER FOR A FIVE-YEAR HOLD WITH A TARGET NET IRR OF 12%.",
+                "YOURS SINCERELY,\nDR HELEN MARSH, MANAGING PARTNER",
+                "DEAR CHIEF INVESTMENT OFFICER,",
+                "SUBJECT: CO-INVESTMENT PROPOSAL - £400M PRIME LONDON OFFICE PORTFOLIO"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 141-1)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 141]."
+            "hint": "Investment size and asset class are in the subject. Portfolio value, equity stake sought, hold period, and IRR target are the four investment parameters in the body. The managing partner approaches the CIO.",
+            "explanation": "The four parameters - portfolio value (£400M), equity stake (40%), hold period (5 years), and IRR target (12%) - give a sovereign wealth fund CIO all the information needed for a first-stage investment committee screening."
         },
         {
             "id": "WRT_WRITINGEMAIL_L141_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 141-2] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to legal advisers requesting preparation of a co-investment term sheet.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "YOURS SINCERELY,\nDR HELEN MARSH, MANAGING PARTNER",
+                "PLEASE PREPARE A CO-INVESTMENT TERM SHEET FOR THE GULF SOVEREIGN FUND REFLECTING A 60:40 EQUITY SPLIT, A FIVE-YEAR HOLD, A 12% TARGET IRR, AND NEXUS'S RIGHTS AS LEAD ASSET MANAGER.",
+                "SUBJECT: TERM SHEET INSTRUCTION - LONDON OFFICE CO-INVESTMENT WITH GULF SOVEREIGN FUND",
+                "DEAR REAL ESTATE COUNSEL,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 141-2)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 141]."
+            "hint": "Deal parties and term sheet purpose are in the subject. Four specific term sheet parameters and the management rights are in the body. The managing partner instructs counsel after in-principle agreement.",
+            "explanation": "The five term sheet parameters - equity split, hold period, IRR target, management rights, and lead manager designation - are the commercially critical points. All five must be accurately reflected to avoid misunderstanding at the legal drafting stage."
         },
         {
             "id": "WRT_WRITINGEMAIL_L141_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 141-3] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to the co-investor confirming execution of the co-investment agreement.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "I AM DELIGHTED TO CONFIRM THAT THE CO-INVESTMENT AGREEMENT HAS BEEN EXECUTED BY BOTH PARTIES AND THE LONDON OFFICE PORTFOLIO FUND FORMALLY CLOSES ON 1 DECEMBER - EQUITY WILL BE DRAWN ON CLOSING.",
+                "DEAR CHIEF INVESTMENT OFFICER,",
+                "YOURS SINCERELY,\nDR HELEN MARSH, MANAGING PARTNER",
+                "SUBJECT: CO-INVESTMENT AGREEMENT EXECUTED - LONDON PORTFOLIO FUND CLOSES 1 DECEMBER"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 141-3)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 141]."
+            "hint": "Agreement execution and closing date are in the subject. Both parties' execution, portfolio fund name, closing date, and equity draw timing are all confirmed in the body.",
+            "explanation": "Three facts confirm a real estate fund close: both parties executed, the fund closes on a specific date, and equity is drawn on closing. These three elements together represent the legal and financial completion of the co-investment."
         },
         {
             "id": "WRT_WRITINGEMAIL_L142_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 142-1] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to a carbon credit registry registering a new carbon offset project.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "WE ARE REGISTERING A NEW VOLUNTARY CARBON MARKET PROJECT - AN AMAZON REFORESTATION INITIATIVE VERIFIED UNDER THE VERRA VCS STANDARD - ESTIMATED TO GENERATE 50,000 CARBON CREDITS ANNUALLY.",
+                "YOURS SINCERELY,\nHEAD OF SUSTAINABILITY, NEXUS GREEN",
+                "DEAR REGISTRY ADMINISTRATOR,",
+                "SUBJECT: CARBON CREDIT REGISTRATION - AMAZON REFORESTATION PROJECT: 50,000 CREDITS"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 142-1)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 142]."
+            "hint": "Project type, location, and scale are in the subject. VCM project type, location, verification standard, and annual credit generation are in the body - the four required registration elements.",
+            "explanation": "The Verra VCS (Voluntary Carbon Standard) is the most widely used verification standard in the voluntary carbon market. Citing it confirms the project meets rigorous third-party additionality and permanence requirements."
         },
         {
             "id": "WRT_WRITINGEMAIL_L142_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 142-2] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to a corporate buyer proposing the sale of verified carbon credits.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "YOURS SINCERELY,\nHEAD OF SUSTAINABILITY, NEXUS GREEN",
+                "WE OFFER 10,000 VERRA VCS-VERIFIED AMAZON REFORESTATION CARBON CREDITS AT £15 PER CREDIT - THE CREDITS HAVE BEEN INDEPENDENTLY VERIFIED AND ARE AVAILABLE FOR IMMEDIATE RETIREMENT.",
+                "SUBJECT: CARBON CREDIT SALE PROPOSAL - 10,000 VCS CREDITS AT £15 PER CREDIT",
+                "DEAR SUSTAINABILITY DIRECTOR,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 142-2)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 142]."
+            "hint": "Credit volume, standard, and price are in the subject. Volume, price, verification status, and retirement availability are in the body - the four commercial parameters of a carbon credit sale.",
+            "explanation": "'Available for immediate retirement' is commercially important - it means the credits can be applied to the buyer's net zero claims without delay. VCS verification provides the third-party assurance corporate buyers need to prevent greenwashing accusations."
         },
         {
             "id": "WRT_WRITINGEMAIL_L142_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 142-3] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email to a sustainability accounting standards body reporting carbon credit retirement.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "NEXUS CONSULTING HEREBY NOTIFIES THE RETIREMENT OF 10,000 VCS AMAZON REFORESTATION CREDITS AGAINST OUR FY2024 EMISSIONS - THE SERIAL NUMBERS ARE LISTED IN THE ATTACHED RETIREMENT CERTIFICATE.",
+                "DEAR REGISTRY TEAM,",
+                "YOURS SINCERELY,\nCHIEF SUSTAINABILITY OFFICER, NEXUS CONSULTING",
+                "SUBJECT: CARBON CREDIT RETIREMENT NOTIFICATION - 10,000 CREDITS RETIRED FOR FY2024"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 142-3)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 142]."
+            "hint": "'Hereby notifies retirement' is the formal registry formula. Credit volume, standard, project type, fiscal year, and serial number reference are in the body - all required for a valid retirement record.",
+            "explanation": "Carbon credit retirement is irreversible - once retired, credits cannot be resold. The serial numbers are the unique identifiers that prevent double-counting. The retirement certificate creates the permanent record that supports the company's net zero claim."
         },
         {
             "id": "WRT_WRITINGEMAIL_L143_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 143-1] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to a pharmaceutical regulatory authority submitting a new drug licensing application.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "NEXUS PHARMA SUBMITS ITS MARKETING AUTHORISATION APPLICATION FOR NX-2201, A NOVEL ONCOLOGY COMPOUND, UNDER THE CENTRALISED PROCEDURE - THE FULL DOSSIER COMPRISING CTD MODULES 1-5 IS ENCLOSED.",
+                "YOURS SINCERELY,\nREGULATORY AFFAIRS DIRECTOR, NEXUS PHARMA",
+                "DEAR REGULATORY AFFAIRS TEAM,",
+                "SUBJECT: MARKETING AUTHORISATION APPLICATION - DRUG CANDIDATE NX-2201"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 143-1)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 143]."
+            "hint": "Drug candidate and application type are in the subject. Compound name, therapeutic area, regulatory procedure, and CTD module completeness are in the body - all required for an EMA submission.",
+            "explanation": "The CTD (Common Technical Document) Modules 1-5 is the standard EMA dossier format. Confirming all five modules are enclosed signals the submission is complete - incomplete dossiers are returned without assessment."
         },
         {
             "id": "WRT_WRITINGEMAIL_L143_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 143-2] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to a pharmaceutical licensing partner proposing commercialisation terms.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "YOURS SINCERELY,\nCEO, NEXUS PHARMA",
+                "NEXUS PHARMA PROPOSES A LICENSING ARRANGEMENT FOR NX-2201'S EUROPEAN COMMERCIALISATION RIGHTS - KEY TERMS INCLUDE A £5M UPFRONT FEE, DEVELOPMENT MILESTONES OF £15M, AND A 12% ROYALTY ON NET SALES.",
+                "SUBJECT: LICENSING PROPOSAL - NX-2201 EUROPEAN COMMERCIALISATION RIGHTS",
+                "DEAR HEAD OF BUSINESS DEVELOPMENT,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 143-2)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 143]."
+            "hint": "Drug candidate and licensing territory are in the subject. Three commercial deal terms - upfront, milestones, and royalty - are the standard pharma licensing deal structure in the body.",
+            "explanation": "The three-element pharma licensing structure - upfront fee, milestone payments, and sales royalties - represents decreasing risk for the licensor: upfront is guaranteed, milestones depend on development success, and royalties on commercial success."
         },
         {
             "id": "WRT_WRITINGEMAIL_L143_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 143-3] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to a pharmaceutical partner notifying them that the drug has received regulatory approval.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "I AM DELIGHTED TO INFORM YOU THAT NX-2201 HAS RECEIVED FULL MARKETING AUTHORISATION FROM THE EUROPEAN MEDICINES AGENCY - THE MILESTONE PAYMENT OF £4M IS NOW DUE UNDER OUR LICENSING AGREEMENT.",
+                "DEAR CEO,",
+                "YOURS SINCERELY,\nCEO, NEXUS PHARMA",
+                "SUBJECT: REGULATORY APPROVAL ACHIEVED - NX-2201 APPROVED BY EMA FOR EUROPEAN MARKET"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 143-3)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 143]."
+            "hint": "Approval and regulator are in the subject. EMA authorisation, marketing authorisation status, and milestone payment trigger are in the body. The milestone payment is contractually triggered by regulatory approval.",
+            "explanation": "Connecting the approval news to the milestone payment trigger ('now due under our licensing agreement') immediately activates the commercial consequence of the regulatory event. This is the most important sentence for the licensor's finance team."
         },
         {
             "id": "WRT_WRITINGEMAIL_L144_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 144-1] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to investment banks requesting proposals for a real estate securitisation.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "WE SEEK PROPOSALS FROM INVESTMENT BANKS FOR THE STRUCTURING AND PLACEMENT OF AN £800M COMMERCIAL MORTGAGE-BACKED SECURITISATION OF OUR PRIME LONDON OFFICE PORTFOLIO.",
+                "YOURS SINCERELY,\nCHIEF FINANCIAL OFFICER, NEXUS REAL ESTATE",
+                "DEAR STRUCTURED FINANCE TEAM,",
+                "SUBJECT: REQUEST FOR PROPOSAL - £800M CMBS SECURITISATION OF OFFICE PORTFOLIO"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 144-1)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 144]."
+            "hint": "Transaction size and type are in the subject. Asset type (CMBS), deal size, and portfolio description are in the body - the key parameters for an investment bank to assess the mandate.",
+            "explanation": "CMBS (Commercial Mortgage-Backed Securities) is the specific securitisation vehicle for commercial real estate debt. Specifying the portfolio as 'prime London offices' indicates the asset quality the bank can use to assess debt pricing."
         },
         {
             "id": "WRT_WRITINGEMAIL_L144_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 144-2] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email to a credit rating agency requesting a pre-sale rating assessment.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "YOURS SINCERELY,\nCHIEF FINANCIAL OFFICER, NEXUS REAL ESTATE",
+                "WE REQUEST A PRE-SALE CREDIT RATING ASSESSMENT FOR THE SENIOR TRANCHE OF OUR PLANNED £800M CMBS TRANSACTION - THE SENIOR TRANCHE IS EXPECTED TO BE SIZED AT £640M (80% OF TOTAL ISSUANCE).",
+                "SUBJECT: PRE-SALE RATING REQUEST - £800M LONDON CMBS - EXPECTED RATING: AAA SENIOR",
+                "DEAR RATING COMMITTEE,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 144-2)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 144]."
+            "hint": "Expected rating and deal size are in the subject. Tranche type, absolute size, and loan-to-value implied ratio are in the body. The CFO requests from the rating committee at the pre-deal stage.",
+            "explanation": "The 80% senior tranche (£640M of £800M) implies 20% subordinated/equity below it - a standard CMBS structure. The rating agency will focus on the senior tranche because AAA rating is essential for pension fund and insurance company investment eligibility."
         },
         {
             "id": "WRT_WRITINGEMAIL_L144_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 144-3] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to investors in a securitisation notifying them of a rating downgrade.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "MOODY'S HAS DOWNGRADED THE SENIOR NOTES IN THE NEXUS OFFICE CMBS FROM AAA TO AA, CITING INCREASED VACANCY RATES IN THE UNDERLYING PORTFOLIO - THE FULL RATING RATIONALE IS ATTACHED.",
+                "DEAR NOTEHOLDER,",
+                "YOURS SINCERELY,\nTRUSTEE, NEXUS OFFICE CMBS",
+                "SUBJECT: RATING ACTION NOTIFICATION - SENIOR NOTES DOWNGRADED FROM AAA TO AA"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 144-3)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 144]."
+            "hint": "Rating action and magnitude are in the subject. Rating agency, direction of change, cited reason (vacancy rates), and attached rationale are in the body. The trustee notifies noteholders of the material rating event.",
+            "explanation": "The trustee's obligation to notify noteholders of a rating action is a standard CMBS indenture requirement. Citing the specific reason ('increased vacancy rates') allows noteholders to assess whether the underlying credit concern is likely to be temporary or permanent."
         },
         {
             "id": "WRT_WRITINGEMAIL_L145_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 145-1] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to a litigation funder proposing a funding arrangement for commercial litigation.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "NEXUS CONSULTING SEEKS THIRD-PARTY LITIGATION FUNDING FOR A £12M BREACH OF CONTRACT CLAIM - WE PROPOSE A FUNDING ARRANGEMENT UNDER WHICH THE FUNDER COVERS ALL COSTS IN EXCHANGE FOR 30% OF PROCEEDS.",
+                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
+                "DEAR INVESTMENT COMMITTEE,",
+                "SUBJECT: LITIGATION FUNDING PROPOSAL - £12M CLAIM AGAINST DELTA SYSTEMS"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 145-1)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 145]."
+            "hint": "Claim size and funding purpose are in the subject. Claim type, value, funder's cost coverage, and success fee percentage are in the body - the four commercial terms of a litigation funding proposal.",
+            "explanation": "Litigation funding arrangements typically offer a success fee of 25-40% of proceeds. A 30% share of a £12M claim represents a potential return of £3.6M for the funder - sufficient to cover legal costs and deliver a return commensurate with the risk."
         },
         {
             "id": "WRT_WRITINGEMAIL_L145_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 145-2] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to external litigators outlining the terms of an agreed litigation funding arrangement.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
+                "THE LITIGATION FUNDING AGREEMENT WITH HARBOUR LITIGATION FUNDING HAS BEEN EXECUTED - PLEASE PROCEED WITH FILING THE CLAIM IN THE HIGH COURT AND CONFIRM THE FILING DATE WITHIN 48 HOURS.",
+                "SUBJECT: LITIGATION FUNDING AGREEMENT EXECUTED - NEXUS v DELTA - PROCEED WITH FILING",
+                "DEAR DISPUTES TEAM,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 145-2)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 145]."
+            "hint": "Agreement execution and instruction are in the subject. Funder name, execution confirmation, filing instruction, forum, and response deadline are in the body. The CLO instructs litigators to proceed after funding is secured.",
+            "explanation": "Naming the funder ('Harbour Litigation Funding') in the instruction gives litigators the information they need to include in the claim as required by court rules for third-party funded cases. The 48-hour response deadline ensures the filing date is confirmed promptly."
         },
         {
             "id": "WRT_WRITINGEMAIL_L145_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 145-3] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to a litigation funder reporting the outcome of funded litigation.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "THE HIGH COURT HAS AWARDED NEXUS CONSULTING JUDGEMENT OF £10.8M AGAINST DELTA SYSTEMS - YOUR 30% SUCCESS FEE OF £3.24M IS PAYABLE WITHIN FOURTEEN DAYS OF SETTLEMENT.",
+                "DEAR INVESTMENT DIRECTOR,",
+                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
+                "SUBJECT: LITIGATION OUTCOME - JUDGEMENT IN FAVOUR OF NEXUS: £10.8M AWARDED"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 145-3)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 145]."
+            "hint": "Judgement amount and outcome are in the subject. Award, success fee calculation, exact amount, and payment deadline are in the body - the financial close of the funding arrangement.",
+            "explanation": "The 30% calculation: £10.8M × 30% = £3.24M - showing the maths explicitly avoids any dispute about the amount owed. Fourteen days is the standard payment term for litigation success fees in funding agreements."
         },
         {
             "id": "WRT_WRITINGEMAIL_L146_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 146-1] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email to a law firm requesting a legal opinion on a technology licensing agreement.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "PLEASE PROVIDE A FORMAL LEGAL OPINION ON THE PROPOSED TECHNOLOGY LICENSING AGREEMENT, WITH PARTICULAR FOCUS ON THE SOURCE CODE ESCROW PROVISIONS, IP OWNERSHIP CLAUSES, AND LICENSE FEE ENFORCEMENT MECHANISMS.",
+                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
+                "DEAR TECHNOLOGY LAW TEAM,",
+                "SUBJECT: LEGAL OPINION REQUEST - SOURCE CODE ESCROW AND LICENSE AGREEMENT"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 146-1)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 146]."
+            "hint": "Agreement type and focus areas are in the subject. Three specific legal opinion topics - escrow, IP ownership, and fee enforcement - are in the body. The CLO commissions an external legal opinion.",
+            "explanation": "Three focal areas - source code escrow (what happens if the licensor fails), IP ownership (who owns what), and fee enforcement (how are royalties collected) - represent the three biggest commercial risks in technology licensing agreements."
         },
         {
             "id": "WRT_WRITINGEMAIL_L146_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 146-2] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to a technology company proposing software licensing terms.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "YOURS SINCERELY,\nCHIEF COMMERCIAL OFFICER, NEXUS ANALYTICS",
+                "WE PROPOSE AN ENTERPRISE-WIDE SOFTWARE LICENCE FOR YOUR ANALYTICS PLATFORM AT £180,000 PER ANNUM - THE LICENCE INCLUDES UNLIMITED USER SEATS, ANNUAL UPDATES, AND TIER-ONE TECHNICAL SUPPORT.",
+                "SUBJECT: SOFTWARE LICENSE PROPOSAL - ENTERPRISE-WIDE DEPLOYMENT: £180,000 PER ANNUM",
+                "DEAR CHIEF COMMERCIAL OFFICER,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 146-2)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 146]."
+            "hint": "License type and annual fee are in the subject. Three included licence components - unlimited seats, annual updates, and support tier - are in the body alongside the annual fee.",
+            "explanation": "An enterprise licence proposal must specify what is included beyond the core software: unlimited seats (removes per-user pricing complexity), annual updates (ensures currency), and Tier-One support (defines response time expectations). All three justify the premium pricing."
         },
         {
             "id": "WRT_WRITINGEMAIL_L146_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 146-3] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to a licensor formally notifying them that a technology licence fee payment is overdue.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "LICENCE FEE PAYMENT LIC-2024-441 OF £45,000 WAS DUE ON 1 OCTOBER AND REMAINS UNPAID - UNDER OUR AGREEMENT, INTEREST IS NOW ACCRUING AT 8% PER ANNUM AND WE RESERVE ALL RIGHTS TO SUSPEND LICENCE ACCESS.",
+                "DEAR FINANCE TEAM,",
+                "YOURS SINCERELY,\nCHIEF COMMERCIAL OFFICER, NEXUS ANALYTICS",
+                "SUBJECT: OVERDUE LICENSE FEE NOTICE - PAYMENT REF: LIC-2024-441 (28 DAYS OVERDUE)"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 146-3)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 146]."
+            "hint": "Overdue notice and duration are in the subject. Payment reference, amount, due date, interest clause, and licence suspension warning are all in the body - a complete contractual demand.",
+            "explanation": "Two contractual remedies are cited: interest accrual (8% per annum, per the Late Payment of Commercial Debts Act) and licence suspension. Both are the standard contractual consequences of non-payment that motivate prompt settlement."
         },
         {
             "id": "WRT_WRITINGEMAIL_L147_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 147-1] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to a trade finance bank requesting a letter of credit for an international purchase order.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "PLEASE ISSUE AN IRREVOCABLE DOCUMENTARY LETTER OF CREDIT FOR USD 1.4M IN FAVOUR OF SAIGON COMPONENTS CO - THE LC SHOULD BE SUBJECT TO UCP 600 AND SHOULD EXPIRE ON 31 MARCH.",
+                "YOURS SINCERELY,\nCHIEF FINANCIAL OFFICER, NEXUS MANUFACTURING",
+                "DEAR TRADE FINANCE TEAM,",
+                "SUBJECT: LETTER OF CREDIT REQUEST - IMPORT FROM VIETNAM - USD 1.4M"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 147-1)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 147]."
+            "hint": "LC amount and trade context are in the subject. 'Irrevocable', beneficiary name, UCP 600 rule reference, and expiry date are in the body - all required for a letter of credit instruction.",
+            "explanation": "An irrevocable LC cannot be cancelled without the beneficiary's consent - this is the bank's payment guarantee to the exporter. UCP 600 is the ICC's standard rules for documentary credits used globally in trade finance."
         },
         {
             "id": "WRT_WRITINGEMAIL_L147_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 147-2] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to a supplier confirming dispatch of complying LC documents.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "YOURS SINCERELY,\nEXPORT FINANCE MANAGER, SAIGON COMPONENTS",
+                "WE HEREBY CONFIRM THAT THE DOCUMENTS FOR LETTER OF CREDIT LC-2024-0881 HAVE BEEN PRESENTED TO YOUR BANK AND CONSTITUTE A COMPLYING PRESENTATION UNDER UCP 600 - PAYMENT IS DUE WITHIN FIVE BANKING DAYS.",
+                "SUBJECT: LC DOCUMENT SUBMISSION - COMPLYING PRESENTATION CONFIRMED - REF: LC-2024-0881",
+                "DEAR TRADE FINANCE TEAM,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 147-2)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 147]."
+            "hint": "Complying presentation and LC reference are in the subject. 'Hereby confirms', LC number, complying status, UCP 600 basis, and payment timeline are in the body - a formal complying presentation notice.",
+            "explanation": "'Complying presentation' is the technical term under UCP 600 meaning all documents meet the LC requirements. Once a complying presentation is accepted, the bank is contractually obligated to pay - the payment timeline ('five banking days') is set by the LC terms."
         },
         {
             "id": "WRT_WRITINGEMAIL_L147_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 147-3] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email to a trade finance bank disputing a non-compliant document rejection.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "WE DISPUTE YOUR REJECTION OF DOCUMENTS UNDER LC-2024-0881 ON THE GROUNDS THAT THE ALLEGED DISCREPANCY IN THE BILL OF LADING DATE IS A TYPOGRAPHICAL ERROR, NOT A DOCUMENTARY DISCREPANCY UNDER UCP 600.",
+                "DEAR DOCUMENTARY CREDITS TEAM,",
+                "YOURS SINCERELY,\nEXPORT FINANCE MANAGER, SAIGON COMPONENTS",
+                "SUBJECT: DISPUTE OF DOCUMENT REJECTION - LC REF: LC-2024-0881 - NON-COMPLIANCE CONTESTED"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 147-3)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 147]."
+            "hint": "Dispute and LC reference are in the subject. 'Dispute', specific rejection reason, grounds for contest (typographical vs documentary discrepancy), and UCP 600 reference are in the body.",
+            "explanation": "Under UCP 600, banks may only reject documents for genuine documentary discrepancies. A typographical error that does not affect the commercial meaning of the document is contested on the grounds that UCP 600 banks must honour facially complying presentations."
         },
         {
             "id": "WRT_WRITINGEMAIL_L148_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 148-1] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to a distressed debt fund proposing the acquisition of non-performing loans.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "NEXUS CREDIT PROPOSES TO ACQUIRE YOUR NON-PERFORMING LOAN PORTFOLIO WITH A FACE VALUE OF £120M AT A PRICE OF 42 CENTS ON THE POUND, REFLECTING OUR RECOVERY ANALYSIS AND RISK PREMIUM.",
+                "YOURS SINCERELY,\nCHIEF INVESTMENT OFFICER, NEXUS CREDIT",
+                "DEAR PORTFOLIO MANAGER,",
+                "SUBJECT: NPL PORTFOLIO ACQUISITION PROPOSAL - £120M FACE VALUE AT 42 CENTS"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 148-1)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 148]."
+            "hint": "NPL portfolio size and bid price are in the subject. Face value, bid price in cents on the pound, and analytical basis are in the body - a standard distressed debt bid.",
+            "explanation": "Distressed debt is priced 'cents on the pound' (or 'cents on the dollar') - here 42 cents means Nexus is paying £50.4M (42% × £120M). The recovery analysis and risk premium are the two inputs that justify the bid price."
         },
         {
             "id": "WRT_WRITINGEMAIL_L148_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 148-2] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to a bank's board requesting approval for a non-performing loan sale.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "YOURS SINCERELY,\nCHIEF FINANCIAL OFFICER",
+                "I AM SEEKING BOARD APPROVAL TO SELL THE £120M NPL PORTFOLIO TO NEXUS CREDIT AT 42 CENTS ON THE POUND, GENERATING PROCEEDS OF £50.4M AND REDUCING RISK-WEIGHTED ASSETS BY £120M.",
+                "SUBJECT: BOARD APPROVAL REQUEST - NPL PORTFOLIO SALE AT 42 CENTS ON THE POUND",
+                "DEAR BOARD,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 148-2)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 148]."
+            "hint": "Deal and price are in the subject. Buyer, price, cash proceeds, and RWA reduction benefit are in the body - a complete board approval request for a balance sheet disposal.",
+            "explanation": "The dual benefit - cash proceeds (£50.4M) and RWA reduction (£120M) - is the most compelling argument for selling NPLs. RWA reduction improves capital ratios, which is why regulators often encourage NPL sales during stress periods."
         },
         {
             "id": "WRT_WRITINGEMAIL_L148_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 148-3] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to borrowers in an acquired NPL portfolio notifying them of the change of ownership.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "WE WRITE TO INFORM YOU THAT YOUR LOAN HAS BEEN TRANSFERRED FROM DELTA BANK TO NEXUS CREDIT UNDER THE CONSUMER CREDIT ACT - YOUR LOAN TERMS REMAIN UNCHANGED AND PAYMENTS SHOULD NOW BE MADE TO NEXUS CREDIT.",
+                "DEAR BORROWER,",
+                "YOURS SINCERELY,\nNEXUS CREDIT CUSTOMER SERVICES",
+                "SUBJECT: IMPORTANT NOTICE - YOUR LOAN HAS BEEN TRANSFERRED TO NEXUS CREDIT"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 148-3)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 148]."
+            "hint": "Notification purpose and direction of change are in the subject. Previous lender, new lender, legal basis (Consumer Credit Act), unchanged terms, and new payment instructions are in the body.",
+            "explanation": "Under the Consumer Credit Act, borrowers must be notified when their loan is transferred. Two critical reassurances - terms unchanged and new payment details - prevent borrower confusion and default from misdirected payments."
         },
         {
             "id": "WRT_WRITINGEMAIL_L149_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 149-1] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to a corporate buyer assessing voluntary carbon market credit quality.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "IN RESPONSE TO YOUR REQUEST, WE ASSESS THAT GOLD STANDARD CREDITS ARE PREFERABLE FOR CORPORATE CLAIMS DUE TO THEIR ADDITIONAL SUSTAINABLE DEVELOPMENT GOAL INDICATORS BEYOND CARBON QUANTIFICATION ALONE.",
+                "YOURS SINCERELY,\nCARBON ADVISORY TEAM, NEXUS SUSTAINABILITY",
+                "DEAR SUSTAINABILITY DIRECTOR,",
+                "SUBJECT: CARBON CREDIT QUALITY ASSESSMENT - GOLD STANDARD vs VCS CERTIFICATION"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 149-1)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 149]."
+            "hint": "Two standards and comparison purpose are in the subject. Gold Standard preference, rationale (SDG indicators), and the additional-to-carbon criterion are in the body - an expert quality assessment.",
+            "explanation": "Gold Standard credits include UN SDG indicators (e.g., biodiversity, local employment) beyond simple carbon quantification. For corporate buyers seeking to demonstrate broader sustainability impact rather than just carbon offsetting, this additional verification adds significant value."
         },
         {
             "id": "WRT_WRITINGEMAIL_L149_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 149-2] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email to a carbon project developer requesting an additionality assessment for a new project.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "YOURS SINCERELY,\nVCS PROGRAMME ADMINISTRATOR",
+                "BEFORE PROCEEDING WITH CREDIT REGISTRATION, YOU MUST DEMONSTRATE ADDITIONALITY - SPECIFICALLY, THAT THE WIND PROJECT WOULD NOT HAVE BEEN FINANCIALLY VIABLE WITHOUT CARBON CREDIT REVENUE.",
+                "SUBJECT: ADDITIONALITY ASSESSMENT REQUIREMENT - WIND ENERGY PROJECT, KERALA, INDIA",
+                "DEAR PROJECT DEVELOPER,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 149-2)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 149]."
+            "hint": "Assessment type and project location are in the subject. Additionality requirement and specific financial additionality test are in the body - the core regulatory requirement for voluntary carbon market registration.",
+            "explanation": "Additionality is the cornerstone of carbon market integrity - without it, companies buy credits for projects that would have happened anyway, delivering no real climate benefit. Financial additionality ('would not be viable without credit revenue') is the most common test."
         },
         {
             "id": "WRT_WRITINGEMAIL_L149_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 149-3] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to a corporate reporting team advising on voluntary carbon offset reporting standards.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "YOUR VOLUNTARY CARBON OFFSET DISCLOSURES SHOULD ALIGN WITH THE GHG PROTOCOL CORPORATE STANDARD AND TCFD RECOMMENDATIONS - OFFSETS MUST BE SEPARATELY REPORTED FROM EMISSION REDUCTIONS TO AVOID GREENWASHING.",
+                "DEAR SUSTAINABILITY REPORTING TEAM,",
+                "YOURS SINCERELY,\nCARBON REPORTING ADVISOR, NEXUS SUSTAINABILITY",
+                "SUBJECT: CARBON OFFSET REPORTING GUIDANCE - TCFD AND GHG PROTOCOL ALIGNMENT"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 149-3)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 149]."
+            "hint": "Two reporting standards and alignment purpose are in the subject. GHG Protocol, TCFD alignment, and the critical separation of offsets from reductions are in the body - expert sustainability reporting advice.",
+            "explanation": "The requirement to report offsets SEPARATELY from emission reductions is critical for anti-greenwashing compliance. Combining them suggests reductions were made when in fact emissions were only offset - a practice increasingly scrutinised by regulators and investors."
         },
         {
             "id": "WRT_WRITINGEMAIL_L150_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 150-1] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to an insurance underwriter submitting a specialist risk for coverage assessment.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "WE SEEK INSURANCE COVERAGE OF £240M FOR A COMMERCIAL SATELLITE LAUNCH SCHEDULED FOR MARCH 2026 - THE SUBMISSION INCLUDES LAUNCH VEHICLE SPECIFICATIONS, PAYLOAD DETAILS, AND MISSION RISK ANALYSIS.",
+                "YOURS SINCERELY,\nSPACE RISK MANAGER, NEXUS VENTURES",
+                "DEAR SPECIALIST UNDERWRITING TEAM,",
+                "SUBJECT: SPECIALIST RISK SUBMISSION - SATELLITE LAUNCH INSURANCE: £240M COVERAGE"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 150-1)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 150]."
+            "hint": "Coverage amount and risk type are in the subject. Coverage sought, launch schedule, and three submission components are in the body - the three documents required for specialist space insurance underwriting.",
+            "explanation": "Satellite launch insurance is one of the most specialised lines of insurance. The three submission documents - launch vehicle specs, payload details, and mission risk analysis - provide the underwriter with the technical data needed to price and assess coverage."
         },
         {
             "id": "WRT_WRITINGEMAIL_L150_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 150-2] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to an insured client confirming specialist insurance coverage and policy terms.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "YOURS SINCERELY,\nSPACE RISK UNDERWRITER, LLOYD'S SYNDICATE 1881",
+                "WE ARE PLEASED TO CONFIRM COVERAGE OF £240M FOR YOUR MARCH 2026 SATELLITE LAUNCH UNDER POLICY SL-2026-0001 - THE POLICY ATTACHES ON LAUNCH AND INCLUDES THIRD PARTY LIABILITY UP TO £500M.",
+                "SUBJECT: COVERAGE CONFIRMATION - SATELLITE LAUNCH INSURANCE POLICY: REF SL-2026-0001",
+                "DEAR SPACE RISK MANAGER,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 150-2)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 150]."
+            "hint": "Policy reference and coverage are in the subject. Coverage amount, launch date, policy attachment point, and additional third-party liability limit are in the body - complete insurance confirmation.",
+            "explanation": "The policy attaches 'on launch' - meaning coverage begins at the moment of launch, not before. Third-party liability (£500M) covers damage to property or people if the launch goes wrong - typically required by the launch range authority."
         },
         {
             "id": "WRT_WRITINGEMAIL_L150_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 4,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 150-3] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to a satellite insurance claims team notifying them of a total loss claim.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "WE ARE NOTIFYING A TOTAL LOSS CLAIM UNDER POLICY SL-2026-0001 FOLLOWING THE COMPLETE FAILURE OF THE MARCH 2026 SATELLITE LAUNCH - THE CLAIM AMOUNT IS £240M, BEING THE FULL POLICY LIMIT.",
+                "DEAR CLAIMS TEAM,",
+                "YOURS SINCERELY,\nSPACE RISK MANAGER, NEXUS VENTURES",
+                "SUBJECT: TOTAL LOSS CLAIM - SATELLITE LAUNCH FAILURE - POLICY SL-2026-0001"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 150-3)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 150]."
+            "hint": "Loss type and policy reference are in the subject. Total loss claim, launch failure, claim amount (full policy limit), and notification date are in the body - a complete insurance total loss notification.",
+            "explanation": "A total loss claim notification must identify the policy, describe the qualifying event (launch failure), and state the claim amount. In satellite insurance, 'complete failure' typically triggers the total loss provision - a partial satellite deployment may only trigger partial loss."
         }
     ]
 }

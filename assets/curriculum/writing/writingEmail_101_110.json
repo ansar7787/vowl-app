@@ -5,663 +5,633 @@
     "quests": [
         {
             "id": "WRT_WRITINGEMAIL_L101_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 101-1] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write a formal email to an investment bank initiating merger negotiations.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
+                "I AM WRITING IN MY CAPACITY AS CEO OF NEXUS CONSULTING TO INITIATE PRELIMINARY AND STRICTLY CONFIDENTIAL DISCUSSIONS REGARDING A POTENTIAL MERGER BETWEEN OUR TWO ORGANISATIONS.",
+                "SUBJECT: INITIATION OF CONFIDENTIAL MERGER DISCUSSIONS - PROJECT FALCON",
+                "DEAR MR ROTHWELL,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 101-1)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 101]."
+            "hint": "The subject uses code name 'Falcon' - standard M&A practice. The CEO signs in capacity. Find the formal professional initiation in the body and the code-named subject.",
+            "explanation": "Using a code name ('Project Falcon') is standard M&A practice to maintain confidentiality. 'In my capacity as CEO' is precise formal language that establishes authority to initiate such discussions."
         },
         {
             "id": "WRT_WRITINGEMAIL_L101_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 101-2] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to legal advisers requesting a comprehensive due diligence scope document.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "PLEASE PREPARE A COMPREHENSIVE DUE DILIGENCE SCOPE DOCUMENT COVERING LEGAL, FINANCIAL, REGULATORY, AND OPERATIONAL MATTERS FOR PHASE 1 OF PROJECT FALCON BY 15 NOVEMBER.",
+                "DEAR DUE DILIGENCE COUNSEL,",
+                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
+                "SUBJECT: DUE DILIGENCE SCOPE REQUEST - PROJECT FALCON PHASE 1"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 101-2)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 101]."
+            "hint": "Four due diligence categories are in the body. The phase and deadline are critical. Note the formal instruction 'please prepare' as the opening of the body.",
+            "explanation": "'Please prepare' is a formal instruction to legal advisers. Listing four specific categories - legal, financial, regulatory, operational - ensures comprehensive coverage and prevents advisers from narrowing the scope without authority."
         },
         {
             "id": "WRT_WRITINGEMAIL_L101_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 101-3] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to the board presenting a merger integration plan.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "I AM PRESENTING THE ONE-HUNDRED-DAY INTEGRATION PLAN FOR THE FALCON MERGER, COVERING ORGANISATIONAL STRUCTURE, SYSTEM MIGRATION, CLIENT COMMUNICATION, AND CULTURAL ALIGNMENT.",
+                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
+                "DEAR BOARD OF DIRECTORS,",
+                "SUBJECT: MERGER INTEGRATION PLAN - PROJECT FALCON POST-COMPLETION"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 101-3)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 101]."
+            "hint": "The integration timeframe and four pillars are in the body. The code name continues. The board is addressed formally. Find the subject first.",
+            "explanation": "A one-hundred-day integration plan covering four pillars - structure, systems, clients, culture - represents the four most critical merger integration dimensions. Presenting all four simultaneously signals comprehensive planning."
         },
         {
             "id": "WRT_WRITINGEMAIL_L102_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 102-1] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write a confidential email to HR following a whistleblower disclosure.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER",
+                "A WHISTLEBLOWER DISCLOSURE HAS BEEN RECEIVED UNDER OUR SPEAK-UP POLICY ALLEGING FINANCIAL IRREGULARITIES IN THE ACCOUNTS PAYABLE FUNCTION - I RECOMMEND IMMEDIATE ESCALATION TO THE AUDIT COMMITTEE.",
+                "SUBJECT: CONFIDENTIAL - WHISTLEBLOWER DISCLOSURE RECEIVED, IMMEDIATE REVIEW REQUIRED",
+                "DEAR HEAD OF HR,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 102-1)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 102]."
+            "hint": "The subject flags urgency and confidentiality. The disclosure allegation and escalation recommendation are in the body. The CCO signs by role title, not name.",
+            "explanation": "Recommending escalation to the Audit Committee rather than line management is the correct governance response to a financial irregularity allegation - it bypasses potentially implicated management and ensures independence."
         },
         {
             "id": "WRT_WRITINGEMAIL_L102_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 102-2] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to the audit committee formally reporting a financial misconduct investigation.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "FOLLOWING THE WHISTLEBLOWER DISCLOSURE RECEIVED ON 3 NOVEMBER, AN INDEPENDENT INVESTIGATION HAS BEEN COMMISSIONED - PRELIMINARY FINDINGS WILL BE PRESENTED TO THE COMMITTEE ON 20 NOVEMBER.",
+                "DEAR AUDIT COMMITTEE CHAIR,",
+                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER",
+                "SUBJECT: AUDIT COMMITTEE BRIEFING - FINANCIAL MISCONDUCT INVESTIGATION STATUS"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 102-2)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 102]."
+            "hint": "The investigation status and committee context are in the subject. The disclosure date, independent investigation, and briefing date are in the body. The formal closing signals official escalation.",
+            "explanation": "Commissioning an 'independent investigation' - rather than an internal one - is critical when management may be involved. Giving a specific briefing date ('20 November') commits the CCO to a timeline."
         },
         {
             "id": "WRT_WRITINGEMAIL_L102_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 102-3] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email to an employee notifying them of a formal disciplinary hearing.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "YOU ARE REQUIRED TO ATTEND A FORMAL DISCIPLINARY HEARING ON 27 NOVEMBER AT 10AM - YOU ARE ENTITLED TO BE ACCOMPANIED BY A UNION REPRESENTATIVE OR WORKPLACE COLLEAGUE OF YOUR CHOICE.",
+                "YOURS SINCERELY,\nHEAD OF HUMAN RESOURCES",
+                "DEAR MR HAYES,",
+                "SUBJECT: FORMAL DISCIPLINARY HEARING NOTICE - 27 NOVEMBER AT 10AM"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 102-3)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 102]."
+            "hint": "Date and time are in the subject. The required attendance and right to accompaniment are in the body - both are statutory. The HR head signs by role, not name.",
+            "explanation": "Notifying the employee of their right to accompaniment is a legal requirement in UK employment law. The hearing notice must include the date, time, and this statutory right to be legally valid."
         },
         {
             "id": "WRT_WRITINGEMAIL_L103_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 103-1] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to a board nominating committee presenting a governance review report.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "YOURS SINCERELY,\nSIR JAMES HUNT, SENIOR INDEPENDENT DIRECTOR",
+                "THE INDEPENDENT GOVERNANCE REVIEW CONCLUDES THAT BOARD COMPOSITION, SUCCESSION PLANNING, AND COMMITTEE EFFECTIVENESS ALL REQUIRE STRENGTHENING - THREE SPECIFIC RECOMMENDATIONS ARE DETAILED IN THE ATTACHED REPORT.",
+                "SUBJECT: BOARD GOVERNANCE REVIEW - FINDINGS AND RECOMMENDATIONS 2024",
+                "DEAR NOMINATIONS COMMITTEE,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 103-1)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 103]."
+            "hint": "The three governance areas requiring strengthening are in the body. The three-recommendation count previews the report. The Senior Independent Director signs - an important independent role.",
+            "explanation": "A governance review presented by the Senior Independent Director (SID) carries particular weight - they are the board's internal watchdog. Summarising findings as three named weaknesses upfront enables focused committee discussion."
         },
         {
             "id": "WRT_WRITINGEMAIL_L103_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 103-2] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to shareholders announcing the outcomes of the annual governance review.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "I AM WRITING TO CONFIRM THAT THE ANNUAL GOVERNANCE REVIEW HAS CONCLUDED AND THE BOARD HAS APPROVED THREE GOVERNANCE ENHANCEMENTS, WHICH ARE DETAILED IN THE ACCOMPANYING GOVERNANCE STATEMENT.",
+                "DEAR SHAREHOLDER,",
+                "YOURS SINCERELY,\nSIR JAMES HUNT, CHAIR",
+                "SUBJECT: SHAREHOLDER COMMUNICATION - ANNUAL GOVERNANCE REVIEW OUTCOMES"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 103-2)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 103]."
+            "hint": "The governance outcomes and shareholder communication are in the subject. The three enhancements and accompanying document are referenced. The Chair signs - appropriate for shareholder communications.",
+            "explanation": "Shareholder communications on governance matters are sent by the Chair, not the CEO, to signal that the board is exercising its independent oversight function. Referring to a 'Governance Statement' provides the full detail."
         },
         {
             "id": "WRT_WRITINGEMAIL_L103_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 103-3] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email formally proposing a candidate for appointment as an independent director.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "I PROPOSE THE APPOINTMENT OF MS AMANDA WEI AS AN INDEPENDENT NON-EXECUTIVE DIRECTOR - SHE BRINGS DEEP EXPERTISE IN FINANCIAL SERVICES REGULATION AND HAS COMPLETED OUR INDEPENDENCE ASSESSMENT.",
+                "YOURS SINCERELY,\nSIR JAMES HUNT, CHAIR",
+                "DEAR NOMINATIONS COMMITTEE,",
+                "SUBJECT: DIRECTOR APPOINTMENT PROPOSAL - MS AMANDA WEI TO INDEPENDENT NED ROLE"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 103-3)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 103]."
+            "hint": "Candidate name and role type are in the subject. The candidate's expertise and independence confirmation are in the body. The Chair proposes NED appointments to the nominations committee.",
+            "explanation": "Confirming that the candidate has 'completed our independence assessment' is a corporate governance requirement - it confirms there are no conflicts of interest that would compromise her independence on the board."
         },
         {
             "id": "WRT_WRITINGEMAIL_L104_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 104-1] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write a formal letter to a competitor alleging infringement of a registered design.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "YOURS FAITHFULLY,\nGEORGIA HUNT, CHIEF LEGAL OFFICER",
+                "WE ARE IN POSSESSION OF EVIDENCE THAT YOUR PRODUCT RANGE LAUNCHED IN SEPTEMBER INFRINGES UK REGISTERED DESIGN NO. 6011228 AND WE HEREBY FORMALLY DEMAND IMMEDIATE CESSATION OF ITS MANUFACTURE AND SALE.",
+                "SUBJECT: FORMAL NOTICE OF REGISTERED DESIGN INFRINGEMENT - UK DESIGN NO. 6011228",
+                "DEAR LEGAL COUNSEL,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 104-1)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 104]."
+            "hint": "The design registration number is in both subject and body. The formal demand for cessation is in the body. 'YOURS FAITHFULLY' closes since legal counsel is addressed as a role. Find the subject first.",
+            "explanation": "A design infringement notice must cite the exact registration number, identify the infringing product, and make a specific demand ('immediate cessation'). 'We hereby formally demand' is the correct legal formula for such notices."
         },
         {
             "id": "WRT_WRITINGEMAIL_L104_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 104-2] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email to internal legal counsel requesting preparation of an IP settlement agreement.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "PLEASE PREPARE A SETTLEMENT AGREEMENT INCORPORATING A ROYALTY-BEARING LICENCE AT 4.5% OF NET SALES, A CONFIDENTIALITY CLAUSE, AND AN ACKNOWLEDGEMENT OF INFRINGEMENT FROM THE DEFENDANT.",
+                "DEAR LEGAL TEAM,",
+                "YOURS SINCERELY,\nGEORGIA HUNT, CHIEF LEGAL OFFICER",
+                "SUBJECT: SETTLEMENT AGREEMENT INSTRUCTIONS - DESIGN INFRINGEMENT DISPUTE"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 104-2)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 104]."
+            "hint": "The settlement purpose is in the subject. Three settlement terms - royalty rate, confidentiality, and acknowledgement - are specified. The CLO instructs internal legal as the authority.",
+            "explanation": "Specifying all three settlement terms - royalty rate (4.5%), confidentiality, and formal infringement acknowledgement - prevents the legal team from omitting a key element. Settlement terms must be precise to be enforceable."
         },
         {
             "id": "WRT_WRITINGEMAIL_L104_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 104-3] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to the board reporting the resolution of an intellectual property dispute.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "I AM PLEASED TO REPORT THAT THE DESIGN INFRINGEMENT DISPUTE HAS BEEN RESOLVED BY WAY OF SETTLEMENT - THE COMPANY WILL RECEIVE ROYALTY INCOME OF APPROXIMATELY £120,000 ANNUALLY FROM Q1.",
+                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
+                "DEAR BOARD,",
+                "SUBJECT: IP DISPUTE RESOLVED - SETTLEMENT EXECUTED, ROYALTY INCOME FROM Q1"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 104-3)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 104]."
+            "hint": "Resolution and financial outcome are in the subject. The settlement mechanism and annual income figure are in the body. The CLO signs with her abbreviated title for the board.",
+            "explanation": "An IP dispute resolution board report is most impactful when it converts the legal outcome into a financial benefit - '£120,000 annually from Q1' tells the board precisely what the resolution is worth commercially."
         },
         {
             "id": "WRT_WRITINGEMAIL_L105_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 105-1] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to all staff announcing an updated data privacy policy.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "YOURS SINCERELY,\nDATA PROTECTION OFFICER",
+                "OUR DATA PRIVACY POLICY HAS BEEN UPDATED TO REFLECT CHANGES IN THE UK GDPR FRAMEWORK - ALL STAFF ARE REQUIRED TO READ AND ACKNOWLEDGE THE REVISED POLICY VIA THE INTRANET BY 15 DECEMBER.",
+                "SUBJECT: UPDATED DATA PRIVACY POLICY - MANDATORY REVIEW BY ALL STAFF",
+                "DEAR ALL,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 105-1)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 105]."
+            "hint": "Policy update and mandatory deadline are in the subject. Regulatory basis, action required, method, and deadline are in the body. The DPO signs by role - GDPR requires this role to be identifiable.",
+            "explanation": "A mandatory policy review email must specify both the mechanism ('via the intranet') and the deadline ('15 December'). Citing the regulatory basis ('UK GDPR changes') explains why the update was necessary."
         },
         {
             "id": "WRT_WRITINGEMAIL_L105_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 105-2] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to a third-party data processor confirming compliance with updated DPA terms.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "OUR UPDATED DATA PROCESSING AGREEMENT REFLECTS THE REVISED UK GDPR REQUIREMENTS - PLEASE CONFIRM YOUR ORGANISATION'S COMPLIANCE WITH THE NEW TERMS BY RETURNING THE SIGNED ADDENDUM BY 30 NOVEMBER.",
+                "DEAR DATA PROTECTION MANAGER,",
+                "YOURS SINCERELY,\nDATA PROTECTION OFFICER",
+                "SUBJECT: DATA PROCESSING AGREEMENT UPDATE - CONFIRMATION OF COMPLIANCE REQUIRED"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 105-2)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 105]."
+            "hint": "Agreement type and compliance request are in the subject. Updated DPA, regulatory basis, action required, and deadline are in the body. The DPO signs by role as the regulatory-facing officer.",
+            "explanation": "A data processing agreement update must require a signed addendum by a specific date - oral agreement is insufficient under GDPR. The '30 November' deadline creates a clear contractual deadline for the processor to comply."
         },
         {
             "id": "WRT_WRITINGEMAIL_L105_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 105-3] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to the data protection regulator notifying them of a personal data breach.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "WE ARE NOTIFYING THE ICO OF A PERSONAL DATA BREACH DISCOVERED ON 7 NOVEMBER AFFECTING AN ESTIMATED 1,200 DATA SUBJECTS - THE BREACH HAS BEEN CONTAINED AND A FULL INCIDENT REPORT IS ATTACHED.",
+                "YOURS SINCERELY,\nDATA PROTECTION OFFICER",
+                "DEAR ICO CASE OFFICER,",
+                "SUBJECT: MANDATORY BREACH NOTIFICATION - ICO REFERENCE REQUESTED"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 105-3)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 105]."
+            "hint": "Mandatory notification and regulator context are in the subject. Breach date, number of subjects, containment confirmation, and attached report are in the body. All are required GDPR elements.",
+            "explanation": "GDPR Article 33 requires breach notifications to the ICO within 72 hours. The notification must include: discovery date, number of subjects affected, containment action taken, and the full incident report. All four appear in this email."
         },
         {
             "id": "WRT_WRITINGEMAIL_L106_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 106-1] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write a formal email to a senior executive notifying them of termination of employment.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "YOURS SINCERELY,\nLADY ANNE WEST, CHAIR",
+                "I AM WRITING IN MY CAPACITY AS CHAIR OF THE BOARD TO FORMALLY NOTIFY YOU THAT YOUR EMPLOYMENT AS CHIEF OPERATING OFFICER IS TERMINATED WITH IMMEDIATE EFFECT AS OF TODAY'S DATE.",
+                "SUBJECT: TERMINATION OF EMPLOYMENT - CONFIDENTIAL AND WITHOUT PREJUDICE",
+                "DEAR MR GRAHAM,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 106-1)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 106]."
+            "hint": "The subject includes 'without prejudice' - critical legal protection. The Chair is the correct authority to terminate a C-suite appointment. The effective date is clear. Find the subject first.",
+            "explanation": "'Without prejudice' protects the communication from being used in legal proceedings - essential when terminating a senior executive who may contest the decision. The Chair terminates C-suite appointments, not the CEO."
         },
         {
             "id": "WRT_WRITINGEMAIL_L106_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 106-2] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to a departing executive's legal team proposing separation agreement terms.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "WITHOUT PREJUDICE AND IN FULL AND FINAL SETTLEMENT, WE PROPOSE THE FOLLOWING TERMS: NINE MONTHS' SALARY IN LIEU OF NOTICE, A MUTUAL NON-DISPARAGEMENT CLAUSE, AND A PAYMENT OF £50,000 IN COMPENSATION.",
+                "DEAR COUNSEL,",
+                "YOURS SINCERELY,\nLADY ANNE WEST, CHAIR",
+                "SUBJECT: SETTLEMENT TERMS PROPOSAL - MR GRAHAM SEPARATION"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 106-2)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 106]."
+            "hint": "'Without prejudice and in full and final settlement' are the three key legal formulas in the body. Three settlement terms follow. The Chair proposes to legal counsel rather than to the executive directly.",
+            "explanation": "'Full and final settlement' means the executive cannot bring further claims. Three terms - pay in lieu, non-disparagement, and compensation - represent the standard components of a senior executive separation package."
         },
         {
             "id": "WRT_WRITINGEMAIL_L106_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 106-3] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write a formal reference email for a departing executive to a prospective employer.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "I AM PLEASED TO PROVIDE A REFERENCE FOR MR GRAHAM HAYES, WHO SERVED AS CHIEF OPERATING OFFICER FROM 2019 TO 2024 AND DURING THAT TIME DELIVERED TRANSFORMATIONAL OPERATIONAL IMPROVEMENTS.",
+                "YOURS SINCERELY,\nLADY ANNE WEST, FORMER CHAIR",
+                "DEAR HIRING COMMITTEE,",
+                "SUBJECT: PROFESSIONAL REFERENCE - MR GRAHAM HAYES, FORMER COO"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 106-3)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 106]."
+            "hint": "Reference type and candidate are in the subject. The former title, tenure dates, and substantive achievement are in the body. 'Former Chair' distinguishes the role from current capacity.",
+            "explanation": "A reference that cites specific tenure dates ('2019–2024') and names a concrete achievement ('transformational operational improvements') is far more credible than generic praise. 'Former Chair' identifies the authority behind the reference."
         },
         {
             "id": "WRT_WRITINGEMAIL_L107_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 107-1] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to a counterparty requesting renegotiation of key contract terms.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "YOURS SINCERELY,\nSTEPHEN FORD, MANAGING DIRECTOR",
+                "IN LIGHT OF MATERIAL CHANGES IN MARKET CONDITIONS SINCE THE EXECUTION OF SA-2019-441, I WISH TO INVOKE OUR CONTRACTUAL RENEGOTIATION CLAUSE AND PROPOSE A MEETING TO DISCUSS REVISED COMMERCIAL TERMS.",
+                "SUBJECT: REQUEST TO RENEGOTIATE KEY TERMS - SERVICE AGREEMENT SA-2019-441",
+                "DEAR MR PATEL,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 107-1)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 107]."
+            "hint": "Contract reference and renegotiation purpose are in the subject. The material change basis and contractual clause invocation are in the body - both essential for a valid renegotiation notice.",
+            "explanation": "'Material changes in market conditions' is the standard legal justification for invoking a renegotiation clause. Citing the specific clause right in the email establishes that you are acting within your contractual rights."
         },
         {
             "id": "WRT_WRITINGEMAIL_L107_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 107-2] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to a contract counterparty invoking a force majeure clause.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "I AM HEREBY NOTIFYING YOU THAT A FORCE MAJEURE EVENT, NAMELY THE GLOBAL SEMICONDUCTOR SHORTAGE, HAS RENDERED PERFORMANCE OF OUR OBLIGATIONS UNDER SA-2019-441 TEMPORARILY IMPOSSIBLE.",
+                "DEAR MR PATEL,",
+                "YOURS SINCERELY,\nSTEPHEN FORD, MANAGING DIRECTOR",
+                "SUBJECT: FORCE MAJEURE NOTIFICATION - CONTRACT SA-2019-441 OBLIGATIONS SUSPENDED"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 107-2)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 107]."
+            "hint": "Force majeure and contract reference are in the subject. The specific qualifying event, 'hereby notifying', and the performance impact are in the body. This is a formal legal notification.",
+            "explanation": "'Hereby notifying' is essential - it establishes the date of formal notification, which starts the contractual force majeure clock. Naming the specific event ('global semiconductor shortage') identifies the qualifying circumstance."
         },
         {
             "id": "WRT_WRITINGEMAIL_L107_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 107-3] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email proposing a six-month extension to an existing commercial contract.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "IN LIEU OF RENEGOTIATION, I PROPOSE A SIX-MONTH EXTENSION OF SA-2019-441 ON EXISTING TERMS, COMMENCING UPON THE CURRENT EXPIRY DATE, TO ALLOW MARKET CONDITIONS TO NORMALISE.",
+                "YOURS SINCERELY,\nSTEPHEN FORD, MANAGING DIRECTOR",
+                "DEAR MR PATEL,",
+                "SUBJECT: SIX-MONTH CONTRACT EXTENSION PROPOSAL - SA-2019-441"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 107-3)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 107]."
+            "hint": "Extension duration and contract reference are in the subject. 'In lieu of renegotiation', existing terms, commencement basis, and commercial rationale are in the body.",
+            "explanation": "'In lieu of renegotiation' signals this is an alternative proposal to the more contentious renegotiation. 'On existing terms' is the most commercially straightforward extension - no new negotiation needed."
         },
         {
             "id": "WRT_WRITINGEMAIL_L108_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 108-1] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to staff announcing a formal redundancy consultation process.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "YOURS SINCERELY,\nCHRIEF EXECUTIVE OFFICER",
+                "FOLLOWING A REVIEW OF OUR OPERATIONAL STRUCTURE, THE COMPANY IS PROPOSING A REDUCTION OF TWENTY-FIVE ROLES AND IS COMMENCING A FORMAL THIRTY-DAY COLLECTIVE CONSULTATION PERIOD FROM TODAY.",
+                "SUBJECT: FORMAL REDUNDANCY CONSULTATION - WORKFORCE REDUCTION PROPOSAL",
+                "DEAR ALL,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 108-1)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 108]."
+            "hint": "The subject uses 'formal' and 'proposal' - legally significant. The number of roles, 'proposing' (not 'deciding'), and the 30-day consultation period are all legally required elements. Find the subject first.",
+            "explanation": "The word 'proposing' rather than 'deciding' is legally critical in redundancy - it signals the consultation is genuine and a decision has not already been made. The 30-day collective consultation period is a UK legal requirement for 20+ redundancies."
         },
         {
             "id": "WRT_WRITINGEMAIL_L108_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 108-2] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to an employee individually notifying them they are at risk of redundancy.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "I AM WRITING TO INFORM YOU THAT YOUR ROLE OF OPERATIONS ANALYST HAS BEEN IDENTIFIED AS BEING AT RISK OF REDUNDANCY AS PART OF THE CURRENT CONSULTATION PROCESS - YOU ARE INVITED TO A CONSULTATION MEETING ON 18 NOVEMBER.",
+                "DEAR JAMES,",
+                "YOURS SINCERELY,\nANNA BLAKE, HR DIRECTOR",
+                "SUBJECT: AT RISK OF REDUNDANCY NOTIFICATION - CONFIDENTIAL - YOUR ROLE"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 108-2)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 108]."
+            "hint": "'At risk' (not 'redundant') is legally precise - it signals the process is ongoing. The role, consultation process, and meeting date are in the body. 'Confidential' in the subject protects the employee's dignity.",
+            "explanation": "UK law requires employees to be notified individually that their specific role is 'at risk' - not that they are redundant. The distinction matters: 'at risk' means the consultation may result in a different outcome."
         },
         {
             "id": "WRT_WRITINGEMAIL_L108_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 108-3] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to HR presenting proposed redundancy severance terms for committee approval.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "I AM SEEKING COMMITTEE APPROVAL FOR SEVERANCE TERMS OF STATUTORY MINIMUM PLUS SIX WEEKS' ENHANCED PAY PER YEAR OF SERVICE, APPLICABLE TO ALL TWENTY-FIVE ROLES AT RISK.",
+                "YOURS SINCERELY,\nANNA BLAKE, HR DIRECTOR",
+                "DEAR HR COMMITTEE,",
+                "SUBJECT: REDUNDANCY SEVERANCE TERMS - COMMITTEE APPROVAL REQUESTED"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 108-3)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 108]."
+            "hint": "The approval request is in the subject. Two tiers of severance - statutory minimum plus enhanced - and scope (25 roles) are in the body. The HR director seeks committee authority for the financial commitment.",
+            "explanation": "Presenting severance as 'statutory minimum plus enhanced pay' gives the committee a clear financial structure. Specifying the exact enhancement ('six weeks per year') means the committee can model the total liability before approving."
         },
         {
             "id": "WRT_WRITINGEMAIL_L109_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 109-1] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to a regulator responding formally to a notice of regulatory sanction.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER, NEXUS CONSULTING",
+                "WE ACKNOWLEDGE RECEIPT OF SANCTION NOTICE FCA-2024-0811 AND FORMALLY CONTEST THE BASIS OF THE SANCTION ON THE GROUNDS THAT OUR CONDUCT WAS AT ALL TIMES COMPLIANT WITH THE APPLICABLE REGULATORY FRAMEWORK.",
+                "SUBJECT: FORMAL RESPONSE TO REGULATORY SANCTION NOTICE REF: FCA-2024-0811",
+                "DEAR SUPERVISORY TEAM,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 109-1)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 109]."
+            "hint": "Sanction reference and formal response are in the subject. The notice reference, formal contest, and specific grounds for contest are in the body. The CCO is the correct officer for regulatory correspondence.",
+            "explanation": "'At all times compliant with the applicable regulatory framework' is the precise legal formula for contesting a regulatory sanction - it establishes full compliance as the defence position from which any subsequent legal arguments will flow."
         },
         {
             "id": "WRT_WRITINGEMAIL_L109_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 109-2] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email to senior leadership briefing them on the regulatory sanction response strategy.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "I AM BRIEFING YOU ON OUR STRATEGY TO CONTEST THE FCA SANCTION: WE HAVE ENGAGED LINKLATERS AS EXTERNAL COUNSEL AND BELIEVE WE HAVE A STRONG CASE ON BOTH PROCEDURAL AND SUBSTANTIVE GROUNDS.",
+                "DEAR BOARD,",
+                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER",
+                "SUBJECT: REGULATORY SANCTION STRATEGY - BOARD BRIEFING AND LEGAL POSITION"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 109-2)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 109]."
+            "hint": "Strategy and board audience are in the subject. External counsel name, contest basis (procedural and substantive), and confident assessment are in the body. The CCO briefs the board.",
+            "explanation": "Naming the external counsel ('Linklaters') signals the seriousness of the legal challenge and gives the board confidence in the quality of representation. Distinguishing 'procedural and substantive grounds' shows a two-pronged legal defence."
         },
         {
             "id": "WRT_WRITINGEMAIL_L109_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 109-3] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to a regulator submitting a compliance remediation timeline.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "WITHOUT PREJUDICE TO OUR CONTEST, WE SUBMIT THE FOLLOWING REMEDIATION TIMELINE: PROCESS REDESIGN BY 28 FEBRUARY, STAFF RETRAINING BY 31 MARCH, AND INDEPENDENT AUDIT BY 30 APRIL.",
+                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER, NEXUS CONSULTING",
+                "DEAR SUPERVISORY TEAM,",
+                "SUBJECT: COMPLIANCE REMEDIATION TIMELINE - RESPONSE TO FCA-2024-0811"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 109-3)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 109]."
+            "hint": "'Without prejudice to our contest' preserves the legal position while cooperating. Three remediation steps with specific dates are in the body - required by the regulator. The sanction reference connects to the notice.",
+            "explanation": "'Without prejudice to our contest' is a critical legal phrase - it means submitting the remediation plan does not constitute admission of the breach. Three dated milestones show the regulator a credible compliance path."
         },
         {
             "id": "WRT_WRITINGEMAIL_L110_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 110-1] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to an overseas partner formalising the terms of a joint venture proposal.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
+                "I AM PLEASED TO PROPOSE THE FOLLOWING HEADS OF TERMS FOR OUR JOINT VENTURE: A 60:40 EQUITY SPLIT IN FAVOUR OF NEXUS, A THREE-YEAR INITIAL TERM, AND A SHARED PROFIT DISTRIBUTION OF 50:50.",
+                "SUBJECT: JOINT VENTURE TERMS PROPOSAL - NEXUS CONSULTING AND KUALA LUMPUR TECH GROUP",
+                "DEAR MR WAN,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 110-1)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 110]."
+            "hint": "Both parties and proposal type are in the subject. Three specific heads of terms - equity, duration, profit distribution - are in the body. Note the different equity and profit splits.",
+            "explanation": "The distinction between equity split (60:40) and profit distribution (50:50) is commercially significant - Nexus holds majority control but shares profits equally, a common compromise in JV negotiations."
         },
         {
             "id": "WRT_WRITINGEMAIL_L110_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 110-2] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to legal counsel instructing them to review a joint venture shareholder agreement.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "PLEASE REVIEW THE ATTACHED DRAFT SHAREHOLDER AGREEMENT FOR THE KUALA LUMPUR TECH GROUP JOINT VENTURE, WITH PARTICULAR FOCUS ON THE DEADLOCK RESOLUTION, EXIT PROVISIONS, AND GOVERNING LAW CLAUSES.",
+                "DEAR CORPORATE LAW TEAM,",
+                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
+                "SUBJECT: REVIEW INSTRUCTION - JV SHAREHOLDER AGREEMENT DRAFT: KL TECH GROUP"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 110-2)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 110]."
+            "hint": "Document type and JV partner are in the subject. The three specific clause areas requiring focus are in the body. The CLO instructs legal counsel on priorities.",
+            "explanation": "Instructing counsel to focus on 'deadlock resolution, exit provisions, and governing law' identifies the three clauses most likely to cause future disputes in a cross-border JV. Deadlock and exit clauses determine how the JV ends; governing law determines which country's courts apply."
         },
         {
             "id": "WRT_WRITINGEMAIL_L110_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 3,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 110-3] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write a joint venture commencement email to the partner organisation confirming all conditions are met.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "I AM PLEASED TO CONFIRM THAT ALL CONDITIONS PRECEDENT TO THE JOINT VENTURE HAVE BEEN SATISFIED AND THE JV FORMALLY COMMENCES ON 1 JANUARY 2025 - IT IS A PRIVILEGE TO PARTNER WITH KUALA LUMPUR TECH GROUP.",
+                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
+                "DEAR MR WAN,",
+                "SUBJECT: JV COMMENCEMENT CONFIRMED - ALL CONDITIONS PRECEDENT SATISFIED"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 110-3)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 110]."
+            "hint": "'Conditions precedent satisfied' is the legal trigger for commencement. The start date and warm closing are in the body. The subject confirms the legal readiness. Find the subject line first.",
+            "explanation": "'All conditions precedent satisfied' is the exact legal formula that confirms the JV can begin. Conditions precedent are the legal prerequisites agreed in the JV agreement - their satisfaction triggers formal commencement."
         }
     ]
 }

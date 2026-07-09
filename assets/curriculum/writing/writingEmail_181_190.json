@@ -5,663 +5,633 @@
     "quests": [
         {
             "id": "WRT_WRITINGEMAIL_L181_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 181-1] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email to a Supreme Court registry submitting a constitutional challenge to an emergency powers act.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "NEXUS LAW FILES A CLAIM ASSERTING THAT SECTIONS 14-17 OF THE EMERGENCY POWERS ACT 2024 ARE INCOMPATIBLE WITH ARTICLES 5, 8, AND 10 OF THE EUROPEAN CONVENTION ON HUMAN RIGHTS.",
+                "DEAR SUPREME COURT REGISTRY,",
+                "YOURS SINCERELY,\nLEAD CONSTITUTIONAL COUNSEL, NEXUS LAW",
+                "SUBJECT: CONSTITUTIONAL CHALLENGE - EMERGENCY POWERS ACT 2024 INCOMPATIBILITY WITH HUMAN RIGHTS ACT"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 181-1)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 181]."
+            "hint": "Act sections and HRA incompatibility are in the subject. Claim filing, specific sections challenged (14-17), and three ECHR articles are in the body - a formal constitutional challenge.",
+            "explanation": "UK courts issue Declarations of Incompatibility under the Human Rights Act 1998 when legislation conflicts with the European Convention. Three Articles - 5 (liberty), 8 (privacy), and 10 (expression) - identify the fundamental rights the emergency powers allegedly violate."
         },
         {
             "id": "WRT_WRITINGEMAIL_L181_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 181-2] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to a government minister requesting emergency legislative reform following a constitutional ruling.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "FOLLOWING THE SUPREME COURT'S DECLARATION OF INCOMPATIBILITY REGARDING SECTIONS 14-17 OF THE EMERGENCY POWERS ACT 2024, WE FORMALLY REQUEST EXPEDITED REMEDIAL ORDER PROCEEDINGS TO CURE THE INCOMPATIBILITY.",
+                "YOURS SINCERELY,\nLEAD CONSTITUTIONAL COUNSEL, NEXUS LAW",
+                "DEAR SECRETARY OF STATE,",
+                "SUBJECT: LEGISLATIVE REFORM REQUEST - SUPREME COURT DECLARATION OF INCOMPATIBILITY"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 181-2)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 181]."
+            "hint": "Reform type and court ruling are in the subject. Declaration of incompatibility, specific sections, and remedial order request are in the body - the correct legislative response process.",
+            "explanation": "A Remedial Order under the Human Rights Act allows the government to amend incompatible legislation quickly - faster than a full Parliamentary Bill. Requesting 'expedited' proceedings acknowledges that fundamental rights violations require urgent remedy."
         },
         {
             "id": "WRT_WRITINGEMAIL_L181_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 181-3] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to the UN Human Rights Committee petitioning for review of a constitutional rights violation.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "YOURS SINCERELY,\nINTERNATIONAL HUMAN RIGHTS COUNSEL, NEXUS LAW",
+                "PURSUANT TO THE OPTIONAL PROTOCOL TO THE ICCPR, NEXUS LAW SUBMITS AN INDIVIDUAL COMMUNICATION ON BEHALF OF MR JAMES MORGAN ALLEGING VIOLATIONS OF ARTICLES 9, 14, AND 17 OF THE ICCPR BY THE UK.",
+                "SUBJECT: INDIVIDUAL COMMUNICATION - OPTIONAL PROTOCOL TO ICCPR - HRC PETITION",
+                "DEAR HUMAN RIGHTS COMMITTEE SECRETARIAT,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 181-3)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 181]."
+            "hint": "Protocol type and committee are in the subject. Protocol basis, individual communication type, claimant, three ICCPR articles violated, and respondent state are in the body.",
+            "explanation": "The Optional Protocol to the ICCPR allows individuals to petition the UN Human Rights Committee after exhausting domestic remedies. Three articles - 9 (liberty), 14 (fair trial), and 17 (privacy) - mirror the ECHR violations, creating a parallel international law claim."
         },
         {
             "id": "WRT_WRITINGEMAIL_L182_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 182-1] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to a military prosecutor presenting evidence in an international humanitarian law case.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "WE SUBMIT EVIDENCE FOR REVIEW OF THE TARGETING DECISION OF 14 NOVEMBER - THE ATTACK ON THE IDENTIFIED STRUCTURE MUST BE ASSESSED AGAINST THE IHL PROPORTIONALITY PRINCIPLE UNDER AP I ARTICLE 51(5)(b).",
+                "DEAR MILITARY PROSECUTOR,",
+                "YOURS SINCERELY,\nINTERNATIONAL HUMANITARIAN LAW COUNSEL",
+                "SUBJECT: IHL EVIDENCE SUBMISSION - TARGETING DECISION REVIEW - INCIDENT REPORT 14/NOV"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 182-1)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 182]."
+            "hint": "IHL principle and article are in the subject. Evidence submission, targeting decision date, assessed location, and specific API proportionality article are in the body.",
+            "explanation": "Additional Protocol I Article 51(5)(b) prohibits attacks 'which may be expected to cause incidental loss of civilian life… which would be excessive in relation to the concrete and direct military advantage'. This is the primary IHL targeting rule for proportionality assessment."
         },
         {
             "id": "WRT_WRITINGEMAIL_L182_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 182-2] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to the International Criminal Court submitting a referral for war crimes investigation.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "THE STATE PARTY REFERS THE SITUATION OF MERIDIA TO THE PROSECUTOR UNDER ARTICLE 14 OF THE ROME STATUTE, ALLEGING SYSTEMATIC ATTACKS ON CIVILIAN INFRASTRUCTURE CONSTITUTING WAR CRIMES UNDER ARTICLE 8(2)(a).",
+                "YOURS SINCERELY,\nMINISTER OF FOREIGN AFFAIRS",
+                "DEAR OFFICE OF THE PROSECUTOR,",
+                "SUBJECT: ICC REFERRAL - ARTICLE 14 ROME STATUTE - WAR CRIMES: CIVILIAN TARGETING"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 182-2)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 182]."
+            "hint": "Referral basis and alleged crime are in the subject. State party referral mechanism, Rome Statute articles (14 and 8(2)(a)), and systematic civilian infrastructure attacks are in the body.",
+            "explanation": "Article 14 State Party Referrals are one of three ICC trigger mechanisms. Article 8(2)(a) Rome Statute defines war crimes - 'willful killing, torture, extensive destruction of civilian property'. Specifying both the referral article and the substantive crime article gives the Prosecutor the legal basis to investigate."
         },
         {
             "id": "WRT_WRITINGEMAIL_L182_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 182-3] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email to a UN Security Council requesting peace-keeping intervention authorisation.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "YOURS SINCERELY,\nMINISTER OF FOREIGN AFFAIRS",
+                "THE STATE PARTY FORMALLY REQUESTS THE SECURITY COUNCIL TO ADOPT A RESOLUTION UNDER CHAPTER VII OF THE UN CHARTER AUTHORISING A MULTILATERAL PEACE-KEEPING OPERATION IN MERIDIA TO PROTECT CIVILIANS.",
+                "SUBJECT: UNSC RESOLUTION REQUEST - CHAPTER VII AUTHORISATION: MERIDIA HUMANITARIAN CRISIS",
+                "DEAR SECURITY COUNCIL PRESIDENCY,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 182-3)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 182]."
+            "hint": "Chapter VII and humanitarian basis are in the subject. Formal request, UNSC resolution, Chapter VII authority, and civilian protection mandate are in the body.",
+            "explanation": "Chapter VII of the UN Charter authorises the Security Council to mandate enforcement actions - including military intervention - to address threats to peace. 'Civilian protection' as the mandate purpose triggers the Responsibility to Protect doctrine, which requires five P3 members' consent."
         },
         {
             "id": "WRT_WRITINGEMAIL_L183_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 183-1] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to a digital markets regulator proposing minimum interoperability standards for messaging platforms.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "WE PROPOSE MANDATORY INTEROPERABILITY STANDARDS FOR LARGE END-TO-END ENCRYPTED MESSAGING PLATFORMS, REQUIRING SECURE MESSAGE PASSING BETWEEN PLATFORMS WITHOUT COMPROMISING ENCRYPTION INTEGRITY.",
+                "DEAR DIGITAL COMPETITION EXPERT PANEL,",
+                "YOURS SINCERELY,\nCHIEF TECHNOLOGY OFFICER, NEXUS DIGITAL",
+                "SUBJECT: INTEROPERABILITY STANDARD PROPOSAL - END-TO-END ENCRYPTED MESSAGING PLATFORMS"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 183-1)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 183]."
+            "hint": "Standard type and platform focus are in the subject. Mandatory interoperability, E2EE platforms, cross-platform message passing, and encryption integrity preservation are in the body.",
+            "explanation": "Interoperability for E2EE messaging is technically complex - it requires a cryptographic protocol (like the Signal Protocol) to work across different platforms without either party needing to decrypt and re-encrypt messages at the gateway. This is the key technical challenge the proposal must address."
         },
         {
             "id": "WRT_WRITINGEMAIL_L183_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 183-2] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to a competition authority requesting mandatory default settings reform for an operating system.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "NEXUS BROWSER REQUESTS CMA INVESTIGATION OF THE DEFAULT BROWSER SETTINGS IN THE DOMINANT MOBILE OPERATING SYSTEM, WHICH WE ALLEGE CONSTITUTES AN ABUSE OF DOMINANT POSITION UNDER CHAPTER II OF THE COMPETITION ACT 1998.",
+                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS BROWSER",
+                "DEAR COMPETITION AND MARKETS AUTHORITY,",
+                "SUBJECT: DEFAULT SETTINGS REFORM REQUEST - MOBILE OS ANTI-COMPETITIVE DEFAULT BROWSER"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 183-2)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 183]."
+            "hint": "Default settings type and allegation are in the subject. Investigation request, dominant OS, alleged abuse, and CA 1998 Chapter II basis are in the body - a formal competition complaint.",
+            "explanation": "Chapter II Competition Act 1998 (equivalent to Article 102 TFEU) prohibits abuse of dominant position. Pre-installed default browser settings that favour the OS developer's own browser (as found in EU v Google Android) constitute a classic leveraging abuse of dominance."
         },
         {
             "id": "WRT_WRITINGEMAIL_L183_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 183-3] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to a platform company issuing a DMA interoperability compliance order.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "YOURS SINCERELY,\nDG CONNECT, EUROPEAN COMMISSION",
+                "PURSUANT TO ARTICLE 7 OF THE DIGITAL MARKETS ACT, THE EUROPEAN COMMISSION ORDERS NEXUS PLATFORM TO ENABLE FULL INTEROPERABILITY OF ITS MESSAGING SERVICE WITH THIRD-PARTY MESSAGING APPLICATIONS BY 31 MARCH.",
+                "SUBJECT: DMA INTEROPERABILITY ORDER - NEXUS PLATFORM: COMPLIANCE REQUIRED BY 31 MARCH",
+                "DEAR CHIEF REGULATORY OFFICER,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 183-3)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 183]."
+            "hint": "DMA article and compliance deadline are in the subject. Article 7 mandate, Commission order, platform name, specific interoperability requirement, and compliance deadline are in the body.",
+            "explanation": "DMA Article 7 requires gatekeepers to open their messaging services to interoperability with third-party providers. The Commission issues binding orders to enforce compliance - non-compliance can result in fines of up to 10% of global annual turnover."
         },
         {
             "id": "WRT_WRITINGEMAIL_L184_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 184-1] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to a medical regulator reporting an adverse pharmacovigilance signal.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "NEXUS PHARMA SUBMITS AN EXPEDITED SAFETY REPORT FOR AN UNEXPECTED SERIOUS ADVERSE REACTION IDENTIFIED IN POST-MARKET SURVEILLANCE OF NX-2201 - FIVE CASES OF HEPATOTOXICITY WERE REPORTED IN WEEK 48.",
+                "DEAR MHRA PHARMACOVIGILANCE TEAM,",
+                "YOURS SINCERELY,\nCHIEF MEDICAL OFFICER, NEXUS PHARMA",
+                "SUBJECT: EXPEDITED PHARMACOVIGILANCE REPORT - UNEXPECTED ADVERSE REACTION: NX-2201"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 184-1)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 184]."
+            "hint": "Report type and drug are in the subject. Expedited report, unexpected reaction type, surveillance context, number of cases, and week of identification are in the body.",
+            "explanation": "MHRA requires expedited reporting of unexpected serious adverse reactions (USARs) within 15 days. Five cases of hepatotoxicity (liver damage) in a single week is a statistically significant safety signal that warrants immediate regulatory review and potential label update."
         },
         {
             "id": "WRT_WRITINGEMAIL_L184_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 184-2] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email to a company's medical officers proposing a risk minimisation strategy for a drug.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "IN RESPONSE TO THE HEPATOTOXICITY SIGNAL, I PROPOSE A RISK MINIMISATION STRATEGY COMPRISING ENHANCED PRESCRIBER EDUCATION, MANDATORY LIVER FUNCTION TESTING BEFORE TREATMENT INITIATION, AND UPDATED PRODUCT LABELLING.",
+                "YOURS SINCERELY,\nCHIEF MEDICAL OFFICER, NEXUS PHARMA",
+                "DEAR SAFETY COMMITTEE,",
+                "SUBJECT: RISK MINIMISATION STRATEGY PROPOSAL - HEPATOTOXICITY SIGNAL: NX-2201"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 184-2)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 184]."
+            "hint": "Risk minimisation type and drug signal are in the subject. Three specific risk minimisation measures - education, liver testing, and label update - are in the body. The CMO proposes to the safety committee.",
+            "explanation": "A three-element risk minimisation strategy - prescriber education (awareness), liver function testing (detection), and label update (information) - represents the proportionate response to a hepatotoxicity signal that allows continued marketing while protecting patients."
         },
         {
             "id": "WRT_WRITINGEMAIL_L184_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 184-3] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to prescribers providing an urgent pharmacovigilance safety update.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "YOURS SINCERELY,\nCHIEF MEDICAL OFFICER, NEXUS PHARMA",
+                "AN IMPORTANT SAFETY NOTICE REGARDING NX-2201: POST-MARKET SURVEILLANCE HAS IDENTIFIED CASES OF HEPATOTOXICITY - PLEASE PERFORM LIVER FUNCTION TESTS BEFORE INITIATING TREATMENT AND MONITOR PATIENTS MONTHLY.",
+                "SUBJECT: URGENT DRUG SAFETY UPDATE - NX-2201: RISK OF HEPATOTOXICITY",
+                "DEAR PRESCRIBER,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 184-3)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 184]."
+            "hint": "Urgency, drug, and risk type are in the subject. Safety notice, identified risk, and two specific prescriber actions (pre-treatment LFT and monthly monitoring) are in the body.",
+            "explanation": "A prescriber safety communication must specify the risk, the pre-treatment action (LFT screening), and the ongoing monitoring requirement (monthly). This 'Dear Doctor' letter triggers immediate prescriber behaviour change - the most direct patient protection measure."
         },
         {
             "id": "WRT_WRITINGEMAIL_L185_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 185-1] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to a nuclear arms control authority filing a notification under a non-proliferation treaty.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "THE REPUBLIC OF NEXIA SUBMITS ITS ANNUAL ADDITIONAL PROTOCOL DECLARATION UNDER ARTICLE 2 OF INFCIRC/540, PROVIDING A COMPREHENSIVE ACCOUNT OF ALL NUCLEAR MATERIAL AND FACILITIES.",
+                "DEAR IAEA SAFEGUARDS SECRETARIAT,",
+                "YOURS SINCERELY,\nMINISTER OF FOREIGN AFFAIRS, REPUBLIC OF NEXIA",
+                "SUBJECT: IAEA SAFEGUARDS NOTIFICATION - ADDITIONAL PROTOCOL DECLARATION SUBMISSION"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 185-1)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 185]."
+            "hint": "Safeguards type and protocol reference are in the subject. Annual declaration, AP article, INFCIRC number, and comprehensive coverage confirmation are in the body.",
+            "explanation": "INFCIRC/540 is the model Additional Protocol - a voluntary strengthening measure beyond the Non-Proliferation Treaty's basic safeguards. Article 2 requires declarations of all nuclear material, facilities, and related activities - the most comprehensive transparency commitment available."
         },
         {
             "id": "WRT_WRITINGEMAIL_L185_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 185-2] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to a UN body alleging non-compliance with nuclear safeguard obligations.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "THE REPUBLIC OF NEXIA REFERS THE SAFEGUARDS NON-COMPLIANCE OF THE REPUBLIC OF MERIDIA TO THE IAEA BOARD, CITING EVIDENCE OF UNDECLARED NUCLEAR ACTIVITIES AT THE SITE IDENTIFIED AS FACILITY X.",
+                "YOURS SINCERELY,\nMINISTER OF FOREIGN AFFAIRS, REPUBLIC OF NEXIA",
+                "DEAR IAEA BOARD OF GOVERNORS,",
+                "SUBJECT: SAFEGUARDS NON-COMPLIANCE ALLEGATION - IAEA BOARD OF GOVERNORS REFERRAL"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 185-2)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 185]."
+            "hint": "Non-compliance allegation and referral body are in the subject. Referring state, respondent state, Board referral mechanism, evidence reference, and specific facility are in the body.",
+            "explanation": "Referral to the IAEA Board of Governors is the formal mechanism for addressing safeguards non-compliance. If the Board finds non-compliance, it can refer the matter to the UN Security Council - the pathway from IAEA finding to potential sanctions."
         },
         {
             "id": "WRT_WRITINGEMAIL_L185_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 185-3] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to a government requesting urgent consultations under a mutual defence treaty.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "YOURS SINCERELY,\nMINISTER OF DEFENCE, REPUBLIC OF NEXIA",
+                "NEXIA FORMALLY REQUESTS URGENT CONSULTATIONS UNDER ARTICLE V OF THE MUTUAL DEFENCE TREATY IN RESPONSE TO THE NUCLEAR CAPABILITY DEVELOPMENT BY A TREATY-DEFINED ADVERSARY STATE.",
+                "SUBJECT: URGENT TREATY CONSULTATIONS REQUESTED - NUCLEAR THREAT: ARTICLE V INVOCATION",
+                "DEAR SECRETARY OF STATE,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 185-3)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 185]."
+            "hint": "Treaty article and threat type are in the subject. Formal consultation request, Article V basis, capability development basis, and adversary state classification are in the body.",
+            "explanation": "Article V consultation clauses in mutual defence treaties (like NATO Article 4) require immediate Allied consultation when a party's security is threatened. Invoking Article V (as opposed to Article IV-equivalent consultation) signals the most serious level of threat."
         },
         {
             "id": "WRT_WRITINGEMAIL_L186_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 186-1] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email to a competition authority quantifying antitrust damages for an overcharge claim.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "OUR ECONOMIC EXPERTS HAVE QUANTIFIED THE CARTEL OVERCHARGE USING THE COMPARATOR COUNTERFACTUAL METHOD - THE TOTAL OVERCHARGE SUFFERED BY NEXUS CONSULTING OVER THE CARTEL PERIOD IS ESTIMATED AT £12.4M.",
+                "DEAR LITIGATION TEAM,",
+                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS CONSULTING",
+                "SUBJECT: ANTITRUST DAMAGES QUANTUM - CARTEL OVERCHARGE ANALYSIS: £12.4M CLAIM"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 186-1)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 186]."
+            "hint": "Claim type and quantum are in the subject. Economic methodology (comparator counterfactual), overcharge quantification, and total claim figure are in the body.",
+            "explanation": "The comparator counterfactual method (comparing cartel prices to a non-cartelised comparable market) is the most widely accepted damages quantification methodology in EU and UK competition law. The European Commission's Practical Guide endorses this approach."
         },
         {
             "id": "WRT_WRITINGEMAIL_L186_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 186-2] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to external economists instructing them on a passing-on defence analysis.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "THE DEFENDANT HAS RAISED A PASSING-ON DEFENCE - PLEASE ANALYSE WHETHER NEXUS CONSULTING PASSED ANY PORTION OF THE CARTEL OVERCHARGE TO ITS DOWNSTREAM CUSTOMERS, WHICH WOULD REDUCE OUR RECOVERABLE DAMAGES.",
+                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS CONSULTING",
+                "DEAR ECONOMIC EXPERTS,",
+                "SUBJECT: PASSING-ON DEFENCE ANALYSIS REQUEST - ANTITRUST OVERCHARGE CLAIM: NEXUS v CARTELISTS"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 186-2)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 186]."
+            "hint": "Defence type and case are in the subject. Defendant's defence, analysis scope, and damages-reduction implication are in the body - a complex economic instruction.",
+            "explanation": "The passing-on defence argues that the claimant passed the cartel overcharge downstream to customers, so it suffered no net loss. EU Directive 2014/104 codifies the passing-on defence - if successful, it reduces the recoverable damages by the amount passed on."
         },
         {
             "id": "WRT_WRITINGEMAIL_L186_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 186-3] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to a court filing antitrust damages evidence following a cartel infringement finding.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "YOURS SINCERELY,\nCOURTS-ADMITTED EXPERT ECONOMIST, NEXUS CONSULTING",
+                "NEXUS CONSULTING FILES THE EXPERT ECONOMIC REPORT QUANTIFYING OVERCHARGE DAMAGES OF £12.4M, NET OF ANY PASSING-ON, FOR THE COURT'S ASSESSMENT IN CLAIM HC-2024-441.",
+                "SUBJECT: ANTITRUST DAMAGES EVIDENCE FILING - NEXUS v CARTELISTS - HIGH COURT CLAIM HC-2024-441",
+                "DEAR HIGH COURT REGISTRY,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 186-3)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 186]."
+            "hint": "Claim reference and evidence type are in the subject. Expert report filing, damages quantum, passing-on adjustment, and court assessment purpose are in the body.",
+            "explanation": "The key phrase 'net of any passing-on' addresses the passing-on defence proactively - the expert's £12.4M already accounts for any downstream pass-through, making the damages figure more robust against the defendant's primary attack on quantum."
         },
         {
             "id": "WRT_WRITINGEMAIL_L187_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 187-1] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to a national court asserting universal jurisdiction over a war crimes suspect.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "NEXUS HUMAN RIGHTS REQUESTS PROSECUTION OF COLONEL ALEXEI ZELENOV FOR WAR CRIMES UNDER THE UK'S UNIVERSAL JURISDICTION PROVISIONS OF THE INTERNATIONAL CRIMINAL COURT ACT 2001.",
+                "DEAR ATTORNEY GENERAL,",
+                "YOURS SINCERELY,\nDIRECTOR, NEXUS HUMAN RIGHTS",
+                "SUBJECT: UNIVERSAL JURISDICTION PROSECUTION REQUEST - WAR CRIMES: COLONEL ZELENOV"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 187-1)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 187]."
+            "hint": "Jurisdiction type and suspect are in the subject. Prosecution request, specific named suspect, legal basis (ICCA 2001), and universal jurisdiction provision are in the body.",
+            "explanation": "The International Criminal Court Act 2001 gives UK courts universal jurisdiction over war crimes, regardless of where they were committed. Unlike crimes requiring a territorial connection, universal jurisdiction allows prosecution of foreign nationals for crimes against foreign victims anywhere in the world."
         },
         {
             "id": "WRT_WRITINGEMAIL_L187_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 187-2] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to an international court requesting extradition under an international criminal law treaty.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "THE UK GOVERNMENT REQUESTS THE EXTRADITION OF COLONEL ALEXEI ZELENOV FROM YOUR JURISDICTION FOR TRIAL ON WAR CRIMES CHARGES UNDER THE INTERNATIONAL CRIMES CONVENTION - THE WARRANT IS ENCLOSED.",
+                "YOURS SINCERELY,\nUK ATTORNEY GENERAL",
+                "DEAR JUDICIAL AUTHORITY,",
+                "SUBJECT: EXTRADITION REQUEST - COLONEL ZELENOV - INTERNATIONAL CRIMES CONVENTION"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 187-2)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 187]."
+            "hint": "Extradition request and suspect are in the subject. Government authority, extradition basis (ICC Convention), crime category, warrant enclosure are in the body - a formal extradition request.",
+            "explanation": "Extradition requests for international crimes must be based on a treaty - the International Crimes Convention provides the legal basis. The warrant must accompany the request - it identifies the charges and is the document on which the requested state's court will rule."
         },
         {
             "id": "WRT_WRITINGEMAIL_L187_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 187-3] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email to an international criminal court prosecution team submitting evidence for a war crimes case.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "YOURS SINCERELY,\nDIRECTOR, NEXUS HUMAN RIGHTS",
+                "NEXUS HUMAN RIGHTS SUBMITS SATELLITE IMAGERY, INTERCEPTED COMMUNICATIONS, AND VICTIM TESTIMONIES AS EVIDENCE IN SUPPORT OF THE PROSECUTION OF COLONEL ZELENOV IN ICC CASE OTP-2024-441.",
+                "SUBJECT: EVIDENCE SUBMISSION - COLONEL ZELENOV PROSECUTION - ICC CASE OTP-2024-441",
+                "DEAR OFFICE OF THE PROSECUTOR,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 187-3)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 187]."
+            "hint": "Case reference and evidence submission purpose are in the subject. Three evidence types - satellite imagery, intercepted communications, and victim testimonies - cover documentary, electronic, and witness evidence categories.",
+            "explanation": "The three evidence categories - satellite imagery (confirms destruction), intercepted communications (establishes command responsibility), and victim testimonies (humanises the crime) - together satisfy the ICC's standard of 'reasonable grounds to believe' at the investigation stage."
         },
         {
             "id": "WRT_WRITINGEMAIL_L188_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 188-1] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to a pension board presenting a longevity risk transfer transaction.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "I PROPOSE A BULK ANNUITY BUY-IN WITH NEXUS LIFE FOR THE £1.4BN SCHEME - THE INSURER ASSUMES THE LONGEVITY RISK FOR ALL 4,200 PENSIONERS, PROVIDING CERTAINTY OF LIABILITY MATCHING.",
+                "DEAR TRUSTEE BOARD,",
+                "YOURS SINCERELY,\nPENSION SCHEME ACTUARY",
+                "SUBJECT: LONGEVITY RISK TRANSFER PROPOSAL - BULK ANNUITY BUY-IN: £1.4BN SCHEME"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 188-1)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 188]."
+            "hint": "Transaction type and scheme size are in the subject. Buy-in definition, insurer, risk transferred (longevity), pensioner number, and liability matching certainty are in the body.",
+            "explanation": "A bulk annuity buy-in transfers longevity risk (the risk that pensioners live longer than expected) to an insurer. Unlike a buy-out (full scheme wind-up), a buy-in keeps the scheme open but insures the pensioner liabilities - the most common route to de-risking."
         },
         {
             "id": "WRT_WRITINGEMAIL_L188_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 188-2] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to an insurance company requesting terms for an insurance-linked security.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "NEXUS LIFE SEEKS TO TRANSFER LONGEVITY RISK FROM OUR £1.4BN BULK ANNUITY PORTFOLIO TO THE CAPITAL MARKETS VIA AN INSURANCE-LINKED SECURITY BACKED BY A CATASTROPHIC MORTALITY BOND.",
+                "YOURS SINCERELY,\nCHIEF RISK OFFICER, NEXUS LIFE",
+                "DEAR STRUCTURED PRODUCTS TEAM,",
+                "SUBJECT: ILS STRUCTURING REQUEST - LONGEVITY SWAP BACKED BY CATASTROPHIC BOND"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 188-2)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 188]."
+            "hint": "ILS type and risk transfer direction are in the subject. Risk transfer direction (insurer to capital markets), portfolio size, ILS type (cat mortality bond), and structural approach are in the body.",
+            "explanation": "Insurance-linked securities (ILS) allow insurers to transfer insurance risk to capital market investors who are not correlated with financial market risks. A catastrophic mortality bond pays out if mortality rates spike catastrophically - providing the insurer's longevity swap with reinsurance from capital markets."
         },
         {
             "id": "WRT_WRITINGEMAIL_L188_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 188-3] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to a pension scheme regarding trigger mechanisms in a longevity swap.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "YOURS SINCERELY,\nPENSION SCHEME ACTUARY",
+                "THE LONGEVITY SWAP TRIGGER IS DEFINED AS ACTUAL MORTALITY RATES FALLING MORE THAN 15% BELOW THE PROJECTED MORTALITY TABLE - AT THIS THRESHOLD, THE SWAP COUNTERPARTY COMPENSATES THE SCHEME FOR EXCESS LONGEVITY.",
+                "SUBJECT: LONGEVITY SWAP TRIGGER MECHANISM - DEFINED THRESHOLD AND SETTLEMENT",
+                "DEAR PENSION TRUSTEE BOARD,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 188-3)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 188]."
+            "hint": "Trigger type and threshold are in the subject. Trigger definition (15% below projected mortality), compensation mechanism, and counterparty obligation are in the body.",
+            "explanation": "The 15% trigger threshold means the swap only pays out when longevity significantly exceeds projections - it is catastrophe protection, not normal variation insurance. This 'cliff' structure makes the swap cheaper while still protecting against the most severe longevity scenarios."
         },
         {
             "id": "WRT_WRITINGEMAIL_L189_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 189-1] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to a mining company requesting an environmental impact baseline study for a deep-sea mining licence.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "BEFORE SUBMITTING YOUR DEEP-SEA MINING LICENCE APPLICATION TO THE INTERNATIONAL SEABED AUTHORITY, A COMPREHENSIVE ENVIRONMENTAL BASELINE STUDY OF ISA SITE 77 MUST BE COMPLETED AND INDEPENDENTLY VERIFIED.",
+                "DEAR CHIEF SCIENTIFIC OFFICER,",
+                "YOURS SINCERELY,\nDEEP-SEA MINERAL REGULATORY ADVISOR, NEXUS ENVIRONMENT",
+                "SUBJECT: ENVIRONMENTAL BASELINE STUDY REQUIREMENT - DSM LICENCE APPLICATION: ISA SITE 77"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 189-1)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 189]."
+            "hint": "Study type and ISA site are in the subject. ISA licence context, baseline study requirement, site identification, and independent verification are in the body.",
+            "explanation": "The ISA requires environmental baseline studies before mining licence approval under UNCLOS Part XI. The study establishes pre-mining ecosystem conditions - essential for monitoring impact and determining whether the 'serious harm' threshold under ISA Regulations has been crossed."
         },
         {
             "id": "WRT_WRITINGEMAIL_L189_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 189-2] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "prompt": "Write an email to the ISA asserting that a deep-sea mining operation has exceeded permitted environmental impact.",
             "options": [
-                "DEAR SCIENTIFIC COUNCIL,",
-                "REGARDS, DEEP EXPLORATION TEAM",
-                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+                "NEXUS ENVIRONMENT SUBMITS EVIDENCE THAT MINING OPERATIONS AT ISA SITE 77 HAVE EXCEEDED THE 'SERIOUS HARM TO THE MARINE ENVIRONMENT' THRESHOLD UNDER UNCLOS PART XI AND ISA REGULATION 31.",
+                "YOURS SINCERELY,\nDIRECTOR, NEXUS ENVIRONMENT",
+                "DEAR ISA LEGAL AND TECHNICAL COMMISSION,",
+                "SUBJECT: ENVIRONMENTAL IMPACT COMPLAINT - DSM SITE 77 EXCEEDS 'SERIOUS HARM' THRESHOLD"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 189-2)",
-            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 189]."
+            "hint": "Environmental impact and legal threshold are in the subject. Evidence submission, two legal sources (UNCLOS Part XI and ISA Regulation 31), and specific threshold exceedance are in the body.",
+            "explanation": "The 'serious harm' standard in UNCLOS Part XI and ISA Regulations is the critical threshold - the ISA can suspend or terminate mining rights if this standard is exceeded. Two legal sources strengthen the complaint by showing the threshold exists in both the treaty and its implementing regulations."
         },
         {
             "id": "WRT_WRITINGEMAIL_L189_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 189-3] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "prompt": "Write an email to a government sponsoring state outlining liability for deep-sea mining contractor failures.",
             "options": [
-                "DEAR CHIEF ASTROBIOLOGIST,",
-                "SINCERELY, BENTHIC BIOLOGY LAB",
-                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+                "YOURS SINCERELY,\nINTERNATIONAL OCEAN LAW COUNSEL, NEXUS LAW",
+                "THE ICJ'S 2011 ADVISORY OPINION ESTABLISHES THAT SPONSORING STATES OWE DUE DILIGENCE OBLIGATIONS FOR THEIR CONTRACTORS' DEEP-SEA MINING ACTIVITIES - NON-COMPLIANCE MAY TRIGGER STATE LIABILITY.",
+                "SUBJECT: SPONSORING STATE LIABILITY BRIEFING - ISA ADVISORY OPINION IMPLICATIONS",
+                "DEAR MINISTER OF NATURAL RESOURCES,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 189-3)",
-            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 189]."
+            "hint": "Liability type and advisory opinion are in the subject. ICJ advisory opinion citation, due diligence obligation, contractor activity scope, and state liability trigger are in the body.",
+            "explanation": "The ICJ's 2011 Advisory Opinion on Responsibilities of Sponsoring States established that states bear 'direct obligations' to ensure their sponsored miners comply with ISA regulations. Unlike traditional state liability (requiring proof of breach), due diligence liability is based on failure to take all reasonable measures to prevent harm."
         },
         {
             "id": "WRT_WRITINGEMAIL_L190_Q1",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 190-1] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "prompt": "Write an email to a technology regulator submitting an algorithmic accountability compliance report.",
             "options": [
-                "DEAR MARINE PATROL LEAGUE,",
-                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+                "NEXUS AI SUBMITS ITS ANNUAL ALGORITHMIC ACCOUNTABILITY REPORT DEMONSTRATING COMPLIANCE WITH EU AI ACT ARTICLE 13 TRANSPARENCY REQUIREMENTS FOR OUR HIGH-RISK AI SYSTEM DEPLOYED IN CREDIT SCORING.",
+                "DEAR AI REGULATORY AUTHORITY,",
+                "YOURS SINCERELY,\nCHIEF AI OFFICER, NEXUS AI",
+                "SUBJECT: ALGORITHMIC ACCOUNTABILITY COMPLIANCE REPORT - EU AI ACT ARTICLE 13 TRANSPARENCY"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 190-1)",
-            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 190]."
+            "hint": "Compliance type and AI Act article are in the subject. Annual report, Article 13 compliance, high-risk AI classification, and specific deployment context (credit scoring) are in the body.",
+            "explanation": "EU AI Act Article 13 requires high-risk AI systems (including credit scoring) to be transparent - users must be able to understand how the system works and challenge its outputs. Annual compliance reports demonstrate ongoing regulatory adherence."
         },
         {
             "id": "WRT_WRITINGEMAIL_L190_Q2",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 190-2] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "prompt": "Write an email to a bank's board raising concerns about algorithmic bias in an AI credit scoring system.",
             "options": [
-                "DEAR CAMERA DEVELOPMENT TEAM,",
-                "BEST REGARDS, OPTICAL SYSTEMS ENG",
-                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+                "OUR ALGORITHMIC AUDIT HAS IDENTIFIED STATISTICALLY SIGNIFICANT DISPARATE IMPACT ON APPLICANTS FROM ETHNIC MINORITY GROUPS IN OUR AI CREDIT SCORING SYSTEM, POTENTIALLY VIOLATING THE EQUALITY ACT 2010.",
+                "YOURS SINCERELY,\nCHIEF AI OFFICER",
+                "DEAR AUDIT COMMITTEE,",
+                "SUBJECT: ALGORITHMIC BIAS CONCERN - AI CREDIT SCORING: PROTECTED CHARACTERISTIC DISCRIMINATION"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 190-2)",
-            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 190]."
+            "hint": "Bias type and protected characteristic are in the subject. Audit finding, statistical evidence, affected group, and EA 2010 violation risk are in the body - a formal algorithmic bias alert to the audit committee.",
+            "explanation": "Disparate impact discrimination (where a facially neutral policy disproportionately affects a protected group) is prohibited under the Equality Act 2010 even without discriminatory intent. An AI audit finding of statistically significant disparate impact triggers immediate remediation obligations."
         },
         {
             "id": "WRT_WRITINGEMAIL_L190_Q3",
-            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-            "difficulty": 5,
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "[Calibration Dispatch 190-3] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "prompt": "Write an email to an AI developer requesting an independent audit of an AI recruitment screening tool.",
             "options": [
-                "DEAR CONSERVATION DIRECTORS,",
-                "WARM REGARDS, KELP FORESTS COALITION",
-                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS CONSULTING",
+                "NEXUS CONSULTING INSTRUCTS YOUR FIRM TO CONDUCT AN INDEPENDENT ALGORITHMIC AUDIT OF OUR RECRUITMENT SCREENING AI TOOL, ASSESSING DISPARATE IMPACT ACROSS ALL NINE PROTECTED CHARACTERISTICS OF THE EQUALITY ACT 2010.",
+                "SUBJECT: INDEPENDENT AI AUDIT INSTRUCTION - RECRUITMENT SCREENING TOOL: BIAS ASSESSMENT",
+                "DEAR AI AUDIT FIRM,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 190-3)",
-            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 190]."
+            "hint": "Audit type and tool are in the subject. Independent audit instruction, specific AI tool, all nine protected characteristics, and Equality Act 2010 reference are in the body.",
+            "explanation": "The nine protected characteristics under the Equality Act 2010 (age, disability, gender reassignment, marriage/civil partnership, pregnancy/maternity, race, religion/belief, sex, sexual orientation) must ALL be assessed - an audit covering only some would be legally inadequate."
         }
     ]
 }
