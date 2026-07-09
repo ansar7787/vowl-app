@@ -4,694 +4,484 @@
     "levels": "121-130",
     "quests": [
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Captain Hektor says: 'I need to manage a situation where two senior team members have fundamentally incompatible visions for our next mission. What's your approach?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: War Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Separate the visions from the visionaries. Have each person document their vision in writing, not in a meeting where personality affects reception. Then evaluate the visions against explicit criteria: operational feasibility, resource requirements, probability of success, and acceptable risk level. Make the decision based on the criteria, not on who is more senior or more articulate. Communicate the decision with full reasoning and explicitly acknowledge the strengths of the approach not chosen.",
+                "Facilitate a meeting where both visions are debated and allow the stronger argument to prevail.",
+                "Incompatible visions between senior team members require decisive and fair leadership to resolve."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l121_q1",
-            "xpReward": 363,
-            "coinReward": 605,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Separate visions from visionaries by evaluating written submissions against explicit criteria.",
+            "explanation": "'Have each person document their vision in writing not in a meeting where personality affects reception; evaluate against explicit criteria: operational feasibility, resource requirements, probability of success, acceptable risk level; make the decision based on criteria not seniority or articulateness; communicate the decision with full reasoning and explicitly acknowledge the strengths of the approach not chosen' is specific, structured, and fair. 'Facilitate a meeting where the stronger argument prevails' allows personality and political capital to affect the outcome. 'Incompatible visions between senior members require decisive and fair leadership' is a general statement.",
+            "id": "bd_l121_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l121_q2",
-            "xpReward": 363,
-            "coinReward": 605,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l121_q3",
-            "xpReward": 363,
-            "coinReward": 605,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l122_q1",
-            "xpReward": 366,
-            "coinReward": 610,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l122_q2",
-            "xpReward": 366,
-            "coinReward": 610,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I've been asked to debrief a foreign intelligence officer who is defecting. What is your primary objective in the first meeting?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Safe House",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The primary objective of the first meeting is not intelligence collection - it is trust establishment. A defector who does not trust you will give you the intelligence they think you want, shaped to maintain their own position and value. The intelligence that changes things is the intelligence they give you only when they trust that you will handle it responsibly and protect them. Spend the first meeting asking and listening, not extracting. Ask what they want. Mean it. The intelligence follows the trust.",
+                "Your primary objective is to assess the credibility and value of the intelligence they carry.",
+                "First debriefs with defectors are critical for establishing the terms of the intelligence relationship."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l122_q3",
-            "xpReward": 366,
-            "coinReward": 610,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The primary objective of the first meeting is trust establishment, not intelligence collection - the intelligence follows the trust.",
+            "explanation": "'The primary objective is not intelligence collection - it is trust establishment; a defector who doesn't trust you will give you the intelligence they think you want, shaped to maintain their own position; the intelligence that changes things is given only when they trust you will handle it responsibly and protect them; spend the first meeting asking and listening not extracting; ask what they want, mean it; the intelligence follows the trust' is specific, psychologically sophisticated, and counter-intuitive. 'Assess the credibility and value of the intelligence they carry' treats the first meeting as an assessment exercise, which will prevent the trust that makes the intelligence genuine. 'First debriefs with defectors are critical for establishing the terms of the relationship' is a general statement.",
+            "id": "bd_l121_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I'm being asked to create a dish that represents our national cuisine for a major international event. What is the right approach to this responsibility?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "The responsibility is not to create the most technically impressive version of a national dish - it's to represent the living culture of a cuisine with honesty and care. Ask: which aspect of this cuisine is most misunderstood internationally, and can this dish correct that misunderstanding? Which aspect is most important to the people whose cuisine this is, even if it's not the most visually impressive? Consult people outside the professional chef world - home cooks, grandmothers, regional specialists - because national cuisine lives in those kitchens more than in restaurants.",
+                "Create the dish that best showcases the technical achievements and creative possibilities of the cuisine.",
+                "Representing a national cuisine at an international event carries significant cultural responsibility."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Represent the living culture honestly and correct misunderstandings - consult outside the professional chef world.",
+            "explanation": "'The responsibility is to represent the living culture with honesty and care; ask which aspect is most misunderstood internationally and can this dish correct that; which aspect is most important to the people whose cuisine this is even if not most visually impressive; consult home cooks, grandmothers, regional specialists - national cuisine lives in those kitchens more than in restaurants' is specific, culturally responsible, and counter-intuitive. 'Create the dish that best showcases the technical achievements and creative possibilities of the cuisine' makes the dish about the chef's achievement rather than the culture. 'Representing a national cuisine at an international event carries significant cultural responsibility' is a general statement.",
+            "id": "bd_l121_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I need to inform a research team that significant funding has been cut and several positions will be eliminated. How do you do this with integrity?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "Three principles: first, tell people individually and in person, not in a group announcement - those whose positions are at risk deserve to hear this privately before the group; second, be completely specific about what is certain and what is not yet determined - uncertainty is tolerable; surprises are not; third, give people agency over their own transition where you can - can they participate in redesigning what the team becomes, can they have access to alternative funding applications, can they have a reference that opens rather than closes doors?",
+                "Communicate the news clearly to the whole team at once so everyone has the same information at the same time.",
+                "Communicating significant funding cuts and position eliminations requires both honesty and compassion."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Tell affected individuals privately before any group announcement, be specific about certainty versus uncertainty, and give agency over the transition.",
+            "explanation": "'Tell people individually and in person not in a group announcement - those at risk deserve to hear privately before the group; be completely specific about what is certain and what is not - uncertainty is tolerable, surprises are not; give people agency over their own transition - can they participate in redesigning the team, access alternative funding applications, have references that open doors' gives three specific, person-centred principles. 'Communicate clearly to the whole team at once so everyone has the same information' privileges procedural equality over individual dignity. 'Communicating significant funding cuts requires honesty and compassion' is a general statement.",
+            "id": "bd_l122_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'A government regulation is about to change in a way that would make our primary product illegal in our main market. What is the strategic response?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "Four-track response: one, engage actively in the regulatory process while it is still in consultation - regulations change when challenged with evidence and alternatives, and your involvement is legitimate and important; two, accelerate product adaptation work so you have a compliant version ready before the regulation takes effect; three, assess which alternative markets your product can be repositioned in if the home market becomes unviable; four, conduct a scenario analysis for the business if none of the above works - know your floor before you need it.",
+                "Begin the product adaptation immediately to ensure you have a compliant product before the regulation takes effect.",
+                "Regulatory changes that affect core products require urgent strategic reassessment."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Give a four-track response covering regulatory engagement, product adaptation, market alternatives, and floor scenario.",
+            "explanation": "'Engage in the regulatory process while it's still in consultation; accelerate product adaptation for a compliant version ready before the regulation takes effect; assess which alternative markets your product can be repositioned in; conduct scenario analysis for the business if none of the above works - know your floor before you need it' gives four specific, simultaneous tracks. 'Begin product adaptation immediately' is one of the four tracks but misses the regulatory engagement track which is often the highest-value action. 'Regulatory changes affecting core products require urgent strategic reassessment' is a general statement.",
+            "id": "bd_l122_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'I'm designing a new pilot wellness programme for our airline that specifically addresses the occupational health challenges unique to aviation. What must it include?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Aviation Hub",
+            "options": [
+                "Four elements that address the unique occupational challenges of aviation: first, circadian rhythm disruption management - this is not generic fatigue advice but specific protocols for managing trans-meridian operations; second, specific psychological support that understands the regulatory implications of seeking mental health support, because the fear of losing a licence is a major barrier to disclosure; third, social isolation management for long-haul operations where crew relationships are temporary and sustained social networks are difficult to maintain; fourth, specific support for the end-of-career transition, which is uniquely abrupt in aviation - mandatory retirement at sixty or sixty-five is not a normal career transition.",
+                "Include regular health screenings, fatigue management education, and access to psychological support services.",
+                "Follow established standard operating procedures and consult the relevant technical documentation before proceeding."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Give four specific elements that address the unique occupational health challenges of aviation.",
+            "explanation": "'Circadian rhythm disruption management - specific protocols not generic fatigue advice; psychological support that understands the regulatory implications of seeking mental health support because fear of losing a licence is a major barrier to disclosure; social isolation management for long-haul crew; specific support for the end-of-career transition which is uniquely abrupt in aviation' gives four specific, aviation-unique elements. 'Regular health screenings, fatigue management education, and access to psychological support' identifies three general occupational health elements without the aviation-specific design. 'A pilot wellness programme must address the unique occupational health challenges of aviation' is a general statement.",
+            "id": "bd_l122_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I need to assess whether to trust a new intelligence partner whose methods we haven't verified. What's your framework?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "A five-point verification framework: first, verify one piece of their intelligence independently - does it check out against sources you trust? Second, examine the methodology they used to obtain the intelligence - is it consistent with the access they claim to have? Third, look for internal consistency across the intelligence they've provided - do the details fit together in ways that would be hard to fabricate? Fourth, check their track record with any shared partners or common contacts. Fifth, begin with low-stakes sharing and assess their operational security discipline - how they handle information tells you whether they can be trusted with more.",
+                "Request a formal vetting process through official channels before sharing any sensitive information.",
+                "Assessing the trustworthiness of a new intelligence partner requires systematic verification."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l123_q1",
-            "xpReward": 369,
-            "coinReward": 615,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Give a five-point verification framework for assessing a new intelligence partner.",
+            "explanation": "'Verify one piece of intelligence independently; examine methodology against claimed access; look for internal consistency across provided intelligence; check track record with shared partners; begin with low-stakes sharing and assess operational security discipline - how they handle information tells you whether they can be trusted with more' gives five specific, systematic verification points. 'Request a formal vetting process through official channels' is appropriate but is a single process, not a framework. 'Assessing the trustworthiness of a new intelligence partner requires systematic verification' is a general statement.",
+            "id": "bd_l123_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l123_q2",
-            "xpReward": 369,
-            "coinReward": 615,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l123_q3",
-            "xpReward": 369,
-            "coinReward": 615,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l124_q1",
-            "xpReward": 372,
-            "coinReward": 620,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l124_q2",
-            "xpReward": 372,
-            "coinReward": 620,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I've discovered that an operation I was running has inadvertently caused harm to an innocent party. What is my obligation?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Surveillance Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Your obligation has three dimensions: first, report the harm immediately and completely to the appropriate authority - do not attempt to manage the information to mitigate the operational consequences; second, assist with whatever remediation is possible for the person harmed, even if that assistance is at cost to the operation; third, document the circumstances fully so that the process failure that led to the innocent person being harmed can be understood and corrected - not to assign blame but to prevent recurrence. Harm caused by the state, even inadvertently, carries a higher obligation to address than private harm.",
+                "Report the incident immediately and cooperate fully with any formal investigation.",
+                "Follow established operational protocols and consult with your handler before taking any significant action."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l124_q3",
-            "xpReward": 372,
-            "coinReward": 620,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Give three specific dimensions of obligation: immediate complete reporting, active remediation assistance, and full documentation for process correction.",
+            "explanation": "'Report the harm immediately and completely - do not attempt to manage the information to mitigate operational consequences; assist with whatever remediation is possible for the person harmed even at cost to the operation; document the circumstances fully so the process failure can be understood and corrected - not to assign blame but to prevent recurrence; harm caused by the state even inadvertently carries a higher obligation to address than private harm' gives three specific dimensions with an important principle. 'Report immediately and cooperate fully with any formal investigation' is one of the three obligations but misses the remediation and documentation obligations.",
+            "id": "bd_l123_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I'm advising a government committee on food policy that affects millions of people's access to nutritious food. How do you ensure your culinary expertise is applied appropriately?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "The most important thing is to be specific about where your expertise genuinely applies and where it doesn't. A chef knows about flavour, technique, ingredient quality, and culinary culture. A chef does not inherently know about supply chain economics at scale, rural food access, institutional cooking constraints, or the behavioural economics of purchasing decisions under financial pressure. The risk is that culinary expertise applied to food policy without these dimensions produces recommendations that are aspirationally excellent and practically useless. Apply your expertise. Be humble about its boundaries. Actively recruit the expertise you don't have.",
+                "Bring your practical experience of food quality and nutrition to complement the scientific and economic perspectives.",
+                "Culinary expertise has an important role in food policy advisory work alongside other disciplines."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Apply expertise precisely where it genuinely applies; be specific about its limits; recruit the expertise you don't have.",
+            "explanation": "'Be specific about where your expertise genuinely applies and where it doesn't; a chef knows flavour, technique, ingredient quality, culinary culture but not supply chain economics at scale, rural food access, institutional cooking constraints, or behavioural economics of purchasing under financial pressure; the risk is recommendations that are aspirationally excellent and practically useless; apply your expertise, be humble about its boundaries, actively recruit the expertise you don't have' is specific, humble, and identifies the precise risk. 'Bring your practical experience of food quality and nutrition to complement other perspectives' is valid but doesn't address the limits of culinary expertise. 'Culinary expertise has an important role in food policy alongside other disciplines' is a general statement.",
+            "id": "bd_l123_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I've been asked to speak publicly about a health topic where I have strong personal views that go beyond what the current evidence supports. How do you manage the boundary?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Clinic",
+            "options": [
+                "The discipline is to separate explicitly in everything you say: here is what the evidence currently supports, and here is my professional interpretation and personal view that goes beyond the current evidence. State that distinction every single time. Never let your personal view appear under the cover of the evidence. Your authority as a clinician comes from your fidelity to evidence - when you use that authority to amplify personal views beyond the evidence, you are trading on credibility you haven't earned for this specific position.",
+                "Share your evidence-based views and decline to comment on anything that goes beyond the current evidence.",
+                "Conduct a thorough review of the relevant literature and consult with specialist colleagues before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Explicitly separate what the evidence supports from your personal interpretation that goes beyond it - every single time.",
+            "explanation": "'Separate explicitly in everything you say: here is what the evidence currently supports and here is my personal view that goes beyond it; state that distinction every single time; never let your personal view appear under the cover of the evidence; your authority as a clinician comes from your fidelity to evidence - when you use that authority to amplify personal views beyond the evidence you are trading on credibility you haven't earned for this specific position' is specific, principled, and gives a specific test. 'Share evidence-based views and decline to comment beyond the current evidence' draws a complete boundary rather than allowing the legitimate sharing of appropriately labelled personal views. 'A clinician speaking publicly about health topics must manage the boundary between evidence and opinion' is a general statement.",
+            "id": "bd_l124_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I've been approached by a private equity firm interested in buying a majority stake in my business. What are the most important things to understand before any negotiation begins?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Auction Hall",
+            "options": [
+                "Five things to understand before any negotiation begins: their investment thesis - what specifically do they believe your business can become under their ownership? Their track record with businesses of your type and size - how have those businesses and their founders been treated post-acquisition? What control over major decisions you would retain - hiring, firing, direction of the business, and the right to reject certain cost reduction initiatives? The exit horizon - how long do they intend to hold, and what is their preferred exit mechanism? And what this means for your employees, your relationships with key customers and suppliers, and the culture you've built.",
+                "Understand the full financial terms including the valuation, equity structure, and management incentive arrangements.",
+                "Conduct thorough due diligence, obtain professional legal advice, and negotiate from a well-prepared position."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Five things to understand: investment thesis, track record with businesses like yours, what control you retain, exit horizon, and implications for your people and culture.",
+            "explanation": "'Investment thesis - what specifically do they believe your business can become; track record with businesses of your type and size - how have those businesses and their founders been treated; what control over major decisions you would retain; exit horizon and preferred exit mechanism; implications for employees, key relationships, and culture' gives five specific, critical pre-negotiation questions. 'Understand the full financial terms including valuation, equity structure, and management incentive arrangements' addresses only the financial dimension, which is one part of what is listed. Private equity negotiations are primarily about these five dimensions. 'What are the most important things to understand before negotiation' is the question, not a response option.",
+            "id": "bd_l124_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'I've observed a safety reporting system that I believe is not working because crew are afraid to use it. What is the most important intervention?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "The most important intervention is not improving the system - it is demonstrating, through a specific, visible act, that using the system produces a response that helps rather than harms the reporter. Find the first report made after this intervention and make the response visible: here is what was reported, here is what we changed because of it, here is what happened to the reporter - they were thanked and recognised. One genuine, visible, positive response to a genuine report does more for safety reporting culture than any number of system improvements.",
+                "Conduct an anonymous survey to understand why crew are reluctant to use the reporting system.",
+                "Follow the applicable emergency checklist and apply standard operating procedures as trained."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Demonstrate through one specific, visible positive response that using the system helps rather than harms the reporter.",
+            "explanation": "'The most important intervention is not improving the system - it is demonstrating through a specific visible act that using the system produces a response that helps rather than harms the reporter; find the first report made after this intervention and make the response visible - here is what was reported, here is what we changed, here is what happened to the reporter: they were thanked and recognised; one genuine visible positive response does more for safety reporting culture than any number of system improvements' is specific, counter-intuitive, and identifies the correct mechanism. 'Conduct an anonymous survey to understand why crew are reluctant' is a good diagnostic but not the most important intervention. 'The most important intervention is demonstrating positive response to reporting' is established by the correct answer.",
+            "id": "bd_l124_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'We've been operating under a set of assumptions for six months that have just been revealed as incorrect. How do you rebuild strategic clarity?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Strategy Chamber",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Three stages: first, diagnose which decisions were made on the basis of the now-incorrect assumptions - not all decisions were, and confusing everything with the specific things that need to change creates unnecessary disruption; second, rebuild the picture from primary sources and first principles rather than from a corrected version of the old picture - the correction will carry the same cognitive biases that produced the original error; third, communicate the reassessment openly to the team, including exactly which assumptions were wrong and how - the transparency serves both trust and the team's ability to identify when assumptions are wrong in the future.",
+                "Conduct a thorough strategic review and consult with all relevant stakeholders before rebuilding the strategy.",
+                "Apply established doctrine and best practices, consulting with relevant specialists as appropriate before acting."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l125_q1",
-            "xpReward": 375,
-            "coinReward": 625,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Give three specific stages: diagnose which decisions were affected, rebuild from first principles not a corrected version, and communicate transparently.",
+            "explanation": "'Diagnose which decisions were made on the basis of the incorrect assumptions - not all decisions were; rebuild from primary sources and first principles rather than from a corrected version of the old picture - correction will carry the same cognitive biases that produced the original error; communicate the reassessment openly including exactly which assumptions were wrong and how - transparency serves trust and the team's future ability to identify assumption failures' gives three specific, sophisticated stages. 'Conduct a thorough strategic review and consult all relevant stakeholders' is the standard process without the specific insights about assumption scope and rebuilding from first principles. 'How to rebuild strategic clarity after incorrect assumptions' is the question.",
+            "id": "bd_l125_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l125_q2",
-            "xpReward": 375,
-            "coinReward": 625,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l125_q3",
-            "xpReward": 375,
-            "coinReward": 625,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l126_q1",
-            "xpReward": 378,
-            "coinReward": 630,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l126_q2",
-            "xpReward": 378,
-            "coinReward": 630,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I need to provide intelligence analysis on a country where my personal cultural background and history create both deeper insight and potential bias. How do you manage this?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Investigation Lab",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The dual quality of insider knowledge and potential bias is not a problem to be solved - it is a quality to be managed transparently. In your analysis, make explicit where your cultural knowledge is informing your assessment and where it might be biasing it. Have all conclusions reviewed by an analyst who does not share your background. Where your assessment diverges from the consensus, investigate whether the divergence is because you know something others don't, or because you want something to be true that the evidence doesn't fully support.",
+                "Recuse yourself from analysis of a country where you have personal cultural history to ensure objectivity.",
+                "Gather additional intelligence through established channels and conduct a rigorous analytical review before proceeding."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l126_q3",
-            "xpReward": 378,
-            "coinReward": 630,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Treat insider knowledge and potential bias as a quality to manage transparently, not a problem that requires recusal.",
+            "explanation": "'Make explicit where cultural knowledge is informing assessment and where it might be biasing it; have all conclusions reviewed by an analyst who doesn't share your background; where your assessment diverges from consensus, investigate whether it's because you know something others don't or because you want something to be true that the evidence doesn't fully support' is specific, transparent, and manages both the asset and the liability. 'Recuse yourself from analysis of a country where you have personal cultural history' removes an asset as well as a liability without managing either. 'The dual quality of insider knowledge and potential bias is not a problem to be solved but a quality to be managed' is established by the correct answer.",
+            "id": "bd_l125_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'A journalist has contacted me asking for a comment on a competitor's food safety incident. What is the right response?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "The right response is no comment, with one exception: if the incident reveals a systemic issue in the industry that you have genuine knowledge about and a constructive position on, you can comment on the systemic issue without commenting on the specific competitor. 'I won't comment on another restaurant's specific situation, but I can tell you how we approach X in our kitchen, because I think it matters industry-wide.' This serves the public interest without weaponising a competitor's misfortune for your benefit.",
+                "This is an opportunity to contrast your own safety standards with the competitor's practices.",
+                "Food safety incidents in the industry create complex communication situations for other operators."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "No comment on the competitor's specific situation; comment on systemic issues if you have genuine knowledge and a constructive position.",
+            "explanation": "'No comment, with one exception: if the incident reveals a systemic industry issue you have genuine knowledge about and a constructive position on, comment on the systemic issue without commenting on the specific competitor; I won't comment on another restaurant's specific situation but I can tell you how we approach X in our kitchen because it matters industry-wide - this serves the public interest without weaponising a competitor's misfortune' is specific, principled, and gives a precise test for the exception. 'This is an opportunity to contrast your own safety standards with the competitor's practices' weaponises the competitor's misfortune for commercial advantage. 'Food safety incidents create complex communication situations for other operators' is a general statement.",
+            "id": "bd_l125_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I've been asked to lead an inquiry into a major clinical failure in my own department. Is this appropriate, and how do you manage the conflict?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Research Lab",
+            "options": [
+                "The conflict is real and the question of appropriateness depends on one specific factor: are you in a position to make a genuinely independent assessment of your own department, or does your leadership relationship with the individuals involved, your investment in the department's reputation, or your prior knowledge of decisions made create a material bias? If the answer to any of those is yes, you should offer to participate in the inquiry rather than lead it. If you lead it, every finding must be reviewed by an independent external reviewer before publication - not as a formality but as a genuine check on blind spots.",
+                "Decline the role to avoid any appearance of conflict of interest and recommend an independent external inquiry.",
+                "Follow established clinical guidelines and ensure all decisions are documented according to professional standards."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Assess whether you can genuinely be independent; if material bias exists, offer to participate rather than lead; if leading, require independent external review of all findings.",
+            "explanation": "'The conflict is real - the question of appropriateness depends on whether you can make a genuinely independent assessment; if your leadership relationship, investment in the department's reputation, or prior knowledge of decisions made creates material bias, offer to participate rather than lead; if you lead, every finding must be reviewed by an independent external reviewer - not as a formality but as a genuine check on blind spots' is specific, principled, and avoids both the over-cautious refusal and the unchecked conflict. 'Decline to avoid any appearance of conflict and recommend external inquiry' is too cautious - there are cases where the departmental leader's insider knowledge makes them the best inquiry leader with appropriate safeguards. 'Whether to lead an inquiry into your own department's failure involves a genuine conflict' is a general statement.",
+            "id": "bd_l126_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'My business has grown rapidly and some of the informal processes that worked when we were smaller are creating risks now. How do you professionalise without losing the agility that drove the growth?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Warehouse",
+            "options": [
+                "The key distinction is between formalising decision rights and formalising processes. Formalising decision rights - who can decide what, and at what level of consequence - adds accountability without removing agility. Formalising every process adds consistency but removes the flexibility that made you fast. Start with documenting the decisions that carry the highest risk if made incorrectly. Formalise those first. Leave the low-consequence daily decisions informal. Add formality at the rate that the risk is growing, not at the rate that feels professional.",
+                "Introduce formal processes systematically across all areas of the business to create consistency.",
+                "Gather comprehensive information, consult with relevant advisers, and apply a structured decision-making framework."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Formalise decision rights rather than processes, starting with decisions carrying the highest risk if made incorrectly.",
+            "explanation": "'The key distinction is between formalising decision rights and formalising processes; formalising decision rights adds accountability without removing agility; formalising every process adds consistency but removes the flexibility that made you fast; start with decisions that carry the highest risk if made incorrectly; leave low-consequence daily decisions informal; add formality at the rate that risk is growing not at the rate that feels professional' is specific, makes a critical distinction, and gives a practical prioritisation principle. 'Introduce formal processes systematically across all areas' is precisely what removes the agility that drove the growth. 'How to professionalise without losing agility' is the question.",
+            "id": "bd_l126_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'I'm leading the development of a human factors training programme that will be mandatory for all crew. What design principles distinguish excellent from adequate human factors training?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Sky-Dock",
+            "options": [
+                "Four design principles that distinguish excellent from adequate: first, train on the specific human factors failures documented in your own incident and accident data - generic human factors training is less effective than training on the specific patterns your organisation actually experiences; second, use active scenario involvement rather than case study analysis - reading about how bias affects decisions is far less effective than experiencing it in simulation; third, train on recovery as prominently as on prevention - knowing how to recover well from a human factors failure is as important as not making it; fourth, make the assessment criterion not knowledge of the concepts but demonstrated ability to apply them under pressure in a simulated scenario.",
+                "Include the key human factors concepts such as situational awareness, CRM, and threat and error management.",
+                "Brief the crew thoroughly, assign clear responsibilities, and ensure all crew resource management principles are applied."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Give four specific principles distinguishing excellent from adequate human factors training design.",
+            "explanation": "'Train on your own incident and accident data not generic patterns; active scenario involvement not case study analysis - experiencing bias in simulation is far more effective than reading about it; train on recovery as prominently as on prevention; the assessment criterion should be demonstrated ability to apply concepts under pressure in simulation, not knowledge of the concepts' gives four specific, evidence-based design principles. 'Include key human factors concepts such as situational awareness, CRM, and threat and error management' describes the content areas of adequate training without the design principles that make it excellent. 'Design principles distinguishing excellent from adequate human factors training' is the question.",
+            "id": "bd_l126_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I need to lead a team that is widely considered to have failed in its last major mission. What is the most important thing to get right in the first month?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The most important thing is to understand what actually failed and why, rather than accepting the narrative that already exists. External narratives about failure are often simplifications. The people who were there have a more complex picture, and some of what's attributed as failure may have been the right decision given the information available. Spend the first month listening specifically to the people who know what happened - not to change the external narrative, but to build your internal understanding from which everything else follows. You cannot lead this team effectively from someone else's analysis of their failure.",
+                "Establish new standards and goals to quickly move the team beyond the previous failure and toward future success.",
+                "Ensure the team has clear objectives and hold regular briefings to maintain alignment and accountability."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l127_q1",
-            "xpReward": 381,
-            "coinReward": 635,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Understand what actually failed and why by listening to the people who were there - don't accept the existing external narrative.",
+            "explanation": "'Understand what actually failed and why rather than accepting the narrative that already exists; external narratives about failure are often simplifications; the people who were there have a more complex picture; spend the first month listening specifically to them; you cannot lead this team effectively from someone else's analysis of their failure' is specific, counter-intuitive, and identifies the most important first step. 'Establish new standards and goals to quickly move beyond the previous failure' is the second step but cannot be done well without the first. 'What to get right in the first month when leading a team widely considered to have failed' is the question.",
+            "id": "bd_l127_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l127_q2",
-            "xpReward": 381,
-            "coinReward": 635,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l127_q3",
-            "xpReward": 381,
-            "coinReward": 635,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l128_q1",
-            "xpReward": 384,
-            "coinReward": 640,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l128_q2",
-            "xpReward": 384,
-            "coinReward": 640,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I need to build a case that is circumstantial but compelling. What makes circumstantial evidence persuasive?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Investigation Lab",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Circumstantial evidence becomes compelling through three qualities: density - not one or two coincidences but a pattern dense enough that coincidence becomes implausible; independence - each piece of circumstantial evidence comes from a different source and a different method, so they cannot all have the same error or manipulation; and narrative coherence - the circumstantial evidence tells a consistent story about motive, opportunity, and behaviour that would be hard to explain any other way. The test is: what is the probability that all of these independent circumstances aligned by chance, and is that probability low enough to exceed the required standard of proof?",
+                "Present the circumstantial evidence comprehensively and let its accumulation speak for itself.",
+                "Follow established operational security protocols and consult with your senior officer before proceeding."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l128_q3",
-            "xpReward": 384,
-            "coinReward": 640,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Circumstantial evidence is persuasive through density, independence across sources and methods, and narrative coherence.",
+            "explanation": "'Circumstantial evidence becomes compelling through density - pattern dense enough that coincidence becomes implausible; independence - each piece from a different source and method so they cannot all have the same error or manipulation; and narrative coherence - a consistent story about motive, opportunity, and behaviour hard to explain any other way; the test is: what is the probability that all of these independent circumstances aligned by chance' gives three specific qualities with a precise test. 'Present the evidence comprehensively and let its accumulation speak for itself' is a presentation strategy without the analytical framework that makes circumstantial evidence genuinely compelling. 'What makes circumstantial evidence persuasive' is the question.",
+            "id": "bd_l127_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I want to create a dish specifically in response to a criticism that my cuisine lacks emotional resonance. How do you approach this?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Kitchen",
+            "options": [
+                "The challenge with deliberately creating emotional resonance is that deliberateness often works against the emotion itself. Emotion in food comes from specificity and memory, not from universality. Rather than creating a dish that is designed to be emotionally resonant for everyone, create a dish that is genuinely emotionally resonant for you - from a specific memory, a specific person, a specific place. Translate the specific truth of that into culinary form. Specific emotional truth that is communicated with technical honesty tends to land emotionally for others in a way that designed emotional resonance never does.",
+                "Create a dish inspired by a universal human experience such as homecoming, comfort, or celebration.",
+                "Design a menu that showcases seasonal ingredients and highlights the restaurant's culinary strengths."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Create a dish that is genuinely emotionally resonant for you specifically - specific emotional truth lands for others in a way that designed resonance never does.",
+            "explanation": "'Deliberateness often works against the emotion itself; emotion in food comes from specificity and memory not universality; create a dish that is genuinely emotionally resonant for you - from a specific memory, person, or place; translate the specific truth of that into culinary form; specific emotional truth communicated with technical honesty tends to land emotionally for others in a way that designed emotional resonance never does' is specific, insightful, and counter-intuitive. 'Create a dish inspired by a universal human experience such as homecoming, comfort, or celebration' is precisely the universality approach that the answer argues against. 'The challenge with deliberately creating emotional resonance is that deliberateness often works against the emotion' is established by the correct answer.",
+            "id": "bd_l127_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I'm being asked to testify before parliament on the resource allocation implications of a new treatment. I have clinical expertise but not health economics expertise. How do you manage this?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "The management is explicit and public: state clearly at the outset precisely what expertise you have and what you don't. 'I am a clinician. I can speak to the clinical evidence for this treatment and to patient experience. I am not a health economist and I will not be giving evidence on resource allocation modelling - I would encourage the committee to also hear from a health economist.' This serves the committee better than trying to speak outside your expertise, and it protects your credibility as a witness within your genuine expertise.",
+                "Prepare thoroughly on the health economics aspects to ensure you can answer all likely questions.",
+                "Follow established clinical guidelines and ensure all decisions are documented according to professional standards."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "State explicitly and publicly at the outset exactly what expertise you have and what you don't, and recommend additional witnesses.",
+            "explanation": "'State clearly at the outset precisely what expertise you have and what you don't; I am a clinician who can speak to clinical evidence and patient experience; I am not a health economist and will not give evidence on resource allocation modelling; I encourage the committee to also hear from a health economist; this serves the committee better than speaking outside your expertise and protects your credibility within your genuine expertise' is specific, principled, and identifies the correct parliamentary approach. 'Prepare thoroughly on health economics to answer all likely questions' extends beyond your genuine expertise rather than managing the boundary of it. 'How to manage parliamentary testimony when your expertise is narrower than the question being asked' is the question.",
+            "id": "bd_l128_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I've discovered that a supplier I depend on has been using child labour in part of their supply chain. What is my obligation?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "Your obligation has four dimensions: immediate, medium-term, long-term, and systemic. Immediately, do not continue to purchase from the affected part of the supply chain while the issue exists - continue purchasing signals acceptance. In the medium term, engage directly with the supplier to understand the scope, timeline for remediation, and how you can support remediation without immediately withdrawing in ways that harm the very workers involved. In the long term, build supply chain transparency systems that prevent this from being discovered only after the fact. Systemically, report to your industry body so that others are not unknowingly in the same position.",
+                "Immediately terminate the relationship with the supplier and find an alternative.",
+                "Apply sound commercial judgment and consult with relevant professional advisers before making any significant decision."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Give four dimensions of obligation: immediate purchasing decision, supplier engagement for remediation, systemic transparency improvement, and industry body reporting.",
+            "explanation": "'Do not continue purchasing from the affected supply chain part while the issue exists; engage directly with the supplier to understand scope, timeline for remediation, and how to support remediation without immediately withdrawing in ways that harm the workers; build supply chain transparency systems; report to your industry body so others are not unknowingly in the same position' gives four specific dimensions. 'Immediately terminate the relationship with the supplier and find an alternative' may cause more harm to the workers involved if a responsible supplier withdraws rather than supporting remediation. 'What is my obligation when I discover child labour in my supply chain' is the question.",
+            "id": "bd_l128_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'An aircraft I've been flying for years is being retired from the fleet. I've been asked to give the final flight. What do you reflect on in that moment?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Sky-Dock",
+            "options": [
+                "The final flight of an aircraft you've flown for years is one of those moments where professional craft and personal meaning meet. What I would reflect on is the specific times this aircraft made a difference - not the routine flights, but the ones where the aircraft's specific characteristics made what needed to happen possible. The machine, for all its mechanical nature, becomes part of the story of what you were able to do for the people who trusted you with their lives. There is something honest in marking that - not with sentimentality, but with professional respect for what tools make possible.",
+                "Reflect on how much aviation has changed during your career and what this aircraft represented in that evolution.",
+                "Follow established standard operating procedures and consult the relevant technical documentation before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Reflect specifically on the times this aircraft made a difference - the moments where its specific characteristics made what needed to happen possible.",
+            "explanation": "'What I would reflect on is the specific times this aircraft made a difference - not the routine flights, but the ones where the aircraft's specific characteristics made what needed to happen possible; the machine becomes part of the story of what you were able to do for the people who trusted you with their lives; something honest in marking that - not with sentimentality, but with professional respect for what tools make possible' is specific, honest, and avoids both sentiment and dismissiveness. 'Reflect on how much aviation has changed during your career and what this aircraft represented in that evolution' is a broader, more impersonal reflection that misses the specific relationship with this aircraft. 'What do you reflect on when giving the final flight of an aircraft you've flown for years' is the question.",
+            "id": "bd_l128_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'We have a window of four hours to act on intelligence that has a seventy percent confidence level and is time-critical. The cost of inaction is potentially high. What is your decision framework?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The framework must account for four variables simultaneously: probability of the intelligence being accurate (seventy percent), cost of acting if the intelligence is wrong, cost of not acting if the intelligence is right, and reversibility of the action being considered. Acting on a seventy percent confidence assessment is defensible when the cost of inaction if the intelligence is right is catastrophic, the action is as reversible as possible, and you have used the four hours to increase your confidence even marginally through independent verification. The decision is not binary - it is about choosing the action that manages the risk of both being right and being wrong.",
+                "Act immediately given the time constraint - waiting four hours risks losing the opportunity entirely.",
+                "Consult with your senior advisers and gather all available intelligence before making any final determination."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l129_q1",
-            "xpReward": 387,
-            "coinReward": 645,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Apply a four-variable framework: probability of accuracy, cost of acting if wrong, cost of not acting if right, and reversibility of the action.",
+            "explanation": "'Four variables simultaneously: probability of intelligence being accurate (seventy percent), cost of acting if wrong, cost of not acting if right, and reversibility of the action being considered; acting on seventy percent is defensible when the cost of inaction if right is catastrophic, the action is as reversible as possible, and you have used the four hours to increase confidence even marginally through independent verification; the decision is not binary - it is about choosing the action that manages the risk of both being right and wrong' is a specific, complete decision framework. 'Act immediately given the time constraint - waiting risks losing the opportunity' doesn't use the four hours for any confidence-increasing activity and doesn't consider the cost of acting if the intelligence is wrong. 'A decision framework for acting on seventy percent confidence time-critical intelligence' is the question.",
+            "id": "bd_l129_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l129_q2",
-            "xpReward": 387,
-            "coinReward": 645,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l129_q3",
-            "xpReward": 387,
-            "coinReward": 645,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l130_q1",
-            "xpReward": 390,
-            "coinReward": 650,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l130_q2",
-            "xpReward": 390,
-            "coinReward": 650,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I've been asked to run an operation that I believe will succeed but that requires compromising a value I hold very seriously. Is there a principled framework for this decision?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Safe House",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "There is a framework, and it is more demanding than it appears. First, distinguish between a value that you hold as a professional principle and one that you hold as a personal preference - only the former justifies refusal. Second, assess whether the compromise is of the value itself or of the specific action through which you have historically expressed the value - there is often a way to achieve the objective without the specific compromise. Third, consider whether your willingness to compromise the value in this instance creates a precedent you are comfortable owning in future decisions. If after this process the answer is still to comply, document your objection formally. If the value is fundamental enough, the correct answer is to decline.",
+                "Discuss the ethical concern with your superior before the operation and get explicit authorisation to proceed.",
+                "Follow established operational protocols and consult with your handler before taking any significant action."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l130_q3",
-            "xpReward": 390,
-            "coinReward": 650,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Apply three tests: professional principle versus personal preference; value itself versus specific expression; precedent you'd be comfortable owning. If fundamental, decline.",
+            "explanation": "'Distinguish between a professional principle and a personal preference - only the former justifies refusal; assess whether the compromise is of the value itself or the specific action through which you've historically expressed the value - often a way to achieve the objective without the specific compromise; consider whether your willingness to compromise creates a precedent you're comfortable owning; if after this process the answer is still to comply, document your objection formally; if the value is fundamental enough, decline' is a specific, demanding, and principled framework. 'Discuss with your superior and get explicit authorisation to proceed' shifts the responsibility rather than providing the framework for the decision. 'Is there a principled framework for this decision' is the question.",
+            "id": "bd_l129_q2"
+        },
+        {
+            "instruction": "Chef O-Ring says: 'I want to write a serious academic paper on the cultural history of a cuisine that isn't my own. What are the responsibilities this creates?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Kitchen",
+            "options": [
+                "Three responsibilities: first, access - not just reading, but extended personal learning with and from people inside the culinary tradition, not studying it from the outside; second, collaboration - the paper should not be authored by you alone; it should involve co-authors or at minimum formal review and input from acknowledged practitioners inside the tradition whose voice matters to the conclusion; third, attribution - be specific in acknowledging where your knowledge came from and be honest about what you don't know and therefore what your analysis cannot claim. Writing about a cuisine that is not your own is legitimate scholarship; writing about it as if you were an insider is not.",
+                "Conduct thorough research drawing on the best academic and culinary sources available on this cuisine.",
+                "Apply your culinary expertise and professional judgment, consulting with trusted colleagues as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Three responsibilities: extended personal learning inside the tradition, co-authorship or formal review from acknowledged practitioners, and specific attribution with honest acknowledgment of limits.",
+            "explanation": "'Access - extended personal learning with and from people inside the culinary tradition not studying it from the outside; collaboration - co-authors or formal review from acknowledged practitioners inside the tradition whose voice matters to the conclusion; attribution - be specific in acknowledging where knowledge came from and honest about what you don't know and therefore what your analysis cannot claim; writing about a cuisine that isn't your own is legitimate scholarship; writing about it as if you were an insider is not' gives three specific responsibilities with a clear principle. 'Conduct thorough research drawing on the best academic and culinary sources' is insufficient - academic sources about a cuisine are not the same as access to and collaboration with practitioners inside the tradition. 'What responsibilities does writing academic history of a cuisine not your own create' is the question.",
+            "id": "bd_l129_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I'm leading a clinical trial that has produced unexpected results that don't fit the hypothesis. How do you handle this scientifically and professionally?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Research Lab",
+            "options": [
+                "The unexpected result is the most important result. Scientifically, you must publish it with the same rigour you would have applied to the expected result - the bias toward publishing hypothesis-confirming results is one of the most distorting forces in contemporary research. Professionally, resist any pressure to reframe the data, to delay publication pending further studies that might explain the discrepancy, or to minimise the unexpected finding in the way you present your primary hypothesis. The unexpected result is not a failure. It is the most honest form of scientific progress.",
+                "Conduct additional analysis to determine whether the unexpected results can be explained or reconciled with the hypothesis.",
+                "Follow established clinical guidelines and ensure all decisions are documented according to professional standards."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Publish the unexpected result with full rigour - the bias toward hypothesis-confirming results is one of the most distorting forces in research.",
+            "explanation": "'The unexpected result is the most important result; publish it with the same rigour you would have applied to the expected result - the bias toward publishing hypothesis-confirming results is one of the most distorting forces in contemporary research; resist any pressure to reframe, delay, or minimise the unexpected finding; the unexpected result is not a failure - it is the most honest form of scientific progress' is specific, principled, and identifies the correct scientific standard. 'Conduct additional analysis to determine whether unexpected results can be explained or reconciled with the hypothesis' is precisely the activity that can become a vehicle for the p-hacking and result management that the answer argues against. 'How to handle unexpected results in a clinical trial scientifically and professionally' is the question.",
+            "id": "bd_l130_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I need to make a strategic acquisition that my board is divided on. I believe it is the right decision. How do you proceed?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Auction Hall",
+            "options": [
+                "Proceed to make the case to the full board with complete intellectual honesty: present the strongest version of the arguments against the acquisition alongside the strongest version of the arguments for it. Then make your recommendation with full reasoning. If the board remains divided after that, you face a governance question: is this a decision that requires board unanimity, qualified majority, or can the CEO proceed with a divided board? If you have the authority to proceed with a divided board and your case is complete and honest, proceeding is a legitimate use of executive authority. If you do not, a divided board is a stop.",
+                "Present the acquisition case with emphasis on your own conviction and the strategic opportunity to build support.",
+                "Gather comprehensive information, consult with relevant advisers, and apply a structured decision-making framework."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Make the case with complete intellectual honesty, presenting strongest arguments for both sides; then use the correct governance mechanism for the authority level required.",
+            "explanation": "'Present the strongest version of the arguments against the acquisition alongside the strongest version of the arguments for it; make your recommendation with full reasoning; if the board remains divided, this is a governance question - is this a decision requiring unanimity, qualified majority, or can the CEO proceed with a divided board; if you have authority to proceed with a divided board and your case is complete and honest, proceeding is legitimate; if you do not, a divided board is a stop' is specific, intellectually honest, and identifies the governance question. 'Present the acquisition case with emphasis on your conviction and the strategic opportunity to build support' is advocacy for your position rather than complete intellectual honesty. 'How to proceed with a strategic acquisition that your board is divided on' is the question.",
+            "id": "bd_l130_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'I'm designing a long-haul operational planning system that should reduce crew fatigue while maintaining commercial efficiency. What are the most important design parameters?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Aviation Hub",
+            "options": [
+                "Five design parameters that genuinely matter: first, integrate actual fatigue prediction modelling rather than simply tracking duty hour compliance - hours alone are a poor proxy for fatigue; second, design for circadian disruption specifically - eastbound and westbound operations have fundamentally different fatigue profiles that hours-based systems treat identically; third, build in a meaningful rest period before any extended operation, not after - rest before high-demand operations is more effective than rest after; fourth, create a mechanism for crew to flag fatigue concerns without consequence - the system is only as good as the fatigue information that actually reaches the planning function; fifth, measure actual fatigue levels after operations and use that data to calibrate the model.",
+                "Optimise crew scheduling to ensure all crew members receive the maximum permitted rest between duties.",
+                "Brief the crew thoroughly, assign clear responsibilities, and ensure all crew resource management principles are applied."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Give five specific design parameters covering fatigue prediction modelling, circadian specificity, pre-operation rest priority, consequence-free flagging, and feedback calibration.",
+            "explanation": "'Integrate actual fatigue prediction modelling not just duty hour compliance; design for circadian disruption specifically - eastbound and westbound have different fatigue profiles; build in meaningful rest before extended operations not after; create a consequence-free mechanism for crew to flag fatigue concerns - the system is only as good as the fatigue information that reaches planning; measure actual fatigue levels after operations and use that data to calibrate the model' gives five specific, evidence-based parameters. 'Optimise crew scheduling to ensure all crew receive maximum permitted rest between duties' describes the current regulatory minimum without the specific design parameters that go beyond it. 'Most important design parameters for a long-haul crew fatigue reduction system' is the question.",
+            "id": "bd_l130_q3"
         }
     ]
-}
+}\n

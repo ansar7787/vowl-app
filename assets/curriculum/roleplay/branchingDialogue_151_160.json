@@ -4,694 +4,484 @@
     "levels": "151-160",
     "quests": [
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Captain Hektor says: 'I need to write a formal assessment of a mission that succeeded but used methods I have moral concerns about. How do you document this honestly?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Document the outcome and the method separately and with equal rigour. In the section on methodology, state your moral concerns specifically and on the record: 'The methods used in phase two raised concerns about X, which I am documenting formally. I recommend that these concerns be reviewed before this approach is used again.' The formal assessment is exactly the right place for this - informal channels are where these concerns disappear.",
+                "Document the successful outcome thoroughly and raise your methodological concerns through separate informal channels.",
+                "Consult with legal counsel before documenting any moral concerns about methods in a formal assessment."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l151_q1",
-            "xpReward": 453,
-            "coinReward": 755,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Document outcome and method separately with equal rigour; state moral concerns specifically and on the record in the methodology section.",
+            "explanation": "'Document the outcome and method separately with equal rigour; in the methodology section state your moral concerns specifically and on the record; I recommend these concerns be reviewed before this approach is used again; the formal assessment is exactly the right place for this - informal channels are where these concerns disappear' is specific, principled, and uses the right mechanism. 'Document the outcome thoroughly and raise concerns through separate informal channels' uses exactly the channel where concerns disappear. 'Consult legal counsel before documenting moral concerns' is overcautious about a standard professional documentation obligation.",
+            "id": "bd_l151_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l151_q2",
-            "xpReward": 453,
-            "coinReward": 755,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l151_q3",
-            "xpReward": 453,
-            "coinReward": 755,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l152_q1",
-            "xpReward": 456,
-            "coinReward": 760,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l152_q2",
-            "xpReward": 456,
-            "coinReward": 760,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'A source I've been cultivating for six months has just provided intelligence that, if true, changes everything. But I cannot verify it. What do you do?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Surveillance Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Three immediate actions: first, communicate the intelligence up the chain with its full confidence level - explicitly unverified, single source, high potential significance; second, immediately begin the fastest available verification pathway and state what that is and when it will produce a result; third, recommend that no irreversible action be taken until verified, while taking any reversible protective actions the intelligence warrants. The worst outcome is high-value intelligence that changes everything being either ignored because it's unverified or acted on without verification.",
+                "Hold the intelligence until it can be properly verified - unverified intelligence is too risky to act on.",
+                "Act immediately - if the intelligence is accurate, any delay could be catastrophic."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l152_q3",
-            "xpReward": 456,
-            "coinReward": 760,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Communicate up the chain with full confidence level explicitly stated, begin fastest available verification, and recommend no irreversible action until verified while taking warranted reversible protective actions.",
+            "explanation": "'Communicate up the chain with full confidence level - explicitly unverified, single source, high potential significance; immediately begin fastest available verification; recommend no irreversible action until verified while taking warranted reversible protective actions; the worst outcome is high-value intelligence being either ignored because unverified or acted on without verification' gives three specific, balanced actions. 'Hold until properly verified' ignores the protective actions warranted by even unverified intelligence. 'Act immediately' ignores the verification obligation entirely.",
+            "id": "bd_l151_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'A dish I've been serving for five years has started to feel tired to me. How do you know when to retire a dish versus when that feeling is your own fatigue rather than the dish's?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "The test is the guest's experience, not yours. You have eaten this dish hundreds of times in the past five years and of course it feels tired to you - you are not the audience. The question to answer is whether guests are still experiencing it with the same engagement they once did. If regular guests still order it with genuine pleasure, if new guests encounter it with real delight, your fatigue is not the dish's tiredness. If engagement from both groups is visibly declining, the dish has earned retirement. Your boredom and the dish's mortality are different events.",
+                "Trust your instinct - as the chef you are the most qualified person to know when a dish has run its course.",
+                "Retire the dish and introduce something new - constant evolution is what keeps a restaurant vital."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The test is the guest's experience not yours - your boredom and the dish's mortality are different events. Measure guest engagement.",
+            "explanation": "'The test is the guest's experience not yours; you have eaten this dish hundreds of times and of course it feels tired to you; if regular guests still order it with genuine pleasure and new guests encounter it with real delight, your fatigue is not the dish's tiredness; if engagement from both groups is visibly declining the dish has earned retirement; your boredom and the dish's mortality are different events' is specific, wise, and gives a precise test. 'Trust your instinct - as the chef you are the most qualified person to know' uses your position of most familiarity as a source of authority when it is actually the source of the bias. 'Constant evolution keeps a restaurant vital' is a general principle that overrides the specific question.",
+            "id": "bd_l151_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I'm advising on a public health intervention that is technically sound but requires significant behaviour change from a population that has historically been resistant to health messaging. How do you design for behaviour change rather than information transfer?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "Three principles that distinguish behaviour change design from information transfer: first, identify the specific barrier to the behaviour change in this population - it is almost never a lack of information; it is usually social norm, convenience, cost, or trust; second, design the change to require minimum willpower - make the healthy behaviour the default and the unhealthy behaviour the choice that requires effort; third, engage trusted community voices rather than institutional ones - messages that come from within a community's trusted networks reach people that institutional messages never do.",
+                "Develop clear and compelling information materials that accurately communicate the health benefits of the behaviour change.",
+                "Conduct a comprehensive social media campaign to reach the target population with clear health messaging."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Three principles: identify the specific barrier which is almost never information; make the healthy behaviour the default requiring minimum willpower; use trusted community voices not institutional ones.",
+            "explanation": "'Identify the specific barrier - almost never information but usually social norm, convenience, cost, or trust; design the change to require minimum willpower - make the healthy behaviour the default; engage trusted community voices rather than institutional ones' gives three specific, evidence-based principles. 'Develop clear and compelling information materials' is precisely information transfer, not behaviour change design. 'Comprehensive social media campaign' is an institutional information channel - exactly what the answer cautions against.",
+            "id": "bd_l152_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I need to make a significant hire for a role I've never had in my organisation before. How do you hire well for a role you don't fully understand?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "Four approaches that work: first, hire someone to help you define the role before you hire for it - a consultant or interim professional whose primary output is a role specification rather than the work itself; second, build an external reference group of people who have done this role well elsewhere and use them to pressure-test candidates; third, make the first hire explicitly probationary with very clear evaluation milestones at ninety days and six months; fourth, hire for intellectual honesty and learning speed ahead of domain expertise - in a role you don't understand, a person who will tell you what they don't know and what's going wrong is more valuable than one who performs expertise you can't evaluate.",
+                "Post the role description, conduct structured interviews, and check references thoroughly.",
+                "Apply sound commercial judgment and consult with relevant professional advisers before making any significant decision."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Four approaches: define the role before hiring for it; build an external reference group; make the first hire explicitly probationary with clear milestones; hire for intellectual honesty and learning speed ahead of domain expertise.",
+            "explanation": "'Hire someone to define the role before hiring for it; build an external reference group to pressure-test candidates; make the first hire explicitly probationary with clear evaluation milestones; hire for intellectual honesty and learning speed ahead of domain expertise - in a role you don't understand, someone who will tell you what they don't know is more valuable than one who performs expertise you can't evaluate' gives four specific, sophisticated approaches. 'Post the role description, conduct structured interviews, and check references' is the standard process that assumes you already understand what to look for.",
+            "id": "bd_l152_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'I've been asked to evaluate whether a new training simulator accurately represents the real aircraft well enough to be used for type rating. What are the critical evaluation criteria?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "Five critical evaluation criteria: first, fidelity in the failure modes that are most likely and most consequential - not perfect representation of all conditions, but excellent representation of the specific scenarios pilots will face; second, accurate representation of system interdependencies - what happens when one system fails and creates a secondary failure in another; third, accurate motion and sensory cues in the approach to unusual attitudes - the simulator must not teach incorrect recovery instincts; fourth, accurate representation of the cognitive and workload demands of real operations - a simulator that makes complex tasks feel simple will produce false confidence; fifth, accurate representation of degraded visibility and night operations - these are where accidents happen most.",
+                "Assess the simulator against the manufacturer's specifications and established certification standards.",
+                "Maintain currency through recurrent training and simulator practice on the relevant procedures and scenarios."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Five criteria: fidelity in likely and consequential failure modes, system interdependency accuracy, accurate motion cues in unusual attitude recovery, accurate cognitive and workload demands, accurate degraded visibility and night operations representation.",
+            "explanation": "'Fidelity in the failure modes that are most likely and most consequential; accurate representation of system interdependencies - secondary failures when one system fails; accurate motion and sensory cues in approach to unusual attitudes - must not teach incorrect recovery instincts; accurate representation of cognitive and workload demands - a simulator making complex tasks feel simple produces false confidence; accurate representation of degraded visibility and night operations - where accidents happen most' gives five specific, safety-critical criteria. 'Assess against manufacturer's specifications and certification standards' is the process without the specific criteria. 'Critical evaluation criteria for a type rating simulator' is the question.",
+            "id": "bd_l152_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I want to understand what makes some military strategies genuinely elegant and others merely complicated. What is the distinction?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Strategy Chamber",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "An elegant military strategy achieves multiple objectives through a single set of actions - each action does more than one thing. A complicated strategy requires separate actions for each objective and creates a choreography of coordination that fails when any element is delayed. Elegant strategies exploit the geometry of the situation - they position you where multiple good options exist rather than requiring you to execute the one right option precisely. Complicated strategies require precise execution and fail when precision fails. The test of elegance is: what breaks? In an elegant strategy, many things can break and success is still possible. In a complicated strategy, one thing breaks and the plan falls apart.",
+                "Elegant strategies are simpler and easier to execute, while complicated strategies require extensive resources and coordination.",
+                "Apply established doctrine and best practices, consulting with relevant specialists as appropriate before acting."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l153_q1",
-            "xpReward": 459,
-            "coinReward": 765,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Elegant strategies achieve multiple objectives through single actions and exploit geometry so multiple good options exist; complicated strategies require separate precise actions for each objective and fail when any one breaks.",
+            "explanation": "'An elegant strategy achieves multiple objectives through a single set of actions; a complicated strategy requires separate actions for each objective; elegant strategies exploit the geometry of the situation - position where multiple good options exist rather than requiring you to execute the one right option precisely; the test of elegance: in an elegant strategy many things can break and success is still possible; in a complicated strategy one thing breaks and the plan falls apart' is specific, insightful, and gives a precise test. 'Elegant strategies are simpler and easier to execute' is superficially correct but misses the precise mechanism. 'What makes some military strategies elegant and others merely complicated' is the question.",
+            "id": "bd_l153_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l153_q2",
-            "xpReward": 459,
-            "coinReward": 765,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l153_q3",
-            "xpReward": 459,
-            "coinReward": 765,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l154_q1",
-            "xpReward": 462,
-            "coinReward": 770,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l154_q2",
-            "xpReward": 462,
-            "coinReward": 770,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I need to run a training exercise for new analysts that builds genuine analytical capability rather than just analytical familiarity. What's the design principle?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Safe House",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The design principle is to make the trainees wrong in ways they can learn from - not to make them succeed. An exercise where trainees consistently succeed builds confidence but not capability. An exercise that is calibrated to reveal the specific errors that novice analysts characteristically make - premature closure, confirmation bias, anchoring - produces learning that stays. The exercise should be designed by working backwards from the errors you want to surface, not forwards from the content you want to cover.",
+                "Design exercises that cover the core analytical methods and build trainees' familiarity with each technique.",
+                "Follow established operational security protocols and consult with your senior officer before proceeding."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l154_q3",
-            "xpReward": 462,
-            "coinReward": 770,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Design to make trainees wrong in ways they can learn from - work backwards from the errors you want to surface, not forwards from the content you want to cover.",
+            "explanation": "'The design principle is to make trainees wrong in ways they can learn from - not to make them succeed; an exercise where trainees consistently succeed builds confidence but not capability; design calibrated to reveal specific errors novice analysts characteristically make - premature closure, confirmation bias, anchoring; the exercise should be designed by working backwards from the errors you want to surface, not forwards from the content you want to cover' is specific, counter-intuitive, and gives the precise design principle. 'Design exercises that cover core analytical methods and build familiarity with each technique' is the conventional approach that builds familiarity not capability.",
+            "id": "bd_l153_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I want to write a culinary manifesto that genuinely says something. What does a culinary manifesto need to do to be worth the name?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Kitchen",
+            "options": [
+                "A culinary manifesto worth the name must do three things: it must say something that the dominant practices of cuisine are getting wrong, not just something they aren't doing yet; it must say it from the evidence of the food itself rather than from philosophy or theory alone - the manifesto must be demonstrable in a meal; and it must be willing to say what it requires the writer to give up, not just what it gains. A manifesto that only describes what the future looks like without naming what it costs is a marketing document, not a manifesto.",
+                "A culinary manifesto needs to articulate a distinctive vision that sets the writer apart and inspires others to follow.",
+                "Apply your culinary expertise and professional judgment, consulting with trusted colleagues as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "A manifesto must identify what dominant practices are getting wrong, be demonstrable in the food itself rather than just in theory, and name what following it requires the writer to give up.",
+            "explanation": "'Must say something that dominant practices of cuisine are getting wrong; must say it from the evidence of the food itself rather than philosophy or theory alone - demonstrable in a meal; must be willing to say what it requires the writer to give up; a manifesto that only describes what the future looks like without naming what it costs is a marketing document not a manifesto' gives three specific, demanding criteria with a precise test. 'Articulate a distinctive vision that sets the writer apart and inspires others to follow' describes what a successful personal brand document does, not what a manifesto does.",
+            "id": "bd_l153_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I've been asked to design the ethical oversight framework for a national health data system that will hold sensitive data on millions of people. What are the non-negotiable elements?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Research Lab",
+            "options": [
+                "Five non-negotiable elements: first, purpose limitation - the data can only be used for the specific purposes for which consent was given, with a rigorous process for adding new uses; second, genuine independent oversight with real authority to stop a use of the data, not just to advise; third, meaningful individual access rights - people can see what data is held about them and can correct errors; fourth, a breach response protocol that includes mandatory public notification within a defined timeframe; fifth, a sunset provision - the oversight framework is reviewed and reaffirmed at regular intervals rather than assumed to remain appropriate indefinitely.",
+                "The framework must comply with all applicable data protection legislation and international standards.",
+                "Conduct a thorough review of the relevant literature and consult with specialist colleagues before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Five non-negotiable elements: purpose limitation, independent oversight with real authority, meaningful individual access rights, mandatory breach notification, and regular sunset review.",
+            "explanation": "'Purpose limitation - only for specific consented purposes with rigorous process for new uses; genuine independent oversight with real authority to stop a data use; meaningful individual access rights - people can see and correct what's held; mandatory breach notification within defined timeframe; sunset provision - the oversight framework is reviewed and reaffirmed at regular intervals rather than assumed to remain appropriate indefinitely' gives five specific, non-negotiable elements. 'Comply with all applicable data protection legislation and international standards' is the minimum legal requirement - an ethical oversight framework must go beyond legal compliance. 'Non-negotiable elements of an ethical oversight framework for a national health data system' is the question.",
+            "id": "bd_l154_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I've been watching the market I operate in consolidate rapidly around two dominant players. I am neither of them. What is the strategic choice set?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "Three genuine strategic choices, each with different logic: first, build a position that is genuinely acquisition-attractive - become the most strategically valuable asset for one of the two dominant players, which requires clarity about what you offer them that they cannot build themselves; second, find and own the specific niche that the two dominant players are structurally unable to serve well because of their size - scale creates blindspots; third, consolidate on your own terms by acquiring smaller players to reach a scale at which you become difficult to displace before the consolidation closes. Staying static is not a fourth option - it is a slow version of the first choice without the negotiating advantage.",
+                "Find your niche and focus on serving a specific customer segment that the dominant players overlook.",
+                "Conduct comprehensive market research and develop a well-evidenced strategic response to the competitive challenge."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Three genuine choices: build acquisition-attractive position for one of the dominant players; own the niche they're structurally unable to serve well because of their size; or consolidate on your own terms by acquiring smaller players. Staying static is not a fourth option.",
+            "explanation": "'Build a position that is genuinely acquisition-attractive - become the most strategically valuable asset for one dominant player offering what they cannot build themselves; find and own the specific niche that the two dominant players are structurally unable to serve well because of their size - scale creates blindspots; consolidate on your own terms by acquiring smaller players to reach a scale at which you become difficult to displace before the consolidation closes; staying static is not a fourth option - it is a slow version of the first choice without the negotiating advantage' gives three specific, distinct strategic choices with their logic. 'Find your niche and focus on a specific customer segment' is one element of option two without the full strategic set.",
+            "id": "bd_l154_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'I want to understand what distinguishes the most effective accident investigators from the competent ones. What specific quality of mind?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "The most effective accident investigators have an unusual quality: they hold the human actors in the accident with genuine curiosity about why what they did made sense to them in the moment, rather than with the retrospective judgment that what they did was obviously wrong. Almost every accident involves people who were doing something that seemed reasonable given their information, their training, and the pressures they were under. The investigator who can genuinely enter that perspective recovers the real causal chain. The investigator who can't recovers only the deviations from the behaviour we wished had occurred.",
+                "The most effective accident investigators have exceptional technical knowledge, systematic methodology, and the ability to analyse large volumes of evidence efficiently.",
+                "Follow established standard operating procedures and consult the relevant technical documentation before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The most effective investigators hold the human actors with genuine curiosity about why what they did made sense in the moment rather than retrospective judgment - they can genuinely enter that perspective and recover the real causal chain.",
+            "explanation": "'Hold the human actors with genuine curiosity about why what they did made sense to them in the moment rather than retrospective judgment that what they did was obviously wrong; almost every accident involves people doing something that seemed reasonable given their information, training, and pressures; the investigator who can genuinely enter that perspective recovers the real causal chain; the investigator who can't recovers only the deviations from the behaviour we wished had occurred' is specific, insightful, and identifies the precise quality. 'Exceptional technical knowledge, systematic methodology, and ability to analyse large volumes of evidence efficiently' describes competent investigators without the specific quality that makes the best ones different.",
+            "id": "bd_l154_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I've been asked to advise on a conflict resolution process between two communities that have been in dispute for a generation. What does an effective process require that a quick resolution does not?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: War Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "An effective process requires three things that quick resolution doesn't: first, genuine acknowledgment of the historical experience of both communities - not a summary, but a process through which both communities feel their specific experience has been heard and not minimised; second, the involvement of the people who will live in the resolution, not just the representatives who will sign the agreement - agreements that communities didn't help create are agreements that communities don't feel bound by; third, a pace that is determined by readiness rather than by external pressure - processes forced to conclusion before trust is built produce agreements that reopen rather than close.",
+                "An effective conflict resolution process requires skilled professional mediation and clear legal frameworks.",
+                "Apply established doctrine and best practices, consulting with relevant specialists as appropriate before acting."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l155_q1",
-            "xpReward": 465,
-            "coinReward": 775,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "An effective process requires genuine historical acknowledgment of both communities' experiences, involvement of the people who will live in the resolution rather than just their representatives, and a pace determined by readiness rather than external pressure.",
+            "explanation": "'Genuine acknowledgment of the historical experience of both communities - not a summary but a process through which both communities feel their specific experience has been heard and not minimised; involvement of the people who will live in the resolution not just the representatives who will sign the agreement - agreements communities didn't help create are agreements they don't feel bound by; a pace determined by readiness rather than external pressure - processes forced to conclusion before trust is built produce agreements that reopen rather than close' gives three specific requirements. 'Skilled professional mediation and clear legal frameworks' describes process inputs that are also present in quick resolution.",
+            "id": "bd_l155_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l155_q2",
-            "xpReward": 465,
-            "coinReward": 775,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l155_q3",
-            "xpReward": 465,
-            "coinReward": 775,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l156_q1",
-            "xpReward": 468,
-            "coinReward": 780,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l156_q2",
-            "xpReward": 468,
-            "coinReward": 780,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I've been asked to design a protection programme for a high-profile individual who has received credible threats but refuses to change their behaviour or routine. How do you manage this?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Surveillance Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "A protection programme for someone who refuses to change their behaviour or routine must work entirely around the principal's actions rather than by changing them. This means: rotating the composition, vehicles, and timing of protective detail in ways invisible to the principal; investing heavily in advance intelligence about threats rather than in visible deterrence; and having a specific conversation with the principal about what changes they consider minimally acceptable - often people have a small range of changes they can tolerate that they haven't been asked to identify specifically. The aim is to close the gap between their fixed behaviour and acceptable risk without their active cooperation.",
+                "Advise the principal clearly about the risks they are creating and recommend a protective detail large enough to compensate.",
+                "Follow established operational security protocols and consult with your senior officer before proceeding."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l156_q3",
-            "xpReward": 468,
-            "coinReward": 780,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Manage the protection entirely around the principal's fixed behaviour: rotate composition and timing of the detail invisibly, invest in advance intelligence over visible deterrence, and identify the minimally acceptable changes the principal can tolerate.",
+            "explanation": "'Work entirely around the principal's actions rather than changing them; rotate composition, vehicles, and timing of protective detail in ways invisible to the principal; invest heavily in advance intelligence rather than visible deterrence; have a specific conversation about what changes they consider minimally acceptable - people often have a small range they haven't been asked to identify specifically; close the gap between fixed behaviour and acceptable risk without active cooperation' gives specific, sophisticated approaches. 'Advise the principal clearly about the risks and recommend a large enough protective detail' repeats what has already been tried and rejected.",
+            "id": "bd_l155_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I'm creating a dish that is meant to evoke a specific memory that many people in this culture share. How do you work with collective memory in food?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "Collective memory in food operates through specific sensory triggers, not through general categories. You don't evoke collective memory by cooking something that is generally associated with the cultural category - you evoke it through the specific sensory detail that is the actual content of the memory: the particular temperature of a bread when it comes out of the oven in winter, the specific sweetness of fruit that comes from being slightly overripe, the texture of a dish that was imperfect in exactly the right way. The precision of the sensory trigger matters more than the accuracy of the category. You are working with the most personal thing in collective experience - the specific physical sensation that carries the memory.",
+                "Research the traditional preparation methods and authentic ingredients associated with this shared cultural memory.",
+                "Design a menu that showcases seasonal ingredients and highlights the restaurant's culinary strengths."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Collective memory operates through specific sensory triggers not general cultural categories - the precision of the specific sensory trigger (temperature, texture, particular quality) matters more than accuracy of the category.",
+            "explanation": "'Collective memory operates through specific sensory triggers not through general categories; you evoke it through the specific sensory detail that is the actual content of the memory - the particular temperature of bread in winter, specific sweetness from slightly overripe fruit, texture of a dish that was imperfect in exactly the right way; the precision of the sensory trigger matters more than the accuracy of the category; you are working with the most personal thing in collective experience - the specific physical sensation that carries the memory' is specific, insightful, and gives a precise working principle. 'Research traditional preparation methods and authentic ingredients associated with this shared cultural memory' is a research process that operates at the category level rather than the sensory trigger level.",
+            "id": "bd_l155_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I've been asked to advise on reforming a medical education system that produces technically competent doctors who are poor communicators and struggle with uncertainty. Where do you intervene?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Clinic",
+            "options": [
+                "The intervention must happen at assessment, not at curriculum. Medical education systems produce what they assess, regardless of what they teach. If technical competence is assessed quantitatively and communication and uncertainty-management are not assessed at all, the students will optimise for technical competence regardless of what communication and uncertainty modules are in the curriculum. The reform that matters is building genuine assessment of communication quality and clinical reasoning under uncertainty into every examination from the first year - assessed by faculty whose promotion is tied to the quality of these attributes in their graduates.",
+                "Introduce dedicated communication skills modules and courses on clinical reasoning under uncertainty.",
+                "Engage with the relevant policymakers and gather comprehensive evidence before making any recommendations."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The intervention must happen at assessment not curriculum - medical education systems produce what they assess; build genuine assessment of communication and uncertainty-management into every examination from the first year.",
+            "explanation": "'The intervention must happen at assessment not curriculum; medical education produces what it assesses regardless of what it teaches; if technical competence is assessed quantitatively and communication and uncertainty-management are not assessed at all, students will optimise for technical competence regardless of curriculum content; the reform that matters is building genuine assessment of communication quality and clinical reasoning under uncertainty into every examination from the first year - assessed by faculty whose promotion is tied to quality of these attributes in graduates' is specific, counter-intuitive, and identifies the critical intervention point. 'Introduce dedicated communication skills modules and courses on clinical reasoning under uncertainty' is exactly the curriculum intervention the answer argues against.",
+            "id": "bd_l156_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I want to develop my own strategic judgment rather than relying on advisers and consultants. What specific practices build genuine strategic judgment over time?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Warehouse",
+            "options": [
+                "Three practices that build genuine strategic judgment: first, make your own strategic predictions explicitly and specifically before hearing expert opinion - write them down; then compare your prediction to the expert opinion and then to what actually happened; over time this gives you a calibration of where your intuition is accurate and where it systematically fails; second, study specific strategic decisions that have failed - not the ones used as success stories - and specifically investigate whether the failure was knowable in advance and whether you would have known it; third, find one person who consistently disagrees with your strategic instincts for good reasons, and have regular conversations with them specifically about the areas where you disagree.",
+                "Read widely in strategic thinking and study the decision-making approaches of successful business leaders.",
+                "Gather comprehensive information, consult with relevant advisers, and apply a structured decision-making framework."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Three practices: make and record your own predictions before hearing expert opinion to calibrate where your intuition fails; study strategic failures and whether they were knowable; find someone who consistently disagrees with your instincts for good reasons.",
+            "explanation": "'Make your own strategic predictions explicitly and specifically before hearing expert opinion - write them down; compare your prediction to expert opinion and to what actually happened; over time this gives calibration of where your intuition is accurate and where it systematically fails; study specific strategic decisions that have failed - investigate whether the failure was knowable in advance and whether you would have known it; find one person who consistently disagrees with your strategic instincts for good reasons and have regular conversations in the areas where you disagree' gives three specific, actionable practices. 'Read widely in strategic thinking and study successful business leaders' is information consumption rather than judgment-building practice.",
+            "id": "bd_l156_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'I want to understand why some aviation incidents produce systemic learning and others produce only procedural compliance. What determines which outcome you get?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Sky-Dock",
+            "options": [
+                "The determining factor is whether the investigation goes back far enough in the causal chain. Investigations that stop at the last human error before the incident produce procedural compliance: the procedure that was violated is tightened. Investigations that go back to the conditions that made the human error likely - the training that didn't prepare for it, the system design that made the error easy to make, the organisational culture that normalised the conditions in which it occurred - produce systemic learning: the system that produced the error is changed. The question to ask after any incident is not 'who broke the rule' but 'why did it make sense to do what was done, in the conditions that existed.'",
+                "The quality of the investigation team and the rigor of their methodology determines whether the learning is systemic.",
+                "Follow the applicable emergency checklist and apply standard operating procedures as trained."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The determining factor is how far back in the causal chain the investigation goes - investigations that stop at the last human error produce compliance; investigations that go back to the conditions that made the error likely produce systemic learning.",
+            "explanation": "'Investigations that stop at the last human error before the incident produce procedural compliance; investigations that go back to the conditions that made the human error likely produce systemic learning; the question to ask is not who broke the rule but why it made sense to do what was done in the conditions that existed' is specific, identifies the critical determining factor, and gives the precise question. 'The quality of the investigation team and the rigor of their methodology determines whether learning is systemic' is one factor but doesn't identify the critical mechanism.",
+            "id": "bd_l156_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I've been asked to advise on the ethics of autonomous weapons systems. What is the essential ethical question?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The essential ethical question is accountability: when an autonomous weapons system kills someone who should not have been killed, who is accountable? The law of armed conflict requires that a human being be accountable for the decision to use lethal force. An autonomous system that makes lethal targeting decisions without human authorisation creates an accountability gap that the existing legal and ethical framework for warfare cannot fill. The technical capability to make the system more accurate or more discriminating does not resolve this question - it changes the probability of error but leaves the accountability gap intact.",
+                "The essential ethical question is whether autonomous weapons systems can reliably distinguish between combatants and civilians.",
+                "Apply established doctrine and best practices, consulting with relevant specialists as appropriate before acting."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l157_q1",
-            "xpReward": 471,
-            "coinReward": 785,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The essential ethical question is accountability - when an autonomous weapons system kills someone who should not have been killed, who is accountable? Accuracy improvements don't resolve this; they change the probability of error but leave the accountability gap intact.",
+            "explanation": "'The essential ethical question is accountability: when an autonomous system kills someone who should not have been killed, who is accountable; the law of armed conflict requires that a human being be accountable for the decision to use lethal force; an autonomous system making lethal targeting decisions without human authorisation creates an accountability gap the existing legal and ethical framework cannot fill; technical capability to make the system more accurate does not resolve this question - it changes the probability of error but leaves the accountability gap intact' is specific, philosophically sound, and identifies the precise essential question. 'Whether autonomous weapons systems can reliably distinguish between combatants and civilians' is the accuracy question - the answer identifies why accuracy alone doesn't resolve the essential ethical question.",
+            "id": "bd_l157_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l157_q2",
-            "xpReward": 471,
-            "coinReward": 785,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l157_q3",
-            "xpReward": 471,
-            "coinReward": 785,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l158_q1",
-            "xpReward": 474,
-            "coinReward": 790,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l158_q2",
-            "xpReward": 474,
-            "coinReward": 790,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I've been offered a very senior position in an intelligence organisation I have serious reservations about. What is the right framework for this decision?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Safe House",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "A five-element framework: first, are the reservations about specific and correctable practices, or about the fundamental purpose and governance of the organisation - the former might be addressable from within, the latter is not; second, would accepting the position give you genuine authority to address what you have reservations about, or symbolic authority that allows the practices to continue under your credibility; third, what would you have to be silent about if you accepted - and can you be silent about those things without compromising your own integrity; fourth, what does declining communicate about your assessment of the organisation, and to whom; fifth, are you the best person to decide this - is there someone with direct experience of the organisation's culture whose judgment you trust?",
+                "Weigh the career opportunity against your reservations and make a decision based on your long-term career objectives.",
+                "Gather additional intelligence through established channels and conduct a rigorous analytical review before proceeding."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l158_q3",
-            "xpReward": 474,
-            "coinReward": 790,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Five elements: whether reservations are about specific correctable practices or fundamental purpose; whether the position gives genuine authority to address those reservations; what you'd have to stay silent about; what declining communicates and to whom; and whether you're the best person to decide.",
+            "explanation": "'Are reservations about specific correctable practices or fundamental purpose and governance - former might be addressable from within, latter is not; would accepting give genuine authority to address reservations or symbolic authority that allows practices to continue under your credibility; what would you have to stay silent about and can you do so without compromising your own integrity; what does declining communicate and to whom; are you the best person to decide this' gives five specific, searching elements. 'Weigh the career opportunity against your reservations based on long-term career objectives' treats the decision as primarily a career decision rather than an ethical one.",
+            "id": "bd_l157_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I've been asked to advise on designing the food and drink programme for a cultural institution that wants food to be genuinely integrated with the cultural experience rather than just a revenue service. How do you think about this?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "The integration requires making a precise decision about what role food plays in this specific cultural institution's relationship with its visitors. There are three genuine roles: food as context - background that doesn't distract from the primary cultural experience; food as extension - a continuation of the cultural experience through a different sensory medium; or food as its own cultural expression in dialogue with the rest of the institution. Only the second and third are genuine integration. Choosing which role is appropriate requires understanding this institution's specific relationship with its visitors and what the primary cultural experience actually is.",
+                "Design menus that reflect the cultural themes of the institution and source ingredients from relevant regions or traditions.",
+                "Draw inspiration from your culinary heritage and contemporary trends to create something distinctive and memorable."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Decide precisely what role food plays: as context, as extension of the cultural experience, or as its own cultural expression in dialogue with the rest. Only extension and expression are genuine integration; the choice requires understanding the institution's specific relationship with visitors.",
+            "explanation": "'Make a precise decision about what role food plays in this specific cultural institution's relationship with visitors; three genuine roles: food as context, food as extension of the cultural experience through a different sensory medium, food as its own cultural expression in dialogue with the rest; only the second and third are genuine integration; choosing which role requires understanding this institution's specific relationship with its visitors' gives a specific framework with a precise distinction. 'Design menus that reflect cultural themes and source ingredients from relevant regions or traditions' is a content approach that assumes the role without deciding it.",
+            "id": "bd_l157_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I want to understand what the best clinicians do differently when they face a genuinely difficult diagnostic case. What is the specific process?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "The specific process has four stages that distinguish the best clinicians from the competent ones: first, they deliberately slow down rather than accelerating toward a conclusion - recognising that a difficult case is specifically the situation where their fastest pattern-matching is most likely to be wrong; second, they explicitly articulate the most plausible alternative diagnosis and specifically ask what evidence would distinguish between their favoured hypothesis and the alternative; third, they specifically look for the finding that doesn't fit their favoured diagnosis, rather than confirming the findings that do; fourth, they are specific about what they don't know and what test or information would resolve the uncertainty, rather than treating uncertainty as a reason to delay.",
+                "The best clinicians combine deep domain knowledge with systematic application of diagnostic protocols.",
+                "Follow established professional guidelines and consult with relevant specialists and oversight bodies as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Four stages: deliberately slow down rather than accelerate; explicitly articulate the most plausible alternative and what would distinguish it; specifically look for the finding that doesn't fit the favoured diagnosis; be specific about what is unknown and what would resolve it.",
+            "explanation": "'Deliberately slow down - recognising that a difficult case is specifically where fastest pattern-matching is most likely to be wrong; explicitly articulate the most plausible alternative and what evidence would distinguish between the favoured hypothesis and the alternative; specifically look for the finding that doesn't fit the favoured diagnosis rather than confirming the findings that do; be specific about what is unknown and what test or information would resolve the uncertainty' gives four specific stages. 'Deep domain knowledge with systematic application of diagnostic protocols' describes competent clinicians without the specific process that distinguishes the best ones.",
+            "id": "bd_l158_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I've been asked to represent my industry's interests in a government consultation. What is the most effective and most principled way to do this?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "The most effective and principled approach treats the consultation as a genuine exchange rather than as advocacy. This means: presenting the industry's interests with complete transparency about what those interests are and where they conflict with broader public interests - not pretending that what's good for the industry is always good for the public; providing the most accurate evidence you have, including evidence that complicates your preferred outcome; and specifically engaging with the concerns the government has rather than ignoring them. The industry representative who is known to say true things they don't want to say is more influential over time than the one who consistently presents one side.",
+                "Present your industry's position clearly and forcefully, backed by the strongest available evidence.",
+                "Apply sound commercial judgment and consult with relevant professional advisers before making any significant decision."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Treat the consultation as a genuine exchange: be transparent about industry interests including where they conflict with public interests, provide accurate evidence including evidence that complicates your preferred outcome, and engage specifically with the government's concerns.",
+            "explanation": "'Treat the consultation as a genuine exchange; present industry interests with complete transparency about where they conflict with broader public interests - not pretending what's good for the industry is always good for the public; provide the most accurate evidence you have including evidence that complicates your preferred outcome; specifically engage with the concerns the government has; the industry representative known to say true things they don't want to say is more influential over time than the one who consistently presents one side' is specific, principled, and gives a counter-intuitive strategic insight. 'Present your industry's position clearly and forcefully backed by the strongest available evidence' is straightforward advocacy without the principled approach.",
+            "id": "bd_l158_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'I've been asked to lead an industry working group on the future of human oversight in highly automated aviation. What is the central question?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Aviation Hub",
+            "options": [
+                "The central question is not how much automation is appropriate - that question has been asked and answered differently in each generation of automation and will be answered again in the next. The central question is how you maintain human expertise in the systems you are automating, so that when the automation fails - which it will - there is a human who can take over rather than a human whose skills have atrophied precisely because the automation has been doing the work. The history of aviation automation incidents that killed people includes a specific pattern: the automation failed, the human couldn't recover, and the automation had been managing the failure mode in which the human was never trained.",
+                "The central question is how to set the appropriate level of automation for different flight phases and conditions.",
+                "Follow established standard operating procedures and consult the relevant technical documentation before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The central question is how you maintain human expertise in the systems being automated so that when automation fails a human can take over rather than one whose skills have atrophied. Aviation automation incidents show this pattern: automation fails, human cannot recover, automation was managing the failure mode in which the human was never trained.",
+            "explanation": "'The central question is not how much automation is appropriate but how you maintain human expertise in the systems you are automating; when automation fails - which it will - there is a human who can take over rather than one whose skills have atrophied because the automation has been doing the work; the history of aviation automation incidents that killed people includes a specific pattern: the automation failed, the human couldn't recover, and the automation had been managing the failure mode in which the human was never trained' is specific, identifies the precise central question, and gives historical evidence. 'How to set the appropriate level of automation for different flight phases and conditions' is the previous generation's question.",
+            "id": "bd_l158_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I want to understand why some organisations remain genuinely excellent over multiple generations of leadership while others peak and then decline. What is the specific mechanism?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Strategy Chamber",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The specific mechanism is whether the organisation has developed the capacity to continuously renew its own highest capabilities, or whether it has developed the capacity to replicate its highest capabilities. Replication produces excellent performance in stable conditions and accelerating decline when conditions change - because replication is optimised for the capabilities that produced past excellence, not the capabilities that will produce future excellence. Renewal requires a genuine institutional willingness to challenge what made you excellent, which is almost always uncomfortable for the people who built the excellence. Organisations that maintain genuine excellence across generations have specifically found a way to honour their highest capabilities while challenging the conditions that produced them.",
+                "Organisations that remain genuinely excellent across multiple leadership generations have strong cultures, clear values, and excellent talent development processes.",
+                "Lead by example, maintain clear lines of command, and ensure accountability at every level of the organisation."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l159_q1",
-            "xpReward": 477,
-            "coinReward": 795,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Replication produces excellent performance in stable conditions and accelerating decline when conditions change; renewal requires genuine willingness to challenge what made you excellent; organisations that maintain genuine excellence specifically honour their highest capabilities while challenging the conditions that produced them.",
+            "explanation": "'Whether the organisation has developed the capacity to continuously renew its own highest capabilities or to replicate them; replication produces excellent performance in stable conditions and accelerating decline when conditions change - optimised for capabilities that produced past excellence not future excellence; renewal requires genuine institutional willingness to challenge what made you excellent which is almost always uncomfortable for the people who built it; organisations that maintain genuine excellence have found a way to honour their highest capabilities while challenging the conditions that produced them' is specific, identifies the mechanism precisely, and names the difficulty. 'Strong cultures, clear values, and excellent talent development processes' describes what excellent organisations have without the specific mechanism.",
+            "id": "bd_l159_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l159_q2",
-            "xpReward": 477,
-            "coinReward": 795,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l159_q3",
-            "xpReward": 477,
-            "coinReward": 795,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l160_q1",
-            "xpReward": 480,
-            "coinReward": 800,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l160_q2",
-            "xpReward": 480,
-            "coinReward": 800,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I want to understand what makes some people's intelligence judgments consistently more accurate than others over a long career. What is the underlying quality?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Surveillance Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The underlying quality is epistemic humility of a specific kind - not the general humility of saying I might be wrong, but the specific and active practice of seeking out the evidence and arguments that would prove you wrong and taking them as seriously as the evidence that supports you. The consistently more accurate analyst is not less confident - they are sometimes more confident because their confidence is based on having genuinely tested their conclusion. They are also more willing to change their view when evidence changes, and they can tell you specifically what changed and why - which is the test of whether the view change was genuine learning or social accommodation.",
+                "Consistently more accurate analysts have superior domain expertise, better sources, and more efficient analytical processes.",
+                "Gather additional intelligence through established channels and conduct a rigorous analytical review before proceeding."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l160_q3",
-            "xpReward": 480,
-            "coinReward": 800,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The underlying quality is the specific and active practice of seeking out the evidence and arguments that would prove you wrong and taking them as seriously as evidence that supports you - and being able to say specifically what changed when views change, which tests whether it was genuine learning or social accommodation.",
+            "explanation": "'Epistemic humility of a specific kind - not the general humility of saying I might be wrong but the specific and active practice of seeking out evidence and arguments that would prove you wrong and taking them as seriously as evidence that supports you; the consistently more accurate analyst is sometimes more confident because their confidence is based on having genuinely tested their conclusion; they can tell you specifically what changed and why when their view changes - which is the test of whether the view change was genuine learning or social accommodation' is specific, identifies the precise quality, and gives a testing criterion. 'Superior domain expertise, better sources, and more efficient analytical processes' describes the advantages of competent analysts without the specific quality.",
+            "id": "bd_l159_q2"
+        },
+        {
+            "instruction": "Chef O-Ring says: 'I'm asked to describe what I believe cooking at its highest level is actually doing. What is the honest answer?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Dining Hall",
+            "options": [
+                "At its highest level, cooking is doing something that very few human activities do as directly: it is turning attention into presence. The attention that a cook brings to an ingredient - its exact condition, what it needs, what it can become - is translated into a sensory experience that produces a moment of genuine presence in the person who eats it. This is why the best food stops conversation. Not because it is impressive, but because for a moment it makes the person eating it fully present in their own experience. That is rare and that is what cooking, at its highest level, is actually trying to do.",
+                "At its highest level, cooking is the finest possible expression of craft, technique, and the creative transformation of raw ingredients.",
+                "Apply your culinary expertise and professional judgment, consulting with trusted colleagues as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "At its highest level, cooking turns attention into presence - the cook's attention to an ingredient is translated into a sensory experience that produces genuine presence in the person who eats it. This is why the best food stops conversation: not because it is impressive but because it makes the person eating fully present in their own experience.",
+            "explanation": "'At its highest level cooking is doing something that very few human activities do as directly: turning attention into presence; the attention a cook brings to an ingredient is translated into a sensory experience that produces a moment of genuine presence in the person who eats it; this is why the best food stops conversation - not because it is impressive but because for a moment it makes the person eating fully present in their own experience; that is rare and that is what cooking at its highest level is actually trying to do' is specific, honest, and identifies something genuinely true and unusual. 'The finest possible expression of craft, technique, and creative transformation of raw ingredients' describes cooking without the insight about what it actually does to the person experiencing it.",
+            "id": "bd_l159_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I want to understand what distinguishes the most genuinely wise clinicians from the most technically excellent ones. What is the quality?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Research Lab",
+            "options": [
+                "The most genuinely wise clinicians have learned to bring the patient's actual experience of their own life into the clinical picture rather than the patient's description of their symptoms in clinical terms. They ask different questions - not just where does it hurt and when, but what does this prevent you from doing that matters to you, and what would good health look like in the context of the life you're actually living. The technical excellence of medicine can be applied to a person's symptoms without ever understanding the person. Wisdom in medicine is the capacity to treat symptoms in a person rather than a person with symptoms.",
+                "The most genuinely wise clinicians combine technical excellence with deep compassion and extensive clinical experience.",
+                "Follow established professional guidelines and consult with relevant specialists and oversight bodies as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The most genuinely wise clinicians bring the patient's actual experience of their life into the clinical picture rather than their symptoms in clinical terms; wisdom in medicine is the capacity to treat symptoms in a person rather than a person with symptoms.",
+            "explanation": "'The most genuinely wise clinicians have learned to bring the patient's actual experience of their own life into the clinical picture rather than the patient's description of their symptoms in clinical terms; they ask what does this prevent you from doing that matters to you and what would good health look like in the context of the life you're actually living; the technical excellence of medicine can be applied to symptoms without ever understanding the person; wisdom in medicine is the capacity to treat symptoms in a person rather than a person with symptoms' is specific, identifies the precise quality, and gives a precise formulation. 'Technical excellence with deep compassion and extensive clinical experience' describes the components of a wise clinician without the specific quality.",
+            "id": "bd_l160_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'Looking back over a long career, what is the most important thing you've learned about the relationship between commercial success and personal integrity that you wish you'd known earlier?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "The most important thing is that they are less in conflict than you fear when you're young and more in conflict than you acknowledge when you're successful. When you're young, you assume that commercial success requires compromising personal integrity, and you brace for that compromise. When you're successful, you tend to interpret your success as evidence that your integrity is intact, even when you've been making small accommodations that have moved you in a direction you didn't intend. The most important practice is not to ask whether you're honest but to ask specifically whether your most recent decisions would have bothered the person you intended to be when you started.",
+                "Commercial success and personal integrity are ultimately aligned - the most successful businesses are built on genuine integrity.",
+                "Maintain strong client relationships through consistent service delivery and regular proactive communication."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "They are less in conflict than you fear when young and more in conflict than you acknowledge when successful - the most important practice is asking whether your most recent decisions would have bothered the person you intended to be when you started.",
+            "explanation": "'Less in conflict than you fear when you're young and more in conflict than you acknowledge when you're successful; when you're young you assume commercial success requires compromising integrity and brace for that; when you're successful you tend to interpret your success as evidence your integrity is intact even when making small accommodations that have moved you in a direction you didn't intend; the most important practice is not to ask whether you're honest but whether your most recent decisions would have bothered the person you intended to be when you started' is specific, honest, and gives a precise self-assessment practice. 'Commercial success and personal integrity are ultimately aligned - the most successful businesses are built on genuine integrity' is the reassuring narrative that the answer identifies as the self-congratulatory blindspot.",
+            "id": "bd_l160_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'I want to understand what flying has taught me about the relationship between preparation and improvisation that applies more broadly to how to live a good life. What is it?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Aviation Hub",
+            "options": [
+                "Flying has taught me that preparation and improvisation are not opposites - they are complements, and the quality of your improvisation is determined by the quality of your preparation. You cannot prepare for the specific novel failure. But you can prepare your ability to recognise a novel situation, hold your initial response for the moment it takes to assess rather than react, and create options before the situation closes around a single choice. Those are capacities, not procedures. The preparation that matters is not the memorisation of responses - it is the development of capacities that work in situations you haven't prepared for. That is also how to live a good life: not to prepare for specific outcomes but to develop the capacities that make good outcomes more likely across a much wider range of situations.",
+                "Flying has taught me that thorough preparation and attention to detail are the foundation of everything, and that staying calm under pressure comes from that preparation.",
+                "Follow established standard operating procedures and consult the relevant technical documentation before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Preparation and improvisation are complements - the quality of improvisation is determined by the quality of preparation; what matters is developing capacities not memorising procedures, because capacities work in situations you haven't prepared for; that is also how to live a good life.",
+            "explanation": "'Flying has taught me that preparation and improvisation are not opposites but complements; the quality of your improvisation is determined by the quality of your preparation; you cannot prepare for the specific novel failure but you can prepare your ability to recognise a novel situation, hold your initial response for the moment it takes to assess rather than react, and create options before the situation closes around a single choice; the preparation that matters is not memorisation of responses but development of capacities that work in situations you haven't prepared for; that is also how to live a good life: not to prepare for specific outcomes but to develop the capacities that make good outcomes more likely across a much wider range of situations' is specific, profound, and applies the insight explicitly to a broader question. 'Thorough preparation and attention to detail are the foundation of everything' describes what pilots do without the specific insight about the relationship between preparation and improvisation.",
+            "id": "bd_l160_q3"
         }
     ]
-}
+}\n

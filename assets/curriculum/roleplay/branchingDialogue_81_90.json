@@ -4,694 +4,484 @@
     "levels": "81-90",
     "quests": [
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Captain Hektor says: 'I'm running a team meeting where two strong personalities always dominate. How do you ensure all voices are heard?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Strategy Chamber",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The most effective technique is structured turn-taking - assign each person two minutes to share their view without interruption, and explicitly invite those who haven't spoken: 'Sam, we haven't heard from you yet - what's your take?' This makes inclusion a procedure, not a sentiment.",
+                "You should ask the dominant people to be quiet so others can speak.",
+                "Dominant personalities in meetings are a common challenge in team leadership."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l81_q1",
-            "xpReward": 243,
-            "coinReward": 405,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Structure inclusion as a procedure, not a request.",
+            "explanation": "'Structured turn-taking with two minutes each, and explicitly inviting silent participants by name' is specific and creates inclusion through structure rather than individual intervention. 'Ask the dominant people to be quiet' creates embarrassment and resentment. 'Dominant personalities are a common challenge' is a general statement.",
+            "id": "bd_l81_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l81_q2",
-            "xpReward": 243,
-            "coinReward": 405,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l81_q3",
-            "xpReward": 243,
-            "coinReward": 405,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l82_q1",
-            "xpReward": 246,
-            "coinReward": 410,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l82_q2",
-            "xpReward": 246,
-            "coinReward": 410,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I've discovered that a colleague is taking credit for my work in briefings I don't attend. How do I address this?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Surveillance Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The most effective first step is an honest private conversation with the colleague: 'I heard my work was attributed differently in last week's briefing. I'd like to understand what happened and how we make sure attribution is accurate going forward.'",
+                "Start attending every briefing to prevent it from happening again.",
+                "Credit-stealing is one of the most corrosive behaviours in any professional environment."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l82_q3",
-            "xpReward": 246,
-            "coinReward": 410,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Address attribution issues directly, privately, and specifically before taking any other action.",
+            "explanation": "'An honest private conversation naming the specific instance and requesting accurate attribution going forward' is direct, specific, and gives the colleague a chance to explain and correct. 'Start attending every briefing' addresses the symptom not the cause. 'Credit-stealing is corrosive' is a general statement.",
+            "id": "bd_l81_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'One of my best kitchen team members has just handed in their notice to go to a competitor. What is the most important conversation to have?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Kitchen",
+            "options": [
+                "A short, genuine exit conversation: not to change their mind, but to understand honestly what the competitor is offering that you haven't - whether it's pay, development, culture, or opportunity. This conversation has more value for your kitchen's future than any retention attempt.",
+                "Try to match whatever the competitor has offered them to keep them.",
+                "Good staff departures are always a significant blow to any kitchen operation."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Use a departure as intelligence for improvement, not as a retention opportunity.",
+            "explanation": "'An honest exit conversation to understand what the competitor is offering that you haven't' produces actionable intelligence. 'Try to match whatever they offered' is reactive and often ineffective. 'Good staff departures are a significant blow' is a general statement.",
+            "id": "bd_l81_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I've just received critical feedback on my research methodology from a peer reviewer. My first reaction is defensive. How do you manage that?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Research Lab",
+            "options": [
+                "The most useful discipline is to read the feedback twice before responding - once to process the emotional reaction, and a second time specifically asking 'what in this criticism might be right?' Even a badly framed criticism usually contains a kernel of genuine methodological insight. Sit with the discomfort for twenty-four hours before drafting your response.",
+                "You should immediately rebut any feedback you believe is incorrect.",
+                "Peer review feedback, even critical, is a fundamental part of the scientific process."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Separate the emotional reaction from the analytical engagement with a specific timing discipline.",
+            "explanation": "'Read twice - once for emotional processing, once asking what might be right; sit with it for twenty-four hours before responding' is a specific, practical discipline for managing defensiveness. 'Immediately rebut incorrect feedback' allows no time for genuine reflection. 'Peer review is a fundamental part of the process' is a general statement.",
+            "id": "bd_l82_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'A customer is making unreasonable demands and threatening to leave. I've already offered everything within my authority. What now?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "At this point, be clear and calm: 'I've offered you everything I'm authorised to offer. I genuinely want to keep your business, and I'm not able to go further without approval I don't have. If you'd like me to escalate this to my manager for further consideration, I'm happy to do that.' This is honest, non-escalatory, and creates a path forward.",
+                "Give them what they want to keep the relationship - the cost is less than losing them.",
+                "Some customers are simply impossible to satisfy regardless of what you offer."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "When you've reached the limit of your authority, name it clearly and offer escalation.",
+            "explanation": "'I've offered everything I'm authorised to offer - if you'd like me to escalate to my manager, I'm happy to' is honest, calm, and creates a forward path. 'Give them what they want' rewards unreasonable behaviour and sets a precedent. 'Some customers are impossible to satisfy' is a general deflection.",
+            "id": "bd_l82_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'My co-pilot consistently second-guesses my decisions out loud in front of the cabin crew. How do you address it?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "Have a clear, private conversation after the next incident: 'When you voice disagreement in front of the cabin crew, it creates uncertainty that has safety implications. I genuinely welcome your input - I need you to raise it with me directly and before action, not after.' This addresses the safety concern and makes a genuine offer.",
+                "Ignore it - cabin crew know that co-pilots sometimes disagree with captains.",
+                "Second-guessing in front of crew is a crew resource management issue."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Frame the issue as a safety concern and make a genuine offer for input through the right channel.",
+            "explanation": "'Voice disagreement in front of cabin crew creates safety-relevant uncertainty - raise it directly with me before action' frames it as a safety issue and offers a genuine channel for input. 'Ignore it' allows the safety issue to continue. 'Second-guessing in front of crew is a CRM issue' is a general statement.",
+            "id": "bd_l82_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'A team member has misunderstood a critical instruction and taken the wrong action. What do you say to them?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Start with the specific facts: 'The instruction was X and the action taken was Y - can you walk me through your understanding of the instruction?' This opens the conversation without blame and immediately identifies whether the gap was communication or execution.",
+                "Correct the situation first, then have a private conversation about what went wrong and why.",
+                "Misunderstandings under pressure are common and should be handled sensitively."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l83_q1",
-            "xpReward": 249,
-            "coinReward": 415,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Correct the situation first, then investigate the communication gap privately.",
+            "explanation": "'Correct the situation first, then have a private conversation about what went wrong and why' gives the right sequence - operational urgency before the learning conversation. 'Walk me through your understanding' is the right question but should come after the situation is corrected. 'Misunderstandings under pressure are common' is a general statement.",
+            "id": "bd_l83_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l83_q2",
-            "xpReward": 249,
-            "coinReward": 415,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l83_q3",
-            "xpReward": 249,
-            "coinReward": 415,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l84_q1",
-            "xpReward": 252,
-            "coinReward": 420,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l84_q2",
-            "xpReward": 252,
-            "coinReward": 420,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I need to ask a sensitive question in an interview without making the subject feel accused. How do you frame it?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Safe House",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Use a normalisation framing: 'In situations like this, people sometimes do X. Is that something that's happened in your case?' This gives the subject permission to acknowledge something without feeling singled out, and makes disclosure feel like part of a normal response rather than a confession.",
+                "Ask the question indirectly so they don't realise you're investigating them.",
+                "Framing sensitive questions without accusation is one of the most important interview skills."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l84_q3",
-            "xpReward": 252,
-            "coinReward": 420,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Normalisation framing reduces the feeling of accusation by making the behaviour seem common.",
+            "explanation": "'In situations like this, people sometimes do X - is that something that's happened in your case?' is a specific normalisation technique that reduces the accusation dimension. 'Ask indirectly so they don't realise' is deceptive in a way that may be legally problematic. 'Framing sensitive questions is important' is a general statement.",
+            "id": "bd_l83_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'A supplier wants to deliver twice a week instead of daily. This would affect freshness for some ingredients. How do you negotiate?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "Agree to twice-weekly delivery for all ingredients where freshness is not materially affected, and negotiate daily delivery specifically and only for the high-turnover fresh items where it is. Name those items specifically. 'We can work with twice-weekly on most of our order, but we need daily on fish and fresh herbs - that's non-negotiable for our quality standard.'",
+                "Accept the change - the supplier is a partner and flexibility goes both ways.",
+                "Ingredient freshness is one of the most important factors in any restaurant's quality."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Agree on the terms that work for both parties by being specific about where daily delivery is essential.",
+            "explanation": "'Agree to twice-weekly on most items, but name specifically the items that require daily delivery for quality reasons' negotiates from a clear quality position. 'Accept the change - flexibility goes both ways' concedes on a quality issue without negotiating. 'Ingredient freshness is one of the most important factors' is a general statement.",
+            "id": "bd_l83_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'A patient keeps missing follow-up appointments. This is affecting their treatment outcomes. What do you do?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Clinic",
+            "options": [
+                "Have a direct, non-judgmental conversation at their next contact: 'I've noticed you've missed the last three follow-up appointments. I'm not here to judge - I want to understand what's getting in the way, because it's affecting your treatment.' Understanding the barrier - whether it's transport, work, fear, or something else - is the only way to address it.",
+                "Send a formal letter noting that missed appointments may result in discharge from your care.",
+                "Patient non-adherence to follow-up is a significant clinical and ethical challenge."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Identify the specific barrier to attendance before taking any other action.",
+            "explanation": "'A direct non-judgmental conversation identifying the specific barrier - transport, work, fear - is the only way to address it' is patient-centred and specific. 'A formal letter noting possible discharge' may be necessary eventually but is premature and punitive without understanding the reason. 'Patient non-adherence is a significant challenge' is a general statement.",
+            "id": "bd_l84_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I need to give a presentation to a potential investor who I know is sceptical of our business model. How do you open?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Auction Hall",
+            "options": [
+                "Open by naming the scepticism directly: 'I know there are some legitimate questions about this model's scalability, and I want to address those head-on today rather than dancing around them.' This builds trust immediately by showing you're not defensive and you've done your homework on the objections.",
+                "Lead with your strongest revenue figures to establish credibility before addressing any concerns.",
+                "Addressing investor scepticism requires careful preparation and strong evidence."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Address scepticism directly at the start rather than waiting for it to become an obstacle.",
+            "explanation": "'Name the scepticism directly - I know there are legitimate questions about scalability and I want to address them head-on' builds trust by demonstrating self-awareness and confidence. 'Lead with revenue figures first' delays the scepticism confrontation and may look evasive. 'Addressing investor scepticism requires careful preparation' is a general statement.",
+            "id": "bd_l84_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'We're approaching the end of our permitted duty hours and there's one more flight to complete. What do you do?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Sky-Dock",
+            "options": [
+                "Inform operations immediately and clearly: 'We are at the limit of our permitted duty hours and cannot accept this rotation. This is a regulatory matter, not a discretionary one.' Offer to identify the fastest path to a compliant crew, but make the position on duty hours unambiguous.",
+                "Complete the flight if you feel fit to fly and let operations document the exemption.",
+                "Duty hour regulations exist to prevent fatigue accidents in commercial aviation."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "State regulatory limits clearly and offer to help find a compliant solution, but be unambiguous.",
+            "explanation": "'We are at the limit of our duty hours and cannot accept this rotation - this is a regulatory matter not a discretionary one; offer to identify the fastest path to a compliant crew' is clear, unambiguous, and constructive. 'Complete the flight if you feel fit' makes a subjective assessment of a regulatory limit. 'Duty hour regulations exist to prevent fatigue accidents' is a general statement.",
+            "id": "bd_l84_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'A team member has come to me saying they're struggling to keep up with the workload but they don't want me to tell anyone. What do you do?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: War Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Acknowledge the confidence they've placed in you, then be honest about your limitations: 'I hear you, and I want to support you. I also need to be transparent that if this affects operational performance, I have a responsibility that goes beyond this conversation. My strong preference is to work with you on a solution before it reaches that point - so let's start there.'",
+                "Keep their confidence completely - if you share it you'll lose their trust permanently.",
+                "Workload management and team welfare are both important leadership responsibilities."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l85_q1",
-            "xpReward": 255,
-            "coinReward": 425,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Honour the confidence while being transparent about your limits as a leader.",
+            "explanation": "'Acknowledging the confidence, being transparent about your leadership responsibilities if operational performance is affected, and offering to work on a solution first' correctly holds both the trust and the responsibility. 'Keep their confidence completely' may mean a performance issue that requires intervention is never addressed. 'Workload management and welfare are both important' is a general statement.",
+            "id": "bd_l85_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l85_q2",
-            "xpReward": 255,
-            "coinReward": 425,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l85_q3",
-            "xpReward": 255,
-            "coinReward": 425,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l86_q1",
-            "xpReward": 258,
-            "coinReward": 430,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l86_q2",
-            "xpReward": 258,
-            "coinReward": 430,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I'm being asked to brief a new external partner on our operation. What information is appropriate to share?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Investigation Lab",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Share only what they need to execute their specific role in this operation. Not background, not context, not history - only what is operationally necessary for them to do their specific job. The principle is 'need to know', and the test is: 'does this information help them do what we need them to do?' If not, it doesn't get shared.",
+                "Share enough context that they understand the full picture - partners work better with context.",
+                "External partner briefings require careful judgement about information boundaries."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l86_q3",
-            "xpReward": 258,
-            "coinReward": 430,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Apply the need-to-know principle strictly: share only what is operationally necessary for their specific role.",
+            "explanation": "'Share only what is operationally necessary for their specific role - the test is: does this help them do what we need them to do?' applies the need-to-know principle specifically. 'Share enough context that they understand the full picture' violates the need-to-know principle. 'External partner briefings require careful judgement' is a general statement.",
+            "id": "bd_l85_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I need to fire a kitchen employee whose attitude is affecting the whole team, but their technical skills are excellent. How do you make that decision?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Kitchen",
+            "options": [
+                "Technical excellence that cannot coexist with a functional team environment is not excellence - it's a liability. If the attitude has been clearly communicated as unacceptable, specific instances have been documented, and there has been no genuine change, then the termination is justified regardless of the technical skill. The team's collective performance will exceed one individual's technical contribution.",
+                "Excellent technical skills are too rare to let go of - find a way to manage the attitude problem around them.",
+                "Balancing individual technical excellence with team culture is one of the hardest HR decisions in any kitchen."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Technical excellence that damages the team environment is not a net positive.",
+            "explanation": "'Technical excellence that cannot coexist with a functional team is a liability not an asset; if attitude has been clearly communicated, instances documented, and no genuine change has occurred, termination is justified' is principled and specific. 'Technical skills are too rare to let go' prioritises individual contribution over team health. 'Balancing technical excellence with team culture is one of the hardest HR decisions' is a general statement.",
+            "id": "bd_l85_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I've been asked to write a reference for a colleague who is competent but not exceptional. How do you write it honestly?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "Write about specific genuine strengths with concrete examples, and be accurate about the level: 'Dr X consistently delivers competent clinical care with a particular strength in Y' is honest and useful. Resist the temptation to inflate with vague superlatives. A reference that describes exactly what someone is genuinely good at is more valuable than one that oversells.",
+                "Write the strongest possible reference - they'll need every advantage they can get.",
+                "Reference writing for competent but non-exceptional colleagues is always uncomfortable."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Write specifically about genuine strengths without inflating - accurate specificity is the most valuable reference.",
+            "explanation": "'Write about specific genuine strengths with concrete examples; accurate description of competence is more valuable than vague superlatives' gives specific, ethical guidance. 'Write the strongest possible reference' inflates beyond the truth. 'Reference writing for non-exceptional colleagues is always uncomfortable' is a general statement.",
+            "id": "bd_l86_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'My most profitable product line has started declining. Do I invest to revive it or redirect resources to newer lines?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "Diagnose before deciding: is the decline driven by changed customer preference, new competition, your own under-investment, or natural category maturity? Each of those has a different answer. If it's preference change or category maturity, redirect. If it's under-investment or competitive response, there may be a case for revival. Never make resource allocation decisions based on trajectory alone.",
+                "Redirect resources to newer lines - declining products rarely recover no matter what you invest.",
+                "Declining product lines always require careful portfolio management decisions."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Diagnose the cause of the decline before making any resource allocation decision.",
+            "explanation": "'Diagnose whether the decline is from preference change, competition, under-investment, or category maturity - each has a different answer; never make resource allocation decisions based on trajectory alone' is the correct analytical approach. 'Redirect resources - declining products rarely recover' makes an assumption without diagnosis. 'Declining product lines require careful portfolio management' is a general statement.",
+            "id": "bd_l86_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'A trainee first officer is technically ready but very anxious in real operations. How do you develop their confidence?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "Expose them progressively to increasing complexity in real operations, starting at the edge of their current comfort zone rather than at the limit of their capacity. After each flight, run a brief debrief that identifies one thing they did technically well and one thing to focus on next time. Confidence is built through evidence, and the evidence accumulates flight by flight.",
+                "Tell them that anxiety is normal and will pass with more experience.",
+                "Building confidence in trainee pilots is an important aspect of their professional development."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Build confidence progressively through structured exposure and specific debrief.",
+            "explanation": "'Progressive exposure at the edge of current comfort zone; debrief identifying one technical success and one focus area each time; confidence is built through evidence that accumulates flight by flight' is specific and evidence-based. 'Tell them anxiety is normal and will pass' is reassurance without mechanism. 'Building confidence in trainee pilots is important' is a general statement.",
+            "id": "bd_l86_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I need to communicate a significant change to the team that I personally disagree with. How do you do that with integrity?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Strategy Chamber",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Communicate the decision fully and clearly, without personal editorialising. It is professionally appropriate to say 'I know this raises questions - I'm happy to answer what I can.' It is not appropriate to say 'I don't agree with this either.' Your role is to implement and enable the decision, not to create ambiguity about its legitimacy. If your disagreement is strong enough that you cannot communicate it with integrity, that is a decision about whether you remain in the role.",
+                "Tell the team honestly that you disagree with the decision - they'll respect your honesty.",
+                "Communicating decisions you personally disagree with is one of the most challenging aspects of leadership."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l87_q1",
-            "xpReward": 261,
-            "coinReward": 435,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Communicate the decision with commitment while acknowledging questions - but not your personal disagreement.",
+            "explanation": "'Communicate fully and clearly without editorialising; acknowledge that questions are welcome; your role is to implement not create ambiguity; if disagreement is strong enough that you cannot communicate it with integrity, that is a decision about whether you remain in the role' is specific and principled. 'Tell the team you disagree' undermines the decision's legitimacy and your role. 'Communicating disagreed decisions is one of the most challenging aspects of leadership' is a general statement.",
+            "id": "bd_l87_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l87_q2",
-            "xpReward": 261,
-            "coinReward": 435,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l87_q3",
-            "xpReward": 261,
-            "coinReward": 435,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l88_q1",
-            "xpReward": 264,
-            "coinReward": 440,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l88_q2",
-            "xpReward": 264,
-            "coinReward": 440,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I've been asked to evaluate two competing intelligence assessments of the same situation. They reach opposite conclusions. How do you adjudicate?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Surveillance Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Evaluate methodology before evaluating conclusions. Which assessment had better access to primary sources? Which applied more rigorous analytical technique? Which made its assumptions explicit and testable? The correct position is often neither one nor the other, but the place where the higher-quality methodology and the more testable assumptions converge.",
+                "Go with the assessment from the analyst with the better track record.",
+                "Competing intelligence assessments are a common challenge in analytical work."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l88_q3",
-            "xpReward": 264,
-            "coinReward": 440,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Adjudicate on methodology and assumption quality, not on analyst reputation or conclusion preference.",
+            "explanation": "'Evaluate methodology: better primary source access, more rigorous analytical technique, assumptions explicit and testable; the correct position is where higher-quality methodology and testable assumptions converge' is a specific, principled adjudication framework. 'Go with the analyst with the better track record' uses reputation as a proxy for methodology quality without evaluating this specific assessment. 'Competing assessments are a common challenge' is a general statement.",
+            "id": "bd_l87_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I want to introduce a tasting menu but some of my regular guests strongly prefer à la carte. How do you manage this transition?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Dining Hall",
+            "options": [
+                "Don't replace - complement. Run the tasting menu on specific days, or offer it as an alternative to à la carte rather than a replacement. Communicate the change personally to your most loyal regular guests before the public announcement: they should hear about it from you, not discover it on arrival. Their sense of being considered is as important as the policy itself.",
+                "Replace à la carte completely - running two menus creates operational complexity.",
+                "Menu format decisions always have significant implications for both guests and kitchen operations."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Complement rather than replace, and communicate personally to loyal guests before the public announcement.",
+            "explanation": "'Complement not replace; run tasting menu on specific days or as an alternative; communicate personally to your most loyal regulars before the public announcement - their sense of being considered is as important as the policy itself' is specific and guest-centred. 'Replace à la carte completely' alienates loyal guests to solve an operational problem. 'Menu format decisions have significant implications' is a general statement.",
+            "id": "bd_l87_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I've been asked to serve on an ethics committee for a major research institution. What is the most important thing to understand before accepting?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Clinic",
+            "options": [
+                "Understand what the committee's actual decision-making power is: does it have genuine authority to delay, modify, or reject research, or is it primarily advisory? An ethics committee with only advisory power and no enforcement mechanism creates an ethical risk of its own - it provides the appearance of ethical oversight without the substance. Accept only if you are comfortable with the committee's actual authority.",
+                "Understand the time commitment and the specific areas of expertise they're looking for.",
+                "Ethics committees serve an essential function in protecting research participants and standards."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Understand the committee's actual decision-making authority before accepting a governance role.",
+            "explanation": "'Does the committee have genuine authority to delay, modify, or reject research - an ethics committee with only advisory power creates the appearance of ethical oversight without the substance; accept only if you're comfortable with the committee's actual authority' is a specific, principled pre-acceptance question. 'Understand the time commitment and expertise they're looking for' addresses only the practical logistics. 'Ethics committees serve an essential function' is a general statement.",
+            "id": "bd_l88_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I've been told by a reliable source that a major competitor is about to be acquired by a multinational. How does this change my strategy?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Warehouse",
+            "options": [
+                "Don't act on unconfirmed intelligence. Wait until the acquisition is announced before changing strategy. In the meantime, use the time to think through the implications clearly: if this acquisition occurs, which of my competitive advantages becomes more or less relevant? Which customer segments will the enlarged competitor serve better and which will they under-serve? Be prepared, but do not pre-empt.",
+                "Position for the new competitive landscape immediately - early movers have the advantage.",
+                "Competitor acquisition intelligence significantly affects competitive strategy."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Do not act on unconfirmed intelligence, but use the time to prepare by thinking through the implications.",
+            "explanation": "'Don't act on unconfirmed intelligence; use the time to think through implications clearly - which competitive advantages become more or less relevant, which segments will the enlarged competitor under-serve; be prepared but do not pre-empt' is disciplined and analytically sound. 'Position immediately - early movers have the advantage' acts on unconfirmed intelligence. 'Competitor acquisition intelligence significantly affects strategy' is a general statement.",
+            "id": "bd_l88_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'Our airline is launching a new route to a destination that is politically unstable. What specific preparations would you recommend?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Sky-Dock",
+            "options": [
+                "Four specific preparations: detailed crew security briefing covering political conditions, curfews, and no-go zones at the destination; identification and pre-clearance of emergency diversion airports along the route; establishment of a real-time political monitoring protocol so crew receive updates before departure and during the flight; and a clear decision criteria for when the captain is authorised to deviate from or abort the route without prior approval.",
+                "Consult with the airline's security team and follow their risk assessment.",
+                "Political instability at a destination creates significant operational risk for airline routes."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Give four specific, operational preparations for a route to a politically unstable destination.",
+            "explanation": "'Crew security briefing covering political conditions and no-go zones; identification and pre-clearance of emergency diversion airports; real-time political monitoring protocol with updates before departure and during flight; clear decision criteria for when captain is authorised to deviate without prior approval' gives four specific preparations. 'Consult with the security team and follow their risk assessment' delegates without specifying the preparations. 'Political instability creates significant operational risk' is a general statement.",
+            "id": "bd_l88_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'A junior crew member has raised a safety concern to me that three senior officers previously dismissed. What do you do?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Take the concern seriously and investigate it independently of the seniority of those who dismissed it. The fact that senior officers dismissed it doesn't make it wrong. More importantly: a junior crew member raising a safety concern through proper channels is exactly the behaviour you need to encourage. How you handle this will be noticed by every crew member. Dismiss it at the level of the concern's source, and you've sent a signal about your safety culture that you cannot easily unsend.",
+                "Respect the judgment of the senior officers who reviewed it - they have more experience.",
+                "Junior crew members raising safety concerns is a positive aspect of any safety culture."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l89_q1",
-            "xpReward": 267,
-            "coinReward": 445,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Investigate independently of seniority and recognise the signal this moment sends to the whole crew.",
+            "explanation": "'Investigate independently - seniority doesn't make dismissal correct; how you handle this will be noticed by every crew member; dismiss it at the level of the concern's source and you've sent a signal about your safety culture that you cannot easily unsend' is specific and culturally important. 'Respect the judgment of senior officers - they have more experience' uses seniority as a substitute for investigation. 'Junior crew raising safety concerns is positive' is a general statement.",
+            "id": "bd_l89_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l89_q2",
-            "xpReward": 267,
-            "coinReward": 445,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l89_q3",
-            "xpReward": 267,
-            "coinReward": 445,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l90_q1",
-            "xpReward": 270,
-            "coinReward": 450,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l90_q2",
-            "xpReward": 270,
-            "coinReward": 450,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I've been asked to create a training module on ethical decision-making for new field agents. What's the most important thing to include?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Safe House",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The most important thing is not ethical frameworks or case studies - it's the specific moment when a decision needs to be made and why the instinct in that moment is so often wrong. Include: what cognitive biases make ethical violations feel justified in the field; what the sunk cost fallacy looks like in an operational context; and specific language for reporting ethical concerns up the chain. Ethics training that doesn't include how to report a concern is incomplete.",
+                "Include a comprehensive review of the ethical rules and standards they must follow.",
+                "Ethical decision-making training for field agents is a critical part of their preparation."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l90_q3",
-            "xpReward": 270,
-            "coinReward": 450,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Focus on the cognitive dynamics that make ethical violations feel justified and include specific reporting language.",
+            "explanation": "'Include: what cognitive biases make ethical violations feel justified in the field; what sunk cost fallacy looks like in an operational context; specific language for reporting ethical concerns up the chain - ethics training that doesn't include how to report a concern is incomplete' identifies the most important and often neglected elements. 'Include a comprehensive review of ethical rules and standards' is necessary but insufficient. 'Ethical decision-making training is critical' is a general statement.",
+            "id": "bd_l89_q2"
+        },
+        {
+            "instruction": "Chef O-Ring says: 'I want to create a kitchen culture where mistakes are used as learning opportunities rather than causes for blame. How do you actually build that?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "The culture is set by your response to the first mistake. When the first significant mistake happens - not a hypothetical one - how you respond will be observed by every person in that kitchen and remembered for years. If your response is specific, non-punitive, and concludes with 'what do we change so this doesn't happen again?' then you've built the foundation. If it's punitive, you've undone it regardless of what you say at any other time.",
+                "Announce clearly at a team meeting that mistakes are learning opportunities and won't be punished.",
+                "A learning culture in the kitchen is essential for developing both skills and safety."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Culture is built through your response to actual mistakes, not through general announcements.",
+            "explanation": "'The culture is set by your response to the first mistake; if your response is specific, non-punitive, and concludes with what do we change so this doesn't happen again, you've built the foundation; if it's punitive, you've undone it regardless of what you say at any other time' is specific and identifies the critical mechanism. 'Announce clearly at a team meeting that mistakes are learning opportunities' is an announcement, not the culture. 'A learning culture is essential for developing skills and safety' is a general statement.",
+            "id": "bd_l89_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I've discovered that the evidence base supporting a treatment I've been using for years is weaker than I believed. What is my professional obligation?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "Update your practice immediately, inform any current patients using this treatment, document the change in their records, and report the finding to your professional body if you believe the treatment is still being widely used based on the overestimated evidence. Professional obligation doesn't end at updating your own practice - it includes contributing to the systemic correction.",
+                "Update your practice going forward, but there's no need to contact patients already successfully treated.",
+                "Evidence-based medicine requires clinicians to continuously update their practice as evidence evolves."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Update your practice, inform current patients, document the change, and report to your professional body.",
+            "explanation": "'Update practice immediately; inform current patients using this treatment; document the change; report to your professional body if the treatment is still widely used - professional obligation doesn't end at updating your own practice, it includes contributing to the systemic correction' gives a complete account of professional obligations. 'Update practice going forward but no need to contact patients' misses the obligation to current patients on this treatment. 'Evidence-based medicine requires continuous updating' is a general statement.",
+            "id": "bd_l90_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'A client has just told me they're going to breach a contract they have with us. What is the immediate priority?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "Document the notification immediately and precisely - note the exact wording used, the date and time, and who was present. Then consult your legal team before making any further response. How you respond in the first twenty-four hours after notification of a contract breach will significantly affect your legal position. Do not confirm, waive, or threaten - document and seek legal advice.",
+                "Contact your solicitor immediately to begin breach of contract proceedings.",
+                "Contract breach notifications require an immediate and appropriate legal response."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Document the notification precisely and seek legal advice before making any further response.",
+            "explanation": "'Document immediately and precisely - exact wording, date, time, and who was present; consult legal team before making any further response; do not confirm, waive, or threaten - document and seek legal advice' is specific and legally sound. 'Contact your solicitor to begin breach of contract proceedings immediately' is premature - legal advice should come before committing to any specific legal path. 'Contract breach notifications require an immediate appropriate legal response' is a general statement.",
+            "id": "bd_l90_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'An air traffic control instruction seems inconsistent with our approved flight plan. What is the procedure?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "Acknowledge receipt without compliance, then seek clarification: 'ATC, this instruction appears inconsistent with our approved flight plan. We need clarification before complying. Request to hold current heading.' This is the correct procedure - compliance with a potentially contradictory instruction could create a more dangerous situation than seeking clarification.",
+                "Comply immediately with ATC instructions - they have the full picture of traffic in the airspace.",
+                "Inconsistencies between ATC instructions and approved flight plans are rare but significant."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Acknowledge receipt without compliance and immediately seek clarification - the contradiction is safety-relevant.",
+            "explanation": "'Acknowledge receipt without compliance; request clarification noting the inconsistency with the approved flight plan; request to hold current heading - complying with a potentially contradictory instruction could be more dangerous than seeking clarification' is the correct, safe procedure. 'Comply immediately with ATC instructions - they have the full picture' is generally true but doesn't apply when an instruction appears inconsistent with an approved plan. 'Inconsistencies between ATC instructions and flight plans are rare' is a general statement.",
+            "id": "bd_l90_q3"
         }
     ]
-}
+}\n

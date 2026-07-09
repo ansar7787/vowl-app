@@ -4,694 +4,484 @@
     "levels": "191-200",
     "quests": [
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l191_q1",
-            "xpReward": 573,
-            "coinReward": 955,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Dr. Elara says: 'What would you most want written on your professional legacy?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
+            "scene": "Location: Clinic",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "That the patients I cared for were treated as full people rather than interesting cases, and that the knowledge I generated was useful to the full range of people who needed it, not just the ones who looked like the people in the trials.",
+                "That I made significant advances in understanding and treatment that improved outcomes for patients across multiple conditions.",
+                "That I maintained the highest professional standards and mentored the next generation throughout my career."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l191_q2",
-            "xpReward": 573,
-            "coinReward": 955,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The most honest professional legacy is being remembered for treating patients as full people and ensuring knowledge served the full range of those who needed it.",
+            "explanation": "'The patients I cared for were treated as full people rather than interesting cases, and the knowledge I generated was useful to the full range of people who needed it, not just the ones who looked like the people in the trials' is specific and identifies two precise commitments. 'Made significant advances that improved outcomes' is the conventional professional legacy statement. 'Maintained the highest professional standards' describes compliance without the specific commitments.",
+            "id": "bd_l191_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l191_q3",
-            "xpReward": 573,
-            "coinReward": 955,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l192_q1",
-            "xpReward": 576,
-            "coinReward": 960,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Merchant Kael says: 'What is the most important thing business cannot teach about a good life?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
+            "scene": "Location: Warehouse",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Business cannot teach that the most important things in a life are not optimisable - that relationships, meaning, and the specific quality of presence you bring to ordinary moments cannot be improved through efficiency and strategy the way business processes can.",
+                "Business cannot teach the importance of genuine rest and recovery, which commercial success tends to deprioritise.",
+                "Business cannot teach that the most important measure of a life is not whether it was productive but whether it was fully lived."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l192_q2",
-            "xpReward": 576,
-            "coinReward": 960,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Business cannot teach that the most important things in life are not optimisable - relationships, meaning, and presence cannot be improved through efficiency and strategy.",
+            "explanation": "'The most important things in a life are not optimisable - relationships, meaning, and the specific quality of presence you bring to ordinary moments cannot be improved through efficiency and strategy in the way business processes can' is specific and identifies the precise thing business cannot teach. 'The importance of genuine rest and recovery' is something business does address, if inadequately. 'The most important measure is whether life was fully lived' is a conclusion rather than a specific limitation of what business can teach.",
+            "id": "bd_l191_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Pilot Jax says: 'What is the most important thing learned from mistakes that did not kill you?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "persona": "Pilot Jax",
+            "scene": "Location: Aviation Hub",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The most important thing is that mistakes that don't kill you are usually the ones where the outcome was produced as much by luck as by skill - and recognising luck as a component, rather than attributing the outcome entirely to skill, is the discipline that separates the pilot who learns from the one who accumulates false confidence that eventually meets a situation where the luck runs out.",
+                "The most important thing is to analyse each mistake thoroughly and implement the relevant procedural corrections to prevent any recurrence.",
+                "The most important thing is that every mistake reveals a gap between what you thought you knew and what the situation actually required."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l192_q3",
-            "xpReward": 576,
-            "coinReward": 960,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Mistakes that don't kill you are often survived as much by luck as by skill - recognising luck as a component rather than attributing the outcome to skill is the discipline that separates the pilot who learns from one who accumulates false confidence.",
+            "explanation": "'Mistakes that don't kill you are usually ones where the outcome was produced as much by luck as by skill; recognising that luck was a component rather than attributing the outcome entirely to skill is the discipline that separates the pilot who learns from the pilot who accumulates a false confidence' is specific and identifies the precise learning. 'Analyse thoroughly and implement procedural corrections' is the operational response without the deeper learning. 'Every mistake reveals a gap that must be closed' is true but not the specific learning about luck.",
+            "id": "bd_l191_q3"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Captain Hektor says: 'What is the question you are most afraid to ask yourself?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Navigation Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Whether the things I asked of the people under my command were worth what it cost them.",
+                "Whether I have truly been as principled in my decisions as I have told myself throughout my career.",
+                "Whether the decisions I made in the most difficult moments were made for the right reasons or to protect my own position."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l193_q1",
-            "xpReward": 579,
-            "coinReward": 965,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The question most worth being afraid to ask is whether what you required of others was worth what it cost them.",
+            "explanation": "'Whether the things I asked of the people under my command were worth what it cost them' gets to the heart of the responsibility of command - the question that cannot be answered with reference to outcomes alone. 'Whether I have been as principled as I told myself' is important but about self-perception. 'Whether difficult decisions were made for the right reasons' is more self-focused than the responsibility to others.",
+            "id": "bd_l192_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l193_q2",
-            "xpReward": 579,
-            "coinReward": 965,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l193_q3",
-            "xpReward": 579,
-            "coinReward": 965,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l194_q1",
-            "xpReward": 582,
-            "coinReward": 970,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l194_q2",
-            "xpReward": 582,
-            "coinReward": 970,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'What is the most important thing this work has taught you about truth?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Investigation Lab",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Truth is not a property of a statement in isolation - it is a relationship between a statement and the full context that gives it meaning. The most effective deception is the statement that is literally true and contextually false. Honesty is not simply saying things that are literally accurate - it is ensuring that what you say creates an accurate picture of the reality you are describing.",
+                "Truth is elusive in intelligence work because it is consistently obscured by self-interest, incomplete information, and motivated reasoning.",
+                "Truth in this work is what can be independently verified through multiple separate sources and rigorous analytical scrutiny."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l194_q3",
-            "xpReward": 582,
-            "coinReward": 970,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Truth is a relationship between a statement and the full context that gives it meaning - the most effective deception is the literally-true but contextually-false statement; honesty means ensuring what you say creates an accurate picture.",
+            "explanation": "'Truth is not a property of a statement in isolation - it is a relationship between a statement and the full context; the most effective deception is the statement that is literally true and contextually false; honesty is not simply saying literally accurate things - it is ensuring what you say creates an accurate picture' is specific and gives the practical implication. 'Truth is elusive and consistently obscured' is true but general. 'Truth is what can be independently verified' describes how we test for truth.",
+            "id": "bd_l192_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'What is the most important thing you have never been able to teach?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Dining Hall",
+            "options": [
+                "The most important unteachable thing is taste - not the technical understanding of flavour balance, which is teachable, but the specific quality of palate that knows when something is right in a way that cannot be reduced to principles. Some people have it. Some don't. The people who have it can learn almost anything else. The people who don't cannot fully compensate regardless of how much they learn.",
+                "The most important unteachable thing is the passion and dedication that drive a truly exceptional chef to continuously push beyond what they have achieved.",
+                "The most important unteachable thing is the creative intuition that allows a chef to imagine a dish that has never existed and bring it into being."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Taste - not technical understanding of flavour balance which is teachable, but the quality of palate that knows when something is right in a way not reducible to principles - is the most important unteachable thing.",
+            "explanation": "'Not the technical understanding of flavour balance which is teachable, but the specific quality of palate that knows when something is right in a way that cannot be reduced to principles; some people have it, some don't; the people who have it can learn almost anything else; the people who don't cannot fully compensate regardless of how much they learn' makes a precise distinction between teachable and unteachable knowledge. 'The passion and dedication that drive exceptional chefs' is important but passion can be cultivated. 'The creative intuition to imagine dishes that have never existed' is a different unteachable quality.",
+            "id": "bd_l192_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'What is the single most important thing about being a good doctor?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "Being a good doctor requires being genuinely present with the specific person in front of you - not the category of patient they represent, not the disease they have, but this person in this specific situation at this specific moment in their life. The medicine is important. The presence is what makes the medicine reach the person.",
+                "Being a good doctor means maintaining the highest clinical standards and continuously updating your knowledge to reflect the latest evidence.",
+                "Being a good doctor means caring deeply and working with persistence and dedication to achieve the best possible outcomes."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Being a good doctor requires genuine presence with the specific person in front of you - not the category of patient or the disease but this person; the medicine is important and the presence is what makes it reach the person.",
+            "explanation": "'Being a good doctor requires being genuinely present with the specific person in front of you - not the category of patient they represent, not the disease they have, but this person in this specific situation at this specific moment; the medicine is important; the presence is what makes the medicine reach the person' is specific and gives a precise formulation. 'Maintaining the highest clinical standards and keeping up with advances' describes technical excellence. 'Caring deeply and working with persistence for the best outcomes' is the motivational quality without the specific relational one.",
+            "id": "bd_l193_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'What would you say to yourself at the start of your career?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "The most important thing I would say is: the relationships you build with the people you work most closely with will matter more in ten years than any of the specific outcomes you are so focused on now - and you will not be able to build those relationships later with the same depth you can build them in the first years of working together.",
+                "I would tell myself to take more calculated risks in the early years when the personal cost of failure is at its lowest.",
+                "I would tell myself to develop better financial discipline from the start and invest a greater proportion of early earnings more intelligently."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The relationships you build with people you work closely with will matter more in ten years than any specific outcomes - and you cannot build them later with the same depth as in the first years of working together.",
+            "explanation": "'The relationships you build with the people you work most closely with will matter more in ten years than any of the specific outcomes you are so focused on now - and you will not be able to build those relationships later with the same depth' is specific, identifies the most important thing, and explains why it is time-sensitive. 'Take more calculated risks when the cost of failure is lowest' is good early career advice but not the most important. 'Develop better financial discipline from the start' is practical without being the most important.",
+            "id": "bd_l193_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'What will be the same about flying in a hundred years?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Sky-Dock",
+            "options": [
+                "The atmosphere does not negotiate - its physics will be the same, its weather will be as complex, and its capacity to present the unexpected will be unchanged. Whatever the technology is, the fundamental challenge of operating in an environment that has no memory of what is good for human beings, and that must be continuously read and responded to, will remain.",
+                "Safety will remain the absolute and non-negotiable priority in all aviation operations.",
+                "The people responsible for the aircraft will bear genuine responsibility for every life on board."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The atmosphere does not negotiate - its physics, weather complexity, and capacity to present the unexpected will be unchanged; the fundamental challenge of operating in an environment with no memory of what is good for human beings will remain.",
+            "explanation": "'The atmosphere does not negotiate - its physics will be the same, its weather will be as complex, its capacity to present the unexpected will be unchanged; the fundamental challenge of operating in an environment that has no memory of what is good for human beings and must be continuously read and responded to will remain' is specific. 'Safety will remain the absolute priority' is a commitment rather than a physical constant. 'Responsibility for every life on board' is a constant that will also remain.",
+            "id": "bd_l193_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'What is the most important quality a leader needs to let go of as they become more senior?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The most important quality to let go of is the need to be the best person in the room at the specific tasks they are leading. At junior levels, personal technical excellence is the primary source of credibility. At senior levels it becomes a liability - it produces micromanagement, crowds out the development of others, and directs attention to the specific tasks done best rather than to the whole picture only you are positioned to see.",
+                "The most important quality to let go of is the need to make every decision personally rather than delegating to trusted subordinates.",
+                "The most important quality to let go of is the need for constant feedback and validation from those above you in the hierarchy."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l195_q1",
-            "xpReward": 585,
-            "coinReward": 975,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The need to be the best person in the room at the specific tasks being led becomes a liability at senior levels - producing micromanagement and directing attention away from the whole picture only you can see.",
+            "explanation": "'The need to be the best person in the room at the specific tasks being led; at junior levels personal technical excellence is the primary source of credibility; at senior levels it becomes a liability - it produces micromanagement, crowds out development of others, and directs the leader's attention to specific tasks they do best rather than the whole picture only they are positioned to see' identifies the precise quality to let go of. 'The need to make every decision personally' addresses delegation rather than technical excellence. 'The need for feedback and validation' is a different quality.",
+            "id": "bd_l194_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l195_q2",
-            "xpReward": 585,
-            "coinReward": 975,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l195_q3",
-            "xpReward": 585,
-            "coinReward": 975,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l196_q1",
-            "xpReward": 588,
-            "coinReward": 980,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l196_q2",
-            "xpReward": 588,
-            "coinReward": 980,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'What is the most important ethical principle this work has confirmed for you?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Surveillance Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The most important ethical principle confirmed is that the ends do not justify the means - not because this is a comfortable position, but because it is empirically correct. The means shape the ends. An organisation using means inconsistent with its stated purposes becomes one whose actual purposes are shaped by those means. The institutions in this work that most damaged their own stated purposes are the ones that decided their purposes justified any means.",
+                "The protection of human life and dignity must always take precedence over operational objectives.",
+                "Transparency and accountability to democratic oversight are essential even in intelligence work."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l196_q3",
-            "xpReward": 588,
-            "coinReward": 980,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The ends do not justify the means - not because it is comfortable but because it is empirically correct; means shape ends; institutions that decided their purposes justified any means became defined by the means rather than the purposes.",
+            "explanation": "'The ends do not justify the means - not because comfortable but because empirically correct; the means shape the ends; an organisation using means inconsistent with its stated purposes becomes one whose actual purposes are shaped by those means; institutions that decided their purposes were important enough to justify any means became defined by the means rather than the purposes' is specific and confirms the principle empirically. 'Protection of human life and dignity must take precedence' is an important principle but different. 'Transparency and accountability to democratic oversight are essential' is also a different principle.",
+            "id": "bd_l194_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'What do you believe about the future of food?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "The most significant developments will come not from technology but from recovering knowledge that has been lost - traditional preservation techniques, heritage varieties, fermentation processes, and the understanding of local ecologies that industrial food production systematically replaced. The food future that matters most is not the one that invents new things but the one that recovers what was abandoned before it was understood.",
+                "Sustainable and plant-based diets will become necessary to address the climate and environmental challenges we face.",
+                "Technology will enable increasingly precise personalisation of nutrition to individual health needs."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The most significant developments will come from recovering knowledge that has been lost - traditional preservation, heritage varieties, fermentation, local ecology understanding - the food future that matters recovers what was abandoned before it was understood.",
+            "explanation": "'The most significant developments will come not from technology but from the recovery of knowledge that has been lost - traditional preservation techniques, heritage varieties, fermentation processes, the understanding of local ecologies that industrial food production systematically replaced; the food future that matters most is not the one that invents new things but the one that recovers what was abandoned' is specific and counter-intuitive. 'Sustainable and plant-based diets will become necessary' addresses dietary shift. 'Technology enabling precise nutrition personalisation' is the technological future.",
+            "id": "bd_l194_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'What do you know about the relationship between stress and health?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Research Lab",
+            "options": [
+                "Chronic low-grade stress is far more damaging than acute high-stress events, and the damage is largely invisible until it becomes a diagnosis. The acute stress response is what the body is designed to manage. The chronic stress response is something the body was not designed for and cannot adapt to indefinitely. The most important thing people could do for their long-term health is to take chronic low-grade stress as seriously as they take acute illness.",
+                "Regular exercise is the most effective intervention for managing stress and its health consequences.",
+                "The effects of stress on health are highly individual and depend significantly on genetic and contextual factors."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Chronic low-grade stress is far more damaging than acute high-stress events and the damage is largely invisible until it becomes a diagnosis - the body was designed for the acute response but not for chronic stress it cannot adapt to indefinitely.",
+            "explanation": "'Chronic low-grade stress is far more damaging than acute high-stress events and the damage is largely invisible until it becomes a diagnosis; the body was designed to manage the acute stress response; the chronic stress response is something the body was not designed for and cannot adapt to indefinitely; the most important thing people could do is take chronic low-grade stress as seriously as acute illness' is specific. 'Regular exercise is the most effective intervention' is one important response. 'Effects of stress are highly individual' is important but not the most important thing.",
+            "id": "bd_l195_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'What is most consistently misunderstood about entrepreneurship?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Auction Hall",
+            "options": [
+                "The most consistently misunderstood thing is that entrepreneurship is primarily about starting things, when in practice the capacity that most determines long-term success is the capacity to stop things - to recognise when a product, market, strategy, or partnership is not working and stop it before it consumes the resources needed for what is working. Starting is celebrated. Stopping is stigmatised. The result is that most entrepreneurs continue with things they should stop far longer than is commercially rational.",
+                "Entrepreneurship requires a special kind of creativity or vision that most people don't possess.",
+                "Entrepreneurship is primarily about the idea rather than the execution and persistence required to build it."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Entrepreneurship is primarily misunderstood as being about starting things - the capacity that most determines long-term success is the capacity to stop things; starting is celebrated and stopping is stigmatised so entrepreneurs continue far longer than is commercially rational.",
+            "explanation": "'The most consistently misunderstood thing is that entrepreneurship is primarily about starting things, when the capacity that most determines success is the capacity to stop things; starting is celebrated, stopping is stigmatised; the result is that most entrepreneurs continue with things they should stop far longer than is commercially rational' is specific and counter-intuitive. 'Requires special creativity or vision' is a different misunderstanding. 'About the idea rather than execution' is a common misunderstanding but different from the stopping insight.",
+            "id": "bd_l195_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'What do you know about the relationship between confidence and competence?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "Confidence and competence track each other in normal development, then diverge in a way that can be dangerous: as competence grows from novice to competent, confidence tends to grow faster - you know enough to feel capable but not enough to know what you don't know. As competence grows from competent to expert, genuine confidence often decreases because experts understand the full complexity. The dangerous pilot is often not the novice but the competent one who doesn't yet know what they don't know.",
+                "You must develop genuine competence before confidence, because unearned confidence is one of the leading causes of accidents.",
+                "Confidence and competence are both necessary and must be developed together through structured progressive training."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Confidence and competence track together in early development then diverge - confidence often grows faster than competence in the intermediate stage; as someone becomes genuinely expert confidence often decreases because they understand full complexity; the dangerous pilot is often the competent one who doesn't know what they don't know.",
+            "explanation": "'They track each other in normal development then diverge: as competence grows from novice to competent, confidence tends to grow faster; as competence grows from competent to expert, genuine confidence often decreases because experts understand the full complexity; the dangerous pilot is often not the novice but the competent one who doesn't yet know what they don't know' identifies a precise and counter-intuitive relationship. 'Develop genuine competence before confidence' misses the divergence insight. 'Both are necessary and must be developed together' is correct but general.",
+            "id": "bd_l195_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'What is the most important question to ask before any course of action?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Strategy Chamber",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The most important question is: what would have to be true for this to be wrong? If you cannot generate a plausible answer you don't understand the decision well enough to be committing to it. If you can and still believe the course of action is correct you have genuinely tested your reasoning. Seriously engaging with the most compelling case against your intended course of action is the single most important intellectual discipline in decision-making.",
+                "What are all the possible consequences of this course of action, including the unintended ones?",
+                "Have I consulted with all relevant stakeholders and gathered all available intelligence on this situation?"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l197_q1",
-            "xpReward": 591,
-            "coinReward": 985,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Ask: what would have to be true for this to be wrong? If you can't generate a plausible answer you don't understand the decision well enough; if you can and still believe it's correct, you've genuinely tested your reasoning.",
+            "explanation": "'What would have to be true for this to be wrong; if you cannot generate a plausible answer you don't understand the decision well enough; if you can and still believe the course of action is correct you have genuinely tested your reasoning; seriously engaging with the most compelling case against your intended course of action is the single most important intellectual discipline in decision-making' is specific and gives a precise test. 'What are all the possible consequences' is an important question but more open-ended. 'Have I consulted all relevant stakeholders' is a process question.",
+            "id": "bd_l196_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l197_q2",
-            "xpReward": 591,
-            "coinReward": 985,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l197_q3",
-            "xpReward": 591,
-            "coinReward": 985,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l198_q1",
-            "xpReward": 594,
-            "coinReward": 990,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l198_q2",
-            "xpReward": 594,
-            "coinReward": 990,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'What has working with people under pressure taught you about human dignity?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Safe House",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Human dignity is not destroyed by pressure, failure, or exposure - it is destroyed by the refusal of the person applying the pressure to see the person rather than the target. The people I worked with who retained their dignity under the most extreme conditions were those whose dignity was seen and acknowledged by the people around them. Dignity is not only an internal resource - it is a relational one that requires being recognised to be sustained.",
+                "Human dignity is a fundamental value that must be respected regardless of the circumstances or operational objectives.",
+                "People under extreme pressure reveal their true character, which is the deepest expression of their human dignity."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l198_q3",
-            "xpReward": 594,
-            "coinReward": 990,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Human dignity is not destroyed by pressure or failure - it is destroyed by the refusal of the person applying pressure to see the person rather than the target; dignity is a relational resource that requires being recognised to be sustained.",
+            "explanation": "'Human dignity is not destroyed by pressure, failure, or exposure - it is destroyed by the refusal of the person applying the pressure to see the person rather than the target; the people who retained dignity under extreme conditions were those whose dignity was seen and acknowledged; dignity is not only an internal resource - it is a relational one that requires being recognised to be sustained' is specific. 'Human dignity is a fundamental value that must be respected' is the principled position without the insight. 'People under extreme pressure reveal their true character' is a different observation.",
+            "id": "bd_l196_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'What has cooking taught you about tradition and innovation?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Kitchen",
+            "options": [
+                "The most effective innovations almost always come from the deepest understanding of what they are departing from. The chefs who have most changed cooking are almost all the ones who knew the tradition most thoroughly - not the most ignorant of it. Innovation without knowing what it is departing from produces novelty. Innovation that knows exactly what it is departing from and why produces genuine change.",
+                "Tradition provides the foundation that enables innovation to have meaning and context.",
+                "Innovation and tradition are in constant tension and the right balance depends on the specific context and goals."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The most effective innovations come from the deepest understanding of what they are departing from - chefs who most changed cooking knew the tradition most thoroughly; innovation without knowing what you're departing from produces novelty; knowing exactly what you're departing from and why produces genuine change.",
+            "explanation": "'The most effective innovations almost always come from the deepest understanding of what they are departing from; the chefs who have most changed cooking are almost all those who knew the tradition most thoroughly - not those most ignorant of it; innovation that doesn't know what it is departing from produces novelty; innovation that knows exactly what it is departing from and why produces change' is specific. 'Tradition provides the foundation that enables innovation to have meaning' is related but doesn't capture the insight. 'Innovation and tradition are in constant tension' is too general.",
+            "id": "bd_l196_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'What is the most important change you would make to medical education?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Clinic",
+            "options": [
+                "The most important change is the timing and prominence of uncertainty training. Medical education front-loads technical knowledge and introduces uncertainty late as a corrective - something to manage, a limitation to navigate. What it should do is introduce the specific skills of working under uncertainty as a primary competence from the very beginning, treating technical knowledge as a tool that is useful because it helps structure what remains uncertain rather than eliminating it.",
+                "Give medical students more clinical exposure earlier in their training.",
+                "Strengthen training in communication skills and the humanistic dimensions of medical practice."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Front-load uncertainty training as a primary competence from the very beginning rather than introducing it late as a corrective - treat technical knowledge as a tool that helps structure what remains uncertain rather than as something that eliminates uncertainty.",
+            "explanation": "'The timing and prominence of uncertainty training; medical education front-loads technical knowledge and introduces uncertainty as a corrective late in training as something to manage; what it should do is introduce the specific skills of working under uncertainty as a primary competence from the very beginning, treating technical knowledge as a tool useful because it helps structure what remains uncertain rather than eliminating it' is specific. 'More clinical exposure earlier' is an important change but not the most important. 'Stronger training in communication and humanistic dimensions' is also important but a different change.",
+            "id": "bd_l197_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'What do organisations most consistently owe their employees?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Warehouse",
+            "options": [
+                "The most important thing organisations owe employees is honest information about their own situation - specifically about the security of their role, the organisation's actual financial and strategic position, and the genuine quality of their performance. Most organisations are far more comfortable discussing what they expect from employees than being honest about what employees can expect from them. That asymmetry of information is one of the most significant ethical failures in commercial employment.",
+                "Fair compensation, safe working conditions, and a respectful workplace environment.",
+                "Meaningful work and the opportunity to develop their skills and advance their careers."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Organisations owe employees honest information about the security of their role, the organisation's actual financial and strategic position, and the genuine quality of their performance - the information asymmetry of employment is one of the most significant ethical failures in commercial employment.",
+            "explanation": "'Honest information about their own situation - the security of their role, the organisation's actual financial and strategic position, the genuine quality of their performance; most organisations are far more comfortable discussing what they expect from employees than being honest about what employees can expect; that asymmetry of information is one of the most significant ethical failures in commercial employment' is specific. 'Fair compensation, safe working conditions, and a respectful environment' are threshold obligations. 'Meaningful work and the opportunity to develop and advance' are important but not the most neglected obligation.",
+            "id": "bd_l197_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'What is the most important advice for someone considering a career in aviation?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Aviation Hub",
+            "options": [
+                "The most important advice is to go in knowing that the qualities that will make you excellent at this work are not the same qualities that will make you impressive in the selection process. The qualities that impress in selection - confidence, assertiveness, decisive communication - are valuable. But the qualities that produce excellent long-term performance - maintaining genuine uncertainty until you have sufficient information, willingness to say you don't know, capacity to be wrong and know it - are ones the selection process tends to select against. Build both sets and understand the difference.",
+                "Develop the strongest possible technical foundation and maintain absolute commitment to safety in every aspect of your work.",
+                "Build resilience early, because the training process is demanding and the career involves significant personal and lifestyle sacrifices."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The qualities that make you excellent are not the same ones that make you impressive in selection - build both the selection-attractive qualities and the performance-producing ones, and understand the difference between them.",
+            "explanation": "'The qualities that will make you excellent are not the qualities that make you impressive in selection; qualities that impress - confidence, assertiveness, decisive communication - are valuable; but qualities that produce excellent long-term performance - maintaining genuine uncertainty until sufficient information, willingness to say you don't know, capacity to be wrong and know it - are ones the selection process tends to select against; build both sets and understand the difference' is specific. 'Develop the strongest technical foundation and maintain commitment to safety' is sound but not the most important insight. 'Build resilience early' is practical but not the most important.",
+            "id": "bd_l197_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'What do you most want your successors to understand about this work?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: War Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The most important thing I want my successors to understand is that the work is not primarily about the missions - it is primarily about the people who execute them. The mission is the context. The people are the substance. A leader who understands every strategic dimension of the mission but doesn't deeply understand the people executing it will produce less than one who understands the people deeply and the mission adequately. The most important investment is in understanding the specific human beings under your command.",
+                "Maintain the highest professional and ethical standards in everything you do and hold your team to the same standards.",
+                "Keep learning, stay current with the latest strategic thinking, and never assume that what worked before will work again."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l199_q1",
-            "xpReward": 597,
-            "coinReward": 995,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The work is not primarily about missions but about the people who execute them - understanding the people deeply matters more than understanding every strategic dimension; the most important investment is in understanding the specific human beings under your command.",
+            "explanation": "'The work is not primarily about the missions - it is primarily about the people who execute them; the mission is the context, the people are the substance; a leader who understands every strategic dimension but doesn't deeply understand the people executing it will produce less than one who understands the people deeply; the most important investment is in understanding the specific human beings under your command' is specific. 'Maintain the highest professional and ethical standards' is important but a different dimension. 'Keep learning and never assume what worked before will work again' is sound but general.",
+            "id": "bd_l198_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l199_q2",
-            "xpReward": 597,
-            "coinReward": 995,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l199_q3",
-            "xpReward": 597,
-            "coinReward": 995,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l200_q1",
-            "xpReward": 600,
-            "coinReward": 1000,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l200_q2",
-            "xpReward": 600,
-            "coinReward": 1000,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'What important question remains unanswered at the end of your career?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Investigation Lab",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The most important unanswered question is whether the work I did made the world genuinely safer or made it feel safer while displacing risks to places and people who were less visible. The honest answer requires information I don't have - what the world would have looked like without the interventions - and that counterfactual is in principle unavailable. That is both the defining intellectual challenge of this work and the reason certainty about its value is not achievable through analysis alone.",
+                "Whether the systems of oversight and accountability for this kind of work are actually adequate to prevent serious abuses over time.",
+                "Whether the people recruited into this work are consistently able to maintain their ethical commitments over the full course of a career."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l200_q3",
-            "xpReward": 600,
-            "coinReward": 1000,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Whether the work made the world genuinely safer or made it feel safer while displacing risks to less visible places and people - the counterfactual is unavailable in principle; that is both the defining intellectual challenge and why certainty about its value is not achievable through analysis alone.",
+            "explanation": "'Whether the work made the world genuinely safer or made it feel safer while displacing risks to places and people who were less visible; the honest answer requires information I don't have - what the world would have looked like without the interventions - and that counterfactual is in principle unavailable; that is both the defining intellectual challenge and the reason certainty about its value is not achievable through analysis alone' is specific. 'Whether the systems of oversight and accountability are adequate' is an important question but different. 'Whether people can maintain their ethical commitments over a full career' is also a different question.",
+            "id": "bd_l198_q2"
+        },
+        {
+            "instruction": "Chef O-Ring says: 'What is the most important question cooking has taught you to ask about anything?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "The most important question cooking has taught me is: what does this actually need, rather than what am I about to do to it? The question presupposes that the thing in front of you has its own requirements more important than your plans for it - your role is to understand those requirements and serve them, not impose your preferences on the material. This is the question that distinguishes cooking from performance, relationships from management, and listening from waiting to speak.",
+                "What is the best possible version of this that I can create with the ingredients and skills I have available?",
+                "What is the right technique for this specific situation and how can I apply it with the greatest possible precision?"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "What does this actually need, rather than what am I about to do to it? - the question presupposes the thing in front of you has requirements more important than your plans; this distinguishes cooking from performance, relationships from management, and listening from waiting to speak.",
+            "explanation": "'What does this actually need, rather than what am I about to do to it; the question presupposes that the thing in front of you has its own requirements more important than your plans - your role is to understand and serve those requirements, not impose your preferences; this is the question that distinguishes cooking from performance, relationships from management, and listening from waiting to speak' is specific and gives the question a broad application. 'What is the best possible version I can create' is focused on your own capacity. 'What is the right technique and how can I apply it with precision' is a technical question.",
+            "id": "bd_l198_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'What would you most want to say to a patient frightened about their diagnosis?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "The most important thing to say is not to reassure them about the outcome, which I often cannot honestly do, but to be specific about what comes next - what we will do, what you will experience, what questions you should bring to the next appointment, and that I will be there for that conversation. Fear is most often a response to the unknown. The most honest thing I can offer is not certainty about the outcome but specificity about the process. That specificity is itself a form of care.",
+                "Modern medicine has effective treatments for many conditions and we will do everything possible to help you through this.",
+                "Many people facing the same diagnosis have found ways to manage the fear and live well through treatment and beyond."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Rather than reassure about outcomes you often cannot honestly promise, be specific about what comes next - fear responds to the unknown and specificity about the process is itself a form of care.",
+            "explanation": "'Not to reassure them about the outcome, which I often cannot honestly do, but to be specific about what comes next - what we will do, what you will experience, what questions to bring to the next appointment, that I will be there; fear is most often a response to the unknown; the most honest thing I can offer is not certainty about the outcome but specificity about the process; that specificity is itself a form of care' is specific and honest. 'Modern medicine has effective treatments and we will do everything possible' is reassurance about outcome. 'Many people have found ways to manage the fear and live well' is empathetic but doesn't address the need for process specificity.",
+            "id": "bd_l199_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'What is the most important thing you have learned about the nature of value?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "The most important thing about value is that it is never intrinsic to a thing - it is always relational, created in the gap between what a thing offers and what a specific person or group needs at a specific time. This means creating genuine value requires understanding the need as precisely as the offering. The most common commercial error is to develop a better offering without understanding whether the need it serves is the most important one for the people who would benefit from it most.",
+                "Value is ultimately determined by what people are willing to pay for it in a free and competitive market.",
+                "Sustainable value must be created for all stakeholders - customers, employees, communities, and shareholders - not just shareholders alone."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Value is never intrinsic to a thing but always relational - created in the gap between what a thing offers and what a specific person needs at a specific time; creating genuine value requires understanding the need as precisely as the offering.",
+            "explanation": "'Value is never intrinsic to a thing - it is always relational, created in the gap between what a thing offers and what a specific person or group needs at a specific time; creating genuine value requires understanding the need as precisely as the offering; the most common commercial error is to develop a better offering without understanding whether the need it serves is the most important one for those who would benefit most' is specific and identifies the relational nature of value. 'Value is ultimately determined by what people are willing to pay' describes market price not value. 'Sustainable value must be created for all stakeholders' is an important principle but a different point.",
+            "id": "bd_l199_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'What is the most important thing you have learned about experience and performance?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "The most important thing is that experience improves performance in familiar situations and can degrade it in novel ones if the experience has not been specifically designed to prepare for novelty. Experienced pilots who have never been trained to recognise their instincts may be wrong in a novel situation can perform worse in those situations than less experienced pilots who have been trained to question their instincts. Experience is valuable but it creates specific blindspots that must be actively managed.",
+                "Experience is the most effective teacher and there is no substitute for the judgment that accumulates through years of practice.",
+                "Experience must be combined with continuous formal training to maintain peak performance over a long career."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Experience improves performance in familiar situations and can degrade it in novel ones if not specifically designed to prepare for novelty - experienced pilots trained to question their instincts in novel situations perform better than less experienced ones who haven't been trained to do so.",
+            "explanation": "'Experience improves performance in familiar situations and degrades it in novel ones if the experience has not been specifically designed to prepare for novelty; experienced pilots who have never been trained to recognise their instincts may be wrong in novel situations can perform worse than less experienced pilots trained to question their instincts; experience is valuable but creates specific blindspots that must be actively managed' is specific, counter-intuitive, and gives the practical implication. 'Experience is the most effective teacher' is the conventional position the answer complicates. 'Experience must be combined with continuous formal training' is correct but doesn't identify the specific mechanism.",
+            "id": "bd_l199_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'What is the most important lesson military history teaches about overconfidence?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Captain Hektor",
+            "scene": "Location: Navigation Room",
+            "options": [
+                "The most important lesson is that overconfidence is almost always preceded by a period of genuine success - and that genuine success creates the conditions for overconfidence precisely because it provides real evidence that the approach has worked. The organisations and leaders who have suffered the worst defeats from overconfidence were usually ones whose previous successes were real. The protection against overconfidence is not self-doubt but the discipline of continually asking whether the conditions that produced past success still apply.",
+                "The most important lesson is that superior force and resources do not guarantee victory, and that complacency can overcome any advantage.",
+                "The most important lesson is that the perception of invincibility, while sometimes useful for morale, becomes dangerous when the leadership begins to believe it themselves."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Overconfidence is almost always preceded by genuine success - genuine success provides real evidence that the approach worked, creating the conditions for overconfidence; the protection is asking whether the conditions that produced past success still apply.",
+            "explanation": "'Overconfidence is almost always preceded by genuine success; genuine success creates conditions for overconfidence because it provides real evidence the approach worked; organisations who suffered worst defeats from overconfidence were ones whose previous successes were real; the protection is the discipline of continually asking whether the conditions that produced past success still apply' is specific and identifies the mechanism. 'Superior force does not guarantee victory and complacency overcomes any advantage' is true but general. 'The perception of invincibility becomes dangerous when leadership believes it' is one dimension without the mechanism.",
+            "id": "bd_l200_q1"
+        },
+        {
+            "instruction": "Agent Nyx says: 'What is the most important thing you have learned about institutional failure?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Agent Nyx",
+            "scene": "Location: Surveillance Room",
+            "options": [
+                "The most important thing I have learned about institutional failure is that the last failure is almost never the first. Almost every major institutional failure is preceded by a series of smaller failures that were managed, minimised, or explained away. The patterns were there. The signals existed. The institution's capacity to adapt failed before the adaptation was required. The question that matters most about any institution is not whether it will face a serious challenge but whether it has developed the capacity to hear the signals that precede that challenge.",
+                "Institutional failure is most often caused by the failure of individual leaders to exercise their responsibilities with sufficient rigour and integrity.",
+                "Institutional failure is almost always preceded by cultural problems that become visible only in retrospect."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The last failure is almost never the first - almost every major institutional failure is preceded by a series of smaller failures that were managed, minimised, or explained away; the patterns were there; the question that matters is whether the institution has developed the capacity to hear the signals that precede the serious challenge.",
+            "explanation": "'The last failure is almost never the first; almost every major institutional failure is preceded by a series of smaller failures that were managed, minimised, or explained away; the patterns were there; the signals existed; the institution's capacity to adapt failed before the adaptation was required; the question that matters most is not whether it will face a serious challenge but whether it has developed the capacity to hear the signals that precede that challenge' is specific and identifies the mechanism. 'Most often caused by the failure of individual leaders' is one contributing factor. 'Preceded by cultural problems visible only in retrospect' is related but less precise.",
+            "id": "bd_l200_q2"
+        },
+        {
+            "instruction": "Chef O-Ring says: 'What is the most important thing a meal can do that nothing else can?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Dining Hall",
+            "options": [
+                "The most important thing a meal can do that nothing else can is create the specific conditions for full mutual presence - in which two or more people are simultaneously paying the same quality of attention to the same experience, and therefore to each other. Music can be shared. Art can be shared. A meal is unique in that it is simultaneously a shared sensory experience and an act of mutual care. The giving and receiving of food creates a bond that other forms of sharing do not, because it is literally incorporated into the person who receives it.",
+                "A meal can nourish both body and soul in a way that no other single experience achieves.",
+                "A meal can bring people together across cultural and social differences in a way that other shared experiences cannot."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "A meal creates the specific conditions for full mutual presence - people simultaneously paying the same quality of attention to the same experience, and therefore to each other; the giving and receiving of food creates a bond that other forms of sharing do not because it is literally incorporated into the person who receives it.",
+            "explanation": "'A meal can create the specific conditions for full mutual presence - in which two or more people are simultaneously paying the same quality of attention to the same experience, and therefore to each other; a meal is unique in that it is simultaneously a shared sensory experience and an act of mutual care; the giving and receiving of food creates a bond other forms of sharing do not, because it is literally incorporated into the person who receives it' is specific and identifies what makes a meal unique. 'Nourish both body and soul in a way no other single experience achieves' is general. 'Bring people together across cultural differences' is one thing meals do but not the most important or unique thing.",
+            "id": "bd_l200_q3"
         }
     ]
-}
+}\n

@@ -4,694 +4,484 @@
     "levels": "11-20",
     "quests": [
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Captain Hektor says: 'I need a coffee. Have you seen where the galley is?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "It's at the end of the corridor, third door on the right.",
+                "I don't personally drink coffee myself.",
+                "Coffee is actually quite bad for your health."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l11_q1",
-            "xpReward": 33,
-            "coinReward": 55,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "When someone asks for directions to a specific place, direct them there helpfully.",
+            "explanation": "'It's at the end of the corridor, third door on the right' directly answers with clear directions. 'I don't drink coffee myself' talks about your own habits. 'Coffee is bad for your health' is unsolicited advice that doesn't help the Captain find the galley.",
+            "id": "bd_l11_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l11_q2",
-            "xpReward": 33,
-            "coinReward": 55,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l11_q3",
-            "xpReward": 33,
-            "coinReward": 55,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l12_q1",
-            "xpReward": 36,
-            "coinReward": 60,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l12_q2",
-            "xpReward": 36,
-            "coinReward": 60,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'Thank you so much for your assistance today.' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Safe House",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "I am generally a very busy person.",
+                "You're welcome - happy to help anytime!",
+                "Helping others is an important virtue in life."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l12_q3",
-            "xpReward": 36,
-            "coinReward": 60,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Respond to 'Thank you' with 'You're welcome' and a friendly follow-up.",
+            "explanation": "'You're welcome - happy to help anytime!' is warm, natural, and invites future cooperation. 'I am generally a very busy person' is an odd, disconnected non-response to gratitude. 'Helping others is an important virtue' is philosophical, not a natural conversational reply.",
+            "id": "bd_l11_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I accidentally gave you the wrong dish. I am so sorry - let me bring the correct one right away.' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "Not to worry - mistakes happen! I'll wait for the right one.",
+                "That is completely and utterly unacceptable!",
+                "I actually ordered this particular dish yesterday too."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "When someone apologizes for a small, easily corrected mistake, respond with grace.",
+            "explanation": "'Not to worry - mistakes happen!' shows graciousness about a minor, easily resolved error. 'That is completely and utterly unacceptable!' is a dramatic overreaction to a simple mix-up. 'I ordered this yesterday too' is confusing and irrelevant.",
+            "id": "bd_l11_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'Have you eaten anything at all today?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Research Lab",
+            "options": [
+                "Food is, of course, essential for maintaining good health.",
+                "Yes, I had a small bowl of porridge this morning.",
+                "I tend to do all my cooking at home."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "'Have you eaten today?' is a direct health question. Answer yes/no with specific details.",
+            "explanation": "'Yes, I had a small bowl of porridge this morning' directly answers the question and gives medically useful specific information. 'Food is essential for good health' is a general statement. 'I tend to cook at home' describes a habit, not what was eaten today.",
+            "id": "bd_l12_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'We're running a special sale this weekend. May I send you the full details?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "Weekends tend to be very busy for me personally.",
+                "Yes please! What email address do you have on file for me?",
+                "I prefer to do my shopping in the morning hours."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "When offered useful information, accept it enthusiastically and confirm the practical details.",
+            "explanation": "'Yes please! What email address do you have on file?' accepts the offer and immediately takes a step to ensure you receive the information correctly. 'Weekends are very busy' doesn't answer whether you want the information. 'I prefer shopping in the morning' is irrelevant to the offer.",
+            "id": "bd_l12_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'Your boarding pass, please.' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Aviation Hub",
+            "options": [
+                "I actually lost my luggage on a previous trip once.",
+                "I checked in online - is a digital boarding pass acceptable?",
+                "Boarding the plane sounds like an excellent idea."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "When asked for a document, either present it or politely explain your situation.",
+            "explanation": "'I checked in online - is a digital boarding pass acceptable?' is clear, explains your situation, and asks a practical clarifying question. 'I lost my luggage on a previous trip' is a different problem entirely. 'Boarding sounds like an excellent idea' is a casual non-answer.",
+            "id": "bd_l12_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'Attention! We are running an emergency safety drill. Please follow all my instructions carefully.' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Battle Deck",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Understood, Captain. Ready and waiting for your instructions.",
+                "I've participated in drills before - they're usually quite quick.",
+                "Are safety drills truly necessary, in your opinion?"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l13_q1",
-            "xpReward": 39,
-            "coinReward": 65,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "When given a formal safety instruction, confirm you've understood and show readiness.",
+            "explanation": "'Understood, Captain. Ready and waiting for your instructions' confirms you heard the announcement and are prepared to act. 'I've done drills before' doesn't engage with the current one. 'Are drills truly necessary?' questions the Captain's authority unhelpfully.",
+            "id": "bd_l13_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l13_q2",
-            "xpReward": 39,
-            "coinReward": 65,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l13_q3",
-            "xpReward": 39,
-            "coinReward": 65,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l14_q1",
-            "xpReward": 42,
-            "coinReward": 70,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l14_q2",
-            "xpReward": 42,
-            "coinReward": 70,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I've found a new clue. Could you write it down while I describe it?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Investigation Lab",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Writing is a very important form of communication.",
+                "Of course! I'm ready with my notepad - go ahead.",
+                "I've written down many things for you already today."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l14_q3",
-            "xpReward": 42,
-            "coinReward": 70,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "When asked to do a specific task, confirm you are ready and equipped to do it.",
+            "explanation": "'Of course! I'm ready with my notepad - go ahead' confirms readiness and shows you have what you need. 'Writing is an important form of communication' is a platitude that doesn't help. 'I've written many things today' implies fatigue or reluctance.",
+            "id": "bd_l13_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'This dish is almost ready. Would you like to try it first and give me your honest opinion?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Kitchen",
+            "options": [
+                "Yes, please! I'd love to try it and give you my thoughts.",
+                "Cooking such a dish takes considerable time and skill.",
+                "I already had quite a large lunch today."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "When offered a tasting opportunity, accept enthusiastically and show genuine interest.",
+            "explanation": "'Yes, please! I'd love to try it and give you my thoughts' accepts the invitation with enthusiasm and offers exactly what was asked - honest feedback. 'Cooking takes considerable time and skill' is a general observation. 'I already had quite a large lunch' might be relevant but 'No thank you, but it smells wonderful!' would be the polite decline.",
+            "id": "bd_l13_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'Are you currently allergic to any medications?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "I'm not entirely certain - what medications are you considering?",
+                "I don't actually take medication very often at all.",
+                "Allergies have become extremely common in modern times."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Give the safest, most responsible answer for a medical context - honest and specific.",
+            "explanation": "'I'm not entirely certain - what medications are you considering?' is the safest response when unsure, opening a dialogue for the doctor to specify. 'I don't take medication often' doesn't address the allergy question. 'Allergies have become very common' is a statistic, not a personal medical answer.",
+            "id": "bd_l14_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'This price is completely firm - it is not negotiable. Take it or leave it.' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Market Square",
+            "options": [
+                "Very well, I understand. In that case, I'll take it.",
+                "Everything is negotiable if you approach it correctly.",
+                "I'll come back with my final answer next week."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "When told a price is final, make a clear decision without arguing unnecessarily.",
+            "explanation": "'Very well, I understand. In that case, I'll take it' accepts the terms clearly and moves forward. 'Everything is negotiable if you approach it correctly' challenges the seller when they have been clear. 'I'll come back next week' delays when an immediate decision is expected.",
+            "id": "bd_l14_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'Your connecting flight departs in just forty minutes. It's going to be tight. Would you like some assistance?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Sky-Dock",
+            "options": [
+                "Yes, please! Which gate is it and do I need to clear security again?",
+                "Forty minutes should probably be enough, shouldn't it?",
+                "I've managed tight connections before without any difficulty."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "When time is short, accept help immediately and ask the two most critical questions.",
+            "explanation": "'Yes, please! Which gate and do I need to clear security again?' accepts help and asks the two most essential questions for making a connection. 'Forty minutes should be enough' is uncertain and doesn't move you forward. 'I've managed before' shows past experience but wastes precious time.",
+            "id": "bd_l14_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'What is your initial impression of our new crew member?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "They seem very eager and show real potential for growth.",
+                "New arrivals can sometimes find it challenging to adapt.",
+                "I honestly haven't had the opportunity to get to know them yet."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l15_q1",
-            "xpReward": 45,
-            "coinReward": 75,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "When asked for a professional impression, give a constructive, thoughtful observation.",
+            "explanation": "'They seem very eager and show real potential for growth' gives a genuine, positive professional observation. 'New arrivals can find it challenging' is vague and doesn't offer an opinion on this specific person. 'I haven't had the opportunity yet' avoids the question - even if true, a first impression could be shared.",
+            "id": "bd_l15_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l15_q2",
-            "xpReward": 45,
-            "coinReward": 75,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l15_q3",
-            "xpReward": 45,
-            "coinReward": 75,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l16_q1",
-            "xpReward": 48,
-            "coinReward": 80,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l16_q2",
-            "xpReward": 48,
-            "coinReward": 80,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I need this information to remain strictly confidential. Can I trust you with it?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Surveillance Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Confidential information is, by definition, sensitive information.",
+                "Absolutely. You have my complete word on it.",
+                "That rather depends on what the information actually is."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l16_q3",
-            "xpReward": 48,
-            "coinReward": 80,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Give a firm, clear commitment when asked if you can be trusted.",
+            "explanation": "'Absolutely. You have my complete word on it' gives an unconditional, clear commitment of trustworthiness. 'Confidential information is sensitive' just defines the term without committing. 'That depends on what it is' makes trust conditional, which undermines the commitment completely.",
+            "id": "bd_l15_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I'm afraid we've run out of the daily special. May I suggest something else from the menu instead?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Dining Hall",
+            "options": [
+                "What a shame - but yes, what would you recommend for me?",
+                "How long exactly has the special been listed on the menu?",
+                "In that case, I'll simply have a glass of water."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "When your first choice is unavailable, accept the offer of a substitute graciously.",
+            "explanation": "'What a shame - but yes, what would you recommend?' expresses mild disappointment while opening up to alternatives. 'How long has it been on the menu?' is irrelevant to your current need. 'I'll simply have water' is an extreme reaction to a simple substitution offer.",
+            "id": "bd_l15_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'You need to rest completely for the next three days. No work, no physical exertion at all.' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Clinic",
+            "options": [
+                "I understand completely. I'll follow your advice carefully.",
+                "But I genuinely feel absolutely fine right now.",
+                "My job isn't particularly physical in nature anyway."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Follow medical advice gracefully and confirm you understand the full instructions.",
+            "explanation": "'I understand completely. I'll follow your advice carefully' shows respect for the doctor's professional judgment. 'But I genuinely feel fine' challenges medical advice - how you feel doesn't override a clinical judgment. 'My job isn't particularly physical' argues around the instruction rather than following it.",
+            "id": "bd_l16_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'This is a genuine antique - it is over two hundred years old.' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Auction Hall",
+            "options": [
+                "That's fascinating! Could you tell me more about its history and provenance?",
+                "Very old objects are not necessarily always valuable, however.",
+                "Two hundred years does sound like rather a long time."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "When given an interesting fact about an item, show genuine curiosity and ask a relevant follow-up.",
+            "explanation": "'That's fascinating! Could you tell me more about its history and provenance?' shows real interest and moves the conversation forward. 'Very old objects are not necessarily valuable' is dismissive and challenges the seller's implication. 'Two hundred years does sound long' just restates the obvious without advancing the conversation.",
+            "id": "bd_l16_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'Visibility is very poor today due to dense fog. How would you like to proceed?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "Fog is actually quite common in coastal regions.",
+                "Let's review all applicable safety procedures before we make a final decision.",
+                "I do generally prefer clear weather conditions for flying."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "When a safety concern is raised, suggest a careful, systematic approach before acting.",
+            "explanation": "'Let's review all applicable safety procedures before making a final decision' shows responsible, safety-first professional thinking. 'Fog is common in coastal regions' is a geographic observation that doesn't answer the question. 'I prefer clear weather' states a personal preference but doesn't address the operational decision.",
+            "id": "bd_l16_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'We appear to be off course. Do you have a bearing?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Navigation Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "North is in the direction of the North Pole.",
+                "I'm not entirely certain, but according to my compass we should bear left - that appears to be north.",
+                "I used to be quite good at navigation at one point."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l17_q1",
-            "xpReward": 51,
-            "coinReward": 85,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Give the most practical and helpful response based on available tools and current information.",
+            "explanation": "'I'm not entirely certain, but according to my compass we should bear left - that appears to be north' is honest about uncertainty but immediately uses available tools. 'North is in the direction of the North Pole' is a definition, not a helpful navigation aid. 'I used to be quite good at navigation' doesn't help the current situation.",
+            "id": "bd_l17_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l17_q2",
-            "xpReward": 51,
-            "coinReward": 85,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l17_q3",
-            "xpReward": 51,
-            "coinReward": 85,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l18_q1",
-            "xpReward": 54,
-            "coinReward": 90,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l18_q2",
-            "xpReward": 54,
-            "coinReward": 90,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'This document is marked classified. Why are you examining it?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Archive",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Documents do need to be organised and catalogued properly.",
+                "I apologise - I wasn't aware it was classified. I'll stop immediately.",
+                "Classified files are genuinely very interesting to read."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l18_q3",
-            "xpReward": 54,
-            "coinReward": 90,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "When caught doing something potentially wrong, apologize immediately and correct your behaviour.",
+            "explanation": "'I apologise - I wasn't aware it was classified. I'll stop immediately' takes responsibility, gives an explanation, and immediately corrects the behaviour. 'Documents need to be organized' is a deflection. 'Classified files are very interesting' would be dangerously inappropriate in a real security context.",
+            "id": "bd_l17_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I only have very ripe tomatoes today - they're ideal for making sauce, though.' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Market",
+            "options": [
+                "Tomatoes do indeed come in many wonderful varieties.",
+                "Perfect - very ripe tomatoes make the best sauce. I'll take two kilograms.",
+                "I was actually hoping for firmer tomatoes to eat fresh."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "When a product's characteristics match a specific need perfectly, show knowledge and make a decisive purchase.",
+            "explanation": "'Very ripe tomatoes make the best sauce. I'll take two kilograms' demonstrates food knowledge, confirms the product is right for the purpose, and makes a clear purchase decision. 'Tomatoes come in many varieties' is general knowledge. 'I was hoping for firmer tomatoes' is a valid preference but doesn't engage with the seller's suggestion.",
+            "id": "bd_l17_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'Your test results have come back. Would you like me to explain them to you now?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Treatment Room",
+            "options": [
+                "Yes, please explain everything to me as clearly as you can.",
+                "Medical tests are generally known to be quite stressful.",
+                "How long did it actually take to process the results?"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "When offered important information you need, accept clearly and show you're ready to listen.",
+            "explanation": "'Yes, please explain everything as clearly as you can' gives a clear yes and makes a specific, useful request for clarity. 'Medical tests are stressful' is a general statement. 'How long did the processing take?' asks a procedural question when what matters is the results themselves.",
+            "id": "bd_l18_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'We can offer a fifteen percent discount if you order in larger quantities.' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Warehouse",
+            "options": [
+                "How large a quantity would be required to qualify for that discount?",
+                "Discounts are certainly beneficial for any business relationship.",
+                "Fifteen percent doesn't seem particularly generous, actually."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "When an offer has conditions attached, ask for clarification about those conditions first.",
+            "explanation": "'How large a quantity would be required to qualify?' is the most practical first question - you need to know the condition before you can make a decision. 'Discounts are beneficial for business' is a vague agreement. 'Fifteen percent doesn't seem generous' jumps to negotiation before you even know the full terms.",
+            "id": "bd_l18_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'You are cleared to land on runway three. Winds are easterly at twelve knots.' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Control Tower",
+            "options": [
+                "Easterly at twelve knots, runway three - understood. Beginning final approach.",
+                "What exactly does twelve knots mean in practical terms?",
+                "Runway three is on the right side, is that correct?"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "In professional aviation contexts, always confirm receipt of instructions by repeating key details.",
+            "explanation": "'Easterly at twelve knots, runway three - understood. Beginning final approach' uses the standard professional practice of reading back key details and confirms the action. 'What exactly does twelve knots mean?' would be alarming from a pilot. 'Which side is runway three?' is something a pilot should always know.",
+            "id": "bd_l18_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'Your performance throughout this mission has been exemplary. Keep it up.' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Strategy Chamber",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Thank you, Captain. I'll continue giving everything I have.",
+                "I'm well aware - it has been a great deal of hard work.",
+                "I was simply doing what any competent person would do."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l19_q1",
-            "xpReward": 57,
-            "coinReward": 95,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Accept praise graciously with thanks and a forward-looking commitment.",
+            "explanation": "'Thank you, Captain. I'll continue giving everything I have' accepts the praise appropriately and makes a genuine commitment. 'I'm well aware - it has been hard work' sounds arrogant. 'I was simply doing what anyone would do' undersells the achievement and misses the social cue to accept praise with warmth.",
+            "id": "bd_l19_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l19_q2",
-            "xpReward": 57,
-            "coinReward": 95,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l19_q3",
-            "xpReward": 57,
-            "coinReward": 95,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l20_q1",
-            "xpReward": 60,
-            "coinReward": 100,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l20_q2",
-            "xpReward": 60,
-            "coinReward": 100,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I need to borrow your phone for just one minute. Is that alright with you?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Safe House",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Mobile phones are considered very personal devices.",
+                "Of course - go right ahead. Here it is.",
+                "What exactly do you need to use it for?"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "When a trusted colleague asks to borrow something for a short time, lend it willingly.",
+            "explanation": "'Of course - go right ahead. Here it is' is generous and trusting, appropriate for a colleague. 'Mobile phones are very personal devices' implies reluctance without declining clearly. 'What exactly do you need it for?' questions a simple request and suggests unnecessary distrust.",
+            "id": "bd_l19_q2"
+        },
+        {
+            "instruction": "Chef O-Ring says: 'What is your absolute favourite dish on our entire menu?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Dining Hall",
+            "options": [
+                "I adore the wild mushroom risotto - the texture is always perfectly silky.",
+                "I generally enjoy food that is both tasty and filling.",
+                "Your menu does offer quite a large number of choices."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l20_q3",
-            "xpReward": 60,
-            "coinReward": 100,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "When asked for a specific preference, give a specific, enthusiastic answer with a reason.",
+            "explanation": "'I adore the wild mushroom risotto - the texture is always perfectly silky' gives a specific, enthusiastic answer with a sensory reason. 'I generally enjoy tasty and filling food' is a vague non-answer. 'Your menu offers many choices' is an observation about quantity, not a personal preference.",
+            "id": "bd_l19_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'How has your quality of sleep been recently?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Ward",
+            "options": [
+                "Sleep is widely known to be very important for overall health.",
+                "I've been sleeping well - roughly seven to eight hours each night.",
+                "I sleep in quite a comfortable and well-furnished bedroom."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "When asked about health habits, give specific, quantified information for the best medical value.",
+            "explanation": "'I've been sleeping well - roughly seven to eight hours each night' gives both a quality assessment and a specific quantity - both medically useful. 'Sleep is very important for health' is a general fact. 'I sleep in a comfortable bedroom' describes the environment, not the quality or duration.",
+            "id": "bd_l20_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I need this entire order delivered no later than Friday. Can you guarantee that?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "Friday does happen to come directly after Thursday.",
+                "Yes, absolutely - I'll have written confirmation to you within the hour.",
+                "Deliveries from us are generally reliably on time."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "When asked to commit to a deadline, give a direct yes or no and immediately state your next step.",
+            "explanation": "'Yes, absolutely - I'll have written confirmation to you within the hour' commits clearly to the deadline and adds a professional follow-up step. 'Friday comes directly after Thursday' is a non-answer. 'Deliveries are generally on time' is vague and doesn't specifically commit to this particular Friday.",
+            "id": "bd_l20_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'Did you enjoy your journey with us today?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Aviation Hub",
+            "options": [
+                "Yes - it was extremely smooth and comfortable. The crew were absolutely wonderful.",
+                "Air travel is certainly considerably faster than travelling by road.",
+                "I actually booked this particular flight about three months ago."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "When asked about your experience, give a genuine, specific response that the person will value.",
+            "explanation": "'Yes - it was extremely smooth and comfortable. The crew were absolutely wonderful' gives specific, enthusiastic feedback that any airline crew would value. 'Air travel is faster than road travel' makes a general comparison. 'I booked three months ago' gives irrelevant booking history.",
+            "id": "bd_l20_q3"
         }
     ]
-}
+}\n

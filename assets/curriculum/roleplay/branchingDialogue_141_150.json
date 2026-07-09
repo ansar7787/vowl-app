@@ -4,694 +4,484 @@
     "levels": "141-150",
     "quests": [
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l141_q1",
-            "xpReward": 423,
-            "coinReward": 705,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Dr. Elara says: 'I need to design a global health surveillance system that can detect emerging pandemics quickly enough to enable meaningful prevention. What are the most important design elements?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
+            "scene": "Location: Research Lab",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The most important design elements, ranked by their contribution to speed and sensitivity: first, integration with animal health surveillance rather than treating human and animal health as separate systems - most pandemics originate at the human-animal interface and are detectable there before they reach humans; second, real-time syndromic surveillance rather than confirmed disease surveillance - waiting for confirmed diagnoses adds weeks of delay that is the difference between containment and spread; third, incentive alignment with early reporting - the existing system perversely incentivises delay because countries that report early bear the economic cost of containment while countries that stay silent for longer share those costs less; fourth, a global infrastructure for rapid genomic sequencing that can characterise novel pathogens within hours.",
+                "Design a comprehensive reporting system that connects national health authorities and enables real-time data sharing.",
+                "Engage with the relevant policymakers and gather comprehensive evidence before making any recommendations."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l141_q2",
-            "xpReward": 423,
-            "coinReward": 705,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Four elements: integration with animal health surveillance, real-time syndromic rather than confirmed disease surveillance, incentive alignment rewarding early reporting, and rapid global genomic sequencing infrastructure.",
+            "explanation": "'Integration with animal health surveillance - most pandemics originate at the human-animal interface and are detectable there before reaching humans; real-time syndromic surveillance rather than confirmed disease surveillance - waiting for confirmed diagnoses adds weeks; incentive alignment with early reporting - the existing system perversely incentivises delay because countries that report early bear the economic cost while those that stay silent longer share those costs less; rapid global genomic sequencing infrastructure that can characterise novel pathogens within hours' gives four specific, prioritised design elements with the key insight about incentive misalignment. 'Design a comprehensive reporting system connecting national health authorities and enabling real-time data sharing' describes the standard approach without the specific design elements that determine whether the system is fast enough. 'Most important design elements for a global pandemic detection system' is the question.",
+            "id": "bd_l141_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l141_q3",
-            "xpReward": 423,
-            "coinReward": 705,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l142_q1",
-            "xpReward": 426,
-            "coinReward": 710,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Merchant Kael says: 'I'm being asked to give a keynote address to the annual conference of my industry. I want to say something genuinely worth hearing. What makes a keynote genuinely worth hearing?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
+            "scene": "Location: Trade District",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Three qualities that make a keynote genuinely worth hearing: it says something the audience genuinely doesn't already believe, not something that confirms what they know; it says this thing specifically rather than generally - a genuinely new idea applied to a specific situation, not a general principle stated at an abstract level; and it has intellectual honesty about the evidence, including the evidence that complicates or challenges the central point. A keynote that says something genuinely new with honest evidence is rare, which is exactly why it's remembered.",
+                "Share a compelling personal story from your career that conveys your vision for the industry's future.",
+                "Apply sound commercial judgment and consult with relevant professional advisers before making any significant decision."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l142_q2",
-            "xpReward": 426,
-            "coinReward": 710,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Three qualities: says something the audience doesn't already believe, says it specifically not generally, and is intellectually honest about the evidence including complicating evidence.",
+            "explanation": "'Says something the audience genuinely doesn't already believe not something that confirms what they know; says this thing specifically rather than generally - a genuinely new idea applied to a specific situation not a general principle stated abstractly; has intellectual honesty about the evidence including evidence that complicates or challenges the central point; a keynote that says something genuinely new with honest evidence is rare, which is exactly why it's remembered' gives three specific, demanding qualities. 'Share a compelling personal story that conveys your vision for the industry's future' is a valid technique but describes a method rather than the qualities that make a keynote worth hearing. 'What makes a keynote genuinely worth hearing' is the question.",
+            "id": "bd_l141_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Pilot Jax says: 'I'm asked to evaluate whether a proposed new airspace management system for a major metropolitan area is ready for operational use. What evaluation framework do you apply?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
-            "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "persona": "Pilot Jax",
+            "scene": "Location: Aviation Hub",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "A five-element evaluation framework: first, stress testing under peak traffic conditions rather than average conditions - systems fail at the edges not the centre; second, failure mode testing - what does the system do when any single component fails, and does the failure mode create additional hazards; third, human-machine interface evaluation specifically with the operators who will use it under realistic workload conditions - the interface must work for the actual human at the actual workload; fourth, interoperability testing with all adjacent systems it will need to communicate with; fifth, evaluation of the degraded operations protocol - how does the system transition when it needs to be taken off-line, and does that transition create temporary vulnerabilities.",
+                "Conduct a comprehensive technical review against established certification standards for air traffic management systems.",
+                "Follow established standard operating procedures and consult the relevant technical documentation before proceeding."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l142_q3",
-            "xpReward": 426,
-            "coinReward": 710,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Five-element framework: stress testing under peak conditions, failure mode testing, human-machine interface evaluation under realistic workload, interoperability testing, and degraded operations protocol evaluation.",
+            "explanation": "'Stress testing under peak traffic conditions not average; failure mode testing - what does the system do when any single component fails and does the failure mode create additional hazards; human-machine interface evaluation with actual operators under realistic workload; interoperability testing with all adjacent systems; evaluation of degraded operations protocol - how does the system transition when taken offline and does that transition create temporary vulnerabilities' gives five specific, sophisticated evaluation elements. 'Comprehensive technical review against established certification standards' describes the process category without the specific elements that matter. 'Evaluation framework for an airspace management system ready for operational use' is the question.",
+            "id": "bd_l141_q3"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Captain Hektor says: 'I need to debrief my team after a very difficult mission where we succeeded but some of our actions will be scrutinised. How do you create a genuinely useful debrief in a context of potential external scrutiny?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The presence of potential external scrutiny creates a significant risk of a defensive debrief rather than a genuine learning debrief. To prevent this: separate the operational debrief from any potential review process - make clear that the debrief is for learning, not for producing documentation for external use; create the conditions for complete honesty by clarifying the specific protections that apply to debrief content; and focus the debrief on learning for the next mission, not on accounting for the last one. A debrief that produces defences is a failed debrief. A debrief that produces learning is the only thing that makes the next mission better.",
+                "Ensure the debrief is properly documented so it serves as a formal record of the team's actions and reasoning.",
+                "Ensure the team has clear objectives and hold regular briefings to maintain alignment and accountability."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l143_q1",
-            "xpReward": 429,
-            "coinReward": 715,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Separate the debrief from any review process, clarify the protections that apply to debrief content, and focus on learning for the next mission not accounting for the last one - a debrief that produces defences is a failed debrief.",
+            "explanation": "'The presence of potential external scrutiny creates a significant risk of a defensive debrief; separate the operational debrief from any potential review process - make clear it's for learning not for producing documentation for external use; create conditions for complete honesty by clarifying the specific protections that apply to debrief content; focus on learning for the next mission not accounting for the last one; a debrief that produces defences is a failed debrief' is specific, sophisticated, and identifies the key risk. 'Ensure the debrief is properly documented so it serves as a formal record of the team's actions and reasoning' conflates the debrief with documentation for external use, which is precisely what corrupts the learning function. 'How to create a genuinely useful debrief when some actions may be externally scrutinised' is the question.",
+            "id": "bd_l142_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l143_q2",
-            "xpReward": 429,
-            "coinReward": 715,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l143_q3",
-            "xpReward": 429,
-            "coinReward": 715,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l144_q1",
-            "xpReward": 432,
-            "coinReward": 720,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l144_q2",
-            "xpReward": 432,
-            "coinReward": 720,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I'm advising on the design of a counter-disinformation programme for a democratic government. What are the most important design principles?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Safe House",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Four principles that distinguish effective from ineffective counter-disinformation design: first, prebunking rather than debunking - inoculating people against disinformation techniques before they encounter them is far more effective than correcting false beliefs after they've formed; second, separating the government's role from the response architecture - a government that is perceived as the arbiter of truth in a democracy is itself a disinformation risk; third, building media literacy in the population rather than just countering specific false claims - a population that can assess evidence is more resilient than one that has been told the right answer; fourth, acknowledging that the government itself must be held to the same evidential standards it asks of others.",
+                "Design a rapid response system that can identify and rebut disinformation claims quickly and authoritatively.",
+                "Gather additional intelligence through established channels and conduct a rigorous analytical review before proceeding."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l144_q3",
-            "xpReward": 432,
-            "coinReward": 720,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Four principles: prebunking over debunking, separate government role from the response architecture, build population media literacy not just counter specific claims, and hold the government to the same evidential standards it asks of others.",
+            "explanation": "'Prebunking rather than debunking - inoculating against disinformation techniques before they're encountered is far more effective than correcting false beliefs; separating the government's role from the response architecture - a government perceived as the arbiter of truth in a democracy is itself a disinformation risk; building media literacy in the population rather than just countering specific false claims; acknowledging that the government itself must be held to the same evidential standards it asks of others' gives four specific, sophisticated principles. 'Design a rapid response system that can identify and rebut disinformation claims quickly and authoritatively' describes the approach the answer argues against as less effective than prebunking. 'Most important design principles for a counter-disinformation programme' is the question.",
+            "id": "bd_l142_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I've spent my career in professional kitchens. Now I want to think seriously about what professional cooking has cost me personally. How do you engage with that question honestly?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Dining Hall",
+            "options": [
+                "The question requires genuine honesty rather than the professional narrative of sacrifice as nobility. Professional cooking at the highest level has specific costs: sustained physical damage to the body; a lifestyle incompatible with most forms of stable long-term relationship; a professional culture that rewards endurance over wellbeing in ways that produce lasting psychological harm; and the specific cost of spending the years when children are young not being present for them. These are not small costs to be acknowledged briefly and then celebrated as the price of passion. They are real losses that deserve to be recognised as losses, not romanticised as necessary sacrifices.",
+                "Reflect on the ways in which the demands of professional cooking have shaped your character and professional identity.",
+                "Invest in developing your team through structured training and clear performance standards."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The question requires genuine honesty - professional cooking has specific costs: physical damage, a lifestyle incompatible with stable relationships, a culture rewarding endurance over wellbeing, and absence during children's early years. These are real losses, not sacrifices to be romanticised.",
+            "explanation": "'The question requires genuine honesty rather than professional narrative of sacrifice as nobility; specific costs: sustained physical damage; a lifestyle incompatible with most forms of stable long-term relationship; a professional culture that rewards endurance over wellbeing and produces lasting psychological harm; specific cost of spending years when children are young not being present; these are not small costs to be acknowledged briefly and celebrated as the price of passion - they are real losses that deserve to be recognised as losses not romanticised as necessary sacrifices' is specific, honest, and counter to the typical professional narrative. 'Reflect on the ways in which professional cooking has shaped your character and professional identity' reframes losses as formative experiences, which is precisely the romanticisation the answer cautions against. 'How to engage honestly with what professional cooking has cost you personally' is the question.",
+            "id": "bd_l142_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I'm advising on the ethics of a medical artificial intelligence system that performs better than most clinicians on diagnostic accuracy but is a black box - no one can explain why it reaches its conclusions. What is the ethical issue and what resolves it?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "The ethical issue is not the accuracy itself but the explainability requirement, which serves a function that accuracy alone cannot: it allows the clinician to identify the cases where the system's accuracy is likely not to apply, to communicate meaningfully with the patient about the basis for their diagnosis, and to learn from the system's approach in ways that improve broader diagnostic practice. An accurate black box that cannot be questioned is not a tool that augments clinical judgment - it is a replacement for it, and that replacement has specific harms: it removes accountability, it removes the patient's ability to meaningfully participate in their care, and it removes the self-correcting mechanism that allows medicine to improve. The resolution is explainability as a design requirement, not an optional enhancement.",
+                "Require independent validation of the system's accuracy across diverse patient populations before deployment.",
+                "Follow your institution's ethics framework and seek formal guidance from the appropriate oversight body."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The ethical issue is that accuracy without explainability removes accountability, removes meaningful patient participation, and removes the self-correcting mechanism that allows medicine to improve. Resolution is explainability as a design requirement not an optional enhancement.",
+            "explanation": "'The ethical issue is not accuracy but explainability, which serves functions accuracy alone cannot: allows clinicians to identify cases where the system's accuracy is likely not to apply; allows meaningful communication with patients about the basis for their diagnosis; allows clinicians to learn from the system's approach; an accurate black box that cannot be questioned is not a tool that augments clinical judgment but a replacement for it; that replacement removes accountability, removes meaningful patient participation in care, removes the self-correcting mechanism that allows medicine to improve; resolution is explainability as a design requirement not an optional enhancement' is specific, comprehensive, and identifies the precise ethical issue. 'Require independent validation of accuracy across diverse patient populations' is important but addresses a different issue than the explainability ethical concern. 'What is the ethical issue and what resolves it in a highly accurate but unexplainable medical AI' is the question.",
+            "id": "bd_l143_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I want to understand the deepest reason why some businesses create enduring value and some don't. What is your view?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Warehouse",
+            "options": [
+                "The deepest reason is that enduring businesses are organised around a genuine purpose that creates value for others, whereas businesses that don't endure are organised around extraction - of value from customers, of effort from employees, of returns from investors - without creating equivalent value. Purpose without genuine value creation is marketing. Extraction without purpose is eventually unsustainable because it erodes the relationships and trust on which commercial activity depends. The businesses that endure are the ones where the purpose, the value creation, and the commercial model are genuinely aligned - not strategically aligned but actually aligned in how the organisation makes decisions under pressure.",
+                "Enduring businesses have strong cultures, consistent strategy, excellent operational execution, and strong customer relationships.",
+                "Apply sound commercial judgment and consult with relevant professional advisers before making any significant decision."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Enduring businesses are organised around genuine purpose that creates value for others; non-enduring ones are organised around extraction without equivalent value creation; the businesses that endure are the ones where purpose, value creation, and commercial model are genuinely aligned - not strategically aligned but actually aligned in how the organisation makes decisions under pressure.",
+            "explanation": "'Enduring businesses are organised around a genuine purpose that creates value for others; businesses that don't endure are organised around extraction - of value from customers, effort from employees, returns from investors - without creating equivalent value; purpose without genuine value creation is marketing; extraction without purpose is eventually unsustainable because it erodes the relationships and trust on which commercial activity depends; the businesses that endure are the ones where the purpose, value creation, and commercial model are genuinely aligned - not strategically aligned but actually aligned in how the organisation makes decisions under pressure' is specific and identifies the deepest reason with precision. 'Enduring businesses have strong cultures, consistent strategy, excellent operational execution, and strong customer relationships' describes the characteristics without identifying the deepest cause. 'Deepest reason why some businesses create enduring value and some don't' is the question.",
+            "id": "bd_l143_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'An aircraft I'm commanding has experienced a previously unknown failure mode that no procedure in our manual covers. I have seventy seconds to decide. What is the decision process?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "In seventy seconds, the decision process is: identify what is still working and what is not; identify the one action that creates the most options and preserves the most time - not the action that solves the problem, but the action that buys the most time to solve the problem; communicate the situation to ATC and the cabin crew simultaneously; and make one clear decision rather than three uncertain ones. The greatest risk in a novel failure mode is decision paralysis produced by the attempt to fully understand the situation before acting. Act to buy time, communicate to get help, then work the problem.",
+                "Follow the abnormal procedures checklist in the closest analogous section of the flight manual.",
+                "Follow the published procedures precisely and consult the relevant sections of the flight manual before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Identify what still works, identify the one action that buys the most time rather than the action that solves the problem, communicate to ATC and cabin crew simultaneously, make one clear decision rather than three uncertain ones - act to buy time, communicate to get help, then work the problem.",
+            "explanation": "'Identify what is still working and what is not; identify the one action that creates the most options and preserves the most time - not the action that solves the problem but the action that buys the most time; communicate the situation to ATC and cabin crew simultaneously; make one clear decision rather than three uncertain ones; the greatest risk in a novel failure mode is decision paralysis produced by the attempt to fully understand before acting; act to buy time, communicate to get help, then work the problem' is specific, counter-intuitive, and practically sound. 'Follow the abnormal procedures checklist in the closest analogous section of the flight manual' is what you would do for a known failure mode - for a genuinely novel failure mode, no procedure applies. 'Decision process in seventy seconds for a previously unknown failure mode with no covering procedure' is the question.",
+            "id": "bd_l143_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I've been asked to write the doctrine for a new form of operation that doesn't exist yet. How do you write doctrine for the genuinely novel?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: War Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Writing doctrine for a genuinely novel form of operation requires a different intellectual approach from writing doctrine for established practice. Four principles: first, write doctrine around the enduring human factors and physical constraints that will apply to this type of operation, because those are not novel even when the operation is; second, write explicitly what is known and what is speculative - doctrine that presents speculation as established practice is doctrine that will mislead; third, build in doctrine evolution - define the evidence that would cause the doctrine to be revised and at what interval it will be reviewed; fourth, test the doctrine specifically in tabletop and simulated exercises before it becomes operational guidance, because doctrine written without simulation has almost always missed something important.",
+                "Consult widely with the relevant technical and operational experts and synthesise their views into coherent operational principles.",
+                "Conduct thorough pre-mission planning and ensure all personnel are briefed on their roles and contingencies."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l145_q1",
-            "xpReward": 435,
-            "coinReward": 725,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Four principles: write around enduring human factors and physical constraints, explicitly distinguish what is known from what is speculative, build in doctrine evolution with defined revision triggers, and test in simulation before operational use.",
+            "explanation": "'Write doctrine around the enduring human factors and physical constraints that will apply - those are not novel even when the operation is; write explicitly what is known and what is speculative - doctrine that presents speculation as established practice is doctrine that will mislead; build in doctrine evolution - define the evidence that would cause revision and at what interval it will be reviewed; test specifically in tabletop and simulated exercises before it becomes operational guidance - doctrine written without simulation has almost always missed something important' gives four specific, sophisticated principles. 'Consult widely with technical and operational experts and synthesise their views into coherent principles' is the correct process but doesn't give the design principles for the doctrine itself. 'How to write doctrine for a genuinely novel form of operation' is the question.",
+            "id": "bd_l144_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l145_q2",
-            "xpReward": 435,
-            "coinReward": 725,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l145_q3",
-            "xpReward": 435,
-            "coinReward": 725,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l146_q1",
-            "xpReward": 438,
-            "coinReward": 730,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l146_q2",
-            "xpReward": 438,
-            "coinReward": 730,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I want to understand what separates outstanding intelligence analysis from competent intelligence analysis. What is the specific quality of mind that makes the difference?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Investigation Lab",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The specific quality of mind that makes the difference is the ability to hold a question open without reaching for a conclusion before the evidence supports one. Competent analysts are good at analysing the evidence they have. Outstanding analysts are equally focused on identifying the evidence they don't have and what it would take to get it - and they resist the closure that competent analysts often reach too quickly. This quality is sometimes called comfort with ambiguity, but it's more specific than that: it's the disciplined refusal to allow the analytical discomfort of an open question to drive premature closure.",
+                "Outstanding analysts have better pattern recognition, more domain expertise, and greater comfort with working under pressure.",
+                "Gather additional intelligence through established channels and conduct a rigorous analytical review before proceeding."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l146_q3",
-            "xpReward": 438,
-            "coinReward": 730,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The specific quality is the disciplined ability to hold a question open - the disciplined refusal to allow the analytical discomfort of an open question to drive premature closure.",
+            "explanation": "'The specific quality is the ability to hold a question open without reaching for a conclusion before the evidence supports one; competent analysts are good at analysing the evidence they have; outstanding analysts are equally focused on identifying the evidence they don't have and what it would take to get it; they resist the closure that competent analysts often reach too quickly; this is sometimes called comfort with ambiguity but it's more specific: it's the disciplined refusal to allow the analytical discomfort of an open question to drive premature closure' is specific, precisely articulated, and identifies the exact quality that distinguishes outstanding from competent. 'Outstanding analysts have better pattern recognition, more domain expertise, and greater comfort under pressure' describes the general characteristics of outstanding analysts without the specific quality of mind. 'The specific quality of mind that separates outstanding from competent intelligence analysis' is the question.",
+            "id": "bd_l144_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I'm working on a cookbook that I hope will be the most important thing I ever produce. What would make it genuinely important rather than merely successful?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "The distinction between genuinely important and merely successful is the question every writer of a cookbook should ask and almost none do. A successful cookbook sells well and reflects current taste. A genuinely important cookbook changes how readers understand something fundamental about food, cooking, or their relationship to both. It asks a question that other cookbooks haven't asked, and it answers that question with genuine rigour - not just recipes that work, but reasoning about why they work and what that reveals about the nature of cooking. An important cookbook will often sell less than a successful one, because it asks more of the reader and gives them something that requires engagement rather than just execution.",
+                "Create a cookbook that represents the best of your culinary philosophy and communicates your unique approach to food.",
+                "Apply your culinary expertise and professional judgment, consulting with trusted colleagues as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "A successful cookbook reflects current taste; a genuinely important cookbook changes how readers understand something fundamental about food, cooking, or their relationship to both - it asks a question other cookbooks haven't asked and answers it with genuine rigour.",
+            "explanation": "'A successful cookbook sells well and reflects current taste; a genuinely important cookbook changes how readers understand something fundamental about food, cooking, or their relationship to both; it asks a question that other cookbooks haven't asked and answers it with genuine rigour - not just recipes that work but reasoning about why they work and what that reveals about the nature of cooking; an important cookbook will often sell less than a successful one because it asks more of the reader and gives them something that requires engagement rather than just execution' is specific, honest, and identifies the precise distinction. 'Create a cookbook that represents the best of your culinary philosophy and communicates your unique approach' is what a successful cookbook does, but not what a genuinely important one does. 'What would make a cookbook genuinely important rather than merely successful' is the question.",
+            "id": "bd_l144_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I've been asked to advise a global health organisation on their strategic priorities for the next decade. What approach to this advisory work ensures it produces genuine value rather than a document that is filed and ignored?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Research Lab",
+            "options": [
+                "The most important thing to get right is the quality of the problem definition before any strategic work begins. The majority of strategic documents that are filed and ignored are filed because they addressed the wrong problem - the problem the organisation was comfortable discussing rather than the problem that most constrains its effectiveness. Spend a third of the advisory engagement specifically on understanding what is most constraining the organisation's effectiveness, and specifically on why the organisation might be systematically unable to see its most constraining problem. If you get the problem definition right, the strategy follows. If you get it wrong, the quality of the strategy is irrelevant.",
+                "Ensure the advisory process involves all key stakeholders and produces clear, actionable recommendations.",
+                "Follow established professional guidelines and consult with relevant specialists and oversight bodies as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Spend a third of the advisory engagement on getting the problem definition right - most strategic documents are filed and ignored because they addressed the problem the organisation was comfortable discussing rather than the problem that most constrains its effectiveness.",
+            "explanation": "'The most important thing is the quality of the problem definition before any strategic work begins; most strategic documents that are filed and ignored are filed because they addressed the wrong problem - the problem the organisation was comfortable discussing rather than the most constraining one; spend a third of the advisory engagement specifically on understanding what is most constraining the organisation's effectiveness; specifically on why the organisation might be systematically unable to see its most constraining problem; if you get the problem definition right the strategy follows - if you get it wrong the quality of the strategy is irrelevant' is specific, counter-intuitive, and identifies the critical mechanism. 'Ensure the advisory process involves all key stakeholders and produces clear actionable recommendations' is the standard approach that produces exactly the documents that get filed and ignored. 'How to ensure strategic advisory work produces genuine value rather than a document that is filed and ignored' is the question.",
+            "id": "bd_l145_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I want to create an organisation that will still be genuinely relevant in fifty years. What is the most important thing to design correctly from the start?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "The most important thing to design correctly from the start is the relationship between the organisation's purpose and its governance. Organisations that are still genuinely relevant in fifty years are those where the purpose has remained consistent through significant strategic and operational change. This requires governance that can distinguish between changes to strategy and operations - which are necessary and must be easy - and changes to core purpose - which must be very difficult, requiring extraordinary process and genuine justification. Most organisations invert this: they make purpose easy to change and strategy hard to change, which produces organisations that drift from their core purpose and become rigid in their approach to achieving it.",
+                "Design excellent founding governance, build a strong culture from the start, and invest in talent and systems.",
+                "Apply sound commercial judgment and consult with relevant professional advisers before making any significant decision."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Design governance that makes changes to strategy and operations easy while making changes to core purpose very difficult - most organisations invert this and as a result drift from their purpose while becoming rigid in their approach.",
+            "explanation": "'The relationship between purpose and governance; organisations still relevant in fifty years are those where purpose has remained consistent through significant strategic and operational change; requires governance that distinguishes between strategy and operations - necessary changes that must be easy - and core purpose - which must be very difficult to change; most organisations invert this: purpose easy to change, strategy hard to change, which produces organisations that drift from core purpose and become rigid in their approach to achieving it' is specific, counter-intuitive, and identifies the precise design principle. 'Design excellent founding governance, build a strong culture, and invest in talent and systems' identifies the right categories at too high a level of generality. 'Most important thing to design correctly when creating an organisation intended to be relevant in fifty years' is the question.",
+            "id": "bd_l145_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'Looking back over a long career flying, what is the most important thing you've learned about what it takes to remain genuinely excellent over decades rather than just competent?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Aviation Hub",
+            "options": [
+                "The most important thing is the deliberate preservation of genuine learning as distinct from experience accumulation. Competent pilots accumulate experience and stop learning from it. Excellent pilots find ways to continue being genuinely surprised by what flying teaches them - they find the gaps in their knowledge that their experience doesn't fill, they seek out situations that genuinely challenge rather than confirm their competence, and they maintain a relationship with the craft that is curious rather than merely skilled. Experience can produce a kind of professional certainty that is the enemy of continued excellence. The discipline of remaining a learner while accumulating expertise is the hardest thing to sustain, and it is the thing that distinguishes pilots who were excellent at forty from those who are excellent at sixty.",
+                "The most important thing is continuous training, maintaining currency on the latest procedures, and developing strong crew resource management skills.",
+                "Follow established standard operating procedures and consult the relevant technical documentation before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The deliberate preservation of genuine learning as distinct from experience accumulation - finding the gaps experience doesn't fill, seeking situations that genuinely challenge rather than confirm competence, maintaining a curious rather than merely skilled relationship with the craft.",
+            "explanation": "'Deliberate preservation of genuine learning as distinct from experience accumulation; competent pilots accumulate experience and stop learning from it; excellent pilots find ways to continue being genuinely surprised by what flying teaches them - they find gaps in their knowledge their experience doesn't fill; experience can produce a kind of professional certainty that is the enemy of continued excellence; the discipline of remaining a learner while accumulating expertise is the hardest thing to sustain and is what distinguishes pilots who were excellent at forty from those who are excellent at sixty' is specific, honest, and identifies the precise quality. 'Continuous training, maintaining currency on latest procedures, and developing CRM skills' describes the institutional mechanisms for maintaining competence without the specific quality that produces sustained excellence. 'Most important thing for remaining genuinely excellent over decades rather than just competent' is the question.",
+            "id": "bd_l145_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I want to create an institution that will continue to do important work for a hundred years after I'm no longer here. What are the most important design decisions?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Strategy Chamber",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Four decisions that matter most for institutional longevity: first, founding governance that makes the mission very hard to change and the strategy easy to change - most institutions fail by inverting this; second, leadership selection processes that find people who genuinely care about the mission rather than those who want to run an institution - the motivation for the role shapes every subsequent decision; third, explicit mechanisms for genuine self-correction - not audit and review processes that produce accountability documents, but processes that actually stop the institution from doing the things that stop working; fourth, a relationship with external scrutiny that treats it as a source of intelligence rather than a threat to manage - institutions that manage their external image rather than learning from critics eventually lose contact with their actual impact.",
+                "Design clear governance structures, establish a strong culture from the start, and build systems for leadership succession.",
+                "Consult with your senior advisers and gather all available intelligence before making any final determination."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l147_q1",
-            "xpReward": 441,
-            "coinReward": 735,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Four decisions: governance that makes mission hard to change and strategy easy, leadership selection that finds people who genuinely care about the mission, explicit self-correction mechanisms, and a relationship with external scrutiny as intelligence not a threat.",
+            "explanation": "'Governance that makes mission very hard to change and strategy easy - most institutions fail by inverting this; leadership selection that finds people who genuinely care about the mission rather than those who want to run an institution; explicit mechanisms for genuine self-correction - processes that actually stop the institution from doing things that stop working, not audit processes that produce accountability documents; a relationship with external scrutiny that treats it as intelligence rather than a threat - institutions that manage their external image rather than learning from critics eventually lose contact with their actual impact' gives four specific, sophisticated decisions with precise mechanisms. 'Clear governance structures, strong culture, and leadership succession systems' identifies the right categories at too general a level. 'Most important design decisions for creating an institution that will continue important work for a hundred years' is the question.",
+            "id": "bd_l146_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l147_q2",
-            "xpReward": 441,
-            "coinReward": 735,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l147_q3",
-            "xpReward": 441,
-            "coinReward": 735,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l148_q1",
-            "xpReward": 444,
-            "coinReward": 740,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l148_q2",
-            "xpReward": 444,
-            "coinReward": 740,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I've spent decades in intelligence work. What is the deepest thing you've learned about the nature of truth and how intelligence relates to it?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Safe House",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The deepest thing is that intelligence work teaches you that truth is genuinely harder to arrive at than almost any other profession requires you to believe. Other professions assume that with sufficient effort and expertise you can arrive at certainty. Intelligence work teaches you that most of the things that matter most are genuinely uncertain - not uncertain because of insufficient information, but uncertain because the systems involved are too complex and the actors too adaptive for certainty to be achievable. The most dangerous thing in intelligence is not uncertainty itself, but the human tendency to resolve that uncertainty into false certainty rather than holding it honestly. The most valuable quality an intelligence professional can develop is the ability to act decisively and to be genuinely uncertain about whether they are right.",
+                "The deepest thing is that intelligence work requires building the most accurate picture possible from incomplete and often contradictory information.",
+                "Gather additional intelligence through established channels and conduct a rigorous analytical review before proceeding."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l148_q3",
-            "xpReward": 444,
-            "coinReward": 740,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The deepest learning is that most important truths are genuinely uncertain - not from insufficient information but because the systems are too complex for certainty. The most dangerous thing is resolving genuine uncertainty into false certainty. The most valuable quality is acting decisively while being genuinely uncertain about whether you are right.",
+            "explanation": "'Intelligence work teaches you that most things that matter most are genuinely uncertain - not uncertain because of insufficient information but because the systems involved are too complex and actors too adaptive for certainty to be achievable; the most dangerous thing in intelligence is not uncertainty itself but the human tendency to resolve that uncertainty into false certainty rather than holding it honestly; the most valuable quality is the ability to act decisively and to be genuinely uncertain about whether you are right' is specific, philosophically sophisticated, and honest about the deepest learning. 'Intelligence work requires building the most accurate picture possible from incomplete and often contradictory information' describes the task without the deepest insight. 'Deepest thing learned about the nature of truth and how intelligence relates to it' is the question.",
+            "id": "bd_l146_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I'm reflecting on what food has meant in my life beyond the professional dimension. What has a life devoted to food actually taught me about being human?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "A life devoted to food teaches you three things about being human that are harder to learn any other way: first, that care - the kind of careful, patient, repeated attention to detail that cooking demands - is itself a form of love, and that this form of love is more sustaining than many of the forms that are given more recognition; second, that the pleasure of feeding other people is a specific, undervalued human capacity that is connected to the deepest things we are - the desire to give, to nurture, to create something that becomes part of another person; third, that every meal is a negotiation between what was available and what was desired, and that almost all of the best things in life are created within that negotiation rather than despite it.",
+                "A life devoted to food teaches you about the connection between nourishment, creativity, and human community.",
+                "Apply your culinary expertise and professional judgment, consulting with trusted colleagues as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Three specific learnings: care as a form of love more sustaining than more recognised forms; the pleasure of feeding others is connected to the deepest human desires to give and nurture; the best things in life are created within the negotiation between what was available and what was desired.",
+            "explanation": "'Care - the kind of careful patient repeated attention to detail that cooking demands - is itself a form of love, and this form of love is more sustaining than many forms that are given more recognition; the pleasure of feeding other people is a specific undervalued human capacity connected to the deepest things we are - the desire to give, to nurture, to create something that becomes part of another person; every meal is a negotiation between what was available and what was desired, and almost all of the best things in life are created within that negotiation rather than despite it' gives three specific, profound learnings with genuine insight. 'A life devoted to food teaches you about the connection between nourishment, creativity, and human community' is true but states the conclusion at too high a level of generality. 'What a life devoted to food has actually taught you about being human' is the question.",
+            "id": "bd_l146_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I've been asked to advise on a deeply difficult ethical question: whether a society is justified in restricting individual freedom significantly to prevent a public health catastrophe that would harm far more people. What is the principled framework for thinking about this?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "The principled framework has several non-negotiable elements: first, proportionality - the restriction of individual freedom must be genuinely necessary and not merely convenient, and the harm it seeks to prevent must be serious enough and certain enough to justify the restriction; second, temporal limitation - freedoms restricted in an emergency cannot remain restricted after the emergency ends without independent democratic justification; third, procedural legitimacy - the decision to restrict freedom must be made through processes that allow genuine challenge and review; fourth, equitable application - restrictions applied disproportionately to already-disadvantaged groups without additional justification are an injustice compounded; fifth, epistemic honesty - the evidence base for the restriction must be disclosed and subject to independent review, because emergency powers that cannot be questioned tend not to be relinquished.",
+                "Apply established public health ethical frameworks to balance individual rights with collective wellbeing.",
+                "Follow established professional guidelines and consult with relevant specialists and oversight bodies as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Five non-negotiable elements: proportionality, temporal limitation, procedural legitimacy, equitable application, and epistemic honesty about the evidence base.",
+            "explanation": "'Proportionality - restriction must be genuinely necessary not merely convenient; temporal limitation - freedoms restricted in an emergency cannot remain restricted after it ends without independent democratic justification; procedural legitimacy - decisions must allow genuine challenge and review; equitable application - restrictions applied disproportionately to already-disadvantaged groups without additional justification are injustice compounded; epistemic honesty - evidence base must be disclosed and subject to independent review because emergency powers that cannot be questioned tend not to be relinquished' gives five specific, non-negotiable framework elements. 'Apply established public health ethical frameworks to balance individual rights with collective wellbeing' is a general directive without the specific elements. 'Principled framework for restricting individual freedom to prevent public health catastrophe' is the question.",
+            "id": "bd_l147_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I'm facing a strategic decision where the most commercially attractive option significantly disadvantages a community that depends on our current operations. What does business ethics actually require in this situation?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "Business ethics in this situation requires two things that are in genuine tension: the legitimate pursuit of commercial objectives in a way that creates sustainable value, and the recognition that commercial decisions that impose concentrated harms on communities that have come to depend on them carry obligations beyond legal compliance. What this concretely requires: genuine advance consultation with the affected community - not notification of a decision already made but genuine input into the decision; transparent and honest communication about the timeline and the reasoning; meaningful mitigation of the specific harm - not a gesture but a genuine effort to address the most serious impacts; and an honest assessment of whether the commercial gain genuinely justifies the human cost, tested against whether you would be comfortable with full public transparency about the trade-off you made and why.",
+                "Consider the long-term reputational and social licence implications of your decision alongside the commercial considerations.",
+                "Ensure all business activities comply with relevant regulations and reflect the organisation's stated values."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Four requirements: genuine advance consultation, transparent honest communication about timeline and reasoning, meaningful rather than gestural mitigation, and an honest trade-off test requiring comfort with full public transparency.",
+            "explanation": "'Two things in genuine tension: legitimate pursuit of commercial objectives and recognition that commercial decisions imposing concentrated harms on dependent communities carry obligations beyond legal compliance; concretely requires: genuine advance consultation - not notification but genuine input; transparent and honest communication about timeline and reasoning; meaningful mitigation not a gesture; honest assessment whether commercial gain genuinely justifies the human cost, tested against whether you would be comfortable with full public transparency about the trade-off made and why' is specific, honest, and gives a concrete test. 'Consider the long-term reputational and social licence implications alongside commercial considerations' reframes an ethical question as a risk management question, which is a different and weaker framework. 'What business ethics actually requires when the most commercially attractive option significantly disadvantages a dependent community' is the question.",
+            "id": "bd_l147_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'I want to write a history of commercial aviation that honestly addresses the industry's impact on climate change alongside its contributions to human progress. How do you hold that complexity?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "The intellectual challenge is to hold two things simultaneously without resolving the tension falsely in either direction: commercial aviation has genuinely transformed human access to each other across distance, has made possible human connections and opportunities that did not previously exist, and has contributed to a material improvement in human welfare at a global scale; and it has done this at a cost to the atmosphere and ultimately to the conditions for human life that is real and significant and was knowingly pursued after the consequences were understood. The history that holds this complexity refuses the temptation of either the triumphalist narrative that aviation progress was a cost-free good, or the retrospective condemnation that treats the people who built the industry as villains who should have known better than the consensus of their time.",
+                "Present the industry's contributions to human progress honestly and address the climate impact as a serious challenge now being addressed.",
+                "Follow established standard operating procedures and consult the relevant technical documentation before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Hold the genuine contributions and the genuine costs simultaneously without resolving the tension falsely - resist both the triumphalist narrative and the retrospective condemnation that treats people as villains who should have known better than the consensus of their time.",
+            "explanation": "'Hold two things simultaneously without resolving the tension falsely: commercial aviation has genuinely transformed human access to each other and contributed to material improvement in human welfare at a global scale; and it has done this at a cost to the atmosphere that is real and significant and was knowingly pursued after the consequences were understood; the history refuses the temptation of the triumphalist narrative that aviation was a cost-free good, or the retrospective condemnation that treats the people who built the industry as villains who should have known better than the consensus of their time' is specific, intellectually honest, and gives a precise methodological principle. 'Present contributions honestly and address the climate impact as a serious challenge now being addressed' resolves the tension in the more comfortable direction rather than holding it. 'How to hold the complexity of aviation's contributions to human progress and its climate impact in a history' is the question.",
+            "id": "bd_l147_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I want to understand the deepest reason why some military commanders produce genuine strategic clarity and others produce strategic confusion even when they're equally intelligent. What is your view?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The deepest reason is not intelligence - it is the commander's relationship with uncertainty. Commanders who produce strategic clarity have developed the discipline of acting decisively from an honest account of what they know and what they don't know. Commanders who produce strategic confusion tend to fill the space of what they don't know with confident assertion, which creates a false certainty that cascades into contradiction when events diverge from the assertion. Strategic clarity requires the courage to say 'we don't know X and here is how we're managing that uncertainty' rather than the professional safety of stating 'we assess X will happen.' The willingness to name and hold uncertainty is rarer than intelligence and more important.",
+                "Strategic clarity comes from clear thinking, strong communication skills, and the ability to synthesise complex information into actionable direction.",
+                "Lead by example, maintain clear lines of command, and ensure accountability at every level of the organisation."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l149_q1",
-            "xpReward": 447,
-            "coinReward": 745,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The deepest reason is the commander's relationship with uncertainty - commanders who produce clarity act decisively from an honest account of what they know and don't know; those who produce confusion fill uncertainty with confident assertion that creates false certainty.",
+            "explanation": "'Not intelligence but the commander's relationship with uncertainty; commanders who produce strategic clarity have developed the discipline of acting decisively from an honest account of what they know and what they don't know; commanders who produce strategic confusion tend to fill the space of what they don't know with confident assertion, which creates a false certainty that cascades into contradiction when events diverge; strategic clarity requires the courage to say we don't know X and here is how we're managing that uncertainty rather than the professional safety of stating we assess X will happen; the willingness to name and hold uncertainty is rarer than intelligence and more important' is specific, counter-intuitive, and precisely articulated. 'Strategic clarity comes from clear thinking, strong communication skills, and ability to synthesise complex information' describes the general characteristics without the specific quality. 'Deepest reason why some commanders produce genuine strategic clarity and others produce strategic confusion even with equal intelligence' is the question.",
+            "id": "bd_l148_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l149_q2",
-            "xpReward": 447,
-            "coinReward": 745,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l149_q3",
-            "xpReward": 447,
-            "coinReward": 745,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l150_q1",
-            "xpReward": 450,
-            "coinReward": 750,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l150_q2",
-            "xpReward": 450,
-            "coinReward": 750,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'What is the most important thing that a life in intelligence work teaches you about the nature of loyalty?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Surveillance Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The most important thing intelligence work teaches about loyalty is that the object of loyalty matters more than the quality of the loyalty itself. People in intelligence work tend to have very high loyalty - the work and the relationships it creates produce a kind of loyalty that is intense and durable. But intelligence work also provides, more vividly than most professions, examples of what happens when high-quality loyalty is directed at the wrong object - when people are loyal to an institution that has become corrupted, to a leader whose judgment has failed, or to a mission that has drifted from what justified it. The discipline that intelligence work teaches, if you pay attention, is not to be less loyal but to be intentional about what you are loyal to and why, and to be willing to recognise when the object of your loyalty no longer merits it.",
+                "Intelligence work teaches that loyalty must be earned and maintained through consistent professional conduct and mutual trust.",
+                "Gather additional intelligence through established channels and conduct a rigorous analytical review before proceeding."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l150_q3",
-            "xpReward": 450,
-            "coinReward": 750,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The most important learning is that the object of loyalty matters more than the quality of the loyalty - high-quality loyalty directed at the wrong object produces the most serious failures; the discipline is to be intentional about what you are loyal to and why, and willing to recognise when it no longer merits it.",
+            "explanation": "'The object of loyalty matters more than the quality of the loyalty itself; intelligence work produces intense and durable loyalty and also provides vivid examples of what happens when high-quality loyalty is directed at the wrong object - when people are loyal to a corrupted institution, a leader whose judgment has failed, or a mission that has drifted from what justified it; the discipline is not to be less loyal but to be intentional about what you are loyal to and why, and to be willing to recognise when the object of your loyalty no longer merits it' is specific, honest, and identifies the precise learning. 'Loyalty must be earned and maintained through consistent professional conduct and mutual trust' describes loyalty from the perspective of the person receiving it rather than the deeper learning about the object of loyalty. 'Most important thing a life in intelligence work teaches about the nature of loyalty' is the question.",
+            "id": "bd_l148_q2"
+        },
+        {
+            "instruction": "Chef O-Ring says: 'I've been given the opportunity to give the most important speech of my career to an audience of the most significant food professionals in the world. What do you say that is genuinely worth their time?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Dining Hall",
+            "options": [
+                "What is genuinely worth their time is not what they expect from the most celebrated chef in the room - an account of the journey, the philosophy, the achievements. What is genuinely worth their time is what only you can say and have been reluctant to say: the thing you've learned that contradicts the prevailing beliefs of the industry; the mistake that most shaped your practice and that you've never discussed publicly; the thing the food world gets most wrong and what it would have to do differently to get it right; and your honest assessment of what food means and can mean in a world with the specific challenges this world has. Not what you know that they should know. What you believe that challenges what they believe.",
+                "Share your culinary philosophy and what has driven your creative development over the course of your career.",
+                "Apply your culinary expertise and professional judgment, consulting with trusted colleagues as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "What is genuinely worth their time is what only you can say and have been reluctant to say: the thing that contradicts prevailing industry beliefs, the mistake that most shaped your practice that you've never discussed publicly, what the food world gets most wrong, and your honest assessment of what food means in this world.",
+            "explanation": "'Not the expected account of journey, philosophy, and achievements - what is genuinely worth their time is what only you can say and have been reluctant to say: the thing you've learned that contradicts the prevailing beliefs of the industry; the mistake that most shaped your practice and that you've never discussed publicly; the thing the food world gets most wrong; your honest assessment of what food means and can mean in a world with the specific challenges this world has; not what you know that they should know - what you believe that challenges what they believe' is specific, courageous, and identifies precisely what makes a speech genuinely worth hearing. 'Share your culinary philosophy and what has driven your creative development over your career' is the expected speech - the one that is not genuinely worth their time. 'What to say in the most important speech of your career to the most significant food professionals in the world' is the question.",
+            "id": "bd_l148_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I want to understand what the practice of medicine, at its most honest, requires of the person who practices it that is different from what it requires professionally.' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "What medicine at its most honest requires personally, beyond the professional, is the sustained willingness to be present with suffering that you cannot fix - to sit with a patient for whom you have nothing more to offer except genuine human presence, without the professional distance that makes that tolerable at the cost of making it less real. Medicine at its most honest also requires the personal honesty to acknowledge that some of your clinical decisions are influenced by things that have nothing to do with the patient - time pressure, cognitive load, your own discomfort with uncertainty - and the discipline to create practices that compensate for those influences. And it requires the long-term practice of not letting what you see in medicine every day become something you stop seeing properly because familiarity has made it invisible.",
+                "Medicine requires continuous learning, genuine compassion, and the maintenance of professional standards over a career.",
+                "Follow established professional guidelines and consult with relevant specialists and oversight bodies as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Three personal requirements beyond the professional: sustained willingness to be present with suffering you cannot fix without professional distance; personal honesty that some clinical decisions are influenced by non-patient factors and creating compensating practices; not letting familiarity make suffering invisible.",
+            "explanation": "'The sustained willingness to be present with suffering that you cannot fix - to sit with a patient for whom you have nothing more to offer except genuine human presence, without the professional distance that makes that tolerable at the cost of making it less real; the personal honesty to acknowledge that some clinical decisions are influenced by things that have nothing to do with the patient - time pressure, cognitive load, your own discomfort with uncertainty - and the discipline to create practices that compensate for those influences; the long-term practice of not letting what you see every day become something you stop seeing properly because familiarity has made it invisible' gives three specific, personal requirements beyond the professional. 'Continuous learning, genuine compassion, and maintenance of professional standards' describes the professional requirements. 'What medicine at its most honest requires personally beyond what it requires professionally' is the question.",
+            "id": "bd_l149_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'After a long career in business, what do you believe most deeply about the relationship between commerce and human wellbeing?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "The most honest thing I believe is that commerce at its best is one of the most powerful mechanisms humans have created for coordinating effort and creating shared value across differences of background, culture, and geography. And that commerce at its worst is a mechanism for the concentration of value in ways that are ultimately self-defeating for the very system that creates it. The distinction between the two is not primarily about regulation - it is about whether the people running commercial organisations have genuinely internalised that their long-term interests and the interests of the people and communities they affect are the same thing, or whether they have decided that the extraction of short-term value at the expense of long-term relationships is a viable strategy. It mostly isn't. The businesses that believe it is tend to find out eventually.",
+                "Commerce creates value that improves human wellbeing when it operates within appropriate regulatory frameworks and ethical guidelines.",
+                "Maintain strong client relationships through consistent service delivery and regular proactive communication."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "At its best, commerce is one of the most powerful mechanisms for coordinating effort and creating shared value. At its worst, it concentrates value in self-defeating ways. The distinction is not regulation but whether leaders have genuinely internalised that their interests and the interests of those they affect are the same.",
+            "explanation": "'Commerce at its best is one of the most powerful mechanisms humans have created for coordinating effort and creating shared value across differences of background, culture, and geography; at its worst it is a mechanism for concentration of value in ways that are ultimately self-defeating for the very system that creates it; the distinction is not primarily about regulation - it is about whether the people running commercial organisations have genuinely internalised that their long-term interests and the interests of those they affect are the same thing; the businesses that believe short-term extraction at the expense of long-term relationships is viable tend to find out eventually that it isn't' is specific, honest, and gives a precise account. 'Commerce creates value that improves human wellbeing when it operates within appropriate regulatory frameworks and ethical guidelines' is true but describes the conditions rather than the deepest belief. 'Most deeply believed about the relationship between commerce and human wellbeing after a long career' is the question.",
+            "id": "bd_l149_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'I've been asked to speak at the retirement ceremony for a colleague who has flown for forty years. They asked me specifically to say something true rather than something kind. What do you say?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Sky-Dock",
+            "options": [
+                "Something true rather than something kind: You flew four decades during which the technology changed more fundamentally than at any other point in the history of flight. That required a kind of adaptability that isn't measured in qualifications but in the willingness to understand, decade by decade, that what you knew was becoming what you once knew. You did that. The other thing that is true and perhaps more important: the specific quality of someone who has flown this long without a serious incident is not primarily technical mastery - it is the sustained humility to remain genuinely concerned about the ways you might be wrong. That is rarer than any skill, and it is the thing that kept the people in your aircraft safe on forty years of flights.",
+                "Speak about their dedication to aviation, the colleagues they've flown with, and the passengers they've safely transported over forty years.",
+                "Follow established standard operating procedures and consult the relevant technical documentation before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Something true: they flew during the most technologically transformative period in aviation history and adapted decade by decade. The rarer quality is not technical mastery but the sustained humility to remain genuinely concerned about the ways you might be wrong - that is what kept people safe.",
+            "explanation": "'You flew four decades during which the technology changed more fundamentally than at any other point in the history of flight; that required adaptability - the willingness to understand decade by decade that what you knew was becoming what you once knew; the other thing true and perhaps more important: the specific quality of someone who has flown this long without a serious incident is not primarily technical mastery - it is the sustained humility to remain genuinely concerned about the ways you might be wrong; that is rarer than any skill and it is the thing that kept the people in your aircraft safe on forty years of flights' is specific, true, and identifies the rarest quality. 'Speak about their dedication to aviation, colleagues flown with, and passengers safely transported' is kind but not specifically true in the sense the colleague asked for. 'What to say at a colleague's retirement ceremony when they asked for something true rather than something kind' is the question.",
+            "id": "bd_l149_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I'm coming to the end of my career. What is the most important thing to pass on to the next generation of leaders who will face challenges I can't imagine?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Captain Hektor",
+            "scene": "Location: War Room",
+            "options": [
+                "The most important thing to pass on is not knowledge - knowledge ages and the challenges they face will be different from mine. It is a specific quality of relationship with difficulty: the ability to face something genuinely hard without knowing whether you will succeed, and to continue thinking clearly and acting with integrity throughout. The leaders who fail at the hardest moments are usually not those who lack skill - they are those who cannot maintain their values under pressure, those who cannot think clearly when the outcome is genuinely uncertain, and those who cannot accept the cost of acting with integrity when the cost is real. Those qualities are developed not through instruction but through the kind of assignments and experiences that test them. The most important thing I can do is create those opportunities and then get out of the way.",
+                "Pass on the technical knowledge, strategic frameworks, and professional standards you've developed over your career.",
+                "Apply established doctrine and best practices, consulting with relevant specialists as appropriate before acting."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The most important thing is not knowledge but a specific quality of relationship with difficulty - the ability to face something genuinely hard without knowing whether you will succeed and to continue thinking clearly and acting with integrity throughout. Developed through assignments that test those qualities, not through instruction.",
+            "explanation": "'The most important thing is not knowledge - knowledge ages and the challenges they face will be different; it is a specific quality of relationship with difficulty: the ability to face something genuinely hard without knowing whether you will succeed and to continue thinking clearly and acting with integrity throughout; the leaders who fail at the hardest moments are usually not those who lack skill but those who cannot maintain their values under pressure, cannot think clearly when outcome is genuinely uncertain, cannot accept the cost of acting with integrity when the cost is real; those qualities are developed not through instruction but through assignments and experiences that test them; the most important thing I can do is create those opportunities and then get out of the way' is specific, honest, and identifies the precise quality. 'Pass on technical knowledge, strategic frameworks, and professional standards' passes on the things that age rather than the quality that endures. 'Most important thing to pass on to the next generation of leaders who will face challenges you can't imagine' is the question.",
+            "id": "bd_l150_q1"
+        },
+        {
+            "instruction": "Agent Nyx says: 'After a career in intelligence, what is the deepest thing you've learned about the relationship between knowledge and power?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Agent Nyx",
+            "scene": "Location: Safe House",
+            "options": [
+                "The deepest thing is that knowledge does not automatically translate into power, and power does not automatically translate into knowledge - and that the most dangerous thing in any system is when those who hold power are systematically insulated from the knowledge that would constrain it. Intelligence work teaches you that the quality of a society's knowledge about itself - including its knowledge about the things it does badly and the things its powerful actors do that its public norms forbid - determines whether that society can correct itself. Societies that close off access to that knowledge in the name of security, efficiency, or social order tend to accumulate uncorrected errors at a rate that eventually becomes catastrophic. The people who do the work of preserving access to that knowledge - journalists, inspectors, investigators, analysts who speak when it is inconvenient to do so - are doing something closer to the essential work of civilisation than most of the work that is given more visibility and reward.",
+                "Knowledge, when applied effectively, creates the ability to act decisively and with greater precision than would otherwise be possible.",
+                "Gather additional intelligence through established channels and conduct a rigorous analytical review before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The most dangerous thing in any system is when those who hold power are insulated from the knowledge that would constrain it - societies that close off that knowledge tend to accumulate uncorrected errors at a catastrophic rate; preserving access to constraining knowledge is closer to the essential work of civilisation.",
+            "explanation": "'Knowledge does not automatically translate into power and power does not automatically translate into knowledge; the most dangerous thing in any system is when those who hold power are systematically insulated from the knowledge that would constrain it; the quality of a society's knowledge about itself determines whether that society can correct itself; societies that close off access to that knowledge tend to accumulate uncorrected errors at a rate that eventually becomes catastrophic; the people who preserve access to that knowledge - journalists, inspectors, investigators, analysts who speak when it is inconvenient - are doing something closer to the essential work of civilisation than most of the work given more visibility and reward' is specific, philosophically serious, and identifies a precisely articulated insight. 'Knowledge applied effectively creates the ability to act decisively with greater precision' describes the tactical value of intelligence without the deeper insight. 'Deepest thing learned about the relationship between knowledge and power after a career in intelligence' is the question.",
+            "id": "bd_l150_q2"
+        },
+        {
+            "instruction": "Chef O-Ring says: 'After thirty years of cooking professionally, what is the single most honest thing you could say to a young person thinking about entering this profession?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Dining Hall",
+            "options": [
+                "The single most honest thing is that this profession will take more than it gives in certain dimensions - it will take your body, many of your weekends and evenings, and some relationships that deserved more time. And it will give you back something that is hard to find elsewhere: the specific pleasure of making something with your hands that becomes part of another person's day, their memory, their celebration. Whether that exchange is worth it is entirely personal and cannot be decided for you. But you should know it is an exchange, not a gift.",
+                "The single most honest thing is that the profession has changed significantly and offers many more opportunities now than it used to.",
+                "The single most honest thing is that it is one of the most creatively fulfilling careers you can choose if you have genuine talent."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The most honest account is that the profession is an exchange - it takes specific things and gives back something specific - and whether that exchange is worth it cannot be decided for you.",
+            "explanation": "'This profession will take your body, many of your weekends and evenings, and some relationships that deserved more time; it will give you back the specific pleasure of making something with your hands that becomes part of another person's day, memory, celebration; whether that exchange is worth it is entirely personal and cannot be decided for you - but you should know it is an exchange, not a gift' is specific, honest, and balanced. 'The profession has changed significantly and offers more opportunities' is a reassuring statement not an honest one. 'One of the most creatively fulfilling careers if you have genuine talent' is encouraging but incomplete - it doesn't name what it takes.",
+            "id": "bd_l150_q3"
         }
     ]
-}
+}\n

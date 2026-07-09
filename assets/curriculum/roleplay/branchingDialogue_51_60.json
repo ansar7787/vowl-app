@@ -4,694 +4,484 @@
     "levels": "51-60",
     "quests": [
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Captain Hektor says: 'Our fuel reserves are at sixty percent. Is that sufficient for the planned route?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Navigation Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Sixty percent should be adequate, but I'd recommend filing a fuel top-up request before we depart - I prefer at least seventy-five percent as a safety buffer.",
+                "Fuel reserves are a critical factor in any long-distance operation.",
+                "That depends on the exact distance and conditions we encounter en route."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l51_q1",
-            "xpReward": 153,
-            "coinReward": 255,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Give a professional assessment with a specific recommendation and your safety rationale.",
+            "explanation": "'Sixty percent is adequate, but I'd recommend a top-up before we depart - I prefer at least seventy-five percent as a safety buffer' is specific, responsible, and explains the safety reasoning. 'Fuel reserves are critical' is a general statement. 'That depends on conditions' is true but non-committal when a direct assessment was asked for.",
+            "id": "bd_l51_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l51_q2",
-            "xpReward": 153,
-            "coinReward": 255,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l51_q3",
-            "xpReward": 153,
-            "coinReward": 255,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l52_q1",
-            "xpReward": 156,
-            "coinReward": 260,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l52_q2",
-            "xpReward": 156,
-            "coinReward": 260,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I need a plausible cover story for why I'm attending this conference. What do you suggest?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Safe House",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Cover stories need to be grounded in verifiable, consistent details.",
+                "Say you're a research consultant specialising in emerging market analysis - it's broad enough to avoid deep technical questions but specific enough to be credible.",
+                "I'd suggest you use a variation on your previous cover to maintain consistency."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l52_q3",
-            "xpReward": 156,
-            "coinReward": 260,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Suggest a specific, credible cover story with a clear rationale for why it works.",
+            "explanation": "'Research consultant in emerging market analysis - broad enough to avoid technical questions but specific enough to be credible' is a specific suggestion with a sound rationale. 'Cover stories need verifiable details' is general advice. 'Use a variation on your previous cover' is vague and could be problematic if the previous cover is known.",
+            "id": "bd_l51_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'A guest has told us they are coeliac. What dishes on tonight's menu can we safely offer them?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "Coeliac guests require completely gluten-free options, of course.",
+                "From tonight's menu, the pan-seared salmon and the roasted vegetable platter are both naturally gluten-free. I'd also confirm with the kitchen that there's no cross-contamination risk.",
+                "We do have several dishes that could possibly be adapted to be gluten-free."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Know your menu's allergen profile and always address cross-contamination as a professional concern.",
+            "explanation": "'The salmon and roasted vegetable platter are naturally gluten-free - and I'd confirm no cross-contamination risk with the kitchen' is specific, accurate, and professionally responsible about cross-contamination. 'Coeliac guests require gluten-free options' is a general statement. 'Several dishes could possibly be adapted' is vague and does not guarantee safety for a coeliac guest.",
+            "id": "bd_l51_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I'd like to start you on a new medication. It may cause some mild side effects initially. Are you comfortable with that?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "I trust your judgment. What side effects should I watch for, and when should I contact you if they concern me?",
+                "All medications carry some risk of side effects by their very nature.",
+                "I'd prefer to try a non-medication approach first, if that's possible."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Accept medical advice responsibly and ask the two most practical questions about the treatment.",
+            "explanation": "'I trust your judgment. What side effects should I watch for, and when should I contact you if they concern me?' shows trust and asks the two most clinically important follow-up questions. 'All medications have side effects' is a general fact. 'I'd prefer a non-medication approach' challenges the professional recommendation without a medical basis.",
+            "id": "bd_l52_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I'm prepared to offer you an exclusive distribution deal in your region. This could be transformative for your business.' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "Thank you - I'm genuinely interested. Could you send me the proposed terms in writing so I can review them properly?",
+                "Exclusive distribution deals can certainly be very transformative for a business.",
+                "That is a very significant and generous offer."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Show genuine interest in a business opportunity while immediately taking the professional step to review it in writing.",
+            "explanation": "'I'm genuinely interested. Could you send me the proposed terms in writing?' shows real interest while taking the correct professional step. 'Exclusive deals can be transformative' is a general statement. 'That is a very significant and generous offer' is an emotional response rather than a business one.",
+            "id": "bd_l52_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'One of our engines is showing an unusual reading. It may just be a sensor issue, but I want a second opinion.' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "Unusual engine readings should always be taken very seriously.",
+                "Let me look at the data. The reading pattern is consistent with a faulty sensor, but I'd recommend we run the full diagnostic cycle before making any assumptions.",
+                "Sensor malfunctions do occur from time to time in older aircraft."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "When asked for a technical second opinion on a safety matter, give a specific analysis and recommend verification.",
+            "explanation": "'The pattern is consistent with a faulty sensor, but I'd recommend running the full diagnostic cycle before making assumptions' gives a specific assessment and a responsible verification step. 'Unusual readings should always be taken seriously' is a general statement. 'Sensor malfunctions occur from time to time' is also general and doesn't help assess this specific reading.",
+            "id": "bd_l52_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I've decided to promote you. This means relocating to our primary base of operations. How do you feel about that?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "I'm honoured by the promotion, Captain. Could I have a week to make the necessary personal arrangements before confirming the relocation?",
+                "Relocations always involve significant personal and logistical challenges.",
+                "That is a major personal and professional decision to process all at once."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l53_q1",
-            "xpReward": 159,
-            "coinReward": 265,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Accept a promotion gratefully, then ask for a reasonable amount of time to address the personal implications.",
+            "explanation": "'I'm honoured. Could I have a week to make the necessary personal arrangements before confirming the relocation?' accepts the honour while making a very reasonable personal request. 'Relocations always involve significant challenges' focuses on the difficulty. 'That is a major personal and professional decision' is an observation, not a constructive response.",
+            "id": "bd_l53_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l53_q2",
-            "xpReward": 159,
-            "coinReward": 265,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l53_q3",
-            "xpReward": 159,
-            "coinReward": 265,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l54_q1",
-            "xpReward": 162,
-            "coinReward": 270,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l54_q2",
-            "xpReward": 162,
-            "coinReward": 270,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I suspect our secure communication channel may have been compromised. What action do you recommend?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Surveillance Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Compromised communication channels are a very serious security concern.",
+                "Switch to our backup channel immediately, assume all recent communications have been intercepted, and alert the operations centre to conduct a full security audit.",
+                "I'd suggest we run some tests to verify whether it's actually compromised before taking any action."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l54_q3",
-            "xpReward": 162,
-            "coinReward": 270,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "When a communication channel may be compromised, recommend immediate protective action, not verification testing.",
+            "explanation": "'Switch to the backup channel immediately, assume all recent communications have been intercepted, and alert operations for a full security audit' takes immediate, comprehensive protective action. 'Compromised communication channels are a serious security concern' is a general statement. 'Run tests to verify before acting' risks further exposure if the channel is indeed compromised - act first, verify after.",
+            "id": "bd_l53_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I'm trying to reduce food waste in my kitchen. What practical steps do you recommend?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Kitchen",
+            "options": [
+                "Food waste is a significant issue throughout the hospitality industry.",
+                "Three immediate steps: implement a daily stock rotation with FIFO, plan your menu around items close to their use-by date, and repurpose vegetable trimmings into stocks and broths.",
+                "Reducing food waste requires a genuine cultural shift in how the whole kitchen thinks."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Give specific, immediately actionable steps rather than general principles.",
+            "explanation": "'Daily stock rotation with FIFO, menu planning around near-use-by items, and vegetable trimmings into stocks' gives three specific, immediately actionable steps. 'Food waste is a significant issue in hospitality' is a general statement. 'Reducing waste requires a cultural shift' is true but is a long-term aspiration, not an actionable step.",
+            "id": "bd_l53_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'You've been referred to me for a second opinion. What specifically concerns you about your current diagnosis?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Clinic",
+            "options": [
+                "I'm not entirely convinced the current diagnosis explains the full range of my symptoms - particularly the intermittent joint pain, which hasn't been adequately addressed.",
+                "Getting a second medical opinion is a completely reasonable thing to do.",
+                "I just want to make sure that all the possibilities have been properly explored."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Be specific about the clinical gap in your current diagnosis when seeking a second opinion.",
+            "explanation": "'I'm not convinced the diagnosis explains the full range of symptoms - particularly the intermittent joint pain, which hasn't been adequately addressed' is specific and gives the doctor a clear starting point. 'Getting a second opinion is reasonable' is a general statement. 'I want all possibilities explored' is vague - what specific possibilities are you concerned about?",
+            "id": "bd_l54_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'Our competitor is offering a lower price on this exact product. Why should I buy from you?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Market Square",
+            "options": [
+                "Price is just one factor in the total cost of ownership - our after-sales support, warranty terms, and delivery reliability consistently make us better value over the full lifetime of the product.",
+                "Our products are widely recognised for their superior quality.",
+                "We've been in business for many more years than our competitors."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "When challenged on price, redirect to total value, not just list price.",
+            "explanation": "'Price is one factor - our after-sales support, warranty terms, and delivery reliability make us better total value' is a sophisticated, evidence-based response. 'Our products are widely recognised for superior quality' is an unsubstantiated claim. 'We've been in business longer' is about longevity, not value.",
+            "id": "bd_l54_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'The airport we're landing at has a shorter runway than our aircraft is rated for in standard conditions. How do you assess the risk?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "A shorter runway is always a risk factor that needs to be taken seriously.",
+                "With our current fuel load and today's temperature and wind conditions, I calculate our landing distance at approximately ninety percent of available runway - within limits, but I'd recommend a full configuration check and briefing the cabin crew for a firm landing.",
+                "I would recommend diverting to an alternate airport with adequate runway length."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Assess the risk with specific calculations and recommend targeted, proportionate mitigations.",
+            "explanation": "'Ninety percent of available runway - within limits, but I'd recommend a full configuration check and briefing the cabin crew for a firm landing' is specific, calculated, and proportionate. 'A shorter runway is always a risk factor' is a general statement. 'Divert to an alternate airport' is a disproportionate response to a risk that is within limits.",
+            "id": "bd_l54_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'Two of our senior officers have a serious interpersonal conflict that is affecting the whole team's performance. How do you recommend I handle it?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: War Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Interpersonal conflicts between senior officers have a disproportionate impact on team morale.",
+                "I'd start with individual private conversations with each officer - understand both perspectives fully before bringing them together for a facilitated resolution conversation with clear behavioural expectations going forward.",
+                "You may need to consider whether one of them needs to be reassigned."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l55_q1",
-            "xpReward": 165,
-            "coinReward": 275,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Recommend a structured, fair approach to conflict resolution with clear steps.",
+            "explanation": "'Individual private conversations first, then a facilitated resolution conversation with clear behavioural expectations' is a structured, fair, step-by-step approach. 'Conflicts between senior officers have a disproportionate impact' is a general statement. 'Consider whether one needs to be reassigned' jumps to an extreme solution before attempting resolution.",
+            "id": "bd_l55_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l55_q2",
-            "xpReward": 165,
-            "coinReward": 275,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l55_q3",
-            "xpReward": 165,
-            "coinReward": 275,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l56_q1",
-            "xpReward": 168,
-            "coinReward": 280,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l56_q2",
-            "xpReward": 168,
-            "coinReward": 280,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I've been offered a significant amount of money to share information from this case. What should I do?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Investigation Lab",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Report the approach immediately to your supervisor - this is a bribery attempt and potentially an indication that someone is trying to compromise the case from the outside.",
+                "The fact that someone is offering money suggests the case is more significant than we thought.",
+                "Refuse the offer firmly and don't engage any further with the person who made it."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l56_q3",
-            "xpReward": 168,
-            "coinReward": 280,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "When approached with a bribe, both refusing AND reporting are required - not just refusing.",
+            "explanation": "'Report immediately to your supervisor - this is a bribery attempt and possibly indicates an attempt to compromise the case' addresses both the immediate ethical action and the operational intelligence value of the approach. 'The fact that someone offered money suggests the case is significant' is an interesting observation but not an action. 'Refuse and don't engage further' is ethically correct but fails to report an attempt to compromise the investigation.",
+            "id": "bd_l55_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I'm considering using a molecular gastronomy technique in a new dish. How do you think our clientele would respond?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "Molecular gastronomy has certainly attracted considerable interest in high-end dining.",
+                "It really depends on our specific clientele profile. For our regular guests who appreciate innovation, it could be exciting - but I'd recommend testing it as a tasting menu option before adding it to the main menu.",
+                "Molecular gastronomy techniques require very specialised equipment and training."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Give a context-specific, nuanced assessment rather than a general statement about the technique.",
+            "explanation": "'It depends on our specific clientele profile - test it as a tasting menu option before adding it to the main menu' is specific to the context and recommends a sensible low-risk testing approach. 'Molecular gastronomy has attracted interest in high-end dining' is a general market observation. 'It requires specialised equipment and training' talks about production challenges, not client response.",
+            "id": "bd_l55_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I want to discuss the possibility of a surgical option. This carries some risk but could significantly improve your quality of life. What are your initial thoughts?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "My initial thought is that I'd like to fully understand the risk profile before saying anything more. Could you walk me through the specific risks, the success rate, and what recovery looks like?",
+                "Surgery is always a major decision that requires very careful consideration.",
+                "I'm not sure I'm ready to consider surgery at this point in time."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "When presented with a significant medical option, ask for the complete picture before forming a position.",
+            "explanation": "'I'd like to fully understand the risk profile - specific risks, success rate, and recovery' asks for the three most critical pieces of information needed to make an informed decision. 'Surgery is always a major decision' is true but gives no direction. 'I'm not sure I'm ready' closes off a potentially beneficial option without first getting the full information.",
+            "id": "bd_l56_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I want to offer you preferential pricing in exchange for an exclusivity clause in our contract. Is that something you'd be open to discussing?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "Exclusivity clauses can be quite restrictive for a buyer in a dynamic market.",
+                "I'm open to discussing it, but I'd need to understand the scope of the exclusivity, the duration, and how the preferential pricing compares to the market before committing to anything.",
+                "That's an interesting proposition - I'd need my legal team to review any exclusivity clause."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Show openness to a commercial discussion while specifying exactly what you need to know before proceeding.",
+            "explanation": "'I'm open to discussing it, but I need to understand the scope, duration, and how the preferential pricing compares to the market' asks the three right questions before committing. 'Exclusivity clauses can be restrictive' is a general concern without engaging with this specific offer. 'I'd need my legal team to review it' is appropriate but is a step for after you've decided you want to proceed.",
+            "id": "bd_l56_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'A passenger has become verbally aggressive with a flight attendant. How would you like to handle this?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "The flight attendant should try harder to de-escalate the situation on their own.",
+                "I'll make a PA announcement reminding all passengers of their obligation to maintain respectful conduct on board. If the behaviour continues, I'm prepared to divert and have the passenger removed by authorities.",
+                "Aggressive behaviour on aircraft is an increasingly common problem in the industry."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Handle an in-flight security situation with a proportionate, sequential approach.",
+            "explanation": "'PA announcement first reminding all passengers of respectful conduct obligations; if it continues, prepared to divert' is proportionate and follows a clear escalation sequence. 'The flight attendant should try harder to de-escalate' puts the burden entirely on the front-line staff member. 'Aggressive behaviour is increasingly common' is a general observation, not an action.",
+            "id": "bd_l56_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'We've intercepted intelligence suggesting a possible attack on our position within the next twenty-four hours. How do you prepare?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Strategy Chamber",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Credible intelligence about an imminent attack requires immediate action.",
+                "Immediately: elevate to full alert status, double the watch, conduct a full equipment and supply audit, brief all personnel, and establish clear command succession in case of casualties.",
+                "We should verify the intelligence before making any significant operational changes."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l57_q1",
-            "xpReward": 171,
-            "coinReward": 285,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "In response to credible threat intelligence, list specific, immediate preparedness actions.",
+            "explanation": "'Elevate to full alert, double the watch, full equipment audit, brief all personnel, establish command succession' gives five specific, concrete preparedness actions. 'Credible intelligence requires immediate action' is a general statement. 'Verify before making significant changes' is too slow when the potential threat is only twenty-four hours away.",
+            "id": "bd_l57_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l57_q2",
-            "xpReward": 171,
-            "coinReward": 285,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l57_q3",
-            "xpReward": 171,
-            "coinReward": 285,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l58_q1",
-            "xpReward": 174,
-            "coinReward": 290,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l58_q2",
-            "xpReward": 174,
-            "coinReward": 290,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'My contact has left a message with a location, but no time. How do you interpret that?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Safe House",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Missing information in covert messages always needs to be decoded very carefully.",
+                "If the time was deliberately omitted, my interpretation is that they want you to choose a time - which puts you in control of when and potentially signals that they are under observation and couldn't safely be more specific.",
+                "It could simply mean the message was incomplete or that they ran out of time."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l58_q3",
-            "xpReward": 174,
-            "coinReward": 290,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "Provide a specific, reasoned interpretation of ambiguous intelligence.",
+            "explanation": "'If the time was deliberately omitted, they want you to choose the time - signals they may be under observation and couldn't safely be more specific' is a specific, reasoned intelligence interpretation. 'Missing information always needs careful decoding' is a general statement. 'It could simply be incomplete' is the obvious explanation - a trained analyst should consider the more operationally significant possibilities.",
+            "id": "bd_l57_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'We've just received a large booking cancellation for Saturday night, leaving us with thirty empty covers. What do you recommend?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "Last-minute booking cancellations are one of the most challenging aspects of restaurant management.",
+                "Three options: launch an immediate social media promotion with a last-minute deal, call your standby list of regular guests personally, or reach out to a local corporate client who books regularly.",
+                "We should focus on filling those covers as quickly as possible."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "When facing a specific business problem, provide multiple specific, actionable solutions.",
+            "explanation": "'Three options: social media promotion with a last-minute deal, call standby list of regular guests personally, or reach out to a local corporate client' gives three specific, immediately actionable options. 'Last-minute cancellations are one of the most challenging aspects' is a general statement. 'We should fill those covers as quickly as possible' states the objective but gives no means of achieving it.",
+            "id": "bd_l57_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I want to refer you to a mental health professional to complement your physical treatment. How do you respond to that suggestion?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Clinic",
+            "options": [
+                "I appreciate you raising this. I've been open to exploring all factors that might be affecting my health - I'm happy to make that appointment.",
+                "Mental health support is widely recognised as part of holistic medical care.",
+                "I'm not sure I see the connection between my mental health and my physical symptoms."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Respond to a mental health referral with openness and a willingness to explore it.",
+            "explanation": "'I appreciate you raising this - I'm happy to make that appointment' shows openness and immediate action. 'Mental health support is widely recognised as part of holistic care' is a general statement. 'I'm not sure I see the connection' is resistant to a professional medical recommendation without a valid reason.",
+            "id": "bd_l58_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I notice you've visited our showroom three times this week without purchasing. What would it take to earn your business today?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Auction Hall",
+            "options": [
+                "I appreciate the directness. The sticking point for me is the warranty terms - if you can offer a three-year guarantee rather than one year, I'm ready to commit today.",
+                "Shopping around and doing your research before purchasing is simply prudent.",
+                "I need a little more time to make a considered decision of this size."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "When a seller asks what it would take, give them a specific, actionable answer.",
+            "explanation": "'The sticking point is the warranty terms - three-year guarantee instead of one year, and I'm ready to commit today' is specific, actionable, and gives the seller a clear path to closing the deal. 'Shopping around is simply prudent' justifies the behaviour but doesn't move toward a decision. 'I need more time' is a deflection when you've already visited three times.",
+            "id": "bd_l58_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'We've arrived at our destination airport and are number four in the landing queue. I'd like your assessment of our fuel situation.' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "We currently have approximately thirty-two minutes of holding fuel remaining. If our wait exceeds twenty minutes, I recommend declaring minimum fuel and requesting priority landing.",
+                "Being number four in the landing queue is quite common at busy airports.",
+                "Fuel management during holding patterns is one of the most critical skills in commercial aviation."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Give a specific fuel assessment with a clear, conditional decision criterion.",
+            "explanation": "'Thirty-two minutes of holding fuel remaining - if our wait exceeds twenty minutes, I recommend declaring minimum fuel and requesting priority landing' is specific, time-bounded, and gives a clear action trigger. 'Number four in the queue is common at busy airports' is a general statement. 'Fuel management during holding is a critical skill' is true but not a specific assessment.",
+            "id": "bd_l58_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I'm considering retiring within the next two years. Who do you think is ready to take over command?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Succession planning is an absolutely critical part of any leadership transition.",
+                "From my assessment, Lieutenant Commander Torres has the strongest combination of operational experience and leadership ability - though I'd recommend giving them at least one major independent command to test them before the transition.",
+                "This is an important decision that deserves a formal succession assessment process."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l59_q1",
-            "xpReward": 177,
-            "coinReward": 295,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 1,
+            "hint": "When asked for a succession opinion, give a specific name with a clear rationale and a development recommendation.",
+            "explanation": "'Lieutenant Commander Torres - strongest combination of operational experience and leadership ability, and I'd recommend one major independent command to test them' is specific with a name, rationale, and development step. 'Succession planning is critical' is a general statement. 'This deserves a formal assessment process' is appropriate as a general recommendation but avoids giving the specific opinion requested.",
+            "id": "bd_l59_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l59_q2",
-            "xpReward": 177,
-            "coinReward": 295,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l59_q3",
-            "xpReward": 177,
-            "coinReward": 295,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l60_q1",
-            "xpReward": 180,
-            "coinReward": 300,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l60_q2",
-            "xpReward": 180,
-            "coinReward": 300,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I've been offered a promotion that would take me away from field work and into a management role. What would you consider in my position?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Investigation Lab",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Career transitions from field work to management are very significant professional decisions.",
+                "I'd weigh three things: whether you still feel the most alive in field work, whether the management role allows you to multiply your impact by developing other agents, and what your personal five-year vision for your career actually looks like.",
+                "Management roles offer greater security and influence than field positions."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Give specific, personal criteria to consider rather than generic career advice.",
+            "explanation": "'Weigh whether you still feel most alive in field work, whether management multiplies your impact by developing others, and what your five-year personal vision looks like' gives three specific, personal, meaningful criteria. 'Career transitions from field to management are significant' is a general statement. 'Management offers greater security and influence' presents one side without the complexity of the actual decision.",
+            "id": "bd_l59_q2"
+        },
+        {
+            "instruction": "Chef O-Ring says: 'A junior chef has presented me with a dish concept they're very proud of. It's creative but not quite there yet. How should I give feedback?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Kitchen",
+            "options": [
+                "Start by genuinely acknowledging what is original and exciting about the concept - then explain precisely what needs to be refined and why. Be specific about the technical issue, not vague about the overall dish.",
+                "Feedback to junior staff should always be very encouraging and positive.",
+                "Honest feedback, even when difficult to hear, is ultimately the most respectful thing to give."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l60_q3",
-            "xpReward": 180,
-            "coinReward": 300,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Describe the specific structure of high-quality, constructive feedback.",
+            "explanation": "'Acknowledge what's original and exciting, then explain precisely what needs to be refined and why - be specific about the technical issue' gives a clear, structured feedback approach. 'Feedback to junior staff should always be encouraging' is an incomplete model - honest feedback, not just encouragement, is what develops chefs. 'Honest feedback is the most respectful thing to give' is a general principle without practical guidance.",
+            "id": "bd_l59_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I'm concerned about your weight, which has increased significantly since your last visit. Can we talk about this?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "Thank you for raising this directly. I've noticed it myself - my routine has changed significantly in the past year and I'd genuinely welcome your guidance on how to address it.",
+                "Weight management is a very complex issue with many contributing factors.",
+                "I do think about my weight quite a lot, actually."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Respond to a sensitive health observation with honesty, self-awareness, and openness to guidance.",
+            "explanation": "'Thank you for raising this directly. I've noticed it myself - my routine has changed and I'd welcome your guidance' shows maturity, self-awareness, and genuine openness to help. 'Weight management is a complex issue with many factors' is a general statement that doesn't engage personally. 'I do think about my weight quite a lot' is an observation but doesn't move toward a solution.",
+            "id": "bd_l60_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'A long-term client is asking for a discount that is genuinely beyond what our margin allows. How do you handle this?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "Long-term client relationships are among the most valuable assets in any business.",
+                "I'd have an honest conversation: acknowledge the value of the relationship, explain our margin reality transparently, and then explore non-price ways to add value - extended warranty, priority delivery, preferential terms on future orders.",
+                "In business, sometimes you need to accept a short-term loss to protect a long-term relationship."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "When a client requests an impossible discount, explore value-add alternatives before accepting a loss.",
+            "explanation": "'Acknowledge the relationship value, explain our margin reality transparently, then explore non-price value-adds - extended warranty, priority delivery, preferential terms' is specific and creative. 'Long-term client relationships are very valuable' is a general statement. 'Sometimes accept a short-term loss for long-term relationship' is a valid principle but accepting margin pressure without exploring alternatives is poor commercial practice.",
+            "id": "bd_l60_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'We're two hours from our destination and a passenger has reported a serious medical situation on board. What is the immediate protocol?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "Medical situations on board aircraft are always handled as the highest priority.",
+                "First, radio ahead to the destination for a medical team on arrival; ask if any medical professionals are on board; follow the on-board emergency medical protocol; and assess whether the severity warrants diverting to the nearest airport.",
+                "We should ask if there is a doctor on board who can assist."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Give the complete, multi-step protocol for an in-flight medical emergency.",
+            "explanation": "'Radio ahead to destination for medical team, check for medical professionals on board, follow emergency protocol, assess whether to divert' covers all the key steps in the correct order. 'Medical situations on board are always the highest priority' is a general statement. 'Ask if there is a doctor on board' is one step in the protocol but misses all the others.",
+            "id": "bd_l60_q3"
         }
     ]
-}
+}\n

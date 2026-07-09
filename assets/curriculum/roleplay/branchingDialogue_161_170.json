@@ -4,694 +4,484 @@
     "levels": "161-170",
     "quests": [
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Captain Hektor says: 'I've been asked to negotiate a treaty with a party that has violated previous agreements. How do you design a treaty that accounts for the likelihood of future non-compliance?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Design for verification, not trust. Every material commitment in the treaty must be independently verifiable before it takes effect. Sequence the exchange of obligations so that neither party has completed their side before verification of the other's. And build automatic consequences into the treaty text itself - not threats, but pre-agreed automatic responses to specific verifiable violations - so that non-compliance triggers consequences without requiring a new negotiation about whether to respond.",
+                "Negotiate for strong enforcement mechanisms and international oversight.",
+                "Apply established doctrine and best practices, consulting with relevant specialists as appropriate before acting."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l161_q1",
-            "xpReward": 483,
-            "coinReward": 805,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Design for verification not trust: verifiable commitments, sequenced obligations, and automatic pre-agreed consequences for specific verifiable violations.",
+            "explanation": "'Every material commitment must be independently verifiable before taking effect; sequence the exchange of obligations so neither party completes their side before verification of the other's; build automatic pre-agreed consequences for specific verifiable violations into the treaty text so non-compliance triggers consequences without requiring a new negotiation about whether to respond' is specific, sophisticated, and addresses the stated problem. 'Negotiate for strong enforcement mechanisms and international oversight' is the conventional approach but doesn't address the specific design problem of accounting for likely non-compliance.",
+            "id": "bd_l161_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l161_q2",
-            "xpReward": 483,
-            "coinReward": 805,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l161_q3",
-            "xpReward": 483,
-            "coinReward": 805,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l162_q1",
-            "xpReward": 486,
-            "coinReward": 810,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l162_q2",
-            "xpReward": 486,
-            "coinReward": 810,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I want to understand what separates the most effective covert operations from the most disastrous ones. What is the pattern?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Surveillance Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The pattern is assumption density. Disastrous operations are typically built on many untested assumptions stacked on each other - assumptions about the target's knowledge, their response, third-party behaviour, the operational environment, and the exit. When any one fails, it cascades into the others. Effective operations are built on the minimum number of assumptions, each tested as independently as possible before being incorporated. The planning discipline is to ask: if this assumption is wrong, what breaks, and is there a way to test this assumption before the operation depends on it?",
+                "Effective operations have better planning, intelligence, and execution than disastrous ones.",
+                "Follow established operational protocols and consult with your handler before taking any significant action."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l162_q3",
-            "xpReward": 486,
-            "coinReward": 810,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The pattern is assumption density - disastrous operations stack many untested assumptions; effective ones use the minimum number tested as independently as possible before being incorporated.",
+            "explanation": "'The pattern is assumption density; disastrous operations are typically built on many untested assumptions stacked on each other; when any one fails it cascades; effective operations are built on the minimum number of assumptions, each tested as independently as possible before being incorporated; the discipline is to ask: if this assumption is wrong what breaks, and is there a way to test it before the operation depends on it' is specific, identifies the precise pattern, and gives a planning discipline. 'Effective operations have better planning, intelligence, and execution' is tautological.",
+            "id": "bd_l161_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I've been asked to advise on the design of a food system for a city that wants to dramatically reduce its carbon footprint without reducing food quality or access. Where do you start?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Kitchen",
+            "options": [
+                "The highest-impact starting point is reducing food waste in the supply chain, not changing what people eat. Fifty percent of food produced globally is lost before it reaches the table - the carbon cost of producing food that is then wasted is enormous. Interventions at this level - better storage, better distribution logistics, better use of surplus by restaurants and institutions - can be implemented quickly and have large measurable impact before you've changed a single food preference, which is a much harder and slower intervention.",
+                "Start by mapping the city's current food system to understand where the carbon footprint is concentrated.",
+                "Draw inspiration from your culinary heritage and contemporary trends to create something distinctive and memorable."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The highest-impact starting point is reducing supply chain food waste - fifty percent of food produced globally is lost before reaching the table - before attempting to change food preferences which is harder and slower.",
+            "explanation": "'The highest-impact starting point is reducing food waste in the supply chain not changing what people eat; fifty percent of food produced globally is lost before it reaches the table; interventions at this level - better storage, better distribution logistics, better use of surplus by restaurants and institutions - can be implemented quickly with large measurable impact before changing food preferences, which is much harder and slower' is specific, evidence-based, and counter-intuitive. 'Map the city's current food system to understand where the carbon footprint is concentrated' is the right second step.",
+            "id": "bd_l161_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I've been asked to chair an inquiry into a serious failure in a health system. The political pressure is to produce findings quickly. How do you manage this?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "Manage the timeline pressure explicitly and publicly from the start: state clearly what a credible inquiry requires in terms of time and why, and what cutting that time would cost in terms of quality of findings. Then deliver interim findings that are genuinely credible at the time they are produced rather than preliminary findings that are dressed up to appear complete. The worst outcome is a quick inquiry that produces findings that later need to be corrected - this damages both the health system and the credibility of the inquiry process itself.",
+                "Prioritise the most important questions and focus the inquiry on those to meet the timeline.",
+                "Engage with the relevant policymakers and gather comprehensive evidence before making any recommendations."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Manage timeline pressure explicitly and publicly from the start, stating what a credible inquiry requires and what cutting it costs; deliver interim findings that are genuinely credible rather than preliminary findings dressed up to appear complete.",
+            "explanation": "'Manage the timeline pressure explicitly and publicly from the start: state clearly what a credible inquiry requires in terms of time and why, and what cutting that time would cost; deliver interim findings that are genuinely credible rather than preliminary findings dressed up to appear complete; the worst outcome is a quick inquiry that produces findings later needing correction - damaging both the health system and the credibility of the inquiry process' is specific and names the precise risk. 'Prioritise the most important questions to meet the timeline' sounds reasonable but may produce incomplete or misleading findings.",
+            "id": "bd_l162_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I've built a successful business over twenty years and I'm being asked to mentor a first-generation entrepreneur from a background very different from mine. What specific awareness do you need?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "Three specific awarenesses: first, the structural advantages you had that you have normalised into assumptions - access to capital, networks, professional vocabulary, and social credibility are not universal starting points; second, the specific ways your advice may be technically correct but structurally inapplicable to their situation - advice that assumes access you had that they don't is not useful advice; third, that the most valuable thing you can offer is not your experience of building a business but your honest account of the specific barriers that you did not face that they will face, and how you would approach those barriers if you were starting with their constraints.",
+                "Be sensitive to cultural differences and be open to learning from their different perspective.",
+                "Apply sound commercial judgment and consult with relevant professional advisers before making any significant decision."
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Three specific awarenesses: the structural advantages you had that you've normalised into assumptions; the ways your technically correct advice may be structurally inapplicable; and that your most valuable offering is your honest account of the barriers you didn't face that they will.",
+            "explanation": "'The structural advantages you had that you've normalised into assumptions - access to capital, networks, professional vocabulary, social credibility are not universal starting points; the specific ways your advice may be technically correct but structurally inapplicable to their situation - advice that assumes access you had that they don't is not useful; the most valuable thing you can offer is not your experience of building a business but your honest account of the specific barriers you did not face that they will face and how you would approach those barriers with their constraints' gives three specific, substantive awarenesses. 'Be sensitive to cultural differences and be open to learning from their perspective' is important but misses the structural self-awareness that matters most here.",
+            "id": "bd_l162_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'I've been asked to advise on the human factors considerations for the first human missions to Mars. What is genuinely different about this context?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Cockpit",
+            "options": [
+                "Three things genuinely different from any previous aviation or spaceflight human factors context: first, communication delay - at peak distance, there will be twenty-four minutes each way, meaning no real-time advice from Earth during any emergency; second, the impossibility of rescue or evacuation for any emergency that cannot be managed within the crew's own capability - the mission must be self-contained to a degree that no previous mission has been; third, the duration and isolation - not weeks or months but years, which produces psychological effects on interpersonal dynamics, leadership, and decision quality that have not been experienced at this scale in a professional setting.",
+                "The main human factors considerations are the same as for any long-duration space mission but at a larger scale.",
+                "Follow established standard operating procedures and consult the relevant technical documentation before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Three genuinely different considerations: twenty-four-minute communication delay making real-time Earth advice impossible; impossibility of rescue or evacuation requiring complete crew self-sufficiency; and years-duration isolation producing psychological effects on dynamics and decision quality at unprecedented scale.",
+            "explanation": "'Communication delay - twenty-four minutes each way at peak distance, meaning no real-time advice during any emergency; impossibility of rescue or evacuation - the mission must be self-contained to a degree no previous mission has been; the duration and isolation - not weeks or months but years, producing psychological effects on interpersonal dynamics, leadership, and decision quality not experienced at this scale in a professional setting' gives three specific, genuinely different considerations. 'The same as for any long-duration space mission but at larger scale' misses the specific qualitative differences.",
+            "id": "bd_l162_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I want to understand what makes some military cultures genuinely self-correcting and others unable to learn from their mistakes. What is the mechanism?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: War Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The mechanism is whether the culture punishes the discovery of mistakes or rewards it. In cultures that punish the discovery of mistakes - through blame, through career consequences for those who report problems, through the expectation that things should have been right the first time - people stop discovering mistakes publicly. This doesn't make the mistakes go away; it makes them invisible until they become catastrophic. In cultures that genuinely reward the discovery of mistakes, problems surface early and are corrected before they compound. The specific question to ask about any military culture is: who gets rewarded - the person who discovers a problem before it becomes a crisis, or the person who maintains the appearance that no problem existed?",
+                "Self-correcting military cultures have strong leadership, clear accountability structures, and effective after-action review processes.",
+                "Apply established doctrine and best practices, consulting with relevant specialists as appropriate before acting."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l163_q1",
-            "xpReward": 489,
-            "coinReward": 815,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The mechanism is whether the culture punishes or rewards the discovery of mistakes - in cultures that punish it, mistakes become invisible until catastrophic; in cultures that reward it, problems surface early; the test is: who gets rewarded, the person who discovers a problem or the person who maintains the appearance no problem existed?",
+            "explanation": "'Whether the culture punishes the discovery of mistakes or rewards it; in cultures that punish discovery people stop discovering mistakes publicly - the mistakes don't go away but become invisible until catastrophic; in cultures that genuinely reward discovery problems surface early and are corrected before compounding; the specific question to ask: who gets rewarded - the person who discovers a problem before it becomes a crisis or the person who maintains the appearance no problem existed' is specific, identifies the precise mechanism, and gives a diagnostic question. 'Strong leadership, clear accountability, and effective after-action review' describes what self-correcting cultures do without the mechanism.",
+            "id": "bd_l163_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l163_q2",
-            "xpReward": 489,
-            "coinReward": 815,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l163_q3",
-            "xpReward": 489,
-            "coinReward": 815,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l164_q1",
-            "xpReward": 492,
-            "coinReward": 820,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l164_q2",
-            "xpReward": 492,
-            "coinReward": 820,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I've been asked to write the ethical guidelines for a new signals intelligence capability that doesn't exist yet. What principles must be established before the capability is deployed?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Safe House",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Four principles that must be established before deployment, not after: first, purpose limitation with meaningful enforcement - the capability can be used only for specified purposes with a genuine mechanism that prevents scope creep; second, judicial authorisation for any use against citizens of the state operating the capability - the executive cannot authorise itself; third, a sunset clause requiring legislative reauthorisation at regular intervals - capabilities authorised in one security environment should not automatically persist into a different one; fourth, an independent audit function with genuine access - not a review body that sees what the capability produces but one that can assess how it was used.",
+                "Establish clear legal authorities, oversight mechanisms, and protocols for authorisation.",
+                "Gather additional intelligence through established channels and conduct a rigorous analytical review before proceeding."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l164_q3",
-            "xpReward": 492,
-            "coinReward": 820,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Four principles before deployment: purpose limitation with meaningful enforcement; judicial authorisation for use against own citizens; sunset clauses requiring regular legislative reauthorisation; and independent audit function with genuine access to assess how the capability was used not just what it produced.",
+            "explanation": "'Purpose limitation with meaningful enforcement - capability can be used only for specified purposes with a genuine mechanism preventing scope creep; judicial authorisation for any use against citizens of the state operating it; sunset clause requiring legislative reauthorisation at regular intervals; independent audit function with genuine access to how it was used not just what it produced' gives four specific, non-negotiable principles. 'Clear legal authorities, oversight mechanisms, and authorisation protocols' describes the categories without the specific principles within each.",
+            "id": "bd_l163_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I've spent my career in haute cuisine. I'm being asked whether I regret that I spent so little time understanding ordinary food - the food people actually eat every day. How do you answer honestly?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Restaurant",
+            "options": [
+                "The honest answer is yes, with a specific reason: the most important food questions - what people can actually afford to eat, what is accessible in different communities, what makes a meal something a family returns to rather than merely experiences - are questions that haute cuisine systematically avoids because the answers are inconvenient. The techniques I've developed could address those questions but for most of my career I chose not to direct them there. That is a genuine choice I made, and the honest account of it is that I prioritised the refinement of craft over the application of that craft where it would have the most human impact.",
+                "It is not a regret - haute cuisine has pushed the boundaries of what cooking can be and that has value.",
+                "Apply your culinary expertise and professional judgment, consulting with trusted colleagues as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The honest answer is yes - the most important food questions are about accessibility, affordability, and what people actually return to, and haute cuisine systematically avoids those questions because the answers are inconvenient; that is a genuine choice with genuine consequences.",
+            "explanation": "'The honest answer is yes, with a specific reason: the most important food questions - what people can afford to eat, what is accessible in different communities, what makes a meal a family returns to rather than merely experiences - are questions haute cuisine systematically avoids because the answers are inconvenient; the techniques I've developed could address those questions but for most of my career I chose not to; that is a genuine choice I made and the honest account is that I prioritised the refinement of craft over the application of that craft where it would have the most human impact' is specific, honest, and takes genuine responsibility. 'Haute cuisine has pushed the boundaries of what cooking can be and that has value' is a defence rather than an honest answer.",
+            "id": "bd_l163_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I want to understand what the most honest account of the limits of evidence-based medicine actually is. What can it tell us and what can't it?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Clinic",
+            "options": [
+                "The most honest account is that evidence-based medicine is excellent at understanding average effects in populations and very limited in understanding what will happen to this specific patient in front of you. The gap is not a failure of evidence-based medicine - it is an inherent feature. Randomised controlled trials are designed to identify average effects by removing individual variation. But the patient in front of you is the individual variation. The art of applying evidence to an individual requires clinical judgment that evidence-based medicine cannot provide and doesn't claim to - but which is sometimes obscured by the prestige of the method.",
+                "Evidence-based medicine provides the best available evidence for clinical decision-making but must be integrated with clinical experience and patient values.",
+                "Conduct a thorough review of the relevant literature and consult with specialist colleagues before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Evidence-based medicine is excellent at average effects in populations and very limited at predicting what will happen to this specific patient - the gap is inherent because RCTs remove individual variation while the patient in front of you is the individual variation.",
+            "explanation": "'Excellent at understanding average effects in populations and very limited in understanding what will happen to this specific patient; the gap is not a failure but an inherent feature - randomised controlled trials are designed to identify average effects by removing individual variation; the patient in front of you is the individual variation; the art of applying evidence to an individual requires clinical judgment that evidence-based medicine cannot provide and doesn't claim to but which is sometimes obscured by the prestige of the method' is specific, honest, and identifies the precise limit. 'Must be integrated with clinical experience and patient values' is correct but doesn't identify the specific nature of the limit.",
+            "id": "bd_l164_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I've been offered the opportunity to testify before a legislative committee on an economic policy I know well. What are the most important disciplines for giving genuinely useful expert testimony?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Warehouse",
+            "options": [
+                "Three disciplines: first, be more specific about what you don't know and what remains genuinely contested than about what you're confident of - committees are saturated with expert confidence and genuinely useful testimony often takes the form of narrowing rather than resolving; second, distinguish between what the evidence shows and what your values recommend as the policy response to that evidence - these are different things and conflating them is the most common way expert testimony becomes advocacy disguised as expertise; third, answer the question asked rather than the question you wish you had been asked - reframing the committee's question is usually a signal that you're avoiding its substance.",
+                "Present your expert knowledge clearly, anticipate likely questions, and prepare comprehensive answers.",
+                "Apply sound commercial judgment and consult with relevant professional advisers before making any significant decision."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Three disciplines: be more specific about what you don't know and what is genuinely contested; distinguish between what evidence shows and what your values recommend as policy response; and answer the question asked rather than the question you wish had been asked.",
+            "explanation": "'Be more specific about what you don't know and what remains genuinely contested than about what you're confident of - committees are saturated with expert confidence and genuinely useful testimony often takes the form of narrowing rather than resolving; distinguish between what the evidence shows and what your values recommend as the policy response - conflating them is how expert testimony becomes advocacy disguised as expertise; answer the question asked rather than the question you wish you had been asked - reframing is usually a signal you're avoiding its substance' gives three specific, sophisticated disciplines. 'Present your expert knowledge clearly, anticipate likely questions, and prepare comprehensive answers' is good preparation advice without the specific disciplines that distinguish genuinely useful testimony.",
+            "id": "bd_l164_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'I've been asked to give a lecture to engineering students about what makes aviation accident investigation uniquely valuable as a methodology for understanding complex system failure. What do you say?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Aviation Hub",
+            "options": [
+                "Aviation accident investigation is uniquely valuable for three specific reasons: first, the stakes mean that the investigation is always funded to completion - you never stop because the investigation became inconvenient; second, the physical record - the flight data recorder, the cockpit voice recorder, the wreckage - provides ground truth against which explanations must be tested, preventing the rationalisation that dominates other failure investigations; third, the findings are public and systematically fed back into the design of future systems, creating a unique feedback loop between failure and future prevention that most industries don't have. The methodology is valuable precisely because it cannot be stopped halfway and its findings cannot remain confidential.",
+                "Aviation accident investigation is the gold standard for understanding complex system failures because of its rigour, thoroughness, and systematic approach.",
+                "Follow established standard operating procedures and consult the relevant technical documentation before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Three reasons it's uniquely valuable: investigations are always funded to completion because stakes prevent stopping when inconvenient; the physical record provides ground truth preventing rationalisation; and findings are public and systematically fed back into future system design.",
+            "explanation": "'Stakes mean the investigation is always funded to completion - never stopped because it became inconvenient; the physical record - flight data recorder, cockpit voice recorder, wreckage - provides ground truth against which explanations must be tested preventing the rationalisation that dominates other failure investigations; findings are public and systematically fed back into the design of future systems, creating a feedback loop between failure and prevention that most industries don't have; the methodology is valuable precisely because it cannot be stopped halfway and findings cannot remain confidential' gives three specific, sophisticated reasons. 'Rigour, thoroughness, and systematic approach' describes good investigations generally without the specific features that make aviation investigation uniquely valuable.",
+            "id": "bd_l164_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I've been asked to advise on whether to pursue a military option that has a high probability of success but that would create significant long-term instability in the region. How do you think about this?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Strategy Chamber",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The specific question to answer is: who bears the long-term instability and how does that compare to the immediate cost of not pursuing the military option? Military options that achieve immediate objectives at the cost of long-term instability for populations in the region transfer cost from the decision-makers to the people who live there. That transfer must be explicit in the analysis, not implicit. The ethical question is not whether the military option succeeds but whether the success is worth the cost to people who did not participate in the decision about whether to pursue it.",
+                "Weigh the probability of success against the estimated cost of long-term regional instability.",
+                "Apply established doctrine and best practices, consulting with relevant specialists as appropriate before acting."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l165_q1",
-            "xpReward": 495,
-            "coinReward": 825,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The analysis must make explicit who bears the long-term instability and how that compares to the immediate cost of not pursuing the option; military options that transfer cost to populations who did not participate in the decision require explicit ethical accounting.",
+            "explanation": "'The specific question is who bears the long-term instability and how that compares to the immediate cost of not pursuing the military option; military options that achieve immediate objectives at the cost of long-term instability for regional populations transfer cost from decision-makers to the people who live there; that transfer must be explicit in the analysis not implicit; the ethical question is not whether the military option succeeds but whether the success is worth the cost to people who did not participate in the decision' is specific, ethically serious, and identifies the precise ethical structure. 'Weigh the probability of success against the estimated cost of long-term instability' is what a cost-benefit analysis does but doesn't address the ethical structure of who bears which costs.",
+            "id": "bd_l165_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l165_q2",
-            "xpReward": 495,
-            "coinReward": 825,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l165_q3",
-            "xpReward": 495,
-            "coinReward": 825,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l166_q1",
-            "xpReward": 498,
-            "coinReward": 830,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l166_q2",
-            "xpReward": 498,
-            "coinReward": 830,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I want to understand why some intelligence failures produce lasting institutional learning and others are repeated. What determines which?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Investigation Lab",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "What determines which is whether the investigation goes to the root rather than to the proximate cause. Almost every intelligence failure has a comfortable proximate explanation - the specific analyst who missed the signal, the specific communication failure, the specific assessment error. These explanations are usually correct as far as they go. But they stop before reaching the cultural, structural, or incentive factors that made the specific error probable. Investigations that stop at the proximate cause produce procedural fixes to the specific failure. Investigations that reach the root produce systemic learning that changes the conditions in which the next failure is attempting to occur.",
+                "The quality of the post-failure analysis determines whether learning is lasting or superficial.",
+                "Gather additional intelligence through established channels and conduct a rigorous analytical review before proceeding."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l166_q3",
-            "xpReward": 498,
-            "coinReward": 830,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Whether the investigation goes to the root or stops at the proximate cause - proximate cause investigations produce procedural fixes to the specific failure; root investigations produce systemic learning that changes the conditions in which the next failure is attempting to occur.",
+            "explanation": "'Whether the investigation goes to the root rather than to the proximate cause; almost every intelligence failure has a comfortable proximate explanation - specific analyst, communication failure, assessment error - usually correct as far as they go but stopping before reaching cultural, structural, or incentive factors; investigations stopping at proximate cause produce procedural fixes to the specific failure; investigations reaching the root produce systemic learning that changes the conditions in which the next failure is attempting to occur' is specific and identifies the precise mechanism. 'The quality of the post-failure analysis determines whether learning is lasting' is a restatement of the conclusion without the mechanism.",
+            "id": "bd_l165_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I've been asked to think about what the history of cuisine can teach about human civilisation more broadly. What do you say?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Kitchen",
+            "options": [
+                "The history of cuisine teaches that what seems like pure cultural expression is always simultaneously a technology for solving practical survival problems and a medium for expressing social hierarchy, identity, and meaning. Every cuisine develops in response to the specific combination of what is available, what preserves, what gives energy, and what signals status. The specific food preferences that feel most natural and most deeply cultural are often the most precisely adapted to specific historical conditions that no longer exist. This makes cuisine a uniquely honest archive of the conditions of human life across time - more honest than official history because it records what people actually did rather than what they said they did.",
+                "The history of cuisine shows how food connects people across cultures and reflects the creativity and adaptability of human civilisation.",
+                "Apply your culinary expertise and professional judgment, consulting with trusted colleagues as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Cuisine teaches that what seems like pure cultural expression is always simultaneously a survival technology and a medium for expressing social hierarchy and identity - and is a uniquely honest archive of actual human conditions because it records what people did rather than what they said they did.",
+            "explanation": "'What seems like pure cultural expression is always simultaneously a technology for solving practical survival problems and a medium for expressing social hierarchy, identity, and meaning; specific food preferences that feel most natural and deeply cultural are often precisely adapted to specific historical conditions that no longer exist; this makes cuisine a uniquely honest archive of the conditions of human life - more honest than official history because it records what people actually did rather than what they said they did' is specific, insightful, and identifies the precise reason for cuisine's value as historical evidence. 'Shows how food connects people across cultures and reflects human creativity and adaptability' is a general celebration rather than a specific insight.",
+            "id": "bd_l165_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I've been asked to lead the design of a healthcare system for a newly independent country. What is the most important foundational decision to get right?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Research Lab",
+            "options": [
+                "The most important foundational decision is the financing model, specifically whether healthcare financing pools risk across the whole population or allows it to be segmented by ability to pay. Systems that pool risk across the whole population produce fundamentally different health outcomes and incentive structures than systems that segment by income. Every other design decision - what services to provide, how to pay providers, how to organise delivery - is far easier to get right once the financing model is established, and far harder to correct once patterns are embedded. The financing model is the decision that shapes everything else and is the hardest to change.",
+                "The most important foundational decision is establishing clear governance and accountability structures.",
+                "Engage with the relevant policymakers and gather comprehensive evidence before making any recommendations."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The most important foundational decision is the financing model - specifically whether it pools risk across the whole population or allows segmentation by ability to pay; this decision shapes everything else and is the hardest to change.",
+            "explanation": "'The most important foundational decision is the financing model: whether it pools risk across the whole population or allows it to be segmented by ability to pay; systems that pool risk produce fundamentally different outcomes and incentive structures; every other design decision is far easier to get right once the financing model is established and far harder to correct once patterns are embedded; the financing model is the decision that shapes everything else and is the hardest to change' is specific, identifies the most important decision, and explains why. 'Establishing clear governance and accountability structures' is important but is a second-order decision that is shaped by the financing model.",
+            "id": "bd_l166_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I want to understand what makes some business leaders genuinely good at learning from competitors and others unable to. What is the specific capability?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "The specific capability is being able to disaggregate a competitor's performance into its component causes rather than attributing it to a single explanation. Leaders who are unable to learn from competitors attribute competitive performance to one explanation - they have a better product, they have more capital, their market is easier - and that single explanation doesn't produce actionable learning. Leaders who can learn disaggregate: this performance is driven by this specific practice in this part of their business, which is separable from other things they do and could in principle be adopted or adapted. The specific capability is the ability to learn at the component level rather than at the level of the whole competitor.",
+                "Being open to learning from competitors and having the humility to acknowledge their successes.",
+                "Conduct comprehensive market research and develop a well-evidenced strategic response to the competitive challenge."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The specific capability is disaggregating a competitor's performance into component causes rather than attributing it to a single explanation - learning at the component level rather than at the level of the whole competitor.",
+            "explanation": "'Being able to disaggregate a competitor's performance into its component causes rather than attributing it to a single explanation; leaders unable to learn attribute competitive performance to one explanation - better product, more capital, easier market - and that explanation doesn't produce actionable learning; leaders who can learn disaggregate: this performance is driven by this specific practice in this part of their business, which is separable and could in principle be adopted or adapted; the specific capability is the ability to learn at the component level rather than at the level of the whole competitor' is specific and identifies the precise capability with a clear mechanism. 'Being open to learning and having humility to acknowledge competitors' successes' describes an attitude without the capability.",
+            "id": "bd_l166_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'I want to understand what flying teaches about the relationship between rules and judgment that applies more broadly. What is the essential insight?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Sky-Dock",
+            "options": [
+                "The essential insight is that rules are designed for the situations that the people who wrote them could imagine, and judgment is required for the situations that they couldn't. Rules produce good outcomes when applied to the situations they were designed for. They produce dangerous outcomes when applied mechanically to situations that differ in ways the rule-writers didn't anticipate - because the mechanical application of the rule satisfies the rule while violating its purpose. The discipline flying teaches is to use rules as the first and best guide for most situations, and to recognise the specific features of a situation that indicate you have left the territory the rule was designed for.",
+                "Rules provide the framework within which good judgment operates, and judgment fills the gaps that rules cannot cover.",
+                "Apply your command authority, consult the relevant documentation, and follow established decision-making frameworks."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Rules are designed for situations that could be imagined; judgment is required for situations that couldn't. Rules produce dangerous outcomes when applied mechanically to unanticipated situations - the discipline is to use rules as the first guide and recognise when you've left the territory the rule was designed for.",
+            "explanation": "'Rules are designed for the situations that the people who wrote them could imagine, and judgment is required for the situations they couldn't; rules produce good outcomes when applied to the situations they were designed for and dangerous outcomes when applied mechanically to situations that differ in ways the rule-writers didn't anticipate - the mechanical application satisfies the rule while violating its purpose; the discipline is to use rules as the first and best guide for most situations and to recognise the specific features of a situation that indicate you have left the territory the rule was designed for' is specific, identifies the precise relationship, and gives the practical discipline. 'Rules provide the framework and judgment fills the gaps' is true but doesn't identify the essential insight.",
+            "id": "bd_l166_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I've been asked to advise on the design of a long-term deterrence strategy. What is the most important thing to get right that is most commonly got wrong?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: War Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The most commonly got wrong thing is the deterrence calculation from the other side's perspective rather than your own. Deterrence works when the adversary calculates that the cost of an action exceeds its benefit. But most deterrence strategy is designed from the deterring party's perspective - what capability do we have that we believe would impose sufficient cost? - rather than from the adversary's perspective - what calculation is the adversary actually making, and what factors enter into their cost-benefit assessment that we are not accounting for? The gap between what we believe deters and what actually deters is the most common source of deterrence failure.",
+                "Deterrence strategies must be credible, proportionate, and clearly communicated to the adversary.",
+                "Develop a comprehensive strategic plan with clear milestones and communicate it effectively to all stakeholders."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l167_q1",
-            "xpReward": 501,
-            "coinReward": 835,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The most commonly got wrong thing is designing deterrence from your own perspective rather than the adversary's actual cost-benefit calculation - the gap between what you believe deters and what actually deters is the most common source of deterrence failure.",
+            "explanation": "'The most commonly got wrong thing is the deterrence calculation from the other side's perspective rather than your own; deterrence works when the adversary calculates that cost of action exceeds benefit; most deterrence strategy is designed from the deterring party's perspective - what capability do we have that we believe would impose sufficient cost - rather than from the adversary's - what calculation is the adversary actually making, what factors enter their cost-benefit assessment that we're not accounting for; the gap between what we believe deters and what actually deters is the most common source of deterrence failure' is specific, identifies the precise error, and explains the mechanism. 'Credible, proportionate, and clearly communicated' is what deterrence must be without identifying the most commonly got wrong thing.",
+            "id": "bd_l167_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l167_q2",
-            "xpReward": 501,
-            "coinReward": 835,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l167_q3",
-            "xpReward": 501,
-            "coinReward": 835,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l168_q1",
-            "xpReward": 504,
-            "coinReward": 840,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l168_q2",
-            "xpReward": 504,
-            "coinReward": 840,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'I've been asked to advise on the ethics of using deception in operations against genuinely harmful actors. What is the honest ethical account?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Surveillance Room",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "The honest ethical account is that deception in operations against genuinely harmful actors is ethically defensible under specific conditions that limit its scope and duration. The conditions are: the harm being prevented must be serious and verifiable; the deception must be genuinely necessary rather than merely convenient; the deception must be proportionate to the harm prevented; and the deception must be the minimum necessary to achieve the objective. What makes deception in this context ethically complex rather than clearly justified is that the institutions that authorise and conduct the deception are capable of defining their targets as genuinely harmful when they are not - the safeguards against this are as important as the conditions that justify the deception.",
+                "Deception against harmful actors is ethically justified when it prevents serious harm to innocent people.",
+                "Follow established operational protocols and consult with your handler before taking any significant action."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l168_q3",
-            "xpReward": 504,
-            "coinReward": 840,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Deception in operations against harmful actors is defensible under specific conditions: serious verifiable harm, genuine necessity, proportionality, and minimum necessary scope; but what makes it ethically complex is that the institutions authorising it can define their targets as harmful when they are not - the safeguards against this are as important as the justifying conditions.",
+            "explanation": "'Ethically defensible under specific conditions: the harm must be serious and verifiable; deception must be genuinely necessary not merely convenient; proportionate to the harm prevented; minimum necessary to achieve the objective; what makes it ethically complex rather than clearly justified is that the institutions that authorise and conduct the deception are capable of defining their targets as genuinely harmful when they are not - the safeguards against this are as important as the conditions that justify the deception' is specific, names the conditions, and identifies the critical complicating factor. 'Ethically justified when it prevents serious harm to innocent people' is correct but misses the complicating factor about institutional self-definition of targets.",
+            "id": "bd_l167_q2"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Chef O-Ring says: 'I've been asked to write a culinary history of my home region. What are the most important methodological choices?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Dining Hall",
+            "options": [
+                "Three methodological choices that determine whether the history is honest or idealised: first, whose memory you collect - the history of a cuisine told exclusively by its successful professional practitioners will differ fundamentally from the history told by home cooks, market vendors, and the people who ate the food across different economic circumstances; second, how you handle the external influences that shaped the cuisine - all regional cuisines are shaped by trade, migration, and conquest, and a history that treats a cuisine as unchanging and pure is a history that is actively misrepresenting it; third, whether you record what has been lost as carefully as what survives - the lost dishes, the discontinued techniques, the foods that were forced out by poverty or politics are part of the history.",
+                "Research primary sources thoroughly, consult food historians, and conduct extensive interviews with regional food practitioners.",
+                "Apply your culinary expertise and professional judgment, consulting with trusted colleagues as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Three methodological choices: whose memory you collect (professional practitioners versus home cooks and others); how you handle external influences that shaped the cuisine; and whether you record what has been lost as carefully as what survives.",
+            "explanation": "'Whose memory you collect - history told exclusively by successful professional practitioners differs fundamentally from history told by home cooks, market vendors, and people who ate across different economic circumstances; how you handle external influences - all regional cuisines are shaped by trade, migration, and conquest and a history treating a cuisine as unchanging and pure is actively misrepresenting it; whether you record what has been lost as carefully as what survives - lost dishes, discontinued techniques, foods forced out by poverty or politics are part of the history' gives three specific, honest methodological choices. 'Research primary sources, consult food historians, conduct extensive interviews' is good process advice without the specific methodological choices that determine the honesty of the history.",
+            "id": "bd_l167_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'I've been asked to advise on whether medicine is moving in the right direction. What is the honest answer?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Medical Bay",
+            "options": [
+                "The honest answer is yes and no in ways that are not separable. Medicine is moving in the right direction in its capacity to intervene in biological processes - the growth in understanding of the molecular basis of disease and the therapeutic options this has produced is genuinely extraordinary. It is moving in the wrong direction in its relationship with the person who is ill - the administrative burden on clinicians, the reduction of the clinical encounter to a series of standardised questions and protocol-driven responses, and the systematic de-emphasising of clinical judgment in favour of standardised evidence all reduce the quality of care for specific individuals even while improving population-level outcomes. The question is whether it is possible to preserve both, and the honest answer is that it hasn't been yet.",
+                "Medicine is moving in the right direction overall - technological advances and evidence-based medicine have significantly improved patient outcomes.",
+                "Follow established professional guidelines and consult with relevant specialists and oversight bodies as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Yes and no in ways not separable - moving in the right direction in biological intervention capacity; moving in the wrong direction in its relationship with the person who is ill; the administrative burden, standardisation, and de-emphasising of clinical judgment reduce quality for specific individuals even while improving population-level outcomes.",
+            "explanation": "'Yes and no in ways that are not separable; in the right direction in capacity to intervene in biological processes - the growth in understanding of molecular basis of disease and therapeutic options this produced is genuinely extraordinary; in the wrong direction in its relationship with the person who is ill - administrative burden on clinicians, reduction of the clinical encounter to standardised questions and protocol-driven responses, systematic de-emphasising of clinical judgment reduce quality of care for specific individuals even while improving population-level outcomes; the question is whether it's possible to preserve both and the honest answer is that it hasn't been yet' is specific, balanced, and honest. 'Moving in the right direction overall - technological advances and evidence-based medicine have improved patient outcomes' is the optimistic partial account.",
+            "id": "bd_l168_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I want to understand what the best investors see that others don't when evaluating a business. What is the specific perceptual capacity?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "The specific perceptual capacity is the ability to distinguish between what is genuinely distinctive about a business and what is merely temporarily advantageous. Most businesses that look excellent at a point in time are benefiting from some combination of market timing, competitive absence, and external tailwinds that will not persist. The investors who consistently outperform are the ones who can identify the subset of businesses where the performance is driven by something that is genuinely hard to replicate rather than circumstantially advantageous - and who can identify which circumstantially advantageous businesses will develop genuine advantages before their circumstances change. The test is always: if the external environment changed significantly, would this business still outperform?",
+                "The best investors see the long-term potential of a business before the market does.",
+                "Seek professional financial advice and conduct rigorous financial modelling before committing to any investment."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The specific perceptual capacity is distinguishing between what is genuinely distinctive and what is merely temporarily advantageous - the test is: if the external environment changed significantly, would this business still outperform?",
+            "explanation": "'The ability to distinguish between what is genuinely distinctive about a business and what is merely temporarily advantageous; most businesses that look excellent at a point in time are benefiting from some combination of market timing, competitive absence, and external tailwinds that won't persist; the investors who consistently outperform can identify the subset of businesses where performance is driven by something genuinely hard to replicate rather than circumstantially advantageous; and who can identify which circumstantially advantageous businesses will develop genuine advantages before their circumstances change; the test: if the external environment changed significantly, would this business still outperform' is specific, identifies the precise perceptual capacity, and gives a concrete test. 'The best investors see long-term potential before the market does' is a general description without the specific capacity.",
+            "id": "bd_l168_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'I want to understand what aviation has taught me about the nature of mastery that applies to any discipline. What is it?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Aviation Hub",
+            "options": [
+                "Aviation has taught me that mastery is not a state you achieve - it is a practice you maintain by continuously operating at the edge of your competence rather than within its comfortable centre. The most dangerous pilots are not the incompetent ones - they are the highly experienced ones who have stopped being surprised by what flying can present, who have mistaken their extensive experience for complete preparation. Mastery requires the paradox of being deeply confident about your capacities while being genuinely open to the discovery that you have encountered a situation in which those capacities are insufficient. The moment you stop genuinely believing the latter is possible, you have stopped being a master and started being a hazard.",
+                "Aviation has taught me that mastery requires continuous learning, rigorous practice, and the discipline to maintain standards over a long career.",
+                "Follow established standard operating procedures and consult the relevant technical documentation before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Mastery is not a state achieved but a practice maintained by operating at the edge of competence rather than its comfortable centre - the most dangerous pilots are highly experienced ones who stopped being surprised; mastery requires being deeply confident while genuinely open to discovering your capacities are insufficient.",
+            "explanation": "'Mastery is not a state you achieve but a practice you maintain by continuously operating at the edge of your competence rather than within its comfortable centre; the most dangerous pilots are not incompetent ones but highly experienced ones who stopped being surprised by what flying can present, who mistook extensive experience for complete preparation; mastery requires the paradox of being deeply confident about your capacities while being genuinely open to the discovery that you've encountered a situation in which those capacities are insufficient; the moment you stop genuinely believing the latter is possible you've stopped being a master and started being a hazard' is specific, identifies the precise nature of mastery, and gives a concrete hazard indicator. 'Continuous learning, rigorous practice, and discipline to maintain standards' describes mastery behaviours without the essential nature.",
+            "id": "bd_l168_q3"
+        },
+        {
+            "instruction": "Captain Hektor says: 'I've been asked to give the closing address at the academy that trained me forty years ago. What do I say that is genuinely worth saying?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
+            "scene": "Location: Command Bridge",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "What is genuinely worth saying is what only someone with forty years of perspective can say: not what the academy taught that proved valuable, but what the academy didn't teach that you had to learn the hard way - specifically, the things that will be hard for this graduating class to learn before they need them, and how to learn them faster than you did. What is also worth saying is what leadership at the highest levels actually requires that cannot be taught in an academy - the specific qualities that only develop through the experience of genuine responsibility for others' lives, and how to recognise when you're developing them.",
+                "Share what you've learned over a long career about leadership and service, and inspire the graduating class about the honour of what they're entering.",
+                "Apply established doctrine and best practices, consulting with relevant specialists as appropriate before acting."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l169_q1",
-            "xpReward": 507,
-            "coinReward": 845,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Say what only forty years of perspective makes possible: what the academy didn't teach that you had to learn the hard way; what will be hard for this class to learn before they need it and how to learn it faster; and what leadership at the highest levels actually requires that only develops through genuine responsibility for others' lives.",
+            "explanation": "'What is genuinely worth saying is what only someone with forty years of perspective can say: not what the academy taught that proved valuable but what it didn't teach that you had to learn the hard way; specifically the things that will be hard for this graduating class to learn before they need them and how to learn them faster than you did; what is also worth saying is what leadership at the highest levels actually requires that cannot be taught in an academy - qualities that only develop through genuine responsibility for others' lives and how to recognise when you're developing them' is specific, uses the platform's unique opportunity, and says what only this speaker can say. 'Share what you've learned about leadership and service and inspire the graduating class' is what every closing address tries to do.",
+            "id": "bd_l169_q1"
         },
         {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l169_q2",
-            "xpReward": 507,
-            "coinReward": 845,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l169_q3",
-            "xpReward": 507,
-            "coinReward": 845,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l170_q1",
-            "xpReward": 510,
-            "coinReward": 850,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
-            "subtype": "branchingDialogue",
-            "interactionType": "dialogue",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l170_q2",
-            "xpReward": 510,
-            "coinReward": 850,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
-        },
-        {
-            "instruction": "Navigate the social protocol.",
-            "difficulty": 1,
+            "instruction": "Agent Nyx says: 'What is the most important thing you've learned about the difference between loyalty and complicity, and how do you know when one becomes the other?' Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
+            "scene": "Location: Safe House",
             "options": [
-                "Request assistance",
-                "Maintain silence",
-                "Scan for data"
+                "Loyalty becomes complicity when you continue to support a person, institution, or cause in the knowledge that they are causing harm that you would not support if you were choosing from the beginning. The test is: if you knew then what you know now, would you have made the same initial commitment? If the answer is no, then what you are calling loyalty is actually the avoidance of the discomfort of acknowledging that you were wrong to commit, which is not a virtue. The most important protection against complicity is the willingness to hold your continuing loyalty to the same standard you held your initial commitment - and to acknowledge clearly when those standards are no longer being met.",
+                "Loyalty becomes complicity when it requires you to act against your own ethical principles.",
+                "Build trust gradually through demonstrated reliability and professional conduct over an extended period."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Cooperation is key.",
-            "explanation": "Dialogue shapes the story.",
-            "id": "bd_l170_q3",
-            "xpReward": 510,
-            "coinReward": 850,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Loyalty becomes complicity when you continue to support in the knowledge of harm you wouldn't have accepted initially - the test is: if you knew then what you know now, would you have made the same commitment; what you're calling loyalty is often avoidance of acknowledging you were wrong to commit.",
+            "explanation": "'Loyalty becomes complicity when you continue to support in the knowledge that they are causing harm you would not support if choosing from the beginning; the test: if you knew then what you know now, would you have made the same initial commitment; if the answer is no, what you're calling loyalty is the avoidance of the discomfort of acknowledging you were wrong to commit, which is not a virtue; the most important protection against complicity is holding your continuing loyalty to the same standard you held your initial commitment and acknowledging clearly when those standards are no longer being met' is specific, gives a precise test, and names the psychological mechanism. 'Loyalty becomes complicity when it requires you to act against your own ethical principles' is one marker but doesn't give the diagnostic test or name the psychological mechanism.",
+            "id": "bd_l169_q2"
+        },
+        {
+            "instruction": "Chef O-Ring says: 'I've been asked to reflect on what cooking has taught me about the nature of time. What is the honest answer?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Chef O-Ring",
+            "scene": "Location: Kitchen",
+            "options": [
+                "Cooking teaches you that time is not something you manage - it is something you participate in. The most important things in cooking - the slow development of flavour, the maturation of fermented things, the transformation that happens when you let something rest rather than cutting it immediately - cannot be accelerated without loss. Cooking teaches you that patience is not a virtue of waiting but a skill of recognising when something is ready rather than when you want it to be. And it teaches you that the most permanent losses in cooking are the losses of time - the stock you didn't start early enough, the dough you didn't let rise, the relationships with ingredients that can only develop over years of cooking them.",
+                "Cooking has taught me about the importance of timing, precision, and the relationship between process and outcome.",
+                "Apply your culinary expertise and professional judgment, consulting with trusted colleagues as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Cooking teaches that time is not something you manage but something you participate in - patience is not a virtue of waiting but a skill of recognising when something is ready rather than when you want it to be; and the most permanent losses in cooking are the losses of time.",
+            "explanation": "'Time is not something you manage but something you participate in; the most important things in cooking - slow development of flavour, maturation of fermented things, transformation that happens when you let something rest - cannot be accelerated without loss; cooking teaches that patience is not a virtue of waiting but a skill of recognising when something is ready rather than when you want it to be; the most permanent losses in cooking are losses of time - the stock you didn't start early enough, the dough you didn't let rise, the relationships with ingredients that can only develop over years of cooking them' is specific, honest, and identifies something genuinely unusual that cooking teaches about time. 'The importance of timing, precision, and the relationship between process and outcome' describes what cooking requires without the insight about time.",
+            "id": "bd_l169_q3"
+        },
+        {
+            "instruction": "Dr. Elara says: 'After a long career in medicine, what is the single most important thing you believe about the nature of healing that differs from what medicine officially teaches?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Dr. Elara",
+            "scene": "Location: Clinic",
+            "options": [
+                "The single most important thing is that healing is not primarily what medicine does - it is what the body and person do, and medicine's best role is to create the conditions in which that process can proceed. When we say medicine heals, we are shortening a description that is actually: medicine removes the obstacles that are preventing the body and person from healing, or medicine changes the conditions sufficiently that the body's own healing processes can do the work. This is not a semantic distinction - it changes what medicine should be trying to do and what success looks like.",
+                "Medicine has the capacity to heal the body through its scientific understanding and therapeutic interventions.",
+                "Follow established professional guidelines and consult with relevant specialists and oversight bodies as appropriate."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The most important thing is that healing is not primarily what medicine does but what the body and person do - medicine's best role is to create conditions in which that process can proceed; this is not semantic but changes what medicine should be trying to do and what success looks like.",
+            "explanation": "'Healing is not primarily what medicine does - it is what the body and person do, and medicine's best role is to create the conditions in which that process can proceed; when we say medicine heals we are shortening a description that is actually: medicine removes the obstacles preventing the body and person from healing, or medicine changes the conditions sufficiently that the body's own healing processes can do the work; this is not a semantic distinction - it changes what medicine should be trying to do and what success looks like' is specific, challenges official teaching precisely, and identifies the practical implication. 'Medicine has the capacity to heal the body through scientific understanding and therapeutic interventions' is the official position.",
+            "id": "bd_l170_q1"
+        },
+        {
+            "instruction": "Merchant Kael says: 'I want to understand what the most important business books get wrong about what actually determines business outcomes. What is the honest critique?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Merchant Kael",
+            "scene": "Location: Trade District",
+            "options": [
+                "The most important business books get wrong the same thing in the same way: they work backwards from successful companies and identify what those companies did that seems to explain their success, without adequately accounting for the companies that did the same things and failed. This produces a systematic survivor bias that makes the lessons look more reliable and generalisable than they are. Almost every principle in popular business books is true in the sense that some successful companies did that thing. Almost none of them have been tested against the question of whether companies that did the same thing but failed did it differently - which is the only test that distinguishes cause from correlation.",
+                "Most business books oversimplify complex business realities and don't capture the full range of factors that determine business outcomes.",
+                "Apply sound commercial judgment and consult with relevant professional advisers before making any significant decision."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The most important business books work backwards from successful companies without adequately accounting for companies that did the same things and failed - survivor bias makes the lessons look more reliable than they are; almost no principle has been tested against whether failed companies did it differently, which is the only test that distinguishes cause from correlation.",
+            "explanation": "'The most important business books get wrong the same thing in the same way: they work backwards from successful companies and identify what those companies did that seems to explain success without adequately accounting for companies that did the same things and failed; this produces systematic survivor bias that makes the lessons look more reliable and generalisable than they are; almost every principle is true in the sense that some successful companies did that thing; almost none have been tested against whether companies that did the same thing but failed did it differently - which is the only test that distinguishes cause from correlation' is specific, identifies the precise methodological flaw, and gives the test that would correct it. 'Most business books oversimplify complex realities and don't capture the full range of factors' is a general critique without identifying the specific flaw.",
+            "id": "bd_l170_q2"
+        },
+        {
+            "instruction": "Pilot Jax says: 'What is the most important question you ask yourself before a flight that you didn't ask in your first years of flying?' Choose the best response.",
+            "subtype": "branchingDialogue",
+            "interactionType": "dialogue",
+            "persona": "Pilot Jax",
+            "scene": "Location: Aviation Hub",
+            "options": [
+                "The most important question I didn't ask in my first years is: what am I not accounting for? Early in flying you ask what you know: what is the weather, what is the aircraft status, what is the route, what are the NOTAMs. These are necessary. What I learned to ask later, and what I now consider the most important question, is what I don't know and what might be affecting this flight that I haven't accounted for. The difference is the shift from confirming that the known factors are acceptable to actively searching for factors I might not know about. That search catches more problems than the confirmation ever did.",
+                "The most important question I now ask is whether I'm fully prepared and whether any risk factors need to be addressed before departure.",
+                "Follow established standard operating procedures and consult the relevant technical documentation before proceeding."
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The most important question I didn't ask early is: what am I not accounting for? - the shift from confirming that known factors are acceptable to actively searching for factors I might not know about catches more problems than confirmation ever did.",
+            "explanation": "'The most important question I didn't ask in my first years is: what am I not accounting for; early in flying you ask what you know: weather, aircraft status, route, NOTAMs - these are necessary; what I learned to ask later and now consider most important is what I don't know and what might be affecting this flight that I haven't accounted for; the difference is the shift from confirming that known factors are acceptable to actively searching for factors I might not know about; that search catches more problems than the confirmation ever did' is specific, identifies the precise question, and explains why it's more important. 'Whether I'm fully prepared and whether any risk factors need to be addressed' is a variation on the known factors check without the shift to unknown factors.",
+            "id": "bd_l170_q3"
         }
     ]
-}
+}\n
