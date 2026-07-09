@@ -4,724 +4,628 @@
     "levels": "61-70",
     "quests": [
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to write a polite follow-up request.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "soon",
+                "reply",
+                "I",
+                "could",
+                "appreciate",
+                ".",
+                "you",
+                "it",
+                "if",
+                "would"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l61_q1",
-            "xpReward": 183,
-            "coinReward": 305,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I would appreciate it if you could reply soon .",
+            "hint": "Start with 'I would appreciate it if'.",
+            "explanation": "'I would appreciate it if...' is a formal, polite request structure.",
+            "id": "ss_l61_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to ask for clarification.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "clarify",
+                "Could",
+                "?",
+                "that",
+                "meant",
+                "you",
+                "what",
+                "please",
+                "you",
+                "by"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l61_q2",
-            "xpReward": 183,
-            "coinReward": 305,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Could you please clarify what you meant by that ?",
+            "hint": "Start with 'Could you please clarify'.",
+            "explanation": "'Clarify' means to make something clearer or easier to understand.",
+            "id": "ss_l61_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to politely express disagreement.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "with",
+                "disagree",
+                "that",
+                ".",
+                "afraid",
+                "I",
+                "am",
+                "assessment",
+                "I"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l61_q3",
-            "xpReward": 183,
-            "coinReward": 305,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I am afraid I disagree with that assessment .",
+            "hint": "Start with 'I am afraid I disagree'.",
+            "explanation": "'I am afraid' softens a disagreement, making it more diplomatic.",
+            "id": "ss_l61_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to reflect on a successful presentation.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                ".",
+                "The",
+                "delivered",
+                "we",
+                "went",
+                "yesterday",
+                "really",
+                "presentation",
+                "well"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l62_q1",
-            "xpReward": 186,
-            "coinReward": 310,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "The presentation we delivered yesterday went really well .",
+            "hint": "Start with 'The presentation we delivered'.",
+            "explanation": "'Went well' (not 'went good') describes a successful outcome.",
+            "id": "ss_l62_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to talk about positive feedback.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
+                "positive",
+                "client",
+                "received",
+                "We",
+                ".",
+                "very",
                 "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "from",
+                "feedback"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l62_q2",
-            "xpReward": 186,
-            "coinReward": 310,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "We received very positive feedback from the client .",
+            "hint": "Start with 'We received very positive feedback'.",
+            "explanation": "'Positive feedback' means the response was encouraging and good.",
+            "id": "ss_l62_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to suggest improvement.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "next",
+                "think",
+                "more",
+                "we",
+                "I",
+                ".",
+                "thoroughly",
+                "prepare",
+                "time",
+                "should"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l62_q3",
-            "xpReward": 186,
-            "coinReward": 310,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I think we should prepare more thoroughly next time .",
+            "hint": "Start with 'I think we should'.",
+            "explanation": "Starting with 'I think' introduces a personal opinion politely.",
+            "id": "ss_l62_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to announce a promotion.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                ".",
+                "promoted",
+                "has",
+                "She",
+                "manager",
+                "year",
+                "to",
+                "this",
+                "senior",
+                "been"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l63_q1",
-            "xpReward": 189,
-            "coinReward": 315,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "She has been promoted to senior manager this year .",
+            "hint": "Start with 'She has been promoted to'.",
+            "explanation": "Present perfect passive 'has been promoted' announces a recent achievement.",
+            "id": "ss_l63_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to congratulate someone.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "work",
+                "on",
+                "Congratulations",
+                "at",
+                "your",
+                ".",
+                "well-deserved",
+                "promotion"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l63_q2",
-            "xpReward": 189,
-            "coinReward": 315,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Congratulations on your well-deserved promotion at work .",
+            "hint": "Start with 'Congratulations'.",
+            "explanation": "'Well-deserved' means the person truly earned what they received.",
+            "id": "ss_l63_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to ask about celebration plans.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "celebrate",
+                "to",
+                "?",
+                "you",
+                "do",
+                "achievement",
+                "How",
+                "plan",
+                "this"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l63_q3",
-            "xpReward": 189,
-            "coinReward": 315,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "How do you plan to celebrate this achievement ?",
+            "hint": "Start with 'How do you plan to'.",
+            "explanation": "'Plan to + verb' asks about intended actions.",
+            "id": "ss_l63_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words about a job opening announcement.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "for",
+                "candidates",
+                "for",
+                "looking",
+                "currently",
+                ".",
+                "role",
+                "experienced",
+                "are",
+                "this",
+                "We"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l64_q1",
-            "xpReward": 192,
-            "coinReward": 320,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "We are currently looking for experienced candidates for this role .",
+            "hint": "Start with 'We are currently looking for'.",
+            "explanation": "'Currently' with present continuous describes an active, ongoing search.",
+            "id": "ss_l64_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words for a common interview question.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "about",
+                "previous",
+                "you",
+                "experience",
+                "tell",
+                "Could",
+                "more",
+                "?",
+                "your",
+                "me"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l64_q2",
-            "xpReward": 192,
-            "coinReward": 320,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Could you tell me more about your previous experience ?",
+            "hint": "Start with 'Could you tell me more'.",
+            "explanation": "This open-ended question invites the candidate to give a detailed answer.",
+            "id": "ss_l64_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to describe job skills.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                ".",
+                "and",
+                "communication",
+                "skills",
+                "have",
+                "organisational",
+                "strong",
+                "I"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l64_q3",
-            "xpReward": 192,
-            "coinReward": 320,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I have strong communication and organisational skills .",
+            "hint": "Start with 'I have strong'.",
+            "explanation": "Listing specific skills is more convincing than vague claims.",
+            "id": "ss_l64_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words for a classic interview question.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
+                "weakness",
                 "is",
-                "weather",
-                "?"
+                "biggest",
+                "What",
+                "you",
+                "would",
+                "?",
+                "your",
+                "say"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l65_q1",
-            "xpReward": 195,
-            "coinReward": 325,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "What would you say is your biggest weakness ?",
+            "hint": "Start with 'What would you say is'.",
+            "explanation": "This interview question asks for honest self-awareness.",
+            "id": "ss_l65_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to describe a weakness diplomatically.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
+                "sometimes",
+                "much",
+                "I",
+                "details",
+                "too",
                 "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "focus",
+                "on",
+                "finer",
+                "."
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l65_q2",
-            "xpReward": 195,
-            "coinReward": 325,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I sometimes focus too much on the finer details .",
+            "hint": "Start with 'I sometimes focus too much'.",
+            "explanation": "Framing perfectionism as a weakness is a well-known interview strategy.",
+            "id": "ss_l65_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order for a forward-looking interview question.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "do",
+                "?",
+                "you",
+                "in",
+                "Where",
+                "years",
+                "see",
+                "time",
+                "five",
+                "yourself"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l65_q3",
-            "xpReward": 195,
-            "coinReward": 325,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Where do you see yourself in five years time ?",
+            "hint": "Start with 'Where do you see yourself'.",
+            "explanation": "This question tests whether your career goals align with the company.",
+            "id": "ss_l65_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to express a workplace value.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "contributing",
+                "team",
+                "passionate",
+                "positive",
+                "am",
+                "a",
+                "about",
+                "I",
+                ".",
+                "culture",
+                "to"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l66_q1",
-            "xpReward": 198,
-            "coinReward": 330,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I am passionate about contributing to a positive team culture .",
+            "hint": "Start with 'I am passionate about contributing'.",
+            "explanation": "'Passionate about' expresses strong enthusiasm for something specific.",
+            "id": "ss_l66_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to express belief in teamwork.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
+                "Working",
+                "brings",
+                "in",
+                "collaboratively",
+                "everyone",
+                ".",
+                "out",
                 "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "best"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l66_q2",
-            "xpReward": 198,
-            "coinReward": 330,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Working collaboratively brings out the best in everyone .",
+            "hint": "Start with 'Working collaboratively'.",
+            "explanation": "A gerund subject ('Working') is common in formal statements about values.",
+            "id": "ss_l66_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to state a professional belief.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "learning",
+                "professional",
+                "continuous",
+                "drives",
+                "that",
+                "believe",
+                "success",
+                "I",
+                "."
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l66_q3",
-            "xpReward": 198,
-            "coinReward": 330,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I believe that continuous learning drives professional success .",
+            "hint": "Start with 'I believe that'.",
+            "explanation": "'Believe that + clause' is a natural structure for introducing a conviction.",
+            "id": "ss_l66_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to describe a medical treatment.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "a",
+                ".",
+                "been",
+                "week",
+                "The",
+                "has",
+                "for",
+                "taking",
+                "patient",
+                "antibiotics"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l67_q1",
-            "xpReward": 201,
-            "coinReward": 335,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "The patient has been taking antibiotics for a week .",
+            "hint": "Start with 'The patient has been taking'.",
+            "explanation": "Present perfect continuous describes an ongoing medical treatment.",
+            "id": "ss_l67_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to give medical advice.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                ".",
+                "should",
+                "You",
+                "avoid",
+                "while",
+                "exercise",
+                "you",
+                "recover",
+                "heavy"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l67_q2",
-            "xpReward": 201,
-            "coinReward": 335,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "You should avoid heavy exercise while you recover .",
+            "hint": "Start with 'You should avoid'.",
+            "explanation": "'Avoid + gerund' means to stop or refrain from doing an activity.",
+            "id": "ss_l67_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to describe a medical next step.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "to",
+                ".",
+                "need",
+                "we",
+                "run",
+                "We",
+                "further",
+                "some",
+                "before",
+                "tests",
+                "proceed"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l67_q3",
-            "xpReward": 201,
-            "coinReward": 335,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "We need to run some further tests before we proceed .",
+            "hint": "Start with 'We need to run some further'.",
+            "explanation": "'Run tests' is a medical expression for conducting examinations.",
+            "id": "ss_l67_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words for a patient-doctor conversation.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "my",
+                "to",
+                "with",
+                "discuss",
+                "would",
+                "like",
+                "treatment",
+                "I",
+                "you",
+                "options",
+                "."
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l68_q1",
-            "xpReward": 204,
-            "coinReward": 340,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I would like to discuss my treatment options with you .",
+            "hint": "Start with 'I would like to discuss my treatment'.",
+            "explanation": "Patients have the right to understand and discuss their medical options.",
+            "id": "ss_l68_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words for a standard medical question.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "medication",
+                "you",
+                "?",
+                "allergic",
+                "reactions",
+                "before",
+                "any",
+                "had",
+                "Have",
+                "to"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l68_q2",
-            "xpReward": 204,
-            "coinReward": 340,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Have you had any allergic reactions to medication before ?",
+            "hint": "Start with 'Have you had any'.",
+            "explanation": "Doctors always check for past drug allergies before prescribing.",
+            "id": "ss_l68_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to ask about side effects.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
+                "are",
+                "of",
+                "What",
                 "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "side",
+                "this",
+                "possible",
+                "treatment",
+                "?",
+                "effects"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l68_q3",
-            "xpReward": 204,
-            "coinReward": 340,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "What are the possible side effects of this treatment ?",
+            "hint": "Start with 'What are the possible side effects'.",
+            "explanation": "Side effects are unintended reactions to a medicine or treatment.",
+            "id": "ss_l68_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to give a film review.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
+                ".",
+                "I",
+                "of",
                 "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "that",
+                "predictable",
+                "quite",
+                "found",
+                "film",
+                "plot"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l69_q1",
-            "xpReward": 207,
-            "coinReward": 345,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I found the plot of that film quite predictable .",
+            "hint": "Start with 'I found the plot'.",
+            "explanation": "'Found + object + adjective' expresses a personal reaction to something.",
+            "id": "ss_l69_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to give a balanced film review.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
+                "were",
                 "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "effects",
+                "The",
+                "impressive",
+                "story",
+                "but",
+                "weak",
+                "was",
+                ".",
+                "special"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l69_q2",
-            "xpReward": 207,
-            "coinReward": 345,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "The special effects were impressive but the story was weak .",
+            "hint": "Start with 'The special effects were'.",
+            "explanation": "Use 'but' to contrast two different aspects of the same thing.",
+            "id": "ss_l69_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to give a surprising opinion.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "Despite",
+                "poor",
+                ".",
+                "enjoyable",
+                "be",
+                "out",
+                "it",
+                "turned",
+                "to",
+                "reviews",
+                "the"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l69_q3",
-            "xpReward": 207,
-            "coinReward": 345,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Despite the poor reviews it turned out to be enjoyable .",
+            "hint": "Start with 'Despite the poor reviews'.",
+            "explanation": "'Despite' introduces a contrast between expectation and reality.",
+            "id": "ss_l69_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to ask about someone's music taste.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
+                "enjoy",
+                "What",
+                "genre",
+                "most",
+                "do",
+                "of",
+                "music",
+                "you",
                 "?"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l70_q1",
-            "xpReward": 210,
-            "coinReward": 350,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "What genre of music do you enjoy most ?",
+            "hint": "Start with 'What genre of music'.",
+            "explanation": "'Genre' refers to a category or style of music, art, or film.",
+            "id": "ss_l70_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to describe a long musical history.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "been",
+                "child",
+                ".",
+                "piano",
+                "since",
+                "has",
+                "a",
+                "playing",
+                "was",
+                "she",
+                "She"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l70_q2",
-            "xpReward": 210,
-            "coinReward": 350,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "She has been playing piano since she was a child .",
+            "hint": "Start with 'She has been playing piano since'.",
+            "explanation": "Present perfect continuous with 'since' shows an activity that started in the past.",
+            "id": "ss_l70_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to express an opinion about live music.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "replicate",
+                "recordings",
+                ".",
+                "that",
+                "Live",
+                "music",
+                "cannot",
+                "an",
+                "creates",
+                "energy"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l70_q3",
-            "xpReward": 210,
-            "coinReward": 350,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Live music creates an energy that recordings cannot replicate .",
+            "hint": "Start with 'Live music creates an energy'.",
+            "explanation": "'Cannot replicate' means it is impossible to exactly copy something.",
+            "id": "ss_l70_q3"
         }
     ]
 }

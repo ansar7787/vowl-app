@@ -4,724 +4,597 @@
     "levels": "31-40",
     "quests": [
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to ask a waiter for a suggestion.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
+                "recommend",
+                "you",
+                "menu",
+                "on",
+                "?",
+                "What",
                 "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "would"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l31_q1",
-            "xpReward": 93,
-            "coinReward": 155,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "What would you recommend on the menu ?",
+            "hint": "Start with 'What would you'.",
+            "explanation": "Asking for recommendations ensures you order the best dish.",
+            "id": "ss_l31_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to state a food allergy.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "to",
+                "allergic",
+                "and",
+                ".",
+                "am",
+                "shellfish",
+                "I",
+                "nuts"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l31_q2",
-            "xpReward": 93,
-            "coinReward": 155,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I am allergic to nuts and shellfish .",
+            "hint": "Start with 'I am allergic to'.",
+            "explanation": "'Allergic to' describes a medical reaction to certain foods.",
+            "id": "ss_l31_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to request a preferred table.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
+                "Could",
                 "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "?",
+                "a",
+                "table",
+                "we",
+                "window",
+                "near",
+                "have"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l31_q3",
-            "xpReward": 93,
-            "coinReward": 155,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Could we have a table near the window ?",
+            "hint": "Start with 'Could we have a table'.",
+            "explanation": "'Near the window' is a common seating preference in restaurants.",
+            "id": "ss_l31_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to ask about internet access.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
+                "Wi-Fi",
+                "available",
+                "you",
+                "cafe",
+                "this",
+                "Do",
+                "in",
+                "have",
                 "?"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l32_q1",
-            "xpReward": 96,
-            "coinReward": 160,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Do you have Wi-Fi available in this cafe ?",
+            "hint": "Start with 'Do you have'.",
+            "explanation": "'Do you have Wi-Fi?' is common when settling into a cafe to work.",
+            "id": "ss_l32_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to ask for the Wi-Fi password.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
+                "me",
                 "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "?",
+                "please",
+                "give",
+                "Can",
+                "password",
+                "you"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l32_q2",
-            "xpReward": 96,
-            "coinReward": 160,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Can you give me the password please ?",
+            "hint": "Start with 'Can you give me'.",
+            "explanation": "After confirming Wi-Fi is available, always ask for the password.",
+            "id": "ss_l32_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to recommend something.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
+                "really",
+                "worth",
+                "trying",
+                "coffee",
+                "here",
+                ".",
                 "is",
-                "weather",
-                "?"
+                "The"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l32_q3",
-            "xpReward": 96,
-            "coinReward": 160,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "The coffee here is really worth trying .",
+            "hint": "Start with 'The coffee here is'.",
+            "explanation": "'Worth + trying' means it is good enough to make the effort.",
+            "id": "ss_l32_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to find a pharmacy.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "this",
+                "pharmacy",
+                "?",
+                "hotel",
+                "near",
+                "Is",
+                "a",
+                "there"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l33_q1",
-            "xpReward": 99,
-            "coinReward": 165,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Is there a pharmacy near this hotel ?",
+            "hint": "Start with 'Is there a pharmacy'.",
+            "explanation": "'Is there a + place + near...?' asks about nearby services.",
+            "id": "ss_l33_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to ask about currency exchange.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "can",
+                "I",
+                "currency",
+                "?",
+                "here",
+                "foreign",
+                "exchange",
+                "Where"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l33_q2",
-            "xpReward": 99,
-            "coinReward": 165,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Where can I exchange foreign currency here ?",
+            "hint": "Start with 'Where can I exchange'.",
+            "explanation": "Currency exchange is available at airports, banks, and many hotels.",
+            "id": "ss_l33_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to direct someone to a cash machine.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
                 "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "The",
+                ".",
+                "on",
+                "nearest",
+                "street",
+                "high",
+                "machine",
+                "cash",
+                "is"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l33_q3",
-            "xpReward": 99,
-            "coinReward": 165,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "The nearest cash machine is on the high street .",
+            "hint": "Start with 'The nearest'.",
+            "explanation": "'High street' means the main shopping street in a town.",
+            "id": "ss_l33_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to ask about opening times.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
+                "weekends",
+                "?",
+                "What",
                 "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "opening",
+                "hours",
+                "are",
+                "on"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l34_q1",
-            "xpReward": 102,
-            "coinReward": 170,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "What are the opening hours on weekends ?",
+            "hint": "Start with 'What are the opening hours'.",
+            "explanation": "Always check opening hours before visiting a shop or museum.",
+            "id": "ss_l34_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to ask about admission costs.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
+                "to",
+                "an",
+                "get",
+                "Is",
+                "there",
+                "fee",
+                "entrance",
+                "in",
                 "?"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l34_q2",
-            "xpReward": 102,
-            "coinReward": 170,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Is there an entrance fee to get in ?",
+            "hint": "Start with 'Is there an entrance fee'.",
+            "explanation": "An 'entrance fee' is money paid to enter a venue.",
+            "id": "ss_l34_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to ask about tours.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "in",
+                "tours",
+                "here",
+                "available",
+                "Are",
+                "guided",
+                "?",
+                "English"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l34_q3",
-            "xpReward": 102,
-            "coinReward": 170,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Are guided tours available in English here ?",
+            "hint": "Start with 'Are guided tours'.",
+            "explanation": "Guided tours in your own language make sightseeing much more enjoyable.",
+            "id": "ss_l34_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to report a lost item.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "like",
+                "to",
+                "a",
+                "lost",
+                "would",
+                ".",
+                "wallet",
+                "report",
+                "I"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l35_q1",
-            "xpReward": 105,
-            "coinReward": 175,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I would like to report a lost wallet .",
+            "hint": "Start with 'I would like to report'.",
+            "explanation": "'Report a lost item' means to officially inform someone it is missing.",
+            "id": "ss_l35_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to ask about a lost item.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "?",
+                "if",
+                "handed",
+                "check",
+                "has",
+                "Could",
+                "in",
+                "anyone",
+                "you",
+                "it"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l35_q2",
-            "xpReward": 105,
-            "coinReward": 175,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Could you check if anyone has handed it in ?",
+            "hint": "Start with 'Could you check'.",
+            "explanation": "Items that are found are 'handed in' to a lost-and-found office.",
+            "id": "ss_l35_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to describe what was lost.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "My",
+                "it",
+                "were",
+                "in",
+                "pass",
+                ".",
+                "boarding",
+                "passport",
+                "and"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l35_q3",
-            "xpReward": 105,
-            "coinReward": 175,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "My passport and boarding pass were in it .",
+            "hint": "Start with 'My passport'.",
+            "explanation": "A boarding pass is the document that allows you to board a flight.",
+            "id": "ss_l35_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to cancel a booking.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "reservation",
+                "would",
+                "please",
+                "I",
+                "to",
+                "cancel",
+                ".",
+                "like",
+                "my"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l36_q1",
-            "xpReward": 108,
-            "coinReward": 180,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I would like to cancel my reservation please .",
+            "hint": "Start with 'I would like to cancel'.",
+            "explanation": "Always confirm a cancellation in writing to avoid being charged.",
+            "id": "ss_l36_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to ask about a cancellation charge.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "there",
+                "a",
+                "fee",
+                "Is",
+                "booking",
+                "cancellation",
+                "this",
+                "?",
+                "for"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l36_q2",
-            "xpReward": 108,
-            "coinReward": 180,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Is there a cancellation fee for this booking ?",
+            "hint": "Start with 'Is there a cancellation fee'.",
+            "explanation": "Always ask about fees before cancelling to avoid surprises.",
+            "id": "ss_l36_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to ask for a new booking.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
+                "you",
+                "on",
+                "available",
+                "Could",
                 "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "next",
+                "?",
+                "flight",
+                "me",
+                "rebook"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l36_q3",
-            "xpReward": 108,
-            "coinReward": 180,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Could you rebook me on the next available flight ?",
+            "hint": "Start with 'Could you rebook me'.",
+            "explanation": "'Rebook' means to arrange a new reservation after a cancellation.",
+            "id": "ss_l36_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to ask about baggage claim.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
+                "to",
+                "Where",
+                "I",
+                "go",
+                "collect",
+                "my",
+                "do",
+                "luggage",
                 "?"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l37_q1",
-            "xpReward": 111,
-            "coinReward": 185,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Where do I go to collect my luggage ?",
+            "hint": "Start with 'Where do I go to'.",
+            "explanation": "Luggage is collected from the baggage carousel at an airport.",
+            "id": "ss_l37_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to report missing luggage.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "flight",
+                "on",
+                "did",
+                ".",
+                "bag",
+                "not",
+                "this",
+                "arrive",
+                "My"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l37_q2",
-            "xpReward": 111,
-            "coinReward": 185,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "My bag did not arrive on this flight .",
+            "hint": "Start with 'My bag did not arrive'.",
+            "explanation": "If your bag is missing, report it immediately at the baggage desk.",
+            "id": "ss_l37_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to ask for help with lost baggage.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "you",
+                "Can",
+                "a",
+                "me",
+                "?",
+                "file",
+                "report",
+                "lost",
+                "luggage",
+                "for"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l37_q3",
-            "xpReward": 111,
-            "coinReward": 185,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Can you file a lost luggage report for me ?",
+            "hint": "Start with 'Can you file'.",
+            "explanation": "Filing a report is the first step in recovering lost luggage.",
+            "id": "ss_l37_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to ask for a manager.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
+                ".",
+                "to",
                 "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "speak",
+                "I",
+                "need",
+                "to",
+                "please",
+                "manager"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l38_q1",
-            "xpReward": 114,
-            "coinReward": 190,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I need to speak to the manager please .",
+            "hint": "Start with 'I need to speak to'.",
+            "explanation": "Request a manager when a problem cannot be resolved by other staff.",
+            "id": "ss_l38_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to make a complaint.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "was",
+                ".",
+                "received",
+                "service",
+                "The",
+                "quite",
+                "I",
+                "disappointing"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l38_q2",
-            "xpReward": 114,
-            "coinReward": 190,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "The service I received was quite disappointing .",
+            "hint": "Start with 'The service I received'.",
+            "explanation": "Be specific but polite when making a formal complaint.",
+            "id": "ss_l38_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to ask for a replacement.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "replacement",
+                "me",
+                "Could",
+                "a",
+                "?",
+                "arrange",
+                "please",
+                "you",
+                "for"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l38_q3",
-            "xpReward": 114,
-            "coinReward": 190,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Could you please arrange a replacement for me ?",
+            "hint": "Start with 'Could you please arrange'.",
+            "explanation": "Asking for a replacement is reasonable when a product or service fails.",
+            "id": "ss_l38_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to describe work history.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                ".",
+                "three",
+                "been",
+                "for",
+                "here",
+                "years",
+                "I",
+                "have",
+                "working"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l39_q1",
-            "xpReward": 117,
-            "coinReward": 195,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I have been working here for three years .",
+            "hint": "Start with 'I have been working'.",
+            "explanation": "Present perfect continuous with 'for' describes an ongoing situation.",
+            "id": "ss_l39_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to describe a professional strength.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "strength",
+                "biggest",
+                "under",
+                "working",
+                "well",
+                ".",
+                "My",
+                "pressure",
+                "is"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l39_q2",
-            "xpReward": 117,
-            "coinReward": 195,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "My biggest strength is working well under pressure .",
+            "hint": "Start with 'My biggest strength is'.",
+            "explanation": "This is a common and effective answer to an interview question.",
+            "id": "ss_l39_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to express career goals.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "for",
+                "to",
+                ".",
+                "looking",
+                "grow",
+                "am",
+                "I",
+                "opportunities",
+                "professionally"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l39_q3",
-            "xpReward": 117,
-            "coinReward": 195,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I am looking for opportunities to grow professionally .",
+            "hint": "Start with 'I am looking for'.",
+            "explanation": "Expressing a desire for professional growth impresses interviewers.",
+            "id": "ss_l39_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to ask about work experience.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
+                "previous",
+                "was",
+                "?",
+                "at",
+                "role",
+                "your",
+                "company",
                 "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "What"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l40_q1",
-            "xpReward": 120,
-            "coinReward": 200,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "What was your previous role at the company ?",
+            "hint": "Start with 'What was your previous role'.",
+            "explanation": "This interview question asks about a candidate's previous job title.",
+            "id": "ss_l40_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to describe management experience.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "I",
+                "people",
+                "ten",
+                "of",
+                "managed",
+                "a",
+                "team",
+                "."
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l40_q2",
-            "xpReward": 120,
-            "coinReward": 200,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I managed a team of ten people .",
+            "hint": "Start with 'I managed a team of'.",
+            "explanation": "Quantifying experience makes answers more convincing in interviews.",
+            "id": "ss_l40_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to describe teamwork.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "tight",
+                "We",
+                ".",
+                "deadlines",
+                "to",
+                "worked",
+                "meet",
+                "together"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l40_q3",
-            "xpReward": 120,
-            "coinReward": 200,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "We worked together to meet tight deadlines .",
+            "hint": "Start with 'We worked together'.",
+            "explanation": "Mentioning teamwork shows collaboration skills valued by all employers.",
+            "id": "ss_l40_q3"
         }
     ]
 }

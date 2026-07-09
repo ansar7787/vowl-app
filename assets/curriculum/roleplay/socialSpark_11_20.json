@@ -4,724 +4,528 @@
     "levels": "11-20",
     "quests": [
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to ask about weekend plans.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "doing",
+                "?",
+                "you",
+                "weekend",
+                "are",
+                "What",
+                "this"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l11_q1",
-            "xpReward": 33,
-            "coinReward": 55,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "What are you doing this weekend ?",
+            "hint": "Start with 'What are you'.",
+            "explanation": "Present continuous is used for plans in the near future.",
+            "id": "ss_l11_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to describe a weekend plan.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                ".",
+                "aunt",
+                "Saturday",
+                "I",
+                "my",
+                "on",
+                "visiting",
+                "am"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l11_q2",
-            "xpReward": 33,
-            "coinReward": 55,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I am visiting my aunt on Saturday .",
+            "hint": "Start with 'I am visiting'.",
+            "explanation": "Present continuous describes a definite plan for the near future.",
+            "id": "ss_l11_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to invite someone.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "Would",
+                "?",
+                "us",
+                "join",
+                "to",
+                "like",
+                "you"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l11_q3",
-            "xpReward": 33,
-            "coinReward": 55,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Would you like to join us ?",
+            "hint": "Start with 'Would you'.",
+            "explanation": "'Would you like to ...?' is a polite and friendly invitation.",
+            "id": "ss_l11_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to agree enthusiastically.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "idea",
+                "like",
+                "sounds",
+                "great",
+                "a",
+                ".",
+                "That"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l12_q1",
-            "xpReward": 36,
-            "coinReward": 60,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "That sounds like a great idea .",
+            "hint": "Start with 'That sounds'.",
+            "explanation": "'Sounds like a great idea' is a natural way to agree with a suggestion.",
+            "id": "ss_l12_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to express polite doubt.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "am",
+                "I",
+                "that",
+                "not",
+                "plan",
+                "about",
+                ".",
+                "sure"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l12_q2",
-            "xpReward": 36,
-            "coinReward": 60,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I am not sure about that plan .",
+            "hint": "Start with 'I am not sure'.",
+            "explanation": "'I am not sure about ...' politely expresses uncertainty or hesitation.",
+            "id": "ss_l12_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to suggest reconsidering.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "of",
+                "another",
+                ".",
+                "us",
+                "option",
+                "think",
+                "Let"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l12_q3",
-            "xpReward": 36,
-            "coinReward": 60,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Let us think of another option .",
+            "hint": "Start with 'Let us'.",
+            "explanation": "'Let us' (Let's) proposes an action to do together.",
+            "id": "ss_l12_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to start a conversation.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "very",
+                "you",
+                "Do",
+                "come",
+                "?",
+                "here",
+                "often"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l13_q1",
-            "xpReward": 39,
-            "coinReward": 65,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Do you come here very often ?",
+            "hint": "Start with 'Do you'.",
+            "explanation": "This classic conversation starter asks how frequently someone visits a place.",
+            "id": "ss_l13_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to talk about how often you visit.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "almost",
+                "I",
+                "come",
+                "every",
+                ".",
+                "here",
+                "week"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l13_q2",
-            "xpReward": 39,
-            "coinReward": 65,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I come here almost every week .",
+            "hint": "Start with 'I come'.",
+            "explanation": "'Almost every + time period' shows high but not absolute frequency.",
+            "id": "ss_l13_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to describe a venue.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "a",
+                "has",
+                "This",
+                "place",
+                "atmosphere",
+                "great",
+                "."
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l13_q3",
-            "xpReward": 39,
-            "coinReward": 65,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "This place has a great atmosphere .",
+            "hint": "Start with 'This place'.",
+            "explanation": "'Atmosphere' refers to the mood or feeling of a place.",
+            "id": "ss_l13_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to politely ask for help.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "?",
+                "please",
+                "you",
+                "Can",
+                "help",
+                "me"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l14_q1",
-            "xpReward": 42,
-            "coinReward": 70,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Can you help me please ?",
+            "hint": "Start with 'Can you'.",
+            "explanation": "Adding 'please' makes any request more polite.",
+            "id": "ss_l14_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to offer help willingly.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "need",
+                "what",
+                "do",
+                "you",
+                "course",
+                "?",
+                "Of",
+                ","
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l14_q2",
-            "xpReward": 42,
-            "coinReward": 70,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Of course , what do you need ?",
+            "hint": "'Of course' starts the sentence, then the comma.",
+            "explanation": "'Of course' shows willingness, then 'what do you need' focuses the help.",
+            "id": "ss_l14_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to express gratitude.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "for",
+                "you",
+                ".",
+                "time",
+                "Thank",
+                "your"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l14_q3",
-            "xpReward": 42,
-            "coinReward": 70,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Thank you for your time .",
+            "hint": "Start with 'Thank you'.",
+            "explanation": "'Thank you for your time' is a polite way to close a conversation.",
+            "id": "ss_l14_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to say you do not understand.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "understand",
+                ".",
+                "do",
+                "I",
+                "you",
+                "not"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l15_q1",
-            "xpReward": 45,
-            "coinReward": 75,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I do not understand you .",
+            "hint": "Start with 'I do not'.",
+            "explanation": "Being honest when you do not understand avoids miscommunication.",
+            "id": "ss_l15_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to ask someone to slow down.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "?",
+                "Can",
+                "slowly",
+                "you",
+                "more",
+                "speak"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l15_q2",
-            "xpReward": 45,
-            "coinReward": 75,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Can you speak more slowly ?",
+            "hint": "Start with 'Can you'.",
+            "explanation": "This polite request helps you understand a fast speaker.",
+            "id": "ss_l15_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to ask for repetition.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                ",",
+                "that",
+                "repeat",
+                "could",
+                "Sorry",
+                "?",
+                "you"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l15_q3",
-            "xpReward": 45,
-            "coinReward": 75,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Sorry , could you repeat that ?",
+            "hint": "Start with 'Sorry'.",
+            "explanation": "'Sorry' softens the request, making it more polite.",
+            "id": "ss_l15_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to give a compliment.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "new",
+                "haircut",
+                ".",
+                "I",
+                "your",
+                "like"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l16_q1",
-            "xpReward": 48,
-            "coinReward": 80,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I like your new haircut .",
+            "hint": "Start with 'I like'.",
+            "explanation": "Complimenting someone's appearance is a natural conversation opener.",
+            "id": "ss_l16_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to compliment someone's clothing.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "great",
+                "blue",
+                "look",
+                "You",
+                "in",
+                "."
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l16_q2",
-            "xpReward": 48,
-            "coinReward": 80,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "You look great in blue .",
+            "hint": "Start with 'You look'.",
+            "explanation": "'Look great in + colour' is a compliment about clothing choices.",
+            "id": "ss_l16_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to compliment an outfit.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
+                "a",
+                ".",
                 "is",
-                "weather",
-                "?"
+                "dress",
+                "lovely",
+                "That"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l16_q3",
-            "xpReward": 48,
-            "coinReward": 80,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "That is a lovely dress .",
+            "hint": "Start with 'That is'.",
+            "explanation": "'That is a lovely ...' compliments an item the person is wearing.",
+            "id": "ss_l16_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to ask about someone's job.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "you",
+                "for",
+                "do",
+                "?",
+                "work",
+                "What",
+                "do"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l17_q1",
-            "xpReward": 51,
-            "coinReward": 85,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "What do you do for work ?",
+            "hint": "Start with 'What do you'.",
+            "explanation": "'What do you do for work?' is a common way to ask about someone's profession.",
+            "id": "ss_l17_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to say where you work.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "hospital",
+                "I",
+                "a",
+                "at",
+                "work",
+                "."
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l17_q2",
-            "xpReward": 51,
-            "coinReward": 85,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I work at a hospital .",
+            "hint": "Start with 'I work at'.",
+            "explanation": "'Work at + place' describes your workplace.",
+            "id": "ss_l17_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to state someone's profession.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
+                ".",
                 "is",
-                "weather",
-                "?"
+                "She",
+                "nurse",
+                "a"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l17_q3",
-            "xpReward": 51,
-            "coinReward": 85,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "She is a nurse .",
+            "hint": "Start with 'She is'.",
+            "explanation": "'Be + profession' states what someone does for work.",
+            "id": "ss_l17_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to ask about someone's weekend.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "weekend",
+                "?",
+                "was",
+                "your",
+                "How"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l18_q1",
-            "xpReward": 54,
-            "coinReward": 90,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "How was your weekend ?",
+            "hint": "Start with 'How was'.",
+            "explanation": "'How was your ...?' asks for a general opinion about a past event.",
+            "id": "ss_l18_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to describe a past experience.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "and",
+                "relaxing",
+                "was",
+                "fun",
+                ".",
+                "It"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l18_q2",
-            "xpReward": 54,
-            "coinReward": 90,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "It was fun and relaxing .",
+            "hint": "Start with 'It was'.",
+            "explanation": "Two adjectives joined by 'and' give a more complete description.",
+            "id": "ss_l18_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to talk about a past activity.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
                 "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "I",
+                "went",
+                "beach",
+                "to",
+                "."
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l18_q3",
-            "xpReward": 54,
-            "coinReward": 90,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I went to the beach .",
+            "hint": "Start with 'I went'.",
+            "explanation": "Simple past 'went' describes a completed trip.",
+            "id": "ss_l18_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to ask about sports preferences.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
+                "sport",
                 "is",
-                "weather",
-                "?"
+                "What",
+                "favourite",
+                "?",
+                "your"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l19_q1",
-            "xpReward": 57,
-            "coinReward": 95,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "What is your favourite sport ?",
+            "hint": "Start with 'What is your favourite'.",
+            "explanation": "'Favourite' asks about the thing you like most.",
+            "id": "ss_l19_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to talk about a sport you love.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                ".",
+                "playing",
+                "I",
+                "love",
+                "basketball"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l19_q2",
-            "xpReward": 57,
-            "coinReward": 95,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I love playing basketball .",
+            "hint": "Start with 'I love'.",
+            "explanation": "'Love + playing' uses a gerund after the verb 'love'.",
+            "id": "ss_l19_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to describe a weekly habit.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "Sunday",
+                "every",
+                ".",
+                "watch",
+                "We",
+                "football"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l19_q3",
-            "xpReward": 57,
-            "coinReward": 95,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "We watch football every Sunday .",
+            "hint": "Start with 'We watch'.",
+            "explanation": "Simple present with 'every Sunday' describes a regular routine.",
+            "id": "ss_l19_q3"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Arrange the words to close a conversation politely.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "was",
+                "to",
+                "nice",
+                "you",
+                "It",
+                "talking",
+                "."
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l20_q1",
-            "xpReward": 60,
-            "coinReward": 100,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "It was nice talking to you .",
+            "hint": "Start with 'It was'.",
+            "explanation": "This phrase is a warm, natural way to end a conversation.",
+            "id": "ss_l20_q1"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Order the words to express a wish to meet again.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "see",
+                "I",
+                "to",
+                "soon",
+                "hope",
+                ".",
+                "you"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l20_q2",
-            "xpReward": 60,
-            "coinReward": 100,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "I hope to see you soon .",
+            "hint": "Start with 'I hope'.",
+            "explanation": "'I hope to + verb' is followed by an infinitive to express a wish.",
+            "id": "ss_l20_q2"
         },
         {
-            "instruction": "Order the words to start a conversation.",
-            "difficulty": 1,
+            "instruction": "Put the words in order to wish someone a safe journey.",
             "subtype": "socialSpark",
             "interactionType": "reorder",
             "shuffledWords": [
-                "Hello",
-                "the",
-                "how",
-                "is",
-                "weather",
-                "?"
+                "safe",
+                "home",
+                ".",
+                "Have",
+                "a",
+                "trip"
             ],
-            "correctAnswer": "Hello how is the weather ?",
-            "hint": "Start with a greeting.",
-            "explanation": "Politeness opens doors.",
-            "id": "ss_l20_q3",
-            "xpReward": 60,
-            "coinReward": 100,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswer": "Have a safe trip home .",
+            "hint": "Start with 'Have a'.",
+            "explanation": "This phrase is used when someone is about to travel home.",
+            "id": "ss_l20_q3"
         }
     ]
 }
