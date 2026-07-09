@@ -4,694 +4,484 @@
     "levels": "91-100",
     "quests": [
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You receive feedback that you come across as too aggressive in meetings. You disagree with this assessment.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "That is entirely their problem.",
+                "Accept it silently and change nothing.",
+                "Consider asking: I didn't intend to come across that way. Could you give me a specific example so I can better understand what you mean?",
+                "Tell them directly they are incorrect."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l91_q1",
-            "xpReward": 273,
-            "coinReward": 455,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Even feedback you disagree with deserves genuinely curious engagement.",
+            "explanation": "Asking for a specific example shows maturity. You may learn something useful; at minimum you demonstrate self-awareness.",
+            "id": "sr_l91_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A client asks you to do something that is clearly outside your professional scope or expertise.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Do it anyway rather than disappointing them.",
+                "Simply say no and offer nothing else.",
+                "That is outside my area of expertise but I can connect you with someone who specialises exactly in this. Would that be helpful?",
+                "Pretend you can handle it and figure it out later."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l91_q2",
-            "xpReward": 273,
-            "coinReward": 455,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Saying what you cannot do while offering a clear alternative is genuinely professional.",
+            "explanation": "Honestly declining and immediately referring them to the right person demonstrates integrity and a genuine service mindset.",
+            "id": "sr_l91_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are at a dinner party and accidentally knock a glass of red wine directly onto the white tablecloth.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Blame the person sitting next to you.",
+                "Act as if nothing has happened.",
+                "I'm so sorry - let me help clean this up right away. I'll cover any cleaning costs of course.",
+                "Dab at it briefly and hope the host doesn't notice."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l91_q3",
-            "xpReward": 273,
-            "coinReward": 455,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Accidents require immediate honest ownership and a generous offer to help.",
+            "explanation": "Apologising immediately offering to help clean up and offering to cover costs is the mature generous response.",
+            "id": "sr_l91_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You must deliver the news to your team that an important project has been cancelled.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "I know this is not what any of us wanted to hear - the project has been cancelled. I want to be transparent about the reason and I'm here to answer any questions.",
+                "I'm not able to say much but the project is unfortunately cancelled.",
+                "Someone from HR will be speaking to each of you.",
+                "The project has been cancelled. Please refocus on your other work immediately."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l92_q1",
-            "xpReward": 276,
-            "coinReward": 460,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 0,
+            "hint": "Deliver difficult news with honesty empathy and a genuine open door for questions.",
+            "explanation": "Acknowledging the disappointment being transparent about the reason and actively offering to answer questions is how leaders communicate difficult news with genuine dignity.",
+            "id": "sr_l92_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "An upset customer insists on speaking to someone in charge about their service issue.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Let them escalate every single time they ask.",
+                "Tell them you are the only person available to help.",
+                "I completely understand. I'm going to take full ownership of resolving this for you right now - and I will involve my manager if it's needed.",
+                "Tell them your manager is currently unavailable."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l92_q2",
-            "xpReward": 276,
-            "coinReward": 460,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Take clear ownership first - involve escalation as a resource rather than an escape.",
+            "explanation": "Committing personally to resolution while keeping escalation available shows genuine ownership.",
+            "id": "sr_l92_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are writing a professional cover letter. What should the opening sentence accomplish?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Introduce yourself as a hard-working and dedicated individual.",
+                "Explain how long you have been job-searching.",
+                "Communicate why you want this specific role at this specific organisation - and what unique value you bring.",
+                "State your full name and age."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l92_q3",
-            "xpReward": 276,
-            "coinReward": 460,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "A cover letter opening must immediately answer: why here and why you specifically.",
+            "explanation": "The most powerful cover letter openings are specific to the company and the role. Generic openings are the single most common damaging cover letter mistake.",
+            "id": "sr_l92_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are relocating abroad and trying to open a bank account without all the required documents.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Give up - it is impossible without every document.",
+                "Bring what you have explain your situation honestly and ask what alternative documents or processes are accepted.",
+                "Try a different bank without explaining your situation.",
+                "Ask someone else to open the account on your behalf."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l93_q1",
-            "xpReward": 279,
-            "coinReward": 465,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Being completely transparent about what you have is always more effective than silence.",
+            "explanation": "Explaining your situation honestly and asking about accepted alternatives gives the bank representative the information they need to help you.",
+            "id": "sr_l93_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A senior colleague dismisses your idea in front of the whole team without explanation.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Stay quiet and feel hurt for weeks.",
+                "Argue your case loudly in the meeting.",
+                "After the meeting approach them privately: I wanted to revisit the idea I raised - I believe it has real merit and I'd value your thoughts on it.",
+                "Complain about it to other team members."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l93_q2",
-            "xpReward": 279,
-            "coinReward": 465,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Follow up privately when your idea receives public dismissal.",
+            "explanation": "Raising it privately afterward framing it as wanting their specific thoughts is more effective and far more professional than a public confrontation.",
+            "id": "sr_l93_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are working across cultures and a person you are speaking with rarely makes direct eye contact.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "They are most likely being dishonest or hiding something.",
+                "They are clearly bored by what you are saying.",
+                "Eye contact norms vary very significantly across cultures - it is premature and potentially incorrect to interpret this negatively.",
+                "They simply do not like you."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l93_q3",
-            "xpReward": 279,
-            "coinReward": 465,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Behaviour that carries strong meaning in your culture may mean something very different in another.",
+            "explanation": "Avoiding direct eye contact is a sign of genuine respect in many cultures not of deception or disinterest.",
+            "id": "sr_l93_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You need to ask your line manager for a day of annual leave at short notice.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "I need to take tomorrow off.",
+                "Is it possible for me to take tomorrow as annual leave? I have a personal matter I need to attend to.",
+                "I won't be coming in tomorrow.",
+                "Someone in my family may be unwell - I might need to be there."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l94_q1",
-            "xpReward": 282,
-            "coinReward": 470,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Frame a leave request as a question with a brief and honest reason.",
+            "explanation": "Phrasing it as is it possible? is more professional than a statement. A brief honest reason is appropriately informative.",
+            "id": "sr_l94_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are on a first date and realize partway through the evening that you are not romantically interested. How do you end the evening respectfully?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "I'm just not feeling it sorry.",
+                "Say nothing go home and never contact them again.",
+                "I've really enjoyed meeting you - but I want to be honest I don't think we have a romantic connection. I'm sorry and I hope you understand.",
+                "Pretend to receive an emergency phone call."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l94_q2",
-            "xpReward": 282,
-            "coinReward": 470,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Honesty combined with genuine kindness is always more respectful than silence or pretense.",
+            "explanation": "Being direct and kind respects the person's time and dignity. Ghosting or making excuses is both cowardly and unkind.",
+            "id": "sr_l94_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A client is angry that a deadline was missed. You believe their expectations were genuinely unrealistic.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Tell them directly their expectations were completely unrealistic.",
+                "Apologise unconditionally even if the original brief was unclear.",
+                "Acknowledge the missed deadline take appropriate responsibility then calmly review the original scope together to ensure future alignment.",
+                "Blame your team for the problem."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l94_q3",
-            "xpReward": 282,
-            "coinReward": 470,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Own what you can then review scope together to prevent future misalignment.",
+            "explanation": "Acknowledging the miss while jointly reviewing the original scope is professional.",
+            "id": "sr_l94_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are writing a performance appraisal for a strong-performing team member.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "They worked extremely hard all year.",
+                "Use superlatives: the best employee I have ever managed.",
+                "Document specific achievements with measurable data: grew client revenue by X% led a team of Y people delivered Z on time and under budget.",
+                "Avoid specifics - they could be misinterpreted."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l95_q1",
-            "xpReward": 285,
-            "coinReward": 475,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Specific measurable achievements are the most valuable thing you can put in a performance review.",
+            "explanation": "A review grounded in specific measurable outcomes is far more credible and useful than vague praise.",
+            "id": "sr_l95_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You want to cancel plans with a friend at the last minute because you feel overwhelmed and need time alone.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Just do not show up without any warning.",
+                "Tell a white lie about being unexpectedly unwell.",
+                "Message them honestly: I'm really sorry - I'm not in the right headspace to be good company tonight. Can we rearrange? I'm genuinely looking forward to seeing you.",
+                "Cancel without suggesting a new time."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l95_q2",
-            "xpReward": 285,
-            "coinReward": 475,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Honesty about needing personal space is more respectful than making excuses.",
+            "explanation": "Being honest about your emotional state while proactively rescheduling is kind mature and genuinely respectful.",
+            "id": "sr_l95_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You witness a colleague taking personal items from the shared office supplies cupboard.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Say nothing - it is really none of your business.",
+                "Confront them loudly and publicly.",
+                "Speak to them quietly: I saw something that concerned me and didn't want to go above your head. Can we talk privately for a moment?",
+                "Report them directly to HR without speaking to them first."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l95_q3",
-            "xpReward": 285,
-            "coinReward": 475,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Give the colleague a fair chance to explain before escalating.",
+            "explanation": "Speaking to them privately first is fairer and often more effective. There may be a reasonable explanation you are not aware of.",
+            "id": "sr_l95_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are in a queue and someone tries to push in ahead of several people who have been waiting.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Say nothing and feel quietly annoyed.",
+                "Shout at them angrily.",
+                "Say calmly: Excuse me the queue starts at the back - we have all been waiting for some time.",
+                "Physically block them from entering the queue."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l96_q1",
-            "xpReward": 288,
-            "coinReward": 480,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Address unfairness calmly and factually speaking for the group rather than just yourself.",
+            "explanation": "Framing the response as a group experience - we've all been waiting - is both factual and fair.",
+            "id": "sr_l96_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A business dinner is running significantly over time and you have another commitment to get to.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Leave without saying anything to anyone.",
+                "This has been a truly wonderful evening - but I'm afraid I have another commitment I need to get to now. Thank you so much for including me.",
+                "Look at your watch repeatedly and obviously.",
+                "Ask them to skip dessert so you can leave sooner."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l96_q2",
-            "xpReward": 288,
-            "coinReward": 480,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Exit graciously with a genuine compliment and a brief honest reason.",
+            "explanation": "Expressing genuine enjoyment of the evening while naming your reason for leaving is gracious and leaves a positive final impression.",
+            "id": "sr_l96_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are helping a colleague improve their presentation skills. They keep apologising mid-speech.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Tell them bluntly to stop apologising.",
+                "You are doing really well overall. One specific tip: try replacing apologies with confident transition phrases - it will completely change the energy and impact of your delivery.",
+                "Demonstrate by taking over and presenting for them.",
+                "Say nothing - that is simply their personal style."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l96_q3",
-            "xpReward": 288,
-            "coinReward": 480,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Give specific practical actionable guidance rather than a vague directive to stop.",
+            "explanation": "Replace apologies with confident transitions is a specific immediately usable tool.",
+            "id": "sr_l96_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You check into your hotel and find that the room has not been properly cleaned.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Complain immediately on social media.",
+                "Accept the situation and clean it yourself.",
+                "Call reception: Hi I have just checked in and my room does not appear to have been cleaned. Could someone attend to it or could I change rooms please?",
+                "Move out without saying anything."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l97_q1",
-            "xpReward": 291,
-            "coinReward": 485,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Report the specific problem directly to reception with a clear and reasonable request.",
+            "explanation": "Calling reception describing the specific problem and offering two workable options is efficient clear and gives the hotel every opportunity to put things right.",
+            "id": "sr_l97_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A colleague asks you to recommend them for a promotion that you genuinely do not believe they are ready for.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Give the recommendation without hesitation to be supportive.",
+                "Write the recommendation but add numerous qualifications throughout.",
+                "I want to support you and I also want to be honest with you. I think you have genuine potential but I don't think you are quite ready yet. Here is what I think would get you there.",
+                "Simply say no without any explanation."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l97_q2",
-            "xpReward": 291,
-            "coinReward": 485,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "An honest constructive conversation is more genuinely supportive than an undeserved recommendation.",
+            "explanation": "Being honest while clearly offering a path forward is far more valuable and supportive in the long run.",
+            "id": "sr_l97_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You have been on hold with a company for twenty minutes. When someone finally answers what do you say?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "That wait was completely and utterly unacceptable!",
+                "Just get straight to the point without any acknowledgment.",
+                "Hi - I've been waiting about twenty minutes. I completely understand it is very busy. I'm [name] and I'm calling about [specific issue].",
+                "Ask immediately to speak to the manager."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l97_q3",
-            "xpReward": 291,
-            "coinReward": 485,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Be efficient and gracious even when you are genuinely frustrated.",
+            "explanation": "Briefly mentioning the wait and acknowledging the busyness shows graciousness. Getting directly to your issue respects everyone's time.",
+            "id": "sr_l97_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A university interviewer asks: Why do you want to study specifically at this institution?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Because it is well-known and very prestigious.",
+                "I applied to many institutions and this was one of them.",
+                "I'm specifically drawn to this programme's focus on [specific aspect] and the research opportunities in [specific area] which align closely with my academic interests.",
+                "It is conveniently close to where I live."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l98_q1",
-            "xpReward": 294,
-            "coinReward": 490,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Specificity in your answer demonstrates genuine research and authentic interest.",
+            "explanation": "Naming specific programme aspects and research opportunities shows you have done your homework seriously.",
+            "id": "sr_l98_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A colleague begins crying unexpectedly at their desk in the open-plan office.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Ask loudly what is wrong so you can understand.",
+                "Ignore them entirely - it is not your business.",
+                "Move closer quietly and say softly: Are you all right? Would you like to step out for a moment?",
+                "Tell them to go to the bathroom if they need to cry."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l98_q2",
-            "xpReward": 294,
-            "coinReward": 490,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Respond with quiet private gentleness and offer a dignified way out of the public situation.",
+            "explanation": "A quiet discreet offer gives the person a way to compose themselves with dignity.",
+            "id": "sr_l98_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are assigned to a project where you lack confidence in your ability to deliver to a high standard.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Pretend to be fully confident and an expert.",
+                "Decline the project entirely.",
+                "I would be glad to take this on. I want to be transparent that I'm still developing in this area - could we agree to a mid-point check-in so I can make sure I'm on the right track?",
+                "Ask a colleague to do it for you."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l98_q3",
-            "xpReward": 294,
-            "coinReward": 490,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Accepting with transparency and building in a checkpoint is professionalism at its finest.",
+            "explanation": "Accepting the challenge honestly with a structured check-in shows confidence in your ability to grow.",
+            "id": "sr_l98_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You find out the company you interviewed with has hired someone else. You really wanted the role.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Send them a message expressing your disappointment.",
+                "Say nothing and write them off entirely.",
+                "Send a brief gracious email: Thank you for letting me know. I'm disappointed but grateful for the process. I remain very interested in the organisation - please do keep me in mind for future roles.",
+                "Ask them directly who got the job."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l99_q1",
-            "xpReward": 297,
-            "coinReward": 495,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "A gracious response to rejection often genuinely leads to future opportunities.",
+            "explanation": "Expressing disappointment maturely showing continued interest and thanking them is the kind of response that frequently leads to future job offers.",
+            "id": "sr_l99_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are part of a team making a significant decision that you believe is ethically wrong.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Go along with the group to maintain team unity.",
+                "Resign immediately from the organisation.",
+                "Raise your concern clearly within the team and if it remains unresolved escalate through the appropriate internal ethics or compliance channel.",
+                "Leak the information externally as your first action."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l99_q2",
-            "xpReward": 297,
-            "coinReward": 495,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Ethical concerns should be raised internally through appropriate channels first.",
+            "explanation": "Raising concerns within the team and then escalating appropriately follows the proper ethical process.",
+            "id": "sr_l99_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You need to explain a complex technical concept to a completely non-technical audience.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Use all the correct technical terminology so they understand properly.",
+                "Simplify so much that the information becomes inaccurate.",
+                "Ask what they already understand then explain using clear analogies and plain language checking for understanding as you go.",
+                "Give them a detailed written document to read instead."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l99_q3",
-            "xpReward": 297,
-            "coinReward": 495,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Effective technical communication always starts by understanding your specific audience.",
+            "explanation": "Checking existing knowledge using analogies and verifying understanding as you go is how you explain technical ideas clearly to non-experts.",
+            "id": "sr_l99_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A senior mentor gives you glowing and very positive feedback. How should you respond?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "I know - I am very talented thank you.",
+                "Immediately downplay it: I was just lucky really.",
+                "Thank you so much - that genuinely means a lot. Is there one area you think I should be focusing on developing further?",
+                "Say nothing and simply nod politely."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l100_q1",
-            "xpReward": 300,
-            "coinReward": 500,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Accept positive feedback genuinely AND immediately use it as a springboard for growth.",
+            "explanation": "Accepting the compliment with genuine warmth and asking about development areas shows both gratitude and a genuine hunger to keep improving.",
+            "id": "sr_l100_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are asked what three qualities define outstanding professional communication.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Confidence speed and brevity.",
+                "Clarity empathy and precision: knowing what to say how to say it and adapting to your audience.",
+                "Technical vocabulary authority and volume.",
+                "Positivity enthusiasm and passion."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l100_q2",
-            "xpReward": 300,
-            "coinReward": 500,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Outstanding professional communication balances what you say with how it lands for your specific audience.",
+            "explanation": "Clarity ensures you are understood. Empathy ensures you consider your audience. Precision ensures nothing is lost or misinterpreted. Together these three define communication excellence.",
+            "id": "sr_l100_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A mentee asks you what single habit most distinguishes exceptional professionals from good ones.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Arriving at work first and leaving last.",
+                "Checking email constantly to stay responsive.",
+                "Reflecting deliberately on what worked and what did not after every significant interaction and learning from the pattern.",
+                "Always volunteering for the most visible projects."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l100_q3",
-            "xpReward": 300,
-            "coinReward": 500,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Deliberate systematic reflection converts experience into genuine wisdom - without it experience alone does not teach.",
+            "explanation": "Deliberate reflection after significant interactions - noticing patterns asking what you would do differently - is what separates professionals who accumulate decades of experience from those who simply repeat one year of experience many times.",
+            "id": "sr_l100_q3"
         }
     ]
 }

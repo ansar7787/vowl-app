@@ -4,694 +4,484 @@
     "levels": "161-170",
     "quests": [
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are advising a government on reforming its public service delivery model. What is the most critical starting point?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Benchmark immediately against the top-performing international models.",
+                "Begin with a comprehensive fiscal analysis of current costs.",
+                "Conduct a rigorous diagnosis: understand the specific needs and lived experiences of citizens the service is intended to serve the systemic constraints that currently prevent good delivery and the actual performance data at every stage of the system.",
+                "Engage the most senior civil servants to define the reform agenda."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l161_q1",
-            "xpReward": 483,
-            "coinReward": 805,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Effective public service reform must begin with a deep rigorous diagnosis of citizen needs systemic constraints and real performance data.",
+            "explanation": "Citizen needs and lived experience plus systemic constraints plus actual stage-by-stage performance data is the diagnostic foundation without which any reform agenda risks solving the wrong problems.",
+            "id": "sr_l161_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are negotiating a complex multi-party international agreement involving parties with genuinely opposed interests.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Push consistently for your own preferred outcome in every negotiating session.",
+                "Identify and agree on the shared interests that all parties hold in common before addressing the points of genuine conflict.",
+                "Allow the party with the most leverage to determine the final terms.",
+                "Seek a rapid compromise on every point to accelerate closure."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l161_q2",
-            "xpReward": 483,
-            "coinReward": 805,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Complex multi-party negotiations must begin by establishing shared interests before addressing genuine conflicts.",
+            "explanation": "Establishing shared interests first creates a collaborative foundation from which to approach conflicts. Agreements built on shared interests are more durable and easier to implement.",
+            "id": "sr_l161_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are a CEO and need to address your organisation's systemic failure to retain diverse talent beyond the recruitment stage.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Invest heavily in a new diversity recruitment campaign.",
+                "Commission an external diversity audit.",
+                "Conduct a rigorous systemic diagnosis: examine exit interview data conduct listening sessions with currently underrepresented employees audit promotion and recognition processes and review management practices across the organisation.",
+                "Appoint a Chief Diversity Officer to solve the problem."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l161_q3",
-            "xpReward": 483,
-            "coinReward": 805,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Retention failure of diverse talent is a systemic problem requiring systemic diagnosis - not a recruitment or communications solution.",
+            "explanation": "Exit data analysis plus active listening to underrepresented employees plus promotion and recognition audit plus management practice review is the complete systemic diagnostic approach.",
+            "id": "sr_l161_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are presenting a genuinely unpopular but necessary strategic recommendation to a board that will resist it.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Present a more palatable version of the recommendation.",
+                "Lead with the data and hope the evidence changes their minds.",
+                "Open by explicitly acknowledging the recommendation's difficulty then build the logical case rigorously from first principles address the most predictable objections proactively and be precise about the cost of inaction.",
+                "Present only if you are confident the board will agree."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l162_q1",
-            "xpReward": 486,
-            "coinReward": 810,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Presenting unpopular necessary recommendations requires direct acknowledgment of difficulty rigorous logical build proactive objection handling and honest cost-of-inaction analysis.",
+            "explanation": "Acknowledging difficulty explicitly plus rigorous logical build from first principles plus proactive objection addressing plus precise cost of inaction is the complete framework.",
+            "id": "sr_l162_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You discover a fundamental tension between your organisation's stated values and its actual institutional behaviour.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Publicly expose the gap immediately.",
+                "Ignore it - all organisations have some distance between aspiration and practice.",
+                "Document the specific gap precisely raise it formally with the leadership responsible and propose a concrete values realignment process with accountability mechanisms and external validation.",
+                "Commission a new values statement."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l162_q2",
-            "xpReward": 486,
-            "coinReward": 810,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Values-behaviour gaps require formal documentation leadership accountability and a structured realignment process - not new statements.",
+            "explanation": "Precise gap documentation plus formal leadership accountability plus structured realignment process plus external validation is the only approach that closes a genuine values-behaviour gap.",
+            "id": "sr_l162_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are a senior leader and a team member raises a concern about your own leadership behaviour.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Explain why your behaviour was entirely justified.",
+                "Thank them formally and take no substantive action.",
+                "Listen without defensiveness thank them genuinely for their courage in raising it reflect seriously on whether the concern has merit and share your honest response and any intended change.",
+                "Refer the matter to HR as a formal complaint procedure."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l162_q3",
-            "xpReward": 486,
-            "coinReward": 810,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Receiving direct upward feedback with genuine non-defensiveness models the exact psychological safety that great leaders create.",
+            "explanation": "Genuinely non-defensive listening plus thanking the person sincerely plus honest reflection on merit plus shared response and intended change is both the right response and powerful modelling of an open learning culture.",
+            "id": "sr_l162_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are shaping the agenda for a major international conference on a genuinely contested global challenge.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Invite only the most eminent and credentialed specialists.",
+                "Focus the entire agenda on solutions rather than the diagnosis.",
+                "Design an agenda that balances expert analysis with diverse stakeholder perspectives including those most directly affected and creates genuine space for productive disagreement as well as shared direction.",
+                "Optimise for the highest possible media impact."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l163_q1",
-            "xpReward": 489,
-            "coinReward": 815,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "High-quality conference agendas on contested challenges need expert analysis genuine stakeholder diversity and space for productive disagreement.",
+            "explanation": "Expert analysis plus affected-community perspectives plus space for productive disagreement plus shared direction is the complete agenda architecture for a conference that produces genuine insight.",
+            "id": "sr_l163_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are engaged in complex international legal arbitration as a senior advocate. The other side has made a fundamentally flawed argument that appears superficially compelling.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Simply assert that their argument is wrong.",
+                "Identify the precise logical and evidentiary flaw in their argument explain why it is fatal to their position and articulate your alternative analysis with complete precision and supporting authority.",
+                "Hope that the arbitral panel will identify the flaw independently.",
+                "Request an extended time period to prepare a full rebuttal document."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l163_q2",
-            "xpReward": 489,
-            "coinReward": 815,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Legal advocacy requires precise identification of specific flaws in opposing arguments clear explanation of why those flaws are fatal and precise alternative analysis with authority.",
+            "explanation": "Precisely identifying the logical or evidentiary flaw plus explaining why it is fatal to the opposing position plus articulating your analysis with complete precision and supporting authority is the complete structure of effective advocacy.",
+            "id": "sr_l163_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are designing a complex multi-country impact evaluation programme for a major international development intervention.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Standardise the evaluation methodology completely across all countries for comparability.",
+                "Allow each country team to develop its own evaluation approach independently.",
+                "Design a shared framework of core outcomes and methods while explicitly building in contextual flexibility for local adaptation and establish a collaborative learning structure across country teams.",
+                "Commission one global evaluation firm to manage everything centrally."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l163_q3",
-            "xpReward": 489,
-            "coinReward": 815,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Multi-country evaluation requires a shared core framework with principled contextual flexibility and structured cross-country learning.",
+            "explanation": "Shared core outcomes and methods plus principled contextual flexibility plus structured cross-country collaborative learning produces both rigorous comparability and contextually valid results.",
+            "id": "sr_l163_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are advising a board that must make a major strategic decision between two mutually exclusive paths each with significantly different risks.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Recommend the path with the lower financial risk.",
+                "Recommend the path most consistent with the board's current risk appetite.",
+                "Present both paths with complete intellectual honesty: the full risk-return profile of each the key uncertainties the specific assumptions underlying your analysis and how those assumptions could be tested before commitment.",
+                "Recommend the bolder path - great organisations take big strategic risks."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l164_q1",
-            "xpReward": 492,
-            "coinReward": 820,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Major strategic binary choices require complete intellectual honesty about the full risk-return profile and key testable assumptions of both paths.",
+            "explanation": "Full risk-return profile of both paths plus key uncertainties plus specific assumptions plus how assumptions could be tested before full commitment is the complete advisory framework.",
+            "id": "sr_l164_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are designing an organisational system for continuous learning and adaptation in a complex rapidly changing environment.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Create a comprehensive annual strategic planning process.",
+                "Hire a Chief Learning Officer.",
+                "Design a system with embedded feedback loops at every level: operational learning from front-line practice strategic learning from environmental scanning and leadership learning from structured reflection - all connected and informing each other.",
+                "Mandate individual annual learning plans for all staff."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l164_q2",
-            "xpReward": 492,
-            "coinReward": 820,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Genuine organisational learning requires embedded connected feedback loops at operational strategic and leadership levels - not episodic processes.",
+            "explanation": "Embedded operational feedback loops plus strategic environmental scanning plus structured leadership reflection all explicitly connected and informing each other is the complete architecture for genuine continuous organisational learning.",
+            "id": "sr_l164_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are asked to assess whether your organisation has genuinely embedded a culture of psychological safety.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Survey employees on whether they feel psychologically safe.",
+                "Assess whether performance management processes punish failure.",
+                "Triangulate multiple evidence sources: what people actually say in meetings what topics are consistently avoided what happens after failure at every level who speaks and who remains silent and what the most junior people are willing to say to the most senior.",
+                "Review the organisation's stated values and culture commitments."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l164_q3",
-            "xpReward": 492,
-            "coinReward": 820,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Genuine psychological safety assessment requires triangulation across multiple behavioural evidence sources - not self-report surveys or stated commitments.",
+            "explanation": "Meeting speech patterns plus systematically avoided topics plus post-failure treatment plus speaking pattern analysis plus junior-to-senior voice analysis is the complete behavioural evidence triangulation approach.",
+            "id": "sr_l164_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are advising on the design of a complex multi-level governance system for a large federal organisation.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Centralise as much governance as possible for consistency.",
+                "Devolve as much governance as possible for local responsiveness.",
+                "Design a principled subsidiarity framework: devolve decisions to the lowest level at which they can be effectively made with the necessary information and accountability while maintaining genuine coherence on matters of common interest.",
+                "Copy the governance design of the best-performing comparable federal organisation."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l165_q1",
-            "xpReward": 495,
-            "coinReward": 825,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Federal governance design requires a principled subsidiarity framework - not a blanket centralisation or devolution.",
+            "explanation": "Subsidiarity-based devolution to the lowest effective decision level plus maintained coherence on genuinely common interest matters is the principled governance design approach.",
+            "id": "sr_l165_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are asked to lead the development of a comprehensive national strategy on a complex multi-sector challenge.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Begin by commissioning the most comprehensive possible evidence review.",
+                "Convene the most senior officials and ask them to define the strategy.",
+                "Design a strategy development process: evidence foundation genuine multi-stakeholder engagement including affected communities clear theory of change with explicit assumptions measurable outcomes phased implementation with learning cycles and accountability mechanisms.",
+                "Adopt the strategy of the country internationally recognised as the best performer on this challenge."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l165_q2",
-            "xpReward": 495,
-            "coinReward": 825,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "National multi-sector strategy development requires a complete process: evidence genuine stakeholder engagement clear theory of change measurable outcomes phased implementation and accountability.",
+            "explanation": "Evidence foundation plus multi-stakeholder engagement including affected communities plus theory of change plus measurable outcomes plus phased implementation with learning plus accountability mechanisms is the complete national strategy development architecture.",
+            "id": "sr_l165_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are facilitating a high-stakes leadership team offsite where long-suppressed interpersonal tensions are preventing strategic progress.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Focus entirely on the strategic agenda and avoid the interpersonal dynamics.",
+                "Address the interpersonal tensions directly in the group before any strategic work.",
+                "Create a structured process that surfaces the most important unspoken things clearly and safely re-establishes the foundation of working relationships and then connects that renewed foundation explicitly to the strategic work ahead.",
+                "Bring in a therapist to address the team dynamics."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l165_q3",
-            "xpReward": 495,
-            "coinReward": 825,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Unresolved interpersonal tension in leadership teams requires structured surfacing and relational foundation work - explicitly connected to the strategic agenda.",
+            "explanation": "Structured safe surfacing of unspoken dynamics plus relational foundation re-establishment plus explicit connection to strategic work is the complete design.",
+            "id": "sr_l165_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are advising a CEO who must simultaneously manage an immediate operational crisis while leading a major long-term strategic transformation.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Focus entirely on the immediate crisis until it is fully resolved.",
+                "Delegate the entire crisis to others and focus exclusively on the transformation.",
+                "Design a parallel operating model: a dedicated crisis response team with clear accountability and decision authority while protecting your own time and the leadership team's attention for strategic transformation decisions that have long-term irreversibility.",
+                "Postpone the transformation until the crisis is completely resolved."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l166_q1",
-            "xpReward": 498,
-            "coinReward": 830,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Simultaneous crisis response and strategic transformation require a disciplined parallel operating model with protected leadership time for strategic decisions.",
+            "explanation": "Dedicated crisis response team with clear authority plus protected CEO and leadership team time for strategic decisions with long-term irreversibility is the complete parallel operating model.",
+            "id": "sr_l166_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are designing a programme to build systemic innovation capability across a large historically risk-averse organisation.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Create a dedicated innovation lab separate from the core organisation.",
+                "Mandate innovation in all employee performance objectives.",
+                "Design a multi-level capability-building programme: psychological safety infrastructure structured experimentation methodology rapid-cycle learning processes cross-boundary collaboration mechanisms and leadership modelling of genuine risk tolerance.",
+                "Focus innovation investment exclusively on technology adoption."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l166_q2",
-            "xpReward": 498,
-            "coinReward": 830,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Systemic innovation capability requires multi-level infrastructure: safety methodology learning processes collaboration and leadership modelling.",
+            "explanation": "Psychological safety plus structured experimentation plus rapid-cycle learning plus cross-boundary collaboration plus leadership modelling of genuine risk tolerance is the complete systemic innovation capability architecture.",
+            "id": "sr_l166_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A government is considering whether to use algorithmic decision-making for significant welfare benefit eligibility decisions. You are asked for an expert view.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Recommend adoption - algorithmic systems are more objective than human decision-makers.",
+                "Recommend prohibition - algorithms should never make welfare decisions.",
+                "Provide a nuanced evidence-based analysis: the specific accuracy and bias evidence for this system the due process and appeal rights implications the dignity and transparency requirements the accountability gap risks and the conditions under which such systems could be used responsibly.",
+                "Defer entirely to the technical experts who built the system."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l166_q3",
-            "xpReward": 498,
-            "coinReward": 830,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Expert advice on algorithmic welfare decisions requires multi-dimensional analysis: accuracy and bias evidence due process implications dignity requirements accountability gaps and conditions for responsible use.",
+            "explanation": "System-specific accuracy and bias evidence plus due process and appeal rights plus dignity and transparency requirements plus accountability gap risks plus conditions for responsible use is the complete expert analytical framework.",
+            "id": "sr_l166_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are asked to advise on restoring trust in a major public institution whose credibility has been seriously damaged.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Commission a high-profile external review.",
+                "Replace the most senior leaders immediately.",
+                "Design a comprehensive trust restoration programme: rigorous and genuinely independent assessment of what specifically went wrong full public transparency about findings specific and verifiable accountability for failures concrete and demonstrable change and sustained independent performance oversight.",
+                "Launch a major public communications campaign."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l167_q1",
-            "xpReward": 501,
-            "coinReward": 835,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Institutional trust restoration requires independent assessment of genuine failures full public transparency specific accountability demonstrable change and sustained external oversight.",
+            "explanation": "Independent assessment of specific failures plus full public transparency plus verifiable accountability plus demonstrable institutional change plus sustained independent oversight is the complete trust restoration framework.",
+            "id": "sr_l167_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You have been invited to write a significant opinion piece on a major unresolved public policy question.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Summarise the current policy debate comprehensively.",
+                "Advocate strongly for whatever view you personally hold.",
+                "Make a specific original evidence-grounded argument that advances the debate - while being transparent about your assumptions explicitly engaging with the strongest counterargument and being honest about what evidence could change your view.",
+                "Focus your piece on criticising the currently dominant policy position."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l167_q2",
-            "xpReward": 501,
-            "coinReward": 835,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "High-quality policy opinion writing makes a specific original argument grounds it in evidence engages the strongest counterargument and is transparent about what evidence could change the view.",
+            "explanation": "Specific original argument plus evidence grounding plus transparent assumptions plus genuine engagement with the strongest counterargument plus openness to evidence that could change your view is the complete framework.",
+            "id": "sr_l167_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are advising on the design of a new regulatory framework for a rapidly evolving technology sector where the evidence base is still emerging.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Apply the existing regulatory framework for the most analogous established sector.",
+                "Delay all regulatory action until the evidence base is fully established.",
+                "Design a principles-based adaptive regulatory framework: clear statutory objectives and harm prevention principles regulatory powers calibrated to risk level and evidence quality mandatory ongoing regulatory review cycles and built-in mechanisms to adjust as evidence develops.",
+                "Create the most permissive possible regulatory environment to maximise innovation."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l167_q3",
-            "xpReward": 501,
-            "coinReward": 835,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Regulatory design for emerging technology sectors requires principles-based adaptive frameworks - not analogy delay or blanket permissiveness.",
+            "explanation": "Statutory objectives and harm prevention principles plus risk-calibrated regulatory powers plus mandatory ongoing review cycles plus adjustment mechanisms as evidence develops is the complete adaptive regulatory framework design.",
+            "id": "sr_l167_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are asked to develop an expert view on how a major democratic institution should reform itself to remain genuinely legitimate in a context of declining public trust.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Recommend adopting the practices of the most trusted comparable institution internationally.",
+                "Recommend primarily structural reforms to the institution's processes.",
+                "Develop a comprehensive legitimacy restoration framework: honest diagnosis of the specific sources of declining trust with affected populations fundamental reform of the practices generating the trust deficit genuine mechanisms for ongoing citizen participation in oversight and transparent accountability for institutional performance.",
+                "Recommend a major communications strategy to rebuild perceptions."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l168_q1",
-            "xpReward": 504,
-            "coinReward": 840,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Democratic institution legitimacy restoration requires rigorous diagnosis fundamental practice reform genuine citizen participation in oversight and transparent accountability - not structural tinkering or communications strategy.",
+            "explanation": "Specific source diagnosis with affected populations plus fundamental reform of trust-deficit-generating practices plus genuine ongoing citizen oversight participation plus transparent accountability for institutional performance is the complete legitimacy restoration framework.",
+            "id": "sr_l168_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are designing a framework for how a major global corporation should make significant decisions that will have material long-term effects on future generations.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Apply the same discount rate to future impacts as to future financial returns.",
+                "Focus long-term decision-making exclusively on what is legally required.",
+                "Develop an intergenerational impact assessment framework: identification of material long-term effects and those who will bear them application of explicit intergenerational equity principles assessment of reversibility of impacts genuine engagement with representative future-generation interests and integration into the core governance decision process.",
+                "Defer all decisions with primarily long-term effects to future leadership teams."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l168_q2",
-            "xpReward": 504,
-            "coinReward": 840,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Intergenerational corporate decision-making requires an explicit equity framework: material long-term effect identification intergenerational equity principles reversibility assessment and future-generation interest representation.",
+            "explanation": "Material long-term effect and bearer identification plus explicit intergenerational equity principles plus reversibility assessment plus future-generation interest representation plus core governance integration is the complete intergenerational impact assessment framework.",
+            "id": "sr_l168_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are asked to advise on the design of a complex international tax reform that must be simultaneously fair economically efficient and administratively feasible.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Optimise exclusively for tax revenue maximisation.",
+                "Focus the reform design primarily on theoretical economic efficiency.",
+                "Design through genuine multi-objective optimisation: rigorous evidence base for each objective transparent analysis of trade-offs between objectives in specific design choices pilot and experimental evidence where feasible and genuine stakeholder consultation including with those bearing the highest tax burden.",
+                "Adopt the reform design recommended by the most eminent tax economist."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l168_q3",
-            "xpReward": 504,
-            "coinReward": 840,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Complex international tax reform requires genuine multi-objective optimisation with transparent trade-off analysis experimental evidence where possible and inclusive stakeholder consultation.",
+            "explanation": "Rigorous evidence base for each objective plus transparent inter-objective trade-off analysis plus pilot and experimental evidence plus genuine stakeholder consultation including highest-burden bearers is the complete framework.",
+            "id": "sr_l168_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are preparing your most important public lecture of your career on the limits of your own field of expertise.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Defend your field's contributions and methods robustly.",
+                "Comprehensively list all the limitations of your field.",
+                "Structure the lecture around a deep and honest engagement with what your field genuinely cannot know or do well why those limits exist and are likely persistent what other disciplines or methods can address those limits and what a more complete intellectual framework would look like.",
+                "Avoid the topic - publicly criticising your own field damages your credibility."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l169_q1",
-            "xpReward": 507,
-            "coinReward": 845,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Expert engagement with the limits of your own field requires honest acknowledgment of persistent limits structural explanation alternative disciplinary approaches and a vision of more complete intellectual frameworks.",
+            "explanation": "Genuine limits and their persistent structural causes plus what other disciplines or methods address these limits plus vision of a more complete intellectual framework is the architecture of expert intellectual honesty at the highest level.",
+            "id": "sr_l169_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are advising on the design of a major national health system reform in a resource-constrained high-burden context.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Apply the reform model from the highest-income country with the best health outcomes.",
+                "Focus reform entirely on the most cost-effective individual interventions.",
+                "Design a context-specific systems-level reform: comprehensive bottleneck analysis of the current system's most limiting constraints co-designed solutions with health workers and communities phased investment sequencing aligned to system readiness and adaptive management with genuine community accountability.",
+                "Focus reform on expanding the number of available health facilities."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l169_q2",
-            "xpReward": 507,
-            "coinReward": 845,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Health system reform in resource-constrained high-burden contexts requires systems-level bottleneck analysis co-design with workers and communities readiness-aligned sequencing and community accountability.",
+            "explanation": "Comprehensive bottleneck analysis plus co-designed solutions with health workers and communities plus readiness-aligned investment sequencing plus adaptive management with community accountability is the complete health system reform design framework.",
+            "id": "sr_l169_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are asked to evaluate the strategic effectiveness of a major international organisation's decade-long programme of work.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Assess performance primarily against the organisation's own stated targets.",
+                "Focus evaluation primarily on financial value for money.",
+                "Design a comprehensive strategic effectiveness evaluation: independent assessment of whether the strategic objectives were the right ones to pursue given the need quality and rigour of the strategic choices made evidence of genuine change attributable to the programme unintended consequences and opportunity costs and implications for future strategic direction.",
+                "Commission a participatory self-evaluation by the organisation's own leadership."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l169_q3",
-            "xpReward": 507,
-            "coinReward": 845,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Strategic effectiveness evaluation requires independent assessment of objective quality strategic choice rigour attributable change evidence unintended consequences opportunity costs and future strategic implications.",
+            "explanation": "Objective quality assessment plus strategic choice rigour plus attributable change evidence plus unintended consequences and opportunity costs plus future strategic direction implications is the complete strategic effectiveness evaluation framework.",
+            "id": "sr_l169_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are developing an expert position on the ethics of a new powerful dual-use technology with both significant beneficial and deeply harmful potential applications.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Advocate for accelerating the technology's development to maximise beneficial applications.",
+                "Advocate for prohibiting the technology to prevent harmful applications.",
+                "Develop a nuanced evidence-based position: comprehensive benefit-harm analysis across all plausible applications and affected populations explicit engagement with the strongest arguments for and against development assessment of governance mechanisms that can genuinely manage the harmful applications and identification of the conditions under which development would and would not be ethically defensible.",
+                "Defer to the democratic political process to determine the answer."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l170_q1",
-            "xpReward": 510,
-            "coinReward": 850,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Expert dual-use technology ethics requires comprehensive benefit-harm analysis genuine engagement with opposing arguments governance mechanism assessment and explicit ethical defensibility conditions.",
+            "explanation": "Comprehensive benefit-harm analysis across applications and populations plus engagement with strongest opposing arguments plus governance mechanism assessment plus explicit ethical defensibility conditions is the complete framework.",
+            "id": "sr_l170_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are asked to advise on the design of a genuine long-term learning system for a major public institution.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Create a comprehensive knowledge management database.",
+                "Mandate annual lessons-learned reports from all programmes.",
+                "Design a genuine institutional learning system: embedded learning loops at operational programme and strategic levels dedicated time and space for reflection mechanisms that convert individual learning into institutional knowledge leadership behaviour that models and rewards learning from failure and external input to challenge internal assumptions.",
+                "Hire a Chief Knowledge Officer."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l170_q2",
-            "xpReward": 510,
-            "coinReward": 850,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Genuine institutional learning requires embedded multi-level loops dedicated reflection time and space individual-to-institutional knowledge conversion learning-from-failure leadership modelling and external challenge to internal assumptions.",
+            "explanation": "Embedded operational programme and strategic learning loops plus dedicated reflection time and space plus individual-to-institutional knowledge conversion plus leadership modelling of learning from failure plus external assumption challenge is the complete genuine institutional learning system architecture.",
+            "id": "sr_l170_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are designing a complex systemic intervention to address entrenched intergenerational poverty in a specific geographical context.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Focus the intervention on the single most evidence-based poverty-reduction mechanism.",
+                "Design the intervention to address the most visible and measurable symptoms.",
+                "Design a systemic multi-level intervention: evidence-based analysis of the specific causal pathways maintaining poverty in this context complementary interventions addressing multiple reinforcing constraints simultaneously genuine community agency in design and governance long time horizon with adaptive management and attention to political economy barriers to change.",
+                "Commission a top academic team to design the most evidence-based intervention."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l170_q3",
-            "xpReward": 510,
-            "coinReward": 850,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Addressing entrenched intergenerational poverty requires systemic multi-level intervention: context-specific causal analysis multiple reinforcing constraint targeting genuine community agency long horizon with adaptation and political economy engagement.",
+            "explanation": "Context-specific causal pathway analysis plus complementary multi-constraint interventions plus genuine community agency in design and governance plus long adaptive time horizon plus political economy barrier engagement is the complete systemic poverty intervention design.",
+            "id": "sr_l170_q3"
         }
     ]
 }

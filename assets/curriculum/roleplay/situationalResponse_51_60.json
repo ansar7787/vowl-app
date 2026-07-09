@@ -4,694 +4,484 @@
     "levels": "51-60",
     "quests": [
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your colleague accidentally sends you an email clearly meant for someone else.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Share it with the whole team!",
+                "Hi I think this was meant for someone else.",
+                "Save it for later.",
+                "Read it carefully and say nothing."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l51_q1",
-            "xpReward": 153,
-            "coinReward": 255,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The polite and honest thing is to let the sender know immediately.",
+            "explanation": "Telling the sender I think this was meant for someone else is honest and respectful.",
+            "id": "sr_l51_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "In a job interview the interviewer asks: What is your greatest weakness?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "I have absolutely no weaknesses.",
+                "I can sometimes be too hardworking.",
+                "I sometimes struggle with time management and I'm actively working on better planning habits.",
+                "I'd rather not answer that."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l51_q2",
-            "xpReward": 153,
-            "coinReward": 255,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Be genuinely honest but always show self-awareness and a plan to improve.",
+            "explanation": "Naming a real weakness and explaining what you are doing about it shows self-awareness and a growth mindset.",
+            "id": "sr_l51_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You accidentally bump into someone and knock their coffee out of their hand.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Watch where you're going!",
+                "I'm so sorry! Are you all right? Can I get you another one?",
+                "That was an accident.",
+                "You shouldn't have been standing there."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l51_q3",
-            "xpReward": 153,
-            "coinReward": 255,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "When you cause an accident take responsibility immediately and offer to help.",
+            "explanation": "Apologising immediately and offering a replacement shows good character.",
+            "id": "sr_l51_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your friend says: I've been feeling really low lately.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Just cheer up.",
+                "That's tough. Do you want to talk about it?",
+                "Everyone feels like that.",
+                "You'll be fine."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l52_q1",
-            "xpReward": 156,
-            "coinReward": 260,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Show genuine empathy first then offer to listen without judgment.",
+            "explanation": "That's tough. Do you want to talk about it? validates your friend's feelings without dismissing them.",
+            "id": "sr_l52_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A street performer finishes their act and looks hopefully at the crowd. You enjoyed it.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Ignore them and walk away.",
+                "Clap and drop a coin in their hat.",
+                "Say nice job and walk on.",
+                "Whistle very loudly."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l52_q2",
-            "xpReward": 156,
-            "coinReward": 260,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Show appreciation for the performer's talent and effort in the appropriate way.",
+            "explanation": "Clapping and giving a small tip is the socially appropriate response to enjoying a street performance.",
+            "id": "sr_l52_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "During a meeting someone starts talking at exactly the same time as you.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Keep talking as loudly as you can.",
+                "Stop and say: Sorry please go ahead.",
+                "Ignore them completely.",
+                "Say I was speaking first."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l52_q3",
-            "xpReward": 156,
-            "coinReward": 260,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Yielding the floor shows social grace and good manners.",
+            "explanation": "Saying Sorry please go ahead when you accidentally interrupt someone shows excellent manners.",
+            "id": "sr_l52_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A neighbour knocks on your door late at night to say the noise is disturbing them.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Tell them to go away.",
+                "I'm so sorry I didn't realise. I'll keep it down straight away.",
+                "You can't tell me what to do.",
+                "I wasn't being loud at all."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l53_q1",
-            "xpReward": 159,
-            "coinReward": 265,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "A neighbour's complaint deserves respect and a quick solution.",
+            "explanation": "Apologising and agreeing to lower the noise is the respectful considerate response.",
+            "id": "sr_l53_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You overhear a coworker giving a client incorrect information about your product.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Tell the client the truth afterward without the coworker present.",
+                "Say nothing - it's not your problem.",
+                "Politely step in: Excuse me I think I can add something useful here.",
+                "Report your coworker to management immediately."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l53_q2",
-            "xpReward": 159,
-            "coinReward": 265,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Correct the information without embarrassing your colleague.",
+            "explanation": "Excuse me I think I can add something here is tactful - it corrects the error while preserving dignity.",
+            "id": "sr_l53_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are about to board your flight and cannot find your boarding pass anywhere.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Wait quietly and hope it turns up.",
+                "Tell the airline staff immediately and explain the situation calmly.",
+                "Try to walk through without it.",
+                "Go back home."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l53_q3",
-            "xpReward": 159,
-            "coinReward": 265,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Act quickly and tell the right people when a travel problem arises.",
+            "explanation": "Telling the airline staff immediately is the only practical response.",
+            "id": "sr_l53_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A new employee asks you to explain something you know very well.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Do it yourself.",
+                "I don't have time to explain everything.",
+                "Of course - let me walk you through it step by step.",
+                "Ask the manager."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l54_q1",
-            "xpReward": 162,
-            "coinReward": 270,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Sharing knowledge generously is a sign of a great team member.",
+            "explanation": "Offering to explain something step by step shows patience generosity and strong communication skills.",
+            "id": "sr_l54_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A customer is upset about a long wait. You are the shop assistant.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "It's not my fault.",
+                "I understand the wait has been frustrating. I'll look into this right away.",
+                "Come back another day.",
+                "Everyone is waiting not just you."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l54_q2",
-            "xpReward": 162,
-            "coinReward": 270,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Acknowledge the customer's frustration first then take action.",
+            "explanation": "Validating the customer's frustration and committing to action is the professional empathetic response.",
+            "id": "sr_l54_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your friend is moving house this weekend and asks for your help. You are already busy.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "I can't help sorry.",
+                "I'm not really into that kind of thing.",
+                "I'm quite busy this weekend - could I help you with the unpacking during the week instead?",
+                "Hire someone."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l54_q3",
-            "xpReward": 162,
-            "coinReward": 270,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Offer a genuine alternative rather than giving a flat refusal.",
+            "explanation": "Offering to help at a different time shows you care while being honest about your availability.",
+            "id": "sr_l54_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your boss asks you to take on another project when you are already at full capacity.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Sure no problem at all.",
+                "No I'm too busy.",
+                "I'm currently working on X and Y. Could we discuss priorities before I take this on?",
+                "Give it to someone else."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l55_q1",
-            "xpReward": 165,
-            "coinReward": 275,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Be honest about your workload without simply refusing.",
+            "explanation": "Naming your current commitments and asking to discuss priorities is professionally assertive.",
+            "id": "sr_l55_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your meal at a restaurant arrives and it is not what you ordered.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Eat it to avoid a fuss.",
+                "Demand to speak to the manager immediately.",
+                "Excuse me I think there's been a mix-up - I ordered the pasta not the risotto.",
+                "Say nothing but leave a very bad review later."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l55_q2",
-            "xpReward": 165,
-            "coinReward": 275,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Address the mistake directly and politely so it can be fixed.",
+            "explanation": "Pointing out the error calmly and specifically allows the waiter to correct it without confrontation.",
+            "id": "sr_l55_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You need to leave a voicemail for a business contact who did not answer.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Just hang up.",
+                "Say Hi call me back and hang up.",
+                "Hi this is [name] calling about our meeting on Friday. Could you call me back at [number]? Thank you.",
+                "Leave a very long extremely detailed message."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l55_q3",
-            "xpReward": 165,
-            "coinReward": 275,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "A good voicemail is brief informative and includes a call-back number.",
+            "explanation": "A complete professional voicemail includes your name the reason for calling and your number.",
+            "id": "sr_l55_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are meeting your partner's parents for the very first time.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Say nothing and look at your phone.",
+                "Nice to meet you both! I've heard so much about you.",
+                "Hello.",
+                "Don't worry I'll relax once I know you better."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l56_q1",
-            "xpReward": 168,
-            "coinReward": 280,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Make a warm enthusiastic and genuine first impression.",
+            "explanation": "Nice to meet you both! I've heard so much about you. is warm and engaging.",
+            "id": "sr_l56_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You need to ask your neighbour to water your plants while you are away travelling.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Leave a note on their door.",
+                "Hi would you mind watering my plants while I'm away? I'd really appreciate it.",
+                "Just leave and hope for the best.",
+                "Ask a friend who lives further away."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l56_q2",
-            "xpReward": 168,
-            "coinReward": 280,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Ask directly politely and with genuine appreciation.",
+            "explanation": "Making the request in person with appreciation is more personal and effective than a note.",
+            "id": "sr_l56_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "At a conference you want to speak to a well-known expert. You approach them.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "You are very famous. I love you!",
+                "Excuse me I really enjoyed your talk. May I ask you a question?",
+                "Just stand near them and wait.",
+                "Hi. Can I talk to you?"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l56_q3",
-            "xpReward": 168,
-            "coinReward": 280,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Lead with a genuine compliment and then make a specific polite request.",
+            "explanation": "Complimenting the talk creates a natural positive opening. Asking permission shows respect for their time.",
+            "id": "sr_l56_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You notice a colleague's presentation contains several factual errors before they present it to the client.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Your presentation is full of mistakes.",
+                "It's probably fine.",
+                "I noticed a few things that might need checking - would you like me to go through them with you?",
+                "Say nothing and let them present it incorrectly."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l57_q1",
-            "xpReward": 171,
-            "coinReward": 285,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Offer feedback as help and support not as direct criticism.",
+            "explanation": "Framing your input as helping to check is constructive and kind.",
+            "id": "sr_l57_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A child is crying loudly in a cafe. The parent looks very stressed and embarrassed.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Stare at them.",
+                "Ask the staff to remove them.",
+                "Smile at the parent warmly and say: It's OK - all kids do this sometimes!",
+                "Complain to the manager."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l57_q2",
-            "xpReward": 171,
-            "coinReward": 285,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Show empathy and kindness to a stressed parent in a public place.",
+            "explanation": "A small act of reassurance costs nothing but can significantly comfort a stressed parent.",
+            "id": "sr_l57_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You need more time to finish a work assignment and must email your manager to explain.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "I need more time.",
+                "I'm making good progress but need a few extra days. Could we extend the deadline to Friday?",
+                "The deadline is completely unrealistic.",
+                "I'll just submit whatever I have."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l57_q3",
-            "xpReward": 171,
-            "coinReward": 285,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Update your manager on your progress AND make a specific reasonable request.",
+            "explanation": "Updating your manager on progress and asking for a specific deadline is the professional approach.",
+            "id": "sr_l57_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A cashier gives you too much change by mistake.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Keep it - lucky day!",
+                "Say nothing and leave quickly.",
+                "Excuse me I think you've given me too much change.",
+                "Put the extra in the tip jar."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l58_q1",
-            "xpReward": 174,
-            "coinReward": 290,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Honesty is always the right choice even when no one would know.",
+            "explanation": "Pointing out the cashier's mistake is both honest and the morally correct action.",
+            "id": "sr_l58_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A client has asked for a document by 5pm and you see it is 4:45pm.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Send whatever you have without checking it.",
+                "I'll send it tomorrow instead.",
+                "Please find the document attached. Apologies if it feels slightly rushed - please let me know if anything needs adjustment.",
+                "Ignore the email and hope they forget."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l58_q2",
-            "xpReward": 174,
-            "coinReward": 290,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Deliver what you can and be transparent about the circumstances.",
+            "explanation": "Sending the document with a transparent note is professional.",
+            "id": "sr_l58_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A colleague says: I don't think your idea will work.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "You're completely wrong.",
+                "I appreciate your honesty. Could you tell me why you think that?",
+                "Fine forget it then.",
+                "Let's take a vote on it."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l58_q3",
-            "xpReward": 174,
-            "coinReward": 290,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Use disagreement as an opportunity to learn and improve your idea.",
+            "explanation": "Asking Why do you think that? turns a challenge into a productive exchange.",
+            "id": "sr_l58_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A host asks you at a dinner party: Did you enjoy the food?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "It was OK I suppose.",
+                "It was absolutely delicious! Thank you so much for cooking.",
+                "I've had better honestly.",
+                "Tell me what it was first."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l59_q1",
-            "xpReward": 177,
-            "coinReward": 295,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Be generous and sincere with praise when someone has cooked for you.",
+            "explanation": "It was absolutely delicious! Thank you so much for cooking. is warm and sincere.",
+            "id": "sr_l59_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You board a crowded bus with heavy bags. Another passenger stands up and offers you their seat.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Just take it without saying anything.",
+                "I don't need charity.",
+                "Oh that's so kind of you! Thank you very much.",
+                "No thank you I prefer to stand."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l59_q2",
-            "xpReward": 177,
-            "coinReward": 295,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Accept a generous gesture graciously and express genuine gratitude.",
+            "explanation": "Oh that's so kind of you! Thank you very much. accepts the offer with genuine warmth.",
+            "id": "sr_l59_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your child's teacher calls and says: I'm a little concerned about your child's progress in class.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "They're fine - don't worry about it.",
+                "What have they done now?",
+                "Thank you for letting me know. Could we arrange a time to discuss this in more detail?",
+                "That's your job to fix."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l59_q3",
-            "xpReward": 177,
-            "coinReward": 295,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Engage with the teacher as a partner in your child's education.",
+            "explanation": "Thanking the teacher and asking to meet shows you take their concern seriously.",
+            "id": "sr_l59_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You accidentally call someone by the wrong name in the middle of a team meeting.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Pretend nothing happened.",
+                "I'm so incredibly sorry for calling you the wrong name.",
+                "Sorry - Sarah I meant.",
+                "Just keep going and hope they didn't hear."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l60_q1",
-            "xpReward": 180,
-            "coinReward": 300,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "A quick light correction is much better than over-apologising or ignoring it.",
+            "explanation": "A brief natural correction fixes the mistake immediately without drawing more attention to it.",
+            "id": "sr_l60_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A team meeting ends without clearly assigned next steps. What should you do?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Forget about it until the next meeting.",
+                "Send a quick follow-up email summarising the agreed actions and owners.",
+                "Wait for someone else to send the summary.",
+                "Ask someone else to handle the follow-up."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l60_q2",
-            "xpReward": 180,
-            "coinReward": 300,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Good professionals proactively follow up after meetings.",
+            "explanation": "Sending a follow-up summary shows initiative and ensures everyone has clarity on who owns what.",
+            "id": "sr_l60_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your doctor recommends a treatment that you feel uncomfortable about.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "I'm not doing that - end of discussion.",
+                "Just do whatever you think is best.",
+                "I'm not entirely comfortable with that - could we explore other options together?",
+                "Write me a completely different prescription."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l60_q3",
-            "xpReward": 180,
-            "coinReward": 300,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Be honest with your doctor about your concerns - this is your right.",
+            "explanation": "Expressing discomfort and asking about alternatives is assertive and appropriate.",
+            "id": "sr_l60_q3"
         }
     ]
 }

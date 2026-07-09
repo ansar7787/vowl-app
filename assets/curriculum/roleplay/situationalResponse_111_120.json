@@ -4,694 +4,484 @@
     "levels": "111-120",
     "quests": [
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your team has strongly conflicting ideas on how to approach a critical and time-sensitive project.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Simply adopt the idea of the most experienced person.",
+                "Take a vote on which approach to follow.",
+                "Facilitate a structured discussion where each approach is evaluated against agreed criteria before any decision is made.",
+                "Let the conflict eventually resolve on its own."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l111_q1",
-            "xpReward": 333,
-            "coinReward": 555,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Agreed criteria remove personality and status from decision-making entirely.",
+            "explanation": "Agreeing on evaluation criteria first makes decisions more objective and earns genuine team buy-in.",
+            "id": "sr_l111_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You need to give performance feedback to someone who is twice your age about their communication style.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Avoid the conversation entirely.",
+                "Apologise throughout the entire conversation.",
+                "I value your experience enormously. I wanted to share something I've heard from others in the team - with the sincere goal of making your communication even more effective.",
+                "Tell them directly and bluntly what needs to change."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l111_q2",
-            "xpReward": 333,
-            "coinReward": 555,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Acknowledge their experience and frame feedback as amplifying their already genuine effectiveness.",
+            "explanation": "Honouring their experience and framing the feedback as third-party observations in service of their effectiveness is both respectful and credible.",
+            "id": "sr_l111_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are about to have a very difficult conversation with a colleague who tends to become highly defensive.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Be completely blunt - soft approaches simply do not work with this person.",
+                "Soften the message so much that the real point is completely lost.",
+                "Open with genuine recognition: I want to start by saying I truly value what you bring. This conversation comes from that honest place.",
+                "Ask someone else to have the conversation for you."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l111_q3",
-            "xpReward": 333,
-            "coinReward": 555,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Opening with genuine recognition significantly reduces defensiveness before your message lands.",
+            "explanation": "Establishing positive intent and authentic appreciation before the challenging message creates psychological safety.",
+            "id": "sr_l111_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are leading a significant change in an organisation where many people are deeply resistant.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Push the change through regardless of the resistance.",
+                "Give up and simply accept the resistance as final.",
+                "Actively engage the resistors early: I'd like to understand your specific concerns - they may genuinely improve how we implement this.",
+                "Implement the changes quietly and secretly without involving people."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l112_q1",
-            "xpReward": 336,
-            "coinReward": 560,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Resistors often hold genuinely valuable insights. Engage them early and proactively.",
+            "explanation": "Inviting resistance as input is both strategically smart and deeply respectful. People consistently support what they have genuinely helped to create.",
+            "id": "sr_l112_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You notice a consistent pattern of gender bias in how contributions are acknowledged at meetings.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Say nothing - it is not your place to raise this.",
+                "Call out the bias aggressively and publicly in front of everyone.",
+                "Raise the pattern privately with the meeting organiser: I've noticed something I think is worth reflecting on - would you be open to a brief conversation about it?",
+                "File a formal complaint immediately without any prior conversation."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l112_q2",
-            "xpReward": 336,
-            "coinReward": 560,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Raise observed systemic issues at the appropriate level and always in private first.",
+            "explanation": "A private conversation with the organiser framed as worth reflecting on is the right first step.",
+            "id": "sr_l112_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your company culture has become genuinely toxic but you love the actual work. What matters most when deciding to stay or leave?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "The salary is always the only truly relevant factor.",
+                "The quality of the work must override everything else.",
+                "Weigh the long-term personal cost to your wellbeing against the short-term professional reward - culture profoundly affects health growth and long-term career trajectory.",
+                "Stay until you happen to find something better elsewhere."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l112_q3",
-            "xpReward": 336,
-            "coinReward": 560,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Culture directly shapes your health your professional growth and your entire career trajectory.",
+            "explanation": "A thorough evaluation of genuine wellbeing costs weighed against professional rewards with careful attention to long-term career impact is the mature strategic approach.",
+            "id": "sr_l112_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You want to ask for a professional reference from someone you have not spoken to in over two years.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Email them directly: Can I use you as a reference?",
+                "Simply list their name without asking their permission.",
+                "Reconnect first with a genuine personal update and then make the reference request after re-establishing contact.",
+                "Ask someone else entirely without informing them."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l113_q1",
-            "xpReward": 339,
-            "coinReward": 565,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Re-establish the human relationship before making any professional request.",
+            "explanation": "Reconnecting genuinely before asking for the favour is both more respectful and more practically effective.",
+            "id": "sr_l113_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are presenting complex financial data to a board that includes both financial and non-financial members.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Present the complete data in full - board members should understand it.",
+                "Simplify so dramatically that key nuances are entirely lost.",
+                "Layer the presentation: lead with the story behind the numbers present headline figures and offer full technical detail as an appendix for those who want it.",
+                "Outsource the financial presentation section to someone else."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l113_q2",
-            "xpReward": 339,
-            "coinReward": 565,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Layered communication serves genuinely mixed audiences far better than any single approach.",
+            "explanation": "Story first headlines second technical detail as optional depth serves every audience member at their own level.",
+            "id": "sr_l113_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your mentor asks you directly: What kind of support are you actually looking for from me?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Whatever you happen to be able to offer.",
+                "General guidance and advice on my career.",
+                "I'd find it most valuable to have a regular sounding board specifically for strategic decisions particularly around [specific area] - and to have someone who will challenge my thinking when I'm too close to a problem.",
+                "Professional introductions and network connections."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l113_q3",
-            "xpReward": 339,
-            "coinReward": 565,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Specific actionable requests make mentoring relationships dramatically more productive.",
+            "explanation": "A specific honest answer gives the mentor clear and useful direction and signals genuine self-awareness about what you need.",
+            "id": "sr_l113_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are leading a post-mortem review after a significant project failure.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Focus primarily on identifying which individuals made which mistakes.",
+                "Move through it as quickly as possible.",
+                "Create a psychologically safe environment where the team can discuss honestly what went wrong - without blame - and identify the systemic lessons.",
+                "Share only the positive learnings from the experience."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l114_q1",
-            "xpReward": 342,
-            "coinReward": 570,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Post-mortems need genuine psychological safety to produce honest and useful insights.",
+            "explanation": "A blameless post-mortem creates the conditions for real honesty. Systemic issues not individuals are the most valuable outputs.",
+            "id": "sr_l114_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You receive a LinkedIn recommendation that praises you but contains a significant factual inaccuracy.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Accept it gratefully - more positive content is always better.",
+                "Ask them to remove it entirely.",
+                "Reach out privately: I truly appreciate this - could I suggest one small factual adjustment? I want it to be as accurate and credible as possible.",
+                "Ignore the inaccuracy - it is not important."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l114_q2",
-            "xpReward": 342,
-            "coinReward": 570,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Inaccurate professional praise can ultimately undermine your credibility and set expectations you cannot meet.",
+            "explanation": "Asking for an adjustment framed as wanting accuracy ensures the recommendation is genuinely credible.",
+            "id": "sr_l114_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You need to write a compelling internal email to senior leadership requesting budget for a new strategic initiative.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Begin by explaining how much budget you are requesting.",
+                "Focus on the personal and team benefits the initiative would bring.",
+                "Frame the request clearly around business impact: the specific problem being solved the expected return on investment and the resources required.",
+                "Keep the tone deliberately informal and personal."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l114_q3",
-            "xpReward": 342,
-            "coinReward": 570,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Budget requests must speak the precise language of business impact.",
+            "explanation": "Problem being solved + expected business return + resources required is the fundamental structure of any compelling internal budget request.",
+            "id": "sr_l114_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are in a creative brainstorming session and a colleague says: That idea will never work.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Defend your idea passionately and immediately.",
+                "Drop the idea entirely and move to the next one.",
+                "Ask: What is your main concern with it? I'd genuinely like to understand where the gap is.",
+                "Tell them to be more open to creative thinking."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l115_q1",
-            "xpReward": 345,
-            "coinReward": 575,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Ask why before either defending or abandoning any idea.",
+            "explanation": "Asking what is your main concern? turns an objection into useful information and keeps the creative process genuinely open.",
+            "id": "sr_l115_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are asked to set meaningful performance KPIs for your team for the coming year.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Copy the KPIs from a comparable department.",
+                "Set them top-down without involving your team.",
+                "Set KPIs collaboratively ensuring they are specific genuinely measurable and clearly aligned with the company's overall strategic direction.",
+                "Use purely quantitative metrics exclusively."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l115_q2",
-            "xpReward": 345,
-            "coinReward": 575,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Collaborative strategic and measurable KPIs consistently work better than imposed ones.",
+            "explanation": "Collaborative KPI-setting increases team ownership and commitment.",
+            "id": "sr_l115_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are leading a global team and need to run a genuinely effective first kickoff meeting.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Assume your own communication norms apply equally to all cultures.",
+                "Focus exclusively on the project deliverables and timeline.",
+                "Begin with introductions that go beyond roles - include what each person uniquely contributes and what they personally hope to achieve. Then set shared working norms and actively invite input.",
+                "Keep it very short to minimise the risk of cultural misunderstandings."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l115_q3",
-            "xpReward": 345,
-            "coinReward": 575,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Cross-cultural kickoffs require significant additional investment in relationships and shared norms.",
+            "explanation": "Introductions beyond formal roles explicitly shared working norms and deliberately inclusive participation from the very start create the psychological foundation for high-performing global teams.",
+            "id": "sr_l115_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A colleague accuses you of having a conflict of interest in a decision you were involved in.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Deny it immediately and strongly.",
+                "Become visibly defensive.",
+                "Thank them for raising it acknowledge any possible appearance of conflict transparently and offer to recuse yourself from the relevant decision if appropriate.",
+                "Tell them it is genuinely none of their business."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l116_q1",
-            "xpReward": 348,
-            "coinReward": 580,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Conflict of interest concerns deserve complete transparency - not defensiveness.",
+            "explanation": "Thanking them honestly acknowledging the potential appearance of conflict and offering recusal demonstrates genuine professional integrity.",
+            "id": "sr_l116_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are onboarding a new team member entirely remotely. How do you ensure they feel genuinely included?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Send them the company handbook and onboarding documents.",
+                "Have your manager handle the entire onboarding process.",
+                "Assign a dedicated buddy schedule regular short check-in calls proactively introduce them to key people and deliberately over-communicate in their first few weeks.",
+                "Wait for them to ask questions and reach out when they need something."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l116_q2",
-            "xpReward": 348,
-            "coinReward": 580,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Remote onboarding requires deliberate structured and sustained inclusion efforts.",
+            "explanation": "A buddy plus regular check-ins plus proactive introductions plus intentional over-communication are the key ingredients of successful remote onboarding.",
+            "id": "sr_l116_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are asked for your personal view on a significant ethical workplace dilemma in a room full of senior colleagues.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Share your strongest instinctive opinion immediately and confidently.",
+                "Stay completely vague to avoid any possible controversy.",
+                "Take a brief moment then respond: This involves genuinely competing values that I take seriously. Let me share my reasoning and the key tensions I see. Then offer a clearly reasoned position.",
+                "Say you need significantly more time to think before commenting."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l116_q3",
-            "xpReward": 348,
-            "coinReward": 580,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Demonstrating your reasoning process is as important as the position you ultimately take.",
+            "explanation": "Showing the real tensions between competing values before landing on a clear position demonstrates intellectual depth.",
+            "id": "sr_l116_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You have worked for weeks on a technical document and your editor says it needs to be completely rewritten.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Reject the feedback - you have invested too much to change everything.",
+                "Rewrite it precisely as suggested even if you privately disagree.",
+                "This is genuinely hard to hear but I want to fully understand your reasoning before I respond. Can you walk me through your main concerns with it?",
+                "Send it immediately to a second editor for their view."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l117_q1",
-            "xpReward": 351,
-            "coinReward": 585,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Fully absorb difficult editorial feedback before you respond to it.",
+            "explanation": "Asking to understand the reasoning before reacting is emotionally mature. It prevents a defensive response you may later regret.",
+            "id": "sr_l117_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You need to explain to a senior stakeholder why your project has significantly exceeded its budget.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Blame exclusively external factors beyond your control.",
+                "Hope that they simply do not ask about it.",
+                "Present a clear honest account: We are over budget by [X] due to [specific and honest reason]. Here is what we learned and here is our specific revised plan for the remainder.",
+                "Focus entirely on the aspects of the project that went well."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l117_q2",
-            "xpReward": 351,
-            "coinReward": 585,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Own the overrun fully explain the genuine cause and immediately present your plan.",
+            "explanation": "A specific honest account with a clear cause and a credible revised plan is more professionally credible than any denial or deflection.",
+            "id": "sr_l117_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are designing a comprehensive communication strategy for a major internal organisational restructuring.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Send one clear email from leadership and consider the communication done.",
+                "Make a single major town hall announcement and take no further questions.",
+                "Use a multi-channel staged approach: leadership message followed by manager briefings dedicated Q and A sessions and ongoing structured updates with specific tailored messaging for each affected group.",
+                "Say as little as publicly possible about the change."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l117_q3",
-            "xpReward": 351,
-            "coinReward": 585,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Complex organisational change always requires staged targeted multi-channel communication.",
+            "explanation": "A multi-channel audience-segmented approach addresses the informational and emotional needs of each group affected by the change.",
+            "id": "sr_l117_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are presenting a new strategic direction to an audience you know is genuinely sceptical.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Begin with your most compelling data slide.",
+                "Open by directly acknowledging the scepticism: I know some of you have real concerns about this direction. I want to address those head-on right from the start.",
+                "Dive straight into your strategic plan.",
+                "Begin by thoroughly explaining why the previous approach failed."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l118_q1",
-            "xpReward": 354,
-            "coinReward": 590,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Address real resistance explicitly at the beginning - not at the end.",
+            "explanation": "Naming scepticism upfront creates genuine psychological openness. Trying to sell strategy to unaddressed sceptics with data alone almost never works effectively.",
+            "id": "sr_l118_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You discover your team is duplicating significant work that another department has already completed.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Let them finish - it is too late in the process to change anything.",
+                "Tell your team directly that all their work was unnecessary.",
+                "Connect with the other department to understand what already exists then redirect your team's energy toward the genuine gaps that remain.",
+                "Blame the organisational communication structures for the overlap."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l118_q2",
-            "xpReward": 354,
-            "coinReward": 590,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Turn discovered duplication into a real cross-team collaboration opportunity.",
+            "explanation": "Connecting departments to share what already exists and redirecting effort to genuine gaps is constructive and also builds valuable relationships across organisational silos.",
+            "id": "sr_l118_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are running a workshop and can feel that the energy in the room has dropped significantly.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Push on with the planned agenda regardless.",
+                "End the workshop significantly early.",
+                "I can feel the energy is low right now - let's take a short five-minute break and come back with fresh eyes and renewed focus.",
+                "Simply increase your own visible energy level to try to compensate."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l118_q3",
-            "xpReward": 354,
-            "coinReward": 590,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Naming what the room is genuinely experiencing is more effective than ignoring or performing around it.",
+            "explanation": "Acknowledging low energy and taking a break resets the group far more effectively than pushing through.",
+            "id": "sr_l118_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are reviewing your company's diversity hiring practices and the data clearly shows they are falling well short.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Blame the external pipeline - qualified candidates simply do not exist.",
+                "Ignore the data and carry on.",
+                "Present the findings honestly then facilitate a structured stage-by-stage review of where the drop-off is occurring and what specific actions will address each stage.",
+                "Implement a quick superficial cosmetic fix."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l119_q1",
-            "xpReward": 357,
-            "coinReward": 595,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Systemic hiring problems require rigorous systemic analysis and carefully staged solutions.",
+            "explanation": "Honest data plus stage-by-stage analysis of where in the process the drop-off occurs plus specific interventions for each stage is the only rigorous and effective approach.",
+            "id": "sr_l119_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your direct report tells you they are being consistently undermined by a senior colleague.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Confront the senior colleague directly without speaking to your report first.",
+                "Tell your report to deal with it themselves.",
+                "Listen carefully to the full account believe them provisionally and then work out the most appropriate response together with them.",
+                "Dismiss the concern as likely interpersonal sensitivity."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l119_q2",
-            "xpReward": 357,
-            "coinReward": 595,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Support your report by listening fully and actively involving them in how you respond.",
+            "explanation": "Listening carefully believing provisionally and co-creating the response empowers the employee while ensuring the situation is handled appropriately.",
+            "id": "sr_l119_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are writing a funding application for a significant project. What is the single most important element?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "A professionally designed and beautiful layout.",
+                "A comprehensive and detailed list of all your planned activities.",
+                "A clear and compelling case for why your project addresses a specific real-world need and what measurable impact it will have.",
+                "Extensive evidence of your organisation's past history and credentials."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l119_q3",
-            "xpReward": 357,
-            "coinReward": 595,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Funders invest in demonstrated impact - not in activities or organisational history.",
+            "explanation": "Specific need plus measurable impact is the core of every effective funding application.",
+            "id": "sr_l119_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A key team member with critical knowledge announces they are resigning. They leave in two weeks.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Offer them anything to get them to stay.",
+                "Accept the resignation and do nothing further.",
+                "Immediately plan a comprehensive knowledge transfer: identify exactly what critical knowledge exists schedule intensive transfer sessions and systematically document everything before their last day.",
+                "Focus on quickly replacing them rather than transferring their knowledge first."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l120_q1",
-            "xpReward": 360,
-            "coinReward": 600,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Structured knowledge transfer must begin immediately when any critical person announces departure.",
+            "explanation": "A systematic knowledge transfer protected the team and organisation. The goal is to make knowledge institutional rather than leaving it personal and irreplaceable.",
+            "id": "sr_l120_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are drafting a crisis communication message after your company issues a product recall.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Minimise the significance of the problem in your communication.",
+                "Say as little as possible to limit reputational damage.",
+                "Acknowledge the issue clearly and directly take explicit responsibility explain precisely what is being done and provide a clear specific action for customers to take.",
+                "Publicly blame the supplier for the defect."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l120_q2",
-            "xpReward": 360,
-            "coinReward": 600,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Crisis communication requires immediate clarity genuine responsibility and specific customer actions.",
+            "explanation": "Clear acknowledgment plus explicit responsibility plus corrective action plus clear customer guidance is the four-part structure of effective crisis communication.",
+            "id": "sr_l120_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your senior leadership team is genuinely divided on the company's strategic direction. You are facilitating.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Ask the CEO to simply make the final decision.",
+                "Put the options to a vote.",
+                "Use a structured decision-making process: first align clearly on the criteria for a good strategic decision then evaluate each option against those agreed criteria.",
+                "Let the disagreement remain unresolved."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l120_q3",
-            "xpReward": 360,
-            "coinReward": 600,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Strategic disagreements at the leadership level need structured process - not hierarchical override.",
+            "explanation": "Agreeing on decision criteria first removes both ego and rank from the evaluation process and consistently produces more defensible team-owned strategic decisions.",
+            "id": "sr_l120_q3"
         }
     ]
 }

@@ -5,693 +5,483 @@
     "quests": [
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your manager praises your work in front of the whole team.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Proud",
+                "Bored",
+                "Angry",
+                "Scared"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l21_q1",
-            "xpReward": 63,
-            "coinReward": 105,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 0,
+            "hint": "Your hard work has been noticed by someone in authority.",
+            "explanation": "Being praised in front of colleagues makes you feel proud.",
+            "id": "sr_l21_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You find out that a close friend lied to you about something important.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Grateful",
+                "Amused",
+                "Betrayed",
+                "Excited"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l21_q2",
-            "xpReward": 63,
-            "coinReward": 105,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Trust is the most important part of a friendship.",
+            "explanation": "Discovering that a friend lied to you makes you feel betrayed.",
+            "id": "sr_l21_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "The waiter brings you the wrong dish at the restaurant.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Content",
+                "Frustrated",
+                "Proud",
+                "Relieved"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l21_q3",
-            "xpReward": 63,
-            "coinReward": 105,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The food on your plate is not what you wanted.",
+            "explanation": "Getting the wrong food at a restaurant is frustrating.",
+            "id": "sr_l21_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your phone rings with an unknown number at midnight.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Calm",
+                "Alarmed",
+                "Bored",
+                "Proud"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l22_q1",
-            "xpReward": 66,
-            "coinReward": 110,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Something unusual is happening very late at night.",
+            "explanation": "A midnight phone call from an unknown number makes you feel alarmed.",
+            "id": "sr_l22_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "The bus arrives exactly when you need it and you are already running late.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Disappointed",
+                "Relieved",
+                "Bored",
+                "Sad"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l22_q2",
-            "xpReward": 66,
-            "coinReward": 110,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Something worked out perfectly just when you needed it.",
+            "explanation": "When transport arrives at exactly the right moment you feel relieved.",
+            "id": "sr_l22_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your boss cancels an important meeting without explanation five minutes before it starts.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Confused",
+                "Proud",
+                "Excited",
+                "Tired"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l22_q3",
-            "xpReward": 66,
-            "coinReward": 110,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 0,
+            "hint": "You prepared carefully for this but the plan has changed.",
+            "explanation": "When a meeting you prepared for is cancelled without explanation you feel confused.",
+            "id": "sr_l22_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You walk into a room full of people and they all go completely quiet.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Comfortable",
+                "Self-conscious",
+                "Excited",
+                "Relieved"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l23_q1",
-            "xpReward": 69,
-            "coinReward": 115,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Everyone's eyes are suddenly focused on you.",
+            "explanation": "When a room goes silent as you enter you become self-conscious.",
+            "id": "sr_l23_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You try a new hobby for the first time and immediately love it.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Indifferent",
+                "Sad",
+                "Enthusiastic",
+                "Annoyed"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l23_q2",
-            "xpReward": 69,
-            "coinReward": 115,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "You discovered something wonderful and new about yourself.",
+            "explanation": "When you try something new and enjoy it you feel enthusiastic.",
+            "id": "sr_l23_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Someone has taken your reserved seat on the train.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Happy",
+                "Annoyed",
+                "Proud",
+                "Grateful"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l23_q3",
-            "xpReward": 69,
-            "coinReward": 115,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "You had a seat reserved but someone else is sitting there.",
+            "explanation": "When someone takes your seat you feel annoyed.",
+            "id": "sr_l23_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You receive a message saying your flight is delayed by three hours.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Excited",
+                "Relieved",
+                "Frustrated",
+                "Proud"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l24_q1",
-            "xpReward": 72,
-            "coinReward": 120,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Your travel plans have been disrupted and you will arrive late.",
+            "explanation": "A flight delay means waiting longer and arriving late which causes frustration.",
+            "id": "sr_l24_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A stranger smiles at you warmly as you pass on the street.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Alarmed",
+                "Warmhearted",
+                "Bored",
+                "Angry"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l24_q2",
-            "xpReward": 72,
-            "coinReward": 120,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Someone shared a simple friendly unexpected moment.",
+            "explanation": "An unexpected smile from a stranger makes you feel warmhearted.",
+            "id": "sr_l24_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You cannot remember something very important that someone told you yesterday.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Relieved",
+                "Excited",
+                "Frustrated",
+                "Proud"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l24_q3",
-            "xpReward": 72,
-            "coinReward": 120,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "You know the information is somewhere in your memory but you cannot reach it.",
+            "explanation": "Forgetting something important makes you feel frustrated.",
+            "id": "sr_l24_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You finally finish reading a very long and boring work report.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Excited",
+                "Relieved",
+                "Proud",
+                "Scared"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l25_q1",
-            "xpReward": 75,
-            "coinReward": 125,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "A long and tedious task is finally completely done.",
+            "explanation": "Finishing a long dull task makes you feel relieved.",
+            "id": "sr_l25_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your phone battery dies at the exact moment you need it most.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Happy",
+                "Content",
+                "Panicked",
+                "Proud"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l25_q2",
-            "xpReward": 75,
-            "coinReward": 125,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "An essential tool has stopped working at a critical moment.",
+            "explanation": "Losing your phone battery at a critical moment makes you feel panicked.",
+            "id": "sr_l25_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You tell a joke and the whole group laughs together.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Embarrassed",
+                "Amused",
+                "Satisfied",
+                "Worried"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l25_q3",
-            "xpReward": 75,
-            "coinReward": 125,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Your sense of humor worked and people responded!",
+            "explanation": "Making others laugh with your joke makes you feel satisfied.",
+            "id": "sr_l25_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your city is featured positively on a national news programme.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Indifferent",
+                "Proud",
+                "Scared",
+                "Worried"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l26_q1",
-            "xpReward": 78,
-            "coinReward": 130,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Your hometown is being praised and recognized nationally.",
+            "explanation": "Seeing your city celebrated on the news fills you with civic pride.",
+            "id": "sr_l26_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You have to give a short speech in front of one hundred people.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
+                "Relaxed",
+                "Confident",
+                "Nervous",
                 "Bored"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l26_q2",
-            "xpReward": 78,
-            "coinReward": 130,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "All eyes and ears will be focused on you.",
+            "explanation": "Public speaking in front of a large audience makes most people feel nervous.",
+            "id": "sr_l26_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You find twenty pounds in the pocket of an old jacket.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
+                "Sad",
+                "Delighted",
+                "Worried",
                 "Bored"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l26_q3",
-            "xpReward": 78,
-            "coinReward": 130,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "An unexpected and pleasant surprise just happened!",
+            "explanation": "Finding money you had forgotten about makes you feel delighted.",
+            "id": "sr_l26_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your neighbour plays loud music at midnight every night.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Pleased",
+                "Grateful",
+                "Annoyed",
+                "Proud"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l27_q1",
-            "xpReward": 81,
-            "coinReward": 135,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Someone is disturbing your peace and preventing you from sleeping.",
+            "explanation": "Loud noise late at night when you need to sleep is very annoying.",
+            "id": "sr_l27_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your doctor tells you that all your test results are completely clear.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Disappointed",
+                "Relieved",
+                "Bored",
+                "Impatient"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l27_q2",
-            "xpReward": 81,
-            "coinReward": 135,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Your health worry is now completely gone.",
+            "explanation": "Hearing that your health is fine after worrying about test results makes you feel deeply relieved.",
+            "id": "sr_l27_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You try to pay at the supermarket checkout and your card is declined.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Happy",
+                "Confident",
+                "Mortified",
+                "Excited"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l27_q3",
-            "xpReward": 81,
-            "coinReward": 135,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "This is happening in front of other shoppers in the queue.",
+            "explanation": "Having your card declined in public is a mortifying experience.",
+            "id": "sr_l27_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are asked to work overtime for the third evening this week.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Enthusiastic",
+                "Resentful",
+                "Proud",
+                "Relieved"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l28_q1",
-            "xpReward": 84,
-            "coinReward": 140,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "You feel this situation is becoming unfair and one-sided.",
+            "explanation": "Being repeatedly asked to work extra hours can make you feel resentful.",
+            "id": "sr_l28_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You accidentally send a personal message to your manager instead of your friend.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Amused",
+                "Proud",
+                "Horrified",
+                "Calm"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l28_q2",
-            "xpReward": 84,
-            "coinReward": 140,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "A private message was sent to completely the wrong person.",
+            "explanation": "Sending a personal message to your manager by mistake is horrifying.",
+            "id": "sr_l28_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You receive a full refund for a faulty product you bought last week.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
+                "Angry",
+                "Satisfied",
+                "Scared",
                 "Bored"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l28_q3",
-            "xpReward": 84,
-            "coinReward": 140,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The problem was resolved fairly and to your benefit.",
+            "explanation": "When a complaint is resolved fairly you feel satisfied.",
+            "id": "sr_l28_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A project you worked on for several months does not succeed.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Proud",
+                "Relieved",
+                "Devastated",
+                "Happy"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l29_q1",
-            "xpReward": 87,
-            "coinReward": 145,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Something you invested a great deal of time and effort in has failed.",
+            "explanation": "When a long important project fails you feel devastated.",
+            "id": "sr_l29_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A colleague you greatly respect gives you a personal compliment.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Indifferent",
+                "Flattered",
+                "Bored",
+                "Scared"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l29_q2",
-            "xpReward": 87,
-            "coinReward": 145,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Someone whose opinion matters deeply to you has praised you.",
+            "explanation": "Being praised by someone you respect makes you feel flattered.",
+            "id": "sr_l29_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your internet connection drops during an important video call at work.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Relieved",
+                "Amused",
+                "Flustered",
+                "Proud"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l29_q3",
-            "xpReward": 87,
-            "coinReward": 145,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Technology has failed at the worst possible moment.",
+            "explanation": "Losing your connection during an important call makes you feel flustered.",
+            "id": "sr_l29_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You unexpectedly meet your favourite author at a bookshop event.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Bored",
+                "Indifferent",
+                "Starstruck",
+                "Annoyed"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l30_q1",
-            "xpReward": 90,
-            "coinReward": 150,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "You admire this person's work enormously.",
+            "explanation": "Meeting someone you truly admire makes you feel starstruck.",
+            "id": "sr_l30_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "The restaurant brings you the wrong bill with someone else's food on it.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Delighted",
+                "Confused",
+                "Proud",
+                "Excited"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l30_q2",
-            "xpReward": 90,
-            "coinReward": 150,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "The information in front of you does not match what you ordered.",
+            "explanation": "Receiving an incorrect bill at a restaurant makes you feel confused.",
+            "id": "sr_l30_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You wake up an hour before your alarm and cannot fall back to sleep.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Relaxed",
+                "Annoyed",
+                "Excited",
+                "Proud"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l30_q3",
-            "xpReward": 90,
-            "coinReward": 150,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "You have lost extra sleep time for absolutely no reason.",
+            "explanation": "Waking up early when you do not need to and cannot sleep is annoying.",
+            "id": "sr_l30_q3"
         }
     ]
 }

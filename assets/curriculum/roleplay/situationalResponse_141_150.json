@@ -4,694 +4,484 @@
     "levels": "141-150",
     "quests": [
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You discover that a senior executive is making decisions that benefit a company in which they have an undisclosed personal financial interest.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Confront them privately and allow them time to self-disclose.",
+                "Ignore it - it may not be significant enough to act on.",
+                "Report the undisclosed conflict of interest formally to the appropriate governance body through established internal channels immediately.",
+                "Share what you know with a trusted senior colleague first to get their perspective."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l141_q1",
-            "xpReward": 423,
-            "coinReward": 705,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "An undisclosed executive conflict of interest is a governance matter that requires immediate formal reporting.",
+            "explanation": "An executive with an undisclosed conflict of interest is not a matter for informal conversation. Formal reporting to the appropriate governance body is the required action.",
+            "id": "sr_l141_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are writing the introduction to an authoritative leadership book. What approach will make it genuinely memorable?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Begin with a clear and authoritative definition of leadership.",
+                "Open with a compelling specific narrative that captures the central paradox or tension the entire book will explore.",
+                "Begin immediately with the most striking and surprising statistics about leadership failure rates.",
+                "Open with a heartfelt acknowledgment of the people who most influenced your thinking."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l141_q2",
-            "xpReward": 423,
-            "coinReward": 705,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Powerful book introductions must create immediate urgency and genuine intellectual curiosity.",
+            "explanation": "A story that captures the book's central paradox creates immediate emotional and intellectual engagement. It makes readers feel compelled to continue.",
+            "id": "sr_l141_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are asked to produce an authoritative evaluation of a significant new policy proposal in your area of expertise.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Agree broadly with the proposal to maintain your credibility with the commissioning body.",
+                "Rely entirely and exclusively on your own expert knowledge.",
+                "Evaluate the proposal systematically against its stated objectives the available evidence base the material risks involved and the lived perspectives of those who will be most directly affected by it.",
+                "Focus your evaluation exclusively on technical feasibility."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l141_q3",
-            "xpReward": 423,
-            "coinReward": 705,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Rigorous policy evaluation always requires multi-dimensional analysis across four distinct lenses.",
+            "explanation": "Stated objectives plus evidence base plus material risks plus affected stakeholder perspectives is the rigorous framework for genuine policy evaluation.",
+            "id": "sr_l141_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are lead counsel on a complex negotiation and your client insists on including a clause you believe is legally unenforceable.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Include it without comment - your client has ultimate authority.",
+                "Refuse to proceed without removing the clause entirely.",
+                "Advise clearly and in specific terms about the enforceability risk document your formal professional advice comprehensively and then proceed only on the basis of their fully informed and explicit instruction.",
+                "Rephrase the clause so that it appears enforceable without actually being so."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l142_q1",
-            "xpReward": 426,
-            "coinReward": 710,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Legal counsel's professional duty is to advise clearly on risk document that advice formally and act only on fully informed client instruction.",
+            "explanation": "Clear specific risk advice plus comprehensive formal documentation plus fully informed client instruction is the established professional legal standard.",
+            "id": "sr_l142_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are speaking at a formal reconciliation event addressing a divided community. How do you frame your address?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Acknowledge exclusively one community's suffering to avoid appearing to offer false equivalence.",
+                "Focus entirely on the positive future and avoid all reference to the painful past.",
+                "Name the shared pain experienced by both communities affirm the importance of truth and articulate the deeply shared stake in a genuinely peaceful future - without erasing the complexity of what happened.",
+                "Speak in purely abstract language about universal values."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l142_q2",
-            "xpReward": 426,
-            "coinReward": 710,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Genuine reconciliation language must honour simultaneously both the real pain and the genuinely shared future.",
+            "explanation": "Naming shared pain plus affirming truth plus articulating shared future stakes without erasing complexity is the language of authentic reconciliation.",
+            "id": "sr_l142_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A respected member of your professional network offers to introduce you to someone you have been trying to reach for months.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "That would be absolutely amazing - yes please!",
+                "Yes I'd genuinely love that. Could I send you a brief context note first so you can frame the introduction in the most useful and relevant way?",
+                "Please just send me their direct contact details and I'll reach out independently.",
+                "I wasn't expecting that offer - how wonderful!"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l142_q3",
-            "xpReward": 426,
-            "coinReward": 710,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Providing the introducer with the tools and context to make the introduction well is the highest-quality response.",
+            "explanation": "A brief context note gives the person making the introduction exactly what they need to frame a warm credible and relevant connection.",
+            "id": "sr_l142_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are designing a comprehensive succession planning process for a large organisation.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Identify the most loyal and long-serving employees as candidates for key roles.",
+                "Focus exclusively on current technical skills and proven performance.",
+                "Build a comprehensive pipeline framework that assesses leadership potential current readiness and specific development needs across multiple critical roles and levels - updated formally at least annually.",
+                "Allow natural career progression to determine succession outcomes organically."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l143_q1",
-            "xpReward": 429,
-            "coinReward": 715,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Robust succession planning is a systematic continuously maintained process - not an ad hoc decision.",
+            "explanation": "Potential plus readiness plus development needs plus multi-level scope plus annual update is the architecture of a robust succession planning system.",
+            "id": "sr_l143_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A client asks for your frank assessment of their product's readiness for a major market launch.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Tell them it is fully ready - they need to hear that.",
+                "List every single flaw you can identify without prioritisation.",
+                "Provide a structured assessment: what is genuinely strong what specific risks exist and concrete recommendations to improve launch-readiness.",
+                "Say you need significantly more time to assess it properly."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l143_q2",
-            "xpReward": 429,
-            "coinReward": 715,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Honest pre-launch assessment is most valuable when structured and immediately actionable.",
+            "explanation": "Strengths plus material risks plus specific recommendations gives the client actionable intelligence rather than just validation or a list of problems.",
+            "id": "sr_l143_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are reviewing an organisation's governance structure and find seriously overlapping board and management responsibilities.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Recommend dismantling the board structure.",
+                "Accept the complexity - governance is inherently ambiguous.",
+                "Map the current roles and responsibilities precisely identify every point where boundaries are blurred and recommend specific governance changes with clear rationale for each.",
+                "Recommend converting to a purely management-led structure."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l143_q3",
-            "xpReward": 429,
-            "coinReward": 715,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Governance problems require systematic mapping disciplined analysis and targeted recommendations.",
+            "explanation": "Precise mapping plus overlap identification plus specific change recommendations with supporting rationale is rigorous governance review.",
+            "id": "sr_l143_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are coaching a highly effective but notably impulsive executive who consistently makes poor decisions specifically under pressure.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Tell them to simply calm down in high-pressure situations.",
+                "Identify the specific pressure situations that trigger impulsive decisions and co-develop a personal protocol specifically for those moments.",
+                "Remove them from every high-pressure situation going forward.",
+                "Document each poor decision carefully for a future formal performance review."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l144_q1",
-            "xpReward": 432,
-            "coinReward": 720,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Behaviour-specific coaching always requires the development of a specific personal situational protocol.",
+            "explanation": "Identifying the precise pressure triggers and co-creating a personal decision protocol for those specific moments is how coaching produces genuine and lasting behavioural change.",
+            "id": "sr_l144_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You must present an honest assessment of your organisation's digital transformation readiness to the board.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Tell them you are ready - they need to invest confidently.",
+                "Focus exclusively on identifying the technology capability gaps.",
+                "Assess readiness comprehensively across five dimensions: technology infrastructure data maturity talent capability cultural adaptability and leadership commitment - presenting a staged maturity model.",
+                "Describe in compelling terms what full transformation will ultimately look like."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l144_q2",
-            "xpReward": 432,
-            "coinReward": 720,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Digital transformation readiness is genuinely multi-dimensional - no single lens is adequate.",
+            "explanation": "Technology plus data plus talent plus culture plus leadership is the complete readiness picture. Boards need a staged maturity model not just a gap list.",
+            "id": "sr_l144_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are drafting a high-stakes legal brief. What specifically distinguishes the best briefs from merely adequate ones?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Superior length and exhaustive detail.",
+                "The greatest possible number of supporting legal authorities cited.",
+                "A rigorous logical structure where each argument builds directly on the last with the strongest argument positioned last and every single claim precisely evidenced.",
+                "The most sophisticated and technically impressive legal language."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l144_q3",
-            "xpReward": 432,
-            "coinReward": 720,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Legal briefs succeed on disciplined structure logical coherence and complete precision - not on length or sophistication of language.",
+            "explanation": "Clear structure plus logical progression plus strongest argument last plus every claim fully evidenced is the architecture of a genuinely persuasive legal brief.",
+            "id": "sr_l144_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A key investor is visibly losing confidence in your team after a difficult quarter. You have one meeting to rebuild trust.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Promise dramatically faster results than you can realistically deliver.",
+                "Bring the entire team to demonstrate full organisational capability.",
+                "Present a credible revised plan with specific milestones a rigorous risk analysis and clear evidence that the team has genuinely learned from recent difficulties - then actively invite the hardest questions.",
+                "Focus entirely on rebuilding the personal relationship."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l145_q1",
-            "xpReward": 435,
-            "coinReward": 725,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Investor confidence is concretely rebuilt through demonstrated planning rigour authentic learning and full accountability.",
+            "explanation": "Revised plan plus specific milestones plus honest risk analysis plus demonstrated organisational learning plus explicit invitation of hard questions is what rebuilds genuine investor confidence.",
+            "id": "sr_l145_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are asked to write a professional recommendation for a colleague who is clearly overqualified for the role they are applying for.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Write a glowing recommendation and say nothing about the fit concern.",
+                "Decline to write the recommendation.",
+                "Raise the potential fit concern honestly with the colleague in private - and if they still want to proceed write an honest recommendation that clearly acknowledges the breadth of their capability.",
+                "Mention the potential overqualification directly within the recommendation letter."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l145_q2",
-            "xpReward": 435,
-            "coinReward": 725,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Give the colleague the chance to genuinely reflect on fit in private - then respect their fully informed decision.",
+            "explanation": "Giving the colleague complete information to make their own decision is genuinely respectful. A strong recommendation acknowledging their breadth is honest without undermining.",
+            "id": "sr_l145_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your organisation wants to deploy AI tools in a way that may raise serious privacy concerns among your employees.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Implement the tools without proactive disclosure - legal clearance is sufficient.",
+                "Avoid all AI tool deployment entirely.",
+                "Develop a fully transparent employee policy: describe exactly what data is used precisely how it is protected which decisions it informs and how employees can raise concerns.",
+                "Obtain legal sign-off and consider the matter fully addressed."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l145_q3",
-            "xpReward": 435,
-            "coinReward": 725,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Responsible AI deployment requires proactive employee transparency - not just legal clearance.",
+            "explanation": "What data plus how protected plus which decisions plus how to raise concerns all communicated proactively is the ethical trust-building approach to any employee-facing AI deployment.",
+            "id": "sr_l145_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A major foundation asks you to evaluate the genuine impact of a significant social programme.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Measure outputs only - what was specifically produced and delivered.",
+                "Evaluate exclusively against the programme's own stated theory of change.",
+                "Use a genuine mixed-methods approach: measure quantitative outcomes rigorously conduct deep qualitative stakeholder interviews and explicitly assess unintended consequences alongside intended impact.",
+                "Rely primarily on participant satisfaction survey results."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l146_q1",
-            "xpReward": 438,
-            "coinReward": 730,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Rigorous impact evaluation must capture both intended and unintended effects across multiple complementary methods.",
+            "explanation": "Quantitative outcomes plus qualitative stakeholder insight plus unintended consequences assessed together is the complete impact picture.",
+            "id": "sr_l146_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are preparing to give testimony under cross-examination in a formal legal proceeding. What is the most critical preparation?",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Prepare a comprehensive and detailed personal statement.",
+                "Systematically anticipate every plausible line of challenging questioning and prepare clear completely honest evidence-based answers for each.",
+                "Study the professional background and previous cases of opposing counsel.",
+                "Memorise the most critical statistics and data points."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l146_q2",
-            "xpReward": 438,
-            "coinReward": 730,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Cross-examination preparation is fundamentally about anticipating every challenging question and preparing honest precise evidence-based responses.",
+            "explanation": "Rigorously anticipating hostile questions plus preparing honest evidence-based directly clear answers is the core of effective cross-examination preparation.",
+            "id": "sr_l146_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are designing a comprehensive employee listening strategy for a large complex organisation.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Run a single comprehensive annual engagement survey.",
+                "Hold a town hall where senior leaders speak and employees listen.",
+                "Combine quantitative pulse surveys qualitative focus groups dedicated manager listening channels and a fully anonymous suggestion platform - with visible committed organisational response to findings.",
+                "Collect comprehensive data and share it exclusively with the senior leadership team."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l146_q3",
-            "xpReward": 438,
-            "coinReward": 730,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Effective employee listening is multi-channel regular qualitative and visibly connected to genuine organisational action.",
+            "explanation": "Pulse surveys plus focus groups plus manager channels plus anonymous input plus visible response to findings creates genuine organisational listening rather than just data collection.",
+            "id": "sr_l146_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are about to recommend a major organisational restructuring to your board. Your key assumptions carry significant inherent uncertainty.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Remove all reference to uncertainty from your presentation to appear fully confident.",
+                "Present the recommendation transparently with a clear confidence range your key underlying assumptions explicitly stated and a sensitivity analysis covering the most material risks.",
+                "Delay the recommendation indefinitely until you achieve complete certainty.",
+                "Ask the board members to generate the key assumptions themselves."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l147_q1",
-            "xpReward": 441,
-            "coinReward": 735,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Boards always need to understand the genuine uncertainty in a recommendation - not just the conclusion.",
+            "explanation": "A recommendation with an explicit confidence range plus named key assumptions plus honest sensitivity analysis is more credible than false certainty.",
+            "id": "sr_l147_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A newly appointed government minister has asked you to brief them on your sector.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Provide your standard publicly available information pack.",
+                "Focus the briefing exclusively on your own organisation's priorities.",
+                "Design a concise sector-wide briefing: key contextual background the most important current challenges and genuine opportunities your organisation's specific role and three strategic priorities you would recommend for their early attention.",
+                "Wait for their specific questions and requests before preparing anything."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l147_q2",
-            "xpReward": 441,
-            "coinReward": 735,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Ministerial briefings are most valuable when concise structured contextually complete and clearly action-oriented.",
+            "explanation": "Sector context plus key challenges and opportunities plus your specific role plus three priority recommendations is the structure of a ministerial briefing that genuinely enables effective decision-making.",
+            "id": "sr_l147_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are facilitating a high-stakes strategic review and discover that two of the key emerging conclusions directly contradict each other.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Choose the more popular of the two conclusions and present that one.",
+                "Avoid presenting the contradiction and hope no one notices.",
+                "Name the contradiction explicitly: These two conclusions appear to be in direct tension with each other. We need to work through what that means before committing to either one.",
+                "Bring in an external expert to adjudicate between the two positions."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l147_q3",
-            "xpReward": 441,
-            "coinReward": 735,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Genuine contradictions in strategic reasoning must be named and actively worked through - never hidden or glossed over.",
+            "explanation": "Naming the contradiction explicitly rather than resolving it artificially is the most rigorous facilitation choice.",
+            "id": "sr_l147_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are developing a comprehensive ethical decision-making framework for your organisation.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Adopt an existing respected code of ethics and distribute it broadly.",
+                "Focus exclusively on ensuring full legal regulatory compliance.",
+                "Build a multi-layer framework: core organisational values plus operational principles plus specific decision tests plus robust accountability mechanisms - illustrated throughout with real examples from your specific sector.",
+                "Leave all individual ethical decisions entirely to individual professional judgment."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l148_q1",
-            "xpReward": 444,
-            "coinReward": 740,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "An effective organisational ethics framework has multiple interdependent layers - values principles decision tools and accountability.",
+            "explanation": "Values plus principles plus decision tests plus accountability mechanisms plus sector-specific examples provides people with practical tools for real situations not just aspirational language.",
+            "id": "sr_l148_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are advising an organisation on how to handle a formal whistleblower complaint appropriately.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Investigate the complaint internally to protect organisational reputation.",
+                "Thoroughly reassure the whistleblower and then take no further formal action.",
+                "Ensure the complaint is handled through a formally independent process the whistleblower is comprehensively protected from any retaliation and the findings are acted upon transparently.",
+                "Ask the person being complained about to conduct or oversee the investigation."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l148_q2",
-            "xpReward": 444,
-            "coinReward": 740,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Whistleblower complaints require genuine independence complete protection and visible action.",
+            "explanation": "Formally independent process plus comprehensive whistleblower protection plus transparent action on findings is the legal and ethical minimum standard.",
+            "id": "sr_l148_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are designing a rigorous assessment centre for a senior leadership recruitment campaign.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Conduct structured interviews only.",
+                "Use exclusively written analytical tests.",
+                "Design a comprehensive multi-method approach: structured competency interview complex case study immersive leadership simulation and a 360-feedback review - all evaluated against role-specific criteria by independently trained assessors.",
+                "Assess candidates primarily through informal social observation at networking events."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l148_q3",
-            "xpReward": 444,
-            "coinReward": 740,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Senior leadership assessment requires multiple genuinely complementary methods role-specific criteria and rigorously trained assessors.",
+            "explanation": "Structured interview plus case study plus simulation plus 360-feedback plus trained assessors plus role-specific criteria is a rigorous valid legally defensible senior assessment design.",
+            "id": "sr_l148_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "Your organisation is seriously considering withdrawing from a market that has become ethically problematic.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Stay for financial reasons - ethical concerns can be managed separately.",
+                "Withdraw from the market immediately without a considered plan.",
+                "Conduct a thorough multi-dimensional analysis - ethical financial and reputational - consult all key affected stakeholders and develop a responsible well-sequenced exit strategy.",
+                "Commission a strategic public relations campaign to address the reputational dimension first."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l149_q1",
-            "xpReward": 447,
-            "coinReward": 745,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Market withdrawals with significant ethical dimensions require rigorous multi-dimensional analysis and genuine stakeholder consultation.",
+            "explanation": "Ethical plus financial plus reputational analysis plus genuine stakeholder consultation plus a responsible well-sequenced exit strategy is the complete framework.",
+            "id": "sr_l149_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "A strategic partner has clearly violated the non-disclosure agreement between your organisations.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Terminate the partnership immediately and make the breach public.",
+                "Raise it with them informally and see how they respond.",
+                "Consult legal counsel immediately formally notify the partner in writing of the specific breach and then determine what legal or commercial remedy best serves your organisation's interests.",
+                "Ignore the breach to preserve the commercial relationship."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l149_q2",
-            "xpReward": 447,
-            "coinReward": 745,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "NDA breaches require immediate legal consultation and formal written notification of the specific breach.",
+            "explanation": "Legal consultation plus formal written notification of the specific breach plus structured remedy analysis is the appropriate and professionally required sequence.",
+            "id": "sr_l149_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are asked to explain the academic distinction between leadership and management in a graduate-level seminar.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Leaders inspire people while managers organise processes.",
+                "Both terms are essentially interchangeable in modern practice.",
+                "Draw specifically on relevant theoretical frameworks - for example Kotter's distinction between producing change through leadership and producing consistency through management - then illustrate each with concrete examples from multiple real-world contexts.",
+                "Management is primarily about control while leadership is fundamentally about freedom."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l149_q3",
-            "xpReward": 447,
-            "coinReward": 745,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Graduate academic discussion requires genuine theoretical grounding and contextual illustration.",
+            "explanation": "A named theoretical framework plus multiple real-world contextual illustrations is what a graduate seminar requires. Binary slogans do not constitute academic rigour at this level.",
+            "id": "sr_l149_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are preparing an expert witness statement for a complex high-stakes commercial dispute.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Give your strongest professional opinion without qualification.",
+                "Present your analysis rigorously within the precise scope of your documented expertise explicitly qualifying any genuine uncertainties and consistently distinguishing between established facts and reasoned inferences.",
+                "Focus your statement primarily on supporting your instructing client's case.",
+                "Avoid all technical language in order to maximise accessibility for the judge."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l150_q1",
-            "xpReward": 450,
-            "coinReward": 750,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "hint": "Expert witnesses serve the court and the pursuit of truth - not the instructing client. Neutrality and stated scope are non-negotiable professional obligations.",
+            "explanation": "Facts distinguished from inferences plus explicit qualification of uncertainties plus strict adherence to your expert scope is the complete legal and professional standard for expert witness testimony.",
+            "id": "sr_l150_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are asked to lead the turnaround of an organisation in significant operational and financial crisis.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Begin immediately with a comprehensive programme of staff changes.",
+                "Focus exclusively on the financial picture and cost reduction.",
+                "Dedicate the first two full weeks entirely to structured listening: to the leadership team to front-line staff to customers and to key external stakeholders - before designing any significant interventions.",
+                "Announce your detailed turnaround plan in the first week to signal decisiveness."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l150_q2",
-            "xpReward": 450,
-            "coinReward": 750,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "Turnarounds that begin with genuine listening before intervening consistently make better diagnostic decisions.",
+            "explanation": "Deep listening to all key constituencies in the first weeks before acting produces a diagnostic picture grounded in operational reality.",
+            "id": "sr_l150_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
-            "difficulty": 1,
+            "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You just found a lost data chip.",
+            "scene": "You are drafting a corporate human rights policy for a large multinational corporation.",
             "options": [
-                "Excited!",
-                "Curious",
-                "Afraid",
-                "Bored"
+                "Follow the most permissive standard available across your various operating jurisdictions.",
+                "Adapt the existing policy of a comparable competitor organisation.",
+                "Ground the policy explicitly in internationally recognised frameworks such as the UN Guiding Principles on Business and Human Rights apply the highest standard globally and include robust governance remediation and reporting mechanisms.",
+                "Focus the policy exclusively on the human rights of your direct employees."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Data is valuable knowledge.",
-            "explanation": "Emotion guides interaction.",
-            "id": "sr_l150_q3",
-            "xpReward": 450,
-            "coinReward": 750,
-            "visual_config": {
-                "painter_type": "RoleplayPulseSync",
-                "primary_color": "0xFF00D2FF"
-            }
+            "correctAnswerIndex": 2,
+            "hint": "A credible corporate human rights policy must have explicit international grounding and robust governance mechanisms.",
+            "explanation": "UN Guiding Principles plus global highest standard plus governance plus remediation mechanisms plus transparent reporting is the widely accepted architecture for a credible corporate human rights policy.",
+            "id": "sr_l150_q3"
         }
     ]
 }
