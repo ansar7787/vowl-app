@@ -5,543 +5,513 @@
     "quests": [
         {
             "id": "WRT_FIXTHESENTENCE_L121_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 121-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "The report is writing by the senior analyst every quarter.",
+            "missingWord": "is writing",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "is written",
+                "is writing",
+                "writes",
+                "was writing"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 121-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 121]."
+            "correctAnswer": "is written",
+            "hint": "This is a passive sentence - the report doesn't write itself. What is the correct passive form?",
+            "explanation": "The passive is formed with 'be + past participle'. 'The report is written by the analyst' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L121_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 121-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "New safety guidelines were announce at the meeting last Tuesday.",
+            "missingWord": "announce",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "announced",
+                "announce",
+                "announcing",
+                "being announced"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 121-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 121]."
+            "correctAnswer": "announced",
+            "hint": "This is passive voice. What form of the verb goes after 'were' in the passive?",
+            "explanation": "Passive: 'be + past participle'. 'Guidelines were announced' - the past participle of 'announce' is 'announced'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L121_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 121-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "All meals are including in the price of the hotel room.",
+            "missingWord": "including",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "included",
+                "including",
+                "include",
+                "been included"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 121-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 121]."
+            "correctAnswer": "included",
+            "hint": "This passive sentence uses 'are'. What form of the verb completes the passive construction?",
+            "explanation": "Passive: 'be + past participle'. 'All meals are included in the price' - not 'including'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L122_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 122-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "The new bridge is expected to complete next year.",
+            "missingWord": "complete",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "be completed",
+                "complete",
+                "to complete",
+                "completed"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 122-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 122]."
+            "correctAnswer": "be completed",
+            "hint": "The bridge is the recipient of the action. How do we form passive with 'is expected to'?",
+            "explanation": "After 'is expected to' in passive constructions, use 'be + past participle': 'expected to be completed next year'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L122_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 122-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "The winners of the competition will be announcing tomorrow morning.",
+            "missingWord": "announcing",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "announced",
+                "announcing",
+                "announce",
+                "to announce"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 122-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 122]."
+            "correctAnswer": "announced",
+            "hint": "This is passive voice with 'will be'. What form follows 'will be' in a passive sentence?",
+            "explanation": "Passive: 'will be + past participle'. 'The winners will be announced tomorrow' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L122_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 122-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "The stolen painting was eventually find in an abandoned warehouse.",
+            "missingWord": "find",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "found",
+                "find",
+                "finding",
+                "to find"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 122-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 122]."
+            "correctAnswer": "found",
+            "hint": "This is passive voice with 'was'. What is the past participle of 'find'?",
+            "explanation": "In passive voice: 'was + past participle'. The past participle of 'find' is 'found': 'was eventually found'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L123_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 123-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "Students are being ask to submit their projects a week earlier this term.",
+            "missingWord": "ask",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "asked",
+                "ask",
+                "asking",
+                "been asked"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 123-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 123]."
+            "correctAnswer": "asked",
+            "hint": "This is a passive sentence (students receive the action). What form of the verb completes the passive?",
+            "explanation": "In passive: 'be + past participle'. 'Students are being asked to submit' - 'asked' is the past participle."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L123_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 123-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "The exam results will be give back to all students at the end of the week.",
+            "missingWord": "give",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "given",
+                "give",
+                "giving",
+                "been given"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 123-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 123]."
+            "correctAnswer": "given",
+            "hint": "This is a future passive sentence. What form of the verb completes the 'will be + ___' structure?",
+            "explanation": "Future passive: 'will be + past participle'. 'The results will be given back' - 'given' is the past participle."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L123_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 123-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "The textbooks have been order and should arrive by next Monday.",
+            "missingWord": "order",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "ordered",
+                "order",
+                "ordering",
+                "been ordering"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 123-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 123]."
+            "correctAnswer": "ordered",
+            "hint": "This is present perfect passive. What form of the verb completes 'have been + ___'?",
+            "explanation": "Present perfect passive: 'have been + past participle'. 'The textbooks have been ordered' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L124_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 124-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "The software updates automatically and bugs are fixing regularly.",
+            "missingWord": "fixing",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "fixed",
+                "fixing",
+                "fix",
+                "being fixed"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 124-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 124]."
+            "correctAnswer": "fixed",
+            "hint": "This is passive voice. After 'are', what form of the verb is needed to complete the passive?",
+            "explanation": "Passive: 'be + past participle'. 'Bugs are fixed regularly' - 'fixed' is the past participle of 'fix'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L124_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 124-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "This feature been removed from the latest version of the application.",
+            "missingWord": "been removed",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "has been removed",
+                "been removed",
+                "was removed",
+                "had been removed"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 124-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 124]."
+            "correctAnswer": "has been removed",
+            "hint": "This is a passive sentence about a recent change. What is missing from the passive construction?",
+            "explanation": "The auxiliary 'has' is missing: 'This feature has been removed'. Present perfect passive: 'has/have been + past participle'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L124_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 124-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "Personal data must be store securely under the new data protection laws.",
+            "missingWord": "store",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "stored",
+                "store",
+                "storing",
+                "been stored"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 124-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 124]."
+            "correctAnswer": "stored",
+            "hint": "This is a passive modal sentence. What form completes 'must be + ___'?",
+            "explanation": "Modal passive: 'must be + past participle'. 'Data must be stored securely' - 'stored' is the past participle."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L125_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 125-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "These products are manufacture in factories and then exported worldwide.",
+            "missingWord": "manufacture",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "manufactured",
+                "manufacture",
+                "manufacturing",
+                "being manufactured"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 125-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 125]."
+            "correctAnswer": "manufactured",
+            "hint": "This is a passive sentence. After 'are', what form of the verb completes the passive construction?",
+            "explanation": "Passive: 'be + past participle'. 'These products are manufactured in factories' - 'manufactured' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L125_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 125-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "The cheese is make from unpasteurised milk and aged for six months.",
+            "missingWord": "make",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "made",
+                "make",
+                "making",
+                "been made"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 125-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 125]."
+            "correctAnswer": "made",
+            "hint": "This is a passive sentence. What form of 'make' comes after 'is' in the passive construction?",
+            "explanation": "Passive: 'be + past participle'. The past participle of 'make' is 'made': 'The cheese is made from milk'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L125_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 125-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "All orders are process within twenty-four hours of being received.",
+            "missingWord": "process",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "processed",
+                "process",
+                "processing",
+                "being processed"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 125-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 125]."
+            "correctAnswer": "processed",
+            "hint": "This is passive voice. After 'are', what past participle form is needed for the verb 'process'?",
+            "explanation": "Passive: 'be + past participle'. 'All orders are processed within twenty-four hours' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L126_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 126-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "The film was direct by an award-winning director from South Korea.",
+            "missingWord": "direct",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "directed",
+                "direct",
+                "directing",
+                "been directed"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 126-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 126]."
+            "correctAnswer": "directed",
+            "hint": "This is a past passive sentence. What form of 'direct' comes after 'was' in passive voice?",
+            "explanation": "Passive: 'was + past participle'. The past participle of 'direct' is 'directed': 'The film was directed by...'"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L126_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 126-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "The tickets for the concert have already been selling out within minutes.",
+            "missingWord": "selling",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "sold",
+                "selling",
+                "sell",
+                "being sold"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 126-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 126]."
+            "correctAnswer": "sold",
+            "hint": "This is present perfect passive. What form of 'sell' completes 'have been ___'?",
+            "explanation": "Present perfect passive: 'have been + past participle'. The past participle of 'sell' is 'sold': 'have been sold out'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L126_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 126-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "The performance was attend by over five thousand people that evening.",
+            "missingWord": "attend",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "attended",
+                "attend",
+                "attending",
+                "having attended"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 126-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 126]."
+            "correctAnswer": "attended",
+            "hint": "This is passive voice with 'was'. What is the past participle of 'attend'?",
+            "explanation": "Passive: 'was + past participle'. 'Attend' → 'attended'. 'The performance was attended by over five thousand people'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L127_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 127-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "The patient is being operate on by one of the best surgeons in the country.",
+            "missingWord": "operate",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "operated",
+                "operate",
+                "operating",
+                "been operated"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 127-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 127]."
+            "correctAnswer": "operated",
+            "hint": "This is present continuous passive. What form of 'operate' completes 'is being ___'?",
+            "explanation": "Present continuous passive: 'is being + past participle'. 'The patient is being operated on' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L127_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 127-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "The problem was been identified before the meeting, which was a relief.",
+            "missingWord": "been identified",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "identified",
+                "been identified",
+                "being identified",
+                "had identified"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 127-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 127]."
+            "correctAnswer": "identified",
+            "hint": "This is simple past passive. What is the correct structure after 'was'?",
+            "explanation": "Simple past passive uses 'was + past participle' only. 'The problem was identified before the meeting'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L127_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 127-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "These shoes were making by hand by skilled craftspeople in Italy.",
+            "missingWord": "making",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "made",
+                "making",
+                "make",
+                "being made"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 127-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 127]."
+            "correctAnswer": "made",
+            "hint": "This is a past passive sentence. What form of 'make' completes 'were ___' in passive voice?",
+            "explanation": "Past passive: 'were + past participle'. The past participle of 'make' is 'made': 'These shoes were made by hand'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L128_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 128-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "The meeting has been postpone until next Friday due to the bad weather.",
+            "missingWord": "postpone",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "postponed",
+                "postpone",
+                "postponing",
+                "being postponed"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 128-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 128]."
+            "correctAnswer": "postponed",
+            "hint": "This is present perfect passive. What form completes 'has been + ___'?",
+            "explanation": "Present perfect passive: 'has been + past participle'. 'The meeting has been postponed' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L128_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 128-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "A decision will be make by the board before the end of the month.",
+            "missingWord": "make",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "made",
+                "make",
+                "making",
+                "to make"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 128-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 128]."
+            "correctAnswer": "made",
+            "hint": "This is future passive. What form of 'make' completes 'will be ___'?",
+            "explanation": "Future passive: 'will be + past participle'. 'A decision will be made by the board' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L128_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 128-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "The new policy was implemented last month and has been well receive by staff.",
+            "missingWord": "receive",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "received",
+                "receive",
+                "receiving",
+                "been received"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 128-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 128]."
+            "correctAnswer": "received",
+            "hint": "This is present perfect passive. What form of 'receive' completes 'has been ___'?",
+            "explanation": "Present perfect passive: 'has been + past participle'. 'Has been well received by staff' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L129_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 129-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "The building is currently be renovated and will reopen next spring.",
+            "missingWord": "be renovated",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "being renovated",
+                "be renovated",
+                "renovating",
+                "renovated"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 129-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 129]."
+            "correctAnswer": "being renovated",
+            "hint": "This describes an ongoing process. Which passive form expresses a currently ongoing action?",
+            "explanation": "Present continuous passive uses 'is/are being + past participle': 'The building is currently being renovated'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L129_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 129-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "All applications must receive before the deadline on the 30th of this month.",
+            "missingWord": "receive",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "be received",
+                "receive",
+                "receiving",
+                "received"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 129-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 129]."
+            "correctAnswer": "be received",
+            "hint": "This is a modal passive sentence. What form completes 'must ___'?",
+            "explanation": "Modal passive: 'must be + past participle'. 'All applications must be received before the deadline'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L129_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 129-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "The letter was written by hand and send by post to all the members.",
+            "missingWord": "send",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "sent",
+                "send",
+                "sending",
+                "been sent"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 129-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 129]."
+            "correctAnswer": "sent",
+            "hint": "This is a past passive sentence. 'Written' is already correct. What is the past participle of 'send'?",
+            "explanation": "The past participle of 'send' is 'sent'. 'The letter was written by hand and sent by post' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L130_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 130-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "The error was eventually discovering by the quality control team.",
+            "missingWord": "discovering",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "discovered",
+                "discovering",
+                "discover",
+                "been discovered"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 130-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 130]."
+            "correctAnswer": "discovered",
+            "hint": "This is passive voice with 'was'. What form of 'discover' completes the passive?",
+            "explanation": "Past passive: 'was + past participle'. 'The error was eventually discovered' - 'discovered' is the past participle."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L130_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 130-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "New employees are expected to be giving a full induction on their first day.",
+            "missingWord": "giving",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "given",
+                "giving",
+                "give",
+                "been given"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 130-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 130]."
+            "correctAnswer": "given",
+            "hint": "This is a passive infinitive construction. What form of 'give' is needed here?",
+            "explanation": "In passive infinitive: 'to be + past participle'. 'Expected to be given a full induction' - 'given' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L130_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 130-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "The contract should be sign by both parties before work can begin.",
+            "missingWord": "sign",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "signed",
+                "sign",
+                "signing",
+                "been signed"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 130-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 130]."
+            "correctAnswer": "signed",
+            "hint": "This is a modal passive sentence. What form completes 'should be ___'?",
+            "explanation": "Modal passive: 'should be + past participle'. 'The contract should be signed by both parties' is correct."
         }
     ]
 }

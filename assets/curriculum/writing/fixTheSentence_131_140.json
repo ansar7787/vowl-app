@@ -5,543 +5,513 @@
     "quests": [
         {
             "id": "WRT_FIXTHESENTENCE_L131_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 131-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "If you heat water to 100 degrees Celsius, it boiled.",
+            "missingWord": "boiled",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "boils",
+                "boiled",
+                "will boil",
+                "boiling"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 131-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 131]."
+            "correctAnswer": "boils",
+            "hint": "This is a zero conditional - a scientific fact. What tense is used in both clauses of a zero conditional?",
+            "explanation": "Zero conditional: If + present tense, present tense. 'If you heat water to 100°C, it boils' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L131_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 131-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "If she studies hard, she will passes the exam with a high score.",
+            "missingWord": "will passes",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "will pass",
+                "will passes",
+                "passes",
+                "is passing"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 131-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 131]."
+            "correctAnswer": "will pass",
+            "hint": "This is a first conditional. What form of the verb comes after 'will' in the result clause?",
+            "explanation": "After 'will', always use the base form of the verb: 'she will pass the exam'. Never 'will passes'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L131_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 131-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "Ice melts when you will apply heat to it for long enough.",
+            "missingWord": "will apply",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "apply",
+                "will apply",
+                "applied",
+                "are applying"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 131-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 131]."
+            "correctAnswer": "apply",
+            "hint": "This is a zero conditional describing a universal scientific fact. What tense is used in the 'when' clause?",
+            "explanation": "Zero conditional: when + present tense, present tense. 'When you apply heat, ice melts' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L132_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 132-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "If it will rain tomorrow, we will cancel the outdoor event.",
+            "missingWord": "will rain",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "rains",
+                "will rain",
+                "is raining",
+                "rained"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 132-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 132]."
+            "correctAnswer": "rains",
+            "hint": "This is a first conditional. What tense is used in the 'if' clause of a first conditional?",
+            "explanation": "First conditional: If + present simple, will + base verb. 'If it rains tomorrow, we will cancel the event'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L132_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 132-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "If plants don't get enough sunlight, they died.",
+            "missingWord": "died",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "die",
+                "died",
+                "will die",
+                "dying"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 132-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 132]."
+            "correctAnswer": "die",
+            "hint": "This is a zero conditional - a general truth about plants. What tense is used in a zero conditional result clause?",
+            "explanation": "Zero conditional: If + present tense, present tense. 'If plants don't get sunlight, they die' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L132_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 132-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "She will call you if she will need any help with the assignment.",
+            "missingWord": "will need",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "needs",
+                "will need",
+                "needed",
+                "is needing"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 132-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 132]."
+            "correctAnswer": "needs",
+            "hint": "In a first conditional, what tense goes in the 'if' clause?",
+            "explanation": "First conditional: If + present simple (not will), will + base verb. 'If she needs help, she will call you'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L133_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 133-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "If you mix red and blue, you will got purple.",
+            "missingWord": "will got",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "get",
+                "will got",
+                "will get",
+                "got"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 133-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 133]."
+            "correctAnswer": "get",
+            "hint": "This is a zero conditional. What form of the verb goes in the result clause of a zero conditional?",
+            "explanation": "Zero conditional result clause uses the present simple: 'you get purple'. Not 'will got' or 'got'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L133_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 133-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "If he doesn't leave now, he will missed the last bus home.",
+            "missingWord": "will missed",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "will miss",
+                "will missed",
+                "misses",
+                "missed"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 133-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 133]."
+            "correctAnswer": "will miss",
+            "hint": "This is a first conditional. What is the correct form after 'will' in the result clause?",
+            "explanation": "After 'will', use the base verb (infinitive without 'to'): 'he will miss the last bus'. Never 'will missed'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L133_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 133-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "Water will evaporate if you heat it to a sufficient temperature.",
+            "missingWord": "will evaporate",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "evaporates",
+                "will evaporate",
+                "evaporated",
+                "is evaporating"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 133-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 133]."
+            "correctAnswer": "evaporates",
+            "hint": "This describes a scientific fact. Is the first conditional or zero conditional more appropriate here?",
+            "explanation": "For universal truths and scientific facts, use zero conditional (present + present): 'Water evaporates if you heat it'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L134_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 134-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "If the weather will be nice this weekend, we'll have a barbecue.",
+            "missingWord": "will be",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "is",
+                "will be",
+                "was",
+                "would be"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 134-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 134]."
+            "correctAnswer": "is",
+            "hint": "What tense is used in the 'if' clause of a first conditional sentence?",
+            "explanation": "First conditional: If + present simple, will + base verb. 'If the weather is nice, we'll have a barbecue'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L134_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 134-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "She'll finish the project on time if she will work hard this week.",
+            "missingWord": "will work",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "works",
+                "will work",
+                "worked",
+                "is working"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 134-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 134]."
+            "correctAnswer": "works",
+            "hint": "In a first conditional, the 'if' clause uses which tense?",
+            "explanation": "First conditional: If + present simple (not will). 'If she works hard this week, she'll finish the project'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L134_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 134-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "If you pressed this button, the machine will start automatically.",
+            "missingWord": "pressed",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "press",
+                "pressed",
+                "would press",
+                "are pressing"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 134-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 134]."
+            "correctAnswer": "press",
+            "hint": "This is a first conditional - a real future possibility. What tense belongs in the 'if' clause?",
+            "explanation": "First conditional: If + present simple, will + base verb. 'If you press this button, the machine will start'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L135_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 135-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "If the train is late, I will be missing my connecting flight.",
+            "missingWord": "will be missing",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "will miss",
+                "will be missing",
+                "missed",
+                "miss"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 135-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 135]."
+            "correctAnswer": "will miss",
+            "hint": "This is a first conditional result clause. What is the most natural form here?",
+            "explanation": "Use 'will + base verb' (simple future) in first conditional results: 'I will miss my connecting flight'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L135_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 135-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "He will be very disappointed if you won't come to his birthday party.",
+            "missingWord": "won't come",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "don't come",
+                "won't come",
+                "didn't come",
+                "aren't coming"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 135-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 135]."
+            "correctAnswer": "don't come",
+            "hint": "In a first conditional 'if' clause, which form is used - 'won't come' or 'don't come'?",
+            "explanation": "First conditional 'if' clause uses present simple (not 'won't'): 'He'll be disappointed if you don't come'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L135_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 135-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "If you mixed these two chemicals together, they explode.",
+            "missingWord": "mixed",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "mix",
+                "mixed",
+                "would mix",
+                "will mix"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 135-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 135]."
+            "correctAnswer": "mix",
+            "hint": "This describes a zero conditional scientific reaction. What tense goes in the 'if' clause?",
+            "explanation": "Zero conditional: If + present simple, present simple. 'If you mix these chemicals, they explode'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L136_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 136-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "Unless she calls me first, I won't contacted her about the issue.",
+            "missingWord": "won't contacted",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "won't contact",
+                "won't contacted",
+                "don't contact",
+                "not contact"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 136-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 136]."
+            "correctAnswer": "won't contact",
+            "hint": "This is a first conditional with 'unless'. What is the correct form in the result clause?",
+            "explanation": "Use 'will + base verb' (infinitive without 'to'): 'I won't contact her'. 'Won't contacted' is incorrect."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L136_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 136-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "As long as you are honest, people will trusted you.",
+            "missingWord": "will trusted",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "will trust",
+                "will trusted",
+                "trust",
+                "trusted"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 136-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 136]."
+            "correctAnswer": "will trust",
+            "hint": "This is a first conditional. What is the correct form after 'will' in the result clause?",
+            "explanation": "After 'will', use the base verb: 'people will trust you'. 'Will trusted' is grammatically incorrect."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L136_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 136-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "If you don't water plants regularly, they will withers and die.",
+            "missingWord": "will withers",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "will wither",
+                "will withers",
+                "wither",
+                "withers"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 136-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 136]."
+            "correctAnswer": "will wither",
+            "hint": "This is a first conditional. After 'will', which form of the verb is needed?",
+            "explanation": "After 'will', use the base verb without -s: 'they will wither and die'. The -s form is never used after 'will'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L137_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 137-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "If she practices every day, she will becomes fluent in the language.",
+            "missingWord": "will becomes",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "will become",
+                "will becomes",
+                "becomes",
+                "became"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 137-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 137]."
+            "correctAnswer": "will become",
+            "hint": "This is a first conditional. What form of the verb comes after 'will' in the main clause?",
+            "explanation": "After 'will', use the base form: 'she will become fluent'. Never add -s after 'will'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L137_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 137-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "The machine will broke if you use it without reading the instructions.",
+            "missingWord": "will broke",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "will break",
+                "will broke",
+                "breaks",
+                "broke"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 137-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 137]."
+            "correctAnswer": "will break",
+            "hint": "What form of the verb is needed in the main clause of this first conditional?",
+            "explanation": "After 'will', use the base verb (infinitive without 'to'): 'The machine will break'. 'Broke' is past tense."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L137_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 137-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "If children don't get enough sleep, they struggled to concentrate at school.",
+            "missingWord": "struggled",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "struggle",
+                "struggled",
+                "will struggle",
+                "struggling"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 137-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 137]."
+            "correctAnswer": "struggle",
+            "hint": "This is a zero conditional - a general truth about children and sleep. What tense is used in the result clause?",
+            "explanation": "Zero conditional result clause uses present simple: 'they struggle to concentrate'. Not 'struggled' (past)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L138_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 138-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "Unless you book the tickets in advance, you will can't get a seat.",
+            "missingWord": "will can't",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "won't be able to",
+                "will can't",
+                "can't",
+                "couldn't"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 138-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 138]."
+            "correctAnswer": "won't be able to",
+            "hint": "What is wrong with 'will can't'? You can't combine 'will' and 'can' this way.",
+            "explanation": "'Can' and 'will' can't be used together. Express future inability with 'won't be able to'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L138_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 138-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "If he will pass the interview, he'll start work next Monday.",
+            "missingWord": "will pass",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "passes",
+                "will pass",
+                "passed",
+                "is passing"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 138-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 138]."
+            "correctAnswer": "passes",
+            "hint": "What tense is used in the 'if' clause of a first conditional sentence?",
+            "explanation": "First conditional: If + present simple. 'If he passes the interview, he'll start work next Monday'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L138_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 138-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "Provided that you submitted the form today, you'll meet the deadline.",
+            "missingWord": "submitted",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "submit",
+                "submitted",
+                "will submit",
+                "submitting"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 138-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 138]."
+            "correctAnswer": "submit",
+            "hint": "'Provided that' introduces a first conditional condition. What tense goes in the condition clause?",
+            "explanation": "Use present simple in conditional clauses: 'Provided that you submit the form today, you'll meet the deadline'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L139_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 139-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "If the temperature dropped below zero, water will freeze.",
+            "missingWord": "dropped",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "drops",
+                "dropped",
+                "would drop",
+                "will drop"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 139-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 139]."
+            "correctAnswer": "drops",
+            "hint": "This is a zero conditional scientific fact. What tense is used in the 'if' clause of a zero conditional?",
+            "explanation": "Zero conditional: If + present simple, present simple. 'If the temperature drops below zero, water freezes'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L139_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 139-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "She'll be very surprised if she will hear the news about the promotion.",
+            "missingWord": "will hear",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "hears",
+                "will hear",
+                "heard",
+                "is hearing"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 139-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 139]."
+            "correctAnswer": "hears",
+            "hint": "In a first conditional, the 'if' clause uses which tense?",
+            "explanation": "First conditional 'if' clause: present simple (not 'will'). 'She'll be surprised if she hears the news'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L139_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 139-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "If you touches a hot surface, you'll burn your hand immediately.",
+            "missingWord": "touches",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "touch",
+                "touches",
+                "will touch",
+                "touched"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 139-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 139]."
+            "correctAnswer": "touch",
+            "hint": "In the 'if' clause of a first conditional, which subject takes the base verb form?",
+            "explanation": "After 'if + you', use the base verb: 'if you touch a hot surface'. 'Touches' is the third-person singular form."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L140_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 140-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "Provided that the meeting ends on time, we will catching the early train.",
+            "missingWord": "will catching",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "will catch",
+                "will catching",
+                "catch",
+                "are catching"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 140-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 140]."
+            "correctAnswer": "will catch",
+            "hint": "This is a first conditional result clause. What is the correct form after 'will'?",
+            "explanation": "After 'will', use the base verb (infinitive without 'to'): 'we will catch the early train'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L140_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 140-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "If you mix oil and water, they separated immediately.",
+            "missingWord": "separated",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "separate",
+                "separated",
+                "will separate",
+                "separating"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 140-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 140]."
+            "correctAnswer": "separate",
+            "hint": "This is a zero conditional - a scientific fact. What tense is used in the result clause?",
+            "explanation": "Zero conditional: present simple in both clauses. 'If you mix oil and water, they separate immediately'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L140_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 140-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "Unless it rains, the match will went ahead as planned this Saturday.",
+            "missingWord": "will went",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "will go",
+                "will went",
+                "goes",
+                "went"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 140-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 140]."
+            "correctAnswer": "will go",
+            "hint": "This is a first conditional result clause. 'Will' must be followed by which verb form?",
+            "explanation": "After 'will', use the base verb: 'the match will go ahead'. 'Will went' mixes future and past tense incorrectly."
         }
     ]
 }

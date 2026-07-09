@@ -5,543 +5,513 @@
     "quests": [
         {
             "id": "WRT_FIXTHESENTENCE_L21_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 21-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "Last night, I watch a very interesting documentary about space.",
+            "missingWord": "watch",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "watch",
+                "watches",
+                "watched",
+                "watching"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 21-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 21]."
+            "correctAnswer": "watched",
+            "hint": "The phrase 'last night' signals the past. What past tense form does the regular verb 'watch' take?",
+            "explanation": "With a past time marker like 'last night', use simple past. Regular verbs add -ed: 'I watched'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L21_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 21-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "Yesterday, she cook a big dinner for the whole family.",
+            "missingWord": "cook",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "cook",
+                "cooks",
+                "cooked",
+                "cooking"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 21-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 21]."
+            "correctAnswer": "cooked",
+            "hint": "'Yesterday' is a clear signal of past time. What is the past tense of the regular verb 'cook'?",
+            "explanation": "Regular verbs form the past tense by adding -ed: 'She cooked dinner yesterday' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L21_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 21-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "We enjoy the concert so much that we stayed until the very end.",
+            "missingWord": "enjoy",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "enjoy",
+                "enjoys",
+                "enjoyed",
+                "enjoying"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 21-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 21]."
+            "correctAnswer": "enjoyed",
+            "hint": "The verb 'stayed' is already past tense. What tense should 'enjoy' be in order to match?",
+            "explanation": "Both verbs describe the same past event, so both should be past tense: 'We enjoyed the concert'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L22_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 22-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "They visit their grandparents last weekend and had a wonderful time.",
+            "missingWord": "visit",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "visit",
+                "visits",
+                "visited",
+                "visiting"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 22-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 22]."
+            "correctAnswer": "visited",
+            "hint": "'Last weekend' tells us this happened in the past. What is the correct past tense of 'visit'?",
+            "explanation": "Add -ed to regular verbs to form the past tense: 'They visited their grandparents last weekend'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L22_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 22-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "I watch an exciting film at the cinema last Friday evening.",
+            "missingWord": "watch",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "watch",
+                "watches",
+                "watched",
+                "watching"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 22-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 22]."
+            "correctAnswer": "watched",
+            "hint": "The phrase 'last Friday' shows this is a past event. What form of 'watch' is needed in the past?",
+            "explanation": "'Last Friday' is a past time marker. Use the simple past: 'I watched a film last Friday evening'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L22_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 22-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "She clean the entire house before her guests arrived at noon.",
+            "missingWord": "clean",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "clean",
+                "cleans",
+                "cleaned",
+                "cleaning"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 22-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 22]."
+            "correctAnswer": "cleaned",
+            "hint": "'Arrived' is already past tense. Both actions happened in the past - what form should 'clean' take?",
+            "explanation": "When both actions are in the past, use past tense for both: 'She cleaned the house before her guests arrived'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L23_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 23-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "He study very hard for three weeks before the final examination.",
+            "missingWord": "study",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "study",
+                "studies",
+                "studied",
+                "studying"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 23-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 23]."
+            "correctAnswer": "studied",
+            "hint": "This describes past preparation before an exam. What is the past form of 'study'?",
+            "explanation": "The verb 'study' ends in consonant + y. In the past, change -y to -ied: 'He studied hard for three weeks'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L23_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 23-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "We play football in the park every day last summer.",
+            "missingWord": "play",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "play",
+                "plays",
+                "played",
+                "playing"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 23-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 23]."
+            "correctAnswer": "played",
+            "hint": "'Last summer' shows this is a past activity. What is the past tense form of 'play'?",
+            "explanation": "'Last summer' is a past time marker. Use simple past: 'We played football in the park last summer'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L23_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 23-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "She open the envelope and read the news with great surprise.",
+            "missingWord": "open",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "open",
+                "opens",
+                "opened",
+                "opening"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 23-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 23]."
+            "correctAnswer": "opened",
+            "hint": "This describes two past actions. 'Read' is past tense here. What form should 'open' take to match?",
+            "explanation": "Both actions happened in the past, so 'open' becomes 'opened'. Regular verbs add -ed in the simple past."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L24_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 24-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "I call my friend as soon as I heard the good news about the job.",
+            "missingWord": "call",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "call",
+                "calls",
+                "called",
+                "calling"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 24-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 24]."
+            "correctAnswer": "called",
+            "hint": "'Heard' is already past tense. This describes two connected past actions. What form should 'call' take?",
+            "explanation": "Both actions are in the past: 'I called my friend as soon as I heard the good news'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L24_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 24-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "She work at that company for five years before she moved on.",
+            "missingWord": "work",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "work",
+                "works",
+                "worked",
+                "working"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 24-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 24]."
+            "correctAnswer": "worked",
+            "hint": "This describes a completed past situation. What past form does 'work' take?",
+            "explanation": "To describe a completed past situation, use simple past: 'She worked at that company for five years'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L24_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 24-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "He park the car quickly and hurried into the office building.",
+            "missingWord": "park",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "park",
+                "parks",
+                "parked",
+                "parking"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 24-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 24]."
+            "correctAnswer": "parked",
+            "hint": "'Hurried' is already past tense. What form should 'park' take to match the same time period?",
+            "explanation": "Both actions happened at the same past time: 'He parked the car and hurried into the building'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L25_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 25-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "I enjoy the weekend market so much that I went back the very next day.",
+            "missingWord": "enjoy",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "enjoy",
+                "enjoys",
+                "enjoyed",
+                "enjoying"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 25-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 25]."
+            "correctAnswer": "enjoyed",
+            "hint": "'Went' is already past tense. What past form of 'enjoy' makes this sentence consistent?",
+            "explanation": "Use simple past for both verbs: 'I enjoyed the market so much that I went back the next day'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L25_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 25-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "She pack her bag the night before her flight to London.",
+            "missingWord": "pack",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "pack",
+                "packs",
+                "packed",
+                "packing"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 25-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 25]."
+            "correctAnswer": "packed",
+            "hint": "This action happened before her flight - a past event. What is the simple past of 'pack'?",
+            "explanation": "Regular verbs form the past by adding -ed: 'She packed her bag the night before her flight'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L25_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 25-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "He order the same dish he always has at that restaurant.",
+            "missingWord": "order",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "order",
+                "orders",
+                "ordered",
+                "ordering"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 25-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 25]."
+            "correctAnswer": "ordered",
+            "hint": "This describes what someone did at a restaurant - a past event. What tense is needed here?",
+            "explanation": "When describing a past restaurant visit, use simple past: 'He ordered the same dish as always'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L26_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 26-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "We arrive at the hotel just before midnight last night.",
+            "missingWord": "arrive",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "arrive",
+                "arrives",
+                "arrived",
+                "arriving"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 26-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 26]."
+            "correctAnswer": "arrived",
+            "hint": "'Last night' is a past time marker. What is the simple past form of the regular verb 'arrive'?",
+            "explanation": "Add -d to verbs ending in -e to form the past: 'We arrived at the hotel just before midnight'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L26_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 26-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She ask the teacher a very interesting question during the lesson.",
+            "missingWord": "ask",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "ask",
+                "asks",
+                "asked",
+                "asking"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 26-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 26]."
+            "correctAnswer": "asked",
+            "hint": "This describes a past action during a class. What past form does the regular verb 'ask' take?",
+            "explanation": "Regular verbs add -ed for the past: 'She asked the teacher a very interesting question'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L26_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 26-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "He move to a new city after he finished university last year.",
+            "missingWord": "move",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "move",
+                "moves",
+                "moved",
+                "moving"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 26-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 26]."
+            "correctAnswer": "moved",
+            "hint": "'Finished' is past tense. 'Last year' is a past time marker. What form should 'move' take?",
+            "explanation": "Use simple past to match the time frame: 'He moved to a new city after he finished university'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L27_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 27-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "I lock the door carefully before leaving for the airport yesterday.",
+            "missingWord": "lock",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "lock",
+                "locks",
+                "locked",
+                "locking"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 27-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 27]."
+            "correctAnswer": "locked",
+            "hint": "'Yesterday' signals a past event. What is the simple past form of 'lock'?",
+            "explanation": "Regular verbs add -ed to form the simple past: 'I locked the door before leaving for the airport'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L27_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 27-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She smile when she received the surprise birthday present.",
+            "missingWord": "smile",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "smile",
+                "smiles",
+                "smiled",
+                "smiling"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 27-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 27]."
+            "correctAnswer": "smiled",
+            "hint": "'Received' is past tense. What form should 'smile' take to describe this past reaction?",
+            "explanation": "Both actions are in the past: 'She smiled when she received the present'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L27_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 27-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "He start learning Spanish two years ago and now speaks it well.",
+            "missingWord": "start",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "start",
+                "starts",
+                "started",
+                "starting"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 27-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 27]."
+            "correctAnswer": "started",
+            "hint": "'Two years ago' is a past time marker. What is the simple past of the regular verb 'start'?",
+            "explanation": "'Two years ago' requires simple past: 'He started learning Spanish two years ago'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L28_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 28-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "I wait for almost an hour before the train finally arrived.",
+            "missingWord": "wait",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "wait",
+                "waits",
+                "waited",
+                "waiting"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 28-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 28]."
+            "correctAnswer": "waited",
+            "hint": "'Arrived' is past tense. Both actions happened in the past. What form should 'wait' take?",
+            "explanation": "Use simple past for both events: 'I waited for almost an hour before the train finally arrived'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L28_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 28-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "She use a map to find the hotel on her very first visit.",
+            "missingWord": "use",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "use",
+                "uses",
+                "used",
+                "using"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 28-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 28]."
+            "correctAnswer": "used",
+            "hint": "This describes a completed past action. What is the simple past of 'use'?",
+            "explanation": "Add -d to verbs ending in -e: 'She used a map to find the hotel'. This is simple past."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L28_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 28-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "He want to become a doctor when he was a child growing up.",
+            "missingWord": "want",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "want",
+                "wants",
+                "wanted",
+                "wanting"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 28-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 28]."
+            "correctAnswer": "wanted",
+            "hint": "The phrase 'when he was a child' signals a past thought or wish. What tense is needed here?",
+            "explanation": "Describing a past wish uses simple past: 'He wanted to become a doctor when he was a child'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L29_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 29-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "I miss the last bus home and had to call a taxi instead.",
+            "missingWord": "miss",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "miss",
+                "misses",
+                "missed",
+                "missing"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 29-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 29]."
+            "correctAnswer": "missed",
+            "hint": "'Had to' is already past tense. Both events happened in the past. What form should 'miss' take?",
+            "explanation": "Use simple past to match 'had to': 'I missed the last bus and had to call a taxi'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L29_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 29-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "She join the company straight after graduating from university.",
+            "missingWord": "join",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "join",
+                "joins",
+                "joined",
+                "joining"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 29-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 29]."
+            "correctAnswer": "joined",
+            "hint": "This describes a past career event. What tense is needed for a completed past action?",
+            "explanation": "Use simple past for completed past actions: 'She joined the company straight after graduating'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L29_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 29-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "He decide to take a different route and found it much faster.",
+            "missingWord": "decide",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "decide",
+                "decides",
+                "decided",
+                "deciding"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 29-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 29]."
+            "correctAnswer": "decided",
+            "hint": "'Found' is already past tense. What form should 'decide' take to describe this past choice?",
+            "explanation": "Both actions are past: 'He decided to take a different route and found it faster'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L30_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 30-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "We finish the group project on time and felt very proud of our work.",
+            "missingWord": "finish",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "finish",
+                "finishes",
+                "finished",
+                "finishing"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 30-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 30]."
+            "correctAnswer": "finished",
+            "hint": "'Felt' is already past tense. What form should 'finish' take to describe this completed action?",
+            "explanation": "Both verbs describe past events: 'We finished the project on time and felt proud of our work'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L30_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 30-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "She return home last night and immediately went straight to bed.",
+            "missingWord": "return",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "return",
+                "returns",
+                "returned",
+                "returning"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 30-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 30]."
+            "correctAnswer": "returned",
+            "hint": "'Last night' is a past time marker and 'went' is past. What should 'return' become?",
+            "explanation": "Use simple past: 'She returned home last night'. Both actions happened in the past."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L30_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 1,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 30-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "He save enough money and finally bought the car he had always wanted.",
+            "missingWord": "save",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "save",
+                "saves",
+                "saved",
+                "saving"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 30-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 30]."
+            "correctAnswer": "saved",
+            "hint": "'Bought' is already past tense. What form should 'save' take for this past achievement?",
+            "explanation": "Use simple past for completed actions: 'He saved enough money and finally bought the car'."
         }
     ]
 }

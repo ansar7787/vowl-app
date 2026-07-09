@@ -5,543 +5,513 @@
     "quests": [
         {
             "id": "WRT_FIXTHESENTENCE_L101_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 101-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "I have visited Paris last summer and loved every single minute of it.",
+            "missingWord": "have visited",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "visited",
+                "have visited",
+                "was visiting",
+                "had visited"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 101-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 101]."
+            "correctAnswer": "visited",
+            "hint": "'Last summer' is a finished time period. Which tense is used for actions completed at a specific past time?",
+            "explanation": "With specific past time markers like 'last summer', use simple past: 'I visited Paris last summer'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L101_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 101-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She already finished her homework before dinner, which is why she went out.",
+            "missingWord": "already finished",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "had already finished",
+                "already finished",
+                "has already finished",
+                "would have finished"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 101-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 101]."
+            "correctAnswer": "had already finished",
+            "hint": "She finished homework before another past event (dinner). Which tense expresses the earlier of two past actions?",
+            "explanation": "Use past perfect ('had finished') for an action completed before another past event: 'She had already finished her homework'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L101_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 101-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "He has seen that film three years ago and still remembers every scene.",
+            "missingWord": "has seen",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "saw",
+                "has seen",
+                "had seen",
+                "was seeing"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 101-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 101]."
+            "correctAnswer": "saw",
+            "hint": "'Three years ago' is a specific past time. Which tense - simple past or present perfect - is correct here?",
+            "explanation": "With 'three years ago' (specific finished time), use simple past: 'He saw that film three years ago'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L102_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 102-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "She works at this company since 2019 and absolutely loves her job.",
+            "missingWord": "works",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "has worked",
+                "works",
+                "worked",
+                "is working"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 102-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 102]."
+            "correctAnswer": "has worked",
+            "hint": "The action started in 2019 and continues now. Which tense describes a situation from the past to now?",
+            "explanation": "Use present perfect ('has worked') for situations starting in the past and continuing now: 'She has worked here since 2019'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L102_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 102-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "Have you seen the new manager when he visited the office yesterday?",
+            "missingWord": "Have you seen",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "Did you see",
+                "Have you seen",
+                "Had you seen",
+                "Were you seeing"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 102-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 102]."
+            "correctAnswer": "Did you see",
+            "hint": "'Yesterday' is a specific finished time. Does present perfect or simple past work with 'yesterday'?",
+            "explanation": "Present perfect cannot be used with specific past times. Use simple past: 'Did you see the manager yesterday?'"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L102_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 102-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "He worked here for ten years, and he still works here now every day.",
+            "missingWord": "worked",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "has worked",
+                "worked",
+                "had worked",
+                "was working"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 102-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 102]."
+            "correctAnswer": "has worked",
+            "hint": "He started working ten years ago and still works here now. The situation is ongoing. Which tense fits?",
+            "explanation": "For ongoing situations started in the past, use present perfect: 'He has worked here for ten years'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L103_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 103-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "I have lost my keys yesterday and spent an hour looking for them.",
+            "missingWord": "have lost",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "lost",
+                "have lost",
+                "had lost",
+                "was losing"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 103-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 103]."
+            "correctAnswer": "lost",
+            "hint": "'Yesterday' is a specific completed time. Can we use present perfect with 'yesterday'?",
+            "explanation": "Never use present perfect with specific past times like 'yesterday': 'I lost my keys yesterday'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L103_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 103-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "She already ate, so she doesn't want anything else to eat right now.",
+            "missingWord": "already ate",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "has already eaten",
+                "already ate",
+                "had already eaten",
+                "was eating"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 103-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 103]."
+            "correctAnswer": "has already eaten",
+            "hint": "She ate recently, and the result affects now (she's not hungry). Which tense links past action to present?",
+            "explanation": "Use present perfect when a past action has a present result: 'She has already eaten' - that's why she's not hungry."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L103_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 103-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "He never tried sushi before, but he loved it when he finally did.",
+            "missingWord": "never tried",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "had never tried",
+                "never tried",
+                "has never tried",
+                "didn't try"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 103-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 103]."
+            "correctAnswer": "had never tried",
+            "hint": "He tried sushi for the first time at a specific past moment ('when he finally did'). What came before that?",
+            "explanation": "Use past perfect ('had never tried') for a state before a specific past moment: 'He had never tried sushi before'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L104_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 104-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She has graduated from university in 2021 and now works as an engineer.",
+            "missingWord": "has graduated",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "graduated",
+                "has graduated",
+                "had graduated",
+                "was graduating"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 104-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 104]."
+            "correctAnswer": "graduated",
+            "hint": "'In 2021' is a specific past year. Which tense is used for completed actions at a specific past time?",
+            "explanation": "Use simple past with specific past times: 'She graduated from university in 2021'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L104_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 104-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "I study English for five years and still have a lot more to learn.",
+            "missingWord": "study",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "have studied",
+                "study",
+                "studied",
+                "am studying"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 104-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 104]."
+            "correctAnswer": "have studied",
+            "hint": "The studying started five years ago and continues now. Which tense expresses this ongoing situation?",
+            "explanation": "For situations that started in the past and continue now, use present perfect: 'I have studied English for five years'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L104_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 104-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "He didn't finish the report yet - he's still working on it at his desk.",
+            "missingWord": "didn't finish",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "hasn't finished",
+                "didn't finish",
+                "hadn't finished",
+                "won't have finished"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 104-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 104]."
+            "correctAnswer": "hasn't finished",
+            "hint": "'Yet' is often used with negative present perfect. The task is still incomplete now. Which tense fits?",
+            "explanation": "Use present perfect negative with 'yet' for incomplete tasks: 'He hasn't finished the report yet'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L105_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 105-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "Did you ever try sushi before? I'm sure you would absolutely love it.",
+            "missingWord": "Did you ever try",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "Have you ever tried",
+                "Did you ever try",
+                "Had you ever tried",
+                "Were you ever trying"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 105-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 105]."
+            "correctAnswer": "Have you ever tried",
+            "hint": "This is about life experience up to now - no specific time is mentioned. Which tense asks about experiences?",
+            "explanation": "Use present perfect for life experiences: 'Have you ever tried sushi?' 'Did' implies a specific past time."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L105_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 105-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "She has bought a new laptop two days ago and is very happy with it.",
+            "missingWord": "has bought",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "bought",
+                "has bought",
+                "had bought",
+                "was buying"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 105-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 105]."
+            "correctAnswer": "bought",
+            "hint": "'Two days ago' is a specific past time. Which tense - present perfect or simple past - works with 'ago'?",
+            "explanation": "Present perfect cannot be used with specific past times. Use simple past: 'She bought a new laptop two days ago'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L105_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 105-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "The update has been released on Tuesday and fixed several important bugs.",
+            "missingWord": "has been released",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "was released",
+                "has been released",
+                "had been released",
+                "is released"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 105-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 105]."
+            "correctAnswer": "was released",
+            "hint": "'On Tuesday' is a specific past day. Which tense is used for actions completed at a specific past time?",
+            "explanation": "Use simple past with specific past times: 'The update was released on Tuesday'. Present perfect doesn't take 'on Tuesday'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L106_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 106-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "I've been to the doctor last week for a routine annual check-up.",
+            "missingWord": "I've been",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "I went",
+                "I've been",
+                "I had been",
+                "I was going"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 106-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 106]."
+            "correctAnswer": "I went",
+            "hint": "'Last week' is a specific completed time period. Which tense works with 'last week'?",
+            "explanation": "With 'last week', use simple past: 'I went to the doctor last week'. Present perfect can't be used with 'last week'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L106_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 106-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She felt unwell since Monday and still hasn't visited a doctor.",
+            "missingWord": "felt",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "has been feeling",
+                "felt",
+                "is feeling",
+                "was feeling"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 106-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 106]."
+            "correctAnswer": "has been feeling",
+            "hint": "'Since Monday' connects to the present - the feeling is ongoing. Which tense describes a situation from past to now?",
+            "explanation": "Use present perfect continuous: 'She has been feeling unwell since Monday' - it started Monday and continues."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L106_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 106-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "He didn't take his medication yet - please remind him before he leaves.",
+            "missingWord": "didn't take",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "hasn't taken",
+                "didn't take",
+                "hadn't taken",
+                "won't take"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 106-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 106]."
+            "correctAnswer": "hasn't taken",
+            "hint": "'Yet' with a present-moment situation - which tense naturally pairs with 'yet' for incomplete actions?",
+            "explanation": "Use present perfect with 'yet': 'He hasn't taken his medication yet'. 'Didn't' refers to a specific past time."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L107_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 107-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "She has been to Australia when she was eighteen years old and loved it.",
+            "missingWord": "has been",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "went",
+                "has been",
+                "had been",
+                "was going"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 107-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 107]."
+            "correctAnswer": "went",
+            "hint": "'When she was eighteen' is a specific past time. Which tense goes with specific past time references?",
+            "explanation": "With 'when she was eighteen' (specific past time), use simple past: 'She went to Australia when she was eighteen'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L107_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 107-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "He took over forty flights in his career and is still a nervous flyer.",
+            "missingWord": "took",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "has taken",
+                "took",
+                "was taking",
+                "had taken"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 107-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 107]."
+            "correctAnswer": "has taken",
+            "hint": "This refers to accumulated experience over a career to the present. No specific past time is mentioned.",
+            "explanation": "Present perfect for accumulated experience: 'He has taken over forty flights in his career'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L107_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 107-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "They just arrived at the hotel and are checking in at the front desk.",
+            "missingWord": "arrived",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "arrived",
+                "have just arrived",
+                "just arrived",
+                "had arrived"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 107-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 107]."
+            "correctAnswer": "have just arrived",
+            "hint": "'Just' with a very recent action that has a present impact - which tense naturally uses 'just' this way?",
+            "explanation": "Use present perfect with 'just' for very recent actions: 'They have just arrived at the hotel'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L108_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 108-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "I never ate oysters, but I would really like to try them some day.",
+            "missingWord": "never ate",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "have never eaten",
+                "never ate",
+                "had never eaten",
+                "never eat"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 108-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 108]."
+            "correctAnswer": "have never eaten",
+            "hint": "This is about a life experience (or lack of one) up to now. Which tense is used for life experiences?",
+            "explanation": "Use present perfect for experiences: 'I have never eaten oysters' - this refers to all time up to now."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L108_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 108-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "She has tried the new restaurant downtown last Friday and liked it.",
+            "missingWord": "has tried",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "tried",
+                "has tried",
+                "had tried",
+                "was trying"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 108-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 108]."
+            "correctAnswer": "tried",
+            "hint": "'Last Friday' is a specific past time. Can present perfect be used with specific past time markers?",
+            "explanation": "Present perfect cannot be used with 'last Friday'. Use simple past: 'She tried the restaurant last Friday'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L108_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 108-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "He has only arrived a few minutes ago and is still getting settled in.",
+            "missingWord": "has only arrived",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "only arrived",
+                "has only arrived",
+                "had only arrived",
+                "was only arriving"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 108-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 108]."
+            "correctAnswer": "only arrived",
+            "hint": "'A few minutes ago' gives a specific past time. Which tense works with 'ago'?",
+            "explanation": "Simple past is used with 'ago': 'He only arrived a few minutes ago'. Present perfect never takes 'ago'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L109_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 109-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She has completed the training programme last month and is now fully qualified.",
+            "missingWord": "has completed",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "completed",
+                "has completed",
+                "had completed",
+                "was completing"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 109-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 109]."
+            "correctAnswer": "completed",
+            "hint": "'Last month' specifies a past time. Which tense is required when a specific past time is mentioned?",
+            "explanation": "Use simple past with specific past times: 'She completed the training last month'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L109_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 109-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "I've worked here for three months when I got promoted to team leader.",
+            "missingWord": "I've worked",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "I had worked",
+                "I've worked",
+                "I worked",
+                "I was working"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 109-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 109]."
+            "correctAnswer": "I had worked",
+            "hint": "The sentence describes working before a past promotion event. Which tense shows action before another past event?",
+            "explanation": "Use past perfect for the earlier action: 'I had worked here for three months when I got promoted'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L109_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 109-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "The team achieved its annual target three months ahead of schedule and everyone is thrilled.",
+            "missingWord": "achieved",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "has achieved",
+                "achieved",
+                "had achieved",
+                "was achieving"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 109-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 109]."
+            "correctAnswer": "has achieved",
+            "hint": "The achievement is recent and the result ('everyone is thrilled') is relevant now. Which tense links past to present?",
+            "explanation": "Use present perfect when a past action has current relevance: 'The team has achieved its target' - that's why everyone is thrilled."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L110_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 110-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "He watched that film at least ten times and still never gets bored of it.",
+            "missingWord": "watched",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "has watched",
+                "watched",
+                "had watched",
+                "is watching"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 110-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 110]."
+            "correctAnswer": "has watched",
+            "hint": "This refers to accumulated viewings up to the present. No specific past time is mentioned. Which tense fits?",
+            "explanation": "Present perfect for accumulated experience: 'He has watched that film at least ten times'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L110_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 110-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "She read the book twice since it was published and loves it each time.",
+            "missingWord": "read",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "has read",
+                "read",
+                "had read",
+                "reads"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 110-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 110]."
+            "correctAnswer": "has read",
+            "hint": "'Since it was published' connects this to an ongoing period up to now. Which tense works with 'since'?",
+            "explanation": "Use present perfect with 'since': 'She has read the book twice since it was published'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L110_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 110-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "The band released three albums since they formed, all to critical acclaim.",
+            "missingWord": "released",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "has released",
+                "released",
+                "had released",
+                "releases"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 110-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 110]."
+            "correctAnswer": "has released",
+            "hint": "'Since they formed' links this to an ongoing period from the past to now. Which tense works with 'since'?",
+            "explanation": "Use present perfect with 'since': 'The band has released three albums since they formed'."
         }
     ]
 }

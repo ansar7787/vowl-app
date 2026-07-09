@@ -5,543 +5,513 @@
     "quests": [
         {
             "id": "WRT_FIXTHESENTENCE_L51_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 51-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "My brother and me went to the cinema to see the new film.",
+            "missingWord": "me",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "I",
+                "me",
+                "my",
+                "myself"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 51-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 51]."
+            "correctAnswer": "I",
+            "hint": "Try removing 'my brother and' - would you say 'Me went to the cinema'? Or 'I went'?",
+            "explanation": "When the pronoun is the subject (doing the action), use 'I', not 'me'. 'My brother and I went' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L51_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 51-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She told my colleague and I about the changes to the schedule.",
+            "missingWord": "I",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "me",
+                "I",
+                "myself",
+                "my"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 51-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 51]."
+            "correctAnswer": "me",
+            "hint": "Try removing 'my colleague and' - would you say 'She told I'? Or 'She told me'?",
+            "explanation": "When the pronoun receives the action (object), use 'me', not 'I'. 'She told my colleague and me' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L51_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 51-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "The dog hurt it's paw while running in the garden yesterday.",
+            "missingWord": "it's",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "its",
+                "it's",
+                "their",
+                "his"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 51-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 51]."
+            "correctAnswer": "its",
+            "hint": "Is 'it's' here meaning 'it is' or showing possession? Only one of these is intended.",
+            "explanation": "'It's' means 'it is'. The possessive form has no apostrophe: 'its'. 'The dog hurt its paw' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L52_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 52-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "Between you and I, I think the project is already behind schedule.",
+            "missingWord": "I",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "me",
+                "I",
+                "myself",
+                "mine"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 52-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 52]."
+            "correctAnswer": "me",
+            "hint": "After prepositions like 'between', 'for', 'with', 'to', which pronoun form do we use?",
+            "explanation": "After prepositions, always use the object pronoun. 'Between you and me' is correct, not 'between you and I'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L52_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 52-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "The manager asked Sarah and myself to prepare the weekly report.",
+            "missingWord": "myself",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "me",
+                "I",
+                "myself",
+                "mine"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 52-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 52]."
+            "correctAnswer": "me",
+            "hint": "'Myself' is a reflexive pronoun used when the subject and object are the same person. Is that true here?",
+            "explanation": "'Myself' cannot be used as a simple object. Use 'me': 'The manager asked Sarah and me to prepare the report'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L52_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 52-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "He introduced himself to the new team members on his very first day.",
+            "missingWord": "himself",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "himself",
+                "him",
+                "his",
+                "oneself"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 52-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 52]."
+            "correctAnswer": "himself",
+            "hint": "He performed the action on himself - the doer and receiver are the same person. What pronoun is this?",
+            "explanation": "Reflexive pronouns (himself/herself/myself) are used when the subject and object are the same. 'He introduced himself' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L53_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 53-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "The teacher gave us our homework back, and we was very pleased.",
+            "missingWord": "was",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "were",
+                "was",
+                "are",
+                "am"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 53-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 53]."
+            "correctAnswer": "were",
+            "hint": "The subject is 'we'. Which form of 'to be' goes with 'we' in the simple past?",
+            "explanation": "With 'we', use 'were' in the past (not 'was'): 'We were very pleased'. 'Was' is only for I/he/she/it."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L53_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 53-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "Her and her husband moved to a new house near the river.",
+            "missingWord": "Her",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "She",
+                "Her",
+                "They",
+                "He"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 53-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 53]."
+            "correctAnswer": "She",
+            "hint": "Try replacing 'her and her husband' with one pronoun: 'She moved' or 'Her moved'?",
+            "explanation": "The subject needs a subject pronoun. 'She' is the subject form; 'her' is object/possessive. 'She and her husband moved' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L53_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 53-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "This book belongs to my friend - it's her's.",
+            "missingWord": "her's",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "hers",
+                "her's",
+                "her",
+                "herself"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 53-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 53]."
+            "correctAnswer": "hers",
+            "hint": "Possessive pronouns (mine, yours, hers, ours, theirs) never use an apostrophe.",
+            "explanation": "Possessive pronouns have no apostrophe: 'hers', not 'her's'. 'It's hers' is the correct form."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L54_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 54-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "The children played quietly by themselves while their parents cooked dinner.",
+            "missingWord": "themselves",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "themselves",
+                "them",
+                "each other",
+                "oneself"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 54-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 54]."
+            "correctAnswer": "themselves",
+            "hint": "The children played alone, without help. What reflexive pronoun means 'by oneself' for a group?",
+            "explanation": "'By themselves' means alone, without help. The reflexive pronoun 'themselves' is correct here."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L54_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 54-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "They're going to the beach this weekend with there family.",
+            "missingWord": "there",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "their",
+                "there",
+                "they're",
+                "them"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 54-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 54]."
+            "correctAnswer": "their",
+            "hint": "Is 'there' the right word? It refers to a place. But we need to show the family belongs to them.",
+            "explanation": "'There' indicates a place. 'Their' shows possession (belonging to them). 'With their family' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L54_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 54-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "Neither of us wanted to leave early, but we had to catch the last train.",
+            "missingWord": "us",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "us",
+                "we",
+                "our",
+                "ours"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 54-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 54]."
+            "correctAnswer": "us",
+            "hint": "'Of' is a preposition. Which pronoun follows a preposition - 'us' or 'we'?",
+            "explanation": "After a preposition like 'of', use the object pronoun 'us': 'Neither of us'. 'We' is a subject pronoun."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L55_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 55-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "The tour guide showed my friend and I around the historic old city.",
+            "missingWord": "I",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "me",
+                "I",
+                "my",
+                "myself"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 55-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 55]."
+            "correctAnswer": "me",
+            "hint": "Is this pronoun doing the action or receiving it? The tour guide showed ___ around.",
+            "explanation": "The pronoun is the object (receiving the action). Use 'me': 'showed my friend and me around the city'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L55_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 55-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "Us students should take notes during the lecture to help us study later.",
+            "missingWord": "Us",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "We",
+                "Us",
+                "Our",
+                "Them"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 55-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 55]."
+            "correctAnswer": "We",
+            "hint": "'Students' is a noun, and this phrase is the subject of the sentence. Which pronoun is the subject form?",
+            "explanation": "'We students' is correct. Use the subject pronoun 'we' when the pronoun-noun pair is the subject of a sentence."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L55_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 55-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She saw her reflection at the mirror in the bathroom before leaving.",
+            "missingWord": "at",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "in",
+                "at",
+                "on",
+                "through"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 55-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 55]."
+            "correctAnswer": "in",
+            "hint": "Think about looking into a mirror to see a reflection - which preposition captures this idea?",
+            "explanation": "Use 'in' with a mirror: 'She saw her reflection in the mirror'. 'At' would mean she simply looked towards it."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L56_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 56-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "My sister and me share a laptop for our schoolwork every evening.",
+            "missingWord": "me",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "I",
+                "me",
+                "my",
+                "myself"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 56-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 56]."
+            "correctAnswer": "I",
+            "hint": "Remove 'my sister and' - would you say 'Me share a laptop'? What is the subject pronoun?",
+            "explanation": "Use 'I' as the subject: 'My sister and I share a laptop'. 'Me' is an object pronoun, not a subject."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L56_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 56-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "You need to update you phone regularly to keep it secure.",
+            "missingWord": "you",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "your",
+                "you",
+                "yourself",
+                "yours"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 56-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 56]."
+            "correctAnswer": "your",
+            "hint": "We need a possessive word to describe the phone belonging to 'you'. Which form is possessive?",
+            "explanation": "Use the possessive adjective 'your' before a noun: 'update your phone'. 'You' is a subject or object pronoun."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L56_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 56-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "Him and his friends often go camping in the mountains every summer.",
+            "missingWord": "Him",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "He",
+                "Him",
+                "His",
+                "They"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 56-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 56]."
+            "correctAnswer": "He",
+            "hint": "Remove 'and his friends' - would you say 'Him often goes camping'? Or 'He goes camping'?",
+            "explanation": "Use the subject pronoun 'he' when it is the subject of the verb: 'He and his friends go camping' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L57_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 57-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "The shop assistant helped my mother and I choose a birthday gift.",
+            "missingWord": "I",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "me",
+                "I",
+                "my",
+                "myself"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 57-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 57]."
+            "correctAnswer": "me",
+            "hint": "The shop assistant helped ___. Is the pronoun here the subject or the object?",
+            "explanation": "The pronoun is the object (receiving the help). Use 'me': 'helped my mother and me choose a gift'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L57_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 57-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "These are they shoes I was telling you about at the weekend.",
+            "missingWord": "they",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "the",
+                "these",
+                "they",
+                "those"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 57-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 57]."
+            "correctAnswer": "the",
+            "hint": "Which word correctly introduces 'shoes' here - a pronoun or an article?",
+            "explanation": "'They' is a pronoun, not an adjective. To introduce a noun, you need an article: 'These are the shoes'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L57_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 57-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "Can you lend your umbrella to my colleague and I for a few minutes?",
+            "missingWord": "I",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "me",
+                "I",
+                "my",
+                "myself"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 57-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 57]."
+            "correctAnswer": "me",
+            "hint": "After the preposition 'to', which pronoun form is grammatically correct - 'I' or 'me'?",
+            "explanation": "After a preposition like 'to', use the object pronoun 'me'. 'Lend it to my colleague and me' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L58_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 58-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "The doctor told my father and I to eat less sugar and exercise daily.",
+            "missingWord": "I",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "me",
+                "I",
+                "my",
+                "myself"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 58-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 58]."
+            "correctAnswer": "me",
+            "hint": "The doctor told ___. Is the pronoun doing the action or receiving it?",
+            "explanation": "The pronoun is the object of 'told'. Use 'me': 'The doctor told my father and me to eat less sugar'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L58_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 58-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "She hurt her while practising gymnastics at the sports centre.",
+            "missingWord": "her",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "herself",
+                "her",
+                "she",
+                "hers"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 58-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 58]."
+            "correctAnswer": "herself",
+            "hint": "She caused injury to herself - the doer and receiver are the same person. What type of pronoun is needed?",
+            "explanation": "Reflexive pronouns are used when the subject and object are the same: 'She hurt herself'. 'Her' would mean she hurt someone else."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L58_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 58-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "The bird lost it's feathers during the very cold winter months.",
+            "missingWord": "it's",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "its",
+                "it's",
+                "the",
+                "their"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 58-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 58]."
+            "correctAnswer": "its",
+            "hint": "Is 'it's' here meaning 'it is' or showing possession (the feathers belonging to the bird)?",
+            "explanation": "We need the possessive: the feathers belonging to the bird. 'Its feathers' (no apostrophe) is correct. 'It's' = 'it is'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L59_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 59-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "The team congratulated each other on there successful project launch.",
+            "missingWord": "there",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "their",
+                "there",
+                "they're",
+                "its"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 59-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 59]."
+            "correctAnswer": "their",
+            "hint": "'There' refers to a place. We need something to show the project belongs to the team. Which word?",
+            "explanation": "'Their' is the possessive. 'On their successful project launch' - belonging to them. Don't confuse with 'there' (place)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L59_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 59-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "Can you help my colleague and I with this difficult calculation please?",
+            "missingWord": "I",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "me",
+                "I",
+                "my",
+                "myself"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 59-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 59]."
+            "correctAnswer": "me",
+            "hint": "After 'help', is the pronoun the subject or the object? Try the sentence without 'my colleague and'.",
+            "explanation": "Use 'me' as the object pronoun: 'Can you help my colleague and me?' 'I' is a subject pronoun only."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L59_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 59-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "Somebody left they bag on the front desk, and no one knows whose it is.",
+            "missingWord": "they",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "their",
+                "there",
+                "they",
+                "its"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 59-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 59]."
+            "correctAnswer": "their",
+            "hint": "Is 'they bag' correct? What possessive word should go before 'bag'?",
+            "explanation": "'They' is a pronoun, not a possessive adjective. Use 'their' before a noun: 'Somebody left their bag'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L60_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 60-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "The responsibility for the error lies with he who made the final call.",
+            "missingWord": "he",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "him",
+                "he",
+                "his",
+                "one"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 60-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 60]."
+            "correctAnswer": "him",
+            "hint": "After the preposition 'with', which pronoun form is grammatically correct?",
+            "explanation": "After a preposition like 'with', use the object pronoun 'him'. 'The responsibility lies with him who made the call'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L60_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 60-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "Her and she partner have just moved into a new flat in the city centre.",
+            "missingWord": "she",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "her",
+                "she",
+                "hers",
+                "herself"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 60-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 60]."
+            "correctAnswer": "her",
+            "hint": "There are two pronouns: 'Her and she partner'. Which form of the pronoun goes before 'partner'?",
+            "explanation": "Before a noun, use the possessive adjective 'her': 'her partner'. 'She' is a subject pronoun used before verbs."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L60_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 2,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 60-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "We must all take responsibility for our own actions and they consequences.",
+            "missingWord": "they",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "their",
+                "there",
+                "they",
+                "its"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 60-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 60]."
+            "correctAnswer": "their",
+            "hint": "Before 'consequences', we need a possessive adjective. Is 'they' the right word here?",
+            "explanation": "'They' is a subject pronoun. Before a noun, use the possessive 'their': 'their consequences'."
         }
     ]
 }

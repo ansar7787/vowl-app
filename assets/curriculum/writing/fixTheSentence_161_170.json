@@ -5,543 +5,513 @@
     "quests": [
         {
             "id": "WRT_FIXTHESENTENCE_L161_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 161-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "She said that she is very happy with her new job at the company.",
+            "missingWord": "is",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "was",
+                "is",
+                "has been",
+                "had been"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 161-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 161]."
+            "correctAnswer": "was",
+            "hint": "This is reported speech. The reporting verb 'said' is past. What happens to 'is' in reported speech?",
+            "explanation": "In reported speech after a past reporting verb, tenses shift back: 'is' → 'was'. 'She said she was happy'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L161_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 161-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "He told me that he will call me the next day to discuss the matter.",
+            "missingWord": "will",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "would",
+                "will",
+                "was going to",
+                "shall"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 161-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 161]."
+            "correctAnswer": "would",
+            "hint": "In reported speech, what does 'will' change to when the reporting verb is past?",
+            "explanation": "In reported speech, 'will' shifts to 'would': 'He told me he would call me the next day'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L161_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 161-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "She asked me where do I work and how long I had been there.",
+            "missingWord": "do I work",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "I worked",
+                "do I work",
+                "I work",
+                "was I working"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 161-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 161]."
+            "correctAnswer": "I worked",
+            "hint": "In indirect questions (reported speech), what happens to the word order?",
+            "explanation": "In indirect questions, the word order becomes subject + verb (not question order): 'where I worked', not 'where do I work'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L162_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 162-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "He said that he has already finished the report before the deadline.",
+            "missingWord": "has already finished",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "had already finished",
+                "has already finished",
+                "already finished",
+                "would already finish"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 162-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 162]."
+            "correctAnswer": "had already finished",
+            "hint": "The reporting verb 'said' is past. How does the present perfect shift in reported speech?",
+            "explanation": "In reported speech, present perfect ('has finished') shifts to past perfect ('had finished'): 'He said he had already finished'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L162_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 162-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She told him to doesn't worry about the presentation.",
+            "missingWord": "to doesn't worry",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "not to worry",
+                "to doesn't worry",
+                "to don't worry",
+                "to not worry"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 162-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 162]."
+            "correctAnswer": "not to worry",
+            "hint": "In reported speech for a negative command, what is the correct structure?",
+            "explanation": "Reported negative commands use 'told + object + not to + base verb': 'She told him not to worry about the presentation'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L162_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 162-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "He asked her is she coming to the party on Saturday night.",
+            "missingWord": "is she coming",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "if she was coming",
+                "is she coming",
+                "was she coming",
+                "if she is coming"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 162-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 162]."
+            "correctAnswer": "if she was coming",
+            "hint": "How do we report a yes/no question in indirect speech?",
+            "explanation": "Reported yes/no questions use 'if/whether + subject + verb' with tense shift: 'He asked her if she was coming to the party'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L163_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 163-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She said she didn't know where was the nearest pharmacy.",
+            "missingWord": "was",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "-",
+                "was",
+                "is",
+                "had been"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 163-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 163]."
+            "correctAnswer": "-",
+            "hint": "In a reported question after 'know', should the verb come before or after the subject?",
+            "explanation": "In reported speech, use subject + verb order: 'where the nearest pharmacy was', not 'where was the pharmacy'. Remove 'was' from that position."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L163_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 163-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "He told me that he can speak three languages and is learning a fourth.",
+            "missingWord": "can",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "could",
+                "can",
+                "will",
+                "would"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 163-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 163]."
+            "correctAnswer": "could",
+            "hint": "The reporting verb 'told' is past. What does 'can' change to in reported speech?",
+            "explanation": "In reported speech after a past reporting verb, 'can' shifts to 'could': 'He told me that he could speak three languages'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L163_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 163-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "She said that she will be arriving at the station at noon the following day.",
+            "missingWord": "will be arriving",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "would be arriving",
+                "will be arriving",
+                "is arriving",
+                "was arriving"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 163-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 163]."
+            "correctAnswer": "would be arriving",
+            "hint": "In reported speech, what does 'will' change to when the reporting verb is past?",
+            "explanation": "In reported speech, 'will' shifts to 'would': 'She said she would be arriving at the station at noon'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L164_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 164-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "He asked me what time does the next train to Edinburgh depart from here.",
+            "missingWord": "does",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "-",
+                "does",
+                "would",
+                "could"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 164-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 164]."
+            "correctAnswer": "-",
+            "hint": "In an indirect question after 'asked', should we use question word order?",
+            "explanation": "In indirect (reported) questions, use statement word order and remove 'does': 'He asked what time the next train departed'. Remove 'does' and shift tense."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L164_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 164-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "She told her son that he must cleaned his room before going out.",
+            "missingWord": "must cleaned",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "must clean",
+                "must cleaned",
+                "had to clean",
+                "must have cleaned"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 164-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 164]."
+            "correctAnswer": "had to clean",
+            "hint": "In reported speech, what does 'must' (obligation) typically change to?",
+            "explanation": "In reported speech, 'must' (obligation) often changes to 'had to': 'She told her son he had to clean his room'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L164_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 164-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "He said that the meeting is starting at nine o'clock the next morning.",
+            "missingWord": "is starting",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "was starting",
+                "is starting",
+                "will start",
+                "starts"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 164-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 164]."
+            "correctAnswer": "was starting",
+            "hint": "The reporting verb 'said' is past. What tense should present continuous shift to in reported speech?",
+            "explanation": "In reported speech, present continuous ('is starting') shifts to past continuous ('was starting'): 'He said the meeting was starting'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L165_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 165-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "She asked whether I have seen the new film that had just been released.",
+            "missingWord": "have seen",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "had seen",
+                "have seen",
+                "saw",
+                "would see"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 165-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 165]."
+            "correctAnswer": "had seen",
+            "hint": "The reporting verb 'asked' is past. What does the present perfect shift to in reported speech?",
+            "explanation": "In reported speech, present perfect ('have seen') shifts to past perfect ('had seen'): 'She asked whether I had seen the film'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L165_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 165-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "He said he was feeling tired and that he will go to bed early that evening.",
+            "missingWord": "will",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "would",
+                "will",
+                "should",
+                "was going to"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 165-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 165]."
+            "correctAnswer": "would",
+            "hint": "In reported speech, 'will' in the original shifts to which modal?",
+            "explanation": "In reported speech, 'will' shifts to 'would': 'He said he would go to bed early that evening'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L165_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 165-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She told us that she has been living in Paris for the past three years.",
+            "missingWord": "has been living",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "had been living",
+                "has been living",
+                "was living",
+                "would be living"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 165-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 165]."
+            "correctAnswer": "had been living",
+            "hint": "The reporting verb 'told' is past. What does the present perfect continuous shift to in reported speech?",
+            "explanation": "In reported speech, present perfect continuous ('has been living') shifts to past perfect continuous ('had been living')."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L166_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 166-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "He asked why she is upset and whether she wanted to talk about it.",
+            "missingWord": "is upset",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "was upset",
+                "is upset",
+                "had been upset",
+                "has been upset"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 166-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 166]."
+            "correctAnswer": "was upset",
+            "hint": "In a reported question, what tense does 'is' shift to when the reporting verb is past?",
+            "explanation": "In reported speech, 'is' shifts to 'was': 'He asked why she was upset'. The tense shifts back by one step."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L166_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 166-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She said that she might joins us for dinner if she finishes work early.",
+            "missingWord": "might joins",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "might join",
+                "might joins",
+                "join",
+                "would join"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 166-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 166]."
+            "correctAnswer": "might join",
+            "hint": "In reported speech, what is wrong with 'might joins'?",
+            "explanation": "After modal verbs like 'might', use the base verb (infinitive without 'to'): 'She said she might join us for dinner'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L166_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 166-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "He told the children that they must not to make noise after nine o'clock.",
+            "missingWord": "must not to make",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "must not make",
+                "must not to make",
+                "mustn't to make",
+                "not to make"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 166-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 166]."
+            "correctAnswer": "must not make",
+            "hint": "In reported speech, what is the correct structure for a negative obligation?",
+            "explanation": "After modal verbs, never use 'to': 'He told the children they must not make noise'. 'Must not to' is incorrect."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L167_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 167-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "She asked him how long has he been waiting for her at the station.",
+            "missingWord": "has he been waiting",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "he had been waiting",
+                "has he been waiting",
+                "was he waiting",
+                "he has been waiting"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 167-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 167]."
+            "correctAnswer": "he had been waiting",
+            "hint": "This is a reported question. What happens to both word order and tense?",
+            "explanation": "In reported questions: subject + verb order with tense shift. 'She asked how long he had been waiting for her'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L167_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 167-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "He promised that he would helped her with the move the following weekend.",
+            "missingWord": "would helped",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "would help",
+                "would helped",
+                "will help",
+                "had helped"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 167-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 167]."
+            "correctAnswer": "would help",
+            "hint": "After 'would', which form of the verb is used?",
+            "explanation": "After 'would', use the base verb (infinitive without 'to'): 'He promised he would help her with the move'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L167_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 167-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "She said that she was going shopping the following day, and asked if I want to come.",
+            "missingWord": "want",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "wanted",
+                "want",
+                "would want",
+                "have wanted"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 167-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 167]."
+            "correctAnswer": "wanted",
+            "hint": "In reported speech, 'want' (present) shifts to which tense?",
+            "explanation": "In reported speech after a past reporting verb, 'want' shifts to 'wanted': 'She asked if I wanted to come'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L168_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 168-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "He explained that the price of the tickets has increased significantly.",
+            "missingWord": "has increased",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "had increased",
+                "has increased",
+                "increased",
+                "would increase"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 168-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 168]."
+            "correctAnswer": "had increased",
+            "hint": "The reporting verb 'explained' is past. What does the present perfect shift to in reported speech?",
+            "explanation": "In reported speech, present perfect ('has increased') shifts to past perfect ('had increased')."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L168_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 168-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "She asked me where I am going for my summer holiday this year.",
+            "missingWord": "am going",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "was going",
+                "am going",
+                "would be going",
+                "have been going"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 168-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 168]."
+            "correctAnswer": "was going",
+            "hint": "In reported speech, what does 'am going' (present continuous) shift to?",
+            "explanation": "Present continuous ('am going') shifts to past continuous ('was going') in reported speech: 'She asked where I was going'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L168_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 168-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "He warned me not touch the hot surface or I would burn myself.",
+            "missingWord": "not touch",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "not to touch",
+                "not touch",
+                "to not touch",
+                "don't touch"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 168-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 168]."
+            "correctAnswer": "not to touch",
+            "hint": "In reported speech, how is a negative warning structured?",
+            "explanation": "Reported negative warnings use 'warned + object + not to + base verb': 'He warned me not to touch the hot surface'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L169_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 169-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She announced that the winner is the candidate from the northern district.",
+            "missingWord": "is",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "was",
+                "is",
+                "has been",
+                "would be"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 169-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 169]."
+            "correctAnswer": "was",
+            "hint": "The reporting verb 'announced' is past. What tense should 'is' shift to?",
+            "explanation": "In reported speech, 'is' shifts to 'was': 'She announced that the winner was the candidate from the northern district'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L169_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 169-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "He admitted that he had took the money without asking for permission.",
+            "missingWord": "had took",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "had taken",
+                "had took",
+                "took",
+                "has taken"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 169-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 169]."
+            "correctAnswer": "had taken",
+            "hint": "In reported speech, past perfect requires 'had + past participle'. What is the past participle of 'take'?",
+            "explanation": "The past participle of 'take' is 'taken', not 'took'. 'He admitted that he had taken the money'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L169_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 169-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She suggested that they should meets for coffee to discuss the matter.",
+            "missingWord": "should meets",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "should meet",
+                "should meets",
+                "meet",
+                "would meet"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 169-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 169]."
+            "correctAnswer": "should meet",
+            "hint": "After 'should', which form of the verb is used?",
+            "explanation": "After 'should', use the base verb (infinitive without 'to'): 'She suggested they should meet for coffee'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L170_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 170-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "He confirmed that the train will arrive at platform seven at twelve o'clock.",
+            "missingWord": "will arrive",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "would arrive",
+                "will arrive",
+                "arrives",
+                "had arrived"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 170-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 170]."
+            "correctAnswer": "would arrive",
+            "hint": "The reporting verb 'confirmed' is past. What does 'will' shift to in reported speech?",
+            "explanation": "In reported speech, 'will' shifts to 'would': 'He confirmed that the train would arrive at platform seven'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L170_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 170-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "She denied to have stolen the documents from the office filing cabinet.",
+            "missingWord": "to have stolen",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "stealing",
+                "to have stolen",
+                "having steal",
+                "to steal"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 170-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 170]."
+            "correctAnswer": "stealing",
+            "hint": "After 'deny', which verb form is required?",
+            "explanation": "'Deny' takes the gerund: 'She denied stealing the documents'. 'Deny to have stolen' is incorrect."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L170_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 170-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "He claimed that he didn't knew anything about the missing file.",
+            "missingWord": "didn't knew",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "didn't know",
+                "didn't knew",
+                "hadn't known",
+                "doesn't know"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 170-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 170]."
+            "correctAnswer": "didn't know",
+            "hint": "In reported speech with 'didn't', which form of the main verb is used?",
+            "explanation": "After 'didn't', use the base verb (infinitive without 'to'): 'He claimed he didn't know anything about it'."
         }
     ]
 }

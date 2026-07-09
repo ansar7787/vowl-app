@@ -5,543 +5,513 @@
     "quests": [
         {
             "id": "WRT_FIXTHESENTENCE_L91_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 91-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "She doesn't eat many meat because she prefers a plant-based diet.",
+            "missingWord": "many",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "much",
+                "many",
+                "a lot of",
+                "lots of"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 91-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 91]."
+            "correctAnswer": "much",
+            "hint": "'Meat' - is it countable (one meat, two meats) or uncountable? This affects which word to use.",
+            "explanation": "'Meat' is uncountable. Use 'much' with uncountable nouns: 'She doesn't eat much meat'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L91_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 91-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "How much apples do you need to make the pie this afternoon?",
+            "missingWord": "much",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "many",
+                "much",
+                "a lot of",
+                "several"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 91-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 91]."
+            "correctAnswer": "many",
+            "hint": "'Apples' - can you count them (one apple, two apples)? Countable nouns use 'how many', not 'how much'.",
+            "explanation": "Use 'how many' with countable nouns: 'How many apples do you need?' 'How much' is for uncountable nouns."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L91_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 91-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "There is too many sugar in this tea - it's far too sweet to drink.",
+            "missingWord": "many",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "much",
+                "many",
+                "a lot of",
+                "very much"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 91-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 91]."
+            "correctAnswer": "much",
+            "hint": "'Sugar' is uncountable - you can't say 'one sugar, two sugars'. Which word goes with uncountable nouns?",
+            "explanation": "Use 'much' with uncountable nouns: 'too much sugar'. 'Many' is used with countable nouns (many spoons of sugar)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L92_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 92-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "I only have a little coins left in my wallet - not enough for the bus.",
+            "missingWord": "little",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "few",
+                "little",
+                "a few",
+                "a little"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 92-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 92]."
+            "correctAnswer": "few",
+            "hint": "'Coins' - can you count them? Countable or uncountable? This changes whether you use 'few' or 'little'.",
+            "explanation": "Use 'few' with countable nouns: 'only a few coins'. Use 'little' with uncountable nouns (a little money)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L92_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 92-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She has very few patience when people are late for appointments.",
+            "missingWord": "few",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "little",
+                "few",
+                "a few",
+                "not much"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 92-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 92]."
+            "correctAnswer": "little",
+            "hint": "'Patience' - can you count it? Is it countable or uncountable? Which word goes with uncountable nouns?",
+            "explanation": "'Patience' is uncountable. Use 'little' with uncountable nouns: 'She has very little patience'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L92_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 92-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "There are fewer sugar in this coffee compared to the other one.",
+            "missingWord": "fewer",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "less",
+                "fewer",
+                "little",
+                "not much"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 92-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 92]."
+            "correctAnswer": "less",
+            "hint": "'Sugar' is uncountable. 'Fewer' is for countable nouns. Which word goes with uncountable nouns in comparison?",
+            "explanation": "Use 'less' with uncountable nouns: 'less sugar'. Use 'fewer' with countable nouns: 'fewer teaspoons of sugar'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L93_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 93-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She sent less emails today than she usually does on a typical Monday.",
+            "missingWord": "less",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "fewer",
+                "less",
+                "little",
+                "not many"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 93-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 93]."
+            "correctAnswer": "fewer",
+            "hint": "'Emails' is countable (one email, two emails). For countable nouns in comparison, which word is correct?",
+            "explanation": "Use 'fewer' with countable nouns: 'She sent fewer emails'. 'Less' is standard for uncountable nouns like time."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L93_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 93-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "There is too many work to do today - I will definitely have to stay late.",
+            "missingWord": "many",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "much",
+                "many",
+                "a lot of",
+                "lots"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 93-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 93]."
+            "correctAnswer": "much",
+            "hint": "'Work' in this sense is uncountable. Which word goes with uncountable nouns?",
+            "explanation": "Use 'much' with uncountable nouns: 'too much work'. 'Many' is used with countable nouns (many tasks to do)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L93_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 93-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "We have much employees working on weekends than we did last year.",
+            "missingWord": "much",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "more",
+                "much",
+                "many",
+                "most"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 93-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 93]."
+            "correctAnswer": "more",
+            "hint": "We're making a comparison ('than we did last year'). Which word signals a comparison?",
+            "explanation": "Use 'more' for comparisons: 'more employees than before'. 'Much' is not used for comparisons with countable nouns."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L94_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 94-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She had very few time to pack her bags before the taxi arrived.",
+            "missingWord": "few",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "little",
+                "few",
+                "a few",
+                "a little"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 94-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 94]."
+            "correctAnswer": "little",
+            "hint": "'Time' is uncountable (you don't count 'one time, two times' in this sense). Which word is correct?",
+            "explanation": "Use 'little' with uncountable nouns: 'very little time'. 'Few' is used with countable nouns (very few minutes)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L94_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 94-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "I've been to much countries in Europe but haven't visited them all yet.",
+            "missingWord": "much",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "many",
+                "much",
+                "a lot",
+                "loads of"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 94-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 94]."
+            "correctAnswer": "many",
+            "hint": "'Countries' is countable (one country, two countries). Which word goes with countable nouns?",
+            "explanation": "Use 'many' with countable nouns: 'many countries'. 'Much' is used with uncountable nouns (much time, much water)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L94_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 94-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "How many luggage are you planning to take on your trip to Italy?",
+            "missingWord": "many",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "much",
+                "many",
+                "a lot of",
+                "several"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 94-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 94]."
+            "correctAnswer": "much",
+            "hint": "'Luggage' cannot be counted (one luggage, two luggages). Which question word goes with uncountable nouns?",
+            "explanation": "'Luggage' is uncountable. Use 'how much luggage', not 'how many'. 'Much' is for uncountable nouns."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L95_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 95-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "The doctor said I should drink much water every day to stay healthy.",
+            "missingWord": "much",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "more",
+                "much",
+                "a lot of",
+                "plenty of"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 95-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 95]."
+            "correctAnswer": "more",
+            "hint": "Is the doctor comparing current water intake to a recommended higher amount? What word signals an increase?",
+            "explanation": "The doctor recommends an increase: 'drink more water' (more than you currently drink). 'More' indicates comparison."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L95_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 95-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "There were too little beds in the hospital ward for all the patients.",
+            "missingWord": "little",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "few",
+                "little",
+                "a few",
+                "some"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 95-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 95]."
+            "correctAnswer": "few",
+            "hint": "'Beds' are countable (one bed, two beds). Which word means 'not enough' with countable nouns?",
+            "explanation": "Use 'few' with countable nouns: 'too few beds'. 'Little' is used with uncountable nouns (too little space)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L95_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 95-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She has little friends at her new school and often feels very lonely.",
+            "missingWord": "little",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "few",
+                "little",
+                "a few",
+                "not many"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 95-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 95]."
+            "correctAnswer": "few",
+            "hint": "'Friends' is countable (one friend, two friends). Which word means 'not many' with countable nouns?",
+            "explanation": "Use 'few' with countable nouns: 'She has few friends'. 'Little' is used with uncountable nouns (little hope)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L96_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 96-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "How many memory does your computer have for running video editing software?",
+            "missingWord": "many",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "much",
+                "many",
+                "a lot of",
+                "some"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 96-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 96]."
+            "correctAnswer": "much",
+            "hint": "'Memory' (RAM) is uncountable in this context. Which question word goes with uncountable nouns?",
+            "explanation": "Use 'how much' with uncountable nouns: 'How much memory does your computer have?' 'Many' is for countable nouns."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L96_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 96-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She doesn't have much apps on her phone - she only uses the essentials.",
+            "missingWord": "much",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "many",
+                "much",
+                "a lot of",
+                "several"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 96-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 96]."
+            "correctAnswer": "many",
+            "hint": "'Apps' are countable (one app, two apps). Which word goes with countable nouns in negative sentences?",
+            "explanation": "Use 'many' with countable nouns: 'She doesn't have many apps on her phone'. 'Much' is for uncountable nouns."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L96_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 96-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "He spends too much hours every day scrolling through social media feeds.",
+            "missingWord": "much",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "many",
+                "much",
+                "lots of",
+                "a lot of"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 96-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 96]."
+            "correctAnswer": "many",
+            "hint": "'Hours' is countable (one hour, two hours). Which word goes with countable nouns?",
+            "explanation": "Use 'many' with countable nouns: 'too many hours'. 'Much' is used with uncountable nouns (too much time)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L97_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 97-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "There was too few room in the tiny flat for all of their furniture.",
+            "missingWord": "few",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "little",
+                "few",
+                "less",
+                "fewer"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 97-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 97]."
+            "correctAnswer": "little",
+            "hint": "'Room' here means 'space' - an uncountable noun. Which word goes with uncountable nouns?",
+            "explanation": "Use 'little' with uncountable nouns: 'too little room' (not enough space). 'Few' is for countable nouns like 'rooms'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L97_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 97-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "This recipe requires many patience because the dough needs to rest for hours.",
+            "missingWord": "many",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "much",
+                "many",
+                "a lot of",
+                "great"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 97-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 97]."
+            "correctAnswer": "much",
+            "hint": "'Patience' is uncountable - you can't count 'one patience, two patiences'. Which word fits?",
+            "explanation": "Use 'much' with uncountable nouns: 'requires much patience'. Or use 'a great deal of patience'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L97_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 97-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "She used less eggs than the recipe suggested in order to reduce the calories.",
+            "missingWord": "less",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "fewer",
+                "less",
+                "a few",
+                "not many"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 97-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 97]."
+            "correctAnswer": "fewer",
+            "hint": "'Eggs' are countable (one egg, two eggs). Which word is the comparative form for countable nouns?",
+            "explanation": "Use 'fewer' with countable nouns: 'She used fewer eggs'. 'Less' is standard for uncountable nouns like flour."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L98_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 98-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "The company has very little employees who speak more than one language.",
+            "missingWord": "little",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "few",
+                "little",
+                "a few",
+                "not many"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 98-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 98]."
+            "correctAnswer": "few",
+            "hint": "'Employees' is countable (one employee, two employees). Which word means 'not many' with countable nouns?",
+            "explanation": "Use 'few' with countable nouns: 'very few employees'. 'Little' is for uncountable nouns (very little time)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L98_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 98-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "How much customers visited the store during the end-of-season sale?",
+            "missingWord": "much",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "many",
+                "much",
+                "several",
+                "a number of"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 98-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 98]."
+            "correctAnswer": "many",
+            "hint": "'Customers' is countable (one customer, two customers). Which question word goes with countable nouns?",
+            "explanation": "Use 'how many' with countable nouns: 'How many customers visited the store?' 'Much' is for uncountable nouns."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L98_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 98-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "She has few experience in this industry but learns everything very quickly.",
+            "missingWord": "few",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "little",
+                "few",
+                "a little",
+                "not much"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 98-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 98]."
+            "correctAnswer": "little",
+            "hint": "'Experience' (in general) is uncountable. Which word meaning 'not much' goes with uncountable nouns?",
+            "explanation": "Use 'little' with uncountable nouns: 'She has little experience'. 'Few' is used with countable nouns."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L99_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 99-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "There are too much students in this classroom - it is far too crowded.",
+            "missingWord": "much",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "many",
+                "much",
+                "a lot",
+                "loads of"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 99-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 99]."
+            "correctAnswer": "many",
+            "hint": "'Students' is countable (one student, two students). Which word - 'much' or 'many' - goes with countable nouns?",
+            "explanation": "Use 'many' with countable nouns: 'too many students in this classroom'. 'Much' is for uncountable nouns."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L99_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 99-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "She has very much books on her shelf - it's an impressive collection.",
+            "missingWord": "much",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "many",
+                "much",
+                "a large number of",
+                "numerous"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 99-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 99]."
+            "correctAnswer": "many",
+            "hint": "'Books' is countable (one book, two books). Which word correctly modifies countable nouns?",
+            "explanation": "Use 'many' with countable nouns: 'very many books' (or 'a lot of books'). 'Much' is for uncountable nouns."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L99_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 99-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "He didn't have many difficulty understanding the complex grammar rules.",
+            "missingWord": "many",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "much",
+                "many",
+                "little",
+                "a few"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 99-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 99]."
+            "correctAnswer": "much",
+            "hint": "'Difficulty' in this sense is uncountable. Which word - 'much' or 'many' - is used with uncountable nouns?",
+            "explanation": "Use 'much' with uncountable nouns: 'didn't have much difficulty'. 'Many' is for countable nouns (many difficulties)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L100_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 100-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "How many information do you have about the topic for your essay?",
+            "missingWord": "many",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "much",
+                "many",
+                "a lot of",
+                "some"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 100-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 100]."
+            "correctAnswer": "much",
+            "hint": "'Information' is uncountable. Which question word goes with uncountable nouns?",
+            "explanation": "Use 'how much' with uncountable nouns: 'How much information do you have?' 'Many' is for countable nouns."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L100_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 100-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "There is too few evidence to support the conclusion in this report.",
+            "missingWord": "few",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "little",
+                "few",
+                "less",
+                "fewer"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 100-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 100]."
+            "correctAnswer": "little",
+            "hint": "'Evidence' is uncountable - you can't say 'one evidence, two evidences'. Which word fits uncountable nouns?",
+            "explanation": "Use 'little' with uncountable nouns: 'too little evidence'. 'Few' is used with countable nouns (too few examples)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L100_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 100-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She made many progress in her language studies over the last six months.",
+            "missingWord": "many",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "much",
+                "many",
+                "a lot of",
+                "remarkable"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 100-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 100]."
+            "correctAnswer": "much",
+            "hint": "'Progress' is uncountable - you can't count 'one progress, two progresses'. Which word fits?",
+            "explanation": "Use 'much' with uncountable nouns: 'made much progress'. Or use 'a lot of progress' for a more informal tone."
         }
     ]
 }

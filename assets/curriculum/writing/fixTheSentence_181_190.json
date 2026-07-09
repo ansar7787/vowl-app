@@ -5,543 +5,513 @@
     "quests": [
         {
             "id": "WRT_FIXTHESENTENCE_L181_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 181-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "The new policy will effect all employees starting from next quarter.",
+            "missingWord": "effect",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "affect",
+                "effect",
+                "impact",
+                "influence"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 181-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 181]."
+            "correctAnswer": "affect",
+            "hint": "'Effect' and 'affect' are easily confused. Think about which one is usually a verb and which a noun.",
+            "explanation": "'Affect' is usually a verb (to have an impact on): 'The policy will affect all employees'. 'Effect' is usually a noun (the result)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L181_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 181-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She gave me a very helpful advise about how to handle the situation.",
+            "missingWord": "advise",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "advice",
+                "advise",
+                "suggestion",
+                "recommendation"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 181-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 181]."
+            "correctAnswer": "advice",
+            "hint": "'Advice' (noun) and 'advise' (verb) are easily confused. Which one is needed after the article 'a'?",
+            "explanation": "'Advice' is a noun: 'She gave me helpful advice'. 'Advise' is a verb: 'She advised me'. A noun follows 'a'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L181_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 181-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "He borrowed his friend his car for the weekend while his was being repaired.",
+            "missingWord": "borrowed",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "lent",
+                "borrowed",
+                "loaned",
+                "gave"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 181-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 181]."
+            "correctAnswer": "lent",
+            "hint": "'Borrow' and 'lend' are frequently confused. You borrow FROM someone; you lend TO someone. Which fits here?",
+            "explanation": "You 'lend' something to another person. 'He lent his friend his car' - he gave his car for his friend to use."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L182_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 182-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "The company expects to rise its profits by twenty percent this year.",
+            "missingWord": "rise",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "raise",
+                "rise",
+                "increase",
+                "boost"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 182-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 182]."
+            "correctAnswer": "raise",
+            "hint": "'Rise' and 'raise' are easily confused. 'Rise' is intransitive (no object); 'raise' is transitive (needs an object).",
+            "explanation": "'Raise' is transitive (needs an object): 'to raise profits'. 'Rise' is intransitive: 'Profits will rise'. The company raises profits."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L182_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 182-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She lay the books on the table and went to get a cup of tea.",
+            "missingWord": "lay",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "laid",
+                "lay",
+                "placed",
+                "put"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 182-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 182]."
+            "correctAnswer": "laid",
+            "hint": "'Lay' (present: to place something) vs 'laid' (past of 'lay'). Which past tense form is needed here?",
+            "explanation": "The past tense of 'lay' (to place something) is 'laid'. 'She laid the books on the table' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L182_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 182-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "The number of people who accept the invitation are growing every day.",
+            "missingWord": "are growing",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "is growing",
+                "are growing",
+                "grow",
+                "have grown"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 182-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 182]."
+            "correctAnswer": "is growing",
+            "hint": "The subject of this sentence is 'The number' (singular). Which verb form is correct?",
+            "explanation": "'The number of' takes a singular verb: 'The number of people is growing'. Compare: 'A number of people are growing'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L183_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 183-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She was very discrete about the personal information she shared with others.",
+            "missingWord": "discrete",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "discreet",
+                "discrete",
+                "private",
+                "careful"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 183-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 183]."
+            "correctAnswer": "discreet",
+            "hint": "'Discreet' and 'discrete' are homophones with different meanings. Which means 'tactful and careful'?",
+            "explanation": "'Discreet' means tactful and careful: 'She was very discreet'. 'Discrete' means separate or distinct (e.g., discrete parts)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L183_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 183-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "The two companies are planning to compliment each other's strengths and services.",
+            "missingWord": "compliment",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "complement",
+                "compliment",
+                "support",
+                "enhance"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 183-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 183]."
+            "correctAnswer": "complement",
+            "hint": "'Complement' and 'compliment' are easily confused. Which means 'to complete or go well with something'?",
+            "explanation": "'Complement' means to complete or go well with: 'The companies complement each other's strengths'. 'Compliment' means to praise."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L183_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 183-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "She felt very anxious before the exam, which effected her performance badly.",
+            "missingWord": "effected",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "affected",
+                "effected",
+                "impacted",
+                "harmed"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 183-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 183]."
+            "correctAnswer": "affected",
+            "hint": "'Effect' is usually a noun; 'affect' is usually a verb. Which is needed here?",
+            "explanation": "'Affect' is the verb meaning 'to have an impact on': 'This affected her performance badly'. 'Effect' is the noun (the effect)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L184_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 184-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "Can you please insure that all the documents are signed before you submit them?",
+            "missingWord": "insure",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "ensure",
+                "insure",
+                "assure",
+                "make sure"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 184-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 184]."
+            "correctAnswer": "ensure",
+            "hint": "'Ensure', 'insure', and 'assure' have different meanings. Which means 'to make certain that something happens'?",
+            "explanation": "'Ensure' means to make certain: 'Please ensure all documents are signed'. 'Insure' relates to financial insurance."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L184_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 184-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "The principal reason for his success was his dedication and hard work.",
+            "missingWord": "principal",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "principal",
+                "principle",
+                "main",
+                "primary"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 184-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 184]."
+            "correctAnswer": "principal",
+            "hint": "'Principal' and 'principle' are homophones. Which means 'main' or 'most important'?",
+            "explanation": "'Principal' (adjective) means main or most important: 'the principal reason'. 'Principle' is a noun meaning a rule or belief."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L184_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 184-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "He could not bare the thought of losing his job during the economic crisis.",
+            "missingWord": "bare",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "bear",
+                "bare",
+                "stand",
+                "endure"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 184-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 184]."
+            "correctAnswer": "bear",
+            "hint": "'Bare' and 'bear' are easily confused. Which means 'to tolerate' or 'to endure'?",
+            "explanation": "'Bear' means to tolerate or endure: 'He could not bear the thought'. 'Bare' means uncovered or minimal."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L185_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 185-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "She was complemented by her manager for her excellent work on the project.",
+            "missingWord": "complemented",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "complimented",
+                "complemented",
+                "praised",
+                "recognised"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 185-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 185]."
+            "correctAnswer": "complimented",
+            "hint": "'Complement' and 'compliment' are confusable. Which means 'to praise'?",
+            "explanation": "'Compliment' (verb) means to praise: 'She was complimented by her manager'. 'Complement' means to go well with something."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L185_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 185-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "The data implies that sales have fallen by fifteen percent over the quarter.",
+            "missingWord": "implies",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "suggests",
+                "implies",
+                "infers",
+                "means"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 185-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 185]."
+            "correctAnswer": "implies",
+            "hint": "Is 'implies' or 'infers' used when data points to a conclusion? Which does the data do?",
+            "explanation": "'Implies' means to suggest or indicate: 'The data implies sales have fallen'. 'Infer' is what you (the reader) do: 'I infer from the data'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L185_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 185-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "He had to except a pay cut in order to keep his position at the company.",
+            "missingWord": "except",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "accept",
+                "except",
+                "take",
+                "receive"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 185-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 185]."
+            "correctAnswer": "accept",
+            "hint": "'Accept' and 'except' are easily confused. Which means 'to receive or agree to something'?",
+            "explanation": "'Accept' means to receive or agree to: 'He had to accept a pay cut'. 'Except' means 'excluding' or 'apart from'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L186_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 186-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "She lay awake all night worrying about the interview the following morning.",
+            "missingWord": "lay",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "lay",
+                "laid",
+                "lied",
+                "lain"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 186-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 186]."
+            "correctAnswer": "lay",
+            "hint": "Is 'lay' correct here? Think about 'lie' (to recline) and 'lay' (to place). Which is the past of 'lie'?",
+            "explanation": "'Lay' is the past tense of 'lie' (to recline): 'She lay awake all night' is correct. 'Laid' is past of 'lay' (to place)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L186_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 186-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "There was a lose screw in the mechanism that was causing the machine to rattle.",
+            "missingWord": "lose",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "loose",
+                "lose",
+                "lost",
+                "loosen"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 186-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 186]."
+            "correctAnswer": "loose",
+            "hint": "'Loose' and 'lose' are frequently confused. Which means 'not tight' (an adjective)?",
+            "explanation": "'Loose' (adjective) means not tight or fixed: 'a loose screw'. 'Lose' (verb) means to misplace: 'I lose my keys'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L186_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 186-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "The council is comprised of twelve elected members from across the region.",
+            "missingWord": "is comprised of",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "comprises",
+                "is comprised of",
+                "is composed with",
+                "consist of"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 186-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 186]."
+            "correctAnswer": "comprises",
+            "hint": "'Comprise' is often misused. The whole 'comprises' its parts - is 'is comprised of' correct?",
+            "explanation": "'Comprise' means 'to consist of' or 'to include'. Use 'comprises': 'The council comprises twelve members'. Or use 'is composed of'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L187_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 187-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "She past by the office window and waved at her colleague inside.",
+            "missingWord": "past",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "passed",
+                "past",
+                "went past",
+                "walked past"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 187-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 187]."
+            "correctAnswer": "passed",
+            "hint": "'Past' and 'passed' are easily confused. Which is the verb form (past tense of 'pass')?",
+            "explanation": "'Passed' is the past tense of the verb 'pass': 'She passed by the office window'. 'Past' is a preposition or noun."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L187_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 187-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "The affect of the new regulations on small businesses has been significant.",
+            "missingWord": "affect",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "effect",
+                "affect",
+                "impact",
+                "influence"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 187-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 187]."
+            "correctAnswer": "effect",
+            "hint": "'Effect' and 'affect' are frequently confused. Which is usually a noun meaning 'the result'?",
+            "explanation": "'Effect' is usually a noun: 'the effect of the regulations'. 'Affect' is usually a verb: 'the regulations affect businesses'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L187_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 187-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "He was a stationary cyclist who completed races across Europe every summer.",
+            "missingWord": "stationary",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "staunch",
+                "stationary",
+                "stationery",
+                "dedicated"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 187-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 187]."
+            "correctAnswer": "staunch",
+            "hint": "'Stationary' and 'stationery' are confusable, but the issue here is different. Does 'stationary' (not moving) make sense for a cyclist who completes races?",
+            "explanation": "A 'stationary cyclist' would be one who doesn't move - contradicting 'completed races'. A better word would be 'staunch' (loyal, committed) or 'dedicated'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L188_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 188-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She choose to remain silent rather than argue about the misunderstanding.",
+            "missingWord": "choose",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "chose",
+                "choose",
+                "had chosen",
+                "selected"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 188-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 188]."
+            "correctAnswer": "chose",
+            "hint": "Is 'choose' (present) or 'chose' (past) needed here?",
+            "explanation": "'Chose' is the simple past of 'choose': 'She chose to remain silent'. 'Choose' is the present tense form."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L188_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 188-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "He was sitting besides the window when the phone call came through.",
+            "missingWord": "besides",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "beside",
+                "besides",
+                "next to",
+                "by"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 188-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 188]."
+            "correctAnswer": "beside",
+            "hint": "'Beside' and 'besides' have different meanings. Which means 'next to'?",
+            "explanation": "'Beside' means next to: 'sitting beside the window'. 'Besides' means in addition to or anyway: 'Besides, it was raining'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L188_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 188-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "The police are investigating who's car was left outside the building overnight.",
+            "missingWord": "who's",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "whose",
+                "who's",
+                "which",
+                "their"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 188-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 188]."
+            "correctAnswer": "whose",
+            "hint": "'Whose' and 'who's' are commonly confused. Which one shows possession?",
+            "explanation": "'Whose' is the possessive form: 'whose car'. 'Who's' is a contraction of 'who is'. Use 'whose car' here."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L189_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 189-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She was formally introduced to the board at the company's annual general meeting.",
+            "missingWord": "formally",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "formally",
+                "formerly",
+                "officially",
+                "properly"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 189-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 189]."
+            "correctAnswer": "formally",
+            "hint": "Is 'formally' or 'formerly' the right word? Think about what each one means.",
+            "explanation": "'Formally' means in a formal or official manner: 'She was formally introduced'. 'Formerly' means previously or in the past."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L189_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 189-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "He poured over the financial documents for hours looking for the discrepancy.",
+            "missingWord": "poured",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "pored",
+                "poured",
+                "looked",
+                "went"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 189-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 189]."
+            "correctAnswer": "pored",
+            "hint": "'Pore over' and 'pour over' are confused. Which is the correct phrase for studying carefully?",
+            "explanation": "'Pore over' means to study carefully: 'He pored over the documents'. 'Pour over' means to pour liquid on top of something."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L189_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 189-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "The defendant was found not guilty and was acquitted of all the charges.",
+            "missingWord": "acquitted",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "acquitted",
+                "charged",
+                "convicted",
+                "prosecuted"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 189-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 189]."
+            "correctAnswer": "acquitted",
+            "hint": "Is the word 'acquitted' used correctly here? It means found not guilty and released of charges.",
+            "explanation": "'Acquitted' means found not guilty and cleared of charges. 'The defendant was acquitted of all charges' is correct usage."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L190_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 190-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "The project was a great compliment to their previous work in the region.",
+            "missingWord": "compliment",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "complement",
+                "compliment",
+                "addition",
+                "improvement"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 190-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 190]."
+            "correctAnswer": "complement",
+            "hint": "'Complement' and 'compliment' are easily confused. Which means 'something that completes or enhances something'?",
+            "explanation": "'Complement' means something that completes or enhances: 'a great complement to their previous work'. 'Compliment' = praise."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L190_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 190-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "She immigrated to Canada when she was twenty-five and built a new life there.",
+            "missingWord": "immigrated",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "immigrated",
+                "emigrated",
+                "migrated",
+                "relocated"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 190-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 190]."
+            "correctAnswer": "immigrated",
+            "hint": "'Immigrate' and 'emigrate' are confused. She moved to Canada. Which word means to arrive in a new country?",
+            "explanation": "'Immigrate' means to arrive in a new country: 'She immigrated to Canada'. 'Emigrate' means to leave your home country."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L190_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 5,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 190-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "He was enormously flattered when the CEO personally cited his work in the report.",
+            "missingWord": "cited",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "cited",
+                "sited",
+                "sighted",
+                "quoted"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 190-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 190]."
+            "correctAnswer": "cited",
+            "hint": "'Cited', 'sited', and 'sighted' are homophones with very different meanings. Which means 'to reference or quote'?",
+            "explanation": "'Cited' means to reference or mention: 'the CEO cited his work'. 'Sited' = placed at a location; 'sighted' = seen."
         }
     ]
 }

@@ -5,543 +5,513 @@
     "quests": [
         {
             "id": "WRT_FIXTHESENTENCE_L111_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 111-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "You must to submit the report by Friday or you will face a penalty.",
+            "missingWord": "must to",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "must",
+                "must to",
+                "have to",
+                "need to"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 111-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 111]."
+            "correctAnswer": "must",
+            "hint": "What is wrong with 'must to'? Think about how modal verbs work grammatically.",
+            "explanation": "Modal verbs (must, can, will, should) are followed directly by the base verb - never 'to': 'You must submit'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L111_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 111-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She could swam when she was just three years old, which amazed everyone.",
+            "missingWord": "swam",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "swim",
+                "swam",
+                "to swim",
+                "swimming"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 111-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 111]."
+            "correctAnswer": "swim",
+            "hint": "After modal verbs like 'could', which form of the main verb is used?",
+            "explanation": "After modal verbs, always use the base (infinitive without 'to') form: 'She could swim', not 'could swam'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L111_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 111-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "He should studied harder if he wanted to pass the final exam.",
+            "missingWord": "studied",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "have studied",
+                "studied",
+                "study",
+                "studying"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 111-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 111]."
+            "correctAnswer": "have studied",
+            "hint": "'Should' + past situation. What structure is used to express regret about a past action?",
+            "explanation": "Use 'should have + past participle' for past regrets: 'He should have studied harder'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L112_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 112-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "Can you to help me move this heavy table to the other room?",
+            "missingWord": "to help",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "help",
+                "to help",
+                "helping",
+                "helped"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 112-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 112]."
+            "correctAnswer": "help",
+            "hint": "After 'can', which form of the verb is used - with or without 'to'?",
+            "explanation": "After modal verbs like 'can', use the base form without 'to': 'Can you help me?' Not 'can you to help'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L112_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 112-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "You don't need bring your own pen - we have plenty here for everyone.",
+            "missingWord": "bring",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "to bring",
+                "bring",
+                "bringing",
+                "brought"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 112-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 112]."
+            "correctAnswer": "to bring",
+            "hint": "After 'need to' (a semi-modal), which form of the verb is needed?",
+            "explanation": "After 'need to', use the infinitive with 'to': 'You don't need to bring your own pen'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L112_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 112-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "She would rather taking the bus than drive in the heavy rush-hour traffic.",
+            "missingWord": "taking",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "take",
+                "taking",
+                "to take",
+                "taken"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 112-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 112]."
+            "correctAnswer": "take",
+            "hint": "After 'would rather', which form of the verb is used?",
+            "explanation": "After 'would rather', use the base form (infinitive without 'to'): 'She would rather take the bus'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L113_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 113-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "You should to see a doctor if that cough doesn't improve soon.",
+            "missingWord": "should to",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "should",
+                "should to",
+                "had better",
+                "ought"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 113-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 113]."
+            "correctAnswer": "should",
+            "hint": "Is 'should to' grammatically correct? Think about how modal verbs behave with the following verb.",
+            "explanation": "Modal verbs are never followed by 'to'. Use just 'should': 'You should see a doctor'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L113_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 113-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "If I were you, I will talk to the manager about the problem directly.",
+            "missingWord": "will",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "would",
+                "will",
+                "shall",
+                "should"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 113-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 113]."
+            "correctAnswer": "would",
+            "hint": "In 'If I were you...' advice structure, which modal verb completes the main clause?",
+            "explanation": "In 'If I were you, I would...' this is a second conditional structure. Use 'would', not 'will'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L113_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 113-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "He'd better to apologise before the situation gets any worse for everyone.",
+            "missingWord": "to apologise",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "apologise",
+                "to apologise",
+                "apologising",
+                "apologised"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 113-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 113]."
+            "correctAnswer": "apologise",
+            "hint": "'Had better' is followed by which form of the verb?",
+            "explanation": "After 'had better' (or 'd better), use the base form without 'to': 'He'd better apologise'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L114_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 114-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She might not comes to the party if she isn't feeling well enough.",
+            "missingWord": "comes",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "come",
+                "comes",
+                "coming",
+                "to come"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 114-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 114]."
+            "correctAnswer": "come",
+            "hint": "After 'might', which form of the verb is used?",
+            "explanation": "Modal verbs are followed by the base form: 'She might not come'. 'Comes' is the third-person singular form."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L114_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 114-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "He must be very tired - he has worked since five o'clock this morning.",
+            "missingWord": "has worked",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "must have been working",
+                "has worked",
+                "had worked",
+                "has been working"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 114-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 114]."
+            "correctAnswer": "must have been working",
+            "hint": "We're speculating about an ongoing past activity (working all day). Which modal structure fits?",
+            "explanation": "Use 'must have been working' for deduction about an ongoing past action: 'he must have been working since five'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L114_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 114-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "The keys should be in the kitchen - I'm not sure though, I may have left them elsewhere.",
+            "missingWord": "should be",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "could be",
+                "should be",
+                "must be",
+                "will be"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 114-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 114]."
+            "correctAnswer": "could be",
+            "hint": "'I'm not sure' and 'may have left them elsewhere' suggest uncertainty. Which modal best expresses possibility?",
+            "explanation": "'Could be' expresses possibility or uncertainty. 'Should be' suggests expectation. Use 'could be' here."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L115_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 115-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "Will you please be quiet? I'm trying to concentrate on my important work.",
+            "missingWord": "Will",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "Would",
+                "Will",
+                "Shall",
+                "Could"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 115-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 115]."
+            "correctAnswer": "Would",
+            "hint": "'Will you please' is a direct request. Which modal makes the request more polite and formal?",
+            "explanation": "'Would you please' is more polite than 'Will you please'. 'Would' adds formality and politeness to requests."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L115_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 115-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "Should I help you carry those heavy bags to your car today?",
+            "missingWord": "Should",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "Shall",
+                "Should",
+                "Must",
+                "Will"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 115-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 115]."
+            "correctAnswer": "Shall",
+            "hint": "This is an offer of help. In British English, which modal verb is traditionally used to make offers?",
+            "explanation": "'Shall I...?' is the traditional British way to offer help. 'Should' asks about obligation, not offers."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L115_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 115-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "May I to borrow your umbrella? It's starting to rain quite heavily outside.",
+            "missingWord": "to borrow",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "borrow",
+                "to borrow",
+                "borrowing",
+                "borrowed"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 115-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 115]."
+            "correctAnswer": "borrow",
+            "hint": "After 'may', which form of the verb is used - with or without 'to'?",
+            "explanation": "Modal verbs are followed by the base form without 'to': 'May I borrow your umbrella?'"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L116_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 116-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "You mustn't to park here - it's a restricted zone for deliveries only.",
+            "missingWord": "to park",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "park",
+                "to park",
+                "parking",
+                "parked"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 116-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 116]."
+            "correctAnswer": "park",
+            "hint": "After 'mustn't', which form of the verb is used?",
+            "explanation": "After 'mustn't' (and all modal verbs), use the base form without 'to': 'You mustn't park here'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L116_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 116-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She doesn't have to wear a uniform, but she choosing to anyway.",
+            "missingWord": "choosing",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "chooses",
+                "choosing",
+                "is choosing",
+                "chose"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 116-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 116]."
+            "correctAnswer": "chooses",
+            "hint": "After 'she' in simple present, the verb needs a particular form. What is wrong with 'choosing'?",
+            "explanation": "'Choosing' is a gerund/participle, not a finite verb. Use the simple present: 'she chooses to wear one anyway'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L116_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 116-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "She used to living in a small village before she moved to the big city.",
+            "missingWord": "living",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "live",
+                "living",
+                "lived",
+                "have lived"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 116-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 116]."
+            "correctAnswer": "live",
+            "hint": "After 'used to', which form of the verb is correct?",
+            "explanation": "After 'used to', always use the base form (infinitive without 'to'): 'She used to live in a village'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L117_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 117-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "He is used to work late in the evenings because of his demanding job.",
+            "missingWord": "work",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "working",
+                "work",
+                "have worked",
+                "worked"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 117-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 117]."
+            "correctAnswer": "working",
+            "hint": "'Is used to' (= is accustomed to) is different from 'used to'. What form follows 'be used to'?",
+            "explanation": "'Be used to' means 'be accustomed to' and is followed by -ing: 'He is used to working late'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L117_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 117-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "They would to spend summers by the sea when they were young children.",
+            "missingWord": "would to",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "would",
+                "would to",
+                "used to",
+                "will"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 117-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 117]."
+            "correctAnswer": "would",
+            "hint": "'Would to' - is this grammatically possible with modal verbs?",
+            "explanation": "Modal verbs never take 'to': 'They would spend summers by the sea'. 'Would' describes a past habit."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L117_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 117-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "She ought listen to feedback carefully if she wants to improve her performance.",
+            "missingWord": "ought",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "ought to listen",
+                "ought",
+                "should",
+                "must"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 117-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 117]."
+            "correctAnswer": "ought to listen",
+            "hint": "How does 'ought' work differently from other modal verbs?",
+            "explanation": "Unlike most modals, 'ought' is followed by 'to' + verb: 'She ought to listen'. Replace 'ought' with 'ought to listen'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L118_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 118-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "The proposal must submitted by no later than the end of this month.",
+            "missingWord": "submitted",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "be submitted",
+                "submitted",
+                "to be submitted",
+                "having been submitted"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 118-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 118]."
+            "correctAnswer": "be submitted",
+            "hint": "This is a passive voice sentence with a modal verb. What comes between 'must' and 'submitted'?",
+            "explanation": "The passive voice with a modal verb needs: modal + be + past participle. 'The proposal must be submitted'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L118_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 118-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "You will able to take on extra responsibilities after completing the training.",
+            "missingWord": "will able to",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "will be able to",
+                "will able to",
+                "can",
+                "could"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 118-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 118]."
+            "correctAnswer": "will be able to",
+            "hint": "What's wrong with 'will able to'? How do we express future ability?",
+            "explanation": "'Will able to' is incorrect. Express future ability with 'will be able to': 'You will be able to take on extra work'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L118_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 118-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "He might not have knew about the new safety regulations in place.",
+            "missingWord": "knew",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "known",
+                "knew",
+                "know",
+                "knowing"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 118-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 118]."
+            "correctAnswer": "known",
+            "hint": "After 'might not have', which form of the main verb is used?",
+            "explanation": "Modal perfect uses 'modal + have + past participle': 'He might not have known'. 'Knew' is simple past, not a past participle."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L119_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 119-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "You should better see a doctor about that persistent cough you have.",
+            "missingWord": "should better",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "had better",
+                "should better",
+                "would better",
+                "could better"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 119-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 119]."
+            "correctAnswer": "had better",
+            "hint": "'Should better' - is this a real expression? Think of the correct fixed phrase for urgent advice.",
+            "explanation": "The correct expression is 'had better' (or 'd better), not 'should better'. 'You had better see a doctor'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L119_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 119-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "Can you swimming to shore if the boat capsized in rough weather?",
+            "missingWord": "swimming",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "swim",
+                "swimming",
+                "to swim",
+                "swam"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 119-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 119]."
+            "correctAnswer": "swim",
+            "hint": "After 'can/could', which form of the verb is used?",
+            "explanation": "Modal verbs take the base form: 'Can you swim to shore?' 'Swimming' is a gerund, not used after modals."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L119_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 119-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She may had taken a wrong turn - she's been gone for over an hour now.",
+            "missingWord": "may had taken",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "may have taken",
+                "may had taken",
+                "might take",
+                "could have taken"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 119-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 119]."
+            "correctAnswer": "may have taken",
+            "hint": "This is a speculation about a past action. What structure follows 'may' for past possibility?",
+            "explanation": "For past possibility or speculation: 'may have + past participle'. 'May have taken' is correct. 'May had' is wrong."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L120_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 120-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "I would called you, but I didn't have any signal on my phone at all.",
+            "missingWord": "called",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "have called",
+                "called",
+                "to call",
+                "be calling"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 120-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 120]."
+            "correctAnswer": "have called",
+            "hint": "This is a third conditional sentence about a past hypothetical. What structure follows 'would'?",
+            "explanation": "Use 'would have + past participle': 'I would have called you'. 'Would called' is incorrect."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L120_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 120-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "He can't forgot - I reminded him three times this morning about the meeting.",
+            "missingWord": "forgot",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "have forgotten",
+                "forgot",
+                "to forget",
+                "forgotten"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 120-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 120]."
+            "correctAnswer": "have forgotten",
+            "hint": "We're expressing past certainty using 'can't'. What structure follows 'can't' for past deduction?",
+            "explanation": "Use 'can't have + past participle' for certainty about the past: 'He can't have forgotten'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L120_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 3,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 120-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She must knew about the problem before the meeting - everyone else did.",
+            "missingWord": "must knew",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "must have known",
+                "must knew",
+                "should have known",
+                "had to know"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 120-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 120]."
+            "correctAnswer": "must have known",
+            "hint": "We're expressing certainty about a past state. What modal structure expresses past deduction?",
+            "explanation": "Use 'must have + past participle' for certainty about the past: 'She must have known about the problem'."
         }
     ]
 }

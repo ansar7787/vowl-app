@@ -5,543 +5,513 @@
     "quests": [
         {
             "id": "WRT_FIXTHESENTENCE_L151_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 151-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "The woman which lives next door is a doctor at the local hospital.",
+            "missingWord": "which",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "who",
+                "which",
+                "that",
+                "whose"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 151-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 151]."
+            "correctAnswer": "who",
+            "hint": "The relative clause describes a person. Which relative pronoun is used for people?",
+            "explanation": "Use 'who' (or 'that') to introduce a relative clause about a person: 'The woman who lives next door'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L151_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 151-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "The book who I recommended to you is now available in paperback.",
+            "missingWord": "who",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "that",
+                "who",
+                "whose",
+                "whom"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 151-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 151]."
+            "correctAnswer": "that",
+            "hint": "The relative clause describes a book (a thing, not a person). Which pronoun is correct for things?",
+            "explanation": "Use 'that' or 'which' for things: 'The book that I recommended'. 'Who' is only used for people."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L151_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 151-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "This is the city where I was born in, and it holds many memories.",
+            "missingWord": "born in",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "born",
+                "born in",
+                "born there",
+                "born at"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 151-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 151]."
+            "correctAnswer": "born",
+            "hint": "When 'where' is used as a relative pronoun for a place, is it also necessary to add 'in' at the end?",
+            "explanation": "'Where' already includes 'in which', so 'in' at the end is redundant. Say 'the city where I was born', not 'born in'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L152_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 152-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "I have a colleague whose name I can never remember correctly.",
+            "missingWord": "whose",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "whose",
+                "who's",
+                "of whom",
+                "which"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 152-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 152]."
+            "correctAnswer": "whose",
+            "hint": "The colleague possesses a name. Which relative pronoun shows possession?",
+            "explanation": "'Whose' is the possessive relative pronoun: 'a colleague whose name I can never remember'. 'Who's' = 'who is'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L152_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 152-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "The hotel which we stayed at was absolutely beautiful and very comfortable.",
+            "missingWord": "which",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "which",
+                "that",
+                "who",
+                "where"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 152-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 152]."
+            "correctAnswer": "which",
+            "hint": "We're describing a hotel (a thing). The relative pronoun refers to the hotel. Which pronoun is correct?",
+            "explanation": "'Which' or 'that' are used for things: 'The hotel which we stayed at' or 'The hotel we stayed at' (relative pronoun omitted)."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L152_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 152-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "He is someone who I admire greatly for his courage and determination.",
+            "missingWord": "who",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "whom",
+                "who",
+                "whose",
+                "which"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 152-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 152]."
+            "correctAnswer": "whom",
+            "hint": "The relative pronoun is the object of the verb 'admire'. Which form is used for the object?",
+            "explanation": "Formally, use 'whom' when the relative pronoun is the object: 'someone whom I admire'. 'Who' is also accepted informally."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L153_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 153-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "The restaurant that we went to last night, it was very expensive.",
+            "missingWord": "it",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "-",
+                "it",
+                "which",
+                "this"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 153-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 153]."
+            "correctAnswer": "-",
+            "hint": "The relative clause 'that we went to last night' already connects to the main clause. Is 'it' needed?",
+            "explanation": "Remove 'it' - you cannot repeat the subject with a pronoun after a relative clause. 'The restaurant that we went to last night was very expensive'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L153_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 153-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "Is there anything which I can do to help you with the project?",
+            "missingWord": "which",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "that",
+                "which",
+                "who",
+                "what"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 153-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 153]."
+            "correctAnswer": "that",
+            "hint": "In questions and sentences with 'anything', 'everything', 'nothing', which relative pronoun is preferred?",
+            "explanation": "Use 'that' after 'anything', 'everything', 'nothing', and superlatives: 'anything that I can do'. 'Which' sounds unnatural here."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L153_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 153-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "The students whose scored the highest will advance to the regional competition.",
+            "missingWord": "whose scored",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "who scored",
+                "whose scored",
+                "which scored",
+                "that scored"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 153-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 153]."
+            "correctAnswer": "who scored",
+            "hint": "What is wrong with 'whose scored'? Think about whether a possessive pronoun is needed here.",
+            "explanation": "'Scored' needs a subject pronoun, not a possessive. Use 'who': 'The students who scored the highest'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L154_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 154-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She is the person whom has been chosen to lead the new project.",
+            "missingWord": "whom",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "who",
+                "whom",
+                "whose",
+                "which"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 154-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 154]."
+            "correctAnswer": "who",
+            "hint": "The relative pronoun is the subject of the verb 'has been chosen'. Should we use 'who' or 'whom'?",
+            "explanation": "Use 'who' when the relative pronoun is the subject: 'the person who has been chosen'. 'Whom' is for objects."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L154_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 154-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "The company which I work for has recently been taken over by a larger firm.",
+            "missingWord": "which",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "which",
+                "that",
+                "who",
+                "where"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 154-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 154]."
+            "correctAnswer": "which",
+            "hint": "The relative pronoun refers to a company (a thing/organisation). Is 'which' correct here?",
+            "explanation": "'Which' is correct for organisations and things: 'The company which I work for'. Both 'which' and 'that' are acceptable."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L154_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 154-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "The town where I grew up has changed enormously since I was a child.",
+            "missingWord": "where",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "where",
+                "which",
+                "that",
+                "in which"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 154-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 154]."
+            "correctAnswer": "where",
+            "hint": "We're describing a place ('the town'). Which relative pronoun is used for places?",
+            "explanation": "'Where' is used for places: 'The town where I grew up'. 'Which' could also work: 'the town in which I grew up'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L155_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 155-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "That is the reason which she gave for arriving so late to the meeting.",
+            "missingWord": "which",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "why",
+                "which",
+                "that",
+                "for which"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 155-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 155]."
+            "correctAnswer": "why",
+            "hint": "The antecedent is 'reason'. Which relative pronoun is most natural for reasons?",
+            "explanation": "Use 'why' after 'reason': 'the reason why she arrived late'. 'That' is also acceptable. 'Which' is less natural here."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L155_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 155-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "I remember the day which we first met at the conference in Edinburgh.",
+            "missingWord": "which",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "when",
+                "which",
+                "that",
+                "where"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 155-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 155]."
+            "correctAnswer": "when",
+            "hint": "The antecedent is 'the day' (a time). Which relative pronoun is used for time references?",
+            "explanation": "Use 'when' after time expressions like 'day', 'time', 'year': 'the day when we first met'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L155_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 155-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She is the only person that she understood the instructions correctly.",
+            "missingWord": "that she understood",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "who understood",
+                "that she understood",
+                "which understood",
+                "who she understood"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 155-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 155]."
+            "correctAnswer": "who understood",
+            "hint": "There is a pronoun error in the relative clause. What is wrong with 'that she understood'?",
+            "explanation": "'That she understood' has an unnecessary subject 'she' - the relative pronoun is the subject. Use: 'the only person who understood'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L156_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 156-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "The film, which I had been waiting to see for weeks, was disappointing.",
+            "missingWord": "which",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "which",
+                "that",
+                "who",
+                "whose"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 156-1)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 156]."
+            "correctAnswer": "which",
+            "hint": "This is a non-defining relative clause (with commas). Which pronoun is used in non-defining clauses?",
+            "explanation": "In non-defining relative clauses (with commas), use 'which' for things. 'That' cannot be used in non-defining clauses."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L156_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 156-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "He is the person whom I think can help you with your problem.",
+            "missingWord": "whom",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "who",
+                "whom",
+                "whose",
+                "which"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 156-2)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 156]."
+            "correctAnswer": "who",
+            "hint": "The relative pronoun is the subject of 'can help'. Should 'who' or 'whom' be used here?",
+            "explanation": "Use 'who' as the subject of the relative clause: 'the person who can help you'. 'Whom' is used for objects."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L156_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 156-3] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "The manager whose you spoke to has agreed to review your complaint.",
+            "missingWord": "whose",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "whom",
+                "whose",
+                "who",
+                "which"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 156-3)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 156]."
+            "correctAnswer": "whom",
+            "hint": "What is wrong with 'whose'? 'You spoke to ___' - does the relative pronoun show possession or is it an object?",
+            "explanation": "'Whom' is the object of the preposition 'to': 'The manager whom you spoke to'. 'Whose' shows possession."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L157_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 157-1] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "This is the same restaurant which we celebrated our anniversary at last year.",
+            "missingWord": "which",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "where",
+                "which",
+                "that",
+                "in which"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 157-1)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 157]."
+            "correctAnswer": "where",
+            "hint": "'Restaurant' is a place. The sentence describes what happened there. Which pronoun introduces a place?",
+            "explanation": "Use 'where' when describing something that happened at a place: 'the restaurant where we celebrated our anniversary'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L157_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 157-2] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "Everything which he says is taken very seriously by the entire team.",
+            "missingWord": "which",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "that",
+                "which",
+                "who",
+                "what"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 157-2)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 157]."
+            "correctAnswer": "that",
+            "hint": "After 'everything', 'nothing', 'something', 'anything', which relative pronoun is preferred?",
+            "explanation": "Use 'that' after 'everything', 'nothing', 'something': 'Everything that he says'. 'Which' is less natural here."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L157_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 157-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "The report whom the manager approved has been sent to all departments.",
+            "missingWord": "whom",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "which",
+                "whom",
+                "who",
+                "that"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 157-3)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 157]."
+            "correctAnswer": "which",
+            "hint": "The relative pronoun refers to 'the report' (a thing). Which pronoun is used for things?",
+            "explanation": "Use 'which' or 'that' for things: 'The report which the manager approved'. 'Whom' is only for people."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L158_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 158-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "She told me the reason for which she was unable to attend the meeting.",
+            "missingWord": "for which",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "why",
+                "for which",
+                "which",
+                "that"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 158-1)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 158]."
+            "correctAnswer": "why",
+            "hint": "What is the most natural relative pronoun after 'reason'?",
+            "explanation": "Use 'why' after 'reason': 'the reason why she was unable to attend'. 'For which' is formally correct but awkward."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L158_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 158-2] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "He is an expert in his field whose opinion is highly respected worldwide.",
+            "missingWord": "whose",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "whose",
+                "who's",
+                "of which",
+                "that"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 158-2)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 158]."
+            "correctAnswer": "whose",
+            "hint": "The expert possesses an opinion. Which relative pronoun shows possession for a person?",
+            "explanation": "'Whose' is the possessive relative pronoun for people: 'an expert whose opinion is highly respected'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L158_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 158-3] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "This is the hospital where my grandmother was born at many years ago.",
+            "missingWord": "at",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "-",
+                "at",
+                "in",
+                "there"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 158-3)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 158]."
+            "correctAnswer": "-",
+            "hint": "When 'where' is used as a relative pronoun, does it need another preposition at the end?",
+            "explanation": "'Where' already means 'in/at which', so 'at' at the end is redundant and incorrect. Use 'the hospital where my grandmother was born'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L159_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 159-1] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "She has a talent that it is rare to find in someone so young.",
+            "missingWord": "that it is",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "that is",
+                "that it is",
+                "which it is",
+                "who is"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 159-1)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 159]."
+            "correctAnswer": "that is",
+            "hint": "What is wrong with 'that it is'? There is an unnecessary word in the relative clause.",
+            "explanation": "Remove the unnecessary pronoun 'it': 'a talent that is rare to find'. The relative pronoun 'that' is already the subject."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L159_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Vent Fix 159-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
-            "missingWord": "releases",
+            "passage": "The students which passed the exam will receive their certificates next week.",
+            "missingWord": "which",
             "options": [
-                "release",
-                "releasing",
-                "released",
-                "releases"
+                "who",
+                "which",
+                "whose",
+                "whom"
             ],
-            "correctAnswer": "release",
-            "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 159-2)",
-            "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 159]."
+            "correctAnswer": "who",
+            "hint": "The relative clause refers to students (people). Which relative pronoun is used for people?",
+            "explanation": "Use 'who' or 'that' for people: 'The students who passed the exam'. 'Which' is only for things."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L159_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Microbe Fix 159-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
-            "missingWord": "performing",
+            "passage": "I still remember the year which the internet became widely available to the public.",
+            "missingWord": "which",
             "options": [
-                "perform",
-                "performed",
-                "performing",
-                "performs"
+                "when",
+                "which",
+                "that",
+                "where"
             ],
-            "correctAnswer": "perform",
-            "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 159-3)",
-            "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 159]."
+            "correctAnswer": "when",
+            "hint": "The antecedent is 'the year' (a time reference). Which relative pronoun is used with time expressions?",
+            "explanation": "Use 'when' with time expressions: 'the year when the internet became widely available'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L160_Q1",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Kelp Fix 160-1] Giant kelp forests absorbs massive solar energy from above.",
-            "missingWord": "absorbs",
+            "passage": "The city, who is famous for its architecture, attracts millions of tourists.",
+            "missingWord": "who",
             "options": [
-                "absorb",
-                "absorbed",
-                "absorbing",
-                "absorbs"
+                "which",
+                "who",
+                "that",
+                "whose"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 160-1)",
-            "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 160]."
+            "correctAnswer": "which",
+            "hint": "A city is a place (not a person). Which relative pronoun should be used in a non-defining clause?",
+            "explanation": "Use 'which' for places and things in non-defining relative clauses (with commas): 'The city, which is famous'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L160_Q2",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Biolum Fix 160-2] Most deep creatures using biological cold bioluminescent light.",
-            "missingWord": "using",
+            "passage": "That is the professor who lecture I attended last term.",
+            "missingWord": "who",
             "options": [
-                "use",
-                "used",
-                "using",
-                "uses"
+                "whose",
+                "who",
+                "which",
+                "that"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 160-2)",
-            "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 160]."
+            "correctAnswer": "whose",
+            "hint": "The professor possesses the lecture. Which relative pronoun shows possession?",
+            "explanation": "'Whose' is the possessive: 'the professor whose lecture I attended'. 'Who' is not possessive."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L160_Q3",
-            "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
-            "difficulty": 4,
+            "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "[Upwell Fix 160-3] Wind coastal upwellings drags nutrient cold waters upward.",
-            "missingWord": "drags",
+            "passage": "The document that the secretary has been looking for it was found in the archive.",
+            "missingWord": "it",
             "options": [
-                "drag",
-                "dragged",
-                "dragging",
-                "drags"
+                "-",
+                "it",
+                "the document",
+                "which"
             ],
-            "correctAnswer": "drag",
-            "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 160-3)",
-            "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 160]."
+            "correctAnswer": "-",
+            "hint": "There is an unnecessary word in this sentence. The relative clause 'that the secretary has been looking for' already refers to the document - so what is 'it' doing here?",
+            "explanation": "Remove 'it' - the relative clause already refers to 'the document'. 'The document that the secretary has been looking for was found' is correct."
         }
     ]
 }
