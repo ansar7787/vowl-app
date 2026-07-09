@@ -5,603 +5,573 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L111_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 111-1] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "All processed food products should carry prominent graphic health warnings.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Graphic warnings alert consumers to specific health risks and increase the salience of nutritional decisions.",
+                "Warning labels that quantify health impacts give all consumers equal access to relevant health information.",
+                "Processed food is a broad category covering many products that do not pose significant health risks.",
+                "Warning label fatigue sets in quickly, reducing the impact of labelling after initial exposure."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 111-1)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 111]."
+            "hint": "Think about the consumer information case for graphic food warnings (Pros) and the definition and fatigue concerns (Cons).",
+            "explanation": "Graphic warnings raise health risk salience and democratise nutritional information (Pros), but processed food is a very broad category, and warning fatigue significantly reduces label impact after initial exposure (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L111_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 111-2] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Graphic health warnings on food should specifically target sugar, fat, and salt content.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Prominent front-of-pack labelling on specific harmful nutrients makes health risks immediately comprehensible.",
+                "Targeted nutrient warnings have been shown to shift consumer purchasing decisions towards healthier options.",
+                "Nutrient-specific warnings do not capture the complexity of overall dietary pattern and interaction effects.",
+                "Food manufacturers lobby successfully to weaken or delay the implementation of nutrient labelling schemes."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 111-2)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 111]."
+            "hint": "Consider the targeted nutrient warning case (Pros) and the systemic food complexity and lobbying concerns (Cons).",
+            "explanation": "Targeted nutrient warnings are comprehensible and demonstrably shift purchasing behaviour (Pros), but they miss dietary complexity and food manufacturers consistently lobby to weaken labelling requirements (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L111_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 111-3] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Health warning labels on food empower consumers without infringing on their freedom.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Providing clearer information enables genuinely informed choice rather than restricting what people may buy.",
+                "Better-informed consumers create market pressure on manufacturers to improve product nutritional quality.",
+                "Food choices are driven by habit, culture, price, and availability - not primarily by labelling information.",
+                "People with lower literacy or numeracy skills may not benefit from health label information equally."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 111-3)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 111]."
+            "hint": "Think about food labels as an empowerment tool (Pros) and the limits of information-only interventions (Cons).",
+            "explanation": "Health labels enable informed choice and create consumer market pressure for product improvement (Pros), but food choices are primarily driven by habit, culture, and cost, and labels benefit literate consumers far more than those with lower literacy skills (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L112_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 112-1] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Routine dental care should be fully covered by the national health service.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Poor dental health is directly linked to cardiovascular disease, diabetes, and systemic infections.",
+                "Free dental care removes the cost barrier that causes many lower-income people to delay essential treatment.",
+                "Comprehensive NHS dental coverage would require substantial additional public funding.",
+                "Many people who could afford dental costs continue to use NHS provision, reducing funding efficiency."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 112-1)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 112]."
+            "hint": "Think about the public health and access case for NHS dental cover (Pros) and the funding and efficiency concerns (Cons).",
+            "explanation": "Free dental care links oral health to systemic disease prevention and removes cost barriers for lower-income patients (Pros), but comprehensive NHS dental coverage requires substantial new funding, and universal provision is less efficient than targeted support (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L112_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 112-2] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Dental health inequality is one of the most visible markers of social and economic inequality.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Dental disease disproportionately affects lower-income communities who cannot afford preventive care.",
+                "Addressing dental inequality through public provision has measurable long-term public health benefits.",
+                "Expanding NHS dental provision requires recruiting significantly more dentists than currently train in the UK.",
+                "Dental health is strongly influenced by lifestyle behaviours that public provision alone cannot change."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 112-2)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 112]."
+            "hint": "Consider dental inequality as a public health policy target (Pros) and the workforce and lifestyle barriers (Cons).",
+            "explanation": "Dental disease disproportionately affects lower-income communities and NHS provision reduces long-term health inequality (Pros), but workforce shortages limit provision capacity, and dental health depends on lifestyle behaviours beyond the reach of healthcare alone (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L112_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 112-3] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Prevention-focused dental programmes are more cost-effective than expanding NHS treatment.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Fluoride in water, school dental health education, and subsidised preventive check-ups cost less than remedial treatment.",
+                "Investing in early preventive care reduces future demand for expensive restorative NHS dental procedures.",
+                "Prevention programmes alone cannot meet the existing backlog of untreated dental disease in the population.",
+                "Prevention must be complemented by accessible and affordable treatment for those who already need care."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 112-3)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 112]."
+            "hint": "Think about dental prevention versus treatment as the most cost-effective NHS approach (Pros) and the backlog and access concerns (Cons).",
+            "explanation": "Prevention is significantly cheaper than remedial treatment and reduces future NHS demand (Pros), but existing disease backlogs cannot be addressed through prevention alone, and prevention must complement rather than replace accessible treatment (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L113_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 113-1] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "All junk food advertising should be banned before nine in the evening.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Pre-watershed restrictions protect children from repeated exposure to persuasive junk food advertising.",
+                "Removing peak-time junk food advertising reduces normalisation of unhealthy food as a desirable choice.",
+                "A nine o'clock watershed ban ignores the reality that children consume media on demand at all hours.",
+                "Junk food advertisers simply shift spend to digital platforms where pre-watershed restrictions do not apply."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 113-1)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 113]."
+            "hint": "Think about the protection case for a pre-watershed junk food advertising ban (Pros) and its effectiveness in the digital age (Cons).",
+            "explanation": "Pre-watershed restrictions protect children from unhealthy food advertising during prime viewing (Pros), but on-demand media and digital advertising make watershed restrictions easily circumvented in practice (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L113_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 113-2] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "A total ban on junk food advertising would more effectively protect children's health.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "An all-time ban removes junk food advertising from all broadcast media, eliminating the loophole of late-night viewing.",
+                "Total advertising prohibition removes the commercial incentive to create persuasive food marketing targeting children.",
+                "A total advertising ban significantly affects media businesses and entertainment companies that rely on food advertising.",
+                "Adults have the right to receive advertising information about legal food products they are free to purchase."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 113-2)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 113]."
+            "hint": "Consider a total ban versus a watershed restriction on junk food advertising (Pros) and the commercial and rights concerns (Cons).",
+            "explanation": "A total ban eliminates all broadcast loopholes and removes commercial incentives for child-targeted marketing (Pros), but it significantly impacts media revenues and raises questions about adults' right to receive information about legal products (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L113_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 113-3] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Digital platform restrictions on junk food advertising are essential alongside broadcast regulation.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Online platforms carry vast volumes of junk food advertising targeted precisely at children using algorithms.",
+                "Broadcast-only restrictions are ineffective without equivalent digital platform regulation.",
+                "Digital platform regulation is technically complex and difficult to enforce across global platform operators.",
+                "Platform self-regulation of food advertising has historically been weak and commercially compromised."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 113-3)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 113]."
+            "hint": "Think about the necessity of digital platform junk food advertising regulation (Pros) and the enforcement challenges (Cons).",
+            "explanation": "Digital food advertising targets children algorithmically and makes broadcast-only restrictions ineffective without equivalent digital rules (Pros), but global platform regulation is technically complex, and self-regulation by platforms has consistently failed to protect children (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L114_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 114-1] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Mental health treatment should be provided completely free at the point of need.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Mental illness is as serious as physical illness and must receive equivalent free access to treatment.",
+                "Removing financial barriers to mental health treatment encourages earlier intervention before crises develop.",
+                "Providing truly comprehensive free mental health care requires enormous sustained public investment.",
+                "Free provision without capacity expansion creates long waiting lists that reduce clinical effectiveness."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 114-1)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 114]."
+            "hint": "Think about the equity and early intervention case for free mental health care (Pros) and the capacity and cost concerns (Cons).",
+            "explanation": "Free mental health treatment removes financial barriers and enables earlier intervention (Pros), but genuine comprehensiveness requires enormous investment, and free provision without capacity growth creates dangerous waiting list delays (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L114_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 114-2] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Long waiting times for NHS mental health treatment cause serious harm to patients.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Delays in accessing treatment allow mild conditions to escalate into severe and costly crises.",
+                "People waiting for care remain at serious risk, with some experiencing self-harm or suicide during delays.",
+                "The primary cause of long waits is workforce shortage, not funding alone.",
+                "Expanding mental health provision is not achievable quickly given the years required to train clinical staff."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 114-2)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 114]."
+            "hint": "Consider the harm caused by mental health waiting times (Pros for urgent action) and the structural barriers (Cons).",
+            "explanation": "Treatment delays allow conditions to worsen and leave patients at serious risk of harm during the wait (Pros for urgent action), but the primary cause is workforce shortage that cannot be quickly resolved regardless of funding levels (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L114_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 114-3] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Prevention and community support can reduce demand for expensive mental health treatment.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Early community-based support and social prescribing prevent many people from reaching crisis threshold.",
+                "Investment in social determinants of mental health - housing, employment, community - is more effective than treatment alone.",
+                "Community support and prevention cannot replace specialist clinical treatment for severe mental illness.",
+                "The evidence base for social prescribing and community mental health interventions is still developing."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 114-3)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 114]."
+            "hint": "Think about prevention and community support as mental health strategy (Pros) and their limits and evidence base (Cons).",
+            "explanation": "Community support and prevention reduce clinical demand and address social determinants of mental illness (Pros), but they cannot substitute for specialist clinical treatment in severe cases, and the evidence for community interventions is still maturing (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L115_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 115-1] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Employers should be legally required to offer workplace wellness programmes to all staff.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Workplace wellness programmes reduce absenteeism and improve productivity in measurable ways.",
+                "Employer-led wellness programmes reach employees who would not otherwise access health support.",
+                "Wellness programmes vary enormously in quality and many deliver little measurable health benefit.",
+                "Mandatory wellness programmes can feel intrusive and patronising, reducing employee autonomy."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 115-1)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 115]."
+            "hint": "Think about the productivity and access case for mandatory wellness programmes (Pros) and the quality and autonomy concerns (Cons).",
+            "explanation": "Wellness programmes reduce absenteeism and reach otherwise unreached employees (Pros), but quality varies enormously, and mandatory programmes can feel intrusive and undermine the employee autonomy that genuine wellbeing requires (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L115_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 115-2] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Compulsory wellness programmes benefit employers through reduced healthcare and absence costs.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Healthier employees take fewer sick days, reducing the direct and indirect cost of absence to employers.",
+                "Early detection of health conditions through workplace programmes prevents costly long-term medical treatment.",
+                "Small businesses cannot afford the infrastructure and cost of running meaningful wellness programmes.",
+                "Wellness programme ROI is often overstated in industry studies with significant conflicts of interest."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 115-2)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 115]."
+            "hint": "Consider the employer cost-reduction case for wellness programmes (Pros) and the small business and evidence quality concerns (Cons).",
+            "explanation": "Wellness programmes reduce absence costs and enable early health condition detection (Pros), but small businesses cannot afford meaningful programmes, and the financial return on wellness investment is often overstated in industry-funded research (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L115_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 115-3] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Voluntary rather than compulsory wellness programmes produce better employee engagement.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Employees who choose to participate demonstrate greater commitment and derive more benefit from programmes.",
+                "Voluntary programmes focused on specific measurable outcomes generate stronger evidence of effectiveness.",
+                "Voluntary wellness programmes primarily attract already-healthy employees, missing those most at need.",
+                "Without compulsion, programmes are underfunded, underused, and fail to change population health outcomes."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 115-3)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 115]."
+            "hint": "Think about voluntary versus mandatory wellness programmes (Pros for voluntary) and who they actually reach (Cons).",
+            "explanation": "Voluntary participation generates genuine engagement and stronger outcome evidence (Pros), but voluntary programmes primarily attract healthy employees and without compulsion remain underfunded and too narrow in reach (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L116_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 116-1] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Physical education grades should count towards students' final academic results.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Including PE grades in academic results signals that physical health matters as much as academic achievement.",
+                "Graded PE motivates students to engage seriously with exercise as a valued and assessed discipline.",
+                "Grading PE on physical performance disadvantages students with disabilities and chronic health conditions.",
+                "Academic grades already reflect learning effort; measuring physical ability alongside them is a categorical error."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 116-1)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 116]."
+            "hint": "Think about the motivation and values case for graded PE (Pros) and the equity and category concerns (Cons).",
+            "explanation": "Counting PE grades signals the importance of health and motivates serious engagement (Pros), but performance-based grading disadvantages disabled students and conflates physical ability with academic achievement (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L116_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 116-2] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Assessing PE on effort, progress, and knowledge rather than ability makes grading more equitable.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Assessing on personal improvement and sports science knowledge rewards effort rather than natural athleticism.",
+                "Including effort-based PE grades motivates all students equally regardless of physical starting point.",
+                "Effort-based grading is subjective and open to teacher bias in ways that undermine its academic legitimacy.",
+                "Students quickly learn to appear to be trying without genuinely engaging with physical activity."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 116-2)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 116]."
+            "hint": "Consider effort-based PE grading as an equitable approach (Pros) and the subjectivity and gaming concerns (Cons).",
+            "explanation": "Effort and progress-based PE grades reward commitment over natural ability and motivate all students (Pros), but effort assessment is highly subjective and vulnerable to teacher bias, and students can perform effort without genuine engagement (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L116_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 116-3] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "PE is better delivered as an enriching non-assessed experience than as an examined academic subject.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Non-assessed PE removes the anxiety and competition that undermine its enjoyment and health benefits.",
+                "Physical activity experienced as intrinsically enjoyable is more likely to continue beyond compulsory schooling.",
+                "Without assessment, PE lacks the status, funding priority, and teacher accountability of assessed subjects.",
+                "Non-assessed subjects risk becoming marginalised in schools dominated by examination performance pressure."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 116-3)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 116]."
+            "hint": "Think about PE as a non-assessed enriching experience (Pros) and the status and marginalisation risks without assessment (Cons).",
+            "explanation": "Non-assessed PE promotes intrinsic enjoyment and reduces competitive anxiety, building lifelong activity habits (Pros), but without assessment PE lacks academic status, funding, and accountability, risking marginalisation in exam-focused schools (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L117_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 117-1] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Schools should teach students about the importance and science of sleep.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Evidence-based sleep education helps adolescents understand and manage the biological sleep shifts of puberty.",
+                "Understanding sleep science equips students to make better decisions about bedtime, screens, and rest.",
+                "Sleep education competes for limited curriculum time against more immediately assessable academic subjects.",
+                "Parental behaviour and family environment have far greater influence on adolescent sleep than school education."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 117-1)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 117]."
+            "hint": "Think about the evidence-based case for sleep education in schools (Pros) and the curriculum and parent influence concerns (Cons).",
+            "explanation": "Sleep education helps adolescents understand biological sleep changes and make better rest decisions (Pros), but it competes for scarce curriculum time and family environment exerts far greater influence on sleep than school-based education (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L117_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 117-2] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Poor adolescent sleep is a significant and underaddressed public health concern.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Chronic sleep deprivation in teenagers is strongly associated with depression, anxiety, and reduced academic performance.",
+                "Schools are ideally placed to identify and address sleep deficits that families may not recognise.",
+                "Adolescent sleep problems are primarily driven by digital device use and social pressures beyond school control.",
+                "Addressing sleep requires family and community-level intervention, not school education programmes alone."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 117-2)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 117]."
+            "hint": "Consider the public health case for school sleep intervention (Pros) and the root cause and systemic concerns (Cons).",
+            "explanation": "Chronic teen sleep deprivation links to depression and academic decline, and schools can identify patterns families miss (Pros), but device use and social pressures are the primary drivers, and effective sleep improvement requires family and community-level action (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L117_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 117-3] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Later school start times are more effective than sleep education in addressing teen sleep deprivation.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Structural change to school start times addresses the biological clock mismatch without requiring behaviour change.",
+                "Later starts have demonstrated measurable improvements in attendance, mood, and academic performance in pilots.",
+                "Later school starts displace the school day and create significant logistical problems for working families.",
+                "Later starts do not address the late-night digital device use that is the primary cause of teen sleep loss."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 117-3)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 117]."
+            "hint": "Think about later starts versus sleep education as responses to teen sleep deprivation (Pros for later starts) and the practical and root cause concerns (Cons).",
+            "explanation": "Later starts address biological clock mismatch structurally and show positive pilot results for attendance and performance (Pros), but they create serious family logistics problems and do not address the underlying cause of device-driven late-night sleep loss (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L118_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 118-1] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Governments should significantly increase research funding for rare and neglected diseases.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Rare disease patients are systematically underserved by market-driven pharmaceutical research.",
+                "Public research investment in rare diseases produces scientific discoveries applicable to common conditions.",
+                "Public research budgets are finite and every rare disease investment displaces funding for common condition research.",
+                "Orphan drug legislation and commercial incentives have already significantly improved rare disease research."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 118-1)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 118]."
+            "hint": "Think about the equity and spillover case for more rare disease funding (Pros) and the opportunity cost and existing incentives (Cons).",
+            "explanation": "Rare disease patients deserve research investment and rare disease science generates widely applicable discoveries (Pros), but public research budgets are finite, every rare disease investment displaces common condition funding, and existing orphan drug incentives already drive some private investment (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L118_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 118-2] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Market incentives alone are insufficient to ensure adequate research into rare diseases.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "The commercial market is too small to justify private investment in diseases affecting few patients.",
+                "Without public funding, patients with rare conditions face a lifetime without treatment options or diagnosis.",
+                "Tax incentives and guaranteed purchase commitments can motivate sufficient private sector rare disease research.",
+                "Public bodies are less efficient than private research companies in translating funding into effective treatments."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 118-2)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 118]."
+            "hint": "Consider why market incentives are insufficient for rare disease research (Pros) and the private sector alternative (Cons).",
+            "explanation": "Small rare disease markets cannot justify private investment without public support (Pros), but tax incentives and guaranteed purchase agreements can motivate private research, and private companies may translate investment into treatments more efficiently than public bodies (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L118_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 118-3] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "International collaboration in rare disease research is more efficient than national funding alone.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Pooling patients across countries enables clinical trials with sufficient participants for rare conditions.",
+                "Shared research infrastructure reduces duplication and significantly lowers the cost of rare disease investigation.",
+                "International research collaboration raises complex questions of data sharing, intellectual property, and access.",
+                "National governments may prioritise domestic research capacity and control over international collaborative efficiency."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 118-3)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 118]."
+            "hint": "Think about international collaboration as the most effective rare disease research model (Pros) and the coordination challenges (Cons).",
+            "explanation": "International pooling enables adequate trial participation and reduces duplication in rare disease research (Pros), but data sharing and IP questions complicate collaboration, and governments may prioritise national control over collaborative efficiency (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L119_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 119-1] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Alcohol should be taxed significantly more heavily to reduce harmful consumption.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Higher alcohol prices demonstrably reduce consumption, particularly among younger and heavier drinkers.",
+                "Tax revenue from higher alcohol duty can fund alcohol harm reduction, treatment, and public health.",
+                "A higher alcohol tax disproportionately affects lower-income people who drink relatively more of their income.",
+                "Moderate drinkers should not be financially penalised for the harms caused by a minority of heavy drinkers."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 119-1)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 119]."
+            "hint": "Think about the public health and revenue case for higher alcohol taxation (Pros) and the regressive and fairness concerns (Cons).",
+            "explanation": "Higher alcohol taxes demonstrably cut harmful consumption and generate health funding (Pros), but they fall harder on lower-income people and penalise responsible moderate drinkers for harms caused by a minority (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L119_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 119-2] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Minimum unit pricing for alcohol is more targeted and effective than blanket taxation.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Minimum unit pricing specifically increases the cost of the cheapest high-strength alcohol used by heavy drinkers.",
+                "Scottish evidence demonstrates that minimum unit pricing measurably reduced alcohol-related hospital admissions.",
+                "Minimum unit pricing increases profits for producers and retailers rather than generating public health revenue.",
+                "Middle-class wine drinkers are largely unaffected by minimum unit pricing on cheap high-strength products."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 119-2)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 119]."
+            "hint": "Consider minimum unit pricing versus taxation as the optimal alcohol policy tool (Pros) and the revenue and targeting concerns (Cons).",
+            "explanation": "Minimum unit pricing targets cheap high-strength alcohol used by heavy drinkers and Scottish evidence shows measurable health benefits (Pros), but producers capture the revenue benefit rather than the public, and the policy largely bypasses moderate wine and beer drinkers (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L119_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 119-3] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Education and cultural change are more effective long-term responses to harmful drinking than taxation.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Changing social norms about alcohol requires sustained cultural and educational investment, not price intervention.",
+                "Countries with positive drinking cultures achieve lower harm levels through norms rather than tax structures.",
+                "Cultural change in alcohol consumption takes generations to achieve and cannot address immediate harms.",
+                "Evidence from tobacco shows that price measures are consistently more effective than education in changing behaviour."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 119-3)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 119]."
+            "hint": "Think about cultural change versus taxation as the more effective alcohol harm reduction strategy (Pros for culture) and the speed and evidence concerns (Cons).",
+            "explanation": "Sustainable cultural change about alcohol is more durable than price interventions (Pros), but cultural change takes generations, and tobacco evidence shows price measures consistently outperform education in changing consumption behaviour (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L120_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 120-1] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Annual health checks at work should be compulsory for all full-time employees.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Compulsory checks detect chronic conditions early, reducing long-term healthcare costs and sick leave.",
+                "Workplace health checks reach people who would not proactively visit their GP for routine screening.",
+                "Compulsory health checks raise complex questions about medical privacy and employee autonomy.",
+                "Employers who access employee health data may use it to discriminate in pay, promotion, or redundancy."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 120-1)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 120]."
+            "hint": "Think about the preventive health case for compulsory workplace checks (Pros) and the privacy and discrimination concerns (Cons).",
+            "explanation": "Compulsory checks enable early detection and reach people who avoid healthcare (Pros), but they raise serious medical privacy concerns and risk employer misuse of health data for discriminatory employment decisions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L120_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 120-2] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Employer-funded health monitoring programmes deliver measurable returns on investment.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Early detection of conditions reduces the cost of subsequent treatment for employers funding health insurance.",
+                "Healthier employees demonstrate higher productivity, lower absence rates, and stronger retention.",
+                "Financial return on health monitoring investment typically takes many years to materialise.",
+                "Small businesses cannot afford meaningful health monitoring infrastructure for their employees."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 120-2)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 120]."
+            "hint": "Consider the employer ROI case for health monitoring (Pros) and the timeline and small business concerns (Cons).",
+            "explanation": "Early detection saves treatment costs and healthier employees are more productive and reliable (Pros), but returns take years to materialise and small businesses face disproportionate cost barriers to implementing health monitoring (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L120_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 3,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 120-3] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Voluntary occupational health programmes are more effective than compulsory workplace checks.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Employees who choose to engage with health monitoring participate more honestly and act on findings.",
+                "Voluntary programmes avoid the legal and ethical minefield of compulsory health data collection at work.",
+                "Voluntary programmes attract primarily health-conscious employees, missing those with greatest health needs.",
+                "Without compulsion, the majority of employees in high-risk jobs do not participate in health monitoring."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 120-3)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 120]."
+            "hint": "Think about voluntary versus compulsory workplace health programmes (Pros for voluntary) and the reach concerns (Cons).",
+            "explanation": "Voluntary programmes generate genuine engagement and avoid legal and ethical problems of compulsory data collection (Pros), but they attract mainly health-conscious employees, and without compulsion most at-risk workers in high-risk roles do not participate (Cons)."
         }
     ]
 }

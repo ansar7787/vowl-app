@@ -5,603 +5,573 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L21_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 21-1] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "All pupils should wear school uniforms.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Uniforms reduce visible differences in wealth between students, promoting equality.",
+                "A shared uniform builds a sense of school identity and community pride.",
+                "Uniforms restrict students' ability to express their personal identity and creativity.",
+                "Purchasing school uniforms can be a significant financial burden for lower-income families."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 21-1)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 21]."
+            "hint": "Think about what uniforms do for equality and community (Pros) and what they take away (Cons).",
+            "explanation": "Uniforms reduce wealth disparities and build school identity (Pros), but they limit personal expression, and uniform costs can be a real financial hardship for less affluent families (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L21_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 21-2] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "School uniforms improve behaviour and create a better learning environment.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "A common dress code reinforces a professional school environment and focus on learning.",
+                "Uniforms reduce time spent on choosing clothing and can decrease morning conflict at home.",
+                "Research evidence on whether uniforms genuinely improve behaviour or attainment is mixed.",
+                "Strict uniform rules can create tension between students and teachers over minor infractions."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 21-2)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 21]."
+            "hint": "Consider how uniforms affect school discipline (Pros) and what the evidence actually shows (Cons).",
+            "explanation": "Uniforms reinforce a professional learning environment and simplify mornings (Pros), but research on their effectiveness is inconclusive, and rigid enforcement of minor rules creates unnecessary friction (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L21_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 21-3] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "School uniforms help students feel part of a team.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Wearing the same clothes as classmates reduces social pressure around fashion and brand labels.",
+                "Uniforms make it easier to identify students on trips and maintain school safety.",
+                "Teenagers in particular want to express individuality, making uniform policies a point of conflict.",
+                "Uniforms do not prevent all forms of social exclusion, such as bullying based on appearance."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 21-3)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 21]."
+            "hint": "Think about how uniforms build belonging (Pros) and their limitations in practice (Cons).",
+            "explanation": "Uniforms reduce fashion pressure and improve identification on school trips (Pros), but teenagers resist restrictions on self-expression, and uniforms cannot prevent all forms of peer pressure and social exclusion (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L22_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 22-1] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Students should be given homework every school day.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Regular homework reinforces classroom learning and helps knowledge move into long-term memory.",
+                "Daily practice at home develops the habits of independent study that students need for exams.",
+                "Excessive homework consumes time children need for rest, play, and family interaction.",
+                "Research suggests that very large amounts of homework offer diminishing academic returns."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 22-1)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 22]."
+            "hint": "Think about what daily homework achieves (Pros) and when it becomes harmful (Cons).",
+            "explanation": "Homework consolidates learning and builds independent study habits (Pros), but excessive amounts deprive children of necessary rest, and research shows diminishing returns beyond a moderate amount (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L22_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 22-2] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Homework helps parents stay informed about their child's learning.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Parents can see what topics their child is studying and identify where support is needed.",
+                "Shared homework time gives parents and children an opportunity to work and talk together.",
+                "Parents with limited education or time may struggle to provide meaningful help with homework.",
+                "Homework can widen the gap between children from supportive and unsupportive home environments."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 22-2)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 22]."
+            "hint": "Consider how homework connects parents to learning (Pros) and who is disadvantaged (Cons).",
+            "explanation": "Homework keeps parents informed and creates shared study opportunities (Pros), but parents with limited education or time cannot always help, and homework can deepen inequality between students with different home support (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L22_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 22-3] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Daily homework develops children's time management and self-discipline.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Managing a regular homework schedule teaches children to plan and prioritise effectively.",
+                "Completing assignments independently builds confidence and a sense of personal achievement.",
+                "Children who are already tired after a long school day may not retain information effectively.",
+                "Competition around homework grades can create excessive stress in some children."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 22-3)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 22]."
+            "hint": "Think about the skills homework builds (Pros) and when it causes harm (Cons).",
+            "explanation": "Homework builds time management and academic confidence (Pros), but tired children learn less effectively, and grade-driven homework culture can generate damaging levels of anxiety and stress (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L23_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 23-1] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "All children should begin learning a second language at primary school.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Young children's brains are uniquely receptive to language acquisition, making early learning highly effective.",
+                "Bilingual children develop stronger cognitive flexibility and problem-solving abilities.",
+                "Schools in many areas face severe shortages of qualified language teachers.",
+                "Time spent on language learning reduces time available for core subjects such as maths and literacy."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 23-1)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 23]."
+            "hint": "Think about the cognitive benefits of early language learning (Pros) and the practical challenges (Cons).",
+            "explanation": "Early language learning is highly effective and builds cognitive flexibility (Pros), but teacher shortages and time pressures on the core curriculum make universal early language learning very difficult to implement (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L23_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 23-2] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Learning another language opens up important career and travel opportunities.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Bilingual and multilingual speakers are significantly more employable in international careers.",
+                "Speaking another language enables richer, more authentic cultural experiences when travelling.",
+                "Learning a second language requires enormous time investment with slow initial results.",
+                "English's global dominance means many learners question the practical value of other languages."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 23-2)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 23]."
+            "hint": "Consider the career and travel benefits of language learning (Pros) and why learners may be put off (Cons).",
+            "explanation": "Second languages boost employability and enrich travel experiences (Pros), but the slow pace of language acquisition and the widespread use of English as a global lingua franca can reduce learners' motivation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L23_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 23-3] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Learning another language builds cultural understanding and respect.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Understanding a language gives genuine insight into another culture, values, and worldview.",
+                "Students who learn foreign languages are typically more open to cultural differences.",
+                "Language learning can feel irrelevant to children who rarely encounter speakers of other languages.",
+                "Cultural understanding can be developed through other means such as literature, travel, and film."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 23-3)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 23]."
+            "hint": "Think about how language learning develops cultural awareness (Pros) and when other methods may be equally effective (Cons).",
+            "explanation": "Language learning builds deep cultural insight and openness (Pros), but for children with limited exposure to other cultures, language study can feel abstract, and cultural awareness can be developed through other means (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L24_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 24-1] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Parents should limit their children's daily screen time.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Controlled screen time encourages children to spend time on healthier, more active pursuits.",
+                "Excessive screen use is linked to poor sleep quality in children and difficulties concentrating.",
+                "Many educational apps and programmes provide genuine learning value that screen limits would restrict.",
+                "Strict limits are very difficult for parents to enforce consistently without causing conflict."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 24-1)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 24]."
+            "hint": "Think about the benefits of limiting screen time (Pros) and why it is difficult to implement (Cons).",
+            "explanation": "Screen limits encourage active play and improve sleep quality (Pros), but educational content has real value, and rigid limits are hard to enforce consistently and often create parent-child conflict (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L24_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 24-2] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Too much screen time harms children's social and emotional development.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Excessive social media use is associated with higher levels of anxiety and lower self-esteem.",
+                "Time on screens replaces face-to-face interaction that is essential for social skill development.",
+                "Digital communication allows children to maintain meaningful friendships with distant family and friends.",
+                "Blaming screens oversimplifies complex social and emotional issues that have multiple causes."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 24-2)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 24]."
+            "hint": "Consider how excessive screen use affects social development (Pros for limits) and what screens offer socially (Cons).",
+            "explanation": "Excessive social media correlates with anxiety and replaces vital face-to-face interaction (Pros for limits), but screens also enable meaningful social connections, and attributing all social problems to screens is an oversimplification (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L24_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 24-3] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Screen limits help children develop a healthier relationship with technology.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Children who learn to manage screen use early develop better digital self-regulation as adults.",
+                "Reducing screen time creates space for physical activity, reading, and creative play.",
+                "Children born into the digital age need extensive screen time to develop relevant digital skills.",
+                "Blanket limits do not distinguish between passive consumption and productive digital creation."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 24-3)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 24]."
+            "hint": "Think about the long-term benefits of screen self-regulation (Pros) and the value of digital skill-building (Cons).",
+            "explanation": "Early screen management builds healthy adult digital habits and creates space for physical and creative activities (Pros), but children also need digital skills, and blanket limits fail to distinguish between passive and productive screen use (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L25_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 25-1] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "People should shop at local farmers' markets rather than supermarkets.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Local markets support small farmers and producers, keeping money within the community.",
+                "Produce at local markets is often fresher and more nutritious than supermarket alternatives.",
+                "Farmers' markets are usually more expensive than supermarkets, making them inaccessible to lower-income shoppers.",
+                "Markets have limited product ranges and may not be convenient for weekly family shopping."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 25-1)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 25]."
+            "hint": "Think about the community benefits of local markets (Pros) and who cannot easily use them (Cons).",
+            "explanation": "Local markets support local producers and offer fresher produce (Pros), but higher prices exclude lower-income shoppers, and limited range and inconvenient timing make them impractical for regular family shopping (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L25_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 25-2] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Shopping locally is better for the environment than using supermarkets.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Local produce travels shorter distances, significantly reducing transport-related carbon emissions.",
+                "Supporting local farms often encourages more sustainable, small-scale farming practices.",
+                "Large supermarkets benefit from supply chain efficiencies that can reduce overall food waste.",
+                "Not all local produce is grown sustainably, so local does not automatically mean environmentally better."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 25-2)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 25]."
+            "hint": "Consider the environmental arguments for local shopping (Pros) and when supermarkets may be greener (Cons).",
+            "explanation": "Local food reduces transport emissions and supports sustainable farming (Pros), but supermarket supply chains can reduce food waste, and local does not always mean sustainably produced (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L25_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 25-3] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Buying food at local markets helps preserve food culture and variety.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Local markets often sell traditional, seasonal, and heritage varieties not found in supermarkets.",
+                "Direct contact with producers helps shoppers understand food origins and seasonal variation.",
+                "Many shoppers prefer the convenience of one-stop supermarket shopping over visiting multiple stalls.",
+                "Globalised food supply through supermarkets gives consumers access to diverse international foods year-round."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 25-3)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 25]."
+            "hint": "Think about what local markets offer culturally (Pros) and what supermarkets provide that markets cannot (Cons).",
+            "explanation": "Local markets preserve food heritage and connect shoppers to producers (Pros), but supermarkets offer unmatched convenience and global food variety that local markets simply cannot match (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L26_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 26-1] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "People should use public transport instead of driving their own car.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Public transport carries many passengers simultaneously, reducing road congestion significantly.",
+                "Switching from car to bus or train meaningfully reduces an individual's carbon footprint.",
+                "Public transport networks in rural and suburban areas are often infrequent and unreliable.",
+                "Commuting by public transport can be significantly slower and more stressful than driving."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 26-1)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 26]."
+            "hint": "Think about the environmental and traffic benefits of public transport (Pros) and its limitations (Cons).",
+            "explanation": "Public transport reduces congestion and lowers carbon emissions (Pros), but in many areas services are slow and unreliable, and commuting on crowded transport is often more stressful than driving (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L26_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 26-2] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Public transport is a more affordable way to travel than owning a car.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Monthly bus or rail passes cost far less than car ownership, insurance, fuel, and maintenance.",
+                "Cheaper transport allows lower-income people greater freedom to access work and services.",
+                "In many areas, high public transport fares make it no cheaper than running a small car.",
+                "People with disabilities, young children, or heavy shopping find public transport much less convenient."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 26-2)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 26]."
+            "hint": "Consider the financial benefits of public transport (Pros) and when it fails to deliver them (Cons).",
+            "explanation": "Public transport is generally cheaper than car ownership (Pros), but high fares in some areas close this gap, and practical difficulties make it genuinely inconvenient for many groups (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L26_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 26-3] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Using public transport instead of driving improves community wellbeing.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "People using public transport encounter their neighbours, building a sense of community.",
+                "Fewer cars on the road reduces noise pollution and improves air quality in residential areas.",
+                "Anti-social behaviour on buses and trains makes some people feel unsafe using public transport.",
+                "Reduced car use can harm local businesses that rely on customers driving and parking nearby."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 26-3)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 26]."
+            "hint": "Think about how public transport benefits communities (Pros) and the concerns it raises (Cons).",
+            "explanation": "Public transport builds community connections and reduces noise and air pollution (Pros), but concerns about safety and the impact on car-dependent local businesses are genuine drawbacks (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L27_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 27-1] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Young people should volunteer for community projects in their local area.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Volunteering develops practical skills such as teamwork, communication, and problem-solving.",
+                "Helping the community builds a sense of purpose and boosts young people's self-esteem.",
+                "Unpaid volunteering is not accessible to young people who need paid work to support themselves.",
+                "Compulsory or pressured volunteering can feel tokenistic and fail to deliver real community benefit."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 27-1)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 27]."
+            "hint": "Think about what volunteering gives young people (Pros) and who cannot access it (Cons).",
+            "explanation": "Volunteering builds practical skills and a sense of purpose (Pros), but financial pressure excludes many young people from unpaid work, and forced or tokenistic volunteering delivers little value to anyone (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L27_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 27-2] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Volunteering helps young people understand and value their local community.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Hands-on community work gives young people insight into social issues they would not otherwise encounter.",
+                "Working alongside diverse groups of people builds empathy and reduces social prejudice.",
+                "Young people's time may be better invested in study, training, or paid work experience.",
+                "Volunteering opportunities are unevenly distributed, with better options in wealthier areas."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 27-2)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 27]."
+            "hint": "Consider what volunteering teaches about community (Pros) and when other priorities take precedence (Cons).",
+            "explanation": "Volunteering exposes young people to social realities and builds empathy (Pros), but study and paid experience may offer greater long-term benefit, and volunteering opportunities are not equally accessible to all young people (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L27_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 27-3] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Community volunteering gives young people a sense of civic responsibility.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Actively contributing to society encourages young people to see themselves as engaged citizens.",
+                "Volunteering connects young people to public institutions and builds trust in community structures.",
+                "Civic responsibility can be developed through many routes beyond formal volunteering programmes.",
+                "Young people from disadvantaged backgrounds may lack the social networks to access volunteering opportunities."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 27-3)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 27]."
+            "hint": "Think about how volunteering builds civic engagement (Pros) and the barriers that limit access (Cons).",
+            "explanation": "Volunteering builds active citizenship and community trust (Pros), but civic engagement can be nurtured in other ways, and access to meaningful volunteering is often easier for those from more privileged backgrounds (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L28_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 28-1] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "People should eat less meat as part of a healthy and sustainable diet.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Reducing meat consumption lowers the risk of heart disease, stroke, and some cancers.",
+                "Plant-based foods generally have a much lower environmental carbon footprint than meat.",
+                "Meat is an important source of protein, iron, and vitamin B12 that is hard to replace in some diets.",
+                "Food culture and personal taste mean that many people find it very difficult to reduce meat intake."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 28-1)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 28]."
+            "hint": "Think about the health and environmental benefits of eating less meat (Pros) and the practical barriers (Cons).",
+            "explanation": "Less meat reduces disease risk and lowers environmental impact (Pros), but meat provides key nutrients and deep cultural significance makes significant dietary change very difficult for many people (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L28_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 28-2] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Reducing meat production would significantly benefit the environment.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Livestock farming is a major contributor to greenhouse gas emissions and climate change.",
+                "Large-scale animal farming requires vast amounts of land, water, and grain resources.",
+                "Many farming communities and rural economies depend entirely on livestock farming for their livelihoods.",
+                "Lab-grown and alternative protein technology is not yet mature enough to replace conventional farming."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 28-2)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 28]."
+            "hint": "Consider the environmental case for reducing meat production (Pros) and its economic impacts (Cons).",
+            "explanation": "Meat production drives significant greenhouse gas emissions and resource use (Pros for reduction), but reducing it threatens rural livelihoods, and viable alternative protein sources are not yet widely scalable (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L28_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 28-3] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Eating plant-based meals more often leads to a more varied and creative diet.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Plant-based cooking introduces people to a wider range of vegetables, grains, and legumes.",
+                "Exploring meat-free meals encourages experimentation with global cuisines and new flavours.",
+                "Preparing nutritionally balanced plant-based meals requires more culinary knowledge and planning.",
+                "Ready-made plant-based products are often highly processed and may not be healthier than meat."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 28-3)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 28]."
+            "hint": "Think about the culinary benefits of more plant-based eating (Pros) and the pitfalls to avoid (Cons).",
+            "explanation": "Plant-based eating diversifies the diet and encourages culinary exploration (Pros), but achieving nutritional balance requires skill, and many commercial plant-based products are heavily processed substitutes rather than genuinely healthy alternatives (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L29_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 29-1] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Secondary schools should start later in the morning.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Research consistently shows that teenagers have a biological tendency to sleep and wake later.",
+                "Later school starts allow teenagers to get sufficient sleep, improving their mood and health.",
+                "Later starts create serious difficulties for parents who need to go to work early in the morning.",
+                "Ending school later in the afternoon reduces the time available for after-school activities."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 29-1)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 29]."
+            "hint": "Think about the health benefits of later starts for teenagers (Pros) and the practical problems (Cons).",
+            "explanation": "Later starts align with teenagers' biological sleep patterns, improving health and mood (Pros), but they create logistical problems for working parents and reduce time for after-school activities (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L29_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 29-2] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Starting school later improves teenagers' academic performance.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Well-rested teenagers concentrate more effectively and process information more reliably.",
+                "Schools that have trialled later starts report improvements in attendance and academic outcomes.",
+                "Later starts displace the whole school day, reducing time available for learning and activities.",
+                "Some students are already highly productive in the early morning, and later starts may not suit them."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 29-2)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 29]."
+            "hint": "Consider the academic benefits of later school starts (Pros) and their practical trade-offs (Cons).",
+            "explanation": "Adequate sleep improves cognitive performance and school attendance (Pros), but displacing the day reduces learning time, and later starts may not benefit all students equally (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L29_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 29-3] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Later school starts promote better mental health among teenagers.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Chronic sleep deprivation is strongly linked to depression and anxiety in adolescents.",
+                "Starting school at a more natural time reduces the stress of fighting against biological rhythms.",
+                "Shifting school times does not address the underlying causes of teenagers staying up late.",
+                "Social media and device use at night, not school start times, may be the main cause of teen sleep deprivation."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 29-3)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 29]."
+            "hint": "Think about how later starts affect teen mental health (Pros) and whether they address root causes (Cons).",
+            "explanation": "Later starts reduce sleep deprivation-driven anxiety and depression (Pros), but shifting start times does not address teenagers' late-night device use, which may be the primary cause of their sleep problems (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L30_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 30-1] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "School lunchtimes should be at least one hour long.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Longer lunch breaks give students enough time to eat properly without rushing.",
+                "A proper midday break helps students recharge and return to afternoon lessons more focused.",
+                "A longer lunch period reduces the total amount of teaching time available during the school day.",
+                "Some students use extended lunch breaks to engage in disruptive or unsupervised behaviour."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 30-1)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 30]."
+            "hint": "Think about what longer lunchtimes give students (Pros) and what they cost the school (Cons).",
+            "explanation": "Longer breaks ensure proper meals and allow students to recharge for afternoon learning (Pros), but they reduce teaching time and can create supervision challenges and opportunities for disruptive behaviour (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L30_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 30-2] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "A longer lunch break at school supports students' physical health.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Students have enough time to eat slowly and mindfully rather than consuming food too quickly.",
+                "A longer break allows time for physical activity that benefits cardiovascular health.",
+                "Shortening lunch to maximise lesson time is a reasonable compromise in a busy school day.",
+                "Not all schools have adequate outdoor spaces or facilities to make physical activity during lunch practical."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 30-2)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 30]."
+            "hint": "Consider the physical health benefits of longer lunchtimes (Pros) and the practical constraints (Cons).",
+            "explanation": "Longer breaks enable healthy eating and physical activity (Pros), but shorter lunches allow more lesson time, and inadequate school facilities limit physical activity options during lunch regardless of break length (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L30_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 30-3] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Extended lunch breaks improve students' social wellbeing at school.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Longer breaks allow students time to socialise, play, and build genuine friendships.",
+                "Adequate social time at school reduces loneliness and improves students' overall happiness.",
+                "Students with social difficulties may find longer unstructured break times uncomfortable and stressful.",
+                "More social time does not automatically translate into better social skills or reduced bullying."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 30-3)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 30]."
+            "hint": "Think about how longer lunchtimes support social wellbeing (Pros) and when they fall short (Cons).",
+            "explanation": "Longer breaks enable meaningful social connection and improve happiness (Pros), but unstructured time can be difficult for vulnerable students, and more social time does not automatically translate into better social outcomes (Cons)."
         }
     ]
 }

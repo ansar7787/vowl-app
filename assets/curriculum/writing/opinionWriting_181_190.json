@@ -5,603 +5,573 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L181_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 181-1] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Genetic engineering of human embryos to prevent inherited disease should be permitted.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Eliminating severe hereditary diseases like Huntington's and cystic fibrosis reduces profound suffering.",
+                "Germline therapy could eradicate genetic conditions from families permanently, ending intergenerational harm.",
+                "Germline editing creates heritable genetic changes in all future descendants who did not consent to modification.",
+                "Even therapeutic applications create a regulatory pathway towards enhancement that crosses critical ethical lines."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 181-1)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 181]."
+            "hint": "Think about the suffering reduction and therapeutic case for germline editing (Pros) and the consent and slippery slope concerns (Cons).",
+            "explanation": "Eliminating severe genetic diseases prevents profound suffering and ends intergenerational transmission (Pros), but germline changes are heritable by future non-consenting generations, and therapeutic applications create a pathway towards enhancement that may be impossible to regulate (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L181_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 181-2] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "The distinction between treating disease and enhancing traits cannot be clearly maintained in genetic engineering.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "The biological mechanisms for disease prevention and trait enhancement are the same, making legal separation impossible.",
+                "A clear regulatory distinction would license disease elimination while preventing commercial enhancement.",
+                "What counts as a disease versus a variation is culturally contested and scientifically dynamic over time.",
+                "The deaf community and others demonstrate that conditions classified as disabilities are not universally experienced as suffering."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 181-2)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 181]."
+            "hint": "Consider whether the treatment-enhancement distinction can be maintained in genetic regulation (Pros) and the cultural and community concerns (Cons).",
+            "explanation": "Regulatory frameworks can attempt to separate disease treatment from enhancement despite shared biological mechanisms (Pros), but the disease-variation boundary is culturally contested, and affected communities show that many classified 'diseases' are not universally experienced as suffering requiring elimination (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L181_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 181-3] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Somatic genetic therapy for individuals is ethically distinct from germline modification.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Somatic gene therapy modifies only the treated individual with their consent, leaving germline inheritance unchanged.",
+                "Individual-level somatic therapy provides therapeutic benefit without creating contested heritable modifications.",
+                "Somatic therapy is less efficient than germline editing at eliminating genetic conditions from populations.",
+                "The distinction between somatic and germline may become less clear as gene drive technologies develop."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 181-3)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 181]."
+            "hint": "Think about somatic therapy as ethically preferable to germline editing (Pros) and the efficiency and distinction clarity concerns (Cons).",
+            "explanation": "Somatic therapy treats consenting individuals without heritable consequences (Pros), but it cannot eliminate conditions from populations as efficiently as germline editing, and technological development may blur the somatic-germline boundary (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L182_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 182-1] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Cognitive enhancement drugs should be available to students during periods of intensive study.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Cognitive enhancers are already widely used informally; regulation would ensure safe access and quality control.",
+                "Students who cannot access enhancement drugs are placed at unfair competitive disadvantage against those who can.",
+                "Cognitive enhancers have serious side effects including dependency, anxiety, and cardiovascular risk.",
+                "Normalising pharmacological enhancement redefines academic achievement in terms of medication access rather than effort."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 182-1)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 182]."
+            "hint": "Think about the safety and fairness case for legal cognitive enhancement (Pros) and the health risk and achievement meaning concerns (Cons).",
+            "explanation": "Regulation ensures safe access and eliminates the competitive disadvantage of informal unequal access (Pros), but cognitive enhancers carry serious health risks and normalisation redefines academic merit in terms of pharmacological access rather than genuine ability (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L182_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 182-2] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Permitting cognitive enhancement would fundamentally undermine educational integrity and equality.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Assessment systems measure cognitive enhancement as much as learning if enhancement is normalised.",
+                "Students without financial access to enhancement drugs face compounded inequality in already unequal systems.",
+                "Education systems already tolerate caffeine and other cognitive aids without undermining academic integrity.",
+                "Prohibition drives enhancement underground where unregulated, potentially dangerous products are used instead."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 182-2)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 182]."
+            "hint": "Consider the educational integrity and equality case against cognitive enhancement (Pros) and the existing toleration and prohibition drive concerns (Cons).",
+            "explanation": "Normalising enhancement makes assessments measure pharmacological access rather than learning, compounding inequality (Pros), but caffeine is already tolerated, and prohibition drives use underground to unregulated dangerous substances (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L182_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 182-3] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "The ethics of cognitive enhancement depends on the social context in which it is used.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Enhancement in a fair, well-resourced educational system differs ethically from enhancement in an inequitable one.",
+                "Context-dependent ethical evaluation produces more nuanced and practical policy than blanket prohibition or permission.",
+                "Context-dependency creates regulatory instability and provides no clear principle for distinguishing acceptable from unacceptable.",
+                "Individuals within the same educational system experience very different contexts that context-level policy cannot address."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 182-3)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 182]."
+            "hint": "Think about context-dependent ethics of cognitive enhancement (Pros) and the regulatory instability and individual variation concerns (Cons).",
+            "explanation": "Enhancement ethics genuinely differs across fair and inequitable educational contexts, producing more nuanced policy (Pros), but context-dependence creates regulatory instability and cannot address individual variation within the same nominal system context (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L183_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 183-1] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Selecting embryos for desired genetic traits crosses an unacceptable ethical boundary.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Selecting embryos based on desired traits reduces human reproduction to a consumerist design exercise.",
+                "Trait selection establishes social hierarchies based on genetic characteristics, reinforcing existing inequalities.",
+                "Pre-implantation genetic diagnosis already involves selection of embryos for medical reasons.",
+                "The social construction of desirability means trait selection reflects and amplifies cultural prejudices."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 183-1)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 183]."
+            "hint": "Think about the commodification and inequality case against trait-based embryo selection (Pros) and the existing practice and cultural bias concerns (Cons).",
+            "explanation": "Trait-based selection reduces reproduction to consumerist design and creates genetic hierarchy (Pros), but PGD already involves selection for medical conditions, and trait selection reflects and amplifies cultural prejudices about desirable characteristics (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L183_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 183-2] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Permitting limited embryo selection for non-disease traits would be practically uncontrollable.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Commercial pressure from fertility industries would push selection beyond any regulatory line drawn.",
+                "The most economically powerful families would access the best selection, compounding existing privilege.",
+                "Regulatory bodies in many countries have successfully limited PGD to genuine medical applications.",
+                "Transparency and public oversight of fertility technology can prevent commercial exploitation of selection."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 183-2)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 183]."
+            "hint": "Consider whether non-disease trait selection can be practically regulated (Pros against the slippery slope) and the regulatory success and oversight counters (Cons).",
+            "explanation": "Commercial fertility industry pressure would push selection beyond regulatory limits and compound privilege (Pros), but regulatory bodies have successfully limited PGD to medical uses, and transparency and public oversight can constrain commercial exploitation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L183_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 183-3] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "The disability rights perspective reveals important blind spots in anti-selection arguments.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Treating certain genetic traits as inherently undesirable to select against reflects and reinforces disablist assumptions.",
+                "The diversity of human genetics includes variation that has social and evolutionary value beyond individual preference.",
+                "Selection against severe suffering-causing conditions differs meaningfully from selection against disability per se.",
+                "Many disabled people support preventing severe disease while opposing the equation of disability with reduced value."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 183-3)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 183]."
+            "hint": "Think about the disability rights dimension of genetic selection debates (Pros for this perspective) and the suffering distinction and community nuance concerns (Cons).",
+            "explanation": "Anti-selection arguments that ignore disability rights perspectives reinforce disablist assumptions about which lives have value (Pros), but severe suffering-causing conditions differ meaningfully from disability per se, and many disabled people draw the same distinction themselves (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L184_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 184-1] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Cloning human organs for transplant purposes should be permitted under strict medical supervision.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Organ shortages cause preventable deaths - cloned organs could eliminate transplant waiting lists.",
+                "Personalised cloned organs from a patient's own cells would eliminate rejection without lifelong immunosuppression.",
+                "Creating and destroying human embryos for organ harvesting purposes raises fundamental ethical objections.",
+                "The technical complexity and safety risks of cloning viable human organs remain inadequately resolved."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 184-1)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 184]."
+            "hint": "Think about the life-saving and personalisation case for therapeutic organ cloning (Pros) and the embryo ethics and safety concerns (Cons).",
+            "explanation": "Cloned organs could eliminate organ shortages and rejection without immunosuppression (Pros), but creating and destroying embryos for harvesting raises fundamental ethical objections, and technical safety risks remain inadequately resolved (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L184_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 184-2] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Induced pluripotent stem cell technology makes embryonic organ cloning ethically unnecessary.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "iPSC technology can generate patient-specific cells and potentially organs without creating or destroying embryos.",
+                "Continuous iPSC innovation is likely to resolve the technical challenges before cloning produces viable organs.",
+                "iPSC-derived organs still face significant technical hurdles including vascularisation and immune compatibility.",
+                "Restricting research to iPSC pathways may be premature when embryonic research could advance faster."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 184-2)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 184]."
+            "hint": "Consider iPSC technology as an ethical alternative to organ cloning (Pros) and the remaining hurdles and research restriction concerns (Cons).",
+            "explanation": "iPSC technology generates patient-specific organs without creating embryos, resolving the primary ethical concern (Pros), but iPSC organs face technical challenges including vascularisation, and restricting embryonic research pathways may unnecessarily delay life-saving advances (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L184_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 184-3] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Xenotransplantation of genetically modified animal organs offers an alternative to human organ cloning.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Genetically humanised pig organs are now being transplanted into humans with growing clinical success.",
+                "Xenotransplantation avoids embryo creation entirely and could provide unlimited organ supply.",
+                "Xenotransplantation carries zoonotic infection risks that organ cloning from human cells would not.",
+                "Animal welfare concerns about farming pigs for organ harvesting are not resolved by genetic humanisation."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 184-3)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 184]."
+            "hint": "Think about xenotransplantation as an alternative to human organ cloning (Pros) and the zoonotic and animal welfare concerns (Cons).",
+            "explanation": "Humanised pig organs are showing growing clinical success and provide unlimited supply without embryo creation (Pros), but xenotransplantation carries zoonotic disease risks that human cell-derived organs would not, and intensive animal farming for organ harvesting raises serious animal welfare questions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L185_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 185-1] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Artificial intelligence can never truly replicate or reproduce human consciousness.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Consciousness involves subjective experience - qualia - that no computational process has demonstrated.",
+                "Human consciousness emerges from biological complexity that cannot be fully captured in silicon architectures.",
+                "The hard problem of consciousness is unsolved in neuroscience itself, making confident claims in either direction premature.",
+                "Intelligence and consciousness are distinct - machines may develop human-like intelligence without consciousness."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 185-1)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 185]."
+            "hint": "Think about the subjective experience and biological basis case against AI consciousness (Pros) and the hard problem and intelligence-consciousness distinction concerns (Cons).",
+            "explanation": "Consciousness involves qualia that computation has not demonstrated and emerges from biological complexity not replicable in silicon (Pros), but the hard problem remains unsolved in neuroscience, making confident denial premature, and intelligence and consciousness may be distinct phenomena (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L185_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 185-2] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Functional consciousness equivalent to human experience may emerge in sufficiently complex AI systems.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "If consciousness is a property of information processing complexity, sufficiently complex systems may possess it.",
+                "Dismissing AI consciousness without a solved theory of consciousness is scientifically premature.",
+                "Complexity alone has not produced consciousness in non-biological systems of any demonstrated degree.",
+                "Attributing consciousness to AI systems risks misallocating the moral consideration that genuine consciousness demands."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 185-2)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 185]."
+            "hint": "Consider whether functional AI consciousness is possible given information processing complexity (Pros) and the empirical and moral allocation concerns (Cons).",
+            "explanation": "If consciousness is a function of information processing complexity, sufficiently complex AI may possess it, and confident denial without a solved consciousness theory is scientifically premature (Pros), but complexity alone has not produced demonstrated non-biological consciousness, and premature attribution misallocates moral consideration (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L185_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 185-3] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "The question of AI consciousness has profound ethical implications regardless of its resolution.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "If AI systems could be conscious, the ethical obligations this creates require serious anticipatory moral preparation.",
+                "Developing ethical frameworks for potentially conscious AI before the question is resolved is more prudent than waiting.",
+                "Developing ethics for hypothetical AI consciousness diverts moral attention from concrete harms AI causes now.",
+                "Anticipatory ethics based on uncertain consciousness claims may produce obligations that are impossible to fulfil."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 185-3)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 185]."
+            "hint": "Think about the ethical implications of AI consciousness questions (Pros for anticipatory ethics) and the attention diversion and uncertainty concerns (Cons).",
+            "explanation": "Potential AI consciousness demands anticipatory ethical frameworks before the question is resolved (Pros), but speculative ethics diverts attention from concrete present AI harms, and obligations based on uncertain consciousness claims may be impossible to fulfil in practice (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L186_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 186-1] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "The social contract theory remains the most compelling basis for legitimate modern government.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Social contract theory uniquely grounds political obligation in the rational consent of governed citizens.",
+                "Contractarian frameworks provide the most defensible account of political legitimacy in diverse pluralistic societies.",
+                "Actual historical social contracts were never genuinely consented to by those who now live under their terms.",
+                "Social contract theory struggles to account for obligations to non-citizens, future generations, and non-human life."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 186-1)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 186]."
+            "hint": "Think about the consent-based legitimacy case for social contract theory (Pros) and the historical consent and scope concerns (Cons).",
+            "explanation": "Social contract theory grounds political authority in rational citizen consent - the most defensible legitimacy basis for pluralistic societies (Pros), but historical contracts were never genuinely consented to, and the theory struggles with obligations to non-citizens, future generations, and non-human beings (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L186_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 186-2] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Social contract theory has failed to account for the structural exclusions built into its foundations.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Classical social contracts explicitly or implicitly excluded women, enslaved people, and non-property owners.",
+                "Rawlsian revisions have improved but not resolved the problem of who counts as a contracting party.",
+                "Social contract theory is a progressive framework precisely because it provides tools to critique its own exclusions.",
+                "The theory's internal logic demands the inclusion it historically failed to deliver, making it self-correcting."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 186-2)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 186]."
+            "hint": "Consider the structural exclusion critique of social contract theory (Pros) and the self-correcting and progressive capacity counter (Cons).",
+            "explanation": "Classical contracts explicitly excluded women and enslaved people, and Rawlsian revisions have not fully resolved the inclusion problem (Pros), but social contract theory's internal logic demands inclusion and provides the progressive tools to critique and remedy its own historical exclusions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L186_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 186-3] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Deliberative democracy theory offers a more dynamic alternative to social contract theory.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Deliberative democracy grounds legitimacy in ongoing rational public discourse rather than a founding contract.",
+                "Deliberation allows continuous renegotiation of political authority in light of new circumstances and challenges.",
+                "Deliberative democracy assumes conditions of reasonableness and access that do not exist in actual democracies.",
+                "The founding contract provides stability that ongoing deliberation cannot guarantee in politically contested societies."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 186-3)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 186]."
+            "hint": "Think about deliberative democracy as superior to social contract theory (Pros) and the ideal conditions and stability concerns (Cons).",
+            "explanation": "Deliberative democracy grounds legitimacy in ongoing discourse and enables continuous renegotiation as circumstances change (Pros), but it requires conditions of reasonableness and equal access that actual democracies do not provide, and the stability of a founding contract is lost in perpetual deliberation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L187_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 187-1] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Democracy remains the least harmful form of government despite its profound limitations.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Democratic accountability provides peaceful mechanisms to remove incompetent or corrupt leaders.",
+                "Democracy generates more legitimacy and civic cooperation than alternative forms of government.",
+                "Democratic systems produce gridlock, short-termism, and the tyranny of majorities over minorities.",
+                "Democracy's dependence on an informed citizenry makes it vulnerable to misinformation and demagogy."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 187-1)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 187]."
+            "hint": "Think about the peaceful accountability and legitimacy case for democracy (Pros) and the gridlock and vulnerability concerns (Cons).",
+            "explanation": "Democratic accountability removes corrupt leaders peacefully and generates superior legitimacy and cooperation (Pros), but democracy produces gridlock, short-termism, majority tyranny, and is profoundly vulnerable to misinformation and demagogic manipulation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L187_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 187-2] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Epistocracy - governance weighted by knowledge and competence - addresses democracy's worst failures.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Weighting votes by relevant competence could produce more rational policy outcomes in complex technical areas.",
+                "Epistocratic elements already exist in delegating decisions to independent central banks and courts.",
+                "Defining who counts as sufficiently competent to receive greater vote weight is inherently politically contested.",
+                "Historical attempts to restrict political power to the educated have been used to maintain class and racial privilege."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 187-2)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 187]."
+            "hint": "Consider epistocracy as an improvement on pure democracy (Pros) and the definition and historical misuse concerns (Cons).",
+            "explanation": "Competence-weighted decisions could improve technical policy quality and epistocratic elements already exist in central banks and courts (Pros), but defining sufficient competence is politically contested, and knowledge-restricted governance historically maintained class and racial privilege (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L187_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 187-3] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Democratic institutions must be actively protected and reformed to survive authoritarian erosion.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Democratic backsliding in Hungary, Turkey, and elsewhere shows that democracy requires active institutional defence.",
+                "Constitutional reforms that entrench judicial independence and electoral fairness protect democracy from within.",
+                "Reforming democratic institutions through democratic processes is extremely slow when institutions are already compromised.",
+                "External protection of democratic institutions risks being perceived as foreign interference, delegitimising reform."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 187-3)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 187]."
+            "hint": "Think about active institutional protection and reform as necessary for democracy's survival (Pros) and the process speed and legitimacy concerns (Cons).",
+            "explanation": "Democratic backsliding demonstrates that democracy requires active institutional defence and constitutional reforms protecting judicial independence (Pros), but reforming compromised institutions democratically is dangerously slow, and external protection risks delegitimisation as foreign interference (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L188_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 188-1] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Infinite economic growth is fundamentally incompatible with long-term environmental sustainability.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Material throughput cannot increase infinitely on a finite planet with limited resources and carrying capacity.",
+                "GDP growth measured without accounting for natural capital depletion systematically overstates real economic progress.",
+                "Green technology and efficiency improvements can decouple economic growth from resource consumption.",
+                "Developed nations have demonstrated some decoupling of GDP growth from emissions and material use."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 188-1)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 188]."
+            "hint": "Think about the finite planet case for growth-sustainability incompatibility (Pros) and the decoupling and efficiency counters (Cons).",
+            "explanation": "Infinite material throughput is impossible on a finite planet and GDP growth ignores natural capital depletion (Pros), but green technology enables decoupling of growth from resource use, and some developed nations demonstrate measurable GDP-emissions decoupling (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L188_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 188-2] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Degrowth in wealthy economies is necessary for global environmental justice.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Wealthy nations' material consumption levels cannot be universalised to developing populations within planetary limits.",
+                "Reducing material throughput in wealthy economies creates ecological space for development in poorer ones.",
+                "Degrowth in wealthy economies would cause unemployment, reduced public services, and significant social harm.",
+                "Green growth in wealthy nations can fund the clean technology transfer that enables sustainable development globally."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 188-2)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 188]."
+            "hint": "Consider the environmental justice case for degrowth in wealthy nations (Pros) and the social harm and green growth alternative (Cons).",
+            "explanation": "Wealthy nation consumption cannot be universalised within planetary limits, and degrowth creates ecological space for poorer nations (Pros), but degrowth causes unemployment and public service cuts, and green growth could fund clean technology transfer for sustainable global development (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L188_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 188-3] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Measuring prosperity beyond GDP can make growth compatible with sustainability.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Metrics like genuine progress indicators and wellbeing indices measure what economic activity actually delivers.",
+                "Redefining prosperity to include ecosystem health and social wellbeing changes what economic policy optimises for.",
+                "Political and business cycles are organised around GDP targets that are deeply resistant to metric substitution.",
+                "Alternative metrics do not resolve the underlying physical constraints on material throughput that growth demands."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 188-3)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 188]."
+            "hint": "Think about alternative prosperity metrics as making growth sustainable (Pros) and the political resistance and physical constraint concerns (Cons).",
+            "explanation": "Wellbeing and genuine progress indicators measure actual prosperity and redefine what economic policy optimises for (Pros), but GDP targets are deeply embedded in political and business cycles, and alternative metrics do not resolve the underlying physical constraints on material throughput (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L189_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 189-1] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "The concept of fixed national identity is more harmful than beneficial in the modern world.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Rigid national identity fuels exclusionary nationalism, xenophobia, and conflict between communities.",
+                "Fixed national identity creates artificial us-versus-them divisions that prevent cooperation on global challenges.",
+                "National identity provides communities with cultural continuity, shared narrative, and a sense of collective belonging.",
+                "Multiple, fluid, and overlapping identities including national ones can coexist without requiring exclusion."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 189-1)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 189]."
+            "hint": "Think about the exclusion and division case against fixed national identity (Pros) and the cultural continuity and multiplicity concerns (Cons).",
+            "explanation": "Fixed national identity fuels exclusionary nationalism and prevents cooperation on global challenges (Pros), but national identity provides cultural continuity and belonging, and multiple overlapping identities including national ones can coexist without requiring exclusion (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L189_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 189-2] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "National identity is a politically constructed myth that perpetuates historical power structures.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Nations are modern constructions - 'imagined communities' - that naturalise contingent historical arrangements.",
+                "National identity narratives are typically written by dominant groups to exclude minorities and justify hierarchy.",
+                "Even constructed communities generate real belonging, meaning, and solidarity that cannot be dismissed as mere myth.",
+                "The constructedness of national identity is an argument for its conscious transformation, not its abolition."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 189-2)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 189]."
+            "hint": "Consider national identity as political construction and power perpetuation (Pros) and the real community and transformation counters (Cons).",
+            "explanation": "Nations are imagined communities whose identity narratives typically serve dominant groups and naturalise contingent power (Pros), but constructed communities generate genuine belonging and solidarity, and constructedness is an argument for transformation rather than dismissal (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L189_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 189-3] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Cosmopolitan identity offers a more just and globally appropriate alternative to national identity.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "A shared cosmopolitan identity grounds moral obligations to all human beings regardless of national origin.",
+                "Cosmopolitan frameworks provide ethical principles that transcend the partiality of national interest.",
+                "Cosmopolitan identity is an elite abstraction accessible mainly to mobile and privileged global citizens.",
+                "Strong cosmopolitan commitments are vulnerable to populist backlash that discredits the progressive causes they accompany."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 189-3)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 189]."
+            "hint": "Think about cosmopolitan identity as a superior alternative to national identity (Pros) and the elite access and backlash concerns (Cons).",
+            "explanation": "Cosmopolitan identity grounds universal moral obligations and transcends the partiality of national interest (Pros), but cosmopolitan identity is primarily accessible to privileged mobile elites, and strong cosmopolitan commitments attract populist backlash that damages the progressive causes associated with them (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L190_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 190-1] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Moral relativism is more intellectually honest than any form of moral absolutism.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Different cultures have developed genuinely different but internally coherent moral frameworks over centuries.",
+                "Claiming universal moral truths typically reflects cultural imperialism - imposing one culture's values on others.",
+                "Moral relativism prevents coherent condemnation of atrocities like genocide when they reflect a culture's own values.",
+                "Relative moral frameworks cannot explain why practices like slavery were wrong even when culturally accepted."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 190-1)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 190]."
+            "hint": "Think about the cultural diversity and anti-imperialism case for moral relativism (Pros) and the genocide and slavery concerns (Cons).",
+            "explanation": "Genuine cultural moral diversity exists and universal truth claims typically reflect cultural imperialism (Pros), but relativism prevents coherent condemnation of genocide and cannot explain why slavery was wrong even when culturally normalised (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L190_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 190-2] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Universal human rights provide a non-relativist moral framework that transcends cultural particularity.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Human rights frameworks represent cross-cultural consensus on basic protections built through genuine dialogue.",
+                "Rights-based minimalism avoids imposing thick cultural values while establishing inviolable universal protections.",
+                "Existing human rights frameworks reflect the power structures of their post-war Western drafting context.",
+                "Universal human rights are frequently deployed selectively as geopolitical tools rather than applied impartially."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 190-2)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 190]."
+            "hint": "Consider universal human rights as a viable non-relativist framework (Pros) and the drafting context and selective deployment concerns (Cons).",
+            "explanation": "Human rights represent cross-cultural consensus and rights minimalism avoids imposing thick cultural values (Pros), but existing frameworks reflect their Western post-war drafting context, and rights are frequently deployed selectively as geopolitical instruments rather than impartially applied (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L190_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 5,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 190-3] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Reflective equilibrium provides a third path between moral absolutism and pure relativism.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Reflective equilibrium tests principles against intuitions iteratively, producing contextually grounded moral knowledge.",
+                "The method allows for cross-cultural moral learning without claiming universal foundations in advance.",
+                "Reflective equilibrium produces local moral coherence without establishing grounds for cross-cultural moral judgment.",
+                "Without some universally accessible rational basis, reflective equilibrium cannot adjudicate between radically different systems."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 190-3)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 190]."
+            "hint": "Think about reflective equilibrium as a middle path between absolutism and relativism (Pros) and the cross-cultural adjudication concerns (Cons).",
+            "explanation": "Reflective equilibrium generates contextually grounded moral knowledge through iterative testing and enables cross-cultural learning without prior universal claims (Pros), but it produces only local coherence and lacks a universal rational basis for adjudicating between radically different moral systems (Cons)."
         }
     ]
 }

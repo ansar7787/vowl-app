@@ -5,603 +5,573 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L11_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 11-1] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Children should watch less television each day.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Reducing TV time encourages children to read, play, and explore other interests.",
+                "Less screen time before bed improves the quality of children's sleep.",
+                "Television offers genuinely educational content that supports children's learning.",
+                "Restricting TV can make children feel left out when their friends discuss popular programmes."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 11-1)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 11]."
+            "hint": "Think about the benefits of less TV (Pros) and what children lose when it is restricted (Cons).",
+            "explanation": "Cutting TV time frees children for enriching activities and improves sleep (Pros), but educational content has real value, and restrictions can cause social exclusion among peers (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L11_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 11-2] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Less television allows children to be more physically active.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Time previously spent watching TV can be redirected to sports and outdoor play.",
+                "Reducing sedentary screen time lowers the risk of childhood obesity.",
+                "Many children prefer watching television and will resist being forced to do other activities.",
+                "Passive activities like watching TV serve an important role in helping children relax and recover."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 11-2)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 11]."
+            "hint": "Consider how reducing TV supports physical health (Pros) and when TV itself has value (Cons).",
+            "explanation": "Less TV creates space for physical activity and reduces obesity risk (Pros), but children need downtime to recover, and forcing unwilling children into physical activity is counterproductive (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L11_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 11-3] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Watching less TV helps children develop better social skills.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Time away from screens encourages children to play and interact with others face to face.",
+                "Family conversations naturally increase when television is not the focus of the evening.",
+                "Television can be a shared social experience that brings family members together.",
+                "Children who feel they are missing out on popular TV shows may become more socially isolated."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 11-3)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 11]."
+            "hint": "Think about how reducing TV improves social interaction (Pros) and how TV can itself be social (Cons).",
+            "explanation": "Less TV encourages face-to-face interaction and family conversation (Pros), but shared TV viewing bonds families together, and exclusion from popular shows can isolate children from peers (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L12_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 12-1] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Children should share household chores with the rest of the family.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Doing chores teaches children practical skills they will need throughout adult life.",
+                "Contributing to household tasks builds children's sense of responsibility and self-worth.",
+                "Chores take up time that children could spend on homework, reading, or rest.",
+                "Assigning chores can create arguments and resentment within the family."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 12-1)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 12]."
+            "hint": "Think about what children gain from doing chores (Pros) and the problems chores can cause (Cons).",
+            "explanation": "Chores build practical skills and a sense of responsibility (Pros), but they reduce available study and rest time and can become a source of household conflict (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L12_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 12-2] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Sharing chores teaches children about fairness and cooperation.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Working together on household tasks demonstrates that everyone contributes equally.",
+                "Children who do chores learn to work as part of a team from an early age.",
+                "Very young children lack the physical ability and focus to complete most household tasks.",
+                "Parents sometimes find it faster and easier to do chores themselves rather than teach children."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 12-2)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 12]."
+            "hint": "Consider what fairness and cooperation lessons chores teach (Pros) and when they are not practical (Cons).",
+            "explanation": "Chores teach equality and teamwork (Pros), but young children are often physically incapable, and it is frequently quicker for parents to do the work themselves (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L12_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 12-3] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Completing chores prepares children for independent adult life.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Teenagers who do household tasks are better prepared to manage their own homes.",
+                "Learning domestic skills at home builds confidence for living independently at university.",
+                "Some children are overburdened with chores, leaving too little time for academic work.",
+                "Cultural expectations around which children should do which chores can reinforce inequalities."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 12-3)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 12]."
+            "hint": "Think about how chores prepare children for independence (Pros) and when they become a burden (Cons).",
+            "explanation": "Chores build the skills needed for independent living (Pros), but too many chores can harm academic progress, and unequal chore assignment can reinforce gender or family inequalities (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L13_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 13-1] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Children should keep their bedroom clean and tidy at all times.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "A tidy bedroom makes it easier for children to find their belongings and study effectively.",
+                "Keeping personal spaces clean teaches children to take responsibility for their environment.",
+                "A child's bedroom is their personal space, and forcing tidiness can feel controlling.",
+                "Many children are naturally untidy, and constant enforcement causes unnecessary conflict."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 13-1)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 13]."
+            "hint": "Think about the benefits of a tidy bedroom (Pros) and when tidiness rules cause problems (Cons).",
+            "explanation": "Tidiness aids organisation and teaches responsibility (Pros), but enforcing strict tidiness in a personal space can feel controlling and creates ongoing conflict with naturally untidy children (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L13_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 13-2] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "A tidy bedroom improves children's focus and mental clarity.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "An organised space reduces visual distractions that can interrupt concentration during study.",
+                "Research suggests that clutter in the home environment increases feelings of stress and anxiety.",
+                "Some children and adults actually work and think better in a more relaxed, cluttered space.",
+                "Insisting on tidiness can make children anxious about mess rather than focused on learning."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 13-2)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 13]."
+            "hint": "Consider how a tidy room supports mental focus (Pros) and when order causes its own problems (Cons).",
+            "explanation": "An organised space reduces distraction and stress (Pros), but some people genuinely function better in clutter, and rigid tidiness standards can increase rather than reduce anxiety (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L13_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 13-3] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Keeping shared spaces tidy shows respect for other family members.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Tidying communal areas teaches children to consider the needs and comfort of others.",
+                "Shared domestic responsibilities reduce the burden on one parent or carer in the household.",
+                "Different family members have different standards of tidiness, making agreement difficult.",
+                "Constant requests to tidy up can damage parent-child relationships and breed resentment."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 13-3)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 13]."
+            "hint": "Think about how tidiness supports family life (Pros) and what problems differing standards create (Cons).",
+            "explanation": "Keeping shared spaces tidy shows consideration for others and shares the domestic burden (Pros), but conflicting standards of tidiness and constant reminders can create tension and resentment at home (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L14_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 14-1] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Children should learn to play a musical instrument.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Learning an instrument builds discipline, patience, and a strong work ethic.",
+                "Playing music develops children's coordination and fine motor skills effectively.",
+                "Regular instrument practice requires significant time that could be used for other activities.",
+                "Instruments, lessons, and associated costs can be financially prohibitive for many families."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 14-1)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 14]."
+            "hint": "Think about what learning an instrument gives children (Pros) and what it costs (Cons).",
+            "explanation": "Instrument learning builds discipline and motor skills (Pros), but the time commitment and financial costs of lessons and instruments can be significant barriers for many families (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L14_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 14-2] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Learning music improves children's academic performance and brain development.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Studies consistently show that music education strengthens mathematical and language abilities.",
+                "Learning to read music develops cognitive skills that support academic learning generally.",
+                "Not all children are musically inclined, and forcing lessons can create a lasting dislike of music.",
+                "The benefits of music on academic performance may not be greater than other enriching activities."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 14-2)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 14]."
+            "hint": "Consider the academic benefits of music learning (Pros) and the risks of imposing it (Cons).",
+            "explanation": "Music education strengthens academic and cognitive skills (Pros), but forced lessons can kill children's enthusiasm, and other activities may offer equivalent developmental benefits (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L14_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 14-3] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Playing a musical instrument gives children a lifelong creative outlet.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Music provides a healthy emotional outlet that helps children express feelings constructively.",
+                "Performing music in groups teaches collaboration and boosts children's self-confidence.",
+                "The pressure of public performances and exams causes significant anxiety in some children.",
+                "Children who do not enjoy music may waste years on lessons before abandoning them."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 14-3)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 14]."
+            "hint": "Think about music as a creative and emotional tool (Pros) and when it causes pressure (Cons).",
+            "explanation": "Music offers emotional expression and builds confidence through performance (Pros), but exam pressure and recitals cause real anxiety, and years of reluctant lessons may ultimately produce lasting dislike (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L15_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 15-1] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Families should eat meals together every day.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Regular shared meals strengthen communication and family bonds significantly.",
+                "Children who eat with their families tend to have healthier and more balanced diets.",
+                "Conflicting work, school, and activity schedules make daily shared meals very difficult.",
+                "Some family mealtimes become tense occasions if relationships are strained."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 15-1)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 15]."
+            "hint": "Think about what shared meals give the family (Pros) and what makes them difficult (Cons).",
+            "explanation": "Family meals strengthen communication and improve diet quality (Pros), but busy and conflicting schedules make them hard to achieve daily, and difficult family relationships can make meals stressful (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L15_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 15-2] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Eating together as a family benefits children's emotional wellbeing.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Family mealtimes give children a predictable daily moment of connection and belonging.",
+                "Shared meals create positive rituals that children look back on fondly throughout their lives.",
+                "Older teenagers often prefer eating with friends or independently from their family.",
+                "Forcing unwilling teenagers to attend family meals can damage rather than improve relationships."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 15-2)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 15]."
+            "hint": "Consider the emotional benefits of family meals (Pros) and when they are counterproductive (Cons).",
+            "explanation": "Family mealtimes provide connection and positive rituals (Pros), but older teenagers value independence, and mandatory family meals can feel controlling and damage parent-teen relationships (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L15_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 15-3] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Shared family meals help children develop good social and communication skills.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Conversation at family meals teaches children how to discuss topics respectfully.",
+                "Children learn table manners and social etiquette naturally during shared mealtimes.",
+                "Screens at the dinner table undermine conversation even when the whole family is present.",
+                "Children with social anxiety may find forced conversation at mealtimes very stressful."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 15-3)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 15]."
+            "hint": "Think about the social skills family meals build (Pros) and when they fail to deliver these benefits (Cons).",
+            "explanation": "Family meals teach conversation skills and social etiquette naturally (Pros), but screens undermine the conversation, and socially anxious children may find enforced mealtime talk genuinely distressing (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L16_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 16-1] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Children and adults should get regular physical exercise every day.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Daily exercise strengthens the heart, builds muscle, and maintains a healthy body weight.",
+                "Regular physical activity significantly reduces the risk of many serious long-term diseases.",
+                "Busy schedules at school and work leave many people with very little time for exercise.",
+                "Exercise can cause injury, particularly when people push too hard too quickly."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 16-1)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 16]."
+            "hint": "Think about the health benefits of regular exercise (Pros) and the barriers to getting it (Cons).",
+            "explanation": "Regular exercise protects cardiovascular health and reduces disease risk (Pros), but time pressure from school and work commitments and the risk of injury are genuine obstacles for many people (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L16_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 16-2] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Regular exercise improves people's mental health and emotional wellbeing.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Physical activity releases endorphins that reduce symptoms of stress, anxiety, and depression.",
+                "Exercise provides a healthy break from screens and mental demands of daily life.",
+                "Competitive sports can cause anxiety and damage self-esteem in less athletic individuals.",
+                "Over-exercising driven by pressure to look a certain way can harm mental health."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 16-2)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 16]."
+            "hint": "Consider the mental health benefits of exercise (Pros) and when it becomes harmful (Cons).",
+            "explanation": "Exercise reduces stress and improves mood through endorphin release (Pros), but competitive pressure and obsession with appearance can make exercise a source of anxiety and harm to self-esteem (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L16_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 16-3] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Physical exercise is essential for children's healthy development.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Active children develop stronger bones, better coordination, and greater physical confidence.",
+                "Children who are physically active tend to sleep better and concentrate more effectively at school.",
+                "Highly academic school environments increasingly prioritise studying over physical activity.",
+                "Children who dislike exercise may develop a lasting aversion if it is forced on them."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 16-3)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 16]."
+            "hint": "Think about why exercise matters for children's development (Pros) and what reduces access to it (Cons).",
+            "explanation": "Regular activity builds physical health, coordination, and sleep quality in children (Pros), but academic pressure squeezes out exercise time, and forced participation can create a lifelong dislike of physical activity (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L17_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 17-1] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Children should be encouraged to save a portion of their pocket money.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Saving money teaches children the value of delayed gratification and financial planning.",
+                "Children who save regularly from a young age develop healthy financial habits for life.",
+                "Children with very little pocket money have almost nothing spare to put into savings.",
+                "Forcing young children to save can remove the enjoyment and learning value of spending."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 17-1)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 17]."
+            "hint": "Think about what saving teaches children (Pros) and when it is not practical or helpful (Cons).",
+            "explanation": "Saving teaches delayed gratification and builds lifelong financial habits (Pros), but children with little pocket money have nothing to save, and forced saving removes the natural learning experience of spending (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L17_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 17-2] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Saving pocket money teaches children about financial responsibility.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Children who manage savings learn to set goals and work patiently towards them.",
+                "Understanding saving and budgeting from an early age prepares children for adult financial life.",
+                "Some parents believe children should enjoy their money rather than being burdened with saving.",
+                "Financial anxiety created by over-emphasising saving can cause children unnecessary stress."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 17-2)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 17]."
+            "hint": "Consider how saving develops financial skills (Pros) and when saving becomes a pressure (Cons).",
+            "explanation": "Managing savings builds goal-setting and financial planning skills (Pros), but over-emphasising saving can create financial anxiety in children and deny them the simpler joy of spending their pocket money (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L17_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 17-3] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Encouraging children to save money builds self-discipline and patience.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Resisting the urge to spend immediately develops willpower that benefits other areas of life.",
+                "Working steadily towards a savings goal teaches children the satisfaction of achievement.",
+                "Advertising and peer pressure constantly encourage children to spend rather than save.",
+                "Very young children lack the cognitive development to understand the long-term value of saving."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 17-3)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 17]."
+            "hint": "Think about how saving builds self-discipline (Pros) and what works against it (Cons).",
+            "explanation": "Saving builds willpower and teaches the satisfaction of achieving goals (Pros), but peer pressure and advertising work against saving, and very young children cannot yet understand why saving now is worthwhile (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L18_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 18-1] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Families should grow plants or herbs in their home.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Looking after plants teaches children to care for a living thing and observe its growth.",
+                "Growing herbs at home encourages healthier cooking and an interest in fresh ingredients.",
+                "Not all homes have enough space, light, or suitable conditions to grow plants successfully.",
+                "Plants require consistent watering and care, which busy families may not be able to maintain."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 18-1)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 18]."
+            "hint": "Think about what growing plants teaches the family (Pros) and what makes it difficult (Cons).",
+            "explanation": "Growing plants builds nurturing skills and encourages healthy cooking (Pros), but unsuitable living spaces and the time needed to maintain plants make it impractical for many busy families (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L18_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 18-2] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "Growing plants at home improves mental wellbeing for the whole family.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Studies show that caring for plants reduces stress and creates a calming home environment.",
+                "Watching plants grow from seeds gives both children and adults a sense of achievement.",
+                "Plants can trigger allergies or asthma in sensitive family members.",
+                "Dead or failing plants can cause disappointment and a sense of failure, especially in children."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 18-2)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 18]."
+            "hint": "Consider how plants improve wellbeing (Pros) and when they cause problems (Cons).",
+            "explanation": "Plants reduce stress and create a sense of calm and achievement (Pros), but they can trigger allergies, and plant failures can be genuinely disheartening, particularly for young children (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L18_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 18-3] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Growing plants at home builds children's environmental awareness.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Tending a garden or indoor plants connects children to natural cycles and seasonal change.",
+                "Home growing teaches children where food comes from and reduces reliance on supermarkets.",
+                "Children in apartments or urban areas may have extremely limited space for any growing.",
+                "Some children lack the patience required for growing plants, which takes weeks or months."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 18-3)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 18]."
+            "hint": "Think about how growing plants builds environmental awareness (Pros) and who cannot access it (Cons).",
+            "explanation": "Home growing connects children to nature and the origins of food (Pros), but urban children often lack space, and the slow pace of plant growth tests the patience of many young learners (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L19_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 19-1] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Children should visit their local library on a regular basis.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Libraries give children free access to thousands of books across every subject and genre.",
+                "Regular library visits build a lifelong love of reading and learning from an early age.",
+                "Many children find libraries boring and prefer faster, more interactive digital content.",
+                "Libraries in some areas have reduced their opening hours or closed due to funding cuts."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 19-1)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 19]."
+            "hint": "Think about what regular library visits give children (Pros) and what limits access (Cons).",
+            "explanation": "Libraries provide free, wide-ranging reading material and build a love of learning (Pros), but children may find them dull compared to digital alternatives, and funding cuts have reduced availability in many areas (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L19_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 19-2] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+            "prompt": "Public libraries strengthen communities and support lifelong learning.",
             "options": [
-                "Vents provide consistent heat and rich chemical gradients.",
-                "Mineral walls form natural catalytic micro-compartments.",
-                "Extreme temperatures could destroy delicate genetic precursors.",
-                "Ocean currents might dilute vital organic chemical molecules."
+                "Libraries provide a welcoming public space where people of all ages and backgrounds can meet.",
+                "Free access to information and resources at libraries reduces educational inequality.",
+                "Online resources and e-books now offer many of the services libraries once provided exclusively.",
+                "Some communities see libraries as less relevant in the digital age and prioritise other funding."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 19-2)",
-            "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 19]."
+            "hint": "Consider how libraries support communities (Pros) and what challenges they face (Cons).",
+            "explanation": "Libraries foster community and reduce educational inequality through free access (Pros), but digital alternatives now compete with traditional library services, and some communities question their continued relevance (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L19_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 19-3] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+            "prompt": "Encouraging children to use the library builds research and information skills.",
             "options": [
-                "Chemosynthetic bacteria produce organic carbon from sulfur.",
-                "Vents sustain life indefinitely without solar rays.",
-                "Sinking surface organic marine snow feeds many species.",
-                "Migrating deep creatures rely on sun-fed surface plankton."
+                "Finding information in a library teaches children to evaluate and select reliable sources.",
+                "Librarians help children navigate resources and develop independent research skills.",
+                "Internet searches feel faster and more relevant to children than browsing library shelves.",
+                "Not all children have equal access to well-resourced libraries with trained staff."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 19-3)",
-            "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 19]."
+            "hint": "Think about the research skills libraries build (Pros) and the barriers children face (Cons).",
+            "explanation": "Library use builds critical research and source evaluation skills (Pros), but the immediacy of internet searching feels more relevant to children, and unequal library quality means not all children benefit equally (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L20_Q1",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 20-1] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+            "prompt": "People should take regular walks in nature.",
             "options": [
-                "Winds continuously drag nutrient-rich deep currents up.",
-                "Upwellings fuel extensive trophic chains and fisheries.",
-                "Seasonal wind variations cause unpredictable bloom crashes.",
-                "Excessive turbulence can scatter delicate larval plankton."
+                "Time spent in natural green spaces significantly improves mood and reduces stress.",
+                "Regular outdoor walking provides gentle, low-impact exercise suitable for all fitness levels.",
+                "People living in cities may have very limited access to parks, woodland, or natural areas.",
+                "Extreme weather conditions such as intense heat or cold can make outdoor walking unpleasant."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 20-1)",
-            "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 20]."
+            "hint": "Think about the benefits of walking in nature (Pros) and the barriers people face (Cons).",
+            "explanation": "Nature walks improve mood and provide accessible exercise (Pros), but urban residents often lack nearby green spaces, and extreme weather makes outdoor walking impractical for much of the year (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L20_Q2",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 20-2] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+            "prompt": "Spending time in nature improves children's wellbeing and creativity.",
             "options": [
-                "Glowing lures attract prey in absolute sunless voids.",
-                "Light emissions act as silent warning signals.",
-                "Sudden flashes can attract dangerous apex predators.",
-                "High chemical energy cost drains body metabolic reserves."
+                "Natural environments stimulate children's curiosity and encourage imaginative, unstructured play.",
+                "Regular exposure to nature from childhood builds environmental appreciation and responsibility.",
+                "Many children today prefer indoor digital entertainment to outdoor natural experiences.",
+                "Concerns about safety, insects, and getting dirty make some parents reluctant to encourage outdoor nature activities."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 20-2)",
-            "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 20]."
+            "hint": "Consider how nature benefits children's development (Pros) and what prevents regular access (Cons).",
+            "explanation": "Nature stimulates imagination and builds environmental values in children (Pros), but digital entertainment competes strongly for children's attention, and parental anxieties about outdoor safety further reduce access (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L20_Q3",
-            "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
-            "difficulty": 1,
+            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "[Calibration Thesis 20-3] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+            "prompt": "Walking in nature regularly benefits people's long-term physical health.",
             "options": [
-                "Dense kelp canopies absorb solar energy, cooling under-layers.",
-                "Massive kelp biomass sequesters carbon dioxide rapidly.",
-                "High thermal waves easily trigger destructive canopy die-offs.",
-                "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+                "Regular walking reduces blood pressure, improves cardiovascular health, and controls weight.",
+                "Time in natural light and fresh air supports healthy sleep patterns and immune function.",
+                "People with physical disabilities or health conditions may find outdoor walking very difficult.",
+                "The environmental quality of some outdoor areas, including pollution levels, can reduce health benefits."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 20-3)",
-            "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 20]."
+            "hint": "Think about the long-term physical health benefits of nature walks (Pros) and who may not benefit (Cons).",
+            "explanation": "Walking in nature improves cardiovascular health and sleep (Pros), but physical disability limits access for some, and pollution in many outdoor areas can undermine the expected health benefits (Cons)."
         }
     ]
 }
