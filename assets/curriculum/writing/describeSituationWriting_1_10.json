@@ -6,1172 +6,1142 @@
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L1_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 1-1] Describe how deep hydrothermal vents release superheated chemical compounds.",
+            "situation": "You wake up and get ready for a busy day. Describe your morning routine before you leave the house.",
             "emojis": [
-                "🌋",
-                "💧",
-                "🔬",
-                "🐠"
+                "⏰",
+                "🛏️",
+                "🚿",
+                "☕"
             ],
             "keywords": {
                 "0": [
-                    "VENTING",
-                    "MAGMA",
-                    "PLUME"
+                    "ALARM",
+                    "WAKE",
+                    "MORNING"
                 ],
                 "1": [
-                    "OCEANIC",
-                    "THERMAL",
-                    "PRESSURE"
+                    "BED",
+                    "STRETCH",
+                    "GETUP"
                 ],
                 "2": [
-                    "MINERAL",
-                    "CHEMICAL",
-                    "HYDROUS"
+                    "SHOWER",
+                    "BRUSH",
+                    "WASH"
                 ],
                 "3": [
-                    "CREATURE",
-                    "BENTHIC",
-                    "ABYSSAL"
+                    "COFFEE",
+                    "BREAKFAST",
+                    "KITCHEN"
                 ]
             },
             "minWords": 15,
-            "hint": "Focus on hot springs expelling rich black plumes of sulfide minerals. (Diving calibration index 1-1)",
-            "explanation": "Vents erupt superheated solutions containing hydrogen sulfide and sulfur particles. [Verified by Creative Cartographer Unit 1]."
+            "hint": "Think about the order of things you do, from waking up to leaving home.",
+            "explanation": "A clear morning routine uses time words like first, then, and after that to connect each action in order."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L1_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 1-2] Describe the survival mechanism of marine bacteria in dark abyssal plains.",
+            "situation": "Your teacher gives the class a new homework assignment. Describe what the teacher says and how the students react.",
             "emojis": [
-                "🦠",
-                "🌑",
-                "🧪",
-                "🌡️"
+                "👩‍🏫",
+                "📚",
+                "✏️",
+                "🎒"
             ],
             "keywords": {
                 "0": [
-                    "MICROBE",
-                    "BACTERIA",
-                    "CELLULAR"
+                    "TEACHER",
+                    "EXPLAIN",
+                    "CLASSROOM"
                 ],
                 "1": [
-                    "DARKNESS",
-                    "SUNLESS",
-                    "ABYSS"
+                    "BOOK",
+                    "READ",
+                    "LESSON"
                 ],
                 "2": [
-                    "SYNTHESIS",
-                    "REACTION",
-                    "ENZYME"
+                    "WRITE",
+                    "NOTES",
+                    "PENCIL"
                 ],
                 "3": [
-                    "THERMAL",
-                    "METABOLIC",
-                    "ADAPT"
+                    "BACKPACK",
+                    "HOMEWORK",
+                    "DUE"
                 ]
             },
             "minWords": 15,
-            "hint": "Describe how microbes convert chemical energy without any sunlight. (Diving calibration index 1-2)",
-            "explanation": "Microscopic deep marine bacteria perform chemosynthesis to convert chemicals to sugars. [Verified by Creative Cartographer Unit 1]."
+            "hint": "Mention what the teacher asks the students to do and when it is due.",
+            "explanation": "A good answer names the task and the deadline, for example: 'The teacher explains the homework and tells us it is due on Friday.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L1_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 1-3] Describe the photosynthetic layers of giant underwater kelp forests.",
+            "situation": "A new employee arrives at the office on their first day. Describe what happens when they meet their manager and coworkers.",
             "emojis": [
-                "🌱",
-                "☀️",
-                "🌊",
-                "🐟"
+                "💼",
+                "🤝",
+                "🏢",
+                "📋"
             ],
             "keywords": {
                 "0": [
-                    "KELP",
-                    "CANOPY",
-                    "FROND"
+                    "OFFICE",
+                    "DESK",
+                    "FIRSTDAY"
                 ],
                 "1": [
-                    "SOLAR",
-                    "PHOTOSYNTHESIS",
-                    "LIGHT"
+                    "MANAGER",
+                    "GREET",
+                    "INTRODUCE"
                 ],
                 "2": [
-                    "UPWELLING",
-                    "CURRENT",
-                    "NUTRIENT"
+                    "BUILDING",
+                    "COMPANY",
+                    "TEAM"
                 ],
                 "3": [
-                    "HABITAT",
-                    "SPECIES",
-                    "SHELTER"
+                    "TASK",
+                    "SCHEDULE",
+                    "TRAINING"
                 ]
             },
             "minWords": 15,
-            "hint": "Detail how large brown algae absorb solar energy near the ocean surface. (Diving calibration index 1-3)",
-            "explanation": "Kelp plants utilize chloroplasts to absorb solar beams, growing up to two feet daily. [Verified by Creative Cartographer Unit 1]."
+            "hint": "Describe the introductions and the first task the new employee receives.",
+            "explanation": "Strong answers describe greetings and the first responsibility, showing the order of a typical first day."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L2_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 2-1] Describe how deep-sea animals utilize cold biological bioluminescence.",
+            "situation": "You arrive at the airport for your flight. Describe what you do before you get on the plane.",
             "emojis": [
-                "🐙",
-                "💡",
-                "🧪",
-                "❄️"
+                "✈️",
+                "🧳",
+                "🛂",
+                "🎫"
             ],
             "keywords": {
                 "0": [
-                    "ANIMAL",
-                    "PREDATOR",
-                    "SPECIES"
+                    "AIRPORT",
+                    "GATE",
+                    "FLIGHT"
                 ],
                 "1": [
-                    "BIOLUMINESCENT",
-                    "GLOWING",
-                    "LIGHT"
+                    "LUGGAGE",
+                    "PACK",
+                    "CHECKIN"
                 ],
                 "2": [
-                    "LUCIFERIN",
-                    "CATALYST",
-                    "REACTION"
+                    "PASSPORT",
+                    "SECURITY",
+                    "LINE"
                 ],
                 "3": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "COLD"
+                    "TICKET",
+                    "BOARDING",
+                    "SEAT"
                 ]
             },
             "minWords": 15,
-            "hint": "Focus on organic light emissions used for communication and camouflage. (Diving calibration index 2-1)",
-            "explanation": "Luciferin enzymes oxidize to emit cold glowing lights inside deep trenches. [Verified by Creative Cartographer Unit 2]."
+            "hint": "Put the steps in order: arriving, checking in, going through security, and boarding.",
+            "explanation": "A clear travel description follows a logical sequence, such as checking in luggage, passing security, and finding the gate."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L2_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 2-2] Describe how coastal wind upwellings drive nutrient circulation upward.",
+            "situation": "Your family is having dinner together on a Sunday evening. Describe what everyone is doing at the table.",
             "emojis": [
-                "💨",
-                "🌊",
-                "❄️",
-                "🐟"
+                "👨‍👩‍👧‍👦",
+                "🍽️",
+                "🍝",
+                "💬"
             ],
             "keywords": {
                 "0": [
-                    "UPWELLING",
-                    "CIRCULATION",
-                    "CURRENT"
+                    "FAMILY",
+                    "TOGETHER",
+                    "SUNDAY"
                 ],
                 "1": [
-                    "NUTRIENT",
-                    "ORGANIC",
-                    "NITRATE"
+                    "TABLE",
+                    "PLATE",
+                    "DINNER"
                 ],
                 "2": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "DEPTH"
+                    "MEAL",
+                    "COOK",
+                    "SHARE"
                 ],
                 "3": [
-                    "ECOLOGY",
-                    "PLANKTON",
-                    "BIOMASS"
+                    "TALK",
+                    "LAUGH",
+                    "STORY"
                 ]
             },
             "minWords": 15,
-            "hint": "Detail how surface winds displace warm waters, dragging deep cold waters up. (Diving calibration index 2-2)",
-            "explanation": "Strong wind currents displace coastal surfaces, pulling deep cold nutrient water up. [Verified by Creative Cartographer Unit 2]."
+            "hint": "Describe who is at the table and what they talk about during the meal.",
+            "explanation": "Good family scenes mention specific people and an activity, like sharing food and talking about the week."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L2_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 2-3] Describe how deep hydrothermal vents release superheated chemical compounds.",
+            "situation": "You go to the supermarket to buy food for the week. Describe what you put in your shopping cart.",
             "emojis": [
-                "🌋",
-                "💧",
-                "🔬",
-                "🐠"
+                "🛒",
+                "🥦",
+                "🥖",
+                "🧾"
             ],
             "keywords": {
                 "0": [
-                    "VENTING",
-                    "MAGMA",
-                    "PLUME"
+                    "CART",
+                    "SUPERMARKET",
+                    "AISLE"
                 ],
                 "1": [
-                    "OCEANIC",
-                    "THERMAL",
-                    "PRESSURE"
+                    "VEGETABLE",
+                    "FRESH",
+                    "BUY"
                 ],
                 "2": [
-                    "MINERAL",
-                    "CHEMICAL",
-                    "HYDROUS"
+                    "BREAD",
+                    "SNACK",
+                    "DAIRY"
                 ],
                 "3": [
-                    "CREATURE",
-                    "BENTHIC",
-                    "ABYSSAL"
+                    "RECEIPT",
+                    "PAY",
+                    "TOTAL"
                 ]
             },
             "minWords": 15,
-            "hint": "Focus on hot springs expelling rich black plumes of sulfide minerals. (Diving calibration index 2-3)",
-            "explanation": "Vents erupt superheated solutions containing hydrogen sulfide and sulfur particles. [Verified by Creative Cartographer Unit 2]."
+            "hint": "List a few different kinds of food you choose and why you need them.",
+            "explanation": "A useful shopping description names specific items, such as vegetables, bread, and milk, instead of just saying 'food'."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L3_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 3-1] Describe the survival mechanism of marine bacteria in dark abyssal plains.",
+            "situation": "You are cooking a simple dinner at home. Describe the steps you follow to prepare the meal.",
             "emojis": [
-                "🦠",
-                "🌑",
-                "🧪",
-                "🌡️"
+                "🍳",
+                "🔪",
+                "🥘",
+                "⏲️"
             ],
             "keywords": {
                 "0": [
-                    "MICROBE",
-                    "BACTERIA",
-                    "CELLULAR"
+                    "PAN",
+                    "COOK",
+                    "STOVE"
                 ],
                 "1": [
-                    "DARKNESS",
-                    "SUNLESS",
-                    "ABYSS"
+                    "CUT",
+                    "CHOP",
+                    "KNIFE"
                 ],
                 "2": [
-                    "SYNTHESIS",
-                    "REACTION",
-                    "ENZYME"
+                    "RECIPE",
+                    "POT",
+                    "STIR"
                 ],
                 "3": [
-                    "THERMAL",
-                    "METABOLIC",
-                    "ADAPT"
+                    "TIMER",
+                    "WAIT",
+                    "READY"
                 ]
             },
-            "minWords": 15,
-            "hint": "Describe how microbes convert chemical energy without any sunlight. (Diving calibration index 3-1)",
-            "explanation": "Microscopic deep marine bacteria perform chemosynthesis to convert chemicals to sugars. [Verified by Creative Cartographer Unit 3]."
+            "minWords": 16,
+            "hint": "Put the cooking steps in the correct order, from preparing ingredients to serving the food.",
+            "explanation": "Cooking descriptions work best with sequence words like first, next, and finally to show each step clearly."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L3_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 3-2] Describe the photosynthetic layers of giant underwater kelp forests.",
+            "situation": "Your phone battery is almost dead and you need it to stay in touch. Describe what you do to solve the problem.",
             "emojis": [
-                "🌱",
-                "☀️",
-                "🌊",
-                "🐟"
+                "📱",
+                "🔋",
+                "🔌",
+                "😟"
             ],
             "keywords": {
                 "0": [
-                    "KELP",
-                    "CANOPY",
-                    "FROND"
+                    "PHONE",
+                    "SCREEN",
+                    "APP"
                 ],
                 "1": [
-                    "SOLAR",
-                    "PHOTOSYNTHESIS",
-                    "LIGHT"
+                    "BATTERY",
+                    "LOW",
+                    "DIE"
                 ],
                 "2": [
-                    "UPWELLING",
-                    "CURRENT",
-                    "NUTRIENT"
+                    "CHARGER",
+                    "PLUG",
+                    "OUTLET"
                 ],
                 "3": [
-                    "HABITAT",
-                    "SPECIES",
-                    "SHELTER"
+                    "WORRY",
+                    "HURRY",
+                    "FIND"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how large brown algae absorb solar energy near the ocean surface. (Diving calibration index 3-2)",
-            "explanation": "Kelp plants utilize chloroplasts to absorb solar beams, growing up to two feet daily. [Verified by Creative Cartographer Unit 3]."
+            "minWords": 16,
+            "hint": "Explain what you do first when you notice the battery is low.",
+            "explanation": "A clear answer states the problem and the solution, such as 'My battery is low, so I plug in my charger right away.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L3_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 3-3] Describe how deep-sea animals utilize cold biological bioluminescence.",
+            "situation": "You feel tired and a little sick, so you decide to see a doctor. Describe your visit to the clinic.",
             "emojis": [
-                "🐙",
-                "💡",
-                "🧪",
-                "❄️"
+                "🤒",
+                "🩺",
+                "💊",
+                "🏥"
             ],
             "keywords": {
                 "0": [
-                    "ANIMAL",
-                    "PREDATOR",
-                    "SPECIES"
+                    "SICK",
+                    "TIRED",
+                    "FEVER"
                 ],
                 "1": [
-                    "BIOLUMINESCENT",
-                    "GLOWING",
-                    "LIGHT"
+                    "DOCTOR",
+                    "CHECK",
+                    "LISTEN"
                 ],
                 "2": [
-                    "LUCIFERIN",
-                    "CATALYST",
-                    "REACTION"
+                    "MEDICINE",
+                    "PILL",
+                    "PRESCRIBE"
                 ],
                 "3": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "COLD"
+                    "CLINIC",
+                    "WAIT",
+                    "APPOINTMENT"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on organic light emissions used for communication and camouflage. (Diving calibration index 3-3)",
-            "explanation": "Luciferin enzymes oxidize to emit cold glowing lights inside deep trenches. [Verified by Creative Cartographer Unit 3]."
+            "minWords": 16,
+            "hint": "Describe how you feel, what the doctor checks, and what they tell you to do.",
+            "explanation": "Good health descriptions name the symptom, the doctor's action, and the advice given, such as resting and taking medicine."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L4_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 4-1] Describe how coastal wind upwellings drive nutrient circulation upward.",
+            "situation": "You and your friends decide to watch a movie at the cinema on Friday night. Describe your evening.",
             "emojis": [
-                "💨",
-                "🌊",
-                "❄️",
-                "🐟"
+                "🎬",
+                "🍿",
+                "🎟️",
+                "😄"
             ],
             "keywords": {
                 "0": [
-                    "UPWELLING",
-                    "CIRCULATION",
-                    "CURRENT"
+                    "MOVIE",
+                    "SCREEN",
+                    "CINEMA"
                 ],
                 "1": [
-                    "NUTRIENT",
-                    "ORGANIC",
-                    "NITRATE"
+                    "SNACK",
+                    "POPCORN",
+                    "DRINK"
                 ],
                 "2": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "DEPTH"
+                    "TICKET",
+                    "SEAT",
+                    "SHOW"
                 ],
                 "3": [
-                    "ECOLOGY",
-                    "PLANKTON",
-                    "BIOMASS"
+                    "FRIEND",
+                    "LAUGH",
+                    "ENJOY"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how surface winds displace warm waters, dragging deep cold waters up. (Diving calibration index 4-1)",
-            "explanation": "Strong wind currents displace coastal surfaces, pulling deep cold nutrient water up. [Verified by Creative Cartographer Unit 4]."
+            "minWords": 16,
+            "hint": "Mention what movie you choose and how you feel about it afterward.",
+            "explanation": "Strong entertainment answers include a specific activity and a feeling, like 'We watch a funny movie and laugh a lot.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L4_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 4-2] Describe how deep hydrothermal vents release superheated chemical compounds.",
+            "situation": "You call a restaurant to book a table for four people on Saturday. Describe what you say on the phone.",
             "emojis": [
-                "🌋",
-                "💧",
-                "🔬",
-                "🐠"
+                "📞",
+                "🍽️",
+                "🗣️",
+                "📅"
             ],
             "keywords": {
                 "0": [
-                    "VENTING",
-                    "MAGMA",
-                    "PLUME"
+                    "CALL",
+                    "PHONE",
+                    "RING"
                 ],
                 "1": [
-                    "OCEANIC",
-                    "THERMAL",
-                    "PRESSURE"
+                    "TABLE",
+                    "RESERVE",
+                    "BOOK"
                 ],
                 "2": [
-                    "MINERAL",
-                    "CHEMICAL",
-                    "HYDROUS"
+                    "SPEAK",
+                    "ASK",
+                    "POLITE"
                 ],
                 "3": [
-                    "CREATURE",
-                    "BENTHIC",
-                    "ABYSSAL"
+                    "SATURDAY",
+                    "TIME",
+                    "DATE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on hot springs expelling rich black plumes of sulfide minerals. (Diving calibration index 4-2)",
-            "explanation": "Vents erupt superheated solutions containing hydrogen sulfide and sulfur particles. [Verified by Creative Cartographer Unit 4]."
+            "minWords": 16,
+            "hint": "Think about how you politely ask for a table and give the date and time.",
+            "explanation": "A clear phone request states the number of people, the day, and the time, for example: 'I would like a table for four on Saturday at seven.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L4_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 4-3] Describe the survival mechanism of marine bacteria in dark abyssal plains.",
+            "situation": "It starts raining suddenly while you are walking outside. Describe what you do to stay dry.",
             "emojis": [
-                "🦠",
-                "🌑",
-                "🧪",
-                "🌡️"
+                "🌧️",
+                "☂️",
+                "🏃",
+                "👟"
             ],
             "keywords": {
                 "0": [
-                    "MICROBE",
-                    "BACTERIA",
-                    "CELLULAR"
+                    "RAIN",
+                    "WET",
+                    "SUDDEN"
                 ],
                 "1": [
-                    "DARKNESS",
-                    "SUNLESS",
-                    "ABYSS"
+                    "UMBRELLA",
+                    "OPEN",
+                    "COVER"
                 ],
                 "2": [
-                    "SYNTHESIS",
-                    "REACTION",
-                    "ENZYME"
+                    "RUN",
+                    "HURRY",
+                    "SHELTER"
                 ],
                 "3": [
-                    "THERMAL",
-                    "METABOLIC",
-                    "ADAPT"
+                    "SHOES",
+                    "SOAKED",
+                    "DRY"
                 ]
             },
-            "minWords": 15,
-            "hint": "Describe how microbes convert chemical energy without any sunlight. (Diving calibration index 4-3)",
-            "explanation": "Microscopic deep marine bacteria perform chemosynthesis to convert chemicals to sugars. [Verified by Creative Cartographer Unit 4]."
+            "minWords": 16,
+            "hint": "Describe your first reaction and where you go to stay dry.",
+            "explanation": "A natural answer describes the surprise of the rain and the quick action taken, like opening an umbrella or running for shelter."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L5_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 5-1] Describe the photosynthetic layers of giant underwater kelp forests.",
+            "situation": "You forget your homework at home and realize it during class. Describe what you do.",
             "emojis": [
-                "🌱",
-                "☀️",
-                "🌊",
-                "🐟"
+                "😨",
+                "📓",
+                "🏫",
+                "🙋"
             ],
             "keywords": {
                 "0": [
-                    "KELP",
-                    "CANOPY",
-                    "FROND"
+                    "FORGET",
+                    "REALIZE",
+                    "WORRY"
                 ],
                 "1": [
-                    "SOLAR",
-                    "PHOTOSYNTHESIS",
-                    "LIGHT"
+                    "NOTEBOOK",
+                    "PAPER",
+                    "HOME"
                 ],
                 "2": [
-                    "UPWELLING",
-                    "CURRENT",
-                    "NUTRIENT"
+                    "CLASSROOM",
+                    "DESK",
+                    "TEACHER"
                 ],
                 "3": [
-                    "HABITAT",
-                    "SPECIES",
-                    "SHELTER"
+                    "EXPLAIN",
+                    "RAISE",
+                    "HAND"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how large brown algae absorb solar energy near the ocean surface. (Diving calibration index 5-1)",
-            "explanation": "Kelp plants utilize chloroplasts to absorb solar beams, growing up to two feet daily. [Verified by Creative Cartographer Unit 5]."
+            "minWords": 16,
+            "hint": "Explain how you feel and what you say to your teacher.",
+            "explanation": "Good answers show the problem and a polite solution, such as explaining honestly and offering to bring it tomorrow."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L5_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 5-2] Describe how deep-sea animals utilize cold biological bioluminescence.",
+            "situation": "Your computer suddenly stops working in the middle of an important task at the office. Describe what you do next.",
             "emojis": [
-                "🐙",
-                "💡",
-                "🧪",
-                "❄️"
+                "💻",
+                "⚠️",
+                "🛠️",
+                "📞"
             ],
             "keywords": {
                 "0": [
-                    "ANIMAL",
-                    "PREDATOR",
-                    "SPECIES"
+                    "COMPUTER",
+                    "SCREEN",
+                    "FREEZE"
                 ],
                 "1": [
-                    "BIOLUMINESCENT",
-                    "GLOWING",
-                    "LIGHT"
+                    "PROBLEM",
+                    "ERROR",
+                    "STOP"
                 ],
                 "2": [
-                    "LUCIFERIN",
-                    "CATALYST",
-                    "REACTION"
+                    "RESTART",
+                    "CHECK",
+                    "FIX"
                 ],
                 "3": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "COLD"
+                    "CALL",
+                    "SUPPORT",
+                    "HELP"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on organic light emissions used for communication and camouflage. (Diving calibration index 5-2)",
-            "explanation": "Luciferin enzymes oxidize to emit cold glowing lights inside deep trenches. [Verified by Creative Cartographer Unit 5]."
+            "minWords": 16,
+            "hint": "Describe the order of steps you try before asking for help.",
+            "explanation": "A clear workplace answer shows problem-solving steps in order, such as restarting the computer before calling technical support."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L5_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 5-3] Describe how coastal wind upwellings drive nutrient circulation upward.",
+            "situation": "Your train is delayed and you might miss an important meeting. Describe how you handle the situation.",
             "emojis": [
-                "💨",
-                "🌊",
-                "❄️",
-                "🐟"
+                "🚆",
+                "⏳",
+                "😬",
+                "📱"
             ],
             "keywords": {
                 "0": [
-                    "UPWELLING",
-                    "CIRCULATION",
-                    "CURRENT"
+                    "TRAIN",
+                    "PLATFORM",
+                    "DELAY"
                 ],
                 "1": [
-                    "NUTRIENT",
-                    "ORGANIC",
-                    "NITRATE"
+                    "WAIT",
+                    "LATE",
+                    "MINUTE"
                 ],
                 "2": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "DEPTH"
+                    "WORRY",
+                    "STRESS",
+                    "NERVOUS"
                 ],
                 "3": [
-                    "ECOLOGY",
-                    "PLANKTON",
-                    "BIOMASS"
+                    "TEXT",
+                    "CALL",
+                    "INFORM"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how surface winds displace warm waters, dragging deep cold waters up. (Diving calibration index 5-3)",
-            "explanation": "Strong wind currents displace coastal surfaces, pulling deep cold nutrient water up. [Verified by Creative Cartographer Unit 5]."
+            "minWords": 16,
+            "hint": "Explain what you do to let others know you might be late.",
+            "explanation": "A useful travel answer shows both the problem and a responsible action, like messaging someone to explain the delay."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L6_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 6-1] Describe how deep hydrothermal vents release superheated chemical compounds.",
+            "situation": "Your younger sibling needs help with a school project. Describe how you help them.",
             "emojis": [
-                "🌋",
-                "💧",
-                "🔬",
-                "🐠"
+                "👧",
+                "✂️",
+                "📐",
+                "🖍️"
             ],
             "keywords": {
                 "0": [
-                    "VENTING",
-                    "MAGMA",
-                    "PLUME"
+                    "SIBLING",
+                    "YOUNGER",
+                    "ASK"
                 ],
                 "1": [
-                    "OCEANIC",
-                    "THERMAL",
-                    "PRESSURE"
+                    "PROJECT",
+                    "SCISSORS",
+                    "GLUE"
                 ],
                 "2": [
-                    "MINERAL",
-                    "CHEMICAL",
-                    "HYDROUS"
+                    "POSTER",
+                    "DRAW",
+                    "COLOR"
                 ],
                 "3": [
-                    "CREATURE",
-                    "BENTHIC",
-                    "ABYSSAL"
+                    "HELP",
+                    "PATIENT",
+                    "TOGETHER"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on hot springs expelling rich black plumes of sulfide minerals. (Diving calibration index 6-1)",
-            "explanation": "Vents erupt superheated solutions containing hydrogen sulfide and sulfur particles. [Verified by Creative Cartographer Unit 6]."
+            "minWords": 16,
+            "hint": "Describe what part of the project needs help and how you assist.",
+            "explanation": "Strong family answers show a specific helpful action, such as drawing pictures together or explaining instructions patiently."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L6_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 6-2] Describe the survival mechanism of marine bacteria in dark abyssal plains.",
+            "situation": "You find a shirt you like, but it is the wrong size. Describe what you do at the store.",
             "emojis": [
-                "🦠",
-                "🌑",
-                "🧪",
-                "🌡️"
+                "👕",
+                "📏",
+                "🙋‍♀️",
+                "🔄"
             ],
             "keywords": {
                 "0": [
-                    "MICROBE",
-                    "BACTERIA",
-                    "CELLULAR"
+                    "SHIRT",
+                    "STORE",
+                    "RACK"
                 ],
                 "1": [
-                    "DARKNESS",
-                    "SUNLESS",
-                    "ABYSS"
+                    "SIZE",
+                    "SMALL",
+                    "LARGE"
                 ],
                 "2": [
-                    "SYNTHESIS",
-                    "REACTION",
-                    "ENZYME"
+                    "ASSISTANT",
+                    "ASK",
+                    "FIND"
                 ],
                 "3": [
-                    "THERMAL",
-                    "METABOLIC",
-                    "ADAPT"
+                    "EXCHANGE",
+                    "TRY",
+                    "FITTING"
                 ]
             },
-            "minWords": 15,
-            "hint": "Describe how microbes convert chemical energy without any sunlight. (Diving calibration index 6-2)",
-            "explanation": "Microscopic deep marine bacteria perform chemosynthesis to convert chemicals to sugars. [Verified by Creative Cartographer Unit 6]."
+            "minWords": 16,
+            "hint": "Explain what you ask the shop assistant and what happens next.",
+            "explanation": "A clear shopping answer states the problem plainly, such as asking for a different size or trying another item."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L6_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 6-3] Describe the photosynthetic layers of giant underwater kelp forests.",
+            "situation": "You order food at a restaurant, but the waiter brings the wrong dish. Describe what you say.",
             "emojis": [
-                "🌱",
-                "☀️",
-                "🌊",
-                "🐟"
+                "🍽️",
+                "🙅",
+                "😅",
+                "🗣️"
             ],
             "keywords": {
                 "0": [
-                    "KELP",
-                    "CANOPY",
-                    "FROND"
+                    "ORDER",
+                    "WAITER",
+                    "DISH"
                 ],
                 "1": [
-                    "SOLAR",
-                    "PHOTOSYNTHESIS",
-                    "LIGHT"
+                    "WRONG",
+                    "MISTAKE",
+                    "DIFFERENT"
                 ],
                 "2": [
-                    "UPWELLING",
-                    "CURRENT",
-                    "NUTRIENT"
+                    "POLITE",
+                    "EXPLAIN",
+                    "SMILE"
                 ],
                 "3": [
-                    "HABITAT",
-                    "SPECIES",
-                    "SHELTER"
+                    "REPLACE",
+                    "WAIT",
+                    "THANK"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how large brown algae absorb solar energy near the ocean surface. (Diving calibration index 6-3)",
-            "explanation": "Kelp plants utilize chloroplasts to absorb solar beams, growing up to two feet daily. [Verified by Creative Cartographer Unit 6]."
+            "minWords": 16,
+            "hint": "Think about a polite way to point out the mistake without being rude.",
+            "explanation": "Good restaurant answers stay polite, for example: 'Excuse me, I think this is not what I ordered.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L7_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 7-1] Describe how deep-sea animals utilize cold biological bioluminescence.",
+            "situation": "You cannot connect to the Wi-Fi at home. Describe the steps you try to fix the problem.",
             "emojis": [
-                "🐙",
-                "💡",
-                "🧪",
-                "❄️"
+                "📶",
+                "🏠",
+                "🔄",
+                "😤"
             ],
             "keywords": {
                 "0": [
-                    "ANIMAL",
-                    "PREDATOR",
-                    "SPECIES"
+                    "WIFI",
+                    "SIGNAL",
+                    "CONNECT"
                 ],
                 "1": [
-                    "BIOLUMINESCENT",
-                    "GLOWING",
+                    "ROUTER",
+                    "RESTART",
                     "LIGHT"
                 ],
                 "2": [
-                    "LUCIFERIN",
-                    "CATALYST",
-                    "REACTION"
+                    "PASSWORD",
+                    "ENTER",
+                    "RETRY"
                 ],
                 "3": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "COLD"
+                    "FRUSTRATED",
+                    "FIX",
+                    "FINALLY"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on organic light emissions used for communication and camouflage. (Diving calibration index 7-1)",
-            "explanation": "Luciferin enzymes oxidize to emit cold glowing lights inside deep trenches. [Verified by Creative Cartographer Unit 7]."
+            "minWords": 17,
+            "hint": "List the steps in order, from checking the router to trying again.",
+            "explanation": "A clear technology answer follows a logical order, such as restarting the router and re-entering the password."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L7_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 7-2] Describe how coastal wind upwellings drive nutrient circulation upward.",
+            "situation": "You did not sleep well last night and feel exhausted at work. Describe how it affects your day.",
             "emojis": [
-                "💨",
-                "🌊",
-                "❄️",
-                "🐟"
+                "😴",
+                "☕",
+                "🥱",
+                "💤"
             ],
             "keywords": {
                 "0": [
-                    "UPWELLING",
-                    "CIRCULATION",
-                    "CURRENT"
+                    "TIRED",
+                    "SLEEPY",
+                    "EXHAUSTED"
                 ],
                 "1": [
-                    "NUTRIENT",
-                    "ORGANIC",
-                    "NITRATE"
+                    "COFFEE",
+                    "ENERGY",
+                    "AWAKE"
                 ],
                 "2": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "DEPTH"
+                    "YAWN",
+                    "SLOW",
+                    "FOCUS"
                 ],
                 "3": [
-                    "ECOLOGY",
-                    "PLANKTON",
-                    "BIOMASS"
+                    "REST",
+                    "NAP",
+                    "EARLY"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how surface winds displace warm waters, dragging deep cold waters up. (Diving calibration index 7-2)",
-            "explanation": "Strong wind currents displace coastal surfaces, pulling deep cold nutrient water up. [Verified by Creative Cartographer Unit 7]."
+            "minWords": 17,
+            "hint": "Describe how tiredness changes the way you work and what you do about it.",
+            "explanation": "Strong answers connect cause and effect, for example: 'Because I slept badly, I feel slow and need extra coffee to focus.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L7_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 7-3] Describe how deep hydrothermal vents release superheated chemical compounds.",
+            "situation": "You are playing a video game online with a friend. Describe what happens during the game.",
             "emojis": [
-                "🌋",
-                "💧",
-                "🔬",
-                "🐠"
+                "🎮",
+                "🎧",
+                "🏆",
+                "😂"
             ],
             "keywords": {
                 "0": [
-                    "VENTING",
-                    "MAGMA",
-                    "PLUME"
+                    "GAME",
+                    "CONTROLLER",
+                    "SCREEN"
                 ],
                 "1": [
-                    "OCEANIC",
-                    "THERMAL",
-                    "PRESSURE"
+                    "HEADSET",
+                    "TALK",
+                    "TEAM"
                 ],
                 "2": [
-                    "MINERAL",
-                    "CHEMICAL",
-                    "HYDROUS"
+                    "WIN",
+                    "SCORE",
+                    "LEVEL"
                 ],
                 "3": [
-                    "CREATURE",
-                    "BENTHIC",
-                    "ABYSSAL"
+                    "LAUGH",
+                    "FUN",
+                    "EXCITED"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on hot springs expelling rich black plumes of sulfide minerals. (Diving calibration index 7-3)",
-            "explanation": "Vents erupt superheated solutions containing hydrogen sulfide and sulfur particles. [Verified by Creative Cartographer Unit 7]."
+            "minWords": 17,
+            "hint": "Describe an exciting moment in the game and how you feel about it.",
+            "explanation": "Good gaming descriptions include action and emotion, such as winning a level and feeling excited."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L8_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 8-1] Describe the survival mechanism of marine bacteria in dark abyssal plains.",
+            "situation": "You need to ask your neighbor to turn down loud music late at night. Describe what you say.",
             "emojis": [
-                "🦠",
-                "🌑",
-                "🧪",
-                "🌡️"
+                "🏠",
+                "🔊",
+                "😣",
+                "🗣️"
             ],
             "keywords": {
                 "0": [
-                    "MICROBE",
-                    "BACTERIA",
-                    "CELLULAR"
+                    "NEIGHBOR",
+                    "DOOR",
+                    "NIGHT"
                 ],
                 "1": [
-                    "DARKNESS",
-                    "SUNLESS",
-                    "ABYSS"
+                    "MUSIC",
+                    "LOUD",
+                    "NOISE"
                 ],
                 "2": [
-                    "SYNTHESIS",
-                    "REACTION",
-                    "ENZYME"
+                    "POLITE",
+                    "ASK",
+                    "REQUEST"
                 ],
                 "3": [
-                    "THERMAL",
-                    "METABOLIC",
-                    "ADAPT"
+                    "QUIET",
+                    "SLEEP",
+                    "THANK"
                 ]
             },
-            "minWords": 15,
-            "hint": "Describe how microbes convert chemical energy without any sunlight. (Diving calibration index 8-1)",
-            "explanation": "Microscopic deep marine bacteria perform chemosynthesis to convert chemicals to sugars. [Verified by Creative Cartographer Unit 8]."
+            "minWords": 17,
+            "hint": "Think about a polite way to ask without sounding angry.",
+            "explanation": "A respectful request explains the reason calmly, for example: 'Could you please turn the music down? I need to sleep early.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L8_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 8-2] Describe the photosynthetic layers of giant underwater kelp forests.",
+            "situation": "You are running late for an appointment and traffic is heavy. Describe what you do.",
             "emojis": [
-                "🌱",
-                "☀️",
-                "🌊",
-                "🐟"
+                "🚗",
+                "🚦",
+                "⏱️",
+                "😰"
             ],
             "keywords": {
                 "0": [
-                    "KELP",
-                    "CANOPY",
-                    "FROND"
+                    "TRAFFIC",
+                    "ROAD",
+                    "JAM"
                 ],
                 "1": [
-                    "SOLAR",
-                    "PHOTOSYNTHESIS",
-                    "LIGHT"
+                    "LATE",
+                    "HURRY",
+                    "RUSH"
                 ],
                 "2": [
-                    "UPWELLING",
-                    "CURRENT",
-                    "NUTRIENT"
+                    "CLOCK",
+                    "MINUTE",
+                    "TIME"
                 ],
                 "3": [
-                    "HABITAT",
-                    "SPECIES",
-                    "SHELTER"
+                    "CALL",
+                    "APOLOGIZE",
+                    "EXPLAIN"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how large brown algae absorb solar energy near the ocean surface. (Diving calibration index 8-2)",
-            "explanation": "Kelp plants utilize chloroplasts to absorb solar beams, growing up to two feet daily. [Verified by Creative Cartographer Unit 8]."
+            "minWords": 17,
+            "hint": "Describe your feelings and the action you take because of the traffic.",
+            "explanation": "A practical answer shows both the problem and a responsible reaction, such as calling ahead to say you will be late."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L8_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 8-3] Describe how deep-sea animals utilize cold biological bioluminescence.",
+            "situation": "Your class is preparing for a school presentation next week. Describe how you and your group prepare.",
             "emojis": [
-                "🐙",
-                "💡",
-                "🧪",
-                "❄️"
+                "🎤",
+                "📊",
+                "👥",
+                "📝"
             ],
             "keywords": {
                 "0": [
-                    "ANIMAL",
-                    "PREDATOR",
-                    "SPECIES"
+                    "PRESENTATION",
+                    "SPEAK",
+                    "STAGE"
                 ],
                 "1": [
-                    "BIOLUMINESCENT",
-                    "GLOWING",
-                    "LIGHT"
+                    "SLIDES",
+                    "PREPARE",
+                    "SCREEN"
                 ],
                 "2": [
-                    "LUCIFERIN",
-                    "CATALYST",
-                    "REACTION"
+                    "GROUP",
+                    "TEAMWORK",
+                    "PLAN"
                 ],
                 "3": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "COLD"
+                    "PRACTICE",
+                    "REHEARSE",
+                    "NOTES"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on organic light emissions used for communication and camouflage. (Diving calibration index 8-3)",
-            "explanation": "Luciferin enzymes oxidize to emit cold glowing lights inside deep trenches. [Verified by Creative Cartographer Unit 8]."
+            "minWords": 17,
+            "hint": "Mention what each group member does to get ready.",
+            "explanation": "Good preparation answers show teamwork, for example dividing tasks and practicing the presentation together."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L9_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 9-1] Describe how coastal wind upwellings drive nutrient circulation upward.",
+            "situation": "Your manager asks you to finish a report by the end of the day. Describe how you plan your time.",
             "emojis": [
-                "💨",
-                "🌊",
-                "❄️",
-                "🐟"
+                "📊",
+                "⏰",
+                "💼",
+                "✅"
             ],
             "keywords": {
                 "0": [
-                    "UPWELLING",
-                    "CIRCULATION",
-                    "CURRENT"
+                    "REPORT",
+                    "WRITE",
+                    "DEADLINE"
                 ],
                 "1": [
-                    "NUTRIENT",
-                    "ORGANIC",
-                    "NITRATE"
+                    "CLOCK",
+                    "SCHEDULE",
+                    "PLAN"
                 ],
                 "2": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "DEPTH"
+                    "OFFICE",
+                    "FOCUS",
+                    "DESK"
                 ],
                 "3": [
-                    "ECOLOGY",
-                    "PLANKTON",
-                    "BIOMASS"
+                    "FINISH",
+                    "SUBMIT",
+                    "DONE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how surface winds displace warm waters, dragging deep cold waters up. (Diving calibration index 9-1)",
-            "explanation": "Strong wind currents displace coastal surfaces, pulling deep cold nutrient water up. [Verified by Creative Cartographer Unit 9]."
+            "minWords": 17,
+            "hint": "Describe the order of tasks you complete before the deadline.",
+            "explanation": "A clear work answer shows time management, such as planning each task and finishing before the deadline."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L9_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 9-2] Describe how deep hydrothermal vents release superheated chemical compounds.",
+            "situation": "You check into a hotel after a long trip. Describe what happens at the front desk.",
             "emojis": [
-                "🌋",
-                "💧",
-                "🔬",
-                "🐠"
+                "🏨",
+                "🛎️",
+                "🔑",
+                "🧳"
             ],
             "keywords": {
                 "0": [
-                    "VENTING",
-                    "MAGMA",
-                    "PLUME"
+                    "HOTEL",
+                    "LOBBY",
+                    "FRONTDESK"
                 ],
                 "1": [
-                    "OCEANIC",
-                    "THERMAL",
-                    "PRESSURE"
+                    "RECEPTIONIST",
+                    "GREET",
+                    "FORM"
                 ],
                 "2": [
-                    "MINERAL",
-                    "CHEMICAL",
-                    "HYDROUS"
+                    "ROOM",
+                    "KEY",
+                    "FLOOR"
                 ],
                 "3": [
-                    "CREATURE",
-                    "BENTHIC",
-                    "ABYSSAL"
+                    "LUGGAGE",
+                    "CARRY",
+                    "ELEVATOR"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on hot springs expelling rich black plumes of sulfide minerals. (Diving calibration index 9-2)",
-            "explanation": "Vents erupt superheated solutions containing hydrogen sulfide and sulfur particles. [Verified by Creative Cartographer Unit 9]."
+            "minWords": 17,
+            "hint": "Describe the steps from arriving at the hotel to reaching your room.",
+            "explanation": "Good hotel descriptions follow the check-in process clearly, such as giving your name, getting a key, and finding your room."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L9_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 9-3] Describe the survival mechanism of marine bacteria in dark abyssal plains.",
+            "situation": "Your family is planning a birthday party for your grandmother. Describe how everyone helps.",
             "emojis": [
-                "🦠",
-                "🌑",
-                "🧪",
-                "🌡️"
+                "🎂",
+                "👵",
+                "🎈",
+                "🎁"
             ],
             "keywords": {
                 "0": [
-                    "MICROBE",
-                    "BACTERIA",
-                    "CELLULAR"
+                    "BIRTHDAY",
+                    "CAKE",
+                    "CANDLE"
                 ],
                 "1": [
-                    "DARKNESS",
-                    "SUNLESS",
-                    "ABYSS"
+                    "GRANDMOTHER",
+                    "SURPRISE",
+                    "CELEBRATE"
                 ],
                 "2": [
-                    "SYNTHESIS",
-                    "REACTION",
-                    "ENZYME"
+                    "DECORATE",
+                    "BALLOON",
+                    "PARTY"
                 ],
                 "3": [
-                    "THERMAL",
-                    "METABOLIC",
-                    "ADAPT"
+                    "GIFT",
+                    "WRAP",
+                    "GIVE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Describe how microbes convert chemical energy without any sunlight. (Diving calibration index 9-3)",
-            "explanation": "Microscopic deep marine bacteria perform chemosynthesis to convert chemicals to sugars. [Verified by Creative Cartographer Unit 9]."
+            "minWords": 17,
+            "hint": "Describe what different family members do to prepare for the party.",
+            "explanation": "Strong family answers show shared responsibility, such as one person baking the cake while others decorate the room."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L10_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 10-1] Describe the photosynthetic layers of giant underwater kelp forests.",
+            "situation": "You are shopping online and trying to decide between two similar products. Describe how you choose.",
             "emojis": [
-                "🌱",
-                "☀️",
-                "🌊",
-                "🐟"
+                "💻",
+                "🛍️",
+                "⭐",
+                "🤔"
             ],
             "keywords": {
                 "0": [
-                    "KELP",
-                    "CANOPY",
-                    "FROND"
+                    "WEBSITE",
+                    "SCROLL",
+                    "CLICK"
                 ],
                 "1": [
-                    "SOLAR",
-                    "PHOTOSYNTHESIS",
-                    "LIGHT"
+                    "PRODUCT",
+                    "COMPARE",
+                    "PRICE"
                 ],
                 "2": [
-                    "UPWELLING",
-                    "CURRENT",
-                    "NUTRIENT"
+                    "REVIEW",
+                    "RATING",
+                    "STAR"
                 ],
                 "3": [
-                    "HABITAT",
-                    "SPECIES",
-                    "SHELTER"
+                    "DECIDE",
+                    "CHOOSE",
+                    "ORDER"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how large brown algae absorb solar energy near the ocean surface. (Diving calibration index 10-1)",
-            "explanation": "Kelp plants utilize chloroplasts to absorb solar beams, growing up to two feet daily. [Verified by Creative Cartographer Unit 10]."
+            "minWords": 17,
+            "hint": "Explain what information helps you decide, like price or reviews.",
+            "explanation": "A clear answer gives a reason for the choice, for example: 'I choose the cheaper one because it has better reviews.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L10_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 10-2] Describe how deep-sea animals utilize cold biological bioluminescence.",
+            "situation": "You are trying a new dish at a friend's house for the first time. Describe the experience.",
             "emojis": [
-                "🐙",
-                "💡",
-                "🧪",
-                "❄️"
+                "🍲",
+                "😋",
+                "👀",
+                "🤗"
             ],
             "keywords": {
                 "0": [
-                    "ANIMAL",
-                    "PREDATOR",
-                    "SPECIES"
+                    "DISH",
+                    "TASTE",
+                    "SMELL"
                 ],
                 "1": [
-                    "BIOLUMINESCENT",
-                    "GLOWING",
-                    "LIGHT"
+                    "NEW",
+                    "UNUSUAL",
+                    "DIFFERENT"
                 ],
                 "2": [
-                    "LUCIFERIN",
-                    "CATALYST",
-                    "REACTION"
+                    "CURIOUS",
+                    "TRY",
+                    "BITE"
                 ],
                 "3": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "COLD"
+                    "ENJOY",
+                    "COMPLIMENT",
+                    "THANK"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on organic light emissions used for communication and camouflage. (Diving calibration index 10-2)",
-            "explanation": "Luciferin enzymes oxidize to emit cold glowing lights inside deep trenches. [Verified by Creative Cartographer Unit 10]."
+            "minWords": 17,
+            "hint": "Describe what the food looks and tastes like, and how you react.",
+            "explanation": "Good food descriptions use sensory words like smell, taste, and texture to make the experience clear."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L10_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 1,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 10-3] Describe how coastal wind upwellings drive nutrient circulation upward.",
+            "situation": "You get a notification that your phone needs a software update. Describe what you do.",
             "emojis": [
-                "💨",
-                "🌊",
-                "❄️",
-                "🐟"
+                "📱",
+                "🔔",
+                "⬇️",
+                "✅"
             ],
             "keywords": {
                 "0": [
-                    "UPWELLING",
-                    "CIRCULATION",
-                    "CURRENT"
+                    "PHONE",
+                    "NOTIFICATION",
+                    "SCREEN"
                 ],
                 "1": [
-                    "NUTRIENT",
-                    "ORGANIC",
-                    "NITRATE"
+                    "UPDATE",
+                    "DOWNLOAD",
+                    "INSTALL"
                 ],
                 "2": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "DEPTH"
+                    "WAIT",
+                    "PROGRESS",
+                    "BAR"
                 ],
                 "3": [
-                    "ECOLOGY",
-                    "PLANKTON",
-                    "BIOMASS"
+                    "FINISH",
+                    "RESTART",
+                    "READY"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how surface winds displace warm waters, dragging deep cold waters up. (Diving calibration index 10-3)",
-            "explanation": "Strong wind currents displace coastal surfaces, pulling deep cold nutrient water up. [Verified by Creative Cartographer Unit 10]."
+            "minWords": 17,
+            "hint": "Describe the steps from seeing the notification to finishing the update.",
+            "explanation": "A clear technology answer follows the update process step by step, ending with the phone working normally again."
         }
     ]
 }

@@ -6,1172 +6,1142 @@
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L111_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 111-1] Describe how deep hydrothermal vents release superheated chemical compounds.",
+            "situation": "Your formerly peaceful street became a popular shortcut after a new traffic app rerouted commuters through it, drastically increasing noise and danger. Describe how residents organized to address the change.",
             "emojis": [
-                "🌋",
-                "💧",
-                "🔬",
-                "🐠"
+                "🚗",
+                "📱",
+                "😤",
+                "🗣️"
             ],
             "keywords": {
                 "0": [
-                    "VENTING",
-                    "MAGMA",
-                    "PLUME"
+                    "PEACEFULSTREET",
+                    "SHORTCUT",
+                    "TRAFFICAPP"
                 ],
                 "1": [
-                    "OCEANIC",
-                    "THERMAL",
-                    "PRESSURE"
+                    "REROUTE",
+                    "COMMUTER",
+                    "DRASTICALLY"
                 ],
                 "2": [
-                    "MINERAL",
-                    "CHEMICAL",
-                    "HYDROUS"
+                    "NOISE",
+                    "DANGER",
+                    "INCREASE"
                 ],
                 "3": [
-                    "CREATURE",
-                    "BENTHIC",
-                    "ABYSSAL"
+                    "ORGANIZE",
+                    "PETITION",
+                    "RESOLVE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on hot springs expelling rich black plumes of sulfide minerals. (Diving calibration index 111-1)",
-            "explanation": "Vents erupt superheated solutions containing hydrogen sulfide and sulfur particles. [Verified by Creative Cartographer Unit 111]."
+            "minWords": 45,
+            "hint": "Describe the specific action residents took to address the unexpected traffic increase.",
+            "explanation": "Good community-organizing answers show collective problem-solving, for example: 'Residents petitioned the city for speed bumps and contacted the app company directly to request the route be removed.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L111_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 111-2] Describe the survival mechanism of marine bacteria in dark abyssal plains.",
+            "situation": "Your school's decision to implement a controversial uniform policy mid-year created friction between administrators and students who felt blindsided. Describe the dialogue that eventually took place.",
             "emojis": [
-                "🦠",
-                "🌑",
-                "🧪",
-                "🌡️"
+                "👔",
+                "🏫",
+                "😤",
+                "🗣️"
             ],
             "keywords": {
                 "0": [
-                    "MICROBE",
-                    "BACTERIA",
-                    "CELLULAR"
+                    "UNIFORMPOLICY",
+                    "CONTROVERSIAL",
+                    "MIDYEAR"
                 ],
                 "1": [
-                    "DARKNESS",
-                    "SUNLESS",
-                    "ABYSS"
+                    "FRICTION",
+                    "ADMINISTRATOR",
+                    "STUDENT"
                 ],
                 "2": [
-                    "SYNTHESIS",
-                    "REACTION",
-                    "ENZYME"
+                    "BLINDSIDE",
+                    "FEEL",
+                    "DIALOGUE"
                 ],
                 "3": [
-                    "THERMAL",
-                    "METABOLIC",
-                    "ADAPT"
+                    "NEGOTIATE",
+                    "COMPROMISE",
+                    "IMPLEMENT"
                 ]
             },
-            "minWords": 15,
-            "hint": "Describe how microbes convert chemical energy without any sunlight. (Diving calibration index 111-2)",
-            "explanation": "Microscopic deep marine bacteria perform chemosynthesis to convert chemicals to sugars. [Verified by Creative Cartographer Unit 111]."
+            "minWords": 45,
+            "hint": "Describe the compromise reached between the administration and student representatives.",
+            "explanation": "Good institutional-dialogue answers show negotiated outcomes, for example: 'After student representatives met with administrators, the school agreed to delay enforcement until the following semester.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L111_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 111-3] Describe the photosynthetic layers of giant underwater kelp forests.",
+            "situation": "Your department's reputation suffered after a junior employee's public social media post was mistakenly associated with the entire company. Describe how leadership addressed the fallout.",
             "emojis": [
-                "🌱",
-                "☀️",
-                "🌊",
-                "🐟"
+                "💼",
+                "📱",
+                "😟",
+                "🗣️"
             ],
             "keywords": {
                 "0": [
-                    "KELP",
-                    "CANOPY",
-                    "FROND"
+                    "DEPARTMENT",
+                    "REPUTATION",
+                    "SUFFER"
                 ],
                 "1": [
-                    "SOLAR",
-                    "PHOTOSYNTHESIS",
-                    "LIGHT"
+                    "JUNIOREMPLOYEE",
+                    "SOCIALMEDIA",
+                    "MISTAKENLY"
                 ],
                 "2": [
-                    "UPWELLING",
-                    "CURRENT",
-                    "NUTRIENT"
+                    "ASSOCIATE",
+                    "COMPANY",
+                    "FALLOUT"
                 ],
                 "3": [
-                    "HABITAT",
-                    "SPECIES",
-                    "SHELTER"
+                    "ADDRESS",
+                    "CLARIFY",
+                    "LEADERSHIP"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how large brown algae absorb solar energy near the ocean surface. (Diving calibration index 111-3)",
-            "explanation": "Kelp plants utilize chloroplasts to absorb solar beams, growing up to two feet daily. [Verified by Creative Cartographer Unit 111]."
+            "minWords": 45,
+            "hint": "Describe how leadership clarified the situation while still supporting the employee fairly.",
+            "explanation": "Good crisis-communication answers balance honesty and fairness, for example: 'Leadership issued a public clarification while privately coaching the employee, rather than publicly shaming them.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L112_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 112-1] Describe how deep-sea animals utilize cold biological bioluminescence.",
+            "situation": "Your once-in-a-lifetime expedition was jeopardized when a key team member sustained a minor injury just before the most demanding leg of the journey. Describe how the group adapted their plans.",
             "emojis": [
-                "🐙",
-                "💡",
-                "🧪",
-                "❄️"
+                "🥾",
+                "🤕",
+                "😟",
+                "🤝"
             ],
             "keywords": {
                 "0": [
-                    "ANIMAL",
-                    "PREDATOR",
-                    "SPECIES"
+                    "ONCEINALIFETIME",
+                    "EXPEDITION",
+                    "JEOPARDIZE"
                 ],
                 "1": [
-                    "BIOLUMINESCENT",
-                    "GLOWING",
-                    "LIGHT"
+                    "KEYMEMBER",
+                    "MINORINJURY",
+                    "SUSTAIN"
                 ],
                 "2": [
-                    "LUCIFERIN",
-                    "CATALYST",
-                    "REACTION"
+                    "DEMANDINGLEG",
+                    "JOURNEY",
+                    "BEFORE"
                 ],
                 "3": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "COLD"
+                    "ADAPT",
+                    "REASSIGN",
+                    "CONTINUE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on organic light emissions used for communication and camouflage. (Diving calibration index 112-1)",
-            "explanation": "Luciferin enzymes oxidize to emit cold glowing lights inside deep trenches. [Verified by Creative Cartographer Unit 112]."
+            "minWords": 46,
+            "hint": "Describe how the group reorganized roles to accommodate the injured member.",
+            "explanation": "Good adaptive-leadership answers show flexible problem-solving, for example: 'We adjusted the pace and redistributed the heavier gear, which allowed the whole group to complete the expedition together.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L112_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 112-2] Describe how coastal wind upwellings drive nutrient circulation upward.",
+            "situation": "Your family's inheritance dispute, simmering quietly for years, finally erupted into open conflict after a relative's unexpected passing. Describe how the family eventually reached a resolution.",
             "emojis": [
-                "💨",
-                "🌊",
-                "❄️",
-                "🐟"
+                "👨‍👩‍👧‍👦",
+                "😢",
+                "⚖️",
+                "🤝"
             ],
             "keywords": {
                 "0": [
-                    "UPWELLING",
-                    "CIRCULATION",
-                    "CURRENT"
+                    "INHERITANCE",
+                    "DISPUTE",
+                    "SIMMER"
                 ],
                 "1": [
-                    "NUTRIENT",
-                    "ORGANIC",
-                    "NITRATE"
+                    "ERUPT",
+                    "OPENCONFLICT",
+                    "UNEXPECTED"
                 ],
                 "2": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "DEPTH"
+                    "RESOLUTION",
+                    "MEDIATE",
+                    "EVENTUALLY"
                 ],
                 "3": [
-                    "ECOLOGY",
-                    "PLANKTON",
-                    "BIOMASS"
+                    "RECONCILE",
+                    "FAIR",
+                    "RELATIONSHIP"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how surface winds displace warm waters, dragging deep cold waters up. (Diving calibration index 112-2)",
-            "explanation": "Strong wind currents displace coastal surfaces, pulling deep cold nutrient water up. [Verified by Creative Cartographer Unit 112]."
+            "minWords": 46,
+            "hint": "Describe the steps the family took to move from open conflict toward resolution.",
+            "explanation": "Good family-dispute answers show difficult but constructive resolution, for example: 'A neutral mediator helped the family agree on a fair division, allowing relationships to slowly heal afterward.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L112_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 112-3] Describe how deep hydrothermal vents release superheated chemical compounds.",
+            "situation": "After discovering that a well-known retailer had been quietly using exploitative labor practices, you faced a personal dilemma about continuing to shop there out of convenience. Describe your internal debate.",
             "emojis": [
-                "🌋",
-                "💧",
-                "🔬",
-                "🐠"
+                "🏬",
+                "⚠️",
+                "🤔",
+                "💭"
             ],
             "keywords": {
                 "0": [
-                    "VENTING",
-                    "MAGMA",
-                    "PLUME"
+                    "WELLKNOWN",
+                    "RETAILER",
+                    "EXPLOITATIVE"
                 ],
                 "1": [
-                    "OCEANIC",
-                    "THERMAL",
-                    "PRESSURE"
+                    "LABORPRACTICE",
+                    "QUIETLY",
+                    "DISCOVER"
                 ],
                 "2": [
-                    "MINERAL",
-                    "CHEMICAL",
-                    "HYDROUS"
+                    "DILEMMA",
+                    "CONVENIENCE",
+                    "PERSONAL"
                 ],
                 "3": [
-                    "CREATURE",
-                    "BENTHIC",
-                    "ABYSSAL"
+                    "DEBATE",
+                    "DECIDE",
+                    "BOYCOTT"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on hot springs expelling rich black plumes of sulfide minerals. (Diving calibration index 112-3)",
-            "explanation": "Vents erupt superheated solutions containing hydrogen sulfide and sulfur particles. [Verified by Creative Cartographer Unit 112]."
+            "minWords": 46,
+            "hint": "Describe the factors you weighed before reaching your final decision.",
+            "explanation": "Good ethical-consumer-reflection answers show genuine internal conflict, for example: 'Convenience pulled me one way, but ultimately I decided my principles mattered more and switched to a different retailer.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L113_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 113-1] Describe the survival mechanism of marine bacteria in dark abyssal plains.",
+            "situation": "Your culinary startup's plant-based product line faced unexpected resistance from a market still skeptical of meat alternatives. Describe how you adjusted your marketing strategy.",
             "emojis": [
-                "🦠",
-                "🌑",
-                "🧪",
-                "🌡️"
+                "🌱",
+                "📈",
+                "😕",
+                "🎯"
             ],
             "keywords": {
                 "0": [
-                    "MICROBE",
-                    "BACTERIA",
-                    "CELLULAR"
+                    "CULINARYSTARTUP",
+                    "PLANTBASED",
+                    "RESISTANCE"
                 ],
                 "1": [
-                    "DARKNESS",
-                    "SUNLESS",
-                    "ABYSS"
+                    "SKEPTICAL",
+                    "MARKET",
+                    "MEATALTERNATIVE"
                 ],
                 "2": [
-                    "SYNTHESIS",
-                    "REACTION",
-                    "ENZYME"
+                    "ADJUST",
+                    "MARKETING",
+                    "STRATEGY"
                 ],
                 "3": [
-                    "THERMAL",
-                    "METABOLIC",
-                    "ADAPT"
+                    "PERSUADE",
+                    "GROW",
+                    "SUCCEED"
                 ]
             },
-            "minWords": 15,
-            "hint": "Describe how microbes convert chemical energy without any sunlight. (Diving calibration index 113-1)",
-            "explanation": "Microscopic deep marine bacteria perform chemosynthesis to convert chemicals to sugars. [Verified by Creative Cartographer Unit 113]."
+            "minWords": 46,
+            "hint": "Describe the specific marketing change that helped shift public perception.",
+            "explanation": "Good market-adaptation answers show responsive strategy, for example: 'We shifted our messaging from meat substitute to highlighting the dish's own unique flavor, which resonated far better with skeptical customers.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L113_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 113-2] Describe the photosynthetic layers of giant underwater kelp forests.",
+            "situation": "Your engineering team's ambitious deadline for a major product launch required cutting corners that conflicted with the company's stated commitment to quality. Describe how the team navigated this tension.",
             "emojis": [
-                "🌱",
-                "☀️",
-                "🌊",
-                "🐟"
+                "💻",
+                "⏰",
+                "⚖️",
+                "😟"
             ],
             "keywords": {
                 "0": [
-                    "KELP",
-                    "CANOPY",
-                    "FROND"
+                    "AMBITIOUSDEADLINE",
+                    "MAJORLAUNCH",
+                    "REQUIRE"
                 ],
                 "1": [
-                    "SOLAR",
-                    "PHOTOSYNTHESIS",
-                    "LIGHT"
+                    "CUTCORNERS",
+                    "CONFLICT",
+                    "COMMITMENT"
                 ],
                 "2": [
-                    "UPWELLING",
-                    "CURRENT",
-                    "NUTRIENT"
+                    "NAVIGATE",
+                    "TENSION",
+                    "TEAM"
                 ],
                 "3": [
-                    "HABITAT",
-                    "SPECIES",
-                    "SHELTER"
+                    "DECIDE",
+                    "QUALITY",
+                    "DELAY"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how large brown algae absorb solar energy near the ocean surface. (Diving calibration index 113-2)",
-            "explanation": "Kelp plants utilize chloroplasts to absorb solar beams, growing up to two feet daily. [Verified by Creative Cartographer Unit 113]."
+            "minWords": 46,
+            "hint": "Describe how the team balanced the pressure to launch against their commitment to quality.",
+            "explanation": "Good engineering-ethics answers show principled decision-making, for example: 'The team ultimately recommended a two-week delay rather than ship a product that did not meet their own standards.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L113_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 113-3] Describe how deep-sea animals utilize cold biological bioluminescence.",
+            "situation": "Your hospital's new electronic records system, meant to improve efficiency, initially caused several near-miss errors that alarmed the medical staff. Describe how the hospital addressed the risks.",
             "emojis": [
-                "🐙",
-                "💡",
-                "🧪",
-                "❄️"
+                "🏥",
+                "💻",
+                "😰",
+                "🛠️"
             ],
             "keywords": {
                 "0": [
-                    "ANIMAL",
-                    "PREDATOR",
-                    "SPECIES"
+                    "ELECTRONICRECORDS",
+                    "IMPROVE",
+                    "EFFICIENCY"
                 ],
                 "1": [
-                    "BIOLUMINESCENT",
-                    "GLOWING",
-                    "LIGHT"
+                    "NEARMISS",
+                    "ERROR",
+                    "ALARM"
                 ],
                 "2": [
-                    "LUCIFERIN",
-                    "CATALYST",
-                    "REACTION"
+                    "MEDICALSTAFF",
+                    "RISK",
+                    "ADDRESS"
                 ],
                 "3": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "COLD"
+                    "RETRAIN",
+                    "SAFEGUARD",
+                    "RESOLVE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on organic light emissions used for communication and camouflage. (Diving calibration index 113-3)",
-            "explanation": "Luciferin enzymes oxidize to emit cold glowing lights inside deep trenches. [Verified by Creative Cartographer Unit 113]."
+            "minWords": 46,
+            "hint": "Describe the specific safeguards the hospital introduced after the near-miss incidents.",
+            "explanation": "Good patient-safety answers show urgent, responsible action, for example: 'The hospital paused the rollout, retrained staff thoroughly, and added a double-check system before reintroducing the software.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L114_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 114-1] Describe how coastal wind upwellings drive nutrient circulation upward.",
+            "situation": "A beloved childhood theme park announced significant changes to a classic ride, dividing visitors between nostalgia and excitement for something new. Describe the public reaction.",
             "emojis": [
-                "💨",
-                "🌊",
-                "❄️",
-                "🐟"
+                "🎡",
+                "😢",
+                "🤔",
+                "💬"
             ],
             "keywords": {
                 "0": [
-                    "UPWELLING",
-                    "CIRCULATION",
-                    "CURRENT"
+                    "CHILDHOOD",
+                    "THEMEPARK",
+                    "CLASSICRIDE"
                 ],
                 "1": [
-                    "NUTRIENT",
-                    "ORGANIC",
-                    "NITRATE"
+                    "ANNOUNCE",
+                    "SIGNIFICANTCHANGE",
+                    "DIVIDE"
                 ],
                 "2": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "DEPTH"
+                    "NOSTALGIA",
+                    "EXCITEMENT",
+                    "VISITOR"
                 ],
                 "3": [
-                    "ECOLOGY",
-                    "PLANKTON",
-                    "BIOMASS"
+                    "REACT",
+                    "DEBATE",
+                    "ANTICIPATE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how surface winds displace warm waters, dragging deep cold waters up. (Diving calibration index 114-1)",
-            "explanation": "Strong wind currents displace coastal surfaces, pulling deep cold nutrient water up. [Verified by Creative Cartographer Unit 114]."
+            "minWords": 46,
+            "hint": "Present both the nostalgic concerns and the excitement for change fairly.",
+            "explanation": "Good balanced-public-reaction answers present competing emotions evenhandedly, for example: 'Long-time fans mourned the loss of a childhood memory, while newer visitors eagerly anticipated the updated experience.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L114_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 114-2] Describe how deep hydrothermal vents release superheated chemical compounds.",
+            "situation": "You need to write a message to a university admissions office appealing a rejection decision based on a documented personal circumstance that affected your application. Describe what you write.",
             "emojis": [
-                "🌋",
-                "💧",
-                "🔬",
-                "🐠"
+                "🎓",
+                "❌",
+                "📝",
+                "✉️"
             ],
             "keywords": {
                 "0": [
-                    "VENTING",
-                    "MAGMA",
-                    "PLUME"
+                    "UNIVERSITY",
+                    "ADMISSIONS",
+                    "APPEAL"
                 ],
                 "1": [
-                    "OCEANIC",
-                    "THERMAL",
-                    "PRESSURE"
+                    "REJECTION",
+                    "DOCUMENTED",
+                    "CIRCUMSTANCE"
                 ],
                 "2": [
-                    "MINERAL",
-                    "CHEMICAL",
-                    "HYDROUS"
+                    "AFFECT",
+                    "APPLICATION",
+                    "EXPLAIN"
                 ],
                 "3": [
-                    "CREATURE",
-                    "BENTHIC",
-                    "ABYSSAL"
+                    "REQUEST",
+                    "RECONSIDER",
+                    "HOPE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on hot springs expelling rich black plumes of sulfide minerals. (Diving calibration index 114-2)",
-            "explanation": "Vents erupt superheated solutions containing hydrogen sulfide and sulfur particles. [Verified by Creative Cartographer Unit 114]."
+            "minWords": 46,
+            "hint": "Explain the circumstance clearly and respectfully request reconsideration.",
+            "explanation": "A strong appeal letter is factual and respectful, for example: 'My application was submitted during a period when I was hospitalized, which I believe affected the strength of my personal statement. I would appreciate the committee reconsidering my application in light of this.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L114_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 114-3] Describe the survival mechanism of marine bacteria in dark abyssal plains.",
+            "situation": "Your building's homeowners association introduced a sweeping set of new restrictions that several residents felt overstepped reasonable boundaries. Describe how the disagreement unfolded.",
             "emojis": [
-                "🦠",
-                "🌑",
-                "🧪",
-                "🌡️"
+                "🏢",
+                "📋",
+                "😤",
+                "🗣️"
             ],
             "keywords": {
                 "0": [
-                    "MICROBE",
-                    "BACTERIA",
-                    "CELLULAR"
+                    "HOMEOWNERSASSOCIATION",
+                    "SWEEPING",
+                    "RESTRICTION"
                 ],
                 "1": [
-                    "DARKNESS",
-                    "SUNLESS",
-                    "ABYSS"
+                    "OVERSTEP",
+                    "REASONABLE",
+                    "BOUNDARY"
                 ],
                 "2": [
-                    "SYNTHESIS",
-                    "REACTION",
-                    "ENZYME"
+                    "RESIDENT",
+                    "DISAGREE",
+                    "UNFOLD"
                 ],
                 "3": [
-                    "THERMAL",
-                    "METABOLIC",
-                    "ADAPT"
+                    "CHALLENGE",
+                    "VOTE",
+                    "RESOLVE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Describe how microbes convert chemical energy without any sunlight. (Diving calibration index 114-3)",
-            "explanation": "Microscopic deep marine bacteria perform chemosynthesis to convert chemicals to sugars. [Verified by Creative Cartographer Unit 114]."
+            "minWords": 46,
+            "hint": "Describe the specific restriction residents objected to most and how the issue was resolved.",
+            "explanation": "Good governance-conflict answers show organized resident response, for example: 'After residents collected enough signatures, the board agreed to revise the most controversial restriction at the next vote.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L115_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 115-1] Describe the photosynthetic layers of giant underwater kelp forests.",
+            "situation": "Your graduate program's funding was unexpectedly cut midway through the academic year, forcing students to scramble for alternative financial support. Describe how you and your peers responded.",
             "emojis": [
-                "🌱",
-                "☀️",
-                "🌊",
-                "🐟"
+                "🎓",
+                "💰",
+                "😰",
+                "🤝"
             ],
             "keywords": {
                 "0": [
-                    "KELP",
-                    "CANOPY",
-                    "FROND"
+                    "GRADUATEPROGRAM",
+                    "FUNDING",
+                    "UNEXPECTEDLYCUT"
                 ],
                 "1": [
-                    "SOLAR",
-                    "PHOTOSYNTHESIS",
-                    "LIGHT"
+                    "MIDWAY",
+                    "ACADEMICYEAR",
+                    "FORCE"
                 ],
                 "2": [
-                    "UPWELLING",
-                    "CURRENT",
-                    "NUTRIENT"
+                    "SCRAMBLE",
+                    "ALTERNATIVE",
+                    "FINANCIAL"
                 ],
                 "3": [
-                    "HABITAT",
-                    "SPECIES",
-                    "SHELTER"
+                    "RESPOND",
+                    "SUPPORT",
+                    "ADAPT"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how large brown algae absorb solar energy near the ocean surface. (Diving calibration index 115-1)",
-            "explanation": "Kelp plants utilize chloroplasts to absorb solar beams, growing up to two feet daily. [Verified by Creative Cartographer Unit 115]."
+            "minWords": 47,
+            "hint": "Describe the specific steps you and your peers took to secure alternative support.",
+            "explanation": "Good academic-crisis answers show collective resourcefulness, for example: 'Several of us applied jointly for emergency grants and organized a peer fund to help cover the gap.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L115_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 115-2] Describe how deep-sea animals utilize cold biological bioluminescence.",
+            "situation": "Your company's decision to outsource a critical function overseas raised concerns among employees about job security and quality control. Describe the discussions that followed.",
             "emojis": [
-                "🐙",
-                "💡",
-                "🧪",
-                "❄️"
+                "💼",
+                "🌍",
+                "😟",
+                "🗣️"
             ],
             "keywords": {
                 "0": [
-                    "ANIMAL",
-                    "PREDATOR",
-                    "SPECIES"
+                    "OUTSOURCE",
+                    "CRITICALFUNCTION",
+                    "OVERSEAS"
                 ],
                 "1": [
-                    "BIOLUMINESCENT",
-                    "GLOWING",
-                    "LIGHT"
+                    "CONCERN",
+                    "JOBSECURITY",
+                    "QUALITYCONTROL"
                 ],
                 "2": [
-                    "LUCIFERIN",
-                    "CATALYST",
-                    "REACTION"
+                    "DISCUSS",
+                    "EMPLOYEE",
+                    "RAISE"
                 ],
                 "3": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "COLD"
+                    "ADDRESS",
+                    "REASSURE",
+                    "TRANSITION"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on organic light emissions used for communication and camouflage. (Diving calibration index 115-2)",
-            "explanation": "Luciferin enzymes oxidize to emit cold glowing lights inside deep trenches. [Verified by Creative Cartographer Unit 115]."
+            "minWords": 47,
+            "hint": "Describe the specific concerns employees raised and how management responded.",
+            "explanation": "Good organizational-change answers show transparent dialogue, for example: 'Management held an open forum addressing job security directly and committed to retraining affected employees for new roles.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L115_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 115-3] Describe how coastal wind upwellings drive nutrient circulation upward.",
+            "situation": "Your meticulously planned honeymoon was disrupted when the resort you booked had been quietly closed for renovations without notifying guests. Describe how you handled the unexpected situation.",
             "emojis": [
-                "💨",
-                "🌊",
-                "❄️",
-                "🐟"
+                "🏖️",
+                "🚧",
+                "😠",
+                "🤝"
             ],
             "keywords": {
                 "0": [
-                    "UPWELLING",
-                    "CIRCULATION",
-                    "CURRENT"
+                    "HONEYMOON",
+                    "METICULOUSLY",
+                    "DISRUPT"
                 ],
                 "1": [
-                    "NUTRIENT",
-                    "ORGANIC",
-                    "NITRATE"
+                    "RESORT",
+                    "QUIETLYCLOSED",
+                    "RENOVATION"
                 ],
                 "2": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "DEPTH"
+                    "WITHOUTNOTIFY",
+                    "GUEST",
+                    "UNEXPECTED"
                 ],
                 "3": [
-                    "ECOLOGY",
-                    "PLANKTON",
-                    "BIOMASS"
+                    "HANDLE",
+                    "COMPENSATE",
+                    "SALVAGE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how surface winds displace warm waters, dragging deep cold waters up. (Diving calibration index 115-3)",
-            "explanation": "Strong wind currents displace coastal surfaces, pulling deep cold nutrient water up. [Verified by Creative Cartographer Unit 115]."
+            "minWords": 47,
+            "hint": "Describe the steps you took to salvage your honeymoon despite the unexpected closure.",
+            "explanation": "Good travel-crisis answers show calm problem-solving under emotional stakes, for example: 'We immediately contacted our travel agent, who found us an even nicer resort nearby at no extra cost.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L116_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 116-1] Describe how deep hydrothermal vents release superheated chemical compounds.",
+            "situation": "Your family business succession plan was thrown into question when the designated heir announced they had no interest in taking over. Describe how the family navigated this unexpected shift.",
             "emojis": [
-                "🌋",
-                "💧",
-                "🔬",
-                "🐠"
+                "🏢",
+                "👨‍👩‍👧‍👦",
+                "😟",
+                "🤝"
             ],
             "keywords": {
                 "0": [
-                    "VENTING",
-                    "MAGMA",
-                    "PLUME"
+                    "FAMILYBUSINESS",
+                    "SUCCESSIONPLAN",
+                    "QUESTION"
                 ],
                 "1": [
-                    "OCEANIC",
-                    "THERMAL",
-                    "PRESSURE"
+                    "DESIGNATEDHEIR",
+                    "NOINTEREST",
+                    "ANNOUNCE"
                 ],
                 "2": [
-                    "MINERAL",
-                    "CHEMICAL",
-                    "HYDROUS"
+                    "UNEXPECTED",
+                    "SHIFT",
+                    "NAVIGATE"
                 ],
                 "3": [
-                    "CREATURE",
-                    "BENTHIC",
-                    "ABYSSAL"
+                    "RECONSIDER",
+                    "ALTERNATIVE",
+                    "DECIDE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on hot springs expelling rich black plumes of sulfide minerals. (Diving calibration index 116-1)",
-            "explanation": "Vents erupt superheated solutions containing hydrogen sulfide and sulfur particles. [Verified by Creative Cartographer Unit 116]."
+            "minWords": 47,
+            "hint": "Describe how the family reconsidered their plans in light of this unexpected announcement.",
+            "explanation": "Good succession-planning answers show flexible reconsideration, for example: 'Instead of forcing the decision, the family began considering a younger cousin who had always shown genuine passion for the business.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L116_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 116-2] Describe the survival mechanism of marine bacteria in dark abyssal plains.",
+            "situation": "A respected local bookstore you frequented for years closed unexpectedly after a large online retailer undercut its prices for months. Describe your reaction to the closure.",
             "emojis": [
-                "🦠",
-                "🌑",
-                "🧪",
-                "🌡️"
+                "📚",
+                "🏪",
+                "😢",
+                "💭"
             ],
             "keywords": {
                 "0": [
-                    "MICROBE",
-                    "BACTERIA",
-                    "CELLULAR"
+                    "LOCALBOOKSTORE",
+                    "RESPECTED",
+                    "FREQUENT"
                 ],
                 "1": [
-                    "DARKNESS",
-                    "SUNLESS",
-                    "ABYSS"
+                    "ONLINERETAILER",
+                    "UNDERCUT",
+                    "MONTHS"
                 ],
                 "2": [
-                    "SYNTHESIS",
-                    "REACTION",
-                    "ENZYME"
+                    "CLOSEUNEXPECTEDLY",
+                    "REACT",
+                    "SADNESS"
                 ],
                 "3": [
-                    "THERMAL",
-                    "METABOLIC",
-                    "ADAPT"
+                    "REFLECT",
+                    "COMMUNITY",
+                    "VALUE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Describe how microbes convert chemical energy without any sunlight. (Diving calibration index 116-2)",
-            "explanation": "Microscopic deep marine bacteria perform chemosynthesis to convert chemicals to sugars. [Verified by Creative Cartographer Unit 116]."
+            "minWords": 47,
+            "hint": "Describe your emotional reaction and what the closure made you reflect on.",
+            "explanation": "Good reflective-loss answers connect personal feeling to broader meaning, for example: 'Losing that bookstore made me realize how much I had taken for granted the personal recommendations only a real bookseller could offer.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L116_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 116-3] Describe the photosynthetic layers of giant underwater kelp forests.",
+            "situation": "Your restaurant's longtime head chef announced their departure just weeks before a major industry awards ceremony where the restaurant was nominated. Describe how the kitchen team managed the transition.",
             "emojis": [
-                "🌱",
-                "☀️",
-                "🌊",
-                "🐟"
+                "🍽️",
+                "👨‍🍳",
+                "😰",
+                "🏆"
             ],
             "keywords": {
                 "0": [
-                    "KELP",
-                    "CANOPY",
-                    "FROND"
+                    "HEADCHEF",
+                    "LONGTIME",
+                    "DEPART"
                 ],
                 "1": [
-                    "SOLAR",
-                    "PHOTOSYNTHESIS",
-                    "LIGHT"
+                    "INDUSTRYAWARDS",
+                    "WEEKSBEFORE",
+                    "NOMINATE"
                 ],
                 "2": [
-                    "UPWELLING",
-                    "CURRENT",
-                    "NUTRIENT"
+                    "KITCHENTEAM",
+                    "MANAGE",
+                    "TRANSITION"
                 ],
                 "3": [
-                    "HABITAT",
-                    "SPECIES",
-                    "SHELTER"
+                    "MAINTAIN",
+                    "STANDARD",
+                    "SUCCEED"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how large brown algae absorb solar energy near the ocean surface. (Diving calibration index 116-3)",
-            "explanation": "Kelp plants utilize chloroplasts to absorb solar beams, growing up to two feet daily. [Verified by Creative Cartographer Unit 116]."
+            "minWords": 47,
+            "hint": "Describe the steps the kitchen team took to maintain quality during the unexpected transition.",
+            "explanation": "Good leadership-transition answers show resilience under high stakes, for example: 'The sous chef stepped up immediately, and the team rallied around maintaining the exact standards the head chef had established.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L117_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 117-1] Describe how deep-sea animals utilize cold biological bioluminescence.",
+            "situation": "Your software company's flagship product was hit by a wave of negative reviews after a routine update unexpectedly broke compatibility with widely used hardware. Describe how the company managed the fallout.",
             "emojis": [
-                "🐙",
-                "💡",
-                "🧪",
-                "❄️"
+                "💻",
+                "📉",
+                "😤",
+                "🛠️"
             ],
             "keywords": {
                 "0": [
-                    "ANIMAL",
-                    "PREDATOR",
-                    "SPECIES"
+                    "FLAGSHIPPRODUCT",
+                    "WAVE",
+                    "NEGATIVEREVIEW"
                 ],
                 "1": [
-                    "BIOLUMINESCENT",
-                    "GLOWING",
-                    "LIGHT"
+                    "ROUTINEUPDATE",
+                    "BREAKCOMPATIBILITY",
+                    "UNEXPECTED"
                 ],
                 "2": [
-                    "LUCIFERIN",
-                    "CATALYST",
-                    "REACTION"
+                    "WIDELYUSED",
+                    "HARDWARE",
+                    "FALLOUT"
                 ],
                 "3": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "COLD"
+                    "MANAGE",
+                    "FIX",
+                    "RESTORE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on organic light emissions used for communication and camouflage. (Diving calibration index 117-1)",
-            "explanation": "Luciferin enzymes oxidize to emit cold glowing lights inside deep trenches. [Verified by Creative Cartographer Unit 117]."
+            "minWords": 47,
+            "hint": "Describe the company's immediate response and how it worked to restore customer trust.",
+            "explanation": "Good reputation-recovery answers show fast, transparent action, for example: 'The company released a fix within forty-eight hours and publicly apologized, which helped restore much of the lost trust.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L117_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 117-2] Describe how coastal wind upwellings drive nutrient circulation upward.",
+            "situation": "Your community's only specialized clinic for a rare condition faced closure due to funding cuts, leaving patients with few nearby alternatives. Describe how patients and advocates responded.",
             "emojis": [
-                "💨",
-                "🌊",
-                "❄️",
-                "🐟"
+                "🏥",
+                "😟",
+                "📢",
+                "🤝"
             ],
             "keywords": {
                 "0": [
-                    "UPWELLING",
-                    "CIRCULATION",
-                    "CURRENT"
+                    "SPECIALIZEDCLINIC",
+                    "RARECONDITION",
+                    "CLOSURE"
                 ],
                 "1": [
-                    "NUTRIENT",
-                    "ORGANIC",
-                    "NITRATE"
+                    "FUNDINGCUTS",
+                    "FEW",
+                    "ALTERNATIVE"
                 ],
                 "2": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "DEPTH"
+                    "PATIENTS",
+                    "ADVOCATES",
+                    "RESPOND"
                 ],
                 "3": [
-                    "ECOLOGY",
-                    "PLANKTON",
-                    "BIOMASS"
+                    "CAMPAIGN",
+                    "PRESERVE",
+                    "SUCCEED"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how surface winds displace warm waters, dragging deep cold waters up. (Diving calibration index 117-2)",
-            "explanation": "Strong wind currents displace coastal surfaces, pulling deep cold nutrient water up. [Verified by Creative Cartographer Unit 117]."
+            "minWords": 47,
+            "hint": "Describe the specific advocacy efforts patients and supporters organized to save the clinic.",
+            "explanation": "Good healthcare-advocacy answers show organized, urgent action, for example: 'Patients and their families organized a public campaign that eventually secured emergency funding to keep the clinic open.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L117_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 117-3] Describe how deep hydrothermal vents release superheated chemical compounds.",
+            "situation": "Your independent music label discovered that a major artist had quietly used one of your unreleased tracks without proper credit. Describe how the label addressed the situation.",
             "emojis": [
-                "🌋",
-                "💧",
-                "🔬",
-                "🐠"
+                "🎵",
+                "😠",
+                "⚖️",
+                "🗣️"
             ],
             "keywords": {
                 "0": [
-                    "VENTING",
-                    "MAGMA",
-                    "PLUME"
+                    "INDEPENDENTLABEL",
+                    "DISCOVER",
+                    "MAJORARTIST"
                 ],
                 "1": [
-                    "OCEANIC",
-                    "THERMAL",
-                    "PRESSURE"
+                    "QUIETLYUSE",
+                    "UNRELEASEDTRACK",
+                    "WITHOUTCREDIT"
                 ],
                 "2": [
-                    "MINERAL",
-                    "CHEMICAL",
-                    "HYDROUS"
+                    "ADDRESS",
+                    "EVIDENCE",
+                    "RAISE"
                 ],
                 "3": [
-                    "CREATURE",
-                    "BENTHIC",
-                    "ABYSSAL"
+                    "RESOLVE",
+                    "CREDIT",
+                    "COMPENSATE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on hot springs expelling rich black plumes of sulfide minerals. (Diving calibration index 117-3)",
-            "explanation": "Vents erupt superheated solutions containing hydrogen sulfide and sulfur particles. [Verified by Creative Cartographer Unit 117]."
+            "minWords": 47,
+            "hint": "Describe how the label gathered evidence and approached the issue professionally.",
+            "explanation": "Good intellectual-property answers show measured, professional response, for example: 'The label compiled timestamped production files as evidence before formally raising the issue with the artist's representatives.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L118_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 118-1] Describe the survival mechanism of marine bacteria in dark abyssal plains.",
+            "situation": "You need to write a message to a city official advocating for a crosswalk near a school after several near-accidents involving children. Describe what you write.",
             "emojis": [
-                "🦠",
-                "🌑",
-                "🧪",
-                "🌡️"
+                "🚸",
+                "🏫",
+                "😟",
+                "✉️"
             ],
             "keywords": {
                 "0": [
-                    "MICROBE",
-                    "BACTERIA",
-                    "CELLULAR"
+                    "CITYOFFICIAL",
+                    "CROSSWALK",
+                    "ADVOCATE"
                 ],
                 "1": [
-                    "DARKNESS",
-                    "SUNLESS",
-                    "ABYSS"
+                    "NEARACCIDENT",
+                    "CHILDREN",
+                    "SEVERAL"
                 ],
                 "2": [
-                    "SYNTHESIS",
-                    "REACTION",
-                    "ENZYME"
+                    "SCHOOL",
+                    "SAFETY",
+                    "URGENT"
                 ],
                 "3": [
-                    "THERMAL",
-                    "METABOLIC",
-                    "ADAPT"
+                    "REQUEST",
+                    "EVIDENCE",
+                    "RESOLVE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Describe how microbes convert chemical energy without any sunlight. (Diving calibration index 118-1)",
-            "explanation": "Microscopic deep marine bacteria perform chemosynthesis to convert chemicals to sugars. [Verified by Creative Cartographer Unit 118]."
+            "minWords": 47,
+            "hint": "Use specific incidents as evidence to strengthen the urgency of your request.",
+            "explanation": "A strong safety advocacy message uses specific evidence, for example: 'In the past month alone, three near-accidents have occurred near Lincoln Elementary, making a marked crosswalk an urgent necessity.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L118_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 118-2] Describe the photosynthetic layers of giant underwater kelp forests.",
+            "situation": "Your city's plan to convert a beloved community park into a parking structure ignited fierce opposition from residents across generations. Describe the campaign residents organized.",
             "emojis": [
-                "🌱",
-                "☀️",
-                "🌊",
-                "🐟"
+                "🌳",
+                "🚗",
+                "😡",
+                "🗣️"
             ],
             "keywords": {
                 "0": [
-                    "KELP",
-                    "CANOPY",
-                    "FROND"
+                    "COMMUNITYPARK",
+                    "CONVERT",
+                    "PARKINGSTRUCTURE"
                 ],
                 "1": [
-                    "SOLAR",
-                    "PHOTOSYNTHESIS",
-                    "LIGHT"
+                    "IGNITE",
+                    "FIERCEOPPOSITION",
+                    "GENERATIONS"
                 ],
                 "2": [
-                    "UPWELLING",
-                    "CURRENT",
-                    "NUTRIENT"
+                    "RESIDENTS",
+                    "CAMPAIGN",
+                    "ORGANIZE"
                 ],
                 "3": [
-                    "HABITAT",
-                    "SPECIES",
-                    "SHELTER"
+                    "PRESERVE",
+                    "SUCCEED",
+                    "VICTORY"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how large brown algae absorb solar energy near the ocean surface. (Diving calibration index 118-2)",
-            "explanation": "Kelp plants utilize chloroplasts to absorb solar beams, growing up to two feet daily. [Verified by Creative Cartographer Unit 118]."
+            "minWords": 47,
+            "hint": "Describe the specific tactics residents used to oppose the development.",
+            "explanation": "Good civic-organizing answers show coordinated grassroots effort, for example: 'Residents gathered thousands of signatures and attended every city council meeting until the plan was officially withdrawn.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L118_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 118-3] Describe how deep-sea animals utilize cold biological bioluminescence.",
+            "situation": "Your school district's controversial decision to redraw boundary lines split a close-knit neighborhood between two different schools. Describe how affected families responded.",
             "emojis": [
-                "🐙",
-                "💡",
-                "🧪",
-                "❄️"
+                "🏫",
+                "🗺️",
+                "😤",
+                "🗣️"
             ],
             "keywords": {
                 "0": [
-                    "ANIMAL",
-                    "PREDATOR",
-                    "SPECIES"
+                    "SCHOOLDISTRICT",
+                    "REDRAWBOUNDARY",
+                    "CONTROVERSIAL"
                 ],
                 "1": [
-                    "BIOLUMINESCENT",
-                    "GLOWING",
-                    "LIGHT"
+                    "SPLIT",
+                    "CLOSEKNIT",
+                    "NEIGHBORHOOD"
                 ],
                 "2": [
-                    "LUCIFERIN",
-                    "CATALYST",
-                    "REACTION"
+                    "AFFECTED",
+                    "FAMILIES",
+                    "RESPOND"
                 ],
                 "3": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "COLD"
+                    "ADVOCATE",
+                    "APPEAL",
+                    "OUTCOME"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on organic light emissions used for communication and camouflage. (Diving calibration index 118-3)",
-            "explanation": "Luciferin enzymes oxidize to emit cold glowing lights inside deep trenches. [Verified by Creative Cartographer Unit 118]."
+            "minWords": 47,
+            "hint": "Describe the specific concerns families raised and the outcome of their advocacy.",
+            "explanation": "Good community-advocacy answers show organized appeal, for example: 'Affected families presented a unified appeal at the district meeting, which led to a partial revision of the boundary lines.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L119_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 119-1] Describe how coastal wind upwellings drive nutrient circulation upward.",
+            "situation": "Your company's attempt to implement a four-day work week revealed unexpected challenges balancing client expectations with reduced staffing hours. Describe how leadership adjusted the policy.",
             "emojis": [
-                "💨",
-                "🌊",
-                "❄️",
-                "🐟"
+                "💼",
+                "📅",
+                "😕",
+                "🔄"
             ],
             "keywords": {
                 "0": [
-                    "UPWELLING",
-                    "CIRCULATION",
-                    "CURRENT"
+                    "FOURDAYWORKWEEK",
+                    "IMPLEMENT",
+                    "UNEXPECTED"
                 ],
                 "1": [
-                    "NUTRIENT",
-                    "ORGANIC",
-                    "NITRATE"
+                    "CLIENTEXPECTATION",
+                    "REDUCEDHOURS",
+                    "BALANCE"
                 ],
                 "2": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "DEPTH"
+                    "CHALLENGE",
+                    "REVEAL",
+                    "ADJUST"
                 ],
                 "3": [
-                    "ECOLOGY",
-                    "PLANKTON",
-                    "BIOMASS"
+                    "LEADERSHIP",
+                    "REFINE",
+                    "SUCCEED"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how surface winds displace warm waters, dragging deep cold waters up. (Diving calibration index 119-1)",
-            "explanation": "Strong wind currents displace coastal surfaces, pulling deep cold nutrient water up. [Verified by Creative Cartographer Unit 119]."
+            "minWords": 48,
+            "hint": "Describe the specific adjustment leadership made after the initial challenges emerged.",
+            "explanation": "Good policy-refinement answers show iterative improvement, for example: 'Leadership introduced staggered schedules so client coverage remained consistent while employees still benefited from shorter weeks.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L119_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 119-2] Describe how deep hydrothermal vents release superheated chemical compounds.",
+            "situation": "Your carefully booked multi-country rail trip was thrown into disarray when a sudden labor strike halted trains across an entire region. Describe how you adapted your route.",
             "emojis": [
-                "🌋",
-                "💧",
-                "🔬",
-                "🐠"
+                "🚆",
+                "🚫",
+                "😱",
+                "🗺️"
             ],
             "keywords": {
                 "0": [
-                    "VENTING",
-                    "MAGMA",
-                    "PLUME"
+                    "MULTICOUNTRY",
+                    "RAILTRIP",
+                    "DISARRAY"
                 ],
                 "1": [
-                    "OCEANIC",
-                    "THERMAL",
-                    "PRESSURE"
+                    "LABORSTRIKE",
+                    "SUDDEN",
+                    "HALT"
                 ],
                 "2": [
-                    "MINERAL",
-                    "CHEMICAL",
-                    "HYDROUS"
+                    "ENTIREREGION",
+                    "ADAPT",
+                    "ROUTE"
                 ],
                 "3": [
-                    "CREATURE",
-                    "BENTHIC",
-                    "ABYSSAL"
+                    "REROUTE",
+                    "SALVAGE",
+                    "CONTINUE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on hot springs expelling rich black plumes of sulfide minerals. (Diving calibration index 119-2)",
-            "explanation": "Vents erupt superheated solutions containing hydrogen sulfide and sulfur particles. [Verified by Creative Cartographer Unit 119]."
+            "minWords": 48,
+            "hint": "Describe the alternative transportation or route you found to continue your trip.",
+            "explanation": "Good travel-disruption answers show creative problem-solving, for example: 'We rerouted through a neighboring country by bus, which actually let us see a region we had not originally planned to visit.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L119_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 119-3] Describe the survival mechanism of marine bacteria in dark abyssal plains.",
+            "situation": "Your family's decision to finally address a decades-old secret about a relative's past required careful consideration of who should be told and when. Describe how the family approached the disclosure.",
             "emojis": [
-                "🦠",
-                "🌑",
-                "🧪",
-                "🌡️"
+                "👨‍👩‍👧‍👦",
+                "🤐",
+                "😟",
+                "🗣️"
             ],
             "keywords": {
                 "0": [
-                    "MICROBE",
-                    "BACTERIA",
-                    "CELLULAR"
+                    "DECADESOLD",
+                    "SECRET",
+                    "RELATIVE"
                 ],
                 "1": [
-                    "DARKNESS",
-                    "SUNLESS",
-                    "ABYSS"
+                    "ADDRESS",
+                    "FINALLY",
+                    "DECISION"
                 ],
                 "2": [
-                    "SYNTHESIS",
-                    "REACTION",
-                    "ENZYME"
+                    "CAREFUL",
+                    "CONSIDERATION",
+                    "DISCLOSE"
                 ],
                 "3": [
-                    "THERMAL",
-                    "METABOLIC",
-                    "ADAPT"
+                    "APPROACH",
+                    "TIMING",
+                    "SENSITIVE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Describe how microbes convert chemical energy without any sunlight. (Diving calibration index 119-3)",
-            "explanation": "Microscopic deep marine bacteria perform chemosynthesis to convert chemicals to sugars. [Verified by Creative Cartographer Unit 119]."
+            "minWords": 48,
+            "hint": "Describe the careful thought the family put into deciding who should be told and how.",
+            "explanation": "Good sensitive-disclosure answers show thoughtful timing, for example: 'The family decided to tell the younger generation gradually, starting with the eldest grandchild, to avoid overwhelming anyone at once.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L120_Q1",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Microbe Prompt 120-1] Describe the photosynthetic layers of giant underwater kelp forests.",
+            "situation": "A widely trusted product review website was revealed to have undisclosed financial ties to the brands it reviewed, undermining years of consumer trust. Describe how shoppers reacted to the revelation.",
             "emojis": [
-                "🌱",
-                "☀️",
-                "🌊",
-                "🐟"
+                "⭐",
+                "💰",
+                "😠",
+                "🔍"
             ],
             "keywords": {
                 "0": [
-                    "KELP",
-                    "CANOPY",
-                    "FROND"
+                    "PRODUCTREVIEW",
+                    "WIDELYTRUSTED",
+                    "REVEAL"
                 ],
                 "1": [
-                    "SOLAR",
-                    "PHOTOSYNTHESIS",
-                    "LIGHT"
+                    "UNDISCLOSED",
+                    "FINANCIALTIES",
+                    "BRAND"
                 ],
                 "2": [
-                    "UPWELLING",
-                    "CURRENT",
-                    "NUTRIENT"
+                    "UNDERMINE",
+                    "YEARS",
+                    "TRUST"
                 ],
                 "3": [
-                    "HABITAT",
-                    "SPECIES",
-                    "SHELTER"
+                    "REACT",
+                    "SKEPTICAL",
+                    "SEEKALTERNATIVE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how large brown algae absorb solar energy near the ocean surface. (Diving calibration index 120-1)",
-            "explanation": "Kelp plants utilize chloroplasts to absorb solar beams, growing up to two feet daily. [Verified by Creative Cartographer Unit 120]."
+            "minWords": 48,
+            "hint": "Describe how shoppers changed their behavior after losing trust in the review site.",
+            "explanation": "Good informed-consumer answers show behavioral change after a trust breach, for example: 'Many shoppers, myself included, switched to independent reviewers with transparent disclosure policies instead.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L120_Q2",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 120-2] Describe how deep-sea animals utilize cold biological bioluminescence.",
+            "situation": "Your city's iconic street food market faced demolition to make way for a new development, threatening dozens of vendors' livelihoods. Describe how the vendors organized to save it.",
             "emojis": [
-                "🐙",
-                "💡",
-                "🧪",
-                "❄️"
+                "🏙️",
+                "🍢",
+                "😟",
+                "✊"
             ],
             "keywords": {
                 "0": [
-                    "ANIMAL",
-                    "PREDATOR",
-                    "SPECIES"
+                    "ICONIC",
+                    "STREETFOODMARKET",
+                    "DEMOLITION"
                 ],
                 "1": [
-                    "BIOLUMINESCENT",
-                    "GLOWING",
-                    "LIGHT"
+                    "NEWDEVELOPMENT",
+                    "THREATEN",
+                    "VENDORS"
                 ],
                 "2": [
-                    "LUCIFERIN",
-                    "CATALYST",
-                    "REACTION"
+                    "LIVELIHOOD",
+                    "DOZENS",
+                    "ORGANIZE"
                 ],
                 "3": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "COLD"
+                    "CAMPAIGN",
+                    "PRESERVE",
+                    "SUCCEED"
                 ]
             },
-            "minWords": 15,
-            "hint": "Focus on organic light emissions used for communication and camouflage. (Diving calibration index 120-2)",
-            "explanation": "Luciferin enzymes oxidize to emit cold glowing lights inside deep trenches. [Verified by Creative Cartographer Unit 120]."
+            "minWords": 48,
+            "hint": "Describe the specific actions vendors took to advocate for the market's survival.",
+            "explanation": "Good grassroots-preservation answers show collective vendor action, for example: 'The vendors formed an association, gathered public support, and successfully negotiated to be relocated rather than displaced entirely.'"
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L120_Q3",
             "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "difficulty": 3,
             "subtype": "describeSituationWriting",
             "interactionType": "Emoji Map",
-            "situation": "[Diver Prompt 120-3] Describe how coastal wind upwellings drive nutrient circulation upward.",
+            "situation": "Your city's plan to install facial recognition cameras in public spaces sparked a heated debate between safety advocates and privacy rights groups. Describe the arguments presented by both sides.",
             "emojis": [
-                "💨",
-                "🌊",
-                "❄️",
-                "🐟"
+                "📷",
+                "⚖️",
+                "😬",
+                "🗣️"
             ],
             "keywords": {
                 "0": [
-                    "UPWELLING",
-                    "CIRCULATION",
-                    "CURRENT"
+                    "FACIALRECOGNITION",
+                    "PUBLICSPACE",
+                    "INSTALL"
                 ],
                 "1": [
-                    "NUTRIENT",
-                    "ORGANIC",
-                    "NITRATE"
+                    "HEATEDDEBATE",
+                    "SAFETY",
+                    "PRIVACY"
                 ],
                 "2": [
-                    "FREEZING",
-                    "ABYSSAL",
-                    "DEPTH"
+                    "ADVOCATES",
+                    "RIGHTSGROUP",
+                    "SPARK"
                 ],
                 "3": [
-                    "ECOLOGY",
-                    "PLANKTON",
-                    "BIOMASS"
+                    "ARGUE",
+                    "PERSPECTIVE",
+                    "DECIDE"
                 ]
             },
-            "minWords": 15,
-            "hint": "Detail how surface winds displace warm waters, dragging deep cold waters up. (Diving calibration index 120-3)",
-            "explanation": "Strong wind currents displace coastal surfaces, pulling deep cold nutrient water up. [Verified by Creative Cartographer Unit 120]."
+            "minWords": 48,
+            "hint": "Present both the safety argument and the privacy concern fairly.",
+            "explanation": "Good balanced-policy-debate answers present opposing views evenhandedly, for example: 'Safety advocates argued the cameras would reduce crime, while privacy groups warned about the risks of constant surveillance.'"
         }
     ]
 }
