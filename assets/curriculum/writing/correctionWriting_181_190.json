@@ -5,513 +5,483 @@
     "quests": [
         {
             "id": "WRT_CORRECTIONWRITING_L181_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 181-1] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "Were it not for my grandmother's sacrifices, our family [isn't] where it is today.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "isn't",
+                "wouldn't be",
+                "wasn't",
+                "won't be"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 181-1)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 181]."
+            "correctAnswer": "wouldn't be",
+            "hint": "'Were it not for' is a formal inverted form of 'If it weren't for,' describing a present hypothetical situation.",
+            "explanation": "'Were it not for' formally inverts a second conditional; the main clause keeps 'would' + base verb: 'wouldn't be,' not 'isn't.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L181_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 181-2] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "So profound [her influence was] on the family that her values still guide every decision we make.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "did her influence",
+                "her influence was",
+                "had her influence",
+                "was her influence"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 181-2)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 181]."
+            "correctAnswer": "was her influence",
+            "hint": "Fronting 'So profound' at the start triggers inversion with the verb 'be.'",
+            "explanation": "Fronted adjective phrases invert with 'be': 'was her influence,' not 'her influence was.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L181_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 181-3] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "Little [she did realize] that her quiet encouragement would shape three generations of descendants.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "she did realize",
+                "she realized",
+                "realized she",
+                "did she realize"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 181-3)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 181]."
+            "correctAnswer": "did she realize",
+            "hint": "Fronting 'Little' with this meaning triggers inversion with an auxiliary verb.",
+            "explanation": "'Little,' meaning 'almost not at all,' fronted for effect, requires inversion: 'did she realize,' not 'she did realize.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L182_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 182-1] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "Were it not for the loyalty discount, the total cost [is] far higher than it actually was.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "was",
+                "would be",
+                "has been",
+                "is"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 182-1)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 182]."
+            "correctAnswer": "would be",
+            "hint": "'Were it not for' is a formal inverted form describing a present hypothetical situation.",
+            "explanation": "'Were it not for' formally inverts a second conditional; the result clause keeps 'would' + base verb: 'would be,' not 'is.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L182_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 182-2] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "Rarely [one finds a retailer] willing to match a competitor's price without question.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "one does find a retailer",
+                "finds one a retailer",
+                "does one find a retailer",
+                "one finds a retailer"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 182-2)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 182]."
+            "correctAnswer": "does one find a retailer",
+            "hint": "'Rarely' fronted at the start of a sentence triggers inversion with an auxiliary verb.",
+            "explanation": "Fronted negative adverbials like 'Rarely' require inversion: 'does one find,' not 'one finds.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L182_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 182-3] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "Only by comparing several suppliers [she could] secure the best possible deal on the contract.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "she did",
+                "she could",
+                "could she",
+                "did she"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 182-3)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 182]."
+            "correctAnswer": "could she",
+            "hint": "Fronting 'Only by...' at the start of a sentence triggers inversion with a modal verb.",
+            "explanation": "Fronted phrases beginning with 'Only' require inversion with the modal: 'could she secure,' not 'she could secure.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L183_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 183-1] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "The chef's approach to cooking is admirably [economic], never wasting a single ingredient.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "stingy",
+                "cheap",
+                "economical",
+                "economic"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 183-1)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 183]."
+            "correctAnswer": "economical",
+            "hint": "Think about the word meaning 'careful and efficient with resources,' a positive trait, not the word about national finance.",
+            "explanation": "'Economical' carries a positive connotation of efficient resource use; 'economic' instead relates to the economy in general."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L183_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 183-2] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "Despite its high price, the meal felt [extravagant] rather than simply expensive.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "wasteful",
+                "extravagant",
+                "luxurious",
+                "showy"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 183-2)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 183]."
+            "correctAnswer": "luxurious",
+            "hint": "Think about the word with a purely positive connotation of high quality and comfort, not one suggesting wasteful excess.",
+            "explanation": "'Luxurious' has a positive connotation of quality and comfort, unlike 'extravagant,' which can suggest wasteful excess."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L183_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 183-3] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "Her cooking style is best described as [bland] rather than overly elaborate or fussy.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "bland",
+                "plain",
+                "boring",
+                "understated"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 183-3)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 183]."
+            "correctAnswer": "understated",
+            "hint": "Think about the word implying tasteful simplicity, a positive connotation, not one implying a lack of flavor.",
+            "explanation": "'Understated' suggests tasteful simplicity, a positive quality, unlike 'bland,' which suggests a lack of flavor or interest."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L184_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 184-1] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "The new interface is refreshingly [incomplete], removing every unnecessary feature from the design.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "empty",
+                "plain",
+                "incomplete",
+                "minimalist"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 184-1)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 184]."
+            "correctAnswer": "minimalist",
+            "hint": "Think about the word implying intentional, stylish simplicity, a positive design trait, not one suggesting something is missing.",
+            "explanation": "'Minimalist' implies a deliberate, stylish simplicity, unlike 'incomplete,' which suggests something is missing."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L184_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 184-2] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "Critics praised the startup's [strange] approach to solving old problems with entirely new tools.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "innovative",
+                "strange",
+                "experimental",
+                "unusual"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 184-2)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 184]."
+            "correctAnswer": "innovative",
+            "hint": "Think about the word with a strongly positive connotation of creative progress, not a neutral or odd-sounding word.",
+            "explanation": "'Innovative' has a clearly positive connotation of creative progress, stronger than a neutral word like 'strange.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L184_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 184-3] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "The company's pricing model has been criticized as [practical] rather than fair to ordinary customers.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "efficient",
+                "exploitative",
+                "economical",
+                "practical"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 184-3)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 184]."
+            "correctAnswer": "exploitative",
+            "hint": "Think about the word with a strongly negative connotation of taking unfair advantage, not a neutral, positive-sounding word.",
+            "explanation": "'Exploitative' carries a strongly negative connotation of unfair advantage-taking, unlike the neutral word 'practical.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L185_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 185-1] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "After the diagnosis, she decided to [throw in the towel] and focus entirely on her recovery.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "take it in her stride",
+                "throw in the towel",
+                "let the cat out of the bag",
+                "beat around the bush"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 185-1)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 185]."
+            "correctAnswer": "take it in her stride",
+            "hint": "Think about the idiom meaning to accept a difficult situation calmly, not one meaning to give up entirely.",
+            "explanation": "'Take it in stride' means to accept a difficulty calmly, not 'throw in the towel,' which means to give up completely."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L185_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 185-2] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "The new treatment has been hailed as a genuine [drop in the ocean] in managing chronic pain.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "storm in a teacup",
+                "game changer",
+                "drop in the ocean",
+                "wild goose chase"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 185-2)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 185]."
+            "correctAnswer": "game changer",
+            "hint": "Think about the idiom meaning something that completely transforms a situation, not one meaning a tiny, insignificant amount.",
+            "explanation": "'Game changer' describes something that transforms a situation, not 'drop in the ocean,' which means a negligible amount."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L185_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 185-3] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "Compared to the scale of the health crisis, this funding is merely a [game changer].",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "piece of cake",
+                "game changer",
+                "walk in the park",
+                "drop in the ocean"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 185-3)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 185]."
+            "correctAnswer": "drop in the ocean",
+            "hint": "Think about the idiom meaning an amount far too small to make a real difference, not one meaning a transformative event.",
+            "explanation": "'A drop in the ocean' means an amount too small to matter, not 'game changer,' which means something transformative."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L186_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 186-1] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "The sequel was widely considered a [labor of love] compared to the groundbreaking original film.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "work of art",
+                "labor of love",
+                "pale imitation",
+                "game changer"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 186-1)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 186]."
+            "correctAnswer": "pale imitation",
+            "hint": "Think about the idiom meaning a weak, inferior copy, not one meaning work done out of passion.",
+            "explanation": "'Pale imitation' describes a weak copy of the original, not 'labor of love,' which describes passionate, dedicated work."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L186_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 186-2] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "The director's latest project is clearly a [pale imitation], made with great personal dedication and care.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "pale imitation",
+                "drop in the ocean",
+                "wild goose chase",
+                "labor of love"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 186-2)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 186]."
+            "correctAnswer": "labor of love",
+            "hint": "Think about the idiom meaning work done out of passion rather than for profit, not one meaning a weak copy.",
+            "explanation": "'Labor of love' describes work done out of passion, not 'pale imitation,' which describes a weak, inferior copy."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L186_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 186-3] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "Searching for the long-lost footage turned out to be a complete [game changer] that wasted weeks of effort.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "piece of cake",
+                "labor of love",
+                "wild goose chase",
+                "game changer"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 186-3)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 186]."
+            "correctAnswer": "wild goose chase",
+            "hint": "Think about the idiom meaning a pointless search that leads nowhere, not one meaning a transformative event.",
+            "explanation": "'A wild goose chase' describes a fruitless search, not 'game changer,' which describes something transformative."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L187_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 187-1] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "[Given] the fact that we disagreed on several points, we still managed to reach a compromise.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "Despite",
+                "Given",
+                "In that",
+                "Provided"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 187-1)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 187]."
+            "correctAnswer": "Despite",
+            "hint": "Think about a connector meaning 'although,' followed by 'the fact that' plus a clause, not one meaning 'considering.'",
+            "explanation": "'Despite the fact that' introduces a contrast, similar to 'although,' not 'Given,' which means 'considering.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L187_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 187-2] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "The proposal is unusual [despite] it challenges several long-held assumptions in the field.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "given",
+                "provided",
+                "despite",
+                "in that"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 187-2)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 187]."
+            "correctAnswer": "in that",
+            "hint": "Think about a connector meaning 'in the sense that,' used to explain why something is true, not one meaning 'although.'",
+            "explanation": "'In that' means 'in the sense that' and clarifies a preceding statement, not 'despite,' which signals contrast."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L187_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 187-3] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "[In that] the circumstances, I think we handled the negotiation reasonably well overall.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "Despite",
+                "Given",
+                "In that",
+                "Provided"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 187-3)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 187]."
+            "correctAnswer": "Given",
+            "hint": "Think about a connector meaning 'considering,' used to introduce a relevant factor, not one meaning 'in the sense that.'",
+            "explanation": "'Given' means 'considering' and introduces a relevant factor, not 'In that,' which clarifies a statement."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L188_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 188-1] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "[Given] the fact that he had little free time, he still volunteered every single weekend.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "Given",
+                "In that",
+                "Provided",
+                "Despite"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 188-1)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 188]."
+            "correctAnswer": "Despite",
+            "hint": "This phrase pairs with 'the fact that' to introduce a contrasting clause.",
+            "explanation": "'Despite the fact that' introduces a contrast, here between limited time and continued volunteering, not 'Given.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L188_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 188-2] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "Her daily routine is admirable [despite] it balances work, rest, and exercise so effectively.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "given",
+                "despite",
+                "in that",
+                "provided"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 188-2)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 188]."
+            "correctAnswer": "in that",
+            "hint": "Think about a connector meaning 'in the sense that,' used to clarify a previous statement, not one meaning 'although.'",
+            "explanation": "'In that' clarifies why something is true, not 'despite,' which signals contrast rather than explanation."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L188_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 188-3] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "[In that] how little sleep she got, she still managed to stay productive all day long.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "Despite",
+                "Provided",
+                "In that",
+                "Given"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 188-3)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 188]."
+            "correctAnswer": "Given",
+            "hint": "Think about a connector meaning 'considering,' introducing a relevant factor, not one meaning 'in the sense that.'",
+            "explanation": "'Given' introduces a relevant factor making the statement notable, not 'In that,' which clarifies a previous statement."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L189_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 189-1] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "The thesis [puts up] a compelling argument supported by extensive evidence throughout.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "puts out",
+                "puts forward",
+                "puts off",
+                "puts up"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 189-1)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 189]."
+            "correctAnswer": "puts forward",
+            "hint": "Think about the precise academic collocation meaning to present an idea for consideration.",
+            "explanation": "'Put forward an argument' is the standard academic collocation for presenting a claim, not 'put up an argument.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L189_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 189-2] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "Further research is needed to [prove up] these preliminary findings from the pilot study.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "substantiate",
+                "make sure of",
+                "prove up",
+                "back into"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 189-2)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 189]."
+            "correctAnswer": "substantiate",
+            "hint": "Think about the precise academic verb meaning to provide solid evidence for a claim.",
+            "explanation": "'Substantiate' means to provide solid evidence for a claim, a precise academic term, not the informal 'prove up.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L189_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 189-3] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "The professor's lecture [gives off] a critical perspective on the topic that challenged our assumptions.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "puts about",
+                "offers",
+                "brings forth",
+                "gives off"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 189-3)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 189]."
+            "correctAnswer": "offers",
+            "hint": "Think about the precise, natural collocation used with 'a critical perspective.'",
+            "explanation": "'Offers a perspective' is the natural, standard academic collocation, more precise than 'gives off a perspective.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L190_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 190-1] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "The report [puts up] several recommendations for improving overall efficiency across departments.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "puts forward",
+                "puts out",
+                "puts off",
+                "puts up"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 190-1)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 190]."
+            "correctAnswer": "puts forward",
+            "hint": "Think about the precise collocation meaning to present ideas for consideration.",
+            "explanation": "'Put forward recommendations' is the standard collocation for presenting suggestions formally, not 'put up.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L190_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 190-2] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "The new data appears to [prove up] our initial hypothesis about shifting market trends.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "substantiate",
+                "back into",
+                "prove up",
+                "make sure of"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 190-2)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 190]."
+            "correctAnswer": "substantiate",
+            "hint": "Think about the precise verb meaning to provide solid supporting evidence.",
+            "explanation": "'Substantiate a hypothesis' means to provide solid supporting evidence, a precise term, not the informal 'prove up.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L190_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 5,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 190-3] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "This strategy [gives off] a significant shift in how the company plans to operate going forward.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "gives off",
+                "puts about",
+                "brings forth",
+                "represents"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 190-3)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 190]."
+            "correctAnswer": "represents",
+            "hint": "Think about the precise, natural collocation used to describe what a strategy signifies.",
+            "explanation": "'Represents a shift' is the natural, standard collocation for describing significance, not 'gives off a shift.'"
         }
     ]
 }

@@ -5,513 +5,483 @@
     "quests": [
         {
             "id": "WRT_CORRECTIONWRITING_L61_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 61-1] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "I [have never buy] anything from that online store before.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "never have bought",
+                "have never bought",
+                "have never buy",
+                "has never bought"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 61-1)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 61]."
+            "correctAnswer": "have never bought",
+            "hint": "The present perfect needs 'have' plus the past participle, not the base verb.",
+            "explanation": "The present perfect requires the past participle after 'have': 'have never bought,' not 'have never buy.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L61_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 61-2] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "[Have you ever return] an item to this shop before?",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "Have you ever return",
+                "Did you ever returned",
+                "Have you ever returned",
+                "Has you ever returned"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 61-2)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 61]."
+            "correctAnswer": "Have you ever returned",
+            "hint": "The present perfect question needs the past participle, and the subject 'you' needs 'have.'",
+            "explanation": "Present perfect questions need 'Have' + subject + past participle: 'Have you ever returned,' not the base verb."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L61_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 61-3] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "She [has already try on] three different dresses today at the boutique.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "have already tried on",
+                "has already try on",
+                "has already trying on",
+                "has already tried on"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 61-3)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 61]."
+            "correctAnswer": "has already tried on",
+            "hint": "The present perfect needs the past participle, not the base verb, after 'has.'",
+            "explanation": "'Has' must be followed by the past participle: 'has already tried on,' not the base form 'try on.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L62_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 62-1] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "I [have never tasting] such spicy food in my entire life!",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "have never tasted",
+                "never have tasted",
+                "have never tasting",
+                "has never tasted"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 62-1)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 62]."
+            "correctAnswer": "have never tasted",
+            "hint": "The present perfect needs 'have' plus the past participle, not the -ing form.",
+            "explanation": "The present perfect requires the past participle: 'have never tasted,' not the -ing form 'tasting.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L62_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 62-2] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "[Has your brother ever cook] a full meal by himself before?",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "Have your brother ever cooked",
+                "Did your brother ever cooked",
+                "Has your brother ever cooked",
+                "Has your brother ever cook"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 62-2)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 62]."
+            "correctAnswer": "Has your brother ever cooked",
+            "hint": "The present perfect question needs the past participle, with 'Has' matching a singular subject.",
+            "explanation": "Present perfect questions with a singular subject use 'Has' + past participle: 'Has...ever cooked.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L62_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 62-3] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "We [have already eat], so we don't need a table right now, thank you.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "have already eat",
+                "have already ate",
+                "have already eaten",
+                "has already eaten"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 62-3)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 62]."
+            "correctAnswer": "have already eaten",
+            "hint": "The present perfect needs the past participle form after 'have,' not the base verb or simple past form.",
+            "explanation": "'Have' must be followed by the past participle 'eaten,' not the base form 'eat' or the simple past 'ate.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L63_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 63-1] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "I [have lost] my phone yesterday, so now I need a brand new one.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "lose",
+                "losing",
+                "lost",
+                "have lost"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 63-1)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 63]."
+            "correctAnswer": "lost",
+            "hint": "The time word 'yesterday' shows exactly when the action happened, pointing to a finished past action.",
+            "explanation": "A specific past time word like 'yesterday' requires the simple past 'lost,' not the present perfect."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L63_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 63-2] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "I [lost] my phone, so I can't call anyone right now until I find it.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "lost",
+                "have lost",
+                "losing",
+                "lose"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 63-2)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 63]."
+            "correctAnswer": "have lost",
+            "hint": "There's no specific past time mentioned, just a present result of a past action.",
+            "explanation": "Without a specific past time, the present perfect 'have lost' connects the past action to its present result."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L63_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 63-3] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "She [repaired] her laptop three times since she bought it last year.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "has repaired",
+                "is repairing",
+                "repaired",
+                "repair"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 63-3)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 63]."
+            "correctAnswer": "has repaired",
+            "hint": "The phrase 'since she bought it' shows a connection between the past and now, with repeated actions.",
+            "explanation": "'Since' often signals the present perfect for repeated actions up to now: 'has repaired,' not the simple past."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L64_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 64-1] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "I [have seen] the doctor last Tuesday for a regular check-up.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "seeing",
+                "saw",
+                "have seen",
+                "see"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 64-1)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 64]."
+            "correctAnswer": "saw",
+            "hint": "The specific time phrase 'last Tuesday' points to a finished action at a known time.",
+            "explanation": "A specific past time expression like 'last Tuesday' requires the simple past 'saw,' not the present perfect."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L64_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 64-2] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "I [never took] this medicine before, so I'm not sure how it will affect me.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "never took",
+                "have never taken",
+                "am never taking",
+                "never take"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 64-2)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 64]."
+            "correctAnswer": "have never taken",
+            "hint": "There's no specific past time mentioned, just experience up to now.",
+            "explanation": "Without a specific time, the present perfect 'have never taken' describes experience up to the present moment."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L64_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 64-3] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "He [went] to the gym three times this week already, which is impressive.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "has gone",
+                "is going",
+                "went",
+                "go"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 64-3)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 64]."
+            "correctAnswer": "has gone",
+            "hint": "The phrase 'this week' is an unfinished period that includes now.",
+            "explanation": "Unfinished time periods like 'this week' often pair with the present perfect: 'has gone,' not the simple past."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L65_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 65-1] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "You [have to] buy a ticket in advance; you can simply pay at the door.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "don't have to",
+                "have to",
+                "has to",
+                "doesn't have to"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 65-1)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 65]."
+            "correctAnswer": "don't have to",
+            "hint": "Think about something that is not necessary, since there's an alternative option mentioned.",
+            "explanation": "'Don't have to' shows something isn't necessary, fitting a situation with another option, not 'have to.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L65_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 65-2] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "We [don't have to] arrive early if we want good seats at the concert.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "doesn't have to",
+                "don't have to",
+                "has to",
+                "have to"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 65-2)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 65]."
+            "correctAnswer": "have to",
+            "hint": "Think about something necessary in order to get a good result.",
+            "explanation": "'Have to' expresses necessity for a good result, not 'don't have to,' which means it's optional."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L65_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 65-3] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "She [have to] finish her project before she can watch the new series.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "doesn't have to",
+                "has to",
+                "don't have to",
+                "have to"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 65-3)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 65]."
+            "correctAnswer": "has to",
+            "hint": "The subject 'she' is singular; think about the matching form expressing necessity.",
+            "explanation": "With a singular subject, 'has to' expresses necessity, not 'have to,' which pairs with plural subjects."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L66_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 66-1] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "You [have to] shout; I can hear you perfectly well from here.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "doesn't have to",
+                "have to",
+                "don't have to",
+                "has to"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 66-1)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 66]."
+            "correctAnswer": "don't have to",
+            "hint": "Think about something unnecessary because the situation is already fine.",
+            "explanation": "'Don't have to' shows something is unnecessary, fitting a calm situation, not 'have to.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L66_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 66-2] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "We [don't have to] reply to this email by Friday, according to the request.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "doesn't have to",
+                "has to",
+                "have to",
+                "don't have to"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 66-2)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 66]."
+            "correctAnswer": "have to",
+            "hint": "Think about a deadline that creates necessity.",
+            "explanation": "'Have to' expresses necessity created by a deadline, not 'don't have to,' which means it's optional."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L66_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 66-3] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "He [have to] explain everything again because no one understood the first time.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "doesn't have to",
+                "don't have to",
+                "has to",
+                "have to"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 66-3)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 66]."
+            "correctAnswer": "has to",
+            "hint": "The subject 'he' is singular; think about something necessary for him to do.",
+            "explanation": "Singular subjects pair with 'has to' to express necessity, not the plural form 'have to.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L67_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 67-1] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "The neighbor [which] lives next door always waters our plants when we travel.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "where",
+                "which",
+                "who",
+                "whose"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 67-1)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 67]."
+            "correctAnswer": "who",
+            "hint": "We need a relative pronoun for a person, used as the subject of the clause.",
+            "explanation": "'Who' is used for people as the subject of a relative clause, not 'which,' which refers to things."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L67_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 67-2] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "The app [who] I use every morning tracks my sleep and daily steps.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "where",
+                "whose",
+                "which",
+                "who"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 67-2)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 67]."
+            "correctAnswer": "which",
+            "hint": "We need a relative pronoun for a thing, here an app, not a person.",
+            "explanation": "'Which' is used for things or objects, such as an app, not 'who,' which is reserved for people."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L67_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 67-3] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "That's the family [who's] dog always barks at night in our neighborhood.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "where",
+                "whose",
+                "who's",
+                "which"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 67-3)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 67]."
+            "correctAnswer": "whose",
+            "hint": "We need a possessive relative pronoun showing the dog belongs to the family, not the contraction of 'who is.'",
+            "explanation": "'Whose' shows possession, while 'who's' is a contraction of 'who is' and doesn't fit here."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L68_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 68-1] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "The teacher [which] taught me chemistry last year just retired from the school.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "where",
+                "whose",
+                "who",
+                "which"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 68-1)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 68]."
+            "correctAnswer": "who",
+            "hint": "We need a relative pronoun for a person, used as the subject.",
+            "explanation": "'Who' refers to people, here the teacher, not 'which,' which refers to things."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L68_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 68-2] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "The textbook [who] we use in class is quite old and a little outdated.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "which",
+                "who",
+                "where",
+                "whose"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 68-2)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 68]."
+            "correctAnswer": "which",
+            "hint": "We need a relative pronoun for a thing, here a textbook, not a person.",
+            "explanation": "'Which' refers to objects or things, such as a textbook, not 'who,' which is for people."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L68_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 68-3] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "That's the student [who's] backpack was left in the classroom yesterday.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "whose",
+                "where",
+                "which",
+                "who's"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 68-3)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 68]."
+            "correctAnswer": "whose",
+            "hint": "We need a possessive relative pronoun showing the backpack belongs to the student.",
+            "explanation": "'Whose' shows possession, while 'who's' is a contraction of 'who is' and doesn't fit this meaning."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L69_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 69-1] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "If I [will finish] the report on time, my manager will be very happy.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "finishing",
+                "finish",
+                "finished",
+                "will finish"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 69-1)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 69]."
+            "correctAnswer": "finish",
+            "hint": "First conditional uses the simple present in the 'if' clause, not the future form.",
+            "explanation": "In first conditional sentences, the 'if' clause uses the simple present: 'If I finish,' not 'will finish.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L69_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 69-2] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "If you send the email now, the client [receives] it before the meeting starts.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "receiving",
+                "receives",
+                "received",
+                "will receive"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 69-2)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 69]."
+            "correctAnswer": "will receive",
+            "hint": "The main clause of a first conditional sentence uses 'will' plus the base verb.",
+            "explanation": "The result clause of a first conditional uses 'will' + base verb: 'will receive,' not just 'receives.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L69_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 69-3] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "If we [will have] enough time, we'll review the budget again tomorrow.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "have",
+                "had",
+                "will have",
+                "having"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 69-3)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 69]."
+            "correctAnswer": "have",
+            "hint": "First conditional uses the simple present in the 'if' clause, not 'will.'",
+            "explanation": "The 'if' clause of a first conditional always uses the simple present: 'have,' not 'will have.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L70_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 70-1] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "If the weather [will be] nice tomorrow, we'll go hiking in the mountains.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "being",
+                "is",
+                "was",
+                "will be"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 70-1)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 70]."
+            "correctAnswer": "is",
+            "hint": "Remember that first conditional 'if' clauses stay in the present tense.",
+            "explanation": "The 'if' clause of a first conditional sentence takes the simple present: 'is,' not 'will be.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L70_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 70-2] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "If we miss this flight, we [have] to wait six hours for the next one.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "have",
+                "will have",
+                "having",
+                "had"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 70-2)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 70]."
+            "correctAnswer": "will have",
+            "hint": "The result clause of a first conditional sentence uses 'will' plus the base verb.",
+            "explanation": "The main clause of a first conditional uses 'will' + base verb: 'will have to wait,' not just 'have.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L70_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 2,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 70-3] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "If you [will forget] your passport at home, you won't be able to board.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "forget",
+                "forgetting",
+                "will forget",
+                "forgot"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 70-3)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 70]."
+            "correctAnswer": "forget",
+            "hint": "The condition itself is expressed with a present-tense verb here.",
+            "explanation": "The 'if' clause of a first conditional sentence requires the simple present: 'forget,' not 'will forget.'"
         }
     ]
 }

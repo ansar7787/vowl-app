@@ -5,513 +5,483 @@
     "quests": [
         {
             "id": "WRT_CORRECTIONWRITING_L141_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 141-1] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "Never [I have seen] such a sudden improvement in a patient's condition before.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "have I seen",
+                "did I saw",
+                "I saw",
+                "I have seen"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 141-1)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 141]."
+            "correctAnswer": "have I seen",
+            "hint": "Negative adverbials like 'Never' at the start of a sentence trigger inverted word order, with the auxiliary first.",
+            "explanation": "When 'Never' begins a sentence for emphasis, the auxiliary inverts with the subject: 'have I seen,' not 'I have seen.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L141_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 141-2] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "Not only [she ate] better, but she also started exercising regularly every morning.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "she did eat",
+                "did she eat",
+                "she ate",
+                "ate she"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 141-2)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 141]."
+            "correctAnswer": "did she eat",
+            "hint": "'Not only' at the start of a sentence triggers inverted word order with an auxiliary verb.",
+            "explanation": "After 'Not only' at the start, the auxiliary inverts with the subject: 'did she eat,' not 'she ate.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L141_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 141-3] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "Rarely [doctors have witnessed] a recovery as remarkable as this one in their careers.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "did doctors witness",
+                "have doctors witnessed",
+                "doctors witnessed",
+                "doctors have witnessed"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 141-3)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 141]."
+            "correctAnswer": "have doctors witnessed",
+            "hint": "'Rarely' at the start of a sentence triggers inverted word order.",
+            "explanation": "Negative adverbials such as 'Rarely' at the front require inversion: 'have doctors witnessed,' not the normal order."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L142_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 142-1] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "Never [I have seen] such an emotional ending to a film before in my life.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "have I seen",
+                "I have seen",
+                "did I saw",
+                "I saw"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 142-1)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 142]."
+            "correctAnswer": "have I seen",
+            "hint": "Negative adverbials like 'Never' at the start of a sentence trigger inverted word order.",
+            "explanation": "'Never' at the front of a sentence requires the auxiliary to invert with the subject: 'have I seen,' not 'I have seen.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L142_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 142-2] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "Not only [the album was] a hit, but it also won several major awards that year.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "was the album",
+                "the album was",
+                "the album did become",
+                "did the album become"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 142-2)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 142]."
+            "correctAnswer": "was the album",
+            "hint": "'Not only' at the start of a sentence triggers inverted word order.",
+            "explanation": "After 'Not only,' the verb 'be' inverts directly with the subject: 'was the album,' not 'the album was.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L142_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 142-3] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "Little [the director knew] that the small independent film would become a worldwide hit.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "the director did know",
+                "knew the director",
+                "the director knew",
+                "did the director know"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 142-3)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 142]."
+            "correctAnswer": "did the director know",
+            "hint": "'Little' at the start of a sentence with this meaning triggers inverted word order.",
+            "explanation": "'Little' meaning 'almost not at all' at the start requires inversion: 'did the director know,' not 'the director knew.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L143_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 143-1] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "It was [her] that suggested rescheduling the meeting, not me, if I remember correctly.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "she",
+                "that she",
+                "who she",
+                "her"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 143-1)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 143]."
+            "correctAnswer": "she",
+            "hint": "Think about the subject pronoun needed in the structure 'It was [person] who/that...'",
+            "explanation": "Cleft sentences with 'It was...who/that' need a subject pronoun like 'she,' not the object pronoun 'her.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L143_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 143-2] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "[It] I really need right now is a clear answer from your team about the plan.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "That",
+                "What",
+                "It",
+                "This"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 143-2)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 143]."
+            "correctAnswer": "What",
+            "hint": "Think about the structure 'What [someone] needs is...' used to emphasize a specific thing.",
+            "explanation": "Cleft sentences emphasizing a need begin with 'What,' not 'It': 'What I really need is...'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L143_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 143-3] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "It was the misunderstanding [who] caused all this confusion between the two teams.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "which one",
+                "who",
+                "that",
+                "what"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 143-3)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 143]."
+            "correctAnswer": "that",
+            "hint": "Think about the structure 'It was [thing] that...' used to emphasize a cause.",
+            "explanation": "Cleft sentences with 'It was...that' use 'that' for things and causes, not 'who,' which is for people."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L144_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 144-1] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "It was my neighbor [which] helped me fix the leaking pipe in the kitchen.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "which",
+                "that one",
+                "what",
+                "who"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 144-1)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 144]."
+            "correctAnswer": "who",
+            "hint": "Think about the structure 'It was [person] who...' used to emphasize who performed an action.",
+            "explanation": "Cleft sentences with 'It was...who' use 'who' for people, not 'which,' which is for things."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L144_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 144-2] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "[It] really annoys me is when people don't reply to messages for days.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "This",
+                "What",
+                "It",
+                "That"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 144-2)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 144]."
+            "correctAnswer": "What",
+            "hint": "Think about the structure 'What [someone] feels is...' used to emphasize a specific feeling.",
+            "explanation": "Cleft sentences highlighting a feeling begin with 'What,' not 'It': 'What really annoys me is...'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L144_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 144-3] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "It was the constant noise from the street [who] kept me awake most of the night.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "which one",
+                "that",
+                "who",
+                "what"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 144-3)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 144]."
+            "correctAnswer": "that",
+            "hint": "This cleft pattern singles out a cause using 'It was...that.'",
+            "explanation": "Cleft sentences with 'It was...that' use 'that' for causes, not 'who,' which is reserved for people."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L145_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 145-1] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "You [shouldn't have] studied so much; the test turned out to be very easy.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "mustn't have",
+                "can't have",
+                "needn't have",
+                "shouldn't have"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 145-1)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 145]."
+            "correctAnswer": "needn't have",
+            "hint": "Think about a past action that turned out to be unnecessary, not a mistaken one.",
+            "explanation": "'Needn't have' shows an action was unnecessary, fitting overpreparing for an easy test, not 'shouldn't have,' which criticizes a mistake."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L145_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 145-2] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "You [needn't have] copied your friend's homework; now you're both in serious trouble.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "needn't have",
+                "mustn't have",
+                "shouldn't have",
+                "can't have"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 145-2)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 145]."
+            "correctAnswer": "shouldn't have",
+            "hint": "Think about a past action that was a mistake, not simply unnecessary.",
+            "explanation": "'Shouldn't have' criticizes a past mistake, like copying homework, not 'needn't have,' which means it was simply unnecessary."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L145_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 145-3] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "She [needn't have] left her notes at home; the presentation went really badly as a result.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "can't have",
+                "needn't have",
+                "mustn't have",
+                "shouldn't have"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 145-3)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 145]."
+            "correctAnswer": "shouldn't have",
+            "hint": "Think about a past action that was a mistake leading to a negative outcome.",
+            "explanation": "'Shouldn't have' criticizes a past mistake that caused a problem, not 'needn't have,' which means it was unnecessary."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L146_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 146-1] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "You [shouldn't have] stayed so late; the deadline was actually extended that afternoon.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "needn't have",
+                "mustn't have",
+                "can't have",
+                "shouldn't have"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 146-1)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 146]."
+            "correctAnswer": "needn't have",
+            "hint": "This modal shows effort was spent on something that wasn't actually required.",
+            "explanation": "'Needn't have' shows an action was unnecessary, here staying late when the deadline changed, not 'shouldn't have.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L146_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 146-2] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "He [needn't have] sent that email without checking it first; it had several mistakes.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "can't have",
+                "shouldn't have",
+                "needn't have",
+                "mustn't have"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 146-2)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 146]."
+            "correctAnswer": "shouldn't have",
+            "hint": "This modal criticizes a choice that turned out to be a genuine error.",
+            "explanation": "'Shouldn't have' criticizes a past mistake, here sending an unchecked email, not 'needn't have.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L146_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 146-3] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "We [shouldn't have] rushed the report; the client postponed the meeting anyway that day.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "mustn't have",
+                "can't have",
+                "needn't have",
+                "shouldn't have"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 146-3)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 146]."
+            "correctAnswer": "needn't have",
+            "hint": "Think about an action that turned out to be unnecessary, given later events.",
+            "explanation": "'Needn't have' shows the effort was unnecessary, since the meeting was postponed, not 'shouldn't have.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L147_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 147-1] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "The agent recommended that we [booked] our tickets a month in advance for the trip.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "will book",
+                "books",
+                "book",
+                "booked"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 147-1)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 147]."
+            "correctAnswer": "book",
+            "hint": "After 'recommend that,' the subjunctive uses the base form of the verb, regardless of subject.",
+            "explanation": "The subjunctive after 'recommend that' uses the base verb form for all subjects: 'book,' not 'booked.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L147_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 147-2] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "Our guide insisted that everyone [stays] with the group at all times during the tour.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "will stay",
+                "stays",
+                "stay",
+                "stayed"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 147-2)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 147]."
+            "correctAnswer": "stay",
+            "hint": "After 'insist that,' the subjunctive uses the base form of the verb, not the -s form.",
+            "explanation": "The subjunctive mood after 'insist that' takes the base verb form: 'stay,' not 'stays,' regardless of the subject."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L147_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 147-3] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "It is essential that each passenger [shows] their passport at check-in before boarding.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "shows",
+                "will show",
+                "showed",
+                "show"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 147-3)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 147]."
+            "correctAnswer": "show",
+            "hint": "After 'It is essential that,' the subjunctive uses the base form of the verb, not the -s form.",
+            "explanation": "Subjunctive structures like 'it is essential that' require the base verb form: 'show,' not 'shows.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L148_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 148-1] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "My mother suggested that we [took] a family photo before everyone leaves for the airport.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "took",
+                "take",
+                "will take",
+                "takes"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 148-1)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 148]."
+            "correctAnswer": "take",
+            "hint": "After 'suggest that,' the subjunctive uses the base form of the verb, not the past tense.",
+            "explanation": "The subjunctive after 'suggest that' uses the base verb form for all subjects: 'take,' not 'took.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L148_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 148-2] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "My father insisted that my brother [helps] him with the heavy moving boxes.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "will help",
+                "helped",
+                "helps",
+                "help"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 148-2)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 148]."
+            "correctAnswer": "help",
+            "hint": "Following 'insist that,' the verb stays in its base form regardless of subject.",
+            "explanation": "Subjunctive structures after 'insist that' require the base verb form: 'help,' not 'helps.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L148_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 148-3] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "It's important that every family member [is] involved in the final decision.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "is",
+                "will be",
+                "was",
+                "be"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 148-3)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 148]."
+            "correctAnswer": "be",
+            "hint": "After 'It's important that,' the subjunctive uses the base form 'be,' not 'is.'",
+            "explanation": "The subjunctive mood always uses 'be' rather than 'is' or 'are,' regardless of the subject."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L149_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 149-1] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "The store stayed open, [whereas] with reduced hours, during the entire holiday period.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "whereas",
+                "because",
+                "notwithstanding",
+                "albeit"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 149-1)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 149]."
+            "correctAnswer": "albeit",
+            "hint": "Think about a connector meaning 'although,' often placed right before a short phrase, not one comparing two facts.",
+            "explanation": "'Albeit' means 'although' and precedes a short phrase, not 'whereas,' which contrasts two complete facts."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L149_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 149-2] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "The complaints, [albeit] valid, did not change the store's official return policy.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "albeit",
+                "because",
+                "whereas",
+                "notwithstanding"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 149-2)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 149]."
+            "correctAnswer": "notwithstanding",
+            "hint": "Think about a formal connector meaning 'despite,' placed after the noun it modifies, not one meaning 'although.'",
+            "explanation": "'Notwithstanding' means 'despite' and can follow the noun it refers to, unlike 'albeit,' which precedes a short phrase."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L149_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 149-3] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "Online shoppers want fast delivery, [albeit] in-store shoppers prioritize seeing the product first.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "albeit",
+                "whereas",
+                "notwithstanding",
+                "because"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 149-3)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 149]."
+            "correctAnswer": "whereas",
+            "hint": "Think about a connector used to contrast two different groups' preferences, not one meaning 'although.'",
+            "explanation": "'Whereas' contrasts two different preferences, not 'albeit,' which precedes a short descriptive phrase."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L150_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 150-1] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "The restaurant remained popular, [albeit] several negative reviews appearing online recently.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "albeit",
+                "because",
+                "whereas",
+                "notwithstanding"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 150-1)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 150]."
+            "correctAnswer": "notwithstanding",
+            "hint": "Think about a formal connector meaning 'despite,' followed by a noun phrase, not one meaning 'although.'",
+            "explanation": "'Notwithstanding' means 'despite' and introduces a contrasting fact, not 'albeit,' which precedes a short phrase."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L150_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 150-2] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "The dish was delicious, [whereas] a little too spicy for some of the guests.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "notwithstanding",
+                "whereas",
+                "because",
+                "albeit"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 150-2)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 150]."
+            "correctAnswer": "albeit",
+            "hint": "Think about a connector meaning 'although,' followed by a brief descriptive phrase, not one comparing two facts.",
+            "explanation": "'Albeit' means 'although' and is followed by a brief phrase, not 'whereas,' which contrasts two complete facts."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L150_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 4,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 150-3] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "Some diners prefer bold flavors, [albeit] others enjoy simpler, milder dishes instead.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "notwithstanding",
+                "albeit",
+                "because",
+                "whereas"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 150-3)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 150]."
+            "correctAnswer": "whereas",
+            "hint": "Think about a connector used to contrast two different preferences, not one meaning 'although.'",
+            "explanation": "'Whereas' contrasts two groups' tastes within a sentence, not 'albeit,' which precedes a short phrase."
         }
     ]
 }

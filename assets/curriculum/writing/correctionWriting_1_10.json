@@ -5,513 +5,483 @@
     "quests": [
         {
             "id": "WRT_CORRECTIONWRITING_L1_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 1-1] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "Each of my neighbors [are friendly] to new families on our street.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "being friendly",
+                "is friendly",
+                "were friendly",
+                "be friendly"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 1-1)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 1]."
+            "correctAnswer": "is friendly",
+            "hint": "Look at the subject 'Each' - it is always treated as singular, even before 'of my neighbors.'",
+            "explanation": "'Each' is a singular indefinite pronoun, so it needs the singular verb 'is,' not 'are.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L1_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 1-2] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "Everyone in my family [are happy] about the new house.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "were happy",
+                "be happy",
+                "is happy",
+                "being happy"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 1-2)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 1]."
+            "correctAnswer": "is happy",
+            "hint": "The subject 'Everyone' looks like it refers to many people, but grammatically it is singular.",
+            "explanation": "'Everyone' is grammatically singular, so it takes the singular verb 'is,' not the plural 'are.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L1_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 1-3] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "Either of my parents [are able] to pick me up after school today.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "is able",
+                "were able",
+                "be able",
+                "being able"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 1-3)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 1]."
+            "correctAnswer": "is able",
+            "hint": "The subject 'Either' refers to one of two people, so think about the matching singular verb.",
+            "explanation": "'Either' is singular, meaning 'one or the other,' so it requires the singular verb 'is.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L2_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 2-1] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "Each of the students [are responsible] for bringing their own textbook.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "be responsible",
+                "were responsible",
+                "is responsible",
+                "being responsible"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 2-1)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 2]."
+            "correctAnswer": "is responsible",
+            "hint": "The subject 'Each' is always singular, regardless of how many students follow it.",
+            "explanation": "'Each' takes a singular verb, so the correct form is 'is responsible,' not 'are responsible.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L2_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 2-2] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "Neither of the answers [are correct], according to the teacher.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "were correct",
+                "is correct",
+                "be correct",
+                "being correct"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 2-2)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 2]."
+            "correctAnswer": "is correct",
+            "hint": "The subject 'Neither' refers to not one of the two, and is treated as singular.",
+            "explanation": "'Neither' is a singular indefinite pronoun, so it pairs with the singular verb 'is.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L2_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 2-3] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "Somebody in the classroom [are talking] loudly during the quiet test.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "were talking",
+                "being talking",
+                "be talking",
+                "is talking"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 2-3)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 2]."
+            "correctAnswer": "is talking",
+            "hint": "The subject 'Somebody' refers to one unknown person and is always singular.",
+            "explanation": "'Somebody' is singular, so the present continuous needs the singular auxiliary 'is,' not 'are.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L3_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 3-1] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "My manager always [check] the schedule before assigning new tasks.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "checks",
+                "checked",
+                "checking",
+                "check"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 3-1)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 3]."
+            "correctAnswer": "checks",
+            "hint": "The subject 'my manager' is singular (he/she), so the verb needs an ending added.",
+            "explanation": "Singular subjects like 'my manager' require an -s ending on the verb in the simple present: 'checks.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L3_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 3-2] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "Our accounting department [handle] all the invoices for the company.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "handled",
+                "handle",
+                "handling",
+                "handles"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 3-2)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 3]."
+            "correctAnswer": "handles",
+            "hint": "Think of 'our accounting department' as a single unit, like 'it,' which needs the matching verb ending.",
+            "explanation": "Singular collective subjects like 'department' take the -s verb form in the simple present: 'handles.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L3_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 3-3] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "She usually [arrive] at the office before everyone else.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "arrived",
+                "arrives",
+                "arriving",
+                "arrive"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 3-3)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 3]."
+            "correctAnswer": "arrives",
+            "hint": "The subject 'she' is singular, so think about the verb ending needed in the simple present.",
+            "explanation": "With singular subjects such as 'she,' the simple present verb takes an -s ending: 'arrives.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L4_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 4-1] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "This airline always [offer] free snacks on international flights.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "offered",
+                "offering",
+                "offer",
+                "offers"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 4-1)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 4]."
+            "correctAnswer": "offers",
+            "hint": "The subject 'this airline' is singular, so the verb needs an ending added.",
+            "explanation": "Singular subjects like 'this airline' require an -s ending on the verb in the simple present: 'offers.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L4_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 4-2] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "My travel agent usually [recommend] budget-friendly hotels near the airport.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "recommend",
+                "recommended",
+                "recommends",
+                "recommending"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 4-2)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 4]."
+            "correctAnswer": "recommends",
+            "hint": "The subject 'my travel agent' is singular, so think about the matching verb ending.",
+            "explanation": "With a singular subject, the simple present verb takes an -s ending: 'recommends.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L4_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 4-3] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "The local guide [know] every hidden street in the old town.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "knowing",
+                "knows",
+                "know",
+                "knowed"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 4-3)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 4]."
+            "correctAnswer": "knows",
+            "hint": "The subject 'the local guide' is singular, so the verb needs an -s ending, and remember this verb is irregular.",
+            "explanation": "'Know' is irregular but still follows the -s rule for singular subjects in the simple present: 'knows,' not 'knowed.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L5_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 5-1] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "My grandmother has three [childs] who all live in different cities.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "children",
+                "childs",
+                "childrens",
+                "childes"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 5-1)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 5]."
+            "correctAnswer": "children",
+            "hint": "Think about the irregular plural form of the word 'child.'",
+            "explanation": "'Child' has an irregular plural form, 'children,' not the regular 'childs.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L5_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 5-2] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "Both of my [brother-in-laws] are coming to the family reunion this year.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "brothers-in-laws",
+                "brother-in-law's",
+                "brother-in-laws",
+                "brothers-in-law"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 5-2)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 5]."
+            "correctAnswer": "brothers-in-law",
+            "hint": "In compound nouns like this, the main noun usually takes the plural ending, not the last word.",
+            "explanation": "In compound nouns such as 'brother-in-law,' the core noun 'brother' becomes plural: 'brothers-in-law.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L5_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 5-3] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "There are two [babys] sleeping peacefully in the next room.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "babies",
+                "babys",
+                "babes",
+                "babies's"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 5-3)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 5]."
+            "correctAnswer": "babies",
+            "hint": "Nouns ending in a consonant + y usually change 'y' to 'i' before adding -es.",
+            "explanation": "'Baby' ends in a consonant + y, so its plural changes the y to i and adds -es: 'babies.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L6_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 6-1] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "I need to buy two new [knifes] for my kitchen drawer.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "knive's",
+                "knives",
+                "knifes's",
+                "knifes"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 6-1)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 6]."
+            "correctAnswer": "knives",
+            "hint": "Nouns ending in -fe often change to -ves in the plural.",
+            "explanation": "Some nouns ending in -fe change to -ves in the plural, so 'knife' becomes 'knives,' not 'knifes.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L6_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 6-2] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "The store sells several [mouses] for use with desktop computers.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "mices",
+                "mouses",
+                "mice",
+                "mouse's"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 6-2)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 6]."
+            "correctAnswer": "mice",
+            "hint": "This is an irregular plural noun - think about the special form used for more than one 'mouse.'",
+            "explanation": "'Mouse' has an irregular plural form, 'mice,' rather than the regular 'mouses.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L6_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 6-3] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "She bought three [pair] of shoes during the big weekend sale.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "pair",
+                "paires",
+                "pairs",
+                "payrs"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 6-3)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 6]."
+            "correctAnswer": "pairs",
+            "hint": "Since the sentence already says 'three,' the noun needs to be in its plural form.",
+            "explanation": "After a number greater than one, the countable noun must be plural: 'three pairs,' not 'three pair.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L7_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 7-1] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "Could you pass me [a apple] from the fruit bowl, please?",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "an apple",
+                "a apple",
+                "apple",
+                "the apple's"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 7-1)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 7]."
+            "correctAnswer": "an apple",
+            "hint": "Listen to the sound at the start of 'apple' - is it a vowel sound or a consonant sound?",
+            "explanation": "We use 'an' before words starting with a vowel sound, so it should be 'an apple,' not 'a apple.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L7_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 7-2] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "I had [an sandwich] for lunch, and it was delicious.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "a sandwich",
+                "sandwich",
+                "the sandwich's",
+                "an sandwich"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 7-2)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 7]."
+            "correctAnswer": "a sandwich",
+            "hint": "Listen to the sound at the start of 'sandwich' - is it a vowel sound or a consonant sound?",
+            "explanation": "'Sandwich' starts with a consonant sound, so it follows 'a,' not 'an': 'a sandwich.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L7_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 7-3] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "We already talked about [a restaurant] you suggested yesterday, remember?",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "an restaurant",
+                "the restaurant",
+                "restaurant",
+                "a restaurant"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 7-3)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 7]."
+            "correctAnswer": "the restaurant",
+            "hint": "Think about whether this restaurant is new information or something already mentioned.",
+            "explanation": "Once something has already been mentioned, English uses 'the,' not 'a,' to refer back to it."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L8_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 8-1] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "I just bought [an new laptop] for my online classes.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "an new laptop",
+                "a new laptop",
+                "the new laptop's",
+                "new laptop"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 8-1)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 8]."
+            "correctAnswer": "a new laptop",
+            "hint": "Listen to the first sound of 'new' - is it a vowel or a consonant sound?",
+            "explanation": "'New' starts with a consonant sound, so the article should be 'a,' not 'an': 'a new laptop.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L8_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 8-2] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "She is looking for [a old charger] that fits her phone exactly.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "old charger",
+                "the old charger's",
+                "a old charger",
+                "an old charger"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 8-2)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 8]."
+            "correctAnswer": "an old charger",
+            "hint": "Listen to the first sound of the word right after the article.",
+            "explanation": "'Old' begins with a vowel sound, so the article should be 'an,' not 'a': 'an old charger.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L8_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 8-3] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "Please turn off [a computer] in the meeting room before you leave.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "computer",
+                "the computer",
+                "a computer",
+                "an computer"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 8-3)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 8]."
+            "correctAnswer": "the computer",
+            "hint": "Think about whether this is one specific, already-known computer, not just any computer.",
+            "explanation": "'The' is used because it refers to one specific, already-known computer, not just any computer."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L9_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 9-1] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "The doctor is waiting for you [on the small clinic] on Park Street.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "in the small clinic",
+                "at the small clinic",
+                "on the small clinic",
+                "to the small clinic"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 9-1)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 9]."
+            "correctAnswer": "in the small clinic",
+            "hint": "Think of a clinic as an enclosed space - which preposition do we use for being inside a place?",
+            "explanation": "We use 'in' for enclosed spaces like buildings, so it should be 'in the clinic,' not 'on the clinic.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L9_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 9-2] Each of the deep submersibles [are ready] for the Mariana Trench survey.",
+            "passage": "There is a small bandage [in your left hand] from the minor cut.",
             "options": [
-                "is ready",
-                "were ready",
-                "be ready",
-                "being ready"
+                "to your left hand",
+                "on your left hand",
+                "in your left hand",
+                "at your left hand"
             ],
-            "correctAnswer": "is ready",
-            "hint": "Focus on subject-verb agreement for the singular pronoun 'Each'. (Diving calibration index 9-2)",
-            "explanation": "Singular indefinite pronouns like 'Each' demand a singular verb 'is', not a plural verb 'are'. [Verified by Academy Syntax Unit 9]."
+            "correctAnswer": "on your left hand",
+            "hint": "Think about something resting on a surface, like skin, rather than inside something.",
+            "explanation": "We use 'on' for things that touch a surface, so a bandage is 'on' your hand, not 'in' your hand."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L9_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 9-3] Neither of the geothermal vents [have stopped] emitting chemical gases.",
+            "passage": "My next appointment with the dentist is [in the new health center] downtown.",
             "options": [
-                "has stopped",
-                "having stopped",
-                "have stop",
-                "were stopping"
+                "at the new health center",
+                "on the new health center",
+                "to the new health center",
+                "in the new health center"
             ],
-            "correctAnswer": "has stopped",
-            "hint": "Determine the correct singular verb form matching the pronoun 'Neither'. (Diving calibration index 9-3)",
-            "explanation": "Indefinite pronouns like 'Neither' are singular and require the singular auxiliary verb 'has'. [Verified by Academy Syntax Unit 9]."
+            "correctAnswer": "at the new health center",
+            "hint": "Think of this as naming a specific place or address, not describing being physically inside it.",
+            "explanation": "'At' is commonly used before the name of a specific place, such as a health center, rather than 'in.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L10_Q1",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 10-1] Winds trigger cold upwellings, which [carries] deep ocean nutrients upward.",
+            "passage": "We watched the whole match [at the new stadium] downtown last night.",
             "options": [
-                "carry",
-                "carrying",
-                "is carrying",
-                "has carried"
+                "on the new stadium",
+                "in the new stadium",
+                "at the new stadium",
+                "to the new stadium"
             ],
-            "correctAnswer": "carry",
-            "hint": "Ensure the relative pronoun 'which' matches its plural antecedent 'upwellings'. (Diving calibration index 10-1)",
-            "explanation": "The relative pronoun 'which' refers to the plural antecedent 'upwellings', demanding the plural verb 'carry'. [Verified by Academy Syntax Unit 10]."
+            "correctAnswer": "in the new stadium",
+            "hint": "Think of a stadium as a large enclosed area you go inside.",
+            "explanation": "Large enclosed spaces such as stadiums usually take 'in,' not 'at': 'in the stadium.'"
         },
         {
             "id": "WRT_CORRECTIONWRITING_L10_Q2",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 10-2] Deep-sea bioluminescent fish [uses] cold chemical luciferin to light up lures.",
+            "passage": "There is a great comedy show [in TV] tonight that everyone is talking about.",
             "options": [
-                "use",
-                "using",
-                "uses to",
-                "is using"
+                "on TV",
+                "to TV",
+                "in TV",
+                "at TV"
             ],
-            "correctAnswer": "use",
-            "hint": "Identify the plural subject 'fish' (plural context) and select its correct verb conjugation. (Diving calibration index 10-2)",
-            "explanation": "In this plural context, 'fish' functions as a plural subject, requiring the plural base verb 'use'. [Verified by Academy Syntax Unit 10]."
+            "correctAnswer": "on TV",
+            "hint": "Remember the special preposition we always use with screens and broadcasts.",
+            "explanation": "We always say 'on TV,' not 'in TV,' when talking about programs being broadcast."
         },
         {
             "id": "WRT_CORRECTIONWRITING_L10_Q3",
-            "instruction": "AUDIT SYNTAX AND CORRECT THE FAULTY GRAMMATICAL PHRASE",
-            "difficulty": 1,
+            "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "Polish Cloth",
-            "passage": "[Calibration Audit 10-3] The towering canopy of giant kelp sanctuaries [shelter] diverse marine creatures.",
+            "passage": "The band is performing [in the music festival] this weekend downtown.",
             "options": [
-                "shelters",
-                "sheltering",
-                "be sheltering",
-                "have sheltered"
+                "in the music festival",
+                "to the music festival",
+                "at the music festival",
+                "on the music festival"
             ],
-            "correctAnswer": "shelters",
-            "hint": "Identify the singular head noun 'canopy' inside the complex subject phrase. (Diving calibration index 10-3)",
-            "explanation": "The true grammatical subject is the singular head noun 'canopy', requiring the singular verb form 'shelters'. [Verified by Academy Syntax Unit 10]."
+            "correctAnswer": "at the music festival",
+            "hint": "Think about naming a specific event, not a closed space you step inside.",
+            "explanation": "'At' is used before events such as festivals, parties, or concerts, rather than 'in.'"
         }
     ]
 }
