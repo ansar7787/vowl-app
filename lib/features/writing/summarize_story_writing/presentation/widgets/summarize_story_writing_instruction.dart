@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class SummarizeStoryWritingInstruction extends StatelessWidget {
+  final String instruction;
   final Color primaryColor;
 
   const SummarizeStoryWritingInstruction({
     super.key,
+    required this.instruction,
     required this.primaryColor,
   });
 
@@ -23,7 +25,7 @@ class SummarizeStoryWritingInstruction extends StatelessWidget {
           Icon(Icons.videocam_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
           Text(
-            "SEQUENCE THE KEY FRAMES TO PROJECT THE TRUTH", 
+            instruction.toUpperCase(), 
             style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp, 
               fontWeight: FontWeight.w900, 

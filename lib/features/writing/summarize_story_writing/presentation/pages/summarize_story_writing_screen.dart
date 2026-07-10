@@ -182,6 +182,7 @@ class _SummarizeStoryWritingScreenState
                       children: [
                         SizedBox(height: 16.h),
                         SummarizeStoryWritingInstruction(
+                          instruction: quest.instruction,
                           primaryColor: theme.primaryColor,
                         ),
                         SizedBox(height: 24.h),

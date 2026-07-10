@@ -5,633 +5,633 @@
     "quests": [
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L11_Q1",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Sub Mission 11-1] A deep sea submarine descends into the darkness. It reaches the active geothermal rift zone. The crew discovers a active field of towering chimneys.",
+            "story": "Mum made a shopping list before going out. She drove to the supermarket and put items in her trolley. She paid at the checkout and drove home.",
             "options": [
-                "Submersible descends into darkness.",
-                "Vessel reaches active geothermal rift.",
-                "Crew discovers massive towering chimneys.",
-                "Sunlight sparkles on the shallow coral."
+                "Mum made a shopping list before going out.",
+                "She put items in her trolley at the supermarket.",
+                "She paid at the checkout and drove home.",
+                "Mum forgot the shopping list at home."
             ],
             "correctOrder": [
                 0,
                 1,
                 2
             ],
-            "hint": "Follow the sequence from descent, reaching the floor, to the final discovery of vents. (Diving calibration index 11-1)",
-            "explanation": "The story logically moves from diving down, entering the rift, and discovering towering chimneys. [Verified by Cinematic Sequencer Unit 11]."
+            "hint": "Look for the shopping sequence: preparing the list, filling the trolley, then paying. One frame contradicts the preparation step.",
+            "explanation": "Shopping narratives show preparation, selection, and payment as the three key stages."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L11_Q2",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Microbe Mission 11-2] Microbes gather around sunless vents. They perform chemical synthesis using sulfur. This supports a rich community of specialized deep sea creatures.",
+            "story": "The dog barked loudly at the front door. Tom went to see who was there. He opened the door and found a friend standing outside.",
             "options": [
-                "Microbes cluster around sunless vents.",
-                "Bacteria synthesize food from sulfur.",
-                "A sunless ecosystem thrives in the deep.",
-                "Surface kelp harvests solar energy."
+                "Tom ignored the barking and stayed asleep.",
+                "The dog barked loudly at the front door.",
+                "Tom went to see who was there.",
+                "Tom opened the door and found a friend."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence the steps starting with microbial clustering, chemical conversion, to sustaining deep life. (Diving calibration index 11-2)",
-            "explanation": "Bacteria cluster, produce nutrient compounds chemically, and support sunless aquatic species. [Verified by Cinematic Sequencer Unit 11]."
+            "hint": "Follow the sequence: the dog barks, Tom investigates, then opens the door. One frame shows the wrong response.",
+            "explanation": "Cause-and-effect narratives show a signal, an investigation, and a discovery. The distractor replaces action with inaction."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L11_Q3",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Upwell Mission 11-3] Coastal winds push surface waters away. Deep icy currents rise to replace them. Plankton blooms rapidly due to the nutrient influx.",
+            "story": "Ella set the oven to the right temperature. She placed the pizza on the baking tray and put it inside. After fifteen minutes, she took out the golden pizza.",
             "options": [
-                "Surface coastal winds push top waters.",
-                "Deep icy current upwellings rise.",
-                "Plankton bloom spreads in sunlit layers.",
-                "Winter snow covers the ocean surface."
+                "Ella set the oven to the right temperature.",
+                "She placed the pizza in the oven.",
+                "Ella ordered a pizza for home delivery.",
+                "Ella took out the golden pizza after fifteen minutes."
             ],
             "correctOrder": [
                 0,
                 1,
-                2
+                3
             ],
-            "hint": "Sequence the upwelling cycle from surface wind push, deep rising currents, to plankton growth. (Diving calibration index 11-3)",
-            "explanation": "Winds displace top warm layers, bringing up cold bottom nutrients that ignite marine blooms. [Verified by Cinematic Sequencer Unit 11]."
+            "hint": "Follow the cooking steps: preheating, placing, then removing. One frame skips the cooking process entirely.",
+            "explanation": "Cooking narratives follow preparation, cooking, and completion. The distractor replaces home cooking with a delivery order."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L12_Q1",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Biolum Mission 12-1] Deep creatures oxidize luciferin inside their organs. A cold glowing light is produced. This glowing lure attracts prey in the pitch black abyss.",
+            "story": "Leo felt cold and wrapped himself in a blanket. He made a hot cup of tea and sat by the fireplace. After an hour he felt much warmer.",
             "options": [
-                "Species oxidize organic luciferin compounds.",
-                "Cold bioluminescent light glows intensely.",
-                "Glowing lures attract prey in abyss.",
-                "Solar beams warm surface currents."
+                "Leo felt cold and wrapped himself in a blanket.",
+                "Leo went outside for a walk in the cold.",
+                "He made a hot cup of tea by the fireplace.",
+                "Leo felt much warmer after an hour."
             ],
             "correctOrder": [
                 0,
-                1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence the biological process from chemical oxidation, light production, to hunting prey. (Diving calibration index 12-1)",
-            "explanation": "Organisms oxidize chemical luciferin, generating organic glowing beacons that attract deep prey. [Verified by Cinematic Sequencer Unit 12]."
+            "hint": "Sequence the comfort story: feeling cold, warming up, then the result. One frame contradicts the cosy setting.",
+            "explanation": "Comfort narratives move from discomfort to action to relief. The distractor replaces warmth-seeking with exposure to the cold."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L12_Q2",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Kelp Mission 12-2] Giant kelp anchors to bottom rocks. Fronds grow rapidly towards solar beams. Kelp canopies form floating forests sheltering fish.",
+            "story": "Nina woke up feeling unwell. She told her mum, who took her temperature. Her mum gave her some medicine and told her to rest in bed.",
             "options": [
-                "Kelp roots anchor to ocean bottom.",
-                "Fronds grow vertically towards sunlight.",
-                "Floating canopy forests shelter marine fish.",
-                "Cold volcanic ash blankets the vents."
+                "Nina woke up feeling unwell.",
+                "Her mum took her temperature.",
+                "Nina's mum gave her medicine and told her to rest.",
+                "Nina went to school despite feeling unwell."
             ],
             "correctOrder": [
                 0,
                 1,
                 2
             ],
-            "hint": "Sequence the plant development from rock anchoring, rapid vertical growth, to canopy shelter formation. (Diving calibration index 12-2)",
-            "explanation": "Sea plants anchor, grow rapidly upward to harness light, and construct dense canopies. [Verified by Cinematic Sequencer Unit 12]."
+            "hint": "Follow the health sequence: feeling sick, being checked, then receiving care. One frame ignores the illness.",
+            "explanation": "Home healthcare stories show reporting, diagnosing, and treating as the three steps. The distractor bypasses care entirely."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L12_Q3",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Sub Mission 12-3] A deep sea submarine descends into the darkness. It reaches the active geothermal rift zone. The crew discovers a active field of towering chimneys.",
+            "story": "It was getting dark outside. Kim closed the curtains and switched on the living room lamp. She settled on the sofa with a book.",
             "options": [
-                "Submersible descends into darkness.",
-                "Vessel reaches active geothermal rift.",
-                "Crew discovers massive towering chimneys.",
-                "Sunlight sparkles on the shallow coral."
+                "Kim went to bed immediately when it got dark.",
+                "It was getting dark outside.",
+                "Kim closed the curtains and switched on the lamp.",
+                "Kim settled on the sofa with a book."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Follow the sequence from descent, reaching the floor, to the final discovery of vents. (Diving calibration index 12-3)",
-            "explanation": "The story logically moves from diving down, entering the rift, and discovering towering chimneys. [Verified by Cinematic Sequencer Unit 12]."
+            "hint": "Trace the evening routine: noticing the dark, preparing the room, then relaxing. One frame skips the relaxation step.",
+            "explanation": "Evening routine narratives follow: noticing dark, preparing comfort, and settling down. The distractor skips to bedtime too early."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L13_Q1",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Microbe Mission 13-1] Microbes gather around sunless vents. They perform chemical synthesis using sulfur. This supports a rich community of specialized deep sea creatures.",
+            "story": "Grandpa sat down in his garden and picked up his newspaper. He read the news stories slowly and carefully. After finishing, he fell asleep in his chair.",
             "options": [
-                "Microbes cluster around sunless vents.",
-                "Bacteria synthesize food from sulfur.",
-                "A sunless ecosystem thrives in the deep.",
-                "Surface kelp harvests solar energy."
+                "Grandpa sat down and picked up his newspaper.",
+                "He read the news stories slowly and carefully.",
+                "Grandpa threw away the newspaper unread.",
+                "Grandpa fell asleep in his chair after finishing."
             ],
             "correctOrder": [
                 0,
                 1,
-                2
+                3
             ],
-            "hint": "Sequence the steps starting with microbial clustering, chemical conversion, to sustaining deep life. (Diving calibration index 13-1)",
-            "explanation": "Bacteria cluster, produce nutrient compounds chemically, and support sunless aquatic species. [Verified by Cinematic Sequencer Unit 13]."
+            "hint": "Sequence the garden reading: sitting down, reading, then the result. One frame contradicts the whole activity.",
+            "explanation": "Relaxation narratives show settling, doing an activity, and the resulting calm. The distractor removes the activity entirely."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L13_Q2",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Upwell Mission 13-2] Coastal winds push surface waters away. Deep icy currents rise to replace them. Plankton blooms rapidly due to the nutrient influx.",
+            "story": "The park was full of fallen leaves. A group of children gathered them into a big pile. They took turns jumping into the pile with shouts of joy.",
             "options": [
-                "Surface coastal winds push top waters.",
-                "Deep icy current upwellings rise.",
-                "Plankton bloom spreads in sunlit layers.",
-                "Winter snow covers the ocean surface."
+                "The park was full of fallen leaves.",
+                "The park gardener immediately swept the leaves away.",
+                "Children gathered the leaves into a big pile.",
+                "The children took turns jumping into the pile."
             ],
             "correctOrder": [
                 0,
-                1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence the upwelling cycle from surface wind push, deep rising currents, to plankton growth. (Diving calibration index 13-2)",
-            "explanation": "Winds displace top warm layers, bringing up cold bottom nutrients that ignite marine blooms. [Verified by Cinematic Sequencer Unit 13]."
+            "hint": "Follow the autumn play: noticing the leaves, gathering them, then playing. One frame introduces an adult who stops the fun.",
+            "explanation": "Play narratives show setting, preparation, and enjoyment. The distractor introduces an authority figure who prevents the play."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L13_Q3",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Biolum Mission 13-3] Deep creatures oxidize luciferin inside their organs. A cold glowing light is produced. This glowing lure attracts prey in the pitch black abyss.",
+            "story": "Mike noticed his bicycle tyre was flat. He found the puncture repair kit in the garage. He fixed the tyre and pumped it back up before school.",
             "options": [
-                "Species oxidize organic luciferin compounds.",
-                "Cold bioluminescent light glows intensely.",
-                "Glowing lures attract prey in abyss.",
-                "Solar beams warm surface currents."
+                "Mike noticed his bicycle tyre was flat.",
+                "He found the puncture repair kit in the garage.",
+                "Mike fixed the tyre and pumped it up before school.",
+                "Mike left his bicycle at home and walked to school."
             ],
             "correctOrder": [
                 0,
                 1,
                 2
             ],
-            "hint": "Sequence the biological process from chemical oxidation, light production, to hunting prey. (Diving calibration index 13-3)",
-            "explanation": "Organisms oxidize chemical luciferin, generating organic glowing beacons that attract deep prey. [Verified by Cinematic Sequencer Unit 13]."
+            "hint": "Follow the problem-solving story: noticing, finding a solution, then fixing. One frame skips the repair entirely.",
+            "explanation": "Repair narratives show noticing a problem, locating the tools, and solving it. The distractor replaces fixing with avoidance."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L14_Q1",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Kelp Mission 14-1] Giant kelp anchors to bottom rocks. Fronds grow rapidly towards solar beams. Kelp canopies form floating forests sheltering fish.",
+            "story": "The team meeting was scheduled for nine o'clock. Everyone arrived and sat around the table. The manager opened the meeting and shared the day's plan.",
             "options": [
-                "Kelp roots anchor to ocean bottom.",
-                "Fronds grow vertically towards sunlight.",
-                "Floating canopy forests shelter marine fish.",
-                "Cold volcanic ash blankets the vents."
+                "The meeting was postponed until the following week.",
+                "The team meeting was scheduled for nine o'clock.",
+                "Everyone arrived and sat around the table.",
+                "The manager opened the meeting and shared the plan."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence the plant development from rock anchoring, rapid vertical growth, to canopy shelter formation. (Diving calibration index 14-1)",
-            "explanation": "Sea plants anchor, grow rapidly upward to harness light, and construct dense canopies. [Verified by Cinematic Sequencer Unit 14]."
+            "hint": "Sequence the meeting story: the schedule, arrival, then the start. One frame postpones the event.",
+            "explanation": "Meeting narratives show scheduling, gathering, and starting. The distractor delays the event rather than letting it begin."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L14_Q2",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Sub Mission 14-2] A deep sea submarine descends into the darkness. It reaches the active geothermal rift zone. The crew discovers a active field of towering chimneys.",
+            "story": "It started raining heavily during the picnic. The family quickly packed up the food and blankets. They ran to the car and drove home laughing.",
             "options": [
-                "Submersible descends into darkness.",
-                "Vessel reaches active geothermal rift.",
-                "Crew discovers massive towering chimneys.",
-                "Sunlight sparkles on the shallow coral."
+                "It started raining heavily during the picnic.",
+                "The family quickly packed up the food and blankets.",
+                "The family stayed outside and continued the picnic.",
+                "They ran to the car and drove home laughing."
             ],
             "correctOrder": [
                 0,
                 1,
-                2
+                3
             ],
-            "hint": "Follow the sequence from descent, reaching the floor, to the final discovery of vents. (Diving calibration index 14-2)",
-            "explanation": "The story logically moves from diving down, entering the rift, and discovering towering chimneys. [Verified by Cinematic Sequencer Unit 14]."
+            "hint": "Follow the rain story: the rain starts, the family packs up, then they leave. One frame ignores the rain entirely.",
+            "explanation": "Disruption narratives show an unexpected event, a response, and a resolution. The distractor pretends the disruption did not happen."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L14_Q3",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Microbe Mission 14-3] Microbes gather around sunless vents. They perform chemical synthesis using sulfur. This supports a rich community of specialized deep sea creatures.",
+            "story": "Oliver found a ten-pound note on the pavement. He looked around to see if anyone had dropped it. He handed it in at the nearby police station.",
             "options": [
-                "Microbes cluster around sunless vents.",
-                "Bacteria synthesize food from sulfur.",
-                "A sunless ecosystem thrives in the deep.",
-                "Surface kelp harvests solar energy."
+                "Oliver found a ten-pound note on the pavement.",
+                "Oliver put the money in his pocket and walked on.",
+                "He looked around to see if anyone had dropped it.",
+                "Oliver handed the note in at the police station."
             ],
             "correctOrder": [
                 0,
-                1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence the steps starting with microbial clustering, chemical conversion, to sustaining deep life. (Diving calibration index 14-3)",
-            "explanation": "Bacteria cluster, produce nutrient compounds chemically, and support sunless aquatic species. [Verified by Cinematic Sequencer Unit 14]."
+            "hint": "Sequence the honest action: finding, checking, then handing in. One frame shows dishonesty instead.",
+            "explanation": "Honest-action narratives show discovery, consideration, and doing the right thing. The distractor replaces honesty with selfishness."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L15_Q1",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Upwell Mission 15-1] Coastal winds push surface waters away. Deep icy currents rise to replace them. Plankton blooms rapidly due to the nutrient influx.",
+            "story": "Sophie wanted to bake biscuits for her class. She followed the recipe step by step. The biscuits came out perfectly and everyone enjoyed them.",
             "options": [
-                "Surface coastal winds push top waters.",
-                "Deep icy current upwellings rise.",
-                "Plankton bloom spreads in sunlit layers.",
-                "Winter snow covers the ocean surface."
+                "Sophie decided to bake biscuits for her class.",
+                "She followed the recipe step by step.",
+                "The biscuits came out perfectly and everyone enjoyed them.",
+                "Sophie forgot to bring the biscuits to school."
             ],
             "correctOrder": [
                 0,
                 1,
                 2
             ],
-            "hint": "Sequence the upwelling cycle from surface wind push, deep rising currents, to plankton growth. (Diving calibration index 15-1)",
-            "explanation": "Winds displace top warm layers, bringing up cold bottom nutrients that ignite marine blooms. [Verified by Cinematic Sequencer Unit 15]."
+            "hint": "Trace the baking story: planning, following the recipe, then the outcome. One frame removes the successful delivery.",
+            "explanation": "Preparation-for-others narratives show intent, careful execution, and a shared reward. The distractor removes the sharing."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L15_Q2",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Biolum Mission 15-2] Deep creatures oxidize luciferin inside their organs. A cold glowing light is produced. This glowing lure attracts prey in the pitch black abyss.",
+            "story": "Harry planted a small oak tree in the garden. He watered it every day for a whole year. The little tree grew tall and strong by the following spring.",
             "options": [
-                "Species oxidize organic luciferin compounds.",
-                "Cold bioluminescent light glows intensely.",
-                "Glowing lures attract prey in abyss.",
-                "Solar beams warm surface currents."
+                "The oak tree was removed by the council.",
+                "Harry planted a small oak tree in the garden.",
+                "He watered it every day for a whole year.",
+                "The tree grew tall and strong by the following spring."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence the biological process from chemical oxidation, light production, to hunting prey. (Diving calibration index 15-2)",
-            "explanation": "Organisms oxidize chemical luciferin, generating organic glowing beacons that attract deep prey. [Verified by Cinematic Sequencer Unit 15]."
+            "hint": "Follow the growth story: planting, consistent care, then the result. One frame replaces growth with removal.",
+            "explanation": "Nurturing narratives follow plant, tend, and grow. The distractor introduces an authority that removes the tree."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L15_Q3",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Kelp Mission 15-3] Giant kelp anchors to bottom rocks. Fronds grow rapidly towards solar beams. Kelp canopies form floating forests sheltering fish.",
+            "story": "The kitchen was in a terrible mess after the party. The family worked together to wash the dishes and mop the floor. By bedtime, the kitchen was spotless.",
             "options": [
-                "Kelp roots anchor to ocean bottom.",
-                "Fronds grow vertically towards sunlight.",
-                "Floating canopy forests shelter marine fish.",
-                "Cold volcanic ash blankets the vents."
+                "The kitchen was a terrible mess after the party.",
+                "The family worked together to wash and mop.",
+                "The family hired a cleaner to do the job.",
+                "By bedtime, the kitchen was spotless."
             ],
             "correctOrder": [
                 0,
                 1,
-                2
+                3
             ],
-            "hint": "Sequence the plant development from rock anchoring, rapid vertical growth, to canopy shelter formation. (Diving calibration index 15-3)",
-            "explanation": "Sea plants anchor, grow rapidly upward to harness light, and construct dense canopies. [Verified by Cinematic Sequencer Unit 15]."
+            "hint": "Sequence the cleanup: the mess, working together, then the result. One frame replaces effort with outsourcing.",
+            "explanation": "Teamwork narratives show a problem, a shared response, and a clean result. The distractor replaces family cooperation with a hired service."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L16_Q1",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Sub Mission 16-1] A deep sea submarine descends into the darkness. It reaches the active geothermal rift zone. The crew discovers a active field of towering chimneys.",
+            "story": "The village had no playground for the children. Local families wrote a letter to the council. The council approved the project and built a playground.",
             "options": [
-                "Submersible descends into darkness.",
-                "Vessel reaches active geothermal rift.",
-                "Crew discovers massive towering chimneys.",
-                "Sunlight sparkles on the shallow coral."
+                "The village had no playground for children.",
+                "The council rejected the families' request.",
+                "Local families wrote a letter to the council.",
+                "The council approved and built a playground."
             ],
             "correctOrder": [
                 0,
-                1,
-                2
+                2,
+                3
             ],
-            "hint": "Follow the sequence from descent, reaching the floor, to the final discovery of vents. (Diving calibration index 16-1)",
-            "explanation": "The story logically moves from diving down, entering the rift, and discovering towering chimneys. [Verified by Cinematic Sequencer Unit 16]."
+            "hint": "Follow the community story: identifying a need, requesting action, then the result. One frame reverses the outcome.",
+            "explanation": "Community advocacy stories show a need, a request, and approval. The distractor replaces approval with rejection."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L16_Q2",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Microbe Mission 16-2] Microbes gather around sunless vents. They perform chemical synthesis using sulfur. This supports a rich community of specialized deep sea creatures.",
+            "story": "The car would not start on a cold winter morning. Dad called roadside assistance. The technician arrived and fixed the problem within twenty minutes.",
             "options": [
-                "Microbes cluster around sunless vents.",
-                "Bacteria synthesize food from sulfur.",
-                "A sunless ecosystem thrives in the deep.",
-                "Surface kelp harvests solar energy."
+                "The car would not start on a cold winter morning.",
+                "Dad called roadside assistance for help.",
+                "The technician arrived and fixed the problem quickly.",
+                "Dad sold the car and bought a new one."
             ],
             "correctOrder": [
                 0,
                 1,
                 2
             ],
-            "hint": "Sequence the steps starting with microbial clustering, chemical conversion, to sustaining deep life. (Diving calibration index 16-2)",
-            "explanation": "Bacteria cluster, produce nutrient compounds chemically, and support sunless aquatic species. [Verified by Cinematic Sequencer Unit 16]."
+            "hint": "Sequence the breakdown: the problem, calling help, then the fix. One frame gives an extreme response to a small problem.",
+            "explanation": "Breakdown narratives show a problem, a call for help, and a quick repair. The distractor replaces a simple fix with a drastic decision."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L16_Q3",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Upwell Mission 16-3] Coastal winds push surface waters away. Deep icy currents rise to replace them. Plankton blooms rapidly due to the nutrient influx.",
+            "story": "The children entered the library very quietly. They chose their books and found comfortable seats. They read in silence for the rest of the afternoon.",
             "options": [
-                "Surface coastal winds push top waters.",
-                "Deep icy current upwellings rise.",
-                "Plankton bloom spreads in sunlit layers.",
-                "Winter snow covers the ocean surface."
+                "The children made so much noise that they were asked to leave.",
+                "The children entered the library very quietly.",
+                "They chose their books and found seats.",
+                "They read in silence for the afternoon."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence the upwelling cycle from surface wind push, deep rising currents, to plankton growth. (Diving calibration index 16-3)",
-            "explanation": "Winds displace top warm layers, bringing up cold bottom nutrients that ignite marine blooms. [Verified by Cinematic Sequencer Unit 16]."
+            "hint": "Follow the library visit: entering quietly, selecting, then reading. One frame reverses the respectful behaviour.",
+            "explanation": "Respectful visit narratives show appropriate entry, selection, and quiet activity. The distractor introduces disruptive behaviour."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L17_Q1",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Biolum Mission 17-1] Deep creatures oxidize luciferin inside their organs. A cold glowing light is produced. This glowing lure attracts prey in the pitch black abyss.",
+            "story": "Maya received a birthday card in the post. She opened it and read the kind message inside. She called her friend to say thank you.",
             "options": [
-                "Species oxidize organic luciferin compounds.",
-                "Cold bioluminescent light glows intensely.",
-                "Glowing lures attract prey in abyss.",
-                "Solar beams warm surface currents."
+                "Maya received a birthday card in the post.",
+                "She opened it and read the kind message inside.",
+                "Maya threw the birthday card in the bin.",
+                "Maya called her friend to say thank you."
             ],
             "correctOrder": [
                 0,
                 1,
-                2
+                3
             ],
-            "hint": "Sequence the biological process from chemical oxidation, light production, to hunting prey. (Diving calibration index 17-1)",
-            "explanation": "Organisms oxidize chemical luciferin, generating organic glowing beacons that attract deep prey. [Verified by Cinematic Sequencer Unit 17]."
+            "hint": "Trace the gratitude story: receiving, reading, then responding. One frame replaces gratitude with indifference.",
+            "explanation": "Gratitude narratives show receiving, reading, and responding with appreciation. The distractor removes all gratitude from the outcome."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L17_Q2",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Kelp Mission 17-2] Giant kelp anchors to bottom rocks. Fronds grow rapidly towards solar beams. Kelp canopies form floating forests sheltering fish.",
+            "story": "The old oak tree fell across the road in the storm. A local farmer came with a chainsaw to cut it up. By morning the road was clear again.",
             "options": [
-                "Kelp roots anchor to ocean bottom.",
-                "Fronds grow vertically towards sunlight.",
-                "Floating canopy forests shelter marine fish.",
-                "Cold volcanic ash blankets the vents."
+                "The old oak tree fell across the road in the storm.",
+                "The road stayed blocked for the entire week.",
+                "A local farmer came with a chainsaw to cut it up.",
+                "The road was clear again by morning."
             ],
             "correctOrder": [
                 0,
-                1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence the plant development from rock anchoring, rapid vertical growth, to canopy shelter formation. (Diving calibration index 17-2)",
-            "explanation": "Sea plants anchor, grow rapidly upward to harness light, and construct dense canopies. [Verified by Cinematic Sequencer Unit 17]."
+            "hint": "Follow the storm story: the tree falls, a farmer clears it, then the road is open. One frame extends the blockage.",
+            "explanation": "Problem-resolution narratives show an event, a helper, and a successful outcome. The distractor replaces resolution with a prolonged problem."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L17_Q3",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Sub Mission 17-3] A deep sea submarine descends into the darkness. It reaches the active geothermal rift zone. The crew discovers a active field of towering chimneys.",
+            "story": "The children set up a lemonade stand outside their house. They made fresh lemonade and wrote a price sign. By the afternoon they had sold every cup.",
             "options": [
-                "Submersible descends into darkness.",
-                "Vessel reaches active geothermal rift.",
-                "Crew discovers massive towering chimneys.",
-                "Sunlight sparkles on the shallow coral."
+                "The children set up a lemonade stand outside.",
+                "They made fresh lemonade and wrote a price sign.",
+                "They had sold every cup by the afternoon.",
+                "Nobody stopped to buy any lemonade all day."
             ],
             "correctOrder": [
                 0,
                 1,
                 2
             ],
-            "hint": "Follow the sequence from descent, reaching the floor, to the final discovery of vents. (Diving calibration index 17-3)",
-            "explanation": "The story logically moves from diving down, entering the rift, and discovering towering chimneys. [Verified by Cinematic Sequencer Unit 17]."
+            "hint": "Sequence the business story: setting up, preparing the product, then selling it. One frame replaces success with failure.",
+            "explanation": "Small business narratives show setup, production, and success. The distractor replaces a sold-out ending with no sales at all."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L18_Q1",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Microbe Mission 18-1] Microbes gather around sunless vents. They perform chemical synthesis using sulfur. This supports a rich community of specialized deep sea creatures.",
+            "story": "Ava lost her phone at school. She asked her friends if anyone had seen it. Her teacher found it in the classroom and returned it to her.",
             "options": [
-                "Microbes cluster around sunless vents.",
-                "Bacteria synthesize food from sulfur.",
-                "A sunless ecosystem thrives in the deep.",
-                "Surface kelp harvests solar energy."
+                "Ava bought a brand-new phone to replace it.",
+                "Ava lost her phone at school.",
+                "She asked her friends if anyone had seen it.",
+                "Her teacher found the phone and returned it."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence the steps starting with microbial clustering, chemical conversion, to sustaining deep life. (Diving calibration index 18-1)",
-            "explanation": "Bacteria cluster, produce nutrient compounds chemically, and support sunless aquatic species. [Verified by Cinematic Sequencer Unit 18]."
+            "hint": "Follow the lost-item story: losing, searching, then recovery. One frame replaces recovery with a new purchase.",
+            "explanation": "Lost-and-found narratives progress from loss to search to recovery. The distractor bypasses the search and returns directly to replacement."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L18_Q2",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Upwell Mission 18-2] Coastal winds push surface waters away. Deep icy currents rise to replace them. Plankton blooms rapidly due to the nutrient influx.",
+            "story": "The young nurse arrived at the ward early for her shift. She checked each patient's notes carefully before starting her rounds. She gave everyone their morning medication on time.",
             "options": [
-                "Surface coastal winds push top waters.",
-                "Deep icy current upwellings rise.",
-                "Plankton bloom spreads in sunlit layers.",
-                "Winter snow covers the ocean surface."
+                "The nurse arrived at the ward early for her shift.",
+                "She checked each patient's notes carefully.",
+                "The nurse arrived late and missed the morning rounds.",
+                "She gave everyone their morning medication on time."
             ],
             "correctOrder": [
                 0,
                 1,
-                2
+                3
             ],
-            "hint": "Sequence the upwelling cycle from surface wind push, deep rising currents, to plankton growth. (Diving calibration index 18-2)",
-            "explanation": "Winds displace top warm layers, bringing up cold bottom nutrients that ignite marine blooms. [Verified by Cinematic Sequencer Unit 18]."
+            "hint": "Sequence the nursing shift: arriving early, checking notes, then giving medication. One frame contradicts the dedication shown.",
+            "explanation": "Professional duty narratives show punctuality, preparation, and careful execution. The distractor replaces dedication with tardiness."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L18_Q3",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Biolum Mission 18-3] Deep creatures oxidize luciferin inside their organs. A cold glowing light is produced. This glowing lure attracts prey in the pitch black abyss.",
+            "story": "The bakery ran out of bread early on Sunday morning. The baker made a new batch immediately. Fresh loaves were ready by ten o'clock.",
             "options": [
-                "Species oxidize organic luciferin compounds.",
-                "Cold bioluminescent light glows intensely.",
-                "Glowing lures attract prey in abyss.",
-                "Solar beams warm surface currents."
+                "The bakery ran out of bread early on Sunday.",
+                "The bakery closed for the rest of the day.",
+                "The baker made a new batch immediately.",
+                "Fresh loaves were ready by ten o'clock."
             ],
             "correctOrder": [
                 0,
-                1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence the biological process from chemical oxidation, light production, to hunting prey. (Diving calibration index 18-3)",
-            "explanation": "Organisms oxidize chemical luciferin, generating organic glowing beacons that attract deep prey. [Verified by Cinematic Sequencer Unit 18]."
+            "hint": "Follow the supply story: running out, responding quickly, then restocking. One frame closes the shop instead of restocking.",
+            "explanation": "Supply-problem narratives show a shortage, a quick response, and successful restocking. The distractor replaces action with closure."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L19_Q1",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Kelp Mission 19-1] Giant kelp anchors to bottom rocks. Fronds grow rapidly towards solar beams. Kelp canopies form floating forests sheltering fish.",
+            "story": "The bus was ten minutes late arriving at the stop. Passengers stood waiting in the cold. When it finally came, everyone got on and took their seats.",
             "options": [
-                "Kelp roots anchor to ocean bottom.",
-                "Fronds grow vertically towards sunlight.",
-                "Floating canopy forests shelter marine fish.",
-                "Cold volcanic ash blankets the vents."
+                "The bus was ten minutes late at the stop.",
+                "Passengers stood waiting in the cold.",
+                "Everyone got on and took their seats when it arrived.",
+                "The bus never arrived and passengers went home."
             ],
             "correctOrder": [
                 0,
                 1,
                 2
             ],
-            "hint": "Sequence the plant development from rock anchoring, rapid vertical growth, to canopy shelter formation. (Diving calibration index 19-1)",
-            "explanation": "Sea plants anchor, grow rapidly upward to harness light, and construct dense canopies. [Verified by Cinematic Sequencer Unit 19]."
+            "hint": "Sequence the delay story: the late bus, waiting in the cold, then boarding. One frame removes the arrival entirely.",
+            "explanation": "Delay narratives show a problem, a period of waiting, and eventual resolution. The distractor removes the resolution."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L19_Q2",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Sub Mission 19-2] A deep sea submarine descends into the darkness. It reaches the active geothermal rift zone. The crew discovers a active field of towering chimneys.",
+            "story": "The cat climbed to the top of the garden tree. It was too frightened to climb back down. The fire brigade came and rescued it safely.",
             "options": [
-                "Submersible descends into darkness.",
-                "Vessel reaches active geothermal rift.",
-                "Crew discovers massive towering chimneys.",
-                "Sunlight sparkles on the shallow coral."
+                "The cat jumped down and landed on its feet.",
+                "The cat climbed to the top of the garden tree.",
+                "The cat was too frightened to climb down.",
+                "The fire brigade came and rescued the cat safely."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Follow the sequence from descent, reaching the floor, to the final discovery of vents. (Diving calibration index 19-2)",
-            "explanation": "The story logically moves from diving down, entering the rift, and discovering towering chimneys. [Verified by Cinematic Sequencer Unit 19]."
+            "hint": "Follow the rescue story: climbing up, being stuck, then being rescued. One frame shows the cat rescuing itself.",
+            "explanation": "Rescue narratives show a problem, a stuck situation, and a professional solution. The distractor replaces external help with self-rescue."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L19_Q3",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Microbe Mission 19-3] Microbes gather around sunless vents. They perform chemical synthesis using sulfur. This supports a rich community of specialized deep sea creatures.",
+            "story": "The library introduced a new reading challenge for children. Each child chose five books to read over the summer. Those who finished received a special certificate.",
             "options": [
-                "Microbes cluster around sunless vents.",
-                "Bacteria synthesize food from sulfur.",
-                "A sunless ecosystem thrives in the deep.",
-                "Surface kelp harvests solar energy."
+                "The library introduced a new reading challenge.",
+                "Each child chose five books to read over summer.",
+                "Most children gave up after reading just one book.",
+                "Children who finished received a special certificate."
             ],
             "correctOrder": [
                 0,
                 1,
-                2
+                3
             ],
-            "hint": "Sequence the steps starting with microbial clustering, chemical conversion, to sustaining deep life. (Diving calibration index 19-3)",
-            "explanation": "Bacteria cluster, produce nutrient compounds chemically, and support sunless aquatic species. [Verified by Cinematic Sequencer Unit 19]."
+            "hint": "Trace the reading challenge: introduction, choosing books, then the reward. One frame replaces success with failure.",
+            "explanation": "Incentive narratives show a challenge, participation, and a reward for completion. The distractor replaces completion with giving up."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L20_Q1",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Upwell Mission 20-1] Coastal winds push surface waters away. Deep icy currents rise to replace them. Plankton blooms rapidly due to the nutrient influx.",
+            "story": "The new park café opened on a sunny Saturday. People came from all over the neighbourhood to try the coffee. By noon it was completely full.",
             "options": [
-                "Surface coastal winds push top waters.",
-                "Deep icy current upwellings rise.",
-                "Plankton bloom spreads in sunlit layers.",
-                "Winter snow covers the ocean surface."
+                "The new park café opened on a sunny Saturday.",
+                "The café struggled to attract any customers at first.",
+                "People from the neighbourhood came to try the coffee.",
+                "The café was completely full by noon."
             ],
             "correctOrder": [
                 0,
-                1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence the upwelling cycle from surface wind push, deep rising currents, to plankton growth. (Diving calibration index 20-1)",
-            "explanation": "Winds displace top warm layers, bringing up cold bottom nutrients that ignite marine blooms. [Verified by Cinematic Sequencer Unit 20]."
+            "hint": "Follow the opening story: the opening day, people arriving, then the full café. One frame replaces success with slow business.",
+            "explanation": "Business opening stories show launch, customer arrival, and full capacity. The distractor replaces instant success with slow business."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L20_Q2",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Biolum Mission 20-2] Deep creatures oxidize luciferin inside their organs. A cold glowing light is produced. This glowing lure attracts prey in the pitch black abyss.",
+            "story": "Fred could not remember where he had parked his car. He walked up and down the car park pressing his key fob. The car beeped and the lights flashed.",
             "options": [
-                "Species oxidize organic luciferin compounds.",
-                "Cold bioluminescent light glows intensely.",
-                "Glowing lures attract prey in abyss.",
-                "Solar beams warm surface currents."
+                "Fred could not remember where he had parked.",
+                "He walked around pressing his key fob.",
+                "The car beeped and the lights flashed to guide him.",
+                "Fred reported his car as stolen to the police."
             ],
             "correctOrder": [
                 0,
                 1,
                 2
             ],
-            "hint": "Sequence the biological process from chemical oxidation, light production, to hunting prey. (Diving calibration index 20-2)",
-            "explanation": "Organisms oxidize chemical luciferin, generating organic glowing beacons that attract deep prey. [Verified by Cinematic Sequencer Unit 20]."
+            "hint": "Sequence the search: forgetting, searching actively, then finding by sound. One frame jumps to an extreme action.",
+            "explanation": "Lost-car narratives show forgetting, searching, and locating using technology. The distractor replaces a simple solution with a panic response."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L20_Q3",
-            "instruction": "SEQUENCE THE FILM FRAMES CHRONOLOGICALLY AND ROTATE THE CRANK",
+            "instruction": "Arrange the story in the correct order.",
             "difficulty": 1,
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "[Kelp Mission 20-3] Giant kelp anchors to bottom rocks. Fronds grow rapidly towards solar beams. Kelp canopies form floating forests sheltering fish.",
+            "story": "The children finished school early because of a staff training day. They went to the park and played until dark. Their parents picked them up at the park gate.",
             "options": [
-                "Kelp roots anchor to ocean bottom.",
-                "Fronds grow vertically towards sunlight.",
-                "Floating canopy forests shelter marine fish.",
-                "Cold volcanic ash blankets the vents."
+                "The children went straight home and did their homework.",
+                "Children finished school early for a training day.",
+                "They went to the park and played until dark.",
+                "Their parents picked them up at the park gate."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence the plant development from rock anchoring, rapid vertical growth, to canopy shelter formation. (Diving calibration index 20-3)",
-            "explanation": "Sea plants anchor, grow rapidly upward to harness light, and construct dense canopies. [Verified by Cinematic Sequencer Unit 20]."
+            "hint": "Follow the unexpected free afternoon: early finish, playing, then being collected. One frame replaces fun with immediate homework.",
+            "explanation": "Unexpected free time narratives show an early end, free activity, and a safe return home. The distractor replaces play with study."
         }
     ]
 }
