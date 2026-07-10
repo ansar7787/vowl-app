@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class SituationSpeakingHeader extends StatelessWidget {
   final Color primaryColor;
+  final String instruction;
 
   const SituationSpeakingHeader({
     super.key,
     required this.primaryColor,
+    required this.instruction,
   });
 
   @override
@@ -23,7 +25,7 @@ class SituationSpeakingHeader extends StatelessWidget {
           Icon(Icons.cleaning_services_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 8.w),
           Text(
-            "FROSTED CONDENSATION SCRUBBER",
+            instruction.toUpperCase(),
             style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,

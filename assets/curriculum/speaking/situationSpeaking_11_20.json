@@ -9,7 +9,15 @@
             "hint": "Use 'Excuse me, do you happen to have the time?' to ask a stranger politely.",
             "explanation": "'Do you happen to have the time?' uses 'happen' to soften the request. This is more polite than the direct 'What time is it?' when speaking to a stranger.",
             "situationText": "You are waiting for a friend and your phone battery has just died.",
-            "sampleAnswer": "Excuse me, do you happen to have the time? My phone just died and I don't want to be late!"
+            "sampleAnswer": "Excuse me, do you happen to have the time? My phone just died and I don't want to be late!",
+            "correctAnswer": "excuse me",
+            "acceptedSynonyms": [
+                "excuse me",
+                "have the time",
+                "do you have the time",
+                "what time is it"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L11_Q2",
@@ -17,7 +25,15 @@
             "hint": "Say the hours first then 'past' or 'to' for minutes when telling the time in English.",
             "explanation": "English times use 'past' for the first half of the hour and 'to' for the second half. 'Half past two' (2:30) and 'quarter to three' (2:45) are the standard spoken forms.",
             "situationText": "A stranger asks you what time it is while you are both waiting at a bus stop.",
-            "sampleAnswer": "It's twenty past three. You're very welcome — I hope your bus comes soon!"
+            "sampleAnswer": "It's twenty past three. You're very welcome - I hope your bus comes soon!",
+            "correctAnswer": "twenty past three",
+            "acceptedSynonyms": [
+                "twenty past three",
+                "three twenty",
+                "it is three twenty",
+                "the time is"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L11_Q3",
@@ -25,7 +41,15 @@
             "hint": "Use 'The class starts at…' with AM or PM for clarity when discussing scheduled times.",
             "explanation": "Specifying 'at nine thirty' with AM or PM prevents misunderstandings. In English, times for scheduled events are almost always stated precisely with an accurate time reference.",
             "situationText": "Your new colleague asks what time the morning briefing begins each day this week.",
-            "sampleAnswer": "The briefing starts at nine thirty AM every morning. It's best to be there a few minutes early."
+            "sampleAnswer": "The briefing starts at nine thirty AM every morning. It's best to be there a few minutes early.",
+            "correctAnswer": "nine thirty",
+            "acceptedSynonyms": [
+                "nine thirty",
+                "half nine",
+                "briefing starts at nine",
+                "nine thirty AM"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L12_Q1",
@@ -33,15 +57,31 @@
             "hint": "Say the day name AND the date together: 'Today is Thursday, the twenty-second.'",
             "explanation": "Combining the day name with the date gives the most complete answer. English ordinal numbers (first, second, twenty-second) are used to state the date in speech.",
             "situationText": "A classmate who missed a day asks you what today's date is.",
-            "sampleAnswer": "Today is Thursday, the twenty-second of the month. You've missed quite a bit — catch me later and I'll fill you in!"
+            "sampleAnswer": "Today is Thursday, the twenty-second of the month. You've missed quite a bit - catch me later and I'll fill you in!",
+            "correctAnswer": "twenty-second",
+            "acceptedSynonyms": [
+                "twenty-second",
+                "the date today",
+                "Thursday the twenty-second",
+                "today is Thursday"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L12_Q2",
             "interactionType": "Scene Scrubber",
             "hint": "Use 'My birthday is on the [ordinal] of [month]' as the natural way to give your birthday.",
-            "explanation": "Birthdays in English are expressed as 'the fifteenth of March' or 'March the fifteenth' — either order is correct. Adding 'What about yours?' keeps the conversation flowing.",
+            "explanation": "Birthdays in English are expressed as 'the fifteenth of March' or 'March the fifteenth' - either order is correct. Adding 'What about yours?' keeps the conversation flowing.",
             "situationText": "Someone at your English class asks when your birthday is while filling in a group calendar.",
-            "sampleAnswer": "My birthday is on the seventh of September. How about yours? I'd love to know so we can celebrate together!"
+            "sampleAnswer": "My birthday is on the seventh of September. How about yours? I'd love to know so we can celebrate together!",
+            "correctAnswer": "seventh of September",
+            "acceptedSynonyms": [
+                "seventh of September",
+                "September the seventh",
+                "my birthday is",
+                "birthday is on"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L12_Q3",
@@ -49,7 +89,15 @@
             "hint": "Ask 'Are you doing anything special for your birthday?' to inquire about plans warmly.",
             "explanation": "'Are you doing anything special for your birthday?' is a warm, open-ended question showing genuine interest. It invites the person to share plans without feeling pressured to have made any.",
             "situationText": "You just remembered your coworker's birthday is this coming Saturday afternoon.",
-            "sampleAnswer": "Happy early birthday! Are you doing anything fun this weekend to celebrate? You deserve a brilliant day!"
+            "sampleAnswer": "Happy early birthday! Are you doing anything fun this weekend to celebrate? You deserve a brilliant day!",
+            "correctAnswer": "happy birthday",
+            "acceptedSynonyms": [
+                "happy birthday",
+                "happy early birthday",
+                "celebrate",
+                "birthday this weekend"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L13_Q1",
@@ -57,7 +105,15 @@
             "hint": "Use 'I have [number] brothers and sisters' to describe your siblings simply and clearly.",
             "explanation": "'I have two brothers and one sister' is the clearest way to describe your siblings. English speakers often add a detail like age or where they live to keep the conversation going.",
             "situationText": "A new friend at your English class asks if you have any brothers or sisters.",
-            "sampleAnswer": "I have one older brother and two younger sisters. We're a big noisy family but I love it!"
+            "sampleAnswer": "I have one older brother and two younger sisters. We're a big noisy family but I love it!",
+            "correctAnswer": "one older brother",
+            "acceptedSynonyms": [
+                "one older brother",
+                "two younger sisters",
+                "siblings",
+                "big noisy family"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L13_Q2",
@@ -65,7 +121,15 @@
             "hint": "Say 'My [relative] is a [job/age]' to give an interesting, specific description of a family member.",
             "explanation": "Adding a job or age makes the description more interesting than just naming the relationship. 'My mum is a nurse' is far more engaging than simply saying 'I have a mum.'",
             "situationText": "Your English host family asks you to tell them a little about your parents back home.",
-            "sampleAnswer": "My mum is a retired teacher and my dad still works as an engineer. They're both incredibly hard-working."
+            "sampleAnswer": "My mum is a retired teacher and my dad still works as an engineer. They're both incredibly hard-working.",
+            "correctAnswer": "retired teacher",
+            "acceptedSynonyms": [
+                "retired teacher",
+                "dad still works as an engineer",
+                "both hard-working",
+                "mum and dad"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L13_Q3",
@@ -73,7 +137,15 @@
             "hint": "Use 'We're very close' or 'We get along really well' to describe a positive family bond.",
             "explanation": "'We're very close' and 'we get along well' are natural expressions used frequently when talking about family relationships. They describe the quality of the relationship, not just the fact of it.",
             "situationText": "A classmate asks what your relationship with your family is like on a daily basis.",
-            "sampleAnswer": "We're really close. We message each other every day and try to have a video call at least once a week."
+            "sampleAnswer": "We're really close. We message each other every day and try to have a video call at least once a week.",
+            "correctAnswer": "really close",
+            "acceptedSynonyms": [
+                "really close",
+                "message each other every day",
+                "video call every week",
+                "stay in touch"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L14_Q1",
@@ -81,7 +153,15 @@
             "hint": "Use 'I live in a [type] with [number] bedrooms' to describe your home type and size quickly.",
             "explanation": "Describing your home with a type ('flat', 'house') and size ('two bedrooms') gives the listener a clear mental picture. This is the standard home-describing structure in English conversation.",
             "situationText": "Your language exchange partner asks you to describe where you currently live.",
-            "sampleAnswer": "I live in a two-bedroom flat near the city centre. It's small but really cosy and the location is brilliant."
+            "sampleAnswer": "I live in a two-bedroom flat near the city centre. It's small but really cosy and the location is brilliant.",
+            "correctAnswer": "two-bedroom flat",
+            "acceptedSynonyms": [
+                "two-bedroom flat",
+                "near the city centre",
+                "small but really cosy",
+                "city centre"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L14_Q2",
@@ -89,7 +169,15 @@
             "hint": "Name your favourite room and explain why with 'because…' for a natural conversational answer.",
             "explanation": "Giving a reason ('because') makes your answer more interesting and conversational. Simply naming a room without an explanation leaves the conversation flat and hard to continue.",
             "situationText": "Your teacher asks the class which room in their home is their absolute favourite, and why.",
-            "sampleAnswer": "My favourite room is the kitchen — because that's where everything happens in our family. Cooking, chatting, laughing. It's the heart of the home."
+            "sampleAnswer": "My favourite room is the kitchen - because that's where everything happens in our family. Cooking, chatting, laughing. It's the heart of the home.",
+            "correctAnswer": "favourite room is the kitchen",
+            "acceptedSynonyms": [
+                "favourite room is the kitchen",
+                "where everything happens",
+                "the kitchen",
+                "best room"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L14_Q3",
@@ -97,7 +185,15 @@
             "hint": "Use 'It's the building on the [left/right] when you come from [landmark]' for clear home location directions.",
             "explanation": "Using directional clues plus a familiar landmark ('when you come from the main road') helps visitors find your home far more reliably than just a street number.",
             "situationText": "A delivery driver calls and asks you to describe exactly where your apartment building is.",
-            "sampleAnswer": "It's the red-brick building on the left when you turn off the main road. There's a blue door — ring the top bell."
+            "sampleAnswer": "It's the red-brick building on the left when you turn off the main road. There's a blue door - ring the top bell.",
+            "correctAnswer": "red-brick building on the left",
+            "acceptedSynonyms": [
+                "red-brick building on the left",
+                "blue door",
+                "turn off the main road",
+                "on the left"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L15_Q1",
@@ -105,31 +201,63 @@
             "hint": "Describe what someone is wearing with 'She's wearing a [colour] [item]' for fast identification.",
             "explanation": "Giving both the colour and the clothing item ('a red jacket') makes identification instant. This is exactly how English speakers help others spot a person in a crowd or at a station.",
             "situationText": "You are trying to help a friend spot the person you are talking about at a busy event.",
-            "sampleAnswer": "She's wearing a bright yellow dress and has long dark curly hair. You genuinely cannot miss her!"
+            "sampleAnswer": "She's wearing a bright yellow dress and has long dark curly hair. You genuinely cannot miss her!",
+            "correctAnswer": "yellow dress",
+            "acceptedSynonyms": [
+                "yellow dress",
+                "bright yellow dress",
+                "long dark curly hair",
+                "cannot miss her"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L15_Q2",
             "interactionType": "Scene Scrubber",
             "hint": "Use 'Do you have this in [colour]?' to ask about colour options in a shop.",
-            "explanation": "'Do you have this in navy blue?' is the natural English question for asking about colour options. 'It comes in several colours' is how staff describe what's available — knowing both sides helps.",
+            "explanation": "'Do you have this in navy blue?' is the natural English question for asking about colour options. 'It comes in several colours' is how staff describe what's available - knowing both sides helps.",
             "situationText": "You love a shirt in the shop but the colour on display is not quite right for you.",
-            "sampleAnswer": "Excuse me, does this shirt come in dark green or navy blue? I'd prefer something a bit darker if possible."
+            "sampleAnswer": "Excuse me, does this shirt come in dark green or navy blue? I'd prefer something a bit darker if possible.",
+            "correctAnswer": "dark green or navy blue",
+            "acceptedSynonyms": [
+                "dark green or navy blue",
+                "does this come in",
+                "different colour",
+                "come in another colour"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L15_Q3",
             "interactionType": "Scene Scrubber",
             "hint": "Use 'She looks like she's in her [decade]s' to estimate age politely without stating a fact.",
-            "explanation": "'She looks like she's in her thirties' signals you are guessing, not stating a fact — which is the polite way to estimate age in English. Never state an age directly as certainty.",
+            "explanation": "'She looks like she's in her thirties' signals you are guessing, not stating a fact - which is the polite way to estimate age in English. Never state an age directly as certainty.",
             "situationText": "Your friend asks what the new English teacher looks like before their first class tomorrow.",
-            "sampleAnswer": "She's fairly tall, with short auburn hair and glasses. She looks like she's in her early forties. Very approachable!"
+            "sampleAnswer": "She's fairly tall, with short auburn hair and glasses. She looks like she's in her early forties. Very approachable!",
+            "correctAnswer": "short auburn hair and glasses",
+            "acceptedSynonyms": [
+                "short auburn hair and glasses",
+                "fairly tall",
+                "auburn hair",
+                "she has glasses"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L16_Q1",
             "interactionType": "Scene Scrubber",
             "hint": "Use 'How do I get to…?' for a natural, direct way to ask for directions from a stranger.",
-            "explanation": "'How do I get to the library?' is the most common English request for directions. It is clear, direct, and immediately understood — more natural than 'Could you tell me the way to?'",
+            "explanation": "'How do I get to the library?' is the most common English request for directions. It is clear, direct, and immediately understood - more natural than 'Could you tell me the way to?'",
             "situationText": "A tourist approaches you and asks you for help getting to the nearest train station.",
-            "sampleAnswer": "Sure! Go straight down this road, turn right at the traffic lights, and the station is on your left. You can't miss it!"
+            "sampleAnswer": "Sure! Go straight down this road, turn right at the traffic lights, and the station is on your left. You can't miss it!",
+            "correctAnswer": "turn right at the traffic lights",
+            "acceptedSynonyms": [
+                "turn right at the traffic lights",
+                "go straight down this road",
+                "on your left",
+                "the station is"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L16_Q2",
@@ -137,7 +265,15 @@
             "hint": "Use 'Turn left/right at the [landmark]' when giving directions to make them easy to follow.",
             "explanation": "Using landmarks ('turn left at the pharmacy', 'past the big church') makes directions far easier to follow than compass points or distances alone. Landmarks are memorable and visible.",
             "situationText": "A friend visiting for the first time asks how to walk from the bus stop to your house.",
-            "sampleAnswer": "Turn left out of the bus stop, walk past the supermarket, and my house is the blue door on the right. About five minutes on foot!"
+            "sampleAnswer": "Turn left out of the bus stop, walk past the supermarket, and my house is the blue door on the right. About five minutes on foot!",
+            "correctAnswer": "turn left out of the bus stop",
+            "acceptedSynonyms": [
+                "turn left out of the bus stop",
+                "past the supermarket",
+                "blue door",
+                "my house is"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L16_Q3",
@@ -145,7 +281,15 @@
             "hint": "Confirm directions back with 'So I go straight, then turn right at…?' to check you understood.",
             "explanation": "Repeating directions back in your own words is the single most effective way to confirm you understood them correctly. This 'check-back' technique is used by native speakers and prevents getting lost.",
             "situationText": "Someone has just given you walking directions to the post office and you want to verify.",
-            "sampleAnswer": "So I go straight for two blocks, turn right at the pharmacy, and the post office is just past the bank on the left?"
+            "sampleAnswer": "So I go straight for two blocks, turn right at the pharmacy, and the post office is just past the bank on the left?",
+            "correctAnswer": "two blocks then turn right at the pharmacy",
+            "acceptedSynonyms": [
+                "two blocks then turn right at the pharmacy",
+                "post office is just past the bakery",
+                "so I go straight",
+                "just to confirm"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L17_Q1",
@@ -153,7 +297,15 @@
             "hint": "Use 'I'll have a…, please' for the most natural and confident café order in English.",
             "explanation": "'I'll have a flat white, please' is the most natural way to order at a café. 'I'll have' signals a confident decision. The word 'please' keeps it polite and warm.",
             "situationText": "The barista smiles and asks what you would like to order from the menu today.",
-            "sampleAnswer": "I'll have a medium oat latte and a banana bread, please. To take away if that's possible — I'm in a slight rush!"
+            "sampleAnswer": "I'll have a medium oat latte and a banana bread, please. To take away if that's possible - I'm in a slight rush!",
+            "correctAnswer": "medium oat latte and a banana bread",
+            "acceptedSynonyms": [
+                "medium oat latte and a banana bread",
+                "to take away",
+                "I will have",
+                "please to take away"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L17_Q2",
@@ -161,7 +313,15 @@
             "hint": "Use 'What do you recommend?' when you are unsure what to order from an unfamiliar menu.",
             "explanation": "'What do you recommend?' shows curiosity and confidence in equal measure. It is a great phrase for new cafés, and baristas and servers usually enjoy answering it with enthusiasm.",
             "situationText": "You have never been to this coffee shop before and the menu has far too many options.",
-            "sampleAnswer": "This is my first time here — what do you recommend? I tend to like something sweet and milky rather than very strong."
+            "sampleAnswer": "This is my first time here - what do you recommend? I tend to like something sweet and milky rather than very strong.",
+            "correctAnswer": "what do you recommend",
+            "acceptedSynonyms": [
+                "what do you recommend",
+                "first time here",
+                "something sweet and milky",
+                "what would you suggest"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L17_Q3",
@@ -169,15 +329,31 @@
             "hint": "Use 'Could I get that to go?' or 'To take away, please' to specify a takeaway order.",
             "explanation": "'To take away, please' is British English; 'to go' is American English. Both are correct. Café staff need to hear one of these phrases to know whether to give you a paper cup or a ceramic mug.",
             "situationText": "You just ordered a cappuccino but realize you need to leave the café in five minutes.",
-            "sampleAnswer": "Oh, could I get that to take away, please? I just remembered I need to catch a bus. Sorry about that!"
+            "sampleAnswer": "Oh, could I get that to take away, please? I just remembered I need to catch a bus. Sorry about that!",
+            "correctAnswer": "to take away please",
+            "acceptedSynonyms": [
+                "to take away please",
+                "to go",
+                "could I get that to take away",
+                "need to catch a bus"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L18_Q1",
             "interactionType": "Scene Scrubber",
-            "hint": "Ask 'How much is this?' or 'How much does this cost?' — both are natural and correct.",
+            "hint": "Ask 'How much is this?' or 'How much does this cost?' - both are natural and correct.",
             "explanation": "'How much is this?' and 'How much does this cost?' are both common English price questions. 'How much?' alone can feel abrupt, so adding 'is this?' makes it more polite and complete.",
             "situationText": "You pick up a beautiful handmade bowl at a craft market and want to know the price.",
-            "sampleAnswer": "Excuse me, how much is this bowl? It's absolutely gorgeous — I love the glaze on it."
+            "sampleAnswer": "Excuse me, how much is this bowl? It's absolutely gorgeous - I love the glaze on it.",
+            "correctAnswer": "how much is this",
+            "acceptedSynonyms": [
+                "how much is this",
+                "how much does it cost",
+                "what is the price",
+                "the price"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L18_Q2",
@@ -185,7 +361,15 @@
             "hint": "Ask 'Is there any chance of a small discount?' politely when an item is just over your budget.",
             "explanation": "'Is there any chance of a discount?' is an indirect, respectful way to negotiate. It is far more polite than 'Can you lower the price?' and works well in market and small shop contexts.",
             "situationText": "You love a leather wallet at a market stall but it is slightly more than you wanted to spend.",
-            "sampleAnswer": "This is beautiful craftsmanship! Is there any chance of a small discount if I pay with cash today?"
+            "sampleAnswer": "This is beautiful craftsmanship! Is there any chance of a small discount if I pay with cash today?",
+            "correctAnswer": "any chance of a small discount",
+            "acceptedSynonyms": [
+                "any chance of a small discount",
+                "pay with cash",
+                "beautiful craftsmanship",
+                "reduce the price"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L18_Q3",
@@ -193,7 +377,15 @@
             "hint": "Use 'This one is cheaper than / more expensive than that one' to compare prices naturally.",
             "explanation": "Using 'cheaper than' and 'more expensive than' correctly applies comparative adjectives in a real shopping context. These are among the most practically useful comparatives in everyday English.",
             "situationText": "A shop assistant asks if you need help choosing between two similar items at different price points.",
-            "sampleAnswer": "I'm comparing the two. The blue one is cheaper than the green one, but I think the quality on the green one might actually be better."
+            "sampleAnswer": "I'm comparing the two. The blue one is cheaper than the green one, but I think the quality on the green one might actually be better.",
+            "correctAnswer": "blue one is cheaper",
+            "acceptedSynonyms": [
+                "blue one is cheaper",
+                "better quality",
+                "comparing the two",
+                "green one is better quality"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L19_Q1",
@@ -201,7 +393,15 @@
             "hint": "Use 'Could you explain that again, please?' to ask for clarification without sounding impolite.",
             "explanation": "'Could you explain that again?' is polite and clear. Adding 'I'm not sure I fully understood' shows intellectual honesty and signals to the teacher that you genuinely want to learn.",
             "situationText": "Your teacher has explained a grammar rule and you are still confused about the main point.",
-            "sampleAnswer": "Excuse me, could you explain that grammar rule again? I'm not sure I fully understood the part about the irregular verbs."
+            "sampleAnswer": "Excuse me, could you explain that grammar rule again? I'm not sure I fully understood the part about the irregular verbs.",
+            "correctAnswer": "could you explain that again",
+            "acceptedSynonyms": [
+                "could you explain that again",
+                "not sure I fully understood",
+                "grammar rule",
+                "could you go over it again"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L19_Q2",
@@ -209,15 +409,31 @@
             "hint": "Ask 'How do you spell that?' and 'Could you write it on the board?' to check new vocabulary spellings.",
             "explanation": "'How do you spell that?' is one of the most useful classroom questions. Asking the teacher to write it also ensures you remember the spelling rather than misremembering what you heard.",
             "situationText": "Your teacher has used a new word and you want to make sure you can spell and remember it correctly.",
-            "sampleAnswer": "How do you spell that word? Could you also write it on the board so I can copy it into my notebook properly?"
+            "sampleAnswer": "How do you spell that word? Could you also write it on the board so I can copy it into my notebook properly?",
+            "correctAnswer": "how do you spell that word",
+            "acceptedSynonyms": [
+                "how do you spell that word",
+                "write it on the board",
+                "spell it out",
+                "copy it down"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L19_Q3",
             "interactionType": "Scene Scrubber",
-            "hint": "Say 'Can I ask a quick question?' before your question — it is the polite classroom convention.",
+            "hint": "Say 'Can I ask a quick question?' before your question - it is the polite classroom convention.",
             "explanation": "Signaling 'can I ask a question?' before you ask it gives the teacher a moment to finish their thought and signals you are engaged. It is a small phrase but creates a much more positive classroom atmosphere.",
             "situationText": "Your teacher is mid-explanation and you have an important question that needs asking now.",
-            "sampleAnswer": "Sorry to interrupt — can I ask a quick question? I just want to clarify something before we move on to the next point."
+            "sampleAnswer": "Sorry to interrupt - can I ask a quick question? I just want to clarify something before we move on to the next point.",
+            "correctAnswer": "can I ask a quick question",
+            "acceptedSynonyms": [
+                "can I ask a quick question",
+                "sorry to interrupt",
+                "clarify something",
+                "just want to clarify"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L20_Q1",
@@ -225,23 +441,47 @@
             "hint": "Use 'I'm sorry, I didn't quite catch that' to ask for repetition politely.",
             "explanation": "'I didn't quite catch that' is far more polite than 'What?' or 'Huh?' The word 'quite' softens the phrase and signals you heard something but not clearly enough. This is an essential English skill.",
             "situationText": "An English speaker says something quickly on the phone and you missed most of it.",
-            "sampleAnswer": "I'm so sorry, I didn't quite catch that. Could you say it one more time, perhaps a little more slowly? Thank you."
+            "sampleAnswer": "I'm so sorry, I didn't quite catch that. Could you say it one more time, perhaps a little more slowly? Thank you.",
+            "correctAnswer": "did not quite catch that",
+            "acceptedSynonyms": [
+                "did not quite catch that",
+                "could you say it again",
+                "one more time",
+                "say it more slowly"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L20_Q2",
             "interactionType": "Scene Scrubber",
             "hint": "Ask 'Could you speak a little more slowly, please?' if someone is speaking too fast to follow.",
-            "explanation": "'Could you speak a little more slowly?' is a completely polite and normal request. Most people are happy to slow down — particularly if you add 'please' and explain you are still learning English.",
+            "explanation": "'Could you speak a little more slowly?' is a completely polite and normal request. Most people are happy to slow down - particularly if you add 'please' and explain you are still learning English.",
             "situationText": "Your English teacher speaks very quickly and you are struggling to follow the lesson at this pace.",
-            "sampleAnswer": "Excuse me, could you speak a tiny bit more slowly, please? I want to make sure I understand every word you are saying."
+            "sampleAnswer": "Excuse me, could you speak a tiny bit more slowly, please? I want to make sure I understand every word you are saying.",
+            "correctAnswer": "speak a tiny bit more slowly",
+            "acceptedSynonyms": [
+                "speak a tiny bit more slowly",
+                "slow down please",
+                "more slowly",
+                "a bit slower"
+            ],
+            "instruction": "Respond to the situation."
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L20_Q3",
             "interactionType": "Scene Scrubber",
             "hint": "Use 'Do you mean…?' to verify your understanding and prevent costly misunderstandings.",
-            "explanation": "'Do you mean I should send it directly to the client?' is a great way to verify understanding. It shows you were listening and are checking rather than guessing — a very useful professional habit.",
+            "explanation": "'Do you mean I should send it directly to the client?' is a great way to verify understanding. It shows you were listening and are checking rather than guessing - a very useful professional habit.",
             "situationText": "Your colleague has given you complex instructions and you want to confirm you understood correctly.",
-            "sampleAnswer": "Just to clarify — do you mean I should email the final report directly to the client, or should I send it to you first to review?"
+            "sampleAnswer": "Just to clarify - do you mean I should email the final report directly to the client, or should I send it to you first to review?",
+            "correctAnswer": "just to clarify",
+            "acceptedSynonyms": [
+                "just to clarify",
+                "do you mean I should email",
+                "confirm I understand",
+                "email directly to the client"
+            ],
+            "instruction": "Respond to the situation."
         }
     ]
 }

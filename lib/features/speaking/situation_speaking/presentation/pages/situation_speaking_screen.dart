@@ -256,10 +256,16 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
                                           height: 32.h,
                                           child: FittedBox(
                                             fit: BoxFit.scaleDown,
-                                            child: SituationSpeakingHeader(primaryColor: theme.primaryColor),
+                                            child: SituationSpeakingHeader(
+                                              primaryColor: theme.primaryColor,
+                                              instruction: quest.instruction,
+                                            ),
                                           ),
                                         )
-                                      : SituationSpeakingHeader(primaryColor: theme.primaryColor),
+                                      : SituationSpeakingHeader(
+                                          primaryColor: theme.primaryColor,
+                                          instruction: quest.instruction,
+                                        ),
                                     SizedBox(height: gapInstruction),
                                     
                                     isCompact
