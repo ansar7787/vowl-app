@@ -5,621 +5,447 @@
     "quests": [
         {
             "id": "WRT_SENTENCEBUILDER_L1_Q1",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "hydrothermal",
-                "toxic",
-                "Deep",
-                "chemicals",
-                "superheated",
-                "release",
-                "vents",
-                "[ID:1-1]."
+                "loves",
+                "music",
+                "She"
             ],
-            "correctAnswer": "Deep hydrothermal vents release superheated toxic chemicals [ID:1-1].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Deep hydrothermal vents release superheated toxic chemicals [ID:1-1].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 1."
+            "correctAnswer": "She loves music.",
+            "hint": "Start with 'She'. Then what she feels. Then what she loves.",
+            "explanation": "S+V+O. 'She'=subject, 'loves'=verb, 'music'=object."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L1_Q2",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "darkness",
-                "Microscopic",
-                "perform",
-                "[ID:1-2].",
-                "chemosynthesis",
-                "bacteria",
-                "in",
-                "marine"
+                "He",
+                "drinks",
+                "tea"
             ],
-            "correctAnswer": "Microscopic marine bacteria perform chemosynthesis in darkness [ID:1-2].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Microscopic marine bacteria perform chemosynthesis in darkness [ID:1-2].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 1."
+            "correctAnswer": "He drinks tea.",
+            "hint": "Begin with 'He'. Then the action. Then what he drinks.",
+            "explanation": "Three-word S+V+O. 'He' does 'drinks'; 'tea' is the thing he drinks."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L1_Q3",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "forests",
-                "solar",
-                "[ID:1-3].",
-                "underwater",
-                "massive",
-                "Giant",
-                "energy",
-                "absorb",
-                "kelp"
+                "They",
+                "outside",
+                "play"
             ],
-            "correctAnswer": "Giant underwater kelp forests absorb massive solar energy [ID:1-3].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Giant underwater kelp forests absorb massive solar energy [ID:1-3].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 1."
+            "correctAnswer": "They play outside.",
+            "hint": "Start with 'They'. Then what they do. Then where.",
+            "explanation": "'Outside' is an adverb of place describing where they play."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L2_Q1",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "Most",
-                "creatures",
-                "bioluminescent",
-                "use",
-                "biological",
-                "cold",
-                "light",
-                "[ID:2-1].",
-                "deep"
+                "eat",
+                "I",
+                "breakfast"
             ],
-            "correctAnswer": "Most deep creatures use biological cold bioluminescent light [ID:2-1].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Most deep creatures use biological cold bioluminescent light [ID:2-1].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 2."
+            "correctAnswer": "I eat breakfast.",
+            "hint": "Begin with 'I'. Then the action. Then the meal.",
+            "explanation": "'I'=subject, 'eat'=verb, 'breakfast'=object. Basic S+V+O pattern."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L2_Q2",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "Wind",
-                "waters",
-                "icy",
-                "nutrient",
-                "drag",
-                "upwellings",
-                "coastal",
-                "upward",
-                "[ID:2-2]."
+                "love",
+                "We",
+                "dogs"
             ],
-            "correctAnswer": "Wind coastal upwellings drag nutrient icy waters upward [ID:2-2].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Wind coastal upwellings drag nutrient icy waters upward [ID:2-2].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 2."
+            "correctAnswer": "We love dogs.",
+            "hint": "Start with 'We'. Then the feeling. Then what we love.",
+            "explanation": "'Love' expresses strong preference. 'Dogs' is the plural noun object."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L2_Q3",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "release",
-                "Deep",
-                "hydrothermal",
-                "superheated",
-                "[ID:2-3].",
-                "chemicals",
-                "vents",
-                "toxic"
+                "cat",
+                "sleeps",
+                "The"
             ],
-            "correctAnswer": "Deep hydrothermal vents release superheated toxic chemicals [ID:2-3].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Deep hydrothermal vents release superheated toxic chemicals [ID:2-3].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 2."
+            "correctAnswer": "The cat sleeps.",
+            "hint": "Begin with 'The'. Then the animal. Then the action.",
+            "explanation": "'The cat'=subject (article+noun). 'Sleeps'=present simple verb."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L3_Q1",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "[ID:3-1].",
-                "bacteria",
-                "darkness",
-                "Microscopic",
-                "chemosynthesis",
-                "in",
-                "perform",
-                "marine"
+                "He",
+                "hard",
+                "works"
             ],
-            "correctAnswer": "Microscopic marine bacteria perform chemosynthesis in darkness [ID:3-1].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Microscopic marine bacteria perform chemosynthesis in darkness [ID:3-1].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 3."
+            "correctAnswer": "He works hard.",
+            "hint": "Start with 'He'. Then the action. Then how he does it.",
+            "explanation": "'Hard' is an adverb describing HOW he works. Adverbs often follow the verb."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L3_Q2",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "Giant",
-                "[ID:3-2].",
-                "solar",
-                "massive",
-                "forests",
-                "absorb",
-                "underwater",
-                "kelp",
-                "energy"
+                "books",
+                "reads",
+                "She"
             ],
-            "correctAnswer": "Giant underwater kelp forests absorb massive solar energy [ID:3-2].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Giant underwater kelp forests absorb massive solar energy [ID:3-2].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 3."
+            "correctAnswer": "She reads books.",
+            "hint": "Begin with 'She'. Then the action. Then what she reads.",
+            "explanation": "Present simple shows a regular activity. 'Reads'=habit of reading."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L3_Q3",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "creatures",
-                "cold",
-                "biological",
-                "Most",
-                "[ID:3-3].",
-                "deep",
-                "bioluminescent",
-                "use",
-                "light"
+                "Birds",
+                "fly",
+                "high"
             ],
-            "correctAnswer": "Most deep creatures use biological cold bioluminescent light [ID:3-3].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Most deep creatures use biological cold bioluminescent light [ID:3-3].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 3."
+            "correctAnswer": "Birds fly high.",
+            "hint": "Start with 'Birds'. Then the action. Then how or where.",
+            "explanation": "'High' is an adverb. S+V+Adv pattern."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L4_Q1",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "nutrient",
-                "waters",
-                "upwellings",
-                "icy",
-                "drag",
-                "upward",
-                "coastal",
-                "Wind",
-                "[ID:4-1]."
+                "dinner",
+                "They",
+                "cook"
             ],
-            "correctAnswer": "Wind coastal upwellings drag nutrient icy waters upward [ID:4-1].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Wind coastal upwellings drag nutrient icy waters upward [ID:4-1].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 4."
+            "correctAnswer": "They cook dinner.",
+            "hint": "Begin with 'They'. Then the action. Then the meal.",
+            "explanation": "'Cook'=verb; 'dinner'=direct object - what is being cooked."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L4_Q2",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "vents",
-                "[ID:4-2].",
-                "hydrothermal",
-                "chemicals",
-                "release",
-                "superheated",
-                "Deep",
-                "toxic"
+                "I",
+                "feel",
+                "happy"
             ],
-            "correctAnswer": "Deep hydrothermal vents release superheated toxic chemicals [ID:4-2].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Deep hydrothermal vents release superheated toxic chemicals [ID:4-2].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 4."
+            "correctAnswer": "I feel happy.",
+            "hint": "Start with 'I'. Then the state verb. Then the emotion.",
+            "explanation": "After state verbs like 'feel', use adjectives, not adverbs."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L4_Q3",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "perform",
-                "[ID:4-3].",
-                "in",
-                "bacteria",
-                "darkness",
-                "Microscopic",
-                "chemosynthesis",
-                "marine"
+                "falls",
+                "Rain",
+                "softly"
             ],
-            "correctAnswer": "Microscopic marine bacteria perform chemosynthesis in darkness [ID:4-3].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Microscopic marine bacteria perform chemosynthesis in darkness [ID:4-3].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 4."
+            "correctAnswer": "Rain falls softly.",
+            "hint": "Begin with 'Rain'. Then the action. Then how.",
+            "explanation": "'Softly' ends in '-ly'. Adverbs describe how an action happens."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L5_Q1",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "forests",
-                "energy",
-                "Giant",
-                "solar",
-                "absorb",
-                "underwater",
-                "kelp",
-                "massive",
-                "[ID:5-1]."
+                "She",
+                "goes",
+                "school",
+                "to"
             ],
-            "correctAnswer": "Giant underwater kelp forests absorb massive solar energy [ID:5-1].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Giant underwater kelp forests absorb massive solar energy [ID:5-1].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 5."
+            "correctAnswer": "She goes to school.",
+            "hint": "Start with 'She'. Then the movement verb. Then the destination.",
+            "explanation": "'Goes to school' uses 'to' for destination."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L5_Q2",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "Most",
-                "deep",
-                "light",
-                "cold",
-                "biological",
-                "bioluminescent",
-                "[ID:5-2].",
-                "creatures",
-                "use"
+                "wakes",
+                "early",
+                "He",
+                "up"
             ],
-            "correctAnswer": "Most deep creatures use biological cold bioluminescent light [ID:5-2].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Most deep creatures use biological cold bioluminescent light [ID:5-2].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 5."
+            "correctAnswer": "He wakes up early.",
+            "hint": "Begin with 'He'. Then the phrasal verb. Then when.",
+            "explanation": "'Wakes up' is a phrasal verb. 'Early'=adverb of time."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L5_Q3",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "coastal",
-                "Wind",
-                "icy",
-                "nutrient",
-                "waters",
-                "upwellings",
-                "upward",
-                "drag",
-                "[ID:5-3]."
+                "We",
+                "fruit",
+                "fresh",
+                "eat"
             ],
-            "correctAnswer": "Wind coastal upwellings drag nutrient icy waters upward [ID:5-3].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Wind coastal upwellings drag nutrient icy waters upward [ID:5-3].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 5."
+            "correctAnswer": "We eat fresh fruit.",
+            "hint": "Start with 'We'. Then the action. Then adjective then noun.",
+            "explanation": "Adjective 'fresh' comes BEFORE the noun 'fruit'. Adjectives precede nouns."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L6_Q1",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "hydrothermal",
-                "toxic",
-                "Deep",
-                "chemicals",
-                "vents",
-                "release",
-                "[ID:6-1].",
-                "superheated"
+                "like",
+                "I",
+                "water",
+                "cold"
             ],
-            "correctAnswer": "Deep hydrothermal vents release superheated toxic chemicals [ID:6-1].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Deep hydrothermal vents release superheated toxic chemicals [ID:6-1].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 6."
+            "correctAnswer": "I like cold water.",
+            "hint": "Begin with 'I'. Then what I like. Then adjective plus noun.",
+            "explanation": "'Cold water'=adjective+noun. Adjectives come before the nouns they describe."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L6_Q2",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "Microscopic",
-                "in",
-                "chemosynthesis",
-                "bacteria",
-                "perform",
-                "[ID:6-2].",
-                "marine",
-                "darkness"
+                "dog",
+                "a",
+                "She",
+                "has"
             ],
-            "correctAnswer": "Microscopic marine bacteria perform chemosynthesis in darkness [ID:6-2].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Microscopic marine bacteria perform chemosynthesis in darkness [ID:6-2].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 6."
+            "correctAnswer": "She has a dog.",
+            "hint": "Start with 'She'. Then the possession verb. Then article plus noun.",
+            "explanation": "'Has' shows possession. 'A' is the indefinite article for a singular noun."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L6_Q3",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "energy",
-                "[ID:6-3].",
-                "Giant",
-                "massive",
-                "underwater",
-                "forests",
-                "solar",
-                "kelp",
-                "absorb"
+                "They",
+                "fast",
+                "walk",
+                "very"
             ],
-            "correctAnswer": "Giant underwater kelp forests absorb massive solar energy [ID:6-3].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Giant underwater kelp forests absorb massive solar energy [ID:6-3].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 6."
+            "correctAnswer": "They walk very fast.",
+            "hint": "Begin with 'They'. Then the action. Then two adverbs.",
+            "explanation": "'Very' intensifies the adverb 'fast'. Adverbs can modify other adverbs."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L7_Q1",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "Most",
-                "[ID:7-1].",
-                "deep",
-                "light",
-                "use",
-                "creatures",
-                "cold",
-                "biological",
-                "bioluminescent"
+                "work",
+                "drives",
+                "to",
+                "He"
             ],
-            "correctAnswer": "Most deep creatures use biological cold bioluminescent light [ID:7-1].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Most deep creatures use biological cold bioluminescent light [ID:7-1].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 7."
+            "correctAnswer": "He drives to work.",
+            "hint": "Start with 'He'. Then the transport action. Then where.",
+            "explanation": "'To work' shows destination. 'Drive to work', 'go to school' - 'to' for places."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L7_Q2",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "[ID:7-2].",
-                "icy",
-                "upwellings",
-                "waters",
-                "nutrient",
-                "Wind",
-                "upward",
-                "coastal",
-                "drag"
+                "more",
+                "need",
+                "sleep",
+                "We"
             ],
-            "correctAnswer": "Wind coastal upwellings drag nutrient icy waters upward [ID:7-2].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Wind coastal upwellings drag nutrient icy waters upward [ID:7-2].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 7."
+            "correctAnswer": "We need more sleep.",
+            "hint": "Begin with 'We'. Then the necessity verb. Then quantity plus noun.",
+            "explanation": "'More' modifies 'sleep'. 'Sleep' is uncountable here - no plural form."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L7_Q3",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "Deep",
-                "superheated",
-                "toxic",
-                "hydrothermal",
-                "vents",
-                "chemicals",
-                "[ID:7-3].",
-                "release"
+                "bread",
+                "buys",
+                "fresh",
+                "She"
             ],
-            "correctAnswer": "Deep hydrothermal vents release superheated toxic chemicals [ID:7-3].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Deep hydrothermal vents release superheated toxic chemicals [ID:7-3].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 7."
+            "correctAnswer": "She buys fresh bread.",
+            "hint": "Start with 'She'. Then the action. Then adjective before noun.",
+            "explanation": "'Fresh bread'=adjective before noun. Present simple shows a regular habit."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L8_Q1",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "in",
-                "bacteria",
-                "[ID:8-1].",
-                "perform",
-                "Microscopic",
-                "darkness",
-                "marine",
-                "chemosynthesis"
+                "English",
+                "write",
+                "I",
+                "in"
             ],
-            "correctAnswer": "Microscopic marine bacteria perform chemosynthesis in darkness [ID:8-1].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Microscopic marine bacteria perform chemosynthesis in darkness [ID:8-1].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 8."
+            "correctAnswer": "I write in English.",
+            "hint": "Begin with 'I'. Then the action. Then the prepositional phrase.",
+            "explanation": "'In English' - we use 'in' with languages: 'write in French', 'speak in Spanish'."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L8_Q2",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "[ID:8-2].",
-                "Giant",
-                "massive",
-                "forests",
-                "absorb",
-                "kelp",
-                "energy",
-                "underwater",
-                "solar"
+                "The",
+                "is",
+                "blue",
+                "sky"
             ],
-            "correctAnswer": "Giant underwater kelp forests absorb massive solar energy [ID:8-2].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Giant underwater kelp forests absorb massive solar energy [ID:8-2].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 8."
+            "correctAnswer": "The sky is blue.",
+            "hint": "Start with 'The sky'. Then the linking verb. Then the colour.",
+            "explanation": "'Is' is a linking verb. After linking verbs, we use adjectives."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L8_Q3",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "[ID:8-3].",
-                "cold",
-                "biological",
-                "deep",
-                "use",
-                "Most",
-                "light",
-                "bioluminescent",
-                "creatures"
+                "He",
+                "the",
+                "piano",
+                "plays"
             ],
-            "correctAnswer": "Most deep creatures use biological cold bioluminescent light [ID:8-3].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Most deep creatures use biological cold bioluminescent light [ID:8-3].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 8."
+            "correctAnswer": "He plays the piano.",
+            "hint": "Begin with 'He'. Then the music verb. Then the instrument.",
+            "explanation": "We use 'the' before musical instruments: 'play the piano', 'play the guitar'."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L9_Q1",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "drag",
-                "nutrient",
-                "coastal",
-                "upward",
-                "[ID:9-1].",
-                "icy",
-                "Wind",
-                "waters",
-                "upwellings"
+                "parents",
+                "often",
+                "visit",
+                "our",
+                "We"
             ],
-            "correctAnswer": "Wind coastal upwellings drag nutrient icy waters upward [ID:9-1].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Wind coastal upwellings drag nutrient icy waters upward [ID:9-1].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 9."
+            "correctAnswer": "We visit our parents often.",
+            "hint": "Start with 'We'. Then the action. Then whose parents. Then frequency.",
+            "explanation": "'Our'=possessive pronoun. 'Often'=frequency adverb at the end."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L9_Q2",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "release",
-                "superheated",
-                "hydrothermal",
-                "Deep",
-                "[ID:9-2].",
-                "toxic",
-                "vents",
-                "chemicals"
+                "takes",
+                "He",
+                "morning",
+                "bus",
+                "the"
             ],
-            "correctAnswer": "Deep hydrothermal vents release superheated toxic chemicals [ID:9-2].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Deep hydrothermal vents release superheated toxic chemicals [ID:9-2].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 9."
+            "correctAnswer": "He takes the morning bus.",
+            "hint": "Begin with 'He'. Then the action. Then the specific transport.",
+            "explanation": "'The morning bus' - 'morning' acts as adjective. 'The'=specific, known bus."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L9_Q3",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "perform",
-                "chemosynthesis",
-                "marine",
-                "bacteria",
-                "[ID:9-3].",
-                "in",
-                "darkness",
-                "Microscopic"
+                "the",
+                "read",
+                "local",
+                "I",
+                "news"
             ],
-            "correctAnswer": "Microscopic marine bacteria perform chemosynthesis in darkness [ID:9-3].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Microscopic marine bacteria perform chemosynthesis in darkness [ID:9-3].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 9."
+            "correctAnswer": "I read the local news.",
+            "hint": "Start with 'I'. Then the action. Then the noun phrase.",
+            "explanation": "'Local'=adjective. 'The news'='the' for a known, specific topic."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L10_Q1",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "[ID:10-1].",
-                "energy",
-                "kelp",
-                "underwater",
-                "massive",
-                "forests",
-                "absorb",
-                "Giant",
-                "solar"
+                "daily",
+                "learns",
+                "words",
+                "She",
+                "new"
             ],
-            "correctAnswer": "Giant underwater kelp forests absorb massive solar energy [ID:10-1].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Giant underwater kelp forests absorb massive solar energy [ID:10-1].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 10."
+            "correctAnswer": "She learns new words daily.",
+            "hint": "Begin with 'She'. Then action, adjective+noun, frequency adverb.",
+            "explanation": "'Daily'=frequency adverb at end. It means every day."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L10_Q2",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "bioluminescent",
-                "use",
-                "creatures",
-                "deep",
-                "cold",
-                "Most",
-                "light",
-                "biological",
-                "[ID:10-2]."
+                "house",
+                "their",
+                "They",
+                "clean",
+                "small"
             ],
-            "correctAnswer": "Most deep creatures use biological cold bioluminescent light [ID:10-2].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Most deep creatures use biological cold bioluminescent light [ID:10-2].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 10."
+            "correctAnswer": "They clean their small house.",
+            "hint": "Start with 'They'. Then action, possessive+adjective+noun.",
+            "explanation": "'Their'=possessive adjective. Adjectives come before nouns."
         },
         {
             "id": "WRT_SENTENCEBUILDER_L10_Q3",
-            "instruction": "ASSEMBLE THE JIGSAW OF LOGIC IN THE WORKBENCH",
-            "difficulty": 1,
+            "instruction": "Build the sentence.",
             "subtype": "sentenceBuilder",
             "interactionType": "Word Jigsaw",
             "shuffledWords": [
-                "nutrient",
-                "upward",
-                "coastal",
-                "[ID:10-3].",
-                "upwellings",
-                "drag",
-                "icy",
-                "waters",
-                "Wind"
+                "delicious",
+                "Italian",
+                "pasta",
+                "He",
+                "cooks"
             ],
-            "correctAnswer": "Wind coastal upwellings drag nutrient icy waters upward [ID:10-3].",
-            "hint": "Arrange jigsaw blocks to spell out: \"Wind coastal upwellings drag nutrient icy waters upward [ID:10-3].\"",
-            "explanation": "Syntax construction purified by Jigsaw Assembly Unit 10."
+            "correctAnswer": "He cooks delicious Italian pasta.",
+            "hint": "Begin with 'He'. Then action, two adjectives before noun.",
+            "explanation": "Opinion adjective (delicious) comes before origin adjective (Italian)."
         }
     ]
 }
