@@ -5,513 +5,483 @@
     "quests": [
         {
             "id": "WRT_COMPLETESENTENCE_L161_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 161-1] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "So delicious ____ the dessert that everyone asked for the recipe.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "did",
+                "were",
+                "had been",
+                "was"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 161-1)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 161]."
+            "correctAnswer": "was",
+            "hint": "Fronting an adjective like 'So delicious' at the start of a sentence triggers inverted word order.",
+            "explanation": "When an adjective phrase like 'So delicious' is fronted for emphasis, the verb 'be' inverts with the subject."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L161_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 161-2] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "Such ____ the demand for the new restaurant that reservations sold out in hours.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "had been",
+                "did",
+                "were",
+                "was"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 161-2)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 161]."
+            "correctAnswer": "was",
+            "hint": "Fronting 'Such' at the start of a sentence triggers inverted word order with the verb 'be.'",
+            "explanation": "Fronted 'Such' requires the verb 'be' to invert with the subject: 'Such was the demand.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L161_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 161-3] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "Only after tasting it ____ I understand why the dish was so famous.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "I had",
+                "I did",
+                "did I",
+                "had I"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 161-3)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 161]."
+            "correctAnswer": "did I",
+            "hint": "Fronting 'Only after...' at the start of a sentence triggers inverted word order.",
+            "explanation": "Fronted time expressions beginning with 'Only' require subject-auxiliary inversion: 'did I understand.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L162_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 162-1] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "So significant ____ the breakthrough that every major news outlet covered it.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "was",
+                "did",
+                "were",
+                "had been"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 162-1)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 162]."
+            "correctAnswer": "was",
+            "hint": "Fronting an adjective phrase at the start of a sentence triggers inverted word order with 'be.'",
+            "explanation": "Fronted adjective phrases like 'So significant' invert with the verb 'be': 'was the breakthrough.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L162_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 162-2] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "Only by rewriting the entire code ____ the developers fix the bug.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "they could",
+                "they did",
+                "did they",
+                "could"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 162-2)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 162]."
+            "correctAnswer": "could",
+            "hint": "Fronting 'Only by...' at the start of a sentence triggers inverted word order with a modal verb.",
+            "explanation": "Fronted phrases beginning with 'Only' require inversion with the modal verb: 'could the developers.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L162_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 162-3] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "Not until the server crashed ____ realize how serious the problem was.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "did we",
+                "we did",
+                "we had",
+                "had we"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 162-3)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 162]."
+            "correctAnswer": "did we",
+            "hint": "Fronting 'Not until...' at the start of a sentence triggers inverted word order.",
+            "explanation": "Fronted negative time expressions with 'Not until' require subject-auxiliary inversion: 'did we realize.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L163_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 163-1] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "After months of physical therapy, she finally ____ and walked unaided again.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "let the cat out of the bag",
+                "hit the nail on the head",
+                "turned the corner",
+                "threw in the towel"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 163-1)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 163]."
+            "correctAnswer": "turned the corner",
+            "hint": "Think about the idiom meaning to pass a difficult point and start improving.",
+            "explanation": "'Turn the corner' means to pass a critical point and begin to improve, fitting a recovery."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L163_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 163-2] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "The exhausted nurse finally ____ after the third consecutive night shift.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "hit the nail on the head",
+                "turned the corner",
+                "threw in the towel",
+                "let the cat out of the bag"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 163-2)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 163]."
+            "correctAnswer": "threw in the towel",
+            "hint": "Think about the idiom meaning to give up after trying hard.",
+            "explanation": "'Throw in the towel' means to give up, often after a long struggle, here exhaustion from night shifts."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L163_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 163-3] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "The specialist really ____ when she explained that stress was the root cause.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "threw in the towel",
+                "hit the nail on the head",
+                "turned the corner",
+                "let the cat out of the bag"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 163-3)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 163]."
+            "correctAnswer": "hit the nail on the head",
+            "hint": "Think about the idiom meaning to describe something exactly and accurately.",
+            "explanation": "'Hit the nail on the head' means to describe something exactly right, here identifying the true cause."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L164_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 164-1] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "The director didn't want to ____ before the official trailer release.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "let the cat out of the bag",
+                "hit the nail on the head",
+                "turn the corner",
+                "throw in the towel"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 164-1)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 164]."
+            "correctAnswer": "let the cat out of the bag",
+            "hint": "Think about the idiom meaning to reveal a secret too early.",
+            "explanation": "'Let the cat out of the bag' means to reveal a secret, here details before the official release."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L164_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 164-2] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "Critics say this film really ____ in capturing the spirit of the original book.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "throws in the towel",
+                "turns the corner",
+                "hits the nail on the head",
+                "lets the cat out of the bag"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 164-2)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 164]."
+            "correctAnswer": "hits the nail on the head",
+            "hint": "Think about the idiom meaning to get something exactly right.",
+            "explanation": "'Hit the nail on the head' means to be exactly right about something, here the film's accuracy."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L164_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 164-3] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "After three failed sequels, the studio finally decided to ____ on the franchise.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "turn the corner",
+                "throw in the towel",
+                "hit the nail on the head",
+                "let the cat out of the bag"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 164-3)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 164]."
+            "correctAnswer": "throw in the towel",
+            "hint": "Think about the idiom meaning to give up after repeated failure.",
+            "explanation": "'Throw in the towel' means to give up, fitting a studio abandoning a failing franchise."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L165_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 165-1] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "Given how busy she's been, she ____ forgotten about our appointment entirely.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "may as well have",
+                "ought hardly",
+                "could hardly have",
+                "might well have"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 165-1)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 165]."
+            "correctAnswer": "might well have",
+            "hint": "Think about a phrase expressing a fairly strong likelihood about a past situation.",
+            "explanation": "'Might well have' expresses a fairly strong likelihood about something in the past, given the context."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L165_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 165-2] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "He ____ have known about the policy change; it was announced just this morning.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "ought hardly",
+                "could hardly",
+                "may as well",
+                "might well"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 165-2)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 165]."
+            "correctAnswer": "could hardly",
+            "hint": "Think about a phrase expressing strong doubt that something was possible.",
+            "explanation": "'Could hardly have' expresses strong doubt about a past possibility, here knowing about a very recent change."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L165_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 165-3] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "Since we're already here, we ____ stay for the rest of the meeting.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "may as well",
+                "could hardly",
+                "ought hardly",
+                "might well"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 165-3)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 165]."
+            "correctAnswer": "may as well",
+            "hint": "Think about a phrase suggesting an action makes sense given the current situation.",
+            "explanation": "'May as well' suggests doing something because the circumstances make it sensible or convenient."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L166_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 166-1] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "Given the traffic at this hour, the delivery ____ taken longer than usual.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "might well have",
+                "ought hardly",
+                "could hardly have",
+                "may as well have"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 166-1)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 166]."
+            "correctAnswer": "might well have",
+            "hint": "Think about a phrase expressing a fairly strong likelihood about a past event.",
+            "explanation": "'Might well have' expresses a fairly strong likelihood, fitting heavy traffic causing a delay."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L166_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 166-2] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "She ____ have missed the announcement; she was sitting right next to the speaker.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "may as well",
+                "could hardly",
+                "ought hardly",
+                "might well"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 166-2)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 166]."
+            "correctAnswer": "could hardly",
+            "hint": "Think about a phrase expressing strong doubt about a past possibility.",
+            "explanation": "'Could hardly have' expresses strong doubt, here that she missed something while sitting so close."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L166_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 166-3] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "Since the laundry is already out, we ____ fold it now instead of later.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "might well",
+                "could hardly",
+                "may as well",
+                "ought hardly"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 166-3)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 166]."
+            "correctAnswer": "may as well",
+            "hint": "Think about a phrase suggesting an action that makes sense in the current situation.",
+            "explanation": "'May as well' suggests a sensible action given the present circumstances."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L167_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 167-1] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "The study had several design flaws; ____, its conclusions should be treated with caution.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "nonetheless",
+                "consequently",
+                "albeit",
+                "thereby"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 167-1)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 167]."
+            "correctAnswer": "consequently",
+            "hint": "Think about a connector meaning 'as a result,' linking a cause to its logical effect.",
+            "explanation": "'Consequently' means 'as a result' and links a cause directly to its logical effect."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L167_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 167-2] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "The data was limited; ____, the researchers were able to draw useful conclusions.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "nonetheless",
+                "consequently",
+                "thereby",
+                "albeit"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 167-2)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 167]."
+            "correctAnswer": "nonetheless",
+            "hint": "Think about a connector meaning 'despite that,' introducing an unexpected outcome.",
+            "explanation": "'Nonetheless' means 'despite that' and introduces a result that contrasts with expectations."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L167_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 167-3] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "The team revised their method, ____ improving the accuracy of their results.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "consequently",
+                "nonetheless",
+                "thereby",
+                "albeit"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 167-3)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 167]."
+            "correctAnswer": "thereby",
+            "hint": "Think about a connector meaning 'by that means,' linking an action to its direct result.",
+            "explanation": "'Thereby' means 'by that means' and links an action directly to its resulting effect."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L168_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 168-1] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "Sales dropped sharply last quarter; ____, the board decided to cut costs.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "albeit",
+                "nonetheless",
+                "consequently",
+                "thereby"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 168-1)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 168]."
+            "correctAnswer": "consequently",
+            "hint": "Think about a connector meaning 'as a result,' linking cause to effect.",
+            "explanation": "'Consequently' links a cause (falling sales) directly to its logical effect (cutting costs)."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L168_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 168-2] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "The merger faced strong opposition; ____, it was eventually approved.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "consequently",
+                "albeit",
+                "thereby",
+                "nonetheless"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 168-2)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 168]."
+            "correctAnswer": "nonetheless",
+            "hint": "Think about a connector meaning 'despite that,' introducing a contrasting outcome.",
+            "explanation": "'Nonetheless' introduces a result that contrasts with what was expected, here approval despite opposition."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L168_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 168-3] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "The company automated several processes, ____ reducing operating costs significantly.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "albeit",
+                "nonetheless",
+                "consequently",
+                "thereby"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 168-3)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 168]."
+            "correctAnswer": "thereby",
+            "hint": "This connector shows that an action directly brought about the result that follows.",
+            "explanation": "'Thereby' links an action to its direct outcome, here automation leading to lower costs."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L169_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 169-1] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "In a formal complaint letter, 'this is really bad' is better expressed as ____.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "this is totally unacceptable",
+                "this is a bummer",
+                "this sucks",
+                "this stinks"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 169-1)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 169]."
+            "correctAnswer": "this is totally unacceptable",
+            "hint": "Think about which option uses formal, professional vocabulary suitable for written complaints.",
+            "explanation": "Formal complaints favor phrasing like 'totally unacceptable' over casual expressions such as 'this sucks.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L169_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 169-2] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "Instead of saying 'the hotel messed up our booking,' a formal email would say the hotel ____ our reservation.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "wrecked",
+                "botched",
+                "screwed up",
+                "mishandled"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 169-2)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 169]."
+            "correctAnswer": "mishandled",
+            "hint": "Think about which option uses neutral, professional vocabulary.",
+            "explanation": "'Mishandled' is a neutral, professional way to describe an error, more suitable than casual terms like 'screwed up.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L169_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 169-3] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "A formal way to write 'we want our money back' in a complaint is 'we ____ a full refund.'",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "need, like, now",
+                "request",
+                "are after",
+                "want"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 169-3)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 169]."
+            "correctAnswer": "request",
+            "hint": "Think about which option uses formal, polite vocabulary suitable for written requests.",
+            "explanation": "'Request' is a polite, formal verb appropriate for written complaints, unlike casual phrasing like 'are after.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L170_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 170-1] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "In a formal letter to a relative's employer, 'she's really good at her job' becomes 'she ____ exceptional competence.'",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "has got",
+                "demonstrates",
+                "totally has",
+                "shows off"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 170-1)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 170]."
+            "correctAnswer": "demonstrates",
+            "hint": "Think about which option uses formal vocabulary suitable for written praise.",
+            "explanation": "'Demonstrates' is a formal verb appropriate for written praise, unlike casual phrasing like 'has got.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L170_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 170-2] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "Instead of saying 'my uncle is loaded,' a more neutral way to describe his wealth is 'my uncle is ____.'",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "rolling in it",
+                "minted",
+                "financially comfortable",
+                "filthy rich"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 170-2)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 170]."
+            "correctAnswer": "financially comfortable",
+            "hint": "Think about which option uses neutral, polite vocabulary instead of slang.",
+            "explanation": "'Financially comfortable' is neutral and polite, unlike slang terms such as 'rolling in it.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L170_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 5,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 170-3] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "A more formal way to say 'my cousin quit her job' is 'my cousin ____ her position.'",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "ditched",
+                "walked out on",
+                "resigned from",
+                "dumped"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 170-3)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 170]."
+            "correctAnswer": "resigned from",
+            "hint": "Think about which option uses formal, professional vocabulary.",
+            "explanation": "'Resigned from' is the formal, professional equivalent of casually 'quitting' a job."
         }
     ]
 }

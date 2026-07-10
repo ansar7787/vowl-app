@@ -5,513 +5,483 @@
     "quests": [
         {
             "id": "WRT_COMPLETESENTENCE_L141_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 141-1] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "Never ____ such a sudden improvement in a patient's condition.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "have I seen",
+                "I saw",
+                "did I saw",
+                "I have seen"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 141-1)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 141]."
+            "correctAnswer": "have I seen",
+            "hint": "Negative adverbials like 'Never' at the start of a sentence trigger inverted word order.",
+            "explanation": "When 'Never' begins a sentence for emphasis, the subject and auxiliary verb invert: 'have I seen.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L141_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 141-2] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "Not only ____ better, but she also started exercising regularly.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "ate she",
+                "she did eat",
+                "did she eat",
+                "she ate"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 141-2)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 141]."
+            "correctAnswer": "did she eat",
+            "hint": "'Not only' at the start of a sentence triggers inverted word order with an auxiliary verb.",
+            "explanation": "After 'Not only' at the start of a sentence, the auxiliary verb inverts with the subject: 'did she eat.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L141_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 141-3] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "Rarely ____ a recovery as remarkable as this one.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "doctors have witnessed",
+                "doctors witnessed",
+                "did doctors witness",
+                "have doctors witnessed"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 141-3)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 141]."
+            "correctAnswer": "have doctors witnessed",
+            "hint": "'Rarely' at the start of a sentence triggers inverted word order.",
+            "explanation": "Negative adverbials such as 'Rarely' at the front of a sentence require inversion: 'have doctors witnessed.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L142_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 142-1] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "Never ____ such an emotional ending to a film before.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "have I seen",
+                "I saw",
+                "did I saw",
+                "I have seen"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 142-1)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 142]."
+            "correctAnswer": "have I seen",
+            "hint": "Starting a sentence with 'Never' for emphasis flips the normal subject-verb order.",
+            "explanation": "'Never' at the front of a sentence requires the auxiliary verb to invert with the subject: 'have I seen.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L142_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 142-2] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "Not only ____ a hit, but it also won several major awards.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "the album did become",
+                "was the album",
+                "did the album become",
+                "the album was"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 142-2)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 142]."
+            "correctAnswer": "was the album",
+            "hint": "'Not only' at the start of a sentence triggers inverted word order.",
+            "explanation": "After 'Not only' at the start, the verb 'be' inverts directly with the subject: 'was the album.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L142_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 142-3] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "Little ____ that the small independent film would become a worldwide phenomenon.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "knew the director",
+                "the director did know",
+                "did the director know",
+                "the director knew"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 142-3)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 142]."
+            "correctAnswer": "did the director know",
+            "hint": "'Little' at the start of a sentence with this meaning triggers inverted word order.",
+            "explanation": "'Little' meaning 'almost not at all' at the start of a sentence requires inversion: 'did the director know.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L143_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 143-1] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "It was ____ who suggested rescheduling the meeting, not me.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "she",
+                "her",
+                "who she",
+                "that she"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 143-1)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 143]."
+            "correctAnswer": "she",
+            "hint": "Think about the structure 'It was [person] who...' used to emphasize who did something.",
+            "explanation": "Cleft sentences with 'It was...who' emphasize the specific person responsible for an action."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L143_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 143-2] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "____ I really need right now is a clear answer from your team.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "That",
+                "This",
+                "What",
+                "It"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 143-2)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 143]."
+            "correctAnswer": "What",
+            "hint": "Think about the structure 'What [someone] needs is...' used to emphasize a specific thing.",
+            "explanation": "Cleft sentences beginning with 'What' emphasize the specific thing being discussed, here a clear answer."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L143_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 143-3] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "It was the misunderstanding ____ caused all this confusion.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "which one",
+                "who",
+                "that",
+                "what"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 143-3)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 143]."
+            "correctAnswer": "that",
+            "hint": "Think about the structure 'It was [thing] that...' used to emphasize a cause.",
+            "explanation": "Cleft sentences with 'It was...that' use 'that' to emphasize the cause of something."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L144_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 144-1] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "It was my neighbor ____ helped me fix the leaking pipe.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "who",
+                "what",
+                "that one",
+                "which"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 144-1)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 144]."
+            "correctAnswer": "who",
+            "hint": "Think about the structure 'It was [person] who...' used to emphasize who performed an action.",
+            "explanation": "Cleft sentences with 'It was...who' use 'who' to emphasize a specific person."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L144_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 144-2] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "____ really annoys me is when people don't reply to messages.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "This",
+                "It",
+                "That",
+                "What"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 144-2)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 144]."
+            "correctAnswer": "What",
+            "hint": "Think about the structure 'What [someone] feels is...' used to emphasize a specific feeling or fact.",
+            "explanation": "Cleft sentences beginning with 'What' highlight a particular thing or feeling being described."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L144_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 144-3] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "It was the constant noise from the street ____ kept me awake.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "who",
+                "that",
+                "which one",
+                "what"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 144-3)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 144]."
+            "correctAnswer": "that",
+            "hint": "This cleft pattern singles out a cause using 'It was...that.'",
+            "explanation": "Cleft sentences using 'It was...that' emphasize a specific cause, here the noise."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L145_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 145-1] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "You ____ studied so much; the test turned out to be very easy.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "can't have",
+                "shouldn't have",
+                "needn't have",
+                "mustn't have"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 145-1)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 145]."
+            "correctAnswer": "needn't have",
+            "hint": "Think about a past action that turned out to be unnecessary.",
+            "explanation": "'Needn't have' shows an action was done but turned out to be unnecessary, fitting overpreparing for an easy test."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L145_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 145-2] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "You ____ copied your friend's homework; now you're both in trouble.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "shouldn't have",
+                "mustn't have",
+                "needn't have",
+                "can't have"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 145-2)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 145]."
+            "correctAnswer": "shouldn't have",
+            "hint": "Think about a past action that was a mistake and shouldn't have happened.",
+            "explanation": "'Shouldn't have' criticizes a past action that was a mistake, here copying homework."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L145_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 145-3] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "She ____ left her notes at home; the presentation went really badly.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "needn't have",
+                "shouldn't have",
+                "mustn't have",
+                "can't have"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 145-3)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 145]."
+            "correctAnswer": "shouldn't have",
+            "hint": "Think about a past action that was a mistake leading to a negative outcome.",
+            "explanation": "'Shouldn't have' is used to criticize a past mistake that caused a problem."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L146_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 146-1] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "You ____ stayed so late; the deadline was actually extended.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "mustn't have",
+                "can't have",
+                "needn't have",
+                "shouldn't have"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 146-1)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 146]."
+            "correctAnswer": "needn't have",
+            "hint": "This modal shows effort was spent on something that wasn't actually required.",
+            "explanation": "'Needn't have' shows an action was unnecessary, here staying late when the deadline changed."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L146_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 146-2] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "He ____ sent that email without checking it first; it had several mistakes.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "needn't have",
+                "can't have",
+                "mustn't have",
+                "shouldn't have"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 146-2)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 146]."
+            "correctAnswer": "shouldn't have",
+            "hint": "Think about a past action that was a mistake.",
+            "explanation": "'Shouldn't have' criticizes a past mistake, here sending an unchecked email."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L146_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 146-3] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "We ____ rushed the report; the client postponed the meeting anyway.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "shouldn't have",
+                "mustn't have",
+                "needn't have",
+                "can't have"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 146-3)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 146]."
+            "correctAnswer": "needn't have",
+            "hint": "Think about an action that turned out to be unnecessary, given later events.",
+            "explanation": "'Needn't have' shows the effort was unnecessary, since the meeting was postponed."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L147_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 147-1] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "The agent recommended that we ____ our tickets a month in advance.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "book",
+                "books",
+                "booked",
+                "will book"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 147-1)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 147]."
+            "correctAnswer": "book",
+            "hint": "After 'recommend that,' the subjunctive uses the base form of the verb, regardless of subject.",
+            "explanation": "The subjunctive after 'recommend that' uses the base verb form for all subjects: 'book.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L147_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 147-2] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "Our guide insisted that everyone ____ the group at all times during the tour.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "stay",
+                "stays",
+                "will stay",
+                "stayed"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 147-2)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 147]."
+            "correctAnswer": "stay",
+            "hint": "After 'insist that,' the subjunctive uses the base form of the verb.",
+            "explanation": "The subjunctive mood after 'insist that' takes the base verb form: 'stay,' regardless of the subject."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L147_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 147-3] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "It is essential that each passenger ____ their passport at check-in.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "show",
+                "will show",
+                "shows",
+                "showed"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 147-3)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 147]."
+            "correctAnswer": "show",
+            "hint": "After 'It is essential that,' the subjunctive uses the base form of the verb.",
+            "explanation": "Subjunctive structures like 'it is essential that' require the base verb form: 'show.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L148_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 148-1] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "My mother suggested that we ____ a family photo before everyone leaves.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "took",
+                "takes",
+                "will take",
+                "take"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 148-1)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 148]."
+            "correctAnswer": "take",
+            "hint": "After 'suggest that,' the subjunctive uses the base form of the verb.",
+            "explanation": "The subjunctive after 'suggest that' uses the base verb form for all subjects: 'take.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L148_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 148-2] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "My father insisted that my brother ____ him with the heavy boxes.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "help",
+                "helped",
+                "will help",
+                "helps"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 148-2)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 148]."
+            "correctAnswer": "help",
+            "hint": "Following 'insist that,' the verb stays in its base form regardless of subject.",
+            "explanation": "Subjunctive structures after 'insist that' require the base verb form: 'help.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L148_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 148-3] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "It's important that every family member ____ involved in the decision.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "will be",
+                "be",
+                "was",
+                "is"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 148-3)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 148]."
+            "correctAnswer": "be",
+            "hint": "After 'It's important that,' the subjunctive uses the base form 'be,' not 'is.'",
+            "explanation": "The subjunctive mood always uses 'be' rather than 'is' or 'are,' regardless of the subject."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L149_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 149-1] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "The store stayed open, ____ with reduced hours, during the holiday.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "albeit",
+                "whereas",
+                "notwithstanding",
+                "because"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 149-1)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 149]."
+            "correctAnswer": "albeit",
+            "hint": "Think about a connector meaning 'although' that's often placed right before an adjective or phrase.",
+            "explanation": "'Albeit' means 'although' and is often followed directly by a short phrase, here 'albeit with reduced hours.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L149_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 149-2] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "The complaints, ____ valid, did not change the store's return policy.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "albeit",
+                "because",
+                "whereas",
+                "notwithstanding"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 149-2)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 149]."
+            "correctAnswer": "notwithstanding",
+            "hint": "Think about a formal connector meaning 'despite,' often placed after the noun it modifies.",
+            "explanation": "'Notwithstanding' means 'despite' and can be placed after the noun it refers to in formal writing."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L149_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 149-3] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "Online shoppers want fast delivery, ____ in-store shoppers prioritize seeing the product first.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "albeit",
+                "whereas",
+                "because",
+                "notwithstanding"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 149-3)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 149]."
+            "correctAnswer": "whereas",
+            "hint": "Think about a connector used to contrast two different groups' preferences.",
+            "explanation": "'Whereas' contrasts two different facts or preferences, here between online and in-store shoppers."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L150_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 150-1] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "The restaurant remained popular, ____ several negative reviews online.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "because",
+                "notwithstanding",
+                "whereas",
+                "albeit"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 150-1)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 150]."
+            "correctAnswer": "notwithstanding",
+            "hint": "Think about a formal connector meaning 'despite,' often placed before or after a noun phrase.",
+            "explanation": "'Notwithstanding' means 'despite' and introduces a contrasting fact, here negative reviews."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L150_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 150-2] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "The dish was delicious, ____ a little too spicy for some guests.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "because",
+                "notwithstanding",
+                "albeit",
+                "whereas"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 150-2)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 150]."
+            "correctAnswer": "albeit",
+            "hint": "Think about a connector meaning 'although,' followed by a short descriptive phrase.",
+            "explanation": "'Albeit' means 'although' and is typically followed by a brief phrase, here 'albeit a little too spicy.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L150_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 4,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 150-3] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "Some diners prefer bold flavors, ____ others enjoy simpler, milder dishes.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "whereas",
+                "notwithstanding",
+                "because",
+                "albeit"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 150-3)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 150]."
+            "correctAnswer": "whereas",
+            "hint": "This linking word sets two different tastes or choices against each other.",
+            "explanation": "'Whereas' is used to contrast two different groups' tastes within a single sentence."
         }
     ]
 }

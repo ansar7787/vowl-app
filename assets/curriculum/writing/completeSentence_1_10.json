@@ -5,513 +5,483 @@
     "quests": [
         {
             "id": "WRT_COMPLETESENTENCE_L1_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 1-1] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "I ____ tired after a long day at work.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "is",
+                "am",
+                "be",
+                "are"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 1-1)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 1]."
+            "correctAnswer": "am",
+            "hint": "Use the form of 'be' that matches the subject 'I'.",
+            "explanation": "With the subject 'I', the verb 'to be' always becomes 'am', so the correct form is 'I am tired'."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L1_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 1-2] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "My brother ____ very busy this morning.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "are",
+                "being",
+                "am",
+                "is"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 1-2)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 1]."
+            "correctAnswer": "is",
+            "hint": "Think about which form of 'be' goes with 'he/she/it' or a singular subject like 'my brother'.",
+            "explanation": "'My brother' is a singular subject (he), so it takes 'is': 'My brother is very busy.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L1_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 1-3] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "My parents ____ at home every evening.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "is",
+                "am",
+                "be",
+                "are"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 1-3)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 1]."
+            "correctAnswer": "are",
+            "hint": "The subject 'my parents' is plural, so look for the plural form of 'be'.",
+            "explanation": "Plural subjects like 'my parents' (they) use 'are', so the sentence is 'My parents are at home.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L2_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 2-1] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "Our classroom ____ on the second floor.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "is",
+                "were",
+                "are",
+                "am"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 2-1)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 2]."
+            "correctAnswer": "is",
+            "hint": "Decide which form of 'be' matches a singular thing like 'our classroom'.",
+            "explanation": "'Classroom' is singular (it), so the sentence needs 'is': 'Our classroom is on the second floor.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L2_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 2-2] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "The students ____ ready for the test.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "was",
+                "are",
+                "am",
+                "is"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 2-2)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 2]."
+            "correctAnswer": "are",
+            "hint": "Look at the subject 'the students' - is it one person or more than one?",
+            "explanation": "'The students' is plural (they), so the correct verb is 'are': 'The students are ready.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L2_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 2-3] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "I ____ a new student in this school.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "am",
+                "is",
+                "be",
+                "are"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 2-3)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 2]."
+            "correctAnswer": "am",
+            "hint": "Remember the special form of 'be' that always follows the subject 'I'.",
+            "explanation": "The subject 'I' always pairs with 'am', giving 'I am a new student.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L3_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 3-1] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "My manager ____ a meeting every Monday morning.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "hold",
+                "held",
+                "holds",
+                "holding"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 3-1)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 3]."
+            "correctAnswer": "holds",
+            "hint": "The subject 'my manager' is singular (he/she), so the verb needs an -s ending.",
+            "explanation": "In the simple present, verbs after he/she/it (like 'my manager') take an -s ending: 'holds'."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L3_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 3-2] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "I ____ to the office by bus every day.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "traveling",
+                "traveled",
+                "travels",
+                "travel"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 3-2)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 3]."
+            "correctAnswer": "travel",
+            "hint": "The subject is 'I', which never takes an -s ending in the simple present.",
+            "explanation": "With 'I', the base form of the verb is used without -s, so 'I travel to the office.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L3_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 3-3] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "Our team ____ ideas in every project meeting.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "shared",
+                "sharing",
+                "shares",
+                "share"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 3-3)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 3]."
+            "correctAnswer": "shares",
+            "hint": "Check whether 'our team' is treated as one group (singular) here, like 'it'.",
+            "explanation": "'Our team' is treated as a single unit, so the verb takes -s: 'Our team shares ideas.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L4_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 4-1] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "The train ____ from platform three every morning.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "leaves",
+                "leaving",
+                "left",
+                "leave"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 4-1)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 4]."
+            "correctAnswer": "leaves",
+            "hint": "The subject 'the train' is singular, so the verb needs the -s ending.",
+            "explanation": "Singular subjects like 'the train' take the -s form in the simple present: 'leaves'."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L4_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 4-2] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "Most tourists ____ photos at the old castle.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "took",
+                "taking",
+                "take",
+                "takes"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 4-2)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 4]."
+            "correctAnswer": "take",
+            "hint": "'Most tourists' is a plural subject, so no -s is added to the verb.",
+            "explanation": "Plural subjects such as 'most tourists' use the base verb form: 'take photos'."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L4_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 4-3] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "This airport ____ flights to over fifty countries.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "offers",
+                "offering",
+                "offer",
+                "offered"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 4-3)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 4]."
+            "correctAnswer": "offers",
+            "hint": "Look at the subject 'this airport' - singular subjects need an -s on the verb.",
+            "explanation": "'This airport' is singular, so the verb becomes 'offers' in the simple present."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L5_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 5-1] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "My grandmother has three ____ who live in different cities.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "child",
+                "children",
+                "childs",
+                "childes"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 5-1)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 5]."
+            "correctAnswer": "children",
+            "hint": "Think of the irregular plural form of the word 'child'.",
+            "explanation": "'Child' has an irregular plural form: 'children', not 'childs'."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L5_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 5-2] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "There are two ____ playing in the garden with their cousins.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "babys",
+                "babies",
+                "babes",
+                "baby"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 5-2)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 5]."
+            "correctAnswer": "babies",
+            "hint": "Words ending in a consonant + y usually change 'y' to 'i' before adding -es.",
+            "explanation": "'Baby' ends in a consonant + y, so the plural is formed by changing y to i and adding -es: 'babies'."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L5_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 5-3] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "Both of my ____ work as teachers in the same town.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "brother",
+                "brothers",
+                "bruthers",
+                "brotheres"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 5-3)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 5]."
+            "correctAnswer": "brothers",
+            "hint": "This is a regular plural noun - just add the usual ending.",
+            "explanation": "Most nouns form the plural by simply adding -s: 'brother' becomes 'brothers'."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L6_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 6-1] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "I need to buy two new ____ for my kitchen.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "knifes",
+                "knive",
+                "knives",
+                "knife"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 6-1)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 6]."
+            "correctAnswer": "knives",
+            "hint": "Nouns ending in -fe often change to -ves in the plural.",
+            "explanation": "Some nouns ending in -fe change the ending to -ves in the plural, so 'knife' becomes 'knives'."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L6_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 6-2] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "The store sells many kinds of ____ for children.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "toyes",
+                "toies",
+                "toys",
+                "toy"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 6-2)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 6]."
+            "correctAnswer": "toys",
+            "hint": "This noun ends in a vowel + y, so the regular plural rule applies.",
+            "explanation": "Nouns ending in a vowel + y simply add -s: 'toy' becomes 'toys'."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L6_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 6-3] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "She bought three ____ of shoes during the sale.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "pairs",
+                "paires",
+                "payrs",
+                "pair"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 6-3)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 6]."
+            "correctAnswer": "pairs",
+            "hint": "This is a regular countable noun - add the usual plural ending.",
+            "explanation": "'Pair' is a regular noun, so its plural is formed by adding -s: 'pairs'."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L7_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 7-1] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "Could you pass me ____ apple from the bowl, please?",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "the",
+                "-",
+                "an",
+                "a"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 7-1)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 7]."
+            "correctAnswer": "an",
+            "hint": "Listen to the sound at the start of 'apple' - is it a vowel sound or a consonant sound?",
+            "explanation": "We use 'an' before words that start with a vowel sound, and 'apple' starts with a vowel sound."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L7_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 7-2] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "I had ____ sandwich for lunch, and it was delicious.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "an",
+                "the",
+                "-",
+                "a"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 7-2)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 7]."
+            "correctAnswer": "a",
+            "hint": "Listen to the sound at the start of 'sandwich' - is it a vowel sound or a consonant sound?",
+            "explanation": "We use 'a' before words that start with a consonant sound, like 'sandwich'."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L7_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 7-3] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "We already talked about ____ restaurant you suggested yesterday.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "an",
+                "-",
+                "a",
+                "the"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 7-3)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 7]."
+            "correctAnswer": "the",
+            "hint": "Think about whether this restaurant is new information or something already mentioned.",
+            "explanation": "We use 'the' when both speakers already know which specific thing is meant, here the restaurant mentioned before."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L8_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 8-1] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "I just bought ____ new laptop for my online classes.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "the",
+                "an",
+                "-",
+                "a"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 8-1)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 8]."
+            "correctAnswer": "a",
+            "hint": "Listen to the first sound of 'new' - is it a vowel or consonant sound?",
+            "explanation": "'New' starts with a consonant sound, so it follows 'a': 'a new laptop.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L8_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 8-2] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "She is looking for ____ old charger that fits her phone.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "-",
+                "an",
+                "the",
+                "a"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 8-2)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 8]."
+            "correctAnswer": "an",
+            "hint": "Listen to the first sound of the word right after the blank.",
+            "explanation": "'Old' begins with a vowel sound, so the correct article is 'an': 'an old charger.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L8_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 8-3] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "Please turn off ____ computer in the meeting room before you leave.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "an",
+                "-",
+                "the",
+                "a"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 8-3)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 8]."
+            "correctAnswer": "the",
+            "hint": "Think about whether this is one specific, already-known computer.",
+            "explanation": "'The' is used because it refers to one specific, known computer - the one in the meeting room."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L9_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 9-1] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "The doctor is waiting for you ____ the small clinic on Park Street.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "at",
+                "to",
+                "in",
+                "on"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 9-1)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 9]."
+            "correctAnswer": "in",
+            "hint": "Think of a clinic as an enclosed space - which preposition do we use for being inside a place?",
+            "explanation": "We use 'in' for enclosed spaces like buildings, so 'in the clinic' is correct."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L9_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Vent Shoot 9-2] Hydrothermal vents ____ superheated toxic chemicals.",
+            "partialSentence": "There is a small bandage ____ your left hand.",
             "options": [
-                "release",
-                "freeze",
-                "absorb",
-                "destroy"
+                "on",
+                "in",
+                "to",
+                "at"
             ],
-            "correctAnswer": "release",
-            "hint": "Determine the action of hot vents venting minerals and toxic plumes. (Diving calibration index 9-2)",
-            "explanation": "Vents release massive venting chemicals into the local aquatic zone. [Verified by Fragment Ballista Unit 9]."
+            "correctAnswer": "on",
+            "hint": "Think about something resting on a surface, like skin.",
+            "explanation": "We use 'on' for things that touch a surface, so a bandage is 'on' your hand."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L9_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Microbe Shoot 9-3] Microscopic marine bacteria perform chemosynthesis ____.",
+            "partialSentence": "My next appointment with the dentist is ____ the new health center downtown.",
             "options": [
-                "in darkness",
-                "in solar beams",
-                "in kelp holds",
-                "in warm fields"
+                "at",
+                "to",
+                "on",
+                "in"
             ],
-            "correctAnswer": "in darkness",
-            "hint": "Consider the visual environment of deep ocean zones where microbes feed. (Diving calibration index 9-3)",
-            "explanation": "Because sunlight cannot penetrate deep ocean layers, bacteria perform chemosynthesis in darkness. [Verified by Fragment Ballista Unit 9]."
+            "correctAnswer": "at",
+            "hint": "Think of this as naming a specific place or address, not describing being inside it.",
+            "explanation": "'At' is commonly used before the name of a specific place, such as a health center."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L10_Q1",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Kelp Shoot 10-1] Giant underwater kelp forests ____ massive solar energy.",
+            "partialSentence": "We watched the whole match ____ the new stadium downtown.",
             "options": [
-                "absorb",
-                "repel",
-                "freeze",
-                "evaporate"
+                "at",
+                "in",
+                "on",
+                "to"
             ],
-            "correctAnswer": "absorb",
-            "hint": "Focus on how green kelp capturing surface solar rays functions. (Diving calibration index 10-1)",
-            "explanation": "Plants use chlorophyll to absorb solar energy, driving rapid vertical photosynthesis. [Verified by Fragment Ballista Unit 10]."
+            "correctAnswer": "in",
+            "hint": "Think of a stadium as a large enclosed area you go inside.",
+            "explanation": "Large enclosed spaces such as stadiums usually take 'in': 'in the stadium.'"
         },
         {
             "id": "WRT_COMPLETESENTENCE_L10_Q2",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Biolum Shoot 10-2] Most deep creatures use biological ____ cold bioluminescent light.",
+            "partialSentence": "There is a great comedy show ____ TV tonight.",
             "options": [
-                "luciferin",
-                "chlorophyll",
-                "hemoglobin",
-                "melanin"
+                "on",
+                "in",
+                "to",
+                "at"
             ],
-            "correctAnswer": "luciferin",
-            "hint": "Identify the light-producing chemical enzyme found in deep marine species. (Diving calibration index 10-2)",
-            "explanation": "Luciferin is the primary cold-light compound utilized by deep creatures. [Verified by Fragment Ballista Unit 10]."
+            "correctAnswer": "on",
+            "hint": "Remember the special preposition we always use with screens and broadcasts.",
+            "explanation": "We always say 'on TV' and 'on the radio' when talking about programs being broadcast."
         },
         {
             "id": "WRT_COMPLETESENTENCE_L10_Q3",
-            "instruction": "LAUNCH PROJECTILE TO FILL THE MISSING FRAGMENT",
-            "difficulty": 1,
+            "instruction": "Complete the sentence.",
             "subtype": "completeSentence",
             "interactionType": "Letter Shoot",
-            "partialSentence": "[Upwell Shoot 10-3] Wind coastal upwellings drag nutrient ____ waters upward.",
+            "partialSentence": "The band is performing ____ the music festival this weekend.",
             "options": [
-                "icy",
-                "warm",
-                "boiling",
-                "magmatic"
+                "at",
+                "on",
+                "in",
+                "to"
             ],
-            "correctAnswer": "icy",
-            "hint": "Recall the temperature profile of bottom deep ocean currents rising up. (Diving calibration index 10-3)",
-            "explanation": "Upwelling brings deep, cold, nutrient-rich icy waters to sunlit surfaces. [Verified by Fragment Ballista Unit 10]."
+            "correctAnswer": "at",
+            "hint": "Think about naming a specific event, not a closed space.",
+            "explanation": "'At' is used before events such as festivals, parties, or concerts."
         }
     ]
 }
