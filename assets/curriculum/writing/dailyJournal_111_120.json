@@ -5,483 +5,453 @@
     "quests": [
         {
             "id": "WRT_DAILYJOURNAL_L111_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 111-1] Draft a log detailing your deep-sea submersible expedition exploring the Mariana Trench.",
+            "prompt": "Write a paragraph describing arranging a home repair service.",
             "options": [
-                "submersible",
-                "mariana",
-                "trench"
+                "had",
+                "fixed",
+                "relief"
             ],
-            "sampleAnswer": "Our research submersible descended deep into the Mariana Trench to document geological active rifts.",
-            "hint": "Reflect on submarine exploration of the deepest aquatic geological formations. (Diving calibration index 111-1)",
-            "explanation": "Oceanic trenches offer valuable scientific insight into benthic activity and lithospheric rifts. [Verified by Fleet Log Unit 111]."
+            "sampleAnswer": "I finally had the leaking faucet fixed by a professional plumber last week. It had been bothering me for months, but I kept putting off the repair out of laziness. The moment it was finally fixed felt like such a relief after so much unnecessary annoyance. I've learned that some small problems are simply not worth ignoring for too long.",
+            "hint": "Think about a household problem you finally arranged to have fixed by someone else.",
+            "explanation": "The causative structure ('had it fixed') shows that someone else performed the repair, which is a natural way to describe arranged services."
         },
         {
             "id": "WRT_DAILYJOURNAL_L111_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 111-2] Record an entry analyzing the active geothermal chimneys at hydrothermal vent fields.",
+            "prompt": "Write a paragraph describing arranging a haircut or personal grooming appointment.",
             "options": [
-                "geothermal",
-                "chimneys",
-                "vents"
+                "had",
+                "cut",
+                "confident"
             ],
-            "sampleAnswer": "We studied active geothermal chimneys venting hydrogen sulfide around deep-sea tectonic plate margins.",
-            "hint": "Focus on mineral structures venting superheated chemical-rich bottom water. (Diving calibration index 111-2)",
-            "explanation": "Geothermal chimneys sustain diverse biological ecosystems purely through chemical conversion. [Verified by Fleet Log Unit 111]."
+            "sampleAnswer": "I finally had my hair cut after putting it off for nearly three months. The stylist suggested a shorter style than I originally planned, which made me a little nervous beforehand. Once it was done, though, I felt surprisingly confident with the new look. Sometimes a small change like this can shift your mood more than expected.",
+            "hint": "Think about an appointment you arranged for personal grooming and how the result made you feel.",
+            "explanation": "This entry shows the causative structure describing a personal service, paired with an honest emotional reaction to the outcome."
         },
         {
             "id": "WRT_DAILYJOURNAL_L111_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 111-3] Describe your observations of localized marine life supported by benthic upwelling zones.",
+            "prompt": "Write a paragraph describing arranging to have something delivered or installed at home.",
             "options": [
-                "upwelling",
-                "nutrients",
-                "plankton"
+                "had",
+                "installed",
+                "convenient"
             ],
-            "sampleAnswer": "A massive local upwelling of nutrient-dense bottom water has triggered an explosive plankton bloom.",
-            "hint": "Detail how wind-driven rising cold currents enrich regional trophic feeding chains. (Diving calibration index 111-3)",
-            "explanation": "Upwelling currents act as nutrient rich vectors, fueling marine ecosystems and biomass cycles. [Verified by Fleet Log Unit 111]."
+            "sampleAnswer": "I finally had a new water filter installed in my kitchen last weekend. The technician arrived right on time and finished the job faster than expected. Having it professionally installed felt far more convenient than attempting it myself, given how little I know about plumbing. It's a small upgrade, but it's already made daily life noticeably easier.",
+            "hint": "Think about something you arranged to have installed or delivered, and how it improved your routine.",
+            "explanation": "The causative structure here highlights convenience, showing how outsourcing a task can simplify everyday responsibilities."
         },
         {
             "id": "WRT_DAILYJOURNAL_L112_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 112-1] Reflect on documenting deep-sea creatures adapting bioluminescence for hunting.",
+            "prompt": "Write a paragraph describing arranging for someone to review your work.",
             "options": [
-                "bioluminescence",
-                "luciferin",
-                "predators"
+                "had",
+                "reviewed",
+                "improved"
             ],
-            "sampleAnswer": "Abyssal organisms utilize high luciferin oxidation to emit cold bioluminescence, keeping safe from predators.",
-            "hint": "Focus on cold chemical light emitted by organic structures in pitch black trenches. (Diving calibration index 112-1)",
-            "explanation": "Biological light emission is a highly successful adaptation for survival in complete darkness. [Verified by Fleet Log Unit 112]."
+            "sampleAnswer": "I had my final essay reviewed by a tutor before submitting it last week. Her detailed comments pointed out several weak arguments I hadn't even noticed myself. After making her suggested changes, the essay improved noticeably in both clarity and structure. I'm genuinely grateful I took the extra step instead of submitting my first draft.",
+            "hint": "Think about a piece of work you had someone else review before finalizing it.",
+            "explanation": "The causative structure ('had it reviewed') describes a service arranged from someone else, which is useful for academic reflection."
         },
         {
             "id": "WRT_DAILYJOURNAL_L112_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 112-2] Record your experiences studying giant kelp forest canopy architectures.",
+            "prompt": "Write a paragraph describing arranging tutoring help for a difficult subject.",
             "options": [
-                "anchorage",
-                "canopy",
-                "shelter"
+                "had",
+                "tutored",
+                "understood"
             ],
-            "sampleAnswer": "The kelp anchors to bottom rocky layers, creating a towering canopy that provides shelter for diverse marine life.",
-            "hint": "Describe how large algae holdfasts compose vertical shelters in shallow sunlit zones. (Diving calibration index 112-2)",
-            "explanation": "Kelp forests form complex three-dimensional ecosystems that reduce wave turbulence and shelter species. [Verified by Fleet Log Unit 112]."
+            "sampleAnswer": "I had a classmate tutor me in calculus for several weeks before the final exam. At first, I felt embarrassed needing extra help with something everyone else seemed to grasp easily. By the end, though, I finally understood the concepts well enough to feel genuinely confident. Asking for help turned out to be far more useful than struggling silently on my own.",
+            "hint": "Think about a subject where arranging tutoring help made a real difference for you.",
+            "explanation": "This entry shows vulnerability and growth together, using the causative structure to describe a service that led to real understanding."
         },
         {
             "id": "WRT_DAILYJOURNAL_L112_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 112-3] Draft a log detailing your deep-sea submersible expedition exploring the Mariana Trench.",
+            "prompt": "Write a paragraph describing arranging for school documents to be translated or certified.",
             "options": [
-                "submersible",
-                "mariana",
-                "trench"
+                "had",
+                "translated",
+                "approved"
             ],
-            "sampleAnswer": "Our research submersible descended deep into the Mariana Trench to document geological active rifts.",
-            "hint": "Reflect on submarine exploration of the deepest aquatic geological formations. (Diving calibration index 112-3)",
-            "explanation": "Oceanic trenches offer valuable scientific insight into benthic activity and lithospheric rifts. [Verified by Fleet Log Unit 112]."
+            "sampleAnswer": "I had my academic transcripts translated officially before applying to a program abroad. The process took longer than expected, mostly due to required certification steps. Once everything was finally approved, submitting my full application felt like a huge relief. I'm glad I started the process early, given how unpredictable the timeline turned out to be.",
+            "hint": "Think about an official document you arranged to have translated or certified for an academic purpose.",
+            "explanation": "The causative structure here describes a formal administrative process, showing how patience and early planning paid off."
         },
         {
             "id": "WRT_DAILYJOURNAL_L113_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 113-1] Record an entry analyzing the active geothermal chimneys at hydrothermal vent fields.",
+            "prompt": "Write a paragraph describing a colleague using a non-defining relative clause.",
             "options": [
-                "geothermal",
-                "chimneys",
-                "vents"
+                "colleague",
+                "who",
+                "appreciate"
             ],
-            "sampleAnswer": "We studied active geothermal chimneys venting hydrogen sulfide around deep-sea tectonic plate margins.",
-            "hint": "Focus on mineral structures venting superheated chemical-rich bottom water. (Diving calibration index 113-1)",
-            "explanation": "Geothermal chimneys sustain diverse biological ecosystems purely through chemical conversion. [Verified by Fleet Log Unit 113]."
+            "sampleAnswer": "My colleague, who has worked at this company for over a decade, has taught me more than any formal training ever could. Her patience with new employees, which never seems to run out, genuinely sets the tone for our whole team. I appreciate her guidance more than I've probably ever told her directly. People like her are honestly rare in any workplace.",
+            "hint": "Think about a colleague and one extra detail about them worth mentioning.",
+            "explanation": "Non-defining relative clauses, set off by commas, add extra detail about someone without changing the core meaning of the sentence."
         },
         {
             "id": "WRT_DAILYJOURNAL_L113_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 113-2] Describe your observations of localized marine life supported by benthic upwelling zones.",
+            "prompt": "Write a paragraph describing a manager using a non-defining relative clause.",
             "options": [
-                "upwelling",
-                "nutrients",
-                "plankton"
+                "manager",
+                "who",
+                "respect"
             ],
-            "sampleAnswer": "A massive local upwelling of nutrient-dense bottom water has triggered an explosive plankton bloom.",
-            "hint": "Detail how wind-driven rising cold currents enrich regional trophic feeding chains. (Diving calibration index 113-2)",
-            "explanation": "Upwelling currents act as nutrient rich vectors, fueling marine ecosystems and biomass cycles. [Verified by Fleet Log Unit 113]."
+            "sampleAnswer": "My current manager, who started in an entry-level role at this same company years ago, genuinely understands the challenges of every position on our team. Her willingness to listen, which many leaders unfortunately lack, has earned her enormous respect from everyone. I think her background shapes how fairly she treats people. It's rare to work under someone who truly remembers where they started.",
+            "hint": "Think about a manager and an extra background detail that explains why you respect them.",
+            "explanation": "This entry uses non-defining relative clauses to add meaningful background detail, deepening the reader's understanding of the person."
         },
         {
             "id": "WRT_DAILYJOURNAL_L113_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 113-3] Reflect on documenting deep-sea creatures adapting bioluminescence for hunting.",
+            "prompt": "Write a paragraph describing an office or workplace using a non-defining relative clause.",
             "options": [
-                "bioluminescence",
-                "luciferin",
-                "predators"
+                "office",
+                "which",
+                "comfortable"
             ],
-            "sampleAnswer": "Abyssal organisms utilize high luciferin oxidation to emit cold bioluminescence, keeping safe from predators.",
-            "hint": "Focus on cold chemical light emitted by organic structures in pitch black trenches. (Diving calibration index 113-3)",
-            "explanation": "Biological light emission is a highly successful adaptation for survival in complete darkness. [Verified by Fleet Log Unit 113]."
+            "sampleAnswer": "Our office, which recently moved to a much larger building downtown, finally feels comfortable enough to focus properly. The natural light, which was almost completely absent in our old space, has genuinely improved everyone's mood. I notice people seem more relaxed and productive since the move. A small change in environment, it turns out, made a surprisingly big difference.",
+            "hint": "Think about your workplace and an extra detail about its environment worth describing.",
+            "explanation": "Non-defining relative clauses here add vivid environmental detail, showing how physical surroundings can affect daily work life."
         },
         {
             "id": "WRT_DAILYJOURNAL_L114_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 114-1] Record your experiences studying giant kelp forest canopy architectures.",
+            "prompt": "Write a paragraph describing a destination using a non-defining relative clause.",
             "options": [
-                "anchorage",
-                "canopy",
-                "shelter"
+                "city",
+                "which",
+                "memorable"
             ],
-            "sampleAnswer": "The kelp anchors to bottom rocky layers, creating a towering canopy that provides shelter for diverse marine life.",
-            "hint": "Describe how large algae holdfasts compose vertical shelters in shallow sunlit zones. (Diving calibration index 114-1)",
-            "explanation": "Kelp forests form complex three-dimensional ecosystems that reduce wave turbulence and shelter species. [Verified by Fleet Log Unit 114]."
+            "sampleAnswer": "The city, which sits along a stunning coastline, quickly became one of the most memorable places I've ever visited. The narrow streets, which wind unpredictably through the old town, made every walk feel like a small adventure. I genuinely didn't want to leave once our trip came to an end. Some places simply stay with you long after you've returned home.",
+            "hint": "Think about a destination and one extra detail that made it especially memorable.",
+            "explanation": "Non-defining relative clauses add rich descriptive detail about a place, making travel writing feel more vivid and specific."
         },
         {
             "id": "WRT_DAILYJOURNAL_L114_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 114-2] Draft a log detailing your deep-sea submersible expedition exploring the Mariana Trench.",
+            "prompt": "Write a paragraph describing a local guide using a non-defining relative clause.",
             "options": [
-                "submersible",
-                "mariana",
-                "trench"
+                "guide",
+                "who",
+                "knowledge"
             ],
-            "sampleAnswer": "Our research submersible descended deep into the Mariana Trench to document geological active rifts.",
-            "hint": "Reflect on submarine exploration of the deepest aquatic geological formations. (Diving calibration index 114-2)",
-            "explanation": "Oceanic trenches offer valuable scientific insight into benthic activity and lithospheric rifts. [Verified by Fleet Log Unit 114]."
+            "sampleAnswer": "Our local guide, who had lived in the region his entire life, shared stories that no guidebook could have ever offered. His deep knowledge of the area's history, which clearly came from genuine passion rather than memorized facts, made the whole tour feel personal. I learned more in that single afternoon than from hours of online research beforehand. Experiences like that are exactly why I prefer guided tours when exploring somewhere new.",
+            "hint": "Think about a guide whose personal background shaped the quality of your experience.",
+            "explanation": "This entry shows how relative clauses can highlight a person's unique background, adding authenticity to travel storytelling."
         },
         {
             "id": "WRT_DAILYJOURNAL_L114_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 114-3] Record an entry analyzing the active geothermal chimneys at hydrothermal vent fields.",
+            "prompt": "Write a paragraph describing accommodation using a non-defining relative clause.",
             "options": [
-                "geothermal",
-                "chimneys",
-                "vents"
+                "hotel",
+                "which",
+                "charming"
             ],
-            "sampleAnswer": "We studied active geothermal chimneys venting hydrogen sulfide around deep-sea tectonic plate margins.",
-            "hint": "Focus on mineral structures venting superheated chemical-rich bottom water. (Diving calibration index 114-3)",
-            "explanation": "Geothermal chimneys sustain diverse biological ecosystems purely through chemical conversion. [Verified by Fleet Log Unit 114]."
+            "sampleAnswer": "The small hotel, which was tucked away on a quiet side street, turned out to be far more charming than its modest exterior suggested. The owner's warm hospitality, which felt genuinely personal rather than rehearsed, made our stay feel like visiting family. I'd choose a place like this over a large chain hotel any day. Sometimes the smallest accommodations leave the biggest impression.",
+            "hint": "Think about a place you stayed that surprised you with unexpected charm or hospitality.",
+            "explanation": "Non-defining relative clauses here add layered, specific detail, helping the writer explain exactly why a place felt special."
         },
         {
             "id": "WRT_DAILYJOURNAL_L115_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 115-1] Describe your observations of localized marine life supported by benthic upwelling zones.",
+            "prompt": "Write a paragraph describing a family responsibility being carried out or set up.",
             "options": [
-                "upwelling",
-                "nutrients",
-                "plankton"
+                "carried out",
+                "set up",
+                "smoothly"
             ],
-            "sampleAnswer": "A massive local upwelling of nutrient-dense bottom water has triggered an explosive plankton bloom.",
-            "hint": "Detail how wind-driven rising cold currents enrich regional trophic feeding chains. (Diving calibration index 115-1)",
-            "explanation": "Upwelling currents act as nutrient rich vectors, fueling marine ecosystems and biomass cycles. [Verified by Fleet Log Unit 115]."
+            "sampleAnswer": "Our family carried out the annual holiday dinner exactly as we have for years, with everyone contributing something different. This year, my younger cousin set up the decorations entirely on her own for the very first time. Watching her take on that responsibility so proudly made the whole evening feel special. Everything ran smoothly, partly because everyone simply knew their role by now.",
+            "hint": "Think about a family tradition and how responsibilities for it are usually divided or carried out.",
+            "explanation": "Phrasal verbs like 'carried out' and 'set up' describe organized family processes naturally, fitting reflective writing about shared responsibilities."
         },
         {
             "id": "WRT_DAILYJOURNAL_L115_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 115-2] Reflect on documenting deep-sea creatures adapting bioluminescence for hunting.",
+            "prompt": "Write a paragraph describing taking over a family responsibility from an older relative.",
             "options": [
-                "bioluminescence",
-                "luciferin",
-                "predators"
+                "took over",
+                "set up",
+                "honored"
             ],
-            "sampleAnswer": "Abyssal organisms utilize high luciferin oxidation to emit cold bioluminescence, keeping safe from predators.",
-            "hint": "Focus on cold chemical light emitted by organic structures in pitch black trenches. (Diving calibration index 115-2)",
-            "explanation": "Biological light emission is a highly successful adaptation for survival in complete darkness. [Verified by Fleet Log Unit 115]."
+            "sampleAnswer": "I recently took over organizing our family's monthly dinners from my grandmother, who had done it for decades. I had to set up the schedule and menu myself, which felt intimidating at first, given how much she used to handle effortlessly. Still, I feel genuinely honored to continue something that means so much to our family. I hope I can do it justice the way she always did.",
+            "hint": "Think about a family responsibility you've taken over from someone else and how that felt.",
+            "explanation": "This entry uses 'took over' to show a meaningful generational transition, adding emotional weight to a simple phrasal verb."
         },
         {
             "id": "WRT_DAILYJOURNAL_L115_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 115-3] Record your experiences studying giant kelp forest canopy architectures.",
+            "prompt": "Write a paragraph describing setting up a new family tradition.",
             "options": [
-                "anchorage",
-                "canopy",
-                "shelter"
+                "set up",
+                "carried out",
+                "meaningful"
             ],
-            "sampleAnswer": "The kelp anchors to bottom rocky layers, creating a towering canopy that provides shelter for diverse marine life.",
-            "hint": "Describe how large algae holdfasts compose vertical shelters in shallow sunlit zones. (Diving calibration index 115-3)",
-            "explanation": "Kelp forests form complex three-dimensional ecosystems that reduce wave turbulence and shelter species. [Verified by Fleet Log Unit 115]."
+            "sampleAnswer": "Last year, I set up a new tradition of monthly video calls with relatives who live far away. We've carried out this simple plan consistently ever since, even during busy weeks. What started as a small idea has become genuinely meaningful for staying connected across distance. Sometimes the simplest traditions end up mattering the most.",
+            "hint": "Think about a new family tradition you helped create and how consistently it has continued.",
+            "explanation": "Phrasal verbs like 'set up' and 'carried out' describe the creation and maintenance of a tradition in clear, natural language."
         },
         {
             "id": "WRT_DAILYJOURNAL_L116_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 116-1] Draft a log detailing your deep-sea submersible expedition exploring the Mariana Trench.",
+            "prompt": "Write a paragraph describing a store carrying out a new policy.",
             "options": [
-                "submersible",
-                "mariana",
-                "trench"
+                "carried out",
+                "set up",
+                "customers"
             ],
-            "sampleAnswer": "Our research submersible descended deep into the Mariana Trench to document geological active rifts.",
-            "hint": "Reflect on submarine exploration of the deepest aquatic geological formations. (Diving calibration index 116-1)",
-            "explanation": "Oceanic trenches offer valuable scientific insight into benthic activity and lithospheric rifts. [Verified by Fleet Log Unit 116]."
+            "sampleAnswer": "The store recently carried out a new return policy that's far more generous than before. They also set up a simple online system that makes the process much faster for customers. I've noticed many regular customers seem genuinely pleased with the improved convenience. It's a small business change, but it clearly reflects a focus on customer experience.",
+            "hint": "Think about a policy or system change you've noticed at a store you visit often.",
+            "explanation": "Phrasal verbs like 'carried out' and 'set up' describe organizational changes naturally, fitting a reflective consumer perspective."
         },
         {
             "id": "WRT_DAILYJOURNAL_L116_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 116-2] Record an entry analyzing the active geothermal chimneys at hydrothermal vent fields.",
+            "prompt": "Write a paragraph describing taking over management of a family shop.",
             "options": [
-                "geothermal",
-                "chimneys",
-                "vents"
+                "took over",
+                "set up",
+                "responsibility"
             ],
-            "sampleAnswer": "We studied active geothermal chimneys venting hydrogen sulfide around deep-sea tectonic plate margins.",
-            "hint": "Focus on mineral structures venting superheated chemical-rich bottom water. (Diving calibration index 116-2)",
-            "explanation": "Geothermal chimneys sustain diverse biological ecosystems purely through chemical conversion. [Verified by Fleet Log Unit 116]."
+            "sampleAnswer": "My cousin recently took over managing our family's small shop from my uncle, who had run it for thirty years. She set up a new inventory system almost immediately, modernizing a process that hadn't changed in decades. Taking on that much responsibility at such a young age genuinely impressed everyone in the family. Watching her adapt so quickly has been inspiring to witness.",
+            "hint": "Think about someone who took over a business and the changes they made early on.",
+            "explanation": "This entry uses 'took over' to highlight a meaningful transition in responsibility, paired with concrete changes that followed."
         },
         {
             "id": "WRT_DAILYJOURNAL_L116_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 116-3] Describe your observations of localized marine life supported by benthic upwelling zones.",
+            "prompt": "Write a paragraph describing setting up a small online shop or side business.",
             "options": [
-                "upwelling",
-                "nutrients",
-                "plankton"
+                "set up",
+                "carried out",
+                "nervous"
             ],
-            "sampleAnswer": "A massive local upwelling of nutrient-dense bottom water has triggered an explosive plankton bloom.",
-            "hint": "Detail how wind-driven rising cold currents enrich regional trophic feeding chains. (Diving calibration index 116-3)",
-            "explanation": "Upwelling currents act as nutrient rich vectors, fueling marine ecosystems and biomass cycles. [Verified by Fleet Log Unit 116]."
+            "sampleAnswer": "I finally set up a small online shop to sell handmade crafts last month. I carried out everything myself, from photography to shipping, which felt overwhelming at first. I was genuinely nervous about whether anyone would actually buy something I made. Surprisingly, the first few sales gave me enough confidence to keep going.",
+            "hint": "Think about a small business or shop you've set up and the nerves involved in starting it.",
+            "explanation": "Phrasal verbs here describe the practical steps of starting something new, balanced with an honest emotional reaction."
         },
         {
             "id": "WRT_DAILYJOURNAL_L117_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 117-1] Reflect on documenting deep-sea creatures adapting bioluminescence for hunting.",
+            "prompt": "Write a paragraph reflecting on cooking using precise make/do collocations.",
             "options": [
-                "bioluminescence",
-                "luciferin",
-                "predators"
+                "made",
+                "did",
+                "effort"
             ],
-            "sampleAnswer": "Abyssal organisms utilize high luciferin oxidation to emit cold bioluminescence, keeping safe from predators.",
-            "hint": "Focus on cold chemical light emitted by organic structures in pitch black trenches. (Diving calibration index 117-1)",
-            "explanation": "Biological light emission is a highly successful adaptation for survival in complete darkness. [Verified by Fleet Log Unit 117]."
+            "sampleAnswer": "I made a real effort to cook a proper meal from scratch this week instead of relying on takeout. It took some research, since I did quite a bit of reading about unfamiliar ingredients beforehand. Honestly, the extra effort made the final dish taste noticeably better than my usual shortcuts. I think I'll keep making this small change part of my regular routine.",
+            "hint": "Think about an extra effort you recently made in the kitchen and whether it paid off.",
+            "explanation": "Precise collocations like 'made an effort' and 'did research' show natural, idiomatic vocabulary use rather than generic alternatives."
         },
         {
             "id": "WRT_DAILYJOURNAL_L117_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 117-2] Record your experiences studying giant kelp forest canopy architectures.",
+            "prompt": "Write a paragraph reflecting on a food-related mistake using precise make/do collocations.",
             "options": [
-                "anchorage",
-                "canopy",
-                "shelter"
+                "made",
+                "did",
+                "mistake"
             ],
-            "sampleAnswer": "The kelp anchors to bottom rocky layers, creating a towering canopy that provides shelter for diverse marine life.",
-            "hint": "Describe how large algae holdfasts compose vertical shelters in shallow sunlit zones. (Diving calibration index 117-2)",
-            "explanation": "Kelp forests form complex three-dimensional ecosystems that reduce wave turbulence and shelter species. [Verified by Fleet Log Unit 117]."
+            "sampleAnswer": "I made a small mistake by adding far too much salt to the soup last night. Afterward, I did a quick search online for ways to balance overly salty dishes. Adding a peeled potato actually did the trick, absorbing some of the excess salt. It's a small kitchen lesson, but one I won't forget anytime soon.",
+            "hint": "Think about a cooking mistake you made and how you eventually fixed it.",
+            "explanation": "This entry uses 'made a mistake' and 'did a search' as natural collocations, which sound more idiomatic than generic alternatives."
         },
         {
             "id": "WRT_DAILYJOURNAL_L117_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 117-3] Draft a log detailing your deep-sea submersible expedition exploring the Mariana Trench.",
+            "prompt": "Write a paragraph reflecting on preparing food for guests using precise make/do collocations.",
             "options": [
-                "submersible",
-                "mariana",
-                "trench"
+                "made",
+                "did",
+                "favor"
             ],
-            "sampleAnswer": "Our research submersible descended deep into the Mariana Trench to document geological active rifts.",
-            "hint": "Reflect on submarine exploration of the deepest aquatic geological formations. (Diving calibration index 117-3)",
-            "explanation": "Oceanic trenches offer valuable scientific insight into benthic activity and lithospheric rifts. [Verified by Fleet Log Unit 117]."
+            "sampleAnswer": "I made several dishes for my friends' visit, hoping to impress them with something homemade. A friend did me a favor by helping with the dessert, since baking isn't really my strength. Together, we made the whole evening feel far less stressful than if I had tried to handle everything alone. Sharing the workload genuinely made the meal more enjoyable for everyone.",
+            "hint": "Think about a time someone helped you prepare food for guests, and how sharing the task felt.",
+            "explanation": "Using 'made dishes,' 'did a favor,' and 'made the evening' shows varied, natural use of common make/do collocations."
         },
         {
             "id": "WRT_DAILYJOURNAL_L118_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 118-1] Record an entry analyzing the active geothermal chimneys at hydrothermal vent fields.",
+            "prompt": "Write a paragraph reflecting on solving a tech problem using precise make/do collocations.",
             "options": [
-                "geothermal",
-                "chimneys",
-                "vents"
+                "made",
+                "did",
+                "progress"
             ],
-            "sampleAnswer": "We studied active geothermal chimneys venting hydrogen sulfide around deep-sea tectonic plate margins.",
-            "hint": "Focus on mineral structures venting superheated chemical-rich bottom water. (Diving calibration index 118-1)",
-            "explanation": "Geothermal chimneys sustain diverse biological ecosystems purely through chemical conversion. [Verified by Fleet Log Unit 118]."
+            "sampleAnswer": "I made very little progress troubleshooting my computer issue on my own at first. After I did some research on a tech forum, I finally found a solution that actually worked. It made such a difference compared to randomly guessing at fixes. Sometimes a little outside research saves hours of frustrating trial and error.",
+            "hint": "Think about a tech problem where outside research eventually led to real progress.",
+            "explanation": "'Made progress' and 'did research' are natural, idiomatic collocations that sound more fluent than generic word choices."
         },
         {
             "id": "WRT_DAILYJOURNAL_L118_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 118-2] Describe your observations of localized marine life supported by benthic upwelling zones.",
+            "prompt": "Write a paragraph reflecting on making a decision about technology, using precise make/do collocations.",
             "options": [
-                "upwelling",
-                "nutrients",
-                "plankton"
+                "made",
+                "did",
+                "decision"
             ],
-            "sampleAnswer": "A massive local upwelling of nutrient-dense bottom water has triggered an explosive plankton bloom.",
-            "hint": "Detail how wind-driven rising cold currents enrich regional trophic feeding chains. (Diving calibration index 118-2)",
-            "explanation": "Upwelling currents act as nutrient rich vectors, fueling marine ecosystems and biomass cycles. [Verified by Fleet Log Unit 118]."
+            "sampleAnswer": "I made a difficult decision to finally upgrade my old laptop after years of putting it off. Before committing, I did extensive comparisons between several different models and price ranges. In the end, the decision made my daily work noticeably smoother and less frustrating. I wish I had made that change sooner, honestly.",
+            "hint": "Think about a tech decision you delayed making and how it eventually improved your daily life.",
+            "explanation": "This entry models 'made a decision' and 'did comparisons' as natural collocations that strengthen everyday technology reflections."
         },
         {
             "id": "WRT_DAILYJOURNAL_L118_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 118-3] Reflect on documenting deep-sea creatures adapting bioluminescence for hunting.",
+            "prompt": "Write a paragraph reflecting on doing maintenance on a device using precise make/do collocations.",
             "options": [
-                "bioluminescence",
-                "luciferin",
-                "predators"
+                "did",
+                "made",
+                "difference"
             ],
-            "sampleAnswer": "Abyssal organisms utilize high luciferin oxidation to emit cold bioluminescence, keeping safe from predators.",
-            "hint": "Focus on cold chemical light emitted by organic structures in pitch black trenches. (Diving calibration index 118-3)",
-            "explanation": "Biological light emission is a highly successful adaptation for survival in complete darkness. [Verified by Fleet Log Unit 118]."
+            "sampleAnswer": "I finally did some basic maintenance on my laptop after months of ignoring small warning signs. Clearing out unnecessary files made a real difference in how quickly everything now runs. I did the entire process myself using a few simple online guides. It's reassuring to know that small, regular maintenance can prevent bigger problems later.",
+            "hint": "Think about a maintenance task you finally did on a device and the difference it made.",
+            "explanation": "Using 'did maintenance' and 'made a difference' together demonstrates fluent, idiomatic use of common collocations in tech reflection."
         },
         {
             "id": "WRT_DAILYJOURNAL_L119_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 119-1] Record your experiences studying giant kelp forest canopy architectures.",
+            "prompt": "Write a paragraph reflecting on exercise using the more...the more structure.",
             "options": [
-                "anchorage",
-                "canopy",
-                "shelter"
+                "the more",
+                "patient",
+                "noticed"
             ],
-            "sampleAnswer": "The kelp anchors to bottom rocky layers, creating a towering canopy that provides shelter for diverse marine life.",
-            "hint": "Describe how large algae holdfasts compose vertical shelters in shallow sunlit zones. (Diving calibration index 119-1)",
-            "explanation": "Kelp forests form complex three-dimensional ecosystems that reduce wave turbulence and shelter species. [Verified by Fleet Log Unit 119]."
+            "sampleAnswer": "The more consistently I exercise, the more noticeable my energy levels become throughout the day. At first, I barely noticed any difference, since the changes happened so gradually. The more patient I became with the process, the more rewarding the results eventually felt. It's a reminder that consistency, not intensity, often matters most.",
+            "hint": "Think about a health habit where consistency gradually led to noticeable results.",
+            "explanation": "The parallel structure 'the more...the more' effectively shows a cause-and-effect relationship that builds gradually over time."
         },
         {
             "id": "WRT_DAILYJOURNAL_L119_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 119-2] Draft a log detailing your deep-sea submersible expedition exploring the Mariana Trench.",
+            "prompt": "Write a paragraph reflecting on sleep using the more...the more structure.",
             "options": [
-                "submersible",
-                "mariana",
-                "trench"
+                "the more",
+                "consistent",
+                "realized"
             ],
-            "sampleAnswer": "Our research submersible descended deep into the Mariana Trench to document geological active rifts.",
-            "hint": "Reflect on submarine exploration of the deepest aquatic geological formations. (Diving calibration index 119-2)",
-            "explanation": "Oceanic trenches offer valuable scientific insight into benthic activity and lithospheric rifts. [Verified by Fleet Log Unit 119]."
+            "sampleAnswer": "The more attention I paid to my sleep schedule, the more I realized how much it affected my mood. For years, I underestimated just how connected the two truly were. The more consistent my bedtime became, the more stable my emotions felt during the day. This simple connection has completely changed how seriously I treat sleep now.",
+            "hint": "Think about a connection you discovered between sleep and another part of your wellbeing.",
+            "explanation": "This entry uses the comparative structure twice, reinforcing a clear pattern between cause (sleep habits) and effect (emotional stability)."
         },
         {
             "id": "WRT_DAILYJOURNAL_L119_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 119-3] Record an entry analyzing the active geothermal chimneys at hydrothermal vent fields.",
+            "prompt": "Write a paragraph reflecting on hydration using the more...the more structure.",
             "options": [
-                "geothermal",
-                "chimneys",
-                "vents"
+                "the more",
+                "naturally",
+                "improved"
             ],
-            "sampleAnswer": "We studied active geothermal chimneys venting hydrogen sulfide around deep-sea tectonic plate margins.",
-            "hint": "Focus on mineral structures venting superheated chemical-rich bottom water. (Diving calibration index 119-3)",
-            "explanation": "Geothermal chimneys sustain diverse biological ecosystems purely through chemical conversion. [Verified by Fleet Log Unit 119]."
+            "sampleAnswer": "The more water I drank throughout the day, the more my concentration improved during long work sessions. At first, the habit felt forced, almost like an unnecessary chore. The more naturally it became part of my routine, the more I noticed the difference whenever I forgot. It's a small habit, but its effects have turned out to be surprisingly significant.",
+            "hint": "Think about a small habit, like hydration, where consistency revealed a clear personal benefit.",
+            "explanation": "Repeating the 'the more...the more' structure emphasizes a strengthening relationship between habit and outcome, a useful reflective technique."
         },
         {
             "id": "WRT_DAILYJOURNAL_L120_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 120-1] Describe your observations of localized marine life supported by benthic upwelling zones.",
+            "prompt": "Write a paragraph reflecting on a hobby using the more...the more structure.",
             "options": [
-                "upwelling",
-                "nutrients",
-                "plankton"
+                "the more",
+                "consistently",
+                "invested"
             ],
-            "sampleAnswer": "A massive local upwelling of nutrient-dense bottom water has triggered an explosive plankton bloom.",
-            "hint": "Detail how wind-driven rising cold currents enrich regional trophic feeding chains. (Diving calibration index 120-1)",
-            "explanation": "Upwelling currents act as nutrient rich vectors, fueling marine ecosystems and biomass cycles. [Verified by Fleet Log Unit 120]."
+            "sampleAnswer": "The more time I spent learning the guitar, the more invested I became in actually improving. Early on, progress felt painfully slow and a little discouraging. The more consistently I practiced, the more confident my playing gradually became. It's a familiar pattern, but living through it personally still feels genuinely rewarding.",
+            "hint": "Think about a hobby where increased effort clearly led to increased enjoyment or investment.",
+            "explanation": "The comparative structure here mirrors a familiar truth about skill-building, making the reflection feel both personal and relatable."
         },
         {
             "id": "WRT_DAILYJOURNAL_L120_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 120-2] Reflect on documenting deep-sea creatures adapting bioluminescence for hunting.",
+            "prompt": "Write a paragraph reflecting on a show or series using the more...the more structure.",
             "options": [
-                "bioluminescence",
-                "luciferin",
-                "predators"
+                "the more",
+                "patient",
+                "attached"
             ],
-            "sampleAnswer": "Abyssal organisms utilize high luciferin oxidation to emit cold bioluminescence, keeping safe from predators.",
-            "hint": "Focus on cold chemical light emitted by organic structures in pitch black trenches. (Diving calibration index 120-2)",
-            "explanation": "Biological light emission is a highly successful adaptation for survival in complete darkness. [Verified by Fleet Log Unit 120]."
+            "sampleAnswer": "The more episodes I watched, the more attached I became to the characters' individual stories. At first, I almost gave up during a slow opening season. The more patient I stayed with the story, the more rewarding the eventual payoff turned out to be. Looking back, I'm glad curiosity won over my initial hesitation.",
+            "hint": "Think about a show that took time to truly hook you, and how your investment grew.",
+            "explanation": "This entry uses the comparative structure to track emotional investment building over time, which adds depth to a simple show review."
         },
         {
             "id": "WRT_DAILYJOURNAL_L120_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 3,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 120-3] Record your experiences studying giant kelp forest canopy architectures.",
+            "prompt": "Write a paragraph reflecting on attending live events using the more...the more structure.",
             "options": [
-                "anchorage",
-                "canopy",
-                "shelter"
+                "the more",
+                "memorable",
+                "appreciated"
             ],
-            "sampleAnswer": "The kelp anchors to bottom rocky layers, creating a towering canopy that provides shelter for diverse marine life.",
-            "hint": "Describe how large algae holdfasts compose vertical shelters in shallow sunlit zones. (Diving calibration index 120-3)",
-            "explanation": "Kelp forests form complex three-dimensional ecosystems that reduce wave turbulence and shelter species. [Verified by Fleet Log Unit 120]."
+            "sampleAnswer": "The more live concerts I attended, the more I appreciated the unique energy that recordings simply can't capture. At first, the cost felt hard to justify compared to streaming music at home. The more memorable experiences I collected, the more those moments felt worth every cent spent. Now, I prioritize live events whenever my schedule and budget allow.",
+            "hint": "Think about how repeated experiences at live events changed your appreciation for them over time.",
+            "explanation": "Repeating the comparative structure shows evolving appreciation, a useful technique for reflecting on experiences that improve with exposure."
         }
     ]
 }

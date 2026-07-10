@@ -5,483 +5,453 @@
     "quests": [
         {
             "id": "WRT_DAILYJOURNAL_L21_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 21-1] Draft a log detailing your deep-sea submersible expedition exploring the Mariana Trench.",
+            "prompt": "Write 2-3 sentences about a movie or show you watched recently.",
             "options": [
-                "submersible",
-                "mariana",
-                "trench"
+                "watched",
+                "surprised",
+                "ending"
             ],
-            "sampleAnswer": "Our research submersible descended deep into the Mariana Trench to document geological active rifts.",
-            "hint": "Reflect on submarine exploration of the deepest aquatic geological formations. (Diving calibration index 21-1)",
-            "explanation": "Oceanic trenches offer valuable scientific insight into benthic activity and lithospheric rifts. [Verified by Fleet Log Unit 21]."
+            "sampleAnswer": "I watched a new thriller last weekend with my roommate. The ending was so surprising that we both gasped out loud.",
+            "hint": "Think about a movie or show with a twist you didn't expect.",
+            "explanation": "This entry uses two simple past sentences: one to set the scene, and one to describe a specific reaction."
         },
         {
             "id": "WRT_DAILYJOURNAL_L21_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 21-2] Record an entry analyzing the active geothermal chimneys at hydrothermal vent fields.",
+            "prompt": "Write 2-3 sentences about a concert or live event you attended.",
             "options": [
-                "geothermal",
-                "chimneys",
-                "vents"
+                "attended",
+                "crowd",
+                "amazing"
             ],
-            "sampleAnswer": "We studied active geothermal chimneys venting hydrogen sulfide around deep-sea tectonic plate margins.",
-            "hint": "Focus on mineral structures venting superheated chemical-rich bottom water. (Diving calibration index 21-2)",
-            "explanation": "Geothermal chimneys sustain diverse biological ecosystems purely through chemical conversion. [Verified by Fleet Log Unit 21]."
+            "sampleAnswer": "I attended a small concert downtown last month. The crowd was huge, and the singer's voice sounded absolutely amazing live.",
+            "hint": "Think about an event and one detail about the atmosphere there.",
+            "explanation": "Combining a fact (attended) with a sensory detail (amazing voice) makes a recount more vivid for the reader."
         },
         {
             "id": "WRT_DAILYJOURNAL_L21_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 21-3] Describe your observations of localized marine life supported by benthic upwelling zones.",
+            "prompt": "Write 2-3 sentences about a game you played recently.",
             "options": [
-                "upwelling",
-                "nutrients",
-                "plankton"
+                "played",
+                "friends",
+                "lost"
             ],
-            "sampleAnswer": "A massive local upwelling of nutrient-dense bottom water has triggered an explosive plankton bloom.",
-            "hint": "Detail how wind-driven rising cold currents enrich regional trophic feeding chains. (Diving calibration index 21-3)",
-            "explanation": "Upwelling currents act as nutrient rich vectors, fueling marine ecosystems and biomass cycles. [Verified by Fleet Log Unit 21]."
+            "sampleAnswer": "I played a video game with my friends last night. We laughed a lot, even though my team lost every round.",
+            "hint": "Think about a recent game and how it ended for you.",
+            "explanation": "Using 'even though' connects the fun of the event with an unexpected or contrasting outcome."
         },
         {
             "id": "WRT_DAILYJOURNAL_L22_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 22-1] Reflect on documenting deep-sea creatures adapting bioluminescence for hunting.",
+            "prompt": "Write 2-3 sentences about a phone call you had recently.",
             "options": [
-                "bioluminescence",
-                "luciferin",
-                "predators"
+                "called",
+                "explained",
+                "understood"
             ],
-            "sampleAnswer": "Abyssal organisms utilize high luciferin oxidation to emit cold bioluminescence, keeping safe from predators.",
-            "hint": "Focus on cold chemical light emitted by organic structures in pitch black trenches. (Diving calibration index 22-1)",
-            "explanation": "Biological light emission is a highly successful adaptation for survival in complete darkness. [Verified by Fleet Log Unit 22]."
+            "sampleAnswer": "I called customer service about my order yesterday. I explained the problem clearly, and the agent finally understood what I needed.",
+            "hint": "Think about a call where you had to explain something carefully.",
+            "explanation": "This entry shows a clear past-tense sequence: making a call, explaining, and reaching understanding."
         },
         {
             "id": "WRT_DAILYJOURNAL_L22_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 22-2] Record your experiences studying giant kelp forest canopy architectures.",
+            "prompt": "Write 2-3 sentences about sending an important email.",
             "options": [
-                "anchorage",
-                "canopy",
-                "shelter"
+                "wrote",
+                "attached",
+                "replied"
             ],
-            "sampleAnswer": "The kelp anchors to bottom rocky layers, creating a towering canopy that provides shelter for diverse marine life.",
-            "hint": "Describe how large algae holdfasts compose vertical shelters in shallow sunlit zones. (Diving calibration index 22-2)",
-            "explanation": "Kelp forests form complex three-dimensional ecosystems that reduce wave turbulence and shelter species. [Verified by Fleet Log Unit 22]."
+            "sampleAnswer": "I wrote a formal email to my landlord last week. I attached a photo of the broken window, and he replied within an hour.",
+            "hint": "Think about an email where you needed to include extra information.",
+            "explanation": "Listing three connected actions in order helps the reader follow exactly what happened, step by step."
         },
         {
             "id": "WRT_DAILYJOURNAL_L22_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 22-3] Draft a log detailing your deep-sea submersible expedition exploring the Mariana Trench.",
+            "prompt": "Write 2-3 sentences about resolving a misunderstanding with someone.",
             "options": [
-                "submersible",
-                "mariana",
-                "trench"
+                "misunderstood",
+                "clarified",
+                "relieved"
             ],
-            "sampleAnswer": "Our research submersible descended deep into the Mariana Trench to document geological active rifts.",
-            "hint": "Reflect on submarine exploration of the deepest aquatic geological formations. (Diving calibration index 22-3)",
-            "explanation": "Oceanic trenches offer valuable scientific insight into benthic activity and lithospheric rifts. [Verified by Fleet Log Unit 22]."
+            "sampleAnswer": "My neighbor misunderstood my message yesterday. I clarified what I meant in person, and we both felt relieved afterward.",
+            "hint": "Think about a small misunderstanding you fixed by talking it through.",
+            "explanation": "Showing the problem, the fix, and the resulting feeling gives this short recount a clear, satisfying structure."
         },
         {
             "id": "WRT_DAILYJOURNAL_L23_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 23-1] Record an entry analyzing the active geothermal chimneys at hydrothermal vent fields.",
+            "prompt": "Write 2-3 sentences describing what you are doing and feeling right now.",
             "options": [
-                "geothermal",
-                "chimneys",
-                "vents"
+                "sitting",
+                "writing",
+                "calm"
             ],
-            "sampleAnswer": "We studied active geothermal chimneys venting hydrogen sulfide around deep-sea tectonic plate margins.",
-            "hint": "Focus on mineral structures venting superheated chemical-rich bottom water. (Diving calibration index 23-1)",
-            "explanation": "Geothermal chimneys sustain diverse biological ecosystems purely through chemical conversion. [Verified by Fleet Log Unit 23]."
+            "sampleAnswer": "I am sitting by the window while writing this journal entry. The street outside is quiet, and I feel surprisingly calm tonight.",
+            "hint": "Think about your physical surroundings and your mood at this exact moment.",
+            "explanation": "The present continuous ('am sitting', 'writing') captures an action happening right now, which fits a real-time diary entry."
         },
         {
             "id": "WRT_DAILYJOURNAL_L23_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 23-2] Describe your observations of localized marine life supported by benthic upwelling zones.",
+            "prompt": "Write 2-3 sentences describing a task you are currently working on.",
             "options": [
-                "upwelling",
-                "nutrients",
-                "plankton"
+                "organizing",
+                "messy",
+                "focused"
             ],
-            "sampleAnswer": "A massive local upwelling of nutrient-dense bottom water has triggered an explosive plankton bloom.",
-            "hint": "Detail how wind-driven rising cold currents enrich regional trophic feeding chains. (Diving calibration index 23-2)",
-            "explanation": "Upwelling currents act as nutrient rich vectors, fueling marine ecosystems and biomass cycles. [Verified by Fleet Log Unit 23]."
+            "sampleAnswer": "I am organizing my desk right now because it has gotten so messy. I'm trying to stay focused, even though it's taking longer than expected.",
+            "hint": "Think about a small task you are doing at this very moment.",
+            "explanation": "Present continuous verbs show ongoing action, while the contrast word 'even though' adds a realistic detail."
         },
         {
             "id": "WRT_DAILYJOURNAL_L23_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 23-3] Reflect on documenting deep-sea creatures adapting bioluminescence for hunting.",
+            "prompt": "Write 2-3 sentences describing what is happening around you right now.",
             "options": [
-                "bioluminescence",
-                "luciferin",
-                "predators"
+                "raining",
+                "listening",
+                "cozy"
             ],
-            "sampleAnswer": "Abyssal organisms utilize high luciferin oxidation to emit cold bioluminescence, keeping safe from predators.",
-            "hint": "Focus on cold chemical light emitted by organic structures in pitch black trenches. (Diving calibration index 23-3)",
-            "explanation": "Biological light emission is a highly successful adaptation for survival in complete darkness. [Verified by Fleet Log Unit 23]."
+            "sampleAnswer": "It is raining heavily outside as I sit here. I'm listening to soft music, and the whole room feels cozy.",
+            "hint": "Think about the weather and a sound you can hear right now.",
+            "explanation": "This entry uses present continuous to describe simultaneous actions happening at the same moment."
         },
         {
             "id": "WRT_DAILYJOURNAL_L24_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 24-1] Record your experiences studying giant kelp forest canopy architectures.",
+            "prompt": "Write 2-3 sentences describing what you are studying right now.",
             "options": [
-                "anchorage",
-                "canopy",
-                "shelter"
+                "studying",
+                "chapter",
+                "struggling"
             ],
-            "sampleAnswer": "The kelp anchors to bottom rocky layers, creating a towering canopy that provides shelter for diverse marine life.",
-            "hint": "Describe how large algae holdfasts compose vertical shelters in shallow sunlit zones. (Diving calibration index 24-1)",
-            "explanation": "Kelp forests form complex three-dimensional ecosystems that reduce wave turbulence and shelter species. [Verified by Fleet Log Unit 24]."
+            "sampleAnswer": "I am studying for tomorrow's history test right now. I'm reading the last chapter, but I'm struggling to remember all the dates.",
+            "hint": "Think about a subject you are currently reviewing and a small difficulty.",
+            "explanation": "The present continuous fits naturally here because the studying is happening at the moment of writing."
         },
         {
             "id": "WRT_DAILYJOURNAL_L24_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 24-2] Draft a log detailing your deep-sea submersible expedition exploring the Mariana Trench.",
+            "prompt": "Write 2-3 sentences describing your current homework situation.",
             "options": [
-                "submersible",
-                "mariana",
-                "trench"
+                "doing",
+                "assignment",
+                "deadline"
             ],
-            "sampleAnswer": "Our research submersible descended deep into the Mariana Trench to document geological active rifts.",
-            "hint": "Reflect on submarine exploration of the deepest aquatic geological formations. (Diving calibration index 24-2)",
-            "explanation": "Oceanic trenches offer valuable scientific insight into benthic activity and lithospheric rifts. [Verified by Fleet Log Unit 24]."
+            "sampleAnswer": "I am doing my math assignment right now. The deadline is tomorrow morning, so I'm trying not to waste any time.",
+            "hint": "Think about an assignment you are currently working on and its due date.",
+            "explanation": "Mentioning a deadline alongside the present continuous adds realistic urgency to the entry."
         },
         {
             "id": "WRT_DAILYJOURNAL_L24_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 24-3] Record an entry analyzing the active geothermal chimneys at hydrothermal vent fields.",
+            "prompt": "Write 2-3 sentences describing a group project happening this week.",
             "options": [
-                "geothermal",
-                "chimneys",
-                "vents"
+                "working",
+                "teammates",
+                "progress"
             ],
-            "sampleAnswer": "We studied active geothermal chimneys venting hydrogen sulfide around deep-sea tectonic plate margins.",
-            "hint": "Focus on mineral structures venting superheated chemical-rich bottom water. (Diving calibration index 24-3)",
-            "explanation": "Geothermal chimneys sustain diverse biological ecosystems purely through chemical conversion. [Verified by Fleet Log Unit 24]."
+            "sampleAnswer": "I am working on a group project with two teammates this week. We are slowly making progress, although we disagree sometimes.",
+            "hint": "Think about a project you're collaborating on and how it's going.",
+            "explanation": "This entry blends present continuous actions with a small honest detail, which makes the writing feel authentic."
         },
         {
             "id": "WRT_DAILYJOURNAL_L25_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 25-1] Describe your observations of localized marine life supported by benthic upwelling zones.",
+            "prompt": "Write 2-3 sentences comparing your current job to a previous one.",
             "options": [
-                "upwelling",
-                "nutrients",
-                "plankton"
+                "current",
+                "previous",
+                "flexible"
             ],
-            "sampleAnswer": "A massive local upwelling of nutrient-dense bottom water has triggered an explosive plankton bloom.",
-            "hint": "Detail how wind-driven rising cold currents enrich regional trophic feeding chains. (Diving calibration index 25-1)",
-            "explanation": "Upwelling currents act as nutrient rich vectors, fueling marine ecosystems and biomass cycles. [Verified by Fleet Log Unit 25]."
+            "sampleAnswer": "My current job is much more flexible than my previous one. I can choose my own hours now, which makes a huge difference to my daily life.",
+            "hint": "Think about one clear difference between your old job and your new one.",
+            "explanation": "Using a comparative adjective ('more flexible') directly compares two experiences, which is a useful everyday writing skill."
         },
         {
             "id": "WRT_DAILYJOURNAL_L25_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 25-2] Reflect on documenting deep-sea creatures adapting bioluminescence for hunting.",
+            "prompt": "Write 2-3 sentences comparing working from home to working in an office.",
             "options": [
-                "bioluminescence",
-                "luciferin",
-                "predators"
+                "quieter",
+                "office",
+                "productive"
             ],
-            "sampleAnswer": "Abyssal organisms utilize high luciferin oxidation to emit cold bioluminescence, keeping safe from predators.",
-            "hint": "Focus on cold chemical light emitted by organic structures in pitch black trenches. (Diving calibration index 25-2)",
-            "explanation": "Biological light emission is a highly successful adaptation for survival in complete darkness. [Verified by Fleet Log Unit 25]."
+            "sampleAnswer": "Working from home is quieter than being in a busy office. I actually feel more productive without constant interruptions all day.",
+            "hint": "Think about one advantage of one work setting over the other.",
+            "explanation": "Comparative structures like 'quieter than' and 'more productive' help organize a clear comparison in writing."
         },
         {
             "id": "WRT_DAILYJOURNAL_L25_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 25-3] Record your experiences studying giant kelp forest canopy architectures.",
+            "prompt": "Write 2-3 sentences comparing two coworkers' working styles.",
             "options": [
-                "anchorage",
-                "canopy",
-                "shelter"
+                "organized",
+                "relaxed",
+                "different"
             ],
-            "sampleAnswer": "The kelp anchors to bottom rocky layers, creating a towering canopy that provides shelter for diverse marine life.",
-            "hint": "Describe how large algae holdfasts compose vertical shelters in shallow sunlit zones. (Diving calibration index 25-3)",
-            "explanation": "Kelp forests form complex three-dimensional ecosystems that reduce wave turbulence and shelter species. [Verified by Fleet Log Unit 25]."
+            "sampleAnswer": "My two coworkers have very different working styles. One is extremely organized, while the other is far more relaxed about deadlines.",
+            "hint": "Think about two people you work with and how their habits differ.",
+            "explanation": "The connector 'while' is useful for directly contrasting two people or things within a single sentence."
         },
         {
             "id": "WRT_DAILYJOURNAL_L26_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 26-1] Draft a log detailing your deep-sea submersible expedition exploring the Mariana Trench.",
+            "prompt": "Write 2-3 sentences comparing two cities you have visited.",
             "options": [
-                "submersible",
-                "mariana",
-                "trench"
+                "bigger",
+                "calmer",
+                "preferred"
             ],
-            "sampleAnswer": "Our research submersible descended deep into the Mariana Trench to document geological active rifts.",
-            "hint": "Reflect on submarine exploration of the deepest aquatic geological formations. (Diving calibration index 26-1)",
-            "explanation": "Oceanic trenches offer valuable scientific insight into benthic activity and lithospheric rifts. [Verified by Fleet Log Unit 26]."
+            "sampleAnswer": "The capital city was much bigger and busier than the small coastal town. Honestly, I preferred the calmer town for relaxing.",
+            "hint": "Think about two places you've visited and which one you liked more.",
+            "explanation": "Comparatives like 'bigger' and 'calmer' make it easy to express a clear personal preference between two places."
         },
         {
             "id": "WRT_DAILYJOURNAL_L26_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 26-2] Record an entry analyzing the active geothermal chimneys at hydrothermal vent fields.",
+            "prompt": "Write 2-3 sentences comparing traveling by train and by plane.",
             "options": [
-                "geothermal",
-                "chimneys",
-                "vents"
+                "cheaper",
+                "slower",
+                "scenic"
             ],
-            "sampleAnswer": "We studied active geothermal chimneys venting hydrogen sulfide around deep-sea tectonic plate margins.",
-            "hint": "Focus on mineral structures venting superheated chemical-rich bottom water. (Diving calibration index 26-2)",
-            "explanation": "Geothermal chimneys sustain diverse biological ecosystems purely through chemical conversion. [Verified by Fleet Log Unit 26]."
+            "sampleAnswer": "Traveling by train is usually cheaper than flying, although it's much slower. Still, the scenic views make the extra time worth it.",
+            "hint": "Think about the trade-offs between two ways of traveling somewhere.",
+            "explanation": "This entry uses comparatives alongside 'although' to show a balanced view of both options."
         },
         {
             "id": "WRT_DAILYJOURNAL_L26_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 26-3] Describe your observations of localized marine life supported by benthic upwelling zones.",
+            "prompt": "Write 2-3 sentences comparing two hotels you have stayed in.",
             "options": [
-                "upwelling",
-                "nutrients",
-                "plankton"
+                "nicer",
+                "expensive",
+                "worth"
             ],
-            "sampleAnswer": "A massive local upwelling of nutrient-dense bottom water has triggered an explosive plankton bloom.",
-            "hint": "Detail how wind-driven rising cold currents enrich regional trophic feeding chains. (Diving calibration index 26-3)",
-            "explanation": "Upwelling currents act as nutrient rich vectors, fueling marine ecosystems and biomass cycles. [Verified by Fleet Log Unit 26]."
+            "sampleAnswer": "The second hotel was nicer than the first, but it was also more expensive. In the end, I think it was worth the extra cost.",
+            "hint": "Think about two hotels and whether the better one was worth the price.",
+            "explanation": "Comparing quality and price together gives a more complete, realistic picture in a short travel reflection."
         },
         {
             "id": "WRT_DAILYJOURNAL_L27_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 27-1] Reflect on documenting deep-sea creatures adapting bioluminescence for hunting.",
+            "prompt": "Write 2-3 sentences explaining why family dinners matter to you.",
             "options": [
-                "bioluminescence",
-                "luciferin",
-                "predators"
+                "dinners",
+                "connect",
+                "stories"
             ],
-            "sampleAnswer": "Abyssal organisms utilize high luciferin oxidation to emit cold bioluminescence, keeping safe from predators.",
-            "hint": "Focus on cold chemical light emitted by organic structures in pitch black trenches. (Diving calibration index 27-1)",
-            "explanation": "Biological light emission is a highly successful adaptation for survival in complete darkness. [Verified by Fleet Log Unit 27]."
+            "sampleAnswer": "I think family dinners matter a lot because they give us time to connect. We share stories about our day, and it always brings us closer.",
+            "hint": "Think about what actually happens during a typical family dinner.",
+            "explanation": "Extending an opinion with two supporting details makes the reasoning feel more complete and convincing."
         },
         {
             "id": "WRT_DAILYJOURNAL_L27_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 27-2] Record your experiences studying giant kelp forest canopy architectures.",
+            "prompt": "Write 2-3 sentences explaining why you admire a family member.",
             "options": [
-                "anchorage",
-                "canopy",
-                "shelter"
+                "admire",
+                "patience",
+                "example"
             ],
-            "sampleAnswer": "The kelp anchors to bottom rocky layers, creating a towering canopy that provides shelter for diverse marine life.",
-            "hint": "Describe how large algae holdfasts compose vertical shelters in shallow sunlit zones. (Diving calibration index 27-2)",
-            "explanation": "Kelp forests form complex three-dimensional ecosystems that reduce wave turbulence and shelter species. [Verified by Fleet Log Unit 27]."
+            "sampleAnswer": "I really admire my uncle because of his patience with everyone around him. He sets such a good example that I try to be more like him.",
+            "hint": "Think about a quality you admire and how it influences you.",
+            "explanation": "Connecting an admired quality to its effect on you adds depth to a simple opinion sentence."
         },
         {
             "id": "WRT_DAILYJOURNAL_L27_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 27-3] Draft a log detailing your deep-sea submersible expedition exploring the Mariana Trench.",
+            "prompt": "Write 2-3 sentences explaining why family traditions are important to you.",
             "options": [
-                "submersible",
-                "mariana",
-                "trench"
+                "traditions",
+                "memories",
+                "meaningful"
             ],
-            "sampleAnswer": "Our research submersible descended deep into the Mariana Trench to document geological active rifts.",
-            "hint": "Reflect on submarine exploration of the deepest aquatic geological formations. (Diving calibration index 27-3)",
-            "explanation": "Oceanic trenches offer valuable scientific insight into benthic activity and lithospheric rifts. [Verified by Fleet Log Unit 27]."
+            "sampleAnswer": "Family traditions are meaningful to me because they create lasting memories. Every holiday feels special, even when we just repeat the same simple routine.",
+            "hint": "Think about a tradition your family repeats and why it matters.",
+            "explanation": "This entry shows how 'because' can introduce more than one supporting idea, strengthening the overall opinion."
         },
         {
             "id": "WRT_DAILYJOURNAL_L28_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 28-1] Record an entry analyzing the active geothermal chimneys at hydrothermal vent fields.",
+            "prompt": "Write 2-3 sentences explaining why you prefer shopping in person.",
             "options": [
-                "geothermal",
-                "chimneys",
-                "vents"
+                "prefer",
+                "touch",
+                "trustworthy"
             ],
-            "sampleAnswer": "We studied active geothermal chimneys venting hydrogen sulfide around deep-sea tectonic plate margins.",
-            "hint": "Focus on mineral structures venting superheated chemical-rich bottom water. (Diving calibration index 28-1)",
-            "explanation": "Geothermal chimneys sustain diverse biological ecosystems purely through chemical conversion. [Verified by Fleet Log Unit 28]."
+            "sampleAnswer": "I prefer shopping in person because I can touch and check the product first. It feels more trustworthy than guessing from photos online.",
+            "hint": "Think about something you can do in a store that you can't do online.",
+            "explanation": "Supporting a preference with a concrete reason makes a simple shopping opinion feel more believable."
         },
         {
             "id": "WRT_DAILYJOURNAL_L28_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 28-2] Describe your observations of localized marine life supported by benthic upwelling zones.",
+            "prompt": "Write 2-3 sentences explaining why you avoid impulse buying.",
             "options": [
-                "upwelling",
-                "nutrients",
-                "plankton"
+                "avoid",
+                "regret",
+                "budget"
             ],
-            "sampleAnswer": "A massive local upwelling of nutrient-dense bottom water has triggered an explosive plankton bloom.",
-            "hint": "Detail how wind-driven rising cold currents enrich regional trophic feeding chains. (Diving calibration index 28-2)",
-            "explanation": "Upwelling currents act as nutrient rich vectors, fueling marine ecosystems and biomass cycles. [Verified by Fleet Log Unit 28]."
+            "sampleAnswer": "I try to avoid impulse buying because I usually regret it later. Sticking to a budget helps me only buy things I truly need.",
+            "hint": "Think about a past purchase you regretted and what you learned.",
+            "explanation": "Connecting a habit to a past regret gives this opinion entry a personal, reflective tone."
         },
         {
             "id": "WRT_DAILYJOURNAL_L28_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 28-3] Reflect on documenting deep-sea creatures adapting bioluminescence for hunting.",
+            "prompt": "Write 2-3 sentences explaining why discounts attract you.",
             "options": [
-                "bioluminescence",
-                "luciferin",
-                "predators"
+                "discounts",
+                "tempting",
+                "save"
             ],
-            "sampleAnswer": "Abyssal organisms utilize high luciferin oxidation to emit cold bioluminescence, keeping safe from predators.",
-            "hint": "Focus on cold chemical light emitted by organic structures in pitch black trenches. (Diving calibration index 28-3)",
-            "explanation": "Biological light emission is a highly successful adaptation for survival in complete darkness. [Verified by Fleet Log Unit 28]."
+            "sampleAnswer": "Discounts are always tempting to me because they make me feel like I'm saving money. Sometimes, though, I end up buying things I don't really need.",
+            "hint": "Think about how sales or discounts affect your shopping decisions.",
+            "explanation": "Adding an honest, slightly critical detail at the end makes a simple opinion feel more genuine."
         },
         {
             "id": "WRT_DAILYJOURNAL_L29_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 29-1] Record your experiences studying giant kelp forest canopy architectures.",
+            "prompt": "Write 2-3 sentences about a cooking mistake and how you fixed it.",
             "options": [
-                "anchorage",
-                "canopy",
-                "shelter"
+                "burned",
+                "fixed",
+                "salvaged"
             ],
-            "sampleAnswer": "The kelp anchors to bottom rocky layers, creating a towering canopy that provides shelter for diverse marine life.",
-            "hint": "Describe how large algae holdfasts compose vertical shelters in shallow sunlit zones. (Diving calibration index 29-1)",
-            "explanation": "Kelp forests form complex three-dimensional ecosystems that reduce wave turbulence and shelter species. [Verified by Fleet Log Unit 29]."
+            "sampleAnswer": "I accidentally burned the rice while cooking dinner tonight. I quickly fixed the problem by scraping off the burnt layer, and I salvaged the rest of the meal.",
+            "hint": "Think about a small kitchen disaster and the quick fix you used.",
+            "explanation": "Describing a problem followed immediately by the solution gives this entry a clear, satisfying structure."
         },
         {
             "id": "WRT_DAILYJOURNAL_L29_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 29-2] Draft a log detailing your deep-sea submersible expedition exploring the Mariana Trench.",
+            "prompt": "Write 2-3 sentences about running out of an ingredient and adapting.",
             "options": [
-                "submersible",
-                "mariana",
-                "trench"
+                "ran out",
+                "substituted",
+                "worked"
             ],
-            "sampleAnswer": "Our research submersible descended deep into the Mariana Trench to document geological active rifts.",
-            "hint": "Reflect on submarine exploration of the deepest aquatic geological formations. (Diving calibration index 29-2)",
-            "explanation": "Oceanic trenches offer valuable scientific insight into benthic activity and lithospheric rifts. [Verified by Fleet Log Unit 29]."
+            "sampleAnswer": "I ran out of sugar halfway through baking cookies. I substituted honey instead, and surprisingly, it worked even better than expected.",
+            "hint": "Think about a missing ingredient and what you used in its place.",
+            "explanation": "Showing a creative substitution highlights problem-solving, a useful theme for this kind of journal entry."
         },
         {
             "id": "WRT_DAILYJOURNAL_L29_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 29-3] Record an entry analyzing the active geothermal chimneys at hydrothermal vent fields.",
+            "prompt": "Write 2-3 sentences about a restaurant order that went wrong.",
             "options": [
-                "geothermal",
-                "chimneys",
-                "vents"
+                "wrong",
+                "complained",
+                "replaced"
             ],
-            "sampleAnswer": "We studied active geothermal chimneys venting hydrogen sulfide around deep-sea tectonic plate margins.",
-            "hint": "Focus on mineral structures venting superheated chemical-rich bottom water. (Diving calibration index 29-3)",
-            "explanation": "Geothermal chimneys sustain diverse biological ecosystems purely through chemical conversion. [Verified by Fleet Log Unit 29]."
+            "sampleAnswer": "The waiter brought the wrong dish to our table last night. I politely complained, and the staff quickly replaced it with the correct order.",
+            "hint": "Think about an order mix-up and how the restaurant handled it.",
+            "explanation": "This entry models polite problem-solving language, which is genuinely useful in real dining situations."
         },
         {
             "id": "WRT_DAILYJOURNAL_L30_Q1",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 30-1] Describe your observations of localized marine life supported by benthic upwelling zones.",
+            "prompt": "Write 2-3 sentences about a tech problem and how you solved it.",
             "options": [
-                "upwelling",
-                "nutrients",
-                "plankton"
+                "crashed",
+                "restarted",
+                "fixed"
             ],
-            "sampleAnswer": "A massive local upwelling of nutrient-dense bottom water has triggered an explosive plankton bloom.",
-            "hint": "Detail how wind-driven rising cold currents enrich regional trophic feeding chains. (Diving calibration index 30-1)",
-            "explanation": "Upwelling currents act as nutrient rich vectors, fueling marine ecosystems and biomass cycles. [Verified by Fleet Log Unit 30]."
+            "sampleAnswer": "My laptop crashed right in the middle of an important task today. I restarted it carefully, and thankfully, the problem fixed itself.",
+            "hint": "Think about a device that suddenly stopped working and what you tried first.",
+            "explanation": "Showing the simple steps you took to solve a tech issue makes the writing practical and relatable."
         },
         {
             "id": "WRT_DAILYJOURNAL_L30_Q2",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 30-2] Reflect on documenting deep-sea creatures adapting bioluminescence for hunting.",
+            "prompt": "Write 2-3 sentences about losing internet connection and adapting.",
             "options": [
-                "bioluminescence",
-                "luciferin",
-                "predators"
+                "disconnected",
+                "frustrated",
+                "reconnected"
             ],
-            "sampleAnswer": "Abyssal organisms utilize high luciferin oxidation to emit cold bioluminescence, keeping safe from predators.",
-            "hint": "Focus on cold chemical light emitted by organic structures in pitch black trenches. (Diving calibration index 30-2)",
-            "explanation": "Biological light emission is a highly successful adaptation for survival in complete darkness. [Verified by Fleet Log Unit 30]."
+            "sampleAnswer": "My internet disconnected suddenly during an online class today. I felt really frustrated at first, but it reconnected after a few minutes.",
+            "hint": "Think about a connection problem and how you reacted while waiting.",
+            "explanation": "Including an honest emotional reaction alongside the technical problem makes the entry feel more authentic."
         },
         {
             "id": "WRT_DAILYJOURNAL_L30_Q3",
-            "instruction": "DRAFT A SCIENTIFIC LOG ENTRY USING THE REQUIRED BOOSTER WORDS",
-            "difficulty": 1,
+            "instruction": "Write a daily journal entry.",
             "subtype": "dailyJournal",
             "interactionType": "Scratch Reveal",
-            "prompt": "[Log Prompt 30-3] Record your experiences studying giant kelp forest canopy architectures.",
+            "prompt": "Write 2-3 sentences about forgetting a password and recovering access.",
             "options": [
-                "anchorage",
-                "canopy",
-                "shelter"
+                "forgot",
+                "reset",
+                "relieved"
             ],
-            "sampleAnswer": "The kelp anchors to bottom rocky layers, creating a towering canopy that provides shelter for diverse marine life.",
-            "hint": "Describe how large algae holdfasts compose vertical shelters in shallow sunlit zones. (Diving calibration index 30-3)",
-            "explanation": "Kelp forests form complex three-dimensional ecosystems that reduce wave turbulence and shelter species. [Verified by Fleet Log Unit 30]."
+            "sampleAnswer": "I forgot my email password this morning and couldn't log in. I reset it using my phone number, and I felt so relieved once it worked.",
+            "hint": "Think about an account you were locked out of and how you got back in.",
+            "explanation": "Describing the recovery process step by step shows clear, organized problem-solving in writing."
         }
     ]
 }
