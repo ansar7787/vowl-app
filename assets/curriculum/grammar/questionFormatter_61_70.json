@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l61_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She likes ice cream in sector 5.",
-            "sentence": "She likes ice cream in sector 5.",
+            "question": "Direct: \"I work at the hospital.\" She said that she _____.",
+            "sentence": "Direct: \"I work at the hospital.\" She said that she _____.",
             "options": [
-                "Does she like ice cream in sector 5?",
-                "Do she likes ice cream in sector 5?",
-                "Is she like ice cream in sector 5?",
-                "She likes ice cream in sector 5?"
+                "worked at the hospital",
+                "works at the hospital",
+                "work at the hospital",
+                "is working at the hospital"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Does she like ice cream in sector 5?",
-            "hint": "Use 'Does' for third person singular present. (Sector 5 calibration)",
-            "explanation": "Does is the correct present tense auxiliary for 'she'. [Verified in sector 5]."
+            "correctAnswer": "worked at the hospital",
+            "hint": "In reported speech, present simple ('work') shifts back to past simple ('worked').",
+            "explanation": "When reporting past speech, present simple shifts to past simple. 'I work' becomes 'she worked' - the reporting verb 'said' triggers the tense backshift."
         },
         {
             "id": "qf_l61_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She can swim well in sector 5.",
-            "sentence": "She can swim well in sector 5.",
+            "question": "Direct: \"We are leaving tomorrow.\" They said that they _____.",
+            "sentence": "Direct: \"We are leaving tomorrow.\" They said that they _____.",
             "options": [
-                "Can she swim well in sector 5?",
-                "Does she can swim well in sector 5?",
-                "Can she swims well in sector 5?",
-                "She can swim well in sector 5?"
+                "were leaving the next day",
+                "are leaving tomorrow",
+                "were leaving tomorrow",
+                "would leave tomorrow"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can she swim well in sector 5?",
-            "hint": "Invert modal 'can' and subject. (Sector 5 calibration)",
-            "explanation": "Can she swim is correct modal inversion. [Verified in sector 5]."
+            "correctAnswer": "were leaving the next day",
+            "hint": "Present continuous shifts to past continuous; 'tomorrow' becomes 'the next day'.",
+            "explanation": "Reported speech requires two changes: 'are leaving' (present continuous) shifts to 'were leaving' (past continuous), and 'tomorrow' becomes 'the next day' since the reporting happens later."
         },
         {
             "id": "qf_l61_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He lives in London in sector 5.",
-            "sentence": "He lives in London in sector 5.",
+            "question": "Direct: \"She has finished the report.\" He said that she _____.",
+            "sentence": "Direct: \"She has finished the report.\" He said that she _____.",
             "options": [
-                "Does he live in London in sector 5?",
-                "Do he lives in London in sector 5?",
-                "Is he live in London in sector 5?",
-                "He lives in London in sector 5?"
+                "had finished the report",
+                "has finished the report",
+                "finished the report",
+                "was finishing the report"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Does he live in London in sector 5?",
-            "hint": "Use 'Does' for present third person singular. (Sector 5 calibration)",
-            "explanation": "Does he live is the correct present question. [Verified in sector 5]."
+            "correctAnswer": "had finished the report",
+            "hint": "Present perfect ('has finished') shifts back to past perfect ('had finished') in reported speech.",
+            "explanation": "In reported speech, the present perfect ('has finished') shifts back to the past perfect ('had finished'). The event is now reported as having already been completed at the time of speaking."
         },
         {
             "id": "qf_l62_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They went to school in sector 5.",
-            "sentence": "They went to school in sector 5.",
+            "question": "Direct: \"They bought a new house.\" She told me that they _____.",
+            "sentence": "Direct: \"They bought a new house.\" She told me that they _____.",
             "options": [
-                "Did they go to school in sector 5?",
-                "Did they went to school in sector 5?",
-                "Do they went to school in sector 5?",
-                "They went to school in sector 5?"
+                "had bought a new house",
+                "bought a new house",
+                "have bought a new house",
+                "were buying a new house"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did they go to school in sector 5?",
-            "hint": "Use 'Did' + base verb for simple past. (Sector 5 calibration)",
-            "explanation": "Did + go is the past tense question form of went. [Verified in sector 5]."
+            "correctAnswer": "had bought a new house",
+            "hint": "Past simple ('bought') shifts to past perfect ('had bought') in reported speech.",
+            "explanation": "When the reporting verb is past ('told'), the direct speech's past simple ('bought') shifts to past perfect ('had bought'). This shows the buying happened even further back in time."
         },
         {
             "id": "qf_l62_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They have finished lunch in sector 5.",
-            "sentence": "They have finished lunch in sector 5.",
+            "question": "Direct: \"I saw her at the market.\" He said that he _____ at the market.",
+            "sentence": "Direct: \"I saw her at the market.\" He said that he _____ at the market.",
             "options": [
-                "Have they finished lunch in sector 5?",
-                "Did they have finished lunch in sector 5?",
-                "Has they finished lunch in sector 5?",
-                "They have finished lunch in sector 5?"
+                "had seen her",
+                "saw her",
+                "has seen her",
+                "would see her"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Have they finished lunch in sector 5?",
-            "hint": "Invert auxiliary 'have' and subject. (Sector 5 calibration)",
-            "explanation": "Have they finished is correct present perfect inversion. [Verified in sector 5]."
+            "correctAnswer": "had seen her",
+            "hint": "Past simple ('saw') shifts to past perfect ('had seen') in reported speech.",
+            "explanation": "Past simple in direct speech shifts to past perfect in reported speech. 'I saw' becomes 'he had seen', placing the event further in the past relative to the reporting moment."
         },
         {
             "id": "qf_l62_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They have a ship in sector 5.",
-            "sentence": "They have a ship in sector 5.",
+            "question": "Direct: \"We were watching TV.\" She said that they _____.",
+            "sentence": "Direct: \"We were watching TV.\" She said that they _____.",
             "options": [
-                "Do they have a ship in sector 5?",
-                "Has they a ship in sector 5?",
-                "Do they has a ship in sector 5?",
-                "They have a ship in sector 5?"
+                "had been watching TV",
+                "were watching TV",
+                "have been watching TV",
+                "watched TV"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do they have a ship in sector 5?",
-            "hint": "Use 'Do' for present plural questions. (Sector 5 calibration)",
-            "explanation": "Do they have is correct. [Verified in sector 5]."
+            "correctAnswer": "had been watching TV",
+            "hint": "Past continuous ('were watching') shifts to past perfect continuous ('had been watching').",
+            "explanation": "Past continuous in direct speech shifts to past perfect continuous in reported speech. 'Were watching' becomes 'had been watching', keeping the continuous nature while moving the event back in time."
         },
         {
             "id": "qf_l63_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is a doctor in sector 5.",
-            "sentence": "He is a doctor in sector 5.",
+            "question": "Direct: \"You should rest.\" The doctor said that I _____ rest.",
+            "sentence": "Direct: \"You should rest.\" The doctor said that I _____ rest.",
             "options": [
-                "Is he a doctor in sector 5?",
-                "Does he is a doctor in sector 5?",
-                "Do he a doctor in sector 5?",
-                "He is a doctor in sector 5?"
+                "should",
+                "would",
+                "might",
+                "could"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is he a doctor in sector 5?",
-            "hint": "Invert the subject and the verb 'to be'. (Sector 5 calibration)",
-            "explanation": "Is he is the correct inverted form of He is. [Verified in sector 5]."
+            "correctAnswer": "should",
+            "hint": "'Should' does not change in reported speech.",
+            "explanation": "'Should' is one of the modals that stays the same in reported speech - it does not shift to another form. 'Must', 'might', 'could', and 'would' also remain unchanged."
         },
         {
             "id": "qf_l63_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We will arrive tomorrow in sector 5.",
-            "sentence": "We will arrive tomorrow in sector 5.",
+            "question": "Direct: \"I can help you.\" She said that she _____ help me.",
+            "sentence": "Direct: \"I can help you.\" She said that she _____ help me.",
             "options": [
-                "Will we arrive tomorrow in sector 5?",
-                "Do we will arrive tomorrow in sector 5?",
-                "Will we arrived tomorrow in sector 5?",
-                "We will arrive tomorrow in sector 5?"
+                "could",
+                "can",
+                "would",
+                "might"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will we arrive tomorrow in sector 5?",
-            "hint": "Invert modal 'will' and subject. (Sector 5 calibration)",
-            "explanation": "Will we arrive is correct future inversion. [Verified in sector 5]."
+            "correctAnswer": "could",
+            "hint": "'Can' shifts to 'could' in reported speech.",
+            "explanation": "'Can' is one of the modals that does shift in reported speech: 'can' → 'could'. This is different from 'should', 'might', 'could', and 'would', which stay the same."
         },
         {
             "id": "qf_l63_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is reading in sector 5.",
-            "sentence": "She is reading in sector 5.",
+            "question": "Direct: \"They will arrive at noon.\" She said that they _____ arrive at noon.",
+            "sentence": "Direct: \"They will arrive at noon.\" She said that they _____ arrive at noon.",
             "options": [
-                "Is she reading in sector 5?",
-                "Does she reading in sector 5?",
-                "Is she read in sector 5?",
-                "She is reading in sector 5?"
+                "would",
+                "will",
+                "should",
+                "could"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is she reading in sector 5?",
-            "hint": "Invert 'is' and 'she'. (Sector 5 calibration)",
-            "explanation": "Is she reading is correct. [Verified in sector 5]."
+            "correctAnswer": "would",
+            "hint": "'Will' shifts to 'would' in reported speech.",
+            "explanation": "'Will' shifts to 'would' in reported speech - this is one of the most important modal backshifts to remember. 'Will → would' parallels the same relationship as the second conditional."
         },
         {
             "id": "qf_l64_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We have some apples in sector 5.",
-            "sentence": "We have some apples in sector 5.",
+            "question": "Direct: \"Are you coming?\" He asked me _____.",
+            "sentence": "Direct: \"Are you coming?\" He asked me _____.",
             "options": [
-                "Do we have any apples in sector 5?",
-                "Have we some apples in sector 5?",
-                "Do we has some apples in sector 5?",
-                "We have any apples in sector 5?"
+                "if I was coming",
+                "if I am coming",
+                "whether I was coming or not",
+                "am I coming"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do we have any apples in sector 5?",
-            "hint": "Use 'Do' for first person plural questions. (Sector 5 calibration)",
-            "explanation": "Do we have is the standard question form. [Verified in sector 5]."
+            "correctAnswer": "if I was coming",
+            "hint": "Reported yes/no questions use 'if/whether' + subject + verb (no inversion, tense shifted).",
+            "explanation": "Reported yes/no questions use 'if' or 'whether' and remove the inversion. 'Are you coming?' → 'if I was coming'. The question mark is also dropped because it is now a statement structure."
         },
         {
             "id": "qf_l64_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You should wait here in sector 5.",
-            "sentence": "You should wait here in sector 5.",
+            "question": "Direct: \"Did she pass the exam?\" He asked me _____.",
+            "sentence": "Direct: \"Did she pass the exam?\" He asked me _____.",
             "options": [
-                "Should you wait here in sector 5?",
-                "Do you should wait here in sector 5?",
-                "Should you waiting here in sector 5?",
-                "You should wait here in sector 5?"
+                "if she had passed the exam",
+                "if she passed the exam",
+                "if she has passed the exam",
+                "did she pass the exam"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should you wait here in sector 5?",
-            "hint": "Invert modal 'should'. (Sector 5 calibration)",
-            "explanation": "Should you wait is correct. [Verified in sector 5]."
+            "correctAnswer": "if she had passed the exam",
+            "hint": "Past simple → past perfect; use 'if' + statement word order (no inversion).",
+            "explanation": "Reported questions never use question word order. 'Did she pass?' → 'if she had passed' - past simple becomes past perfect, and the auxiliary 'did' disappears entirely."
         },
         {
             "id": "qf_l64_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We were working in sector 5.",
-            "sentence": "We were working in sector 5.",
+            "question": "Direct: \"Have they finished?\" She wanted to know _____.",
+            "sentence": "Direct: \"Have they finished?\" She wanted to know _____.",
             "options": [
-                "Were we working in sector 5?",
-                "Was we working in sector 5?",
-                "Did we working in sector 5?",
-                "We were working in sector 5?"
+                "whether they had finished",
+                "if they have finished",
+                "whether had they finished",
+                "they have finished"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Were we working in sector 5?",
-            "hint": "Invert 'were' and 'we'. (Sector 5 calibration)",
-            "explanation": "Were we working is correct. [Verified in sector 5]."
+            "correctAnswer": "whether they had finished",
+            "hint": "Use 'whether/if' + subject + verb (no inversion); present perfect shifts to past perfect.",
+            "explanation": "'Whether' (or 'if') introduces reported yes/no questions. 'Have they finished?' → 'whether they had finished' - inversion disappears, and the present perfect shifts to past perfect."
         },
         {
             "id": "qf_l65_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She swam in the pool in sector 5.",
-            "sentence": "She swam in the pool in sector 5.",
+            "question": "Direct: \"Where do you live?\" She asked me _____.",
+            "sentence": "Direct: \"Where do you live?\" She asked me _____.",
             "options": [
-                "Did she swim in the pool in sector 5?",
-                "Did she swam in the pool in sector 5?",
-                "Does she swim in the pool in sector 5?",
-                "She swam in the pool in sector 5?"
+                "where I lived",
+                "where do I live",
+                "where I live",
+                "where did I live"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did she swim in the pool in sector 5?",
-            "hint": "Use 'Did' + base verb 'swim'. (Sector 5 calibration)",
-            "explanation": "Did she swim is correct for past actions. [Verified in sector 5]."
+            "correctAnswer": "where I lived",
+            "hint": "Reported wh-questions keep the question word but remove inversion and shift the tense.",
+            "explanation": "Reported wh-questions keep 'where' but switch to statement word order and shift the tense. 'Where do you live?' → 'where I lived'. 'Do' disappears; 'live' shifts to 'lived'."
         },
         {
             "id": "qf_l65_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has seen this movie in sector 5.",
-            "sentence": "He has seen this movie in sector 5.",
+            "question": "Direct: \"What time will the train leave?\" He asked _____.",
+            "sentence": "Direct: \"What time will the train leave?\" He asked _____.",
             "options": [
-                "Has he seen this movie in sector 5?",
-                "Did he has seen this movie in sector 5?",
-                "Have he seen this movie in sector 5?",
-                "He has seen this movie in sector 5?"
+                "what time the train would leave",
+                "what time will the train leave",
+                "what time the train leaves",
+                "when the train would leave"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has he seen this movie in sector 5?",
-            "hint": "Invert auxiliary 'has'. (Sector 5 calibration)",
-            "explanation": "Has he seen is correct. [Verified in sector 5]."
+            "correctAnswer": "what time the train would leave",
+            "hint": "Keep 'what time', remove inversion, shift 'will' → 'would'.",
+            "explanation": "The wh-phrase 'what time' stays, but the question inversion disappears and 'will' shifts to 'would'. 'What time will the train leave?' → 'what time the train would leave'."
         },
         {
             "id": "qf_l65_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He was sleeping in sector 5.",
-            "sentence": "He was sleeping in sector 5.",
+            "question": "Direct: \"Why didn't you call me?\" She asked him _____.",
+            "sentence": "Direct: \"Why didn't you call me?\" She asked him _____.",
             "options": [
-                "Was he sleeping in sector 5?",
-                "Were he sleeping in sector 5?",
-                "Did he sleeping in sector 5?",
-                "He was sleeping in sector 5?"
+                "why he hadn't called her",
+                "why didn't he call her",
+                "why he didn't call her",
+                "why he hasn't called her"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was he sleeping in sector 5?",
-            "hint": "Invert 'was' and 'he'. (Sector 5 calibration)",
-            "explanation": "Was he sleeping is correct. [Verified in sector 5]."
+            "correctAnswer": "why he hadn't called her",
+            "hint": "'Why' stays; statement word order; 'didn't' → 'hadn't' (past perfect); pronoun shifts.",
+            "explanation": "Reported wh-question: 'why' stays, inversion disappears, 'didn't call' shifts to 'hadn't called' (past perfect), and pronouns shift from 'you → he' and 'me → her'."
         },
         {
             "id": "qf_l66_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The system is online in sector 5.",
-            "sentence": "The system is online in sector 5.",
+            "question": "Direct: \"Open the window.\" He told me _____.",
+            "sentence": "Direct: \"Open the window.\" He told me _____.",
             "options": [
-                "Is the system online in sector 5?",
-                "Does the system online in sector 5?",
-                "Are the system online in sector 5?",
-                "System is online in sector 5?"
+                "to open the window",
+                "open the window",
+                "that I open the window",
+                "I should open the window"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is the system online in sector 5?",
-            "hint": "Invert the subject and 'is'. (Sector 5 calibration)",
-            "explanation": "Is the system online is correct. [Verified in sector 5]."
+            "correctAnswer": "to open the window",
+            "hint": "Reported commands use 'tell/ask + object + to + base verb'.",
+            "explanation": "Commands in reported speech use 'tell/ask + person + to + base verb'. 'Open' becomes 'to open'. There is no 'that', no tense shift needed, and no question structure."
         },
         {
             "id": "qf_l66_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They could hear us in sector 5.",
-            "sentence": "They could hear us in sector 5.",
+            "question": "Direct: \"Don't touch that.\" She told me _____ that.",
+            "sentence": "Direct: \"Don't touch that.\" She told me _____ that.",
             "options": [
-                "Could they hear us in sector 5?",
-                "Did they could hear us in sector 5?",
-                "Could they heard us in sector 5?",
-                "They could hear us in sector 5?"
+                "not to touch",
+                "to not touch",
+                "don't touch",
+                "that I shouldn't touch"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Could they hear us in sector 5?",
-            "hint": "Invert modal 'could'. (Sector 5 calibration)",
-            "explanation": "Could they hear is correct. [Verified in sector 5]."
+            "correctAnswer": "not to touch",
+            "hint": "Negative reported commands: 'tell + person + not to + base verb'.",
+            "explanation": "Negative reported commands use 'not to + base verb'. 'Don't touch that' → 'not to touch that'. 'To not touch' is less standard, though sometimes acceptable; 'not to touch' is the preferred form."
         },
         {
             "id": "qf_l66_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She has been working in sector 5.",
-            "sentence": "She has been working in sector 5.",
+            "question": "Direct: \"Please be quiet.\" The teacher asked us _____.",
+            "sentence": "Direct: \"Please be quiet.\" The teacher asked us _____.",
             "options": [
-                "Has she been working in sector 5?",
-                "Have she been working in sector 5?",
-                "Does she been working in sector 5?",
-                "She has been working in sector 5?"
+                "to be quiet",
+                "be quiet",
+                "that we be quiet",
+                "that we should be quiet"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has she been working in sector 5?",
-            "hint": "Invert auxiliary 'has'. (Sector 5 calibration)",
-            "explanation": "Has she been working is correct. [Verified in sector 5]."
+            "correctAnswer": "to be quiet",
+            "hint": "'Please' is dropped; command becomes 'ask + us + to be quiet'.",
+            "explanation": "When reporting polite commands with 'please', the word 'please' is dropped. The structure becomes 'ask + object + to + base verb': 'asked us to be quiet'."
         },
         {
             "id": "qf_l67_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They work in the city in sector 5.",
-            "sentence": "They work in the city in sector 5.",
+            "question": "He said, \"I'll see you tomorrow.\" He said he would see me _____.",
+            "sentence": "He said, \"I'll see you tomorrow.\" He said he would see me _____.",
             "options": [
-                "Do they work in the city in sector 5?",
-                "Does they work in the city in sector 5?",
-                "Are they work in the city in sector 5?",
-                "They work in the city in sector 5?"
+                "the next day",
+                "tomorrow",
+                "the following day",
+                "the day after"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do they work in the city in sector 5?",
-            "hint": "Use 'Do' for third person plural present. (Sector 5 calibration)",
-            "explanation": "Do they work is correct. [Verified in sector 5]."
+            "correctAnswer": "the next day",
+            "hint": "In reported speech, 'tomorrow' shifts to 'the next day' or 'the following day' - not 'tomorrow'.",
+            "explanation": "'Tomorrow' in direct speech must change in reported speech because it refers to a time relative to when it was spoken. 'The next day' is the standard shift. 'The following day' is also correct."
         },
         {
             "id": "qf_l67_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She will help us in sector 5.",
-            "sentence": "She will help us in sector 5.",
+            "question": "She said, \"I was here yesterday.\" She said she had been there _____.",
+            "sentence": "She said, \"I was here yesterday.\" She said she had been there _____.",
             "options": [
-                "Will she help us in sector 5?",
-                "Does she will help us in sector 5?",
-                "Will she helps us in sector 5?",
-                "She will help us in sector 5?"
+                "the day before",
+                "yesterday",
+                "the previous day",
+                "the day earlier"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will she help us in sector 5?",
-            "hint": "Invert 'will'. (Sector 5 calibration)",
-            "explanation": "Will she help is correct. [Verified in sector 5]."
+            "correctAnswer": "the day before",
+            "hint": "'Yesterday' shifts to 'the day before' or 'the previous day' in reported speech.",
+            "explanation": "'Yesterday' shifts to 'the day before' (or 'the previous day') when reported later. Also note that 'here' shifts to 'there' because the place reference changes too."
         },
         {
             "id": "qf_l67_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They had left early in sector 5.",
-            "sentence": "They had left early in sector 5.",
+            "question": "He said, \"I saw her last week.\" He said he had seen her _____.",
+            "sentence": "He said, \"I saw her last week.\" He said he had seen her _____.",
             "options": [
-                "Had they left early in sector 5?",
-                "Did they had left early in sector 5?",
-                "Have they left early in sector 5?",
-                "They had left early in sector 5?"
+                "the week before",
+                "last week",
+                "the previous week",
+                "a week ago"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Had they left early in sector 5?",
-            "hint": "Invert auxiliary 'had'. (Sector 5 calibration)",
-            "explanation": "Had they left is correct. [Verified in sector 5]."
+            "correctAnswer": "the week before",
+            "hint": "'Last week' shifts to 'the week before' or 'the previous week'.",
+            "explanation": "'Last week' in direct speech becomes 'the week before' or 'the previous week' in reported speech. 'A week ago' could work in some contexts but is less standard for reported speech."
         },
         {
             "id": "qf_l68_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He forgot his keys in sector 5.",
-            "sentence": "He forgot his keys in sector 5.",
+            "question": "\"I'm going to quit my job,\" she told her friend.",
+            "sentence": "\"I'm going to quit my job,\" she told her friend.",
             "options": [
-                "Did he forget his keys in sector 5?",
-                "Did he forgot his keys in sector 5?",
-                "Does he forget his keys in sector 5?",
-                "He forgot his keys in sector 5?"
+                "She told her friend that she was going to quit her job.",
+                "She told her friend that she is going to quit her job.",
+                "She said her friend that she was going to quit her job.",
+                "She told to her friend that she was going to quit her job."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did he forget his keys in sector 5?",
-            "hint": "Use 'Did' + base verb 'forget'. (Sector 5 calibration)",
-            "explanation": "Did he forget is correct. [Verified in sector 5]."
+            "correctAnswer": "She told her friend that she was going to quit her job.",
+            "hint": "Use 'tell + object' (not 'tell to'); shift 'am going' → 'was going'; shift 'my' → 'her'.",
+            "explanation": "'Tell' takes a direct object: 'told her friend', not 'told to her friend'. 'I'm going' shifts to 'she was going', and 'my job' shifts to 'her job'."
         },
         {
             "id": "qf_l68_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We must report this in sector 5.",
-            "sentence": "We must report this in sector 5.",
+            "question": "\"Don't worry about me,\" he said to her.",
+            "sentence": "\"Don't worry about me,\" he said to her.",
             "options": [
-                "Must we report this in sector 5?",
-                "Do we must report this in sector 5?",
-                "Must we reporting this in sector 5?",
-                "We must report this in sector 5?"
+                "He told her not to worry about him.",
+                "He said her not to worry about him.",
+                "He told her don't worry about him.",
+                "He said to her not to worry about her."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Must we report this in sector 5?",
-            "hint": "Invert modal 'must'. (Sector 5 calibration)",
-            "explanation": "Must we report is correct. [Verified in sector 5]."
+            "correctAnswer": "He told her not to worry about him.",
+            "hint": "Negative command: 'told her not to worry'; pronouns shift 'me' → 'him'.",
+            "explanation": "'Tell + object + not to + base verb' reports negative commands. 'Say' cannot take a direct person object ('say her' is wrong). Pronouns shift: 'me' becomes 'him' when referring to the speaker."
         },
         {
             "id": "qf_l68_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He can read maps in sector 5.",
-            "sentence": "He can read maps in sector 5.",
+            "question": "\"Have you ever been to Japan?\" she asked him.",
+            "sentence": "\"Have you ever been to Japan?\" she asked him.",
             "options": [
-                "Can he read maps in sector 5?",
-                "Does he can read maps in sector 5?",
-                "Can he reads maps in sector 5?",
-                "He can read maps in sector 5?"
+                "She asked him if he had ever been to Japan.",
+                "She asked him have you ever been to Japan.",
+                "She asked him if he has ever been to Japan.",
+                "She asked him if had he ever been to Japan."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can he read maps in sector 5?",
-            "hint": "Invert modal 'can'. (Sector 5 calibration)",
-            "explanation": "Can he read is correct. [Verified in sector 5]."
+            "correctAnswer": "She asked him if he had ever been to Japan.",
+            "hint": "Reported yes/no question: 'if' + statement order + past perfect; pronoun 'you → he'.",
+            "explanation": "Reported yes/no questions use 'if/whether' + statement word order. Present perfect shifts to past perfect: 'have you been' → 'if he had been'. No inversion ('if had he' is wrong)."
         },
         {
             "id": "qf_l69_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You are happy in sector 5.",
-            "sentence": "You are happy in sector 5.",
+            "question": "Choose the correct sentence:",
+            "sentence": "Choose the correct sentence:",
             "options": [
-                "Are you happy in sector 5?",
-                "Do you happy in sector 5?",
-                "Is you happy in sector 5?",
-                "You are happy in sector 5?"
+                "She told me that the meeting was cancelled.",
+                "She said me that the meeting was cancelled.",
+                "She told that the meeting was cancelled.",
+                "She said to me that the meeting was cancelled."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Are you happy in sector 5?",
-            "hint": "Invert 'you' and 'are'. (Sector 5 calibration)",
-            "explanation": "Are you happy is correct. [Verified in sector 5]."
+            "correctAnswer": "She told me that the meeting was cancelled.",
+            "hint": "'Tell' must have a person object directly after it: 'told me'; 'said' uses 'said to me' or 'said that'.",
+            "explanation": "'Tell' always takes a direct object: 'told me / told him / told us'. You cannot say 'told that'. 'Say' never takes a direct person object - use 'said to me' or 'said that'."
         },
         {
             "id": "qf_l69_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He would like tea in sector 5.",
-            "sentence": "He would like tea in sector 5.",
+            "question": "He _____ us not to use our phones in class.",
+            "sentence": "He _____ us not to use our phones in class.",
             "options": [
-                "Would he like tea in sector 5?",
-                "Does he would like tea in sector 5?",
-                "Would he likes tea in sector 5?",
-                "He would like tea in sector 5?"
+                "told",
+                "said",
+                "spoke",
+                "talked"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would he like tea in sector 5?",
-            "hint": "Invert 'would'. (Sector 5 calibration)",
-            "explanation": "Would he like is correct. [Verified in sector 5]."
+            "correctAnswer": "told",
+            "hint": "'Tell + object + not to + verb' - 'say' can't take a direct person object.",
+            "explanation": "Reported negative commands require 'tell + person + not to + base verb'. 'Say' cannot directly precede a person object, so 'said us' is wrong. 'Spoke/talked' don't fit this structure at all."
         },
         {
             "id": "qf_l69_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You should try it in sector 5.",
-            "sentence": "You should try it in sector 5.",
+            "question": "She _____ that she would be late.",
+            "sentence": "She _____ that she would be late.",
             "options": [
-                "Should you try it in sector 5?",
-                "Do you should try it in sector 5?",
-                "Should you trying it in sector 5?",
-                "You should try it in sector 5?"
+                "said",
+                "told",
+                "spoke",
+                "informed"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should you try it in sector 5?",
-            "hint": "Invert 'should'. (Sector 5 calibration)",
-            "explanation": "Should you try is correct. [Verified in sector 5]."
+            "correctAnswer": "said",
+            "hint": "'Said that ...' without a person object - 'told' must always have a person object.",
+            "explanation": "When there is no person object ('told me/him/her'), use 'said'. 'Said that she would be late' is correct. 'Told that ...' (without a person object) is grammatically wrong in standard English."
         },
         {
             "id": "qf_l70_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She wrote a letter in sector 5.",
-            "sentence": "She wrote a letter in sector 5.",
+            "question": "Direct: \"I must submit the form today.\" She said she _____ the form that day.",
+            "sentence": "Direct: \"I must submit the form today.\" She said she _____ the form that day.",
             "options": [
-                "Did she write a letter in sector 5?",
-                "Did she wrote a letter in sector 5?",
-                "Does she write a letter in sector 5?",
-                "She wrote a letter in sector 5?"
+                "had to submit",
+                "must submit",
+                "would submit",
+                "should submit"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did she write a letter in sector 5?",
-            "hint": "Use 'Did' + 'write'. (Sector 5 calibration)",
-            "explanation": "Did she write is correct. [Verified in sector 5]."
+            "correctAnswer": "had to submit",
+            "hint": "'Must' shifts to 'had to' in reported speech.",
+            "explanation": "'Must' is an exception: it shifts to 'had to' (not 'musted') in reported speech. 'Would' and 'should' don't capture the obligation meaning of 'must'."
         },
         {
             "id": "qf_l70_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You may enter in sector 5.",
-            "sentence": "You may enter in sector 5.",
+            "question": "Direct: \"We might go camping.\" They said they _____ camping.",
+            "sentence": "Direct: \"We might go camping.\" They said they _____ camping.",
             "options": [
-                "May you enter in sector 5?",
-                "Do you may enter in sector 5?",
-                "May you entering in sector 5?",
-                "You may enter in sector 5?"
+                "might go",
+                "may go",
+                "could go",
+                "would go"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "May you enter in sector 5?",
-            "hint": "Invert modal 'may'. (Sector 5 calibration)",
-            "explanation": "May you enter is correct. [Verified in sector 5]."
+            "correctAnswer": "might go",
+            "hint": "'Might' does not change in reported speech - it stays as 'might'.",
+            "explanation": "'Might' is one of the modals that stays the same when reported. 'May' also sometimes shifts to 'might', but 'might' itself never changes."
         },
         {
             "id": "qf_l70_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They will win in sector 5.",
-            "sentence": "They will win in sector 5.",
+            "question": "Direct: \"Come back tomorrow.\" She told him to _____.",
+            "sentence": "Direct: \"Come back tomorrow.\" She told him to _____.",
             "options": [
-                "Will they win in sector 5?",
-                "Do they will win in sector 5?",
-                "Will they winning in sector 5?",
-                "They will win in sector 5?"
+                "come back the next day",
+                "come back tomorrow",
+                "come back the following day",
+                "to come back the next day"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will they win in sector 5?",
-            "hint": "Invert 'will'. (Sector 5 calibration)",
-            "explanation": "Will they win is correct. [Verified in sector 5]."
+            "correctAnswer": "come back the next day",
+            "hint": "Reported command = 'told him to + base verb'; 'tomorrow' shifts to 'the next day'.",
+            "explanation": "Reported commands use 'to + base verb'. The time adverb 'tomorrow' shifts to 'the next day'. 'To come back the next day' has a redundant 'to' before it - the 'to' is already included in 'told him to come back'."
         }
     ]
 }

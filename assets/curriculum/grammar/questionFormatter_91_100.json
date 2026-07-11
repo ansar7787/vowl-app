@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l91_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She likes ice cream in sector 8.",
-            "sentence": "She likes ice cream in sector 8.",
+            "question": "She turned _____ the offer because the salary was too low.",
+            "sentence": "She turned _____ the offer because the salary was too low.",
             "options": [
-                "Does she like ice cream in sector 8?",
-                "Do she likes ice cream in sector 8?",
-                "Is she like ice cream in sector 8?",
-                "She likes ice cream in sector 8?"
+                "down",
+                "off",
+                "away",
+                "back"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Does she like ice cream in sector 8?",
-            "hint": "Use 'Does' for third person singular present. (Sector 8 calibration)",
-            "explanation": "Does is the correct present tense auxiliary for 'she'. [Verified in sector 8]."
+            "correctAnswer": "down",
+            "hint": "'Turn down' = decline/reject an offer. 'Turn off' = switch off. 'Turn away' = send away.",
+            "explanation": "'Turn down' means to reject or decline: 'turned down the job offer'. 'Turn off' means to switch something off. 'Turn away' means to send someone away. 'Turn back' means to return."
         },
         {
             "id": "qf_l91_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She can swim well in sector 8.",
-            "sentence": "She can swim well in sector 8.",
+            "question": "Can you turn _____ the music? It's too loud.",
+            "sentence": "Can you turn _____ the music? It's too loud.",
             "options": [
-                "Can she swim well in sector 8?",
-                "Does she can swim well in sector 8?",
-                "Can she swims well in sector 8?",
-                "She can swim well in sector 8?"
+                "down",
+                "off",
+                "up",
+                "out"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can she swim well in sector 8?",
-            "hint": "Invert modal 'can' and subject. (Sector 8 calibration)",
-            "explanation": "Can she swim is correct modal inversion. [Verified in sector 8]."
+            "correctAnswer": "down",
+            "hint": "'Turn down' = reduce the volume. 'Turn up' = increase. 'Turn off' = stop completely.",
+            "explanation": "'Turn down' means to reduce volume or intensity. 'Turn up' means to increase it. 'Turn off' would stop the music entirely. Context ('too loud') calls for reducing, not stopping - so 'down' is correct."
         },
         {
             "id": "qf_l91_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He lives in London in sector 8.",
-            "sentence": "He lives in London in sector 8.",
+            "question": "They called _____ the meeting because of the storm.",
+            "sentence": "They called _____ the meeting because of the storm.",
             "options": [
-                "Does he live in London in sector 8?",
-                "Do he lives in London in sector 8?",
-                "Is he live in London in sector 8?",
-                "He lives in London in sector 8?"
+                "off",
+                "away",
+                "down",
+                "back"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Does he live in London in sector 8?",
-            "hint": "Use 'Does' for present third person singular. (Sector 8 calibration)",
-            "explanation": "Does he live is the correct present question. [Verified in sector 8]."
+            "correctAnswer": "off",
+            "hint": "'Call off' = cancel something that was planned.",
+            "explanation": "'Call off' means to cancel an event: 'called off the meeting/game/wedding'. 'Call away' means to summon someone away. 'Call back' means to return a call. 'Call down' is not a standard phrasal verb."
         },
         {
             "id": "qf_l92_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They went to school in sector 8.",
-            "sentence": "They went to school in sector 8.",
+            "question": "She really looks _____ her younger sister.",
+            "sentence": "She really looks _____ her younger sister.",
             "options": [
-                "Did they go to school in sector 8?",
-                "Did they went to school in sector 8?",
-                "Do they went to school in sector 8?",
-                "They went to school in sector 8?"
+                "after",
+                "up",
+                "into",
+                "for"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did they go to school in sector 8?",
-            "hint": "Use 'Did' + base verb for simple past. (Sector 8 calibration)",
-            "explanation": "Did + go is the past tense question form of went. [Verified in sector 8]."
+            "correctAnswer": "after",
+            "hint": "'Look after' = take care of someone - inseparable phrasal verb.",
+            "explanation": "'Look after' means to take care of someone and is inseparable: you cannot separate the two words with an object ('look her after' is wrong). 'Look up' = search for; 'look into' = investigate; 'look for' = search."
         },
         {
             "id": "qf_l92_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They have finished lunch in sector 8.",
-            "sentence": "They have finished lunch in sector 8.",
+            "question": "The police are looking _____ the incident.",
+            "sentence": "The police are looking _____ the incident.",
             "options": [
-                "Have they finished lunch in sector 8?",
-                "Did they have finished lunch in sector 8?",
-                "Has they finished lunch in sector 8?",
-                "They have finished lunch in sector 8?"
+                "into",
+                "after",
+                "for",
+                "up"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Have they finished lunch in sector 8?",
-            "hint": "Invert auxiliary 'have' and subject. (Sector 8 calibration)",
-            "explanation": "Have they finished is correct present perfect inversion. [Verified in sector 8]."
+            "correctAnswer": "into",
+            "hint": "'Look into' = investigate something - inseparable.",
+            "explanation": "'Look into' means to investigate: 'looking into the incident/matter/complaint'. This is inseparable - you cannot put an object between 'look' and 'into'. 'Look for' = search; 'look up' = check information."
         },
         {
             "id": "qf_l92_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They have a ship in sector 8.",
-            "sentence": "They have a ship in sector 8.",
+            "question": "She came _____ an interesting article about climate change.",
+            "sentence": "She came _____ an interesting article about climate change.",
             "options": [
-                "Do they have a ship in sector 8?",
-                "Has they a ship in sector 8?",
-                "Do they has a ship in sector 8?",
-                "They have a ship in sector 8?"
+                "across",
+                "over",
+                "through",
+                "up"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do they have a ship in sector 8?",
-            "hint": "Use 'Do' for present plural questions. (Sector 8 calibration)",
-            "explanation": "Do they have is correct. [Verified in sector 8]."
+            "correctAnswer": "across",
+            "hint": "'Come across' = find/encounter something unexpectedly.",
+            "explanation": "'Come across' means to find or encounter something by chance: 'came across an old photo / a useful article'. It is inseparable. 'Come over' = visit; 'come through' = survive; 'come up' = arise."
         },
         {
             "id": "qf_l93_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is a doctor in sector 8.",
-            "sentence": "He is a doctor in sector 8.",
+            "question": "He turned on the lights. → He turned _____ on.",
+            "sentence": "He turned on the lights. → He turned _____ on.",
             "options": [
-                "Is he a doctor in sector 8?",
-                "Does he is a doctor in sector 8?",
-                "Do he a doctor in sector 8?",
-                "He is a doctor in sector 8?"
+                "them",
+                "it",
+                "on them",
+                "the lights"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is he a doctor in sector 8?",
-            "hint": "Invert the subject and the verb 'to be'. (Sector 8 calibration)",
-            "explanation": "Is he is the correct inverted form of He is. [Verified in sector 8]."
+            "correctAnswer": "them",
+            "hint": "Separable phrasal verb + pronoun: the pronoun MUST go between verb and particle.",
+            "explanation": "With separable phrasal verbs, when the object is a pronoun, it must go between the verb and the particle: 'turned them on'. Placing the pronoun after the particle ('turned on them') creates a different meaning ('attacked them')."
         },
         {
             "id": "qf_l93_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We will arrive tomorrow in sector 8.",
-            "sentence": "We will arrive tomorrow in sector 8.",
+            "question": "She picked up the keys. → She picked _____ up.",
+            "sentence": "She picked up the keys. → She picked _____ up.",
             "options": [
-                "Will we arrive tomorrow in sector 8?",
-                "Do we will arrive tomorrow in sector 8?",
-                "Will we arrived tomorrow in sector 8?",
-                "We will arrive tomorrow in sector 8?"
+                "them",
+                "it",
+                "up them",
+                "the keys"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will we arrive tomorrow in sector 8?",
-            "hint": "Invert modal 'will' and subject. (Sector 8 calibration)",
-            "explanation": "Will we arrive is correct future inversion. [Verified in sector 8]."
+            "correctAnswer": "them",
+            "hint": "Separable phrasal verb + pronoun: pronoun goes between 'pick' and 'up'.",
+            "explanation": "When replacing a noun object with a pronoun in a separable phrasal verb, the pronoun must go between the verb and the particle. 'Picked them up' is the only correct placement for the pronoun."
         },
         {
             "id": "qf_l93_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is reading in sector 8.",
-            "sentence": "She is reading in sector 8.",
+            "question": "Choose the correct form: 'She is looking after the dog.'",
+            "sentence": "Choose the correct form: 'She is looking after the dog.'",
             "options": [
-                "Is she reading in sector 8?",
-                "Does she reading in sector 8?",
-                "Is she read in sector 8?",
-                "She is reading in sector 8?"
+                "She is looking after it.",
+                "She is looking it after.",
+                "She is it looking after.",
+                "She is looking after him."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is she reading in sector 8?",
-            "hint": "Invert 'is' and 'she'. (Sector 8 calibration)",
-            "explanation": "Is she reading is correct. [Verified in sector 8]."
+            "correctAnswer": "She is looking after it.",
+            "hint": "'Look after' is inseparable - the pronoun stays after 'after', not between the words.",
+            "explanation": "'Look after' is inseparable, so the object always comes after the full phrase: 'looking after it'. 'Looking it after' is wrong because you cannot split inseparable phrasal verbs. 'Him' would be used for a person, not a dog."
         },
         {
             "id": "qf_l94_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We have some apples in sector 8.",
-            "sentence": "We have some apples in sector 8.",
+            "question": "She _____ arrives late for work.",
+            "sentence": "She _____ arrives late for work.",
             "options": [
-                "Do we have any apples in sector 8?",
-                "Have we some apples in sector 8?",
-                "Do we has some apples in sector 8?",
-                "We have any apples in sector 8?"
+                "never",
+                "arrives never",
+                "never is arriving",
+                "is never"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do we have any apples in sector 8?",
-            "hint": "Use 'Do' for first person plural questions. (Sector 8 calibration)",
-            "explanation": "Do we have is the standard question form. [Verified in sector 8]."
+            "correctAnswer": "never",
+            "hint": "Frequency adverbs ('never', 'always', 'often', etc.) go before the main verb but after 'to be'.",
+            "explanation": "Frequency adverbs position: BEFORE main verbs ('she never arrives'), AFTER 'to be' ('she is never late'), and AFTER the first auxiliary ('she has never arrived'). 'Never arrives' is correct here because 'arrives' is the main verb."
         },
         {
             "id": "qf_l94_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You should wait here in sector 8.",
-            "sentence": "You should wait here in sector 8.",
+            "question": "He has _____ finished his work on time.",
+            "sentence": "He has _____ finished his work on time.",
             "options": [
-                "Should you wait here in sector 8?",
-                "Do you should wait here in sector 8?",
-                "Should you waiting here in sector 8?",
-                "You should wait here in sector 8?"
+                "always",
+                "always has",
+                "finished always",
+                "has finished always"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should you wait here in sector 8?",
-            "hint": "Invert modal 'should'. (Sector 8 calibration)",
-            "explanation": "Should you wait is correct. [Verified in sector 8]."
+            "correctAnswer": "always",
+            "hint": "Frequency adverbs go AFTER the first auxiliary ('has') and BEFORE the main verb ('finished').",
+            "explanation": "When there is an auxiliary verb, the frequency adverb goes after the first auxiliary: 'has always finished'. It does not go before the auxiliary or after the main verb."
         },
         {
             "id": "qf_l94_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We were working in sector 8.",
-            "sentence": "We were working in sector 8.",
+            "question": "She is _____ tired after a long shift.",
+            "sentence": "She is _____ tired after a long shift.",
             "options": [
-                "Were we working in sector 8?",
-                "Was we working in sector 8?",
-                "Did we working in sector 8?",
-                "We were working in sector 8?"
+                "usually",
+                "usually is",
+                "is usually after",
+                "tired usually"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Were we working in sector 8?",
-            "hint": "Invert 'were' and 'we'. (Sector 8 calibration)",
-            "explanation": "Were we working is correct. [Verified in sector 8]."
+            "correctAnswer": "usually",
+            "hint": "Frequency adverbs go AFTER 'to be' as a main verb: 'is usually'.",
+            "explanation": "When 'to be' is the main verb, frequency adverbs come after it: 'is usually tired'. 'Usually is' reverses this rule. Position after 'tired' would create an odd emphasis."
         },
         {
             "id": "qf_l95_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She swam in the pool in sector 8.",
-            "sentence": "She swam in the pool in sector 8.",
+            "question": "She drove _____ to the airport _____ morning.",
+            "sentence": "She drove _____ to the airport _____ morning.",
             "options": [
-                "Did she swim in the pool in sector 8?",
-                "Did she swam in the pool in sector 8?",
-                "Does she swim in the pool in sector 8?",
-                "She swam in the pool in sector 8?"
+                "quickly / this",
+                "this morning / quickly",
+                "quickly / in the",
+                "to the airport quickly / this"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did she swim in the pool in sector 8?",
-            "hint": "Use 'Did' + base verb 'swim'. (Sector 8 calibration)",
-            "explanation": "Did she swim is correct for past actions. [Verified in sector 8]."
+            "correctAnswer": "quickly / this",
+            "hint": "Standard adverb order: manner → place → time.",
+            "explanation": "English adverb order: manner ('quickly') → place ('to the airport') → time ('this morning'). This is the default unmarked order. Changing this order is possible for emphasis but unusual."
         },
         {
             "id": "qf_l95_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has seen this movie in sector 8.",
-            "sentence": "He has seen this movie in sector 8.",
+            "question": "Choose the most natural sentence:",
+            "sentence": "Choose the most natural sentence:",
             "options": [
-                "Has he seen this movie in sector 8?",
-                "Did he has seen this movie in sector 8?",
-                "Have he seen this movie in sector 8?",
-                "He has seen this movie in sector 8?"
+                "They worked hard in the office all day.",
+                "They worked in the office all day hard.",
+                "They worked all day hard in the office.",
+                "Hard they worked all day in the office."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has he seen this movie in sector 8?",
-            "hint": "Invert auxiliary 'has'. (Sector 8 calibration)",
-            "explanation": "Has he seen is correct. [Verified in sector 8]."
+            "correctAnswer": "They worked hard in the office all day.",
+            "hint": "Manner (hard) → place (in the office) → time (all day).",
+            "explanation": "The natural adverb order is manner → place → time: 'worked hard (manner) in the office (place) all day (time)'. Placing 'hard' after 'all day' or 'in the office' sounds unnatural."
         },
         {
             "id": "qf_l95_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He was sleeping in sector 8.",
-            "sentence": "He was sleeping in sector 8.",
+            "question": "He plays the guitar _____ in his room _____ evenings.",
+            "sentence": "He plays the guitar _____ in his room _____ evenings.",
             "options": [
-                "Was he sleeping in sector 8?",
-                "Were he sleeping in sector 8?",
-                "Did he sleeping in sector 8?",
-                "He was sleeping in sector 8?"
+                "well / on",
+                "good / in",
+                "well / in",
+                "good / on"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was he sleeping in sector 8?",
-            "hint": "Invert 'was' and 'he'. (Sector 8 calibration)",
-            "explanation": "Was he sleeping is correct. [Verified in sector 8]."
+            "correctAnswer": "well / on",
+            "hint": "'Well' is the adverb form of 'good'; 'on + evenings' is the correct preposition for regular scheduled times.",
+            "explanation": "'Well' is an adverb (modifying the verb 'plays'); 'good' is an adjective modifying a noun. 'On' is used with specific times: 'on Monday evenings, on weekends'. 'In the evenings' is also possible as a general expression."
         },
         {
             "id": "qf_l96_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The system is online in sector 8.",
-            "sentence": "The system is online in sector 8.",
+            "question": "Never _____ such a beautiful sunset.",
+            "sentence": "Never _____ such a beautiful sunset.",
             "options": [
-                "Is the system online in sector 8?",
-                "Does the system online in sector 8?",
-                "Are the system online in sector 8?",
-                "System is online in sector 8?"
+                "have I seen",
+                "I have seen",
+                "I saw",
+                "did I saw"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is the system online in sector 8?",
-            "hint": "Invert the subject and 'is'. (Sector 8 calibration)",
-            "explanation": "Is the system online is correct. [Verified in sector 8]."
+            "correctAnswer": "have I seen",
+            "hint": "After 'Never' at the start, invert subject and auxiliary: 'Never have I seen...'",
+            "explanation": "When 'never', 'rarely', 'seldom', 'hardly', 'scarcely', 'little', or 'no sooner' begin a sentence for emphasis, subject-auxiliary inversion follows: 'Never have I seen...' This is a formal, emphatic structure."
         },
         {
             "id": "qf_l96_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They could hear us in sector 8.",
-            "sentence": "They could hear us in sector 8.",
+            "question": "Not only _____ late, but she also forgot her notes.",
+            "sentence": "Not only _____ late, but she also forgot her notes.",
             "options": [
-                "Could they hear us in sector 8?",
-                "Did they could hear us in sector 8?",
-                "Could they heard us in sector 8?",
-                "They could hear us in sector 8?"
+                "was she",
+                "she was",
+                "is she",
+                "did she be"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Could they hear us in sector 8?",
-            "hint": "Invert modal 'could'. (Sector 8 calibration)",
-            "explanation": "Could they hear is correct. [Verified in sector 8]."
+            "correctAnswer": "was she",
+            "hint": "'Not only' at the start triggers inversion: 'Not only was she...'",
+            "explanation": "After 'Not only' at the beginning of a sentence, inversion is required: 'Not only was she late...' 'She was' (no inversion) is the non-emphatic version and would not normally begin with 'Not only'."
         },
         {
             "id": "qf_l96_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She has been working in sector 8.",
-            "sentence": "She has been working in sector 8.",
+            "question": "Hardly _____ sat down when the phone rang.",
+            "sentence": "Hardly _____ sat down when the phone rang.",
             "options": [
-                "Has she been working in sector 8?",
-                "Have she been working in sector 8?",
-                "Does she been working in sector 8?",
-                "She has been working in sector 8?"
+                "had she",
+                "she had",
+                "did she",
+                "has she"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has she been working in sector 8?",
-            "hint": "Invert auxiliary 'has'. (Sector 8 calibration)",
-            "explanation": "Has she been working is correct. [Verified in sector 8]."
+            "correctAnswer": "had she",
+            "hint": "'Hardly' triggers past perfect inversion: 'Hardly had she...'",
+            "explanation": "'Hardly' at the start requires inversion and uses the past perfect ('had she') because it expresses a sequence of past events - sitting down happened just before the phone rang. 'She had' (no inversion) is the non-emphatic equivalent."
         },
         {
             "id": "qf_l97_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They work in the city in sector 8.",
-            "sentence": "They work in the city in sector 8.",
+            "question": "_____ the manager who approved the budget, not the director.",
+            "sentence": "_____ the manager who approved the budget, not the director.",
             "options": [
-                "Do they work in the city in sector 8?",
-                "Does they work in the city in sector 8?",
-                "Are they work in the city in sector 8?",
-                "They work in the city in sector 8?"
+                "It was",
+                "It is",
+                "There was",
+                "What was"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do they work in the city in sector 8?",
-            "hint": "Use 'Do' for third person plural present. (Sector 8 calibration)",
-            "explanation": "Do they work is correct. [Verified in sector 8]."
+            "correctAnswer": "It was",
+            "hint": "It-cleft ('It was... who...') emphasizes the specific person responsible.",
+            "explanation": "It-cleft sentences ('It was/is + noun phrase + who/that + ...') are used for emphasis, highlighting one part of a sentence. 'It was the manager who...' focuses on which person. The tense matches the context (past action, so 'was')."
         },
         {
             "id": "qf_l97_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She will help us in sector 8.",
-            "sentence": "She will help us in sector 8.",
+            "question": "_____ I want is a long holiday.",
+            "sentence": "_____ I want is a long holiday.",
             "options": [
-                "Will she help us in sector 8?",
-                "Does she will help us in sector 8?",
-                "Will she helps us in sector 8?",
-                "She will help us in sector 8?"
+                "What",
+                "That",
+                "Which",
+                "It"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will she help us in sector 8?",
-            "hint": "Invert 'will'. (Sector 8 calibration)",
-            "explanation": "Will she help is correct. [Verified in sector 8]."
+            "correctAnswer": "What",
+            "hint": "Wh-cleft ('What I want is...') highlights the object ('a long holiday') as the key information.",
+            "explanation": "A wh-cleft begins with 'What + subject + verb' and is completed with 'is + noun phrase'. 'What I want is a long holiday' places maximum focus on the holiday. 'That' and 'which' cannot start a wh-cleft in this pattern."
         },
         {
             "id": "qf_l97_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They had left early in sector 8.",
-            "sentence": "They had left early in sector 8.",
+            "question": "It was _____ she finally told him the truth.",
+            "sentence": "It was _____ she finally told him the truth.",
             "options": [
-                "Had they left early in sector 8?",
-                "Did they had left early in sector 8?",
-                "Have they left early in sector 8?",
-                "They had left early in sector 8?"
+                "then that",
+                "then when",
+                "when that",
+                "that when"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Had they left early in sector 8?",
-            "hint": "Invert auxiliary 'had'. (Sector 8 calibration)",
-            "explanation": "Had they left is correct. [Verified in sector 8]."
+            "correctAnswer": "then that",
+            "hint": "It-cleft with a time expression: 'It was then that...'",
+            "explanation": "It-cleft sentences can emphasize time: 'It was then that she told him' = the timing is the focus. The structure is 'It was + [emphasis] + that + clause'. 'Then when' and 'when that' are both incorrect combinations."
         },
         {
             "id": "qf_l98_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He forgot his keys in sector 8.",
-            "sentence": "He forgot his keys in sector 8.",
+            "question": "I _____ enjoy cooking, even though it takes time.",
+            "sentence": "I _____ enjoy cooking, even though it takes time.",
             "options": [
-                "Did he forget his keys in sector 8?",
-                "Did he forgot his keys in sector 8?",
-                "Does he forget his keys in sector 8?",
-                "He forgot his keys in sector 8?"
+                "do",
+                "really",
+                "am",
+                "have"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did he forget his keys in sector 8?",
-            "hint": "Use 'Did' + base verb 'forget'. (Sector 8 calibration)",
-            "explanation": "Did he forget is correct. [Verified in sector 8]."
+            "correctAnswer": "do",
+            "hint": "'Do' (stressed) before the main verb adds emphasis in positive present-simple sentences.",
+            "explanation": "Adding 'do/does/did' before a main verb in an affirmative sentence adds emphasis or contrast: 'I DO enjoy cooking' (despite what you might think). This is called 'emphatic do'. It's different from a question - there's no inversion."
         },
         {
             "id": "qf_l98_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We must report this in sector 8.",
-            "sentence": "We must report this in sector 8.",
+            "question": "She _____ call you - I was there when she did it.",
+            "sentence": "She _____ call you - I was there when she did it.",
             "options": [
-                "Must we report this in sector 8?",
-                "Do we must report this in sector 8?",
-                "Must we reporting this in sector 8?",
-                "We must report this in sector 8?"
+                "did",
+                "has",
+                "was",
+                "does"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Must we report this in sector 8?",
-            "hint": "Invert modal 'must'. (Sector 8 calibration)",
-            "explanation": "Must we report is correct. [Verified in sector 8]."
+            "correctAnswer": "did",
+            "hint": "'Did' + base verb emphasizes that the action really happened (contradicting doubt).",
+            "explanation": "Emphatic 'did' before the base verb stresses that an action genuinely occurred. 'She did call you' counters someone's doubt. Note: after emphatic 'did', the main verb stays in the base form ('call', not 'called')."
         },
         {
             "id": "qf_l98_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He can read maps in sector 8.",
-            "sentence": "He can read maps in sector 8.",
+            "question": "He _____ look tired today, doesn't he?",
+            "sentence": "He _____ look tired today, doesn't he?",
             "options": [
-                "Can he read maps in sector 8?",
-                "Does he can read maps in sector 8?",
-                "Can he reads maps in sector 8?",
-                "He can read maps in sector 8?"
+                "does",
+                "is",
+                "has",
+                "looks"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can he read maps in sector 8?",
-            "hint": "Invert modal 'can'. (Sector 8 calibration)",
-            "explanation": "Can he read is correct. [Verified in sector 8]."
+            "correctAnswer": "does",
+            "hint": "'Does + look' - emphatic 'does' before the main verb 'look' for present-simple emphasis.",
+            "explanation": "Emphatic 'does' before the base verb 'look' adds surprise or emphasis: 'He does look tired.' Note that after 'does', the verb returns to its base form - not 'looks'. The tag 'doesn't he?' confirms this is a present-simple construction."
         },
         {
             "id": "qf_l99_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You are happy in sector 8.",
-            "sentence": "You are happy in sector 8.",
+            "question": "She can swim and so _____ I.",
+            "sentence": "She can swim and so _____ I.",
             "options": [
-                "Are you happy in sector 8?",
-                "Do you happy in sector 8?",
-                "Is you happy in sector 8?",
-                "You are happy in sector 8?"
+                "can",
+                "do",
+                "am",
+                "have"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Are you happy in sector 8?",
-            "hint": "Invert 'you' and 'are'. (Sector 8 calibration)",
-            "explanation": "Are you happy is correct. [Verified in sector 8]."
+            "correctAnswer": "can",
+            "hint": "'So + auxiliary + subject' echoes the first clause's auxiliary - here 'can'.",
+            "explanation": "In 'so + auxiliary + subject', the auxiliary must match the tense and type of the first clause. 'She can swim → so can I.' Using 'do' or 'am' would not match the modal 'can'."
         },
         {
             "id": "qf_l99_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He would like tea in sector 8.",
-            "sentence": "He would like tea in sector 8.",
+            "question": "He doesn't like fish, and neither _____ I.",
+            "sentence": "He doesn't like fish, and neither _____ I.",
             "options": [
-                "Would he like tea in sector 8?",
-                "Does he would like tea in sector 8?",
-                "Would he likes tea in sector 8?",
-                "He would like tea in sector 8?"
+                "do",
+                "am",
+                "don't",
+                "can"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would he like tea in sector 8?",
-            "hint": "Invert 'would'. (Sector 8 calibration)",
-            "explanation": "Would he like is correct. [Verified in sector 8]."
+            "correctAnswer": "do",
+            "hint": "'Neither + auxiliary + subject' agrees with the tense/type of the first negative clause.",
+            "explanation": "In 'neither + auxiliary + subject', use the auxiliary that matches the original clause. 'He doesn't like' = present simple, so 'neither do I'. The auxiliary reverses to positive because 'neither' already carries the negative meaning."
         },
         {
             "id": "qf_l99_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You should try it in sector 8.",
-            "sentence": "You should try it in sector 8.",
+            "question": "A: 'I've been waiting for an hour.' B: 'So _____ I!'",
+            "sentence": "A: 'I've been waiting for an hour.' B: 'So _____ I!'",
             "options": [
-                "Should you try it in sector 8?",
-                "Do you should try it in sector 8?",
-                "Should you trying it in sector 8?",
-                "You should try it in sector 8?"
+                "have",
+                "do",
+                "am",
+                "was"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should you try it in sector 8?",
-            "hint": "Invert 'should'. (Sector 8 calibration)",
-            "explanation": "Should you try is correct. [Verified in sector 8]."
+            "correctAnswer": "have",
+            "hint": "'So have I' agrees with the first speaker's present perfect ('have been waiting').",
+            "explanation": "'So + auxiliary + subject' takes the auxiliary from the previous clause. 'I've been waiting' uses 'have' (present perfect), so the response is 'So have I.' Using 'do' would match simple present, not perfect."
         },
         {
             "id": "qf_l100_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She wrote a letter in sector 8.",
-            "sentence": "She wrote a letter in sector 8.",
+            "question": "By the time she _____ the office, the meeting had already begun.",
+            "sentence": "By the time she _____ the office, the meeting had already begun.",
             "options": [
-                "Did she write a letter in sector 8?",
-                "Did she wrote a letter in sector 8?",
-                "Does she write a letter in sector 8?",
-                "She wrote a letter in sector 8?"
+                "reached",
+                "had reached",
+                "reaches",
+                "would reach"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did she write a letter in sector 8?",
-            "hint": "Use 'Did' + 'write'. (Sector 8 calibration)",
-            "explanation": "Did she write is correct. [Verified in sector 8]."
+            "correctAnswer": "reached",
+            "hint": "'By the time' + past simple; the other event uses past perfect.",
+            "explanation": "With 'by the time + past simple', the result clause typically uses the past perfect to show the earlier event. However, if 'by the time' clause is simple past, it can also stay simple past (both finished past events). Here, 'reached' (simple past) is correct because the earlier event ('had begun') is in the past perfect."
         },
         {
             "id": "qf_l100_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You may enter in sector 8.",
-            "sentence": "You may enter in sector 8.",
+            "question": "She is the most dedicated student I _____ ever taught.",
+            "sentence": "She is the most dedicated student I _____ ever taught.",
             "options": [
-                "May you enter in sector 8?",
-                "Do you may enter in sector 8?",
-                "May you entering in sector 8?",
-                "You may enter in sector 8?"
+                "have",
+                "had",
+                "am",
+                "will"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "May you enter in sector 8?",
-            "hint": "Invert modal 'may'. (Sector 8 calibration)",
-            "explanation": "May you enter is correct. [Verified in sector 8]."
+            "correctAnswer": "have",
+            "hint": "Superlatives often trigger present perfect ('have ever'): the most ... I have ever seen/met.",
+            "explanation": "Superlative adjectives often collocate with the present perfect in the relative clause: 'the most ... I have ever + past participle'. This is because the comparison spans up to the current moment."
         },
         {
             "id": "qf_l100_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They will win in sector 8.",
-            "sentence": "They will win in sector 8.",
+            "question": "I _____ to call her back, but I completely forgot.",
+            "sentence": "I _____ to call her back, but I completely forgot.",
             "options": [
-                "Will they win in sector 8?",
-                "Do they will win in sector 8?",
-                "Will they winning in sector 8?",
-                "They will win in sector 8?"
+                "was going",
+                "had gone",
+                "went",
+                "would go"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will they win in sector 8?",
-            "hint": "Invert 'will'. (Sector 8 calibration)",
-            "explanation": "Will they win is correct. [Verified in sector 8]."
+            "correctAnswer": "was going",
+            "hint": "'Was going to' = intended to do something but didn't - past intention.",
+            "explanation": "'Was going to + base verb' expresses a past intention that was not carried out. It is the past form of 'be going to' for future plans. 'Would go' implies a habitual past action, not an unfulfilled intention."
         }
     ]
 }

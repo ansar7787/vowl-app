@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l101_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The keys are on the table in sector 9.",
-            "sentence": "The keys are on the table in sector 9.",
+            "question": "I wish I _____ more time to travel.",
+            "sentence": "I wish I _____ more time to travel.",
             "options": [
-                "Where are the keys in sector 9?",
-                "What are the keys in sector 9?",
-                "Who are the keys in sector 9?",
-                "When are the keys in sector 9?"
+                "had",
+                "have",
+                "would have",
+                "had had"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where are the keys in sector 9?",
-            "hint": "'On the table' represents a location, which requires 'Where'. (Sector 9 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 9]."
+            "correctAnswer": "had",
+            "hint": "'Wish + past simple' expresses a wish about a present situation that is not true.",
+            "explanation": "'Wish + past simple' expresses a regret about the present: 'I wish I had' = I don't have time, but I want to. 'Have' (present simple) cannot follow 'wish' for present regret. 'Had had' (past perfect) is used for past regrets with 'wish'."
         },
         {
             "id": "qf_l101_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The package arrived yesterday in sector 9.",
-            "sentence": "The package arrived yesterday in sector 9.",
+            "question": "She wishes she _____ how to play the piano.",
+            "sentence": "She wishes she _____ how to play the piano.",
             "options": [
-                "When did the package arrive in sector 9?",
-                "Where did the package arrive in sector 9?",
-                "Why did the package arrive in sector 9?",
-                "What did the package arrive in sector 9?"
+                "knew",
+                "knows",
+                "would know",
+                "known"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When did the package arrive in sector 9?",
-            "hint": "'Yesterday' is a past time, requiring 'When'. (Sector 9 calibration)",
-            "explanation": "Use 'When' for time queries. [Verified in sector 9]."
+            "correctAnswer": "knew",
+            "hint": "'Wish + past simple' - 'knew' is the past form of 'know' for a present wish.",
+            "explanation": "'Wish + past simple' describes an untrue present: she doesn't know how to play. 'Knows' is a real present-simple fact. 'Known' is a past participle, not a simple past. 'Would know' is used for complaints about other people's behaviour, not your own."
         },
         {
             "id": "qf_l101_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The flight takes six hours in sector 9.",
-            "sentence": "The flight takes six hours in sector 9.",
+            "question": "He wishes he _____ harder when he was at university.",
+            "sentence": "He wishes he _____ harder when he was at university.",
             "options": [
-                "How long does the flight take in sector 9?",
-                "When does the flight take in sector 9?",
-                "Where does the flight take in sector 9?",
-                "Why does the flight take in sector 9?"
+                "had studied",
+                "studied",
+                "would study",
+                "studies"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long does the flight take in sector 9?",
-            "hint": "'Six hours' is a duration, requiring 'How long'. (Sector 9 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 9]."
+            "correctAnswer": "had studied",
+            "hint": "'Wish + past perfect' expresses a regret about a past situation that cannot be changed.",
+            "explanation": "'Wish + past perfect' refers to a past situation we regret: he didn't study hard and regrets it now. 'Wish + past simple' would express a present wish. 'Would study' after 'wish' is used for complaints about someone else's behaviour, not past regrets."
         },
         {
             "id": "qf_l102_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He left because it was late in sector 9.",
-            "sentence": "He left because it was late in sector 9.",
+            "question": "I wish you _____ make so much noise.",
+            "sentence": "I wish you _____ make so much noise.",
             "options": [
-                "Why did he leave in sector 9?",
-                "When did he leave in sector 9?",
-                "Where did he leave in sector 9?",
-                "How did he leave in sector 9?"
+                "wouldn't",
+                "don't",
+                "didn't",
+                "won't"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why did he leave in sector 9?",
-            "hint": "'Because it was late' indicates a reason, requiring 'Why'. (Sector 9 calibration)",
-            "explanation": "Use 'Why' for reasons. [Verified in sector 9]."
+            "correctAnswer": "wouldn't",
+            "hint": "'Wish + would(n't)' expresses a complaint about someone's current behaviour.",
+            "explanation": "'Wish + would/wouldn't + base verb' complains about a present habit or behaviour. 'Wish + didn't' would be for a present fact, not a request for change. 'Won't' cannot follow 'wish' in this structure."
         },
         {
             "id": "qf_l102_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are travelling by capsule in sector 9.",
-            "sentence": "They are travelling by capsule in sector 9.",
+            "question": "She wishes her neighbour _____ his music down.",
+            "sentence": "She wishes her neighbour _____ his music down.",
             "options": [
-                "How are they travelling in sector 9?",
-                "Why are they travelling in sector 9?",
-                "Where are they travelling in sector 9?",
-                "When are they travelling in sector 9?"
+                "would turn",
+                "turned",
+                "turns",
+                "had turned"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How are they travelling in sector 9?",
-            "hint": "'By capsule' is a means of transport. (Sector 9 calibration)",
-            "explanation": "Use 'How' for transportation methods. [Verified in sector 9]."
+            "correctAnswer": "would turn",
+            "hint": "'Wish + would + base verb' = a complaint/wish directed at someone else's behaviour.",
+            "explanation": "'Wish + would' expresses a desire for someone else to change their behaviour. It cannot be used when the subjects of 'wish' and 'would' are the same person. 'Turned' expresses a present wish about a fact."
         },
         {
             "id": "qf_l102_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "This fuel costs fifty coins in sector 9.",
-            "sentence": "This fuel costs fifty coins in sector 9.",
+            "question": "He wishes he _____ leave work early today.",
+            "sentence": "He wishes he _____ leave work early today.",
             "options": [
-                "How much does this fuel cost in sector 9?",
-                "How many does this fuel cost in sector 9?",
-                "What cost is this fuel in sector 9?",
-                "Why does this fuel cost in sector 9?"
+                "could",
+                "would",
+                "can",
+                "will"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How much does this fuel cost in sector 9?",
-            "hint": "Uncountable cost/value requires 'How much'. (Sector 9 calibration)",
-            "explanation": "Use 'How much' for costs. [Verified in sector 9]."
+            "correctAnswer": "could",
+            "hint": "'Wish + could' expresses a desire for a present ability or possibility.",
+            "explanation": "'Wish + could' expresses a present wish about ability or permission - he wants to but probably can't. 'Wish + would' is for wishing about someone else's behaviour. 'Can/will' cannot follow 'wish' for this meaning."
         },
         {
             "id": "qf_l103_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She arrives at 6 PM in sector 9.",
-            "sentence": "She arrives at 6 PM in sector 9.",
+            "question": "I'd rather _____ coffee than tea, please.",
+            "sentence": "I'd rather _____ coffee than tea, please.",
             "options": [
-                "What time does she arrive in sector 9?",
-                "Where does she arrive in sector 9?",
-                "Why does she arrive in sector 9?",
-                "Who does she arrive in sector 9?"
+                "have",
+                "to have",
+                "having",
+                "had"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "What time does she arrive in sector 9?",
-            "hint": "'At 6 PM' represents a time, requiring 'What time' or 'When'. (Sector 9 calibration)",
-            "explanation": "Use 'What time' for specific hours. [Verified in sector 9]."
+            "correctAnswer": "have",
+            "hint": "'Would rather' is followed by a bare infinitive (no 'to') for your own preference.",
+            "explanation": "'Would rather + bare infinitive' expresses personal preference. No 'to' is used. 'Having' (gerund) is wrong here."
         },
         {
             "id": "qf_l103_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She wants a coffee in sector 9.",
-            "sentence": "She wants a coffee in sector 9.",
+            "question": "I'd rather you _____ early tomorrow.",
+            "sentence": "I'd rather you _____ early tomorrow.",
             "options": [
-                "What does she want in sector 9?",
-                "Who does she want in sector 9?",
-                "Why does she want in sector 9?",
-                "Where does she want in sector 9?"
+                "came",
+                "come",
+                "to come",
+                "had come"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "What does she want in sector 9?",
-            "hint": "'A coffee' is a thing, requiring 'What'. (Sector 9 calibration)",
-            "explanation": "Use 'What' for things. [Verified in sector 9]."
+            "correctAnswer": "came",
+            "hint": "'Would rather + subject + past simple' expresses a preference about someone else's action.",
+            "explanation": "When the subject after 'would rather' differs from the main subject, use past simple: 'I'd rather you came.' This is a subjunctive-like use. 'Come' (present) and 'to come' (infinitive) are both incorrect here."
         },
         {
             "id": "qf_l103_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They practice three times a day in sector 9.",
-            "sentence": "They practice three times a day in sector 9.",
+            "question": "She'd rather he _____ that in front of everyone.",
+            "sentence": "She'd rather he _____ that in front of everyone.",
             "options": [
-                "How often do they practice in sector 9?",
-                "How long do they practice in sector 9?",
-                "When do they practice in sector 9?",
-                "Where do they practice in sector 9?"
+                "hadn't said",
+                "didn't say",
+                "hasn't said",
+                "wouldn't say"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How often do they practice in sector 9?",
-            "hint": "'Three times a day' is a frequency. (Sector 9 calibration)",
-            "explanation": "Use 'How often' for frequencies. [Verified in sector 9]."
+            "correctAnswer": "hadn't said",
+            "hint": "'Would rather + subject + past perfect' = a preference about a past action (regret).",
+            "explanation": "'Would rather + past perfect' refers to a past action someone wishes had been different. 'Hadn't said' (past perfect) expresses this regret. 'Didn't say' (past simple) is for present/future preferences."
         },
         {
             "id": "qf_l104_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They went to the space base in sector 9.",
-            "sentence": "They went to the space base in sector 9.",
+            "question": "It's time we _____ this decision.",
+            "sentence": "It's time we _____ this decision.",
             "options": [
-                "Where did they go in sector 9?",
-                "Why did they go in sector 9?",
-                "What did they go in sector 9?",
-                "When did they go in sector 9?"
+                "made",
+                "make",
+                "to make",
+                "making"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where did they go in sector 9?",
-            "hint": "'To the space base' is a destination/location. (Sector 9 calibration)",
-            "explanation": "Use 'Where' for destinations. [Verified in sector 9]."
+            "correctAnswer": "made",
+            "hint": "'It's time + subject + past simple' - the past form signals urgency about the present.",
+            "explanation": "'It's time + subject + past simple' expresses that something should happen now and is overdue. The past simple here does not mean past time - it signals urgency. The infinitive ('to make') is used in 'it's time to make', which has a different structure (no subject)."
         },
         {
             "id": "qf_l104_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He chose the red wire in sector 9.",
-            "sentence": "He chose the red wire in sector 9.",
+            "question": "It's high time he _____ up and took responsibility.",
+            "sentence": "It's high time he _____ up and took responsibility.",
             "options": [
-                "Which wire did he choose in sector 9?",
-                "What wire does he choose in sector 9?",
-                "Who chose the wire in sector 9?",
-                "Why did he choose the wire in sector 9?"
+                "grew",
+                "grow",
+                "to grow",
+                "would grow"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Which wire did he choose in sector 9?",
-            "hint": "Choosing from a limited set requires 'Which'. (Sector 9 calibration)",
-            "explanation": "Use 'Which' for selection. [Verified in sector 9]."
+            "correctAnswer": "grew",
+            "hint": "'It's high time + subject + past simple' - stronger urgency than 'it's time'.",
+            "explanation": "'It's high time' adds frustration or impatience. Both 'it's time' and 'it's high time' require past simple after the subject. 'Grew' signals that this should have happened long ago."
         },
         {
             "id": "qf_l104_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She walked five miles in sector 9.",
-            "sentence": "She walked five miles in sector 9.",
+            "question": "Isn't it about time you _____ your own place?",
+            "sentence": "Isn't it about time you _____ your own place?",
             "options": [
-                "How far did she walk in sector 9?",
-                "How long did she walk in sector 9?",
-                "Where did she walk in sector 9?",
-                "Why did she walk in sector 9?"
+                "got",
+                "get",
+                "to get",
+                "will get"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far did she walk in sector 9?",
-            "hint": "'Five miles' is a distance. (Sector 9 calibration)",
-            "explanation": "Use 'How far' for distances. [Verified in sector 9]."
+            "correctAnswer": "got",
+            "hint": "'About time + subject + past simple' - same subjunctive-like pattern.",
+            "explanation": "'About time + subject + past simple' follows the same pattern as 'it's time'. The past simple 'got' expresses that this should have happened already. The question form adds a rhetorical edge."
         },
         {
             "id": "qf_l105_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is talking to the commander in sector 9.",
-            "sentence": "He is talking to the commander in sector 9.",
+            "question": "The committee recommended that she _____ a full report.",
+            "sentence": "The committee recommended that she _____ a full report.",
             "options": [
-                "Who is he talking to in sector 9?",
-                "What is he talking to in sector 9?",
-                "Why is he talking to in sector 9?",
-                "Where is he talking in sector 9?"
+                "submit",
+                "submits",
+                "should submit",
+                "submitted"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Who is he talking to in sector 9?",
-            "hint": "'The commander' is a person, requiring 'Who'. (Sector 9 calibration)",
-            "explanation": "Use 'Who' for people. [Verified in sector 9]."
+            "correctAnswer": "submit",
+            "hint": "Formal subjunctive after 'recommend that': bare infinitive, no -s even for 3rd person singular.",
+            "explanation": "After verbs like 'recommend, suggest, insist, demand', formal English uses the present subjunctive (bare infinitive for all subjects): 'she submit', not 'she submits'. 'Should submit' is an informal alternative that is also widely accepted."
         },
         {
             "id": "qf_l105_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They called the security guard in sector 9.",
-            "sentence": "They called the security guard in sector 9.",
+            "question": "The doctor insisted that he _____ the medication for a full month.",
+            "sentence": "The doctor insisted that he _____ the medication for a full month.",
             "options": [
-                "Who did they call in sector 9?",
-                "What did they call in sector 9?",
-                "Why did they call in sector 9?",
-                "Where did they call in sector 9?"
+                "take",
+                "takes",
+                "took",
+                "should take"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Who did they call in sector 9?",
-            "hint": "'The security guard' is a person. (Sector 9 calibration)",
-            "explanation": "Use 'Who' for human objects. [Verified in sector 9]."
+            "correctAnswer": "take",
+            "hint": "Formal subjunctive after 'insist that': bare infinitive regardless of subject.",
+            "explanation": "The formal subjunctive uses the base verb for all subjects including third-person singular. 'Insist that he take' (not 'takes'). This pattern is standard in American English and formal British English."
         },
         {
             "id": "qf_l105_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has been waiting for an hour in sector 9.",
-            "sentence": "He has been waiting for an hour in sector 9.",
+            "question": "It is essential that every employee _____ the new protocols.",
+            "sentence": "It is essential that every employee _____ the new protocols.",
             "options": [
-                "How long has he been waiting in sector 9?",
-                "When has he been waiting in sector 9?",
-                "Why has he been waiting in sector 9?",
-                "Where has he been waiting in sector 9?"
+                "follow",
+                "follows",
+                "should follow",
+                "followed"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long has he been waiting in sector 9?",
-            "hint": "'For an hour' is a duration. (Sector 9 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 9]."
+            "correctAnswer": "follow",
+            "hint": "After 'it is essential/vital/important that': formal subjunctive = bare infinitive.",
+            "explanation": "After expressions like 'it is essential/vital/necessary/important that', formal English uses the subjunctive (base verb): 'every employee follow' (not 'follows'). 'Should follow' is the informal equivalent and is also widely accepted."
         },
         {
             "id": "qf_l106_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is crying due to fear in sector 9.",
-            "sentence": "She is crying due to fear in sector 9.",
+            "question": "If she had studied medicine, she _____ a doctor now.",
+            "sentence": "If she had studied medicine, she _____ a doctor now.",
             "options": [
-                "Why is she crying in sector 9?",
-                "How is she crying in sector 9?",
-                "Where is she crying in sector 9?",
-                "When is she crying in sector 9?"
+                "would be",
+                "would have been",
+                "will be",
+                "was"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why is she crying in sector 9?",
-            "hint": "'Due to fear' is a reason. (Sector 9 calibration)",
-            "explanation": "Use 'Why' for reasons. [Verified in sector 9]."
+            "correctAnswer": "would be",
+            "hint": "Mixed conditional: past unreal condition + present result → 'would be' (not 'would have been').",
+            "explanation": "Mixed conditionals combine a third-conditional 'if' clause (past perfect) with a second-conditional result (present: 'would be'). This shows how a past decision affects the present. 'Would have been' would be a pure third conditional (past result)."
         },
         {
             "id": "qf_l106_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The motor failed due to heat in sector 9.",
-            "sentence": "The motor failed due to heat in sector 9.",
+            "question": "If he were more patient, he _____ fewer mistakes yesterday.",
+            "sentence": "If he were more patient, he _____ fewer mistakes yesterday.",
             "options": [
-                "Why did the motor fail in sector 9?",
-                "How did the motor fail in sector 9?",
-                "When did the motor fail in sector 9?",
-                "Where did the motor fail in sector 9?"
+                "would have made",
+                "would make",
+                "will have made",
+                "had made"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why did the motor fail in sector 9?",
-            "hint": "'Due to heat' represents a cause. (Sector 9 calibration)",
-            "explanation": "Use 'Why' for causes. [Verified in sector 9]."
+            "correctAnswer": "would have made",
+            "hint": "Reversed mixed conditional: present character condition + past result → 'would have + past participle'.",
+            "explanation": "This mixed conditional uses a second-conditional 'if' clause (present character) with a third-conditional result (past). The person's present nature caused a past consequence."
         },
         {
             "id": "qf_l106_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The base is ten miles away in sector 9.",
-            "sentence": "The base is ten miles away in sector 9.",
+            "question": "If I hadn't moved to this city, I _____ my best friend now.",
+            "sentence": "If I hadn't moved to this city, I _____ my best friend now.",
             "options": [
-                "How far is the base in sector 9?",
-                "How long is the base in sector 9?",
-                "Where is the base in sector 9?",
-                "When is the base in sector 9?"
+                "wouldn't know",
+                "wouldn't have known",
+                "didn't know",
+                "hadn't known"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far is the base in sector 9?",
-            "hint": "'Ten miles away' is a distance. (Sector 9 calibration)",
-            "explanation": "Use 'How far' for distances. [Verified in sector 9]."
+            "correctAnswer": "wouldn't know",
+            "hint": "Past unreal condition → present result: 'wouldn't know' (present, not past perfect).",
+            "explanation": "Mixed conditional: 'if I hadn't moved' (past) affects 'I wouldn't know now' (present). The result is about the present state, so 'would + base verb', not 'would have + past participle'."
         },
         {
             "id": "qf_l107_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They met at the shuttle dock in sector 9.",
-            "sentence": "They met at the shuttle dock in sector 9.",
+            "question": "She's been working for 18 hours. She _____ be exhausted.",
+            "sentence": "She's been working for 18 hours. She _____ be exhausted.",
             "options": [
-                "Where did they meet in sector 9?",
-                "When did they meet in sector 9?",
-                "What did they meet in sector 9?",
-                "Who did they meet in sector 9?"
+                "must",
+                "should",
+                "can",
+                "would"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where did they meet in sector 9?",
-            "hint": "'At the shuttle dock' is a location. (Sector 9 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 9]."
+            "correctAnswer": "must",
+            "hint": "'Must' = strong logical deduction from evidence. 'Should' = weaker expectation.",
+            "explanation": "'Must' expresses strong logical deduction: 18 hours of work → she must be exhausted (near certain). 'Should' expresses expectation ('she should be tired by now'), which is weaker. 'Can + be' for deduction only works in negatives ('can't be')."
         },
         {
             "id": "qf_l107_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She lives in the capital in sector 9.",
-            "sentence": "She lives in the capital in sector 9.",
+            "question": "He just ate a full meal. He _____ be hungry.",
+            "sentence": "He just ate a full meal. He _____ be hungry.",
             "options": [
-                "Where does she live in sector 9?",
-                "When does she live in sector 9?",
-                "Why does she live in sector 9?",
-                "What does she live in sector 9?"
+                "can't",
+                "mustn't",
+                "shouldn't",
+                "wouldn't"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where does she live in sector 9?",
-            "hint": "'In the capital' is a location. (Sector 9 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 9]."
+            "correctAnswer": "can't",
+            "hint": "'Can't' = logical deduction of near-impossibility.",
+            "explanation": "'Can't be' expresses that something is logically impossible or highly unlikely: having just eaten, being hungry is contradictory. 'Mustn't be' expresses prohibition, not deduction. 'Shouldn't be' = weaker expectation."
         },
         {
             "id": "qf_l107_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They visit the hub weekly in sector 9.",
-            "sentence": "They visit the hub weekly in sector 9.",
+            "question": "There's a light on upstairs. Someone _____ be home.",
+            "sentence": "There's a light on upstairs. Someone _____ be home.",
             "options": [
-                "How often do they visit the hub in sector 9?",
-                "How long do they visit the hub in sector 9?",
-                "When do they visit the hub in sector 9?",
-                "Where do they visit the hub in sector 9?"
+                "must",
+                "should",
+                "would",
+                "shall"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How often do they visit the hub in sector 9?",
-            "hint": "'Weekly' is a frequency. (Sector 9 calibration)",
-            "explanation": "Use 'How often' for frequency queries. [Verified in sector 9]."
+            "correctAnswer": "must",
+            "hint": "'Must' = confident deduction from present evidence (the light).",
+            "explanation": "The visible light provides evidence for a confident deduction: 'must be' = almost certainly true. 'Should be' means 'I expect them to be home' - weaker, expectation-based rather than evidence-based."
         },
         {
             "id": "qf_l108_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The launch is next Tuesday in sector 9.",
-            "sentence": "The launch is next Tuesday in sector 9.",
+            "question": "She _____ brought so much food - there are leftovers for a week.",
+            "sentence": "She _____ brought so much food - there are leftovers for a week.",
             "options": [
-                "When is the launch in sector 9?",
-                "Where is the launch in sector 9?",
-                "Why is the launch in sector 9?",
-                "What is the launch in sector 9?"
+                "needn't have",
+                "didn't need to",
+                "shouldn't have",
+                "mustn't have"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When is the launch in sector 9?",
-            "hint": "'Next Tuesday' is a time. (Sector 9 calibration)",
-            "explanation": "Use 'When' for dates/times. [Verified in sector 9]."
+            "correctAnswer": "needn't have",
+            "hint": "'Needn't have + past participle' = she did it, but it wasn't necessary.",
+            "explanation": "'Needn't have + past participle' means the action was done but was unnecessary in retrospect. 'Didn't need to' means she knew before and therefore didn't do it. The leftovers prove she did bring the food, so 'needn't have' is correct."
         },
         {
             "id": "qf_l108_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They wake up at sunrise in sector 9.",
-            "sentence": "They wake up at sunrise in sector 9.",
+            "question": "You _____ told me you were coming - I would have prepared more.",
+            "sentence": "You _____ told me you were coming - I would have prepared more.",
             "options": [
-                "When do they wake up in sector 9?",
-                "Why do they wake up in sector 9?",
-                "Where do they wake up in sector 9?",
-                "Who wakes up in sector 9?"
+                "should have",
+                "could have",
+                "would have",
+                "ought to"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When do they wake up in sector 9?",
-            "hint": "'At sunrise' is a time point. (Sector 9 calibration)",
-            "explanation": "Use 'When' for time points. [Verified in sector 9]."
+            "correctAnswer": "should have",
+            "hint": "'Should have + past participle' = the right thing to do, but it didn't happen (mild criticism).",
+            "explanation": "'Should have told me' expresses a past obligation that wasn't fulfilled - mild criticism. 'Could have' implies ability, not obligation. 'Ought to' would need 'have' after it: 'ought to have told'."
         },
         {
             "id": "qf_l108_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "This shield weighs ten tons in sector 9.",
-            "sentence": "This shield weighs ten tons in sector 9.",
+            "question": "He _____ to stay late - his boss had already left.",
+            "sentence": "He _____ to stay late - his boss had already left.",
             "options": [
-                "How much does this shield weigh in sector 9?",
-                "How many does this shield weigh in sector 9?",
-                "What is the weight in sector 9?",
-                "Why does it weigh in sector 9?"
+                "didn't need",
+                "needn't have",
+                "mustn't have",
+                "shouldn't have"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How much does this shield weigh in sector 9?",
-            "hint": "Weight is a quantity requiring 'How much'. (Sector 9 calibration)",
-            "explanation": "Use 'How much' for weights. [Verified in sector 9]."
+            "correctAnswer": "didn't need",
+            "hint": "'Didn't need to' = it wasn't necessary, and he probably didn't do it.",
+            "explanation": "'Didn't need to' implies both that staying was unnecessary and (knowing this) he probably didn't stay. 'Needn't have' means he did stay unnecessarily. Here, since the boss was gone, staying was unnecessary - and he likely didn't."
         },
         {
             "id": "qf_l109_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He solved the puzzle with a tool in sector 9.",
-            "sentence": "He solved the puzzle with a tool in sector 9.",
+            "question": "The project was expensive. _____, the results were impressive.",
+            "sentence": "The project was expensive. _____, the results were impressive.",
             "options": [
-                "How did he solve the puzzle in sector 9?",
-                "Why did he solve the puzzle in sector 9?",
-                "Where did he solve the puzzle in sector 9?",
-                "Who solved the puzzle in sector 9?"
+                "Nevertheless",
+                "However",
+                "Moreover",
+                "Despite this"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How did he solve the puzzle in sector 9?",
-            "hint": "'With a tool' is a manner or method. (Sector 9 calibration)",
-            "explanation": "Use 'How' for methods. [Verified in sector 9]."
+            "correctAnswer": "Nevertheless",
+            "hint": "'Nevertheless' overcomes an implied obstacle - more forceful than 'however' here.",
+            "explanation": "Both 'nevertheless' and 'however' express contrast. 'Nevertheless' specifically overcomes an obstacle: despite the cost, the results were impressive. 'Moreover' adds information. 'Despite this' is also correct here and equally emphatic."
         },
         {
             "id": "qf_l109_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He fixed it using tape in sector 9.",
-            "sentence": "He fixed it using tape in sector 9.",
+            "question": "_____ working full-time, she manages to study every evening.",
+            "sentence": "_____ working full-time, she manages to study every evening.",
             "options": [
-                "How did he fix it in sector 9?",
-                "Why did he fix it in sector 9?",
-                "Where did he fix it in sector 9?",
-                "When did he fix it in sector 9?"
+                "Despite",
+                "Although",
+                "Even though",
+                "However"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How did he fix it in sector 9?",
-            "hint": "'Using tape' is a method. (Sector 9 calibration)",
-            "explanation": "Use 'How' for methods. [Verified in sector 9]."
+            "correctAnswer": "Despite",
+            "hint": "'Despite' is a preposition followed by a noun/gerund - not a clause.",
+            "explanation": "'Despite + noun phrase/gerund' expresses concession: 'Despite working full-time'. 'Although/even though' are conjunctions and need a full clause with subject and verb: 'Although she works full-time...' 'However' connects two separate sentences and cannot start a clause this way."
         },
         {
             "id": "qf_l109_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The trip lasts ten days in sector 9.",
-            "sentence": "The trip lasts ten days in sector 9.",
+            "question": "She is highly qualified. _____, she has extensive experience.",
+            "sentence": "She is highly qualified. _____, she has extensive experience.",
             "options": [
-                "How long does the trip last in sector 9?",
-                "When does the trip last in sector 9?",
-                "Where does the trip last in sector 9?",
-                "Why does the trip last in sector 9?"
+                "Furthermore",
+                "Nevertheless",
+                "However",
+                "On the other hand"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long does the trip last in sector 9?",
-            "hint": "'Ten days' is a duration. (Sector 9 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 9]."
+            "correctAnswer": "Furthermore",
+            "hint": "'Furthermore/moreover/in addition' add information. 'Nevertheless/however' introduce contrast.",
+            "explanation": "'Furthermore' adds information that reinforces the previous point. Both being qualified and experienced support the same positive conclusion. 'Nevertheless' and 'however' would introduce contrast, which is inappropriate here."
         },
         {
             "id": "qf_l110_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is hiding under the deck in sector 9.",
-            "sentence": "She is hiding under the deck in sector 9.",
+            "question": "The roads were icy. _____, many accidents occurred.",
+            "sentence": "The roads were icy. _____, many accidents occurred.",
             "options": [
-                "Where is she hiding in sector 9?",
-                "What is she hiding in sector 9?",
-                "Why is she hiding in sector 9?",
-                "Who is she hiding in sector 9?"
+                "As a result",
+                "Because",
+                "Since",
+                "For"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where is she hiding in sector 9?",
-            "hint": "'Under the deck' is a location. (Sector 9 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 9]."
+            "correctAnswer": "As a result",
+            "hint": "'As a result' introduces a result between two sentences. 'Because/since' introduce a cause clause (need a subject+verb).",
+            "explanation": "'As a result' connects two complete sentences, introducing a consequence. 'Because', 'since', and 'as' are subordinating conjunctions that introduce clauses within a sentence: 'Because the roads were icy, many accidents occurred.'"
         },
         {
             "id": "qf_l110_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She bought three crates in sector 9.",
-            "sentence": "She bought three crates in sector 9.",
+            "question": "She took an umbrella _____ it wouldn't rain.",
+            "sentence": "She took an umbrella _____ it wouldn't rain.",
             "options": [
-                "How many crates did she buy in sector 9?",
-                "How much crates did she buy in sector 9?",
-                "What did she buy in sector 9?",
-                "Why did she buy crates in sector 9?"
+                "in case",
+                "so that",
+                "because",
+                "since"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How many crates did she buy in sector 9?",
-            "hint": "Countable quantity requires 'How many'. (Sector 9 calibration)",
-            "explanation": "Use 'How many' for countable items. [Verified in sector 9]."
+            "correctAnswer": "in case",
+            "hint": "'In case' = precaution against something that might happen (not because it is happening).",
+            "explanation": "'In case' expresses precaution: she prepared for possible rain. 'So that' expresses purpose ('so that she wouldn't get wet'). 'Because' expresses reason for a past fact - but it wasn't raining when she left."
         },
         {
             "id": "qf_l110_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The colony is very distant in sector 9.",
-            "sentence": "The colony is very distant in sector 9.",
+            "question": "She spoke slowly _____ everyone could understand her.",
+            "sentence": "She spoke slowly _____ everyone could understand her.",
             "options": [
-                "How far is the colony in sector 9?",
-                "Where is the colony in sector 9?",
-                "What is the colony like in sector 9?",
-                "Why is the colony distant in sector 9?"
+                "so that",
+                "so as to",
+                "in order to",
+                "because"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far is the colony in sector 9?",
-            "hint": "'Very distant' is a distance/degree. (Sector 9 calibration)",
-            "explanation": "Use 'How far' for distance. [Verified in sector 9]."
+            "correctAnswer": "so that",
+            "hint": "'So that + clause (with subject)' expresses purpose when both clauses have different subjects.",
+            "explanation": "'So that + subject + verb' expresses purpose when the subjects differ: 'she spoke slowly so that everyone could understand'. 'So as to/in order to' use infinitives and imply the same subject: 'she spoke slowly so as to be understood'."
         }
     ]
 }

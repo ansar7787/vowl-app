@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l21_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is the manager.",
-            "sentence": "He is the manager.",
+            "question": "She doesn't have a car.",
+            "sentence": "She doesn't have a car.",
             "options": [
-                "He is the manager, isn't he?",
-                "Is he the manager?",
-                "He is the manager, is he?",
-                "He is the manager, does he?"
+                "Doesn't she have a car?",
+                "Does she have a car?",
+                "She doesn't have a car?",
+                "Don't she have a car?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He is the manager, isn't he?",
-            "hint": "A positive statement with 'is' takes a negative tag 'isn't he?'.",
-            "explanation": "Positive statement requires a negative tag."
+            "correctAnswer": "Doesn't she have a car?",
+            "hint": "Keep the negative meaning: invert 'doesn't' with 'she' - don't drop the 'not'.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'doesn't' moves before 'she' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l21_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She could have won the race.",
-            "sentence": "She could have won the race.",
+            "question": "They don't live here.",
+            "sentence": "They don't live here.",
             "options": [
-                "Could she have won the race?",
-                "Could have she won the race?",
-                "Should she have won the race?",
-                "She could have won the race?"
+                "Don't they live here?",
+                "Do they live here?",
+                "They don't live here?",
+                "Doesn't they live here?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Could she have won the race?",
-            "hint": "Invert the first auxiliary 'could'.",
-            "explanation": "Invert the primary modal in a perfect modal construction."
+            "correctAnswer": "Don't they live here?",
+            "hint": "Negative questions often check or confirm something. 'Don't' moves to the front, still negative.",
+            "explanation": "To question a negative statement, the contracted negative auxiliary ('don't') inverts with 'they' as a single unit - dropping the 'not' would change the meaning entirely."
         },
         {
             "id": "qf_l21_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The project was finished.",
-            "sentence": "The project was finished.",
+            "question": "He doesn't like vegetables.",
+            "sentence": "He doesn't like vegetables.",
             "options": [
-                "Was the project finished?",
-                "Did the project finish?",
-                "Is the project finished?",
-                "The project was finished?"
+                "Doesn't he like vegetables?",
+                "Does he like vegetables?",
+                "He doesn't like vegetables?",
+                "Don't he like vegetables?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was the project finished?",
-            "hint": "Invert 'was' in passive voice.",
-            "explanation": "Invert auxiliary 'was' and subject."
+            "correctAnswer": "Doesn't he like vegetables?",
+            "hint": "Inverting a negative statement keeps it negative - only the word order changes.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'doesn't' moves before 'he' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l22_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You haven't seen him lately.",
-            "sentence": "You haven't seen him lately.",
+            "question": "She isn't your sister.",
+            "sentence": "She isn't your sister.",
             "options": [
-                "You haven't seen him lately, have you?",
-                "You haven't seen him lately, haven't you?",
-                "Have you seen him lately?",
-                "You haven't seen him lately, did you?"
+                "Isn't she your sister?",
+                "Is she your sister?",
+                "She isn't your sister?",
+                "Aren't she your sister?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You haven't seen him lately, have you?",
-            "hint": "A negative statement with 'haven't' takes a positive tag 'have you?'.",
-            "explanation": "Negative statement requires a positive tag."
+            "correctAnswer": "Isn't she your sister?",
+            "hint": "Keep the negative meaning: invert 'isn't' with 'she' - don't drop the 'not'.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'isn't' moves before 'she' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l22_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They should have reported this.",
-            "sentence": "They should have reported this.",
+            "question": "They aren't ready yet.",
+            "sentence": "They aren't ready yet.",
             "options": [
-                "Should they have reported this?",
-                "Should have they reported this?",
-                "Would they have reported this?",
-                "They should have reported this?"
+                "Aren't they ready yet?",
+                "Are they ready yet?",
+                "They aren't ready yet?",
+                "Isn't they ready yet?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should they have reported this?",
-            "hint": "Invert the first modal 'should'.",
-            "explanation": "Invert the primary modal."
+            "correctAnswer": "Aren't they ready yet?",
+            "hint": "Negative questions often check or confirm something. 'Aren't' moves to the front, still negative.",
+            "explanation": "To question a negative statement, the contracted negative auxiliary ('aren't') inverts with 'they' as a single unit - dropping the 'not' would change the meaning entirely."
         },
         {
             "id": "qf_l22_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are being monitored.",
-            "sentence": "They are being monitored.",
+            "question": "The library isn't open on Sundays.",
+            "sentence": "The library isn't open on Sundays.",
             "options": [
-                "Are they being monitored?",
-                "Do they being monitored?",
-                "Are they monitoring?",
-                "They are being monitored?"
+                "Isn't the library open on sundays?",
+                "Is the library open on sundays?",
+                "The library isn't open on sundays?",
+                "Aren't the library open on sundays?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Are they being monitored?",
-            "hint": "Invert the first auxiliary 'are'.",
-            "explanation": "Invert primary auxiliary."
+            "correctAnswer": "Isn't the library open on sundays?",
+            "hint": "Inverting a negative statement keeps it negative - only the word order changes.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'isn't' moves before 'the library' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l23_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They will arrive on time.",
-            "sentence": "They will arrive on time.",
+            "question": "He didn't call you.",
+            "sentence": "He didn't call you.",
             "options": [
-                "They will arrive on time, won't they?",
-                "They will arrive on time, will they?",
-                "Will they arrive on time?",
-                "They will arrive on time, don't they?"
+                "Didn't he call you?",
+                "Did he call you?",
+                "He didn't call you?",
+                "Doesn't he call you?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They will arrive on time, won't they?",
-            "hint": "A positive future statement with 'will' takes 'won't they?'.",
-            "explanation": "Will shifts to won't in the tag."
+            "correctAnswer": "Didn't he call you?",
+            "hint": "Keep the negative meaning: invert 'didn't' with 'he' - don't drop the 'not'.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'didn't' moves before 'he' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l23_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He would have helped us.",
-            "sentence": "He would have helped us.",
+            "question": "She didn't pass the exam.",
+            "sentence": "She didn't pass the exam.",
             "options": [
-                "Would he have helped us?",
-                "Would have he helped us?",
-                "Could he have helped us?",
-                "He would have helped us?"
+                "Didn't she pass the exam?",
+                "Did she pass the exam?",
+                "She didn't pass the exam?",
+                "Doesn't she pass the exam?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would he have helped us?",
-            "hint": "Invert the first auxiliary 'would'.",
-            "explanation": "Invert the primary modal."
+            "correctAnswer": "Didn't she pass the exam?",
+            "hint": "Negative questions often check or confirm something. 'Didn't' moves to the front, still negative.",
+            "explanation": "To question a negative statement, the contracted negative auxiliary ('didn't') inverts with 'she' as a single unit - dropping the 'not' would change the meaning entirely."
         },
         {
             "id": "qf_l23_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has been arrested.",
-            "sentence": "He has been arrested.",
+            "question": "We didn't book the hotel.",
+            "sentence": "We didn't book the hotel.",
             "options": [
-                "Has he been arrested?",
-                "Did he been arrested?",
-                "Have he been arrested?",
-                "He has been arrested?"
+                "Didn't we book the hotel?",
+                "Did we book the hotel?",
+                "We didn't book the hotel?",
+                "Doesn't we book the hotel?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has he been arrested?",
-            "hint": "Invert 'has'.",
-            "explanation": "Invert primary auxiliary."
+            "correctAnswer": "Didn't we book the hotel?",
+            "hint": "Inverting a negative statement keeps it negative - only the word order changes.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'didn't' moves before 'we' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l24_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She doesn't like coffee.",
-            "sentence": "She doesn't like coffee.",
+            "question": "She wasn't at the party.",
+            "sentence": "She wasn't at the party.",
             "options": [
-                "She doesn't like coffee, does she?",
-                "She doesn't like coffee, doesn't she?",
-                "Does she like coffee?",
-                "She doesn't like coffee, is she?"
+                "Wasn't she at the party?",
+                "Was she at the party?",
+                "She wasn't at the party?",
+                "Weren't she at the party?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She doesn't like coffee, does she?",
-            "hint": "A negative present statement with 'doesn't' takes 'does she?'.",
-            "explanation": "Doesn't shifts to does in the tag."
+            "correctAnswer": "Wasn't she at the party?",
+            "hint": "Keep the negative meaning: invert 'wasn't' with 'she' - don't drop the 'not'.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'wasn't' moves before 'she' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l24_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You must have seen the sign.",
-            "sentence": "You must have seen the sign.",
+            "question": "They weren't surprised.",
+            "sentence": "They weren't surprised.",
             "options": [
-                "Must you have seen the sign?",
-                "Must have you seen the sign?",
-                "Did you have seen the sign?",
-                "You must have seen the sign?"
+                "Weren't they surprised?",
+                "Were they surprised?",
+                "They weren't surprised?",
+                "Wasn't they surprised?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Must you have seen the sign?",
-            "hint": "Invert 'must'.",
-            "explanation": "Invert the primary modal."
+            "correctAnswer": "Weren't they surprised?",
+            "hint": "Negative questions often check or confirm something. 'Weren't' moves to the front, still negative.",
+            "explanation": "To question a negative statement, the contracted negative auxiliary ('weren't') inverts with 'they' as a single unit - dropping the 'not' would change the meaning entirely."
         },
         {
             "id": "qf_l24_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She was being interviewed.",
-            "sentence": "She was being interviewed.",
+            "question": "The food wasn't good.",
+            "sentence": "The food wasn't good.",
             "options": [
-                "Was she being interviewed?",
-                "Did she being interviewed?",
-                "Was she interviewing?",
-                "She was being interviewed?"
+                "Wasn't the food good?",
+                "Was the food good?",
+                "The food wasn't good?",
+                "Weren't the food good?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was she being interviewed?",
-            "hint": "Invert 'was'.",
-            "explanation": "Invert primary auxiliary."
+            "correctAnswer": "Wasn't the food good?",
+            "hint": "Inverting a negative statement keeps it negative - only the word order changes.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'wasn't' moves before 'the food' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l25_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You can drive a shuttle.",
-            "sentence": "You can drive a shuttle.",
+            "question": "He can't swim.",
+            "sentence": "He can't swim.",
             "options": [
-                "You can drive a shuttle, can't you?",
-                "You can drive a shuttle, can you?",
-                "Can you drive a shuttle?",
-                "You can drive a shuttle, don't you?"
+                "Can't he swim?",
+                "Can he swim?",
+                "He can't swim?",
+                "Couldn't he swim?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You can drive a shuttle, can't you?",
-            "hint": "Positive 'can' takes negative 'can't you?'.",
-            "explanation": "Can shifts to can't in the tag."
+            "correctAnswer": "Can't he swim?",
+            "hint": "Keep the negative meaning: invert 'can't' with 'he' - don't drop the 'not'.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'can't' moves before 'he' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l25_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We might have missed them.",
-            "sentence": "We might have missed them.",
+            "question": "She can't drive yet.",
+            "sentence": "She can't drive yet.",
             "options": [
-                "Might we have missed them?",
-                "Might have we missed them?",
-                "Did we might have missed them?",
-                "We might have missed them?"
+                "Can't she drive yet?",
+                "Can she drive yet?",
+                "She can't drive yet?",
+                "Couldn't she drive yet?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Might we have missed them?",
-            "hint": "Invert 'might'.",
-            "explanation": "Invert the primary modal."
+            "correctAnswer": "Can't she drive yet?",
+            "hint": "Negative questions often check or confirm something. 'Can't' moves to the front, still negative.",
+            "explanation": "To question a negative statement, the contracted negative auxiliary ('can't') inverts with 'she' as a single unit - dropping the 'not' would change the meaning entirely."
         },
         {
             "id": "qf_l25_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We have been invited.",
-            "sentence": "We have been invited.",
+            "question": "They can't come tonight.",
+            "sentence": "They can't come tonight.",
             "options": [
-                "Have we been invited?",
-                "Has we been invited?",
-                "Do we been invited?",
-                "We have been invited?"
+                "Can't they come tonight?",
+                "Can they come tonight?",
+                "They can't come tonight?",
+                "Couldn't they come tonight?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Have we been invited?",
-            "hint": "Invert 'have'.",
-            "explanation": "Invert primary auxiliary."
+            "correctAnswer": "Can't they come tonight?",
+            "hint": "Inverting a negative statement keeps it negative - only the word order changes.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'can't' moves before 'they' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l26_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He didn't finish the task.",
-            "sentence": "He didn't finish the task.",
+            "question": "They haven't eaten yet.",
+            "sentence": "They haven't eaten yet.",
             "options": [
-                "He didn't finish the task, did he?",
-                "He didn't finish the task, didn't he?",
-                "Did he finish the task?",
-                "He didn't finish the task, was he?"
+                "Haven't they eaten yet?",
+                "Have they eaten yet?",
+                "They haven't eaten yet?",
+                "Hasn't they eaten yet?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He didn't finish the task, did he?",
-            "hint": "Negative past 'didn't' takes positive 'did he?'.",
-            "explanation": "Didn't shifts to did in the tag."
+            "correctAnswer": "Haven't they eaten yet?",
+            "hint": "Keep the negative meaning: invert 'haven't' with 'they' - don't drop the 'not'.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'haven't' moves before 'they' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l26_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She ought to have apologized.",
-            "sentence": "She ought to have apologized.",
+            "question": "She hasn't replied yet.",
+            "sentence": "She hasn't replied yet.",
             "options": [
-                "Ought she to have apologized?",
-                "Ought to she have apologized?",
-                "Should she to have apologized?",
-                "She ought to have apologized?"
+                "Hasn't she replied yet?",
+                "Has she replied yet?",
+                "She hasn't replied yet?",
+                "Haven't she replied yet?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Ought she to have apologized?",
-            "hint": "Invert 'ought' with the subject.",
-            "explanation": "Invert the first element of 'ought to'."
+            "correctAnswer": "Hasn't she replied yet?",
+            "hint": "Negative questions often check or confirm something. 'Hasn't' moves to the front, still negative.",
+            "explanation": "To question a negative statement, the contracted negative auxiliary ('hasn't') inverts with 'she' as a single unit - dropping the 'not' would change the meaning entirely."
         },
         {
             "id": "qf_l26_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The temple is being restored.",
-            "sentence": "The temple is being restored.",
+            "question": "We haven't met before.",
+            "sentence": "We haven't met before.",
             "options": [
-                "Is the temple being restored?",
-                "Does the temple being restored?",
-                "Is the temple restoring?",
-                "The temple is being restored?"
+                "Haven't we met before?",
+                "Have we met before?",
+                "We haven't met before?",
+                "Hasn't we met before?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is the temple being restored?",
-            "hint": "Invert 'is'.",
-            "explanation": "Invert primary auxiliary."
+            "correctAnswer": "Haven't we met before?",
+            "hint": "Inverting a negative statement keeps it negative - only the word order changes.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'haven't' moves before 'we' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l27_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are ready.",
-            "sentence": "They are ready.",
+            "question": "He shouldn't eat so much sugar.",
+            "sentence": "He shouldn't eat so much sugar.",
             "options": [
-                "They are ready, aren't they?",
-                "They are ready, are they?",
-                "Are they ready?",
-                "They are ready, don't they?"
+                "Shouldn't he eat so much sugar?",
+                "Should he eat so much sugar?",
+                "He shouldn't eat so much sugar?",
+                "Wouldn't he eat so much sugar?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They are ready, aren't they?",
-            "hint": "Positive 'are' takes negative 'aren't they?'.",
-            "explanation": "Are shifts to aren't in the tag."
+            "correctAnswer": "Shouldn't he eat so much sugar?",
+            "hint": "Keep the negative meaning: invert 'shouldn't' with 'he' - don't drop the 'not'.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'shouldn't' moves before 'he' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l27_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They can't have forgotten.",
-            "sentence": "They can't have forgotten.",
+            "question": "She wouldn't prefer coffee.",
+            "sentence": "She wouldn't prefer coffee.",
             "options": [
-                "Can they have forgotten?",
-                "Can't they have forgotten?",
-                "Have they can't forgotten?",
-                "They can't have forgotten?"
+                "Wouldn't she prefer coffee?",
+                "Would she prefer coffee?",
+                "She wouldn't prefer coffee?",
+                "Shouldn't she prefer coffee?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can they have forgotten?",
-            "hint": "Invert modal 'can' (or negative 'can't').",
-            "explanation": "Invert the modal auxiliary."
+            "correctAnswer": "Wouldn't she prefer coffee?",
+            "hint": "Negative questions often check or confirm something. 'Wouldn't' moves to the front, still negative.",
+            "explanation": "To question a negative statement, the contracted negative auxiliary ('wouldn't') inverts with 'she' as a single unit - dropping the 'not' would change the meaning entirely."
         },
         {
             "id": "qf_l27_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They had been warned.",
-            "sentence": "They had been warned.",
+            "question": "They couldn't find a table.",
+            "sentence": "They couldn't find a table.",
             "options": [
-                "Had they been warned?",
-                "Did they had been warned?",
-                "Have they been warned?",
-                "They had been warned?"
+                "Couldn't they find a table?",
+                "Could they find a table?",
+                "They couldn't find a table?",
+                "Wouldn't they find a table?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Had they been warned?",
-            "hint": "Invert 'had'.",
-            "explanation": "Invert primary auxiliary."
+            "correctAnswer": "Couldn't they find a table?",
+            "hint": "Inverting a negative statement keeps it negative - only the word order changes.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'couldn't' moves before 'they' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l28_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She has been working hard.",
-            "sentence": "She has been working hard.",
+            "question": "The bus doesn't stop here.",
+            "sentence": "The bus doesn't stop here.",
             "options": [
-                "She has been working hard, hasn't she?",
-                "She has been working hard, has she?",
-                "Has she been working hard?",
-                "She has been working hard, doesn't she?"
+                "Doesn't the bus stop here?",
+                "Does the bus stop here?",
+                "The bus doesn't stop here?",
+                "Don't the bus stop here?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She has been working hard, hasn't she?",
-            "hint": "Use the first auxiliary 'has' in the tag: 'hasn't she?'.",
-            "explanation": "Has shifts to hasn't in the tag."
+            "correctAnswer": "Doesn't the bus stop here?",
+            "hint": "Keep the negative meaning: invert 'doesn't' with 'the bus' - don't drop the 'not'.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'doesn't' moves before 'the bus' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l28_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You shouldn't have done that.",
-            "sentence": "You shouldn't have done that.",
+            "question": "This seat isn't taken.",
+            "sentence": "This seat isn't taken.",
             "options": [
-                "Should you have done that?",
-                "Shouldn't you have done that?",
-                "Did you shouldn't have done that?",
-                "You shouldn't have done that?"
+                "Isn't this seat taken?",
+                "Is this seat taken?",
+                "This seat isn't taken?",
+                "Aren't this seat taken?"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Shouldn't you have done that?",
-            "hint": "Keep the negative force or invert to negative 'Shouldn't you have done that?'.",
-            "explanation": "Negative inversion is correct."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Isn't this seat taken?",
+            "hint": "Negative questions often check or confirm something. 'Isn't' moves to the front, still negative.",
+            "explanation": "To question a negative statement, the contracted negative auxiliary ('isn't') inverts with 'this seat' as a single unit - dropping the 'not' would change the meaning entirely."
         },
         {
             "id": "qf_l28_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She will be promoted.",
-            "sentence": "She will be promoted.",
+            "question": "You didn't bring your umbrella.",
+            "sentence": "You didn't bring your umbrella.",
             "options": [
-                "Will she be promoted?",
-                "Does she will be promoted?",
-                "Will she promoting?",
-                "She will be promoted?"
+                "Didn't you bring your umbrella?",
+                "Did you bring your umbrella?",
+                "You didn't bring your umbrella?",
+                "Doesn't you bring your umbrella?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will she be promoted?",
-            "hint": "Invert 'will'.",
-            "explanation": "Invert primary auxiliary."
+            "correctAnswer": "Didn't you bring your umbrella?",
+            "hint": "Inverting a negative statement keeps it negative - only the word order changes.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'didn't' moves before 'you' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l29_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You wouldn't do that.",
-            "sentence": "You wouldn't do that.",
+            "question": "She won't be here tomorrow.",
+            "sentence": "She won't be here tomorrow.",
             "options": [
-                "You wouldn't do that, would you?",
-                "You wouldn't do that, wouldn't you?",
-                "Would you do that?",
-                "You wouldn't do that, did you?"
+                "Won't she be here tomorrow?",
+                "Will she be here tomorrow?",
+                "She won't be here tomorrow?",
+                "Wouldn't she be here tomorrow?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You wouldn't do that, would you?",
-            "hint": "Negative 'wouldn't' takes positive 'would you?'.",
-            "explanation": "Wouldn't shifts to would in the tag."
+            "correctAnswer": "Won't she be here tomorrow?",
+            "hint": "Keep the negative meaning: invert 'won't' with 'she' - don't drop the 'not'.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'won't' moves before 'she' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l29_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He wouldn't have agreed.",
-            "sentence": "He wouldn't have agreed.",
+            "question": "He wouldn't help us.",
+            "sentence": "He wouldn't help us.",
             "options": [
-                "Would he have agreed?",
-                "Wouldn't he have agreed?",
-                "Did he wouldn't have agreed?",
-                "He wouldn't have agreed?"
+                "Wouldn't he help us?",
+                "Would he help us?",
+                "He wouldn't help us?",
+                "Won't he help us?"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Wouldn't he have agreed?",
-            "hint": "Keep the negative force for inverted negative modal.",
-            "explanation": "Wouldn't he have agreed is correct."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Wouldn't he help us?",
+            "hint": "Negative questions often check or confirm something. 'Wouldn't' moves to the front, still negative.",
+            "explanation": "To question a negative statement, the contracted negative auxiliary ('wouldn't') inverts with 'he' as a single unit - dropping the 'not' would change the meaning entirely."
         },
         {
             "id": "qf_l29_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He should be informed.",
-            "sentence": "He should be informed.",
+            "question": "You mustn't open this door.",
+            "sentence": "You mustn't open this door.",
             "options": [
-                "Should he be informed?",
-                "Do he should be informed?",
-                "Should he informing?",
-                "He should be informed?"
+                "Mustn't you open this door?",
+                "Must you open this door?",
+                "You mustn't open this door?",
+                "Shouldn't you open this door?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should he be informed?",
-            "hint": "Invert 'should'.",
-            "explanation": "Invert primary auxiliary."
+            "correctAnswer": "Mustn't you open this door?",
+            "hint": "Inverting a negative statement keeps it negative - only the word order changes.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'mustn't' moves before 'you' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l30_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We should go now.",
-            "sentence": "We should go now.",
+            "question": "You haven't finished your homework.",
+            "sentence": "You haven't finished your homework.",
             "options": [
-                "We should go now, shouldn't we?",
-                "We should go now, should we?",
-                "Should we go now?",
-                "We should go now, don't we?"
+                "Haven't you finished your homework?",
+                "Have you finished your homework?",
+                "You haven't finished your homework?",
+                "Hasn't you finished your homework?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "We should go now, shouldn't we?",
-            "hint": "Positive 'should' takes negative 'shouldn't we?'.",
-            "explanation": "Should shifts to shouldn't in the tag."
+            "correctAnswer": "Haven't you finished your homework?",
+            "hint": "Keep the negative meaning: invert 'haven't' with 'you' - don't drop the 'not'.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'haven't' moves before 'you' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         },
         {
             "id": "qf_l30_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We couldn't have known.",
-            "sentence": "We couldn't have known.",
+            "question": "The test wasn't too difficult.",
+            "sentence": "The test wasn't too difficult.",
             "options": [
-                "Could we have known?",
-                "Couldn't we have known?",
-                "Did we couldn't have known?",
-                "We couldn't have known?"
+                "Wasn't the test too difficult?",
+                "Was the test too difficult?",
+                "The test wasn't too difficult?",
+                "Weren't the test too difficult?"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Couldn't we have known?",
-            "hint": "Negative modal inversion.",
-            "explanation": "Couldn't we have known is correct."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Wasn't the test too difficult?",
+            "hint": "Negative questions often check or confirm something. 'Wasn't' moves to the front, still negative.",
+            "explanation": "To question a negative statement, the contracted negative auxiliary ('wasn't') inverts with 'the test' as a single unit - dropping the 'not' would change the meaning entirely."
         },
         {
             "id": "qf_l30_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You would be surprised.",
-            "sentence": "You would be surprised.",
+            "question": "They didn't enjoy the concert.",
+            "sentence": "They didn't enjoy the concert.",
             "options": [
-                "Would you be surprised?",
-                "Do you would be surprised?",
-                "Would you surprising?",
-                "You would be surprised?"
+                "Didn't they enjoy the concert?",
+                "Did they enjoy the concert?",
+                "They didn't enjoy the concert?",
+                "Doesn't they enjoy the concert?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would you be surprised?",
-            "hint": "Invert 'would'.",
-            "explanation": "Invert primary auxiliary."
+            "correctAnswer": "Didn't they enjoy the concert?",
+            "hint": "Inverting a negative statement keeps it negative - only the word order changes.",
+            "explanation": "Negative yes/no questions invert the negative auxiliary itself; 'didn't' moves before 'they' but keeps its negative form, since the question still expresses surprise or seeks confirmation of a negative idea."
         }
     ]
 }

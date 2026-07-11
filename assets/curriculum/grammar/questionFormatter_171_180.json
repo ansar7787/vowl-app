@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l171_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is the manager in sector 16.",
-            "sentence": "He is the manager in sector 16.",
+            "question": "Which correctly identifies the clause type: 'Whoever finishes first can leave early.'",
+            "sentence": "Which correctly identifies the clause type: 'Whoever finishes first can leave early.'",
             "options": [
-                "He is the manager, isn't he in sector 16?",
-                "Is he the manager in sector 16?",
-                "He is the manager, is he in sector 16?",
-                "He is the manager, does he in sector 16?"
+                "'Whoever finishes first' is a free relative clause functioning as the subject.",
+                "'Whoever finishes first' is a defining relative clause modifying a hidden noun.",
+                "'Whoever finishes first' is a conditional clause equivalent to 'if someone finishes first'.",
+                "'Whoever finishes first' is a wh-question embedded in a declarative sentence."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He is the manager, isn't he in sector 16?",
-            "hint": "A positive statement with 'is' takes a negative tag 'isn't he?'. (Sector 16 calibration)",
-            "explanation": "Positive statement requires a negative tag. [Verified in sector 16]."
+            "correctAnswer": "'Whoever finishes first' is a free relative clause functioning as the subject.",
+            "hint": "Free relative clause: 'whoever' = 'the person who' - it acts as its own noun phrase (subject here).",
+            "explanation": "'Whoever finishes first' is a free relative clause, meaning it functions as a complete noun phrase ('the person who finishes first') without a separate antecedent. It is the subject of 'can leave early'. It is not a defining relative clause (which needs an antecedent noun) or a conditional clause."
         },
         {
             "id": "qf_l171_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She could have won the race in sector 16.",
-            "sentence": "She could have won the race in sector 16.",
+            "question": "Which sentence demonstrates the most effective use of ellipsis?",
+            "sentence": "Which sentence demonstrates the most effective use of ellipsis?",
             "options": [
-                "Could she have won the race in sector 16?",
-                "Could have she won the race in sector 16?",
-                "Should she have won the race in sector 16?",
-                "She could have won the race in sector 16?"
+                "A: 'Are you coming?' B: 'I hope so.'",
+                "A: 'Are you coming?' B: 'I hope that I am coming.'",
+                "A: 'Are you coming?' B: 'I hope yes.'",
+                "A: 'Are you coming?' B: 'Coming, hope.'"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Could she have won the race in sector 16?",
-            "hint": "Invert the first auxiliary 'could'. (Sector 16 calibration)",
-            "explanation": "Invert the primary modal in a perfect modal construction. [Verified in sector 16]."
+            "correctAnswer": "A: 'Are you coming?' B: 'I hope so.'",
+            "hint": "'I hope so' = clausal substitution using 'so' for the positive content clause - natural and fluent ellipsis.",
+            "explanation": "'I hope so' is the most natural response, using 'so' as a substitute for the full clause 'that I am coming'. This is clausal substitution combined with ellipsis - the most fluent option. 'I hope that I am coming' is grammatically correct but unnecessarily explicit. 'I hope yes' is not English."
         },
         {
             "id": "qf_l171_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The project was finished in sector 16.",
-            "sentence": "The project was finished in sector 16.",
+            "question": "Which sentence uses 'have' as a main verb in the causative correctly?",
+            "sentence": "Which sentence uses 'have' as a main verb in the causative correctly?",
             "options": [
-                "Was the project finished in sector 16?",
-                "Did the project finish in sector 16?",
-                "Is the project finished in sector 16?",
-                "The project was finished in sector 16?"
+                "She had her car serviced last week.",
+                "She had her car service last week.",
+                "She had her car to be serviced last week.",
+                "She had been her car serviced last week."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was the project finished in sector 16?",
-            "hint": "Invert 'was' in passive voice. (Sector 16 calibration)",
-            "explanation": "Invert auxiliary 'was' and subject. [Verified in sector 16]."
+            "correctAnswer": "She had her car serviced last week.",
+            "hint": "Causative 'have': had + object + past participle (no 'to be', no bare infinitive).",
+            "explanation": "Causative 'have' = 'had + object + past participle': 'had her car serviced'. No 'to be' is added between object and past participle. A bare infinitive ('have her car service') creates a different meaning - it would mean something else entirely in context."
         },
         {
             "id": "qf_l172_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You haven't seen him lately in sector 16.",
-            "sentence": "You haven't seen him lately in sector 16.",
+            "question": "Which option correctly uses 'being' vs 'having been' in a participle clause?",
+            "sentence": "Which option correctly uses 'being' vs 'having been' in a participle clause?",
             "options": [
-                "You haven't seen him lately, have you in sector 16?",
-                "You haven't seen him lately, haven't you in sector 16?",
-                "Have you seen him lately in sector 16?",
-                "You haven't seen him lately, did you in sector 16?"
+                "Being a doctor, she was immediately asked to help.",
+                "Having been a doctor, she was immediately asked to help.",
+                "Being been a doctor, she was immediately asked to help.",
+                "As being a doctor, she was immediately asked to help."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You haven't seen him lately, have you in sector 16?",
-            "hint": "A negative statement with 'haven't' takes a positive tag 'have you?'. (Sector 16 calibration)",
-            "explanation": "Negative statement requires a positive tag. [Verified in sector 16]."
+            "correctAnswer": "Being a doctor, she was immediately asked to help.",
+            "hint": "'Being a doctor' = she is a doctor now (present state). 'Having been a doctor' = she was a doctor in the past (no longer).",
+            "explanation": "'Being a doctor' indicates a current state simultaneous with the main clause. 'Having been a doctor' would imply she no longer is - which conflicts with 'immediately asked to help' in the present context. 'As being' is ungrammatical."
         },
         {
             "id": "qf_l172_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They should have reported this in sector 16.",
-            "sentence": "They should have reported this in sector 16.",
+            "question": "Which sentence uses 'so as to' vs 'so that' correctly?",
+            "sentence": "Which sentence uses 'so as to' vs 'so that' correctly?",
             "options": [
-                "Should they have reported this in sector 16?",
-                "Should have they reported this in sector 16?",
-                "Would they have reported this in sector 16?",
-                "They should have reported this in sector 16?"
+                "She whispered so as not to wake the baby.",
+                "She whispered so that not to wake the baby.",
+                "She whispered so as she wouldn't wake the baby.",
+                "She whispered so to not wake the baby."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should they have reported this in sector 16?",
-            "hint": "Invert the first modal 'should'. (Sector 16 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 16]."
+            "correctAnswer": "She whispered so as not to wake the baby.",
+            "hint": "'So as not to + base verb' = purpose (same subject). 'So that + clause' = purpose (different subject or need for modal).",
+            "explanation": "'So as not to + base verb' is correct when both clauses share the same subject and the purpose is negative. 'So that not to' is ungrammatical - 'so that' requires a full clause. 'So as she wouldn't' mixes the two structures incorrectly."
         },
         {
             "id": "qf_l172_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are being monitored in sector 16.",
-            "sentence": "They are being monitored in sector 16.",
+            "question": "Which sentence correctly uses a cleft structure for focus?",
+            "sentence": "Which sentence correctly uses a cleft structure for focus?",
             "options": [
-                "Are they being monitored in sector 16?",
-                "Do they being monitored in sector 16?",
-                "Are they monitoring in sector 16?",
-                "They are being monitored in sector 16?"
+                "It is the long hours, not the pay, that she finds most difficult.",
+                "It is the long hours, not the pay, which she finds most difficult.",
+                "The long hours, not the pay, is what she finds most difficult.",
+                "It is that the long hours, not the pay, she finds most difficult."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Are they being monitored in sector 16?",
-            "hint": "Invert the first auxiliary 'are'. (Sector 16 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 16]."
+            "correctAnswer": "It is the long hours, not the pay, that she finds most difficult.",
+            "hint": "It-cleft: 'It is + X + that + clause'. 'Which' cannot be used in it-clefts. Word order matters.",
+            "explanation": "It-cleft structures use 'that', not 'which', after the focused element: 'It is X that...'. 'Which' is a relative pronoun used in relative clauses, not cleft structures. 'The long hours, not the pay, is what she finds' creates a wh-cleft - a different but also valid emphatic structure."
         },
         {
             "id": "qf_l173_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They will arrive on time in sector 16.",
-            "sentence": "They will arrive on time in sector 16.",
+            "question": "Which sentence is grammatically correct and most formal?",
+            "sentence": "Which sentence is grammatically correct and most formal?",
             "options": [
-                "They will arrive on time, won't they in sector 16?",
-                "They will arrive on time, will they in sector 16?",
-                "Will they arrive on time in sector 16?",
-                "They will arrive on time, don't they in sector 16?"
+                "The extent to which these factors interact remains to be seen.",
+                "The extent these factors interact to which remains to be seen.",
+                "How much these factors interact to is still to be seen.",
+                "To what extent these factors interact is yet unclear."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They will arrive on time, won't they in sector 16?",
-            "hint": "A positive future statement with 'will' takes 'won't they?'. (Sector 16 calibration)",
-            "explanation": "Will shifts to won't in the tag. [Verified in sector 16]."
+            "correctAnswer": "The extent to which these factors interact remains to be seen.",
+            "hint": "'The extent to which' is the standard formal noun phrase for this type of relative clause.",
+            "explanation": "'The extent to which' is a fixed formal phrase. 'To what extent' is also correct and widely used. 'How much... to' is ungrammatical. 'The extent these factors interact to which' is wrong word order. 'Yet unclear' in the last option is also grammatically valid."
         },
         {
             "id": "qf_l173_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He would have helped us in sector 16.",
-            "sentence": "He would have helped us in sector 16.",
+            "question": "Which sentence uses 'the more...the more' structure most precisely?",
+            "sentence": "Which sentence uses 'the more...the more' structure most precisely?",
             "options": [
-                "Would he have helped us in sector 16?",
-                "Would have he helped us in sector 16?",
-                "Could he have helped us in sector 16?",
-                "He would have helped us in sector 16?"
+                "The more precisely you define the problem, the more efficiently you can solve it.",
+                "The more you define precisely the problem, the more you solve it efficiently.",
+                "More precisely you define the problem, more efficiently you solve it.",
+                "The more precise the problem defined, the efficient the solution."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would he have helped us in sector 16?",
-            "hint": "Invert the first auxiliary 'would'. (Sector 16 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 16]."
+            "correctAnswer": "The more precisely you define the problem, the more efficiently you can solve it.",
+            "hint": "Both halves need 'the + comparative adjective/adverb', and subject+verb follows each 'the more'.",
+            "explanation": "'The more + adverb + subject + verb, the more + adverb + subject + verb' is the correct structure. Both halves need 'the' before the comparative. 'More precisely...' (no 'the') and 'more efficiently...' (no 'the') are wrong. 'The more precise... the efficient' lacks the comparative marker on both adjectives."
         },
         {
             "id": "qf_l173_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has been arrested in sector 16.",
-            "sentence": "He has been arrested in sector 16.",
+            "question": "Which correctly identifies the error: 'He suggested to go to the cinema.'?",
+            "sentence": "Which correctly identifies the error: 'He suggested to go to the cinema.'?",
             "options": [
-                "Has he been arrested in sector 16?",
-                "Did he been arrested in sector 16?",
-                "Have he been arrested in sector 16?",
-                "He has been arrested in sector 16?"
+                "'to go' should be 'going' - 'suggest' takes a gerund, not an infinitive.",
+                "'to go' should be 'we go' - 'suggest' takes a that-clause.",
+                "'He' should be 'It' - 'suggest' requires an impersonal subject.",
+                "There is no error - 'suggest to go' is a valid alternative."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has he been arrested in sector 16?",
-            "hint": "Invert 'has'. (Sector 16 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 16]."
+            "correctAnswer": "'to go' should be 'going' - 'suggest' takes a gerund, not an infinitive.",
+            "hint": "'Suggest + gerund' or 'suggest that + subject + verb'. 'Suggest + infinitive' is always wrong.",
+            "explanation": "'Suggest' never takes a direct infinitive in standard English. The correct forms are: 'suggested going' (gerund) or 'suggested that we go' (that-clause with subjunctive). 'Suggest + infinitive' is a common learner error, often influenced by languages where the equivalent verb takes an infinitive."
         },
         {
             "id": "qf_l174_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She doesn't like coffee in sector 16.",
-            "sentence": "She doesn't like coffee in sector 16.",
+            "question": "Which most precisely expresses a past ability that was used on one occasion?",
+            "sentence": "Which most precisely expresses a past ability that was used on one occasion?",
             "options": [
-                "She doesn't like coffee, does she in sector 16?",
-                "She doesn't like coffee, doesn't she in sector 16?",
-                "Does she like coffee in sector 16?",
-                "She doesn't like coffee, is she in sector 16?"
+                "She managed to open the jar after several attempts.",
+                "She could open the jar after several attempts.",
+                "She was able to open the jar after several attempts.",
+                "She could have opened the jar after several attempts."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She doesn't like coffee, does she in sector 16?",
-            "hint": "A negative present statement with 'doesn't' takes 'does she?'. (Sector 16 calibration)",
-            "explanation": "Doesn't shifts to does in the tag. [Verified in sector 16]."
+            "correctAnswer": "She managed to open the jar after several attempts.",
+            "hint": "For a specific past achievement (single occasion), use 'managed to' or 'was able to' - not 'could'.",
+            "explanation": "For a specific successful achievement on one occasion, 'managed to' or 'was able to' are used, not 'could'. 'Could' expresses general past ability ('she could swim'). 'Could have opened' implies she had the ability but didn't open it. Both 'managed to' and 'was able to' are correct here."
         },
         {
             "id": "qf_l174_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You must have seen the sign in sector 16.",
-            "sentence": "You must have seen the sign in sector 16.",
+            "question": "Which sentence uses 'it' correctly as an anticipatory subject?",
+            "sentence": "Which sentence uses 'it' correctly as an anticipatory subject?",
             "options": [
-                "Must you have seen the sign in sector 16?",
-                "Must have you seen the sign in sector 16?",
-                "Did you have seen the sign in sector 16?",
-                "You must have seen the sign in sector 16?"
+                "It is vital that all employees attend the training session.",
+                "It is vital all employees attending the training session.",
+                "That all employees attend the training session is vital.",
+                "Vital it is that all employees attend the training session."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Must you have seen the sign in sector 16?",
-            "hint": "Invert 'must'. (Sector 16 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 16]."
+            "correctAnswer": "It is vital that all employees attend the training session.",
+            "hint": "Extraposition with dummy 'it': 'It is + adjective + that + clause' (formal, natural).",
+            "explanation": "'It is vital that...' uses a dummy 'it' as the anticipatory subject, allowing the heavy clause to follow. Both 'It is vital that...' and 'That all employees attend... is vital' are grammatically correct. The latter (without 'it') is more formal/literary but both are acceptable."
         },
         {
             "id": "qf_l174_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She was being interviewed in sector 16.",
-            "sentence": "She was being interviewed in sector 16.",
+            "question": "Choose the most grammatically precise sentence:",
+            "sentence": "Choose the most grammatically precise sentence:",
             "options": [
-                "Was she being interviewed in sector 16?",
-                "Did she being interviewed in sector 16?",
-                "Was she interviewing in sector 16?",
-                "She was being interviewed in sector 16?"
+                "The number of people who have applied has increased dramatically.",
+                "The number of people who have applied have increased dramatically.",
+                "The number of people who applied has increased dramatically.",
+                "A number of people who have applied has increased dramatically."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was she being interviewed in sector 16?",
-            "hint": "Invert 'was'. (Sector 16 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 16]."
+            "correctAnswer": "The number of people who have applied has increased dramatically.",
+            "hint": "'The number of + noun' = singular subject → singular verb. 'A number of + noun' = plural verb.",
+            "explanation": "'The number of' is the subject (singular) → 'has increased'. 'A number of people have' is correct because 'a number of' = 'some'. Present perfect 'have applied' is more precise than simple past 'applied' for people currently in the application pool. 'Have increased' (after 'the number') would be a subject-verb agreement error."
         },
         {
             "id": "qf_l175_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You can drive a shuttle in sector 16.",
-            "sentence": "You can drive a shuttle in sector 16.",
+            "question": "Which sentence most elegantly combines two ideas using a participle clause?",
+            "sentence": "Which sentence most elegantly combines two ideas using a participle clause?",
             "options": [
-                "You can drive a shuttle, can't you in sector 16?",
-                "You can drive a shuttle, can you in sector 16?",
-                "Can you drive a shuttle in sector 16?",
-                "You can drive a shuttle, don't you in sector 16?"
+                "Having reviewed all the evidence, the jury reached its verdict.",
+                "After they had reviewed all the evidence, the jury reached its verdict.",
+                "The jury reviewed all the evidence and then reached its verdict.",
+                "The jury, which had reviewed all the evidence, reached its verdict."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You can drive a shuttle, can't you in sector 16?",
-            "hint": "Positive 'can' takes negative 'can't you?'. (Sector 16 calibration)",
-            "explanation": "Can shifts to can't in the tag. [Verified in sector 16]."
+            "correctAnswer": "Having reviewed all the evidence, the jury reached its verdict.",
+            "hint": "Perfect participle clause expresses prior action elegantly without repeating the subject.",
+            "explanation": "'Having reviewed all the evidence' (perfect participle) indicates that the reviewing was completed before the verdict. It is more elegant and concise than the subordinate clause 'after they had reviewed' or a coordinated clause with 'and then'. The subject of the participle and the main clause must match - both refer to 'the jury'."
         },
         {
             "id": "qf_l175_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We might have missed them in sector 16.",
-            "sentence": "We might have missed them in sector 16.",
+            "question": "Which sentence correctly uses 'no sooner...than' and 'hardly...when'?",
+            "sentence": "Which sentence correctly uses 'no sooner...than' and 'hardly...when'?",
             "options": [
-                "Might we have missed them in sector 16?",
-                "Might have we missed them in sector 16?",
-                "Did we might have missed them in sector 16?",
-                "We might have missed them in sector 16?"
+                "Hardly had she arrived when the phone rang.",
+                "Hardly did she arrive when the phone rang.",
+                "No sooner she had arrived than the phone rang.",
+                "Hardly had she arrived when did the phone ring."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Might we have missed them in sector 16?",
-            "hint": "Invert 'might'. (Sector 16 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 16]."
+            "correctAnswer": "Hardly had she arrived when the phone rang.",
+            "hint": "'Hardly had + subject + past participle + when + subject + past simple' - inversion required.",
+            "explanation": "'Hardly had she arrived when the phone rang' is correct. 'Hardly' triggers past-perfect inversion ('had she arrived'), and the second clause uses simple past ('rang'). 'No sooner' uses the same inversion structure but pairs with 'than': 'No sooner had she arrived than the phone rang'. The version 'Hardly did she arrive' uses simple past, not past perfect - less standard."
         },
         {
             "id": "qf_l175_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We have been invited in sector 16.",
-            "sentence": "We have been invited in sector 16.",
+            "question": "Which sentence best uses an appositive noun phrase for concision?",
+            "sentence": "Which sentence best uses an appositive noun phrase for concision?",
             "options": [
-                "Have we been invited in sector 16?",
-                "Has we been invited in sector 16?",
-                "Do we been invited in sector 16?",
-                "We have been invited in sector 16?"
+                "A brilliant strategist, she transformed the company within two years.",
+                "She was a brilliant strategist and she transformed the company within two years.",
+                "She, who was a brilliant strategist, transformed the company within two years.",
+                "Being a brilliant strategist, she transformed the company within two years."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Have we been invited in sector 16?",
-            "hint": "Invert 'have'. (Sector 16 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 16]."
+            "correctAnswer": "A brilliant strategist, she transformed the company within two years.",
+            "hint": "Fronted appositive ('A brilliant strategist,') is the most concise and elegant equivalent of a relative clause.",
+            "explanation": "A fronted appositive noun phrase ('A brilliant strategist') renames or describes the subject without a verb, making it the most concise option. The non-defining relative clause ('who was a brilliant strategist') is also correct but wordier. The participial clause ('Being a brilliant strategist') is also acceptable but implies the strategy is the reason for the transformation."
         },
         {
             "id": "qf_l176_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He didn't finish the task in sector 16.",
-            "sentence": "He didn't finish the task in sector 16.",
+            "question": "What is the pragmatic difference between 'You must be tired' and 'You should be tired'?",
+            "sentence": "What is the pragmatic difference between 'You must be tired' and 'You should be tired'?",
             "options": [
-                "He didn't finish the task, did he in sector 16?",
-                "He didn't finish the task, didn't he in sector 16?",
-                "Did he finish the task in sector 16?",
-                "He didn't finish the task, was he in sector 16?"
+                "'Must be' = confident deduction from evidence; 'should be' = logical expectation without certain evidence.",
+                "'Must be' = obligation; 'should be' = prediction.",
+                "'Must be' = past certainty; 'should be' = present deduction.",
+                "There is no pragmatic difference - both mean the same thing."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He didn't finish the task, did he in sector 16?",
-            "hint": "Negative past 'didn't' takes positive 'did he?'. (Sector 16 calibration)",
-            "explanation": "Didn't shifts to did in the tag. [Verified in sector 16]."
+            "correctAnswer": "'Must be' = confident deduction from evidence; 'should be' = logical expectation without certain evidence.",
+            "hint": "'Must' = evidence-based certain deduction; 'should' = expectation based on logic without direct evidence.",
+            "explanation": "'You must be tired' = I can see evidence of your tiredness (you look pale, you're yawning). 'You should be tired' = logically, given what you've done, I expect you to be tired (whether or not I can see signs of it). 'Must' is stronger and evidence-based; 'should' is weaker and inference-based."
         },
         {
             "id": "qf_l176_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She ought to have apologized in sector 16.",
-            "sentence": "She ought to have apologized in sector 16.",
+            "question": "Which sentence most accurately uses 'will' for a present deduction?",
+            "sentence": "Which sentence most accurately uses 'will' for a present deduction?",
             "options": [
-                "Ought she to have apologized in sector 16?",
-                "Ought to she have apologized in sector 16?",
-                "Should she to have apologized in sector 16?",
-                "She ought to have apologized in sector 16?"
+                "That will be the delivery driver - I ordered something this morning.",
+                "That would be the delivery driver - I ordered something this morning.",
+                "That must be the delivery driver - I ordered something this morning.",
+                "That should be the delivery driver - I ordered something this morning."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Ought she to have apologized in sector 16?",
-            "hint": "Invert 'ought' with the subject. (Sector 16 calibration)",
-            "explanation": "Invert the first element of 'ought to'. [Verified in sector 16]."
+            "correctAnswer": "That will be the delivery driver - I ordered something this morning.",
+            "hint": "'Will' can express a confident present deduction, especially in informal British English.",
+            "explanation": "'That will be' is used in British English for a confident present deduction based on contextual logic - similar to 'must be' but slightly less formal. 'That must be' is also correct and slightly more emphatic. 'That should be' suggests expectation. 'That would be' expresses a polite or tentative deduction."
         },
         {
             "id": "qf_l176_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The temple is being restored in sector 16.",
-            "sentence": "The temple is being restored in sector 16.",
+            "question": "Which is a correct instance of the 'be + about to' structure?",
+            "sentence": "Which is a correct instance of the 'be + about to' structure?",
             "options": [
-                "Is the temple being restored in sector 16?",
-                "Does the temple being restored in sector 16?",
-                "Is the temple restoring in sector 16?",
-                "The temple is being restored in sector 16?"
+                "She is about to make a presentation.",
+                "She is about to be making a presentation.",
+                "She is about making a presentation.",
+                "She is about to have made a presentation."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is the temple being restored in sector 16?",
-            "hint": "Invert 'is'. (Sector 16 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 16]."
+            "correctAnswer": "She is about to make a presentation.",
+            "hint": "'Be about to + base verb' = imminent future action happening very soon.",
+            "explanation": "'Be about to + base verb' expresses an action that is immediately going to happen. Only the base infinitive follows: 'about to make'. 'About to be making' (continuous infinitive) is not standard. 'About making' loses the 'to'. 'About to have made' (perfect infinitive) would suggest something that will have been completed, which contradicts 'about to' (imminent)."
         },
         {
             "id": "qf_l177_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are ready in sector 16.",
-            "sentence": "They are ready in sector 16.",
+            "question": "Choose the sentence with the most appropriate register for a formal complaint letter:",
+            "sentence": "Choose the sentence with the most appropriate register for a formal complaint letter:",
             "options": [
-                "They are ready, aren't they in sector 16?",
-                "They are ready, are they in sector 16?",
-                "Are they ready in sector 16?",
-                "They are ready, don't they in sector 16?"
+                "I wish to draw your attention to a matter of considerable concern.",
+                "I want to talk about something that's really bothering me.",
+                "I'm writing to complain about something quite serious.",
+                "I need you to know about this serious problem."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They are ready, aren't they in sector 16?",
-            "hint": "Positive 'are' takes negative 'aren't they?'. (Sector 16 calibration)",
-            "explanation": "Are shifts to aren't in the tag. [Verified in sector 16]."
+            "correctAnswer": "I wish to draw your attention to a matter of considerable concern.",
+            "hint": "Formal letters use indirect, polite vocabulary ('wish to', 'draw attention to', 'considerable concern').",
+            "explanation": "A formal complaint letter uses indirect, polite language: 'wish to' instead of 'want to', 'draw attention to' instead of 'talk about', 'considerable concern' instead of 'really bothering me'. The formal version maintains professional distance while clearly signalling the seriousness of the matter."
         },
         {
             "id": "qf_l177_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They can't have forgotten in sector 16.",
-            "sentence": "They can't have forgotten in sector 16.",
+            "question": "Which sentence correctly uses 'seeing as' or 'given that'?",
+            "sentence": "Which sentence correctly uses 'seeing as' or 'given that'?",
             "options": [
-                "Can they have forgotten in sector 16?",
-                "Can't they have forgotten in sector 16?",
-                "Have they can't forgotten in sector 16?",
-                "They can't have forgotten in sector 16?"
+                "Given that the report is overdue, we should prioritise it.",
+                "Seeing that the report is overdue, it should be prioritised by us.",
+                "Seeing as the report is overdue, it should prioritise.",
+                "Given the report being overdue, we should prioritise it."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can they have forgotten in sector 16?",
-            "hint": "Invert modal 'can' (or negative 'can't'). (Sector 16 calibration)",
-            "explanation": "Invert the modal auxiliary. [Verified in sector 16]."
+            "correctAnswer": "Given that the report is overdue, we should prioritise it.",
+            "hint": "'Given that + clause' introduces a reason. 'Seeing as' is informal. Both are grammatically possible here.",
+            "explanation": "'Given that + clause' is a formal connector introducing a reason or concession. 'Seeing as' is the informal equivalent. 'Given the report being overdue' uses a gerund phrase instead of a clause - less standard. 'It should prioritise' (active) is wrong - the report doesn't prioritise itself."
         },
         {
             "id": "qf_l177_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They had been warned in sector 16.",
-            "sentence": "They had been warned in sector 16.",
+            "question": "Which correctly uses a reporting verb with a that-clause dropped?",
+            "sentence": "Which correctly uses a reporting verb with a that-clause dropped?",
             "options": [
-                "Had they been warned in sector 16?",
-                "Did they had been warned in sector 16?",
-                "Have they been warned in sector 16?",
-                "They had been warned in sector 16?"
+                "She said she'd be late. (= She said that she'd be late.)",
+                "She said would be late.",
+                "She told she'd be late.",
+                "She said it she'd be late."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Had they been warned in sector 16?",
-            "hint": "Invert 'had'. (Sector 16 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 16]."
+            "correctAnswer": "She said she'd be late. (= She said that she'd be late.)",
+            "hint": "'That' is frequently dropped in informal reported speech after 'said'. 'Tell' must have an object.",
+            "explanation": "After 'say', 'that' can be omitted in informal speech: 'She said she'd be late.' 'Tell' requires a direct person object: 'She told me she'd be late.' 'Said would be' (missing the subject pronoun) is ungrammatical. 'Said it she'd be' is non-standard."
         },
         {
             "id": "qf_l178_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She has been working hard in sector 16.",
-            "sentence": "She has been working hard in sector 16.",
+            "question": "Which identifies the correct function of 'for' in: 'For all its faults, the plan is workable.'?",
+            "sentence": "Which identifies the correct function of 'for' in: 'For all its faults, the plan is workable.'?",
             "options": [
-                "She has been working hard, hasn't she in sector 16?",
-                "She has been working hard, has she in sector 16?",
-                "Has she been working hard in sector 16?",
-                "She has been working hard, doesn't she in sector 16?"
+                "'For' here is a concessive preposition meaning 'despite'.",
+                "'For' introduces a purpose clause.",
+                "'For' is a conjunction linking two independent clauses.",
+                "'For' introduces a reason - it means 'because of'."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She has been working hard, hasn't she in sector 16?",
-            "hint": "Use the first auxiliary 'has' in the tag: 'hasn't she?'. (Sector 16 calibration)",
-            "explanation": "Has shifts to hasn't in the tag. [Verified in sector 16]."
+            "correctAnswer": "'For' here is a concessive preposition meaning 'despite'.",
+            "hint": "'For all its faults' = 'despite all its faults' - concessive prepositional phrase.",
+            "explanation": "In 'for all its faults', 'for' is a concessive preposition meaning 'despite'. This is a formal, literary use: 'for all its complexity' = 'despite its complexity'. It is not a conjunction ('for' as conjunction means 'because') or a purpose marker."
         },
         {
             "id": "qf_l178_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You shouldn't have done that in sector 16.",
-            "sentence": "You shouldn't have done that in sector 16.",
+            "question": "Which sentence correctly uses 'else' after a question word?",
+            "sentence": "Which sentence correctly uses 'else' after a question word?",
             "options": [
-                "Should you have done that in sector 16?",
-                "Shouldn't you have done that in sector 16?",
-                "Did you shouldn't have done that in sector 16?",
-                "You shouldn't have done that in sector 16?"
+                "Where else can we go if this doesn't work?",
+                "Where we else can go if this doesn't work?",
+                "Where can we go else if this doesn't work?",
+                "Else where can we go if this doesn't work?"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Shouldn't you have done that in sector 16?",
-            "hint": "Keep the negative force or invert to negative 'Shouldn't you have done that?'. (Sector 16 calibration)",
-            "explanation": "Negative inversion is correct. [Verified in sector 16]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Where else can we go if this doesn't work?",
+            "hint": "'Else' follows the question word/pronoun it modifies: 'where else', 'who else', 'what else'.",
+            "explanation": "'Else' always directly follows the question word or indefinite pronoun it modifies: 'where else', 'who else', 'what else', 'anything else'. Moving 'else' to another position in the sentence is non-standard. 'Elsewhere' is a different word (an adverb)."
         },
         {
             "id": "qf_l178_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She will be promoted in sector 16.",
-            "sentence": "She will be promoted in sector 16.",
+            "question": "Identify the rhetorical device in: 'Ask not what your country can do for you - ask what you can do for your country.'",
+            "sentence": "Identify the rhetorical device in: 'Ask not what your country can do for you - ask what you can do for your country.'",
             "options": [
-                "Will she be promoted in sector 16?",
-                "Does she will be promoted in sector 16?",
-                "Will she promoting in sector 16?",
-                "She will be promoted in sector 16?"
+                "Chiasmus - reversal of the grammatical structure for rhetorical effect.",
+                "Anaphora - repetition of the same phrase at the start of clauses.",
+                "Hyperbole - exaggeration for emphasis.",
+                "Litotes - understatement using a negative."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will she be promoted in sector 16?",
-            "hint": "Invert 'will'. (Sector 16 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 16]."
+            "correctAnswer": "Chiasmus - reversal of the grammatical structure for rhetorical effect.",
+            "hint": "Chiasmus reverses the structure: 'country...you / you...country' creates a mirror pattern.",
+            "explanation": "This is chiasmus - a rhetorical device where the grammatical structure is reversed in the second clause. 'Country...do for...you' becomes 'you...do for...country'. This creates a memorable mirror pattern. Anaphora would be repeating the same words at the start. Hyperbole is exaggeration. Litotes is understatement with negation."
         },
         {
             "id": "qf_l179_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You wouldn't do that in sector 16.",
-            "sentence": "You wouldn't do that in sector 16.",
+            "question": "Which sentence uses 'need' as a modal verb correctly?",
+            "sentence": "Which sentence uses 'need' as a modal verb correctly?",
             "options": [
-                "You wouldn't do that, would you in sector 16?",
-                "You wouldn't do that, wouldn't you in sector 16?",
-                "Would you do that in sector 16?",
-                "You wouldn't do that, did you in sector 16?"
+                "Need she say anything more?",
+                "Does she need say anything more?",
+                "Needs she say anything more?",
+                "Need she to say anything more?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You wouldn't do that, would you in sector 16?",
-            "hint": "Negative 'wouldn't' takes positive 'would you?'. (Sector 16 calibration)",
-            "explanation": "Wouldn't shifts to would in the tag. [Verified in sector 16]."
+            "correctAnswer": "Need she say anything more?",
+            "hint": "Modal 'need': 'Need + subject + base verb?' (no 'do', no 'to', no -s).",
+            "explanation": "When 'need' functions as a modal verb (mainly in questions and negatives), it takes no 'do', no 'to', and no third-person -s: 'Need she say?' As a main verb, it takes 'to': 'Does she need to say?' Both are grammatically correct in standard English, but 'Need she say?' uses modal 'need'."
         },
         {
             "id": "qf_l179_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He wouldn't have agreed in sector 16.",
-            "sentence": "He wouldn't have agreed in sector 16.",
+            "question": "Which correctly uses 'dare' as a semi-modal?",
+            "sentence": "Which correctly uses 'dare' as a semi-modal?",
             "options": [
-                "Would he have agreed in sector 16?",
-                "Wouldn't he have agreed in sector 16?",
-                "Did he wouldn't have agreed in sector 16?",
-                "He wouldn't have agreed in sector 16?"
+                "She dared not speak in his presence.",
+                "She didn't dare to speak in his presence.",
+                "She dare not to speak in his presence.",
+                "She dares not speak in his presence."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Wouldn't he have agreed in sector 16?",
-            "hint": "Keep the negative force for inverted negative modal. (Sector 16 calibration)",
-            "explanation": "Wouldn't he have agreed is correct. [Verified in sector 16]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "She dared not speak in his presence.",
+            "hint": "Semi-modal 'dare': 'dared not + base verb' (no 'to') is formal; 'didn't dare to' is informal.",
+            "explanation": "Semi-modal 'dare not/dared not + base verb' (no 'to') is the formal/literary usage: 'She dared not speak.' As a main verb: 'She didn't dare to speak' or 'She didn't dare speak'. 'Dare not to speak' is non-standard - 'to' is not used after modal 'dare'. 'Dares not' would be archaic."
         },
         {
             "id": "qf_l179_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He should be informed in sector 16.",
-            "sentence": "He should be informed in sector 16.",
+            "question": "Which sentence uses 'the' with a superlative correctly?",
+            "sentence": "Which sentence uses 'the' with a superlative correctly?",
             "options": [
-                "Should he be informed in sector 16?",
-                "Do he should be informed in sector 16?",
-                "Should he informing in sector 16?",
-                "He should be informed in sector 16?"
+                "She is the most qualified candidate we have interviewed.",
+                "She is the most qualified candidate we have ever interviewed.",
+                "She is most qualified candidate we have interviewed.",
+                "She is the most qualified candidate which we have interviewed."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should he be informed in sector 16?",
-            "hint": "Invert 'should'. (Sector 16 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 16]."
+            "correctAnswer": "She is the most qualified candidate we have interviewed.",
+            "hint": "Superlatives always take 'the'. 'Ever' strengthens the superlative in present perfect contexts.",
+            "explanation": "Superlative adjectives always use 'the': 'the most qualified'. 'Ever' is often added with the present perfect for emphasis ('the best I have ever seen'). Omitting 'the' before a superlative is always wrong. 'Which' (instead of 'that/who') is non-standard in defining relative clauses about people."
         },
         {
             "id": "qf_l180_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We should go now in sector 16.",
-            "sentence": "We should go now in sector 16.",
+            "question": "Which sentence correctly uses inversion after 'only when'?",
+            "sentence": "Which sentence correctly uses inversion after 'only when'?",
             "options": [
-                "We should go now, shouldn't we in sector 16?",
-                "We should go now, should we in sector 16?",
-                "Should we go now in sector 16?",
-                "We should go now, don't we in sector 16?"
+                "Only when she read the letter did she understand the truth.",
+                "Only when she read the letter she understood the truth.",
+                "Only when did she read the letter she understood the truth.",
+                "Only when she read the letter, she did understand the truth."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "We should go now, shouldn't we in sector 16?",
-            "hint": "Positive 'should' takes negative 'shouldn't we?'. (Sector 16 calibration)",
-            "explanation": "Should shifts to shouldn't in the tag. [Verified in sector 16]."
+            "correctAnswer": "Only when she read the letter did she understand the truth.",
+            "hint": "'Only when + clause, + inversion in main clause': 'did she understand'.",
+            "explanation": "After 'only when + subordinate clause', the main clause undergoes subject-auxiliary inversion: 'did she understand'. The inversion is in the main clause, not in the 'only when' clause. 'She understood' (no inversion) is the non-emphatic version."
         },
         {
             "id": "qf_l180_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We couldn't have known in sector 16.",
-            "sentence": "We couldn't have known in sector 16.",
+            "question": "Which correctly identifies an error in complex subject-verb agreement?",
+            "sentence": "Which correctly identifies an error in complex subject-verb agreement?",
             "options": [
-                "Could we have known in sector 16?",
-                "Couldn't we have known in sector 16?",
-                "Did we couldn't have known in sector 16?",
-                "We couldn't have known in sector 16?"
+                "'A range of methods are being tested' - 'are' should be 'is' in formal English.",
+                "'A range of methods are being tested' - this is fully correct.",
+                "'A range of methods are being tested' - 'range' should be 'ranges'.",
+                "'A range of methods are being tested' - 'being tested' should be 'being test'."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Couldn't we have known in sector 16?",
-            "hint": "Negative modal inversion. (Sector 16 calibration)",
-            "explanation": "Couldn't we have known is correct. [Verified in sector 16]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "'A range of methods are being tested' - 'are' should be 'is' in formal English.",
+            "hint": "'A range of' is grammatically singular ('a range') but plural agreement is widely used. Formally, 'is' is preferred.",
+            "explanation": "'A range of methods' - the head noun is 'a range' (singular), so formal English uses 'is'. However, 'are' is widely accepted because the semantic plurality of 'methods' influences the verb. Both 'is' and 'are' appear in reputable texts, but formal academic style often prefers 'is'."
         },
         {
             "id": "qf_l180_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You would be surprised in sector 16.",
-            "sentence": "You would be surprised in sector 16.",
+            "question": "Which is the most grammatically sophisticated expression of concession?",
+            "sentence": "Which is the most grammatically sophisticated expression of concession?",
             "options": [
-                "Would you be surprised in sector 16?",
-                "Do you would be surprised in sector 16?",
-                "Would you surprising in sector 16?",
-                "You would be surprised in sector 16?"
+                "Compelling though the argument may be, it overlooks a fundamental flaw.",
+                "Although the argument may be compelling, it overlooks a fundamental flaw.",
+                "Despite the argument being compelling, it overlooks a fundamental flaw.",
+                "The argument is compelling but it overlooks a fundamental flaw."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would you be surprised in sector 16?",
-            "hint": "Invert 'would'. (Sector 16 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 16]."
+            "correctAnswer": "Compelling though the argument may be, it overlooks a fundamental flaw.",
+            "hint": "'Adjective + though + subject + verb' = inverted concessive clause - formal literary style.",
+            "explanation": "'Compelling though the argument may be' inverts the adjective to the front of the concessive clause for rhetorical emphasis. This structure ('Adjective/Adverb + though + subject + verb') is a formal literary alternative to 'Although + subject + verb + adjective'. All options are grammatically correct; the inverted structure is the most sophisticated."
         }
     ]
 }

@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l191_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The keys are on the table in sector 18.",
-            "sentence": "The keys are on the table in sector 18.",
+            "question": "Which sentence uses 'scarcely...when' correctly?",
+            "sentence": "Which sentence uses 'scarcely...when' correctly?",
             "options": [
-                "Where are the keys in sector 18?",
-                "What are the keys in sector 18?",
-                "Who are the keys in sector 18?",
-                "When are the keys in sector 18?"
+                "Scarcely had the ceremony begun when it started to rain.",
+                "Scarcely had the ceremony begun than it started to rain.",
+                "Scarcely did the ceremony begin when it started to rain.",
+                "Scarcely the ceremony had begun when it started to rain."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where are the keys in sector 18?",
-            "hint": "'On the table' represents a location, which requires 'Where'. (Sector 18 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 18]."
+            "correctAnswer": "Scarcely had the ceremony begun when it started to rain.",
+            "hint": "'Scarcely had + subject + past participle + when + past simple' - inversion + 'when'.",
+            "explanation": "'Scarcely' (like 'hardly', 'barely') uses past-perfect inversion and pairs with 'when': 'Scarcely had she left when the phone rang.' 'No sooner' is the only negative adverbial that pairs with 'than'. 'Scarcely did the ceremony begin' uses simple past inversion - less standard. 'Scarcely the ceremony had' (no inversion) is non-standard."
         },
         {
             "id": "qf_l191_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The package arrived yesterday in sector 18.",
-            "sentence": "The package arrived yesterday in sector 18.",
+            "question": "Identify the most precise description of the passive in: 'Mistakes were made.'",
+            "sentence": "Identify the most precise description of the passive in: 'Mistakes were made.'",
             "options": [
-                "When did the package arrive in sector 18?",
-                "Where did the package arrive in sector 18?",
-                "Why did the package arrive in sector 18?",
-                "What did the package arrive in sector 18?"
+                "It is an agentless passive used to deflect responsibility.",
+                "It is a past continuous passive expressing an ongoing action.",
+                "It is an impersonal passive with an unspecified agent for academic objectivity.",
+                "It is a stative passive expressing a state rather than an action."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When did the package arrive in sector 18?",
-            "hint": "'Yesterday' is a past time, requiring 'When'. (Sector 18 calibration)",
-            "explanation": "Use 'When' for time queries. [Verified in sector 18]."
+            "correctAnswer": "It is an agentless passive used to deflect responsibility.",
+            "hint": "Agentless passive ('Mistakes were made') deliberately omits the agent - often used to avoid blame.",
+            "explanation": "'Mistakes were made' is an agentless passive - the agent (who made the mistakes) is not mentioned. This is deliberately used in political language to acknowledge error without assigning responsibility. While agentless passives can be used for academic objectivity, in this case the brevity and context suggest deliberate avoidance of accountability."
         },
         {
             "id": "qf_l191_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The flight takes six hours in sector 18.",
-            "sentence": "The flight takes six hours in sector 18.",
+            "question": "Which identifies a genuine semantic difference?",
+            "sentence": "Which identifies a genuine semantic difference?",
             "options": [
-                "How long does the flight take in sector 18?",
-                "When does the flight take in sector 18?",
-                "Where does the flight take in sector 18?",
-                "Why does the flight take in sector 18?"
+                "'He didn't manage to solve it' vs 'He managed not to solve it'.",
+                "Both sentences mean the same - he failed to solve it.",
+                "'Managed not to' is ungrammatical.",
+                "Both sentences mean he succeeded in his aim."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long does the flight take in sector 18?",
-            "hint": "'Six hours' is a duration, requiring 'How long'. (Sector 18 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 18]."
+            "correctAnswer": "'He didn't manage to solve it' vs 'He managed not to solve it'.",
+            "hint": "'Not manage to = fail' vs 'manage not to = succeed in avoiding' - opposite meanings.",
+            "explanation": "'He didn't manage to solve it' = he tried but failed. 'He managed not to solve it' = he succeeded in not solving it (deliberately avoided solving). These are semantically opposite. 'Manage' can be modified by 'not' in either position, but the position changes the meaning entirely."
         },
         {
             "id": "qf_l192_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He left because it was late in sector 18.",
-            "sentence": "He left because it was late in sector 18.",
+            "question": "Which correctly uses a nominal relative clause as the object?",
+            "sentence": "Which correctly uses a nominal relative clause as the object?",
             "options": [
-                "Why did he leave in sector 18?",
-                "When did he leave in sector 18?",
-                "Where did he leave in sector 18?",
-                "How did he leave in sector 18?"
+                "Tell me what you need.",
+                "Tell me that you need.",
+                "Tell me which you need.",
+                "Tell me what do you need."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why did he leave in sector 18?",
-            "hint": "'Because it was late' indicates a reason, requiring 'Why'. (Sector 18 calibration)",
-            "explanation": "Use 'Why' for reasons. [Verified in sector 18]."
+            "correctAnswer": "Tell me what you need.",
+            "hint": "'What you need' = free relative clause functioning as direct object ('the thing(s) you need').",
+            "explanation": "'What you need' is a free relative clause (nominal relative clause) acting as the object. 'What' means 'the thing(s) that'. 'That you need' would be a that-clause but sounds incomplete as a direct object of 'tell'. 'Which you need' would need a referent ('tell me which one you need'). 'What do you need' inverts for a direct question - wrong here."
         },
         {
             "id": "qf_l192_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are travelling by capsule in sector 18.",
-            "sentence": "They are travelling by capsule in sector 18.",
+            "question": "Which identifies the most subtle error in complex tense use?",
+            "sentence": "Which identifies the most subtle error in complex tense use?",
             "options": [
-                "How are they travelling in sector 18?",
-                "Why are they travelling in sector 18?",
-                "Where are they travelling in sector 18?",
-                "When are they travelling in sector 18?"
+                "'If I would have known, I would have helped.' - 'would have known' should be 'had known'.",
+                "'If I would have known' is correct third conditional.",
+                "'I would have helped' should be 'I will have helped'.",
+                "The sentence should use 'could' instead of 'would' throughout."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How are they travelling in sector 18?",
-            "hint": "'By capsule' is a means of transport. (Sector 18 calibration)",
-            "explanation": "Use 'How' for transportation methods. [Verified in sector 18]."
+            "correctAnswer": "'If I would have known, I would have helped.' - 'would have known' should be 'had known'.",
+            "hint": "'Would' cannot appear in the 'if' clause of third conditional - use 'had + past participle'.",
+            "explanation": "In the third conditional, the 'if' clause uses the past perfect ('had known'), never 'would have'. 'If I would have known' is a very common learner error, often influenced by other languages. The result clause correctly uses 'would have helped'."
         },
         {
             "id": "qf_l192_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "This fuel costs fifty coins in sector 18.",
-            "sentence": "This fuel costs fifty coins in sector 18.",
+            "question": "Which sentence correctly uses 'either...or' with subject-verb agreement?",
+            "sentence": "Which sentence correctly uses 'either...or' with subject-verb agreement?",
             "options": [
-                "How much does this fuel cost in sector 18?",
-                "How many does this fuel cost in sector 18?",
-                "What cost is this fuel in sector 18?",
-                "Why does this fuel cost in sector 18?"
+                "Either the manager or the assistants are responsible.",
+                "Either the manager or the assistants is responsible.",
+                "Either the manager or the assistants were responsible.",
+                "Either the managers or the assistant is responsible."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How much does this fuel cost in sector 18?",
-            "hint": "Uncountable cost/value requires 'How much'. (Sector 18 calibration)",
-            "explanation": "Use 'How much' for costs. [Verified in sector 18]."
+            "correctAnswer": "Either the manager or the assistants are responsible.",
+            "hint": "With 'either...or', the verb agrees with the nearest subject ('the assistants' - plural).",
+            "explanation": "With 'either...or', the verb agrees with the subject nearest to it. 'The assistants' (plural) is nearest, so 'are' is correct. If the order were reversed ('either the assistants or the manager'), 'is' would be correct. This is the same rule as for 'neither...nor'."
         },
         {
             "id": "qf_l193_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She arrives at 6 PM in sector 18.",
-            "sentence": "She arrives at 6 PM in sector 18.",
+            "question": "Which sentence most precisely uses 'the fact that' vs 'that'?",
+            "sentence": "Which sentence most precisely uses 'the fact that' vs 'that'?",
             "options": [
-                "What time does she arrive in sector 18?",
-                "Where does she arrive in sector 18?",
-                "Why does she arrive in sector 18?",
-                "Who does she arrive in sector 18?"
+                "The fact that she succeeded surprised everyone.",
+                "That she succeeded surprised everyone.",
+                "The fact she succeeded surprised everyone.",
+                "The fact which she succeeded surprised everyone."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "What time does she arrive in sector 18?",
-            "hint": "'At 6 PM' represents a time, requiring 'What time' or 'When'. (Sector 18 calibration)",
-            "explanation": "Use 'What time' for specific hours. [Verified in sector 18]."
+            "correctAnswer": "The fact that she succeeded surprised everyone.",
+            "hint": "'The fact that' is more explicit than a bare 'that-clause' as subject; 'that' alone is also grammatically correct.",
+            "explanation": "Both 'That she succeeded surprised everyone' (nominal that-clause as subject) and 'The fact that she succeeded surprised everyone' are grammatically correct. 'The fact that' makes the nominative clause more explicit by using a head noun. 'The fact she succeeded' (without 'that') omits the complementizer, which is less standard in formal writing."
         },
         {
             "id": "qf_l193_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She wants a coffee in sector 18.",
-            "sentence": "She wants a coffee in sector 18.",
+            "question": "Which best explains 'mitigated assertion' in the sentence: 'It would appear that there may be some inconsistencies.'?",
+            "sentence": "Which best explains 'mitigated assertion' in the sentence: 'It would appear that there may be some inconsistencies.'?",
             "options": [
-                "What does she want in sector 18?",
-                "Who does she want in sector 18?",
-                "Why does she want in sector 18?",
-                "Where does she want in sector 18?"
+                "Multiple hedges ('would appear', 'may be', 'some') are stacked to express maximum epistemic caution.",
+                "The sentence is ungrammatical because too many hedges cannot be stacked.",
+                "'Would appear' implies the speaker is lying or uncertain.",
+                "'May be' is redundant since 'would appear' already expresses uncertainty."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "What does she want in sector 18?",
-            "hint": "'A coffee' is a thing, requiring 'What'. (Sector 18 calibration)",
-            "explanation": "Use 'What' for things. [Verified in sector 18]."
+            "correctAnswer": "Multiple hedges ('would appear', 'may be', 'some') are stacked to express maximum epistemic caution.",
+            "hint": "Stacking hedges ('would appear', 'may', 'some') is a legitimate and sophisticated academic device.",
+            "explanation": "Stacking multiple hedging devices ('would appear', 'may be', 'some inconsistencies') is an advanced academic writing technique that maximises epistemic caution - appropriate when the evidence is tentative. It is grammatically correct and common in careful academic writing. The hedges are not redundant - each targets a different aspect of the claim."
         },
         {
             "id": "qf_l193_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They practice three times a day in sector 18.",
-            "sentence": "They practice three times a day in sector 18.",
+            "question": "Which sentence uses a 'verbless clause' correctly?",
+            "sentence": "Which sentence uses a 'verbless clause' correctly?",
             "options": [
-                "How often do they practice in sector 18?",
-                "How long do they practice in sector 18?",
-                "When do they practice in sector 18?",
-                "Where do they practice in sector 18?"
+                "Though exhausted, she continued working.",
+                "Though she was exhausted but continued working.",
+                "Though exhausted but, she continued working.",
+                "Exhausted though but, she continued working."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How often do they practice in sector 18?",
-            "hint": "'Three times a day' is a frequency. (Sector 18 calibration)",
-            "explanation": "Use 'How often' for frequencies. [Verified in sector 18]."
+            "correctAnswer": "Though exhausted, she continued working.",
+            "hint": "Verbless clause: 'Though + adjective' = a reduced concessive clause omitting subject and verb.",
+            "explanation": "'Though exhausted' is a verbless concessive clause = 'though she was exhausted'. The subject and auxiliary are omitted. 'Though...but' mixes two connectors. 'Exhausted though but' is ungrammatical. The full version ('though she was exhausted') and the inverted version ('exhausted though she was') are both also correct."
         },
         {
             "id": "qf_l194_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They went to the space base in sector 18.",
-            "sentence": "They went to the space base in sector 18.",
+            "question": "Which sentence contains a 'transferred epithet' (hypallage)?",
+            "sentence": "Which sentence contains a 'transferred epithet' (hypallage)?",
             "options": [
-                "Where did they go in sector 18?",
-                "Why did they go in sector 18?",
-                "What did they go in sector 18?",
-                "When did they go in sector 18?"
+                "She had a restless night.",
+                "She had a night of restlessness.",
+                "She was restless throughout the night.",
+                "The restless night kept her awake."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where did they go in sector 18?",
-            "hint": "'To the space base' is a destination/location. (Sector 18 calibration)",
-            "explanation": "Use 'Where' for destinations. [Verified in sector 18]."
+            "correctAnswer": "She had a restless night.",
+            "hint": "A transferred epithet shifts the adjective from the noun it logically modifies to an associated noun.",
+            "explanation": "'A restless night' is a transferred epithet - 'restless' logically describes the person (she was restless), not the night. The adjective has been transferred to the noun it is associated with. This is a common stylistic device in English. 'A night of restlessness' or 'she was restless throughout the night' express the same idea without the transfer."
         },
         {
             "id": "qf_l194_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He chose the red wire in sector 18.",
-            "sentence": "He chose the red wire in sector 18.",
+            "question": "Which correctly uses 'if only' for past regret?",
+            "sentence": "Which correctly uses 'if only' for past regret?",
             "options": [
-                "Which wire did he choose in sector 18?",
-                "What wire does he choose in sector 18?",
-                "Who chose the wire in sector 18?",
-                "Why did he choose the wire in sector 18?"
+                "If only I had taken that job offer ten years ago!",
+                "If only I took that job offer ten years ago!",
+                "If only I would have taken that job offer ten years ago!",
+                "If only I had been taking that job offer ten years ago!"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Which wire did he choose in sector 18?",
-            "hint": "Choosing from a limited set requires 'Which'. (Sector 18 calibration)",
-            "explanation": "Use 'Which' for selection. [Verified in sector 18]."
+            "correctAnswer": "If only I had taken that job offer ten years ago!",
+            "hint": "'If only + past perfect' expresses strong regret about a past situation.",
+            "explanation": "'If only + past perfect' (had taken) expresses intense regret about a past event that didn't happen. 'If only I took' uses past simple - appropriate for present wishes, not past regrets. 'Would have taken' cannot follow 'if only' (same rule as third conditional). 'Had been taking' (continuous) is less natural for a single past decision."
         },
         {
             "id": "qf_l194_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She walked five miles in sector 18.",
-            "sentence": "She walked five miles in sector 18.",
+            "question": "Which sentence most precisely uses 'regardless' vs 'irrespective'?",
+            "sentence": "Which sentence most precisely uses 'regardless' vs 'irrespective'?",
             "options": [
-                "How far did she walk in sector 18?",
-                "How long did she walk in sector 18?",
-                "Where did she walk in sector 18?",
-                "Why did she walk in sector 18?"
+                "Regardless of the cost, we will proceed.",
+                "Irrespective of the cost, we will proceed.",
+                "Regardless the cost, we will proceed.",
+                "Irrespective the cost, we will proceed."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far did she walk in sector 18?",
-            "hint": "'Five miles' is a distance. (Sector 18 calibration)",
-            "explanation": "Use 'How far' for distances. [Verified in sector 18]."
+            "correctAnswer": "Regardless of the cost, we will proceed.",
+            "hint": "Both 'regardless of' and 'irrespective of' are correct. 'Regardless of' is more common in informal contexts; 'irrespective of' is more formal.",
+            "explanation": "Both 'regardless of' and 'irrespective of' + noun phrase are grammatically correct and mean the same thing. 'Irrespective of' is typically more formal. 'Regardless' and 'irrespective' always take 'of' - 'regardless the cost' and 'irrespective the cost' are both wrong."
         },
         {
             "id": "qf_l195_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is talking to the commander in sector 18.",
-            "sentence": "He is talking to the commander in sector 18.",
+            "question": "Which correctly uses 'have yet to' in a formal negative statement?",
+            "sentence": "Which correctly uses 'have yet to' in a formal negative statement?",
             "options": [
-                "Who is he talking to in sector 18?",
-                "What is he talking to in sector 18?",
-                "Why is he talking to in sector 18?",
-                "Where is he talking in sector 18?"
+                "The committee has yet to respond to our request.",
+                "The committee yet has to respond to our request.",
+                "The committee has to yet respond to our request.",
+                "The committee has yet respond to our request."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Who is he talking to in sector 18?",
-            "hint": "'The commander' is a person, requiring 'Who'. (Sector 18 calibration)",
-            "explanation": "Use 'Who' for people. [Verified in sector 18]."
+            "correctAnswer": "The committee has yet to respond to our request.",
+            "hint": "'Have yet to + base verb' = still hasn't done X. 'Yet' is positioned between 'have' and 'to'.",
+            "explanation": "'Has yet to respond' = hasn't responded yet (formal). 'Yet' must be between 'have' and 'to': 'has yet to'. 'Yet has to' sounds awkward. 'Has to yet respond' is wrong word order. 'Has yet respond' (without 'to') is ungrammatical."
         },
         {
             "id": "qf_l195_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They called the security guard in sector 18.",
-            "sentence": "They called the security guard in sector 18.",
+            "question": "Which sentence correctly combines two past perfect constructions for a complex narrative?",
+            "sentence": "Which sentence correctly combines two past perfect constructions for a complex narrative?",
             "options": [
-                "Who did they call in sector 18?",
-                "What did they call in sector 18?",
-                "Why did they call in sector 18?",
-                "Where did they call in sector 18?"
+                "After she had reviewed the data and had drafted the summary, she submitted the report.",
+                "After she had reviewed the data and drafted the summary, she submitted the report.",
+                "After reviewing the data and drafting the summary, she submitted the report.",
+                "After she had reviewed the data and she had drafted the summary, she submitted the report."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Who did they call in sector 18?",
-            "hint": "'The security guard' is a person. (Sector 18 calibration)",
-            "explanation": "Use 'Who' for human objects. [Verified in sector 18]."
+            "correctAnswer": "After she had reviewed the data and had drafted the summary, she submitted the report.",
+            "hint": "When two completed past actions precede the main past event, both may use past perfect (or the second can omit 'had').",
+            "explanation": "When a list of prior actions is introduced by 'after', it is acceptable to use the past perfect for the first and omit 'had' for subsequent parallel verbs ('had reviewed and drafted'). Both 'had reviewed and had drafted' (explicit) and 'had reviewed and drafted' (ellipsis of second 'had') are correct. The participial clause 'After reviewing and drafting' is also correct and more concise."
         },
         {
             "id": "qf_l195_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has been waiting for an hour in sector 18.",
-            "sentence": "He has been waiting for an hour in sector 18.",
+            "question": "Which sentence demonstrates the most sophisticated use of apposition?",
+            "sentence": "Which sentence demonstrates the most sophisticated use of apposition?",
             "options": [
-                "How long has he been waiting in sector 18?",
-                "When has he been waiting in sector 18?",
-                "Why has he been waiting in sector 18?",
-                "Where has he been waiting in sector 18?"
+                "Professor Chen, a pioneer in quantum computing, delivered the keynote address.",
+                "Professor Chen who is a pioneer in quantum computing delivered the keynote address.",
+                "Professor Chen, who is a pioneer in quantum computing, delivered the keynote address.",
+                "Professor Chen is a pioneer in quantum computing, and she delivered the keynote address."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long has he been waiting in sector 18?",
-            "hint": "'For an hour' is a duration. (Sector 18 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 18]."
+            "correctAnswer": "Professor Chen, a pioneer in quantum computing, delivered the keynote address.",
+            "hint": "A noun phrase appositive (no verb) is more concise than a relative clause with 'who is'.",
+            "explanation": "A noun phrase appositive ('a pioneer in quantum computing') is elegant and concise - it renames the subject without an additional verb or pronoun. The non-defining relative clause ('who is a pioneer') is also correct but wordier. The coordinated clause ('and she delivered') separates ideas that are more naturally integrated."
         },
         {
             "id": "qf_l196_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is crying due to fear in sector 18.",
-            "sentence": "She is crying due to fear in sector 18.",
+            "question": "Which sentence uses 'what' in a 'pseudo-cleft' correctly?",
+            "sentence": "Which sentence uses 'what' in a 'pseudo-cleft' correctly?",
             "options": [
-                "Why is she crying in sector 18?",
-                "How is she crying in sector 18?",
-                "Where is she crying in sector 18?",
-                "When is she crying in sector 18?"
+                "What she needs most is encouragement.",
+                "What she needs most is encouraging.",
+                "What she mostly needs is encouragement.",
+                "What she needs more is encouragement."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why is she crying in sector 18?",
-            "hint": "'Due to fear' is a reason. (Sector 18 calibration)",
-            "explanation": "Use 'Why' for reasons. [Verified in sector 18]."
+            "correctAnswer": "What she needs most is encouragement.",
+            "hint": "Pseudo-cleft: 'What + subject + verb + is + noun phrase' - 'what' introduces the focus element.",
+            "explanation": "A pseudo-cleft (wh-cleft) is formed with 'What + subject + verb + is/was + focus element'. 'What she needs most is encouragement' correctly focuses on 'encouragement'. 'Most' goes directly after 'needs': 'needs most' (not 'mostly needs'). 'Needs more' would be a comparison, not a superlative."
         },
         {
             "id": "qf_l196_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The motor failed due to heat in sector 18.",
-            "sentence": "The motor failed due to heat in sector 18.",
+            "question": "Which sentence most precisely uses 'tend to' for a general pattern?",
+            "sentence": "Which sentence most precisely uses 'tend to' for a general pattern?",
             "options": [
-                "Why did the motor fail in sector 18?",
-                "How did the motor fail in sector 18?",
-                "When did the motor fail in sector 18?",
-                "Where did the motor fail in sector 18?"
+                "Research findings tend to reflect the assumptions of their methodology.",
+                "Research findings tend to be reflected by their methodology.",
+                "Research findings tend reflecting the assumptions of their methodology.",
+                "Research findings tend in reflecting the assumptions of their methodology."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why did the motor fail in sector 18?",
-            "hint": "'Due to heat' represents a cause. (Sector 18 calibration)",
-            "explanation": "Use 'Why' for causes. [Verified in sector 18]."
+            "correctAnswer": "Research findings tend to reflect the assumptions of their methodology.",
+            "hint": "'Tend to + base verb' expresses a general tendency or pattern.",
+            "explanation": "'Tend to + base verb' is the standard structure: 'tend to reflect'. 'Tend to be reflected' (passive) is grammatically correct but changes the meaning. 'Tend reflecting' (gerund) is wrong - 'tend' always takes 'to + base verb'. 'Tend in reflecting' is not standard."
         },
         {
             "id": "qf_l196_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The base is ten miles away in sector 18.",
-            "sentence": "The base is ten miles away in sector 18.",
+            "question": "Which correctly uses 'on account of' as a formal causal preposition?",
+            "sentence": "Which correctly uses 'on account of' as a formal causal preposition?",
             "options": [
-                "How far is the base in sector 18?",
-                "How long is the base in sector 18?",
-                "Where is the base in sector 18?",
-                "When is the base in sector 18?"
+                "The match was postponed on account of heavy rain.",
+                "The match was postponed on account of it rained heavily.",
+                "The match was postponed on account heavy rain.",
+                "On account of, the match was postponed by heavy rain."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far is the base in sector 18?",
-            "hint": "'Ten miles away' is a distance. (Sector 18 calibration)",
-            "explanation": "Use 'How far' for distances. [Verified in sector 18]."
+            "correctAnswer": "The match was postponed on account of heavy rain.",
+            "hint": "'On account of + noun phrase/gerund' - never followed directly by a full clause.",
+            "explanation": "'On account of + noun phrase/gerund' is a formal causal preposition: 'on account of heavy rain'. It cannot be followed by a full clause ('on account of it rained'). 'On account' alone (without 'of') is non-standard. 'On account of, the match...' incorrectly uses a comma after 'of'."
         },
         {
             "id": "qf_l197_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They met at the shuttle dock in sector 18.",
-            "sentence": "They met at the shuttle dock in sector 18.",
+            "question": "Which sentence uses 'rather than' correctly as a coordinator?",
+            "sentence": "Which sentence uses 'rather than' correctly as a coordinator?",
             "options": [
-                "Where did they meet in sector 18?",
-                "When did they meet in sector 18?",
-                "What did they meet in sector 18?",
-                "Who did they meet in sector 18?"
+                "She decided to resign rather than accept the demotion.",
+                "She decided to resign rather than accepting the demotion.",
+                "She decided to resign rather than she would accept the demotion.",
+                "Rather than accepting the demotion, she has decided to resign."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where did they meet in sector 18?",
-            "hint": "'At the shuttle dock' is a location. (Sector 18 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 18]."
+            "correctAnswer": "She decided to resign rather than accept the demotion.",
+            "hint": "'Rather than + bare infinitive' when the preceding verb is an infinitive (parallel structure).",
+            "explanation": "When 'rather than' follows an infinitive ('to resign'), it takes a bare infinitive ('rather than accept') for strict parallelism. 'Rather than accepting' (gerund) is also widely accepted and is becoming the standard. 'Rather than she would accept' uses a full clause, which is non-standard in this position. Option 4 uses a fronted 'rather than + gerund' which is common and acceptable."
         },
         {
             "id": "qf_l197_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She lives in the capital in sector 18.",
-            "sentence": "She lives in the capital in sector 18.",
+            "question": "Which sentence correctly uses 'to' after 'be' as a prepositional verb?",
+            "sentence": "Which sentence correctly uses 'to' after 'be' as a prepositional verb?",
             "options": [
-                "Where does she live in sector 18?",
-                "When does she live in sector 18?",
-                "Why does she live in sector 18?",
-                "What does she live in sector 18?"
+                "This phenomenon is key to understanding climate change.",
+                "This phenomenon is key to understand climate change.",
+                "This phenomenon is key for understanding climate change.",
+                "This phenomenon is key in understanding climate change."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where does she live in sector 18?",
-            "hint": "'In the capital' is a location. (Sector 18 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 18]."
+            "correctAnswer": "This phenomenon is key to understanding climate change.",
+            "hint": "'Key to + gerund' - 'to' here is a preposition, not part of an infinitive.",
+            "explanation": "'Key to + gerund' is the correct structure: 'key to understanding'. 'To' here is a preposition (not part of an infinitive), so it must be followed by a noun/gerund. 'Key to understand' uses an infinitive after a preposition - wrong. 'Key for' and 'key in' are not the standard collocations with 'key'."
         },
         {
             "id": "qf_l197_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They visit the hub weekly in sector 18.",
-            "sentence": "They visit the hub weekly in sector 18.",
+            "question": "Which best describes the function of the subjunctive in: 'I move that the meeting be adjourned.'?",
+            "sentence": "Which best describes the function of the subjunctive in: 'I move that the meeting be adjourned.'?",
             "options": [
-                "How often do they visit the hub in sector 18?",
-                "How long do they visit the hub in sector 18?",
-                "When do they visit the hub in sector 18?",
-                "Where do they visit the hub in sector 18?"
+                "It is a formal subjunctive expressing a procedural motion - the base verb 'be' is used for all subjects.",
+                "'Be adjourned' is a passive infinitive, not a subjunctive.",
+                "'Move that' takes an indicative, not a subjunctive, clause.",
+                "The subjunctive requires 'should be adjourned' in formal English."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How often do they visit the hub in sector 18?",
-            "hint": "'Weekly' is a frequency. (Sector 18 calibration)",
-            "explanation": "Use 'How often' for frequency queries. [Verified in sector 18]."
+            "correctAnswer": "It is a formal subjunctive expressing a procedural motion - the base verb 'be' is used for all subjects.",
+            "hint": "'Move/propose/request that + subject + base verb' (subjunctive) is the formal parliamentary/procedural usage.",
+            "explanation": "'I move that the meeting be adjourned' uses the present subjunctive ('be' instead of 'is') in a formal procedural context - common in parliamentary and formal meeting language. This is the same subjunctive pattern used after 'insist/suggest/demand that'. 'Should be adjourned' is an acceptable informal alternative."
         },
         {
             "id": "qf_l198_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The launch is next Tuesday in sector 18.",
-            "sentence": "The launch is next Tuesday in sector 18.",
+            "question": "Which sentence uses 'far from' correctly as a negative emphasiser?",
+            "sentence": "Which sentence uses 'far from' correctly as a negative emphasiser?",
             "options": [
-                "When is the launch in sector 18?",
-                "Where is the launch in sector 18?",
-                "Why is the launch in sector 18?",
-                "What is the launch in sector 18?"
+                "Far from being a problem, the new policy has improved efficiency.",
+                "Far from a problem, the new policy has improved efficiency.",
+                "Far from being a problem but the new policy has improved efficiency.",
+                "Far from is a problem, the new policy has improved efficiency."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When is the launch in sector 18?",
-            "hint": "'Next Tuesday' is a time. (Sector 18 calibration)",
-            "explanation": "Use 'When' for dates/times. [Verified in sector 18]."
+            "correctAnswer": "Far from being a problem, the new policy has improved efficiency.",
+            "hint": "'Far from + gerund/noun' = the opposite of what might be expected - negative emphasiser.",
+            "explanation": "'Far from + gerund/noun phrase' emphasises the opposite: 'far from being a problem' = it is not a problem at all - in fact the opposite. 'Far from a problem' (without gerund) is also grammatically possible but 'far from being' is more standard. 'Far from...but' mixes two connectors."
         },
         {
             "id": "qf_l198_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They wake up at sunrise in sector 18.",
-            "sentence": "They wake up at sunrise in sector 18.",
+            "question": "Which sentence most accurately uses an 'existential' vs 'predicative' construction?",
+            "sentence": "Which sentence most accurately uses an 'existential' vs 'predicative' construction?",
             "options": [
-                "When do they wake up in sector 18?",
-                "Why do they wake up in sector 18?",
-                "Where do they wake up in sector 18?",
-                "Who wakes up in sector 18?"
+                "There is a chance of success (existential) vs The chance is real (predicative).",
+                "Both sentences use predicative constructions.",
+                "'There is a chance' uses 'there' as a personal pronoun.",
+                "'Existential there' and 'predicative there' are the same grammatical structure."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When do they wake up in sector 18?",
-            "hint": "'At sunrise' is a time point. (Sector 18 calibration)",
-            "explanation": "Use 'When' for time points. [Verified in sector 18]."
+            "correctAnswer": "There is a chance of success (existential) vs The chance is real (predicative).",
+            "hint": "'There is + noun' (existential) introduces a new referent; predicative uses 'be' to describe a quality.",
+            "explanation": "Existential 'there' ('there is a chance') introduces a new, previously unknown referent into the discourse. Predicative constructions ('the chance is real') use 'be' to link a subject with a description/complement. They are distinct grammatical structures. 'There' in existential constructions is a dummy subject with no referential meaning."
         },
         {
             "id": "qf_l198_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "This shield weighs ten tons in sector 18.",
-            "sentence": "This shield weighs ten tons in sector 18.",
+            "question": "Which sentence uses 'the more...the more' with the most precise parallel structure?",
+            "sentence": "Which sentence uses 'the more...the more' with the most precise parallel structure?",
             "options": [
-                "How much does this shield weigh in sector 18?",
-                "How many does this shield weigh in sector 18?",
-                "What is the weight in sector 18?",
-                "Why does it weigh in sector 18?"
+                "The clearer the explanation, the more quickly students grasp the concept.",
+                "The clearer the explanation is, the more students grasp quickly the concept.",
+                "The more clear the explanation, the more quickly students grasp the concept.",
+                "The clearer is the explanation, the more quickly students grasp the concept."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How much does this shield weigh in sector 18?",
-            "hint": "Weight is a quantity requiring 'How much'. (Sector 18 calibration)",
-            "explanation": "Use 'How much' for weights. [Verified in sector 18]."
+            "correctAnswer": "The clearer the explanation, the more quickly students grasp the concept.",
+            "hint": "'The + comparative adj + noun, the more + adverb + subject + verb' - ellipsis of verb in first clause.",
+            "explanation": "'The clearer the explanation, the more quickly students grasp the concept' is correct. The first clause ellipses the verb ('the clearer the explanation [is]'). 'The more clear' is wrong - 'clearer' is the regular comparative of 'clear'. 'The more quickly' correctly uses the comparative adverb. 'The clearer is the explanation' inverts unnecessarily."
         },
         {
             "id": "qf_l199_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He solved the puzzle with a tool in sector 18.",
-            "sentence": "He solved the puzzle with a tool in sector 18.",
+            "question": "Which sentence demonstrates the most sophisticated use of inversion for formal style?",
+            "sentence": "Which sentence demonstrates the most sophisticated use of inversion for formal style?",
             "options": [
-                "How did he solve the puzzle in sector 18?",
-                "Why did he solve the puzzle in sector 18?",
-                "Where did he solve the puzzle in sector 18?",
-                "Who solved the puzzle in sector 18?"
+                "Not until the final chapter does the author reveal the solution.",
+                "The author doesn't reveal the solution until the final chapter.",
+                "The author reveals the solution not until the final chapter.",
+                "The solution is not revealed until the final chapter by the author."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How did he solve the puzzle in sector 18?",
-            "hint": "'With a tool' is a manner or method. (Sector 18 calibration)",
-            "explanation": "Use 'How' for methods. [Verified in sector 18]."
+            "correctAnswer": "Not until the final chapter does the author reveal the solution.",
+            "hint": "'Not until + noun phrase + does + subject + verb' - fronted negative adverbial with inversion.",
+            "explanation": "Fronting 'not until the final chapter' triggers subject-auxiliary inversion in the main clause: 'does the author reveal'. This is a highly formal and emphatic literary structure. The plain version ('the author doesn't reveal') and the passive ('the solution is not revealed') are also correct but less rhetorically sophisticated."
         },
         {
             "id": "qf_l199_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He fixed it using tape in sector 18.",
-            "sentence": "He fixed it using tape in sector 18.",
+            "question": "Which correctly identifies a 'garden-path sentence' and its resolution?",
+            "sentence": "Which correctly identifies a 'garden-path sentence' and its resolution?",
             "options": [
-                "How did he fix it in sector 18?",
-                "Why did he fix it in sector 18?",
-                "Where did he fix it in sector 18?",
-                "When did he fix it in sector 18?"
+                "'The horse raced past the barn fell.' - Misparse: 'raced' is initially read as main verb; it is actually a passive relative clause.",
+                "'The horse raced past the barn fell.' - 'raced' is the main verb; 'fell' is a past participle.",
+                "'The horse raced past the barn fell.' - The sentence is ungrammatical.",
+                "'The horse raced past the barn fell.' - 'raced' and 'fell' are two main verbs connected by ellipsis."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How did he fix it in sector 18?",
-            "hint": "'Using tape' is a method. (Sector 18 calibration)",
-            "explanation": "Use 'How' for methods. [Verified in sector 18]."
+            "correctAnswer": "'The horse raced past the barn fell.' - Misparse: 'raced' is initially read as main verb; it is actually a passive relative clause.",
+            "hint": "Garden-path sentences are grammatically correct but initially misprocessed. 'Raced' = reduced passive relative clause.",
+            "explanation": "'The horse raced past the barn fell' is a famous garden-path sentence. It is grammatically correct: 'The horse [that was] raced past the barn fell [down]'. 'Raced' is a reduced passive relative clause ('that was raced'). Readers initially parse 'raced' as the main verb, leading to a processing dead end when 'fell' is encountered."
         },
         {
             "id": "qf_l199_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The trip lasts ten days in sector 18.",
-            "sentence": "The trip lasts ten days in sector 18.",
+            "question": "Which sentence best uses 'so much so that' for gradation of consequence?",
+            "sentence": "Which sentence best uses 'so much so that' for gradation of consequence?",
             "options": [
-                "How long does the trip last in sector 18?",
-                "When does the trip last in sector 18?",
-                "Where does the trip last in sector 18?",
-                "Why does the trip last in sector 18?"
+                "She was dedicated to her work, so much so that she rarely took holidays.",
+                "She was dedicated to her work, so much that she rarely took holidays.",
+                "She was so dedicated to her work, she rarely took holidays.",
+                "She was dedicated to her work, so so much that she rarely took holidays."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long does the trip last in sector 18?",
-            "hint": "'Ten days' is a duration. (Sector 18 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 18]."
+            "correctAnswer": "She was dedicated to her work, so much so that she rarely took holidays.",
+            "hint": "'So much so that' intensifies a quality already described and introduces its consequence.",
+            "explanation": "'So much so that' is a fixed phrase meaning 'to such an extent that' - it follows and amplifies the previous statement. 'So much that' (without the second 'so') is non-standard. 'She was so dedicated...she rarely took holidays' (without 'so much so that') is also correct and natural but less formal. 'So so much' is a redundant repetition."
         },
         {
             "id": "qf_l200_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is hiding under the deck in sector 18.",
-            "sentence": "She is hiding under the deck in sector 18.",
+            "question": "Which sentence best demonstrates mastery of the English article system?",
+            "sentence": "Which sentence best demonstrates mastery of the English article system?",
             "options": [
-                "Where is she hiding in sector 18?",
-                "What is she hiding in sector 18?",
-                "Why is she hiding in sector 18?",
-                "Who is she hiding in sector 18?"
+                "An unprecedented number of the world's leading scientists have endorsed the findings.",
+                "A unprecedented number of the world's leading scientists have endorsed the findings.",
+                "An unprecedented number of world's leading scientists have endorsed the findings.",
+                "An unprecedented number of the world's leading scientists has endorsed the findings."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where is she hiding in sector 18?",
-            "hint": "'Under the deck' is a location. (Sector 18 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 18]."
+            "correctAnswer": "An unprecedented number of the world's leading scientists have endorsed the findings.",
+            "hint": "'An' before vowel sound; 'the world's' = unique referent; 'have' agrees with plural 'number' in 'a number of'.",
+            "explanation": "'An unprecedented' - 'unprecedented' starts with /ʌn/ (vowel sound). 'The world's leading scientists' - 'the world' is unique. 'An unprecedented number of + plural noun + have' - 'a number of' takes a plural verb. All three article/agreement features are correct only in the first option."
         },
         {
             "id": "qf_l200_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She bought three crates in sector 18.",
-            "sentence": "She bought three crates in sector 18.",
+            "question": "Which sentence most precisely expresses an unverified claim using passive reporting?",
+            "sentence": "Which sentence most precisely expresses an unverified claim using passive reporting?",
             "options": [
-                "How many crates did she buy in sector 18?",
-                "How much crates did she buy in sector 18?",
-                "What did she buy in sector 18?",
-                "Why did she buy crates in sector 18?"
+                "He is alleged to have embezzled funds from the charity.",
+                "He is accused to have embezzled funds from the charity.",
+                "He allegedly embezzled funds from the charity.",
+                "It is alleged that he embezzled funds from the charity."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How many crates did she buy in sector 18?",
-            "hint": "Countable quantity requires 'How many'. (Sector 18 calibration)",
-            "explanation": "Use 'How many' for countable items. [Verified in sector 18]."
+            "correctAnswer": "He is alleged to have embezzled funds from the charity.",
+            "hint": "Both 'is alleged to have' and 'it is alleged that' are correct legal passive reporting structures.",
+            "explanation": "'Is alleged to have + past infinitive' (passive reporting with perfect infinitive) and 'It is alleged that + past simple' are both standard legal/journalistic passive structures. Both are correct. 'Is accused to have' is non-standard - 'accuse' takes 'of + gerund' or 'that + clause', not 'to + infinitive'. 'Allegedly + past simple' is also correct but active rather than passive."
         },
         {
             "id": "qf_l200_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The colony is very distant in sector 18.",
-            "sentence": "The colony is very distant in sector 18.",
+            "question": "Which sentence demonstrates the highest level of grammatical sophistication while remaining perfectly natural?",
+            "sentence": "Which sentence demonstrates the highest level of grammatical sophistication while remaining perfectly natural?",
             "options": [
-                "How far is the colony in sector 18?",
-                "Where is the colony in sector 18?",
-                "What is the colony like in sector 18?",
-                "Why is the colony distant in sector 18?"
+                "Compelling as the evidence may be, we must guard against drawing premature conclusions.",
+                "Although the evidence is compelling, we must guard against drawing premature conclusions.",
+                "Despite the compelling evidence, we must guard against drawing premature conclusions.",
+                "The evidence is compelling; however, we must guard against drawing premature conclusions."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far is the colony in sector 18?",
-            "hint": "'Very distant' is a distance/degree. (Sector 18 calibration)",
-            "explanation": "Use 'How far' for distance. [Verified in sector 18]."
+            "correctAnswer": "Compelling as the evidence may be, we must guard against drawing premature conclusions.",
+            "hint": "'Adjective + as + subject + modal + be' = inverted concessive clause - the most sophisticated structure here.",
+            "explanation": "'Compelling as the evidence may be' uses the formal inverted concessive structure ('Adjective + as + subject + modal/verb'). All four options are grammatically correct. The inverted structure is the most sophisticated while remaining perfectly natural in formal academic or professional writing. It demonstrates mastery of English's full range of concessive structures."
         }
     ]
 }

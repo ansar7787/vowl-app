@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l31_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She likes ice cream in sector 2.",
-            "sentence": "She likes ice cream in sector 2.",
+            "question": "She works at the hospital, ___?",
+            "sentence": "She works at the hospital, ___?",
             "options": [
-                "Does she like ice cream in sector 2?",
-                "Do she likes ice cream in sector 2?",
-                "Is she like ice cream in sector 2?",
-                "She likes ice cream in sector 2?"
+                "She works at the hospital, doesn't she?",
+                "She works at the hospital, does she?",
+                "Does she work at the hospital?",
+                "She works at the hospital, doesn't he?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Does she like ice cream in sector 2?",
-            "hint": "Use 'Does' for third person singular present. (Sector 2 calibration)",
-            "explanation": "Does is the correct present tense auxiliary for 'she'. [Verified in sector 2]."
+            "correctAnswer": "She works at the hospital, doesn't she?",
+            "hint": "A positive statement takes the opposite polarity in its tag.",
+            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'does' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l31_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She can swim well in sector 2.",
-            "sentence": "She can swim well in sector 2.",
+            "question": "You like spicy food, ___?",
+            "sentence": "You like spicy food, ___?",
             "options": [
-                "Can she swim well in sector 2?",
-                "Does she can swim well in sector 2?",
-                "Can she swims well in sector 2?",
-                "She can swim well in sector 2?"
+                "You like spicy food, don't you?",
+                "You like spicy food, do you?",
+                "Do you like spicy food?",
+                "You like spicy food, doesn't she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can she swim well in sector 2?",
-            "hint": "Invert modal 'can' and subject. (Sector 2 calibration)",
-            "explanation": "Can she swim is correct modal inversion. [Verified in sector 2]."
+            "correctAnswer": "You like spicy food, don't you?",
+            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
+            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('do') and subject pronoun, but with the opposite polarity from the main clause, since the statement is positive."
         },
         {
             "id": "qf_l31_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He lives in London in sector 2.",
-            "sentence": "He lives in London in sector 2.",
+            "question": "They play football every Saturday, ___?",
+            "sentence": "They play football every Saturday, ___?",
             "options": [
-                "Does he live in London in sector 2?",
-                "Do he lives in London in sector 2?",
-                "Is he live in London in sector 2?",
-                "He lives in London in sector 2?"
+                "They play football every Saturday, don't they?",
+                "They play football every Saturday, do they?",
+                "Do they play football every Saturday?",
+                "They play football every Saturday, doesn't she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Does he live in London in sector 2?",
-            "hint": "Use 'Does' for present third person singular. (Sector 2 calibration)",
-            "explanation": "Does he live is the correct present question. [Verified in sector 2]."
+            "correctAnswer": "They play football every Saturday, don't they?",
+            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
+            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'do' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l32_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They went to school in sector 2.",
-            "sentence": "They went to school in sector 2.",
+            "question": "She doesn't eat meat, ___?",
+            "sentence": "She doesn't eat meat, ___?",
             "options": [
-                "Did they go to school in sector 2?",
-                "Did they went to school in sector 2?",
-                "Do they went to school in sector 2?",
-                "They went to school in sector 2?"
+                "She doesn't eat meat, does she?",
+                "She doesn't eat meat, doesn't she?",
+                "Does she eat meat?",
+                "She doesn't eat meat, does he?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did they go to school in sector 2?",
-            "hint": "Use 'Did' + base verb for simple past. (Sector 2 calibration)",
-            "explanation": "Did + go is the past tense question form of went. [Verified in sector 2]."
+            "correctAnswer": "She doesn't eat meat, does she?",
+            "hint": "A negative statement takes the opposite polarity in its tag.",
+            "explanation": "Tag questions reverse polarity: a negative statement needs the opposite tag. Here the tag repeats the auxiliary 'does' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l32_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They have finished lunch in sector 2.",
-            "sentence": "They have finished lunch in sector 2.",
+            "question": "He doesn't own a car, ___?",
+            "sentence": "He doesn't own a car, ___?",
             "options": [
-                "Have they finished lunch in sector 2?",
-                "Did they have finished lunch in sector 2?",
-                "Has they finished lunch in sector 2?",
-                "They have finished lunch in sector 2?"
+                "He doesn't own a car, does he?",
+                "He doesn't own a car, doesn't he?",
+                "Does he own a car?",
+                "He doesn't own a car, does she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Have they finished lunch in sector 2?",
-            "hint": "Invert auxiliary 'have' and subject. (Sector 2 calibration)",
-            "explanation": "Have they finished is correct present perfect inversion. [Verified in sector 2]."
+            "correctAnswer": "He doesn't own a car, does he?",
+            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
+            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('does') and subject pronoun, but with the opposite polarity from the main clause, since the statement is negative."
         },
         {
             "id": "qf_l32_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They have a ship in sector 2.",
-            "sentence": "They have a ship in sector 2.",
+            "question": "They don't work on weekends, ___?",
+            "sentence": "They don't work on weekends, ___?",
             "options": [
-                "Do they have a ship in sector 2?",
-                "Has they a ship in sector 2?",
-                "Do they has a ship in sector 2?",
-                "They have a ship in sector 2?"
+                "They don't work on weekends, do they?",
+                "They don't work on weekends, don't they?",
+                "Do they work on weekends?",
+                "They don't work on weekends, does she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do they have a ship in sector 2?",
-            "hint": "Use 'Do' for present plural questions. (Sector 2 calibration)",
-            "explanation": "Do they have is correct. [Verified in sector 2]."
+            "correctAnswer": "They don't work on weekends, do they?",
+            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
+            "explanation": "Tag questions reverse polarity: a negative statement needs the opposite tag. Here the tag repeats the auxiliary 'do' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l33_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is a doctor in sector 2.",
-            "sentence": "He is a doctor in sector 2.",
+            "question": "He is very talented, ___?",
+            "sentence": "He is very talented, ___?",
             "options": [
-                "Is he a doctor in sector 2?",
-                "Does he is a doctor in sector 2?",
-                "Do he a doctor in sector 2?",
-                "He is a doctor in sector 2?"
+                "He is very talented, isn't he?",
+                "He is very talented, is he?",
+                "Is he very talented?",
+                "He is very talented, isn't she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is he a doctor in sector 2?",
-            "hint": "Invert the subject and the verb 'to be'. (Sector 2 calibration)",
-            "explanation": "Is he is the correct inverted form of He is. [Verified in sector 2]."
+            "correctAnswer": "He is very talented, isn't he?",
+            "hint": "A positive statement takes the opposite polarity in its tag.",
+            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'is' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l33_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We will arrive tomorrow in sector 2.",
-            "sentence": "We will arrive tomorrow in sector 2.",
+            "question": "They are ready to leave, ___?",
+            "sentence": "They are ready to leave, ___?",
             "options": [
-                "Will we arrive tomorrow in sector 2?",
-                "Do we will arrive tomorrow in sector 2?",
-                "Will we arrived tomorrow in sector 2?",
-                "We will arrive tomorrow in sector 2?"
+                "They are ready to leave, aren't they?",
+                "They are ready to leave, are they?",
+                "Are they ready to leave?",
+                "They are ready to leave, aren't we?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will we arrive tomorrow in sector 2?",
-            "hint": "Invert modal 'will' and subject. (Sector 2 calibration)",
-            "explanation": "Will we arrive is correct future inversion. [Verified in sector 2]."
+            "correctAnswer": "They are ready to leave, aren't they?",
+            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
+            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('are') and subject pronoun, but with the opposite polarity from the main clause, since the statement is positive."
         },
         {
             "id": "qf_l33_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is reading in sector 2.",
-            "sentence": "She is reading in sector 2.",
+            "question": "She isn't feeling well, ___?",
+            "sentence": "She isn't feeling well, ___?",
             "options": [
-                "Is she reading in sector 2?",
-                "Does she reading in sector 2?",
-                "Is she read in sector 2?",
-                "She is reading in sector 2?"
+                "She isn't feeling well, is she?",
+                "She isn't feeling well, isn't she?",
+                "Is she feeling well?",
+                "She isn't feeling well, is he?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is she reading in sector 2?",
-            "hint": "Invert 'is' and 'she'. (Sector 2 calibration)",
-            "explanation": "Is she reading is correct. [Verified in sector 2]."
+            "correctAnswer": "She isn't feeling well, is she?",
+            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
+            "explanation": "Tag questions reverse polarity: a negative statement needs the opposite tag. Here the tag repeats the auxiliary 'is' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l34_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We have some apples in sector 2.",
-            "sentence": "We have some apples in sector 2.",
+            "question": "He passed his driving test, ___?",
+            "sentence": "He passed his driving test, ___?",
             "options": [
-                "Do we have any apples in sector 2?",
-                "Have we some apples in sector 2?",
-                "Do we has some apples in sector 2?",
-                "We have any apples in sector 2?"
+                "He passed his driving test, didn't he?",
+                "He passed his driving test, did he?",
+                "Did he pass his driving test?",
+                "He passed his driving test, didn't she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do we have any apples in sector 2?",
-            "hint": "Use 'Do' for first person plural questions. (Sector 2 calibration)",
-            "explanation": "Do we have is the standard question form. [Verified in sector 2]."
+            "correctAnswer": "He passed his driving test, didn't he?",
+            "hint": "A positive statement takes the opposite polarity in its tag.",
+            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'did' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l34_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You should wait here in sector 2.",
-            "sentence": "You should wait here in sector 2.",
+            "question": "They didn't enjoy the film, ___?",
+            "sentence": "They didn't enjoy the film, ___?",
             "options": [
-                "Should you wait here in sector 2?",
-                "Do you should wait here in sector 2?",
-                "Should you waiting here in sector 2?",
-                "You should wait here in sector 2?"
+                "They didn't enjoy the film, did they?",
+                "They didn't enjoy the film, didn't they?",
+                "Did they enjoy the film?",
+                "They didn't enjoy the film, does she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should you wait here in sector 2?",
-            "hint": "Invert modal 'should'. (Sector 2 calibration)",
-            "explanation": "Should you wait is correct. [Verified in sector 2]."
+            "correctAnswer": "They didn't enjoy the film, did they?",
+            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
+            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('did') and subject pronoun, but with the opposite polarity from the main clause, since the statement is negative."
         },
         {
             "id": "qf_l34_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We were working in sector 2.",
-            "sentence": "We were working in sector 2.",
+            "question": "She called you last night, ___?",
+            "sentence": "She called you last night, ___?",
             "options": [
-                "Were we working in sector 2?",
-                "Was we working in sector 2?",
-                "Did we working in sector 2?",
-                "We were working in sector 2?"
+                "She called you last night, didn't she?",
+                "She called you last night, did she?",
+                "Did she call you last night?",
+                "She called you last night, didn't he?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Were we working in sector 2?",
-            "hint": "Invert 'were' and 'we'. (Sector 2 calibration)",
-            "explanation": "Were we working is correct. [Verified in sector 2]."
+            "correctAnswer": "She called you last night, didn't she?",
+            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
+            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'did' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l35_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She swam in the pool in sector 2.",
-            "sentence": "She swam in the pool in sector 2.",
+            "question": "The weather was awful, ___?",
+            "sentence": "The weather was awful, ___?",
             "options": [
-                "Did she swim in the pool in sector 2?",
-                "Did she swam in the pool in sector 2?",
-                "Does she swim in the pool in sector 2?",
-                "She swam in the pool in sector 2?"
+                "The weather was awful, wasn't it?",
+                "The weather was awful, was it?",
+                "Was the weather awful?",
+                "The weather was awful, weren't they?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did she swim in the pool in sector 2?",
-            "hint": "Use 'Did' + base verb 'swim'. (Sector 2 calibration)",
-            "explanation": "Did she swim is correct for past actions. [Verified in sector 2]."
+            "correctAnswer": "The weather was awful, wasn't it?",
+            "hint": "A positive statement takes the opposite polarity in its tag.",
+            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'was' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l35_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has seen this movie in sector 2.",
-            "sentence": "He has seen this movie in sector 2.",
+            "question": "They were late for the meeting, ___?",
+            "sentence": "They were late for the meeting, ___?",
             "options": [
-                "Has he seen this movie in sector 2?",
-                "Did he has seen this movie in sector 2?",
-                "Have he seen this movie in sector 2?",
-                "He has seen this movie in sector 2?"
+                "They were late for the meeting, weren't they?",
+                "They were late for the meeting, were they?",
+                "Were they late for the meeting?",
+                "They were late for the meeting, wasn't she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has he seen this movie in sector 2?",
-            "hint": "Invert auxiliary 'has'. (Sector 2 calibration)",
-            "explanation": "Has he seen is correct. [Verified in sector 2]."
+            "correctAnswer": "They were late for the meeting, weren't they?",
+            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
+            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('were') and subject pronoun, but with the opposite polarity from the main clause, since the statement is positive."
         },
         {
             "id": "qf_l35_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He was sleeping in sector 2.",
-            "sentence": "He was sleeping in sector 2.",
+            "question": "She wasn't at school yesterday, ___?",
+            "sentence": "She wasn't at school yesterday, ___?",
             "options": [
-                "Was he sleeping in sector 2?",
-                "Were he sleeping in sector 2?",
-                "Did he sleeping in sector 2?",
-                "He was sleeping in sector 2?"
+                "She wasn't at school yesterday, was she?",
+                "She wasn't at school yesterday, wasn't she?",
+                "Was she at school yesterday?",
+                "She wasn't at school yesterday, was he?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was he sleeping in sector 2?",
-            "hint": "Invert 'was' and 'he'. (Sector 2 calibration)",
-            "explanation": "Was he sleeping is correct. [Verified in sector 2]."
+            "correctAnswer": "She wasn't at school yesterday, was she?",
+            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
+            "explanation": "Tag questions reverse polarity: a negative statement needs the opposite tag. Here the tag repeats the auxiliary 'was' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l36_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The system is online in sector 2.",
-            "sentence": "The system is online in sector 2.",
+            "question": "She has visited Paris before, ___?",
+            "sentence": "She has visited Paris before, ___?",
             "options": [
-                "Is the system online in sector 2?",
-                "Does the system online in sector 2?",
-                "Are the system online in sector 2?",
-                "System is online in sector 2?"
+                "She has visited Paris before, hasn't she?",
+                "She has visited Paris before, has she?",
+                "Has she visited Paris before?",
+                "She has visited Paris before, hasn't he?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is the system online in sector 2?",
-            "hint": "Invert the subject and 'is'. (Sector 2 calibration)",
-            "explanation": "Is the system online is correct. [Verified in sector 2]."
+            "correctAnswer": "She has visited Paris before, hasn't she?",
+            "hint": "A positive statement takes the opposite polarity in its tag.",
+            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'has' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l36_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They could hear us in sector 2.",
-            "sentence": "They could hear us in sector 2.",
+            "question": "They haven't decided yet, ___?",
+            "sentence": "They haven't decided yet, ___?",
             "options": [
-                "Could they hear us in sector 2?",
-                "Did they could hear us in sector 2?",
-                "Could they heard us in sector 2?",
-                "They could hear us in sector 2?"
+                "They haven't decided yet, have they?",
+                "They haven't decided yet, haven't they?",
+                "Have they decided yet?",
+                "They haven't decided yet, has she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Could they hear us in sector 2?",
-            "hint": "Invert modal 'could'. (Sector 2 calibration)",
-            "explanation": "Could they hear is correct. [Verified in sector 2]."
+            "correctAnswer": "They haven't decided yet, have they?",
+            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
+            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('have') and subject pronoun, but with the opposite polarity from the main clause, since the statement is negative."
         },
         {
             "id": "qf_l36_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She has been working in sector 2.",
-            "sentence": "She has been working in sector 2.",
+            "question": "He has already eaten, ___?",
+            "sentence": "He has already eaten, ___?",
             "options": [
-                "Has she been working in sector 2?",
-                "Have she been working in sector 2?",
-                "Does she been working in sector 2?",
-                "She has been working in sector 2?"
+                "He has already eaten, hasn't he?",
+                "He has already eaten, has he?",
+                "Has he already eaten?",
+                "He has already eaten, haven't they?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has she been working in sector 2?",
-            "hint": "Invert auxiliary 'has'. (Sector 2 calibration)",
-            "explanation": "Has she been working is correct. [Verified in sector 2]."
+            "correctAnswer": "He has already eaten, hasn't he?",
+            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
+            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'has' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l37_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They work in the city in sector 2.",
-            "sentence": "They work in the city in sector 2.",
+            "question": "She will be back soon, ___?",
+            "sentence": "She will be back soon, ___?",
             "options": [
-                "Do they work in the city in sector 2?",
-                "Does they work in the city in sector 2?",
-                "Are they work in the city in sector 2?",
-                "They work in the city in sector 2?"
+                "She will be back soon, won't she?",
+                "She will be back soon, will she?",
+                "Will she be back soon?",
+                "She will be back soon, won't he?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do they work in the city in sector 2?",
-            "hint": "Use 'Do' for third person plural present. (Sector 2 calibration)",
-            "explanation": "Do they work is correct. [Verified in sector 2]."
+            "correctAnswer": "She will be back soon, won't she?",
+            "hint": "A positive statement takes the opposite polarity in its tag.",
+            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'will' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l37_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She will help us in sector 2.",
-            "sentence": "She will help us in sector 2.",
+            "question": "He won't forget the appointment, ___?",
+            "sentence": "He won't forget the appointment, ___?",
             "options": [
-                "Will she help us in sector 2?",
-                "Does she will help us in sector 2?",
-                "Will she helps us in sector 2?",
-                "She will help us in sector 2?"
+                "He won't forget the appointment, will he?",
+                "He won't forget the appointment, won't he?",
+                "Will he forget the appointment?",
+                "He won't forget the appointment, won't she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will she help us in sector 2?",
-            "hint": "Invert 'will'. (Sector 2 calibration)",
-            "explanation": "Will she help is correct. [Verified in sector 2]."
+            "correctAnswer": "He won't forget the appointment, will he?",
+            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
+            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('will') and subject pronoun, but with the opposite polarity from the main clause, since the statement is negative."
         },
         {
             "id": "qf_l37_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They had left early in sector 2.",
-            "sentence": "They had left early in sector 2.",
+            "question": "They will enjoy the party, ___?",
+            "sentence": "They will enjoy the party, ___?",
             "options": [
-                "Had they left early in sector 2?",
-                "Did they had left early in sector 2?",
-                "Have they left early in sector 2?",
-                "They had left early in sector 2?"
+                "They will enjoy the party, won't they?",
+                "They will enjoy the party, will they?",
+                "Will they enjoy the party?",
+                "They will enjoy the party, won't she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Had they left early in sector 2?",
-            "hint": "Invert auxiliary 'had'. (Sector 2 calibration)",
-            "explanation": "Had they left is correct. [Verified in sector 2]."
+            "correctAnswer": "They will enjoy the party, won't they?",
+            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
+            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'will' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l38_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He forgot his keys in sector 2.",
-            "sentence": "He forgot his keys in sector 2.",
+            "question": "She can speak three languages, ___?",
+            "sentence": "She can speak three languages, ___?",
             "options": [
-                "Did he forget his keys in sector 2?",
-                "Did he forgot his keys in sector 2?",
-                "Does he forget his keys in sector 2?",
-                "He forgot his keys in sector 2?"
+                "She can speak three languages, can't she?",
+                "She can speak three languages, can she?",
+                "Can she speak three languages?",
+                "She can speak three languages, can't he?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did he forget his keys in sector 2?",
-            "hint": "Use 'Did' + base verb 'forget'. (Sector 2 calibration)",
-            "explanation": "Did he forget is correct. [Verified in sector 2]."
+            "correctAnswer": "She can speak three languages, can't she?",
+            "hint": "A positive statement takes the opposite polarity in its tag.",
+            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'can' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l38_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We must report this in sector 2.",
-            "sentence": "We must report this in sector 2.",
+            "question": "He can't attend the event, ___?",
+            "sentence": "He can't attend the event, ___?",
             "options": [
-                "Must we report this in sector 2?",
-                "Do we must report this in sector 2?",
-                "Must we reporting this in sector 2?",
-                "We must report this in sector 2?"
+                "He can't attend the event, can he?",
+                "He can't attend the event, can't he?",
+                "Can he attend the event?",
+                "He can't attend the event, can't she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Must we report this in sector 2?",
-            "hint": "Invert modal 'must'. (Sector 2 calibration)",
-            "explanation": "Must we report is correct. [Verified in sector 2]."
+            "correctAnswer": "He can't attend the event, can he?",
+            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
+            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('can') and subject pronoun, but with the opposite polarity from the main clause, since the statement is negative."
         },
         {
             "id": "qf_l38_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He can read maps in sector 2.",
-            "sentence": "He can read maps in sector 2.",
+            "question": "They could see the mountains, ___?",
+            "sentence": "They could see the mountains, ___?",
             "options": [
-                "Can he read maps in sector 2?",
-                "Does he can read maps in sector 2?",
-                "Can he reads maps in sector 2?",
-                "He can read maps in sector 2?"
+                "They could see the mountains, couldn't they?",
+                "They could see the mountains, could they?",
+                "Could they see the mountains?",
+                "They could see the mountains, can't she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can he read maps in sector 2?",
-            "hint": "Invert modal 'can'. (Sector 2 calibration)",
-            "explanation": "Can he read is correct. [Verified in sector 2]."
+            "correctAnswer": "They could see the mountains, couldn't they?",
+            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
+            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'could' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l39_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You are happy in sector 2.",
-            "sentence": "You are happy in sector 2.",
+            "question": "You aren't coming with us, ___?",
+            "sentence": "You aren't coming with us, ___?",
             "options": [
-                "Are you happy in sector 2?",
-                "Do you happy in sector 2?",
-                "Is you happy in sector 2?",
-                "You are happy in sector 2?"
+                "You aren't coming with us, are you?",
+                "You aren't coming with us, aren't you?",
+                "Are you coming with us?",
+                "You aren't coming with us, is she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Are you happy in sector 2?",
-            "hint": "Invert 'you' and 'are'. (Sector 2 calibration)",
-            "explanation": "Are you happy is correct. [Verified in sector 2]."
+            "correctAnswer": "You aren't coming with us, are you?",
+            "hint": "A negative statement takes the opposite polarity in its tag.",
+            "explanation": "Tag questions reverse polarity: a negative statement needs the opposite tag. Here the tag repeats the auxiliary 'are' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l39_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He would like tea in sector 2.",
-            "sentence": "He would like tea in sector 2.",
+            "question": "I am next in the queue, ___?",
+            "sentence": "I am next in the queue, ___?",
             "options": [
-                "Would he like tea in sector 2?",
-                "Does he would like tea in sector 2?",
-                "Would he likes tea in sector 2?",
-                "He would like tea in sector 2?"
+                "I am next in the queue, aren't I?",
+                "I am next in the queue, am I?",
+                "Am I next in the queue?",
+                "I am next in the queue, isn't it?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would he like tea in sector 2?",
-            "hint": "Invert 'would'. (Sector 2 calibration)",
-            "explanation": "Would he like is correct. [Verified in sector 2]."
+            "correctAnswer": "I am next in the queue, aren't I?",
+            "hint": "The special tag for 'I am ...' is 'aren't I?' - not 'amn't I?' which doesn't exist in English.",
+            "explanation": "'I am' uses the unusual tag 'aren't I?' This is the only grammatically accepted contracted tag for 'I am' in standard English. 'Am I?' would be a plain question, not a tag."
         },
         {
             "id": "qf_l39_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You should try it in sector 2.",
-            "sentence": "You should try it in sector 2.",
+            "question": "You are the new student, ___?",
+            "sentence": "You are the new student, ___?",
             "options": [
-                "Should you try it in sector 2?",
-                "Do you should try it in sector 2?",
-                "Should you trying it in sector 2?",
-                "You should try it in sector 2?"
+                "You are the new student, aren't you?",
+                "You are the new student, are you?",
+                "Are you the new student?",
+                "You are the new student, isn't she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should you try it in sector 2?",
-            "hint": "Invert 'should'. (Sector 2 calibration)",
-            "explanation": "Should you try is correct. [Verified in sector 2]."
+            "correctAnswer": "You are the new student, aren't you?",
+            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
+            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'are' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l40_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She wrote a letter in sector 2.",
-            "sentence": "She wrote a letter in sector 2.",
+            "question": "She should rest more, ___?",
+            "sentence": "She should rest more, ___?",
             "options": [
-                "Did she write a letter in sector 2?",
-                "Did she wrote a letter in sector 2?",
-                "Does she write a letter in sector 2?",
-                "She wrote a letter in sector 2?"
+                "She should rest more, shouldn't she?",
+                "She should rest more, should she?",
+                "Should she rest more?",
+                "She should rest more, shouldn't he?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did she write a letter in sector 2?",
-            "hint": "Use 'Did' + 'write'. (Sector 2 calibration)",
-            "explanation": "Did she write is correct. [Verified in sector 2]."
+            "correctAnswer": "She should rest more, shouldn't she?",
+            "hint": "A positive statement takes the opposite polarity in its tag.",
+            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'should' with the matching pronoun, just with reversed polarity."
         },
         {
             "id": "qf_l40_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You may enter in sector 2.",
-            "sentence": "You may enter in sector 2.",
+            "question": "They have been waiting for an hour, ___?",
+            "sentence": "They have been waiting for an hour, ___?",
             "options": [
-                "May you enter in sector 2?",
-                "Do you may enter in sector 2?",
-                "May you entering in sector 2?",
-                "You may enter in sector 2?"
+                "They have been waiting for an hour, haven't they?",
+                "They have been waiting for an hour, have they?",
+                "Have they been waiting for an hour?",
+                "They have been waiting for an hour, hasn't she?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "May you enter in sector 2?",
-            "hint": "Invert modal 'may'. (Sector 2 calibration)",
-            "explanation": "May you enter is correct. [Verified in sector 2]."
+            "correctAnswer": "They have been waiting for an hour, haven't they?",
+            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
+            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('have') and subject pronoun, but with the opposite polarity from the main clause, since the statement is positive."
         },
         {
             "id": "qf_l40_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They will win in sector 2.",
-            "sentence": "They will win in sector 2.",
+            "question": "You wouldn't do that, ___?",
+            "sentence": "You wouldn't do that, ___?",
             "options": [
-                "Will they win in sector 2?",
-                "Do they will win in sector 2?",
-                "Will they winning in sector 2?",
-                "They will win in sector 2?"
+                "You wouldn't do that, would you?",
+                "You wouldn't do that, wouldn't you?",
+                "Would you do that?",
+                "You wouldn't do that, won't he?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will they win in sector 2?",
-            "hint": "Invert 'will'. (Sector 2 calibration)",
-            "explanation": "Will they win is correct. [Verified in sector 2]."
+            "correctAnswer": "You wouldn't do that, would you?",
+            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
+            "explanation": "Tag questions reverse polarity: a negative statement needs the opposite tag. Here the tag repeats the auxiliary 'would' with the matching pronoun, just with reversed polarity."
         }
     ]
 }

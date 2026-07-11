@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l151_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She likes ice cream in sector 14.",
-            "sentence": "She likes ice cream in sector 14.",
+            "question": "'Had the government intervened sooner, many lives _____ been saved.'",
+            "sentence": "'Had the government intervened sooner, many lives _____ been saved.'",
             "options": [
-                "Does she like ice cream in sector 14?",
-                "Do she likes ice cream in sector 14?",
-                "Is she like ice cream in sector 14?",
-                "She likes ice cream in sector 14?"
+                "could have",
+                "would",
+                "might",
+                "should"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Does she like ice cream in sector 14?",
-            "hint": "Use 'Does' for third person singular present. (Sector 14 calibration)",
-            "explanation": "Does is the correct present tense auxiliary for 'she'. [Verified in sector 14]."
+            "correctAnswer": "could have",
+            "hint": "Third conditional result clause: modal + 'have' + past participle.",
+            "explanation": "Third conditional result clauses use 'could/would/might + have + past participle'. 'Could have been saved' expresses possibility. 'Would have been saved' expresses certainty. 'Should have been saved' implies they should have been (moral judgment). All three are grammatically correct with slightly different nuances."
         },
         {
             "id": "qf_l151_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She can swim well in sector 14.",
-            "sentence": "She can swim well in sector 14.",
+            "question": "Which uses the past perfect most precisely?",
+            "sentence": "Which uses the past perfect most precisely?",
             "options": [
-                "Can she swim well in sector 14?",
-                "Does she can swim well in sector 14?",
-                "Can she swims well in sector 14?",
-                "She can swim well in sector 14?"
+                "By the time the results were published, the team had already dissolved.",
+                "When the results were published, the team dissolved.",
+                "The team dissolved when the results were published.",
+                "The results were published and the team had dissolved."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can she swim well in sector 14?",
-            "hint": "Invert modal 'can' and subject. (Sector 14 calibration)",
-            "explanation": "Can she swim is correct modal inversion. [Verified in sector 14]."
+            "correctAnswer": "By the time the results were published, the team had already dissolved.",
+            "hint": "'By the time + simple past' → past perfect marks the earlier past event.",
+            "explanation": "'By the time the results were published, the team had already dissolved' correctly uses the past perfect to mark the earlier event (dissolution before publication). 'When the results were published, the team dissolved' makes the events simultaneous."
         },
         {
             "id": "qf_l151_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He lives in London in sector 14.",
-            "sentence": "He lives in London in sector 14.",
+            "question": "Choose the best continuation: 'The hypothesis was supported by the data. _____, three limitations must be acknowledged.'",
+            "sentence": "Choose the best continuation: 'The hypothesis was supported by the data. _____, three limitations must be acknowledged.'",
             "options": [
-                "Does he live in London in sector 14?",
-                "Do he lives in London in sector 14?",
-                "Is he live in London in sector 14?",
-                "He lives in London in sector 14?"
+                "Nevertheless",
+                "Despite this",
+                "Although",
+                "Regardless"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Does he live in London in sector 14?",
-            "hint": "Use 'Does' for present third person singular. (Sector 14 calibration)",
-            "explanation": "Does he live is the correct present question. [Verified in sector 14]."
+            "correctAnswer": "Nevertheless",
+            "hint": "'Nevertheless' concedes and contrasts between two full sentences - ideal for academic transitions.",
+            "explanation": "'Nevertheless' acknowledges the positive finding while signalling an important qualification. 'Despite this' is also possible. 'Although' would require restructuring into a single sentence. 'Regardless' is informal and too absolute."
         },
         {
             "id": "qf_l152_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They went to school in sector 14.",
-            "sentence": "They went to school in sector 14.",
+            "question": "Formal equivalent of 'The sales went up by a lot last quarter':",
+            "sentence": "Formal equivalent of 'The sales went up by a lot last quarter':",
             "options": [
-                "Did they go to school in sector 14?",
-                "Did they went to school in sector 14?",
-                "Do they went to school in sector 14?",
-                "They went to school in sector 14?"
+                "Sales increased substantially in the previous quarter.",
+                "Sales went up a lot in the last quarter.",
+                "There was a big go-up in sales last quarter.",
+                "Sales were hugely increased in the previous quarter."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did they go to school in sector 14?",
-            "hint": "Use 'Did' + base verb for simple past. (Sector 14 calibration)",
-            "explanation": "Did + go is the past tense question form of went. [Verified in sector 14]."
+            "correctAnswer": "Sales increased substantially in the previous quarter.",
+            "hint": "Avoid phrasal verbs ('went up → increased') and informal quantifiers ('a lot → substantially').",
+            "explanation": "'Increased substantially' replaces the phrasal verb 'went up' and the informal 'a lot'. 'Previous quarter' is more formal. 'Were hugely increased' is passive but 'hugely' is informal. 'Big go-up' is not standard English."
         },
         {
             "id": "qf_l152_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They have finished lunch in sector 14.",
-            "sentence": "They have finished lunch in sector 14.",
+            "question": "The extent to which social media _____ mental health remains debated.",
+            "sentence": "The extent to which social media _____ mental health remains debated.",
             "options": [
-                "Have they finished lunch in sector 14?",
-                "Did they have finished lunch in sector 14?",
-                "Has they finished lunch in sector 14?",
-                "They have finished lunch in sector 14?"
+                "affects",
+                "effect",
+                "is affecting",
+                "has affected"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Have they finished lunch in sector 14?",
-            "hint": "Invert auxiliary 'have' and subject. (Sector 14 calibration)",
-            "explanation": "Have they finished is correct present perfect inversion. [Verified in sector 14]."
+            "correctAnswer": "affects",
+            "hint": "In a noun clause, use present simple for a general ongoing relationship.",
+            "explanation": "The noun clause 'to which social media affects mental health' contains a general ongoing relationship - present simple is appropriate for general truths. 'Effect' is a noun. 'Is affecting' (continuous) and 'has affected' (perfect) are less neutral for stating a general research question."
         },
         {
             "id": "qf_l152_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They have a ship in sector 14.",
-            "sentence": "They have a ship in sector 14.",
+            "question": "Which is the most grammatically precise relative clause?",
+            "sentence": "Which is the most grammatically precise relative clause?",
             "options": [
-                "Do they have a ship in sector 14?",
-                "Has they a ship in sector 14?",
-                "Do they has a ship in sector 14?",
-                "They have a ship in sector 14?"
+                "The researcher whose work was cited most frequently won the award.",
+                "The researcher which work was cited most frequently won the award.",
+                "The researcher who work was cited most frequently won the award.",
+                "The researcher of whom work was cited most frequently won the award."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do they have a ship in sector 14?",
-            "hint": "Use 'Do' for present plural questions. (Sector 14 calibration)",
-            "explanation": "Do they have is correct. [Verified in sector 14]."
+            "correctAnswer": "The researcher whose work was cited most frequently won the award.",
+            "hint": "'Whose' is the possessive relative pronoun for people - the only correct form here.",
+            "explanation": "'Whose' is the possessive relative pronoun: 'the researcher whose work'. 'Which' is for things. 'Who' is nominative (subject), not possessive. 'Of whom' is used for people ('of whom we know little') but 'of whom work' is not the right structure for possession."
         },
         {
             "id": "qf_l153_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is a doctor in sector 14.",
-            "sentence": "He is a doctor in sector 14.",
+            "question": "Which sentence correctly uses an absolute phrase?",
+            "sentence": "Which sentence correctly uses an absolute phrase?",
             "options": [
-                "Is he a doctor in sector 14?",
-                "Does he is a doctor in sector 14?",
-                "Do he a doctor in sector 14?",
-                "He is a doctor in sector 14?"
+                "The deadline approaching, the team worked through the night.",
+                "With the deadline was approaching, the team worked through the night.",
+                "As the deadline approaching, the team worked through the night.",
+                "The deadline having approached, the team worked through the night."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is he a doctor in sector 14?",
-            "hint": "Invert the subject and the verb 'to be'. (Sector 14 calibration)",
-            "explanation": "Is he is the correct inverted form of He is. [Verified in sector 14]."
+            "correctAnswer": "The deadline approaching, the team worked through the night.",
+            "hint": "Absolute phrase = noun + present participle (no verb 'to be'). Perfect participle = event already complete.",
+            "explanation": "An absolute phrase is a noun + participle without a linking verb: 'the deadline approaching'. 'With the deadline was approaching' has a redundant 'was'. 'As the deadline approaching' needs a finite verb after 'as'. 'Having approached' would mean the deadline had already passed."
         },
         {
             "id": "qf_l153_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We will arrive tomorrow in sector 14.",
-            "sentence": "We will arrive tomorrow in sector 14.",
+            "question": "He spoke _____ clearly that even the people in the back could hear him.",
+            "sentence": "He spoke _____ clearly that even the people in the back could hear him.",
             "options": [
-                "Will we arrive tomorrow in sector 14?",
-                "Do we will arrive tomorrow in sector 14?",
-                "Will we arrived tomorrow in sector 14?",
-                "We will arrive tomorrow in sector 14?"
+                "so",
+                "such",
+                "very",
+                "too"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will we arrive tomorrow in sector 14?",
-            "hint": "Invert modal 'will' and subject. (Sector 14 calibration)",
-            "explanation": "Will we arrive is correct future inversion. [Verified in sector 14]."
+            "correctAnswer": "so",
+            "hint": "'So + adverb + that' - degree result clause. 'Such' needs a noun.",
+            "explanation": "'So clearly that' uses 'so + adverb + that-clause' for result. 'Such' requires an adjective + noun: 'such a clear voice that'. 'Very clearly' doesn't combine with 'that' in this result structure. 'Too clearly' implies an excess preventing something."
         },
         {
             "id": "qf_l153_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is reading in sector 14.",
-            "sentence": "She is reading in sector 14.",
+            "question": "Which sentence demonstrates correct fronting for emphasis?",
+            "sentence": "Which sentence demonstrates correct fronting for emphasis?",
             "options": [
-                "Is she reading in sector 14?",
-                "Does she reading in sector 14?",
-                "Is she read in sector 14?",
-                "She is reading in sector 14?"
+                "The courage of her convictions - that is what drove her forward.",
+                "What drove her forward was her courage of convictions.",
+                "It was courage that she drove forward with.",
+                "She drove forward with courage was the key."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is she reading in sector 14?",
-            "hint": "Invert 'is' and 'she'. (Sector 14 calibration)",
-            "explanation": "Is she reading is correct. [Verified in sector 14]."
+            "correctAnswer": "The courage of her convictions - that is what drove her forward.",
+            "hint": "Fronting with a dash + demonstrative creates strong emphasis on the fronted noun phrase.",
+            "explanation": "'The courage of her convictions - that is what drove her forward' uses fronting with a demonstrative to emphasise. 'What drove her forward was her courage' (wh-cleft) is also emphatic. 'It was courage that she drove forward with' is an it-cleft but awkward. 'She drove forward with courage was the key' is a run-on sentence."
         },
         {
             "id": "qf_l154_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We have some apples in sector 14.",
-            "sentence": "We have some apples in sector 14.",
+            "question": "Choose the most precise verb: 'The new evidence _____ the previous theory.'",
+            "sentence": "Choose the most precise verb: 'The new evidence _____ the previous theory.'",
             "options": [
-                "Do we have any apples in sector 14?",
-                "Have we some apples in sector 14?",
-                "Do we has some apples in sector 14?",
-                "We have any apples in sector 14?"
+                "undermined",
+                "disproved",
+                "challenged",
+                "broke"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do we have any apples in sector 14?",
-            "hint": "Use 'Do' for first person plural questions. (Sector 14 calibration)",
-            "explanation": "Do we have is the standard question form. [Verified in sector 14]."
+            "correctAnswer": "undermined",
+            "hint": "'Undermined' = gradually weakened foundations without necessarily disproving.",
+            "explanation": "'Undermined' suggests gradual erosion of the theory's foundations without conclusively disproving it. 'Disproved' implies definitive refutation. 'Challenged' suggests questioning without weakening. 'Broke' is too informal."
         },
         {
             "id": "qf_l154_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You should wait here in sector 14.",
-            "sentence": "You should wait here in sector 14.",
+            "question": "_____ the project succeed, we will have proved our critics wrong.",
+            "sentence": "_____ the project succeed, we will have proved our critics wrong.",
             "options": [
-                "Should you wait here in sector 14?",
-                "Do you should wait here in sector 14?",
-                "Should you waiting here in sector 14?",
-                "You should wait here in sector 14?"
+                "Should",
+                "If",
+                "Were",
+                "Had"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should you wait here in sector 14?",
-            "hint": "Invert modal 'should'. (Sector 14 calibration)",
-            "explanation": "Should you wait is correct. [Verified in sector 14]."
+            "correctAnswer": "Should",
+            "hint": "Inverted conditional with 'should' for a future open condition.",
+            "explanation": "'Should the project succeed' = 'If the project succeeds' - inverted future open conditional. 'Should' is used when the condition is possible but not certain. 'Were' would be for a hypothetical (second conditional). 'Had' would be third conditional (past)."
         },
         {
             "id": "qf_l154_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We were working in sector 14.",
-            "sentence": "We were working in sector 14.",
+            "question": "Which sentence uses 'only' with the most precise focus?",
+            "sentence": "Which sentence uses 'only' with the most precise focus?",
             "options": [
-                "Were we working in sector 14?",
-                "Was we working in sector 14?",
-                "Did we working in sector 14?",
-                "We were working in sector 14?"
+                "She told only her sister, no one else.",
+                "She only told her sister, no one else.",
+                "Only she told her sister, no one else.",
+                "She told her only sister, no one else."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Were we working in sector 14?",
-            "hint": "Invert 'were' and 'we'. (Sector 14 calibration)",
-            "explanation": "Were we working is correct. [Verified in sector 14]."
+            "correctAnswer": "She told only her sister, no one else.",
+            "hint": "The position of 'only' determines what it modifies - place it immediately before the word it restricts.",
+            "explanation": "In formal English, 'only' should be placed immediately before the element it modifies. 'She told only her sister' = she restricted disclosure to her sister. 'Only she told' = no one else told her sister. 'Her only sister' = she has one sister. 'She only told' is informal but ambiguous."
         },
         {
             "id": "qf_l155_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She swam in the pool in sector 14.",
-            "sentence": "She swam in the pool in sector 14.",
+            "question": "Which sentence uses the passive voice appropriately?",
+            "sentence": "Which sentence uses the passive voice appropriately?",
             "options": [
-                "Did she swim in the pool in sector 14?",
-                "Did she swam in the pool in sector 14?",
-                "Does she swim in the pool in sector 14?",
-                "She swam in the pool in sector 14?"
+                "The suspect was arrested by officers at the scene.",
+                "Officers arrested the suspect at the scene.",
+                "The suspect arrested by officers at the scene.",
+                "At the scene, was the suspect arrested."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did she swim in the pool in sector 14?",
-            "hint": "Use 'Did' + base verb 'swim'. (Sector 14 calibration)",
-            "explanation": "Did she swim is correct for past actions. [Verified in sector 14]."
+            "correctAnswer": "The suspect was arrested by officers at the scene.",
+            "hint": "Passive is appropriate when the recipient of the action is more important than the agent.",
+            "explanation": "The passive ('was arrested') is appropriate when the focus is on the suspect rather than the officers. The active ('officers arrested') shifts focus. 'The suspect arrested' is missing 'was'. 'Was the suspect arrested' is a question form."
         },
         {
             "id": "qf_l155_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has seen this movie in sector 14.",
-            "sentence": "He has seen this movie in sector 14.",
+            "question": "The _____ of the merger depends on regulatory approval.",
+            "sentence": "The _____ of the merger depends on regulatory approval.",
             "options": [
-                "Has he seen this movie in sector 14?",
-                "Did he has seen this movie in sector 14?",
-                "Have he seen this movie in sector 14?",
-                "He has seen this movie in sector 14?"
+                "outcome",
+                "output",
+                "result",
+                "consequence"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has he seen this movie in sector 14?",
-            "hint": "Invert auxiliary 'has'. (Sector 14 calibration)",
-            "explanation": "Has he seen is correct. [Verified in sector 14]."
+            "correctAnswer": "outcome",
+            "hint": "'Outcome of a process' = what eventually happens. 'Consequence' often implies negative result. 'Output' = production.",
+            "explanation": "'Outcome' refers to what a process leads to - appropriate for an uncertain future result. 'Consequence' usually implies a significant, often negative result. 'Output' refers to production quantity. 'Result' can work but 'outcome' is more nuanced for uncertain futures."
         },
         {
             "id": "qf_l155_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He was sleeping in sector 14.",
-            "sentence": "He was sleeping in sector 14.",
+            "question": "Which best completes the analogy: 'Just as exercise benefits the body, _____ benefits the mind.'",
+            "sentence": "Which best completes the analogy: 'Just as exercise benefits the body, _____ benefits the mind.'",
             "options": [
-                "Was he sleeping in sector 14?",
-                "Were he sleeping in sector 14?",
-                "Did he sleeping in sector 14?",
-                "He was sleeping in sector 14?"
+                "so too does reading",
+                "reading also does",
+                "reading benefits also",
+                "so reading"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was he sleeping in sector 14?",
-            "hint": "Invert 'was' and 'he'. (Sector 14 calibration)",
-            "explanation": "Was he sleeping is correct. [Verified in sector 14]."
+            "correctAnswer": "so too does reading",
+            "hint": "'Just as...so too does...' inverts the second clause for formal parallel structure.",
+            "explanation": "'Just as X, so too does Y' is the formal parallel structure with subject-auxiliary inversion following 'so too'. 'Reading also does' is not inverted. 'Reading benefits also' has the adverb in the wrong position. 'So reading' is incomplete."
         },
         {
             "id": "qf_l156_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The system is online in sector 14.",
-            "sentence": "The system is online in sector 14.",
+            "question": "Which sentence is grammatically complete and most formal?",
+            "sentence": "Which sentence is grammatically complete and most formal?",
             "options": [
-                "Is the system online in sector 14?",
-                "Does the system online in sector 14?",
-                "Are the system online in sector 14?",
-                "System is online in sector 14?"
+                "The committee has yet to reach a consensus.",
+                "The committee still haven't reached any consensus.",
+                "A consensus hasn't been reached yet by the committee.",
+                "They have yet to reach a consensus, the committee."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is the system online in sector 14?",
-            "hint": "Invert the subject and 'is'. (Sector 14 calibration)",
-            "explanation": "Is the system online is correct. [Verified in sector 14]."
+            "correctAnswer": "The committee has yet to reach a consensus.",
+            "hint": "'Has yet to + base verb' = formal equivalent of 'still hasn't + past participle'.",
+            "explanation": "'Have yet to + base verb' is a formal alternative to 'still haven't': 'has yet to reach' = still hasn't reached. 'Still haven't reached' is correct but informal. 'A consensus hasn't been reached yet by the committee' is passive but 'yet by the committee' is awkward. The right-dislocated structure ('...the committee') is informal."
         },
         {
             "id": "qf_l156_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They could hear us in sector 14.",
-            "sentence": "They could hear us in sector 14.",
+            "question": "Choose the most precise expression: 'This may suggest _____ correlation between stress and productivity.'",
+            "sentence": "Choose the most precise expression: 'This may suggest _____ correlation between stress and productivity.'",
             "options": [
-                "Could they hear us in sector 14?",
-                "Did they could hear us in sector 14?",
-                "Could they heard us in sector 14?",
-                "They could hear us in sector 14?"
+                "a negative",
+                "the negative",
+                "a negating",
+                "some negative of"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Could they hear us in sector 14?",
-            "hint": "Invert modal 'could'. (Sector 14 calibration)",
-            "explanation": "Could they hear is correct. [Verified in sector 14]."
+            "correctAnswer": "a negative",
+            "hint": "'A negative correlation' is the precise technical collocation.",
+            "explanation": "'A negative correlation' is the correct technical term from research: an inverse relationship. 'The negative correlation' would refer to a specific previously mentioned one. 'A negating correlation' is not a standard term. 'Some negative of' is grammatically invalid."
         },
         {
             "id": "qf_l156_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She has been working in sector 14.",
-            "sentence": "She has been working in sector 14.",
+            "question": "Which sentence correctly uses a gerund phrase as subject?",
+            "sentence": "Which sentence correctly uses a gerund phrase as subject?",
             "options": [
-                "Has she been working in sector 14?",
-                "Have she been working in sector 14?",
-                "Does she been working in sector 14?",
-                "She has been working in sector 14?"
+                "Designing effective policies requires an understanding of both economics and human behaviour.",
+                "To design effective policies requires understanding of both.",
+                "Design of effective policies require understanding economics and human behaviour.",
+                "Designing effective policies require an understanding of economics."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has she been working in sector 14?",
-            "hint": "Invert auxiliary 'has'. (Sector 14 calibration)",
-            "explanation": "Has she been working is correct. [Verified in sector 14]."
+            "correctAnswer": "Designing effective policies requires an understanding of both economics and human behaviour.",
+            "hint": "Gerund phrase as subject takes a singular verb.",
+            "explanation": "A gerund phrase ('Designing effective policies') is a singular subject and takes a singular verb ('requires'). 'Design of effective policies' (nominalisation) is also correct but 'require' (plural) is wrong with a singular subject. Infinitive as subject ('To design') can also take a singular verb but is more formal."
         },
         {
             "id": "qf_l157_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They work in the city in sector 14.",
-            "sentence": "They work in the city in sector 14.",
+            "question": "Which option correctly uses 'former' and 'latter'?",
+            "sentence": "Which option correctly uses 'former' and 'latter'?",
             "options": [
-                "Do they work in the city in sector 14?",
-                "Does they work in the city in sector 14?",
-                "Are they work in the city in sector 14?",
-                "They work in the city in sector 14?"
+                "Between speed and accuracy, the latter is more important in this context.",
+                "Between speed and accuracy, the former is accuracy.",
+                "Between speed and accuracy, the latter refers to speed.",
+                "Between speed and accuracy, the former being accuracy."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do they work in the city in sector 14?",
-            "hint": "Use 'Do' for third person plural present. (Sector 14 calibration)",
-            "explanation": "Do they work is correct. [Verified in sector 14]."
+            "correctAnswer": "Between speed and accuracy, the latter is more important in this context.",
+            "hint": "'Former' = first mentioned; 'latter' = second mentioned. Accuracy is second, so 'latter'.",
+            "explanation": "'Former' refers to the first item; 'latter' to the second. Speed was mentioned first (former), accuracy second (latter). 'The latter is more important' = accuracy is more important. The other options assign the terms incorrectly."
         },
         {
             "id": "qf_l157_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She will help us in sector 14.",
-            "sentence": "She will help us in sector 14.",
+            "question": "Which uses parallel structure correctly?",
+            "sentence": "Which uses parallel structure correctly?",
             "options": [
-                "Will she help us in sector 14?",
-                "Does she will help us in sector 14?",
-                "Will she helps us in sector 14?",
-                "She will help us in sector 14?"
+                "The report was clear, concise, and well-organised.",
+                "The report was clear, concisely written, and had good organisation.",
+                "The report was clear, written concisely, and well-organised.",
+                "The report was clearly written, concise, and organised well."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will she help us in sector 14?",
-            "hint": "Invert 'will'. (Sector 14 calibration)",
-            "explanation": "Will she help is correct. [Verified in sector 14]."
+            "correctAnswer": "The report was clear, concise, and well-organised.",
+            "hint": "Parallel structure: all items in a list must use the same grammatical form.",
+            "explanation": "Parallel structure requires all items in a list to use the same grammatical form. 'Clear, concise, and well-organised' are all adjectives. The other options mix adjectives, adverb phrases, and past participle phrases, breaking the parallel."
         },
         {
             "id": "qf_l157_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They had left early in sector 14.",
-            "sentence": "They had left early in sector 14.",
+            "question": "Which sentence avoids a split infinitive in a formal context?",
+            "sentence": "Which sentence avoids a split infinitive in a formal context?",
             "options": [
-                "Had they left early in sector 14?",
-                "Did they had left early in sector 14?",
-                "Have they left early in sector 14?",
-                "They had left early in sector 14?"
+                "She decided to review the data thoroughly.",
+                "She decided to thoroughly review the data.",
+                "She thoroughly decided to review the data.",
+                "She decided thoroughly to review the data."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Had they left early in sector 14?",
-            "hint": "Invert auxiliary 'had'. (Sector 14 calibration)",
-            "explanation": "Had they left is correct. [Verified in sector 14]."
+            "correctAnswer": "She decided to review the data thoroughly.",
+            "hint": "To avoid a split infinitive, place the adverb after the infinitive phrase or elsewhere.",
+            "explanation": "A split infinitive places an adverb between 'to' and the base verb ('to thoroughly review'). In formal writing, it is traditionally avoided: 'to review the data thoroughly' is preferred. The adverb 'thoroughly' at the start ('thoroughly decided') modifies the decision, not the reviewing."
         },
         {
             "id": "qf_l158_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He forgot his keys in sector 14.",
-            "sentence": "He forgot his keys in sector 14.",
+            "question": "Which sentence is free of redundancy?",
+            "sentence": "Which sentence is free of redundancy?",
             "options": [
-                "Did he forget his keys in sector 14?",
-                "Did he forgot his keys in sector 14?",
-                "Does he forget his keys in sector 14?",
-                "He forgot his keys in sector 14?"
+                "The deadline is 5 PM today.",
+                "The deadline is at 5 PM today in the afternoon.",
+                "The deadline is 5 PM on the afternoon of today.",
+                "The deadline is today at 5 PM today."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did he forget his keys in sector 14?",
-            "hint": "Use 'Did' + base verb 'forget'. (Sector 14 calibration)",
-            "explanation": "Did he forget is correct. [Verified in sector 14]."
+            "correctAnswer": "The deadline is 5 PM today.",
+            "hint": "Avoid redundant expressions: '5 PM' implies afternoon; 'today' shouldn't be repeated.",
+            "explanation": "'The deadline is 5 PM today' is concise. '5 PM in the afternoon' is redundant because 'PM' already means afternoon/evening. 'On the afternoon of today' is wordy. Repeating 'today' is obvious redundancy."
         },
         {
             "id": "qf_l158_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We must report this in sector 14.",
-            "sentence": "We must report this in sector 14.",
+            "question": "Identify the misplaced modifier: 'She almost drove her children to school every day.'",
+            "sentence": "Identify the misplaced modifier: 'She almost drove her children to school every day.'",
             "options": [
-                "Must we report this in sector 14?",
-                "Do we must report this in sector 14?",
-                "Must we reporting this in sector 14?",
-                "We must report this in sector 14?"
+                "'almost' should be moved to modify 'every day', not 'drove'.",
+                "'drove' should be 'drived'",
+                "'almost' is correctly placed",
+                "'every day' should be 'each day'"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Must we report this in sector 14?",
-            "hint": "Invert modal 'must'. (Sector 14 calibration)",
-            "explanation": "Must we report is correct. [Verified in sector 14]."
+            "correctAnswer": "'almost' should be moved to modify 'every day', not 'drove'.",
+            "hint": "'Almost drove' implies she nearly drove (but didn't). The intended meaning is 'almost every day'.",
+            "explanation": "As written, 'almost drove' implies she nearly (but didn't quite) drive them. The intended meaning is likely 'she drove them almost every day' (most days). The modifier 'almost' must be placed immediately before what it modifies."
         },
         {
             "id": "qf_l158_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He can read maps in sector 14.",
-            "sentence": "He can read maps in sector 14.",
+            "question": "Which sentence correctly uses 'respectively'?",
+            "sentence": "Which sentence correctly uses 'respectively'?",
             "options": [
-                "Can he read maps in sector 14?",
-                "Does he can read maps in sector 14?",
-                "Can he reads maps in sector 14?",
-                "He can read maps in sector 14?"
+                "The first and second prizes were won by Alice and Bob, respectively.",
+                "The first prize was won by Alice and Bob, respectively.",
+                "Alice and Bob won the prizes, respectively, which were first and second.",
+                "Respectively, Alice and Bob won the first and second prizes."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can he read maps in sector 14?",
-            "hint": "Invert modal 'can'. (Sector 14 calibration)",
-            "explanation": "Can he read is correct. [Verified in sector 14]."
+            "correctAnswer": "The first and second prizes were won by Alice and Bob, respectively.",
+            "hint": "'Respectively' maps two parallel lists in order: Alice → first, Bob → second.",
+            "explanation": "'Respectively' connects two parallel lists in the same order. It only works with matching pairs in the same sequence. 'Respectively' at the start of a sentence or with misaligned lists is incorrect. With a single prize, 'respectively' makes no sense."
         },
         {
             "id": "qf_l159_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You are happy in sector 14.",
-            "sentence": "You are happy in sector 14.",
+            "question": "Which sentence uses 'due to' most correctly in formal writing?",
+            "sentence": "Which sentence uses 'due to' most correctly in formal writing?",
             "options": [
-                "Are you happy in sector 14?",
-                "Do you happy in sector 14?",
-                "Is you happy in sector 14?",
-                "You are happy in sector 14?"
+                "The delay was due to bad weather.",
+                "Due to bad weather, the flight was delayed.",
+                "Due to she was sick, she missed the meeting.",
+                "She missed the meeting due to she was sick."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Are you happy in sector 14?",
-            "hint": "Invert 'you' and 'are'. (Sector 14 calibration)",
-            "explanation": "Are you happy is correct. [Verified in sector 14]."
+            "correctAnswer": "The delay was due to bad weather.",
+            "hint": "Traditional rule: 'due to' modifies a noun; it should not introduce an adverbial clause.",
+            "explanation": "Traditionally, 'due to' is an adjective phrase modifying a noun: 'the delay (noun) was due to weather'. 'Due to bad weather, the flight was delayed' treats 'due to' as an adverbial - widely accepted in modern usage but avoided in strict formal writing (use 'because of' instead). 'Due to she was sick' is always wrong - 'due to' takes a noun, never a clause."
         },
         {
             "id": "qf_l159_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He would like tea in sector 14.",
-            "sentence": "He would like tea in sector 14.",
+            "question": "Choose the most precise academic verb: 'The researchers _____ that the drug reduced inflammation.'",
+            "sentence": "Choose the most precise academic verb: 'The researchers _____ that the drug reduced inflammation.'",
             "options": [
-                "Would he like tea in sector 14?",
-                "Does he would like tea in sector 14?",
-                "Would he likes tea in sector 14?",
-                "He would like tea in sector 14?"
+                "concluded",
+                "thought",
+                "believed",
+                "found out"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would he like tea in sector 14?",
-            "hint": "Invert 'would'. (Sector 14 calibration)",
-            "explanation": "Would he like is correct. [Verified in sector 14]."
+            "correctAnswer": "concluded",
+            "hint": "'Concluded' signals a formal inference from data. 'Thought/believed' are too subjective.",
+            "explanation": "'Concluded' implies a reasoned inference from evidence - appropriate after research. 'Found' is also widely used academically. 'Thought' and 'believed' imply subjective opinion. 'Found out' is informal."
         },
         {
             "id": "qf_l159_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You should try it in sector 14.",
-            "sentence": "You should try it in sector 14.",
+            "question": "Which correctly expresses a concessive relationship?",
+            "sentence": "Which correctly expresses a concessive relationship?",
             "options": [
-                "Should you try it in sector 14?",
-                "Do you should try it in sector 14?",
-                "Should you trying it in sector 14?",
-                "You should try it in sector 14?"
+                "Albeit expensive, the treatment proved highly effective.",
+                "Albeit it was expensive, the treatment proved highly effective.",
+                "Although expensive, but the treatment proved highly effective.",
+                "Despite it was expensive, the treatment proved highly effective."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should you try it in sector 14?",
-            "hint": "Invert 'should'. (Sector 14 calibration)",
-            "explanation": "Should you try is correct. [Verified in sector 14]."
+            "correctAnswer": "Albeit expensive, the treatment proved highly effective.",
+            "hint": "'Albeit' = 'even though it is' - takes an adjective/adverb phrase, not a full clause.",
+            "explanation": "'Albeit + adjective/adverb/noun phrase' is a literary concessive conjunction. 'Albeit expensive' is correct. 'Albeit it was expensive' adds a redundant subject+verb. 'Although expensive, but...' mixes two connectors. 'Despite it was expensive' uses 'despite' with a clause (incorrect)."
         },
         {
             "id": "qf_l160_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She wrote a letter in sector 14.",
-            "sentence": "She wrote a letter in sector 14.",
+            "question": "What is the effect of fronting in: 'This approach we find most compelling.'?",
+            "sentence": "What is the effect of fronting in: 'This approach we find most compelling.'?",
             "options": [
-                "Did she write a letter in sector 14?",
-                "Did she wrote a letter in sector 14?",
-                "Does she write a letter in sector 14?",
-                "She wrote a letter in sector 14?"
+                "It places maximum emphasis on 'this approach' as the topic of discussion.",
+                "It signals that 'we' is the subject of 'find'.",
+                "It indicates the speaker is unsure about the approach.",
+                "It is a grammatical error - the object cannot be fronted."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did she write a letter in sector 14?",
-            "hint": "Use 'Did' + 'write'. (Sector 14 calibration)",
-            "explanation": "Did she write is correct. [Verified in sector 14]."
+            "correctAnswer": "It places maximum emphasis on 'this approach' as the topic of discussion.",
+            "hint": "Fronting the object ('This approach') creates topicalization - making it the discourse topic.",
+            "explanation": "Fronting moves the object to the front for emphasis or to establish it as the discourse topic. 'This approach [object] we find most compelling.' This is called topicalization and is grammatically correct - not an error."
         },
         {
             "id": "qf_l160_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You may enter in sector 14.",
-            "sentence": "You may enter in sector 14.",
+            "question": "Choose the sentence that uses 'which' correctly in formal writing:",
+            "sentence": "Choose the sentence that uses 'which' correctly in formal writing:",
             "options": [
-                "May you enter in sector 14?",
-                "Do you may enter in sector 14?",
-                "May you entering in sector 14?",
-                "You may enter in sector 14?"
+                "She submitted the report, which had taken three weeks to complete.",
+                "She submitted the report which had took three weeks to complete.",
+                "She submitted the report, that had taken three weeks to complete.",
+                "She submitted the report which was taken three weeks to complete."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "May you enter in sector 14?",
-            "hint": "Invert modal 'may'. (Sector 14 calibration)",
-            "explanation": "May you enter is correct. [Verified in sector 14]."
+            "correctAnswer": "She submitted the report, which had taken three weeks to complete.",
+            "hint": "Non-defining relative clause (with comma) uses 'which'; 'that' cannot be used here.",
+            "explanation": "Non-defining relative clauses use 'which', never 'that'. Commas set off non-defining clauses. 'Had took' is a double-marked past (wrong). 'Was taken three weeks' misuses the passive ('took' is active; passive would be 'it took three weeks')."
         },
         {
             "id": "qf_l160_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They will win in sector 14.",
-            "sentence": "They will win in sector 14.",
+            "question": "Which option uses the correct article with a proper noun?",
+            "sentence": "Which option uses the correct article with a proper noun?",
             "options": [
-                "Will they win in sector 14?",
-                "Do they will win in sector 14?",
-                "Will they winning in sector 14?",
-                "They will win in sector 14?"
+                "She works for the United Nations.",
+                "She works for United Nations.",
+                "She works for a United Nations.",
+                "She works for The United Nations."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will they win in sector 14?",
-            "hint": "Invert 'will'. (Sector 14 calibration)",
-            "explanation": "Will they win is correct. [Verified in sector 14]."
+            "correctAnswer": "She works for the United Nations.",
+            "hint": "Named organisations like 'the United Nations' always take 'the' (lowercase in running text).",
+            "explanation": "'The United Nations' takes 'the' because it is a named organisation - like 'the BBC', 'the EU', 'the European Commission'. In running text, 'the' is not capitalised unless at the start of a sentence."
         }
     ]
 }

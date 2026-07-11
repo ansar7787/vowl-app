@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l1_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She likes ice cream.",
-            "sentence": "She likes ice cream.",
+            "question": "Maria works at a hospital.",
+            "sentence": "Maria works at a hospital.",
             "options": [
-                "Does she like ice cream?",
-                "Do she likes ice cream?",
-                "Is she like ice cream?",
-                "She likes ice cream?"
+                "Does Maria work at a hospital?",
+                "Maria works at a hospital?",
+                "Does Maria works at a hospital?",
+                "Do Maria work at a hospital?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Does she like ice cream?",
-            "hint": "Use 'Does' for third person singular present.",
-            "explanation": "Does is the correct present tense auxiliary for 'she'."
+            "correctAnswer": "Does Maria work at a hospital?",
+            "hint": "'Maria' needs 'does', and the main verb goes back to its base form, 'work'.",
+            "explanation": "Present-simple questions begin with 'Do' or 'Does'. Since the subject is 'Maria', the correct auxiliary is 'does', and the main verb returns to its base form 'work' instead of 'works'."
         },
         {
             "id": "qf_l1_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She can swim well.",
-            "sentence": "She can swim well.",
+            "question": "He can play the guitar.",
+            "sentence": "He can play the guitar.",
             "options": [
-                "Can she swim well?",
-                "Does she can swim well?",
-                "Can she swims well?",
-                "She can swim well?"
+                "Can he play the guitar?",
+                "He can play the guitar?",
+                "Does he can play the guitar?",
+                "Can he plays the guitar?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can she swim well?",
-            "hint": "Invert modal 'can' and subject.",
-            "explanation": "Can she swim is correct modal inversion."
+            "correctAnswer": "Can he play the guitar?",
+            "hint": "Modal verbs like 'can' move directly in front of the subject - no 'do' needed, and the verb stays as 'play'.",
+            "explanation": "Modal verbs such as 'can' act as their own question auxiliary, so they invert directly with the subject. The main verb always stays in its base form, 'play', after a modal."
         },
         {
             "id": "qf_l1_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He lives in London.",
-            "sentence": "He lives in London.",
+            "question": "They live near the park.",
+            "sentence": "They live near the park.",
             "options": [
-                "Does he live in London?",
-                "Do he lives in London?",
-                "Is he live in London?",
-                "He lives in London?"
+                "Do they live near the park?",
+                "They live near the park?",
+                "Did they live near the park?",
+                "Does they live near the park?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Does he live in London?",
-            "hint": "Use 'Does' for present third person singular.",
-            "explanation": "Does he live is the correct present question."
+            "correctAnswer": "Do they live near the park?",
+            "hint": "Start with 'Do', then 'they', then 'live' - no -s ending after the auxiliary.",
+            "explanation": "'Do' is the auxiliary that agrees with 'they' in the present simple. Once an auxiliary is added, the main verb never takes -s, so 'live' becomes 'live'."
         },
         {
             "id": "qf_l2_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They went to school.",
-            "sentence": "They went to school.",
+            "question": "She visited her grandmother.",
+            "sentence": "She visited her grandmother.",
             "options": [
-                "Did they go to school?",
-                "Did they went to school?",
-                "Do they went to school?",
-                "They went to school?"
+                "Did she visit her grandmother?",
+                "She visited her grandmother?",
+                "Did she visited her grandmother?",
+                "Does she visit her grandmother?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did they go to school?",
-            "hint": "Use 'Did' + base verb for simple past.",
-            "explanation": "Did + go is the past tense question form of went."
+            "correctAnswer": "Did she visit her grandmother?",
+            "hint": "Past-simple questions use 'Did' + the base verb 'visit', not the past form 'visited'.",
+            "explanation": "'Did' is the past-tense question auxiliary, and once it appears, the main verb stays in its base form ('visit'); the past tense is already shown by 'did', so 'visited' would be doubling the tense."
         },
         {
             "id": "qf_l2_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They have finished lunch.",
-            "sentence": "They have finished lunch.",
+            "question": "We have finished the project.",
+            "sentence": "We have finished the project.",
             "options": [
-                "Have they finished lunch?",
-                "Did they have finished lunch?",
-                "Has they finished lunch?",
-                "They have finished lunch?"
+                "Have we finished the project?",
+                "We have finished the project?",
+                "Did we have finished the project?",
+                "Has we finished the project?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Have they finished lunch?",
-            "hint": "Invert auxiliary 'have' and subject.",
-            "explanation": "Have they finished is correct present perfect inversion."
+            "correctAnswer": "Have we finished the project?",
+            "hint": "'Have' is the auxiliary here - invert it with 'we' and keep the past participle unchanged.",
+            "explanation": "Present-perfect questions invert 'have' or 'has' with the subject. 'We' takes 'have' (not 'has'), and the past participle stays exactly as it is."
         },
         {
             "id": "qf_l2_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They have a ship.",
-            "sentence": "They have a ship.",
+            "question": "They have a new car.",
+            "sentence": "They have a new car.",
             "options": [
-                "Do they have a ship?",
-                "Has they a ship?",
-                "Do they has a ship?",
-                "They have a ship?"
+                "Do they have a new car?",
+                "They have a new car?",
+                "Did they have a new car?",
+                "Does they have a new car?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do they have a ship?",
-            "hint": "Use 'Do' for present plural questions.",
-            "explanation": "Do they have is correct."
+            "correctAnswer": "Do they have a new car?",
+            "hint": "Think subject-verb agreement: which auxiliary, 'do' or 'does', matches 'they'?",
+            "explanation": "Present-simple questions begin with 'Do' or 'Does'. Since the subject is 'they', the correct auxiliary is 'do', and the main verb returns to its base form 'have' instead of 'have'."
         },
         {
             "id": "qf_l3_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is a doctor.",
-            "sentence": "He is a doctor.",
+            "question": "He is a teacher.",
+            "sentence": "He is a teacher.",
             "options": [
-                "Is he a doctor?",
-                "Does he is a doctor?",
-                "Do he a doctor?",
-                "He is a doctor?"
+                "Is he a teacher?",
+                "He is a teacher?",
+                "Does he is a teacher?",
+                "Are he a teacher?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is he a doctor?",
-            "hint": "Invert the subject and the verb 'to be'.",
-            "explanation": "Is he is the correct inverted form of He is."
+            "correctAnswer": "Is he a teacher?",
+            "hint": "The verb 'to be' simply swaps places with the subject: 'is' moves before 'he'.",
+            "explanation": "With the verb 'to be', no extra auxiliary like 'do' is needed - 'is' itself inverts with 'he' to form the question."
         },
         {
             "id": "qf_l3_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We will arrive tomorrow.",
-            "sentence": "We will arrive tomorrow.",
+            "question": "We will visit Paris next year.",
+            "sentence": "We will visit Paris next year.",
             "options": [
-                "Will we arrive tomorrow?",
-                "Do we will arrive tomorrow?",
-                "Will we arrived tomorrow?",
-                "We will arrive tomorrow?"
+                "Will we visit Paris next year?",
+                "We will visit Paris next year?",
+                "Do we will visit Paris next year?",
+                "Would we visit Paris next year?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will we arrive tomorrow?",
-            "hint": "Invert modal 'will' and subject.",
-            "explanation": "Will we arrive is correct future inversion."
+            "correctAnswer": "Will we visit Paris next year?",
+            "hint": "Invert 'will' and 'we'; the main verb never changes form after a modal.",
+            "explanation": "Because 'will' is a modal auxiliary, it moves before 'we' without any extra 'do/does/did', and 'visit' never takes an -s or past ending."
         },
         {
             "id": "qf_l3_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is reading.",
-            "sentence": "She is reading.",
+            "question": "She is cooking dinner.",
+            "sentence": "She is cooking dinner.",
             "options": [
-                "Is she reading?",
-                "Does she reading?",
-                "Is she read?",
-                "She is reading?"
+                "Is she cooking dinner?",
+                "She is cooking dinner?",
+                "Are she cooking dinner?",
+                "Does she cooking dinner?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is she reading?",
-            "hint": "Invert 'is' and 'she'.",
-            "explanation": "Is she reading is correct."
+            "correctAnswer": "Is she cooking dinner?",
+            "hint": "Invert 'is' and 'she'; the -ing form of the verb never changes.",
+            "explanation": "Continuous tenses use 'to be' + -ing, so the question is formed by inverting 'is' with 'she'; the -ing form itself never changes."
         },
         {
             "id": "qf_l4_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We have some apples.",
-            "sentence": "We have some apples.",
+            "question": "We need more time.",
+            "sentence": "We need more time.",
             "options": [
-                "Do we have any apples?",
-                "Have we some apples?",
-                "Do we has some apples?",
-                "We have any apples?"
+                "Do we need more time?",
+                "We need more time?",
+                "Did we need more time?",
+                "Does we need more time?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do we have any apples?",
-            "hint": "Use 'Do' for first person plural questions.",
-            "explanation": "Do we have is the standard question form."
+            "correctAnswer": "Do we need more time?",
+            "hint": "'We' needs 'do', and the main verb goes back to its base form, 'need'.",
+            "explanation": "'Do' is the auxiliary that agrees with 'we' in the present simple. Once an auxiliary is added, the main verb never takes -s, so 'need' becomes 'need'."
         },
         {
             "id": "qf_l4_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You should wait here.",
-            "sentence": "You should wait here.",
+            "question": "You should call your doctor.",
+            "sentence": "You should call your doctor.",
             "options": [
-                "Should you wait here?",
-                "Do you should wait here?",
-                "Should you waiting here?",
-                "You should wait here?"
+                "Should you call your doctor?",
+                "You should call your doctor?",
+                "Do you should call your doctor?",
+                "Should you calls your doctor?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should you wait here?",
-            "hint": "Invert modal 'should'.",
-            "explanation": "Should you wait is correct."
+            "correctAnswer": "Should you call your doctor?",
+            "hint": "'Should' is already an auxiliary, so it goes straight to the front of the question.",
+            "explanation": "Modal verbs such as 'should' act as their own question auxiliary, so they invert directly with the subject. The main verb always stays in its base form, 'call', after a modal."
         },
         {
             "id": "qf_l4_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We were working.",
-            "sentence": "We were working.",
+            "question": "They were watching a movie.",
+            "sentence": "They were watching a movie.",
             "options": [
-                "Were we working?",
-                "Was we working?",
-                "Did we working?",
-                "We were working?"
+                "Were they watching a movie?",
+                "They were watching a movie?",
+                "Was they watching a movie?",
+                "Did they watching a movie?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Were we working?",
-            "hint": "Invert 'were' and 'we'.",
-            "explanation": "Were we working is correct."
+            "correctAnswer": "Were they watching a movie?",
+            "hint": "'Were' is already the auxiliary - move it before 'they', keep '-ing'.",
+            "explanation": "'Were' agrees with 'they' and moves to the front to form the question; 'do/does/did' is never used with continuous tenses."
         },
         {
             "id": "qf_l5_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She swam in the pool.",
-            "sentence": "She swam in the pool.",
+            "question": "She cooked dinner for us.",
+            "sentence": "She cooked dinner for us.",
             "options": [
-                "Did she swim in the pool?",
-                "Did she swam in the pool?",
-                "Does she swim in the pool?",
-                "She swam in the pool?"
+                "Did she cook dinner for us?",
+                "She cooked dinner for us?",
+                "Did she cooked dinner for us?",
+                "Does she cook dinner for us?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did she swim in the pool?",
-            "hint": "Use 'Did' + base verb 'swim'.",
-            "explanation": "Did she swim is correct for past actions."
+            "correctAnswer": "Did she cook dinner for us?",
+            "hint": "'Did' carries the past tense here, so the main verb drops back to 'cook'.",
+            "explanation": "Past-simple yes/no questions are formed with 'Did' + subject + base verb. 'Cooked' is correct in a statement, but after 'did' it must change back to 'cook'."
         },
         {
             "id": "qf_l5_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has seen this movie.",
-            "sentence": "He has seen this movie.",
+            "question": "He has seen that film twice.",
+            "sentence": "He has seen that film twice.",
             "options": [
-                "Has he seen this movie?",
-                "Did he has seen this movie?",
-                "Have he seen this movie?",
-                "He has seen this movie?"
+                "Has he seen that film twice?",
+                "He has seen that film twice?",
+                "Did he has seen that film twice?",
+                "Have he seen that film twice?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has he seen this movie?",
-            "hint": "Invert auxiliary 'has'.",
-            "explanation": "Has he seen is correct."
+            "correctAnswer": "Has he seen that film twice?",
+            "hint": "Present perfect questions invert 'have/has', not 'do' - match 'has' to 'he'.",
+            "explanation": "Because the sentence is in the present perfect, the auxiliary is 'has', matched to 'he'; only 'have/has' moves - the verb form itself never changes."
         },
         {
             "id": "qf_l5_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He was sleeping.",
-            "sentence": "He was sleeping.",
+            "question": "He was sleeping at noon.",
+            "sentence": "He was sleeping at noon.",
             "options": [
-                "Was he sleeping?",
-                "Were he sleeping?",
-                "Did he sleeping?",
-                "He was sleeping?"
+                "Was he sleeping at noon?",
+                "He was sleeping at noon?",
+                "Were he sleeping at noon?",
+                "Did he sleeping at noon?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was he sleeping?",
-            "hint": "Invert 'was' and 'he'.",
-            "explanation": "Was he sleeping is correct."
+            "correctAnswer": "Was he sleeping at noon?",
+            "hint": "Continuous questions invert the 'to be' verb, not 'do'.",
+            "explanation": "Continuous tenses use 'to be' + -ing, so the question is formed by inverting 'was' with 'he'; the -ing form itself never changes."
         },
         {
             "id": "qf_l6_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The system is online.",
-            "sentence": "The system is online.",
+            "question": "The store is open today.",
+            "sentence": "The store is open today.",
             "options": [
-                "Is the system online?",
-                "Does the system online?",
-                "Are the system online?",
-                "System is online?"
+                "Is the store open today?",
+                "The store is open today?",
+                "Does the store is open today?",
+                "Are the store open today?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is the system online?",
-            "hint": "Invert the subject and 'is'.",
-            "explanation": "Is the system online is correct."
+            "correctAnswer": "Is the store open today?",
+            "hint": "No 'do' is needed with 'to be' - just invert 'the store' and 'is'.",
+            "explanation": "'Is' is a form of 'to be', which forms questions by switching places with the subject, unlike action verbs that need 'do/does/did'."
         },
         {
             "id": "qf_l6_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They could hear us.",
-            "sentence": "They could hear us.",
+            "question": "They could hear the music.",
+            "sentence": "They could hear the music.",
             "options": [
-                "Could they hear us?",
-                "Did they could hear us?",
-                "Could they heard us?",
-                "They could hear us?"
+                "Could they hear the music?",
+                "They could hear the music?",
+                "Do they could hear the music?",
+                "Could they hears the music?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Could they hear us?",
-            "hint": "Invert modal 'could'.",
-            "explanation": "Could they hear is correct."
+            "correctAnswer": "Could they hear the music?",
+            "hint": "Modal verbs like 'could' move directly in front of the subject - no 'do' needed, and the verb stays as 'hear'.",
+            "explanation": "Modal verbs such as 'could' act as their own question auxiliary, so they invert directly with the subject. The main verb always stays in its base form, 'hear', after a modal."
         },
         {
             "id": "qf_l6_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She has been working.",
-            "sentence": "She has been working.",
+            "question": "She has been studying English.",
+            "sentence": "She has been studying English.",
             "options": [
-                "Has she been working?",
-                "Have she been working?",
-                "Does she been working?",
-                "She has been working?"
+                "Has she been studying english?",
+                "She has been studying english?",
+                "Has she studying english?",
+                "Have she been studying english?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has she been working?",
-            "hint": "Invert auxiliary 'has'.",
-            "explanation": "Has she been working is correct."
+            "correctAnswer": "Has she been studying english?",
+            "hint": "Only the first auxiliary moves: invert 'has' with 'she', then keep 'been' + the -ing verb in place.",
+            "explanation": "Present perfect continuous uses 'has' + been + verb-ing. Only the first auxiliary ('has') inverts with 'she'; 'been' and the -ing form stay in place."
         },
         {
             "id": "qf_l7_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They work in the city.",
-            "sentence": "They work in the city.",
+            "question": "They work near the airport.",
+            "sentence": "They work near the airport.",
             "options": [
-                "Do they work in the city?",
-                "Does they work in the city?",
-                "Are they work in the city?",
-                "They work in the city?"
+                "Do they work near the airport?",
+                "They work near the airport?",
+                "Did they work near the airport?",
+                "Does they work near the airport?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do they work in the city?",
-            "hint": "Use 'Do' for third person plural present.",
-            "explanation": "Do they work is correct."
+            "correctAnswer": "Do they work near the airport?",
+            "hint": "'They' needs 'do', and the main verb goes back to its base form, 'work'.",
+            "explanation": "Present-simple questions begin with 'Do' or 'Does'. Since the subject is 'they', the correct auxiliary is 'do', and the main verb returns to its base form 'work' instead of 'work'."
         },
         {
             "id": "qf_l7_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She will help us.",
-            "sentence": "She will help us.",
+            "question": "She will call you tomorrow.",
+            "sentence": "She will call you tomorrow.",
             "options": [
-                "Will she help us?",
-                "Does she will help us?",
-                "Will she helps us?",
-                "She will help us?"
+                "Will she call you tomorrow?",
+                "She will call you tomorrow?",
+                "Does she will call you tomorrow?",
+                "Will she calls you tomorrow?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will she help us?",
-            "hint": "Invert 'will'.",
-            "explanation": "Will she help is correct."
+            "correctAnswer": "Will she call you tomorrow?",
+            "hint": "Invert 'will' and 'she'; the main verb never changes form after a modal.",
+            "explanation": "Because 'will' is a modal auxiliary, it moves before 'she' without any extra 'do/does/did', and 'call' never takes an -s or past ending."
         },
         {
             "id": "qf_l7_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They had left early.",
-            "sentence": "They had left early.",
+            "question": "They had left before noon.",
+            "sentence": "They had left before noon.",
             "options": [
-                "Had they left early?",
-                "Did they had left early?",
-                "Have they left early?",
-                "They had left early?"
+                "Had they left before noon?",
+                "They had left before noon?",
+                "Did they had left before noon?",
+                "Have they left before noon?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Had they left early?",
-            "hint": "Invert auxiliary 'had'.",
-            "explanation": "Had they left is correct."
+            "correctAnswer": "Had they left before noon?",
+            "hint": "'Had' is the same for every subject - just move it in front of 'they'.",
+            "explanation": "'Had' is the past-perfect auxiliary for every subject, including 'they'. It inverts with the subject, and the past participle that follows never changes."
         },
         {
             "id": "qf_l8_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He forgot his keys.",
-            "sentence": "He forgot his keys.",
+            "question": "He lost his wallet.",
+            "sentence": "He lost his wallet.",
             "options": [
-                "Did he forget his keys?",
-                "Did he forgot his keys?",
-                "Does he forget his keys?",
-                "He forgot his keys?"
+                "Did he lose his wallet?",
+                "He lost his wallet?",
+                "Did he lost his wallet?",
+                "Does he lose his wallet?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did he forget his keys?",
-            "hint": "Use 'Did' + base verb 'forget'.",
-            "explanation": "Did he forget is correct."
+            "correctAnswer": "Did he lose his wallet?",
+            "hint": "Put 'Did' first, then 'he', then the unchanged base verb 'lose'.",
+            "explanation": "'Did' is the past-tense question auxiliary, and once it appears, the main verb stays in its base form ('lose'); the past tense is already shown by 'did', so 'lost' would be doubling the tense."
         },
         {
             "id": "qf_l8_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We must report this.",
-            "sentence": "We must report this.",
+            "question": "We must finish this today.",
+            "sentence": "We must finish this today.",
             "options": [
-                "Must we report this?",
-                "Do we must report this?",
-                "Must we reporting this?",
-                "We must report this?"
+                "Must we finish this today?",
+                "We must finish this today?",
+                "Do we must finish this today?",
+                "Must we finishes this today?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Must we report this?",
-            "hint": "Invert modal 'must'.",
-            "explanation": "Must we report is correct."
+            "correctAnswer": "Must we finish this today?",
+            "hint": "Modal verbs like 'must' move directly in front of the subject - no 'do' needed, and the verb stays as 'finish'.",
+            "explanation": "Modal verbs such as 'must' act as their own question auxiliary, so they invert directly with the subject. The main verb always stays in its base form, 'finish', after a modal."
         },
         {
             "id": "qf_l8_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He can read maps.",
-            "sentence": "He can read maps.",
+            "question": "He can fix the printer.",
+            "sentence": "He can fix the printer.",
             "options": [
-                "Can he read maps?",
-                "Does he can read maps?",
-                "Can he reads maps?",
-                "He can read maps?"
+                "Can he fix the printer?",
+                "He can fix the printer?",
+                "Does he can fix the printer?",
+                "Can he fixes the printer?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can he read maps?",
-            "hint": "Invert modal 'can'.",
-            "explanation": "Can he read is correct."
+            "correctAnswer": "Can he fix the printer?",
+            "hint": "Invert 'can' and 'he'; the main verb never changes form after a modal.",
+            "explanation": "Because 'can' is a modal auxiliary, it moves before 'he' without any extra 'do/does/did', and 'fix' never takes an -s or past ending."
         },
         {
             "id": "qf_l9_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You are happy.",
-            "sentence": "You are happy.",
+            "question": "You are very kind.",
+            "sentence": "You are very kind.",
             "options": [
-                "Are you happy?",
-                "Do you happy?",
-                "Is you happy?",
-                "You are happy?"
+                "Are you very kind?",
+                "You are very kind?",
+                "Does you are very kind?",
+                "Is you very kind?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Are you happy?",
-            "hint": "Invert 'you' and 'are'.",
-            "explanation": "Are you happy is correct."
+            "correctAnswer": "Are you very kind?",
+            "hint": "'Are' already functions as the question auxiliary, so move it to the front.",
+            "explanation": "With the verb 'to be', no extra auxiliary like 'do' is needed - 'are' itself inverts with 'you' to form the question."
         },
         {
             "id": "qf_l9_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He would like tea.",
-            "sentence": "He would like tea.",
+            "question": "He would like some tea.",
+            "sentence": "He would like some tea.",
             "options": [
-                "Would he like tea?",
-                "Does he would like tea?",
-                "Would he likes tea?",
-                "He would like tea?"
+                "Would he like some tea?",
+                "He would like some tea?",
+                "Does he would like some tea?",
+                "Would he likes some tea?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would he like tea?",
-            "hint": "Invert 'would'.",
-            "explanation": "Would he like is correct."
+            "correctAnswer": "Would he like some tea?",
+            "hint": "'Would' is already an auxiliary, so it goes straight to the front of the question.",
+            "explanation": "Modal verbs such as 'would' act as their own question auxiliary, so they invert directly with the subject. The main verb always stays in its base form, 'like', after a modal."
         },
         {
             "id": "qf_l9_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You should try it.",
-            "sentence": "You should try it.",
+            "question": "You should try this recipe.",
+            "sentence": "You should try this recipe.",
             "options": [
-                "Should you try it?",
-                "Do you should try it?",
-                "Should you trying it?",
-                "You should try it?"
+                "Should you try this recipe?",
+                "You should try this recipe?",
+                "Do you should try this recipe?",
+                "Should you tries this recipe?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should you try it?",
-            "hint": "Invert 'should'.",
-            "explanation": "Should you try is correct."
+            "correctAnswer": "Should you try this recipe?",
+            "hint": "Modal verbs like 'should' move directly in front of the subject - no 'do' needed, and the verb stays as 'try'.",
+            "explanation": "Modal verbs such as 'should' act as their own question auxiliary, so they invert directly with the subject. The main verb always stays in its base form, 'try', after a modal."
         },
         {
             "id": "qf_l10_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She wrote a letter.",
-            "sentence": "She wrote a letter.",
+            "question": "She wrote a letter to her friend.",
+            "sentence": "She wrote a letter to her friend.",
             "options": [
-                "Did she write a letter?",
-                "Did she wrote a letter?",
-                "Does she write a letter?",
-                "She wrote a letter?"
+                "Did she write a letter to her friend?",
+                "She wrote a letter to her friend?",
+                "Did she wrote a letter to her friend?",
+                "Does she write a letter to her friend?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did she write a letter?",
-            "hint": "Use 'Did' + 'write'.",
-            "explanation": "Did she write is correct."
+            "correctAnswer": "Did she write a letter to her friend?",
+            "hint": "Past-simple questions use 'Did' + the base verb 'write', not the past form 'wrote'.",
+            "explanation": "'Did' is the past-tense question auxiliary, and once it appears, the main verb stays in its base form ('write'); the past tense is already shown by 'did', so 'wrote' would be doubling the tense."
         },
         {
             "id": "qf_l10_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You may enter.",
-            "sentence": "You may enter.",
+            "question": "He may enter the building.",
+            "sentence": "He may enter the building.",
             "options": [
-                "May you enter?",
-                "Do you may enter?",
-                "May you entering?",
-                "You may enter?"
+                "May he enter the building?",
+                "He may enter the building?",
+                "Does he may enter the building?",
+                "May he enters the building?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "May you enter?",
-            "hint": "Invert modal 'may'.",
-            "explanation": "May you enter is correct."
+            "correctAnswer": "May he enter the building?",
+            "hint": "Invert 'may' and 'he'; the main verb never changes form after a modal.",
+            "explanation": "Because 'may' is a modal auxiliary, it moves before 'he' without any extra 'do/does/did', and 'enter' never takes an -s or past ending."
         },
         {
             "id": "qf_l10_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 1,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They will win.",
-            "sentence": "They will win.",
+            "question": "They will win the match.",
+            "sentence": "They will win the match.",
             "options": [
-                "Will they win?",
-                "Do they will win?",
-                "Will they winning?",
-                "They will win?"
+                "Will they win the match?",
+                "They will win the match?",
+                "Do they will win the match?",
+                "Will they wins the match?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will they win?",
-            "hint": "Invert 'will'.",
-            "explanation": "Will they win is correct."
+            "correctAnswer": "Will they win the match?",
+            "hint": "'Will' is already an auxiliary, so it goes straight to the front of the question.",
+            "explanation": "Modal verbs such as 'will' act as their own question auxiliary, so they invert directly with the subject. The main verb always stays in its base form, 'win', after a modal."
         }
     ]
 }

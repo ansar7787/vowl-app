@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l161_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The keys are on the table in sector 15.",
-            "sentence": "The keys are on the table in sector 15.",
+            "question": "Which sentence uses 'as' with greatest precision?",
+            "sentence": "Which sentence uses 'as' with greatest precision?",
             "options": [
-                "Where are the keys in sector 15?",
-                "What are the keys in sector 15?",
-                "Who are the keys in sector 15?",
-                "When are the keys in sector 15?"
+                "As a result of the restructuring, profits rose sharply.",
+                "As the restructuring, profits rose sharply.",
+                "As the profits rose, restructuring resulted.",
+                "As sharply the profits rose from restructuring."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where are the keys in sector 15?",
-            "hint": "'On the table' represents a location, which requires 'Where'. (Sector 15 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 15]."
+            "correctAnswer": "As a result of the restructuring, profits rose sharply.",
+            "hint": "'As a result of + noun' is the precise causal connector.",
+            "explanation": "'As a result of + noun phrase' expresses cause-and-effect. Bare 'as' alone cannot introduce a noun phrase for causation. 'As the restructuring' would mean 'while the restructuring was happening', not 'because of it'."
         },
         {
             "id": "qf_l161_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The package arrived yesterday in sector 15.",
-            "sentence": "The package arrived yesterday in sector 15.",
+            "question": "_____ of the research budget went on equipment, with the rest allocated to personnel.",
+            "sentence": "_____ of the research budget went on equipment, with the rest allocated to personnel.",
             "options": [
-                "When did the package arrive in sector 15?",
-                "Where did the package arrive in sector 15?",
-                "Why did the package arrive in sector 15?",
-                "What did the package arrive in sector 15?"
+                "The bulk",
+                "The majority",
+                "Most",
+                "A large proportion"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When did the package arrive in sector 15?",
-            "hint": "'Yesterday' is a past time, requiring 'When'. (Sector 15 calibration)",
-            "explanation": "Use 'When' for time queries. [Verified in sector 15]."
+            "correctAnswer": "The bulk",
+            "hint": "'The bulk of' = the largest part of something - precise for financial context.",
+            "explanation": "'The bulk of' means the largest part of something, with a connotation of substantial majority. 'The majority of' is also acceptable. 'Most' is less formal. 'A large proportion of' hedges more. 'The bulk of' is most precise for formal financial context."
         },
         {
             "id": "qf_l161_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The flight takes six hours in sector 15.",
-            "sentence": "The flight takes six hours in sector 15.",
+            "question": "Which is the most natural nominalisation of 'Many people left the area'?",
+            "sentence": "Which is the most natural nominalisation of 'Many people left the area'?",
             "options": [
-                "How long does the flight take in sector 15?",
-                "When does the flight take in sector 15?",
-                "Where does the flight take in sector 15?",
-                "Why does the flight take in sector 15?"
+                "There was a significant exodus from the area.",
+                "A significant leaving of people from the area happened.",
+                "Many leavings happened from the area.",
+                "There was a departure by many from the area."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long does the flight take in sector 15?",
-            "hint": "'Six hours' is a duration, requiring 'How long'. (Sector 15 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 15]."
+            "correctAnswer": "There was a significant exodus from the area.",
+            "hint": "'Exodus' is the precise formal noun for mass departure.",
+            "explanation": "'Exodus' is the precise noun for mass departure. 'Significant leaving' and 'many leavings' are awkward - 'leaving' in this sense is rarely countable. 'A departure by many' is valid but less precise and elegant."
         },
         {
             "id": "qf_l162_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He left because it was late in sector 15.",
-            "sentence": "He left because it was late in sector 15.",
+            "question": "What does 'had had' mean in: 'She had had enough of the delays.'?",
+            "sentence": "What does 'had had' mean in: 'She had had enough of the delays.'?",
             "options": [
-                "Why did he leave in sector 15?",
-                "When did he leave in sector 15?",
-                "Where did he leave in sector 15?",
-                "How did he leave in sector 15?"
+                "It is past perfect of 'have' (experience): she had experienced enough delays by that point.",
+                "It is a typing error - only one 'had' is needed.",
+                "The first 'had' is auxiliary; the second means 'received'.",
+                "It uses 'had' as a main verb twice, which is redundant."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why did he leave in sector 15?",
-            "hint": "'Because it was late' indicates a reason, requiring 'Why'. (Sector 15 calibration)",
-            "explanation": "Use 'Why' for reasons. [Verified in sector 15]."
+            "correctAnswer": "It is past perfect of 'have' (experience): she had experienced enough delays by that point.",
+            "hint": "'Had had' = past perfect of 'to have' as a main verb: first 'had' is auxiliary, second is main verb.",
+            "explanation": "'Had had' is the past perfect of 'to have' as a main verb ('have' meaning experience/receive). The first 'had' is the auxiliary forming the past perfect; the second 'had' is the past simple of the main verb 'to have'. So 'she had had enough' = by that moment, she had experienced enough."
         },
         {
             "id": "qf_l162_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are travelling by capsule in sector 15.",
-            "sentence": "They are travelling by capsule in sector 15.",
+            "question": "'The book that I was telling you about has been published.' What does 'that' refer to?",
+            "sentence": "'The book that I was telling you about has been published.' What does 'that' refer to?",
             "options": [
-                "How are they travelling in sector 15?",
-                "Why are they travelling in sector 15?",
-                "Where are they travelling in sector 15?",
-                "When are they travelling in sector 15?"
+                "It is the object of 'about' in the relative clause ('about which').",
+                "It is the subject of the relative clause.",
+                "It is a conjunction linking two clauses.",
+                "It is a demonstrative pronoun referring to publication."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How are they travelling in sector 15?",
-            "hint": "'By capsule' is a means of transport. (Sector 15 calibration)",
-            "explanation": "Use 'How' for transportation methods. [Verified in sector 15]."
+            "correctAnswer": "It is the object of 'about' in the relative clause ('about which').",
+            "hint": "'That' replaces 'which' as the object of the preposition 'about' at the end of the relative clause.",
+            "explanation": "In 'the book that I was telling you about', 'that' is the object of the preposition 'about' (formal: 'the book about which I was telling you'). In informal English, the preposition moves to the end and 'that' or zero-pronoun replaces 'which'."
         },
         {
             "id": "qf_l162_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "This fuel costs fifty coins in sector 15.",
-            "sentence": "This fuel costs fifty coins in sector 15.",
+            "question": "Which sentence most elegantly avoids ending with a preposition in formal writing?",
+            "sentence": "Which sentence most elegantly avoids ending with a preposition in formal writing?",
             "options": [
-                "How much does this fuel cost in sector 15?",
-                "How many does this fuel cost in sector 15?",
-                "What cost is this fuel in sector 15?",
-                "Why does this fuel cost in sector 15?"
+                "This is the proposal on which we should focus.",
+                "This is the proposal we should focus on.",
+                "This is the proposal which we should focus on.",
+                "This is the proposal that we should be focusing on."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How much does this fuel cost in sector 15?",
-            "hint": "Uncountable cost/value requires 'How much'. (Sector 15 calibration)",
-            "explanation": "Use 'How much' for costs. [Verified in sector 15]."
+            "correctAnswer": "This is the proposal on which we should focus.",
+            "hint": "Fronting the preposition ('on which') avoids ending the relative clause with a preposition.",
+            "explanation": "In formal written English, prepositions are traditionally placed before the relative pronoun: 'on which we should focus'. The informal 'focus on' at the end is widely accepted in modern English but less preferred in formal writing. 'That' cannot follow a preposition, so 'on that' would be ungrammatical."
         },
         {
             "id": "qf_l163_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She arrives at 6 PM in sector 15.",
-            "sentence": "She arrives at 6 PM in sector 15.",
+            "question": "'The conditions that need to be met are as follows: ...' - What is the function of 'as follows'?",
+            "sentence": "'The conditions that need to be met are as follows: ...' - What is the function of 'as follows'?",
             "options": [
-                "What time does she arrive in sector 15?",
-                "Where does she arrive in sector 15?",
-                "Why does she arrive in sector 15?",
-                "Who does she arrive in sector 15?"
+                "It is a fixed phrase introducing a list or explanation that comes next.",
+                "It means 'as previously stated'.",
+                "It introduces a comparison.",
+                "It signals the conclusion of a list."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "What time does she arrive in sector 15?",
-            "hint": "'At 6 PM' represents a time, requiring 'What time' or 'When'. (Sector 15 calibration)",
-            "explanation": "Use 'What time' for specific hours. [Verified in sector 15]."
+            "correctAnswer": "It is a fixed phrase introducing a list or explanation that comes next.",
+            "hint": "'As follows' introduces what comes next - typically a list or specification.",
+            "explanation": "'As follows:' is a fixed phrase used before a list or specification. It introduces what comes immediately after, not what has been said before. It always ends with a colon and is followed by the list or explanation."
         },
         {
             "id": "qf_l163_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She wants a coffee in sector 15.",
-            "sentence": "She wants a coffee in sector 15.",
+            "question": "Which correctly uses 'the former' and 'the latter' in a complex sentence?",
+            "sentence": "Which correctly uses 'the former' and 'the latter' in a complex sentence?",
             "options": [
-                "What does she want in sector 15?",
-                "Who does she want in sector 15?",
-                "Why does she want in sector 15?",
-                "Where does she want in sector 15?"
+                "Between innovation and efficiency, the former drives growth while the latter reduces costs.",
+                "Between innovation and efficiency, the latter drives growth while the former reduces costs.",
+                "Between innovation, efficiency, and quality, the latter is most important.",
+                "The former and latter both refer to innovation and efficiency respectively."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "What does she want in sector 15?",
-            "hint": "'A coffee' is a thing, requiring 'What'. (Sector 15 calibration)",
-            "explanation": "Use 'What' for things. [Verified in sector 15]."
+            "correctAnswer": "Between innovation and efficiency, the former drives growth while the latter reduces costs.",
+            "hint": "'Former' = first mentioned; 'latter' = second mentioned. They only work for exactly two referents.",
+            "explanation": "'Former' and 'latter' are only used when exactly two items have been mentioned. With three or more items, use 'the last mentioned' or repeat the noun. Innovation is mentioned first (former → drives growth); efficiency is second (latter → reduces costs)."
         },
         {
             "id": "qf_l163_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They practice three times a day in sector 15.",
-            "sentence": "They practice three times a day in sector 15.",
+            "question": "Which sentence uses 'whatever' as a concessive pronoun correctly?",
+            "sentence": "Which sentence uses 'whatever' as a concessive pronoun correctly?",
             "options": [
-                "How often do they practice in sector 15?",
-                "How long do they practice in sector 15?",
-                "When do they practice in sector 15?",
-                "Where do they practice in sector 15?"
+                "Whatever happens, we will support your decision.",
+                "Whatever it happens, we will support your decision.",
+                "Whatever happens to, we will support your decision.",
+                "However happens, we will support your decision."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How often do they practice in sector 15?",
-            "hint": "'Three times a day' is a frequency. (Sector 15 calibration)",
-            "explanation": "Use 'How often' for frequencies. [Verified in sector 15]."
+            "correctAnswer": "Whatever happens, we will support your decision.",
+            "hint": "'Whatever happens' = 'regardless of what happens' - 'whatever' is the subject of the embedded clause.",
+            "explanation": "'Whatever happens' = 'no matter what happens'. 'Whatever' is a relative pronoun that also functions as the subject of the embedded clause - no additional 'it' or 'to' is needed. 'However happens' is wrong because 'however' modifies adjectives/adverbs, not verbs."
         },
         {
             "id": "qf_l164_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They went to the space base in sector 15.",
-            "sentence": "They went to the space base in sector 15.",
+            "question": "Identify the most precise word: 'The scandal _____ serious questions about corporate governance.'",
+            "sentence": "Identify the most precise word: 'The scandal _____ serious questions about corporate governance.'",
             "options": [
-                "Where did they go in sector 15?",
-                "Why did they go in sector 15?",
-                "What did they go in sector 15?",
-                "When did they go in sector 15?"
+                "raised",
+                "asked",
+                "made",
+                "produced"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where did they go in sector 15?",
-            "hint": "'To the space base' is a destination/location. (Sector 15 calibration)",
-            "explanation": "Use 'Where' for destinations. [Verified in sector 15]."
+            "correctAnswer": "raised",
+            "hint": "'Raise questions' = bring questions to attention - the standard collocation.",
+            "explanation": "'Raise questions' is the standard collocation meaning to bring questions to public attention. 'Ask questions' requires a human subject. 'Make questions' is not a standard collocation. 'Produce questions' is grammatically possible but unidiomatic."
         },
         {
             "id": "qf_l164_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He chose the red wire in sector 15.",
-            "sentence": "He chose the red wire in sector 15.",
+            "question": "Which sentence avoids the error with 'comprise'?",
+            "sentence": "Which sentence avoids the error with 'comprise'?",
             "options": [
-                "Which wire did he choose in sector 15?",
-                "What wire does he choose in sector 15?",
-                "Who chose the wire in sector 15?",
-                "Why did he choose the wire in sector 15?"
+                "The team comprises five members.",
+                "The team is comprised of five members.",
+                "The team comprises of five members.",
+                "Five members are comprised by the team."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Which wire did he choose in sector 15?",
-            "hint": "Choosing from a limited set requires 'Which'. (Sector 15 calibration)",
-            "explanation": "Use 'Which' for selection. [Verified in sector 15]."
+            "correctAnswer": "The team comprises five members.",
+            "hint": "'Comprise' means 'consist of/include' - it takes a direct object with no preposition.",
+            "explanation": "'Comprise' means 'consist of': 'the team comprises five members' = 'the team consists of five members'. It never takes 'of' directly: 'comprises of' is incorrect. 'Is comprised of' is widely used but traditionally considered incorrect - 'comprises' or 'consists of' are preferred."
         },
         {
             "id": "qf_l164_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She walked five miles in sector 15.",
-            "sentence": "She walked five miles in sector 15.",
+            "question": "'Less' vs 'fewer': which is correct? 'We need _____ resources and _____ staff.'",
+            "sentence": "'Less' vs 'fewer': which is correct? 'We need _____ resources and _____ staff.'",
             "options": [
-                "How far did she walk in sector 15?",
-                "How long did she walk in sector 15?",
-                "Where did she walk in sector 15?",
-                "Why did she walk in sector 15?"
+                "fewer / fewer",
+                "less / less",
+                "fewer / less",
+                "less / fewer"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far did she walk in sector 15?",
-            "hint": "'Five miles' is a distance. (Sector 15 calibration)",
-            "explanation": "Use 'How far' for distances. [Verified in sector 15]."
+            "correctAnswer": "fewer / fewer",
+            "hint": "'Fewer' = countable nouns; 'less' = uncountable nouns. Both 'resources' and 'staff' are countable here.",
+            "explanation": "'Fewer' is used with countable nouns; 'less' with uncountable. 'Resources' and 'staff' are both countable (individual resources, individual staff members), so both take 'fewer'. 'Staff' as a collective noun can be tricky - but in context of reducing numbers, 'fewer staff' is correct."
         },
         {
             "id": "qf_l165_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is talking to the commander in sector 15.",
-            "sentence": "He is talking to the commander in sector 15.",
+            "question": "Which sentence uses 'such as' vs 'like' correctly in formal writing?",
+            "sentence": "Which sentence uses 'such as' vs 'like' correctly in formal writing?",
             "options": [
-                "Who is he talking to in sector 15?",
-                "What is he talking to in sector 15?",
-                "Why is he talking to in sector 15?",
-                "Where is he talking in sector 15?"
+                "In subjects such as maths and science, precision is crucial.",
+                "In subjects like maths and science, precision is crucial.",
+                "In subjects such as maths and like science, precision is crucial.",
+                "In subjects including such as maths, precision is crucial."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Who is he talking to in sector 15?",
-            "hint": "'The commander' is a person, requiring 'Who'. (Sector 15 calibration)",
-            "explanation": "Use 'Who' for people. [Verified in sector 15]."
+            "correctAnswer": "In subjects such as maths and science, precision is crucial.",
+            "hint": "'Such as' introduces examples in formal writing; 'like' is informal (and sometimes considered incorrect for examples).",
+            "explanation": "In formal writing, 'such as' is preferred for introducing examples. 'Like' is commonly used informally but traditional grammar discourages using 'like' (a preposition of similarity) for introducing examples. 'Such as' clearly signals 'for example'. 'Including such as' is redundant."
         },
         {
             "id": "qf_l165_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They called the security guard in sector 15.",
-            "sentence": "They called the security guard in sector 15.",
+            "question": "Choose the correctly punctuated sentence with a non-defining relative clause:",
+            "sentence": "Choose the correctly punctuated sentence with a non-defining relative clause:",
             "options": [
-                "Who did they call in sector 15?",
-                "What did they call in sector 15?",
-                "Why did they call in sector 15?",
-                "Where did they call in sector 15?"
+                "My sister, who lives in Tokyo, is visiting next month.",
+                "My sister who lives in Tokyo is visiting next month.",
+                "My sister, that lives in Tokyo, is visiting next month.",
+                "My sister who, lives in Tokyo, is visiting next month."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Who did they call in sector 15?",
-            "hint": "'The security guard' is a person. (Sector 15 calibration)",
-            "explanation": "Use 'Who' for human objects. [Verified in sector 15]."
+            "correctAnswer": "My sister, who lives in Tokyo, is visiting next month.",
+            "hint": "Non-defining relative clauses are set off by commas and use 'who', never 'that'.",
+            "explanation": "Non-defining relative clauses (adding non-essential information) must be set off by commas and use 'who' for people, never 'that'. Without commas, the clause becomes defining (implying you have multiple sisters). 'That' cannot be used in non-defining clauses."
         },
         {
             "id": "qf_l165_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has been waiting for an hour in sector 15.",
-            "sentence": "He has been waiting for an hour in sector 15.",
+            "question": "Which correctly expresses a counterfactual using inversion?",
+            "sentence": "Which correctly expresses a counterfactual using inversion?",
             "options": [
-                "How long has he been waiting in sector 15?",
-                "When has he been waiting in sector 15?",
-                "Why has he been waiting in sector 15?",
-                "Where has he been waiting in sector 15?"
+                "Were the evidence stronger, we could proceed.",
+                "If would the evidence be stronger, we could proceed.",
+                "Had the evidence been stronger, we could proceed now.",
+                "Should the evidence be stronger, we would have proceeded."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long has he been waiting in sector 15?",
-            "hint": "'For an hour' is a duration. (Sector 15 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 15]."
+            "correctAnswer": "Were the evidence stronger, we could proceed.",
+            "hint": "'Were + subject + adjective' = inverted second conditional for present/future hypothetical.",
+            "explanation": "'Were the evidence stronger' = 'If the evidence were stronger' - inverted second conditional for a current hypothetical. 'Had the evidence been stronger, we could proceed now' is a mixed conditional (past condition, present result) - also grammatically valid but different in meaning."
         },
         {
             "id": "qf_l166_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is crying due to fear in sector 15.",
-            "sentence": "She is crying due to fear in sector 15.",
+            "question": "Which sentence uses 'that' as a complementizer correctly?",
+            "sentence": "Which sentence uses 'that' as a complementizer correctly?",
             "options": [
-                "Why is she crying in sector 15?",
-                "How is she crying in sector 15?",
-                "Where is she crying in sector 15?",
-                "When is she crying in sector 15?"
+                "The fact that she resigned shocked everyone.",
+                "The fact which she resigned shocked everyone.",
+                "The fact about that she resigned shocked everyone.",
+                "The fact of she resigned shocked everyone."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why is she crying in sector 15?",
-            "hint": "'Due to fear' is a reason. (Sector 15 calibration)",
-            "explanation": "Use 'Why' for reasons. [Verified in sector 15]."
+            "correctAnswer": "The fact that she resigned shocked everyone.",
+            "hint": "'The fact that + clause' - 'that' is a complementizer introducing a noun complement clause.",
+            "explanation": "'The fact that + clause' is the noun complement structure. 'Which' would introduce a relative clause. 'About that' creates a prepositional phrase that cannot directly introduce a complement clause in this structure. 'Of she resigned' requires a gerund: 'of her resigning'."
         },
         {
             "id": "qf_l166_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The motor failed due to heat in sector 15.",
-            "sentence": "The motor failed due to heat in sector 15.",
+            "question": "Which sentence demonstrates correct use of inversion after 'nor'?",
+            "sentence": "Which sentence demonstrates correct use of inversion after 'nor'?",
             "options": [
-                "Why did the motor fail in sector 15?",
-                "How did the motor fail in sector 15?",
-                "When did the motor fail in sector 15?",
-                "Where did the motor fail in sector 15?"
+                "She didn't attend the conference, nor did her colleagues.",
+                "She didn't attend the conference, nor her colleagues did.",
+                "She didn't attend the conference, nor her colleagues attended.",
+                "She didn't attend the conference, nor do her colleagues."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why did the motor fail in sector 15?",
-            "hint": "'Due to heat' represents a cause. (Sector 15 calibration)",
-            "explanation": "Use 'Why' for causes. [Verified in sector 15]."
+            "correctAnswer": "She didn't attend the conference, nor did her colleagues.",
+            "hint": "After 'nor', subject-auxiliary inversion is required: 'nor did...'",
+            "explanation": "'Nor' at the start of a clause triggers subject-auxiliary inversion: 'nor did her colleagues'. This parallels the inversion after 'neither'. 'Nor her colleagues did' (no inversion) is informal or non-standard. The tense must match: 'didn't attend' → 'nor did'."
         },
         {
             "id": "qf_l166_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The base is ten miles away in sector 15.",
-            "sentence": "The base is ten miles away in sector 15.",
+            "question": "Which best describes the function of 'do' in: 'I do think you should reconsider.'?",
+            "sentence": "Which best describes the function of 'do' in: 'I do think you should reconsider.'?",
             "options": [
-                "How far is the base in sector 15?",
-                "How long is the base in sector 15?",
-                "Where is the base in sector 15?",
-                "When is the base in sector 15?"
+                "Emphatic 'do' adds stress to the main verb in an affirmative sentence.",
+                "'Do' is the main verb, meaning 'perform' or 'carry out'.",
+                "'Do' forms a present-simple question structure.",
+                "'Do' is a redundant auxiliary that adds no meaning."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far is the base in sector 15?",
-            "hint": "'Ten miles away' is a distance. (Sector 15 calibration)",
-            "explanation": "Use 'How far' for distances. [Verified in sector 15]."
+            "correctAnswer": "Emphatic 'do' adds stress to the main verb in an affirmative sentence.",
+            "hint": "Emphatic 'do/does/did' before the base verb in affirmative sentences adds stress or contradiction.",
+            "explanation": "Emphatic 'do' in affirmative statements adds stress or counters a previous negative: 'I do think' = I genuinely think (emphasising sincerity). This is not a question ('Do I think?'). The 'do' changes the prosody - it is spoken with stress - and adds no new proposition, but it does add a pragmatic meaning of emphasis."
         },
         {
             "id": "qf_l167_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They met at the shuttle dock in sector 15.",
-            "sentence": "They met at the shuttle dock in sector 15.",
+            "question": "'Providing that all documents are submitted, the visa will be approved.' Which type of conditional is this?",
+            "sentence": "'Providing that all documents are submitted, the visa will be approved.' Which type of conditional is this?",
             "options": [
-                "Where did they meet in sector 15?",
-                "When did they meet in sector 15?",
-                "What did they meet in sector 15?",
-                "Who did they meet in sector 15?"
+                "It is a real conditional (first conditional equivalent) with a formal connector.",
+                "It is a third conditional expressing a past hypothetical.",
+                "It is a second conditional expressing an imaginary scenario.",
+                "It is a mixed conditional combining past and present."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where did they meet in sector 15?",
-            "hint": "'At the shuttle dock' is a location. (Sector 15 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 15]."
+            "correctAnswer": "It is a real conditional (first conditional equivalent) with a formal connector.",
+            "hint": "'Providing that' = 'as long as' = a positive condition for a real future result.",
+            "explanation": "'Providing that all documents are submitted' introduces a real, achievable condition. The result is a future certainty if the condition is met. This is equivalent to a first conditional but uses a formal connector instead of 'if'. Third and second conditionals are for hypothetical or past scenarios."
         },
         {
             "id": "qf_l167_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She lives in the capital in sector 15.",
-            "sentence": "She lives in the capital in sector 15.",
+            "question": "Which correctly uses a participle clause to express a reason?",
+            "sentence": "Which correctly uses a participle clause to express a reason?",
             "options": [
-                "Where does she live in sector 15?",
-                "When does she live in sector 15?",
-                "Why does she live in sector 15?",
-                "What does she live in sector 15?"
+                "Not knowing the answer, she remained silent.",
+                "Not knowing the answer, the silence was maintained.",
+                "The answer not knowing, she remained silent.",
+                "Because not knowing the answer, she remained silent."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where does she live in sector 15?",
-            "hint": "'In the capital' is a location. (Sector 15 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 15]."
+            "correctAnswer": "Not knowing the answer, she remained silent.",
+            "hint": "Participle clause expressing reason: subject of participle must match subject of main clause.",
+            "explanation": "'Not knowing the answer, she remained silent' is correct - 'she' is both the one who doesn't know and the one who stays silent. 'Not knowing the answer, the silence was maintained' is a dangling modifier - silence can't know things. 'Because not knowing' is ungrammatical - use 'because she didn't know'."
         },
         {
             "id": "qf_l167_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They visit the hub weekly in sector 15.",
-            "sentence": "They visit the hub weekly in sector 15.",
+            "question": "What is the rhetorical effect of: 'The question is not whether we can afford to invest in education, but whether we can afford not to.'?",
+            "sentence": "What is the rhetorical effect of: 'The question is not whether we can afford to invest in education, but whether we can afford not to.'?",
             "options": [
-                "How often do they visit the hub in sector 15?",
-                "How long do they visit the hub in sector 15?",
-                "When do they visit the hub in sector 15?",
-                "Where do they visit the hub in sector 15?"
+                "It uses antithesis to create a paradox that strengthens the argument for investment.",
+                "It uses a conditional structure to express uncertainty about investment.",
+                "It is an indirect question embedded in a declarative sentence.",
+                "It uses ellipsis to avoid repeating 'invest in education'."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How often do they visit the hub in sector 15?",
-            "hint": "'Weekly' is a frequency. (Sector 15 calibration)",
-            "explanation": "Use 'How often' for frequency queries. [Verified in sector 15]."
+            "correctAnswer": "It uses antithesis to create a paradox that strengthens the argument for investment.",
+            "hint": "Antithesis ('not X but Y') creates emphasis by setting up and reversing the expected argument.",
+            "explanation": "This sentence uses antithesis: 'not whether we can afford... but whether we can afford not to'. By reversing the cost argument, it implies that not investing is the greater financial risk. The 'not to' at the end is also an example of ellipsis (omitting 'invest in education'). The antithesis creates rhetorical force."
         },
         {
             "id": "qf_l168_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The launch is next Tuesday in sector 15.",
-            "sentence": "The launch is next Tuesday in sector 15.",
+            "question": "Identify the tense and aspect: 'By next June, she will have been working here for a decade.'",
+            "sentence": "Identify the tense and aspect: 'By next June, she will have been working here for a decade.'",
             "options": [
-                "When is the launch in sector 15?",
-                "Where is the launch in sector 15?",
-                "Why is the launch in sector 15?",
-                "What is the launch in sector 15?"
+                "Future perfect continuous - action ongoing from past up to a future point.",
+                "Future simple - prediction about next June.",
+                "Present perfect continuous - action ongoing to the present.",
+                "Future continuous - action happening at the moment of next June."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When is the launch in sector 15?",
-            "hint": "'Next Tuesday' is a time. (Sector 15 calibration)",
-            "explanation": "Use 'When' for dates/times. [Verified in sector 15]."
+            "correctAnswer": "Future perfect continuous - action ongoing from past up to a future point.",
+            "hint": "'Will have been + V-ing' = future perfect continuous, projecting a continuous span to a future point.",
+            "explanation": "'Will have been working' is the future perfect continuous. It projects a span of continuous action ('been working') that will have been completed by a future point ('by next June'). This expresses both the completion and the ongoing nature of the duration."
         },
         {
             "id": "qf_l168_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They wake up at sunrise in sector 15.",
-            "sentence": "They wake up at sunrise in sector 15.",
+            "question": "Which correctly uses 'be to' for future obligation?",
+            "sentence": "Which correctly uses 'be to' for future obligation?",
             "options": [
-                "When do they wake up in sector 15?",
-                "Why do they wake up in sector 15?",
-                "Where do they wake up in sector 15?",
-                "Who wakes up in sector 15?"
+                "You are to report to the main office immediately.",
+                "You are to be reporting to the main office immediately.",
+                "You are reporting to the main office immediately.",
+                "You have to be reporting to the main office immediately."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When do they wake up in sector 15?",
-            "hint": "'At sunrise' is a time point. (Sector 15 calibration)",
-            "explanation": "Use 'When' for time points. [Verified in sector 15]."
+            "correctAnswer": "You are to report to the main office immediately.",
+            "hint": "'Be + to-infinitive' expresses official obligation or arrangement for the near future.",
+            "explanation": "'Be to + base infinitive' expresses an arrangement, instruction, or obligation - especially in official/formal contexts. It often appears in headlines and official orders: 'You are to report...' = 'You must report / You are required to report.' 'Be to + continuous infinitive' is not standard for this use."
         },
         {
             "id": "qf_l168_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "This shield weighs ten tons in sector 15.",
-            "sentence": "This shield weighs ten tons in sector 15.",
+            "question": "Which sentence correctly uses 'let alone'?",
+            "sentence": "Which sentence correctly uses 'let alone'?",
             "options": [
-                "How much does this shield weigh in sector 15?",
-                "How many does this shield weigh in sector 15?",
-                "What is the weight in sector 15?",
-                "Why does it weigh in sector 15?"
+                "She can't afford a holiday, let alone a new car.",
+                "She can't afford a holiday, let alone she can't afford a new car.",
+                "Let alone a holiday, she can't afford a new car.",
+                "She can't a holiday afford, let alone a car new."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How much does this shield weigh in sector 15?",
-            "hint": "Weight is a quantity requiring 'How much'. (Sector 15 calibration)",
-            "explanation": "Use 'How much' for weights. [Verified in sector 15]."
+            "correctAnswer": "She can't afford a holiday, let alone a new car.",
+            "hint": "'Let alone' introduces a more extreme item in a negative context - the second item must be harder to achieve.",
+            "explanation": "'Let alone' is used after a negative to introduce something even less possible: 'can't afford a holiday, let alone a new car' (a car is more expensive). The second item must be a step beyond the first in the same negative direction. 'Let alone' is followed directly by the noun/phrase, not a full clause."
         },
         {
             "id": "qf_l169_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He solved the puzzle with a tool in sector 15.",
-            "sentence": "He solved the puzzle with a tool in sector 15.",
+            "question": "Which sentence correctly uses 'used to' vs 'would' for past habits?",
+            "sentence": "Which sentence correctly uses 'used to' vs 'would' for past habits?",
             "options": [
-                "How did he solve the puzzle in sector 15?",
-                "Why did he solve the puzzle in sector 15?",
-                "Where did he solve the puzzle in sector 15?",
-                "Who solved the puzzle in sector 15?"
+                "She used to live near the sea, and she would often walk on the beach.",
+                "She would live near the sea, and she used to often walk on the beach.",
+                "She used to live near the sea, and she used to often walk on the beach.",
+                "She would have lived near the sea, and she would often walk on the beach."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How did he solve the puzzle in sector 15?",
-            "hint": "'With a tool' is a manner or method. (Sector 15 calibration)",
-            "explanation": "Use 'How' for methods. [Verified in sector 15]."
+            "correctAnswer": "She used to live near the sea, and she would often walk on the beach.",
+            "hint": "'Used to' = past state OR habit; 'would' = past habit ONLY (not states). Both can describe habits.",
+            "explanation": "'Used to' can describe past states ('used to live') and habits. 'Would' can only describe habits, not states - 'would live' for a state sounds unnatural. Both 'used to walk' and 'would walk' are correct for habitual past actions. The sentence correctly uses 'used to' for the state (living) and 'would' for the habit (walking)."
         },
         {
             "id": "qf_l169_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He fixed it using tape in sector 15.",
-            "sentence": "He fixed it using tape in sector 15.",
+            "question": "Which is the correct interpretation of: 'You should have seen her face!'?",
+            "sentence": "Which is the correct interpretation of: 'You should have seen her face!'?",
             "options": [
-                "How did he fix it in sector 15?",
-                "Why did he fix it in sector 15?",
-                "Where did he fix it in sector 15?",
-                "When did he fix it in sector 15?"
+                "It expresses regret that the listener missed a remarkable experience.",
+                "It expresses an obligation to look at someone's face.",
+                "It expresses a past deduction about what the listener saw.",
+                "It expresses a future obligation using a past modal."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How did he fix it in sector 15?",
-            "hint": "'Using tape' is a method. (Sector 15 calibration)",
-            "explanation": "Use 'How' for methods. [Verified in sector 15]."
+            "correctAnswer": "It expresses regret that the listener missed a remarkable experience.",
+            "hint": "'Should have + past participle' in exclamative contexts = expressing what a pity someone missed.",
+            "explanation": "'You should have seen' in an exclamative context means 'it's a pity you didn't see it - it was remarkable'. This is an informal use of 'should have' to express regret on behalf of the listener. It does not express obligation (that would need a serious context) or deduction."
         },
         {
             "id": "qf_l169_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The trip lasts ten days in sector 15.",
-            "sentence": "The trip lasts ten days in sector 15.",
+            "question": "Which sentence uses 'may have' vs 'might have' with the correct nuance?",
+            "sentence": "Which sentence uses 'may have' vs 'might have' with the correct nuance?",
             "options": [
-                "How long does the trip last in sector 15?",
-                "When does the trip last in sector 15?",
-                "Where does the trip last in sector 15?",
-                "Why does the trip last in sector 15?"
+                "She may have taken the wrong exit - I'm not certain either way.",
+                "She might have taken the wrong exit - we know she did.",
+                "She may have taken the wrong exit - it's theoretically possible but very unlikely.",
+                "She might have taken the wrong exit - it's not allowed."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long does the trip last in sector 15?",
-            "hint": "'Ten days' is a duration. (Sector 15 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 15]."
+            "correctAnswer": "She may have taken the wrong exit - I'm not certain either way.",
+            "hint": "'May have' and 'might have' are both used for past possibility; 'might have' is often slightly less certain.",
+            "explanation": "Both 'may have' and 'might have' express past possibility/uncertainty. 'May have' tends to be used when the possibility seems more equal (50/50). 'Might have' is often slightly more tentative. The key is that both express genuine uncertainty - not certainty ('we know she did') or prohibition ('not allowed')."
         },
         {
             "id": "qf_l170_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is hiding under the deck in sector 15.",
-            "sentence": "She is hiding under the deck in sector 15.",
+            "question": "Which correctly demonstrates subject-verb inversion after a negative fronted expression?",
+            "sentence": "Which correctly demonstrates subject-verb inversion after a negative fronted expression?",
             "options": [
-                "Where is she hiding in sector 15?",
-                "What is she hiding in sector 15?",
-                "Why is she hiding in sector 15?",
-                "Who is she hiding in sector 15?"
+                "Under no circumstances should you share your password.",
+                "Under no circumstances you should share your password.",
+                "Under no circumstances do you share your password.",
+                "Under no circumstances you share your password."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where is she hiding in sector 15?",
-            "hint": "'Under the deck' is a location. (Sector 15 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 15]."
+            "correctAnswer": "Under no circumstances should you share your password.",
+            "hint": "Negative fronting ('Under no circumstances') triggers subject-auxiliary inversion.",
+            "explanation": "Negative fronted expressions like 'Under no circumstances', 'On no account', 'In no way' trigger subject-auxiliary inversion: 'should you share'. 'You should share' (no inversion) is the non-emphatic statement form. 'Do you share' would imply a question about general habit."
         },
         {
             "id": "qf_l170_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She bought three crates in sector 15.",
-            "sentence": "She bought three crates in sector 15.",
+            "question": "Which sentence uses 'what' as a relative pronoun (free relative) correctly?",
+            "sentence": "Which sentence uses 'what' as a relative pronoun (free relative) correctly?",
             "options": [
-                "How many crates did she buy in sector 15?",
-                "How much crates did she buy in sector 15?",
-                "What did she buy in sector 15?",
-                "Why did she buy crates in sector 15?"
+                "What she told me shocked everyone in the room.",
+                "What she told me it shocked everyone in the room.",
+                "What did she tell me shocked everyone in the room.",
+                "The thing what she told me shocked everyone in the room."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How many crates did she buy in sector 15?",
-            "hint": "Countable quantity requires 'How many'. (Sector 15 calibration)",
-            "explanation": "Use 'How many' for countable items. [Verified in sector 15]."
+            "correctAnswer": "What she told me shocked everyone in the room.",
+            "hint": "Free relative 'What she told me' = 'the thing that she told me' - 'what' is both determiner and relative pronoun.",
+            "explanation": "A free relative clause ('what she told me') functions as a noun phrase meaning 'the thing(s) that she told me'. 'What' simultaneously refers to the content and introduces the clause. Adding 'it' creates a double subject. 'What did she tell me' inverts for a question, which is wrong here. 'The thing what' is ungrammatical - use 'the thing that'."
         },
         {
             "id": "qf_l170_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The colony is very distant in sector 15.",
-            "sentence": "The colony is very distant in sector 15.",
+            "question": "Which sentence correctly uses the subjunctive in a formal wish?",
+            "sentence": "Which sentence correctly uses the subjunctive in a formal wish?",
             "options": [
-                "How far is the colony in sector 15?",
-                "Where is the colony in sector 15?",
-                "What is the colony like in sector 15?",
-                "Why is the colony distant in sector 15?"
+                "The proposal requires that each member submit a signed declaration.",
+                "The proposal requires that each member submits a signed declaration.",
+                "The proposal requires each member to submit a signed declaration.",
+                "The proposal requires each member submitting a signed declaration."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far is the colony in sector 15?",
-            "hint": "'Very distant' is a distance/degree. (Sector 15 calibration)",
-            "explanation": "Use 'How far' for distance. [Verified in sector 15]."
+            "correctAnswer": "The proposal requires that each member submit a signed declaration.",
+            "hint": "After 'require that', the formal subjunctive uses the base verb (no -s for 3rd person).",
+            "explanation": "After 'require/insist/demand that', the subjunctive uses the base verb for all subjects: 'each member submit' (not 'submits'). 'Requires each member to submit' (infinitive) is also grammatically correct and widely used. Both the subjunctive and the infinitive construction are acceptable."
         }
     ]
 }

@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l181_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She likes ice cream in sector 17.",
-            "sentence": "She likes ice cream in sector 17.",
+            "question": "Which sentence correctly uses 'would' for past conditionality in narrative?",
+            "sentence": "Which sentence correctly uses 'would' for past conditionality in narrative?",
             "options": [
-                "Does she like ice cream in sector 17?",
-                "Do she likes ice cream in sector 17?",
-                "Is she like ice cream in sector 17?",
-                "She likes ice cream in sector 17?"
+                "He knew that if he pushed the button, the alarm would sound.",
+                "He knew that if he pushes the button, the alarm would sound.",
+                "He knew that if he had pushed the button, the alarm would have sounded.",
+                "He knew that if he pushed the button, the alarm will sound."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Does she like ice cream in sector 17?",
-            "hint": "Use 'Does' for third person singular present. (Sector 17 calibration)",
-            "explanation": "Does is the correct present tense auxiliary for 'she'. [Verified in sector 17]."
+            "correctAnswer": "He knew that if he pushed the button, the alarm would sound.",
+            "hint": "Backshifted conditional in reported thought: 'if he pushed...would sound' = reported first conditional.",
+            "explanation": "In reported speech and narrative, the first conditional backshifts: 'if it rains, I will come' → 'he knew that if it rained, he would come'. The version 'if he pushed...would sound' correctly represents this backshifted open conditional. 'If he pushes...would sound' mixes tenses. 'Will sound' doesn't backshift."
         },
         {
             "id": "qf_l181_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She can swim well in sector 17.",
-            "sentence": "She can swim well in sector 17.",
+            "question": "Which sentence most accurately uses 'the' with a unique referent?",
+            "sentence": "Which sentence most accurately uses 'the' with a unique referent?",
             "options": [
-                "Can she swim well in sector 17?",
-                "Does she can swim well in sector 17?",
-                "Can she swims well in sector 17?",
-                "She can swim well in sector 17?"
+                "The Prime Minister will address the nation tonight.",
+                "A Prime Minister will address a nation tonight.",
+                "The Prime Minister will address a nation tonight.",
+                "Prime Minister will address the nation tonight."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can she swim well in sector 17?",
-            "hint": "Invert modal 'can' and subject. (Sector 17 calibration)",
-            "explanation": "Can she swim is correct modal inversion. [Verified in sector 17]."
+            "correctAnswer": "The Prime Minister will address the nation tonight.",
+            "hint": "Both 'the Prime Minister' and 'the nation' are unique referents in context - both take 'the'.",
+            "explanation": "'The Prime Minister' refers to a specific, unique role-holder in context. 'The nation' refers to the specific country whose PM is speaking - also unique in context. 'A Prime Minister' would imply any prime minister, not the current one. Omitting 'the' before 'Prime Minister' is a common error in some learner varieties of English."
         },
         {
             "id": "qf_l181_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He lives in London in sector 17.",
-            "sentence": "He lives in London in sector 17.",
+            "question": "What is the grammatical function of 'to' in 'He was the last person to arrive'?",
+            "sentence": "What is the grammatical function of 'to' in 'He was the last person to arrive'?",
             "options": [
-                "Does he live in London in sector 17?",
-                "Do he lives in London in sector 17?",
-                "Is he live in London in sector 17?",
-                "He lives in London in sector 17?"
+                "'To arrive' is a postmodifying infinitive, equivalent to a defining relative clause: 'who arrived'.",
+                "'To arrive' is the purpose of his being last.",
+                "'To arrive' is the subject complement after 'was'.",
+                "'To arrive' is a participle clause modifying 'last'."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Does he live in London in sector 17?",
-            "hint": "Use 'Does' for present third person singular. (Sector 17 calibration)",
-            "explanation": "Does he live is the correct present question. [Verified in sector 17]."
+            "correctAnswer": "'To arrive' is a postmodifying infinitive, equivalent to a defining relative clause: 'who arrived'.",
+            "hint": "'The last person to arrive' = 'the last person who arrived' - postmodifying infinitive in superlative context.",
+            "explanation": "In superlative and ordinal expressions ('the first, the last, the only, the next'), an infinitive can postmodify the noun and acts like a defining relative clause. 'The last person to arrive' = 'the last person who arrived'. This is a postmodifying infinitive, not a purpose clause."
         },
         {
             "id": "qf_l182_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They went to school in sector 17.",
-            "sentence": "They went to school in sector 17.",
+            "question": "Which is a correct example of an 'existential there' construction?",
+            "sentence": "Which is a correct example of an 'existential there' construction?",
             "options": [
-                "Did they go to school in sector 17?",
-                "Did they went to school in sector 17?",
-                "Do they went to school in sector 17?",
-                "They went to school in sector 17?"
+                "There appears to be a problem with the data.",
+                "It appears to be a problem with the data.",
+                "A problem with the data appears to be there.",
+                "There is appearing a problem with the data."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did they go to school in sector 17?",
-            "hint": "Use 'Did' + base verb for simple past. (Sector 17 calibration)",
-            "explanation": "Did + go is the past tense question form of went. [Verified in sector 17]."
+            "correctAnswer": "There appears to be a problem with the data.",
+            "hint": "Existential 'there' + complex verb phrase ('appears to be') introduces a new referent.",
+            "explanation": "Existential 'there' introduces a new, previously unknown referent into discourse. It can combine with complex verb phrases: 'There appears to be', 'There tends to be', 'There seems to be'. 'It appears to be a problem' uses a different structure (anticipatory 'it' for evaluation). 'There is appearing' is non-standard."
         },
         {
             "id": "qf_l182_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They have finished lunch in sector 17.",
-            "sentence": "They have finished lunch in sector 17.",
+            "question": "Identify the most precise word for the blank: 'The government _____ the opposition's proposal without debate.'",
+            "sentence": "Identify the most precise word for the blank: 'The government _____ the opposition's proposal without debate.'",
             "options": [
-                "Have they finished lunch in sector 17?",
-                "Did they have finished lunch in sector 17?",
-                "Has they finished lunch in sector 17?",
-                "They have finished lunch in sector 17?"
+                "rejected",
+                "refused",
+                "denied",
+                "declined"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Have they finished lunch in sector 17?",
-            "hint": "Invert auxiliary 'have' and subject. (Sector 17 calibration)",
-            "explanation": "Have they finished is correct present perfect inversion. [Verified in sector 17]."
+            "correctAnswer": "rejected",
+            "hint": "'Reject a proposal' = formally turn it down. 'Refuse' = decline to do something (verb + infinitive/noun).",
+            "explanation": "'Reject a proposal' is the precise collocation - the government formally turns down the proposal. 'Refuse a proposal' is less standard; 'refuse' typically takes a verbal complement ('refuse to do'). 'Deny a proposal' means to say it doesn't exist. 'Decline a proposal' is also possible but 'reject' is strongest for outright dismissal."
         },
         {
             "id": "qf_l182_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They have a ship in sector 17.",
-            "sentence": "They have a ship in sector 17.",
+            "question": "Which correctly uses an 'infinitive of result' (too...to/enough...to)?",
+            "sentence": "Which correctly uses an 'infinitive of result' (too...to/enough...to)?",
             "options": [
-                "Do they have a ship in sector 17?",
-                "Has they a ship in sector 17?",
-                "Do they has a ship in sector 17?",
-                "They have a ship in sector 17?"
+                "The film was engaging enough to hold my attention for three hours.",
+                "The film was too engaging to hold my attention for three hours.",
+                "The film was so engaging enough to hold my attention for three hours.",
+                "The film was engaging enough so to hold my attention for three hours."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do they have a ship in sector 17?",
-            "hint": "Use 'Do' for present plural questions. (Sector 17 calibration)",
-            "explanation": "Do they have is correct. [Verified in sector 17]."
+            "correctAnswer": "The film was engaging enough to hold my attention for three hours.",
+            "hint": "'Adjective + enough + to + base verb' = the quality was sufficient to enable the result.",
+            "explanation": "'Engaging enough to hold' = the engagement was sufficient to keep attention. 'Too engaging to hold' would imply the film was excessively engaging in a way that prevented holding attention - logically contradictory. 'So engaging enough' doubles the intensifier. 'Enough so to' is not standard word order."
         },
         {
             "id": "qf_l183_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is a doctor in sector 17.",
-            "sentence": "He is a doctor in sector 17.",
+            "question": "Which sentence demonstrates the 'have + object + bare infinitive' (causative) correctly?",
+            "sentence": "Which sentence demonstrates the 'have + object + bare infinitive' (causative) correctly?",
             "options": [
-                "Is he a doctor in sector 17?",
-                "Does he is a doctor in sector 17?",
-                "Do he a doctor in sector 17?",
-                "He is a doctor in sector 17?"
+                "The manager had her team revise the entire report.",
+                "The manager had her team to revise the entire report.",
+                "The manager had her team revised the entire report.",
+                "The manager had revised the entire report by her team."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is he a doctor in sector 17?",
-            "hint": "Invert the subject and the verb 'to be'. (Sector 17 calibration)",
-            "explanation": "Is he is the correct inverted form of He is. [Verified in sector 17]."
+            "correctAnswer": "The manager had her team revise the entire report.",
+            "hint": "Causative 'have' for people: have + person + bare infinitive (no 'to').",
+            "explanation": "Causative 'have' with a person object: 'had her team revise' = arranged for the team to revise. No 'to' is used. 'Had her team revised' = causative with a thing object (past participle), but 'her team' is a person. 'Had revised... by her team' creates an odd passive-like structure."
         },
         {
             "id": "qf_l183_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We will arrive tomorrow in sector 17.",
-            "sentence": "We will arrive tomorrow in sector 17.",
+            "question": "Which sentence correctly uses 'can' for theoretical possibility (not ability)?",
+            "sentence": "Which sentence correctly uses 'can' for theoretical possibility (not ability)?",
             "options": [
-                "Will we arrive tomorrow in sector 17?",
-                "Do we will arrive tomorrow in sector 17?",
-                "Will we arrived tomorrow in sector 17?",
-                "We will arrive tomorrow in sector 17?"
+                "Mistakes can be made even by experts.",
+                "Mistakes are able to be made even by experts.",
+                "Mistakes could be made even by experts.",
+                "Mistakes may be made even by experts."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will we arrive tomorrow in sector 17?",
-            "hint": "Invert modal 'will' and subject. (Sector 17 calibration)",
-            "explanation": "Will we arrive is correct future inversion. [Verified in sector 17]."
+            "correctAnswer": "Mistakes can be made even by experts.",
+            "hint": "'Can' in passive constructions expresses theoretical possibility in general statements.",
+            "explanation": "'Mistakes can be made' uses 'can' for theoretical/general possibility: it is possible for mistakes to happen. This is different from ability ('she can swim'). 'Could be made' would suggest a specific conditional possibility. 'May be made' suggests permission or uncertain future possibility."
         },
         {
             "id": "qf_l183_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is reading in sector 17.",
-            "sentence": "She is reading in sector 17.",
+            "question": "Which sentence correctly uses 'whose' with a non-human antecedent?",
+            "sentence": "Which sentence correctly uses 'whose' with a non-human antecedent?",
             "options": [
-                "Is she reading in sector 17?",
-                "Does she reading in sector 17?",
-                "Is she read in sector 17?",
-                "She is reading in sector 17?"
+                "The company whose product was recalled has issued an apology.",
+                "The company which product was recalled has issued an apology.",
+                "The company that product was recalled has issued an apology.",
+                "The company who product was recalled has issued an apology."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is she reading in sector 17?",
-            "hint": "Invert 'is' and 'she'. (Sector 17 calibration)",
-            "explanation": "Is she reading is correct. [Verified in sector 17]."
+            "correctAnswer": "The company whose product was recalled has issued an apology.",
+            "hint": "'Whose' can refer to non-human nouns (organisations, things) as a possessive relative pronoun.",
+            "explanation": "'Whose' can function as a possessive relative pronoun for non-human antecedents in formal English: 'the company whose product'. 'Which product' is non-standard as a possessive relative (use 'of which': 'the company the product of which...'). 'That product' is ungrammatical as a possessive relative."
         },
         {
             "id": "qf_l184_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We have some apples in sector 17.",
-            "sentence": "We have some apples in sector 17.",
+            "question": "Which correctly uses 'as if' / 'as though' with the subjunctive?",
+            "sentence": "Which correctly uses 'as if' / 'as though' with the subjunctive?",
             "options": [
-                "Do we have any apples in sector 17?",
-                "Have we some apples in sector 17?",
-                "Do we has some apples in sector 17?",
-                "We have any apples in sector 17?"
+                "She spoke as if she were the only expert in the room.",
+                "She spoke as if she was the only expert in the room.",
+                "She spoke as if she is the only expert in the room.",
+                "She spoke as though she had been the only expert in the room."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do we have any apples in sector 17?",
-            "hint": "Use 'Do' for first person plural questions. (Sector 17 calibration)",
-            "explanation": "Do we have is the standard question form. [Verified in sector 17]."
+            "correctAnswer": "She spoke as if she were the only expert in the room.",
+            "hint": "'As if/as though + past subjunctive (were)' = hypothetical comparison not matching reality.",
+            "explanation": "'As if/as though + past subjunctive (were)' expresses a hypothetical: she isn't actually the only expert. In formal English, 'were' is preferred for all subjects. 'Was' is widely used informally. 'As though she had been' would imply she was previously the only expert but no longer is - a different meaning."
         },
         {
             "id": "qf_l184_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You should wait here in sector 17.",
-            "sentence": "You should wait here in sector 17.",
+            "question": "Which sentence most precisely uses 'might as well'?",
+            "sentence": "Which sentence most precisely uses 'might as well'?",
             "options": [
-                "Should you wait here in sector 17?",
-                "Do you should wait here in sector 17?",
-                "Should you waiting here in sector 17?",
-                "You should wait here in sector 17?"
+                "We might as well take the scenic route since there's a traffic jam.",
+                "We might take the scenic route since there's a traffic jam.",
+                "We may as well have taken the scenic route since there's a traffic jam.",
+                "We could as well take the scenic route since there's a traffic jam."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should you wait here in sector 17?",
-            "hint": "Invert modal 'should'. (Sector 17 calibration)",
-            "explanation": "Should you wait is correct. [Verified in sector 17]."
+            "correctAnswer": "We might as well take the scenic route since there's a traffic jam.",
+            "hint": "'Might as well + base verb' = there's no particular reason not to do it; one option is as good as another.",
+            "explanation": "'Might as well' expresses that an alternative is equally good or that there's no real reason not to choose it. 'May as well have taken' would be for a past missed opportunity. 'Could as well' is not a standard expression. 'Might take' expresses possibility without the 'no reason not to' implication."
         },
         {
             "id": "qf_l184_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We were working in sector 17.",
-            "sentence": "We were working in sector 17.",
+            "question": "Which sentence uses an 'unattached participle' that is grammatically acceptable?",
+            "sentence": "Which sentence uses an 'unattached participle' that is grammatically acceptable?",
             "options": [
-                "Were we working in sector 17?",
-                "Was we working in sector 17?",
-                "Did we working in sector 17?",
-                "We were working in sector 17?"
+                "Strictly speaking, this rule has a few exceptions.",
+                "Speaking strictly, this rule has a few exceptions.",
+                "Speaking, this rule strictly has a few exceptions.",
+                "To strictly speak, this rule has a few exceptions."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Were we working in sector 17?",
-            "hint": "Invert 'were' and 'we'. (Sector 17 calibration)",
-            "explanation": "Were we working is correct. [Verified in sector 17]."
+            "correctAnswer": "Strictly speaking, this rule has a few exceptions.",
+            "hint": "Some participial phrases are 'conventionally unattached' - they don't refer to the sentence subject.",
+            "explanation": "'Strictly speaking', 'generally speaking', 'broadly speaking', 'frankly speaking', 'considering the evidence' - these are conventional, accepted 'absolute' or 'unattached' participial expressions that do not need to refer to the grammatical subject. They are fixed discourse markers, unlike true dangling modifiers."
         },
         {
             "id": "qf_l185_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She swam in the pool in sector 17.",
-            "sentence": "She swam in the pool in sector 17.",
+            "question": "Which identifies the correct term for 'he' in: 'The CEO announced his resignation'?",
+            "sentence": "Which identifies the correct term for 'he' in: 'The CEO announced his resignation'?",
             "options": [
-                "Did she swim in the pool in sector 17?",
-                "Did she swam in the pool in sector 17?",
-                "Does she swim in the pool in sector 17?",
-                "She swam in the pool in sector 17?"
+                "'His' is a possessive adjective (determiner) co-referential with 'the CEO'.",
+                "'His' is a personal pronoun substituting for 'the CEO'.",
+                "'His' is a reflexive pronoun emphasising the CEO.",
+                "'His' is a relative pronoun introducing a relative clause."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did she swim in the pool in sector 17?",
-            "hint": "Use 'Did' + base verb 'swim'. (Sector 17 calibration)",
-            "explanation": "Did she swim is correct for past actions. [Verified in sector 17]."
+            "correctAnswer": "'His' is a possessive adjective (determiner) co-referential with 'the CEO'.",
+            "hint": "'His' is a possessive determiner (adjective) modifying 'resignation', co-referential with 'the CEO'.",
+            "explanation": "'His' functions as a possessive adjective (or possessive determiner), modifying the noun 'resignation'. It co-refers with 'the CEO' in the same sentence - an anaphoric reference. It is not a personal pronoun (he/him), a reflexive pronoun (himself), or a relative pronoun (who/which/that)."
         },
         {
             "id": "qf_l185_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has seen this movie in sector 17.",
-            "sentence": "He has seen this movie in sector 17.",
+            "question": "Which sentence correctly uses 'lest' in a formal subordinate clause?",
+            "sentence": "Which sentence correctly uses 'lest' in a formal subordinate clause?",
             "options": [
-                "Has he seen this movie in sector 17?",
-                "Did he has seen this movie in sector 17?",
-                "Have he seen this movie in sector 17?",
-                "He has seen this movie in sector 17?"
+                "She left early lest she miss the last train.",
+                "She left early lest she misses the last train.",
+                "She left early lest she missed the last train.",
+                "She left early lest she should miss the last train."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has he seen this movie in sector 17?",
-            "hint": "Invert auxiliary 'has'. (Sector 17 calibration)",
-            "explanation": "Has he seen is correct. [Verified in sector 17]."
+            "correctAnswer": "She left early lest she miss the last train.",
+            "hint": "'Lest' = 'for fear that' - takes the subjunctive (base verb) or 'should + base verb'.",
+            "explanation": "'Lest' is a formal/literary conjunction meaning 'for fear that'. It takes either the subjunctive (base verb: 'she miss') or 'should + base verb' ('she should miss'). Both are grammatically correct. 'Lest she misses' (indicative with -s) and 'lest she missed' (past simple) are both wrong after 'lest'."
         },
         {
             "id": "qf_l185_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He was sleeping in sector 17.",
-            "sentence": "He was sleeping in sector 17.",
+            "question": "Which sentence most precisely expresses 'near certainty' about a past event?",
+            "sentence": "Which sentence most precisely expresses 'near certainty' about a past event?",
             "options": [
-                "Was he sleeping in sector 17?",
-                "Were he sleeping in sector 17?",
-                "Did he sleeping in sector 17?",
-                "He was sleeping in sector 17?"
+                "She must have already left - her coat is gone.",
+                "She should have already left - her coat is gone.",
+                "She would have already left - her coat is gone.",
+                "She might have already left - her coat is gone."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was he sleeping in sector 17?",
-            "hint": "Invert 'was' and 'he'. (Sector 17 calibration)",
-            "explanation": "Was he sleeping is correct. [Verified in sector 17]."
+            "correctAnswer": "She must have already left - her coat is gone.",
+            "hint": "'Must have + past participle' = near-certain past deduction based on present evidence.",
+            "explanation": "'Must have left' expresses a near-certain past deduction from present evidence (her coat is gone). 'Should have left' = it was the expected thing to do. 'Would have left' = in a hypothetical conditional context. 'Might have left' = a much less certain possibility."
         },
         {
             "id": "qf_l186_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The system is online in sector 17.",
-            "sentence": "The system is online in sector 17.",
+            "question": "Which sentence best demonstrates epistemic vs deontic modality?",
+            "sentence": "Which sentence best demonstrates epistemic vs deontic modality?",
             "options": [
-                "Is the system online in sector 17?",
-                "Does the system online in sector 17?",
-                "Are the system online in sector 17?",
-                "System is online in sector 17?"
+                "You must be exhausted (epistemic) vs You must submit the form (deontic).",
+                "'Must' always expresses obligation (deontic).",
+                "'Must' always expresses deduction (epistemic).",
+                "'Must' expresses the same meaning in both cases - only context creates the distinction."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is the system online in sector 17?",
-            "hint": "Invert the subject and 'is'. (Sector 17 calibration)",
-            "explanation": "Is the system online is correct. [Verified in sector 17]."
+            "correctAnswer": "You must be exhausted (epistemic) vs You must submit the form (deontic).",
+            "hint": "'Must' has two distinct meanings: epistemic (deduction/certainty) and deontic (obligation/necessity).",
+            "explanation": "'Must' can express: (1) epistemic modality - certainty or deduction from evidence ('you must be tired'); (2) deontic modality - obligation or necessity ('you must submit the form'). Context determines which reading is active. These are genuinely different meanings of the same modal."
         },
         {
             "id": "qf_l186_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They could hear us in sector 17.",
-            "sentence": "They could hear us in sector 17.",
+            "question": "Which sentence uses 'would' for a past repeated action (habitual past) correctly?",
+            "sentence": "Which sentence uses 'would' for a past repeated action (habitual past) correctly?",
             "options": [
-                "Could they hear us in sector 17?",
-                "Did they could hear us in sector 17?",
-                "Could they heard us in sector 17?",
-                "They could hear us in sector 17?"
+                "As a child, he would spend hours reading in the garden.",
+                "As a child, he spent hours reading in the garden (equally correct with habitual meaning).",
+                "As a child, he would have spent hours reading in the garden.",
+                "As a child, he used to spend hours reading in the garden (less correct)."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Could they hear us in sector 17?",
-            "hint": "Invert modal 'could'. (Sector 17 calibration)",
-            "explanation": "Could they hear is correct. [Verified in sector 17]."
+            "correctAnswer": "As a child, he would spend hours reading in the garden.",
+            "hint": "Both 'would' and 'used to' express habitual past; 'would' cannot express past states (only actions).",
+            "explanation": "'Would + base verb' expresses habitual past actions: 'he would spend hours'. This is equivalent to 'used to spend'. Crucially, 'would' cannot be used for past states: 'he would know her' (state) is wrong; use 'used to know'. 'Both A and B' - simple past ('spent') also expresses habitual past in context. 'Would have spent' = third conditional (hypothetical past)."
         },
         {
             "id": "qf_l186_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She has been working in sector 17.",
-            "sentence": "She has been working in sector 17.",
+            "question": "Identify the most sophisticated error in: 'Being that she was late, the meeting started without her.'",
+            "sentence": "Identify the most sophisticated error in: 'Being that she was late, the meeting started without her.'",
             "options": [
-                "Has she been working in sector 17?",
-                "Have she been working in sector 17?",
-                "Does she been working in sector 17?",
-                "She has been working in sector 17?"
+                "'Being that' is non-standard; use 'Because' or 'Since'.",
+                "'She was late' should be in the past perfect.",
+                "'Meeting started' should be passive.",
+                "'Without her' should be 'without her being there'."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has she been working in sector 17?",
-            "hint": "Invert auxiliary 'has'. (Sector 17 calibration)",
-            "explanation": "Has she been working is correct. [Verified in sector 17]."
+            "correctAnswer": "'Being that' is non-standard; use 'Because' or 'Since'.",
+            "hint": "'Being that' is a non-standard conjunction; it should be replaced by 'Because/Since' in formal writing.",
+            "explanation": "'Being that' as a causal conjunction is non-standard in formal English. The correct formal alternatives are 'because', 'since', or 'as': 'Since she was late, the meeting started without her.' 'Being that' is occasionally heard in informal American English but is avoided in writing."
         },
         {
             "id": "qf_l187_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They work in the city in sector 17.",
-            "sentence": "They work in the city in sector 17.",
+            "question": "Which sentence contains a subtle subject-verb agreement error?",
+            "sentence": "Which sentence contains a subtle subject-verb agreement error?",
             "options": [
-                "Do they work in the city in sector 17?",
-                "Does they work in the city in sector 17?",
-                "Are they work in the city in sector 17?",
-                "They work in the city in sector 17?"
+                "One of the recommendations that was made proves controversial.",
+                "One of the recommendations that were made proves controversial.",
+                "One of the recommendations that were made prove controversial.",
+                "One of the recommendations that was made prove controversial."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do they work in the city in sector 17?",
-            "hint": "Use 'Do' for third person plural present. (Sector 17 calibration)",
-            "explanation": "Do they work is correct. [Verified in sector 17]."
+            "correctAnswer": "One of the recommendations that was made proves controversial.",
+            "hint": "'One of the N that/which + plural verb': the relative clause verb agrees with the plural noun, not 'one'.",
+            "explanation": "In 'one of the [plural noun] that [verb]', the verb in the relative clause agrees with the plural noun (not 'one'): 'one of the recommendations that WERE made'. The main clause verb agrees with 'one' (singular): 'proves'. So the correct version is 'One of the recommendations that were made proves controversial'."
         },
         {
             "id": "qf_l187_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She will help us in sector 17.",
-            "sentence": "She will help us in sector 17.",
+            "question": "Which correctly captures the difference between 'I don't think she knows' and 'I think she doesn't know'?",
+            "sentence": "Which correctly captures the difference between 'I don't think she knows' and 'I think she doesn't know'?",
             "options": [
-                "Will she help us in sector 17?",
-                "Does she will help us in sector 17?",
-                "Will she helps us in sector 17?",
-                "She will help us in sector 17?"
+                "'I don't think she knows' = standard negation transfer; both mean the same but the first is more natural.",
+                "They have different logical meanings - the first is epistemic, the second is deontic.",
+                "'I don't think she knows' denies my thinking; 'I think she doesn't know' asserts my belief.",
+                "Only 'I think she doesn't know' is grammatically correct."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will she help us in sector 17?",
-            "hint": "Invert 'will'. (Sector 17 calibration)",
-            "explanation": "Will she help is correct. [Verified in sector 17]."
+            "correctAnswer": "'I don't think she knows' = standard negation transfer; both mean the same but the first is more natural.",
+            "hint": "Negation transfer: 'I don't think + positive clause' is idiomatic for 'I think + negative clause'.",
+            "explanation": "In English, negation is often 'transferred' from the subordinate clause to the main verb: 'I don't think she knows' = 'I think she doesn't know'. This is idiomatic and natural. Both are grammatically correct and mean the same thing in practice, though the logical scope of negation technically differs."
         },
         {
             "id": "qf_l187_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They had left early in sector 17.",
-            "sentence": "They had left early in sector 17.",
+            "question": "Which sentence demonstrates the correct use of 'barely' in an inverted structure?",
+            "sentence": "Which sentence demonstrates the correct use of 'barely' in an inverted structure?",
             "options": [
-                "Had they left early in sector 17?",
-                "Did they had left early in sector 17?",
-                "Have they left early in sector 17?",
-                "They had left early in sector 17?"
+                "Barely had she entered the room when the lights went out.",
+                "Barely she had entered the room when the lights went out.",
+                "Barely did she enter the room when the lights went out.",
+                "Barely had she entered the room than the lights went out."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Had they left early in sector 17?",
-            "hint": "Invert auxiliary 'had'. (Sector 17 calibration)",
-            "explanation": "Had they left is correct. [Verified in sector 17]."
+            "correctAnswer": "Barely had she entered the room when the lights went out.",
+            "hint": "'Barely had + subject + past participle + when + simple past' - inversion + correct connector.",
+            "explanation": "'Barely' (like 'hardly' and 'scarcely') triggers past-perfect inversion: 'Barely had she entered'. The connector is 'when', not 'than' (which is used with 'no sooner'). 'Barely did she enter' (simple past inversion) is less standard with 'barely'. 'Barely she had entered' (no inversion) is non-standard."
         },
         {
             "id": "qf_l188_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He forgot his keys in sector 17.",
-            "sentence": "He forgot his keys in sector 17.",
+            "question": "Which uses 'it' correctly as a preparatory object?",
+            "sentence": "Which uses 'it' correctly as a preparatory object?",
             "options": [
-                "Did he forget his keys in sector 17?",
-                "Did he forgot his keys in sector 17?",
-                "Does he forget his keys in sector 17?",
-                "He forgot his keys in sector 17?"
+                "I find it difficult to work in a noisy environment.",
+                "I find it difficult working in a noisy environment.",
+                "I find working in a noisy environment difficult.",
+                "I find difficult to work in a noisy environment."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did he forget his keys in sector 17?",
-            "hint": "Use 'Did' + base verb 'forget'. (Sector 17 calibration)",
-            "explanation": "Did he forget is correct. [Verified in sector 17]."
+            "correctAnswer": "I find it difficult to work in a noisy environment.",
+            "hint": "'Find it + adjective + to-infinitive' - 'it' is the anticipatory/preparatory object.",
+            "explanation": "'Find it + adjective + to-infinitive' uses 'it' as a preparatory object, placing the heavy infinitive at the end. 'Find it difficult working' is non-standard after 'find' (though 'find' + gerund is possible: 'I find working difficult'). 'Find working in a noisy environment difficult' is also grammatically correct but more awkward. 'Find difficult to work' (without 'it') is ungrammatical."
         },
         {
             "id": "qf_l188_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We must report this in sector 17.",
-            "sentence": "We must report this in sector 17.",
+            "question": "Which correctly uses 'the' before a noun modified by a superlative relative clause?",
+            "sentence": "Which correctly uses 'the' before a noun modified by a superlative relative clause?",
             "options": [
-                "Must we report this in sector 17?",
-                "Do we must report this in sector 17?",
-                "Must we reporting this in sector 17?",
-                "We must report this in sector 17?"
+                "She is one of the most articulate speakers I have ever heard.",
+                "She is one of most articulate speakers I have ever heard.",
+                "She is the most articulate one of the speakers I have ever heard.",
+                "She is one of the most articulate speakers I have ever heard of."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Must we report this in sector 17?",
-            "hint": "Invert modal 'must'. (Sector 17 calibration)",
-            "explanation": "Must we report is correct. [Verified in sector 17]."
+            "correctAnswer": "She is one of the most articulate speakers I have ever heard.",
+            "hint": "'One of the + superlative + plural noun' - 'the' is essential before the superlative.",
+            "explanation": "'One of the most + adjective + plural noun' is the standard pattern. 'The' is essential before the superlative. 'One of most articulate' (no 'the') is wrong. 'The most articulate one of the speakers' is grammatically valid but focuses differently. 'Have ever heard of' changes the meaning ('of' would mean 'I've heard of her existence', not 'I've heard her speak')."
         },
         {
             "id": "qf_l188_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He can read maps in sector 17.",
-            "sentence": "He can read maps in sector 17.",
+            "question": "Which sentence correctly uses 'the more...the more' for a causal proportion?",
+            "sentence": "Which sentence correctly uses 'the more...the more' for a causal proportion?",
             "options": [
-                "Can he read maps in sector 17?",
-                "Does he can read maps in sector 17?",
-                "Can he reads maps in sector 17?",
-                "He can read maps in sector 17?"
+                "The longer the delay, the greater the cost becomes.",
+                "The longer the delay, the greater cost becomes.",
+                "Longer the delay, the greater the cost becomes.",
+                "The longer delay, the greater the cost."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can he read maps in sector 17?",
-            "hint": "Invert modal 'can'. (Sector 17 calibration)",
-            "explanation": "Can he read is correct. [Verified in sector 17]."
+            "correctAnswer": "The longer the delay, the greater the cost becomes.",
+            "hint": "Both halves: 'the + comparative adjective/adverb + subject + verb'.",
+            "explanation": "'The longer the delay, the greater the cost becomes' is correct. Both halves need 'the' before the comparative. The second half optionally includes a verb ('becomes'). 'The greater cost' (no 'the' before 'greater') is wrong. 'Longer the delay' (no 'the' before 'longer') is also wrong. 'The greater the cost' (without a verb) is also standard and acceptable."
         },
         {
             "id": "qf_l189_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You are happy in sector 17.",
-            "sentence": "You are happy in sector 17.",
+            "question": "Which sentence most accurately uses 'cannot but'?",
+            "sentence": "Which sentence most accurately uses 'cannot but'?",
             "options": [
-                "Are you happy in sector 17?",
-                "Do you happy in sector 17?",
-                "Is you happy in sector 17?",
-                "You are happy in sector 17?"
+                "I cannot but admire her persistence.",
+                "I cannot but admiring her persistence.",
+                "I cannot but to admire her persistence.",
+                "I cannot but admired her persistence."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Are you happy in sector 17?",
-            "hint": "Invert 'you' and 'are'. (Sector 17 calibration)",
-            "explanation": "Are you happy is correct. [Verified in sector 17]."
+            "correctAnswer": "I cannot but admire her persistence.",
+            "hint": "'Cannot but + bare infinitive' = cannot help/avoid doing - formal/literary expression.",
+            "explanation": "'Cannot but + bare infinitive' is a formal/literary expression meaning 'cannot avoid or help doing something': 'I cannot but admire' = 'I cannot help admiring'. The bare infinitive (no 'to') follows 'cannot but'. 'Cannot but admiring' (gerund) and 'cannot but to admire' (with 'to') are both wrong."
         },
         {
             "id": "qf_l189_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He would like tea in sector 17.",
-            "sentence": "He would like tea in sector 17.",
+            "question": "Which correctly identifies the clause type in: 'However you look at the problem, the answer remains the same.'?",
+            "sentence": "Which correctly identifies the clause type in: 'However you look at the problem, the answer remains the same.'?",
             "options": [
-                "Would he like tea in sector 17?",
-                "Does he would like tea in sector 17?",
-                "Would he likes tea in sector 17?",
-                "He would like tea in sector 17?"
+                "'However you look at the problem' is an adverbial concessive clause.",
+                "It is a relative clause modifying 'problem'.",
+                "It is a nominal clause functioning as the subject.",
+                "It is a conditional clause equivalent to 'if you look at the problem'."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would he like tea in sector 17?",
-            "hint": "Invert 'would'. (Sector 17 calibration)",
-            "explanation": "Would he like is correct. [Verified in sector 17]."
+            "correctAnswer": "'However you look at the problem' is an adverbial concessive clause.",
+            "hint": "'However + subject + verb' introduces a concessive adverbial clause ('no matter how').",
+            "explanation": "'However you look at the problem' = 'no matter how you look at the problem' - it is a concessive adverbial clause. It is not a relative clause (no antecedent noun to modify), not a nominal clause (it doesn't function as a noun), and not a conditional ('if' would suggest a specific scenario)."
         },
         {
             "id": "qf_l189_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You should try it in sector 17.",
-            "sentence": "You should try it in sector 17.",
+            "question": "Which most accurately explains the difference between 'since' (temporal) and 'since' (causal)?",
+            "sentence": "Which most accurately explains the difference between 'since' (temporal) and 'since' (causal)?",
             "options": [
-                "Should you try it in sector 17?",
-                "Do you should try it in sector 17?",
-                "Should you trying it in sector 17?",
-                "You should try it in sector 17?"
+                "'Since I left' (temporal: from the time I left) vs 'Since you're here' (causal: because you're here).",
+                "'Since' is only temporal - causal use is non-standard.",
+                "'Since' is only causal - temporal use is non-standard.",
+                "'Since' always expresses both time and cause simultaneously."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should you try it in sector 17?",
-            "hint": "Invert 'should'. (Sector 17 calibration)",
-            "explanation": "Should you try is correct. [Verified in sector 17]."
+            "correctAnswer": "'Since I left' (temporal: from the time I left) vs 'Since you're here' (causal: because you're here).",
+            "hint": "'Since' is polysemous: it expresses both time (from a point) and cause (because), depending on context.",
+            "explanation": "'Since' has two distinct uses: (1) temporal - 'since I left' = from the time I left; (2) causal - 'since you're here' = because you're here. Context usually disambiguates. Temporal 'since' typically collocates with perfect tenses; causal 'since' typically introduces clauses with present/past simple."
         },
         {
             "id": "qf_l190_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She wrote a letter in sector 17.",
-            "sentence": "She wrote a letter in sector 17.",
+            "question": "Which sentence correctly uses a 'double genitive'?",
+            "sentence": "Which sentence correctly uses a 'double genitive'?",
             "options": [
-                "Did she write a letter in sector 17?",
-                "Did she wrote a letter in sector 17?",
-                "Does she write a letter in sector 17?",
-                "She wrote a letter in sector 17?"
+                "She is a friend of my sister's.",
+                "She is a friend of my sister.",
+                "She is a friend my sister's.",
+                "She is my sister's friend of."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did she write a letter in sector 17?",
-            "hint": "Use 'Did' + 'write'. (Sector 17 calibration)",
-            "explanation": "Did she write is correct. [Verified in sector 17]."
+            "correctAnswer": "She is a friend of my sister's.",
+            "hint": "Double genitive: 'of + noun + 's' - used for human possessors with indefinite reference.",
+            "explanation": "The double genitive ('of + possessive 's') is used for human possessors, especially with indefinite articles: 'a friend of my sister's'. 'A friend of my sister' is also accepted by many grammarians, but the double genitive is traditional. The double genitive often implies a choice from a set ('one of my sister's friends')."
         },
         {
             "id": "qf_l190_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You may enter in sector 17.",
-            "sentence": "You may enter in sector 17.",
+            "question": "Which sentence uses 'such' as a predeterminer correctly?",
+            "sentence": "Which sentence uses 'such' as a predeterminer correctly?",
             "options": [
-                "May you enter in sector 17?",
-                "Do you may enter in sector 17?",
-                "May you entering in sector 17?",
-                "You may enter in sector 17?"
+                "Such dedication is rarely seen in someone so young.",
+                "Such a dedication is rarely seen in someone so young.",
+                "A such dedication is rarely seen in someone so young.",
+                "Such dedication it is rarely seen in someone so young."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "May you enter in sector 17?",
-            "hint": "Invert modal 'may'. (Sector 17 calibration)",
-            "explanation": "May you enter is correct. [Verified in sector 17]."
+            "correctAnswer": "Such dedication is rarely seen in someone so young.",
+            "hint": "'Such + uncountable noun' (no article) for emphasis. 'Such + a/an + countable noun' for single countable nouns.",
+            "explanation": "'Dedication' is uncountable, so 'such dedication' (no article) is correct. 'Such a dedication' would be used with a countable noun: 'such a performance'. 'A such dedication' is wrong - 'such' comes before the article, not after. 'Such dedication it is' adds a redundant pronoun."
         },
         {
             "id": "qf_l190_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 5,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They will win in sector 17.",
-            "sentence": "They will win in sector 17.",
+            "question": "Which sentence uses 'no matter' correctly?",
+            "sentence": "Which sentence uses 'no matter' correctly?",
             "options": [
-                "Will they win in sector 17?",
-                "Do they will win in sector 17?",
-                "Will they winning in sector 17?",
-                "They will win in sector 17?"
+                "No matter how busy she is, she always makes time for her family.",
+                "No matter how much busy she is, she always makes time for her family.",
+                "No matter she is busy, she always makes time for her family.",
+                "No matter busy she is, she always makes time for her family."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will they win in sector 17?",
-            "hint": "Invert 'will'. (Sector 17 calibration)",
-            "explanation": "Will they win is correct. [Verified in sector 17]."
+            "correctAnswer": "No matter how busy she is, she always makes time for her family.",
+            "hint": "'No matter how + adjective/adverb + subject + verb' - the structure requires 'how' before the adjective.",
+            "explanation": "'No matter how + adjective + subject + verb' is the correct structure: 'No matter how busy she is'. 'No matter how much busy' is wrong - 'much' is not used before adjectives (use 'how much' with nouns: 'no matter how much money'). 'No matter she is busy' drops 'how'. 'No matter busy she is' also drops 'how'."
         }
     ]
 }

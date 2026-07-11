@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l111_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is the manager in sector 10.",
-            "sentence": "He is the manager in sector 10.",
+            "question": "_____ the bad weather, we enjoyed the trip.",
+            "sentence": "_____ the bad weather, we enjoyed the trip.",
             "options": [
-                "He is the manager, isn't he in sector 10?",
-                "Is he the manager in sector 10?",
-                "He is the manager, is he in sector 10?",
-                "He is the manager, does he in sector 10?"
+                "Despite",
+                "Although",
+                "Even though",
+                "However"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He is the manager, isn't he in sector 10?",
-            "hint": "A positive statement with 'is' takes a negative tag 'isn't he?'. (Sector 10 calibration)",
-            "explanation": "Positive statement requires a negative tag. [Verified in sector 10]."
+            "correctAnswer": "Despite",
+            "hint": "'Despite' = preposition + noun/gerund. 'Although/even though' = conjunction + full clause.",
+            "explanation": "'Despite' takes a noun phrase ('despite the bad weather'). 'Although' and 'even though' need a full clause ('although the weather was bad'). 'However' connects two sentences and cannot start a clause like this."
         },
         {
             "id": "qf_l111_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She could have won the race in sector 10.",
-            "sentence": "She could have won the race in sector 10.",
+            "question": "_____ he is young, he has a lot of experience.",
+            "sentence": "_____ he is young, he has a lot of experience.",
             "options": [
-                "Could she have won the race in sector 10?",
-                "Could have she won the race in sector 10?",
-                "Should she have won the race in sector 10?",
-                "She could have won the race in sector 10?"
+                "Although",
+                "Despite",
+                "In spite",
+                "However"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Could she have won the race in sector 10?",
-            "hint": "Invert the first auxiliary 'could'. (Sector 10 calibration)",
-            "explanation": "Invert the primary modal in a perfect modal construction. [Verified in sector 10]."
+            "correctAnswer": "Although",
+            "hint": "'Although/even though' = subordinating conjunction introducing a contrast clause.",
+            "explanation": "'Although' and 'even though' introduce a subordinate clause. 'Despite' must be followed by a noun or gerund ('despite his youth'). 'In spite' is incomplete - it needs 'of': 'in spite of his youth'."
         },
         {
             "id": "qf_l111_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The project was finished in sector 10.",
-            "sentence": "The project was finished in sector 10.",
+            "question": "The meeting ran over by an hour. _____, all key decisions were made.",
+            "sentence": "The meeting ran over by an hour. _____, all key decisions were made.",
             "options": [
-                "Was the project finished in sector 10?",
-                "Did the project finish in sector 10?",
-                "Is the project finished in sector 10?",
-                "The project was finished in sector 10?"
+                "Even so",
+                "Despite this",
+                "Although",
+                "In spite"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was the project finished in sector 10?",
-            "hint": "Invert 'was' in passive voice. (Sector 10 calibration)",
-            "explanation": "Invert auxiliary 'was' and subject. [Verified in sector 10]."
+            "correctAnswer": "Even so",
+            "hint": "'Even so' = a sentence connector meaning 'despite that'. 'Although' must introduce a clause.",
+            "explanation": "'Even so' connects two sentences and means 'despite what was just said'. 'Despite this' is also grammatically correct here. 'Although' cannot start the second sentence here without forming a subordinate clause. 'In spite' alone is incomplete."
         },
         {
             "id": "qf_l112_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You haven't seen him lately in sector 10.",
-            "sentence": "You haven't seen him lately in sector 10.",
+            "question": "The project was _____ difficult _____ we had expected.",
+            "sentence": "The project was _____ difficult _____ we had expected.",
             "options": [
-                "You haven't seen him lately, have you in sector 10?",
-                "You haven't seen him lately, haven't you in sector 10?",
-                "Have you seen him lately in sector 10?",
-                "You haven't seen him lately, did you in sector 10?"
+                "more / than",
+                "as / as",
+                "more / as",
+                "so / as"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You haven't seen him lately, have you in sector 10?",
-            "hint": "A negative statement with 'haven't' takes a positive tag 'have you?'. (Sector 10 calibration)",
-            "explanation": "Negative statement requires a positive tag. [Verified in sector 10]."
+            "correctAnswer": "more / than",
+            "hint": "'More...than' for inequality; 'as...as' for equality.",
+            "explanation": "'More + adjective + than' expresses that something exceeds the comparison point: 'more difficult than expected'. 'As...as' expresses equality. The sentence implies it exceeded expectations, so 'more...than' is correct."
         },
         {
             "id": "qf_l112_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They should have reported this in sector 10.",
-            "sentence": "They should have reported this in sector 10.",
+            "question": "_____ you practice, _____ you become.",
+            "sentence": "_____ you practice, _____ you become.",
             "options": [
-                "Should they have reported this in sector 10?",
-                "Should have they reported this in sector 10?",
-                "Would they have reported this in sector 10?",
-                "They should have reported this in sector 10?"
+                "The more / the better",
+                "More / more better",
+                "The more / better",
+                "More / the better"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should they have reported this in sector 10?",
-            "hint": "Invert the first modal 'should'. (Sector 10 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 10]."
+            "correctAnswer": "The more / the better",
+            "hint": "'The more...the better/faster...' - both halves need 'the' before the comparative.",
+            "explanation": "'The + comparative + the + comparative' expresses proportion. Both halves need 'the'. 'More...more' (without 'the') is incorrect in standard English. 'The more faster' double-marks the comparative."
         },
         {
             "id": "qf_l112_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are being monitored in sector 10.",
-            "sentence": "They are being monitored in sector 10.",
+            "question": "She is not _____ experienced _____ her colleague.",
+            "sentence": "She is not _____ experienced _____ her colleague.",
             "options": [
-                "Are they being monitored in sector 10?",
-                "Do they being monitored in sector 10?",
-                "Are they monitoring in sector 10?",
-                "They are being monitored in sector 10?"
+                "as / as",
+                "more / than",
+                "so / as",
+                "as / than"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Are they being monitored in sector 10?",
-            "hint": "Invert the first auxiliary 'are'. (Sector 10 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+            "correctAnswer": "as / as",
+            "hint": "'Not as...as' = comparison of inequality (the second person has more experience).",
+            "explanation": "'Not as + adjective + as' means the first is less than the second. 'So...as' is used in formal/literary negative contexts but is less common than 'as...as'."
         },
         {
             "id": "qf_l113_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They will arrive on time in sector 10.",
-            "sentence": "They will arrive on time in sector 10.",
+            "question": "She is _____ tired _____ walk home.",
+            "sentence": "She is _____ tired _____ walk home.",
             "options": [
-                "They will arrive on time, won't they in sector 10?",
-                "They will arrive on time, will they in sector 10?",
-                "Will they arrive on time in sector 10?",
-                "They will arrive on time, don't they in sector 10?"
+                "too / to",
+                "so / that",
+                "enough / to",
+                "very / to"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They will arrive on time, won't they in sector 10?",
-            "hint": "A positive future statement with 'will' takes 'won't they?'. (Sector 10 calibration)",
-            "explanation": "Will shifts to won't in the tag. [Verified in sector 10]."
+            "correctAnswer": "too / to",
+            "hint": "'Too + adjective + to + base verb' = excessively (prevents action).",
+            "explanation": "'Too + adjective + to + base verb': 'too tired to walk' = so tired she cannot walk. 'So tired that...' also works but needs 'that + clause'. 'Enough' follows the adjective and enables action: 'tired enough to collapse'."
         },
         {
             "id": "qf_l113_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He would have helped us in sector 10.",
-            "sentence": "He would have helped us in sector 10.",
+            "question": "She isn't tall _____ to reach the top shelf.",
+            "sentence": "She isn't tall _____ to reach the top shelf.",
             "options": [
-                "Would he have helped us in sector 10?",
-                "Would have he helped us in sector 10?",
-                "Could he have helped us in sector 10?",
-                "He would have helped us in sector 10?"
+                "enough",
+                "too",
+                "so",
+                "very"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would he have helped us in sector 10?",
-            "hint": "Invert the first auxiliary 'would'. (Sector 10 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 10]."
+            "correctAnswer": "enough",
+            "hint": "'Adjective + enough + to + base verb' = sufficient degree to enable the action.",
+            "explanation": "'Enough' follows the adjective and is followed by 'to + infinitive': 'tall enough to reach'. 'Too tall to reach' would mean excessively tall - the opposite problem. Note: 'enough' comes after adjectives but before nouns ('enough time')."
         },
         {
             "id": "qf_l113_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has been arrested in sector 10.",
-            "sentence": "He has been arrested in sector 10.",
+            "question": "It was _____ a difficult situation that no one knew what to do.",
+            "sentence": "It was _____ a difficult situation that no one knew what to do.",
             "options": [
-                "Has he been arrested in sector 10?",
-                "Did he been arrested in sector 10?",
-                "Have he been arrested in sector 10?",
-                "He has been arrested in sector 10?"
+                "such",
+                "so",
+                "very",
+                "too"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has he been arrested in sector 10?",
-            "hint": "Invert 'has'. (Sector 10 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+            "correctAnswer": "such",
+            "hint": "'Such + a + adjective + noun' for emphasis; 'so + adjective' (no noun).",
+            "explanation": "'Such + a/an + adjective + noun' emphasises the noun: 'such a difficult situation'. 'So + adjective' works without a noun: 'It was so difficult that...'. 'So a difficult situation' is wrong - 'so' cannot precede an article."
         },
         {
             "id": "qf_l114_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She doesn't like coffee in sector 10.",
-            "sentence": "She doesn't like coffee in sector 10.",
+            "question": "_____ you call ahead, they won't hold a table for you.",
+            "sentence": "_____ you call ahead, they won't hold a table for you.",
             "options": [
-                "She doesn't like coffee, does she in sector 10?",
-                "She doesn't like coffee, doesn't she in sector 10?",
-                "Does she like coffee in sector 10?",
-                "She doesn't like coffee, is she in sector 10?"
+                "Unless",
+                "If",
+                "Even if",
+                "As long as"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She doesn't like coffee, does she in sector 10?",
-            "hint": "A negative present statement with 'doesn't' takes 'does she?'. (Sector 10 calibration)",
-            "explanation": "Doesn't shifts to does in the tag. [Verified in sector 10]."
+            "correctAnswer": "Unless",
+            "hint": "'Unless' = 'if...not'. The result happens if the condition is NOT met.",
+            "explanation": "'Unless you call ahead' = 'if you don't call ahead'. 'Unless' is a negative condition - the negative meaning is built in. 'As long as' = 'provided that', which is positive."
         },
         {
             "id": "qf_l114_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You must have seen the sign in sector 10.",
-            "sentence": "You must have seen the sign in sector 10.",
+            "question": "You can borrow my car _____ you bring it back by six.",
+            "sentence": "You can borrow my car _____ you bring it back by six.",
             "options": [
-                "Must you have seen the sign in sector 10?",
-                "Must have you seen the sign in sector 10?",
-                "Did you have seen the sign in sector 10?",
-                "You must have seen the sign in sector 10?"
+                "as long as",
+                "unless",
+                "even though",
+                "despite"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Must you have seen the sign in sector 10?",
-            "hint": "Invert 'must'. (Sector 10 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 10]."
+            "correctAnswer": "as long as",
+            "hint": "'As long as' = 'provided that/on condition that' - introduces a positive condition.",
+            "explanation": "'As long as' gives permission provided a condition is met. 'Unless' would be negative and reverse the meaning. 'Even though' and 'despite' express concession, not condition."
         },
         {
             "id": "qf_l114_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She was being interviewed in sector 10.",
-            "sentence": "She was being interviewed in sector 10.",
+            "question": "The investment will proceed _____ all parties sign the agreement.",
+            "sentence": "The investment will proceed _____ all parties sign the agreement.",
             "options": [
-                "Was she being interviewed in sector 10?",
-                "Did she being interviewed in sector 10?",
-                "Was she interviewing in sector 10?",
-                "She was being interviewed in sector 10?"
+                "provided that",
+                "unless",
+                "although",
+                "despite"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was she being interviewed in sector 10?",
-            "hint": "Invert 'was'. (Sector 10 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+            "correctAnswer": "provided that",
+            "hint": "'Provided that' = formal 'as long as' - introduces a required condition.",
+            "explanation": "'Provided that' (or 'providing that') is a formal alternative to 'as long as'. The investment happens only if everyone signs. 'Unless' would be the negative equivalent. Common in legal and business English."
         },
         {
             "id": "qf_l115_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You can drive a shuttle in sector 10.",
-            "sentence": "You can drive a shuttle in sector 10.",
+            "question": "So difficult _____ the problem that no one could solve it.",
+            "sentence": "So difficult _____ the problem that no one could solve it.",
             "options": [
-                "You can drive a shuttle, can't you in sector 10?",
-                "You can drive a shuttle, can you in sector 10?",
-                "Can you drive a shuttle in sector 10?",
-                "You can drive a shuttle, don't you in sector 10?"
+                "was",
+                "is",
+                "it was",
+                "had been"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You can drive a shuttle, can't you in sector 10?",
-            "hint": "Positive 'can' takes negative 'can't you?'. (Sector 10 calibration)",
-            "explanation": "Can shifts to can't in the tag. [Verified in sector 10]."
+            "correctAnswer": "was",
+            "hint": "'So + adjective + was + subject' - inversion after a fronted 'so + adjective' phrase.",
+            "explanation": "When 'so + adjective' is fronted for emphasis, the subject and be-verb invert: 'So difficult was the problem...' This is a formal, literary structure. 'So difficult it was' is wrong word order."
         },
         {
             "id": "qf_l115_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We might have missed them in sector 10.",
-            "sentence": "We might have missed them in sector 10.",
+            "question": "Not since 1990 _____ the city seen such heavy snowfall.",
+            "sentence": "Not since 1990 _____ the city seen such heavy snowfall.",
             "options": [
-                "Might we have missed them in sector 10?",
-                "Might have we missed them in sector 10?",
-                "Did we might have missed them in sector 10?",
-                "We might have missed them in sector 10?"
+                "has",
+                "had",
+                "have",
+                "was"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Might we have missed them in sector 10?",
-            "hint": "Invert 'might'. (Sector 10 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 10]."
+            "correctAnswer": "has",
+            "hint": "Negative fronting ('Not since...') + present perfect → inversion: 'has the city seen'.",
+            "explanation": "'Not since 1990' triggers inversion. Present perfect is needed for a span continuing to the present. 'Has the city seen' = correct inverted present perfect. 'Had' would be past perfect; 'was' would be past simple."
         },
         {
             "id": "qf_l115_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We have been invited in sector 10.",
-            "sentence": "We have been invited in sector 10.",
+            "question": "No sooner _____ sat down than the phone rang.",
+            "sentence": "No sooner _____ sat down than the phone rang.",
             "options": [
-                "Have we been invited in sector 10?",
-                "Has we been invited in sector 10?",
-                "Do we been invited in sector 10?",
-                "We have been invited in sector 10?"
+                "had she",
+                "she had",
+                "did she",
+                "has she"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Have we been invited in sector 10?",
-            "hint": "Invert 'have'. (Sector 10 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+            "correctAnswer": "had she",
+            "hint": "'No sooner + past perfect inversion': 'No sooner had she...'",
+            "explanation": "'No sooner...than' requires inversion with the past perfect: 'No sooner had she sat down than the phone rang.' 'She had' (no inversion) is the non-emphatic version. 'No sooner did she sit down than...' (simple past inversion) is also correct."
         },
         {
             "id": "qf_l116_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He didn't finish the task in sector 10.",
-            "sentence": "He didn't finish the task in sector 10.",
+            "question": "Formal: 'People buy more online now' → 'There has been an increase _____ online purchasing.'",
+            "sentence": "Formal: 'People buy more online now' → 'There has been an increase _____ online purchasing.'",
             "options": [
-                "He didn't finish the task, did he in sector 10?",
-                "He didn't finish the task, didn't he in sector 10?",
-                "Did he finish the task in sector 10?",
-                "He didn't finish the task, was he in sector 10?"
+                "in",
+                "of",
+                "on",
+                "with"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He didn't finish the task, did he in sector 10?",
-            "hint": "Negative past 'didn't' takes positive 'did he?'. (Sector 10 calibration)",
-            "explanation": "Didn't shifts to did in the tag. [Verified in sector 10]."
+            "correctAnswer": "in",
+            "hint": "'An increase in something' - 'in' is the fixed preposition after 'increase'.",
+            "explanation": "'An increase in' is the correct collocation: increase in sales, increase in temperature, increase in online purchasing. 'An increase of' is used with a specific number: 'an increase of 10%'."
         },
         {
             "id": "qf_l116_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She ought to have apologized in sector 10.",
-            "sentence": "She ought to have apologized in sector 10.",
+            "question": "'Scientists discovered the drug works.' → 'The scientists made _____ discovery that the drug works.'",
+            "sentence": "'Scientists discovered the drug works.' → 'The scientists made _____ discovery that the drug works.'",
             "options": [
-                "Ought she to have apologized in sector 10?",
-                "Ought to she have apologized in sector 10?",
-                "Should she to have apologized in sector 10?",
-                "She ought to have apologized in sector 10?"
+                "a",
+                "the",
+                "an",
+                "-"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Ought she to have apologized in sector 10?",
-            "hint": "Invert 'ought' with the subject. (Sector 10 calibration)",
-            "explanation": "Invert the first element of 'ought to'. [Verified in sector 10]."
+            "correctAnswer": "a",
+            "hint": "First mention of a newly introduced noun takes 'a' (indefinite).",
+            "explanation": "The first mention of a discovery not previously specified uses 'a'. 'The discovery' would refer back to a previously mentioned specific discovery. 'An' would require a vowel sound - 'discovery' starts with /d/."
         },
         {
             "id": "qf_l116_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The temple is being restored in sector 10.",
-            "sentence": "The temple is being restored in sector 10.",
+            "question": "Formal version of: 'How we fund this matters most.'",
+            "sentence": "Formal version of: 'How we fund this matters most.'",
             "options": [
-                "Is the temple being restored in sector 10?",
-                "Does the temple being restored in sector 10?",
-                "Is the temple restoring in sector 10?",
-                "The temple is being restored in sector 10?"
+                "The question of how we fund this is paramount.",
+                "The funding question how we fund is most paramount.",
+                "Most paramount is how the question of funding is.",
+                "The question how funding will is the paramount."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is the temple being restored in sector 10?",
-            "hint": "Invert 'is'. (Sector 10 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+            "correctAnswer": "The question of how we fund this is paramount.",
+            "hint": "Nominalisation: 'how we fund this' becomes 'the question of how we fund this'.",
+            "explanation": "Nominalisation adds a head noun ('the question of') before the wh-clause. 'Paramount' already means 'most important' - 'most paramount' is redundant. The other options contain grammatical errors."
         },
         {
             "id": "qf_l117_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are ready in sector 10.",
-            "sentence": "They are ready in sector 10.",
+            "question": "_____ tigers are endangered. _____ tiger in this zoo was born in captivity.",
+            "sentence": "_____ tigers are endangered. _____ tiger in this zoo was born in captivity.",
             "options": [
-                "They are ready, aren't they in sector 10?",
-                "They are ready, are they in sector 10?",
-                "Are they ready in sector 10?",
-                "They are ready, don't they in sector 10?"
+                "- / The",
+                "The / A",
+                "A / The",
+                "The / -"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They are ready, aren't they in sector 10?",
-            "hint": "Positive 'are' takes negative 'aren't they?'. (Sector 10 calibration)",
-            "explanation": "Are shifts to aren't in the tag. [Verified in sector 10]."
+            "correctAnswer": "- / The",
+            "hint": "Generic species = zero article (plural). Specific individual = 'the'.",
+            "explanation": "When referring to a species in general, use the zero article with a plural: '(-) Tigers are endangered.' For a specific individual: 'The tiger in this zoo.' 'The tigers' would mean specific known tigers."
         },
         {
             "id": "qf_l117_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They can't have forgotten in sector 10.",
-            "sentence": "They can't have forgotten in sector 10.",
+            "question": "She plays _____ piano in _____ orchestra downtown.",
+            "sentence": "She plays _____ piano in _____ orchestra downtown.",
             "options": [
-                "Can they have forgotten in sector 10?",
-                "Can't they have forgotten in sector 10?",
-                "Have they can't forgotten in sector 10?",
-                "They can't have forgotten in sector 10?"
+                "the / an",
+                "- / the",
+                "the / the",
+                "a / an"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can they have forgotten in sector 10?",
-            "hint": "Invert modal 'can' (or negative 'can't'). (Sector 10 calibration)",
-            "explanation": "Invert the modal auxiliary. [Verified in sector 10]."
+            "correctAnswer": "the / an",
+            "hint": "'Play the piano' (instrument); 'an orchestra' (first mention, vowel sound /ɒ/).",
+            "explanation": "'Play the piano/guitar/violin' is a fixed phrase using 'the'. 'An orchestra' uses 'an' because 'orchestra' starts with a vowel sound /ɒ/, and this is the first (indefinite) mention. 'The orchestra' would imply a specific previously identified one."
         },
         {
             "id": "qf_l117_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They had been warned in sector 10.",
-            "sentence": "They had been warned in sector 10.",
+            "question": "She went to _____ bed early because she had _____ headache.",
+            "sentence": "She went to _____ bed early because she had _____ headache.",
             "options": [
-                "Had they been warned in sector 10?",
-                "Did they had been warned in sector 10?",
-                "Have they been warned in sector 10?",
-                "They had been warned in sector 10?"
+                "- / a",
+                "the / a",
+                "a / the",
+                "- / the"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Had they been warned in sector 10?",
-            "hint": "Invert 'had'. (Sector 10 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+            "correctAnswer": "- / a",
+            "hint": "'Go to bed' (zero article, institution); 'a headache' (indefinite, first mention).",
+            "explanation": "'Go to bed' uses the zero article - like 'go to school/work/church' - referring to the activity rather than the building. 'A headache' is indefinite ('one headache'), not 'the headache' which would refer to a specific, previously mentioned one."
         },
         {
             "id": "qf_l118_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She has been working hard in sector 10.",
-            "sentence": "She has been working hard in sector 10.",
+            "question": "The research _____ conducted by a team of international scientists.",
+            "sentence": "The research _____ conducted by a team of international scientists.",
             "options": [
-                "She has been working hard, hasn't she in sector 10?",
-                "She has been working hard, has she in sector 10?",
-                "Has she been working hard in sector 10?",
-                "She has been working hard, doesn't she in sector 10?"
+                "was",
+                "is",
+                "has been",
+                "had been"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She has been working hard, hasn't she in sector 10?",
-            "hint": "Use the first auxiliary 'has' in the tag: 'hasn't she?'. (Sector 10 calibration)",
-            "explanation": "Has shifts to hasn't in the tag. [Verified in sector 10]."
+            "correctAnswer": "was",
+            "hint": "Past simple passive for a specific completed past event.",
+            "explanation": "Past simple passive ('was conducted') is used for a specific completed past event. 'Is conducted' (present) is wrong for past research. 'Has been conducted' (present perfect) implies recent relevance but past simple is more natural for a specific completed study."
         },
         {
             "id": "qf_l118_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You shouldn't have done that in sector 10.",
-            "sentence": "You shouldn't have done that in sector 10.",
+            "question": "It _____ that the new policy will reduce costs.",
+            "sentence": "It _____ that the new policy will reduce costs.",
             "options": [
-                "Should you have done that in sector 10?",
-                "Shouldn't you have done that in sector 10?",
-                "Did you shouldn't have done that in sector 10?",
-                "You shouldn't have done that in sector 10?"
+                "is anticipated",
+                "anticipates",
+                "is expecting",
+                "has expected"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Shouldn't you have done that in sector 10?",
-            "hint": "Keep the negative force or invert to negative 'Shouldn't you have done that?'. (Sector 10 calibration)",
-            "explanation": "Negative inversion is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is anticipated",
+            "hint": "Impersonal passive: 'It is anticipated/expected/reported + that clause' - formal reporting structure.",
+            "explanation": "'It is anticipated/expected/believed/reported + that' is a formal impersonal passive used in official and academic writing. 'Anticipates' (active) needs a subject. 'Is expecting' is active continuous and informal."
         },
         {
             "id": "qf_l118_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She will be promoted in sector 10.",
-            "sentence": "She will be promoted in sector 10.",
+            "question": "More passive voice is typically used in _____ writing.",
+            "sentence": "More passive voice is typically used in _____ writing.",
             "options": [
-                "Will she be promoted in sector 10?",
-                "Does she will be promoted in sector 10?",
-                "Will she promoting in sector 10?",
-                "She will be promoted in sector 10?"
+                "academic",
+                "academy",
+                "academics",
+                "academical"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will she be promoted in sector 10?",
-            "hint": "Invert 'will'. (Sector 10 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+            "correctAnswer": "academic",
+            "hint": "The adjective 'academic' modifies the noun 'writing'. 'Academy' is a noun; 'academics' means scholars.",
+            "explanation": "'Academic writing' uses the adjective 'academic'. 'Academy writing' (noun modifier) is non-standard here. 'Academics' (plural noun) cannot directly modify 'writing' without a preposition ('writing by academics')."
         },
         {
             "id": "qf_l119_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You wouldn't do that in sector 10.",
-            "sentence": "You wouldn't do that in sector 10.",
+            "question": "The woman _____ at the table is my professor.",
+            "sentence": "The woman _____ at the table is my professor.",
             "options": [
-                "You wouldn't do that, would you in sector 10?",
-                "You wouldn't do that, wouldn't you in sector 10?",
-                "Would you do that in sector 10?",
-                "You wouldn't do that, did you in sector 10?"
+                "sitting",
+                "who is sitting",
+                "sat",
+                "sits"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You wouldn't do that, would you in sector 10?",
-            "hint": "Negative 'wouldn't' takes positive 'would you?'. (Sector 10 calibration)",
-            "explanation": "Wouldn't shifts to would in the tag. [Verified in sector 10]."
+            "correctAnswer": "sitting",
+            "hint": "Reduced relative clause: 'sitting' replaces 'who is sitting'.",
+            "explanation": "Present-participle clauses reduce defining relative clauses: 'the woman sitting at the table' = 'who is sitting at the table'. 'Sat' would suggest a passive/completed state. 'Sits' is a finite verb and cannot function as a reduced relative."
         },
         {
             "id": "qf_l119_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He wouldn't have agreed in sector 10.",
-            "sentence": "He wouldn't have agreed in sector 10.",
+            "question": "_____ the report, she discovered several errors.",
+            "sentence": "_____ the report, she discovered several errors.",
             "options": [
-                "Would he have agreed in sector 10?",
-                "Wouldn't he have agreed in sector 10?",
-                "Did he wouldn't have agreed in sector 10?",
-                "He wouldn't have agreed in sector 10?"
+                "Reading",
+                "Having read",
+                "Read",
+                "While she read"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Wouldn't he have agreed in sector 10?",
-            "hint": "Keep the negative force for inverted negative modal. (Sector 10 calibration)",
-            "explanation": "Wouldn't he have agreed is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Reading",
+            "hint": "'Reading the report' = simultaneous with discovering. 'Having read' = completed before discovering.",
+            "explanation": "A present participle clause indicates simultaneous actions: reading and discovering happened at the same time. 'Having read' (perfect participle) would mean she finished reading before discovering the errors - a different sequence. Both are grammatically correct but convey different timings."
         },
         {
             "id": "qf_l119_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He should be informed in sector 10.",
-            "sentence": "He should be informed in sector 10.",
+            "question": "_____ in 1889, the tower has become a global symbol.",
+            "sentence": "_____ in 1889, the tower has become a global symbol.",
             "options": [
-                "Should he be informed in sector 10?",
-                "Do he should be informed in sector 10?",
-                "Should he informing in sector 10?",
-                "He should be informed in sector 10?"
+                "Built",
+                "Building",
+                "Having built",
+                "Being built"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should he be informed in sector 10?",
-            "hint": "Invert 'should'. (Sector 10 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+            "correctAnswer": "Built",
+            "hint": "Past participle clause = passive reduced relative: 'Built in 1889' = 'which was built in 1889'.",
+            "explanation": "A past participle clause reduces a passive relative clause: 'Built in 1889, the tower...' = 'The tower, which was built in 1889, has become...' 'Building' would imply the tower was actively building something. 'Having built' would mean the tower itself built something."
         },
         {
             "id": "qf_l120_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We should go now in sector 10.",
-            "sentence": "We should go now in sector 10.",
+            "question": "I suggest _____ the meeting until everyone is available.",
+            "sentence": "I suggest _____ the meeting until everyone is available.",
             "options": [
-                "We should go now, shouldn't we in sector 10?",
-                "We should go now, should we in sector 10?",
-                "Should we go now in sector 10?",
-                "We should go now, don't we in sector 10?"
+                "postponing",
+                "to postpone",
+                "postpone",
+                "we postpone"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "We should go now, shouldn't we in sector 10?",
-            "hint": "Positive 'should' takes negative 'shouldn't we?'. (Sector 10 calibration)",
-            "explanation": "Should shifts to shouldn't in the tag. [Verified in sector 10]."
+            "correctAnswer": "postponing",
+            "hint": "'Suggest + gerund' is the correct structure (not 'suggest + infinitive').",
+            "explanation": "'Suggest + gerund' is correct: 'suggest postponing'. 'Suggest + infinitive' is wrong in standard English. 'Suggest that we postpone' (with 'that') is also grammatically correct - a subjunctive alternative."
         },
         {
             "id": "qf_l120_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We couldn't have known in sector 10.",
-            "sentence": "We couldn't have known in sector 10.",
+            "question": "No sooner had she arrived _____ the argument broke out.",
+            "sentence": "No sooner had she arrived _____ the argument broke out.",
             "options": [
-                "Could we have known in sector 10?",
-                "Couldn't we have known in sector 10?",
-                "Did we couldn't have known in sector 10?",
-                "We couldn't have known in sector 10?"
+                "than",
+                "when",
+                "then",
+                "but"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Couldn't we have known in sector 10?",
-            "hint": "Negative modal inversion. (Sector 10 calibration)",
-            "explanation": "Couldn't we have known is correct. [Verified in sector 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "than",
+            "hint": "'No sooner ... than' is the fixed connector - not 'when' or 'then'.",
+            "explanation": "'No sooner...than' is the fixed pair for this inversion structure. 'Hardly/scarcely...when' are alternatives, but 'No sooner...when' is not standard. 'No sooner...then' is a common spelling confusion - always use 'than' (comparative)."
         },
         {
             "id": "qf_l120_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You would be surprised in sector 10.",
-            "sentence": "You would be surprised in sector 10.",
+            "question": "It's vital that every citizen _____ their right to vote.",
+            "sentence": "It's vital that every citizen _____ their right to vote.",
             "options": [
-                "Would you be surprised in sector 10?",
-                "Do you would be surprised in sector 10?",
-                "Would you surprising in sector 10?",
-                "You would be surprised in sector 10?"
+                "exercise",
+                "exercises",
+                "should exercise",
+                "to exercise"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would you be surprised in sector 10?",
-            "hint": "Invert 'would'. (Sector 10 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+            "correctAnswer": "exercise",
+            "hint": "Formal subjunctive after 'it is vital that': bare infinitive, no -s for third person.",
+            "explanation": "'It is vital that' triggers the present subjunctive, using the base verb for all subjects including third-person singular. 'Exercises' incorrectly adds -s. 'Should exercise' is the informal equivalent but not the pure subjunctive."
         }
     ]
 }

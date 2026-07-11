@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l81_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is the manager in sector 7.",
-            "sentence": "He is the manager in sector 7.",
+            "question": "She plays _____ violin in an orchestra.",
+            "sentence": "She plays _____ violin in an orchestra.",
             "options": [
-                "He is the manager, isn't he in sector 7?",
-                "Is he the manager in sector 7?",
-                "He is the manager, is he in sector 7?",
-                "He is the manager, does he in sector 7?"
+                "the",
+                "a",
+                "an",
+                "-"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He is the manager, isn't he in sector 7?",
-            "hint": "A positive statement with 'is' takes a negative tag 'isn't he?'. (Sector 7 calibration)",
-            "explanation": "Positive statement requires a negative tag. [Verified in sector 7]."
+            "correctAnswer": "the",
+            "hint": "Musical instruments use 'the' when referring to playing the instrument (not just any instrument).",
+            "explanation": "'The' is used with musical instruments in the context of playing: 'play the violin/piano/guitar'. This is a fixed rule in English, unlike many other languages."
         },
         {
             "id": "qf_l81_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She could have won the race in sector 7.",
-            "sentence": "She could have won the race in sector 7.",
+            "question": "She is _____ engineer working on renewable energy.",
+            "sentence": "She is _____ engineer working on renewable energy.",
             "options": [
-                "Could she have won the race in sector 7?",
-                "Could have she won the race in sector 7?",
-                "Should she have won the race in sector 7?",
-                "She could have won the race in sector 7?"
+                "an",
+                "a",
+                "the",
+                "-"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Could she have won the race in sector 7?",
-            "hint": "Invert the first auxiliary 'could'. (Sector 7 calibration)",
-            "explanation": "Invert the primary modal in a perfect modal construction. [Verified in sector 7]."
+            "correctAnswer": "an",
+            "hint": "Use 'an' before a vowel sound - 'engineer' starts with the vowel sound /ɛ/.",
+            "explanation": "'An' is used before words beginning with a vowel sound. 'Engineer' starts with /ɛ/ (a vowel sound), so 'an engineer' is correct, not 'a engineer'."
         },
         {
             "id": "qf_l81_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The project was finished in sector 7.",
-            "sentence": "The project was finished in sector 7.",
+            "question": "He has breakfast at _____ seven every morning.",
+            "sentence": "He has breakfast at _____ seven every morning.",
             "options": [
-                "Was the project finished in sector 7?",
-                "Did the project finish in sector 7?",
-                "Is the project finished in sector 7?",
-                "The project was finished in sector 7?"
+                "-",
+                "a",
+                "the",
+                "an"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was the project finished in sector 7?",
-            "hint": "Invert 'was' in passive voice. (Sector 7 calibration)",
-            "explanation": "Invert auxiliary 'was' and subject. [Verified in sector 7]."
+            "correctAnswer": "-",
+            "hint": "No article with meals ('breakfast') and no article with clock times using 'at'.",
+            "explanation": "Meals do not take an article in English: 'have breakfast/lunch/dinner'. Times also don't need an article: 'at seven'. Both use the zero article here."
         },
         {
             "id": "qf_l82_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You haven't seen him lately in sector 7.",
-            "sentence": "You haven't seen him lately in sector 7.",
+            "question": "_____ Nile is the longest river in Africa.",
+            "sentence": "_____ Nile is the longest river in Africa.",
             "options": [
-                "You haven't seen him lately, have you in sector 7?",
-                "You haven't seen him lately, haven't you in sector 7?",
-                "Have you seen him lately in sector 7?",
-                "You haven't seen him lately, did you in sector 7?"
+                "The",
+                "A",
+                "An",
+                "-"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You haven't seen him lately, have you in sector 7?",
-            "hint": "A negative statement with 'haven't' takes a positive tag 'have you?'. (Sector 7 calibration)",
-            "explanation": "Negative statement requires a positive tag. [Verified in sector 7]."
+            "correctAnswer": "The",
+            "hint": "Rivers, mountain ranges, oceans, and seas always take 'the'.",
+            "explanation": "Geographical features such as rivers ('the Nile'), mountain ranges ('the Alps'), and oceans ('the Pacific') always use 'the'. Individual mountains ('Mount Everest') and lakes ('Lake Victoria') do not."
         },
         {
             "id": "qf_l82_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They should have reported this in sector 7.",
-            "sentence": "They should have reported this in sector 7.",
+            "question": "She went to _____ hospital to visit her friend.",
+            "sentence": "She went to _____ hospital to visit her friend.",
             "options": [
-                "Should they have reported this in sector 7?",
-                "Should have they reported this in sector 7?",
-                "Would they have reported this in sector 7?",
-                "They should have reported this in sector 7?"
+                "the",
+                "a",
+                "an",
+                "-"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should they have reported this in sector 7?",
-            "hint": "Invert the first modal 'should'. (Sector 7 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 7]."
+            "correctAnswer": "the",
+            "hint": "'The hospital' = a specific place (as a building/location). 'Hospital' without 'the' = as an institution (being admitted as a patient).",
+            "explanation": "In British English, 'go to hospital' (zero article) means being admitted as a patient. 'Go to the hospital' (with 'the') means visiting the building as a specific place. Since she is visiting (not a patient herself), 'the' is correct."
         },
         {
             "id": "qf_l82_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are being monitored in sector 7.",
-            "sentence": "They are being monitored in sector 7.",
+            "question": "They are looking for _____ experienced project manager.",
+            "sentence": "They are looking for _____ experienced project manager.",
             "options": [
-                "Are they being monitored in sector 7?",
-                "Do they being monitored in sector 7?",
-                "Are they monitoring in sector 7?",
-                "They are being monitored in sector 7?"
+                "an",
+                "a",
+                "the",
+                "-"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Are they being monitored in sector 7?",
-            "hint": "Invert the first auxiliary 'are'. (Sector 7 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+            "correctAnswer": "an",
+            "hint": "Use 'an' before a vowel sound - 'experienced' starts with /ɪk/ (vowel sound).",
+            "explanation": "'Experienced' begins with a vowel sound /ɪk/, so 'an experienced' is correct. The article choice depends on the sound of the next word, not just the first letter ('a university' uses 'a' because /juː/ is a consonant sound)."
         },
         {
             "id": "qf_l83_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They will arrive on time in sector 7.",
-            "sentence": "They will arrive on time in sector 7.",
+            "question": "She doesn't have _____ free time these days.",
+            "sentence": "She doesn't have _____ free time these days.",
             "options": [
-                "They will arrive on time, won't they in sector 7?",
-                "They will arrive on time, will they in sector 7?",
-                "Will they arrive on time in sector 7?",
-                "They will arrive on time, don't they in sector 7?"
+                "much",
+                "many",
+                "a lot",
+                "few"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They will arrive on time, won't they in sector 7?",
-            "hint": "A positive future statement with 'will' takes 'won't they?'. (Sector 7 calibration)",
-            "explanation": "Will shifts to won't in the tag. [Verified in sector 7]."
+            "correctAnswer": "much",
+            "hint": "'Free time' is uncountable - use 'much' (not 'many') in questions and negatives.",
+            "explanation": "'Time' is uncountable, so it takes 'much' (not 'many', which is for countable nouns). In positive sentences, 'a lot of' is more natural than 'much', but 'much' is correct in negatives."
         },
         {
             "id": "qf_l83_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He would have helped us in sector 7.",
-            "sentence": "He would have helped us in sector 7.",
+            "question": "There were _____ people at the concert - barely fifty.",
+            "sentence": "There were _____ people at the concert - barely fifty.",
             "options": [
-                "Would he have helped us in sector 7?",
-                "Would have he helped us in sector 7?",
-                "Could he have helped us in sector 7?",
-                "He would have helped us in sector 7?"
+                "few",
+                "little",
+                "a few",
+                "many"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would he have helped us in sector 7?",
-            "hint": "Invert the first auxiliary 'would'. (Sector 7 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 7]."
+            "correctAnswer": "few",
+            "hint": "'Few' (without 'a') emphasizes an insufficient number - closer to 'almost none'.",
+            "explanation": "'Few' (without 'a') has a negative connotation: 'barely any, not enough'. 'A few' has a positive connotation: 'some, enough'. Here, 'barely fifty' signals disappointment, so 'few' is correct. 'Little' is for uncountable nouns."
         },
         {
             "id": "qf_l83_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has been arrested in sector 7.",
-            "sentence": "He has been arrested in sector 7.",
+            "question": "Could you give me _____ advice on this?",
+            "sentence": "Could you give me _____ advice on this?",
             "options": [
-                "Has he been arrested in sector 7?",
-                "Did he been arrested in sector 7?",
-                "Have he been arrested in sector 7?",
-                "He has been arrested in sector 7?"
+                "some",
+                "any",
+                "a few",
+                "many"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has he been arrested in sector 7?",
-            "hint": "Invert 'has'. (Sector 7 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+            "correctAnswer": "some",
+            "hint": "'Advice' is uncountable - use 'some' in affirmative requests, 'any' in negatives/yes-no questions.",
+            "explanation": "'Advice' is an uncountable noun, so it cannot take 'a few' or 'many'. 'Some' is used in polite requests and affirmative statements; 'any' is more typical in direct questions and negatives."
         },
         {
             "id": "qf_l84_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She doesn't like coffee in sector 7.",
-            "sentence": "She doesn't like coffee in sector 7.",
+            "question": "She arrived _____ 7 o'clock _____ the morning.",
+            "sentence": "She arrived _____ 7 o'clock _____ the morning.",
             "options": [
-                "She doesn't like coffee, does she in sector 7?",
-                "She doesn't like coffee, doesn't she in sector 7?",
-                "Does she like coffee in sector 7?",
-                "She doesn't like coffee, is she in sector 7?"
+                "at / in",
+                "in / at",
+                "on / in",
+                "at / on"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She doesn't like coffee, does she in sector 7?",
-            "hint": "A negative present statement with 'doesn't' takes 'does she?'. (Sector 7 calibration)",
-            "explanation": "Doesn't shifts to does in the tag. [Verified in sector 7]."
+            "correctAnswer": "at / in",
+            "hint": "'At' + clock time; 'in' + morning/afternoon/evening.",
+            "explanation": "'At' is used with specific clock times. 'In' is used with parts of the day (morning, afternoon, evening, night). 'On' is for days and dates."
         },
         {
             "id": "qf_l84_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You must have seen the sign in sector 7.",
-            "sentence": "You must have seen the sign in sector 7.",
+            "question": "The class is _____ Monday _____ 9 AM.",
+            "sentence": "The class is _____ Monday _____ 9 AM.",
             "options": [
-                "Must you have seen the sign in sector 7?",
-                "Must have you seen the sign in sector 7?",
-                "Did you have seen the sign in sector 7?",
-                "You must have seen the sign in sector 7?"
+                "on / at",
+                "at / on",
+                "in / at",
+                "on / in"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Must you have seen the sign in sector 7?",
-            "hint": "Invert 'must'. (Sector 7 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 7]."
+            "correctAnswer": "on / at",
+            "hint": "'On' + day of the week; 'at' + clock time.",
+            "explanation": "'On' is used with days of the week: 'on Monday', 'on Friday'. 'At' is used with clock times: 'at 9 AM'. Never 'in Monday' or 'in 9 AM'."
         },
         {
             "id": "qf_l84_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She was being interviewed in sector 7.",
-            "sentence": "She was being interviewed in sector 7.",
+            "question": "He has been working here _____ 2019.",
+            "sentence": "He has been working here _____ 2019.",
             "options": [
-                "Was she being interviewed in sector 7?",
-                "Did she being interviewed in sector 7?",
-                "Was she interviewing in sector 7?",
-                "She was being interviewed in sector 7?"
+                "since",
+                "for",
+                "from",
+                "during"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was she being interviewed in sector 7?",
-            "hint": "Invert 'was'. (Sector 7 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+            "correctAnswer": "since",
+            "hint": "'Since' + a point in time; 'for' + a duration.",
+            "explanation": "'Since' is used with a specific point in time ('since 2019', 'since Monday'). 'For' is used with a duration ('for five years', 'for two hours'). 'From' needs 'to': 'from 2019 to 2025'."
         },
         {
             "id": "qf_l85_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You can drive a shuttle in sector 7.",
-            "sentence": "You can drive a shuttle in sector 7.",
+            "question": "She walked _____ the bridge and _____ the hill.",
+            "sentence": "She walked _____ the bridge and _____ the hill.",
             "options": [
-                "You can drive a shuttle, can't you in sector 7?",
-                "You can drive a shuttle, can you in sector 7?",
-                "Can you drive a shuttle in sector 7?",
-                "You can drive a shuttle, don't you in sector 7?"
+                "across / up",
+                "through / over",
+                "over / up",
+                "across / over"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You can drive a shuttle, can't you in sector 7?",
-            "hint": "Positive 'can' takes negative 'can't you?'. (Sector 7 calibration)",
-            "explanation": "Can shifts to can't in the tag. [Verified in sector 7]."
+            "correctAnswer": "across / up",
+            "hint": "'Across' = from one side to the other (horizontal surface); 'up' = movement to a higher position.",
+            "explanation": "'Across' means from one side to the other on a flat surface ('across the bridge'). 'Up' means moving to a higher position ('up the hill'). 'Over' can sometimes replace 'across', but 'over the hill' has an idiomatic meaning (past one's prime)."
         },
         {
             "id": "qf_l85_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We might have missed them in sector 7.",
-            "sentence": "We might have missed them in sector 7.",
+            "question": "The cat jumped _____ the fence and ran _____ the garden.",
+            "sentence": "The cat jumped _____ the fence and ran _____ the garden.",
             "options": [
-                "Might we have missed them in sector 7?",
-                "Might have we missed them in sector 7?",
-                "Did we might have missed them in sector 7?",
-                "We might have missed them in sector 7?"
+                "over / through",
+                "above / across",
+                "across / through",
+                "over / across"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Might we have missed them in sector 7?",
-            "hint": "Invert 'might'. (Sector 7 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 7]."
+            "correctAnswer": "over / through",
+            "hint": "'Over' = clearing an obstacle (vertical movement); 'through' = from one end to the other (inside a space).",
+            "explanation": "'Over' means clearing something by going above it ('over the fence'). 'Through' means moving inside a space from one end to the other ('through the garden'). 'Across' would imply the garden is a flat surface being crossed, which changes the visual."
         },
         {
             "id": "qf_l85_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We have been invited in sector 7.",
-            "sentence": "We have been invited in sector 7.",
+            "question": "The company is located _____ the corner of Park Street and Fifth Avenue.",
+            "sentence": "The company is located _____ the corner of Park Street and Fifth Avenue.",
             "options": [
-                "Have we been invited in sector 7?",
-                "Has we been invited in sector 7?",
-                "Do we been invited in sector 7?",
-                "We have been invited in sector 7?"
+                "on",
+                "at",
+                "in",
+                "by"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Have we been invited in sector 7?",
-            "hint": "Invert 'have'. (Sector 7 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+            "correctAnswer": "on",
+            "hint": "Streets and corners use 'on' in American English; 'at' can be used but is more common for the number address.",
+            "explanation": "'On the corner of ...' is the standard expression in American English. 'At' is typically used for a specific address number ('at 25 Park Street'). 'In' is for areas/districts/countries, not streets."
         },
         {
             "id": "qf_l86_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He didn't finish the task in sector 7.",
-            "sentence": "He didn't finish the task in sector 7.",
+            "question": "I've been waiting here _____ two hours.",
+            "sentence": "I've been waiting here _____ two hours.",
             "options": [
-                "He didn't finish the task, did he in sector 7?",
-                "He didn't finish the task, didn't he in sector 7?",
-                "Did he finish the task in sector 7?",
-                "He didn't finish the task, was he in sector 7?"
+                "for",
+                "since",
+                "during",
+                "while"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He didn't finish the task, did he in sector 7?",
-            "hint": "Negative past 'didn't' takes positive 'did he?'. (Sector 7 calibration)",
-            "explanation": "Didn't shifts to did in the tag. [Verified in sector 7]."
+            "correctAnswer": "for",
+            "hint": "'For' + duration of time; 'since' + point in time.",
+            "explanation": "'For' is used with a time period/duration: 'for two hours, for a week'. 'Since' is used with a starting point: 'since Monday, since 2020'. 'Two hours' is a duration, so 'for' is correct."
         },
         {
             "id": "qf_l86_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She ought to have apologized in sector 7.",
-            "sentence": "She ought to have apologized in sector 7.",
+            "question": "_____ the meeting, she took careful notes.",
+            "sentence": "_____ the meeting, she took careful notes.",
             "options": [
-                "Ought she to have apologized in sector 7?",
-                "Ought to she have apologized in sector 7?",
-                "Should she to have apologized in sector 7?",
-                "She ought to have apologized in sector 7?"
+                "During",
+                "While",
+                "For",
+                "In"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Ought she to have apologized in sector 7?",
-            "hint": "Invert 'ought' with the subject. (Sector 7 calibration)",
-            "explanation": "Invert the first element of 'ought to'. [Verified in sector 7]."
+            "correctAnswer": "During",
+            "hint": "'During' + noun phrase; 'while' + clause with a verb.",
+            "explanation": "'During' is a preposition followed by a noun: 'during the meeting, during lunch'. 'While' is a conjunction followed by a clause: 'while she was in the meeting'. 'During the meeting' = prepositional phrase; 'while the meeting' is ungrammatical."
         },
         {
             "id": "qf_l86_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The temple is being restored in sector 7.",
-            "sentence": "The temple is being restored in sector 7.",
+            "question": "She finished _____ the deadline.",
+            "sentence": "She finished _____ the deadline.",
             "options": [
-                "Is the temple being restored in sector 7?",
-                "Does the temple being restored in sector 7?",
-                "Is the temple restoring in sector 7?",
-                "The temple is being restored in sector 7?"
+                "before",
+                "until",
+                "by",
+                "within"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is the temple being restored in sector 7?",
-            "hint": "Invert 'is'. (Sector 7 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+            "correctAnswer": "before",
+            "hint": "'By' = not later than; 'before' = at any point earlier than; 'until' = up to and including that moment.",
+            "explanation": "All three can appear here with slightly different nuances. 'By the deadline' = no later than (most standard). 'Before the deadline' = at some point earlier. 'Within the deadline' is not natural English. Both 'by' and 'before' are correct here; 'by' is the most conventional business expression."
         },
         {
             "id": "qf_l87_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are ready in sector 7.",
-            "sentence": "They are ready in sector 7.",
+            "question": "There is _____ milk left. We need to buy more.",
+            "sentence": "There is _____ milk left. We need to buy more.",
             "options": [
-                "They are ready, aren't they in sector 7?",
-                "They are ready, are they in sector 7?",
-                "Are they ready in sector 7?",
-                "They are ready, don't they in sector 7?"
+                "little",
+                "few",
+                "a little",
+                "a few"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They are ready, aren't they in sector 7?",
-            "hint": "Positive 'are' takes negative 'aren't they?'. (Sector 7 calibration)",
-            "explanation": "Are shifts to aren't in the tag. [Verified in sector 7]."
+            "correctAnswer": "little",
+            "hint": "'Little' (without 'a') = almost none (negative connotation); 'milk' is uncountable.",
+            "explanation": "'Little' with a negative connotation ('hardly any') is used with uncountable nouns like 'milk'. 'Few' is for countable nouns. 'A little' means 'some, a small amount' (positive connotation), which contradicts 'we need to buy more'."
         },
         {
             "id": "qf_l87_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They can't have forgotten in sector 7.",
-            "sentence": "They can't have forgotten in sector 7.",
+            "question": "_____ student in the class passed the test.",
+            "sentence": "_____ student in the class passed the test.",
             "options": [
-                "Can they have forgotten in sector 7?",
-                "Can't they have forgotten in sector 7?",
-                "Have they can't forgotten in sector 7?",
-                "They can't have forgotten in sector 7?"
+                "Every",
+                "Each",
+                "All",
+                "Both"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can they have forgotten in sector 7?",
-            "hint": "Invert modal 'can' (or negative 'can't'). (Sector 7 calibration)",
-            "explanation": "Invert the modal auxiliary. [Verified in sector 7]."
+            "correctAnswer": "Every",
+            "hint": "'Every student' (singular) = all members of a group considered together; 'each' focuses on individuals one by one.",
+            "explanation": "'Every' is used with singular nouns and a singular verb to mean 'all members of a group'. 'Each' also takes singular nouns but emphasizes individual members. 'Every student passed' is slightly more natural as a general statement than 'Each student passed'."
         },
         {
             "id": "qf_l87_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They had been warned in sector 7.",
-            "sentence": "They had been warned in sector 7.",
+            "question": "I don't have _____ money on me right now.",
+            "sentence": "I don't have _____ money on me right now.",
             "options": [
-                "Had they been warned in sector 7?",
-                "Did they had been warned in sector 7?",
-                "Have they been warned in sector 7?",
-                "They had been warned in sector 7?"
+                "any",
+                "some",
+                "no",
+                "few"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Had they been warned in sector 7?",
-            "hint": "Invert 'had'. (Sector 7 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+            "correctAnswer": "any",
+            "hint": "'Any' in negative sentences with uncountable nouns.",
+            "explanation": "'Any' is used in negative sentences and questions with both countable and uncountable nouns. 'Some' is for positive sentences. 'No money' (with 'no' directly before the noun) is also grammatically correct and adds emphasis."
         },
         {
             "id": "qf_l88_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She has been working hard in sector 7.",
-            "sentence": "She has been working hard in sector 7.",
+            "question": "He is _____ the phone with his manager.",
+            "sentence": "He is _____ the phone with his manager.",
             "options": [
-                "She has been working hard, hasn't she in sector 7?",
-                "She has been working hard, has she in sector 7?",
-                "Has she been working hard in sector 7?",
-                "She has been working hard, doesn't she in sector 7?"
+                "on",
+                "at",
+                "in",
+                "by"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She has been working hard, hasn't she in sector 7?",
-            "hint": "Use the first auxiliary 'has' in the tag: 'hasn't she?'. (Sector 7 calibration)",
-            "explanation": "Has shifts to hasn't in the tag. [Verified in sector 7]."
+            "correctAnswer": "on",
+            "hint": "'On the phone' = talking by telephone - fixed prepositional phrase.",
+            "explanation": "'On the phone' is a fixed phrase meaning talking via telephone. You are 'on the phone', not 'at the phone' or 'in the phone'."
         },
         {
             "id": "qf_l88_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You shouldn't have done that in sector 7.",
-            "sentence": "You shouldn't have done that in sector 7.",
+            "question": "She is interested _____ learning new languages.",
+            "sentence": "She is interested _____ learning new languages.",
             "options": [
-                "Should you have done that in sector 7?",
-                "Shouldn't you have done that in sector 7?",
-                "Did you shouldn't have done that in sector 7?",
-                "You shouldn't have done that in sector 7?"
+                "in",
+                "on",
+                "at",
+                "about"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Shouldn't you have done that in sector 7?",
-            "hint": "Keep the negative force or invert to negative 'Shouldn't you have done that?'. (Sector 7 calibration)",
-            "explanation": "Negative inversion is correct. [Verified in sector 7]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "in",
+            "hint": "'Interested in' is the fixed preposition - not 'interested on/at/about'.",
+            "explanation": "'Interested in' is a fixed adjective + preposition combination. After 'interested in', use a gerund: 'interested in learning'. 'Interested about' is a common error but not standard English."
         },
         {
             "id": "qf_l88_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She will be promoted in sector 7.",
-            "sentence": "She will be promoted in sector 7.",
+            "question": "They apologized _____ being late.",
+            "sentence": "They apologized _____ being late.",
             "options": [
-                "Will she be promoted in sector 7?",
-                "Does she will be promoted in sector 7?",
-                "Will she promoting in sector 7?",
-                "She will be promoted in sector 7?"
+                "for",
+                "of",
+                "about",
+                "to"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will she be promoted in sector 7?",
-            "hint": "Invert 'will'. (Sector 7 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+            "correctAnswer": "for",
+            "hint": "'Apologize for' + gerund is the fixed verb + preposition pattern.",
+            "explanation": "'Apologize for' is the correct prepositional verb. 'Apologize for something' or 'apologize for doing something' - always 'for'. 'Apologize about' is not standard."
         },
         {
             "id": "qf_l89_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You wouldn't do that in sector 7.",
-            "sentence": "You wouldn't do that in sector 7.",
+            "question": "She depends _____ her colleagues for support.",
+            "sentence": "She depends _____ her colleagues for support.",
             "options": [
-                "You wouldn't do that, would you in sector 7?",
-                "You wouldn't do that, wouldn't you in sector 7?",
-                "Would you do that in sector 7?",
-                "You wouldn't do that, did you in sector 7?"
+                "on",
+                "from",
+                "at",
+                "about"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You wouldn't do that, would you in sector 7?",
-            "hint": "Negative 'wouldn't' takes positive 'would you?'. (Sector 7 calibration)",
-            "explanation": "Wouldn't shifts to would in the tag. [Verified in sector 7]."
+            "correctAnswer": "on",
+            "hint": "'Depend on' = rely on - fixed preposition.",
+            "explanation": "'Depend on' is a fixed collocation: you depend 'on' someone or something. 'Depend from' is not English; 'depend about' is also wrong."
         },
         {
             "id": "qf_l89_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He wouldn't have agreed in sector 7.",
-            "sentence": "He wouldn't have agreed in sector 7.",
+            "question": "The children are afraid _____ the dark.",
+            "sentence": "The children are afraid _____ the dark.",
             "options": [
-                "Would he have agreed in sector 7?",
-                "Wouldn't he have agreed in sector 7?",
-                "Did he wouldn't have agreed in sector 7?",
-                "He wouldn't have agreed in sector 7?"
+                "of",
+                "from",
+                "about",
+                "at"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Wouldn't he have agreed in sector 7?",
-            "hint": "Keep the negative force for inverted negative modal. (Sector 7 calibration)",
-            "explanation": "Wouldn't he have agreed is correct. [Verified in sector 7]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "of",
+            "hint": "'Afraid of' is the fixed adjective-preposition pair.",
+            "explanation": "'Afraid of' is always the correct preposition with 'afraid'. 'Afraid of the dark, afraid of spiders, afraid of failing' - always 'of'. 'Afraid from' is a common translation error."
         },
         {
             "id": "qf_l89_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He should be informed in sector 7.",
-            "sentence": "He should be informed in sector 7.",
+            "question": "She succeeded _____ passing all her exams.",
+            "sentence": "She succeeded _____ passing all her exams.",
             "options": [
-                "Should he be informed in sector 7?",
-                "Do he should be informed in sector 7?",
-                "Should he informing in sector 7?",
-                "He should be informed in sector 7?"
+                "in",
+                "at",
+                "to",
+                "on"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should he be informed in sector 7?",
-            "hint": "Invert 'should'. (Sector 7 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+            "correctAnswer": "in",
+            "hint": "'Succeed in + gerund' is the correct structure.",
+            "explanation": "'Succeed in doing something' is the fixed structure. 'Succeed at' is sometimes used informally, but 'in + gerund' is the standard grammar pattern. Never 'succeed to' - confuse with 'manage to' which does take an infinitive."
         },
         {
             "id": "qf_l90_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We should go now in sector 7.",
-            "sentence": "We should go now in sector 7.",
+            "question": "He has been _____ a diet since January.",
+            "sentence": "He has been _____ a diet since January.",
             "options": [
-                "We should go now, shouldn't we in sector 7?",
-                "We should go now, should we in sector 7?",
-                "Should we go now in sector 7?",
-                "We should go now, don't we in sector 7?"
+                "on",
+                "in",
+                "at",
+                "with"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "We should go now, shouldn't we in sector 7?",
-            "hint": "Positive 'should' takes negative 'shouldn't we?'. (Sector 7 calibration)",
-            "explanation": "Should shifts to shouldn't in the tag. [Verified in sector 7]."
+            "correctAnswer": "on",
+            "hint": "'On a diet' = following a restricted eating plan - fixed prepositional phrase.",
+            "explanation": "'On a diet' is the correct fixed phrase. Similarly: 'on a budget', 'on a break', 'on a trip'. These take 'on', not 'in', 'at', or 'with'."
         },
         {
             "id": "qf_l90_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We couldn't have known in sector 7.",
-            "sentence": "We couldn't have known in sector 7.",
+            "question": "They are looking forward _____ the holiday.",
+            "sentence": "They are looking forward _____ the holiday.",
             "options": [
-                "Could we have known in sector 7?",
-                "Couldn't we have known in sector 7?",
-                "Did we couldn't have known in sector 7?",
-                "We couldn't have known in sector 7?"
+                "to",
+                "for",
+                "at",
+                "about"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Couldn't we have known in sector 7?",
-            "hint": "Negative modal inversion. (Sector 7 calibration)",
-            "explanation": "Couldn't we have known is correct. [Verified in sector 7]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "to",
+            "hint": "'Look forward to' + noun or gerund - 'to' is a preposition here, not part of an infinitive.",
+            "explanation": "'Look forward to' is a phrasal verb where 'to' is a preposition, not part of an infinitive. After 'to' (preposition), use a noun or gerund: 'look forward to the holiday', 'look forward to going'. Never 'look forward to go'."
         },
         {
             "id": "qf_l90_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 3,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You would be surprised in sector 7.",
-            "sentence": "You would be surprised in sector 7.",
+            "question": "We need to focus _____ the most important tasks first.",
+            "sentence": "We need to focus _____ the most important tasks first.",
             "options": [
-                "Would you be surprised in sector 7?",
-                "Do you would be surprised in sector 7?",
-                "Would you surprising in sector 7?",
-                "You would be surprised in sector 7?"
+                "on",
+                "at",
+                "about",
+                "in"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would you be surprised in sector 7?",
-            "hint": "Invert 'would'. (Sector 7 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+            "correctAnswer": "on",
+            "hint": "'Focus on' = direct your attention to - fixed prepositional verb.",
+            "explanation": "'Focus on' is the correct prepositional verb. 'Focus at' is not standard. 'Focus on the task, focus on the problem, focus on improving' - always 'on'."
         }
     ]
 }

@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l51_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is the manager in sector 4.",
-            "sentence": "He is the manager in sector 4.",
+            "question": "She has been working here for five years.",
+            "sentence": "She has been working here for five years.",
             "options": [
-                "He is the manager, isn't he in sector 4?",
-                "Is he the manager in sector 4?",
-                "He is the manager, is he in sector 4?",
-                "He is the manager, does he in sector 4?"
+                "Has she been working here for five years?",
+                "She has been working here for five years?",
+                "Has she working here for five years?",
+                "Have she been working here for five years?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He is the manager, isn't he in sector 4?",
-            "hint": "A positive statement with 'is' takes a negative tag 'isn't he?'. (Sector 4 calibration)",
-            "explanation": "Positive statement requires a negative tag. [Verified in sector 4]."
+            "correctAnswer": "Has she been working here for five years?",
+            "hint": "Only the first auxiliary moves: invert 'has' with 'she', then keep 'been' + the -ing verb in place.",
+            "explanation": "Present perfect continuous uses 'has' + been + verb-ing. Only the first auxiliary ('has') inverts with 'she'; 'been' and the -ing form stay in place."
         },
         {
             "id": "qf_l51_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She could have won the race in sector 4.",
-            "sentence": "She could have won the race in sector 4.",
+            "question": "They have been arguing all morning.",
+            "sentence": "They have been arguing all morning.",
             "options": [
-                "Could she have won the race in sector 4?",
-                "Could have she won the race in sector 4?",
-                "Should she have won the race in sector 4?",
-                "She could have won the race in sector 4?"
+                "Have they been arguing all morning?",
+                "They have been arguing all morning?",
+                "Have they arguing all morning?",
+                "Has they been arguing all morning?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Could she have won the race in sector 4?",
-            "hint": "Invert the first auxiliary 'could'. (Sector 4 calibration)",
-            "explanation": "Invert the primary modal in a perfect modal construction. [Verified in sector 4]."
+            "correctAnswer": "Have they been arguing all morning?",
+            "hint": "'Have ... been ...' - 'have' inverts with 'they', 'been' stays right after the subject.",
+            "explanation": "This tense has two helping verbs. 'Have' (matched to 'they') moves to the front; 'been' is never dropped or moved."
         },
         {
             "id": "qf_l51_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The project was finished in sector 4.",
-            "sentence": "The project was finished in sector 4.",
+            "question": "He has been studying medicine for three years.",
+            "sentence": "He has been studying medicine for three years.",
             "options": [
-                "Was the project finished in sector 4?",
-                "Did the project finish in sector 4?",
-                "Is the project finished in sector 4?",
-                "The project was finished in sector 4?"
+                "Has he been studying medicine for three years?",
+                "He has been studying medicine for three years?",
+                "Has he studying medicine for three years?",
+                "Have he been studying medicine for three years?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was the project finished in sector 4?",
-            "hint": "Invert 'was' in passive voice. (Sector 4 calibration)",
-            "explanation": "Invert auxiliary 'was' and subject. [Verified in sector 4]."
+            "correctAnswer": "Has he been studying medicine for three years?",
+            "hint": "Present perfect continuous has two auxiliaries; only the first one inverts.",
+            "explanation": "Present perfect continuous uses 'has' + been + verb-ing. Only the first auxiliary ('has') inverts with 'he'; 'been' and the -ing form stay in place."
         },
         {
             "id": "qf_l52_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You haven't seen him lately in sector 4.",
-            "sentence": "You haven't seen him lately in sector 4.",
+            "question": "They had been waiting for an hour when the bus finally came.",
+            "sentence": "They had been waiting for an hour when the bus finally came.",
             "options": [
-                "You haven't seen him lately, have you in sector 4?",
-                "You haven't seen him lately, haven't you in sector 4?",
-                "Have you seen him lately in sector 4?",
-                "You haven't seen him lately, did you in sector 4?"
+                "Had they been waiting for an hour when the bus finally came?",
+                "They had been waiting for an hour?",
+                "Have they been waiting for an hour when the bus finally came?",
+                "Did they wait for an hour when the bus finally came?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You haven't seen him lately, have you in sector 4?",
-            "hint": "A negative statement with 'haven't' takes a positive tag 'have you?'. (Sector 4 calibration)",
-            "explanation": "Negative statement requires a positive tag. [Verified in sector 4]."
+            "correctAnswer": "Had they been waiting for an hour when the bus finally came?",
+            "hint": "Move 'had' before 'they'; 'been waiting' stays together after the subject.",
+            "explanation": "Past perfect continuous questions move 'had' before the subject while 'been + V-ing' stays intact after the subject. 'Have' would shift the tense to present perfect continuous."
         },
         {
             "id": "qf_l52_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They should have reported this in sector 4.",
-            "sentence": "They should have reported this in sector 4.",
+            "question": "She had been teaching English for ten years before she retired.",
+            "sentence": "She had been teaching English for ten years before she retired.",
             "options": [
-                "Should they have reported this in sector 4?",
-                "Should have they reported this in sector 4?",
-                "Would they have reported this in sector 4?",
-                "They should have reported this in sector 4?"
+                "Had she been teaching English for ten years before she retired?",
+                "She had been teaching English for ten years?",
+                "Have she been teaching English for ten years before she retired?",
+                "Did she teach English for ten years before she retired?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should they have reported this in sector 4?",
-            "hint": "Invert the first modal 'should'. (Sector 4 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 4]."
+            "correctAnswer": "Had she been teaching English for ten years before she retired?",
+            "hint": "Only 'had' inverts with 'she'; 'been teaching' stays right after the subject.",
+            "explanation": "'Had' is the only auxiliary that moves in a past perfect continuous question. 'Been teaching' is the continuous verb phrase and stays unchanged after the subject."
         },
         {
             "id": "qf_l52_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are being monitored in sector 4.",
-            "sentence": "They are being monitored in sector 4.",
+            "question": "He had been saving money for two years before he bought a car.",
+            "sentence": "He had been saving money for two years before he bought a car.",
             "options": [
-                "Are they being monitored in sector 4?",
-                "Do they being monitored in sector 4?",
-                "Are they monitoring in sector 4?",
-                "They are being monitored in sector 4?"
+                "Had he been saving money for two years before he bought a car?",
+                "He had been saving money for two years?",
+                "Has he been saving money for two years before he bought a car?",
+                "Did he save money for two years before he bought a car?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Are they being monitored in sector 4?",
-            "hint": "Invert the first auxiliary 'are'. (Sector 4 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 4]."
+            "correctAnswer": "Had he been saving money for two years before he bought a car?",
+            "hint": "Invert 'had' and 'he'; the rest of the verb phrase follows the subject.",
+            "explanation": "Past perfect continuous uses 'had been + V-ing'. To form a question, only 'had' inverts with the subject; 'been saving' is the continuous part and stays in place."
         },
         {
             "id": "qf_l53_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They will arrive on time in sector 4.",
-            "sentence": "They will arrive on time in sector 4.",
+            "question": "I need to know: has she finished the report, or is she still working on it?",
+            "sentence": "I need to know: has she finished the report, or is she still working on it?",
             "options": [
-                "They will arrive on time, won't they in sector 4?",
-                "They will arrive on time, will they in sector 4?",
-                "Will they arrive on time in sector 4?",
-                "They will arrive on time, don't they in sector 4?"
+                "Has she finished the report?",
+                "Has she been finishing the report?",
+                "Is she finishing the report?",
+                "Did she finish the report?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They will arrive on time, won't they in sector 4?",
-            "hint": "A positive future statement with 'will' takes 'won't they?'. (Sector 4 calibration)",
-            "explanation": "Will shifts to won't in the tag. [Verified in sector 4]."
+            "correctAnswer": "Has she finished the report?",
+            "hint": "Completion of a specific task uses present perfect simple ('has finished'), not continuous.",
+            "explanation": "The present perfect simple ('has finished') is used for a completed action with a visible result. 'Has been finishing' (continuous) would suggest an ongoing process, which contradicts 'finished'."
         },
         {
             "id": "qf_l53_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He would have helped us in sector 4.",
-            "sentence": "He would have helped us in sector 4.",
+            "question": "She looks tired. She _____ all day.",
+            "sentence": "She looks tired. She _____ all day.",
             "options": [
-                "Would he have helped us in sector 4?",
-                "Would have he helped us in sector 4?",
-                "Could he have helped us in sector 4?",
-                "He would have helped us in sector 4?"
+                "has been cleaning",
+                "has cleaned",
+                "had been cleaning",
+                "was cleaning"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would he have helped us in sector 4?",
-            "hint": "Invert the first auxiliary 'would'. (Sector 4 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 4]."
+            "correctAnswer": "has been cleaning",
+            "hint": "The context ('looks tired' after a long ongoing activity) calls for the present perfect continuous.",
+            "explanation": "Present perfect continuous ('has been cleaning') expresses an activity that has been ongoing up to now, which explains a present visible effect (she looks tired). 'Has cleaned' would focus on completion, not duration."
         },
         {
             "id": "qf_l53_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has been arrested in sector 4.",
-            "sentence": "He has been arrested in sector 4.",
+            "question": "The children _____ three sandwiches each. There are none left.",
+            "sentence": "The children _____ three sandwiches each. There are none left.",
             "options": [
-                "Has he been arrested in sector 4?",
-                "Did he been arrested in sector 4?",
-                "Have he been arrested in sector 4?",
-                "He has been arrested in sector 4?"
+                "have eaten",
+                "have been eating",
+                "had eaten",
+                "were eating"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has he been arrested in sector 4?",
-            "hint": "Invert 'has'. (Sector 4 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 4]."
+            "correctAnswer": "have eaten",
+            "hint": "Focus on the result - all sandwiches are gone - so use the present perfect simple.",
+            "explanation": "When the focus is on a quantified, completed result ('three sandwiches each - none left'), the present perfect simple ('have eaten') is correct. 'Have been eating' would focus on the ongoing activity, not the finished quantity."
         },
         {
             "id": "qf_l54_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She doesn't like coffee in sector 4.",
-            "sentence": "She doesn't like coffee in sector 4.",
+            "question": "By the time we arrived, the film _____ already.",
+            "sentence": "By the time we arrived, the film _____ already.",
             "options": [
-                "She doesn't like coffee, does she in sector 4?",
-                "She doesn't like coffee, doesn't she in sector 4?",
-                "Does she like coffee in sector 4?",
-                "She doesn't like coffee, is she in sector 4?"
+                "had started",
+                "started",
+                "has started",
+                "was starting"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She doesn't like coffee, does she in sector 4?",
-            "hint": "A negative present statement with 'doesn't' takes 'does she?'. (Sector 4 calibration)",
-            "explanation": "Doesn't shifts to does in the tag. [Verified in sector 4]."
+            "correctAnswer": "had started",
+            "hint": "'By the time' signals that one past event was already complete before another - use past perfect.",
+            "explanation": "'By the time' introduces a reference point in the past. The film starting happened before we arrived, so the past perfect ('had started') is needed to show that earlier sequence."
         },
         {
             "id": "qf_l54_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You must have seen the sign in sector 4.",
-            "sentence": "You must have seen the sign in sector 4.",
+            "question": "She _____ her homework before her parents came home.",
+            "sentence": "She _____ her homework before her parents came home.",
             "options": [
-                "Must you have seen the sign in sector 4?",
-                "Must have you seen the sign in sector 4?",
-                "Did you have seen the sign in sector 4?",
-                "You must have seen the sign in sector 4?"
+                "had finished",
+                "finished",
+                "has finished",
+                "was finishing"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Must you have seen the sign in sector 4?",
-            "hint": "Invert 'must'. (Sector 4 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 4]."
+            "correctAnswer": "had finished",
+            "hint": "One past event (finishing) happened before another past event (parents coming home) - use past perfect.",
+            "explanation": "The past perfect ('had finished') shows that finishing homework came before parents arriving - both are past events, but one is earlier. Simple past 'finished' would not clearly show the sequence."
         },
         {
             "id": "qf_l54_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She was being interviewed in sector 4.",
-            "sentence": "She was being interviewed in sector 4.",
+            "question": "When I called him, he _____ out.",
+            "sentence": "When I called him, he _____ out.",
             "options": [
-                "Was she being interviewed in sector 4?",
-                "Did she being interviewed in sector 4?",
-                "Was she interviewing in sector 4?",
-                "She was being interviewed in sector 4?"
+                "had already gone",
+                "already went",
+                "has already gone",
+                "was already going"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was she being interviewed in sector 4?",
-            "hint": "Invert 'was'. (Sector 4 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 4]."
+            "correctAnswer": "had already gone",
+            "hint": "His going out happened before your call - show this earlier-past event with the past perfect.",
+            "explanation": "'Had already gone' (past perfect) marks his departure as happening before the call. 'Already went' (simple past) would make the two events sound simultaneous, which changes the meaning."
         },
         {
             "id": "qf_l55_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You can drive a shuttle in sector 4.",
-            "sentence": "You can drive a shuttle in sector 4.",
+            "question": "Look at those clouds! It _____ rain.",
+            "sentence": "Look at those clouds! It _____ rain.",
             "options": [
-                "You can drive a shuttle, can't you in sector 4?",
-                "You can drive a shuttle, can you in sector 4?",
-                "Can you drive a shuttle in sector 4?",
-                "You can drive a shuttle, don't you in sector 4?"
+                "is going to",
+                "will",
+                "is",
+                "would"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You can drive a shuttle, can't you in sector 4?",
-            "hint": "Positive 'can' takes negative 'can't you?'. (Sector 4 calibration)",
-            "explanation": "Can shifts to can't in the tag. [Verified in sector 4]."
+            "correctAnswer": "is going to",
+            "hint": "A present visible sign (dark clouds) predicts something imminent - use 'going to', not 'will'.",
+            "explanation": "'Going to' is used when there is present evidence predicting a future event. Seeing dark clouds is direct evidence of coming rain, so 'is going to rain' is correct. 'Will' is for decisions made in the moment or predictions without present evidence."
         },
         {
             "id": "qf_l55_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We might have missed them in sector 4.",
-            "sentence": "We might have missed them in sector 4.",
+            "question": "I've decided. I _____ take a cooking class next month.",
+            "sentence": "I've decided. I _____ take a cooking class next month.",
             "options": [
-                "Might we have missed them in sector 4?",
-                "Might have we missed them in sector 4?",
-                "Did we might have missed them in sector 4?",
-                "We might have missed them in sector 4?"
+                "am going to",
+                "will",
+                "am",
+                "would"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Might we have missed them in sector 4?",
-            "hint": "Invert 'might'. (Sector 4 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 4]."
+            "correctAnswer": "am going to",
+            "hint": "A prior decision (already made) calls for 'going to', not 'will'.",
+            "explanation": "'Going to' expresses a decision already made before the moment of speaking. 'Will' would suggest a spontaneous decision made at that exact moment, but 'I've decided' tells us the decision is already formed."
         },
         {
             "id": "qf_l55_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We have been invited in sector 4.",
-            "sentence": "We have been invited in sector 4.",
+            "question": "A: The phone is ringing. B: Don't worry, I _____ get it.",
+            "sentence": "A: The phone is ringing. B: Don't worry, I _____ get it.",
             "options": [
-                "Have we been invited in sector 4?",
-                "Has we been invited in sector 4?",
-                "Do we been invited in sector 4?",
-                "We have been invited in sector 4?"
+                "will",
+                "am going to",
+                "am",
+                "would"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Have we been invited in sector 4?",
-            "hint": "Invert 'have'. (Sector 4 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 4]."
+            "correctAnswer": "will",
+            "hint": "A spontaneous decision made at the moment of speaking uses 'will', not 'going to'.",
+            "explanation": "'Will' expresses a spontaneous decision made at the moment of speaking. Since B decides to answer the phone right now (not in advance), 'will' is correct. 'Going to' would imply B had already planned to answer it."
         },
         {
             "id": "qf_l56_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He didn't finish the task in sector 4.",
-            "sentence": "He didn't finish the task in sector 4.",
+            "question": "If you study hard, you _____ pass the exam.",
+            "sentence": "If you study hard, you _____ pass the exam.",
             "options": [
-                "He didn't finish the task, did he in sector 4?",
-                "He didn't finish the task, didn't he in sector 4?",
-                "Did he finish the task in sector 4?",
-                "He didn't finish the task, was he in sector 4?"
+                "will",
+                "would",
+                "should",
+                "shall"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He didn't finish the task, did he in sector 4?",
-            "hint": "Negative past 'didn't' takes positive 'did he?'. (Sector 4 calibration)",
-            "explanation": "Didn't shifts to did in the tag. [Verified in sector 4]."
+            "correctAnswer": "will",
+            "hint": "Real future possibility + real result → first conditional uses 'will' in the result clause.",
+            "explanation": "In the first conditional (real future possibility), the result clause uses 'will + base verb'. 'Would' belongs to the second conditional (hypothetical situations), not real ones."
         },
         {
             "id": "qf_l56_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She ought to have apologized in sector 4.",
-            "sentence": "She ought to have apologized in sector 4.",
+            "question": "She will miss the bus if she _____ hurry.",
+            "sentence": "She will miss the bus if she _____ hurry.",
             "options": [
-                "Ought she to have apologized in sector 4?",
-                "Ought to she have apologized in sector 4?",
-                "Should she to have apologized in sector 4?",
-                "She ought to have apologized in sector 4?"
+                "doesn't",
+                "won't",
+                "didn't",
+                "hadn't"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Ought she to have apologized in sector 4?",
-            "hint": "Invert 'ought' with the subject. (Sector 4 calibration)",
-            "explanation": "Invert the first element of 'ought to'. [Verified in sector 4]."
+            "correctAnswer": "doesn't",
+            "hint": "In a first-conditional 'if' clause, use the present simple - even though the meaning is future.",
+            "explanation": "First-conditional 'if' clauses always use the present simple, never 'will' or 'would'. 'Doesn't hurry' is present simple and correctly expresses the real future condition."
         },
         {
             "id": "qf_l56_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The temple is being restored in sector 4.",
-            "sentence": "The temple is being restored in sector 4.",
+            "question": "If it _____ tomorrow, we'll stay home.",
+            "sentence": "If it _____ tomorrow, we'll stay home.",
             "options": [
-                "Is the temple being restored in sector 4?",
-                "Does the temple being restored in sector 4?",
-                "Is the temple restoring in sector 4?",
-                "The temple is being restored in sector 4?"
+                "rains",
+                "will rain",
+                "rained",
+                "would rain"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is the temple being restored in sector 4?",
-            "hint": "Invert 'is'. (Sector 4 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 4]."
+            "correctAnswer": "rains",
+            "hint": "The 'if' clause of a first conditional uses present simple, not 'will'.",
+            "explanation": "A key rule of the first conditional: the 'if' clause uses present simple, even though the action is future. 'Will rain' is a common learner error; the correct form is 'rains'."
         },
         {
             "id": "qf_l57_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are ready in sector 4.",
-            "sentence": "They are ready in sector 4.",
+            "question": "If I _____ rich, I would travel the world.",
+            "sentence": "If I _____ rich, I would travel the world.",
             "options": [
-                "They are ready, aren't they in sector 4?",
-                "They are ready, are they in sector 4?",
-                "Are they ready in sector 4?",
-                "They are ready, don't they in sector 4?"
+                "were",
+                "am",
+                "will be",
+                "had been"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They are ready, aren't they in sector 4?",
-            "hint": "Positive 'are' takes negative 'aren't they?'. (Sector 4 calibration)",
-            "explanation": "Are shifts to aren't in the tag. [Verified in sector 4]."
+            "correctAnswer": "were",
+            "hint": "Second conditional uses 'were' (or 'was') in the 'if' clause - this is a hypothetical, not a real situation.",
+            "explanation": "In the second conditional, 'were' is the grammatically preferred form for all subjects in formal English, even 'I'. This signals that the situation is hypothetical or unlikely, unlike the first conditional which uses present simple."
         },
         {
             "id": "qf_l57_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They can't have forgotten in sector 4.",
-            "sentence": "They can't have forgotten in sector 4.",
+            "question": "If she knew the answer, she _____ tell you.",
+            "sentence": "If she knew the answer, she _____ tell you.",
             "options": [
-                "Can they have forgotten in sector 4?",
-                "Can't they have forgotten in sector 4?",
-                "Have they can't forgotten in sector 4?",
-                "They can't have forgotten in sector 4?"
+                "would",
+                "will",
+                "could have",
+                "should"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can they have forgotten in sector 4?",
-            "hint": "Invert modal 'can' (or negative 'can't'). (Sector 4 calibration)",
-            "explanation": "Invert the modal auxiliary. [Verified in sector 4]."
+            "correctAnswer": "would",
+            "hint": "Hypothetical present situation → result clause needs 'would + base verb'.",
+            "explanation": "The second conditional expresses a hypothetical present or future situation. The result clause always uses 'would + base verb'. 'Will' belongs to the first conditional (real situations)."
         },
         {
             "id": "qf_l57_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They had been warned in sector 4.",
-            "sentence": "They had been warned in sector 4.",
+            "question": "We _____ buy a house if we had more savings.",
+            "sentence": "We _____ buy a house if we had more savings.",
             "options": [
-                "Had they been warned in sector 4?",
-                "Did they had been warned in sector 4?",
-                "Have they been warned in sector 4?",
-                "They had been warned in sector 4?"
+                "would",
+                "will",
+                "could have",
+                "shall"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Had they been warned in sector 4?",
-            "hint": "Invert 'had'. (Sector 4 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 4]."
+            "correctAnswer": "would",
+            "hint": "This is an imaginary situation in the present - use 'would' in the result clause.",
+            "explanation": "'Would' is the modal in the second conditional's result clause, expressing a hypothetical outcome. 'Will' signals a real, likely outcome and belongs in the first conditional."
         },
         {
             "id": "qf_l58_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She has been working hard in sector 4.",
-            "sentence": "She has been working hard in sector 4.",
+            "question": "If I _____ you, I would apologize.",
+            "sentence": "If I _____ you, I would apologize.",
             "options": [
-                "She has been working hard, hasn't she in sector 4?",
-                "She has been working hard, has she in sector 4?",
-                "Has she been working hard in sector 4?",
-                "She has been working hard, doesn't she in sector 4?"
+                "were",
+                "am",
+                "will be",
+                "would be"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She has been working hard, hasn't she in sector 4?",
-            "hint": "Use the first auxiliary 'has' in the tag: 'hasn't she?'. (Sector 4 calibration)",
-            "explanation": "Has shifts to hasn't in the tag. [Verified in sector 4]."
+            "correctAnswer": "were",
+            "hint": "This is giving advice about an imaginary situation ('if I were you') - second conditional.",
+            "explanation": "The fixed phrase 'If I were you' is a classic second conditional structure used for advice. The speaker is imagining themselves as the other person - a hypothetical situation requiring the past form 'were'."
         },
         {
             "id": "qf_l58_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You shouldn't have done that in sector 4.",
-            "sentence": "You shouldn't have done that in sector 4.",
+            "question": "If she _____ the job, she'll be very happy.",
+            "sentence": "If she _____ the job, she'll be very happy.",
             "options": [
-                "Should you have done that in sector 4?",
-                "Shouldn't you have done that in sector 4?",
-                "Did you shouldn't have done that in sector 4?",
-                "You shouldn't have done that in sector 4?"
+                "gets",
+                "got",
+                "would get",
+                "had gotten"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Shouldn't you have done that in sector 4?",
-            "hint": "Keep the negative force or invert to negative 'Shouldn't you have done that?'. (Sector 4 calibration)",
-            "explanation": "Negative inversion is correct. [Verified in sector 4]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "gets",
+            "hint": "This is a realistic possibility about the future - first conditional uses present simple in the 'if' clause.",
+            "explanation": "The first conditional handles real, possible future events. Since getting the job is a realistic possibility, the 'if' clause uses present simple ('gets'). 'Got' would make it second conditional (hypothetical)."
         },
         {
             "id": "qf_l58_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She will be promoted in sector 4.",
-            "sentence": "She will be promoted in sector 4.",
+            "question": "If the train _____ on time, we would arrive before midnight.",
+            "sentence": "If the train _____ on time, we would arrive before midnight.",
             "options": [
-                "Will she be promoted in sector 4?",
-                "Does she will be promoted in sector 4?",
-                "Will she promoting in sector 4?",
-                "She will be promoted in sector 4?"
+                "ran",
+                "runs",
+                "will run",
+                "had run"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will she be promoted in sector 4?",
-            "hint": "Invert 'will'. (Sector 4 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 4]."
+            "correctAnswer": "ran",
+            "hint": "An unlikely or imaginary scenario → second conditional; 'if' clause needs past simple.",
+            "explanation": "The second conditional uses past simple in the 'if' clause to signal an imaginary or unlikely situation. 'Runs' would make it first conditional (likely). 'Had run' belongs to the third conditional."
         },
         {
             "id": "qf_l59_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You wouldn't do that in sector 4.",
-            "sentence": "You wouldn't do that in sector 4.",
+            "question": "If she had studied harder, she _____ passed the exam.",
+            "sentence": "If she had studied harder, she _____ passed the exam.",
             "options": [
-                "You wouldn't do that, would you in sector 4?",
-                "You wouldn't do that, wouldn't you in sector 4?",
-                "Would you do that in sector 4?",
-                "You wouldn't do that, did you in sector 4?"
+                "would have",
+                "would",
+                "will have",
+                "had"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You wouldn't do that, would you in sector 4?",
-            "hint": "Negative 'wouldn't' takes positive 'would you?'. (Sector 4 calibration)",
-            "explanation": "Wouldn't shifts to would in the tag. [Verified in sector 4]."
+            "correctAnswer": "would have",
+            "hint": "Third conditional: past hypothetical → 'would have + past participle' in the result clause.",
+            "explanation": "The third conditional talks about a past event that did not happen. The result clause uses 'would have + past participle'. 'Would' alone (without 'have') belongs to the second conditional."
         },
         {
             "id": "qf_l59_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He wouldn't have agreed in sector 4.",
-            "sentence": "He wouldn't have agreed in sector 4.",
+            "question": "If they had left earlier, they _____ missed the traffic.",
+            "sentence": "If they had left earlier, they _____ missed the traffic.",
             "options": [
-                "Would he have agreed in sector 4?",
-                "Wouldn't he have agreed in sector 4?",
-                "Did he wouldn't have agreed in sector 4?",
-                "He wouldn't have agreed in sector 4?"
+                "would have",
+                "will have",
+                "had",
+                "would"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Wouldn't he have agreed in sector 4?",
-            "hint": "Keep the negative force for inverted negative modal. (Sector 4 calibration)",
-            "explanation": "Wouldn't he have agreed is correct. [Verified in sector 4]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "would have",
+            "hint": "The situation is past and unreal - result clause = 'would have + past participle'.",
+            "explanation": "Third conditional describes hypothetical past situations. Both clauses refer to what did not happen: 'had left' in the 'if' clause and 'would have missed' in the result clause. This is past-unreal, not future."
         },
         {
             "id": "qf_l59_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He should be informed in sector 4.",
-            "sentence": "He should be informed in sector 4.",
+            "question": "He wouldn't have lost his keys if he _____ more careful.",
+            "sentence": "He wouldn't have lost his keys if he _____ more careful.",
             "options": [
-                "Should he be informed in sector 4?",
-                "Do he should be informed in sector 4?",
-                "Should he informing in sector 4?",
-                "He should be informed in sector 4?"
+                "had been",
+                "was",
+                "were",
+                "would have been"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should he be informed in sector 4?",
-            "hint": "Invert 'should'. (Sector 4 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 4]."
+            "correctAnswer": "had been",
+            "hint": "'If' clause of third conditional = 'had been' (past perfect), not simple past.",
+            "explanation": "In the third conditional, the 'if' clause uses the past perfect ('had been'). Simple past 'was/were' belongs to the second conditional. 'Would have been' cannot appear in the 'if' clause - ever."
         },
         {
             "id": "qf_l60_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We should go now in sector 4.",
-            "sentence": "We should go now in sector 4.",
+            "question": "If I _____ a pilot, I fly to different countries every week.",
+            "sentence": "If I _____ a pilot, I fly to different countries every week.",
             "options": [
-                "We should go now, shouldn't we in sector 4?",
-                "We should go now, should we in sector 4?",
-                "Should we go now in sector 4?",
-                "We should go now, don't we in sector 4?"
+                "were",
+                "am",
+                "would be",
+                "had been"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "We should go now, shouldn't we in sector 4?",
-            "hint": "Positive 'should' takes negative 'shouldn't we?'. (Sector 4 calibration)",
-            "explanation": "Should shifts to shouldn't in the tag. [Verified in sector 4]."
+            "correctAnswer": "were",
+            "hint": "This is a hypothetical present situation (not true now) - second conditional.",
+            "explanation": "The speaker is not a pilot, so this is an imaginary present situation. Second conditional: 'If I were..., I would fly...'. The missing word in the 'if' clause is 'were', the past form that signals the hypothetical."
         },
         {
             "id": "qf_l60_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We couldn't have known in sector 4.",
-            "sentence": "We couldn't have known in sector 4.",
+            "question": "If you _____ water to 100 degrees Celsius, it boils.",
+            "sentence": "If you _____ water to 100 degrees Celsius, it boils.",
             "options": [
-                "Could we have known in sector 4?",
-                "Couldn't we have known in sector 4?",
-                "Did we couldn't have known in sector 4?",
-                "We couldn't have known in sector 4?"
+                "heat",
+                "heated",
+                "would heat",
+                "had heated"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Couldn't we have known in sector 4?",
-            "hint": "Negative modal inversion. (Sector 4 calibration)",
-            "explanation": "Couldn't we have known is correct. [Verified in sector 4]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "heat",
+            "hint": "Scientific facts use the zero conditional - present simple in both clauses.",
+            "explanation": "Zero conditional describes universal truths and scientific facts. Both clauses use present simple: 'If you heat..., it boils.' This is not about a hypothetical - it always happens."
         },
         {
             "id": "qf_l60_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You would be surprised in sector 4.",
-            "sentence": "You would be surprised in sector 4.",
+            "question": "She would have come if she _____ about the party.",
+            "sentence": "She would have come if she _____ about the party.",
             "options": [
-                "Would you be surprised in sector 4?",
-                "Do you would be surprised in sector 4?",
-                "Would you surprising in sector 4?",
-                "You would be surprised in sector 4?"
+                "had known",
+                "knew",
+                "knows",
+                "would have known"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would you be surprised in sector 4?",
-            "hint": "Invert 'would'. (Sector 4 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 4]."
+            "correctAnswer": "had known",
+            "hint": "Past unreal condition → 'if' clause needs past perfect ('had known').",
+            "explanation": "Third conditional expresses a past unreal situation. She didn't know about the party, so she didn't come. The 'if' clause needs past perfect ('had known'), not simple past ('knew'), which belongs to the second conditional."
         }
     ]
 }

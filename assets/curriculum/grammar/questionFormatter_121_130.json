@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l121_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She likes ice cream in sector 11.",
-            "sentence": "She likes ice cream in sector 11.",
+            "question": "_____ she passed the bar exam surprised everyone.",
+            "sentence": "_____ she passed the bar exam surprised everyone.",
             "options": [
-                "Does she like ice cream in sector 11?",
-                "Do she likes ice cream in sector 11?",
-                "Is she like ice cream in sector 11?",
-                "She likes ice cream in sector 11?"
+                "That",
+                "What",
+                "The fact",
+                "It"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Does she like ice cream in sector 11?",
-            "hint": "Use 'Does' for third person singular present. (Sector 11 calibration)",
-            "explanation": "Does is the correct present tense auxiliary for 'she'. [Verified in sector 11]."
+            "correctAnswer": "That",
+            "hint": "'That she passed' is a nominal 'that-clause' functioning as the subject of the sentence.",
+            "explanation": "A 'that-clause' can function as the sentence subject. 'What she passed' would create a different wh-clause. 'The fact' needs 'that' after it: 'The fact that she passed'. 'It...that' is the extraposition pattern with a dummy subject."
         },
         {
             "id": "qf_l121_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She can swim well in sector 11.",
-            "sentence": "She can swim well in sector 11.",
+            "question": "The fact _____ he lied was deeply troubling.",
+            "sentence": "The fact _____ he lied was deeply troubling.",
             "options": [
-                "Can she swim well in sector 11?",
-                "Does she can swim well in sector 11?",
-                "Can she swims well in sector 11?",
-                "She can swim well in sector 11?"
+                "that",
+                "which",
+                "of",
+                "what"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can she swim well in sector 11?",
-            "hint": "Invert modal 'can' and subject. (Sector 11 calibration)",
-            "explanation": "Can she swim is correct modal inversion. [Verified in sector 11]."
+            "correctAnswer": "that",
+            "hint": "'The fact + that' introduces a noun complement clause - 'that' is the complementizer.",
+            "explanation": "'The fact that + clause' is the correct noun complement structure. 'Which' introduces a relative clause differently. 'The fact of' would need a gerund: 'the fact of his lying'. 'What he lied' is not a complement clause."
         },
         {
             "id": "qf_l121_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He lives in London in sector 11.",
-            "sentence": "He lives in London in sector 11.",
+            "question": "Whether she will accept the offer _____ unclear.",
+            "sentence": "Whether she will accept the offer _____ unclear.",
             "options": [
-                "Does he live in London in sector 11?",
-                "Do he lives in London in sector 11?",
-                "Is he live in London in sector 11?",
-                "He lives in London in sector 11?"
+                "is",
+                "are",
+                "remains to be",
+                "it is"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Does he live in London in sector 11?",
-            "hint": "Use 'Does' for present third person singular. (Sector 11 calibration)",
-            "explanation": "Does he live is the correct present question. [Verified in sector 11]."
+            "correctAnswer": "is",
+            "hint": "The nominal 'whether' clause is a singular subject - takes singular 'is'.",
+            "explanation": "A 'whether' clause as subject is treated as singular: 'Whether she will accept is unclear.' 'Are' is wrong. 'Remains to be' needs 'seen' to complete it. 'It is' would need the extraposition pattern with a dummy 'it' at the front."
         },
         {
             "id": "qf_l122_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They went to school in sector 11.",
-            "sentence": "They went to school in sector 11.",
+            "question": "_____ I could never forgive.",
+            "sentence": "_____ I could never forgive.",
             "options": [
-                "Did they go to school in sector 11?",
-                "Did they went to school in sector 11?",
-                "Do they went to school in sector 11?",
-                "They went to school in sector 11?"
+                "That",
+                "This",
+                "It",
+                "What"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did they go to school in sector 11?",
-            "hint": "Use 'Did' + base verb for simple past. (Sector 11 calibration)",
-            "explanation": "Did + go is the past tense question form of went. [Verified in sector 11]."
+            "correctAnswer": "That",
+            "hint": "Fronted object: 'That' (= that thing) is moved to the front for emphasis.",
+            "explanation": "Fronting moves the object to the beginning for emphasis. 'That I could never forgive' means 'I could never forgive that thing'. 'What I could never forgive' creates a wh-clause - a different emphatic structure (wh-cleft)."
         },
         {
             "id": "qf_l122_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They have finished lunch in sector 11.",
-            "sentence": "They have finished lunch in sector 11.",
+            "question": "_____ she is - patient, resourceful, and determined.",
+            "sentence": "_____ she is - patient, resourceful, and determined.",
             "options": [
-                "Have they finished lunch in sector 11?",
-                "Did they have finished lunch in sector 11?",
-                "Has they finished lunch in sector 11?",
-                "They have finished lunch in sector 11?"
+                "What a leader",
+                "How a leader",
+                "Such a leader",
+                "What leader"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Have they finished lunch in sector 11?",
-            "hint": "Invert auxiliary 'have' and subject. (Sector 11 calibration)",
-            "explanation": "Have they finished is correct present perfect inversion. [Verified in sector 11]."
+            "correctAnswer": "What a leader",
+            "hint": "'What + a/an + noun (+ subject + verb)' = exclamative structure.",
+            "explanation": "'What + a/an + noun + subject + verb' forms exclamatives: 'What a leader she is!' 'How' is used with adjectives/adverbs: 'How patient she is!' 'Such' is also emphatic: 'Such a leader she is' - also correct. 'What leader' without the article is wrong."
         },
         {
             "id": "qf_l122_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They have a ship in sector 11.",
-            "sentence": "They have a ship in sector 11.",
+            "question": "His dedication to the cause - _____ truly remarkable.",
+            "sentence": "His dedication to the cause - _____ truly remarkable.",
             "options": [
-                "Do they have a ship in sector 11?",
-                "Has they a ship in sector 11?",
-                "Do they has a ship in sector 11?",
-                "They have a ship in sector 11?"
+                "that was",
+                "this is",
+                "it is",
+                "that is"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do they have a ship in sector 11?",
-            "hint": "Use 'Do' for present plural questions. (Sector 11 calibration)",
-            "explanation": "Do they have is correct. [Verified in sector 11]."
+            "correctAnswer": "that was",
+            "hint": "Fronted noun phrase + dash, then a referring comment clause with 'that was'.",
+            "explanation": "When a noun phrase is fronted and followed by a dash, the comment clause refers back with a demonstrative: 'His dedication - that was truly remarkable.' 'That is' (present) is possible. 'It is' is more neutral. 'This is' implies something currently present rather than the specific thing just named."
         },
         {
             "id": "qf_l123_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is a doctor in sector 11.",
-            "sentence": "He is a doctor in sector 11.",
+            "question": "Most of _____ came to the event were volunteers.",
+            "sentence": "Most of _____ came to the event were volunteers.",
             "options": [
-                "Is he a doctor in sector 11?",
-                "Does he is a doctor in sector 11?",
-                "Do he a doctor in sector 11?",
-                "He is a doctor in sector 11?"
+                "those who",
+                "them who",
+                "who",
+                "the ones which"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is he a doctor in sector 11?",
-            "hint": "Invert the subject and the verb 'to be'. (Sector 11 calibration)",
-            "explanation": "Is he is the correct inverted form of He is. [Verified in sector 11]."
+            "correctAnswer": "those who",
+            "hint": "'Most of those who...' = 'most of the people who...' - 'those' is the required antecedent.",
+            "explanation": "'Those who' = 'the people who'. 'Most of them who' is not standard - use 'those', not 'them', before a relative clause. 'Most of who' skips the antecedent. 'The ones which' uses 'which' for people, which is wrong."
         },
         {
             "id": "qf_l123_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We will arrive tomorrow in sector 11.",
-            "sentence": "We will arrive tomorrow in sector 11.",
+            "question": "She received several job offers, two _____ she declined.",
+            "sentence": "She received several job offers, two _____ she declined.",
             "options": [
-                "Will we arrive tomorrow in sector 11?",
-                "Do we will arrive tomorrow in sector 11?",
-                "Will we arrived tomorrow in sector 11?",
-                "We will arrive tomorrow in sector 11?"
+                "of which",
+                "of them",
+                "which",
+                "that"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will we arrive tomorrow in sector 11?",
-            "hint": "Invert modal 'will' and subject. (Sector 11 calibration)",
-            "explanation": "Will we arrive is correct future inversion. [Verified in sector 11]."
+            "correctAnswer": "of which",
+            "hint": "'Quantifier + of which' creates a quantifying relative clause after the antecedent.",
+            "explanation": "'Two of which she declined' = 'she declined two of the offers'. 'Of them' is not a relative pronoun and would need a separate sentence. 'Two which' and 'two that' are grammatically incorrect as quantifying relative clauses."
         },
         {
             "id": "qf_l123_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is reading in sector 11.",
-            "sentence": "She is reading in sector 11.",
+            "question": "She was promoted, _____ made her colleagues jealous.",
+            "sentence": "She was promoted, _____ made her colleagues jealous.",
             "options": [
-                "Is she reading in sector 11?",
-                "Does she reading in sector 11?",
-                "Is she read in sector 11?",
-                "She is reading in sector 11?"
+                "which",
+                "that",
+                "what",
+                "this"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is she reading in sector 11?",
-            "hint": "Invert 'is' and 'she'. (Sector 11 calibration)",
-            "explanation": "Is she reading is correct. [Verified in sector 11]."
+            "correctAnswer": "which",
+            "hint": "'Which' can refer to the entire previous clause in a non-defining relative clause.",
+            "explanation": "'Which' in a non-defining relative clause can refer to the whole preceding clause ('she was promoted'). 'That' cannot begin a non-defining relative clause. 'What' is used in free relative clauses, not clause-referential relatives. 'This' would require a new sentence."
         },
         {
             "id": "qf_l124_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We have some apples in sector 11.",
-            "sentence": "We have some apples in sector 11.",
+            "question": "_____ strange that she didn't mention this.",
+            "sentence": "_____ strange that she didn't mention this.",
             "options": [
-                "Do we have any apples in sector 11?",
-                "Have we some apples in sector 11?",
-                "Do we has some apples in sector 11?",
-                "We have any apples in sector 11?"
+                "It seems",
+                "It appears",
+                "That seems",
+                "It is"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do we have any apples in sector 11?",
-            "hint": "Use 'Do' for first person plural questions. (Sector 11 calibration)",
-            "explanation": "Do we have is the standard question form. [Verified in sector 11]."
+            "correctAnswer": "It seems",
+            "hint": "'It seems/appears + that' - both use dummy 'it' extraposition.",
+            "explanation": "'It seems that + clause' places the heavy clause at the end with a dummy 'it' as subject. Both 'It seems' and 'It appears' are correct. 'It is strange' is also valid but changes the nuance slightly. 'That seems strange' is grammatical but different in focus."
         },
         {
             "id": "qf_l124_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You should wait here in sector 11.",
-            "sentence": "You should wait here in sector 11.",
+            "question": "It is _____ that the new regulations will affect small businesses.",
+            "sentence": "It is _____ that the new regulations will affect small businesses.",
             "options": [
-                "Should you wait here in sector 11?",
-                "Do you should wait here in sector 11?",
-                "Should you waiting here in sector 11?",
-                "You should wait here in sector 11?"
+                "likely",
+                "probably",
+                "possible that",
+                "expected of"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should you wait here in sector 11?",
-            "hint": "Invert modal 'should'. (Sector 11 calibration)",
-            "explanation": "Should you wait is correct. [Verified in sector 11]."
+            "correctAnswer": "likely",
+            "hint": "'It is + adjective + that + clause' - 'likely/expected/possible' are adjectives here.",
+            "explanation": "'It is + adjective + that' uses a dummy 'it' in subject position (extraposition). Adjectives work here. 'Probably' is an adverb and cannot follow 'is' as a predicative adjective. 'Possible that' would make 'it is possible that' - double 'that' is redundant."
         },
         {
             "id": "qf_l124_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We were working in sector 11.",
-            "sentence": "We were working in sector 11.",
+            "question": "It was _____ to complete the project in one week.",
+            "sentence": "It was _____ to complete the project in one week.",
             "options": [
-                "Were we working in sector 11?",
-                "Was we working in sector 11?",
-                "Did we working in sector 11?",
-                "We were working in sector 11?"
+                "impossible",
+                "impossibly",
+                "an impossibility",
+                "not possible of"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Were we working in sector 11?",
-            "hint": "Invert 'were' and 'we'. (Sector 11 calibration)",
-            "explanation": "Were we working is correct. [Verified in sector 11]."
+            "correctAnswer": "impossible",
+            "hint": "'It + was + adjective + to + infinitive' - predicate adjective structure.",
+            "explanation": "'It was impossible to complete' uses the dummy 'it' + adjective + infinitive. 'Impossibly' is an adverb and cannot be predicative. 'An impossibility to complete' is not standard. 'Not possible of' is not English."
         },
         {
             "id": "qf_l125_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She swam in the pool in sector 11.",
-            "sentence": "She swam in the pool in sector 11.",
+            "question": "She _____ her hair cut at a salon downtown.",
+            "sentence": "She _____ her hair cut at a salon downtown.",
             "options": [
-                "Did she swim in the pool in sector 11?",
-                "Did she swam in the pool in sector 11?",
-                "Does she swim in the pool in sector 11?",
-                "She swam in the pool in sector 11?"
+                "had",
+                "got",
+                "made",
+                "did"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did she swim in the pool in sector 11?",
-            "hint": "Use 'Did' + base verb 'swim'. (Sector 11 calibration)",
-            "explanation": "Did she swim is correct for past actions. [Verified in sector 11]."
+            "correctAnswer": "had",
+            "hint": "'Have + object + past participle' - causative 'have'. 'Got' is also correct; 'made' changes meaning.",
+            "explanation": "'Have something done' means to arrange for someone else to do it. 'Got' is also a valid causative. 'Made her hair cut' is incorrect - 'make' takes a bare infinitive: 'made the stylist cut her hair' (compulsion, not arrangement). 'Did her hair cut' is ungrammatical."
         },
         {
             "id": "qf_l125_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has seen this movie in sector 11.",
-            "sentence": "He has seen this movie in sector 11.",
+            "question": "He needs to _____ his car serviced before the long trip.",
+            "sentence": "He needs to _____ his car serviced before the long trip.",
             "options": [
-                "Has he seen this movie in sector 11?",
-                "Did he has seen this movie in sector 11?",
-                "Have he seen this movie in sector 11?",
-                "He has seen this movie in sector 11?"
+                "have",
+                "get",
+                "make",
+                "do"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has he seen this movie in sector 11?",
-            "hint": "Invert auxiliary 'has'. (Sector 11 calibration)",
-            "explanation": "Has he seen is correct. [Verified in sector 11]."
+            "correctAnswer": "have",
+            "hint": "'Have/get + object + past participle' - causative construction for arranged services.",
+            "explanation": "'Have something done' or 'get something done' both express causative meaning. 'Make something done' is not a valid causative structure. 'Do his car serviced' is ungrammatical."
         },
         {
             "id": "qf_l125_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He was sleeping in sector 11.",
-            "sentence": "He was sleeping in sector 11.",
+            "question": "They _____ their house painted last summer.",
+            "sentence": "They _____ their house painted last summer.",
             "options": [
-                "Was he sleeping in sector 11?",
-                "Were he sleeping in sector 11?",
-                "Did he sleeping in sector 11?",
-                "He was sleeping in sector 11?"
+                "had",
+                "made",
+                "wanted",
+                "let"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was he sleeping in sector 11?",
-            "hint": "Invert 'was' and 'he'. (Sector 11 calibration)",
-            "explanation": "Was he sleeping is correct. [Verified in sector 11]."
+            "correctAnswer": "had",
+            "hint": "'Had their house painted' = arranged for someone to paint it (causative have).",
+            "explanation": "Causative 'had + object + past participle' means they arranged the painting. 'Made their house painted' is wrong - 'make' takes a bare infinitive ('made someone paint'). 'Let their house painted' is wrong - 'let' takes a bare infinitive."
         },
         {
             "id": "qf_l126_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The system is online in sector 11.",
-            "sentence": "The system is online in sector 11.",
+            "question": "She spoke quietly _____ not to disturb anyone.",
+            "sentence": "She spoke quietly _____ not to disturb anyone.",
             "options": [
-                "Is the system online in sector 11?",
-                "Does the system online in sector 11?",
-                "Are the system online in sector 11?",
-                "System is online in sector 11?"
+                "so as",
+                "in order",
+                "so that",
+                "as if"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is the system online in sector 11?",
-            "hint": "Invert the subject and 'is'. (Sector 11 calibration)",
-            "explanation": "Is the system online is correct. [Verified in sector 11]."
+            "correctAnswer": "so as",
+            "hint": "'So as not to + infinitive' = purpose (negative). 'In order not to' is also correct.",
+            "explanation": "'So as not to + base verb' and 'in order not to + base verb' both express negative purpose. 'In order' alone (without 'to') is incomplete. 'So that not to' is not a valid structure."
         },
         {
             "id": "qf_l126_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They could hear us in sector 11.",
-            "sentence": "They could hear us in sector 11.",
+            "question": "The contract was _____ detailed that it took weeks to review.",
+            "sentence": "The contract was _____ detailed that it took weeks to review.",
             "options": [
-                "Could they hear us in sector 11?",
-                "Did they could hear us in sector 11?",
-                "Could they heard us in sector 11?",
-                "They could hear us in sector 11?"
+                "so",
+                "such",
+                "very",
+                "too"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Could they hear us in sector 11?",
-            "hint": "Invert modal 'could'. (Sector 11 calibration)",
-            "explanation": "Could they hear is correct. [Verified in sector 11]."
+            "correctAnswer": "so",
+            "hint": "'So + adjective + that' (result clause). 'Such' needs a noun ('such a detailed contract that...').",
+            "explanation": "'So + adjective/adverb + that + clause' expresses result: 'so detailed that it took weeks'. 'Such + a/an + noun + that' also works but needs a noun. 'Very' doesn't combine with 'that' in result clauses. 'Too' implies prevention: 'too detailed to review quickly'."
         },
         {
             "id": "qf_l126_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She has been working in sector 11.",
-            "sentence": "She has been working in sector 11.",
+            "question": "_____ be right or wrong, she always stands by her decisions.",
+            "sentence": "_____ be right or wrong, she always stands by her decisions.",
             "options": [
-                "Has she been working in sector 11?",
-                "Have she been working in sector 11?",
-                "Does she been working in sector 11?",
-                "She has been working in sector 11?"
+                "Whether she may",
+                "Whether to",
+                "Although",
+                "Be she"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has she been working in sector 11?",
-            "hint": "Invert auxiliary 'has'. (Sector 11 calibration)",
-            "explanation": "Has she been working is correct. [Verified in sector 11]."
+            "correctAnswer": "Whether she may",
+            "hint": "'Whether...or...' concessive clause acknowledges both possibilities.",
+            "explanation": "'Whether she may be right or wrong, she...' is a formal concessive clause. The full version is 'whether she is right or wrong'. 'Although' introduces a regular contrast clause. 'Be she' is archaic subjunctive - 'whether she may be' is the modern equivalent."
         },
         {
             "id": "qf_l127_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They work in the city in sector 11.",
-            "sentence": "They work in the city in sector 11.",
+            "question": "The manager reviewed all the proposals. The _____ she liked best was James's.",
+            "sentence": "The manager reviewed all the proposals. The _____ she liked best was James's.",
             "options": [
-                "Do they work in the city in sector 11?",
-                "Does they work in the city in sector 11?",
-                "Are they work in the city in sector 11?",
-                "They work in the city in sector 11?"
+                "one",
+                "ones",
+                "one which",
+                "proposal"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Do they work in the city in sector 11?",
-            "hint": "Use 'Do' for third person plural present. (Sector 11 calibration)",
-            "explanation": "Do they work is correct. [Verified in sector 11]."
+            "correctAnswer": "one",
+            "hint": "'The one' substitutes for the singular countable noun 'proposal' to avoid repetition.",
+            "explanation": "'One/ones' substitutes for a countable noun. Since 'proposal' is singular, 'the one she liked best' is correct. 'Ones' would be plural. 'One which' adds an unnecessary relative pronoun - 'she liked best' is already a reduced relative."
         },
         {
             "id": "qf_l127_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She will help us in sector 11.",
-            "sentence": "She will help us in sector 11.",
+            "question": "A: 'Are you coming to the meeting?' B: 'I hope _____.'",
+            "sentence": "A: 'Are you coming to the meeting?' B: 'I hope _____.'",
             "options": [
-                "Will she help us in sector 11?",
-                "Does she will help us in sector 11?",
-                "Will she helps us in sector 11?",
-                "She will help us in sector 11?"
+                "so",
+                "it",
+                "to",
+                "yes"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will she help us in sector 11?",
-            "hint": "Invert 'will'. (Sector 11 calibration)",
-            "explanation": "Will she help is correct. [Verified in sector 11]."
+            "correctAnswer": "so",
+            "hint": "'Hope so' substitutes for the full clause: 'I hope (that I am coming)'.",
+            "explanation": "'So' substitutes for an entire positive clause: 'I hope so' = 'I hope I am coming'. 'I hope to' works in a different context ('I hope to come'). 'I hope it' is not standard substitution. 'I hope yes' is not English."
         },
         {
             "id": "qf_l127_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They had left early in sector 11.",
-            "sentence": "They had left early in sector 11.",
+            "question": "She wanted to call him, but decided _____ in the end.",
+            "sentence": "She wanted to call him, but decided _____ in the end.",
             "options": [
-                "Had they left early in sector 11?",
-                "Did they had left early in sector 11?",
-                "Have they left early in sector 11?",
-                "They had left early in sector 11?"
+                "not to",
+                "not",
+                "to not",
+                "not doing so"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Had they left early in sector 11?",
-            "hint": "Invert auxiliary 'had'. (Sector 11 calibration)",
-            "explanation": "Had they left is correct. [Verified in sector 11]."
+            "correctAnswer": "not to",
+            "hint": "Infinitive ellipsis: 'decided not to (call him)' - the main verb is omitted but understood.",
+            "explanation": "'Decided not to' is infinitive ellipsis - 'call him' is omitted but understood. 'Decided not' (without 'to') is incomplete. 'To not' (split infinitive for negation) is less standard here than 'not to'."
         },
         {
             "id": "qf_l128_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He forgot his keys in sector 11.",
-            "sentence": "He forgot his keys in sector 11.",
+            "question": "Formal equivalent of: 'We need to look into this issue more.'",
+            "sentence": "Formal equivalent of: 'We need to look into this issue more.'",
             "options": [
-                "Did he forget his keys in sector 11?",
-                "Did he forgot his keys in sector 11?",
-                "Does he forget his keys in sector 11?",
-                "He forgot his keys in sector 11?"
+                "This issue warrants further investigation.",
+                "This issue needs looking at more.",
+                "We've got to dig deeper into this issue.",
+                "More investigation of this issue should happen."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did he forget his keys in sector 11?",
-            "hint": "Use 'Did' + base verb 'forget'. (Sector 11 calibration)",
-            "explanation": "Did he forget is correct. [Verified in sector 11]."
+            "correctAnswer": "This issue warrants further investigation.",
+            "hint": "Nominalisation + formal vocabulary ('warrants', 'investigation') elevates register.",
+            "explanation": "Formal academic/business writing uses nominalisation ('investigation' not 'investigate'), passive or impersonal constructions, and formal vocabulary ('warrants' not 'needs'). 'Dig deeper' and 'looking at more' are informal/idiomatic."
         },
         {
             "id": "qf_l128_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We must report this in sector 11.",
-            "sentence": "We must report this in sector 11.",
+            "question": "Informal equivalent of: 'The proposal was subsequently withdrawn.'",
+            "sentence": "Informal equivalent of: 'The proposal was subsequently withdrawn.'",
             "options": [
-                "Must we report this in sector 11?",
-                "Do we must report this in sector 11?",
-                "Must we reporting this in sector 11?",
-                "We must report this in sector 11?"
+                "They ended up taking the proposal back.",
+                "The proposal was later taken back.",
+                "Subsequently, the proposal was withdrawn.",
+                "The proposal then got withdrawn."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Must we report this in sector 11?",
-            "hint": "Invert modal 'must'. (Sector 11 calibration)",
-            "explanation": "Must we report is correct. [Verified in sector 11]."
+            "correctAnswer": "They ended up taking the proposal back.",
+            "hint": "Informal English uses phrasal verbs ('take back') and active voice ('they ended up').",
+            "explanation": "Informal English typically uses active voice, phrasal verbs ('take back' instead of 'withdraw'), and colloquial expressions ('ended up'). 'Got withdrawn' is semi-informal but still passive. 'Later taken back' keeps a formal structure."
         },
         {
             "id": "qf_l128_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He can read maps in sector 11.",
-            "sentence": "He can read maps in sector 11.",
+            "question": "Which sentence is most appropriate for a formal report?",
+            "sentence": "Which sentence is most appropriate for a formal report?",
             "options": [
-                "Can he read maps in sector 11?",
-                "Does he can read maps in sector 11?",
-                "Can he reads maps in sector 11?",
-                "He can read maps in sector 11?"
+                "The data indicates a significant correlation between diet and mental health.",
+                "The numbers show diet and mental health are linked.",
+                "It looks like diet affects how healthy your mind is.",
+                "Diet and mental health? Turns out they're connected."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can he read maps in sector 11?",
-            "hint": "Invert modal 'can'. (Sector 11 calibration)",
-            "explanation": "Can he read is correct. [Verified in sector 11]."
+            "correctAnswer": "The data indicates a significant correlation between diet and mental health.",
+            "hint": "Formal reports use precise vocabulary, complex noun phrases, and impersonal constructions.",
+            "explanation": "Formal reports require precise vocabulary ('indicates', 'significant correlation'), technical terms, and impersonal structures. The other options use colloquial vocabulary ('numbers', 'looks like'), contractions, and conversational structure."
         },
         {
             "id": "qf_l129_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You are happy in sector 11.",
-            "sentence": "You are happy in sector 11.",
+            "question": "The new system enables employees _____ their schedules remotely.",
+            "sentence": "The new system enables employees _____ their schedules remotely.",
             "options": [
-                "Are you happy in sector 11?",
-                "Do you happy in sector 11?",
-                "Is you happy in sector 11?",
-                "You are happy in sector 11?"
+                "to manage",
+                "managing",
+                "manage",
+                "the management of"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Are you happy in sector 11?",
-            "hint": "Invert 'you' and 'are'. (Sector 11 calibration)",
-            "explanation": "Are you happy is correct. [Verified in sector 11]."
+            "correctAnswer": "to manage",
+            "hint": "'Enable + object + to + base verb' - infinitive construction.",
+            "explanation": "'Enable + object + to + base verb': 'enables employees to manage'. Gerund ('managing') would need a preposition. 'The management of' nominalises but changes the syntactic relationship."
         },
         {
             "id": "qf_l129_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He would like tea in sector 11.",
-            "sentence": "He would like tea in sector 11.",
+            "question": "The policy prevents workers _____ overtime without prior approval.",
+            "sentence": "The policy prevents workers _____ overtime without prior approval.",
             "options": [
-                "Would he like tea in sector 11?",
-                "Does he would like tea in sector 11?",
-                "Would he likes tea in sector 11?",
-                "He would like tea in sector 11?"
+                "from working",
+                "to work",
+                "working",
+                "of working"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would he like tea in sector 11?",
-            "hint": "Invert 'would'. (Sector 11 calibration)",
-            "explanation": "Would he like is correct. [Verified in sector 11]."
+            "correctAnswer": "from working",
+            "hint": "'Prevent + object + from + gerund' is the only standard pattern.",
+            "explanation": "'Prevent + object + from + gerund' is fixed: 'prevents workers from working'. 'Prevent + object + to + verb' is a common learner error. 'Prevent + object + gerund' (without 'from') is non-standard."
         },
         {
             "id": "qf_l129_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You should try it in sector 11.",
-            "sentence": "You should try it in sector 11.",
+            "question": "The crisis forced the government _____ drastic measures.",
+            "sentence": "The crisis forced the government _____ drastic measures.",
             "options": [
-                "Should you try it in sector 11?",
-                "Do you should try it in sector 11?",
-                "Should you trying it in sector 11?",
-                "You should try it in sector 11?"
+                "to take",
+                "taking",
+                "take",
+                "into taking"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should you try it in sector 11?",
-            "hint": "Invert 'should'. (Sector 11 calibration)",
-            "explanation": "Should you try is correct. [Verified in sector 11]."
+            "correctAnswer": "to take",
+            "hint": "'Force + object + to + base verb' - infinitive construction.",
+            "explanation": "'Force + object + to + base verb': 'forced the government to take'. This pattern is shared by 'allow', 'enable', 'require', 'compel'. 'Taking' (gerund) and 'take' (bare infinitive) require different verbs."
         },
         {
             "id": "qf_l130_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She wrote a letter in sector 11.",
-            "sentence": "She wrote a letter in sector 11.",
+            "question": "Which sentence places maximum focus on 'the letter'?",
+            "sentence": "Which sentence places maximum focus on 'the letter'?",
             "options": [
-                "Did she write a letter in sector 11?",
-                "Did she wrote a letter in sector 11?",
-                "Does she write a letter in sector 11?",
-                "She wrote a letter in sector 11?"
+                "It was the letter that she never sent.",
+                "She never sent the letter.",
+                "What she never sent was the letter.",
+                "The letter she never sent."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Did she write a letter in sector 11?",
-            "hint": "Use 'Did' + 'write'. (Sector 11 calibration)",
-            "explanation": "Did she write is correct. [Verified in sector 11]."
+            "correctAnswer": "It was the letter that she never sent.",
+            "hint": "It-cleft places maximum focus on the highlighted element by isolating it.",
+            "explanation": "It-cleft sentences ('It was X that...') place the strongest focus on the highlighted element. 'What she never sent was the letter' (wh-cleft) focuses similarly from the other direction. The it-cleft is the most emphatic. 'The letter she never sent' is a noun phrase, not a sentence."
         },
         {
             "id": "qf_l130_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You may enter in sector 11.",
-            "sentence": "You may enter in sector 11.",
+            "question": "In academic writing, new information typically goes _____ the sentence.",
+            "sentence": "In academic writing, new information typically goes _____ the sentence.",
             "options": [
-                "May you enter in sector 11?",
-                "Do you may enter in sector 11?",
-                "May you entering in sector 11?",
-                "You may enter in sector 11?"
+                "at the end of",
+                "at the start of",
+                "in the middle of",
+                "before the verb in"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "May you enter in sector 11?",
-            "hint": "Invert modal 'may'. (Sector 11 calibration)",
-            "explanation": "May you enter is correct. [Verified in sector 11]."
+            "correctAnswer": "at the end of",
+            "hint": "End-focus: new and important information goes at the end of a sentence in English.",
+            "explanation": "English sentences follow the 'end-focus' principle: given (old) information comes early, new or important information comes at the end. Academic writing carefully orders information according to this principle to guide the reader's attention."
         },
         {
             "id": "qf_l130_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They will win in sector 11.",
-            "sentence": "They will win in sector 11.",
+            "question": "The results were _____, to say the least.",
+            "sentence": "The results were _____, to say the least.",
             "options": [
-                "Will they win in sector 11?",
-                "Do they will win in sector 11?",
-                "Will they winning in sector 11?",
-                "They will win in sector 11?"
+                "disappointing",
+                "disappointed",
+                "disappoint",
+                "disappointingly"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will they win in sector 11?",
-            "hint": "Invert 'will'. (Sector 11 calibration)",
-            "explanation": "Will they win is correct. [Verified in sector 11]."
+            "correctAnswer": "disappointing",
+            "hint": "Predicative adjective ('disappointing') after the linking verb 'were'.",
+            "explanation": "After linking verbs ('are', 'were', 'seem', 'feel'), use a predicative adjective: 'were disappointing'. 'Disappointed' describes a person's feeling. 'Disappoint' is a verb. 'Disappointingly' is an adverb - wrong after 'were'."
         }
     ]
 }

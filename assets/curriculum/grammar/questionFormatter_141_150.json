@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l141_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is the manager in sector 13.",
-            "sentence": "He is the manager in sector 13.",
+            "question": "She _____ coffee when her phone suddenly rang.",
+            "sentence": "She _____ coffee when her phone suddenly rang.",
             "options": [
-                "He is the manager, isn't he in sector 13?",
-                "Is he the manager in sector 13?",
-                "He is the manager, is he in sector 13?",
-                "He is the manager, does he in sector 13?"
+                "was drinking",
+                "drank",
+                "had drunk",
+                "has been drinking"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He is the manager, isn't he in sector 13?",
-            "hint": "A positive statement with 'is' takes a negative tag 'isn't he?'. (Sector 13 calibration)",
-            "explanation": "Positive statement requires a negative tag. [Verified in sector 13]."
+            "correctAnswer": "was drinking",
+            "hint": "Past continuous = background activity interrupted by a sudden event (past simple).",
+            "explanation": "Past continuous ('was drinking') describes a continuous background activity interrupted by a sudden event (past simple: 'rang'). 'Drank' (simple past) would make both actions seem equally complete, losing the interruption dynamic."
         },
         {
             "id": "qf_l141_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She could have won the race in sector 13.",
-            "sentence": "She could have won the race in sector 13.",
+            "question": "By the time the ambulance arrived, the patient _____ consciousness.",
+            "sentence": "By the time the ambulance arrived, the patient _____ consciousness.",
             "options": [
-                "Could she have won the race in sector 13?",
-                "Could have she won the race in sector 13?",
-                "Should she have won the race in sector 13?",
-                "She could have won the race in sector 13?"
+                "had already lost",
+                "already lost",
+                "was already losing",
+                "has already lost"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Could she have won the race in sector 13?",
-            "hint": "Invert the first auxiliary 'could'. (Sector 13 calibration)",
-            "explanation": "Invert the primary modal in a perfect modal construction. [Verified in sector 13]."
+            "correctAnswer": "had already lost",
+            "hint": "Past perfect for an event completed before another past reference point.",
+            "explanation": "The past perfect ('had already lost') shows that losing consciousness happened before the ambulance arrived. The adverb 'already' reinforces this sequence. 'Already lost' (simple past) is less precise about the sequence."
         },
         {
             "id": "qf_l141_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The project was finished in sector 13.",
-            "sentence": "The project was finished in sector 13.",
+            "question": "He realised he _____ his passport at the hotel.",
+            "sentence": "He realised he _____ his passport at the hotel.",
             "options": [
-                "Was the project finished in sector 13?",
-                "Did the project finish in sector 13?",
-                "Is the project finished in sector 13?",
-                "The project was finished in sector 13?"
+                "had left",
+                "left",
+                "was leaving",
+                "has left"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was the project finished in sector 13?",
-            "hint": "Invert 'was' in passive voice. (Sector 13 calibration)",
-            "explanation": "Invert auxiliary 'was' and subject. [Verified in sector 13]."
+            "correctAnswer": "had left",
+            "hint": "Reporting a past discovery of an earlier past event → past perfect ('had left').",
+            "explanation": "When a past mental verb ('realised') introduces another past event that happened earlier, the past perfect ('had left') is used. The leaving happened before the realising. 'Left' (simple past) is possible in informal speech but less precise."
         },
         {
             "id": "qf_l142_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You haven't seen him lately in sector 13.",
-            "sentence": "You haven't seen him lately in sector 13.",
+            "question": "Which connector best fits a concluding paragraph?",
+            "sentence": "Which connector best fits a concluding paragraph?",
             "options": [
-                "You haven't seen him lately, have you in sector 13?",
-                "You haven't seen him lately, haven't you in sector 13?",
-                "Have you seen him lately in sector 13?",
-                "You haven't seen him lately, did you in sector 13?"
+                "In conclusion",
+                "However",
+                "Moreover",
+                "On the other hand"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You haven't seen him lately, have you in sector 13?",
-            "hint": "A negative statement with 'haven't' takes a positive tag 'have you?'. (Sector 13 calibration)",
-            "explanation": "Negative statement requires a positive tag. [Verified in sector 13]."
+            "correctAnswer": "In conclusion",
+            "hint": "'In conclusion' signals the final summary. Contrast/addition connectors do not close an argument.",
+            "explanation": "'In conclusion' (or 'to conclude', 'in summary', 'to sum up') signals that the writer is summarising and closing the argument. 'However' introduces contrast. 'Moreover' adds a further point. 'On the other hand' introduces an opposite viewpoint."
         },
         {
             "id": "qf_l142_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They should have reported this in sector 13.",
-            "sentence": "They should have reported this in sector 13.",
+            "question": "She worked extremely hard. _____, she failed to meet the deadline.",
+            "sentence": "She worked extremely hard. _____, she failed to meet the deadline.",
             "options": [
-                "Should they have reported this in sector 13?",
-                "Should have they reported this in sector 13?",
-                "Would they have reported this in sector 13?",
-                "They should have reported this in sector 13?"
+                "Even so",
+                "Although",
+                "Nevertheless",
+                "In spite"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should they have reported this in sector 13?",
-            "hint": "Invert the first modal 'should'. (Sector 13 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 13]."
+            "correctAnswer": "Even so",
+            "hint": "'Even so' connects two sentences, conceding the first while giving an unexpected contrast.",
+            "explanation": "'Even so' connects two complete sentences and means 'despite this'. 'Nevertheless' is also correct. 'Although' introduces a subordinate clause and cannot start the second sentence of a pair without restructuring. 'In spite' is incomplete."
         },
         {
             "id": "qf_l142_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are being monitored in sector 13.",
-            "sentence": "They are being monitored in sector 13.",
+            "question": "The evidence is clear; _____, many still question the findings.",
+            "sentence": "The evidence is clear; _____, many still question the findings.",
             "options": [
-                "Are they being monitored in sector 13?",
-                "Do they being monitored in sector 13?",
-                "Are they monitoring in sector 13?",
-                "They are being monitored in sector 13?"
+                "nevertheless",
+                "for example",
+                "in particular",
+                "as a result"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Are they being monitored in sector 13?",
-            "hint": "Invert the first auxiliary 'are'. (Sector 13 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 13]."
+            "correctAnswer": "nevertheless",
+            "hint": "'Nevertheless' contrasts. 'For example/in particular' introduce examples. 'As a result' introduces a consequence.",
+            "explanation": "'Nevertheless' signals a contrast: the evidence is clear, but there is still doubt. 'For example' and 'in particular' would introduce supporting examples. 'As a result' would introduce a consequence."
         },
         {
             "id": "qf_l143_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They will arrive on time in sector 13.",
-            "sentence": "They will arrive on time in sector 13.",
+            "question": "The reforms were _____ - they challenged the very foundations of the legal system.",
+            "sentence": "The reforms were _____ - they challenged the very foundations of the legal system.",
             "options": [
-                "They will arrive on time, won't they in sector 13?",
-                "They will arrive on time, will they in sector 13?",
-                "Will they arrive on time in sector 13?",
-                "They will arrive on time, don't they in sector 13?"
+                "sweeping",
+                "widespread",
+                "expansive",
+                "broad"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They will arrive on time, won't they in sector 13?",
-            "hint": "A positive future statement with 'will' takes 'won't they?'. (Sector 13 calibration)",
-            "explanation": "Will shifts to won't in the tag. [Verified in sector 13]."
+            "correctAnswer": "sweeping",
+            "hint": "'Sweeping reforms' = comprehensive, far-reaching reforms that affect fundamental structures.",
+            "explanation": "'Sweeping reforms' means changes that are radical and wide-ranging, affecting fundamental structures. 'Widespread' means found in many places (not necessarily deep). 'Expansive' means large in scope. 'Broad reforms' is possible but less specific about their fundamental impact."
         },
         {
             "id": "qf_l143_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He would have helped us in sector 13.",
-            "sentence": "He would have helped us in sector 13.",
+            "question": "His speech had a _____ effect on the audience - they were moved to tears.",
+            "sentence": "His speech had a _____ effect on the audience - they were moved to tears.",
             "options": [
-                "Would he have helped us in sector 13?",
-                "Would have he helped us in sector 13?",
-                "Could he have helped us in sector 13?",
-                "He would have helped us in sector 13?"
+                "profound",
+                "deep",
+                "heavy",
+                "serious"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would he have helped us in sector 13?",
-            "hint": "Invert the first auxiliary 'would'. (Sector 13 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 13]."
+            "correctAnswer": "profound",
+            "hint": "'Profound effect' = deeply significant emotional/intellectual impact - the precise collocation.",
+            "explanation": "'A profound effect' means a deeply moving, significant impact. 'A deep effect' is less standard as a collocation. 'Heavy effect' is not a natural collocation. 'Serious effect' implies a negative or damaging consequence, which is too narrow here."
         },
         {
             "id": "qf_l143_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has been arrested in sector 13.",
-            "sentence": "He has been arrested in sector 13.",
+            "question": "The company faced _____ opposition to the merger from shareholders.",
+            "sentence": "The company faced _____ opposition to the merger from shareholders.",
             "options": [
-                "Has he been arrested in sector 13?",
-                "Did he been arrested in sector 13?",
-                "Have he been arrested in sector 13?",
-                "He has been arrested in sector 13?"
+                "fierce",
+                "heavy",
+                "serious",
+                "large"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Has he been arrested in sector 13?",
-            "hint": "Invert 'has'. (Sector 13 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 13]."
+            "correctAnswer": "fierce",
+            "hint": "'Fierce opposition' = intense, strong opposition - the standard collocation.",
+            "explanation": "'Fierce opposition' collocates naturally in formal contexts. 'Serious opposition' is possible but less forceful. 'Heavy opposition' is occasionally used but less standard. 'Large opposition' is not a natural collocation at all."
         },
         {
             "id": "qf_l144_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She doesn't like coffee in sector 13.",
-            "sentence": "She doesn't like coffee in sector 13.",
+            "question": "Identify the error: 'The number of applicants have increased significantly this year.'",
+            "sentence": "Identify the error: 'The number of applicants have increased significantly this year.'",
             "options": [
-                "She doesn't like coffee, does she in sector 13?",
-                "She doesn't like coffee, doesn't she in sector 13?",
-                "Does she like coffee in sector 13?",
-                "She doesn't like coffee, is she in sector 13?"
+                "'have' → 'has'",
+                "'applicants' → 'applications'",
+                "'significantly' → 'significant'",
+                "'this year' → 'these years'"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She doesn't like coffee, does she in sector 13?",
-            "hint": "A negative present statement with 'doesn't' takes 'does she?'. (Sector 13 calibration)",
-            "explanation": "Doesn't shifts to does in the tag. [Verified in sector 13]."
+            "correctAnswer": "'have' → 'has'",
+            "hint": "'The number of' + noun takes a singular verb; 'a number of' takes a plural verb.",
+            "explanation": "'The number of + noun' is the subject and it is singular: 'the number... has increased'. Confusingly, 'a number of applicants have increased' would be correct because 'a number of' means 'some'."
         },
         {
             "id": "qf_l144_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You must have seen the sign in sector 13.",
-            "sentence": "You must have seen the sign in sector 13.",
+            "question": "Identify the error: 'She is the most unique candidate we had seen.'",
+            "sentence": "Identify the error: 'She is the most unique candidate we had seen.'",
             "options": [
-                "Must you have seen the sign in sector 13?",
-                "Must have you seen the sign in sector 13?",
-                "Did you have seen the sign in sector 13?",
-                "You must have seen the sign in sector 13?"
+                "'most unique' → 'unique' (unique is an absolute adjective)",
+                "'had seen' → 'have seen'",
+                "'the' → 'a'",
+                "'candidate' → 'candidates'"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Must you have seen the sign in sector 13?",
-            "hint": "Invert 'must'. (Sector 13 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 13]."
+            "correctAnswer": "'most unique' → 'unique' (unique is an absolute adjective)",
+            "hint": "'Unique' is an absolute adjective - it cannot take a comparative or superlative degree.",
+            "explanation": "'Unique' means 'one of a kind' - an absolute quality that cannot be graded. 'Most unique' implies degrees of uniqueness, which is logically contradictory. Similarly, 'very unique', 'more unique', or 'rather unique' are all non-standard."
         },
         {
             "id": "qf_l144_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She was being interviewed in sector 13.",
-            "sentence": "She was being interviewed in sector 13.",
+            "question": "Identify the error: 'She gave me an useful tip.'",
+            "sentence": "Identify the error: 'She gave me an useful tip.'",
             "options": [
-                "Was she being interviewed in sector 13?",
-                "Did she being interviewed in sector 13?",
-                "Was she interviewing in sector 13?",
-                "She was being interviewed in sector 13?"
+                "'an' → 'a' ('useful' starts with a consonant sound /j/)",
+                "Nothing is wrong",
+                "'gave' → 'given'",
+                "'useful' → 'usefully'"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Was she being interviewed in sector 13?",
-            "hint": "Invert 'was'. (Sector 13 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 13]."
+            "correctAnswer": "'an' → 'a' ('useful' starts with a consonant sound /j/)",
+            "hint": "Article choice depends on the SOUND, not the letter: 'useful' starts with /j/ (a consonant sound).",
+            "explanation": "'Useful' starts with the consonant sound /j/ ('yooseful'), so 'a' is correct. 'An' is used before vowel sounds: 'an umbrella' (/ʌm/), 'an hour' (/aʊ/). The first letter is irrelevant - only the first sound matters."
         },
         {
             "id": "qf_l145_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You can drive a shuttle in sector 13.",
-            "sentence": "You can drive a shuttle in sector 13.",
+            "question": "The decision was made _____ the long-term interests of the company.",
+            "sentence": "The decision was made _____ the long-term interests of the company.",
             "options": [
-                "You can drive a shuttle, can't you in sector 13?",
-                "You can drive a shuttle, can you in sector 13?",
-                "Can you drive a shuttle in sector 13?",
-                "You can drive a shuttle, don't you in sector 13?"
+                "in light of",
+                "in terms of",
+                "with regard to",
+                "on behalf of"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You can drive a shuttle, can't you in sector 13?",
-            "hint": "Positive 'can' takes negative 'can't you?'. (Sector 13 calibration)",
-            "explanation": "Can shifts to can't in the tag. [Verified in sector 13]."
+            "correctAnswer": "in light of",
+            "hint": "'In light of' = taking something into account when making a decision.",
+            "explanation": "'In light of' means considering or because of something: 'made in light of long-term interests'. 'In terms of' introduces a framework ('in terms of cost'). 'With regard to' means concerning (more neutral). 'On behalf of' = acting as a representative."
         },
         {
             "id": "qf_l145_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We might have missed them in sector 13.",
-            "sentence": "We might have missed them in sector 13.",
+            "question": "The proposal is _____ consideration by the executive board.",
+            "sentence": "The proposal is _____ consideration by the executive board.",
             "options": [
-                "Might we have missed them in sector 13?",
-                "Might have we missed them in sector 13?",
-                "Did we might have missed them in sector 13?",
-                "We might have missed them in sector 13?"
+                "under",
+                "in",
+                "on",
+                "at"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Might we have missed them in sector 13?",
-            "hint": "Invert 'might'. (Sector 13 calibration)",
-            "explanation": "Invert the primary modal. [Verified in sector 13]."
+            "correctAnswer": "under",
+            "hint": "'Under consideration' is the fixed phrase for something being reviewed.",
+            "explanation": "'Under consideration' means being reviewed or thought about. Other 'under' collocations: under review, under investigation, under construction, under pressure. 'In consideration' is not standard for this meaning."
         },
         {
             "id": "qf_l145_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We have been invited in sector 13.",
-            "sentence": "We have been invited in sector 13.",
+            "question": "The project was completed _____ budget and ahead of schedule.",
+            "sentence": "The project was completed _____ budget and ahead of schedule.",
             "options": [
-                "Have we been invited in sector 13?",
-                "Has we been invited in sector 13?",
-                "Do we been invited in sector 13?",
-                "We have been invited in sector 13?"
+                "within",
+                "under",
+                "inside",
+                "below"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Have we been invited in sector 13?",
-            "hint": "Invert 'have'. (Sector 13 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 13]."
+            "correctAnswer": "within",
+            "hint": "'Within budget' = not exceeding the budget; 'under budget' = less than planned (also correct).",
+            "explanation": "Both 'within budget' and 'under budget' are used, though with slightly different implications. 'Within budget' means it stayed inside the limits; 'under budget' implies it cost less than planned. 'Inside budget' is occasionally heard but less standard."
         },
         {
             "id": "qf_l146_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He didn't finish the task in sector 13.",
-            "sentence": "He didn't finish the task in sector 13.",
+            "question": "_____ the merger not been approved, the company would have filed for bankruptcy.",
+            "sentence": "_____ the merger not been approved, the company would have filed for bankruptcy.",
             "options": [
-                "He didn't finish the task, did he in sector 13?",
-                "He didn't finish the task, didn't he in sector 13?",
-                "Did he finish the task in sector 13?",
-                "He didn't finish the task, was he in sector 13?"
+                "Had",
+                "If",
+                "Were",
+                "Should"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He didn't finish the task, did he in sector 13?",
-            "hint": "Negative past 'didn't' takes positive 'did he?'. (Sector 13 calibration)",
-            "explanation": "Didn't shifts to did in the tag. [Verified in sector 13]."
+            "correctAnswer": "Had",
+            "hint": "'Had + subject + past participle' = inverted third conditional - formal legal/business style.",
+            "explanation": "'Had the merger not been approved' = 'If the merger had not been approved' - inverted third conditional without 'if'. This is the standard form in legal documents and formal business writing."
         },
         {
             "id": "qf_l146_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She ought to have apologized in sector 13.",
-            "sentence": "She ought to have apologized in sector 13.",
+            "question": "_____ you to reconsider, we would welcome the opportunity to meet again.",
+            "sentence": "_____ you to reconsider, we would welcome the opportunity to meet again.",
             "options": [
-                "Ought she to have apologized in sector 13?",
-                "Ought to she have apologized in sector 13?",
-                "Should she to have apologized in sector 13?",
-                "She ought to have apologized in sector 13?"
+                "Were",
+                "Should",
+                "Had",
+                "If"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Ought she to have apologized in sector 13?",
-            "hint": "Invert 'ought' with the subject. (Sector 13 calibration)",
-            "explanation": "Invert the first element of 'ought to'. [Verified in sector 13]."
+            "correctAnswer": "Were",
+            "hint": "'Were + subject + to + verb' = formal inverted hypothetical conditional.",
+            "explanation": "'Were you to reconsider' = 'If you were to reconsider' - formal inverted conditional expressing a polite hypothetical, common in business correspondence. 'Should you reconsider' is also correct and expresses an open conditional (less formal)."
         },
         {
             "id": "qf_l146_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The temple is being restored in sector 13.",
-            "sentence": "The temple is being restored in sector 13.",
+            "question": "This offer is valid until further notice, _____ to change.",
+            "sentence": "This offer is valid until further notice, _____ to change.",
             "options": [
-                "Is the temple being restored in sector 13?",
-                "Does the temple being restored in sector 13?",
-                "Is the temple restoring in sector 13?",
-                "The temple is being restored in sector 13?"
+                "subject",
+                "possible",
+                "liable",
+                "prone"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Is the temple being restored in sector 13?",
-            "hint": "Invert 'is'. (Sector 13 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 13]."
+            "correctAnswer": "subject",
+            "hint": "'Subject to change' = the standard phrase meaning 'may change without notice'.",
+            "explanation": "'Subject to change' is the fixed business/legal phrase meaning 'may be altered'. 'Liable to change' is possible but is more often used for negative possibilities. 'Prone to' implies a tendency. 'Possible to change' changes the meaning entirely."
         },
         {
             "id": "qf_l147_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are ready in sector 13.",
-            "sentence": "They are ready in sector 13.",
+            "question": "He is believed _____ the country illegally.",
+            "sentence": "He is believed _____ the country illegally.",
             "options": [
-                "They are ready, aren't they in sector 13?",
-                "They are ready, are they in sector 13?",
-                "Are they ready in sector 13?",
-                "They are ready, don't they in sector 13?"
+                "to have entered",
+                "to enter",
+                "of entering",
+                "that he entered"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They are ready, aren't they in sector 13?",
-            "hint": "Positive 'are' takes negative 'aren't they?'. (Sector 13 calibration)",
-            "explanation": "Are shifts to aren't in the tag. [Verified in sector 13]."
+            "correctAnswer": "to have entered",
+            "hint": "'Is believed to have + past participle' - passive reporting with perfect infinitive.",
+            "explanation": "'Is believed to have entered' = 'People believe he entered / It is believed that he entered' - a passive reporting construction using the perfect infinitive. 'To enter' (simple infinitive) would suggest it's currently happening."
         },
         {
             "id": "qf_l147_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They can't have forgotten in sector 13.",
-            "sentence": "They can't have forgotten in sector 13.",
+            "question": "The criminal _____ to have fled the country.",
+            "sentence": "The criminal _____ to have fled the country.",
             "options": [
-                "Can they have forgotten in sector 13?",
-                "Can't they have forgotten in sector 13?",
-                "Have they can't forgotten in sector 13?",
-                "They can't have forgotten in sector 13?"
+                "is reported",
+                "is said",
+                "has been told",
+                "is told"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Can they have forgotten in sector 13?",
-            "hint": "Invert modal 'can' (or negative 'can't'). (Sector 13 calibration)",
-            "explanation": "Invert the modal auxiliary. [Verified in sector 13]."
+            "correctAnswer": "is reported",
+            "hint": "'Is reported to have + past participle' - passive reporting verb structure.",
+            "explanation": "'Is reported to have fled' and 'is said to have fled' are both grammatically correct passive reporting structures. 'Is told' and 'has been told' need a person object ('was told by someone'). Both 'reported' and 'said' work here; 'reported' is more journalistic."
         },
         {
             "id": "qf_l147_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They had been warned in sector 13.",
-            "sentence": "They had been warned in sector 13.",
+            "question": "The decision _____ be welcomed by most employees.",
+            "sentence": "The decision _____ be welcomed by most employees.",
             "options": [
-                "Had they been warned in sector 13?",
-                "Did they had been warned in sector 13?",
-                "Have they been warned in sector 13?",
-                "They had been warned in sector 13?"
+                "is expected to",
+                "is hoped",
+                "has been waited",
+                "is anticipated of"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Had they been warned in sector 13?",
-            "hint": "Invert 'had'. (Sector 13 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 13]."
+            "correctAnswer": "is expected to",
+            "hint": "'Is expected to + base verb' - passive reporting with an infinitive.",
+            "explanation": "'Is expected to + base verb' is the standard form: 'the decision is expected to be welcomed'. 'Is hoped to' is not standard - 'hope' typically uses 'it is hoped that'. 'Has been waited for' means something awaited. 'Is anticipated of' is not a valid structure."
         },
         {
             "id": "qf_l148_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She has been working hard in sector 13.",
-            "sentence": "She has been working hard in sector 13.",
+            "question": "Legal: 'The defendant _____ the right to remain silent.'",
+            "sentence": "Legal: 'The defendant _____ the right to remain silent.'",
             "options": [
-                "She has been working hard, hasn't she in sector 13?",
-                "She has been working hard, has she in sector 13?",
-                "Has she been working hard in sector 13?",
-                "She has been working hard, doesn't she in sector 13?"
+                "invoked",
+                "used",
+                "took",
+                "made"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She has been working hard, hasn't she in sector 13?",
-            "hint": "Use the first auxiliary 'has' in the tag: 'hasn't she?'. (Sector 13 calibration)",
-            "explanation": "Has shifts to hasn't in the tag. [Verified in sector 13]."
+            "correctAnswer": "invoked",
+            "hint": "'Invoke a right' is the standard legal collocation - the formal act of activating a legal right.",
+            "explanation": "'Invoke a right' is the precise legal term for formally claiming a legal right. 'Use a right' is too informal. 'Take a right' is not the legal collocation. 'Make a right' is not standard in this context."
         },
         {
             "id": "qf_l148_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You shouldn't have done that in sector 13.",
-            "sentence": "You shouldn't have done that in sector 13.",
+            "question": "Academic: 'The study _____ three key variables.'",
+            "sentence": "Academic: 'The study _____ three key variables.'",
             "options": [
-                "Should you have done that in sector 13?",
-                "Shouldn't you have done that in sector 13?",
-                "Did you shouldn't have done that in sector 13?",
-                "You shouldn't have done that in sector 13?"
+                "examined",
+                "looked at",
+                "checked",
+                "studied about"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Shouldn't you have done that in sector 13?",
-            "hint": "Keep the negative force or invert to negative 'Shouldn't you have done that?'. (Sector 13 calibration)",
-            "explanation": "Negative inversion is correct. [Verified in sector 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "examined",
+            "hint": "'Examined' is the precise academic verb for systematic analysis. 'Looked at' is informal.",
+            "explanation": "'Examine' is the standard academic verb for systematic investigation. 'Look at' is informal. 'Check' implies verification, not analysis. 'Study about' is not a standard collocation - 'study' takes a direct object without a preposition."
         },
         {
             "id": "qf_l148_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She will be promoted in sector 13.",
-            "sentence": "She will be promoted in sector 13.",
+            "question": "Journalistic: 'The prime minister _____ to comment on the allegations.'",
+            "sentence": "Journalistic: 'The prime minister _____ to comment on the allegations.'",
             "options": [
-                "Will she be promoted in sector 13?",
-                "Does she will be promoted in sector 13?",
-                "Will she promoting in sector 13?",
-                "She will be promoted in sector 13?"
+                "declined",
+                "refused",
+                "rejected",
+                "denied"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Will she be promoted in sector 13?",
-            "hint": "Invert 'will'. (Sector 13 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 13]."
+            "correctAnswer": "declined",
+            "hint": "'Declined to comment' is journalistic convention - neutral and formal.",
+            "explanation": "'Declined to comment' is the standard journalistic phrasing for a public figure who doesn't engage with questions - neutral and formal. 'Refused to comment' is stronger (suggests actively opposing). 'Rejected' and 'denied' mean something different."
         },
         {
             "id": "qf_l149_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You wouldn't do that in sector 13.",
-            "sentence": "You wouldn't do that in sector 13.",
+            "question": "_____ this may be true in some cases, the broader picture is more complex.",
+            "sentence": "_____ this may be true in some cases, the broader picture is more complex.",
             "options": [
-                "You wouldn't do that, would you in sector 13?",
-                "You wouldn't do that, wouldn't you in sector 13?",
-                "Would you do that in sector 13?",
-                "You wouldn't do that, did you in sector 13?"
+                "While",
+                "Despite",
+                "Although that",
+                "Even so"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "You wouldn't do that, would you in sector 13?",
-            "hint": "Negative 'wouldn't' takes positive 'would you?'. (Sector 13 calibration)",
-            "explanation": "Wouldn't shifts to would in the tag. [Verified in sector 13]."
+            "correctAnswer": "While",
+            "hint": "'While + clause' = concessive conjunction. 'Although that' is not grammatically correct.",
+            "explanation": "'While' (or 'although', 'even though') introduces a concessive clause. 'Despite' needs a noun/gerund, not a full clause. 'Although that' is not standard English - 'that' would be redundant here."
         },
         {
             "id": "qf_l149_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He wouldn't have agreed in sector 13.",
-            "sentence": "He wouldn't have agreed in sector 13.",
+            "question": "The argument has merit. _____, it overlooks a critical factor.",
+            "sentence": "The argument has merit. _____, it overlooks a critical factor.",
             "options": [
-                "Would he have agreed in sector 13?",
-                "Wouldn't he have agreed in sector 13?",
-                "Did he wouldn't have agreed in sector 13?",
-                "He wouldn't have agreed in sector 13?"
+                "However",
+                "Despite this",
+                "In contrast",
+                "On the contrary"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Wouldn't he have agreed in sector 13?",
-            "hint": "Keep the negative force for inverted negative modal. (Sector 13 calibration)",
-            "explanation": "Wouldn't he have agreed is correct. [Verified in sector 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "However",
+            "hint": "'However' = contrastive connector. 'On the contrary' = outright contradiction.",
+            "explanation": "'However' introduces a contrasting point while acknowledging the validity of the first: it has merit, but it has a flaw. 'On the contrary' would mean the argument has no merit at all. 'In contrast' typically introduces an alternative example."
         },
         {
             "id": "qf_l149_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He should be informed in sector 13.",
-            "sentence": "He should be informed in sector 13.",
+            "question": "Which phrase best qualifies a claim in academic writing?",
+            "sentence": "Which phrase best qualifies a claim in academic writing?",
             "options": [
-                "Should he be informed in sector 13?",
-                "Do he should be informed in sector 13?",
-                "Should he informing in sector 13?",
-                "He should be informed in sector 13?"
+                "It could be argued that",
+                "It's obvious that",
+                "Everyone knows that",
+                "It is a fact that"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Should he be informed in sector 13?",
-            "hint": "Invert 'should'. (Sector 13 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 13]."
+            "correctAnswer": "It could be argued that",
+            "hint": "Hedging phrases ('it could be argued that') are essential in academic argumentation.",
+            "explanation": "'It could be argued that' is a classic hedging phrase - it presents a view without overcommitting. 'It's obvious that' and 'everyone knows that' are informal and make overconfident claims. 'It is a fact that' is too assertive for contested or interpretive claims."
         },
         {
             "id": "qf_l150_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We should go now in sector 13.",
-            "sentence": "We should go now in sector 13.",
+            "question": "The more you expose yourself to authentic English, _____ you progress.",
+            "sentence": "The more you expose yourself to authentic English, _____ you progress.",
             "options": [
-                "We should go now, shouldn't we in sector 13?",
-                "We should go now, should we in sector 13?",
-                "Should we go now in sector 13?",
-                "We should go now, don't we in sector 13?"
+                "the faster",
+                "faster",
+                "the more fast",
+                "the more faster"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "We should go now, shouldn't we in sector 13?",
-            "hint": "Positive 'should' takes negative 'shouldn't we?'. (Sector 13 calibration)",
-            "explanation": "Should shifts to shouldn't in the tag. [Verified in sector 13]."
+            "correctAnswer": "the faster",
+            "hint": "'The more...the + comparative' - both halves need 'the' before the comparative.",
+            "explanation": "'The more...the + comparative' is the proportional structure. 'The faster' is the comparative of 'fast' with 'the'. 'The more fast' is wrong - 'fast' forms its comparative with '-er'. 'The more faster' double-marks the comparative."
         },
         {
             "id": "qf_l150_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "We couldn't have known in sector 13.",
-            "sentence": "We couldn't have known in sector 13.",
+            "question": "Choose the most precise formal paraphrase of: 'He got what he deserved.'",
+            "sentence": "Choose the most precise formal paraphrase of: 'He got what he deserved.'",
             "options": [
-                "Could we have known in sector 13?",
-                "Couldn't we have known in sector 13?",
-                "Did we couldn't have known in sector 13?",
-                "We couldn't have known in sector 13?"
+                "He received the consequences commensurate with his actions.",
+                "He had it coming.",
+                "He was punished for what he did.",
+                "He got his just deserts."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Couldn't we have known in sector 13?",
-            "hint": "Negative modal inversion. (Sector 13 calibration)",
-            "explanation": "Couldn't we have known is correct. [Verified in sector 13]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "He received the consequences commensurate with his actions.",
+            "hint": "Formal paraphrase uses formal vocabulary, no idioms, and precise nouns.",
+            "explanation": "A formal paraphrase eliminates idioms ('had it coming', 'just deserts'), slang, and informal structures. 'Consequences commensurate with his actions' uses precise, formal vocabulary. 'Punished' is neutral but informal. 'Just deserts' is an idiom - acceptable in some registers but not purely formal."
         },
         {
             "id": "qf_l150_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "You would be surprised in sector 13.",
-            "sentence": "You would be surprised in sector 13.",
+            "question": "Which sentence correctly uses 'although' vs 'despite'?",
+            "sentence": "Which sentence correctly uses 'although' vs 'despite'?",
             "options": [
-                "Would you be surprised in sector 13?",
-                "Do you would be surprised in sector 13?",
-                "Would you surprising in sector 13?",
-                "You would be surprised in sector 13?"
+                "Although she was exhausted, she finished the report.",
+                "Despite she was exhausted, she finished the report.",
+                "Although her exhaustion, she finished the report.",
+                "Despite being exhausted but she finished the report."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Would you be surprised in sector 13?",
-            "hint": "Invert 'would'. (Sector 13 calibration)",
-            "explanation": "Invert primary auxiliary. [Verified in sector 13]."
+            "correctAnswer": "Although she was exhausted, she finished the report.",
+            "hint": "'Although' + full clause; 'despite' + noun/gerund; never mix the two structures.",
+            "explanation": "'Although + subject + verb' is a subordinating conjunction requiring a full clause. 'Despite + noun/gerund' requires a noun phrase or gerund. 'Despite she was exhausted' uses 'despite' with a clause (wrong). 'Although her exhaustion' uses 'although' with a noun (wrong). 'Despite being exhausted but' mixes two connectors."
         }
     ]
 }

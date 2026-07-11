@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l71_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The keys are on the table in sector 6.",
-            "sentence": "The keys are on the table in sector 6.",
+            "question": "The woman _____ lives next door is a doctor.",
+            "sentence": "The woman _____ lives next door is a doctor.",
             "options": [
-                "Where are the keys in sector 6?",
-                "What are the keys in sector 6?",
-                "Who are the keys in sector 6?",
-                "When are the keys in sector 6?"
+                "who",
+                "which",
+                "whom",
+                "whose"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where are the keys in sector 6?",
-            "hint": "'On the table' represents a location, which requires 'Where'. (Sector 6 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 6]."
+            "correctAnswer": "who",
+            "hint": "'Who' refers to people as the subject of the relative clause.",
+            "explanation": "'Who' introduces a defining relative clause about a person as the subject. 'Which' is for things. 'Whom' is the object form of 'who' - not the subject."
         },
         {
             "id": "qf_l71_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The package arrived yesterday in sector 6.",
-            "sentence": "The package arrived yesterday in sector 6.",
+            "question": "The phone _____ I bought last week is already broken.",
+            "sentence": "The phone _____ I bought last week is already broken.",
             "options": [
-                "When did the package arrive in sector 6?",
-                "Where did the package arrive in sector 6?",
-                "Why did the package arrive in sector 6?",
-                "What did the package arrive in sector 6?"
+                "that",
+                "who",
+                "which is",
+                "it"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When did the package arrive in sector 6?",
-            "hint": "'Yesterday' is a past time, requiring 'When'. (Sector 6 calibration)",
-            "explanation": "Use 'When' for time queries. [Verified in sector 6]."
+            "correctAnswer": "that",
+            "hint": "'That' (or 'which') introduces a defining relative clause about a thing; don't add 'is'.",
+            "explanation": "In a defining relative clause about a thing, 'that' or 'which' is used. Adding 'is' after 'which' would create a second finite verb, breaking the clause structure."
         },
         {
             "id": "qf_l71_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The flight takes six hours in sector 6.",
-            "sentence": "The flight takes six hours in sector 6.",
+            "question": "The restaurant _____ we visited last week has closed.",
+            "sentence": "The restaurant _____ we visited last week has closed.",
             "options": [
-                "How long does the flight take in sector 6?",
-                "When does the flight take in sector 6?",
-                "Where does the flight take in sector 6?",
-                "Why does the flight take in sector 6?"
+                "that",
+                "who",
+                "where",
+                "it"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long does the flight take in sector 6?",
-            "hint": "'Six hours' is a duration, requiring 'How long'. (Sector 6 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 6]."
+            "correctAnswer": "that",
+            "hint": "The object relative clause about a place: use 'that' or 'which', not 'where' or 'it'.",
+            "explanation": "'That' (or 'which') is the object pronoun in this defining relative clause. 'Where' can only introduce relative clauses when it replaces a prepositional phrase of place ('the restaurant where we ate'), not the object position here."
         },
         {
             "id": "qf_l72_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He left because it was late in sector 6.",
-            "sentence": "He left because it was late in sector 6.",
+            "question": "The manager _____ hired me has retired.",
+            "sentence": "The manager _____ hired me has retired.",
             "options": [
-                "Why did he leave in sector 6?",
-                "When did he leave in sector 6?",
-                "Where did he leave in sector 6?",
-                "How did he leave in sector 6?"
+                "who",
+                "whom",
+                "whose",
+                "which"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why did he leave in sector 6?",
-            "hint": "'Because it was late' indicates a reason, requiring 'Why'. (Sector 6 calibration)",
-            "explanation": "Use 'Why' for reasons. [Verified in sector 6]."
+            "correctAnswer": "who",
+            "hint": "'Who' is the subject of 'hired me' in this relative clause.",
+            "explanation": "'Who' is the subject form - it is the manager who performed the action ('hired me'). 'Whom' is the object form, used when the relative pronoun is the object of the verb."
         },
         {
             "id": "qf_l72_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are travelling by capsule in sector 6.",
-            "sentence": "They are travelling by capsule in sector 6.",
+            "question": "The student _____ essay won first prize is from India.",
+            "sentence": "The student _____ essay won first prize is from India.",
             "options": [
-                "How are they travelling in sector 6?",
-                "Why are they travelling in sector 6?",
-                "Where are they travelling in sector 6?",
-                "When are they travelling in sector 6?"
+                "whose",
+                "who",
+                "whom",
+                "which"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How are they travelling in sector 6?",
-            "hint": "'By capsule' is a means of transport. (Sector 6 calibration)",
-            "explanation": "Use 'How' for transportation methods. [Verified in sector 6]."
+            "correctAnswer": "whose",
+            "hint": "'Whose' shows possession - the student's essay won.",
+            "explanation": "'Whose' is the possessive relative pronoun, replacing 'his/her'. 'The student whose essay won' = 'the student; his/her essay won'. Neither 'who' nor 'whom' can show possession."
         },
         {
             "id": "qf_l72_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "This fuel costs fifty coins in sector 6.",
-            "sentence": "This fuel costs fifty coins in sector 6.",
+            "question": "The person _____ I spoke to was very helpful.",
+            "sentence": "The person _____ I spoke to was very helpful.",
             "options": [
-                "How much does this fuel cost in sector 6?",
-                "How many does this fuel cost in sector 6?",
-                "What cost is this fuel in sector 6?",
-                "Why does this fuel cost in sector 6?"
+                "whom",
+                "who",
+                "whose",
+                "which"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How much does this fuel cost in sector 6?",
-            "hint": "Uncountable cost/value requires 'How much'. (Sector 6 calibration)",
-            "explanation": "Use 'How much' for costs. [Verified in sector 6]."
+            "correctAnswer": "whom",
+            "hint": "'Whom' is the object of 'spoke to' - use the object form here.",
+            "explanation": "'Whom' is the object form of 'who'. In the relative clause, 'I spoke to [them]' - the pronoun is the object of the preposition 'to'. Formal English uses 'whom' for this object position."
         },
         {
             "id": "qf_l73_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She arrives at 6 PM in sector 6.",
-            "sentence": "She arrives at 6 PM in sector 6.",
+            "question": "My brother, _____ is a chef, works in a five-star hotel.",
+            "sentence": "My brother, _____ is a chef, works in a five-star hotel.",
             "options": [
-                "What time does she arrive in sector 6?",
-                "Where does she arrive in sector 6?",
-                "Why does she arrive in sector 6?",
-                "Who does she arrive in sector 6?"
+                "who",
+                "that",
+                "which",
+                "whose"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "What time does she arrive in sector 6?",
-            "hint": "'At 6 PM' represents a time, requiring 'What time' or 'When'. (Sector 6 calibration)",
-            "explanation": "Use 'What time' for specific hours. [Verified in sector 6]."
+            "correctAnswer": "who",
+            "hint": "Non-defining relative clauses about people use 'who', never 'that'.",
+            "explanation": "In non-defining relative clauses (set off by commas), 'that' is never used - only 'who' for people or 'which' for things. The commas show the information is additional, not essential."
         },
         {
             "id": "qf_l73_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She wants a coffee in sector 6.",
-            "sentence": "She wants a coffee in sector 6.",
+            "question": "The Eiffel Tower, _____ is in Paris, attracts millions of visitors each year.",
+            "sentence": "The Eiffel Tower, _____ is in Paris, attracts millions of visitors each year.",
             "options": [
-                "What does she want in sector 6?",
-                "Who does she want in sector 6?",
-                "Why does she want in sector 6?",
-                "Where does she want in sector 6?"
+                "which",
+                "that",
+                "who",
+                "where"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "What does she want in sector 6?",
-            "hint": "'A coffee' is a thing, requiring 'What'. (Sector 6 calibration)",
-            "explanation": "Use 'What' for things. [Verified in sector 6]."
+            "correctAnswer": "which",
+            "hint": "Non-defining relative clause about a thing → 'which' (no commas with 'that').",
+            "explanation": "'Which' introduces non-defining relative clauses about things. 'That' is never used with non-defining clauses (the ones between commas). 'Who' is for people; 'where' introduces place relative clauses, not noun-modifying clauses like this."
         },
         {
             "id": "qf_l73_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They practice three times a day in sector 6.",
-            "sentence": "They practice three times a day in sector 6.",
+            "question": "She gave me a gift, _____ surprised me greatly.",
+            "sentence": "She gave me a gift, _____ surprised me greatly.",
             "options": [
-                "How often do they practice in sector 6?",
-                "How long do they practice in sector 6?",
-                "When do they practice in sector 6?",
-                "Where do they practice in sector 6?"
+                "which",
+                "that",
+                "who",
+                "what"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How often do they practice in sector 6?",
-            "hint": "'Three times a day' is a frequency. (Sector 6 calibration)",
-            "explanation": "Use 'How often' for frequencies. [Verified in sector 6]."
+            "correctAnswer": "which",
+            "hint": "'Which' can refer to the whole previous clause or idea - 'that' cannot do this.",
+            "explanation": "'Which' can refer to the whole idea of the previous clause ('she gave me a gift'). 'That' cannot do this, and 'what' is not a relative pronoun here. This is a non-defining relative clause commenting on the entire preceding action."
         },
         {
             "id": "qf_l74_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They went to the space base in sector 6.",
-            "sentence": "They went to the space base in sector 6.",
+            "question": "The company _____ I work for is very successful.",
+            "sentence": "The company _____ I work for is very successful.",
             "options": [
-                "Where did they go in sector 6?",
-                "Why did they go in sector 6?",
-                "What did they go in sector 6?",
-                "When did they go in sector 6?"
+                "that",
+                "which for",
+                "for which",
+                "who"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where did they go in sector 6?",
-            "hint": "'To the space base' is a destination/location. (Sector 6 calibration)",
-            "explanation": "Use 'Where' for destinations. [Verified in sector 6]."
+            "correctAnswer": "that",
+            "hint": "Informal English: keep the preposition at the end and use 'that' or no pronoun.",
+            "explanation": "In informal English, prepositions stay at the end of the relative clause: '... that I work for'. In formal English, the preposition moves to the front: '... for which I work'. Both are correct, but 'which for' is never acceptable word order."
         },
         {
             "id": "qf_l74_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He chose the red wire in sector 6.",
-            "sentence": "He chose the red wire in sector 6.",
+            "question": "The hotel _____ we stayed was excellent.",
+            "sentence": "The hotel _____ we stayed was excellent.",
             "options": [
-                "Which wire did he choose in sector 6?",
-                "What wire does he choose in sector 6?",
-                "Who chose the wire in sector 6?",
-                "Why did he choose the wire in sector 6?"
+                "where",
+                "that we stayed at",
+                "which we stayed",
+                "in which"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Which wire did he choose in sector 6?",
-            "hint": "Choosing from a limited set requires 'Which'. (Sector 6 calibration)",
-            "explanation": "Use 'Which' for selection. [Verified in sector 6]."
+            "correctAnswer": "where",
+            "hint": "'Where' replaces 'which we stayed in/at' when referring to a location in a defining clause.",
+            "explanation": "'Where' elegantly replaces 'which ... in/at' for locations. 'The hotel where we stayed' = 'the hotel in which we stayed'. 'Which we stayed' (without a preposition) leaves the clause grammatically incomplete."
         },
         {
             "id": "qf_l74_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She walked five miles in sector 6.",
-            "sentence": "She walked five miles in sector 6.",
+            "question": "2010 was the year _____ they got married.",
+            "sentence": "2010 was the year _____ they got married.",
             "options": [
-                "How far did she walk in sector 6?",
-                "How long did she walk in sector 6?",
-                "Where did she walk in sector 6?",
-                "Why did she walk in sector 6?"
+                "when",
+                "that",
+                "which",
+                "in which"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far did she walk in sector 6?",
-            "hint": "'Five miles' is a distance. (Sector 6 calibration)",
-            "explanation": "Use 'How far' for distances. [Verified in sector 6]."
+            "correctAnswer": "when",
+            "hint": "'When' introduces time relative clauses, replacing 'in which' for years/times.",
+            "explanation": "'When' = 'in which' for time expressions. 'The year when they got married' is more natural than 'the year in which they got married', though both are correct. 'That' is possible here too, but 'which' alone is not."
         },
         {
             "id": "qf_l75_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is talking to the commander in sector 6.",
-            "sentence": "He is talking to the commander in sector 6.",
+            "question": "She enjoys _____ to music while she works.",
+            "sentence": "She enjoys _____ to music while she works.",
             "options": [
-                "Who is he talking to in sector 6?",
-                "What is he talking to in sector 6?",
-                "Why is he talking to in sector 6?",
-                "Where is he talking in sector 6?"
+                "listening",
+                "to listen",
+                "listen",
+                "to listening"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Who is he talking to in sector 6?",
-            "hint": "'The commander' is a person, requiring 'Who'. (Sector 6 calibration)",
-            "explanation": "Use 'Who' for people. [Verified in sector 6]."
+            "correctAnswer": "listening",
+            "hint": "'Enjoy' is always followed by a gerund (-ing form), never an infinitive.",
+            "explanation": "'Enjoy' is one of the verbs that must be followed by a gerund. 'Enjoy to listen' is incorrect in standard English. Other gerund-only verbs include 'avoid', 'suggest', 'finish', 'mind', and 'stop' (when it means 'cease')."
         },
         {
             "id": "qf_l75_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They called the security guard in sector 6.",
-            "sentence": "They called the security guard in sector 6.",
+            "question": "They suggested _____ a different route.",
+            "sentence": "They suggested _____ a different route.",
             "options": [
-                "Who did they call in sector 6?",
-                "What did they call in sector 6?",
-                "Why did they call in sector 6?",
-                "Where did they call in sector 6?"
+                "taking",
+                "to take",
+                "take",
+                "to taking"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Who did they call in sector 6?",
-            "hint": "'The security guard' is a person. (Sector 6 calibration)",
-            "explanation": "Use 'Who' for human objects. [Verified in sector 6]."
+            "correctAnswer": "taking",
+            "hint": "'Suggest' is always followed by a gerund, not an infinitive.",
+            "explanation": "'Suggest + gerund' is the correct pattern. 'Suggest to take' is a common learner error. Other gerund-following verbs: 'recommend', 'avoid', 'consider', 'deny'."
         },
         {
             "id": "qf_l75_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has been waiting for an hour in sector 6.",
-            "sentence": "He has been waiting for an hour in sector 6.",
+            "question": "He stopped _____ cigarettes three years ago.",
+            "sentence": "He stopped _____ cigarettes three years ago.",
             "options": [
-                "How long has he been waiting in sector 6?",
-                "When has he been waiting in sector 6?",
-                "Why has he been waiting in sector 6?",
-                "Where has he been waiting in sector 6?"
+                "smoking",
+                "to smoke",
+                "smoke",
+                "to smoking"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long has he been waiting in sector 6?",
-            "hint": "'For an hour' is a duration. (Sector 6 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 6]."
+            "correctAnswer": "smoking",
+            "hint": "'Stop + gerund' means 'cease doing' - 'stop to smoke' means something very different (stop in order to smoke).",
+            "explanation": "'Stop + gerund' means to cease an activity: 'stopped smoking' = quit. 'Stop + infinitive' means to stop in order to do something else: 'stopped to smoke' = paused and smoked. These have entirely different meanings."
         },
         {
             "id": "qf_l76_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is crying due to fear in sector 6.",
-            "sentence": "She is crying due to fear in sector 6.",
+            "question": "She decided _____ a new career.",
+            "sentence": "She decided _____ a new career.",
             "options": [
-                "Why is she crying in sector 6?",
-                "How is she crying in sector 6?",
-                "Where is she crying in sector 6?",
-                "When is she crying in sector 6?"
+                "to pursue",
+                "pursuing",
+                "pursue",
+                "in pursuing"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why is she crying in sector 6?",
-            "hint": "'Due to fear' is a reason. (Sector 6 calibration)",
-            "explanation": "Use 'Why' for reasons. [Verified in sector 6]."
+            "correctAnswer": "to pursue",
+            "hint": "'Decide' is always followed by an infinitive (to + base verb).",
+            "explanation": "'Decide' takes an infinitive: 'decided to pursue'. It cannot take a gerund. Other infinitive-only verbs: 'want', 'plan', 'hope', 'refuse', 'choose', 'expect', 'agree'."
         },
         {
             "id": "qf_l76_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The motor failed due to heat in sector 6.",
-            "sentence": "The motor failed due to heat in sector 6.",
+            "question": "They plan _____ a new business next year.",
+            "sentence": "They plan _____ a new business next year.",
             "options": [
-                "Why did the motor fail in sector 6?",
-                "How did the motor fail in sector 6?",
-                "When did the motor fail in sector 6?",
-                "Where did the motor fail in sector 6?"
+                "to start",
+                "starting",
+                "start",
+                "on starting"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why did the motor fail in sector 6?",
-            "hint": "'Due to heat' represents a cause. (Sector 6 calibration)",
-            "explanation": "Use 'Why' for causes. [Verified in sector 6]."
+            "correctAnswer": "to start",
+            "hint": "'Plan' is followed by an infinitive, not a gerund.",
+            "explanation": "'Plan to + base verb' is always correct. 'Plan on + gerund' is an informal but accepted alternative, but 'plan starting' without a preposition is ungrammatical."
         },
         {
             "id": "qf_l76_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The base is ten miles away in sector 6.",
-            "sentence": "The base is ten miles away in sector 6.",
+            "question": "He hopes _____ a scholarship.",
+            "sentence": "He hopes _____ a scholarship.",
             "options": [
-                "How far is the base in sector 6?",
-                "How long is the base in sector 6?",
-                "Where is the base in sector 6?",
-                "When is the base in sector 6?"
+                "to receive",
+                "receiving",
+                "receive",
+                "in receiving"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far is the base in sector 6?",
-            "hint": "'Ten miles away' is a distance. (Sector 6 calibration)",
-            "explanation": "Use 'How far' for distances. [Verified in sector 6]."
+            "correctAnswer": "to receive",
+            "hint": "'Hope' takes an infinitive: 'hope to do something'.",
+            "explanation": "'Hope' is always followed by an infinitive. 'Hope to receive' = want to receive (with positive expectation). 'Hoping' after 'hope' would require 'is hoping for', a different structure entirely."
         },
         {
             "id": "qf_l77_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They met at the shuttle dock in sector 6.",
-            "sentence": "They met at the shuttle dock in sector 6.",
+            "question": "I remember _____ her at the conference. (She was there; I saw her.)",
+            "sentence": "I remember _____ her at the conference. (She was there; I saw her.)",
             "options": [
-                "Where did they meet in sector 6?",
-                "When did they meet in sector 6?",
-                "What did they meet in sector 6?",
-                "Who did they meet in sector 6?"
+                "meeting",
+                "to meet",
+                "meet",
+                "to meeting"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where did they meet in sector 6?",
-            "hint": "'At the shuttle dock' is a location. (Sector 6 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 6]."
+            "correctAnswer": "meeting",
+            "hint": "'Remember + gerund' = recall a past event. 'Remember + infinitive' = don't forget to do something future.",
+            "explanation": "'Remember + gerund' recalls something from the past: 'I remember meeting her' = I have a memory of meeting her. 'Remember + infinitive' refers to a duty: 'Remember to meet her' = don't forget your appointment with her."
         },
         {
             "id": "qf_l77_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She lives in the capital in sector 6.",
-            "sentence": "She lives in the capital in sector 6.",
+            "question": "Don't forget _____ the lights when you leave.",
+            "sentence": "Don't forget _____ the lights when you leave.",
             "options": [
-                "Where does she live in sector 6?",
-                "When does she live in sector 6?",
-                "Why does she live in sector 6?",
-                "What does she live in sector 6?"
+                "to turn off",
+                "turning off",
+                "turn off",
+                "of turning off"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where does she live in sector 6?",
-            "hint": "'In the capital' is a location. (Sector 6 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 6]."
+            "correctAnswer": "to turn off",
+            "hint": "'Forget + infinitive' = fail to do something upcoming. 'Forget + gerund' = fail to recall a past event.",
+            "explanation": "'Forget + infinitive' refers to future responsibilities: 'Don't forget to turn off the lights' = remember to do it. 'Forget + gerund' refers to memory of past events: 'I'll never forget meeting her'."
         },
         {
             "id": "qf_l77_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They visit the hub weekly in sector 6.",
-            "sentence": "They visit the hub weekly in sector 6.",
+            "question": "She tried _____ the machine, but it still didn't work.",
+            "sentence": "She tried _____ the machine, but it still didn't work.",
             "options": [
-                "How often do they visit the hub in sector 6?",
-                "How long do they visit the hub in sector 6?",
-                "When do they visit the hub in sector 6?",
-                "Where do they visit the hub in sector 6?"
+                "restarting",
+                "to restart",
+                "restart",
+                "of restarting"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How often do they visit the hub in sector 6?",
-            "hint": "'Weekly' is a frequency. (Sector 6 calibration)",
-            "explanation": "Use 'How often' for frequency queries. [Verified in sector 6]."
+            "correctAnswer": "restarting",
+            "hint": "'Try + gerund' = experiment with a method. 'Try + infinitive' = make an effort to do something difficult.",
+            "explanation": "'Try + gerund' means to experiment with an approach ('tried restarting' = tried that approach to solve it). 'Try + infinitive' means to attempt something difficult ('tried to restart' = made the effort). Both are possible here, but the context implies experimenting with a method."
         },
         {
             "id": "qf_l78_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The launch is next Tuesday in sector 6.",
-            "sentence": "The launch is next Tuesday in sector 6.",
+            "question": "_____ regularly is important for your health.",
+            "sentence": "_____ regularly is important for your health.",
             "options": [
-                "When is the launch in sector 6?",
-                "Where is the launch in sector 6?",
-                "Why is the launch in sector 6?",
-                "What is the launch in sector 6?"
+                "Exercising",
+                "To exercise",
+                "Exercise",
+                "The exercising"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When is the launch in sector 6?",
-            "hint": "'Next Tuesday' is a time. (Sector 6 calibration)",
-            "explanation": "Use 'When' for dates/times. [Verified in sector 6]."
+            "correctAnswer": "Exercising",
+            "hint": "When an -ing form acts as the subject of a sentence, it is a gerund.",
+            "explanation": "A gerund (verb + -ing) can function as the subject of a sentence. 'Exercising regularly is important' treats the activity as a noun. The infinitive 'to exercise' could also work as a subject, but it sounds more formal and less natural here."
         },
         {
             "id": "qf_l78_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They wake up at sunrise in sector 6.",
-            "sentence": "They wake up at sunrise in sector 6.",
+            "question": "She's good at _____ problems quickly.",
+            "sentence": "She's good at _____ problems quickly.",
             "options": [
-                "When do they wake up in sector 6?",
-                "Why do they wake up in sector 6?",
-                "Where do they wake up in sector 6?",
-                "Who wakes up in sector 6?"
+                "solving",
+                "to solve",
+                "solve",
+                "the solving"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When do they wake up in sector 6?",
-            "hint": "'At sunrise' is a time point. (Sector 6 calibration)",
-            "explanation": "Use 'When' for time points. [Verified in sector 6]."
+            "correctAnswer": "solving",
+            "hint": "After a preposition ('at'), always use a gerund, never an infinitive.",
+            "explanation": "Prepositions must be followed by a noun or gerund, never a bare infinitive or 'to + verb'. 'Good at solving' is correct because 'at' is a preposition requiring a gerund."
         },
         {
             "id": "qf_l78_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "This shield weighs ten tons in sector 6.",
-            "sentence": "This shield weighs ten tons in sector 6.",
+            "question": "Instead of _____ a cab, why not walk?",
+            "sentence": "Instead of _____ a cab, why not walk?",
             "options": [
-                "How much does this shield weigh in sector 6?",
-                "How many does this shield weigh in sector 6?",
-                "What is the weight in sector 6?",
-                "Why does it weigh in sector 6?"
+                "taking",
+                "to take",
+                "take",
+                "you take"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How much does this shield weigh in sector 6?",
-            "hint": "Weight is a quantity requiring 'How much'. (Sector 6 calibration)",
-            "explanation": "Use 'How much' for weights. [Verified in sector 6]."
+            "correctAnswer": "taking",
+            "hint": "After the preposition 'of', use the gerund form.",
+            "explanation": "'Instead of' is a prepositional phrase and must be followed by a gerund. 'Instead of taking' is correct. 'Instead of to take' is wrong because infinitives never follow prepositions."
         },
         {
             "id": "qf_l79_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He solved the puzzle with a tool in sector 6.",
-            "sentence": "He solved the puzzle with a tool in sector 6.",
+            "question": "The teacher made the students _____ the test again.",
+            "sentence": "The teacher made the students _____ the test again.",
             "options": [
-                "How did he solve the puzzle in sector 6?",
-                "Why did he solve the puzzle in sector 6?",
-                "Where did he solve the puzzle in sector 6?",
-                "Who solved the puzzle in sector 6?"
+                "repeat",
+                "to repeat",
+                "repeating",
+                "repeated"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How did he solve the puzzle in sector 6?",
-            "hint": "'With a tool' is a manner or method. (Sector 6 calibration)",
-            "explanation": "Use 'How' for methods. [Verified in sector 6]."
+            "correctAnswer": "repeat",
+            "hint": "'Make' in this causative sense takes a bare infinitive (no 'to').",
+            "explanation": "'Make + object + bare infinitive' expresses compulsion. 'Made them repeat' - no 'to'. If you change 'make' to 'allow' or 'permit', you need 'to': 'allowed them to repeat'."
         },
         {
             "id": "qf_l79_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He fixed it using tape in sector 6.",
-            "sentence": "He fixed it using tape in sector 6.",
+            "question": "She let her children _____ up late on weekends.",
+            "sentence": "She let her children _____ up late on weekends.",
             "options": [
-                "How did he fix it in sector 6?",
-                "Why did he fix it in sector 6?",
-                "Where did he fix it in sector 6?",
-                "When did he fix it in sector 6?"
+                "stay",
+                "to stay",
+                "staying",
+                "stayed"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How did he fix it in sector 6?",
-            "hint": "'Using tape' is a method. (Sector 6 calibration)",
-            "explanation": "Use 'How' for methods. [Verified in sector 6]."
+            "correctAnswer": "stay",
+            "hint": "'Let' is followed by a bare infinitive - no 'to'.",
+            "explanation": "'Let + object + bare infinitive' means to allow. No 'to' is used after 'let'. 'Allowed them to stay' would be the 'to + infinitive' equivalent using 'allow' instead."
         },
         {
             "id": "qf_l79_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The trip lasts ten days in sector 6.",
-            "sentence": "The trip lasts ten days in sector 6.",
+            "question": "I heard someone _____ outside my window last night.",
+            "sentence": "I heard someone _____ outside my window last night.",
             "options": [
-                "How long does the trip last in sector 6?",
-                "When does the trip last in sector 6?",
-                "Where does the trip last in sector 6?",
-                "Why does the trip last in sector 6?"
+                "knocking",
+                "to knock",
+                "knocked",
+                "knock"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long does the trip last in sector 6?",
-            "hint": "'Ten days' is a duration. (Sector 6 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 6]."
+            "correctAnswer": "knocking",
+            "hint": "Perception verbs ('hear/see/watch') take either bare infinitive or -ing; -ing stresses ongoing action.",
+            "explanation": "After perception verbs ('hear', 'see', 'watch'), both bare infinitive and -ing are possible. 'Heard someone knock' (completed action) and 'heard someone knocking' (ongoing action) are both correct. Here, knocking implies the sound was ongoing - more natural than 'knock'."
         },
         {
             "id": "qf_l80_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is hiding under the deck in sector 6.",
-            "sentence": "She is hiding under the deck in sector 6.",
+            "question": "The doctor _____ treated my mother has won several awards.",
+            "sentence": "The doctor _____ treated my mother has won several awards.",
             "options": [
-                "Where is she hiding in sector 6?",
-                "What is she hiding in sector 6?",
-                "Why is she hiding in sector 6?",
-                "Who is she hiding in sector 6?"
+                "who",
+                "which",
+                "whom",
+                "that she"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where is she hiding in sector 6?",
-            "hint": "'Under the deck' is a location. (Sector 6 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 6]."
+            "correctAnswer": "who",
+            "hint": "'Who' introduces a defining relative clause about the doctor (a person, subject position).",
+            "explanation": "'Who' is correct as the subject of 'treated'. 'Whom' would be the object. 'Which' is for things. 'That' could replace 'who' in defining clauses but 'that she' adds a redundant subject."
         },
         {
             "id": "qf_l80_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She bought three crates in sector 6.",
-            "sentence": "She bought three crates in sector 6.",
+            "question": "She admitted _____ the report without reading it.",
+            "sentence": "She admitted _____ the report without reading it.",
             "options": [
-                "How many crates did she buy in sector 6?",
-                "How much crates did she buy in sector 6?",
-                "What did she buy in sector 6?",
-                "Why did she buy crates in sector 6?"
+                "signing",
+                "to sign",
+                "sign",
+                "to signing"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How many crates did she buy in sector 6?",
-            "hint": "Countable quantity requires 'How many'. (Sector 6 calibration)",
-            "explanation": "Use 'How many' for countable items. [Verified in sector 6]."
+            "correctAnswer": "signing",
+            "hint": "'Admit' is always followed by a gerund, never an infinitive.",
+            "explanation": "'Admit + gerund' is the correct structure. Other 'confessional' verbs that take gerunds: 'deny', 'confess to', 'regret' (past action). 'Admit to signing' is also correct; 'admit signing' is the more common form."
         },
         {
             "id": "qf_l80_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The colony is very distant in sector 6.",
-            "sentence": "The colony is very distant in sector 6.",
+            "question": "The course, _____ starts in September, is fully online.",
+            "sentence": "The course, _____ starts in September, is fully online.",
             "options": [
-                "How far is the colony in sector 6?",
-                "Where is the colony in sector 6?",
-                "What is the colony like in sector 6?",
-                "Why is the colony distant in sector 6?"
+                "which",
+                "that",
+                "who",
+                "it"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far is the colony in sector 6?",
-            "hint": "'Very distant' is a distance/degree. (Sector 6 calibration)",
-            "explanation": "Use 'How far' for distance. [Verified in sector 6]."
+            "correctAnswer": "which",
+            "hint": "Non-defining relative clause about a thing → 'which', not 'that'.",
+            "explanation": "Non-defining relative clauses (inside commas) use 'which' for things, never 'that'. 'It' creates a run-on sentence. 'Who' is only for people."
         }
     ]
 }

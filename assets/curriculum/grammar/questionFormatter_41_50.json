@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l41_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The keys are on the table in sector 3.",
-            "sentence": "The keys are on the table in sector 3.",
+            "question": "This room is cleaned every day.",
+            "sentence": "This room is cleaned every day.",
             "options": [
-                "Where are the keys in sector 3?",
-                "What are the keys in sector 3?",
-                "Who are the keys in sector 3?",
-                "When are the keys in sector 3?"
+                "Is this room cleaned every day?",
+                "This room is cleaned every day?",
+                "Are this room cleaned every day?",
+                "Does someone clean this room every day?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where are the keys in sector 3?",
-            "hint": "'On the table' represents a location, which requires 'Where'. (Sector 3 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 3]."
+            "correctAnswer": "Is this room cleaned every day?",
+            "hint": "This is passive voice - invert 'is' with 'this room' and keep the past participle as it is.",
+            "explanation": "In passive voice, 'this room' receives the action rather than doing it. The question inverts 'is' with 'this room', and the past participle stays unchanged."
         },
         {
             "id": "qf_l41_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The package arrived yesterday in sector 3.",
-            "sentence": "The package arrived yesterday in sector 3.",
+            "question": "The emails are sent automatically.",
+            "sentence": "The emails are sent automatically.",
             "options": [
-                "When did the package arrive in sector 3?",
-                "Where did the package arrive in sector 3?",
-                "Why did the package arrive in sector 3?",
-                "What did the package arrive in sector 3?"
+                "Are the emails sent automatically?",
+                "The emails are sent automatically?",
+                "Is the emails sent automatically?",
+                "Do they send the emails automatically?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When did the package arrive in sector 3?",
-            "hint": "'Yesterday' is a past time, requiring 'When'. (Sector 3 calibration)",
-            "explanation": "Use 'When' for time queries. [Verified in sector 3]."
+            "correctAnswer": "Are the emails sent automatically?",
+            "hint": "Look for who/what receives the action. Invert 'are' and 'the emails'.",
+            "explanation": "Passive-voice questions form the same way as 'to be' questions: 'are' moves before 'the emails', because 'are' is the auxiliary, not the main verb."
         },
         {
             "id": "qf_l41_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The flight takes six hours in sector 3.",
-            "sentence": "The flight takes six hours in sector 3.",
+            "question": "Dinner is cooked by my mother.",
+            "sentence": "Dinner is cooked by my mother.",
             "options": [
-                "How long does the flight take in sector 3?",
-                "When does the flight take in sector 3?",
-                "Where does the flight take in sector 3?",
-                "Why does the flight take in sector 3?"
+                "Is dinner cooked by my mother?",
+                "Dinner is cooked by my mother?",
+                "Are dinner cooked by my mother?",
+                "Does my mother cook dinner?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long does the flight take in sector 3?",
-            "hint": "'Six hours' is a duration, requiring 'How long'. (Sector 3 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 3]."
+            "correctAnswer": "Is dinner cooked by my mother?",
+            "hint": "Passive questions invert 'to be', just like continuous tenses do.",
+            "explanation": "In passive voice, 'dinner' receives the action rather than doing it. The question inverts 'is' with 'dinner', and the past participle stays unchanged."
         },
         {
             "id": "qf_l42_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He left because it was late in sector 3.",
-            "sentence": "He left because it was late in sector 3.",
+            "question": "The window was broken last night.",
+            "sentence": "The window was broken last night.",
             "options": [
-                "Why did he leave in sector 3?",
-                "When did he leave in sector 3?",
-                "Where did he leave in sector 3?",
-                "How did he leave in sector 3?"
+                "Was the window broken last night?",
+                "The window was broken last night?",
+                "Were the window broken last night?",
+                "Did someone break the window last night?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why did he leave in sector 3?",
-            "hint": "'Because it was late' indicates a reason, requiring 'Why'. (Sector 3 calibration)",
-            "explanation": "Use 'Why' for reasons. [Verified in sector 3]."
+            "correctAnswer": "Was the window broken last night?",
+            "hint": "This is passive voice - invert 'was' with 'the window' and keep the past participle as it is.",
+            "explanation": "In passive voice, 'the window' receives the action rather than doing it. The question inverts 'was' with 'the window', and the past participle stays unchanged."
         },
         {
             "id": "qf_l42_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are travelling by capsule in sector 3.",
-            "sentence": "They are travelling by capsule in sector 3.",
+            "question": "The books were delivered this morning.",
+            "sentence": "The books were delivered this morning.",
             "options": [
-                "How are they travelling in sector 3?",
-                "Why are they travelling in sector 3?",
-                "Where are they travelling in sector 3?",
-                "When are they travelling in sector 3?"
+                "Were the books delivered this morning?",
+                "The books were delivered this morning?",
+                "Was the books delivered this morning?",
+                "Did they deliver the books this morning?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How are they travelling in sector 3?",
-            "hint": "'By capsule' is a means of transport. (Sector 3 calibration)",
-            "explanation": "Use 'How' for transportation methods. [Verified in sector 3]."
+            "correctAnswer": "Were the books delivered this morning?",
+            "hint": "Look for who/what receives the action. Invert 'were' and 'the books'.",
+            "explanation": "Passive-voice questions form the same way as 'to be' questions: 'were' moves before 'the books', because 'were' is the auxiliary, not the main verb."
         },
         {
             "id": "qf_l42_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "This fuel costs fifty coins in sector 3.",
-            "sentence": "This fuel costs fifty coins in sector 3.",
+            "question": "The patient was treated immediately.",
+            "sentence": "The patient was treated immediately.",
             "options": [
-                "How much does this fuel cost in sector 3?",
-                "How many does this fuel cost in sector 3?",
-                "What cost is this fuel in sector 3?",
-                "Why does this fuel cost in sector 3?"
+                "Was the patient treated immediately?",
+                "The patient was treated immediately?",
+                "Were the patient treated immediately?",
+                "Did the doctor treat the patient immediately?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How much does this fuel cost in sector 3?",
-            "hint": "Uncountable cost/value requires 'How much'. (Sector 3 calibration)",
-            "explanation": "Use 'How much' for costs. [Verified in sector 3]."
+            "correctAnswer": "Was the patient treated immediately?",
+            "hint": "Passive questions invert 'to be', just like continuous tenses do.",
+            "explanation": "In passive voice, 'the patient' receives the action rather than doing it. The question inverts 'was' with 'the patient', and the past participle stays unchanged."
         },
         {
             "id": "qf_l43_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She arrives at 6 PM in sector 3.",
-            "sentence": "She arrives at 6 PM in sector 3.",
+            "question": "The bridge is being repaired.",
+            "sentence": "The bridge is being repaired.",
             "options": [
-                "What time does she arrive in sector 3?",
-                "Where does she arrive in sector 3?",
-                "Why does she arrive in sector 3?",
-                "Who does she arrive in sector 3?"
+                "Is the bridge being repaired?",
+                "The bridge is being repaired?",
+                "Are the bridge being repaired?",
+                "Is the bridge repaired?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "What time does she arrive in sector 3?",
-            "hint": "'At 6 PM' represents a time, requiring 'What time' or 'When'. (Sector 3 calibration)",
-            "explanation": "Use 'What time' for specific hours. [Verified in sector 3]."
+            "correctAnswer": "Is the bridge being repaired?",
+            "hint": "Invert 'is' with 'the bridge' and keep 'being + past participle' together.",
+            "explanation": "This sentence combines passive voice with the continuous aspect: 'is' + being + past participle. Only 'is' inverts with 'the bridge'; 'being' never moves or changes."
         },
         {
             "id": "qf_l43_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She wants a coffee in sector 3.",
-            "sentence": "She wants a coffee in sector 3.",
+            "question": "The new phones are being tested right now.",
+            "sentence": "The new phones are being tested right now.",
             "options": [
-                "What does she want in sector 3?",
-                "Who does she want in sector 3?",
-                "Why does she want in sector 3?",
-                "Where does she want in sector 3?"
+                "Are the new phones being tested right now?",
+                "The new phones are being tested right now?",
+                "Is the new phones being tested right now?",
+                "Are the new phones tested right now?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "What does she want in sector 3?",
-            "hint": "'A coffee' is a thing, requiring 'What'. (Sector 3 calibration)",
-            "explanation": "Use 'What' for things. [Verified in sector 3]."
+            "correctAnswer": "Are the new phones being tested right now?",
+            "hint": "This is passive + continuous combined - only the 'to be' auxiliary moves.",
+            "explanation": "'Are' is the auxiliary for both the passive and the continuous meaning here, so it alone inverts with 'the new phones'."
         },
         {
             "id": "qf_l43_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They practice three times a day in sector 3.",
-            "sentence": "They practice three times a day in sector 3.",
+            "question": "The road is being widened.",
+            "sentence": "The road is being widened.",
             "options": [
-                "How often do they practice in sector 3?",
-                "How long do they practice in sector 3?",
-                "When do they practice in sector 3?",
-                "Where do they practice in sector 3?"
+                "Is the road being widened?",
+                "The road is being widened?",
+                "Are the road being widened?",
+                "Is the road widened?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How often do they practice in sector 3?",
-            "hint": "'Three times a day' is a frequency. (Sector 3 calibration)",
-            "explanation": "Use 'How often' for frequencies. [Verified in sector 3]."
+            "correctAnswer": "Is the road being widened?",
+            "hint": "Invert 'is' with 'the road' and keep 'being + past participle' together.",
+            "explanation": "This sentence combines passive voice with the continuous aspect: 'is' + being + past participle. Only 'is' inverts with 'the road'; 'being' never moves or changes."
         },
         {
             "id": "qf_l44_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They went to the space base in sector 3.",
-            "sentence": "They went to the space base in sector 3.",
+            "question": "The car was being washed when it rained.",
+            "sentence": "The car was being washed when it rained.",
             "options": [
-                "Where did they go in sector 3?",
-                "Why did they go in sector 3?",
-                "What did they go in sector 3?",
-                "When did they go in sector 3?"
+                "Was the car being washed when it rained?",
+                "The car was being washed when it rained?",
+                "Were the car being washed when it rained?",
+                "Was the car washed when it rained?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where did they go in sector 3?",
-            "hint": "'To the space base' is a destination/location. (Sector 3 calibration)",
-            "explanation": "Use 'Where' for destinations. [Verified in sector 3]."
+            "correctAnswer": "Was the car being washed when it rained?",
+            "hint": "This is passive + continuous combined - only the 'to be' auxiliary moves.",
+            "explanation": "'Was' is the auxiliary for both the passive and the continuous meaning here, so it alone inverts with 'the car'."
         },
         {
             "id": "qf_l44_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He chose the red wire in sector 3.",
-            "sentence": "He chose the red wire in sector 3.",
+            "question": "The reports were being checked all morning.",
+            "sentence": "The reports were being checked all morning.",
             "options": [
-                "Which wire did he choose in sector 3?",
-                "What wire does he choose in sector 3?",
-                "Who chose the wire in sector 3?",
-                "Why did he choose the wire in sector 3?"
+                "Were the reports being checked all morning?",
+                "The reports were being checked all morning?",
+                "Was the reports being checked all morning?",
+                "Were the reports checked all morning?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Which wire did he choose in sector 3?",
-            "hint": "Choosing from a limited set requires 'Which'. (Sector 3 calibration)",
-            "explanation": "Use 'Which' for selection. [Verified in sector 3]."
+            "correctAnswer": "Were the reports being checked all morning?",
+            "hint": "Invert 'were' with 'the reports' and keep 'being + past participle' together.",
+            "explanation": "This sentence combines passive voice with the continuous aspect: 'were' + being + past participle. Only 'were' inverts with 'the reports'; 'being' never moves or changes."
         },
         {
             "id": "qf_l44_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She walked five miles in sector 3.",
-            "sentence": "She walked five miles in sector 3.",
+            "question": "The patients were being examined when the fire alarm went off.",
+            "sentence": "The patients were being examined when the fire alarm went off.",
             "options": [
-                "How far did she walk in sector 3?",
-                "How long did she walk in sector 3?",
-                "Where did she walk in sector 3?",
-                "Why did she walk in sector 3?"
+                "Were the patients being examined when the fire alarm went off?",
+                "The patients were being examined when the fire alarm went off?",
+                "Was the patients being examined when the fire alarm went off?",
+                "Were the patients examined when the fire alarm went off?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far did she walk in sector 3?",
-            "hint": "'Five miles' is a distance. (Sector 3 calibration)",
-            "explanation": "Use 'How far' for distances. [Verified in sector 3]."
+            "correctAnswer": "Were the patients being examined when the fire alarm went off?",
+            "hint": "This is passive + continuous combined - only the 'to be' auxiliary moves.",
+            "explanation": "'Were' is the auxiliary for both the passive and the continuous meaning here, so it alone inverts with 'the patients'."
         },
         {
             "id": "qf_l45_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is talking to the commander in sector 3.",
-            "sentence": "He is talking to the commander in sector 3.",
+            "question": "The problem has been solved.",
+            "sentence": "The problem has been solved.",
             "options": [
-                "Who is he talking to in sector 3?",
-                "What is he talking to in sector 3?",
-                "Why is he talking to in sector 3?",
-                "Where is he talking in sector 3?"
+                "Has the problem been solved?",
+                "The problem has been solved?",
+                "Has the problem solved?",
+                "Have the problem been solved?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Who is he talking to in sector 3?",
-            "hint": "'The commander' is a person, requiring 'Who'. (Sector 3 calibration)",
-            "explanation": "Use 'Who' for people. [Verified in sector 3]."
+            "correctAnswer": "Has the problem been solved?",
+            "hint": "Invert 'has' with 'the problem'; 'been' stays right where it is, before the past participle.",
+            "explanation": "This sentence is passive and perfect together: 'has' + been + past participle. 'Has' inverts with 'the problem'; 'been' is never moved."
         },
         {
             "id": "qf_l45_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They called the security guard in sector 3.",
-            "sentence": "They called the security guard in sector 3.",
+            "question": "All the tickets have been sold.",
+            "sentence": "All the tickets have been sold.",
             "options": [
-                "Who did they call in sector 3?",
-                "What did they call in sector 3?",
-                "Why did they call in sector 3?",
-                "Where did they call in sector 3?"
+                "Have all the tickets been sold?",
+                "All the tickets have been sold?",
+                "Have all the tickets sold?",
+                "Has all the tickets been sold?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Who did they call in sector 3?",
-            "hint": "'The security guard' is a person. (Sector 3 calibration)",
-            "explanation": "Use 'Who' for human objects. [Verified in sector 3]."
+            "correctAnswer": "Have all the tickets been sold?",
+            "hint": "This combines passive voice with the perfect aspect - only the first auxiliary inverts.",
+            "explanation": "'Have' is the auxiliary matched to 'all the tickets'; it moves to the front while 'been' and the past participle stay together."
         },
         {
             "id": "qf_l45_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has been waiting for an hour in sector 3.",
-            "sentence": "He has been waiting for an hour in sector 3.",
+            "question": "The deadline has been moved to next week.",
+            "sentence": "The deadline has been moved to next week.",
             "options": [
-                "How long has he been waiting in sector 3?",
-                "When has he been waiting in sector 3?",
-                "Why has he been waiting in sector 3?",
-                "Where has he been waiting in sector 3?"
+                "Has the deadline been moved to next week?",
+                "The deadline has been moved to next week?",
+                "Has the deadline moved to next week?",
+                "Have the deadline been moved to next week?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long has he been waiting in sector 3?",
-            "hint": "'For an hour' is a duration. (Sector 3 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 3]."
+            "correctAnswer": "Has the deadline been moved to next week?",
+            "hint": "Invert 'has' with 'the deadline'; 'been' stays right where it is, before the past participle.",
+            "explanation": "This sentence is passive and perfect together: 'has' + been + past participle. 'Has' inverts with 'the deadline'; 'been' is never moved."
         },
         {
             "id": "qf_l46_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is crying due to fear in sector 3.",
-            "sentence": "She is crying due to fear in sector 3.",
+            "question": "The documents had been signed before the meeting.",
+            "sentence": "The documents had been signed before the meeting.",
             "options": [
-                "Why is she crying in sector 3?",
-                "How is she crying in sector 3?",
-                "Where is she crying in sector 3?",
-                "When is she crying in sector 3?"
+                "Had the documents been signed before the meeting?",
+                "The documents had been signed before the meeting?",
+                "Had the documents signed before the meeting?",
+                "Has the documents been signed before the meeting?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why is she crying in sector 3?",
-            "hint": "'Due to fear' is a reason. (Sector 3 calibration)",
-            "explanation": "Use 'Why' for reasons. [Verified in sector 3]."
+            "correctAnswer": "Had the documents been signed before the meeting?",
+            "hint": "Move 'had' before the subject to form the question; 'been' stays after the subject.",
+            "explanation": "'Had been' is the past-perfect passive auxiliary. 'Had' moves before the subject, while 'been' and the past participle stay in place. This is the same pattern as the active past perfect."
         },
         {
             "id": "qf_l46_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The motor failed due to heat in sector 3.",
-            "sentence": "The motor failed due to heat in sector 3.",
+            "question": "The data had been backed up before the crash.",
+            "sentence": "The data had been backed up before the crash.",
             "options": [
-                "Why did the motor fail in sector 3?",
-                "How did the motor fail in sector 3?",
-                "When did the motor fail in sector 3?",
-                "Where did the motor fail in sector 3?"
+                "Had the data been backed up before the crash?",
+                "The data had been backed up before the crash?",
+                "Had the data backed up before the crash?",
+                "Have the data been backed up before the crash?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why did the motor fail in sector 3?",
-            "hint": "'Due to heat' represents a cause. (Sector 3 calibration)",
-            "explanation": "Use 'Why' for causes. [Verified in sector 3]."
+            "correctAnswer": "Had the data been backed up before the crash?",
+            "hint": "Invert 'had' with the subject; 'been backed up' stays as one unit after the subject.",
+            "explanation": "In the past-perfect passive, 'had' is the only auxiliary that inverts. 'Been backed up' is the verb phrase and remains unchanged after the subject."
         },
         {
             "id": "qf_l46_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The base is ten miles away in sector 3.",
-            "sentence": "The base is ten miles away in sector 3.",
+            "question": "The flight had been cancelled an hour earlier.",
+            "sentence": "The flight had been cancelled an hour earlier.",
             "options": [
-                "How far is the base in sector 3?",
-                "How long is the base in sector 3?",
-                "Where is the base in sector 3?",
-                "When is the base in sector 3?"
+                "Had the flight been cancelled an hour earlier?",
+                "The flight had been cancelled an hour earlier?",
+                "Had the flight cancelled an hour earlier?",
+                "Have the flight been cancelled an hour earlier?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far is the base in sector 3?",
-            "hint": "'Ten miles away' is a distance. (Sector 3 calibration)",
-            "explanation": "Use 'How far' for distances. [Verified in sector 3]."
+            "correctAnswer": "Had the flight been cancelled an hour earlier?",
+            "hint": "Move 'had' before 'the flight'; 'been cancelled' stays together after it.",
+            "explanation": "Past-perfect passive questions are formed by moving 'had' before the subject. 'Been + past participle' is the passive verb phrase and always stays together."
         },
         {
             "id": "qf_l47_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They met at the shuttle dock in sector 3.",
-            "sentence": "They met at the shuttle dock in sector 3.",
+            "question": "The results will be announced tomorrow.",
+            "sentence": "The results will be announced tomorrow.",
             "options": [
-                "Where did they meet in sector 3?",
-                "When did they meet in sector 3?",
-                "What did they meet in sector 3?",
-                "Who did they meet in sector 3?"
+                "Will the results be announced tomorrow?",
+                "The results will be announced tomorrow?",
+                "Will the results been announced tomorrow?",
+                "Are the results announced tomorrow?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where did they meet in sector 3?",
-            "hint": "'At the shuttle dock' is a location. (Sector 3 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 3]."
+            "correctAnswer": "Will the results be announced tomorrow?",
+            "hint": "Move 'will' before the subject; 'be announced' stays together after it.",
+            "explanation": "Future passive questions move 'will' before the subject. The verb phrase 'be + past participle' stays unchanged - 'will be announced', not 'will been announced'."
         },
         {
             "id": "qf_l47_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She lives in the capital in sector 3.",
-            "sentence": "She lives in the capital in sector 3.",
+            "question": "The package will be delivered today.",
+            "sentence": "The package will be delivered today.",
             "options": [
-                "Where does she live in sector 3?",
-                "When does she live in sector 3?",
-                "Why does she live in sector 3?",
-                "What does she live in sector 3?"
+                "Will the package be delivered today?",
+                "The package will be delivered today?",
+                "Will the package been delivered today?",
+                "Does the package get delivered today?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where does she live in sector 3?",
-            "hint": "'In the capital' is a location. (Sector 3 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 3]."
+            "correctAnswer": "Will the package be delivered today?",
+            "hint": "Invert 'will' and 'the package'; keep 'be delivered' exactly as is.",
+            "explanation": "In the future passive, 'will' acts as the question auxiliary. 'Be delivered' is the passive infinitive, always used after 'will' - never 'been delivered'."
         },
         {
             "id": "qf_l47_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They visit the hub weekly in sector 3.",
-            "sentence": "They visit the hub weekly in sector 3.",
+            "question": "The new policy will be implemented next month.",
+            "sentence": "The new policy will be implemented next month.",
             "options": [
-                "How often do they visit the hub in sector 3?",
-                "How long do they visit the hub in sector 3?",
-                "When do they visit the hub in sector 3?",
-                "Where do they visit the hub in sector 3?"
+                "Will the new policy be implemented next month?",
+                "The new policy will be implemented next month?",
+                "Is the new policy implemented next month?",
+                "Will the new policy been implemented next month?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How often do they visit the hub in sector 3?",
-            "hint": "'Weekly' is a frequency. (Sector 3 calibration)",
-            "explanation": "Use 'How often' for frequency queries. [Verified in sector 3]."
+            "correctAnswer": "Will the new policy be implemented next month?",
+            "hint": "Move 'will' to the front; 'be implemented' follows directly after the subject.",
+            "explanation": "Future passive: 'will' inverts with the subject, and 'be + past participle' stays intact. The key error to avoid is using 'been' instead of 'be' after 'will'."
         },
         {
             "id": "qf_l48_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The launch is next Tuesday in sector 3.",
-            "sentence": "The launch is next Tuesday in sector 3.",
+            "question": "English is spoken in many countries.",
+            "sentence": "English is spoken in many countries.",
             "options": [
-                "When is the launch in sector 3?",
-                "Where is the launch in sector 3?",
-                "Why is the launch in sector 3?",
-                "What is the launch in sector 3?"
+                "Is English spoken in many countries?",
+                "Does English speak in many countries?",
+                "Do people speak English in many countries?",
+                "Is English speaking in many countries?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When is the launch in sector 3?",
-            "hint": "'Next Tuesday' is a time. (Sector 3 calibration)",
-            "explanation": "Use 'When' for dates/times. [Verified in sector 3]."
+            "correctAnswer": "Is English spoken in many countries?",
+            "hint": "The sentence uses passive voice ('is spoken') - use 'is' as the question auxiliary, not 'does'.",
+            "explanation": "This sentence is in the passive voice, so 'is' is the auxiliary. Inverting 'is' and 'English' forms the question. Using 'does' would wrongly create an active question."
         },
         {
             "id": "qf_l48_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They wake up at sunrise in sector 3.",
-            "sentence": "They wake up at sunrise in sector 3.",
+            "question": "The new café is opening next week.",
+            "sentence": "The new café is opening next week.",
             "options": [
-                "When do they wake up in sector 3?",
-                "Why do they wake up in sector 3?",
-                "Where do they wake up in sector 3?",
-                "Who wakes up in sector 3?"
+                "Is the new café opening next week?",
+                "Does the new café open next week?",
+                "Will the new café be opened next week?",
+                "Is the new café being opened next week?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When do they wake up in sector 3?",
-            "hint": "'At sunrise' is a time point. (Sector 3 calibration)",
-            "explanation": "Use 'When' for time points. [Verified in sector 3]."
+            "correctAnswer": "Is the new café opening next week?",
+            "hint": "This is a present-continuous active statement - invert 'is' and 'the new café'.",
+            "explanation": "This is an active present-continuous sentence. Only 'is' moves - it's not passive here because 'opening' is not a past participle, so 'Is the new café opening?' is the correct question form."
         },
         {
             "id": "qf_l48_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "This shield weighs ten tons in sector 3.",
-            "sentence": "This shield weighs ten tons in sector 3.",
+            "question": "The children were taken to school by their father.",
+            "sentence": "The children were taken to school by their father.",
             "options": [
-                "How much does this shield weigh in sector 3?",
-                "How many does this shield weigh in sector 3?",
-                "What is the weight in sector 3?",
-                "Why does it weigh in sector 3?"
+                "Were the children taken to school by their father?",
+                "Did the children take to school by their father?",
+                "Was the children taken to school by their father?",
+                "Were the children being taken to school by their father?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How much does this shield weigh in sector 3?",
-            "hint": "Weight is a quantity requiring 'How much'. (Sector 3 calibration)",
-            "explanation": "Use 'How much' for weights. [Verified in sector 3]."
+            "correctAnswer": "Were the children taken to school by their father?",
+            "hint": "The subject 'the children' is plural and the tense is past passive - use 'were'.",
+            "explanation": "Past passive with a plural subject requires 'were', not 'was'. Moving 'were' before 'the children' forms the question; the rest of the verb phrase stays unchanged."
         },
         {
             "id": "qf_l49_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He solved the puzzle with a tool in sector 3.",
-            "sentence": "He solved the puzzle with a tool in sector 3.",
+            "question": "This novel was written by a famous author.",
+            "sentence": "This novel was written by a famous author.",
             "options": [
-                "How did he solve the puzzle in sector 3?",
-                "Why did he solve the puzzle in sector 3?",
-                "Where did he solve the puzzle in sector 3?",
-                "Who solved the puzzle in sector 3?"
+                "Was this novel written by a famous author?",
+                "Did a famous author write this novel?",
+                "Were this novel written by a famous author?",
+                "Has this novel been written by a famous author?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How did he solve the puzzle in sector 3?",
-            "hint": "'With a tool' is a manner or method. (Sector 3 calibration)",
-            "explanation": "Use 'How' for methods. [Verified in sector 3]."
+            "correctAnswer": "Was this novel written by a famous author?",
+            "hint": "The sentence is past passive and 'this novel' is singular - use 'was'.",
+            "explanation": "Past passive singular subjects use 'was'. Inverting 'was' and 'this novel' forms the passive question. 'Did' would shift the sentence to an active question about the author."
         },
         {
             "id": "qf_l49_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He fixed it using tape in sector 3.",
-            "sentence": "He fixed it using tape in sector 3.",
+            "question": "The award was given to her by the committee.",
+            "sentence": "The award was given to her by the committee.",
             "options": [
-                "How did he fix it in sector 3?",
-                "Why did he fix it in sector 3?",
-                "Where did he fix it in sector 3?",
-                "When did he fix it in sector 3?"
+                "Was the award given to her by the committee?",
+                "Did the committee give the award to her?",
+                "Were the award given to her by the committee?",
+                "Has the award been given to her by the committee?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How did he fix it in sector 3?",
-            "hint": "'Using tape' is a method. (Sector 3 calibration)",
-            "explanation": "Use 'How' for methods. [Verified in sector 3]."
+            "correctAnswer": "Was the award given to her by the committee?",
+            "hint": "Singular subject + past passive = 'was'. Just invert 'was' and 'the award'.",
+            "explanation": "The subject 'the award' is singular and the tense is past, so 'was' is the correct auxiliary. Inverting it with the subject creates the passive question without changing the verb phrase."
         },
         {
             "id": "qf_l49_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The trip lasts ten days in sector 3.",
-            "sentence": "The trip lasts ten days in sector 3.",
+            "question": "The speech was delivered by the president.",
+            "sentence": "The speech was delivered by the president.",
             "options": [
-                "How long does the trip last in sector 3?",
-                "When does the trip last in sector 3?",
-                "Where does the trip last in sector 3?",
-                "Why does the trip last in sector 3?"
+                "Was the speech delivered by the president?",
+                "Did the president deliver the speech?",
+                "Were the speech delivered by the president?",
+                "Is the speech delivered by the president?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long does the trip last in sector 3?",
-            "hint": "'Ten days' is a duration. (Sector 3 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 3]."
+            "correctAnswer": "Was the speech delivered by the president?",
+            "hint": "Keep it passive - 'was' inverts with 'the speech'; don't switch to an active question.",
+            "explanation": "Inverting 'was' and 'the speech' keeps the question in the passive voice, which matches the original. Changing it to 'Did the president deliver...' would be correct English but would switch to the active voice, altering the focus of the sentence."
         },
         {
             "id": "qf_l50_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is hiding under the deck in sector 3.",
-            "sentence": "She is hiding under the deck in sector 3.",
+            "question": "The documents are reviewed weekly.",
+            "sentence": "The documents are reviewed weekly.",
             "options": [
-                "Where is she hiding in sector 3?",
-                "What is she hiding in sector 3?",
-                "Why is she hiding in sector 3?",
-                "Who is she hiding in sector 3?"
+                "Are the documents reviewed weekly?",
+                "Do the documents review weekly?",
+                "Is the documents reviewed weekly?",
+                "Have the documents been reviewed weekly?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where is she hiding in sector 3?",
-            "hint": "'Under the deck' is a location. (Sector 3 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 3]."
+            "correctAnswer": "Are the documents reviewed weekly?",
+            "hint": "'The documents' is the passive subject (plural, present) - invert 'are'.",
+            "explanation": "'The documents' is plural, so the passive uses 'are'. Inverting 'are' with the subject forms the question. 'Do' would be wrong because this is passive, not active."
         },
         {
             "id": "qf_l50_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She bought three crates in sector 3.",
-            "sentence": "She bought three crates in sector 3.",
+            "question": "This app is updated automatically.",
+            "sentence": "This app is updated automatically.",
             "options": [
-                "How many crates did she buy in sector 3?",
-                "How much crates did she buy in sector 3?",
-                "What did she buy in sector 3?",
-                "Why did she buy crates in sector 3?"
+                "Is this app updated automatically?",
+                "Does this app update automatically?",
+                "Are this app updated automatically?",
+                "Has this app been updated automatically?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How many crates did she buy in sector 3?",
-            "hint": "Countable quantity requires 'How many'. (Sector 3 calibration)",
-            "explanation": "Use 'How many' for countable items. [Verified in sector 3]."
+            "correctAnswer": "Is this app updated automatically?",
+            "hint": "Singular subject 'this app' + present passive - invert 'is'.",
+            "explanation": "'This app' is singular, so the present passive uses 'is'. Moving 'is' to the front creates the question. 'Does update' would be an active question with a different meaning."
         },
         {
             "id": "qf_l50_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 2,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The colony is very distant in sector 3.",
-            "sentence": "The colony is very distant in sector 3.",
+            "question": "The winners will be announced at the ceremony.",
+            "sentence": "The winners will be announced at the ceremony.",
             "options": [
-                "How far is the colony in sector 3?",
-                "Where is the colony in sector 3?",
-                "What is the colony like in sector 3?",
-                "Why is the colony distant in sector 3?"
+                "Will the winners be announced at the ceremony?",
+                "Are the winners announced at the ceremony?",
+                "Will the winners been announced at the ceremony?",
+                "Do they announce the winners at the ceremony?"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far is the colony in sector 3?",
-            "hint": "'Very distant' is a distance/degree. (Sector 3 calibration)",
-            "explanation": "Use 'How far' for distance. [Verified in sector 3]."
+            "correctAnswer": "Will the winners be announced at the ceremony?",
+            "hint": "Future passive: 'will' moves first; 'be announced' stays together.",
+            "explanation": "'Will' is the question auxiliary for future passive. 'Be announced' must stay intact - 'been announced' would incorrectly use the past participle of 'be' instead of the infinitive."
         }
     ]
 }

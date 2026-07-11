@@ -5,573 +5,543 @@
     "quests": [
         {
             "id": "qf_l131_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The keys are on the table in sector 12.",
-            "sentence": "The keys are on the table in sector 12.",
+            "question": "_____ for her advice, I would never have succeeded.",
+            "sentence": "_____ for her advice, I would never have succeeded.",
             "options": [
-                "Where are the keys in sector 12?",
-                "What are the keys in sector 12?",
-                "Who are the keys in sector 12?",
-                "When are the keys in sector 12?"
+                "But for",
+                "Without",
+                "Except for",
+                "If not for"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where are the keys in sector 12?",
-            "hint": "'On the table' represents a location, which requires 'Where'. (Sector 12 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 12]."
+            "correctAnswer": "But for",
+            "hint": "'But for + noun phrase' = 'if it had not been for' - formal conditional without 'if'.",
+            "explanation": "'But for' is a formal way to express a third-conditional meaning without 'if': 'But for her advice' = 'If it had not been for her advice'. 'Without her advice' is also correct. 'Except for' is for exclusions, not conditionals."
         },
         {
             "id": "qf_l131_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The package arrived yesterday in sector 12.",
-            "sentence": "The package arrived yesterday in sector 12.",
+            "question": "_____ she to agree, the project could begin immediately.",
+            "sentence": "_____ she to agree, the project could begin immediately.",
             "options": [
-                "When did the package arrive in sector 12?",
-                "Where did the package arrive in sector 12?",
-                "Why did the package arrive in sector 12?",
-                "What did the package arrive in sector 12?"
+                "Were",
+                "If",
+                "Should",
+                "Had"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When did the package arrive in sector 12?",
-            "hint": "'Yesterday' is a past time, requiring 'When'. (Sector 12 calibration)",
-            "explanation": "Use 'When' for time queries. [Verified in sector 12]."
+            "correctAnswer": "Were",
+            "hint": "Inverted conditional: 'Were + subject + to + verb' = 'If + subject + were to + verb'.",
+            "explanation": "'Were she to agree' = 'If she were to agree' - formal inverted conditional without 'if'. Inversion of 'were' replaces 'if' in this hypothetical present/future structure. 'Should she agree' is also an inverted conditional but for open possibilities."
         },
         {
             "id": "qf_l131_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The flight takes six hours in sector 12.",
-            "sentence": "The flight takes six hours in sector 12.",
+            "question": "_____ I known about the event, I would have attended.",
+            "sentence": "_____ I known about the event, I would have attended.",
             "options": [
-                "How long does the flight take in sector 12?",
-                "When does the flight take in sector 12?",
-                "Where does the flight take in sector 12?",
-                "Why does the flight take in sector 12?"
+                "Had",
+                "Have",
+                "If",
+                "Should"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long does the flight take in sector 12?",
-            "hint": "'Six hours' is a duration, requiring 'How long'. (Sector 12 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 12]."
+            "correctAnswer": "Had",
+            "hint": "Inverted third conditional: 'Had I known' = 'If I had known' - formal literary inversion.",
+            "explanation": "'Had I known' = 'If I had known' - the auxiliary 'had' inverts with the subject to form an elegant third conditional without 'if'. This is common in formal and literary English. 'Have I known' uses the wrong tense."
         },
         {
             "id": "qf_l132_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He left because it was late in sector 12.",
-            "sentence": "He left because it was late in sector 12.",
+            "question": "_____ hard she tries, she always struggles with public speaking.",
+            "sentence": "_____ hard she tries, she always struggles with public speaking.",
             "options": [
-                "Why did he leave in sector 12?",
-                "When did he leave in sector 12?",
-                "Where did he leave in sector 12?",
-                "How did he leave in sector 12?"
+                "However",
+                "Whatever",
+                "Whenever",
+                "No matter"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why did he leave in sector 12?",
-            "hint": "'Because it was late' indicates a reason, requiring 'Why'. (Sector 12 calibration)",
-            "explanation": "Use 'Why' for reasons. [Verified in sector 12]."
+            "correctAnswer": "However",
+            "hint": "'However + adjective/adverb + subject + verb' - concessive adverb clause.",
+            "explanation": "'However hard' = 'no matter how hard' - it concedes the effort while denying the expected result. 'Whatever' introduces noun clauses or 'whatever + noun'. 'Whenever' relates to time. 'No matter' needs 'how' after it: 'No matter how hard'."
         },
         {
             "id": "qf_l132_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They are travelling by capsule in sector 12.",
-            "sentence": "They are travelling by capsule in sector 12.",
+            "question": "_____ you look at it, the results are the same.",
+            "sentence": "_____ you look at it, the results are the same.",
             "options": [
-                "How are they travelling in sector 12?",
-                "Why are they travelling in sector 12?",
-                "Where are they travelling in sector 12?",
-                "When are they travelling in sector 12?"
+                "Whichever way",
+                "However",
+                "Whatever",
+                "Whichever"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How are they travelling in sector 12?",
-            "hint": "'By capsule' is a means of transport. (Sector 12 calibration)",
-            "explanation": "Use 'How' for transportation methods. [Verified in sector 12]."
+            "correctAnswer": "Whichever way",
+            "hint": "'Whichever way' = from any perspective - selecting between options.",
+            "explanation": "'Whichever way you look at it' = 'from any perspective'. 'However you look at it' is also possible. 'Whatever you look at it' is grammatically incorrect - 'whatever' needs a noun after it. 'Whichever' alone needs a noun."
         },
         {
             "id": "qf_l132_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "This fuel costs fifty coins in sector 12.",
-            "sentence": "This fuel costs fifty coins in sector 12.",
+            "question": "_____ she goes, she makes friends easily.",
+            "sentence": "_____ she goes, she makes friends easily.",
             "options": [
-                "How much does this fuel cost in sector 12?",
-                "How many does this fuel cost in sector 12?",
-                "What cost is this fuel in sector 12?",
-                "Why does this fuel cost in sector 12?"
+                "Wherever",
+                "However",
+                "Whenever",
+                "Whatever"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How much does this fuel cost in sector 12?",
-            "hint": "Uncountable cost/value requires 'How much'. (Sector 12 calibration)",
-            "explanation": "Use 'How much' for costs. [Verified in sector 12]."
+            "correctAnswer": "Wherever",
+            "hint": "'Wherever' = 'in any place' - general place clause.",
+            "explanation": "'Wherever she goes' = 'in whatever place she goes'. 'Whenever' refers to time. 'However' modifies adjectives/adverbs. 'Whatever' introduces noun clauses about things, not places."
         },
         {
             "id": "qf_l133_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She arrives at 6 PM in sector 12.",
-            "sentence": "She arrives at 6 PM in sector 12.",
+            "question": "She _____ having made the decision too quickly.",
+            "sentence": "She _____ having made the decision too quickly.",
             "options": [
-                "What time does she arrive in sector 12?",
-                "Where does she arrive in sector 12?",
-                "Why does she arrive in sector 12?",
-                "Who does she arrive in sector 12?"
+                "admitted",
+                "apologized",
+                "insisted",
+                "denied"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "What time does she arrive in sector 12?",
-            "hint": "'At 6 PM' represents a time, requiring 'What time' or 'When'. (Sector 12 calibration)",
-            "explanation": "Use 'What time' for specific hours. [Verified in sector 12]."
+            "correctAnswer": "admitted",
+            "hint": "'Admit + gerund' = confess to doing. 'Deny + gerund' = claim not to have done it.",
+            "explanation": "'Admit + gerund' means to confess to doing something. 'Denied having made' = claimed she didn't make it. 'Apologized for having made' is also possible but changes the nuance. 'Insist' takes a 'that' clause, not a gerund directly."
         },
         {
             "id": "qf_l133_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She wants a coffee in sector 12.",
-            "sentence": "She wants a coffee in sector 12.",
+            "question": "He _____ the board that the project was on track.",
+            "sentence": "He _____ the board that the project was on track.",
             "options": [
-                "What does she want in sector 12?",
-                "Who does she want in sector 12?",
-                "Why does she want in sector 12?",
-                "Where does she want in sector 12?"
+                "assured",
+                "insisted to",
+                "promised to",
+                "confirmed to"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "What does she want in sector 12?",
-            "hint": "'A coffee' is a thing, requiring 'What'. (Sector 12 calibration)",
-            "explanation": "Use 'What' for things. [Verified in sector 12]."
+            "correctAnswer": "assured",
+            "hint": "'Assure + object + that' - 'assure' takes a direct person object + that-clause.",
+            "explanation": "'Assure + person + that + clause': 'assured the board that...' 'Insist' takes 'that' without a person object. 'Promise + person + that' is also possible but sounds less formal. 'Confirmed to the board that' is grammatically possible but 'assured' is more precise here."
         },
         {
             "id": "qf_l133_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They practice three times a day in sector 12.",
-            "sentence": "They practice three times a day in sector 12.",
+            "question": "The judge warned the defendant _____ interrupt the proceedings.",
+            "sentence": "The judge warned the defendant _____ interrupt the proceedings.",
             "options": [
-                "How often do they practice in sector 12?",
-                "How long do they practice in sector 12?",
-                "When do they practice in sector 12?",
-                "Where do they practice in sector 12?"
+                "not to",
+                "to not",
+                "against",
+                "from"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How often do they practice in sector 12?",
-            "hint": "'Three times a day' is a frequency. (Sector 12 calibration)",
-            "explanation": "Use 'How often' for frequencies. [Verified in sector 12]."
+            "correctAnswer": "not to",
+            "hint": "'Warn + object + not to + base verb' is the standard reporting structure for negative commands.",
+            "explanation": "'Warn + object + not to + base verb': 'warned the defendant not to interrupt'. 'Warn against + gerund' is also grammatical: 'warned against interrupting'. 'To not' (split infinitive) is less standard with 'warn'. 'Warn from' is not a standard construction."
         },
         {
             "id": "qf_l134_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They went to the space base in sector 12.",
-            "sentence": "They went to the space base in sector 12.",
+            "question": "The findings _____ that further research is needed.",
+            "sentence": "The findings _____ that further research is needed.",
             "options": [
-                "Where did they go in sector 12?",
-                "Why did they go in sector 12?",
-                "What did they go in sector 12?",
-                "When did they go in sector 12?"
+                "suggest",
+                "say",
+                "tell",
+                "speak"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where did they go in sector 12?",
-            "hint": "'To the space base' is a destination/location. (Sector 12 calibration)",
-            "explanation": "Use 'Where' for destinations. [Verified in sector 12]."
+            "correctAnswer": "suggest",
+            "hint": "'Findings suggest' - formal academic collocation; 'say/tell' require a human speaker.",
+            "explanation": "'Suggest' is the standard academic verb for presenting evidence-based conclusions: 'findings suggest, data suggest, results suggest'. 'Say' and 'tell' require a human speaker. 'Speak' would need 'to': 'the findings speak to the need for...'"
         },
         {
             "id": "qf_l134_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He chose the red wire in sector 12.",
-            "sentence": "He chose the red wire in sector 12.",
+            "question": "This research _____ the gap in our understanding of climate change.",
+            "sentence": "This research _____ the gap in our understanding of climate change.",
             "options": [
-                "Which wire did he choose in sector 12?",
-                "What wire does he choose in sector 12?",
-                "Who chose the wire in sector 12?",
-                "Why did he choose the wire in sector 12?"
+                "addresses",
+                "speaks to",
+                "fills",
+                "resolves"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Which wire did he choose in sector 12?",
-            "hint": "Choosing from a limited set requires 'Which'. (Sector 12 calibration)",
-            "explanation": "Use 'Which' for selection. [Verified in sector 12]."
+            "correctAnswer": "addresses",
+            "hint": "'Addresses a gap' - standard academic collocation for identifying and treating a research problem.",
+            "explanation": "'Address a gap in knowledge/research' is the standard academic collocation. 'Fill a gap' is also used. 'Speaks to' is more informal. 'Resolves a gap' is not standard - you 'resolve a problem or dispute', not a 'gap'."
         },
         {
             "id": "qf_l134_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She walked five miles in sector 12.",
-            "sentence": "She walked five miles in sector 12.",
+            "question": "The study _____ to determine the most effective treatment.",
+            "sentence": "The study _____ to determine the most effective treatment.",
             "options": [
-                "How far did she walk in sector 12?",
-                "How long did she walk in sector 12?",
-                "Where did she walk in sector 12?",
-                "Why did she walk in sector 12?"
+                "sought",
+                "tried",
+                "looked",
+                "aimed"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far did she walk in sector 12?",
-            "hint": "'Five miles' is a distance. (Sector 12 calibration)",
-            "explanation": "Use 'How far' for distances. [Verified in sector 12]."
+            "correctAnswer": "sought",
+            "hint": "'Sought to + infinitive' - formal past tense of 'seek', meaning aimed to accomplish.",
+            "explanation": "'Sought to + base verb' is the past tense of 'seek to': formal academic expression meaning aimed. 'Aimed to' is also valid. 'Tried to' is less formal. 'Looked to' means 'expected from', which is different."
         },
         {
             "id": "qf_l135_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He is talking to the commander in sector 12.",
-            "sentence": "He is talking to the commander in sector 12.",
+            "question": "Identify the error: 'Despite of the rain, they continued working.'",
+            "sentence": "Identify the error: 'Despite of the rain, they continued working.'",
             "options": [
-                "Who is he talking to in sector 12?",
-                "What is he talking to in sector 12?",
-                "Why is he talking to in sector 12?",
-                "Where is he talking in sector 12?"
+                "'Despite of' → 'Despite'",
+                "'continued' → 'have continued'",
+                "'the rain' → 'it was raining'",
+                "'working' → 'to work'"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Who is he talking to in sector 12?",
-            "hint": "'The commander' is a person, requiring 'Who'. (Sector 12 calibration)",
-            "explanation": "Use 'Who' for people. [Verified in sector 12]."
+            "correctAnswer": "'Despite of' → 'Despite'",
+            "hint": "'Despite' is a preposition that does not take 'of'. 'In spite of' (with 'of') is the equivalent.",
+            "explanation": "'Despite' is never followed by 'of'. It is 'despite the rain' (no 'of') or 'in spite of the rain' (with 'of'). 'Despite of' combines both forms incorrectly and is a common advanced-learner error."
         },
         {
             "id": "qf_l135_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They called the security guard in sector 12.",
-            "sentence": "They called the security guard in sector 12.",
+            "question": "Identify the error: 'She is used to work late every night.'",
+            "sentence": "Identify the error: 'She is used to work late every night.'",
             "options": [
-                "Who did they call in sector 12?",
-                "What did they call in sector 12?",
-                "Why did they call in sector 12?",
-                "Where did they call in sector 12?"
+                "'to work' → 'to working'",
+                "'is used' → 'used'",
+                "'every' → 'each'",
+                "'late' → 'lately'"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Who did they call in sector 12?",
-            "hint": "'The security guard' is a person. (Sector 12 calibration)",
-            "explanation": "Use 'Who' for human objects. [Verified in sector 12]."
+            "correctAnswer": "'to work' → 'to working'",
+            "hint": "'Be used to' = accustomed to - always followed by a noun or gerund, not an infinitive.",
+            "explanation": "'Be used to + gerund/noun' means accustomed to: 'She is used to working late.' The infinitive 'to work' creates 'used to work' (past habit), a completely different structure requiring no 'is': 'She used to work late' = she worked late regularly in the past."
         },
         {
             "id": "qf_l135_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He has been waiting for an hour in sector 12.",
-            "sentence": "He has been waiting for an hour in sector 12.",
+            "question": "Identify the error: 'Neither the director nor the producers was available for comment.'",
+            "sentence": "Identify the error: 'Neither the director nor the producers was available for comment.'",
             "options": [
-                "How long has he been waiting in sector 12?",
-                "When has he been waiting in sector 12?",
-                "Why has he been waiting in sector 12?",
-                "Where has he been waiting in sector 12?"
+                "'was' → 'were'",
+                "'the director' → 'the directors'",
+                "'available' → 'availably'",
+                "'for comment' → 'for commenting'"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long has he been waiting in sector 12?",
-            "hint": "'For an hour' is a duration. (Sector 12 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 12]."
+            "correctAnswer": "'was' → 'were'",
+            "hint": "With 'neither...nor', the verb agrees with the nearest subject ('the producers' - plural).",
+            "explanation": "With 'neither...nor' and 'either...or', the verb agrees with the subject nearest to it. 'The producers' (plural) is closest, so 'were' is correct. If the order were reversed ('neither the producers nor the director'), 'was' would be correct."
         },
         {
             "id": "qf_l136_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is crying due to fear in sector 12.",
-            "sentence": "She is crying due to fear in sector 12.",
+            "question": "_____, the CEO announced the merger at the press conference.",
+            "sentence": "_____, the CEO announced the merger at the press conference.",
             "options": [
-                "Why is she crying in sector 12?",
-                "How is she crying in sector 12?",
-                "Where is she crying in sector 12?",
-                "When is she crying in sector 12?"
+                "A lifelong entrepreneur",
+                "Being a lifelong entrepreneur",
+                "As a lifelong entrepreneur was",
+                "She, a lifelong entrepreneur,"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why is she crying in sector 12?",
-            "hint": "'Due to fear' is a reason. (Sector 12 calibration)",
-            "explanation": "Use 'Why' for reasons. [Verified in sector 12]."
+            "correctAnswer": "A lifelong entrepreneur",
+            "hint": "Fronted appositive noun phrase must refer to the sentence's subject.",
+            "explanation": "A fronted appositive noun phrase ('A lifelong entrepreneur') renames the subject ('the CEO'). No verb is needed in the appositive. 'Being a lifelong entrepreneur' is a participial clause - a different structure."
         },
         {
             "id": "qf_l136_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The motor failed due to heat in sector 12.",
-            "sentence": "The motor failed due to heat in sector 12.",
+            "question": "Her voice _____, she delivered the speech without a pause.",
+            "sentence": "Her voice _____, she delivered the speech without a pause.",
             "options": [
-                "Why did the motor fail in sector 12?",
-                "How did the motor fail in sector 12?",
-                "When did the motor fail in sector 12?",
-                "Where did the motor fail in sector 12?"
+                "steady",
+                "was steady",
+                "steadily",
+                "steadied"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Why did the motor fail in sector 12?",
-            "hint": "'Due to heat' represents a cause. (Sector 12 calibration)",
-            "explanation": "Use 'Why' for causes. [Verified in sector 12]."
+            "correctAnswer": "steady",
+            "hint": "Absolute phrase: 'Her voice steady' = 'with her voice being steady' - adjective, no verb needed.",
+            "explanation": "An absolute phrase uses a noun + adjective (or participle) without a finite verb: 'Her voice steady, she...' Adding 'was' creates a separate clause (comma splice). 'Steadily' is an adverb and cannot predicate 'voice' in this structure."
         },
         {
             "id": "qf_l136_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The base is ten miles away in sector 12.",
-            "sentence": "The base is ten miles away in sector 12.",
+            "question": "The report, _____ in three languages, reached a global audience.",
+            "sentence": "The report, _____ in three languages, reached a global audience.",
             "options": [
-                "How far is the base in sector 12?",
-                "How long is the base in sector 12?",
-                "Where is the base in sector 12?",
-                "When is the base in sector 12?"
+                "published",
+                "publishing",
+                "which published",
+                "that was published"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far is the base in sector 12?",
-            "hint": "'Ten miles away' is a distance. (Sector 12 calibration)",
-            "explanation": "Use 'How far' for distances. [Verified in sector 12]."
+            "correctAnswer": "published",
+            "hint": "Reduced non-defining relative clause: 'published in three languages' = 'which was published...'",
+            "explanation": "'Published in three languages' reduces the non-defining relative clause 'which was published in three languages'. The past participle reduces a passive relative clause. 'Publishing' (active participle) would mean the report published something - logically wrong."
         },
         {
             "id": "qf_l137_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They met at the shuttle dock in sector 12.",
-            "sentence": "They met at the shuttle dock in sector 12.",
+            "question": "She _____ the train - there were no delays, but she still arrived late.",
+            "sentence": "She _____ the train - there were no delays, but she still arrived late.",
             "options": [
-                "Where did they meet in sector 12?",
-                "When did they meet in sector 12?",
-                "What did they meet in sector 12?",
-                "Who did they meet in sector 12?"
+                "could have caught",
+                "could catch",
+                "must have caught",
+                "should have caught"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where did they meet in sector 12?",
-            "hint": "'At the shuttle dock' is a location. (Sector 12 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 12]."
+            "correctAnswer": "could have caught",
+            "hint": "'Could have + past participle' = it was possible but didn't happen.",
+            "explanation": "'Could have caught' means catching the train was possible but didn't happen. 'Must have caught' would mean we're almost certain she caught it (deduction). 'Should have caught' implies obligation."
         },
         {
             "id": "qf_l137_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She lives in the capital in sector 12.",
-            "sentence": "She lives in the capital in sector 12.",
+            "question": "He's not answering his phone. He _____ asleep.",
+            "sentence": "He's not answering his phone. He _____ asleep.",
             "options": [
-                "Where does she live in sector 12?",
-                "When does she live in sector 12?",
-                "Why does she live in sector 12?",
-                "What does she live in sector 12?"
+                "might be",
+                "might have been",
+                "should be",
+                "could have been"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where does she live in sector 12?",
-            "hint": "'In the capital' is a location. (Sector 12 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 12]."
+            "correctAnswer": "might be",
+            "hint": "'Might be' = present speculation about a current state.",
+            "explanation": "'Might be' speculates about a current state (he is perhaps asleep now). 'Might have been' speculates about a past state. Since he's not answering now, the speculation is about the present."
         },
         {
             "id": "qf_l137_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They visit the hub weekly in sector 12.",
-            "sentence": "They visit the hub weekly in sector 12.",
+            "question": "She _____ the announcement - it was all over the news.",
+            "sentence": "She _____ the announcement - it was all over the news.",
             "options": [
-                "How often do they visit the hub in sector 12?",
-                "How long do they visit the hub in sector 12?",
-                "When do they visit the hub in sector 12?",
-                "Where do they visit the hub in sector 12?"
+                "must have seen",
+                "should have seen",
+                "could have seen",
+                "might have seen"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How often do they visit the hub in sector 12?",
-            "hint": "'Weekly' is a frequency. (Sector 12 calibration)",
-            "explanation": "Use 'How often' for frequency queries. [Verified in sector 12]."
+            "correctAnswer": "must have seen",
+            "hint": "'Must have + past participle' = strong past deduction based on clear evidence.",
+            "explanation": "'Must have seen' = almost certain past deduction from evidence (it was everywhere on the news). 'Could have seen' = it was possible. 'Might have seen' = less certain speculation. 'Should have seen' = the expected or right thing."
         },
         {
             "id": "qf_l138_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The launch is next Tuesday in sector 12.",
-            "sentence": "The launch is next Tuesday in sector 12.",
+            "question": "Which sentence best uses academic hedging?",
+            "sentence": "Which sentence best uses academic hedging?",
             "options": [
-                "When is the launch in sector 12?",
-                "Where is the launch in sector 12?",
-                "Why is the launch in sector 12?",
-                "What is the launch in sector 12?"
+                "The results suggest that regular exercise may reduce anxiety.",
+                "The results prove that regular exercise reduces anxiety.",
+                "Regular exercise definitely reduces anxiety, the results show.",
+                "The results say regular exercise will reduce anxiety."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When is the launch in sector 12?",
-            "hint": "'Next Tuesday' is a time. (Sector 12 calibration)",
-            "explanation": "Use 'When' for dates/times. [Verified in sector 12]."
+            "correctAnswer": "The results suggest that regular exercise may reduce anxiety.",
+            "hint": "Hedges ('suggest', 'may') show appropriate epistemic caution in academic writing.",
+            "explanation": "Academic writing uses hedging language ('suggest', 'may', 'appears to') to make claims appropriately cautious. 'Prove' and 'definitely' are too strong for empirical research. 'Say' is too informal. 'Will reduce' is too certain for a research finding."
         },
         {
             "id": "qf_l138_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "They wake up at sunrise in sector 12.",
-            "sentence": "They wake up at sunrise in sector 12.",
+            "question": "Which word hedges the claim most effectively? 'The treatment _____ effective in reducing symptoms.'",
+            "sentence": "Which word hedges the claim most effectively? 'The treatment _____ effective in reducing symptoms.'",
             "options": [
-                "When do they wake up in sector 12?",
-                "Why do they wake up in sector 12?",
-                "Where do they wake up in sector 12?",
-                "Who wakes up in sector 12?"
+                "appeared to be",
+                "was clearly",
+                "was definitely",
+                "proved"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "When do they wake up in sector 12?",
-            "hint": "'At sunrise' is a time point. (Sector 12 calibration)",
-            "explanation": "Use 'When' for time points. [Verified in sector 12]."
+            "correctAnswer": "appeared to be",
+            "hint": "'Appeared to be' softens the certainty - appropriate for research reporting.",
+            "explanation": "'Appeared to be' signals the researchers observed effectiveness without making an absolute claim. 'Was clearly' and 'was definitely' are too strong. 'Proved' implies certainty and is rarely appropriate in empirical reporting."
         },
         {
             "id": "qf_l138_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "This shield weighs ten tons in sector 12.",
-            "sentence": "This shield weighs ten tons in sector 12.",
+            "question": "Rewrite more formally: 'There might be some link between the two.'",
+            "sentence": "Rewrite more formally: 'There might be some link between the two.'",
             "options": [
-                "How much does this shield weigh in sector 12?",
-                "How many does this shield weigh in sector 12?",
-                "What is the weight in sector 12?",
-                "Why does it weigh in sector 12?"
+                "A tentative association may exist between the two phenomena.",
+                "The two things might maybe be linked.",
+                "Perhaps there could be some kind of link.",
+                "There is some connection between the two."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How much does this shield weigh in sector 12?",
-            "hint": "Weight is a quantity requiring 'How much'. (Sector 12 calibration)",
-            "explanation": "Use 'How much' for weights. [Verified in sector 12]."
+            "correctAnswer": "A tentative association may exist between the two phenomena.",
+            "hint": "Formal hedging: nominalisation + 'may' + precise vocabulary.",
+            "explanation": "Academic formal style uses nominalisation ('association' rather than 'link'), precise vocabulary ('phenomena' rather than 'things'), and appropriate hedges ('may exist'). The other options repeat informal language or lose the hedging entirely."
         },
         {
             "id": "qf_l139_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He solved the puzzle with a tool in sector 12.",
-            "sentence": "He solved the puzzle with a tool in sector 12.",
+            "question": "Identify the unclear reference: 'Sarah told Maria that she had made a mistake.'",
+            "sentence": "Identify the unclear reference: 'Sarah told Maria that she had made a mistake.'",
             "options": [
-                "How did he solve the puzzle in sector 12?",
-                "Why did he solve the puzzle in sector 12?",
-                "Where did he solve the puzzle in sector 12?",
-                "Who solved the puzzle in sector 12?"
+                "'she' is ambiguous - it could refer to Sarah or Maria.",
+                "'she' clearly refers to Sarah.",
+                "'she' clearly refers to Maria.",
+                "The sentence is incorrect - 'she' should be 'her'."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How did he solve the puzzle in sector 12?",
-            "hint": "'With a tool' is a manner or method. (Sector 12 calibration)",
-            "explanation": "Use 'How' for methods. [Verified in sector 12]."
+            "correctAnswer": "'she' is ambiguous - it could refer to Sarah or Maria.",
+            "hint": "When two people of the same gender appear, third-person pronouns become ambiguous.",
+            "explanation": "In this sentence, 'she' could refer to either Sarah or Maria. This is pronoun reference ambiguity. To clarify, rewrite: 'Sarah told Maria that Maria had made a mistake' or use a reflexive: 'Sarah admitted to Maria that she herself had made a mistake'. Grammatically, 'she' is correct - the problem is unclear reference."
         },
         {
             "id": "qf_l139_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "He fixed it using tape in sector 12.",
-            "sentence": "He fixed it using tape in sector 12.",
+            "question": "Which sentence has the clearest pronoun reference?",
+            "sentence": "Which sentence has the clearest pronoun reference?",
             "options": [
-                "How did he fix it in sector 12?",
-                "Why did he fix it in sector 12?",
-                "Where did he fix it in sector 12?",
-                "When did he fix it in sector 12?"
+                "After the manager interviewed the candidate, the manager offered her the job.",
+                "After interviewing the candidate, she was offered the job.",
+                "She interviewed the candidate and offered her the job.",
+                "After the manager interviewed the candidate, she got the job."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How did he fix it in sector 12?",
-            "hint": "'Using tape' is a method. (Sector 12 calibration)",
-            "explanation": "Use 'How' for methods. [Verified in sector 12]."
+            "correctAnswer": "After the manager interviewed the candidate, the manager offered her the job.",
+            "hint": "Clarity in pronoun reference sometimes requires repeating the noun.",
+            "explanation": "The clearest version explicitly repeats 'the manager' to avoid ambiguity. The other versions use 'she' with two possible antecedents (manager/candidate), creating confusion."
         },
         {
             "id": "qf_l139_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The trip lasts ten days in sector 12.",
-            "sentence": "The trip lasts ten days in sector 12.",
+            "question": "Choose the sentence that avoids a dangling modifier:",
+            "sentence": "Choose the sentence that avoids a dangling modifier:",
             "options": [
-                "How long does the trip last in sector 12?",
-                "When does the trip last in sector 12?",
-                "Where does the trip last in sector 12?",
-                "Why does the trip last in sector 12?"
+                "Having reviewed the data, the team drew their conclusions.",
+                "Having reviewed the data, conclusions were drawn.",
+                "The conclusions were drawn, having reviewed the data.",
+                "Having been reviewed, the team drew their conclusions."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How long does the trip last in sector 12?",
-            "hint": "'Ten days' is a duration. (Sector 12 calibration)",
-            "explanation": "Use 'How long' for durations. [Verified in sector 12]."
+            "correctAnswer": "Having reviewed the data, the team drew their conclusions.",
+            "hint": "The participial phrase must logically relate to the subject of the main clause.",
+            "explanation": "A dangling modifier occurs when a participial phrase doesn't logically relate to the sentence's subject. 'Having reviewed the data, the team drew their conclusions' is correct - 'the team' reviewed the data. 'Having reviewed the data, conclusions were drawn' is dangling - conclusions can't review data."
         },
         {
             "id": "qf_l140_q1",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She is hiding under the deck in sector 12.",
-            "sentence": "She is hiding under the deck in sector 12.",
+            "question": "Not only _____ arrive late, but he also forgot the documents.",
+            "sentence": "Not only _____ arrive late, but he also forgot the documents.",
             "options": [
-                "Where is she hiding in sector 12?",
-                "What is she hiding in sector 12?",
-                "Why is she hiding in sector 12?",
-                "Who is she hiding in sector 12?"
+                "did he",
+                "he did",
+                "had he",
+                "was he"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Where is she hiding in sector 12?",
-            "hint": "'Under the deck' is a location. (Sector 12 calibration)",
-            "explanation": "Use 'Where' for locations. [Verified in sector 12]."
+            "correctAnswer": "did he",
+            "hint": "Negative adverbial inversion after 'Not only': 'Not only did he...'",
+            "explanation": "'Not only' at the start triggers inversion with the auxiliary that fits the tense. Simple past 'arrive' needs 'did': 'Not only did he arrive late...' 'Had he' would be past perfect. 'Was he' would be for a state or continuous."
         },
         {
             "id": "qf_l140_q2",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "She bought three crates in sector 12.",
-            "sentence": "She bought three crates in sector 12.",
+            "question": "The extent _____ the damage was worse than initially reported.",
+            "sentence": "The extent _____ the damage was worse than initially reported.",
             "options": [
-                "How many crates did she buy in sector 12?",
-                "How much crates did she buy in sector 12?",
-                "What did she buy in sector 12?",
-                "Why did she buy crates in sector 12?"
+                "to which",
+                "of which",
+                "in which",
+                "that"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How many crates did she buy in sector 12?",
-            "hint": "Countable quantity requires 'How many'. (Sector 12 calibration)",
-            "explanation": "Use 'How many' for countable items. [Verified in sector 12]."
+            "correctAnswer": "to which",
+            "hint": "'The extent to which' is the fixed academic noun + preposition + relative pronoun collocation.",
+            "explanation": "'The extent to which' is a fixed academic phrase: 'the extent to which X is true/severe'. 'The extent of which' would refer to the extent's quantity. 'The extent that' is sometimes used informally but 'to which' is the standard formal form."
         },
         {
             "id": "qf_l140_q3",
-            "instruction": "CRANK THE INQUIRY",
-            "difficulty": 4,
+            "instruction": "Turn the statement into a question.",
             "subtype": "questionFormatter",
             "interactionType": "Crank Logic",
-            "question": "The colony is very distant in sector 12.",
-            "sentence": "The colony is very distant in sector 12.",
+            "question": "She was, _____, one of the most gifted scientists of her generation.",
+            "sentence": "She was, _____, one of the most gifted scientists of her generation.",
             "options": [
-                "How far is the colony in sector 12?",
-                "Where is the colony in sector 12?",
-                "What is the colony like in sector 12?",
-                "Why is the colony distant in sector 12?"
+                "by all accounts",
+                "in all accounts",
+                "for all accounts",
+                "with all accounts"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "How far is the colony in sector 12?",
-            "hint": "'Very distant' is a distance/degree. (Sector 12 calibration)",
-            "explanation": "Use 'How far' for distance. [Verified in sector 12]."
+            "correctAnswer": "by all accounts",
+            "hint": "'By all accounts' = according to everyone's reports - fixed prepositional idiom.",
+            "explanation": "'By all accounts' is a fixed idiomatic expression meaning 'according to everyone who knows'. 'In all accounts', 'for all accounts', and 'with all accounts' are not standard English expressions. The correct preposition is always 'by'."
         }
     ]
 }
