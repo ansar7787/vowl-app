@@ -1,4 +1,4 @@
-{
+﻿{
     "gameType": "directIndirectSpeech",
     "batchIndex": 1,
     "levels": "1-10",
@@ -6,7 +6,6 @@
         {
             "id": "dis_l1_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: He said, 'I am ready.'",
@@ -18,13 +17,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "He said that he was ready.",
             "sentence": "He said, 'I am ready.'",
-            "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-            "explanation": "In reported speech, we usually move the tense one step back into the past."
+            "hint": "Shift 'am' one step back in time to 'was'.",
+            "explanation": "In reported speech, present simple ('am') shifts to past simple ('was')."
         },
         {
             "id": "dis_l1_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: She noted, 'I may come to the party.'",
@@ -36,13 +34,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "She noted that she might come to the party.",
             "sentence": "She noted, 'I may come to the party.'",
-            "hint": "'May' shifts to 'might'.",
-            "explanation": "'May' becomes 'might' in reported speech."
+            "hint": "The modal 'may' becomes 'might' in reported speech.",
+            "explanation": "'May' shifts to 'might' when backshifting modals in reported speech."
         },
         {
             "id": "dis_l1_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: She advised, 'You should see a doctor.'",
@@ -54,13 +51,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "She advised me to see a doctor.",
             "sentence": "She advised, 'You should see a doctor.'",
-            "hint": "Advice uses 'advised me to'.",
-            "explanation": "Advice is effectively reported using 'advised + object + to + infinitive'."
+            "hint": "Advice is reported with 'advised + object + to + infinitive'.",
+            "explanation": "When reporting advice, use 'advised + object + to-infinitive'. 'You should see' becomes 'advised me to see'."
         },
         {
             "id": "dis_l2_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: She told me, 'We will arrive soon.'",
@@ -72,13 +68,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "She told me that they would arrive soon.",
             "sentence": "She told me, 'We will arrive soon.'",
-            "hint": "Future becomes conditional.",
-            "explanation": "'Will' shifts to 'would' in reported speech."
+            "hint": "'Will' shifts to 'would', and 'we' changes to 'they' (she is excluded from 'we').",
+            "explanation": "'Will' becomes 'would' in reported speech. The pronoun 'we' shifts to 'they' because the speaker is reporting, not included."
         },
         {
             "id": "dis_l2_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: The teacher said, 'Finish your homework.'",
@@ -90,13 +85,12 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "The teacher told us to finish our homework.",
             "sentence": "The teacher said, 'Finish your homework.'",
-            "hint": "Imperative uses 'to + verb'.",
-            "explanation": "Commands are reported using 'told + object + to + infinitive'."
+            "hint": "Imperatives (commands) are reported using 'told + object + to + infinitive'.",
+            "explanation": "Commands are reported with 'told + object + to + infinitive'. 'Finish your homework' becomes 'told us to finish our homework'."
         },
         {
             "id": "dis_l2_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: He said, 'I must finish this report today.'",
@@ -108,13 +102,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "He said that he had to finish that report that day.",
             "sentence": "He said, 'I must finish this report today.'",
-            "hint": "'Must' often shifts to 'had to'.",
-            "explanation": "The correct reported form is: 'He said that he had to finish that report that day.'"
+            "hint": "'Must' shifts to 'had to', 'this' shifts to 'that', and 'today' shifts to 'that day'.",
+            "explanation": "'Must' becomes 'had to', deictic 'this' becomes 'that', and the time reference 'today' shifts to 'that day'."
         },
         {
             "id": "dis_l3_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: The commander announced, 'I have finished the test.'",
@@ -126,13 +119,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "The commander announced that he had finished the test.",
             "sentence": "The commander announced, 'I have finished the test.'",
-            "hint": "Present perfect becomes past perfect.",
-            "explanation": "'Have finished' shifts to 'had finished'."
+            "hint": "Present perfect ('have finished') shifts to past perfect ('had finished').",
+            "explanation": "'Have finished' (present perfect) shifts to 'had finished' (past perfect) in reported speech."
         },
         {
             "id": "dis_l3_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: He asked, 'Where are you going?'",
@@ -144,13 +136,12 @@
             "correctAnswerIndex": 2,
             "correctAnswer": "He asked where I was going.",
             "sentence": "He asked, 'Where are you going?'",
-            "hint": "Question word followed by statement order.",
-            "explanation": "In reported questions, we use the word order of a statement."
+            "hint": "In reported questions, use statement word order: subject before verb.",
+            "explanation": "Reported questions use statement word order (subject + verb), not question order. 'Are you going' becomes 'I was going'."
         },
         {
             "id": "dis_l3_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: She said, 'I might come if I have time.'",
@@ -162,13 +153,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "She said that she might come if she had time.",
             "sentence": "She said, 'I might come if I have time.'",
-            "hint": "'Might' stays as 'might'; check the conditional.",
-            "explanation": "The correct reported form is: 'She said that she might come if she had time.'"
+            "hint": "'Might' stays as 'might'; the present 'have' in the conditional shifts to 'had'.",
+            "explanation": "'Might' does not shift further. In the conditional clause, 'have' (present simple) shifts to 'had' (past simple)."
         },
         {
             "id": "dis_l4_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: The pilot stated, 'The system is failing.'",
@@ -180,13 +170,12 @@
             "correctAnswerIndex": 2,
             "correctAnswer": "The pilot stated that the system was failing.",
             "sentence": "The pilot stated, 'The system is failing.'",
-            "hint": "Present continuous becomes past continuous.",
-            "explanation": "'Is failing' shifts to 'was failing'."
+            "hint": "Present continuous ('is failing') shifts to past continuous ('was failing').",
+            "explanation": "'Is failing' (present continuous) becomes 'was failing' (past continuous) in reported speech."
         },
         {
             "id": "dis_l4_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: She warned, 'Don't touch the wire.'",
@@ -198,13 +187,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "She warned me not to touch the wire.",
             "sentence": "She warned, 'Don't touch the wire.'",
-            "hint": "Negative imperative uses 'not to'.",
-            "explanation": "Reported negative commands use 'warned + object + not to + infinitive'."
+            "hint": "Negative imperatives are reported with 'warned + object + not to + infinitive'.",
+            "explanation": "Negative commands use 'warned/told + object + not to + infinitive'. 'Don't touch' becomes 'not to touch'."
         },
         {
             "id": "dis_l4_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: They said, 'We ought to leave early.'",
@@ -216,13 +204,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "They said that they ought to leave early.",
             "sentence": "They said, 'We ought to leave early.'",
-            "hint": "'Ought to' does not usually shift.",
-            "explanation": "'Ought to' remains 'ought to' in reported speech."
+            "hint": "'Ought to' does not change in reported speech.",
+            "explanation": "'Ought to' is one of the modal forms that remains unchanged in reported speech. It stays as 'ought to'."
         },
         {
             "id": "dis_l5_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: The doctor reported, 'I can help you.'",
@@ -234,13 +221,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "The doctor reported that he could help me.",
             "sentence": "The doctor reported, 'I can help you.'",
-            "hint": "Modal 'can' shifts to 'could'.",
-            "explanation": "'Can' shifts to 'could' in reported speech."
+            "hint": "'Can' shifts to 'could' in reported speech. Pronouns also shift.",
+            "explanation": "'Can' becomes 'could' in reported speech. 'I' changes to 'he' (the doctor) and 'you' changes to 'me'."
         },
         {
             "id": "dis_l5_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: They said, 'We are staying here.'",
@@ -252,13 +238,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "They said that they were staying there.",
             "sentence": "They said, 'We are staying here.'",
-            "hint": "'Here' shifts to 'there'.",
-            "explanation": "Deictic words like 'here' shift to 'there' in reported speech."
+            "hint": "'Here' (deictic word) shifts to 'there' in reported speech. The tense also shifts.",
+            "explanation": "Both the tense ('are' → 'were') and the deictic word ('here' → 'there') shift in reported speech."
         },
         {
             "id": "dis_l5_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: He promised, 'I will call you tomorrow.'",
@@ -270,13 +255,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "He promised that he would call me the next day.",
             "sentence": "He promised, 'I will call you tomorrow.'",
-            "hint": "'Tomorrow' shifts to 'the next day'.",
-            "explanation": "The correct reported form is: 'He promised that he would call me the next day.'"
+            "hint": "'Will' shifts to 'would', 'you' to 'me', and 'tomorrow' to 'the next day'.",
+            "explanation": "Multiple changes occur: 'will' → 'would', 'you' → 'me', and the time word 'tomorrow' → 'the next day'."
         },
         {
             "id": "dis_l6_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: The scientist explained, 'We saw the signal.'",
@@ -288,13 +272,12 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "The scientist explained that they had seen the signal.",
             "sentence": "The scientist explained, 'We saw the signal.'",
-            "hint": "Past simple becomes past perfect.",
-            "explanation": "'Saw' shifts to 'had seen'."
+            "hint": "Past simple ('saw') shifts to past perfect ('had seen').",
+            "explanation": "'Saw' (past simple) shifts to 'had seen' (past perfect) in reported speech."
         },
         {
             "id": "dis_l6_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: He asked her, 'Do you want some coffee?'",
@@ -306,13 +289,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "He asked her if she wanted some coffee.",
             "sentence": "He asked her, 'Do you want some coffee?'",
-            "hint": "Yes/No question with past shift.",
-            "explanation": "The correct reported form is: 'He asked her if she wanted some coffee.'"
+            "hint": "Yes/No questions use 'if' or 'whether'. The auxiliary 'do' disappears and tense shifts.",
+            "explanation": "Yes/No questions are reported with 'if/whether'. The auxiliary 'do' is dropped, and 'want' shifts to 'wanted'."
         },
         {
             "id": "dis_l6_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: She told him, 'I saw her two days ago.'",
@@ -324,13 +306,12 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "She told him that she had seen her two days before.",
             "sentence": "She told him, 'I saw her two days ago.'",
-            "hint": "'Ago' shifts to 'before'.",
-            "explanation": "The correct reported form is: 'She told him that she had seen her two days before.'"
+            "hint": "'Ago' shifts to 'before' in reported speech. Past simple also shifts to past perfect.",
+            "explanation": "'Saw' shifts to 'had seen' (past perfect) and 'ago' shifts to 'before' - both standard reported speech changes."
         },
         {
             "id": "dis_l7_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: He said, 'I'm going to the store.'",
@@ -342,13 +323,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "He said that he was going to the store.",
             "sentence": "He said, 'I'm going to the store.'",
-            "hint": "Present continuous shift.",
-            "explanation": "'I'm going' becomes 'he was going'."
+            "hint": "Present continuous ('I'm going') shifts to past continuous ('was going').",
+            "explanation": "'I'm going' (present continuous) becomes 'he was going' (past continuous). The pronoun 'I' shifts to 'he'."
         },
         {
             "id": "dis_l7_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: She asked, 'What time does the train leave?'",
@@ -360,13 +340,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "She asked what time the train left.",
             "sentence": "She asked, 'What time does the train leave?'",
-            "hint": "Wh- question word order shift.",
-            "explanation": "The correct reported form is: 'She asked what time the train left.'"
+            "hint": "In wh-questions, use statement word order. 'Does' disappears and tense shifts.",
+            "explanation": "In reported wh-questions, use statement order (no auxiliary 'does'). 'Leave' shifts to 'left'."
         },
         {
             "id": "dis_l7_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: They asked, 'Can we stay here tonight?'",
@@ -378,13 +357,12 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "They asked if they could stay there that night.",
             "sentence": "They asked, 'Can we stay here tonight?'",
-            "hint": "Shift 'here' and 'tonight'.",
-            "explanation": "The correct reported form is: 'They asked if they could stay there that night.'"
+            "hint": "'Can' → 'could', 'here' → 'there', and 'tonight' → 'that night'.",
+            "explanation": "Multiple shifts: 'can' → 'could', 'here' → 'there', and 'tonight' → 'that night'. Use 'if' and statement word order."
         },
         {
             "id": "dis_l8_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: She asked, 'Are you happy?'",
@@ -396,13 +374,12 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "She asked if I was happy.",
             "sentence": "She asked, 'Are you happy?'",
-            "hint": "Yes/No question uses 'if'.",
-            "explanation": "The correct reported form is: 'She asked if I was happy.'"
+            "hint": "Yes/No questions use 'if'. 'Are' shifts to 'was' and word order becomes subject + verb.",
+            "explanation": "Yes/No questions in reported speech use 'if', and the word order becomes subject-verb. 'Are' shifts to 'was'."
         },
         {
             "id": "dis_l8_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: The detective asked, 'Where were you last night?'",
@@ -414,13 +391,12 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "The detective asked where I had been the night before.",
             "sentence": "The detective asked, 'Where were you last night?'",
-            "hint": "Past simple shifts to past perfect.",
-            "explanation": "'Were' shifts to 'had been' in reported questions."
+            "hint": "'Were' shifts to 'had been' (past perfect), and 'last night' shifts to 'the night before'.",
+            "explanation": "Past simple 'were' shifts to past perfect 'had been'. 'Last night' becomes 'the night before'. Statement word order is used."
         },
         {
             "id": "dis_l8_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: He said, 'I wish I were rich.'",
@@ -432,13 +408,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "He said that he wished he were rich.",
             "sentence": "He said, 'I wish I were rich.'",
-            "hint": "Subjunctive mood in reported speech.",
-            "explanation": "The subjunctive 'were' often remains 'were' in reported speech after 'wish'."
+            "hint": "'Wish' shifts to 'wished'. The subjunctive 'were' remains 'were' in formal English.",
+            "explanation": "'Wish' shifts to 'wished'. The subjunctive form 'were' is typically retained in reported speech after 'wish'."
         },
         {
             "id": "dis_l9_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: They told us, 'We have already left.'",
@@ -450,13 +425,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "They told us that they had already left.",
             "sentence": "They told us, 'We have already left.'",
-            "hint": "Present perfect shift.",
-            "explanation": "'Have left' becomes 'had left'."
+            "hint": "Present perfect ('have left') shifts to past perfect ('had left').",
+            "explanation": "'Have left' (present perfect) shifts to 'had left' (past perfect) in reported speech. 'Already' stays in position."
         },
         {
             "id": "dis_l9_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: He told me, 'Open the window, please.'",
@@ -468,13 +442,12 @@
             "correctAnswerIndex": 1,
             "correctAnswer": "He asked me to open the window.",
             "sentence": "He told me, 'Open the window, please.'",
-            "hint": "Polite requests use 'asked me to'.",
-            "explanation": "A polite request is best reported using 'asked + object + to + infinitive'."
+            "hint": "A polite request ('please') is best reported with 'asked + object + to + infinitive'.",
+            "explanation": "When 'please' is used, it signals a request rather than a command. 'Asked me to open' is the natural reported form."
         },
         {
             "id": "dis_l9_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: She remarked, 'If I had seen the sign, I would have stopped.'",
@@ -486,13 +459,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "She remarked that if she had seen the sign, she would have stopped.",
             "sentence": "She remarked, 'If I had seen the sign, I would have stopped.'",
-            "hint": "Third conditional does not shift further back.",
-            "explanation": "The third conditional 'had seen / would have stopped' remains unchanged."
+            "hint": "The third conditional ('had seen / would have stopped') cannot shift back further.",
+            "explanation": "Third conditional structures ('had seen / would have stopped') are already in past perfect and conditional perfect - they do not shift further in reported speech."
         },
         {
             "id": "dis_l10_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: He stated, 'The project will be a success.'",
@@ -504,13 +476,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "He stated that the project would be a success.",
             "sentence": "He stated, 'The project will be a success.'",
-            "hint": "'Will' shifts to 'would'.",
-            "explanation": "'Will be' shifts to 'would be'."
+            "hint": "'Will' shifts to 'would' in reported speech.",
+            "explanation": "'Will be' shifts to 'would be' in reported speech. The subject stays as 'the project'."
         },
         {
             "id": "dis_l10_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: The officer ordered, 'Stand up immediately.'",
@@ -522,13 +493,12 @@
             "correctAnswerIndex": 0,
             "correctAnswer": "The officer ordered us to stand up immediately.",
             "sentence": "The officer ordered, 'Stand up immediately.'",
-            "hint": "Order uses 'ordered + to + verb'.",
-            "explanation": "The correct reported form is: 'The officer ordered us to stand up immediately.'"
+            "hint": "Commands use 'ordered + object + to + infinitive'.",
+            "explanation": "When reporting orders, use 'ordered + object + to + infinitive'. 'Stand up' becomes 'to stand up'."
         },
         {
             "id": "dis_l10_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 1,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
             "question": "Convert to reported speech: The captain shouted, 'Abandon ship at once!'",
@@ -540,8 +510,8 @@
             "correctAnswerIndex": 2,
             "correctAnswer": "The captain ordered us to abandon ship immediately.",
             "sentence": "The captain shouted, 'Abandon ship at once!'",
-            "hint": "Urgent command with adverb shift.",
-            "explanation": "The correct reported form is: 'The captain ordered us to abandon ship immediately.'"
+            "hint": "Urgent commands use 'ordered + object + to + infinitive'. 'At once' can shift to 'immediately'.",
+            "explanation": "'Shouted' signals urgency; the reported form uses 'ordered + us + to + infinitive'. 'At once' naturally becomes 'immediately' in formal reported speech."
         }
     ]
 }

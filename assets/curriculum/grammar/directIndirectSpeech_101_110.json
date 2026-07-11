@@ -1,4 +1,4 @@
-{
+﻿{
     "gameType": "directIndirectSpeech",
     "batchIndex": 11,
     "levels": "101-110",
@@ -6,542 +6,512 @@
         {
             "id": "dis_l101_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): He said, 'I am ready.'",
+            "question": "Convert to reported speech: The analyst said, 'The company's shares have fallen sharply this week.'",
             "options": [
-                "He said that he was ready.",
-                "He said that he is ready.",
-                "He said that I was ready."
+                "The analyst said the company's shares had fallen sharply that week.",
+                "The analyst said the company's shares fell sharply this week.",
+                "The analyst said the company's shares had been falling sharply that week."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he was ready.",
-            "sentence": "He said, 'I am ready.'",
-            "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was'). (Log 10 calibration)",
-            "explanation": "In reported speech, we usually move the tense one step back into the past. [Verified in calibration unit 10]."
+            "correctAnswer": "The analyst said the company's shares had fallen sharply that week.",
+            "sentence": "The analyst said, 'The company's shares have fallen sharply this week.'",
+            "hint": "'Have fallen' → 'had fallen'. 'This week' → 'that week'. The simple perfect is preserved.",
+            "explanation": "'Have fallen' → 'had fallen'. 'This week' → 'that week'. Do not change the tense aspect from simple to continuous."
         },
         {
             "id": "dis_l101_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): She noted, 'I may come to the party.'",
+            "question": "Convert to reported speech: She asked, 'Does anyone know when the next train to Oxford departs?'",
             "options": [
-                "She noted that she might come to the party.",
-                "She noted that she may come to the party.",
-                "She noted that she would come to the party."
+                "She asked if anyone knew when the next train to Oxford departed.",
+                "She asked does anyone know when the next train to Oxford departs.",
+                "She asked if anyone knew when the next train to Oxford departs."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She noted that she might come to the party.",
-            "sentence": "She noted, 'I may come to the party.'",
-            "hint": "'May' shifts to 'might'. (Log 10 calibration)",
-            "explanation": "'May' becomes 'might' in reported speech. [Verified in calibration unit 10]."
+            "correctAnswer": "She asked if anyone knew when the next train to Oxford departed.",
+            "sentence": "She asked, 'Does anyone know when the next train to Oxford departs?'",
+            "hint": "Both verbs shift: 'knows' → 'knew', 'departs' → 'departed'. Use 'if' and statement order.",
+            "explanation": "'Does anyone know' → 'anyone knew'. The embedded verb 'departs' also shifts to 'departed'. Both verbs must shift."
         },
         {
             "id": "dis_l101_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): She advised, 'You should see a doctor.'",
+            "question": "Convert to reported speech: The careers advisor said, 'Ensure your CV is tailored to each role you apply for.'",
             "options": [
-                "She advised me to see a doctor.",
-                "She advised that I see a doctor.",
-                "She said I should see a doctor."
+                "The careers advisor told graduates to ensure their CVs were tailored to each role they applied for.",
+                "The careers advisor told graduates to ensure their CVs are tailored to each role you apply for.",
+                "The careers advisor said ensure your CV is tailored to each role you apply for."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She advised me to see a doctor.",
-            "sentence": "She advised, 'You should see a doctor.'",
-            "hint": "Advice uses 'advised me to'. (Log 10 calibration)",
-            "explanation": "Advice is effectively reported using 'advised + object + to + infinitive'. [Verified in calibration unit 10]."
+            "correctAnswer": "The careers advisor told graduates to ensure their CVs were tailored to each role they applied for.",
+            "sentence": "The careers advisor said, 'Ensure your CV is tailored to each role you apply for.'",
+            "hint": "Imperative with embedded passive clause and relative clause. All verbs and pronouns must shift.",
+            "explanation": "'Ensure' → 'to ensure'. 'Is tailored' → 'were tailored'. 'Apply' → 'applied'. 'Your' → 'their'. 'You' → 'they'."
         },
         {
             "id": "dis_l102_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): She told me, 'We will arrive soon.'",
+            "question": "Convert to reported speech: She said, 'I hadn't expected the project to be so challenging.'",
             "options": [
-                "She told me that they would arrive soon.",
-                "She told me that they will arrive soon.",
-                "She told me that we would arrive soon."
+                "She said she hadn't expected the project to be so challenging.",
+                "She said she didn't expect the project to be so challenging.",
+                "She said she hadn't been expecting the project to be so challenging."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She told me that they would arrive soon.",
-            "sentence": "She told me, 'We will arrive soon.'",
-            "hint": "Future becomes conditional. (Log 10 calibration)",
-            "explanation": "'Will' shifts to 'would' in reported speech. [Verified in calibration unit 10]."
+            "correctAnswer": "She said she hadn't expected the project to be so challenging.",
+            "sentence": "She said, 'I hadn't expected the project to be so challenging.'",
+            "hint": "Past perfect 'hadn't expected' cannot shift further. It remains unchanged in reported speech.",
+            "explanation": "'Hadn't expected' is already past perfect. In reported speech, past perfect does not shift further - it stays as 'hadn't expected'."
         },
         {
             "id": "dis_l102_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): The teacher said, 'Finish your homework.'",
+            "question": "Convert to reported speech: The journalist asked, 'What steps are being taken to address the issue?'",
             "options": [
-                "The teacher said that we finished our homework.",
-                "The teacher told us to finish our homework.",
-                "The teacher said finish our homework."
+                "The journalist asked what steps were being taken to address the issue.",
+                "The journalist asked what steps are being taken to address the issue.",
+                "The journalist asked what steps had been taken to address the issue."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The teacher told us to finish our homework.",
-            "sentence": "The teacher said, 'Finish your homework.'",
-            "hint": "Imperative uses 'to + verb'. (Log 10 calibration)",
-            "explanation": "Commands are reported using 'told + object + to + infinitive'. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The journalist asked what steps were being taken to address the issue.",
+            "sentence": "The journalist asked, 'What steps are being taken to address the issue?'",
+            "hint": "Present continuous passive → past continuous passive. Not past perfect passive.",
+            "explanation": "'Are being taken' (present continuous passive) → 'were being taken' (past continuous passive). 'Had been taken' changes the aspect."
         },
         {
             "id": "dis_l102_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): He said, 'I must finish this report today.'",
+            "question": "Convert to reported speech: The editor said, 'Proofread everything twice before sending.'",
             "options": [
-                "He said that he had to finish that report that day.",
-                "He said that he must finish this report today.",
-                "He said that he has to finish that report that day."
+                "The editor insisted we proofread everything twice before sending.",
+                "The editor insisted to proofread everything twice before sending.",
+                "The editor insisted that proofread everything twice before sending."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he had to finish that report that day.",
-            "sentence": "He said, 'I must finish this report today.'",
-            "hint": "'Must' often shifts to 'had to'. (Log 10 calibration)",
-            "explanation": "The correct reported form is: 'He said that he had to finish that report that day.' [Verified in calibration unit 10]."
+            "correctAnswer": "The editor insisted we proofread everything twice before sending.",
+            "sentence": "The editor said, 'Proofread everything twice before sending.'",
+            "hint": "'Insist' takes 'that + subject + base verb' or 'on + -ing'. 'Insist to' is incorrect.",
+            "explanation": "'Insist' can be followed by 'that + subject + verb (base form)': 'insisted we proofread'. 'Insisted to proofread' is grammatically incorrect."
         },
         {
             "id": "dis_l103_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): The commander announced, 'I have finished the test.'",
+            "question": "Convert to reported speech: She said, 'The results are more promising than we had expected.'",
             "options": [
-                "The commander announced that he had finished the test.",
-                "The commander announced that he finished the test.",
-                "The commander announced that he has finished the test."
+                "She reported the results were more promising than they had expected.",
+                "She reported the results are more promising than they had expected.",
+                "She reported the results had been more promising than they had expected."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The commander announced that he had finished the test.",
-            "sentence": "The commander announced, 'I have finished the test.'",
-            "hint": "Present perfect becomes past perfect. (Log 10 calibration)",
-            "explanation": "'Have finished' shifts to 'had finished'. [Verified in calibration unit 10]."
+            "correctAnswer": "She reported the results were more promising than they had expected.",
+            "sentence": "She said, 'The results are more promising than we had expected.'",
+            "hint": "'Are' → 'were'. 'Had expected' stays. 'We' → 'they'.",
+            "explanation": "'Are' → 'were'. 'Had expected' is already past perfect - it stays. 'We' → 'they'."
         },
         {
             "id": "dis_l103_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): He asked, 'Where are you going?'",
+            "question": "Convert to reported speech: He was asked, 'What would you do differently if you had the chance?'",
             "options": [
-                "He asked where was I going.",
-                "He asked where I am going.",
-                "He asked where I was going."
+                "He was asked what he would do differently if he had the chance.",
+                "He was asked what he would do differently if he had had the chance.",
+                "He was asked what would he do differently if he had the chance."
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He asked where I was going.",
-            "sentence": "He asked, 'Where are you going?'",
-            "hint": "Question word followed by statement order. (Log 10 calibration)",
-            "explanation": "In reported questions, we use the word order of a statement. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "He was asked what he would do differently if he had the chance.",
+            "sentence": "He was asked, 'What would you do differently if you had the chance?'",
+            "hint": "Second conditional: 'would do' stays. 'Had the chance' stays. 'You' → 'he'. Statement order.",
+            "explanation": "Second conditional: 'would do' and 'had' do not shift further. 'You' → 'he'. 'Had had' would be an over-shift. Use statement word order."
         },
         {
             "id": "dis_l103_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): She said, 'I might come if I have time.'",
+            "question": "Convert to reported speech: The therapist said, 'Focus on what you can control and let go of what you can't.'",
             "options": [
-                "She said that she might come if she had time.",
-                "She said that she might come if she has time.",
-                "She said that she might have come if she had time."
+                "The therapist advised patients to focus on what they could control and let go of what they couldn't.",
+                "The therapist advised patients to focus on what they can control and let go of what you can't.",
+                "The therapist advised patients to focus on what they could control and let go of what they can't."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She said that she might come if she had time.",
-            "sentence": "She said, 'I might come if I have time.'",
-            "hint": "'Might' stays as 'might'; check the conditional. (Log 10 calibration)",
-            "explanation": "The correct reported form is: 'She said that she might come if she had time.' [Verified in calibration unit 10]."
+            "correctAnswer": "The therapist advised patients to focus on what they could control and let go of what they couldn't.",
+            "sentence": "The therapist said, 'Focus on what you can control and let go of what you can't.'",
+            "hint": "'Can' → 'could'. 'Can't' → 'couldn't'. 'You' → 'they'. Both embedded modals shift.",
+            "explanation": "Both 'can' and 'can't' shift to 'could' and 'couldn't'. 'You' → 'they'. Both modal verbs in the embedded clauses must be updated."
         },
         {
             "id": "dis_l104_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): The pilot stated, 'The system is failing.'",
+            "question": "Convert to reported speech: She said, 'I know this will sound strange, but I think I've seen you before.'",
             "options": [
-                "The pilot stated that the system has failed.",
-                "The pilot stated that the system is failing.",
-                "The pilot stated that the system was failing."
+                "She said she knew it would sound strange, but she thought she had seen me before.",
+                "She said she knows this will sound strange, but she thinks she's seen me before.",
+                "She said she knew it would sound strange, but she thought she had seen you before."
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The pilot stated that the system was failing.",
-            "sentence": "The pilot stated, 'The system is failing.'",
-            "hint": "Present continuous becomes past continuous. (Log 10 calibration)",
-            "explanation": "'Is failing' shifts to 'was failing'. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "She said she knew it would sound strange, but she thought she had seen me before.",
+            "sentence": "She said, 'I know this will sound strange, but I think I've seen you before.'",
+            "hint": "Multiple shifts: 'know' → 'knew', 'this' → 'it', 'will sound' → 'would sound', 'think' → 'thought', 'have seen' → 'had seen', 'you' → 'me'.",
+            "explanation": "Six shifts: 'know' → 'knew', 'this' → 'it', 'will sound' → 'would sound', 'think' → 'thought', 'have seen' → 'had seen', 'you' → 'me'."
         },
         {
             "id": "dis_l104_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): She warned, 'Don't touch the wire.'",
+            "question": "Convert to reported speech: The union representative asked, 'Were the changes introduced with sufficient notice?'",
             "options": [
-                "She warned me not to touch the wire.",
-                "She warned me don't touch the wire.",
-                "She warned me to not touch the wire."
+                "The union representative asked whether the changes had been introduced with sufficient notice.",
+                "The union representative asked were the changes introduced with sufficient notice.",
+                "The union representative asked whether the changes were introduced with sufficient notice."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She warned me not to touch the wire.",
-            "sentence": "She warned, 'Don't touch the wire.'",
-            "hint": "Negative imperative uses 'not to'. (Log 10 calibration)",
-            "explanation": "Reported negative commands use 'warned + object + not to + infinitive'. [Verified in calibration unit 10]."
+            "correctAnswer": "The union representative asked whether the changes had been introduced with sufficient notice.",
+            "sentence": "The union representative asked, 'Were the changes introduced with sufficient notice?'",
+            "hint": "Past passive → past perfect passive. Use 'whether' and statement order.",
+            "explanation": "'Were introduced' (past simple passive) → 'had been introduced' (past perfect passive). Use 'whether' and statement word order."
         },
         {
             "id": "dis_l104_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): They said, 'We ought to leave early.'",
+            "question": "Convert to reported speech: The communication trainer said, 'Invest time in understanding your audience before presenting.'",
             "options": [
-                "They said that they ought to leave early.",
-                "They said that they ought to have left early.",
-                "They said that they had to leave early."
+                "The communication trainer told the group to invest time in understanding their audience before presenting.",
+                "The communication trainer told the group invest time in understanding their audience before presenting.",
+                "The communication trainer told the group to invest time to understand your audience before presenting."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They said that they ought to leave early.",
-            "sentence": "They said, 'We ought to leave early.'",
-            "hint": "'Ought to' does not usually shift. (Log 10 calibration)",
-            "explanation": "'Ought to' remains 'ought to' in reported speech. [Verified in calibration unit 10]."
+            "correctAnswer": "The communication trainer told the group to invest time in understanding their audience before presenting.",
+            "sentence": "The communication trainer said, 'Invest time in understanding your audience before presenting.'",
+            "hint": "Imperative: 'told + group + to + invest'. 'Understanding' is a gerund. 'Your' → 'their'.",
+            "explanation": "'Invest time in understanding' → 'to invest time in understanding'. 'Your audience' → 'their audience'. 'To understand' breaks the 'in + -ing' pattern."
         },
         {
             "id": "dis_l105_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): The doctor reported, 'I can help you.'",
+            "question": "Convert to reported speech: She said, 'Apparently, the CEO resigned this morning.'",
             "options": [
-                "The doctor reported that he could help me.",
-                "The doctor reported that he can help me.",
-                "The doctor reported that I could help you."
+                "She said that apparently the CEO had resigned that morning.",
+                "She said that apparently the CEO resigned that morning.",
+                "She said that apparently the CEO had been resigning that morning."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The doctor reported that he could help me.",
-            "sentence": "The doctor reported, 'I can help you.'",
-            "hint": "Modal 'can' shifts to 'could'. (Log 10 calibration)",
-            "explanation": "'Can' shifts to 'could' in reported speech. [Verified in calibration unit 10]."
+            "correctAnswer": "She said that apparently the CEO had resigned that morning.",
+            "sentence": "She said, 'Apparently, the CEO resigned this morning.'",
+            "hint": "'Resigned' → 'had resigned'. 'This morning' → 'that morning'. 'Apparently' stays.",
+            "explanation": "'Resigned' (past simple) → 'had resigned' (past perfect). 'This morning' → 'that morning'. 'Apparently' (adverb) is unchanged."
         },
         {
             "id": "dis_l105_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): They said, 'We are staying here.'",
+            "question": "Convert to reported speech: The professor asked, 'Which sections of the report do you find most convincing?'",
             "options": [
-                "They said that they were staying there.",
-                "They said that they were staying here.",
-                "They said that they are staying here."
+                "The professor asked which sections of the report I found most convincing.",
+                "The professor asked which sections of the report do I find most convincing.",
+                "The professor asked which sections of the report I had found most convincing."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They said that they were staying there.",
-            "sentence": "They said, 'We are staying here.'",
-            "hint": "'Here' shifts to 'there'. (Log 10 calibration)",
-            "explanation": "Deictic words like 'here' shift to 'there' in reported speech. [Verified in calibration unit 10]."
+            "correctAnswer": "The professor asked which sections of the report I found most convincing.",
+            "sentence": "The professor asked, 'Which sections of the report do you find most convincing?'",
+            "hint": "'Do find' → 'found'. 'You' → 'I'. Statement order. No over-shift to past perfect.",
+            "explanation": "Drop 'do'. 'Find' → 'found'. 'You' → 'I'. 'Had found' would be an over-shift for a general opinion question."
         },
         {
             "id": "dis_l105_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): He promised, 'I will call you tomorrow.'",
+            "question": "Convert to reported speech: The coach said, 'Ask for feedback regularly and use it to improve.'",
             "options": [
-                "He promised that he would call me the next day.",
-                "He promised that he will call me tomorrow.",
-                "He promised that he would call me tomorrow."
+                "The coach encouraged athletes to ask for feedback regularly and use it to improve.",
+                "The coach encouraged athletes asking for feedback regularly and using it to improve.",
+                "The coach said ask for feedback regularly and use it to improve."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He promised that he would call me the next day.",
-            "sentence": "He promised, 'I will call you tomorrow.'",
-            "hint": "'Tomorrow' shifts to 'the next day'. (Log 10 calibration)",
-            "explanation": "The correct reported form is: 'He promised that he would call me the next day.' [Verified in calibration unit 10]."
+            "correctAnswer": "The coach encouraged athletes to ask for feedback regularly and use it to improve.",
+            "sentence": "The coach said, 'Ask for feedback regularly and use it to improve.'",
+            "hint": "Double imperative: 'encouraged + athletes + to + ask... and use'. Gerunds after 'encouraged' are less natural here.",
+            "explanation": "'Ask' and 'use' are imperatives → 'encouraged athletes to ask for feedback regularly and use it to improve'. Both use infinitive form after 'to'."
         },
         {
             "id": "dis_l106_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): The scientist explained, 'We saw the signal.'",
+            "question": "Convert to reported speech: She said, 'I was told that the position has already been filled.'",
             "options": [
-                "The scientist explained that they have seen the signal.",
-                "The scientist explained that they had seen the signal.",
-                "The scientist explained that they saw the signal."
+                "She said she had been told that the position had already been filled.",
+                "She said she was told that the position has already been filled.",
+                "She said she had been told that the position was already filled."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The scientist explained that they had seen the signal.",
-            "sentence": "The scientist explained, 'We saw the signal.'",
-            "hint": "Past simple becomes past perfect. (Log 10 calibration)",
-            "explanation": "'Saw' shifts to 'had seen'. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "She said she had been told that the position had already been filled.",
+            "sentence": "She said, 'I was told that the position has already been filled.'",
+            "hint": "'Was told' → 'had been told'. 'Has been filled' → 'had been filled'. Both passives shift.",
+            "explanation": "Both passive verbs shift: 'was told' → 'had been told', 'has been filled' → 'had been filled'. The perfect passive in the embedded clause is also updated."
         },
         {
             "id": "dis_l106_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): He asked her, 'Do you want some coffee?'",
+            "question": "Convert to reported speech: She asked, 'Have the relevant stakeholders been consulted?'",
             "options": [
-                "He asked her if she wanted some coffee.",
-                "He asked her if did she want some coffee.",
-                "He asked her whether she want some coffee."
+                "She asked whether the relevant stakeholders had been consulted.",
+                "She asked whether the relevant stakeholders have been consulted.",
+                "She asked have the relevant stakeholders been consulted."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He asked her if she wanted some coffee.",
-            "sentence": "He asked her, 'Do you want some coffee?'",
-            "hint": "Yes/No question with past shift. (Log 10 calibration)",
-            "explanation": "The correct reported form is: 'He asked her if she wanted some coffee.' [Verified in calibration unit 10]."
+            "correctAnswer": "She asked whether the relevant stakeholders had been consulted.",
+            "sentence": "She asked, 'Have the relevant stakeholders been consulted?'",
+            "hint": "'Have been consulted' → 'had been consulted'. Use 'whether' and statement order.",
+            "explanation": "'Have been consulted' (present perfect passive) → 'had been consulted' (past perfect passive). Use 'whether'."
         },
         {
             "id": "dis_l106_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): She told him, 'I saw her two days ago.'",
+            "question": "Convert to reported speech: The dean said, 'Make the most of every learning opportunity.'",
             "options": [
-                "She told him that she had seen her two days ago.",
-                "She told him that she had seen her two days before.",
-                "She told him that she saw her two days before."
+                "The dean encouraged students to make the most of every learning opportunity.",
+                "The dean encouraged students making the most of every learning opportunity.",
+                "The dean said make the most of every learning opportunity."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She told him that she had seen her two days before.",
-            "sentence": "She told him, 'I saw her two days ago.'",
-            "hint": "'Ago' shifts to 'before'. (Log 10 calibration)",
-            "explanation": "The correct reported form is: 'She told him that she had seen her two days before.' [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The dean encouraged students to make the most of every learning opportunity.",
+            "sentence": "The dean said, 'Make the most of every learning opportunity.'",
+            "hint": "Imperative: 'encouraged + students + to + make the most of'.",
+            "explanation": "'Make the most of' is an imperative → 'encouraged students to make the most of every learning opportunity'."
         },
         {
             "id": "dis_l107_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): He said, 'I'm going to the store.'",
+            "question": "Convert to reported speech: The prosecutor said, 'The evidence strongly suggests the defendant was at the scene.'",
             "options": [
-                "He said that he was going to the store.",
-                "He said that he is going to the store.",
-                "He said that he goes to the store."
+                "The prosecutor said the evidence strongly suggested the defendant had been at the scene.",
+                "The prosecutor said the evidence strongly suggests the defendant was at the scene.",
+                "The prosecutor said the evidence strongly suggested the defendant was at the scene."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he was going to the store.",
-            "sentence": "He said, 'I'm going to the store.'",
-            "hint": "Present continuous shift. (Log 10 calibration)",
-            "explanation": "'I'm going' becomes 'he was going'. [Verified in calibration unit 10]."
+            "correctAnswer": "The prosecutor said the evidence strongly suggested the defendant had been at the scene.",
+            "sentence": "The prosecutor said, 'The evidence strongly suggests the defendant was at the scene.'",
+            "hint": "'Suggests' → 'suggested'. 'Was' → 'had been'. Both verbs shift.",
+            "explanation": "Two shifts: 'suggests' → 'suggested' and 'was' → 'had been'. The embedded 'was' shifts to past perfect 'had been'."
         },
         {
             "id": "dis_l107_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): She asked, 'What time does the train leave?'",
+            "question": "Convert to reported speech: The investor asked, 'What makes this product different from your competitors'?'",
             "options": [
-                "She asked what time the train left.",
-                "She asked what time did the train leave.",
-                "She asked what time the train leaves."
+                "The investor asked what made that product different from their competitors'.",
+                "The investor asked what makes this product different from your competitors'.",
+                "The investor asked what makes that product different from their competitors'."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She asked what time the train left.",
-            "sentence": "She asked, 'What time does the train leave?'",
-            "hint": "Wh- question word order shift. (Log 10 calibration)",
-            "explanation": "The correct reported form is: 'She asked what time the train left.' [Verified in calibration unit 10]."
+            "correctAnswer": "The investor asked what made that product different from their competitors'.",
+            "sentence": "The investor asked, 'What makes this product different from your competitors'?'",
+            "hint": "'Makes' → 'made'. 'This' → 'that'. 'Your competitors'' → 'their competitors''. Statement order.",
+            "explanation": "Three shifts: 'makes' → 'made', 'this' → 'that', 'your' → 'their'. Use statement word order."
         },
         {
             "id": "dis_l107_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): They asked, 'Can we stay here tonight?'",
+            "question": "Convert to reported speech: The IT security expert said, 'Separate your personal and professional email accounts.'",
             "options": [
-                "They asked if they could stay here tonight.",
-                "They asked if they could stay there that night.",
-                "They asked could they stay there that night."
+                "The IT security expert advised users to separate their personal and professional email accounts.",
+                "The IT security expert advised users to separate your personal and professional email accounts.",
+                "The IT security expert told to separating personal and professional email accounts."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "They asked if they could stay there that night.",
-            "sentence": "They asked, 'Can we stay here tonight?'",
-            "hint": "Shift 'here' and 'tonight'. (Log 10 calibration)",
-            "explanation": "The correct reported form is: 'They asked if they could stay there that night.' [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The IT security expert advised users to separate their personal and professional email accounts.",
+            "sentence": "The IT security expert said, 'Separate your personal and professional email accounts.'",
+            "hint": "Imperative: 'advised + users + to + separate'. 'Your' → 'their'.",
+            "explanation": "'Separate' is an imperative → 'advised users to separate their personal and professional email accounts'."
         },
         {
             "id": "dis_l108_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): She asked, 'Are you happy?'",
+            "question": "Convert to reported speech: He said, 'I'm not sure I can trust what she's been telling me.'",
             "options": [
-                "She asked if I am happy.",
-                "She asked if I was happy.",
-                "She asked was I happy."
+                "He said he wasn't sure he could trust what she had been telling him.",
+                "He said he isn't sure he can trust what she's been telling me.",
+                "He said he wasn't sure he could trust what she was telling him."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She asked if I was happy.",
-            "sentence": "She asked, 'Are you happy?'",
-            "hint": "Yes/No question uses 'if'. (Log 10 calibration)",
-            "explanation": "The correct reported form is: 'She asked if I was happy.' [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "He said he wasn't sure he could trust what she had been telling him.",
+            "sentence": "He said, 'I'm not sure I can trust what she's been telling me.'",
+            "hint": "'Am not sure' → 'wasn't sure'. 'Can trust' → 'could trust'. 'Has been telling' → 'had been telling'. 'Me' → 'him'.",
+            "explanation": "Four shifts: 'am' → 'was', 'can' → 'could', 'has been telling' → 'had been telling', 'me' → 'him'. The perfect continuous is preserved."
         },
         {
             "id": "dis_l108_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): The detective asked, 'Where were you last night?'",
+            "question": "Convert to reported speech: The project manager asked, 'Was the original estimate accurate?'",
             "options": [
-                "The detective asked where I was the night before.",
-                "The detective asked where I had been the night before.",
-                "The detective asked where was I the night before."
+                "The project manager asked whether the original estimate had been accurate.",
+                "The project manager asked whether the original estimate was accurate.",
+                "The project manager asked was the original estimate accurate."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The detective asked where I had been the night before.",
-            "sentence": "The detective asked, 'Where were you last night?'",
-            "hint": "Past simple shifts to past perfect. (Log 10 calibration)",
-            "explanation": "'Were' shifts to 'had been' in reported questions. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The project manager asked whether the original estimate had been accurate.",
+            "sentence": "The project manager asked, 'Was the original estimate accurate?'",
+            "hint": "'Was accurate' → 'had been accurate'. Use 'whether' and statement order.",
+            "explanation": "Past simple 'was accurate' shifts to past perfect 'had been accurate'. Use 'whether' for yes/no questions."
         },
         {
             "id": "dis_l108_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): He said, 'I wish I were rich.'",
+            "question": "Convert to reported speech: The mentor said, 'Revisit your goals quarterly to track your progress.'",
             "options": [
-                "He said that he wished he were rich.",
-                "He said that he wished he was rich.",
-                "He said that he had wished he were rich."
+                "The mentor told the mentee to revisit goals quarterly to track their progress.",
+                "The mentor told the mentee to revisit your goals quarterly to track your progress.",
+                "The mentor said revisit your goals quarterly to track your progress."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he wished he were rich.",
-            "sentence": "He said, 'I wish I were rich.'",
-            "hint": "Subjunctive mood in reported speech. (Log 10 calibration)",
-            "explanation": "The subjunctive 'were' often remains 'were' in reported speech after 'wish'. [Verified in calibration unit 10]."
+            "correctAnswer": "The mentor told the mentee to revisit goals quarterly to track their progress.",
+            "sentence": "The mentor said, 'Revisit your goals quarterly to track your progress.'",
+            "hint": "Imperative: 'told + mentee + to + revisit'. 'Your goals' → 'goals'. 'Your progress' → 'their progress'.",
+            "explanation": "'Revisit' → 'to revisit'. 'Your goals' becomes 'goals' (object known). 'Your progress' → 'their progress'."
         },
         {
             "id": "dis_l109_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): They told us, 'We have already left.'",
+            "question": "Convert to reported speech: He said, 'It seems as though the issue has been resolved at last.'",
             "options": [
-                "They told us that they had already left.",
-                "They told us that they have already left.",
-                "They told us that they already left."
+                "He said it seemed as though the issue had been resolved at last.",
+                "He said it seems as though the issue has been resolved at last.",
+                "He said it seemed as though the issue was resolved at last."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They told us that they had already left.",
-            "sentence": "They told us, 'We have already left.'",
-            "hint": "Present perfect shift. (Log 10 calibration)",
-            "explanation": "'Have left' becomes 'had left'. [Verified in calibration unit 10]."
+            "correctAnswer": "He said it seemed as though the issue had been resolved at last.",
+            "sentence": "He said, 'It seems as though the issue has been resolved at last.'",
+            "hint": "'Seems' → 'seemed'. 'Has been resolved' → 'had been resolved'. Passive perfect preserved.",
+            "explanation": "'Seems' → 'seemed'. 'Has been resolved' (present perfect passive) → 'had been resolved' (past perfect passive)."
         },
         {
             "id": "dis_l109_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): He told me, 'Open the window, please.'",
+            "question": "Convert to reported speech: The marketing team asked, 'How satisfied are customers with the current service?'",
             "options": [
-                "He told me to open the window.",
-                "He asked me to open the window.",
-                "He said to me open the window."
+                "The marketing team asked how satisfied customers were with the current service.",
+                "The marketing team asked how satisfied are customers with the current service.",
+                "The marketing team asked how satisfied customers had been with the current service."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He asked me to open the window.",
-            "sentence": "He told me, 'Open the window, please.'",
-            "hint": "Polite requests use 'asked me to'. (Log 10 calibration)",
-            "explanation": "A polite request is best reported using 'asked + object + to + infinitive'. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The marketing team asked how satisfied customers were with the current service.",
+            "sentence": "The marketing team asked, 'How satisfied are customers with the current service?'",
+            "hint": "'Are' → 'were'. Statement order. No over-shift to past perfect for a current process question.",
+            "explanation": "'Are satisfied' → 'were satisfied'. Use statement word order. 'Had been' would be an over-shift for a question about a current, ongoing service."
         },
         {
             "id": "dis_l109_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): She remarked, 'If I had seen the sign, I would have stopped.'",
+            "question": "Convert to reported speech: The performance coach said, 'Focus on your strengths while working to improve your weaknesses.'",
             "options": [
-                "She remarked that if she had seen the sign, she would have stopped.",
-                "She remarked that if she saw the sign, she would have stopped.",
-                "She remarked that if she had seen the sign, she would stop."
+                "The performance coach advised the athlete to focus on strengths while working to improve weaknesses.",
+                "The performance coach advised the athlete to focus on your strengths while working to improve your weaknesses.",
+                "The performance coach said focus on your strengths while working to improve your weaknesses."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She remarked that if she had seen the sign, she would have stopped.",
-            "sentence": "She remarked, 'If I had seen the sign, I would have stopped.'",
-            "hint": "Third conditional does not shift further back. (Log 10 calibration)",
-            "explanation": "The third conditional 'had seen / would have stopped' remains unchanged. [Verified in calibration unit 10]."
+            "correctAnswer": "The performance coach advised the athlete to focus on strengths while working to improve weaknesses.",
+            "sentence": "The performance coach said, 'Focus on your strengths while working to improve your weaknesses.'",
+            "hint": "Imperative: 'advised + athlete + to + focus'. Pronoun 'your' is dropped as the subject is now clear.",
+            "explanation": "'Focus' is an imperative → 'advised the athlete to focus on strengths while working to improve weaknesses'. 'Your' is naturally dropped as the subject is clear."
         },
         {
             "id": "dis_l110_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): He stated, 'The project will be a success.'",
+            "question": "Convert to reported speech: The minister said, 'The new law will come into force next April.'",
             "options": [
-                "He stated that the project would be a success.",
-                "He stated that the project will be a success.",
-                "He stated that the project was a success."
+                "The minister announced the new law would come into force the following April.",
+                "The minister announced the new law will come into force next April.",
+                "The minister announced the new law would come into force in next April."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He stated that the project would be a success.",
-            "sentence": "He stated, 'The project will be a success.'",
-            "hint": "'Will' shifts to 'would'. (Log 10 calibration)",
-            "explanation": "'Will be' shifts to 'would be'. [Verified in calibration unit 10]."
+            "correctAnswer": "The minister announced the new law would come into force the following April.",
+            "sentence": "The minister said, 'The new law will come into force next April.'",
+            "hint": "'Will come' → 'would come'. 'Next April' → 'the following April'. No 'in' before 'the following April'.",
+            "explanation": "'Will come' → 'would come'. 'Next April' → 'the following April'. Adding 'in' before 'the following April' is unnatural."
         },
         {
             "id": "dis_l110_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): The officer ordered, 'Stand up immediately.'",
+            "question": "Convert to reported speech: She asked, 'Who is going to be in charge of the marketing campaign?'",
             "options": [
-                "The officer ordered us to stand up immediately.",
-                "The officer said that we stand up immediately.",
-                "The officer ordered that we stood up immediately."
+                "She asked who was going to be in charge of the marketing campaign.",
+                "She asked who is going to be in charge of the marketing campaign.",
+                "She asked who would be going to be in charge of the marketing campaign."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The officer ordered us to stand up immediately.",
-            "sentence": "The officer ordered, 'Stand up immediately.'",
-            "hint": "Order uses 'ordered + to + verb'. (Log 10 calibration)",
-            "explanation": "The correct reported form is: 'The officer ordered us to stand up immediately.' [Verified in calibration unit 10]."
+            "correctAnswer": "She asked who was going to be in charge of the marketing campaign.",
+            "sentence": "She asked, 'Who is going to be in charge of the marketing campaign?'",
+            "hint": "'Is going to be' → 'was going to be'. Statement order. Avoid double modals.",
+            "explanation": "'Is going to be' → 'was going to be'. Use statement word order. 'Would be going to be' is incorrect - do not combine 'would' and 'going to'."
         },
         {
             "id": "dis_l110_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 3,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 10): The captain shouted, 'Abandon ship at once!'",
+            "question": "Convert to reported speech: The public speaking tutor said, 'Speak clearly and maintain eye contact during your presentation.'",
             "options": [
-                "The captain shouted that we abandon ship at once.",
-                "The captain ordered to abandon ship at once.",
-                "The captain ordered us to abandon ship immediately."
+                "The public speaking tutor told students to speak clearly and maintain eye contact during their presentations.",
+                "The public speaking tutor told students to speak clearly and maintain eye contact during your presentation.",
+                "The public speaking tutor said speak clearly and maintain eye contact during your presentation."
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The captain ordered us to abandon ship immediately.",
-            "sentence": "The captain shouted, 'Abandon ship at once!'",
-            "hint": "Urgent command with adverb shift. (Log 10 calibration)",
-            "explanation": "The correct reported form is: 'The captain ordered us to abandon ship immediately.' [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The public speaking tutor told students to speak clearly and maintain eye contact during their presentations.",
+            "sentence": "The public speaking tutor said, 'Speak clearly and maintain eye contact during your presentation.'",
+            "hint": "Double imperative: 'told + students + to + speak... and maintain'. 'Your' → 'their'.",
+            "explanation": "Two imperatives → 'told students to speak clearly and maintain eye contact'. 'Your presentation' → 'their presentations'."
         }
     ]
 }

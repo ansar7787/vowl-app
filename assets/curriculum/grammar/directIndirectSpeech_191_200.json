@@ -1,4 +1,4 @@
-{
+﻿{
     "gameType": "directIndirectSpeech",
     "batchIndex": 20,
     "levels": "191-200",
@@ -6,542 +6,512 @@
         {
             "id": "dis_l191_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): He said, 'I am ready.'",
+            "question": "Convert to reported speech: The commission of inquiry found, 'The evidence before us suggests that warnings which had been provided to senior officials were systematically disregarded over a period of several years.'",
             "options": [
-                "He said that he was ready.",
-                "He said that he is ready.",
-                "He said that I was ready."
+                "The commission of inquiry found that the evidence before them suggested that warnings which had been provided to senior officials had been systematically disregarded over a period of several years.",
+                "The commission of inquiry found that the evidence before them suggests that warnings which had been provided to senior officials were systematically disregarded over a period of several years.",
+                "The commission of inquiry found that the evidence before them suggested that warnings which had been provided to senior officials were systematically disregarded over a period of several years."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he was ready.",
-            "sentence": "He said, 'I am ready.'",
-            "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was'). (Log 19 calibration)",
-            "explanation": "In reported speech, we usually move the tense one step back into the past. [Verified in calibration unit 19]."
+            "correctAnswer": "The commission of inquiry found that the evidence before them suggested that warnings which had been provided to senior officials had been systematically disregarded over a period of several years.",
+            "sentence": "The commission found, 'The evidence before us suggests that warnings... were systematically disregarded over several years.'",
+            "hint": "'Suggests' → 'suggested'. 'Were disregarded' → 'had been disregarded'. 'Had been provided' stays (already past perfect). 'Us' → 'them'.",
+            "explanation": "Three shifts: 'suggests' → 'suggested', 'us' → 'them', 'were disregarded' → 'had been disregarded'. 'Had been provided' stays. Option C correctly shifts 'suggests' and 'us' but misses shifting 'were disregarded'."
         },
         {
             "id": "dis_l191_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): She noted, 'I may come to the party.'",
+            "question": "Convert to reported speech: The parliamentary sub-committee asked, 'To what extent, in your professional judgment, had the risk assessment frameworks that were in use at the time been fit for purpose?'",
             "options": [
-                "She noted that she might come to the party.",
-                "She noted that she may come to the party.",
-                "She noted that she would come to the party."
+                "The parliamentary sub-committee asked to what extent, in his professional judgment, the risk assessment frameworks that had been in use at the time had been fit for purpose.",
+                "The parliamentary sub-committee asked to what extent, in your professional judgment, had the risk assessment frameworks that were in use at the time been fit for purpose.",
+                "The parliamentary sub-committee asked to what extent, in his professional judgment, the risk assessment frameworks that were in use at the time had been fit for purpose."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She noted that she might come to the party.",
-            "sentence": "She noted, 'I may come to the party.'",
-            "hint": "'May' shifts to 'might'. (Log 19 calibration)",
-            "explanation": "'May' becomes 'might' in reported speech. [Verified in calibration unit 19]."
+            "correctAnswer": "The parliamentary sub-committee asked to what extent, in his professional judgment, the risk assessment frameworks that had been in use at the time had been fit for purpose.",
+            "sentence": "The sub-committee asked, 'To what extent, in your professional judgment, had the risk assessment frameworks that were in use at the time been fit for purpose?'",
+            "hint": "'Your judgment' → 'his judgment'. 'Had been fit for purpose' stays. 'Were in use' → 'had been in use'. Statement order.",
+            "explanation": "Two shifts: 'your professional judgment' → 'his professional judgment' and 'were in use' → 'had been in use'. 'Had been fit for purpose' stays. Option C misses shifting 'were in use'."
         },
         {
             "id": "dis_l191_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): She advised, 'You should see a doctor.'",
+            "question": "Convert to reported speech: The international standards body stated, 'Member organizations shall not adopt standards that are less stringent than those prescribed herein, and shall take all measures necessary to ensure consistent implementation.'",
             "options": [
-                "She advised me to see a doctor.",
-                "She advised that I see a doctor.",
-                "She said I should see a doctor."
+                "The international standards body required member organizations not to adopt standards that were less stringent than those prescribed therein, and to take all measures necessary to ensure consistent implementation.",
+                "The international standards body required member organizations not to adopt standards that are less stringent than those prescribed herein, and to take all measures necessary to ensure consistent implementation.",
+                "The international standards body required member organizations not to adopt standards that were less stringent than those prescribed therein, and take all measures necessary to ensure consistent implementation."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She advised me to see a doctor.",
-            "sentence": "She advised, 'You should see a doctor.'",
-            "hint": "Advice uses 'advised me to'. (Log 19 calibration)",
-            "explanation": "Advice is effectively reported using 'advised + object + to + infinitive'. [Verified in calibration unit 19]."
+            "correctAnswer": "The international standards body required member organizations not to adopt standards that were less stringent than those prescribed therein, and to take all measures necessary to ensure consistent implementation.",
+            "sentence": "The standards body stated, 'Shall not adopt... and shall take all measures necessary to ensure consistent implementation.'",
+            "hint": "'Shall not adopt' → 'not to adopt'. 'That are less stringent' → 'that were less stringent'. 'Herein' → 'therein'. 'Shall take' → 'to take'.",
+            "explanation": "'Shall not adopt' → 'not to adopt', 'are less stringent' → 'were less stringent', 'herein' → 'therein', 'shall take' → 'to take'. Option C omits 'to' before 'take', breaking the parallel structure."
         },
         {
             "id": "dis_l192_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): She told me, 'We will arrive soon.'",
+            "question": "Convert to reported speech: The appeal judge concluded, 'It has not been demonstrated to the requisite standard that the appellant was aware of the full implications of the agreement she had signed.'",
             "options": [
-                "She told me that they would arrive soon.",
-                "She told me that they will arrive soon.",
-                "She told me that we would arrive soon."
+                "The appeal judge concluded that it had not been demonstrated to the requisite standard that the appellant had been aware of the full implications of the agreement she had signed.",
+                "The appeal judge concluded that it has not been demonstrated to the requisite standard that the appellant was aware of the full implications of the agreement she had signed.",
+                "The appeal judge concluded that it had not been demonstrated to the requisite standard that the appellant was aware of the full implications of the agreement she had signed."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She told me that they would arrive soon.",
-            "sentence": "She told me, 'We will arrive soon.'",
-            "hint": "Future becomes conditional. (Log 19 calibration)",
-            "explanation": "'Will' shifts to 'would' in reported speech. [Verified in calibration unit 19]."
+            "correctAnswer": "The appeal judge concluded that it had not been demonstrated to the requisite standard that the appellant had been aware of the full implications of the agreement she had signed.",
+            "sentence": "The appeal judge concluded, 'It has not been demonstrated... that the appellant was aware of the full implications of the agreement she had signed.'",
+            "hint": "'Has not been demonstrated' → 'had not been demonstrated'. 'Was aware' → 'had been aware'. 'Had signed' stays. Three shifts.",
+            "explanation": "Three shifts: 'has not been demonstrated' → 'had not been demonstrated', 'was aware' → 'had been aware', 'had signed' stays. Option C correctly shifts the first verb but misses 'was aware' → 'had been aware'."
         },
         {
             "id": "dis_l192_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): The teacher said, 'Finish your homework.'",
+            "question": "Convert to reported speech: The scrutiny panel asked, 'By what mechanism had the organization ensured that the lessons identified following previous incidents had been shared with all relevant personnel?'",
             "options": [
-                "The teacher said that we finished our homework.",
-                "The teacher told us to finish our homework.",
-                "The teacher said finish our homework."
+                "The scrutiny panel asked by what mechanism the organization had ensured that the lessons identified following previous incidents had been shared with all relevant personnel.",
+                "The scrutiny panel asked by what mechanism had the organization ensured that the lessons identified following previous incidents had been shared with all relevant personnel.",
+                "The scrutiny panel asked by what mechanism the organization had ensured that the lessons identified following previous incidents were shared with all relevant personnel."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The teacher told us to finish our homework.",
-            "sentence": "The teacher said, 'Finish your homework.'",
-            "hint": "Imperative uses 'to + verb'. (Log 19 calibration)",
-            "explanation": "Commands are reported using 'told + object + to + infinitive'. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The scrutiny panel asked by what mechanism the organization had ensured that the lessons identified following previous incidents had been shared with all relevant personnel.",
+            "sentence": "The scrutiny panel asked, 'By what mechanism had the organization ensured that the lessons... had been shared with all relevant personnel?'",
+            "hint": "Both past perfects stay. Statement word order throughout.",
+            "explanation": "Both 'had ensured' and 'had been shared' are already past perfect - they stay unchanged. Statement word order. Option C correctly handles the first clause but downgrades 'had been shared' to 'were shared'."
         },
         {
             "id": "dis_l192_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): He said, 'I must finish this report today.'",
+            "question": "Convert to reported speech: The fiduciary framework stated, 'Disclose proactively all information that is material to the beneficiary's decision, refrain from self-dealing, and document your compliance with these obligations in a manner that is auditable.'",
             "options": [
-                "He said that he had to finish that report that day.",
-                "He said that he must finish this report today.",
-                "He said that he has to finish that report that day."
+                "The fiduciary framework required fiduciaries to disclose proactively all information that was material to the beneficiary's decision, refrain from self-dealing, and document their compliance with those obligations in a manner that was auditable.",
+                "The fiduciary framework required fiduciaries to disclose proactively all information that is material to the beneficiary's decision, refrain from self-dealing, and document your compliance with these obligations in a manner that is auditable.",
+                "The fiduciary framework required fiduciaries to disclose proactively all information that was material to the beneficiary's decision, refrain from self-dealing, and to documenting their compliance with those obligations in a manner that was auditable."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he had to finish that report that day.",
-            "sentence": "He said, 'I must finish this report today.'",
-            "hint": "'Must' often shifts to 'had to'. (Log 19 calibration)",
-            "explanation": "The correct reported form is: 'He said that he had to finish that report that day.' [Verified in calibration unit 19]."
+            "correctAnswer": "The fiduciary framework required fiduciaries to disclose proactively all information that was material to the beneficiary's decision, refrain from self-dealing, and document their compliance with those obligations in a manner that was auditable.",
+            "sentence": "The framework stated, 'Disclose... refrain from self-dealing, and document your compliance with these obligations in a manner that is auditable.'",
+            "hint": "Triple imperative + two embedded clauses. 'Is material' → 'was material'. 'Your compliance' → 'their compliance'. 'These obligations' → 'those obligations'. 'Is auditable' → 'was auditable'.",
+            "explanation": "Triple parallel imperatives → 'to disclose, refrain, and document'. Four embedded shifts: 'is material' → 'was material', 'your' → 'their', 'these' → 'those', 'is auditable' → 'was auditable'. 'To documenting' breaks parallel structure."
         },
         {
             "id": "dis_l193_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): The commander announced, 'I have finished the test.'",
+            "question": "Convert to reported speech: The expert panel advised, 'The assumption that past performance is a reliable predictor of future outcomes must be treated with considerable scepticism, particularly in contexts characterized by high levels of volatility.'",
             "options": [
-                "The commander announced that he had finished the test.",
-                "The commander announced that he finished the test.",
-                "The commander announced that he has finished the test."
+                "The expert panel advised that the assumption that past performance was a reliable predictor of future outcomes had to be treated with considerable scepticism, particularly in contexts characterized by high levels of volatility.",
+                "The expert panel advised that the assumption that past performance is a reliable predictor of future outcomes must be treated with considerable scepticism, particularly in contexts characterized by high levels of volatility.",
+                "The expert panel advised that the assumption that past performance was a reliable predictor of future outcomes should be treated with considerable scepticism, particularly in contexts characterized by high levels of volatility."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The commander announced that he had finished the test.",
-            "sentence": "The commander announced, 'I have finished the test.'",
-            "hint": "Present perfect becomes past perfect. (Log 19 calibration)",
-            "explanation": "'Have finished' shifts to 'had finished'. [Verified in calibration unit 19]."
+            "correctAnswer": "The expert panel advised that the assumption that past performance was a reliable predictor of future outcomes had to be treated with considerable scepticism, particularly in contexts characterized by high levels of volatility.",
+            "sentence": "The expert panel advised, 'The assumption that past performance is a reliable predictor of future outcomes must be treated with considerable scepticism...'",
+            "hint": "'Is a reliable predictor' → 'was a reliable predictor'. 'Must be treated' → 'had to be treated'. 'Should be treated' changes the modal obligation.",
+            "explanation": "'Is' → 'was'. 'Must be treated' → 'had to be treated' (obligation modal shift). 'Should be treated' changes 'must' (strong obligation) to 'should' (recommendation) - a semantic change."
         },
         {
             "id": "dis_l193_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): He asked, 'Where are you going?'",
+            "question": "Convert to reported speech: The constitutional court asked, 'Can it be established whether the legislation, as enacted, is consistent with the rights enshrined in the constitution as it stands?'",
             "options": [
-                "He asked where was I going.",
-                "He asked where I am going.",
-                "He asked where I was going."
+                "The constitutional court asked whether it could be established whether the legislation, as enacted, was consistent with the rights enshrined in the constitution as it stood.",
+                "The constitutional court asked can it be established whether the legislation, as enacted, is consistent with the rights enshrined in the constitution as it stands.",
+                "The constitutional court asked whether it could be established whether the legislation, as enacted, was consistent with the rights enshrined in the constitution as it stands."
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He asked where I was going.",
-            "sentence": "He asked, 'Where are you going?'",
-            "hint": "Question word followed by statement order. (Log 19 calibration)",
-            "explanation": "In reported questions, we use the word order of a statement. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The constitutional court asked whether it could be established whether the legislation, as enacted, was consistent with the rights enshrined in the constitution as it stood.",
+            "sentence": "The constitutional court asked, 'Can it be established whether the legislation... is consistent with the rights... as it stands?'",
+            "hint": "'Can it be established' → 'could it be established'. Use 'whether' for the outer question. 'Is consistent' → 'was consistent'. 'Stands' → 'stood'.",
+            "explanation": "Three shifts: 'can' → 'could', 'is consistent' → 'was consistent', 'stands' → 'stood'. Use 'whether' for the outer yes/no question. Option C shifts 'can' and 'is consistent' but misses 'stands → stood'."
         },
         {
             "id": "dis_l193_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): She said, 'I might come if I have time.'",
+            "question": "Convert to reported speech: The compliance code stated, 'Treat all information received in a professional capacity as confidential unless you are expressly authorized to disclose it, and obtain legal advice before doing so in any case of doubt.'",
             "options": [
-                "She said that she might come if she had time.",
-                "She said that she might come if she has time.",
-                "She said that she might have come if she had time."
+                "The compliance code required professionals to treat all information received in a professional capacity as confidential unless they were expressly authorized to disclose it, and obtain legal advice before doing so in any case of doubt.",
+                "The compliance code required professionals to treat all information received in a professional capacity as confidential unless you are expressly authorized to disclose it, and obtain legal advice before doing so in any case of doubt.",
+                "The compliance code required professionals to treat all information received in a professional capacity as confidential unless they were expressly authorized to disclose it, and to obtaining legal advice before doing so in any case of doubt."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She said that she might come if she had time.",
-            "sentence": "She said, 'I might come if I have time.'",
-            "hint": "'Might' stays as 'might'; check the conditional. (Log 19 calibration)",
-            "explanation": "The correct reported form is: 'She said that she might come if she had time.' [Verified in calibration unit 19]."
+            "correctAnswer": "The compliance code required professionals to treat all information received in a professional capacity as confidential unless they were expressly authorized to disclose it, and obtain legal advice before doing so in any case of doubt.",
+            "sentence": "The compliance code stated, 'Treat... as confidential unless you are expressly authorized..., and obtain legal advice...'",
+            "hint": "'Treat' and 'obtain' are imperatives → 'to treat... and obtain'. 'You are authorized' → 'they were authorized'. Parallel infinitive structure.",
+            "explanation": "Two imperatives → 'to treat... and obtain'. 'You are authorized' → 'they were authorized'. 'To obtaining' breaks the parallel infinitive structure."
         },
         {
             "id": "dis_l194_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): The pilot stated, 'The system is failing.'",
+            "question": "Convert to reported speech: The joint statement declared, 'We have agreed to pursue a course of action that will seek to address the underlying structural causes of the dispute, and we believe this represents the most constructive path forward.'",
             "options": [
-                "The pilot stated that the system has failed.",
-                "The pilot stated that the system is failing.",
-                "The pilot stated that the system was failing."
+                "The joint statement declared they had agreed to pursue a course of action that would seek to address the underlying structural causes of the dispute, and they believed that represented the most constructive path forward.",
+                "The joint statement declared they have agreed to pursue a course of action that will seek to address the underlying structural causes of the dispute, and they believe this represents the most constructive path forward.",
+                "The joint statement declared they had agreed to pursue a course of action that would seek to address the underlying structural causes of the dispute, and they believed this represented the most constructive path forward."
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The pilot stated that the system was failing.",
-            "sentence": "The pilot stated, 'The system is failing.'",
-            "hint": "Present continuous becomes past continuous. (Log 19 calibration)",
-            "explanation": "'Is failing' shifts to 'was failing'. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The joint statement declared they had agreed to pursue a course of action that would seek to address the underlying structural causes of the dispute, and they believed that represented the most constructive path forward.",
+            "sentence": "The joint statement declared, 'We have agreed... and we believe this represents the most constructive path forward.'",
+            "hint": "'Have agreed' → 'had agreed'. 'Will seek' → 'would seek'. 'Believe' → 'believed'. 'This represents' → 'that represented'. 'We' → 'they'.",
+            "explanation": "Five shifts: 'have agreed' → 'had agreed', 'will seek' → 'would seek', 'believe' → 'believed', 'this' → 'that', 'represents' → 'represented'. Option C correctly handles the first clause but changes 'this' to 'that' while missing 'represents' → 'represented'."
         },
         {
             "id": "dis_l194_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): She warned, 'Don't touch the wire.'",
+            "question": "Convert to reported speech: The expert witness was asked, 'In your expert opinion, could a reasonably competent professional in that field have foreseen the consequences that subsequently materialized?'",
             "options": [
-                "She warned me not to touch the wire.",
-                "She warned me don't touch the wire.",
-                "She warned me to not touch the wire."
+                "The expert witness was asked whether, in his expert opinion, a reasonably competent professional in that field could have foreseen the consequences that subsequently materialized.",
+                "The expert witness was asked in your expert opinion, could a reasonably competent professional in that field have foreseen the consequences that subsequently materialized.",
+                "The expert witness was asked whether, in his expert opinion, a reasonably competent professional in that field could have foreseen the consequences that had subsequently materialized."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She warned me not to touch the wire.",
-            "sentence": "She warned, 'Don't touch the wire.'",
-            "hint": "Negative imperative uses 'not to'. (Log 19 calibration)",
-            "explanation": "Reported negative commands use 'warned + object + not to + infinitive'. [Verified in calibration unit 19]."
+            "correctAnswer": "The expert witness was asked whether, in his expert opinion, a reasonably competent professional in that field could have foreseen the consequences that subsequently materialized.",
+            "sentence": "The expert witness was asked, 'In your expert opinion, could a reasonably competent professional... have foreseen the consequences that subsequently materialized?'",
+            "hint": "'Your expert opinion' → 'his expert opinion'. 'Could have foreseen' stays (already past modal perfect). 'Materialized' stays as past simple. Use 'whether'.",
+            "explanation": "'Your' → 'his'. 'Could have foreseen' stays. 'Materialized' stays as past simple - it marks the completion of the sequence. Option C over-shifts 'materialized' to 'had materialized'."
         },
         {
             "id": "dis_l194_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): They said, 'We ought to leave early.'",
+            "question": "Convert to reported speech: The ethical standards framework stated, 'Place the welfare of those in your care above institutional considerations, challenge decisions you believe to be ethically unsound, and escalate concerns through appropriate channels without fear of reprisal.'",
             "options": [
-                "They said that they ought to leave early.",
-                "They said that they ought to have left early.",
-                "They said that they had to leave early."
+                "The ethical standards framework required practitioners to place the welfare of those in their care above institutional considerations, challenge decisions they believed to be ethically unsound, and escalate concerns through appropriate channels without fear of reprisal.",
+                "The ethical standards framework required practitioners to place the welfare of those in your care above institutional considerations, challenge decisions you believe to be ethically unsound, and escalate concerns through appropriate channels without fear of reprisal.",
+                "The ethical standards framework required practitioners to place the welfare of those in their care above institutional considerations, challenge decisions they believed to be ethically unsound, and to escalating concerns through appropriate channels without fear of reprisal."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They said that they ought to leave early.",
-            "sentence": "They said, 'We ought to leave early.'",
-            "hint": "'Ought to' does not usually shift. (Log 19 calibration)",
-            "explanation": "'Ought to' remains 'ought to' in reported speech. [Verified in calibration unit 19]."
+            "correctAnswer": "The ethical standards framework required practitioners to place the welfare of those in their care above institutional considerations, challenge decisions they believed to be ethically unsound, and escalate concerns through appropriate channels without fear of reprisal.",
+            "sentence": "The framework stated, 'Place the welfare... challenge decisions you believe to be ethically unsound, and escalate concerns...'",
+            "hint": "Triple imperative: 'to place, challenge, and escalate'. 'Your care' → 'their care'. 'You believe' → 'they believed'. Parallel structure throughout.",
+            "explanation": "Three parallel imperatives → 'to place, challenge, and escalate'. 'Your care' → 'their care'. 'You believe' → 'they believed'. 'To escalating' breaks the parallel structure."
         },
         {
             "id": "dis_l195_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): The doctor reported, 'I can help you.'",
+            "question": "Convert to reported speech: The final report concluded, 'There is no reasonable prospect that the situation will improve absent a fundamental restructuring of the governance arrangements that have given rise to it.'",
             "options": [
-                "The doctor reported that he could help me.",
-                "The doctor reported that he can help me.",
-                "The doctor reported that I could help you."
+                "The final report concluded that there was no reasonable prospect that the situation would improve absent a fundamental restructuring of the governance arrangements that had given rise to it.",
+                "The final report concluded that there is no reasonable prospect that the situation will improve absent a fundamental restructuring of the governance arrangements that have given rise to it.",
+                "The final report concluded that there was no reasonable prospect that the situation would improve absent a fundamental restructuring of the governance arrangements that gave rise to it."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The doctor reported that he could help me.",
-            "sentence": "The doctor reported, 'I can help you.'",
-            "hint": "Modal 'can' shifts to 'could'. (Log 19 calibration)",
-            "explanation": "'Can' shifts to 'could' in reported speech. [Verified in calibration unit 19]."
+            "correctAnswer": "The final report concluded that there was no reasonable prospect that the situation would improve absent a fundamental restructuring of the governance arrangements that had given rise to it.",
+            "sentence": "The final report concluded, 'There is no reasonable prospect that the situation will improve absent a fundamental restructuring... that have given rise to it.'",
+            "hint": "'Is no prospect' → 'was no prospect'. 'Will improve' → 'would improve'. 'Have given rise' → 'had given rise'. Three shifts.",
+            "explanation": "Three shifts: 'is' → 'was', 'will improve' → 'would improve', 'have given rise' → 'had given rise'. Option C shifts 'is' and 'will' but changes 'have given rise' to 'gave rise', losing the perfect."
         },
         {
             "id": "dis_l195_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): They said, 'We are staying here.'",
+            "question": "Convert to reported speech: The investigative panel asked, 'Had appropriate protocols been in place and consistently observed, is it your view that the harm that was caused could have been avoided?'",
             "options": [
-                "They said that they were staying there.",
-                "They said that they were staying here.",
-                "They said that they are staying here."
+                "The investigative panel asked whether, had appropriate protocols been in place and consistently observed, it was his view that the harm that had been caused could have been avoided.",
+                "The investigative panel asked had appropriate protocols been in place and consistently observed, is it your view that the harm that was caused could have been avoided.",
+                "The investigative panel asked whether, had appropriate protocols been in place and consistently observed, it was his view that the harm that was caused could have been avoided."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They said that they were staying there.",
-            "sentence": "They said, 'We are staying here.'",
-            "hint": "'Here' shifts to 'there'. (Log 19 calibration)",
-            "explanation": "Deictic words like 'here' shift to 'there' in reported speech. [Verified in calibration unit 19]."
+            "correctAnswer": "The investigative panel asked whether, had appropriate protocols been in place and consistently observed, it was his view that the harm that had been caused could have been avoided.",
+            "sentence": "The panel asked, 'Had appropriate protocols been in place..., is it your view that the harm that was caused could have been avoided?'",
+            "hint": "Inverted third conditional stays. 'Is it your view' → 'it was his view'. 'Was caused' → 'had been caused'. 'Could have been avoided' stays. Use 'whether'.",
+            "explanation": "The inverted conditional 'had appropriate protocols been in place' stays. 'Is it your view' → 'it was his view'. 'Was caused' → 'had been caused'. 'Could have been avoided' stays. Option C misses shifting 'was caused'."
         },
         {
             "id": "dis_l195_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): He promised, 'I will call you tomorrow.'",
+            "question": "Convert to reported speech: The regulatory guidelines stated, 'Ensure that your organization has robust mechanisms in place for detecting, reporting, and responding to breaches; review these mechanisms at least annually; and remediate any identified deficiencies without undue delay.'",
             "options": [
-                "He promised that he would call me the next day.",
-                "He promised that he will call me tomorrow.",
-                "He promised that he would call me tomorrow."
+                "The regulatory guidelines required organizations to ensure that they had robust mechanisms in place for detecting, reporting, and responding to breaches; review those mechanisms at least annually; and remediate any identified deficiencies without undue delay.",
+                "The regulatory guidelines required organizations to ensure that they had robust mechanisms in place for detecting, reporting, and responding to breaches; review those mechanisms at least annually; and to remediating any identified deficiencies without undue delay.",
+                "The regulatory guidelines required organizations to ensure that your organization had robust mechanisms in place for detecting, reporting, and responding to breaches; review those mechanisms at least annually; and remediate any identified deficiencies without undue delay."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He promised that he would call me the next day.",
-            "sentence": "He promised, 'I will call you tomorrow.'",
-            "hint": "'Tomorrow' shifts to 'the next day'. (Log 19 calibration)",
-            "explanation": "The correct reported form is: 'He promised that he would call me the next day.' [Verified in calibration unit 19]."
+            "correctAnswer": "The regulatory guidelines required organizations to ensure that they had robust mechanisms in place for detecting, reporting, and responding to breaches; review those mechanisms at least annually; and remediate any identified deficiencies without undue delay.",
+            "sentence": "The guidelines stated, 'Ensure... has robust mechanisms...; review these mechanisms...; and remediate any identified deficiencies...'",
+            "hint": "Triple imperative: 'to ensure, review, and remediate'. 'Your organization has' → 'they had'. 'These mechanisms' → 'those mechanisms'. Parallel infinitives.",
+            "explanation": "Three imperatives → 'to ensure, review, and remediate'. 'Your organization has' → 'they had'. 'These' → 'those'. 'To remediating' breaks the parallel infinitive structure. Option C keeps 'your organization' unchanged."
         },
         {
             "id": "dis_l196_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): The scientist explained, 'We saw the signal.'",
+            "question": "Convert to reported speech: The appeals tribunal found, 'The procedural irregularities that have been identified are of a nature and severity that would, had they been identified at first instance, have justified the case being remitted for a fresh hearing.'",
             "options": [
-                "The scientist explained that they have seen the signal.",
-                "The scientist explained that they had seen the signal.",
-                "The scientist explained that they saw the signal."
+                "The appeals tribunal found that the procedural irregularities that had been identified were of a nature and severity that would, had they been identified at first instance, have justified the case being remitted for a fresh hearing.",
+                "The appeals tribunal found that the procedural irregularities that have been identified are of a nature and severity that would, had they been identified at first instance, have justified the case being remitted for a fresh hearing.",
+                "The appeals tribunal found that the procedural irregularities that had been identified were of a nature and severity that would have, had they been identified at first instance, justified the case being remitted for a fresh hearing."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The scientist explained that they had seen the signal.",
-            "sentence": "The scientist explained, 'We saw the signal.'",
-            "hint": "Past simple becomes past perfect. (Log 19 calibration)",
-            "explanation": "'Saw' shifts to 'had seen'. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The appeals tribunal found that the procedural irregularities that had been identified were of a nature and severity that would, had they been identified at first instance, have justified the case being remitted for a fresh hearing.",
+            "sentence": "The tribunal found, 'The procedural irregularities that have been identified are of a nature and severity that would... have justified the case being remitted...'",
+            "hint": "'Have been identified' → 'had been identified'. 'Are' → 'were'. 'Would... have justified' stays (already conditional perfect). The inverted conditional 'had they been identified' stays.",
+            "explanation": "Two shifts: 'have been identified' → 'had been identified' and 'are' → 'were'. The conditional perfect 'would... have justified' and the inverted conditional 'had they been identified' stay. Option C repositions 'have' awkwardly."
         },
         {
             "id": "dis_l196_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): He asked her, 'Do you want some coffee?'",
+            "question": "Convert to reported speech: The standards commission asked, 'On the basis of the evidence that was before the original decision-maker, do you consider that the decision reached was within the range of decisions that a reasonable decision-maker, properly directing themselves, could have made?'",
             "options": [
-                "He asked her if she wanted some coffee.",
-                "He asked her if did she want some coffee.",
-                "He asked her whether she want some coffee."
+                "The standards commission asked whether, on the basis of the evidence that had been before the original decision-maker, I considered that the decision reached had been within the range of decisions that a reasonable decision-maker, properly directing themselves, could have made.",
+                "The standards commission asked on the basis of the evidence that was before the original decision-maker, do you consider that the decision reached was within the range of decisions that a reasonable decision-maker, properly directing themselves, could have made.",
+                "The standards commission asked whether, on the basis of the evidence that had been before the original decision-maker, I considered that the decision reached was within the range of decisions that a reasonable decision-maker, properly directing themselves, could have made."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He asked her if she wanted some coffee.",
-            "sentence": "He asked her, 'Do you want some coffee?'",
-            "hint": "Yes/No question with past shift. (Log 19 calibration)",
-            "explanation": "The correct reported form is: 'He asked her if she wanted some coffee.' [Verified in calibration unit 19]."
+            "correctAnswer": "The standards commission asked whether, on the basis of the evidence that had been before the original decision-maker, I considered that the decision reached had been within the range of decisions that a reasonable decision-maker, properly directing themselves, could have made.",
+            "sentence": "The commission asked, '...do you consider that the decision reached was within the range of decisions... could have made?'",
+            "hint": "'Do consider' → 'considered'. 'You' → 'I'. 'Was before' → 'had been before'. 'Was within the range' → 'had been within the range'. 'Could have made' stays. Use 'whether'.",
+            "explanation": "Four shifts: 'do consider' → 'considered', 'you' → 'I', 'was before' → 'had been before', 'was within the range' → 'had been within the range'. Option C correctly shifts most elements but fails to shift 'was within the range'."
         },
         {
             "id": "dis_l196_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): She told him, 'I saw her two days ago.'",
+            "question": "Convert to reported speech: The professional conduct code stated, 'Do not accept instructions where compliance would require you to act contrary to law or in a manner inconsistent with your professional obligations; in such cases, withdraw and advise your client to seek alternative representation.'",
             "options": [
-                "She told him that she had seen her two days ago.",
-                "She told him that she had seen her two days before.",
-                "She told him that she saw her two days before."
+                "The professional conduct code required practitioners not to accept instructions where compliance would require them to act contrary to law or in a manner inconsistent with their professional obligations; in such cases, to withdraw and advise their client to seek alternative representation.",
+                "The professional conduct code required practitioners not to accept instructions where compliance would require you to act contrary to law or in a manner inconsistent with your professional obligations; in such cases, to withdraw and advise your client to seek alternative representation.",
+                "The professional conduct code required practitioners not to accept instructions where compliance would require them to act contrary to law or in a manner inconsistent with their professional obligations; in such cases, withdraw and advise their client to seek alternative representation."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She told him that she had seen her two days before.",
-            "sentence": "She told him, 'I saw her two days ago.'",
-            "hint": "'Ago' shifts to 'before'. (Log 19 calibration)",
-            "explanation": "The correct reported form is: 'She told him that she had seen her two days before.' [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The professional conduct code required practitioners not to accept instructions where compliance would require them to act contrary to law or in a manner inconsistent with their professional obligations; in such cases, to withdraw and advise their client to seek alternative representation.",
+            "sentence": "The code stated, 'Do not accept instructions...; in such cases, withdraw and advise your client to seek alternative representation.'",
+            "hint": "Negative imperative + double imperative: 'not to accept'; 'to withdraw and advise'. 'You/your' → 'them/their' throughout. Parallel infinitives.",
+            "explanation": "'Do not accept' → 'not to accept'. 'You/your' → 'them/their'. 'Withdraw and advise' → 'to withdraw and advise' (completing the parallel structure). Option C omits 'to' before 'withdraw'."
         },
         {
             "id": "dis_l197_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): He said, 'I'm going to the store.'",
+            "question": "Convert to reported speech: The select committee concluded, 'The failures of oversight that we have documented were not isolated incidents but rather reflect a systemic absence of the accountability structures that should have been operating throughout the period under review.'",
             "options": [
-                "He said that he was going to the store.",
-                "He said that he is going to the store.",
-                "He said that he goes to the store."
+                "The select committee concluded that the failures of oversight they had documented had not been isolated incidents but rather reflected a systemic absence of the accountability structures that should have been operating throughout the period under review.",
+                "The select committee concluded that the failures of oversight they have documented were not isolated incidents but rather reflect a systemic absence of the accountability structures that should have been operating throughout the period under review.",
+                "The select committee concluded that the failures of oversight they had documented were not isolated incidents but rather reflected a systemic absence of the accountability structures that should have been operating throughout the period under review."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he was going to the store.",
-            "sentence": "He said, 'I'm going to the store.'",
-            "hint": "Present continuous shift. (Log 19 calibration)",
-            "explanation": "'I'm going' becomes 'he was going'. [Verified in calibration unit 19]."
+            "correctAnswer": "The select committee concluded that the failures of oversight they had documented had not been isolated incidents but rather reflected a systemic absence of the accountability structures that should have been operating throughout the period under review.",
+            "sentence": "The committee concluded, 'The failures... that we have documented were not isolated incidents but rather reflect a systemic absence... that should have been operating...'",
+            "hint": "'Have documented' → 'had documented'. 'We' → 'they'. 'Were not isolated' → 'had not been isolated'. 'Reflect' → 'reflected'. 'Should have been operating' stays.",
+            "explanation": "Four shifts: 'have documented' → 'had documented', 'we' → 'they', 'were not isolated incidents' → 'had not been isolated incidents', 'reflect' → 'reflected'. 'Should have been operating' stays. Option C shifts 'have documented' and 'reflect' but leaves 'were not isolated incidents' without the past perfect."
         },
         {
             "id": "dis_l197_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): She asked, 'What time does the train leave?'",
+            "question": "Convert to reported speech: The tribunal of inquiry asked, 'Had the organization implemented the safeguards it had previously committed to introducing, would the losses that were ultimately sustained have been avoided or reduced?'",
             "options": [
-                "She asked what time the train left.",
-                "She asked what time did the train leave.",
-                "She asked what time the train leaves."
+                "The tribunal of inquiry asked whether, had the organization implemented the safeguards it had previously committed to introducing, the losses that had been ultimately sustained would have been avoided or reduced.",
+                "The tribunal of inquiry asked had the organization implemented the safeguards it had previously committed to introducing, would the losses that were ultimately sustained have been avoided or reduced.",
+                "The tribunal of inquiry asked whether, had the organization implemented the safeguards it had previously committed to introducing, the losses that were ultimately sustained would have been avoided or reduced."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She asked what time the train left.",
-            "sentence": "She asked, 'What time does the train leave?'",
-            "hint": "Wh- question word order shift. (Log 19 calibration)",
-            "explanation": "The correct reported form is: 'She asked what time the train left.' [Verified in calibration unit 19]."
+            "correctAnswer": "The tribunal of inquiry asked whether, had the organization implemented the safeguards it had previously committed to introducing, the losses that had been ultimately sustained would have been avoided or reduced.",
+            "sentence": "The tribunal asked, 'Had the organization implemented the safeguards it had committed to introducing, would the losses... have been avoided or reduced?'",
+            "hint": "Inverted third conditional stays. 'Had committed' stays. 'Were ultimately sustained' → 'had been ultimately sustained'. 'Would have been avoided' stays. Use 'whether'.",
+            "explanation": "The inverted conditional and conditional perfect both stay. 'Were ultimately sustained' → 'had been ultimately sustained'. Use 'whether'. Option C correctly handles most elements but fails to shift 'were sustained'."
         },
         {
             "id": "dis_l197_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): They asked, 'Can we stay here tonight?'",
+            "question": "Convert to reported speech: The governance framework required, 'Board members shall exercise their duties with due care, skill, and diligence; shall act in the best interests of the organization at all times; and shall not place themselves in a position where their personal interests conflict with those of the organization.'",
             "options": [
-                "They asked if they could stay here tonight.",
-                "They asked if they could stay there that night.",
-                "They asked could they stay there that night."
+                "The governance framework required board members to exercise their duties with due care, skill, and diligence; act in the best interests of the organization at all times; and not place themselves in a position where their personal interests conflicted with those of the organization.",
+                "The governance framework required board members to exercise their duties with due care, skill, and diligence; act in the best interests of the organization at all times; and not place themselves in a position where their personal interests conflict with those of the organization.",
+                "The governance framework required board members to exercise their duties with due care, skill, and diligence; to acting in the best interests of the organization at all times; and not place themselves in a position where their personal interests conflicted with those of the organization."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "They asked if they could stay there that night.",
-            "sentence": "They asked, 'Can we stay here tonight?'",
-            "hint": "Shift 'here' and 'tonight'. (Log 19 calibration)",
-            "explanation": "The correct reported form is: 'They asked if they could stay there that night.' [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The governance framework required board members to exercise their duties with due care, skill, and diligence; act in the best interests of the organization at all times; and not place themselves in a position where their personal interests conflicted with those of the organization.",
+            "sentence": "The framework required, 'Board members shall exercise... shall act... and shall not place themselves in a position where their personal interests conflict with those of the organization.'",
+            "hint": "Triple obligation: 'shall exercise, shall act, shall not place' → 'to exercise, act, and not place'. 'Conflict' → 'conflicted'. Parallel infinitives.",
+            "explanation": "Three parallel obligations → 'to exercise, act, and not place'. 'Conflict' → 'conflicted'. Option B misses shifting 'conflict'. Option C uses 'to acting' which breaks the parallel structure."
         },
         {
             "id": "dis_l198_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): She asked, 'Are you happy?'",
+            "question": "Convert to reported speech: The commission's final report stated, 'Had the warnings that were received in the years preceding the crisis been acted upon with the urgency they warranted, it is our considered view that the scale of the harm that was ultimately suffered could have been materially reduced.'",
             "options": [
-                "She asked if I am happy.",
-                "She asked if I was happy.",
-                "She asked was I happy."
+                "The commission's final report stated that had the warnings that had been received in the years preceding the crisis been acted upon with the urgency they had warranted, it was their considered view that the scale of the harm that had been ultimately suffered could have been materially reduced.",
+                "The commission's final report stated that had the warnings that were received in the years preceding the crisis been acted upon with the urgency they warranted, it is their considered view that the scale of the harm that was ultimately suffered could have been materially reduced.",
+                "The commission's final report stated that had the warnings that had been received in the years preceding the crisis been acted upon with the urgency they warranted, it was their considered view that the scale of the harm that was ultimately suffered could have been materially reduced."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "She asked if I was happy.",
-            "sentence": "She asked, 'Are you happy?'",
-            "hint": "Yes/No question uses 'if'. (Log 19 calibration)",
-            "explanation": "The correct reported form is: 'She asked if I was happy.' [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The commission's final report stated that had the warnings that had been received in the years preceding the crisis been acted upon with the urgency they had warranted, it was their considered view that the scale of the harm that had been ultimately suffered could have been materially reduced.",
+            "sentence": "The report stated, 'Had the warnings... been acted upon... it is our considered view that the scale of the harm... could have been materially reduced.'",
+            "hint": "Inverted conditional stays. 'Were received' → 'had been received'. 'Is our considered view' → 'was their considered view'. 'Was ultimately suffered' → 'had been ultimately suffered'. 'Warranted' stays. 'Could have been reduced' stays.",
+            "explanation": "Shifts: 'were received' → 'had been received', 'is our view' → 'was their view', 'was ultimately suffered' → 'had been ultimately suffered'. Inverted conditional, 'warranted', and 'could have been reduced' stay. Option C misses shifting 'was ultimately suffered'."
         },
         {
             "id": "dis_l198_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): The detective asked, 'Where were you last night?'",
+            "question": "Convert to reported speech: The inquiry panel asked, 'In the period between when the initial risk assessment was carried out and when the crisis emerged, what opportunities existed to revisit the assumptions on which the assessment had been based, and were any such opportunities taken?'",
             "options": [
-                "The detective asked where I was the night before.",
-                "The detective asked where I had been the night before.",
-                "The detective asked where was I the night before."
+                "The inquiry panel asked what opportunities had existed, in the period between when the initial risk assessment had been carried out and when the crisis had emerged, to revisit the assumptions on which the assessment had been based, and whether any such opportunities had been taken.",
+                "The inquiry panel asked in the period between when the initial risk assessment was carried out and when the crisis emerged, what opportunities existed to revisit the assumptions on which the assessment had been based, and were any such opportunities taken.",
+                "The inquiry panel asked what opportunities had existed, in the period between when the initial risk assessment had been carried out and when the crisis had emerged, to revisit the assumptions on which the assessment had been based, and any such opportunities had been taken."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "The detective asked where I had been the night before.",
-            "sentence": "The detective asked, 'Where were you last night?'",
-            "hint": "Past simple shifts to past perfect. (Log 19 calibration)",
-            "explanation": "'Were' shifts to 'had been' in reported questions. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The inquiry panel asked what opportunities had existed, in the period between when the initial risk assessment had been carried out and when the crisis had emerged, to revisit the assumptions on which the assessment had been based, and whether any such opportunities had been taken.",
+            "sentence": "The panel asked, 'What opportunities existed...? and were any such opportunities taken?'",
+            "hint": "'Existed' → 'had existed'. 'Was carried out' → 'had been carried out'. 'Emerged' → 'had emerged'. 'Had been based' stays. 'Were taken' → 'had been taken'. The second question becomes a 'whether' clause.",
+            "explanation": "Five shifts to past perfect throughout. The second question ('were any such opportunities taken') becomes 'whether any such opportunities had been taken'. Option C omits 'whether' for the second clause."
         },
         {
             "id": "dis_l198_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): He said, 'I wish I were rich.'",
+            "question": "Convert to reported speech: The constitutional compact stated, 'All signatories commit to upholding the principles enshrined herein, to refrain from actions that undermine the integrity of the compact, and to submit any disputes arising from its interpretation to binding arbitration in accordance with the procedures set out in the annexed protocol.'",
             "options": [
-                "He said that he wished he were rich.",
-                "He said that he wished he was rich.",
-                "He said that he had wished he were rich."
+                "The constitutional compact required all signatories to uphold the principles enshrined therein, refrain from actions that undermined the integrity of the compact, and submit any disputes arising from its interpretation to binding arbitration in accordance with the procedures set out in the annexed protocol.",
+                "The constitutional compact required all signatories to uphold the principles enshrined therein, refrain from actions that undermine the integrity of the compact, and submit any disputes arising from its interpretation to binding arbitration in accordance with the procedures set out in the annexed protocol.",
+                "The constitutional compact required all signatories to uphold the principles enshrined therein, to refrain from actions that undermined the integrity of the compact, and submit any disputes arising from its interpretation to binding arbitration."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He said that he wished he were rich.",
-            "sentence": "He said, 'I wish I were rich.'",
-            "hint": "Subjunctive mood in reported speech. (Log 19 calibration)",
-            "explanation": "The subjunctive 'were' often remains 'were' in reported speech after 'wish'. [Verified in calibration unit 19]."
+            "correctAnswer": "The constitutional compact required all signatories to uphold the principles enshrined therein, refrain from actions that undermined the integrity of the compact, and submit any disputes arising from its interpretation to binding arbitration in accordance with the procedures set out in the annexed protocol.",
+            "sentence": "The compact stated, 'All signatories commit to upholding... to refrain from actions that undermine..., and to submit any disputes...'",
+            "hint": "Triple obligation: 'commit to upholding, to refrain, and to submit' → 'required + to + uphold, refrain, and submit'. 'Herein' → 'therein'. 'Undermine' → 'undermined'. Parallel infinitives.",
+            "explanation": "Three parallel infinitives → 'to uphold, refrain, and submit'. 'Herein' → 'therein'. 'Undermine' → 'undermined'. Option B misses shifting 'undermine'. Option C adds an extra 'to' before 'refrain', breaking parallel structure."
         },
         {
             "id": "dis_l199_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): They told us, 'We have already left.'",
+            "question": "Identify the error in the following reported speech: 'She said she has not been informed of the decision until the following morning.'",
             "options": [
-                "They told us that they had already left.",
-                "They told us that they have already left.",
-                "They told us that they already left."
+                "'Has not been informed' should be 'had not been informed' - present perfect must shift to past perfect in reported speech.",
+                "'Following morning' should be 'next morning' - 'following' is not used in reported speech.",
+                "'She said' should be 'she told' - 'said' cannot introduce reported speech without an object."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They told us that they had already left.",
-            "sentence": "They told us, 'We have already left.'",
-            "hint": "Present perfect shift. (Log 19 calibration)",
-            "explanation": "'Have left' becomes 'had left'. [Verified in calibration unit 19]."
+            "correctAnswer": "'Has not been informed' should be 'had not been informed' - present perfect must shift to past perfect in reported speech.",
+            "sentence": "She said she has not been informed of the decision until the following morning.",
+            "hint": "The present perfect 'has not been informed' should shift to past perfect 'had not been informed'. 'Following morning' and 'said' are both correct.",
+            "explanation": "In reported speech, present perfect ('has not been informed') must shift to past perfect ('had not been informed'). 'Following morning' is a correct time shift from 'next morning'. 'Said' is correct without an object."
         },
         {
             "id": "dis_l199_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): He told me, 'Open the window, please.'",
+            "question": "Identify the error in the following reported speech: 'The board asked what grounds were there for the appeal.'",
             "options": [
-                "He told me to open the window.",
-                "He asked me to open the window.",
-                "He said to me open the window."
+                "'Were there' should be 'there were' - reported speech requires statement word order, not question order.",
+                "'Were' should be 'had been' - past simple must always shift to past perfect in reported speech.",
+                "'What grounds' should be 'which grounds' - 'what' is not used with nouns in indirect questions."
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "He asked me to open the window.",
-            "sentence": "He told me, 'Open the window, please.'",
-            "hint": "Polite requests use 'asked me to'. (Log 19 calibration)",
-            "explanation": "A polite request is best reported using 'asked + object + to + infinitive'. [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "'Were there' should be 'there were' - reported speech requires statement word order, not question order.",
+            "sentence": "The board asked what grounds were there for the appeal.",
+            "hint": "The error is the question word order 'were there'. Reported questions require statement order: 'what grounds there were'.",
+            "explanation": "In reported speech, question word order ('were there') must change to statement order ('there were'). 'Were' → 'had been' is not always obligatory. 'What grounds' is perfectly natural in indirect questions."
         },
         {
             "id": "dis_l199_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): She remarked, 'If I had seen the sign, I would have stopped.'",
+            "question": "Identify the error in the following reported speech: 'The policy warned employees to not sharing confidential data with third parties.'",
             "options": [
-                "She remarked that if she had seen the sign, she would have stopped.",
-                "She remarked that if she saw the sign, she would have stopped.",
-                "She remarked that if she had seen the sign, she would stop."
+                "'To not sharing' is incorrect - negative imperatives are reported as 'warned + not to + infinitive', giving 'not to share'.",
+                "'Warned' is incorrect - prohibitions should always be reported using 'told', not 'warned'.",
+                "'Third parties' should be 'external parties' - the vocabulary in reported speech must match formal register."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She remarked that if she had seen the sign, she would have stopped.",
-            "sentence": "She remarked, 'If I had seen the sign, I would have stopped.'",
-            "hint": "Third conditional does not shift further back. (Log 19 calibration)",
-            "explanation": "The third conditional 'had seen / would have stopped' remains unchanged. [Verified in calibration unit 19]."
+            "correctAnswer": "'To not sharing' is incorrect - negative imperatives are reported as 'warned + not to + infinitive', giving 'not to share'.",
+            "sentence": "The policy warned employees to not sharing confidential data with third parties.",
+            "hint": "'To not sharing' is incorrect. It should be 'not to share' - the gerund cannot follow 'to' when reporting a negative imperative.",
+            "explanation": "Negative imperatives are reported as 'warned/told + object + not to + bare infinitive'. 'Not sharing' (gerund) cannot follow 'to' in this structure. 'Warned' is appropriate for prohibitions. Vocabulary choices in reported speech are flexible."
         },
         {
             "id": "dis_l200_q1",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): He stated, 'The project will be a success.'",
+            "question": "Identify the error in the following reported speech: 'He claimed the evidence clearly shown that the defendant had been present at the scene.'",
             "options": [
-                "He stated that the project would be a success.",
-                "He stated that the project will be a success.",
-                "He stated that the project was a success."
+                "'Shown' should be 'showed' - past simple 'showed' is required here, not the past participle 'shown'.",
+                "'Had been present' should be 'was present' - the past perfect is unnecessary when the main verb is already past.",
+                "'Claimed' should be 'stated' - 'claimed' is only used when reporting false or disputed statements."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He stated that the project would be a success.",
-            "sentence": "He stated, 'The project will be a success.'",
-            "hint": "'Will' shifts to 'would'. (Log 19 calibration)",
-            "explanation": "'Will be' shifts to 'would be'. [Verified in calibration unit 19]."
+            "correctAnswer": "'Shown' should be 'showed' - past simple 'showed' is required here, not the past participle 'shown'.",
+            "sentence": "He claimed the evidence clearly shown that the defendant had been present at the scene.",
+            "hint": "'Shown' is the past participle, not the past simple. The past simple 'showed' is required as the main verb in this reported clause.",
+            "explanation": "'Showed' (past simple) is the correct form - 'shown' is the past participle used in perfect constructions ('had shown'). 'Had been present' is correctly back-shifted. 'Claimed' can be used for disputed statements."
         },
         {
             "id": "dis_l200_q2",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): The officer ordered, 'Stand up immediately.'",
+            "question": "Identify the error in the following reported speech: 'The manager told the team that they should to review the figures before submitting the report.'",
             "options": [
-                "The officer ordered us to stand up immediately.",
-                "The officer said that we stand up immediately.",
-                "The officer ordered that we stood up immediately."
+                "'Should to review' is incorrect - modal verbs are followed by the bare infinitive, not 'to + infinitive'. It should be 'should review'.",
+                "'Told the team that' is incorrect - 'told' should be followed by an object and infinitive, not a 'that' clause.",
+                "'Before submitting' is incorrect - it should be 'before they submitted' for consistency of tense."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The officer ordered us to stand up immediately.",
-            "sentence": "The officer ordered, 'Stand up immediately.'",
-            "hint": "Order uses 'ordered + to + verb'. (Log 19 calibration)",
-            "explanation": "The correct reported form is: 'The officer ordered us to stand up immediately.' [Verified in calibration unit 19]."
+            "correctAnswer": "'Should to review' is incorrect - modal verbs are followed by the bare infinitive, not 'to + infinitive'. It should be 'should review'.",
+            "sentence": "The manager told the team that they should to review the figures before submitting the report.",
+            "hint": "'Should to review' is incorrect. Modal verbs (should, must, can, will, etc.) are always followed by the bare infinitive without 'to'.",
+            "explanation": "Modal verbs are always followed by the bare infinitive: 'should review', not 'should to review'. 'Told + object + that-clause' is perfectly correct. 'Before submitting' is a natural gerund clause."
         },
         {
             "id": "dis_l200_q3",
             "instruction": "TRANSFORM THE SPEECH",
-            "difficulty": 5,
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech (unit 19): The captain shouted, 'Abandon ship at once!'",
+            "question": "Identify the error in the following reported speech: 'The scientist explained that water boiled at 100 degrees Celsius at sea level under standard atmospheric conditions.'",
             "options": [
-                "The captain shouted that we abandon ship at once.",
-                "The captain ordered to abandon ship at once.",
-                "The captain ordered us to abandon ship immediately."
+                "There is no error - when reporting scientific or universal facts, either the present tense or the back-shifted past tense is acceptable.",
+                "'Boiled' should be 'boils' - universal scientific facts must always remain in the present tense in reported speech.",
+                "'Explained' should be 'said' - 'explained' implies a causal relationship that is not present here."
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "The captain ordered us to abandon ship immediately.",
-            "sentence": "The captain shouted, 'Abandon ship at once!'",
-            "hint": "Urgent command with adverb shift. (Log 19 calibration)",
-            "explanation": "The correct reported form is: 'The captain ordered us to abandon ship immediately.' [Verified in calibration unit 19]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "There is no error - when reporting scientific or universal facts, either the present tense or the back-shifted past tense is acceptable.",
+            "sentence": "The scientist explained that water boiled at 100 degrees Celsius at sea level under standard atmospheric conditions.",
+            "hint": "Both 'boils' (present) and 'boiled' (back-shifted past) are acceptable when reporting scientific facts.",
+            "explanation": "For permanent scientific truths, both the present tense ('boils') and the back-shifted past ('boiled') are grammatically acceptable in reported speech. The present tense is often preferred but neither is an error. 'Explained' is appropriate for scientific information."
         }
     ]
 }
