@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -87,9 +89,28 @@ class SpeedSpellingInputField extends StatelessWidget {
         children: [
           Center(
             child: Padding(
-              padding: EdgeInsets.only(
-                left: 20.w,
-                right: 90.w, // Safe space for Backspace + Clear buttons
+              // FIX: was `EdgeInsets.only(left: 20.w, right: 90.w)` —
+              // asymmetric padding that deliberately reserves space for the
+              // trailing backspace/clear controls. Because it's asymmetric,
+              // it does NOT correctly mirror for RTL locales on its own;
+              // `EdgeInsetsDirectional` (paired with the matching
+              // `PositionedDirectional` fix below) keeps the reserved space
+              // on the correct (trailing/"end") side regardless of text
+              // direction.
+              padding: EdgeInsetsDirectional.only(
+                start: 20.w,
+                // FIX: was `90.w` alone. The backspace/clear buttons below
+                // now floor at 48dp each for touch-target compliance
+                // (48 + 8 gap + 48 = 104 logical px minimum), which the
+                // original 90.w reservation is too narrow for — the
+                // buttons could visually crowd the spelled-word text.
+                // `math.max` keeps the original, larger reservation on
+                // bigger screens while guaranteeing enough room for the
+                // now-larger buttons everywhere else.
+                end: math.max(
+                  90.w,
+                  120.0,
+                ), // Safe space for Backspace + Clear buttons
               ),
               child: FittedBox(
                 fit: BoxFit.scaleDown,
@@ -135,8 +156,8 @@ class SpeedSpellingInputField extends StatelessWidget {
             ),
           ),
           if (currentInput.isNotEmpty && !isAnswered)
-            Positioned(
-              right: 12.w,
+            PositionedDirectional(
+              end: 12.w,
               top: 0,
               bottom: 0,
               child: Center(
@@ -149,18 +170,31 @@ class SpeedSpellingInputField extends StatelessWidget {
                       excludeSemantics: true,
                       child: ScaleButton(
                         onTap: onBackspace,
-                        child: Container(
-                          padding: EdgeInsets.all(8.r),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.15),
-                            shape: BoxShape.circle,
+                        // FIX: 8.r padding + 18.r icon ≈ 34 logical px,
+                        // under the 48dp touch-target minimum. Growing only
+                        // the invisible tappable area, not the visible
+                        // circle, via the same ConstrainedBox+Center
+                        // pattern used elsewhere in this review.
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(
+                            minWidth: 48,
+                            minHeight: 48,
                           ),
-                          child: Icon(
-                            Icons.backspace_rounded,
-                            color: isDark
-                                ? Colors.white
-                                : const Color(0xFF0F172A),
-                            size: 18.r,
+                          child: Center(
+                            child: Container(
+                              padding: EdgeInsets.all(8.r),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.15),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.backspace_rounded,
+                                color: isDark
+                                    ? Colors.white
+                                    : const Color(0xFF0F172A),
+                                size: 18.r,
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -172,18 +206,26 @@ class SpeedSpellingInputField extends StatelessWidget {
                       excludeSemantics: true,
                       child: ScaleButton(
                         onTap: onClear,
-                        child: Container(
-                          padding: EdgeInsets.all(8.r),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.15),
-                            shape: BoxShape.circle,
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(
+                            minWidth: 48,
+                            minHeight: 48,
                           ),
-                          child: Icon(
-                            Icons.refresh_rounded,
-                            color: isDark
-                                ? Colors.white
-                                : const Color(0xFF0F172A),
-                            size: 18.r,
+                          child: Center(
+                            child: Container(
+                              padding: EdgeInsets.all(8.r),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.15),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.refresh_rounded,
+                                color: isDark
+                                    ? Colors.white
+                                    : const Color(0xFF0F172A),
+                                size: 18.r,
+                              ),
+                            ),
                           ),
                         ),
                       ),

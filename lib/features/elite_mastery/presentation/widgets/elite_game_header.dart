@@ -7,6 +7,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Standalone header widget for the Elite Mastery game screen.
 ///
@@ -76,7 +77,20 @@ class EliteGameHeader extends StatelessWidget {
       container: true,
       // Screen readers announce level and lives so the player can track
       // progress without visually inspecting the header.
-      label: 'Level $level. $lives ${lives == 1 ? "life" : "lives"} remaining.',
+      // FIX: previously a hardcoded English string, the only one of its
+      // kind in this file — every other user-facing/semantic string here
+      // and elsewhere in this feature goes through `context.tr(...)`. A
+      // screen-reader user on any of this app's other 17 supported
+      // languages would hear this one announcement in English regardless
+      // of their device locale. NOTE: `games.semantic_level_progress` is a
+      // new localization key needed in the ARB/localization files (outside
+      // this feature slice); its English text should itself handle the
+      // life/lives plural, e.g. via that framework's plural syntax if
+      // supported, or two args as used here in the interim.
+      label: context.tr(
+        'games.semantic_level_progress',
+        args: [level.toString(), lives.toString()],
+      ),
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Row(
@@ -126,25 +140,42 @@ class _BriefingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 8.w),
+      // FIX: was `EdgeInsets.only(left: 8.w)` — a literal side that does not
+      // flip when this Row's layout direction mirrors for RTL locales
+      // (Arabic). `EdgeInsetsDirectional.only(start:)` keeps this spacing on
+      // the correct side of the button regardless of text direction.
+      padding: EdgeInsetsDirectional.only(start: 8.w),
       child: Semantics(
-        label: 'Show level instructions',
+        label: context.tr('games.semantic_show_instructions'),
         button: true,
         child: ScaleButton(
           onTap: onTap,
-          child: Container(
-            padding: EdgeInsets.all(6.r),
-            decoration: BoxDecoration(
-              color: theme.primaryColor.withValues(alpha: 0.1),
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: theme.primaryColor.withValues(alpha: 0.2),
+          // FIX: the visible circle (6.r padding + 16.r icon ≈ 28 logical
+          // px) sits well under the 48x48dp minimum touch-target
+          // recommendation. Wrapping it in an invisible 48x48 box (centered)
+          // grows only the tappable area — the visible circle itself is
+          // completely unchanged — assuming `ScaleButton` hit-tests the
+          // full space given to its child, which is the standard behavior
+          // for this kind of button wrapper; worth confirming directly
+          // against `scale_button.dart` if available.
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
+            child: Center(
+              child: Container(
+                padding: EdgeInsets.all(6.r),
+                decoration: BoxDecoration(
+                  color: theme.primaryColor.withValues(alpha: 0.1),
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: theme.primaryColor.withValues(alpha: 0.2),
+                  ),
+                ),
+                child: Icon(
+                  Icons.info_outline_rounded,
+                  size: 16.r,
+                  color: theme.primaryColor,
+                ),
               ),
-            ),
-            child: Icon(
-              Icons.info_outline_rounded,
-              size: 16.r,
-              color: theme.primaryColor,
             ),
           ),
         ),
@@ -171,7 +202,13 @@ class _HintButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: isHintUsed ? 'Hint already used' : 'Show hint',
+      // FIX: another hardcoded English pair found alongside the ones fixed
+      // above — same issue, same fix. NOTE: `games.semantic_hint_used` /
+      // `games.semantic_show_hint` are new localization keys needed in the
+      // ARB/localization files (outside this feature slice).
+      label: isHintUsed
+          ? context.tr('games.semantic_hint_used')
+          : context.tr('games.semantic_show_hint'),
       button: true,
       child:
           QuestHintButton(

@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
@@ -72,7 +73,8 @@ class EliteFeedbackCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ruleTip = state.currentQuest.explanation;
-    final hasRuleTip = (_success || state.isFinalFailure) &&
+    final hasRuleTip =
+        (_success || state.isFinalFailure) &&
         ruleTip != null &&
         ruleTip.trim().isNotEmpty;
 
@@ -222,9 +224,15 @@ class EliteFeedbackCard extends StatelessWidget {
       buffer.write(context.tr('games.semantic_incorrect_try_again'));
     }
     if (ruleTip != null) {
-      buffer
-        ..write(context.tr('games.pro_tip_caps'))
-        ..write(ruleTip);
+      // FIX: previously concatenated a raw label + the tip text directly
+      // (`context.tr('games.pro_tip_caps') + ruleTip`), inconsistent with
+      // the properly parameterized template used a few lines above
+      // (`games.semantic_incorrect_explanation`, args: [...]). Naive
+      // concatenation can't be reordered for languages with different word
+      // order/grammar around an inserted value. NOTE: `games.semantic_pro_tip`
+      // is a new localization key needed in the ARB/localization files
+      // (outside this feature slice), e.g. English: "Pro tip: {0}".
+      buffer.write(context.tr('games.semantic_pro_tip', args: [ruleTip]));
     }
     return buffer.toString();
   }
@@ -434,8 +442,15 @@ class _ContinueButton extends StatelessWidget {
             child: Container(
               width: double.infinity,
               // 65.h gives ~48dp on a 812px reference — meets the WCAG 2.1 AA
-              // minimum touch-target requirement of 44dp.
-              height: 65.h,
+              // minimum touch-target requirement of 44dp. FIX: on the
+              // smallest realistic phone heights (~568-667 logical px),
+              // ScreenUtil's proportional scaling can bring this closer to
+              // ~45dp — still above the 44dp WCAG floor, but under Android
+              // Material's 48dp recommendation. `math.max` guarantees the
+              // full 48dp regardless of device height, while leaving the
+              // value unchanged (still scaling normally) on every device
+              // where 65.h already clears it.
+              height: math.max(65.h, 48.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20.r),
                 gradient: LinearGradient(

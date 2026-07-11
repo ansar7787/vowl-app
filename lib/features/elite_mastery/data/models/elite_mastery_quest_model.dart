@@ -73,9 +73,19 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
             )
           : null,
       sentences: parseStringList(json['sentences']),
+      // FIX: previously always round-tripped through `e.toString()` then
+      // `int.tryParse`. For a genuine int (e.g. `3`) this works, but if a
+      // value ever arrives as a double (e.g. `3.0`), `.toString()` produces
+      // `"3.0"`, which `int.tryParse` cannot parse — silently falling back
+      // to `0` instead of `3`. Handling `num` directly avoids that
+      // silent-data-corruption path; the string fallback remains for any
+      // other representation.
       correctOrder: json['correctOrder'] != null
           ? (json['correctOrder'] as List)
-                .map((e) => int.tryParse(e.toString()) ?? 0)
+                .map(
+                  (e) =>
+                      e is num ? e.toInt() : (int.tryParse(e.toString()) ?? 0),
+                )
                 .toList()
           : null,
       idiom: getString(json['idiom']),

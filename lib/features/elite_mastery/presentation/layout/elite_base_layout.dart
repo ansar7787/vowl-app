@@ -99,11 +99,17 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
   @override
   void didUpdateWidget(EliteBaseLayout oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.level != widget.level) {
+    // FIX: previously only checked `level`. `_getTheme`'s own cache already
+    // self-invalidates on a `gameType` change independently, but the
+    // life-warning-nudge bookkeeping (`_hasSpokenNudge`/`_lastLives`/
+    // `_lastIndex`) did not, which could — in principle — carry stale state
+    // across a `gameType` change that isn't accompanied by a `level` change.
+    if (oldWidget.level != widget.level ||
+        oldWidget.gameType != widget.gameType) {
       _hasSpokenNudge = false;
       _lastLives = _kMaxLives;
       _lastIndex = -1;
-      _cachedTheme = null; // invalidate when level changes
+      _cachedTheme = null; // invalidate when level or game type changes
     }
   }
 
@@ -222,16 +228,21 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
       return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: theme.backgroundColors[1],
-        body: GameErrorWidget(
-          message: state.message,
-          onRetry: () => context.read<EliteMasteryBloc>().add(
-            FetchEliteMasteryQuests(
-              gameType: widget.gameType,
-              level: widget.level,
+        // FIX: this Scaffold's body wasn't wrapped in `SafeArea`, unlike the
+        // main game Scaffold below — content could render under a notch,
+        // status bar, or gesture-navigation inset on the error screen.
+        body: SafeArea(
+          child: GameErrorWidget(
+            message: _localizedErrorMessage(context, state),
+            onRetry: () => context.read<EliteMasteryBloc>().add(
+              FetchEliteMasteryQuests(
+                gameType: widget.gameType,
+                level: widget.level,
+              ),
             ),
+            onBack: () => Navigator.pop(context),
+            primaryColor: theme.primaryColor,
           ),
-          onBack: () => Navigator.pop(context),
-          primaryColor: theme.primaryColor,
         ),
       );
     }
@@ -248,6 +259,18 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
 
     return Scaffold(
       backgroundColor: theme.backgroundColors[1],
+      // FIX: this Scaffold previously relied on the (default) automatic
+      // `resizeToAvoidBottomInset: true` behavior while the scroll view
+      // below *also* manually adds `MediaQuery.viewInsetsOf(context).bottom`
+      // to its own padding. Flutter's Scaffold removes the bottom view
+      // inset for its body once it has resized to avoid it, so that manual
+      // addition would silently evaluate to zero — or, depending on
+      // ancestor widgets, the two mechanisms could disagree about who is
+      // responsible for keyboard clearance. Disabling the automatic resize
+      // makes the manual calculation the single, unambiguous source of
+      // truth, and matches the choice already made for the error Scaffold
+      // above.
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           // Positioned.fill ensures this base layer actually covers the Stack.
@@ -261,134 +284,147 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
           else if (quest?.visualConfig != null)
             VisualConfigBackground(config: quest!.visualConfig!),
 
-          if (state is EliteMasteryLoading)
-            GameShimmerLoading(primaryColor: theme.primaryColor)
-          else
-            SafeArea(
-              child: Column(
-                children: [
-                  SizedBox(height: 10.h),
-                  EliteGameHeader(
-                    level: widget.level,
-                    progress: progress,
-                    lives: lives,
-                    streak: state is EliteMasteryLoaded
-                        ? state.currentIndex
-                        : 0,
-                    isAnswered: widget.isAnswered,
-                    isHintUsed: state is EliteMasteryLoaded
-                        ? state.isHintUsed
-                        : false,
-                    hintText: quest?.hint,
-                    theme: theme,
-                    isDark: isDark,
-                    onBack: () => GameDialogHelper.showExitConfirmation(
-                      context,
-                      onQuit: () => Navigator.pop(context),
-                    ),
-                    onHint: widget.onHint,
-                    onBriefing: () => setState(() => _showBriefing = true),
-                  ),
-                  Expanded(
-                    child: Stack(
-                      clipBehavior: Clip.none,
-                      children: [
-                        AnimatedOpacity(
-                          duration: const Duration(milliseconds: 400),
-                          opacity: widget.isAnswered ? 0.6 : 1.0,
-                          child: AbsorbPointer(
-                            absorbing: widget.isAnswered,
-                            child: SingleChildScrollView(
-                              physics: const BouncingScrollPhysics(),
-                              padding: EdgeInsets.only(
-                                left: 24.w,
-                                right: 24.w,
-                                top: 20.h,
-                                bottom:
-                                    (widget.isAnswered ? 200.h : 40.h) +
-                                    MediaQuery.viewInsetsOf(context).bottom,
-                              ),
-                              child: Center(
-                                child: ConstrainedBox(
-                                  constraints: BoxConstraints(
-                                    minHeight:
-                                        MediaQuery.sizeOf(context).height * 0.5,
+          // FIX: both branches now start with `SafeArea` (previously only
+          // the loaded/game-content branch had it) — `GameShimmerLoading`
+          // otherwise had no protection against rendering under a notch,
+          // status bar, or gesture-navigation inset.
+          SafeArea(
+            child: state is EliteMasteryLoading
+                ? GameShimmerLoading(primaryColor: theme.primaryColor)
+                : Column(
+                    children: [
+                      SizedBox(height: 10.h),
+                      EliteGameHeader(
+                        level: widget.level,
+                        progress: progress,
+                        lives: lives,
+                        streak: state is EliteMasteryLoaded
+                            ? state.currentIndex
+                            : 0,
+                        isAnswered: widget.isAnswered,
+                        isHintUsed: state is EliteMasteryLoaded
+                            ? state.isHintUsed
+                            : false,
+                        hintText: quest?.hint,
+                        theme: theme,
+                        isDark: isDark,
+                        onBack: () => GameDialogHelper.showExitConfirmation(
+                          context,
+                          onQuit: () => Navigator.pop(context),
+                        ),
+                        onHint: widget.onHint,
+                        onBriefing: () => setState(() => _showBriefing = true),
+                      ),
+                      Expanded(
+                        child: Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            AnimatedOpacity(
+                              duration: const Duration(milliseconds: 400),
+                              opacity: widget.isAnswered ? 0.6 : 1.0,
+                              child: AbsorbPointer(
+                                absorbing: widget.isAnswered,
+                                child: SingleChildScrollView(
+                                  physics: const BouncingScrollPhysics(),
+                                  padding: EdgeInsets.only(
+                                    left: 24.w,
+                                    right: 24.w,
+                                    top: 20.h,
+                                    bottom:
+                                        (widget.isAnswered
+                                            ? _feedbackCardReserve(context)
+                                            : 40.h) +
+                                        MediaQuery.viewInsetsOf(context).bottom,
                                   ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Semantics(
-                                        header: true,
-                                        child: Text(
-                                          widget.title,
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize:
-                                                (widget.subtitle == null ||
-                                                    widget.subtitle!.isEmpty)
-                                                ? 14.sp
-                                                : 10.sp,
-                                            fontWeight: FontWeight.w900,
-                                            letterSpacing:
-                                                (widget.subtitle == null ||
-                                                    widget.subtitle!.isEmpty)
-                                                ? 0
-                                                : 4,
-                                            color: isDark
-                                                ? Colors.white70
-                                                : const Color(
-                                                    0xFF1E293B,
-                                                  ).withValues(alpha: 0.7),
-                                          ),
-                                        ),
-                                      ).animate().fadeIn(),
-                                      if (widget.subtitle != null &&
-                                          widget.subtitle!.isNotEmpty) ...[
-                                        SizedBox(height: 8.h),
-                                        Semantics(
-                                          liveRegion: true,
-                                          child: Text(
-                                            widget.subtitle!,
-                                            textAlign: TextAlign.center,
-                                            maxLines: 2,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 22.sp,
-                                              fontWeight: FontWeight.w900,
-                                              color: isDark
-                                                  ? Colors.white
-                                                  : const Color(0xFF0F172A),
+                                  child: Center(
+                                    child: ConstrainedBox(
+                                      constraints: BoxConstraints(
+                                        minHeight:
+                                            MediaQuery.sizeOf(context).height *
+                                            0.5,
+                                      ),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Semantics(
+                                            header: true,
+                                            child: Text(
+                                              widget.title,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize:
+                                                    (widget.subtitle == null ||
+                                                        widget
+                                                            .subtitle!
+                                                            .isEmpty)
+                                                    ? 14.sp
+                                                    : 10.sp,
+                                                fontWeight: FontWeight.w900,
+                                                letterSpacing:
+                                                    (widget.subtitle == null ||
+                                                        widget
+                                                            .subtitle!
+                                                            .isEmpty)
+                                                    ? 0
+                                                    : 4,
+                                                color: isDark
+                                                    ? Colors.white70
+                                                    : const Color(
+                                                        0xFF1E293B,
+                                                      ).withValues(alpha: 0.7),
+                                              ),
                                             ),
-                                          ),
-                                        ).animate().fadeIn().slideY(begin: 0.1),
-                                      ],
-                                      SizedBox(height: 32.h),
-                                      widget.child,
-                                    ],
+                                          ).animate().fadeIn(),
+                                          if (widget.subtitle != null &&
+                                              widget.subtitle!.isNotEmpty) ...[
+                                            SizedBox(height: 8.h),
+                                            Semantics(
+                                              liveRegion: true,
+                                              child: Text(
+                                                widget.subtitle!,
+                                                textAlign: TextAlign.center,
+                                                maxLines: 2,
+                                                overflow: TextOverflow.ellipsis,
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 22.sp,
+                                                  fontWeight: FontWeight.w900,
+                                                  color: isDark
+                                                      ? Colors.white
+                                                      : const Color(0xFF0F172A),
+                                                ),
+                                              ),
+                                            ).animate().fadeIn().slideY(
+                                              begin: 0.1,
+                                            ),
+                                          ],
+                                          SizedBox(height: 32.h),
+                                          widget.child,
+                                        ],
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
+                            Positioned(
+                              top: -10.h,
+                              left: 20.w,
+                              child: ElitePeekingMascot(
+                                state: state,
+                                lives: lives,
+                                isAnswered: widget.isAnswered,
+                                isCorrect: widget.isCorrect,
+                              ),
+                            ),
+                          ],
                         ),
-                        Positioned(
-                          top: -10.h,
-                          left: 20.w,
-                          child: ElitePeekingMascot(
-                            state: state,
-                            lives: lives,
-                            isAnswered: widget.isAnswered,
-                            isCorrect: widget.isCorrect,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            ),
+          ),
 
           if (widget.isAnswered && state is EliteMasteryLoaded)
             Positioned(
@@ -409,6 +445,53 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
         ],
       ),
     );
+  }
+
+  // ── Feedback card scroll reserve ─────────────────────────────────────────
+
+  /// Reserves scroll-padding so the game content behind [EliteFeedbackCard]
+  /// never sits hidden underneath it.
+  ///
+  /// FIX: previously a fixed `200.h`. `EliteFeedbackCard` shows the
+  /// curriculum's `explanation`/rule-tip text on nearly every successful
+  /// answer, and that text's real rendered height varies with: the length
+  /// of the curriculum sentence itself (later levels use noticeably longer
+  /// sentences), the active locale (translated strings commonly run
+  /// 30–100%+ longer than English), and the player's accessibility
+  /// text-scale setting (up to 3.0x per this app's supported range). A
+  /// single fixed value can't safely cover that range — at larger text
+  /// scales in particular, the card can render meaningfully taller than
+  /// 200.h, leaving part of the scrollable game content obscured behind it.
+  /// This keeps the original value as the floor for the default (1.0x)
+  /// case, and grows the reserve as text scale increases.
+  double _feedbackCardReserve(BuildContext context) {
+    final textScale = MediaQuery.textScalerOf(
+      context,
+    ).scale(1.0).clamp(1.0, 3.0);
+    return 240.h + (140.h * (textScale - 1.0));
+  }
+
+  // ── Error message localization ───────────────────────────────────────────
+
+  /// Resolves a fully localized message for the known, common
+  /// [EliteMasteryErrorReason] cases. Falls back to [EliteMasteryError.message]
+  /// (set by the data/domain layer, which cannot depend on
+  /// `BuildContext`/localization) for [EliteMasteryErrorReason.unknown] —
+  /// e.g. a message built from an unexpected exception whose text can't be
+  /// predicted ahead of time.
+  ///
+  /// NOTE: `games.error_no_quests_for_level` and `games.error_load_failed`
+  /// are new localization keys that need to be added to the ARB/localization
+  /// files (outside this feature slice) for all supported languages.
+  String _localizedErrorMessage(BuildContext context, EliteMasteryError state) {
+    switch (state.reason) {
+      case EliteMasteryErrorReason.noQuestsForLevel:
+        return context.tr('games.error_no_quests_for_level');
+      case EliteMasteryErrorReason.loadFailed:
+        return context.tr('games.error_load_failed');
+      case EliteMasteryErrorReason.unknown:
+        return state.message;
+    }
   }
 
   // ── Briefing overlay ─────────────────────────────────────────────────────

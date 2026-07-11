@@ -43,6 +43,12 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
   Set<int> _matchedIndices = {};
   String? _lastQuestId;
 
+  // Below this available height, use tighter spacing so the target panel,
+  // hint card, transcript, and mic trigger all comfortably fit without the
+  // player needing to scroll on short viewports (landscape phones,
+  // split-screen, or with the on-screen keyboard occupying vertical space).
+  static const double _kCompactHeightBreakpoint = 580;
+
   @override
   void initState() {
     super.initState();
@@ -146,24 +152,20 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
       threshold: 0.70,
     );
 
-    _attempts++;
-
-    if (isCorrect) {
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
-      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
-    } else {
-      setState(() {
-        _isCorrect = false;
-        _isAnswered = true;
-      });
-      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
-    }
-
-    // Reset processing lock after check
-    setState(() => _isProcessing = false);
+    // FIX: previously `_attempts++` ran outside any `setState`, and the
+    // three state mutations below were split across two separate `setState`
+    // calls. Neither was an active bug (Flutter coalesces same-frame
+    // `setState` calls, and the very next call always covered the
+    // `_attempts` update too), but consolidating into a single call is
+    // clearer to read and keeps every mutation of this State's fields
+    // consistently inside `setState`.
+    setState(() {
+      _attempts++;
+      _isAnswered = true;
+      _isCorrect = isCorrect;
+      _isProcessing = false;
+    });
+    context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(isCorrect));
   }
 
   void _tutorPass() {
@@ -192,7 +194,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
         if (state is EliteMasteryGameComplete) {
           setState(() => _showConfetti = true);
           GameDialogHelper.showCompletion(
-            this.context,
+            context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
             title: context.tr('games.accent_legend_title'),
@@ -264,7 +266,8 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title: quest?.instruction ?? context.tr('games.accent_shadowing_title'),
+          title:
+              quest?.instruction ?? context.tr('games.accent_shadowing_title'),
           onContinue: () {
             setState(() {
               _isAnswered = false;
@@ -342,7 +345,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        final isCompact = constraints.maxHeight < 580;
+        final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
 
         return Column(
           children: [
@@ -366,25 +369,36 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               ),
             ],
             SizedBox(height: isCompact ? 16.h : 30.h),
+            // FIX: previously no Semantics wrapper — a screen-reader user
+            // had no indication this text is their own live transcription
+            // rather than some other UI copy.
             if (_lastWords.isNotEmpty)
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20.w,
-                  vertical: isCompact ? 8.h : 12.h,
+              Semantics(
+                liveRegion: true,
+                label: context.tr(
+                  'games.semantic_transcribed_speech',
+                  args: [_lastWords],
                 ),
-                decoration: BoxDecoration(
-                  color: theme.primaryColor.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(15.r),
-                ),
-                child: Text(
-                  _lastWords,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: isCompact ? 14.sp : 16.sp,
-                    fontWeight: FontWeight.w600,
-                    color: theme.primaryColor,
+                excludeSemantics: true,
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20.w,
+                    vertical: isCompact ? 8.h : 12.h,
                   ),
-                  textAlign: TextAlign.center,
+                  decoration: BoxDecoration(
+                    color: theme.primaryColor.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(15.r),
+                  ),
+                  child: Text(
+                    _lastWords,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: isCompact ? 14.sp : 16.sp,
+                      fontWeight: FontWeight.w600,
+                      color: theme.primaryColor,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ).animate().fadeIn(),
             SizedBox(height: isCompact ? 20.h : 40.h),

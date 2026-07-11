@@ -31,29 +31,45 @@ class EliteHintCard extends StatelessWidget {
         excludeSemantics: true,
         child: ScaleButton(
           onTap: onShowHint,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-            decoration: BoxDecoration(
-              color: primaryColor.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.lightbulb_rounded, color: primaryColor, size: 20.r),
-                SizedBox(width: 10.w),
-                Text(
-                  context.tr('games.need_a_hint'),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w900,
-                    color: primaryColor,
-                    letterSpacing: 1.2,
+          // FIX: at 12.h vertical padding plus icon/text content, this
+          // button's natural height runs under the 48dp minimum
+          // touch-target recommendation. Constraining the *outer* box to a
+          // 48dp floor (and centering the original, visually-unchanged
+          // content inside it) grows only the tappable area.
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 48),
+            child: Center(
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+                decoration: BoxDecoration(
+                  color: primaryColor.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(20.r),
+                  border: Border.all(
+                    color: primaryColor.withValues(alpha: 0.2),
                   ),
                 ),
-              ],
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.lightbulb_rounded,
+                      color: primaryColor,
+                      size: 20.r,
+                    ),
+                    SizedBox(width: 10.w),
+                    Text(
+                      context.tr('games.need_a_hint'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w900,
+                        color: primaryColor,
+                        letterSpacing: 1.2,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         ),

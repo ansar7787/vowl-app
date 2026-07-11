@@ -39,7 +39,33 @@ class EliteMasteryLoaded extends EliteMasteryState {
   final List<int> removedIndices;
   final bool isLetterRevealed;
 
-  EliteMasteryQuest get currentQuest => quests[currentIndex];
+  /// Returns the quest at [currentIndex].
+  ///
+  /// FIX: previously a bare `quests[currentIndex]`. In correct operation the
+  /// BLoC always keeps `currentIndex` inside bounds, but this getter is also
+  /// reached from places that construct or copy an [EliteMasteryLoaded]
+  /// outside the BLoC's own transitions (e.g. the screen layer building a
+  /// dimmed background state from [EliteMasteryGameOver]). A future
+  /// off-by-one there — or a regression in the BLoC itself — would otherwise
+  /// surface as an opaque `RangeError` crash in the middle of a widget build.
+  /// The `assert` still fails loudly in debug/QA builds so the underlying
+  /// bug gets caught before release; the clamp keeps release builds showing
+  /// the last valid quest instead of crashing.
+  EliteMasteryQuest get currentQuest {
+    assert(
+      quests.isNotEmpty,
+      'EliteMasteryLoaded.quests must never be empty — a load failure '
+      'should surface as EliteMasteryError instead of an empty list.',
+    );
+    if (quests.isEmpty) {
+      throw StateError(
+        'EliteMasteryLoaded.currentQuest was accessed with an empty quests '
+        'list. This indicates a bug in the data layer or bloc — a load '
+        'failure should have produced EliteMasteryError instead.',
+      );
+    }
+    return quests[currentIndex.clamp(0, quests.length - 1)];
+  }
 
   const EliteMasteryLoaded({
     // Optional, not `required`, so pre-existing call sites compile unchanged.
@@ -112,13 +138,42 @@ class EliteMasteryLoaded extends EliteMasteryState {
   }
 }
 
+/// Stable, localization-friendly cause codes for [EliteMasteryError].
+///
+/// The BLoC/data layer cannot depend on `BuildContext` or localization
+/// (that would break Clean Architecture's layer boundaries), so it can't
+/// call `context.tr(...)` itself. Instead it tags the error with one of
+/// these codes; the presentation layer (see `EliteBaseLayout`) maps a known
+/// code to a fully localized string, and falls back to [EliteMasteryError.message]
+/// only for [unknown] — e.g. a message built from an unexpected exception
+/// whose text can't be predicted ahead of time.
+enum EliteMasteryErrorReason {
+  /// Cause doesn't map to a known, localizable case — show [EliteMasteryError.message]
+  /// as-is (English fallback).
+  unknown,
+
+  /// The repository call itself failed (parse error, missing asset, etc).
+  loadFailed,
+
+  /// The repository succeeded but returned zero quests for this level.
+  noQuestsForLevel,
+}
+
 class EliteMasteryError extends EliteMasteryState {
   final String message;
 
-  const EliteMasteryError(this.message);
+  /// See [EliteMasteryErrorReason]. Defaults to [EliteMasteryErrorReason.unknown]
+  /// so existing call sites that only pass [message] keep their current
+  /// behavior unchanged.
+  final EliteMasteryErrorReason reason;
+
+  const EliteMasteryError(
+    this.message, {
+    this.reason = EliteMasteryErrorReason.unknown,
+  });
 
   @override
-  List<Object?> get props => [message];
+  List<Object?> get props => [message, reason];
 }
 
 class EliteMasteryGameComplete extends EliteMasteryState {

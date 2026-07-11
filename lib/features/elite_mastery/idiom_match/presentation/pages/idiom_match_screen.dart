@@ -41,6 +41,17 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
   String? _lastQuestId;
   int? _lastLives;
 
+  // Below this available height, use tighter spacing so the question text,
+  // hint card, and all 4 options comfortably fit without the player needing
+  // to scroll on short viewports (landscape phones, split-screen, or with
+  // the on-screen keyboard occupying vertical space).
+  //
+  // NOTE: this same breakpoint is duplicated across all 4 Elite Mastery game
+  // screens (accent shadowing, idiom match, speed spelling, story builder).
+  // Worth consolidating into one shared constant — see the review report's
+  // Refactoring Opportunities section.
+  static const double _kCompactHeightBreakpoint = 580;
+
   @override
   void initState() {
     super.initState();
@@ -50,7 +61,28 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
   }
 
   void _initializeOptions(GameQuest quest, {bool shouldSetState = true}) {
-    if (quest.options == null) return;
+    // FIX: previously just `if (quest.options == null) return;` — leaving
+    // whatever the *previous* quest's shuffled options were still on
+    // screen. Since `quest`/`quest.id` has already moved on by the time
+    // this is called, that meant showing options that don't belong to the
+    // current question at all, with taps resolving against the wrong
+    // quest's correctAnswerIndex. Clearing instead of leaving stale state
+    // makes this fail safely (an empty panel) rather than fail confusingly.
+    if (quest.options == null || quest.options!.isEmpty) {
+      void reset() {
+        _shuffledOptions = [];
+        _originalIndices = [];
+        _selectedIndex = null;
+        _wrongIndices = [];
+      }
+
+      if (shouldSetState) {
+        setState(reset);
+      } else {
+        reset();
+      }
+      return;
+    }
 
     final List<int> indices = List.generate(quest.options!.length, (i) => i);
     final List<MapEntry<int, String>> mapped = indices
@@ -122,7 +154,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
         if (state is EliteMasteryGameComplete) {
           setState(() => _showConfetti = true);
           GameDialogHelper.showCompletion(
-            this.context,
+            context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
             title: context.tr('games.idiom_legend_title'),
@@ -274,7 +306,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        final isCompact = constraints.maxHeight < 580;
+        final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
 
         return Column(
           children: [

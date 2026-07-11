@@ -41,6 +41,12 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
   List<int> _tapHistory = [];
   String? _lastQuestId;
 
+  // Below this available height, use tighter spacing. See the identical
+  // constant in accent_shadowing_screen.dart / idiom_match_screen.dart /
+  // story_builder_screen.dart — worth consolidating into one shared
+  // constant, noted in the review report's Refactoring Opportunities.
+  static const double _kCompactHeightBreakpoint = 580;
+
   @override
   void initState() {
     super.initState();
@@ -76,7 +82,10 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
       setState(() {
         _currentInput = "";
         _tapHistory.clear();
-        _shuffledChars = state.currentQuest.word!.split('')..shuffle();
+        // FIX: was `state.currentQuest.word!` — a bare force-unwrap that
+        // would throw and crash the app if `word` were ever null for a
+        // malformed quest. `?? ''` degrades to an empty deck instead.
+        _shuffledChars = (state.currentQuest.word ?? '').split('')..shuffle();
       });
     }
     _hapticService.selection();
@@ -124,7 +133,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
         if (state is EliteMasteryGameComplete) {
           setState(() => _showConfetti = true);
           GameDialogHelper.showCompletion(
-            this.context,
+            context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
             title: context.tr('games.spelling_legend_title'),
@@ -140,7 +149,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
               _attempts = 0;
               _currentInput = "";
               _tapHistory = [];
-              _shuffledChars = quest.word!.split('')..shuffle();
+              // FIX: was `quest.word!` — see _onClear for why this is a
+              // real crash risk, not just a style nit.
+              _shuffledChars = (quest.word ?? '').split('')..shuffle();
             });
           } else if (state.lastAnswerCorrect == null) {
             setState(() {
@@ -148,7 +159,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
               _isCorrect = null;
               _currentInput = "";
               _tapHistory = [];
-              _shuffledChars = quest.word!.split('')..shuffle();
+              _shuffledChars = (quest.word ?? '').split('')..shuffle();
             });
           }
           if (state.lastAnswerCorrect == false) {
@@ -202,7 +213,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title: quest?.instruction ?? context.tr('games.speed_spelling_title_fallback'),
+          title:
+              quest?.instruction ??
+              context.tr('games.speed_spelling_title_fallback'),
           onContinue: () {
             setState(() {
               _isAnswered = false;
@@ -225,6 +238,18 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
                 GameDialogHelper.showHintAdDialog(
                   context,
                   onHintEarned: () {
+                    // FIX: Idiom Match's equivalent ad-dialog callback
+                    // already dispatches MarkEliteHintUsed() here (needed
+                    // for its 50/50 lifeline to activate); this screen's
+                    // didn't. Currently inert either way, since this game's
+                    // curriculum always supplies real hint text so this
+                    // branch is never actually reached — but this game also
+                    // has a fully-built letter-reveal mechanic in the Bloc
+                    // that depends on exactly this call. Added for
+                    // consistency and to not silently block that mechanic
+                    // if it's ever wired up to be reachable. See the review
+                    // report's Curriculum Utilization section.
+                    if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
                     bloc.add(ShowEliteHint());
                   },
                 );
@@ -292,7 +317,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        final isCompact = constraints.maxHeight < 580;
+        final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
 
         return Column(
           children: [
@@ -328,9 +353,19 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
                 label: context.tr('games.submit_caps'),
                 excludeSemantics: true,
                 child: ScaleButton(
-                  onTap: () => _submit(quest.word!),
+                  // FIX: was `_submit(quest.word!)` — see _onClear for
+                  // rationale. An empty fallback just resolves to "wrong
+                  // answer" rather than crashing the screen outright.
+                  onTap: () => _submit(quest.word ?? ''),
                   child: Container(
                     width: double.infinity,
+                    // FIX: height was purely padding-driven (14-20.h
+                    // vertical + text), which sits right at the 48dp
+                    // touch-target floor in compact mode and could dip
+                    // under it once ScreenUtil scales down on the smallest
+                    // screens. This is the primary submit action for every
+                    // question in this game — worth the extra insurance.
+                    constraints: const BoxConstraints(minHeight: 48),
                     padding: EdgeInsets.symmetric(
                       vertical: isCompact ? 14.h : 20.h,
                     ),

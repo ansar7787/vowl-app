@@ -112,7 +112,11 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
             ),
             if (isHintVisible)
               Container(
-                    margin: EdgeInsets.only(left: 8.w),
+                    // FIX: was `EdgeInsets.only(left: 8.w)` — a literal side
+                    // that doesn't flip when this Row mirrors for RTL
+                    // locales. `EdgeInsetsDirectional` keeps this spacing on
+                    // the correct side of the badge regardless of direction.
+                    margin: EdgeInsetsDirectional.only(start: 8.w),
                     padding: EdgeInsets.symmetric(
                       horizontal: 10.w,
                       vertical: 6.h,
@@ -151,10 +155,22 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
             // platform-added handle appearing next to it.
             ReorderableDragStartListener(
               index: index,
-              child: Icon(
-                Icons.drag_indicator_rounded,
-                color: isDark ? Colors.white30 : Colors.black26,
-                size: 26.r,
+              // FIX: a bare 26.r icon with no surrounding padding measures
+              // well under the 48dp touch-target minimum — and this handle
+              // is the *sole* way to interact with this entire game
+              // (reordering is the whole mechanic). Growing only the
+              // invisible tappable/drag-initiation area, not the visible
+              // icon, via the same ConstrainedBox+Center pattern used
+              // elsewhere in this review.
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
+                child: Center(
+                  child: Icon(
+                    Icons.drag_indicator_rounded,
+                    color: isDark ? Colors.white30 : Colors.black26,
+                    size: 26.r,
+                  ),
+                ),
               ),
             ),
           ],

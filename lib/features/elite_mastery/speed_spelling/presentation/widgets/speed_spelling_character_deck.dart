@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -6,7 +8,11 @@ import 'package:vowl/core/utils/locale_service.dart';
 class SpeedSpellingCharacterDeck extends StatelessWidget {
   final List<String> shuffledChars;
   final bool isDark;
-  final Function(String char, int index) onCharTap;
+  // FIX: was `final Function(String char, int index) onCharTap;` — see
+  // idiom_match_options_panel.dart for the same fix and rationale. Flutter
+  // doesn't ship a named 2-arg alias, so this spells out `void Function(...)`
+  // directly rather than leaving it as a permissive bare `Function`.
+  final void Function(String char, int index) onCharTap;
 
   const SpeedSpellingCharacterDeck({
     super.key,
@@ -42,8 +48,15 @@ class SpeedSpellingCharacterDeck extends StatelessWidget {
               duration: const Duration(milliseconds: 200),
               opacity: char == "" ? 0.3 : 1.0,
               child: Container(
-                width: 54.r,
-                height: 54.r,
+                // FIX: 54.r already clears 48dp at reference scale, but on
+                // the smallest realistic phone widths ScreenUtil's
+                // proportional scaling can bring it close to or under that
+                // floor. `math.max` guarantees the true 48dp minimum on
+                // every device while leaving the size unchanged everywhere
+                // it already clears it — these tiles are the sole input
+                // mechanism for this entire game.
+                width: math.max(54.r, 48.0),
+                height: math.max(54.r, 48.0),
                 decoration: BoxDecoration(
                   color: char == ""
                       ? (isDark

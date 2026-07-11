@@ -49,18 +49,33 @@ class AccentShadowingTargetPanel extends StatelessWidget {
             button: true,
             label: context.tr('games.semantic_listen_example'),
             excludeSemantics: true,
+            // FIX: at reference scale (12.r padding + 32.r icon ≈ 56
+            // logical px) this already clears the 48dp minimum touch
+            // target, but `.r` scales proportionally with screen size —
+            // on the smallest realistic phone widths it can shrink below
+            // that minimum. `behavior: HitTestBehavior.opaque` combined
+            // with a `minWidth`/`minHeight` floor (in true, unscaled
+            // logical pixels) guarantees the full 48dp tappable area on
+            // every device regardless of ScreenUtil's scale ratio, while
+            // the visible circle itself is completely unchanged.
             child: GestureDetector(
               onTap: onListenTap,
-              child: Container(
-                padding: EdgeInsets.all(12.r),
-                decoration: BoxDecoration(
-                  color: primaryColor.withValues(alpha: 0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  Icons.volume_up_rounded,
-                  color: isDark ? primaryColor : const Color(0xFF0F172A),
-                  size: 32.r,
+              behavior: HitTestBehavior.opaque,
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
+                child: Center(
+                  child: Container(
+                    padding: EdgeInsets.all(12.r),
+                    decoration: BoxDecoration(
+                      color: primaryColor.withValues(alpha: 0.1),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      Icons.volume_up_rounded,
+                      color: isDark ? primaryColor : const Color(0xFF0F172A),
+                      size: 32.r,
+                    ),
+                  ),
                 ),
               ),
             ),

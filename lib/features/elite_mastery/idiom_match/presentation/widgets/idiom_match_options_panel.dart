@@ -15,7 +15,12 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
   final int correctAnswerIndex;
   final bool isDark;
   final Color primaryColor;
-  final Function(int shuffledIndex) onOptionSelected;
+  // FIX: was `final Function(int shuffledIndex) onOptionSelected;` — a bare
+  // `Function` type accepts a callback of *any* signature and only fails at
+  // runtime if misused. `ValueChanged<int>` (Flutter's own alias for
+  // `void Function(int)`) gives the same call-site ergonomics with real
+  // compile-time type safety.
+  final ValueChanged<int> onOptionSelected;
 
   const IdiomMatchOptionsPanel({
     super.key,

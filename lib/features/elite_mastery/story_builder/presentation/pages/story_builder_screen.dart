@@ -41,6 +41,12 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   String? _lastQuestId;
   int? _lastLives;
 
+  // Below this available height, use tighter spacing. See the identical
+  // constant in accent_shadowing_screen.dart / idiom_match_screen.dart /
+  // speed_spelling_screen.dart — worth consolidating into one shared
+  // constant, noted in the review report's Refactoring Opportunities.
+  static const double _kCompactHeightBreakpoint = 580;
+
   @override
   void initState() {
     super.initState();
@@ -61,7 +67,15 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   }
 
   void _shuffleSentences(List<String> sentences, List<int>? correctOrder) {
-    if (sentences.isEmpty) return;
+    // FIX: previously just `if (sentences.isEmpty) return;` — leaving
+    // whatever tiles the *previous* quest had shuffled still on screen,
+    // mismatched against the new quest's (empty) sentences and correctOrder.
+    // Clearing instead makes this fail safely (an empty list) rather than
+    // fail confusingly with stale content.
+    if (sentences.isEmpty) {
+      setState(() => _currentOrder = []);
+      return;
+    }
 
     List<String> shuffled = List.from(sentences);
     // Shuffle until it's NOT the correct order
@@ -285,7 +299,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        final isCompact = constraints.maxHeight < 580;
+        final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
 
         return Column(
           children: [
@@ -331,7 +345,19 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               children: [
                 for (int i = 0; i < _currentOrder.length; i++)
                   Padding(
-                    key: ValueKey("${quest.id}_${_currentOrder[i]}_$i"),
+                    // FIX: was `ValueKey("${quest.id}_${_currentOrder[i]}_$i")`
+                    // — including the *current display position* `i` in the
+                    // key meant the key changed on every single reorder
+                    // (since `i` is exactly what moves), which defeats
+                    // ReorderableListView's whole purpose for using keys:
+                    // tracking "this specific tile moved from position A to
+                    // B" so the built-in reorder transition can animate it
+                    // smoothly. Keying on the sentence's *original* index
+                    // (stable regardless of its current display position)
+                    // fixes this while still being unique per tile.
+                    key: ValueKey(
+                      '${quest.id}_${quest.sentences?.indexOf(_currentOrder[i]) ?? i}',
+                    ),
                     padding: EdgeInsets.only(bottom: isCompact ? 10.h : 14.h),
                     child: StoryBuilderNarrativeTile(
                       index: i,
@@ -357,6 +383,12 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                       _submitOrder(quest.correctOrder, quest.sentences ?? []),
                   child: Container(
                     width: double.infinity,
+                    // FIX: height was purely padding-driven, sitting right
+                    // at the 48dp touch-target floor in compact mode and
+                    // able to dip under it once ScreenUtil scales down on
+                    // the smallest screens. This is the primary submit
+                    // action for every question in this game.
+                    constraints: const BoxConstraints(minHeight: 48),
                     padding: EdgeInsets.symmetric(
                       vertical: isCompact ? 14.h : 20.h,
                     ),
