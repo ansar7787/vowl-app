@@ -6,542 +6,512 @@
         {
             "id": "pc_l71_q1",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "I am interested ___ (log 7) learning new languages.",
+            "question": "She felt nervous ___ speaking in front of an audience.",
             "options": [
-                "in",
-                "on",
                 "of",
-                "at"
+                "at",
+                "about",
+                "on"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "in",
-            "hint": "We say 'interested in'. (Log 7 calibration)",
-            "explanation": "The dependent preposition for 'interested' is always 'in'. [Verified in calibration unit 7]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "about",
+            "hint": "'Nervous about something' expresses anxiety.",
+            "explanation": "'Nervous about' is the standard combination: nervous about the exam, nervous about the interview."
         },
         {
             "id": "pc_l71_q2",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "Translate this ___ (log 7) English.",
+            "question": "He was very disappointed ___ the results of the test.",
             "options": [
-                "through",
+                "at",
+                "with",
+                "on",
+                "by"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "with",
+            "hint": "'Disappointed with' something that failed to meet expectations.",
+            "explanation": "'Disappointed with' is used when something or someone fails expectations: disappointed with the service."
+        },
+        {
+            "id": "pc_l71_q3",
+            "instruction": "CHOOSE THE POSITION",
+            "subtype": "prepositionChoice",
+            "interactionType": "Spatial Path",
+            "question": "She was surprised ___ the sudden change in plans.",
+            "options": [
+                "with",
+                "by",
+                "about",
+                "of"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "by",
+            "hint": "'Surprised by' something unexpected is the standard form.",
+            "explanation": "'Surprised by' or 'surprised at' - both are used. 'By' is most natural with an unexpected event."
+        },
+        {
+            "id": "pc_l72_q1",
+            "instruction": "CHOOSE THE POSITION",
+            "subtype": "prepositionChoice",
+            "interactionType": "Spatial Path",
+            "question": "He was very impressed ___ the quality of the work.",
+            "options": [
+                "about",
+                "by",
+                "of",
+                "with"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "by",
+            "hint": "'Impressed by' or 'impressed with' - 'by' is standard.",
+            "explanation": "'Impressed by' is the most common form: impressed by the performance, impressed by the results."
+        },
+        {
+            "id": "pc_l72_q2",
+            "instruction": "CHOOSE THE POSITION",
+            "subtype": "prepositionChoice",
+            "interactionType": "Spatial Path",
+            "question": "She is satisfied ___ the progress she has made.",
+            "options": [
+                "about",
+                "by",
+                "at",
+                "with"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "with",
+            "hint": "'Satisfied with' means pleased with a result.",
+            "explanation": "'Satisfied with' is the standard combination: satisfied with the outcome, satisfied with the food."
+        },
+        {
+            "id": "pc_l72_q3",
+            "instruction": "CHOOSE THE POSITION",
+            "subtype": "prepositionChoice",
+            "interactionType": "Spatial Path",
+            "question": "They were astonished ___ how quickly it was done.",
+            "options": [
+                "by",
+                "with",
+                "at",
+                "about"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "at",
+            "hint": "'Astonished at' or 'astonished by' - both are used.",
+            "explanation": "'Astonished at' or 'astonished by' - both are correct. 'At' is slightly more formal; 'by' is common in everyday speech."
+        },
+        {
+            "id": "pc_l73_q1",
+            "instruction": "CHOOSE THE POSITION",
+            "subtype": "prepositionChoice",
+            "interactionType": "Spatial Path",
+            "question": "She is very particular ___ her food.",
+            "options": [
+                "about",
+                "with",
+                "at",
+                "of"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "about",
+            "hint": "'Particular about' means careful and precise in preferences.",
+            "explanation": "'Particular about' means having strong or exact preferences: particular about food, particular about punctuality."
+        },
+        {
+            "id": "pc_l73_q2",
+            "instruction": "CHOOSE THE POSITION",
+            "subtype": "prepositionChoice",
+            "interactionType": "Spatial Path",
+            "question": "He is well-known ___ his sense of humour.",
+            "options": [
+                "about",
+                "at",
+                "for",
+                "of"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "for",
+            "hint": "'Well-known for' means famous or recognised for a quality.",
+            "explanation": "'Well-known for' is the standard pattern: well-known for cooking, well-known for generosity."
+        },
+        {
+            "id": "pc_l73_q3",
+            "instruction": "CHOOSE THE POSITION",
+            "subtype": "prepositionChoice",
+            "interactionType": "Spatial Path",
+            "question": "She is confident ___ her ability to succeed.",
+            "options": [
+                "of",
+                "at",
+                "in",
+                "about"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "in",
+            "hint": "'Confident in' or 'confident about' - both used with ability.",
+            "explanation": "'Confident in' is used with nouns referring to ability or skill. 'Confident about' is used with situations or outcomes."
+        },
+        {
+            "id": "pc_l74_q1",
+            "instruction": "CHOOSE THE POSITION",
+            "subtype": "prepositionChoice",
+            "interactionType": "Spatial Path",
+            "question": "He is dedicated ___ his work.",
+            "options": [
+                "in",
+                "about",
+                "on",
+                "to"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "to",
+            "hint": "'Dedicated to something' means fully committed.",
+            "explanation": "'Dedicated to' means fully committed: dedicated to a cause, dedicated to excellence."
+        },
+        {
+            "id": "pc_l74_q2",
+            "instruction": "CHOOSE THE POSITION",
+            "subtype": "prepositionChoice",
+            "interactionType": "Spatial Path",
+            "question": "She is very sensitive ___ criticism.",
+            "options": [
+                "of",
+                "about",
+                "at",
+                "to"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "to",
+            "hint": "'Sensitive to' means reacting strongly to something.",
+            "explanation": "'Sensitive to' is the correct pattern: sensitive to noise, sensitive to cold, sensitive to feedback."
+        },
+        {
+            "id": "pc_l74_q3",
+            "instruction": "CHOOSE THE POSITION",
+            "subtype": "prepositionChoice",
+            "interactionType": "Spatial Path",
+            "question": "He is committed ___ improving the environment.",
+            "options": [
+                "about",
+                "for",
+                "to",
+                "in"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "to",
+            "hint": "'Committed to' means dedicated to a course of action.",
+            "explanation": "'Committed to' means firmly resolved: committed to change, committed to quality."
+        },
+        {
+            "id": "pc_l75_q1",
+            "instruction": "CHOOSE THE POSITION",
+            "subtype": "prepositionChoice",
+            "interactionType": "Spatial Path",
+            "question": "The scores varied ___ 60 to 95 across the class.",
+            "options": [
+                "from",
                 "between",
+                "among",
+                "since"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "from",
+            "hint": "'Vary from...to' shows a range from one point to another.",
+            "explanation": "'Vary from X to Y' is the standard pattern: scores varied from 60 to 95."
+        },
+        {
+            "id": "pc_l75_q2",
+            "instruction": "CHOOSE THE POSITION",
+            "subtype": "prepositionChoice",
+            "interactionType": "Spatial Path",
+            "question": "The company employs ___ 200 and 250 people.",
+            "options": [
+                "from",
+                "among",
+                "about",
+                "between"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "between",
+            "hint": "'Between X and Y' expresses a range for two endpoints.",
+            "explanation": "'Between 200 and 250' expresses a range: the number is anywhere between those two figures."
+        },
+        {
+            "id": "pc_l75_q3",
+            "instruction": "CHOOSE THE POSITION",
+            "subtype": "prepositionChoice",
+            "interactionType": "Spatial Path",
+            "question": "The temperature rose ___ three degrees.",
+            "options": [
+                "with",
+                "for",
+                "of",
+                "by"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "by",
+            "hint": "'Rise by an amount' shows the degree of increase.",
+            "explanation": "'By' is used to express the degree of a change: rose by three degrees, fell by 10 per cent."
+        },
+        {
+            "id": "pc_l76_q1",
+            "instruction": "CHOOSE THE POSITION",
+            "subtype": "prepositionChoice",
+            "interactionType": "Spatial Path",
+            "question": "He divided the pizza ___ four equal slices.",
+            "options": [
+                "to",
+                "among",
                 "in",
                 "into"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "into",
-            "hint": "Change of state. (Log 7 calibration)",
-            "explanation": "'Into' is used to represent transition or translation. [Verified in calibration unit 7]."
-        },
-        {
-            "id": "pc_l71_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "They swam ___ (log 7) the wide river.",
-            "options": [
-                "across",
-                "into",
-                "at",
-                "on"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "across",
-            "hint": "From one side to the other. (Log 7 calibration)",
-            "explanation": "'Across' represents motion from one side of a line or river to the other. [Verified in calibration unit 7]."
-        },
-        {
-            "id": "pc_l72_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "The keys are ___ (log 7) the table.",
-            "options": [
-                "at",
-                "through",
-                "to",
-                "on"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "on",
-            "hint": "Surface location. (Log 7 calibration)",
-            "explanation": "'On' designates location resting on top of a physical surface. [Verified in calibration unit 7]."
-        },
-        {
-            "id": "pc_l72_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "The plane flew ___ (log 7) the clouds.",
-            "options": [
-                "above",
-                "of",
-                "to",
-                "through"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "above",
-            "hint": "Higher relative position. (Log 7 calibration)",
-            "explanation": "'Above' signifies a position higher than something else. [Verified in calibration unit 7]."
-        },
-        {
-            "id": "pc_l72_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "The phone is hidden ___ (log 7) the couch.",
-            "options": [
-                "under",
-                "between",
-                "on",
-                "above"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "under",
-            "hint": "Directly below. (Log 7 calibration)",
-            "explanation": "'Under' denotes a position directly beneath an object. [Verified in calibration unit 7]."
-        },
-        {
-            "id": "pc_l73_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "She is good ___ (log 7) solving puzzles.",
-            "options": [
-                "at",
-                "between",
-                "on",
-                "in"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "at",
-            "hint": "Ability preposition. (Log 7 calibration)",
-            "explanation": "'Good at' indicates proficiency in a specific skill or subject. [Verified in calibration unit 7]."
-        },
-        {
-            "id": "pc_l73_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "We walked ___ (log 7) the dark tunnel.",
-            "options": [
-                "through",
-                "on",
-                "above",
-                "for"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "through",
-            "hint": "Movement across an interior space. (Log 7 calibration)",
-            "explanation": "'Through' is correct for passing inside a three-dimensional passage. [Verified in calibration unit 7]."
-        },
-        {
-            "id": "pc_l73_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "He is famous ___ (log 7) his novels.",
-            "options": [
-                "for",
-                "to",
-                "in",
-                "at"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "for",
-            "hint": "Reason for fame. (Log 7 calibration)",
-            "explanation": "'Famous for' is the proper dependent preposition. [Verified in calibration unit 7]."
-        },
-        {
-            "id": "pc_l74_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "We arrived ___ (log 7) the airport early.",
-            "options": [
-                "at",
-                "on",
-                "for",
-                "to"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "at",
-            "hint": "Specific point-like location. (Log 7 calibration)",
-            "explanation": "'At' is used for a precise location like an airport or building. [Verified in calibration unit 7]."
-        },
-        {
-            "id": "pc_l74_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "It's a secret ___ (log 7) you and me.",
-            "options": [
-                "to",
-                "at",
-                "for",
-                "between"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "between",
-            "hint": "Two specific parties. (Log 7 calibration)",
-            "explanation": "'Between' is correct when referring to two distinct items or people. [Verified in calibration unit 7]."
-        },
-        {
-            "id": "pc_l74_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "I agree ___ (log 7) your proposal.",
-            "options": [
-                "with",
-                "to",
-                "on",
-                "for"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "with",
-            "hint": "Concurring with a person/idea. (Log 7 calibration)",
-            "explanation": "'Agree with' is correct when aligning with an opinion or person. [Verified in calibration unit 7]."
-        },
-        {
-            "id": "pc_l75_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "He is afraid ___ (log 7) spiders.",
-            "options": [
-                "to",
-                "of",
-                "above",
-                "in"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "of",
-            "hint": "Fear preposition. (Log 7 calibration)",
-            "explanation": "'Afraid of' is the correct dependent preposition form. [Verified in calibration unit 7]."
-        },
-        {
-            "id": "pc_l75_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "I am fond ___ (log 7) classical music.",
-            "options": [
-                "of",
-                "in",
-                "on",
-                "from"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "of",
-            "hint": "Liking or affection. (Log 7 calibration)",
-            "explanation": "'Fond of' is the standard dependent prepositional formula. [Verified in calibration unit 7]."
-        },
-        {
-            "id": "pc_l75_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "Please listen ___ (log 7) the instructor.",
-            "options": [
-                "to",
-                "at",
-                "on",
-                "of"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "to",
-            "hint": "Directing attention. (Log 7 calibration)",
-            "explanation": "'Listen to' is the standard dependent prepositional construct. [Verified in calibration unit 7]."
-        },
-        {
-            "id": "pc_l76_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "I'll see you ___ (log 7) Monday.",
-            "options": [
-                "above",
-                "in",
-                "from",
-                "on"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "on",
-            "hint": "Days of the week. (Log 7 calibration)",
-            "explanation": "'On' is always paired with days of the week. [Verified in calibration unit 7]."
+            "hint": "'Divide something into parts' is the standard pattern.",
+            "explanation": "'Divide into' is the correct pattern: divide into sections, cut into pieces."
         },
         {
             "id": "pc_l76_q2",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "This notebook belongs ___ (log 7) me.",
+            "question": "Sales increased ___ 15% in the last quarter.",
             "options": [
-                "to",
-                "at",
-                "in",
-                "from"
+                "of",
+                "with",
+                "by",
+                "to"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "to",
-            "hint": "Possession preposition. (Log 7 calibration)",
-            "explanation": "'Belong to' indicates possession or membership. [Verified in calibration unit 7]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "by",
+            "hint": "'Increase by an amount' shows the degree of growth.",
+            "explanation": "'By' expresses the amount of increase or decrease: increased by 15%, cut by a third."
         },
         {
             "id": "pc_l76_q3",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "She succeeded ___ (log 7) passing the test.",
+            "question": "The population has grown ___ 3 million people.",
             "options": [
-                "in",
-                "on",
-                "at",
-                "to"
+                "with",
+                "to",
+                "of",
+                "for"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "in",
-            "hint": "Achieving success. (Log 7 calibration)",
-            "explanation": "'Succeed in' is the standard verb-preposition pair. [Verified in calibration unit 7]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "to",
+            "hint": "'Grow to a number' means reaching that total.",
+            "explanation": "'Grow to' or 'rise to' a number means reaching that figure as the new total: grown to 3 million."
         },
         {
             "id": "pc_l77_q1",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "She lives ___ (log 7) London.",
+            "question": "She shared the information ___ everyone in the group.",
             "options": [
-                "from",
-                "in",
-                "above",
-                "to"
+                "to",
+                "among",
+                "between",
+                "with"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "in",
-            "hint": "Large area (cities/countries). (Log 7 calibration)",
-            "explanation": "'In' is standard for cities, countries, and large geographical areas. [Verified in calibration unit 7]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "with",
+            "hint": "'Share something with someone' is the standard pattern.",
+            "explanation": "'Share with' is the correct pattern: share information with the team, share resources with colleagues."
         },
         {
             "id": "pc_l77_q2",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "She apologized ___ (log 7) arriving late.",
+            "question": "He chose the blue one ___ preference.",
             "options": [
-                "for",
-                "to",
-                "at",
-                "on"
+                "in",
+                "by",
+                "of",
+                "from"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "for",
-            "hint": "Reason for apology. (Log 7 calibration)",
-            "explanation": "'Apologize for' is the dependent verb-preposition construct. [Verified in calibration unit 7]."
+            "correctAnswer": "in",
+            "hint": "'By preference' means as a chosen option.",
+            "explanation": "'By preference' is a fixed expression meaning preferring one option over another."
         },
         {
             "id": "pc_l77_q3",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "They arrived ___ (log 7) the station on time.",
+            "question": "The price has gone up ___ three euros.",
             "options": [
-                "at",
-                "in",
                 "to",
-                "for"
+                "of",
+                "at",
+                "by"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "at",
-            "hint": "Specific point destination. (Log 7 calibration)",
-            "explanation": "'At' is correct for point locations like stations. [Verified in calibration unit 7]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "by",
+            "hint": "'Go up by an amount' shows the increase.",
+            "explanation": "'By' expresses the amount of increase: go up by three euros, go down by five per cent."
         },
         {
             "id": "pc_l78_q1",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "The meeting is ___ (log 7) 10 AM.",
+            "question": "She is very attached ___ her childhood home.",
             "options": [
-                "on",
-                "at",
-                "of",
-                "above"
+                "about",
+                "to",
+                "with",
+                "of"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "at",
-            "hint": "Specific clock time. (Log 7 calibration)",
-            "explanation": "'At' represents exact clock points. [Verified in calibration unit 7]."
+            "correctAnswer": "to",
+            "hint": "'Attached to' means having a strong emotional bond with.",
+            "explanation": "'Attached to' means feeling a strong connection: attached to a place, attached to a possession."
         },
         {
             "id": "pc_l78_q2",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "We depend ___ (log 7) your guidance.",
+            "question": "He is bored ___ doing the same thing every day.",
             "options": [
-                "on",
-                "in",
-                "to",
-                "at"
+                "of",
+                "at",
+                "from",
+                "about"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "on",
-            "hint": "Reliance or trust. (Log 7 calibration)",
-            "explanation": "'Depend on' is correct for indicating reliance. [Verified in calibration unit 7]."
+            "correctAnswer": "of",
+            "hint": "'Bored of' or 'bored with' - both are used today.",
+            "explanation": "'Bored of' (increasingly common in British English) and 'bored with' (traditional) are both acceptable."
         },
         {
             "id": "pc_l78_q3",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "The cup fell ___ (log 7) the table.",
+            "question": "She was thrilled ___ the news of her promotion.",
             "options": [
-                "off",
-                "out",
-                "in",
-                "on"
+                "about",
+                "of",
+                "at",
+                "with"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "off",
-            "hint": "Separation from a surface. (Log 7 calibration)",
-            "explanation": "'Off' is used for movement away from a surface. [Verified in calibration unit 7]."
+            "correctAnswer": "about",
+            "hint": "'Thrilled about/at' good news is the standard pattern.",
+            "explanation": "'Thrilled about' or 'thrilled at' are both used with positive news: thrilled about the promotion."
         },
         {
             "id": "pc_l79_q1",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "I'm looking ___ (log 7) my lost keys.",
+            "question": "He is very conscious ___ the environment.",
             "options": [
+                "about",
+                "of",
                 "on",
-                "to",
-                "at",
-                "for"
+                "to"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "for",
-            "hint": "Phrasal verb: search. (Log 7 calibration)",
-            "explanation": "'Look for' is a phrasal verb meaning to search. [Verified in calibration unit 7]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "of",
+            "hint": "'Conscious of' means aware of something.",
+            "explanation": "'Conscious of' means having an awareness: conscious of the risks, conscious of the environment."
         },
         {
             "id": "pc_l79_q2",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "The cat jumped ___ (log 7) the counter.",
+            "question": "She is very passionate ___ social justice.",
             "options": [
-                "onto",
-                "in",
-                "of",
-                "through"
+                "for",
+                "on",
+                "about",
+                "of"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "onto",
-            "hint": "Movement to a surface. (Log 7 calibration)",
-            "explanation": "'Onto' describes movement ending on top of a surface. [Verified in calibration unit 7]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "about",
+            "hint": "'Passionate about' means feeling very strongly about.",
+            "explanation": "'Passionate about' is the standard: passionate about music, passionate about equality."
         },
         {
             "id": "pc_l79_q3",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "He is married ___ (log 7) a doctor.",
+            "question": "He is not very enthusiastic ___ the idea.",
             "options": [
-                "to",
-                "with",
-                "at",
-                "in"
+                "for",
+                "of",
+                "about",
+                "on"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "to",
-            "hint": "Marital connection. (Log 7 calibration)",
-            "explanation": "In standard English grammar, one is 'married to' someone, not 'with'. [Verified in calibration unit 7]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "about",
+            "hint": "'Enthusiastic about' is the correct adjective-preposition combination.",
+            "explanation": "'Enthusiastic about' is the standard pattern: enthusiastic about a project, enthusiastic about the plan."
         },
         {
             "id": "pc_l80_q1",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "He is proud ___ (log 7) his achievements.",
+            "question": "She is popular ___ her fellow students.",
             "options": [
-                "of",
-                "through",
-                "in",
-                "between"
+                "among",
+                "between",
+                "for",
+                "with"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "of",
-            "hint": "Pride preposition. (Log 7 calibration)",
-            "explanation": "'Proud of' is the correct dependent prepositional pairing. [Verified in calibration unit 7]."
+            "correctAnswerIndex": 3,
+            "correctAnswer": "with",
+            "hint": "'Popular with' means liked by a group of people.",
+            "explanation": "'Popular with' is the standard pattern: popular with students, popular with the public."
         },
         {
             "id": "pc_l80_q2",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "He walked ___ (log 7) the door slowly.",
+            "question": "He is very dependent ___ his smartphone.",
             "options": [
-                "toward",
-                "at",
+                "to",
                 "on",
+                "at",
                 "of"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "toward",
-            "hint": "In the direction of. (Log 7 calibration)",
-            "explanation": "'Toward' describes motion in a specific direction. [Verified in calibration unit 7]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "on",
+            "hint": "'Dependent on' means relying on something.",
+            "explanation": "'Dependent on' is the correct pattern: dependent on technology, dependent on support."
         },
         {
             "id": "pc_l80_q3",
             "instruction": "CHOOSE THE POSITION",
-            "difficulty": 2,
             "subtype": "prepositionChoice",
             "interactionType": "Spatial Path",
-            "question": "I bought this ___ (log 7) ten dollars.",
+            "question": "She is aware ___ the potential risks.",
             "options": [
-                "for",
-                "at",
-                "in",
-                "with"
+                "of",
+                "about",
+                "on",
+                "for"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "for",
-            "hint": "Price paid. (Log 7 calibration)",
-            "explanation": "'For' is used to show the cost or price of an exchange. [Verified in calibration unit 7]."
+            "correctAnswer": "of",
+            "hint": "'Aware of' means having knowledge of something.",
+            "explanation": "'Aware of' is the standard pattern: aware of the dangers, aware of the situation."
         }
     ]
 }
