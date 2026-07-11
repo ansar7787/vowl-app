@@ -1,645 +1,597 @@
 {
-    "gameType": "modifierPlacement",
-    "batchIndex": 3,
-    "levels": "21-30",
-    "quests": [
-        {
-            "id": "mp_l21_q1",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'red' into the correct position.",
-            "correctAnswer": "The red car is very fast in sector 2.",
-            "shuffledWords": [
-                "red",
-                "The",
-                "car",
-                "is",
-                "very",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Adjectives like 'red' usually go right before the noun they describe. (Sector 2 calibration)",
-            "explanation": "Adjectives go immediately before the noun they modify (e.g. 'red car'). [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l21_q2",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'silent' into the correct position.",
-            "correctAnswer": "The silent drones monitored the sector in sector 2.",
-            "shuffledWords": [
-                "silent",
-                "The",
-                "drones",
-                "monitored",
-                "the",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Descriptive adjectives precede the noun. (Sector 2 calibration)",
-            "explanation": "'Silent' describes the 'drones'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l21_q3",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'shiny' into the correct position.",
-            "correctAnswer": "The shiny capsule landed in the desert in sector 2.",
-            "shuffledWords": [
-                "shiny",
-                "The",
-                "capsule",
-                "landed",
-                "in",
-                "the",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Appearance adjectives precede the noun. (Sector 2 calibration)",
-            "explanation": "'Shiny' describes the 'capsule'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l22_q1",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'beautifully' into the correct position.",
-            "correctAnswer": "She sang the national anthem beautifully in sector 2.",
-            "shuffledWords": [
-                "beautifully",
-                "She",
-                "sang",
-                "the",
-                "national",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Adverbs of manner like 'beautifully' usually go at the end of the sentence or verb phrase. (Sector 2 calibration)",
-            "explanation": "Adverbs of manner typically go after the direct object. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l22_q2",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'remotely' into the correct position.",
-            "correctAnswer": "He operated the robotic arm remotely in sector 2.",
-            "shuffledWords": [
-                "remotely",
-                "He",
-                "operated",
-                "the",
-                "robotic",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Place method adverbs at the end of the clause. (Sector 2 calibration)",
-            "explanation": "'Remotely' describes the method of operation. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l22_q3",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'securely' into the correct position.",
-            "correctAnswer": "We locked the containment chamber securely in sector 2.",
-            "shuffledWords": [
-                "securely",
-                "We",
-                "locked",
-                "the",
-                "containment",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Adverbs of manner go after the object. (Sector 2 calibration)",
-            "explanation": "'Securely' modifies 'locked'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l23_q1",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'quickly' into the correct position.",
-            "correctAnswer": "He ran quickly to the shelter in sector 2.",
-            "shuffledWords": [
-                "quickly",
-                "He",
-                "ran",
-                "to",
-                "the",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Place the adverb of speed close to the action verb. (Sector 2 calibration)",
-            "explanation": "Adverbs of speed can place immediately after the verb they describe. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l23_q2",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'loudly' into the correct position.",
-            "correctAnswer": "The alarm sounded loudly in the hall in sector 2.",
-            "shuffledWords": [
-                "loudly",
-                "The",
-                "alarm",
-                "sounded",
-                "in",
-                "the",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Adverbs of sound go after the verb. (Sector 2 calibration)",
-            "explanation": "'Loudly' describes how the alarm sounded. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l23_q3",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'patiently' into the correct position.",
-            "correctAnswer": "The engineer waited patiently for the results in sector 2.",
-            "shuffledWords": [
-                "patiently",
-                "The",
-                "engineer",
-                "waited",
-                "for",
-                "the",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Adverbs of manner go after the verb. (Sector 2 calibration)",
-            "explanation": "'Patiently' modifies 'waited'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l24_q1",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'wooden' into the correct position.",
-            "correctAnswer": "A wooden box was found in the attic in sector 2.",
-            "shuffledWords": [
-                "wooden",
-                "A",
-                "box",
-                "was",
-                "found",
-                "in",
-                "the",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Material adjectives go directly before the noun. (Sector 2 calibration)",
-            "explanation": "'Wooden' describes the material of the 'box'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l24_q2",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'golden' into the correct position.",
-            "correctAnswer": "A golden key unlocked the secret vault in sector 2.",
-            "shuffledWords": [
-                "golden",
-                "A",
-                "key",
-                "unlocked",
-                "the",
-                "secret",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Material adjective goes before the noun. (Sector 2 calibration)",
-            "explanation": "'Golden' describes the 'key'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l24_q3",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'metallic' into the correct position.",
-            "correctAnswer": "A metallic sound echoed through the cave in sector 2.",
-            "shuffledWords": [
-                "metallic",
-                "A",
-                "sound",
-                "echoed",
-                "through",
-                "the",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Descriptive adjective goes before the noun. (Sector 2 calibration)",
-            "explanation": "'Metallic' describes 'sound'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l25_q1",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'always' into the correct position.",
-            "correctAnswer": "She is always happy on Fridays in sector 2.",
-            "shuffledWords": [
-                "always",
-                "She",
-                "is",
-                "happy",
-                "on",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Adverbs of frequency go after the verb 'to be'. (Sector 2 calibration)",
-            "explanation": "'Always' goes after 'is'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l25_q2",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'never' into the correct position.",
-            "correctAnswer": "They have never seen a meteor shower in sector 2.",
-            "shuffledWords": [
-                "never",
-                "They",
-                "have",
-                "seen",
-                "a",
-                "meteor",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Frequency adverbs go between auxiliary and main verbs. (Sector 2 calibration)",
-            "explanation": "'Never' sits between 'have' and 'seen'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l25_q3",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'rarely' into the correct position.",
-            "correctAnswer": "The comet rarely approaches our solar system in sector 2.",
-            "shuffledWords": [
-                "rarely",
-                "The",
-                "comet",
-                "approaches",
-                "our",
-                "solar",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Frequency adverbs precede simple verbs. (Sector 2 calibration)",
-            "explanation": "'Rarely' goes before 'approaches'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l26_q1",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'extremely' into the correct position.",
-            "correctAnswer": "The experiment was extremely dangerous in sector 2.",
-            "shuffledWords": [
-                "extremely",
-                "The",
-                "experiment",
-                "was",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Adverbs of degree go directly before the adjective they modify. (Sector 2 calibration)",
-            "explanation": "'Extremely' modifies the adjective 'dangerous'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l26_q2",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'very' into the correct position.",
-            "correctAnswer": "The sensor readings were very accurate in sector 2.",
-            "shuffledWords": [
-                "very",
-                "The",
-                "sensor",
-                "readings",
-                "were",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Adverbs of degree precede the adjective. (Sector 2 calibration)",
-            "explanation": "'Very' modifies the adjective 'accurate'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l26_q3",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'quite' into the correct position.",
-            "correctAnswer": "The atmosphere is quite chilly today in sector 2.",
-            "shuffledWords": [
-                "quite",
-                "The",
-                "atmosphere",
-                "is",
-                "chilly",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Adverbs of degree go before the adjective. (Sector 2 calibration)",
-            "explanation": "'Quite' modifies the adjective 'chilly'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l27_q1",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'Italian' into the correct position.",
-            "correctAnswer": "An Italian chef cooked our pasta in sector 2.",
-            "shuffledWords": [
-                "Italian",
-                "An",
-                "chef",
-                "cooked",
-                "our",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Origin adjectives go right before the noun. (Sector 2 calibration)",
-            "explanation": "'Italian' describes the origin of the chef. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l27_q2",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'ancient' into the correct position.",
-            "correctAnswer": "They found an ancient artifact in Egypt in sector 2.",
-            "shuffledWords": [
-                "ancient",
-                "They",
-                "found",
-                "an",
-                "artifact",
-                "in",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Age adjectives go before the noun. (Sector 2 calibration)",
-            "explanation": "'Ancient' describes the 'artifact'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l27_q3",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'modern' into the correct position.",
-            "correctAnswer": "The agency built a modern laboratory in sector 2.",
-            "shuffledWords": [
-                "modern",
-                "The",
-                "agency",
-                "built",
-                "a",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Time adjectives precede the noun. (Sector 2 calibration)",
-            "explanation": "'Modern' describes 'laboratory'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l28_q1",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'enough' into the correct position.",
-            "correctAnswer": "He is old enough to drive in sector 2.",
-            "shuffledWords": [
-                "enough",
-                "He",
-                "is",
-                "old",
-                "to",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "'Enough' goes after the adjective it modifies. (Sector 2 calibration)",
-            "explanation": "'Enough' uniquely succeeds adjectives. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l28_q2",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'well' into the correct position.",
-            "correctAnswer": "The stabilizer functions well under pressure in sector 2.",
-            "shuffledWords": [
-                "well",
-                "The",
-                "stabilizer",
-                "functions",
-                "under",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Adverbs of performance go after the verb. (Sector 2 calibration)",
-            "explanation": "'Well' modifies 'functions'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l28_q3",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'perfectly' into the correct position.",
-            "correctAnswer": "The thruster aligned perfectly with the dock in sector 2.",
-            "shuffledWords": [
-                "perfectly",
-                "The",
-                "thruster",
-                "aligned",
-                "with",
-                "the",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Place performance adverbs after the verb. (Sector 2 calibration)",
-            "explanation": "'Perfectly' modifies 'aligned'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l29_q1",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'nearly' into the correct position.",
-            "correctAnswer": "We nearly missed our flight yesterday in sector 2.",
-            "shuffledWords": [
-                "nearly",
-                "We",
-                "missed",
-                "our",
-                "flight",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Place near-limit adverbs right before the verb. (Sector 2 calibration)",
-            "explanation": "'Nearly' modifies the verb 'missed'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l29_q2",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'almost' into the correct position.",
-            "correctAnswer": "She almost finished the entire repair project in sector 2.",
-            "shuffledWords": [
-                "almost",
-                "She",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Degree adverbs go before the verb. (Sector 2 calibration)",
-            "explanation": "'Almost' modifies 'finished'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l29_q3",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'hardly' into the correct position.",
-            "correctAnswer": "We could hardly hear the faint signal in sector 2.",
-            "shuffledWords": [
-                "hardly",
-                "We",
-                "could",
-                "hear",
-                "the",
-                "faint",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Degree limiting adverbs go between auxiliary and main verbs. (Sector 2 calibration)",
-            "explanation": "'Hardly' goes between 'could' and 'hear'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l30_q1",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'only' into the correct position.",
-            "correctAnswer": "I have only two coins left in sector 2.",
-            "shuffledWords": [
-                "only",
-                "I",
-                "have",
-                "two",
-                "coins",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Place limiting adverbs directly before the quantity. (Sector 2 calibration)",
-            "explanation": "'Only' modifies the quantity 'two'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l30_q2",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'just' into the correct position.",
-            "correctAnswer": "We just completed the system reboot in sector 2.",
-            "shuffledWords": [
-                "just",
-                "We",
-                "completed",
-                "the",
-                "system",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Place time adverbs indicating recency before the verb. (Sector 2 calibration)",
-            "explanation": "'Just' modifies 'completed'. [Verified in sector 2]."
-        },
-        {
-            "id": "mp_l30_q3",
-            "instruction": "PLACE THE MODIFIER",
-            "difficulty": 1,
-            "subtype": "modifierPlacement",
-            "interactionType": "Map Placement",
-            "sentence": "Insert the modifier 'solely' into the correct position.",
-            "correctAnswer": "He relies solely on solar energy in sector 2.",
-            "shuffledWords": [
-                "solely",
-                "He",
-                "relies",
-                "on",
-                "solar",
-                "in",
-                "sector",
-                "2."
-            ],
-            "hint": "Adverbs of restriction go before the prepositional phrase. (Sector 2 calibration)",
-            "explanation": "'Solely' modifies 'relies on'. [Verified in sector 2]."
-        }
-    ]
+  "gameType": "modifierPlacement",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "mp_l21_q1",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'always' into the correct position.",
+      "correctAnswer": "She always drinks coffee in the morning.",
+      "shuffledWords": [
+        "always",
+        "She",
+        "drinks",
+        "coffee",
+        "in",
+        "the",
+        "morning."
+      ],
+      "hint": "Frequency adverbs come before the main verb in positive sentences.",
+      "explanation": "'Always' is a frequency adverb. In positive sentences it comes before the main verb: 'always drinks'."
+    },
+    {
+      "id": "mp_l21_q2",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'never' into the correct position.",
+      "correctAnswer": "He never forgets his mother's birthday.",
+      "shuffledWords": [
+        "never",
+        "He",
+        "forgets",
+        "his",
+        "mother's",
+        "birthday."
+      ],
+      "hint": "Frequency adverbs come before the main verb in positive sentences.",
+      "explanation": "'Never' is a frequency adverb meaning 'at no time'. It comes before the main verb: 'never forgets'."
+    },
+    {
+      "id": "mp_l21_q3",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'usually' into the correct position.",
+      "correctAnswer": "We usually leave for work at eight o'clock.",
+      "shuffledWords": [
+        "usually",
+        "We",
+        "leave",
+        "for",
+        "work",
+        "at",
+        "eight",
+        "o'clock."
+      ],
+      "hint": "Frequency adverbs come before the main verb in positive sentences.",
+      "explanation": "'Usually' comes before the main verb: 'usually leave'. It expresses how frequently something happens."
+    },
+    {
+      "id": "mp_l22_q1",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'often' into the correct position.",
+      "correctAnswer": "I often go for a walk after lunch.",
+      "shuffledWords": [
+        "often",
+        "I",
+        "go",
+        "for",
+        "a",
+        "walk",
+        "after",
+        "lunch."
+      ],
+      "hint": "Frequency adverbs come before the main verb.",
+      "explanation": "'Often' is a frequency adverb that comes before the main verb 'go': 'often go'."
+    },
+    {
+      "id": "mp_l22_q2",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'sometimes' into the correct position.",
+      "correctAnswer": "She sometimes reads a book before bed.",
+      "shuffledWords": [
+        "sometimes",
+        "She",
+        "reads",
+        "a",
+        "book",
+        "before",
+        "bed."
+      ],
+      "hint": "Frequency adverbs come before the main verb.",
+      "explanation": "'Sometimes' is a frequency adverb. It comes before the main verb: 'sometimes reads'."
+    },
+    {
+      "id": "mp_l22_q3",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'rarely' into the correct position.",
+      "correctAnswer": "He rarely eats fast food during the week.",
+      "shuffledWords": [
+        "rarely",
+        "He",
+        "eats",
+        "fast",
+        "food",
+        "during",
+        "the",
+        "week."
+      ],
+      "hint": "Frequency adverbs come before the main verb.",
+      "explanation": "'Rarely' means 'not very often'. It comes before the main verb: 'rarely eats'."
+    },
+    {
+      "id": "mp_l23_q1",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'frequently' into the correct position.",
+      "correctAnswer": "They frequently change their plans at the last minute.",
+      "shuffledWords": [
+        "frequently",
+        "They",
+        "change",
+        "their",
+        "plans",
+        "at",
+        "the",
+        "last",
+        "minute."
+      ],
+      "hint": "Frequency adverbs come before the main verb.",
+      "explanation": "'Frequently' means 'often'. It comes before the main verb: 'frequently change'."
+    },
+    {
+      "id": "mp_l23_q2",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'seldom' into the correct position.",
+      "correctAnswer": "She seldom loses her temper at work.",
+      "shuffledWords": [
+        "seldom",
+        "She",
+        "loses",
+        "her",
+        "temper",
+        "at",
+        "work."
+      ],
+      "hint": "Frequency adverbs come before the main verb.",
+      "explanation": "'Seldom' means 'not often'. It comes before the main verb: 'seldom loses'."
+    },
+    {
+      "id": "mp_l23_q3",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'occasionally' into the correct position.",
+      "correctAnswer": "We occasionally order takeaway on a Friday evening.",
+      "shuffledWords": [
+        "occasionally",
+        "We",
+        "order",
+        "takeaway",
+        "on",
+        "a",
+        "Friday",
+        "evening."
+      ],
+      "hint": "Frequency adverbs come before the main verb.",
+      "explanation": "'Occasionally' means 'sometimes but not often'. It comes before the main verb: 'occasionally order'."
+    },
+    {
+      "id": "mp_l24_q1",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'ever' into the correct position.",
+      "correctAnswer": "Have you ever been to Japan?",
+      "shuffledWords": [
+        "ever",
+        "Have",
+        "you",
+        "been",
+        "to",
+        "Japan?"
+      ],
+      "hint": "In questions with 'have', frequency adverbs go between the auxiliary and the main verb.",
+      "explanation": "'Ever' is placed between the auxiliary 'have' and the main verb 'been': 'Have you ever been'."
+    },
+    {
+      "id": "mp_l24_q2",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'always' into the correct position.",
+      "correctAnswer": "The museum is always busy at the weekend.",
+      "shuffledWords": [
+        "always",
+        "The",
+        "museum",
+        "is",
+        "busy",
+        "at",
+        "the",
+        "weekend."
+      ],
+      "hint": "Frequency adverbs come AFTER the verb 'to be'.",
+      "explanation": "With the verb 'to be', frequency adverbs come after it, not before: 'is always busy'."
+    },
+    {
+      "id": "mp_l24_q3",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'never' into the correct position.",
+      "correctAnswer": "The trains are never on time in winter.",
+      "shuffledWords": [
+        "never",
+        "The",
+        "trains",
+        "are",
+        "on",
+        "time",
+        "in",
+        "winter."
+      ],
+      "hint": "Frequency adverbs come AFTER the verb 'to be'.",
+      "explanation": "'Never' comes after the 'to be' verb 'are': 'are never on time'."
+    },
+    {
+      "id": "mp_l25_q1",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'usually' into the correct position.",
+      "correctAnswer": "The café is usually open until nine.",
+      "shuffledWords": [
+        "usually",
+        "The",
+        "café",
+        "is",
+        "open",
+        "until",
+        "nine."
+      ],
+      "hint": "Frequency adverbs come after the verb 'to be'.",
+      "explanation": "'Usually' follows the 'be' verb 'is': 'is usually open'. Frequency adverbs follow 'be' verbs."
+    },
+    {
+      "id": "mp_l25_q2",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'often' into the correct position.",
+      "correctAnswer": "She is often late for morning meetings.",
+      "shuffledWords": [
+        "often",
+        "She",
+        "is",
+        "late",
+        "for",
+        "morning",
+        "meetings."
+      ],
+      "hint": "Frequency adverbs come after the verb 'to be'.",
+      "explanation": "'Often' comes after the 'be' verb 'is': 'is often late'. This follows the rule for 'be' verbs."
+    },
+    {
+      "id": "mp_l25_q3",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'sometimes' into the correct position.",
+      "correctAnswer": "The weather is sometimes unpredictable in spring.",
+      "shuffledWords": [
+        "sometimes",
+        "The",
+        "weather",
+        "is",
+        "unpredictable",
+        "in",
+        "spring."
+      ],
+      "hint": "Frequency adverbs come after the verb 'to be'.",
+      "explanation": "'Sometimes' follows the 'be' verb 'is': 'is sometimes unpredictable'."
+    },
+    {
+      "id": "mp_l26_q1",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'rarely' into the correct position.",
+      "correctAnswer": "The shop is rarely crowded on a Monday morning.",
+      "shuffledWords": [
+        "rarely",
+        "The",
+        "shop",
+        "is",
+        "crowded",
+        "on",
+        "a",
+        "Monday",
+        "morning."
+      ],
+      "hint": "Frequency adverbs come after the verb 'to be'.",
+      "explanation": "'Rarely' follows the 'be' verb 'is': 'is rarely crowded'."
+    },
+    {
+      "id": "mp_l26_q2",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'frequently' into the correct position.",
+      "correctAnswer": "They have frequently asked for better facilities.",
+      "shuffledWords": [
+        "frequently",
+        "They",
+        "have",
+        "asked",
+        "for",
+        "better",
+        "facilities."
+      ],
+      "hint": "With 'have', frequency adverbs go between the auxiliary and the main verb.",
+      "explanation": "'Frequently' is placed between 'have' and 'asked': 'have frequently asked'."
+    },
+    {
+      "id": "mp_l26_q3",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'always' into the correct position.",
+      "correctAnswer": "He always checks his emails first thing in the morning.",
+      "shuffledWords": [
+        "always",
+        "He",
+        "checks",
+        "his",
+        "emails",
+        "first",
+        "thing",
+        "in",
+        "the",
+        "morning."
+      ],
+      "hint": "Frequency adverbs come before the main verb.",
+      "explanation": "'Always' comes before the main verb 'checks': 'always checks'. This is the standard position in present simple."
+    },
+    {
+      "id": "mp_l27_q1",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'never' into the correct position.",
+      "correctAnswer": "I have never heard such a strange story before.",
+      "shuffledWords": [
+        "never",
+        "I",
+        "have",
+        "heard",
+        "such",
+        "a",
+        "strange",
+        "story",
+        "before."
+      ],
+      "hint": "With 'have', frequency adverbs go between the auxiliary and the main verb.",
+      "explanation": "'Never' goes between 'have' and 'heard': 'have never heard'. This is the standard position with perfect tenses."
+    },
+    {
+      "id": "mp_l27_q2",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'often' into the correct position.",
+      "correctAnswer": "She has often wondered about her family history.",
+      "shuffledWords": [
+        "often",
+        "She",
+        "has",
+        "wondered",
+        "about",
+        "her",
+        "family",
+        "history."
+      ],
+      "hint": "With 'has', frequency adverbs go between the auxiliary and the main verb.",
+      "explanation": "'Often' is placed between 'has' and 'wondered': 'has often wondered'."
+    },
+    {
+      "id": "mp_l27_q3",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'sometimes' into the correct position.",
+      "correctAnswer": "He has sometimes considered moving abroad.",
+      "shuffledWords": [
+        "sometimes",
+        "He",
+        "has",
+        "considered",
+        "moving",
+        "abroad."
+      ],
+      "hint": "With 'has', frequency adverbs go between the auxiliary and the main verb.",
+      "explanation": "'Sometimes' goes between 'has' and 'considered': 'has sometimes considered'."
+    },
+    {
+      "id": "mp_l28_q1",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'always' into the correct position.",
+      "correctAnswer": "She had always wanted to visit New Zealand.",
+      "shuffledWords": [
+        "always",
+        "She",
+        "had",
+        "wanted",
+        "to",
+        "visit",
+        "New",
+        "Zealand."
+      ],
+      "hint": "With past perfect 'had', frequency adverbs go between 'had' and the main verb.",
+      "explanation": "'Always' goes between 'had' and 'wanted': 'had always wanted'. This is the standard position with past perfect."
+    },
+    {
+      "id": "mp_l28_q2",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'usually' into the correct position.",
+      "correctAnswer": "They had usually finished dinner before nine.",
+      "shuffledWords": [
+        "usually",
+        "They",
+        "had",
+        "finished",
+        "dinner",
+        "before",
+        "nine."
+      ],
+      "hint": "With past perfect 'had', frequency adverbs go between 'had' and the main verb.",
+      "explanation": "'Usually' goes between 'had' and 'finished': 'had usually finished'."
+    },
+    {
+      "id": "mp_l28_q3",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'rarely' into the correct position.",
+      "correctAnswer": "He had rarely spoken about his difficult childhood.",
+      "shuffledWords": [
+        "rarely",
+        "He",
+        "had",
+        "spoken",
+        "about",
+        "his",
+        "difficult",
+        "childhood."
+      ],
+      "hint": "With past perfect 'had', frequency adverbs go between 'had' and the main verb.",
+      "explanation": "'Rarely' goes between 'had' and 'spoken': 'had rarely spoken'."
+    },
+    {
+      "id": "mp_l29_q1",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'never' into the correct position.",
+      "correctAnswer": "You should never leave a fire unattended.",
+      "shuffledWords": [
+        "never",
+        "You",
+        "should",
+        "leave",
+        "a",
+        "fire",
+        "unattended."
+      ],
+      "hint": "With modal verbs, frequency adverbs go between the modal and the main verb.",
+      "explanation": "'Never' goes between the modal 'should' and the main verb 'leave': 'should never leave'."
+    },
+    {
+      "id": "mp_l29_q2",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'always' into the correct position.",
+      "correctAnswer": "You must always wear a seatbelt when driving.",
+      "shuffledWords": [
+        "always",
+        "You",
+        "must",
+        "wear",
+        "a",
+        "seatbelt",
+        "when",
+        "driving."
+      ],
+      "hint": "With modal verbs, frequency adverbs go between the modal and the main verb.",
+      "explanation": "'Always' goes between the modal 'must' and the main verb 'wear': 'must always wear'."
+    },
+    {
+      "id": "mp_l29_q3",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'occasionally' into the correct position.",
+      "correctAnswer": "We should occasionally review our long-term goals.",
+      "shuffledWords": [
+        "occasionally",
+        "We",
+        "should",
+        "review",
+        "our",
+        "long-term",
+        "goals."
+      ],
+      "hint": "With modal verbs, frequency adverbs go between the modal and the main verb.",
+      "explanation": "'Occasionally' goes between 'should' and 'review': 'should occasionally review'."
+    },
+    {
+      "id": "mp_l30_q1",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'ever' into the correct position.",
+      "correctAnswer": "Will you ever stop making that noise?",
+      "shuffledWords": [
+        "ever",
+        "Will",
+        "you",
+        "stop",
+        "making",
+        "that",
+        "noise?"
+      ],
+      "hint": "With modal verbs, frequency adverbs go between the modal and the main verb.",
+      "explanation": "'Ever' goes between the modal 'will' and the main verb 'stop': 'will ever stop'."
+    },
+    {
+      "id": "mp_l30_q2",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'frequently' into the correct position.",
+      "correctAnswer": "She will frequently travel for work in the new role.",
+      "shuffledWords": [
+        "frequently",
+        "She",
+        "will",
+        "travel",
+        "for",
+        "work",
+        "in",
+        "the",
+        "new",
+        "role."
+      ],
+      "hint": "With modal verbs, frequency adverbs go between the modal and the main verb.",
+      "explanation": "'Frequently' goes between 'will' and 'travel': 'will frequently travel'."
+    },
+    {
+      "id": "mp_l30_q3",
+      "instruction": "PLACE THE MODIFIER",
+      "subtype": "modifierPlacement",
+      "interactionType": "Map Placement",
+      "sentence": "Insert the modifier 'seldom' into the correct position.",
+      "correctAnswer": "He would seldom admit when he was wrong.",
+      "shuffledWords": [
+        "seldom",
+        "He",
+        "would",
+        "admit",
+        "when",
+        "he",
+        "was",
+        "wrong."
+      ],
+      "hint": "With modal verbs, frequency adverbs go between the modal and the main verb.",
+      "explanation": "'Seldom' goes between 'would' and 'admit': 'would seldom admit'."
+    }
+  ]
 }
