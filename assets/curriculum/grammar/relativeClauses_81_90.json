@@ -6,542 +6,512 @@
         {
             "id": "rc_l81_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The man ___ lives next door is a scientist (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "My sister, ___ lives in Paris, is visiting next month.",
+            "hint": "Commas appear on both sides of the clause - that tells you something crucial about which word is allowed here.",
+            "explanation": "The commas signal a non-defining relative clause, which adds extra information. In non-defining clauses, 'that' is never used; only 'who', 'which', or 'whom' are acceptable.",
             "options": [
-                "when",
-                "where",
-                "whom",
-                "who"
+                "who",
+                "that",
+                "which",
+                "whom"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "who",
-            "hint": "Relative pronoun for people (subject). (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'who'. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l81_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The students ___ pass will get a prize (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The Eiffel Tower, ___ stands 330 metres tall, attracts millions of visitors.",
+            "hint": "Both commas are present - confirm what kind of clause this is, then pick the right pronoun.",
+            "explanation": "The commas mark this as a non-defining clause giving extra information. Because 'that' is banned in non-defining clauses, 'which' is the only choice for an object.",
             "options": [
+                "that",
                 "which",
-                "where",
-                "whom",
-                "who"
+                "who",
+                "whose"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "who",
-            "hint": "Subject pronoun for people. (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'who'. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l81_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The reason ___ she missed the train is unknown (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "Her debut novel, ___ took three years to write, became a bestseller.",
+            "hint": "Look at the commas bracketing the clause - they signal the type of clause that bans one pronoun completely.",
+            "explanation": "The commas identify this as a non-defining clause. 'That' is never permitted inside a non-defining clause, so 'which' is the correct choice for a novel.",
             "options": [
-                "where",
-                "when",
+                "that",
+                "who",
                 "which",
-                "why"
+                "whose"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "why",
-            "hint": "Relative adverb for reason. (Log 8 calibration)",
-            "explanation": "'Why' is used to link a reason to the statement. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l82_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The book ___ I read was fascinating (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "Dr. Morris, ___ I have seen for years, retired last spring.",
+            "hint": "The commas mark this as non-defining - and the hidden clause is 'I have seen ___', making it an object position too.",
+            "explanation": "This is a non-defining clause ('that' banned) AND the doctor is the object of 'seen', calling for the formal 'whom' rather than 'who'.",
             "options": [
                 "that",
-                "whom",
-                "where",
-                "which"
+                "which",
+                "who",
+                "whom"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Relative pronoun for things. (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'which'. [Verified in calibration unit 8]."
+            "correctAnswer": "whom"
         },
         {
             "id": "rc_l82_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The phone ___ is on the table is mine (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "My grandfather, ___ fought in the war, rarely talked about it.",
+            "hint": "Commas signal non-defining - and the grandfather is doing the action 'fought', placing him in subject position.",
+            "explanation": "Non-defining clauses ban 'that'. Since the grandfather is the subject of 'fought', the subject pronoun 'who' is required.",
             "options": [
                 "who",
-                "whom",
-                "where",
-                "that"
+                "that",
+                "which",
+                "whose"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "that",
-            "hint": "'That' for identifying things. (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'that'. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l82_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The box in ___ I kept the letters is lost (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The award ceremony, ___ we had all been anticipating, was postponed.",
+            "hint": "Both commas are there - the pronoun must satisfy the non-defining rule AND work for a thing being anticipated.",
+            "explanation": "The commas make this non-defining, banning 'that'. Since the ceremony is the object of 'anticipating' and is a thing, 'which' is correct.",
             "options": [
                 "that",
-                "where",
-                "whom",
-                "which"
+                "which",
+                "who",
+                "whose"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Preposition + relative pronoun for objects. (Log 8 calibration)",
-            "explanation": "'In which' is the formal way to indicate location within an object. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l83_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "This is the house ___ Jack built (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The students ___ passed the exam will move to the advanced class.",
+            "hint": "Notice there are no commas - this clause restricts which students are meant. What does that tell you?",
+            "explanation": "Without commas, this is a defining clause that restricts the meaning to only the students who passed. Both 'who' and 'that' would be grammatically possible, but only 'who' is offered.",
             "options": [
+                "whom",
                 "which",
-                "where",
-                "that",
-                "who"
+                "who",
+                "that"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "that",
-            "hint": "'That' for defining clauses. (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'that'. [Verified in calibration unit 8]."
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l83_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The nurse ___ helped me was very kind (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The laptop ___ has the longest battery life is the best choice.",
+            "hint": "Again no commas - the clause picks out a specific laptop from several options. What kind of clause is this?",
+            "explanation": "The absence of commas makes this a defining clause - it identifies one laptop in particular. Both 'which' and 'that' would work, but only 'which' is offered here.",
             "options": [
-                "which",
-                "where",
+                "who",
                 "whom",
-                "who"
+                "that",
+                "which"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "who",
-            "hint": "Subject pronoun for people. (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'who'. [Verified in calibration unit 8]."
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l83_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The company for ___ he works is global (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The employees ___ completed the training first were promoted.",
+            "hint": "No commas again - the clause identifies exactly which employees received the promotion.",
+            "explanation": "Without commas, this defining clause restricts the meaning to specific employees. 'Who' is the subject relative pronoun for people in this context.",
             "options": [
                 "who",
-                "that",
-                "where",
-                "which"
+                "whom",
+                "which",
+                "that"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Preposition + relative pronoun for organizations. (Log 8 calibration)",
-            "explanation": "Use 'which' after the preposition 'for' when referring to a company. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l84_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The girl ___ father is a doctor is my friend (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The new policy, ___ covers remote workers, takes effect in January.",
+            "hint": "Both commas are there - what rule governs the pronoun choice in this type of clause?",
+            "explanation": "The commas signal a non-defining clause, which bans 'that' entirely. Since a policy is a thing, 'which' is the only correct choice.",
             "options": [
+                "that",
                 "which",
-                "why",
                 "who",
                 "whose"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whose",
-            "hint": "Possessive relative pronoun. (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'whose'. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l84_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The house ___ we bought is new (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "Her performance, ___ left the audience speechless, won every award.",
+            "hint": "Commas bracket the clause - apply the same rule as the last question.",
+            "explanation": "Non-defining clauses always ban 'that'. Since a performance is a thing, 'which' is the only pronoun that fits here.",
             "options": [
+                "that",
                 "who",
-                "whom",
-                "where",
-                "which"
+                "which",
+                "whose"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Object pronoun for things. (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'which'. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l84_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The lady with ___ I was traveling was very kind (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "Professor Blake, ___ published fifty papers, is my supervisor.",
+            "hint": "Commas are present - and Professor Blake is the one publishing, so this is subject position.",
+            "explanation": "The commas make this a non-defining clause, banning 'that'. Professor Blake performs the action 'published', so the subject pronoun 'who' is correct.",
             "options": [
-                "who",
+                "that",
                 "which",
                 "whose",
-                "whom"
+                "who"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "hint": "Preposition + relative pronoun for people. (Log 8 calibration)",
-            "explanation": "'Whom' is required after the preposition 'with'. [Verified in calibration unit 8]."
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l85_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The city ___ I was born is very old (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The café ___ opens at six is always crowded by seven.",
+            "hint": "No commas here - the clause identifies a specific café among others. Both 'which' and 'that' are options - pick the one available.",
+            "explanation": "The lack of commas marks this as a defining clause. Only 'which' is offered as a subject pronoun for this thing.",
             "options": [
-                "why",
-                "that",
+                "which",
+                "who",
                 "whom",
-                "where"
+                "that"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "where",
-            "hint": "Relative adverb for place. (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'where'. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l85_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The cake ___ she made was delicious (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The nurse, ___ had worked there for twenty years, trained all the new staff.",
+            "hint": "Look for the commas - they tell you this clause adds extra information about one specific nurse.",
+            "explanation": "The commas mark this as a non-defining clause ('that' is banned). The nurse performs the action 'had worked', so the subject pronoun 'who' is correct.",
             "options": [
+                "that",
                 "who",
-                "whom",
-                "where",
-                "that"
+                "which",
+                "whose"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "that",
-            "hint": "'That' for identifying things. (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'that'. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l85_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The researchers, all of ___ are experts, agreed (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The reports ___ contained errors were sent back for revision.",
+            "hint": "No commas - the clause defines which reports specifically were sent back.",
+            "explanation": "Without commas, this is a defining clause identifying particular reports. Only 'which' is available as the subject pronoun for these things.",
             "options": [
                 "who",
-                "which",
-                "whose",
-                "whom"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "hint": "Quantifier + of + relative pronoun for people. (Log 8 calibration)",
-            "explanation": "Use 'whom' after quantifiers like 'all of', 'some of', 'none of'. [Verified in calibration unit 8]."
-        },
-        {
-            "id": "rc_l86_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
-            "interactionType": "Fishing Cast",
-            "question": "The reasons ___ he left are unknown (calib 8).",
-            "options": [
-                "where",
-                "when",
-                "which",
-                "why"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "why",
-            "hint": "Relative adverb for reason. (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'why'. [Verified in calibration unit 8]."
-        },
-        {
-            "id": "rc_l86_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
-            "interactionType": "Fishing Cast",
-            "question": "The colleague ___ I was talking to is very skilled (calib 8).",
-            "options": [
-                "who",
-                "which",
-                "where",
-                "whom"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "hint": "Formal object pronoun for people. (Log 8 calibration)",
-            "explanation": "In formal English, 'whom' is used as the object of a preposition. [Verified in calibration unit 8]."
-        },
-        {
-            "id": "rc_l86_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
-            "interactionType": "Fishing Cast",
-            "question": "The problems, many of ___ were complex, were solved (calib 8).",
-            "options": [
-                "whom",
-                "that",
-                "who",
-                "which"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Quantifier + of + relative pronoun for things. (Log 8 calibration)",
-            "explanation": "Use 'which' after quantifiers when referring to inanimate objects or problems. [Verified in calibration unit 8]."
-        },
-        {
-            "id": "rc_l87_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
-            "interactionType": "Fishing Cast",
-            "question": "The movie ___ we saw yesterday was great (calib 8).",
-            "options": [
-                "where",
                 "whom",
                 "which",
                 "that"
             ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "which"
+        },
+        {
+            "id": "rc_l86_q1",
+            "instruction": "CAST THE RELATIVE LINK",
+            "interactionType": "Fishing Cast",
+            "subtype": "relativeClauses",
+            "question": "The museum, ___ houses over five thousand artifacts, was built in 1890.",
+            "hint": "Both commas appear - that one banned word still can't enter this type of clause.",
+            "explanation": "Non-defining clauses, marked by commas, never allow 'that'. Since a museum is a thing that performs the action 'houses', 'which' is the only correct choice.",
+            "options": [
+                "that",
+                "who",
+                "whose",
+                "which"
+            ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "that",
-            "hint": "'That' for defining clauses. (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'that'. [Verified in calibration unit 8]."
+            "correctAnswer": "which"
+        },
+        {
+            "id": "rc_l86_q2",
+            "instruction": "CAST THE RELATIVE LINK",
+            "interactionType": "Fishing Cast",
+            "subtype": "relativeClauses",
+            "question": "The surgeon ___ performed the operation has forty years of experience.",
+            "hint": "No commas - the clause picks out one specific surgeon, not all surgeons in general.",
+            "explanation": "The absence of commas makes this a defining clause that identifies a particular surgeon. 'Who' is the subject pronoun for this person.",
+            "options": [
+                "who",
+                "that",
+                "which",
+                "whom"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "who"
+        },
+        {
+            "id": "rc_l86_q3",
+            "instruction": "CAST THE RELATIVE LINK",
+            "interactionType": "Fishing Cast",
+            "subtype": "relativeClauses",
+            "question": "The train, ___ was running two hours late, finally arrived at midnight.",
+            "hint": "The commas tell you this adds extra information about a specific, already-identified train.",
+            "explanation": "The commas signal a non-defining clause, banning 'that'. Since a train is a thing, 'which' is the only possible subject pronoun here.",
+            "options": [
+                "that",
+                "which",
+                "who",
+                "whose"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "which"
+        },
+        {
+            "id": "rc_l87_q1",
+            "instruction": "CAST THE RELATIVE LINK",
+            "interactionType": "Fishing Cast",
+            "subtype": "relativeClauses",
+            "question": "He returned the phone ___ he had borrowed without saying thank you.",
+            "hint": "The phone is the object of 'borrowed' - but a relative pronoun IS needed here because of the extra clause after it.",
+            "explanation": "In everyday speech the pronoun is often dropped, but when a pronoun IS kept for an object clause about a thing, 'which' is correct. 'Who' and 'whom' cannot refer to a phone.",
+            "options": [
+                "who",
+                "whom",
+                "which",
+                "why"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l87_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The painting, ___ was stolen last year, has been found (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The book ___ I recommended sold out within a week of my review.",
+            "hint": "The book is the object of 'recommended', and a thing - pick the object pronoun that works for things.",
+            "explanation": "When an object relative pronoun is retained for a thing, 'which' is the correct form. 'Who' and 'whom' only apply to people.",
             "options": [
-                "that",
                 "who",
                 "whom",
+                "why",
                 "which"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Use 'which' for non-defining clauses (with commas). (Log 8 calibration)",
-            "explanation": "'Which' is required for non-defining clauses; 'that' cannot be used after a comma. [Verified in calibration unit 8]."
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l87_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The house, the roof of ___ was damaged, is old (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The film ___ we watched last night has terrible subtitles, apparently.",
+            "hint": "The film is the object of 'watched' and is a thing - what object pronoun fits?",
+            "explanation": "When kept, the object relative pronoun for a thing is 'which'. 'Who' and 'whom' only apply to people, and 'whose' would need a noun after it.",
             "options": [
-                "that",
-                "where",
+                "which",
                 "who",
-                "which"
+                "whom",
+                "whose"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Formal possessive for things (of which). (Log 8 calibration)",
-            "explanation": "'Of which' is a formal alternative to 'whose' for inanimate objects. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l88_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The time ___ we met was very special (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "Is this the best deal ___ they can offer right now?",
+            "hint": "A superlative ('best') is present and the referent is a thing - which connector fits best in this context?",
+            "explanation": "After superlatives, 'that' is the natural connector. Here 'that' fills the object-pronoun slot after 'the best deal'.",
             "options": [
-                "where",
-                "why",
+                "which",
                 "that",
-                "when"
+                "who",
+                "whom"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "when",
-            "hint": "Relative adverb for time. (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'when'. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "that"
         },
         {
             "id": "rc_l88_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The man to ___ I spoke was very helpful (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The colleague ___ she trusted most ended up leaking the information.",
+            "hint": "The colleague is the object of 'trusted' and is a person - choose the person-pronoun for object position.",
+            "explanation": "When an object relative pronoun for a person is kept in a defining clause, 'who' is the everyday choice; 'whom' is formal, and 'which' never applies to people.",
             "options": [
-                "who",
                 "which",
                 "whose",
+                "who",
                 "whom"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "hint": "Prepositions require 'whom' for people. (Log 8 calibration)",
-            "explanation": "After a preposition (to), 'whom' must be used instead of 'who'. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l88_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "He is a man ___ word can be trusted (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The restaurant ___ we were told about has since closed down completely.",
+            "hint": "The restaurant is the object of the phrasal verb 'told about' - a thing receiving the action.",
+            "explanation": "Since the restaurant is a thing in object position, 'which' is the correct pronoun when kept. 'Who' and 'whom' only apply to people.",
             "options": [
                 "who",
                 "whom",
-                "which",
-                "whose"
+                "why",
+                "which"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "whose",
-            "hint": "Possessive relative pronoun. (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'whose'. [Verified in calibration unit 8]."
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l89_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The person ___ I called was busy (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The company ___ they acquired last year is already profitable.",
+            "hint": "The company is the object of 'acquired' and is a non-human entity - in formal writing, which pronoun fits?",
+            "explanation": "In formal and written English, 'which' is preferred over 'that' for a non-person object in a defining clause, particularly in careful prose.",
             "options": [
                 "which",
-                "where",
                 "who",
+                "that",
                 "whom"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "hint": "Object pronoun for people. (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'whom' (object). [Verified in calibration unit 8]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l89_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "Paris, ___ is the capital of France, is beautiful (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The medication ___ the doctor prescribed takes four weeks to show results.",
+            "hint": "The medication is the object of 'prescribed' - again, in careful writing, which pronoun is preferred for a thing?",
+            "explanation": "For things in object position, 'which' is the more formal choice over 'that', and 'who'/'whom' only apply to people.",
             "options": [
+                "who",
+                "which",
                 "that",
-                "where",
-                "when",
-                "which"
+                "whom"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Non-defining clause for a place. (Log 8 calibration)",
-            "explanation": "Since the clause adds extra info (non-defining), use 'which' instead of 'that'. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l89_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The scenario ___ I was placed was difficult (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The password ___ I set last week expired without warning.",
+            "hint": "A password is a thing in object position - which pronoun is preferred in careful, formal writing?",
+            "explanation": "For things in object position in formal contexts, 'which' is preferred over 'that'. 'Who' and 'whom' are impossible since a password is not a person.",
             "options": [
+                "who",
                 "that",
-                "where",
                 "which",
-                "in which"
+                "whom"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "in which",
-            "hint": "Formal prepositional location. (Log 8 calibration)",
-            "explanation": "'In which' specifically denotes being placed within a scenario. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l90_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The car ___ broke down is being fixed (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "My laptop, ___ I bought just a year ago, crashed again today.",
+            "hint": "Commas appear on both sides - what kind of clause is this, and what does that ban?",
+            "explanation": "The commas signal a non-defining clause, which never allows 'that'. Since a laptop is a thing, 'which' is correct.",
             "options": [
-                "who",
-                "whom",
                 "that",
+                "who",
+                "whose",
                 "which"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Subject pronoun for things. (Log 8 calibration)",
-            "explanation": "The correct relative pronoun is 'which'. [Verified in calibration unit 8]."
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l90_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The day ___ I started my new job was rainy (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The bridge, ___ was completed in 1920, still carries heavy traffic.",
+            "hint": "Both commas are there - apply the non-defining rule you've now practised many times.",
+            "explanation": "Non-defining clauses always ban 'that'. A bridge is a thing performing the action 'was completed', so 'which' is the only option.",
             "options": [
-                "where",
                 "which",
                 "that",
-                "when"
+                "who",
+                "whose"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "when",
-            "hint": "Relative adverb for time. (Log 8 calibration)",
-            "explanation": "'When' is the relative adverb used to refer to a time. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l90_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The city, ___ I spent my childhood, is changing (calib 8).",
+            "subtype": "relativeClauses",
+            "question": "The referee, ___ we all thought was biased, made the right call in the end.",
+            "hint": "Commas bracket the clause - one word is banned; and the referee is a person acting as subject of 'thought'.",
+            "explanation": "The commas signal a non-defining clause ('that' banned). The referee is a person and the subject of 'thought', so the subject pronoun 'who' is correct.",
             "options": [
                 "that",
+                "who",
                 "which",
-                "when",
-                "where"
+                "whose"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "where",
-            "hint": "Relative adverb for place in non-defining clause. (Log 8 calibration)",
-            "explanation": "'Where' is the relative adverb for location. [Verified in calibration unit 8]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "who"
         }
     ]
 }

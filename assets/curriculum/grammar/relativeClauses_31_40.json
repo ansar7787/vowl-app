@@ -6,542 +6,512 @@
         {
             "id": "rc_l31_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The man ___ lives next door is a scientist (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The candidate ___ we interviewed had great references.",
+            "hint": "Hidden clause: 'we interviewed ___.' A candidate for a job is a person.",
+            "explanation": "The candidate is the object of 'interviewed', and because a candidate is a person, 'who' is the correct pronoun.",
             "options": [
-                "when",
-                "where",
-                "whom",
-                "who"
+                "which",
+                "whose",
+                "who",
+                "where"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "who",
-            "hint": "Relative pronoun for people (subject). (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'who'. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l31_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The students ___ pass will get a prize (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The trailer ___ I watched made the movie look amazing.",
+            "hint": "Hidden clause: 'I watched ___.' A film trailer is a thing.",
+            "explanation": "Since the trailer is the object of 'watched' and is a thing, 'which' is correct, not 'who'.",
             "options": [
-                "which",
-                "where",
-                "whom",
-                "who"
+                "who",
+                "whose",
+                "when",
+                "which"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "who",
-            "hint": "Subject pronoun for people. (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'who'. [Verified in calibration unit 3]."
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l31_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The reason ___ she missed the train is unknown (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The therapist ___ I see every week is very patient.",
+            "hint": "Hidden clause: 'I see ___ every week.' A therapist is a person you see.",
+            "explanation": "The therapist is the object of 'see', and since a therapist is a person, the pronoun must be 'who'.",
             "options": [
-                "where",
-                "when",
+                "who",
                 "which",
+                "whose",
                 "why"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "why",
-            "hint": "Relative adverb for reason. (Log 3 calibration)",
-            "explanation": "'Why' is used to link a reason to the statement. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l32_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The book ___ I read was fascinating (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The blanket ___ I knitted took me a month.",
+            "hint": "Hidden clause: 'I knitted ___.' A blanket is a thing you make.",
+            "explanation": "The blanket is the object of 'knitted'. As a thing, it takes 'which', not a pronoun reserved for people.",
             "options": [
-                "that",
-                "whom",
-                "where",
-                "which"
+                "who",
+                "which",
+                "whose",
+                "where"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Relative pronoun for things. (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'which'. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l32_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The phone ___ is on the table is mine (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The agent ___ I booked through gave me a discount.",
+            "hint": "The preposition 'through' is stranded at the end - trace it back to the person it refers to.",
+            "explanation": "Even though 'through' is left at the end, its object is the agent, a person, so 'who' is the correct pronoun.",
             "options": [
+                "which",
+                "whose",
                 "who",
-                "whom",
-                "where",
-                "that"
+                "when"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "that",
-            "hint": "'That' for identifying things. (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'that'. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l32_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The box in ___ I kept the letters is lost (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The bag ___ I picked turned out to be fake.",
+            "hint": "Hidden clause: 'I picked ___.' A bag is a thing being chosen.",
+            "explanation": "Since the bag is the object of 'picked' and is a thing, 'which' is correct rather than 'why'.",
             "options": [
-                "that",
-                "where",
-                "whom",
+                "who",
+                "whose",
+                "why",
                 "which"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Preposition + relative pronoun for objects. (Log 3 calibration)",
-            "explanation": "'In which' is the formal way to indicate location within an object. [Verified in calibration unit 3]."
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l33_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "This is the house ___ Jack built (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The sister ___ I trust most lives abroad.",
+            "hint": "Hidden clause: 'I trust ___ most.' A sister is a person.",
+            "explanation": "The sister is the object of 'trust', and since she is a person, 'who' is needed instead of 'which'.",
             "options": [
+                "who",
                 "which",
-                "where",
-                "that",
-                "who"
+                "whose",
+                "where"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "that",
-            "hint": "'That' for defining clauses. (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'that'. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l33_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The nurse ___ helped me was very kind (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The project ___ we submitted received the highest grade.",
+            "hint": "Hidden clause: 'we submitted ___.' A school project is a thing.",
+            "explanation": "The project is the object of 'submitted'. As a thing, it takes 'which', not a time word like 'when'.",
             "options": [
+                "who",
                 "which",
-                "where",
-                "whom",
-                "who"
+                "whose",
+                "when"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "who",
-            "hint": "Subject pronoun for people. (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'who'. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l33_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The company for ___ he works is global (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The caller ___ I spoke to refused to leave a number.",
+            "hint": "The preposition 'to' is stranded at the end of the clause - its object is still a person.",
+            "explanation": "Although 'to' appears at the end, its object is the caller, a person, so the pronoun 'who' is correct.",
             "options": [
+                "which",
+                "whose",
                 "who",
-                "that",
-                "where",
-                "which"
+                "why"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Preposition + relative pronoun for organizations. (Log 3 calibration)",
-            "explanation": "Use 'which' after the preposition 'for' when referring to a company. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l34_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The girl ___ father is a doctor is my friend (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The cake ___ I baked yesterday collapsed in the oven.",
+            "hint": "A cake isn't a person, so rule out every people-only option before choosing.",
+            "explanation": "'That' is a natural, everyday alternative to 'which' for things in object position. 'Who' and 'whose' are impossible since a cake is not a person.",
             "options": [
-                "which",
-                "why",
                 "who",
-                "whose"
+                "whose",
+                "where",
+                "that"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "whose",
-            "hint": "Possessive relative pronoun. (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'whose'. [Verified in calibration unit 3]."
+            "correctAnswer": "that"
         },
         {
             "id": "rc_l34_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The house ___ we bought is new (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The phone ___ I bought last year still works perfectly.",
+            "hint": "Phones aren't people - eliminate the people-only pronouns first.",
+            "explanation": "Because a phone is a thing, 'that' works naturally as the object pronoun here. 'Who' could never apply to an object.",
             "options": [
+                "that",
                 "who",
-                "whom",
-                "where",
-                "which"
+                "whose",
+                "when"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Object pronoun for things. (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'which'. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "that"
         },
         {
             "id": "rc_l34_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The lady with ___ I was traveling was very kind (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The colleague ___ I trained left the company.",
+            "hint": "A colleague is a person - but 'which' can never describe a person, so cross that one out immediately.",
+            "explanation": "'That' is a common, neutral way to refer to a person in object position. 'Which' is impossible because it never refers to people.",
             "options": [
-                "who",
                 "which",
+                "that",
                 "whose",
-                "whom"
+                "why"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "hint": "Preposition + relative pronoun for people. (Log 3 calibration)",
-            "explanation": "'Whom' is required after the preposition 'with'. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "that"
         },
         {
             "id": "rc_l35_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The city ___ I was born is very old (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "This is the best concert ___ I have ever attended.",
+            "hint": "You've seen this pattern before: a superlative like 'best' pulls in one particular connector instead of 'which'.",
+            "explanation": "After superlatives such as 'the best', natural English strongly prefers 'that' over 'which', the same pattern you practiced with subjects earlier.",
             "options": [
-                "why",
+                "which",
+                "who",
                 "that",
-                "whom",
-                "where"
+                "whom"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "where",
-            "hint": "Relative adverb for place. (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'where'. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "that"
         },
         {
             "id": "rc_l35_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The cake ___ she made was delicious (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "That was the hardest test ___ I have ever taken.",
+            "hint": "Same superlative pattern as before - 'hardest' behaves just like 'best'.",
+            "explanation": "'The hardest' is a superlative, and superlatives are conventionally followed by 'that' rather than 'which' in natural English.",
             "options": [
+                "which",
                 "who",
                 "whom",
-                "where",
                 "that"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "that",
-            "hint": "'That' for identifying things. (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'that'. [Verified in calibration unit 3]."
+            "correctAnswer": "that"
         },
         {
             "id": "rc_l35_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The researchers, all of ___ are experts, agreed (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "This is the only city ___ I would love to live in.",
+            "hint": "'Only' triggers the same connector you've now seen several times with superlatives.",
+            "explanation": "Just like superlatives, 'the only' is followed by 'that' rather than 'which' in idiomatic English.",
             "options": [
-                "who",
+                "that",
                 "which",
-                "whose",
+                "who",
                 "whom"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "hint": "Quantifier + of + relative pronoun for people. (Log 3 calibration)",
-            "explanation": "Use 'whom' after quantifiers like 'all of', 'some of', 'none of'. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "that"
         },
         {
             "id": "rc_l36_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The reasons ___ he left are unknown (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "Everything ___ I packed fit into one suitcase.",
+            "hint": "Indefinite words like 'everything' call for the same connector as before - not 'which'.",
+            "explanation": "After indefinite pronouns such as 'everything', English speakers naturally use 'that' rather than 'which'.",
             "options": [
-                "where",
-                "when",
                 "which",
-                "why"
+                "that",
+                "who",
+                "whom"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "why",
-            "hint": "Relative adverb for reason. (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'why'. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "that"
         },
         {
             "id": "rc_l36_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The colleague ___ I was talking to is very skilled (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "Nothing ___ the doctors tried seemed to help.",
+            "hint": "Same family of trigger words as 'everything' - apply the same rule.",
+            "explanation": "'Nothing' belongs to the same group of indefinite pronouns that prefer 'that' over 'which'.",
             "options": [
-                "who",
                 "which",
-                "where",
+                "who",
+                "that",
                 "whom"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "hint": "Formal object pronoun for people. (Log 3 calibration)",
-            "explanation": "In formal English, 'whom' is used as the object of a preposition. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "that"
         },
         {
             "id": "rc_l36_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The problems, many of ___ were complex, were solved (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "Anything ___ you say will be recorded.",
+            "hint": "This indefinite word follows the same pattern you've now seen three times.",
+            "explanation": "Like 'everything' and 'nothing', the word 'anything' is naturally followed by 'that' instead of 'which'.",
             "options": [
-                "whom",
-                "that",
+                "which",
                 "who",
-                "which"
+                "whom",
+                "that"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Quantifier + of + relative pronoun for things. (Log 3 calibration)",
-            "explanation": "Use 'which' after quantifiers when referring to inanimate objects or problems. [Verified in calibration unit 3]."
+            "correctAnswer": "that"
         },
         {
             "id": "rc_l37_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The movie ___ we saw yesterday was great (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "I thanked the stylist and the products ___ transformed my look.",
+            "hint": "The subject names a person and some things together - one connector has to cover both.",
+            "explanation": "Because 'the stylist and the products' mixes a person with things, only 'that' can refer to both - 'who' would leave out the products, and 'which' would leave out the stylist.",
             "options": [
-                "where",
-                "whom",
+                "that",
                 "which",
-                "that"
+                "who",
+                "whom"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "that",
-            "hint": "'That' for defining clauses. (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'that'. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "that"
         },
         {
             "id": "rc_l37_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The painting, ___ was stolen last year, has been found (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "I will never forget the people and the memories ___ shaped my childhood.",
+            "hint": "Again, the antecedent combines people and things, so only one connector works for both.",
+            "explanation": "Since 'the people and the memories' combines a person-category with a thing-category, 'that' is needed to refer to both at once.",
             "options": [
+                "which",
                 "that",
                 "who",
-                "whom",
-                "which"
+                "whom"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Use 'which' for non-defining clauses (with commas). (Log 3 calibration)",
-            "explanation": "'Which' is required for non-defining clauses; 'that' cannot be used after a comma. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "that"
         },
         {
             "id": "rc_l37_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The house, the roof of ___ was damaged, is old (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "This is the most useful tool ___ the team has built.",
+            "hint": "A superlative shows up again - recall which connector that pattern favors.",
+            "explanation": "Following the superlative 'the most useful', 'that' is the natural choice over 'which', continuing the pattern from earlier levels.",
             "options": [
-                "that",
-                "where",
+                "which",
                 "who",
-                "which"
+                "that",
+                "whom"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Formal possessive for things (of which). (Log 3 calibration)",
-            "explanation": "'Of which' is a formal alternative to 'whose' for inanimate objects. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "that"
         },
         {
             "id": "rc_l38_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The time ___ we met was very special (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The captain ___ I spoke to reassured the passengers.",
+            "hint": "The preposition 'to' is stranded at the end, but its object is still a person.",
+            "explanation": "Even with 'to' left at the end, its object is the captain, a person, so 'who' is correct.",
             "options": [
+                "which",
+                "whose",
                 "where",
-                "why",
-                "that",
-                "when"
+                "who"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "when",
-            "hint": "Relative adverb for time. (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'when'. [Verified in calibration unit 3]."
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l38_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The man to ___ I spoke was very helpful (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The update ___ I installed fixed the bug.",
+            "hint": "Hidden clause: 'I installed ___.' A software update is a thing.",
+            "explanation": "The update is the object of 'installed'. As a thing, it takes 'which', not 'when'.",
             "options": [
-                "who",
                 "which",
+                "who",
                 "whose",
-                "whom"
+                "when"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "hint": "Prepositions require 'whom' for people. (Log 3 calibration)",
-            "explanation": "After a preposition (to), 'whom' must be used instead of 'who'. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l38_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "He is a man ___ word can be trusted (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "This is the funniest show ___ I have watched all year.",
+            "hint": "A superlative ('funniest') appears again - the same rule from earlier levels applies.",
+            "explanation": "After the superlative 'the funniest', 'that' is the conventional choice instead of 'which'.",
             "options": [
-                "who",
-                "whom",
                 "which",
-                "whose"
+                "that",
+                "who",
+                "whom"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whose",
-            "hint": "Possessive relative pronoun. (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'whose'. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "that"
         },
         {
             "id": "rc_l39_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The person ___ I called was busy (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The mentor ___ I admire gave me great advice.",
+            "hint": "Hidden clause: 'I admire ___.' A mentor is a person.",
+            "explanation": "The mentor is the object of 'admire', and since a mentor is a person, 'who' is required.",
             "options": [
                 "which",
-                "where",
+                "whose",
                 "who",
-                "whom"
+                "where"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "hint": "Object pronoun for people. (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'whom' (object). [Verified in calibration unit 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l39_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "Paris, ___ is the capital of France, is beautiful (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The receipt ___ I kept proved the purchase.",
+            "hint": "Hidden clause: 'I kept ___.' A receipt is a thing.",
+            "explanation": "The receipt is the object of 'kept'. As a thing, it takes 'which' rather than 'who'.",
             "options": [
-                "that",
-                "where",
+                "who",
+                "whose",
                 "when",
                 "which"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Non-defining clause for a place. (Log 3 calibration)",
-            "explanation": "Since the clause adds extra info (non-defining), use 'which' instead of 'that'. [Verified in calibration unit 3]."
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l39_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The scenario ___ I was placed was difficult (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "All ___ I wanted was a quiet evening.",
+            "hint": "'All' behaves like the indefinite words you practiced earlier (everything, nothing, anything).",
+            "explanation": "Like 'everything' and 'nothing', the word 'all' is conventionally followed by 'that' rather than 'which'.",
             "options": [
                 "that",
-                "where",
                 "which",
-                "in which"
+                "who",
+                "whom"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "in which",
-            "hint": "Formal prepositional location. (Log 3 calibration)",
-            "explanation": "'In which' specifically denotes being placed within a scenario. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "that"
         },
         {
             "id": "rc_l40_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The car ___ broke down is being fixed (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The supplier ___ we chose offered the best price.",
+            "hint": "Hidden clause: 'we chose ___.' A supplier here refers to a person or company representative acting as one.",
+            "explanation": "The supplier is the object of 'chose', and since the supplier is treated as a person here, 'who' is correct.",
             "options": [
+                "which",
                 "who",
-                "whom",
-                "that",
-                "which"
+                "whose",
+                "where"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Subject pronoun for things. (Log 3 calibration)",
-            "explanation": "The correct relative pronoun is 'which'. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l40_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The day ___ I started my new job was rainy (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "The supplement ___ I take every morning boosts my energy.",
+            "hint": "Hidden clause: 'I take ___ every morning.' A supplement is a thing.",
+            "explanation": "The supplement is the object of 'take'. As a thing, 'which' is correct, not a time word.",
             "options": [
-                "where",
+                "who",
+                "whose",
                 "which",
-                "that",
                 "when"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "when",
-            "hint": "Relative adverb for time. (Log 3 calibration)",
-            "explanation": "'When' is the relative adverb used to refer to a time. [Verified in calibration unit 3]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l40_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 1,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The city, ___ I spent my childhood, is changing (calib 3).",
+            "subtype": "relativeClauses",
+            "question": "This is the clearest explanation ___ I have ever read.",
+            "hint": "Superlative pattern one more time - 'clearest' behaves exactly like 'best' or 'funniest'.",
+            "explanation": "Following the superlative 'the clearest', 'that' completes the pattern you've now practiced across many levels.",
             "options": [
-                "that",
                 "which",
-                "when",
-                "where"
+                "who",
+                "whom",
+                "that"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "where",
-            "hint": "Relative adverb for place in non-defining clause. (Log 3 calibration)",
-            "explanation": "'Where' is the relative adverb for location. [Verified in calibration unit 3]."
+            "correctAnswer": "that"
         }
     ]
 }

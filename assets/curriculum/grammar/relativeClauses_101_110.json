@@ -6,542 +6,512 @@
         {
             "id": "rc_l101_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The man ___ lives next door is a scientist (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "She received many job offers, most of ___ came from abroad.",
+            "hint": "The blank fills the slot after 'most of ___' - is the thing being referred to a group of people or a group of offers?",
+            "explanation": "Here 'most of ___' refers back to 'many job offers' (things), so 'which' is correct. 'Whom' would only work if referring back to a group of people.",
             "options": [
-                "when",
-                "where",
+                "which",
+                "who",
                 "whom",
-                "who"
+                "that"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "who",
-            "hint": "Relative pronoun for people (subject). (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'who'. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l101_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The students ___ pass will get a prize (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "He interviewed twenty candidates, only two of ___ were shortlisted.",
+            "hint": "The blank follows 'of ___' - and the candidates are people. Which pronoun follows 'of' when referring to people?",
+            "explanation": "After 'of', when referring to people, 'whom' is required. 'Who' cannot follow a preposition; 'which' would be wrong because candidates are people.",
             "options": [
                 "which",
-                "where",
                 "whom",
+                "that",
                 "who"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "who",
-            "hint": "Subject pronoun for people. (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'who'. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "whom"
         },
         {
             "id": "rc_l101_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The reason ___ she missed the train is unknown (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "She read fifty articles, none of ___ mentioned the side effects.",
+            "hint": "The blank follows 'none of ___' - the articles are things, so which pronoun belongs after 'of' for things?",
+            "explanation": "After 'of', things take 'which'. The articles are not people, so 'whom' is incorrect; 'that' can never follow a preposition.",
             "options": [
-                "where",
-                "when",
+                "who",
+                "whom",
                 "which",
-                "why"
+                "that"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "why",
-            "hint": "Relative adverb for reason. (Log 10 calibration)",
-            "explanation": "'Why' is used to link a reason to the statement. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l102_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The book ___ I read was fascinating (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "The team had twelve members, three of ___ had worked together before.",
+            "hint": "After 'of' the blank refers back to the twelve members - people. Which form follows 'of' for people?",
+            "explanation": "After the preposition 'of', people require 'whom'. 'Who' cannot directly follow a preposition, and 'which' would wrongly treat the members as things.",
             "options": [
+                "which",
                 "that",
-                "whom",
-                "where",
-                "which"
+                "who",
+                "whom"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Relative pronoun for things. (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'which'. [Verified in calibration unit 10]."
+            "correctAnswer": "whom"
         },
         {
             "id": "rc_l102_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The phone ___ is on the table is mine (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "The company launched six products, two of ___ failed within a year.",
+            "hint": "After 'of' the blank refers back to products - things. Choose accordingly.",
+            "explanation": "After 'of', things take 'which'. Products are not people, so 'whom' is incorrect; 'that' cannot follow a preposition.",
             "options": [
+                "which",
                 "who",
                 "whom",
-                "where",
                 "that"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "that",
-            "hint": "'That' for identifying things. (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'that'. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l102_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The box in ___ I kept the letters is lost (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "There were ten speakers at the conference, most of ___ were experts.",
+            "hint": "The speakers are people, and the blank follows 'of' - apply the same rule.",
+            "explanation": "After the preposition 'of', people require 'whom'. 'Who' cannot follow a preposition, and 'which' would treat the speakers as things.",
             "options": [
-                "that",
-                "where",
+                "which",
                 "whom",
-                "which"
+                "that",
+                "who"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Preposition + relative pronoun for objects. (Log 10 calibration)",
-            "explanation": "'In which' is the formal way to indicate location within an object. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "whom"
         },
         {
             "id": "rc_l103_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "This is the house ___ Jack built (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "We visited four museums, each of ___ had a different theme.",
+            "hint": "'Each of ___' - the blank refers back to museums. Are museums people or things?",
+            "explanation": "Museums are things, so 'which' is required after 'of'. 'Whom' only applies to people after a preposition.",
             "options": [
+                "who",
+                "whom",
                 "which",
-                "where",
-                "that",
-                "who"
+                "that"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "that",
-            "hint": "'That' for defining clauses. (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'that'. [Verified in calibration unit 10]."
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l103_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The nurse ___ helped me was very kind (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "The report named five suspects, all of ___ denied involvement.",
+            "hint": "'All of ___' - the suspects are people. What form goes after 'of' for people?",
+            "explanation": "After 'of', when referring to people, 'whom' is required. 'Which' would wrongly treat the suspects as things.",
             "options": [
                 "which",
-                "where",
-                "whom",
-                "who"
+                "that",
+                "who",
+                "whom"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "who",
-            "hint": "Subject pronoun for people. (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'who'. [Verified in calibration unit 10]."
+            "correctAnswer": "whom"
         },
         {
             "id": "rc_l103_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The company for ___ he works is global (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "The store sells three coffee blends, the best of ___ comes from Ethiopia.",
+            "hint": "'The best of ___' - coffee blends are things, so choose the form for things after 'of'.",
+            "explanation": "Coffee blends are things, so 'which' is correct after 'of'. 'That' cannot follow a preposition under any circumstances.",
             "options": [
+                "which",
                 "who",
-                "that",
-                "where",
-                "which"
+                "whom",
+                "that"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Preposition + relative pronoun for organizations. (Log 10 calibration)",
-            "explanation": "Use 'which' after the preposition 'for' when referring to a company. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l104_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The girl ___ father is a doctor is my friend (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "I applied to eight universities, only one of ___ offered me a scholarship.",
+            "hint": "'One of ___' - universities are institutions treated as things. Which pronoun follows 'of' for things?",
+            "explanation": "Universities are treated as things here, so 'which' follows 'of'. 'Whom' would only apply if referring back to people.",
             "options": [
-                "which",
-                "why",
                 "who",
-                "whose"
+                "which",
+                "whom",
+                "that"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whose",
-            "hint": "Possessive relative pronoun. (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'whose'. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l104_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The house ___ we bought is new (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "The hospital employed thirty nurses, several of ___ had overseas training.",
+            "hint": "'Several of ___' - nurses are people. Apply the 'of' + people rule.",
+            "explanation": "Nurses are people, so 'whom' is required after 'of'. 'Which' would wrongly treat the nurses as objects.",
             "options": [
-                "who",
+                "which",
+                "that",
                 "whom",
-                "where",
-                "which"
+                "who"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Object pronoun for things. (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'which'. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whom"
         },
         {
             "id": "rc_l104_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The lady with ___ I was traveling was very kind (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "The country has five major rivers, the longest of ___ flows to the sea.",
+            "hint": "'The longest of ___' - rivers are things. Choose the form for things after a preposition.",
+            "explanation": "Rivers are things, so 'which' follows 'of'. 'That' is permanently barred from following a preposition.",
             "options": [
                 "who",
-                "which",
-                "whose",
-                "whom"
+                "whom",
+                "that",
+                "which"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "hint": "Preposition + relative pronoun for people. (Log 10 calibration)",
-            "explanation": "'Whom' is required after the preposition 'with'. [Verified in calibration unit 10]."
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l105_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The city ___ I was born is very old (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "She bought several scarves, one of ___ she gave to her mother.",
+            "hint": "'One of ___' - the scarves are things. What form follows 'of' for things?",
+            "explanation": "Scarves are things, so 'which' is correct after 'of'. 'Whom' only applies when referring to people.",
             "options": [
-                "why",
-                "that",
+                "which",
+                "who",
                 "whom",
-                "where"
+                "that"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "where",
-            "hint": "Relative adverb for place. (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'where'. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l105_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The cake ___ she made was delicious (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "The agency hired five translators, each of ___ spoke at least three languages.",
+            "hint": "'Each of ___' - translators are people. Apply the rule for people after a preposition.",
+            "explanation": "Translators are people, so 'whom' follows 'of'. 'Which' treats them as things; 'who' cannot follow a preposition.",
             "options": [
-                "who",
+                "which",
                 "whom",
-                "where",
-                "that"
+                "that",
+                "who"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "that",
-            "hint": "'That' for identifying things. (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'that'. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "whom"
         },
         {
             "id": "rc_l105_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The researchers, all of ___ are experts, agreed (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "We sampled eight dishes, most of ___ were too spicy for me.",
+            "hint": "'Most of ___' - dishes are things. Choose accordingly.",
+            "explanation": "Dishes are things, so 'which' is correct after 'of'. 'That' cannot follow a preposition.",
             "options": [
                 "who",
-                "which",
-                "whose",
-                "whom"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "hint": "Quantifier + of + relative pronoun for people. (Log 10 calibration)",
-            "explanation": "Use 'whom' after quantifiers like 'all of', 'some of', 'none of'. [Verified in calibration unit 10]."
-        },
-        {
-            "id": "rc_l106_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
-            "interactionType": "Fishing Cast",
-            "question": "The reasons ___ he left are unknown (calib 10).",
-            "options": [
-                "where",
-                "when",
-                "which",
-                "why"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "why",
-            "hint": "Relative adverb for reason. (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'why'. [Verified in calibration unit 10]."
-        },
-        {
-            "id": "rc_l106_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
-            "interactionType": "Fishing Cast",
-            "question": "The colleague ___ I was talking to is very skilled (calib 10).",
-            "options": [
-                "who",
-                "which",
-                "where",
-                "whom"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "hint": "Formal object pronoun for people. (Log 10 calibration)",
-            "explanation": "In formal English, 'whom' is used as the object of a preposition. [Verified in calibration unit 10]."
-        },
-        {
-            "id": "rc_l106_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
-            "interactionType": "Fishing Cast",
-            "question": "The problems, many of ___ were complex, were solved (calib 10).",
-            "options": [
-                "whom",
-                "that",
-                "who",
-                "which"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Quantifier + of + relative pronoun for things. (Log 10 calibration)",
-            "explanation": "Use 'which' after quantifiers when referring to inanimate objects or problems. [Verified in calibration unit 10]."
-        },
-        {
-            "id": "rc_l107_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
-            "interactionType": "Fishing Cast",
-            "question": "The movie ___ we saw yesterday was great (calib 10).",
-            "options": [
-                "where",
                 "whom",
                 "which",
                 "that"
             ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "which"
+        },
+        {
+            "id": "rc_l106_q1",
+            "instruction": "CAST THE RELATIVE LINK",
+            "interactionType": "Fishing Cast",
+            "subtype": "relativeClauses",
+            "question": "He forgot his keys, ___ meant he was locked out for an hour.",
+            "hint": "The blank doesn't refer to a specific noun - it refers back to the whole idea of forgetting his keys.",
+            "explanation": "When 'which' introduces a non-defining clause that comments on a whole previous idea (not just a single noun), it is called a 'comment clause'. 'That' is barred in non-defining clauses; 'what' cannot introduce this type of clause.",
+            "options": [
+                "that",
+                "what",
+                "it",
+                "which"
+            ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "that",
-            "hint": "'That' for defining clauses. (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'that'. [Verified in calibration unit 10]."
+            "correctAnswer": "which"
+        },
+        {
+            "id": "rc_l106_q2",
+            "instruction": "CAST THE RELATIVE LINK",
+            "interactionType": "Fishing Cast",
+            "subtype": "relativeClauses",
+            "question": "The train was cancelled, ___ caused everyone to miss their connections.",
+            "hint": "Again, the blank refers to the entire situation described in the first clause.",
+            "explanation": "A comment 'which'-clause refers back to a complete idea ('the train was cancelled'). 'That' is banned in non-defining clauses; 'it' is a pronoun, not a relative connector.",
+            "options": [
+                "which",
+                "that",
+                "what",
+                "it"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "which"
+        },
+        {
+            "id": "rc_l106_q3",
+            "instruction": "CAST THE RELATIVE LINK",
+            "interactionType": "Fishing Cast",
+            "subtype": "relativeClauses",
+            "question": "She passed her bar exam on the first attempt, ___ surprised her professors.",
+            "hint": "The blank points back to the whole achievement, not to a specific noun.",
+            "explanation": "This comment clause uses 'which' to refer to the entire preceding idea. 'That' cannot introduce a non-defining clause; 'what' would change the grammar of the sentence entirely.",
+            "options": [
+                "that",
+                "which",
+                "what",
+                "it"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "which"
+        },
+        {
+            "id": "rc_l107_q1",
+            "instruction": "CAST THE RELATIVE LINK",
+            "interactionType": "Fishing Cast",
+            "subtype": "relativeClauses",
+            "question": "He refused to apologize, ___ made the situation much worse.",
+            "hint": "The blank connects back to his refusal as a whole - a comment on an entire action.",
+            "explanation": "Comment clauses use 'which' to refer to a complete idea from the previous clause. 'That' is barred in non-defining clauses, and 'this' is a demonstrative pronoun, not a relative connector.",
+            "options": [
+                "that",
+                "what",
+                "which",
+                "this"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l107_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The painting, ___ was stolen last year, has been found (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "The medicine was free of charge, ___ was a huge relief.",
+            "hint": "The blank follows a comma and refers back to the entire situation of the medicine being free.",
+            "explanation": "This comment 'which' refers to the whole previous idea ('the medicine was free of charge'). 'That' cannot appear in non-defining clauses; 'it' is not a relative connector.",
             "options": [
                 "that",
-                "who",
-                "whom",
+                "what",
+                "it",
                 "which"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Use 'which' for non-defining clauses (with commas). (Log 10 calibration)",
-            "explanation": "'Which' is required for non-defining clauses; 'that' cannot be used after a comma. [Verified in calibration unit 10]."
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l107_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The house, the roof of ___ was damaged, is old (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "They arrived three hours early, ___ turned out to be very lucky.",
+            "hint": "Their early arrival (the whole event) is what 'turned out to be lucky' - the blank connects to that complete idea.",
+            "explanation": "Comment clauses use 'which' to refer to a complete preceding idea. 'That' is barred in non-defining clauses, and 'this' is a demonstrative, not a relative pronoun.",
             "options": [
+                "which",
                 "that",
-                "where",
-                "who",
-                "which"
+                "what",
+                "this"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Formal possessive for things (of which). (Log 10 calibration)",
-            "explanation": "'Of which' is a formal alternative to 'whose' for inanimate objects. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l108_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The time ___ we met was very special (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "The power cut lasted eight hours, ___ meant the food in the fridge spoiled.",
+            "hint": "The whole eight-hour power cut is what caused the food to spoil - not a single noun.",
+            "explanation": "'Which' in a comment clause refers back to the complete preceding idea. 'That' cannot introduce this type of clause; 'it' is a personal pronoun, not a connector.",
             "options": [
-                "where",
-                "why",
                 "that",
-                "when"
+                "which",
+                "what",
+                "it"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "when",
-            "hint": "Relative adverb for time. (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'when'. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "which"
         },
         {
             "id": "rc_l108_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The man to ___ I spoke was very helpful (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "The prize goes to ___ wins the tournament.",
+            "hint": "The blank starts the subject of the sentence and refers to a person who might win - any person.",
+            "explanation": "'Whoever' means 'any person who' and acts as the subject of 'wins'. 'Whatever' and 'whichever' refer to things, not people.",
             "options": [
-                "who",
-                "which",
-                "whose",
-                "whom"
+                "Whatever",
+                "Whichever",
+                "whoever",
+                "However"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "hint": "Prepositions require 'whom' for people. (Log 10 calibration)",
-            "explanation": "After a preposition (to), 'whom' must be used instead of 'who'. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whoever"
         },
         {
             "id": "rc_l108_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "He is a man ___ word can be trusted (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "You must live with ___ you decide to do.",
+            "hint": "The blank refers to a thing - any option or decision chosen - not a specific person or time.",
+            "explanation": "'Whatever' means 'anything that' and introduces a free relative clause about a choice (a thing). 'Whoever' would refer to a person, and 'whenever'/'wherever' refer to times and places.",
             "options": [
-                "who",
-                "whom",
-                "which",
-                "whose"
+                "Whoever",
+                "Whenever",
+                "Wherever",
+                "whatever"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "whose",
-            "hint": "Possessive relative pronoun. (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'whose'. [Verified in calibration unit 10]."
+            "correctAnswer": "whatever"
         },
         {
             "id": "rc_l109_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The person ___ I called was busy (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "She donates to ___ charity needs the most support.",
+            "hint": "The blank introduces a selection among multiple charities (things) - any one of them.",
+            "explanation": "'Whichever' means 'any one of (these things) that' and is used when selecting from a defined set of options. 'Whoever' would only work if a person were being selected.",
             "options": [
-                "which",
-                "where",
-                "who",
-                "whom"
+                "whichever",
+                "whatever",
+                "whoever",
+                "however"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "hint": "Object pronoun for people. (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'whom' (object). [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "whichever"
         },
         {
             "id": "rc_l109_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "Paris, ___ is the capital of France, is beautiful (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "You are welcome here, ___ you come from.",
+            "hint": "The blank introduces a place - any country or background.",
+            "explanation": "'Wherever' means 'no matter where' and refers to a location. 'Whatever' refers to things; 'however' introduces manner; 'whenever' introduces time.",
             "options": [
-                "that",
-                "where",
-                "when",
-                "which"
+                "Whatever",
+                "wherever",
+                "However",
+                "Whenever"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Non-defining clause for a place. (Log 10 calibration)",
-            "explanation": "Since the clause adds extra info (non-defining), use 'which' instead of 'that'. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "wherever"
         },
         {
             "id": "rc_l109_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The scenario ___ I was placed was difficult (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "She consistently achieves ___ she sets her mind to.",
+            "hint": "The blank introduces a thing - any goal or task she chooses to pursue.",
+            "explanation": "'Whatever' means 'anything that' and here introduces a thing she sets her mind to. 'Whoever' would wrongly refer to a person.",
             "options": [
-                "that",
-                "where",
-                "which",
-                "in which"
+                "Whoever",
+                "Whenever",
+                "whatever",
+                "Wherever"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "in which",
-            "hint": "Formal prepositional location. (Log 10 calibration)",
-            "explanation": "'In which' specifically denotes being placed within a scenario. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 2,
+            "correctAnswer": "whatever"
         },
         {
             "id": "rc_l110_q1",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The car ___ broke down is being fixed (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "You can start the presentation ___ you feel ready.",
+            "hint": "The blank introduces a time - any moment she feels ready.",
+            "explanation": "'Whenever' means 'at any time that' and introduces a free relative clause about time. 'Wherever' refers to place; 'whatever' refers to things.",
             "options": [
-                "who",
-                "whom",
-                "that",
-                "which"
+                "Wherever",
+                "Whatever",
+                "Whoever",
+                "whenever"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "hint": "Subject pronoun for things. (Log 10 calibration)",
-            "explanation": "The correct relative pronoun is 'which'. [Verified in calibration unit 10]."
+            "correctAnswer": "whenever"
         },
         {
             "id": "rc_l110_q2",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The day ___ I started my new job was rainy (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "The person ___ told you that information was completely wrong.",
+            "hint": "The blank is the subject of 'told' and refers to an unknown person.",
+            "explanation": "'Whoever' means 'any person who' and here acts as the subject of 'told'. 'Whatever' refers to things; 'however' introduces manner.",
             "options": [
-                "where",
-                "which",
-                "that",
-                "when"
+                "who",
+                "Whatever",
+                "However",
+                "Wherever"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "when",
-            "hint": "Relative adverb for time. (Log 10 calibration)",
-            "explanation": "'When' is the relative adverb used to refer to a time. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 0,
+            "correctAnswer": "who"
         },
         {
             "id": "rc_l110_q3",
             "instruction": "CAST THE RELATIVE LINK",
-            "difficulty": 3,
-            "subtype": "relativeClauses",
             "interactionType": "Fishing Cast",
-            "question": "The city, ___ I spent my childhood, is changing (calib 10).",
+            "subtype": "relativeClauses",
+            "question": "Some people will still misunderstand, ___ carefully you explain it.",
+            "hint": "The blank modifies an adjective ('carefully') - it introduces a degree or manner.",
+            "explanation": "'However' means 'no matter how' when it introduces an adjective or adverb. 'Whatever' refers to things; 'whoever' refers to people.",
             "options": [
-                "that",
-                "which",
-                "when",
-                "where"
+                "Whatever",
+                "however",
+                "Whoever",
+                "Whenever"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "where",
-            "hint": "Relative adverb for place in non-defining clause. (Log 10 calibration)",
-            "explanation": "'Where' is the relative adverb for location. [Verified in calibration unit 10]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "however"
         }
     ]
 }
