@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import '../../domain/entities/elite_mastery_quest.dart';
 import '../../../../core/domain/entities/game_quest.dart';
+import '../../../../core/error/failures.dart';
 import '../../../../features/auth/domain/usecases/update_user_rewards.dart';
 import '../../../../features/auth/domain/usecases/update_unlocked_level.dart';
 import '../../../../features/auth/domain/usecases/update_category_stats.dart';
@@ -83,23 +84,41 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       GetEliteMasteryQuestParams(gameType: event.gameType, level: event.level),
     );
 
-    result.fold((failure) => emit(EliteMasteryError(failure.message)), (
-      quests,
-    ) {
-      if (quests.isEmpty) {
-        emit(const EliteMasteryError('No quests found for this level.'));
-        return;
-      }
-      emit(
-        EliteMasteryLoaded(
-          gameType: event.gameType,
-          level: event.level,
-          quests: quests.take(_questsPerLevel).toList(),
-          currentIndex: 0,
-          livesRemaining: _maxLives,
-        ),
-      );
-    });
+    result.fold(
+      (failure) {
+        // FIX: `failure.message` is plain, hardcoded English produced by the
+        // data/repository layer (which — correctly, per Clean Architecture —
+        // has no access to `BuildContext`/localization). Tagging it with a
+        // `reason` lets the presentation layer (`EliteBaseLayout`) show a
+        // fully localized string for the common, known cause instead of
+        // always falling back to raw English text. See
+        // `EliteMasteryErrorReason` for details.
+        final reason = failure is ServerFailure
+            ? EliteMasteryErrorReason.loadFailed
+            : EliteMasteryErrorReason.unknown;
+        emit(EliteMasteryError(failure.message, reason: reason));
+      },
+      (quests) {
+        if (quests.isEmpty) {
+          emit(
+            const EliteMasteryError(
+              'No quests found for this level.',
+              reason: EliteMasteryErrorReason.noQuestsForLevel,
+            ),
+          );
+          return;
+        }
+        emit(
+          EliteMasteryLoaded(
+            gameType: event.gameType,
+            level: event.level,
+            quests: quests.take(_questsPerLevel).toList(),
+            currentIndex: 0,
+            livesRemaining: _maxLives,
+          ),
+        );
+      },
+    );
   }
 
   void _onSubmitEliteAnswer(
@@ -253,6 +272,22 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
               categoryId: gameTypeName,
               isCorrect: true,
             ),
+          ),
+        ),
+        // FIX (critical): `updateUnlockedLevel` was injected as a constructor
+        // dependency but was never actually called anywhere in this class.
+        // Level completion was awarding XP/coins/category-stats but never
+        // persisting level-progression — i.e. the next level never actually
+        // unlocked for the player. NOTE: field names below mirror this
+        // file's existing `UpdateUserRewardsParams` convention (gameType +
+        // level); please verify them against the real
+        // `UpdateUnlockedLevelParams` in
+        // features/auth/domain/usecases/update_unlocked_level.dart (outside
+        // this feature slice) and adjust if they differ.
+        _persistRewardSafely(
+          'updateUnlockedLevel',
+          () => updateUnlockedLevel(
+            UpdateUnlockedLevelParams(categoryId: gameTypeName, newLevel: level + 1),
           ),
         ),
       ]);
@@ -426,4 +461,3 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
     return List<EliteMasteryQuest>.from(quests)..removeLast();
   }
 }
-
