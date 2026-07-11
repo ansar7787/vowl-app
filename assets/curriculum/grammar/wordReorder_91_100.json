@@ -6,43 +6,43 @@
         {
             "id": "wr_l91_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "The strict teacher said that we had to submit assignments tomorrow.",
+            "sentence": "The strict teacher said that we had to submit our assignments tomorrow.",
             "shuffledWords": [
+                "submit",
                 "had",
+                "our",
+                "strict",
                 "to",
                 "that",
-                "tomorrow",
-                "submit",
-                "said",
                 "The",
-                "strict",
-                "teacher",
+                "assignments",
+                "said",
                 "we",
-                "assignments"
+                "teacher",
+                "tomorrow"
             ],
             "correctOrder": [
                 6,
-                7,
+                3,
+                10,
                 8,
                 5,
-                2,
                 9,
-                0,
                 1,
                 4,
-                10,
-                3
+                0,
+                2,
+                7,
+                11
             ],
-            "hint": "Start with the capitalized subject phrase 'The strict teacher'.",
+            "hint": "Reported statement: Subject + 'said' + 'that' + reported clause (note tense shift: present→past).",
             "explanation": "Indirect / Reported Speech: Reporting verb 'said' + 'that' + backshifted tense."
         },
         {
             "id": "wr_l91_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "He asked me if I had seen his blue pen anywhere.",
@@ -72,13 +72,12 @@
                 10,
                 5
             ],
-            "hint": "Start with the capitalized singular pronoun 'He'.",
+            "hint": "Reported question: Subject + 'asked' + 'me' + 'if' + reported question (note tense shift).",
             "explanation": "Reported Question: Reporting verb 'asked' + 'if' + past perfect backshift."
         },
         {
             "id": "wr_l91_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "She told her brother not to touch her computer screen ever.",
@@ -108,85 +107,86 @@
                 8,
                 5
             ],
-            "hint": "Start with the capitalized female pronoun.",
+            "hint": "Reported command (negative): Subject + 'told' + object + 'not to' + base verb + object.",
             "explanation": "Reported Imperative: Reporting verb 'told' + Object + 'not to' + infinitive."
         },
         {
             "id": "wr_l92_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "The local guide explained that the historic castle was built long.",
+            "sentence": "The local guide explained that the historic castle was built long ago.",
             "shuffledWords": [
-                "explained",
-                "local",
+                "was",
+                "that",
                 "historic",
                 "The",
-                "guide",
-                "that",
-                "was",
                 "the",
-                "built",
+                "guide",
+                "local",
+                "explained",
                 "castle",
+                "built",
+                "ago",
                 "long"
             ],
             "correctOrder": [
                 3,
-                1,
-                4,
-                0,
+                6,
                 5,
                 7,
+                1,
+                4,
                 2,
-                9,
-                6,
                 8,
+                0,
+                9,
+                11,
                 10
             ],
-            "hint": "Start with the capitalized subject article.",
+            "hint": "Reported statement with 'that': Subject + 'explained' + 'that' + subject + was + verb + 'long ago'.",
             "explanation": "Reported Statement: 'explained' + 'that' + past simple state clause."
         },
         {
             "id": "wr_l92_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "They asked us where we were spending our summer vacation this.",
+            "sentence": "They asked us where we were spending our summer vacation that year.",
             "shuffledWords": [
-                "were",
-                "us",
                 "our",
-                "this",
-                "summer",
-                "They",
-                "we",
-                "spending",
+                "vacation",
                 "where",
+                "that",
+                "They",
+                "summer",
+                "we",
+                "were",
+                "spending",
                 "asked",
-                "vacation"
+                "us",
+                "year"
             ],
             "correctOrder": [
-                5,
-                9,
-                1,
-                8,
-                6,
-                0,
-                7,
-                2,
                 4,
+                9,
                 10,
-                3
+                2,
+                6,
+                7,
+                8,
+                0,
+                5,
+                1,
+                3,
+                11
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Reported question with 'where': Subject + 'asked' + 'us' + 'where' + reported clause.",
             "explanation": "Reported Wh-Question: 'asked' + Wh-word + Subject + Tense shift."
         },
         {
             "id": "wr_l92_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "My father advised me to study hard for final university exams.",
@@ -216,13 +216,12 @@
                 4,
                 1
             ],
-            "hint": "Start with the capitalized possessive pronoun.",
+            "hint": "Reported advice: Subject + 'advised' + 'me' + 'to' + base verb + adverb + 'for' + noun.",
             "explanation": "Reported Advice: Reporting verb 'advised' + Object + Infinitive clause."
         },
         {
             "id": "wr_l93_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "She promised that she would help us with the moving tomorrow.",
@@ -252,13 +251,12 @@
                 1,
                 8
             ],
-            "hint": "Start with the capitalized singular female subject.",
+            "hint": "Reported promise: Subject + 'promised' + 'that' + subject + 'would' + base verb + object + time.",
             "explanation": "Reported Promise: 'promised' + 'that' + modal shift (will to would)."
         },
         {
             "id": "wr_l93_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The police officer ordered the driver to step out of car.",
@@ -288,13 +286,12 @@
                 7,
                 1
             ],
-            "hint": "Start with the capitalized subject article.",
+            "hint": "Reported command: Subject + 'ordered' + 'the driver' + 'to' + verb + 'out of' + article + noun.",
             "explanation": "Reported Command: 'ordered' + Object + Infinitive action."
         },
         {
             "id": "wr_l93_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "He complained that the hotel room was extremely noisy and dirty.",
@@ -324,49 +321,51 @@
                 9,
                 6
             ],
-            "hint": "Start with the capitalized male pronoun.",
+            "hint": "Reported complaint: Subject + 'complained' + 'that' + subject + was + adjective + 'and' + adjective.",
             "explanation": "Reported Complaint: 'complained' + 'that' + Shifted past state description."
         },
         {
             "id": "wr_l94_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "They announced that the morning flight had been canceled due storm.",
+            "sentence": "They announced that the morning flight had been canceled due to the storm.",
             "shuffledWords": [
-                "storm",
-                "been",
-                "the",
                 "that",
-                "They",
-                "flight",
-                "morning",
-                "announced",
+                "canceled",
+                "the",
                 "due",
+                "announced",
+                "been",
+                "morning",
                 "had",
-                "canceled"
+                "the",
+                "flight",
+                "to",
+                "They",
+                "storm"
             ],
             "correctOrder": [
+                11,
                 4,
-                7,
-                3,
+                0,
                 2,
                 6,
-                5,
                 9,
+                7,
+                5,
                 1,
+                3,
                 10,
                 8,
-                0
+                12
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Reported announcement: Subject + 'announced' + 'that' + article + noun + 'had been' + verb + 'due to' + noun.",
             "explanation": "Reported Announcement: 'announced' + 'that' + Shifted past perfect passive."
         },
         {
             "id": "wr_l94_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The manager confirmed that the financial report was successfully completed today.",
@@ -396,13 +395,12 @@
                 9,
                 4
             ],
-            "hint": "Start with the capitalized subject determiner.",
+            "hint": "Reported confirmation: Subject + 'confirmed' + 'that' + article + noun + was + adverb + verb + adverb.",
             "explanation": "Reported Statement: 'confirmed' + 'that' + Completed past passive clause."
         },
         {
             "id": "wr_l94_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "She asked her mother whether she could go to the party.",
@@ -432,13 +430,12 @@
                 5,
                 6
             ],
-            "hint": "Start with the capitalized female pronoun.",
+            "hint": "Reported question with 'whether': Subject + 'asked' + object + 'whether' + subject + could + verb.",
             "explanation": "Reported Yes/No Question: 'asked' + Object + 'whether' + Shifted modal (can to could)."
         },
         {
             "id": "wr_l95_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The doctor warned the patient not to eat heavy oily meals.",
@@ -468,13 +465,12 @@
                 8,
                 7
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Reported warning (negative command): Subject + 'warned' + object + 'not to' + verb + adjective + noun.",
             "explanation": "Reported Warning: 'warned' + Object + Negative infinitive 'not to' + base verb."
         },
         {
             "id": "wr_l95_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "My friend suggested that we go to the new Italian restaurant.",
@@ -504,13 +500,12 @@
                 5,
                 0
             ],
-            "hint": "Start with the capitalized possessive adjective.",
+            "hint": "Reported suggestion with subjunctive: Subject + 'suggested' + 'that' + subject + 'go' (subjunctive) + location.",
             "explanation": "Reported Suggestion: 'suggested' + 'that' + Subjunctive / base clause."
         },
         {
             "id": "wr_l95_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "They claimed that they had never seen the mysterious man before.",
@@ -540,49 +535,49 @@
                 0,
                 9
             ],
-            "hint": "Start with the capitalized plural subject.",
+            "hint": "Reported claim: Subject + 'claimed' + 'that' + subject + 'had never' + verb + object + adverb.",
             "explanation": "Reported Claim: 'claimed' + 'that' + Shifted negative past perfect clause."
         },
         {
             "id": "wr_l96_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "She admitted that she had made a big mistake in report.",
+            "sentence": "She admitted that she had made a big mistake in the report.",
             "shuffledWords": [
                 "She",
-                "admitted",
-                "that",
-                "big",
+                "made",
+                "the",
+                "had",
                 "a",
                 "in",
-                "report",
+                "that",
+                "big",
+                "admitted",
                 "she",
                 "mistake",
-                "made",
-                "had"
+                "report"
             ],
             "correctOrder": [
                 0,
+                8,
+                6,
+                9,
+                3,
                 1,
-                2,
+                4,
                 7,
                 10,
-                9,
-                4,
-                3,
-                8,
                 5,
-                6
+                2,
+                11
             ],
-            "hint": "Start with the capitalized female pronoun.",
+            "hint": "Reported admission: Subject + 'admitted' + 'that' + subject + 'had made' + article + noun + location.",
             "explanation": "Reported Admission: 'admitted' + 'that' + Shifted past perfect active."
         },
         {
             "id": "wr_l96_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The student explained that he had lost his homework on bus.",
@@ -612,13 +607,12 @@
                 6,
                 3
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Reported explanation: Subject + 'explained' + 'that' + subject + 'had lost' + possessive + noun + location.",
             "explanation": "Reported Explanation: 'explained' + 'that' + Shifted past perfect possession."
         },
         {
             "id": "wr_l96_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "My mother told me that she was very proud of me.",
@@ -648,49 +642,49 @@
                 6,
                 10
             ],
-            "hint": "Start with the capitalized possessive determiner.",
+            "hint": "Reported statement of emotion: Subject + 'told' + 'me' + 'that' + subject + was + adjective + 'of' + object.",
             "explanation": "Reported Statement: 'told' + Object + 'that' + Shifted past continuous state."
         },
         {
             "id": "wr_l97_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "He asked his colleague how long he had worked in company.",
+            "sentence": "He asked his colleague how long he had worked in the company.",
             "shuffledWords": [
-                "asked",
-                "in",
-                "long",
-                "He",
-                "worked",
-                "he",
-                "how",
-                "company",
                 "his",
                 "colleague",
-                "had"
+                "he",
+                "in",
+                "company",
+                "He",
+                "had",
+                "how",
+                "worked",
+                "asked",
+                "long",
+                "the"
             ],
             "correctOrder": [
-                3,
-                0,
-                8,
-                9,
-                6,
-                2,
                 5,
-                10,
-                4,
+                9,
+                0,
                 1,
-                7
+                7,
+                10,
+                2,
+                6,
+                8,
+                3,
+                11,
+                4
             ],
-            "hint": "Start with the capitalized male pronoun.",
+            "hint": "Reported wh-question: Subject + 'asked' + object + 'how long' + subject + 'had worked' + location.",
             "explanation": "Reported Wh-Question: 'asked' + Object + Wh-phrase + Shifted past perfect."
         },
         {
             "id": "wr_l97_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The coach ordered the players to run around the sports field.",
@@ -720,13 +714,12 @@
                 1,
                 3
             ],
-            "hint": "Start with the capitalized subject determiner.",
+            "hint": "Reported command: Subject + 'ordered' + article + noun + 'to' + verb + location.",
             "explanation": "Reported Command: 'ordered' + Object + Infinitive physical action."
         },
         {
             "id": "wr_l97_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "She denied that she had stolen the expensive diamond ring yesterday.",
@@ -756,13 +749,12 @@
                 4,
                 6
             ],
-            "hint": "Start with the capitalized female pronoun.",
+            "hint": "Reported denial: Subject + 'denied' + 'that' + subject + 'had stolen' + article + adjective + noun + time.",
             "explanation": "Reported Denial: 'denied' + 'that' + Shifted past perfect crime clause."
         },
         {
             "id": "wr_l98_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The customer complained that the hot soup was completely cold.",
@@ -790,13 +782,12 @@
                 3,
                 4
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Reported complaint: Subject + 'complained' + 'that' + article + adjective + noun + was + adverb + adjective.",
             "explanation": "Reported Complaint: 'complained' + 'that' + Paradoxical past simple state."
         },
         {
             "id": "wr_l98_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "My sister promised that she would write a letter every week.",
@@ -826,13 +817,12 @@
                 3,
                 2
             ],
-            "hint": "Start with the capitalized possessive adjective.",
+            "hint": "Reported promise: Subject + 'promised' + 'that' + subject + 'would' + verb + object + time.",
             "explanation": "Reported Promise: 'promised' + 'that' + Shifted modal future (will to would)."
         },
         {
             "id": "wr_l98_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "They asked the local guide if the mountain road was safe.",
@@ -862,49 +852,49 @@
                 3,
                 6
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Reported question with 'if': Subject + 'asked' + article + noun + 'if' + article + noun + was + adjective.",
             "explanation": "Reported Yes/No Question: 'asked' + Object + 'if' + Shifted past state."
         },
         {
             "id": "wr_l99_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "The teacher warned the young children not to run on corridor.",
+            "sentence": "The teacher warned the young children not to run in the corridor.",
             "shuffledWords": [
+                "young",
+                "the",
                 "not",
-                "children",
+                "to",
+                "teacher",
+                "in",
                 "the",
                 "run",
+                "corridor",
                 "The",
-                "teacher",
-                "to",
-                "on",
-                "young",
                 "warned",
-                "corridor"
+                "children"
             ],
             "correctOrder": [
-                4,
-                5,
                 9,
-                2,
-                8,
+                4,
+                10,
                 1,
                 0,
-                6,
+                11,
+                2,
                 3,
                 7,
-                10
+                5,
+                6,
+                8
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Reported warning (command): Subject + 'warned' + article + noun + 'not to' + verb + location.",
             "explanation": "Reported Warning: 'warned' + Object + 'not to' + Infinitive location phrase."
         },
         {
             "id": "wr_l99_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "He confirmed that he had already sent the important email yesterday.",
@@ -934,13 +924,12 @@
                 1,
                 2
             ],
-            "hint": "Start with the capitalized subject pronoun.",
+            "hint": "Reported confirmation with 'already': Subject + 'confirmed' + 'that' + subject + 'had already' + verb + object.",
             "explanation": "Reported Statement: 'confirmed' + 'that' + Shifted past perfect completion."
         },
         {
             "id": "wr_l99_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "She suggested that they should take a short break now.",
@@ -968,13 +957,12 @@
                 9,
                 8
             ],
-            "hint": "Start with the capitalized female pronoun.",
+            "hint": "Reported suggestion with 'should': Subject + 'suggested that' + subject + 'should check' + object + adverb (frequency).",
             "explanation": "Reported Suggestion: 'suggested' + 'that' + Subjunctive modal auxiliary clause."
         },
         {
             "id": "wr_l100_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "My father advised my brother to buy a reliable second-hand car.",
@@ -1004,13 +992,12 @@
                 10,
                 0
             ],
-            "hint": "Start with the capitalized possessive adjective.",
+            "hint": "Reported advice: Subject + 'advised' + object + 'to' + verb + article + adjective + noun.",
             "explanation": "Reported Advice: 'advised' + Object + Infinitive purchasing action."
         },
         {
             "id": "wr_l100_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "They claimed that the new product was extremely safe and useful.",
@@ -1040,13 +1027,12 @@
                 7,
                 0
             ],
-            "hint": "Start with the capitalized plural subject pronoun.",
+            "hint": "Reported claim with evaluation: Subject + 'claimed' + 'that' + article + noun + was + adverb + adjective.",
             "explanation": "Reported Claim: 'claimed' + 'that' + Shifted past state descriptors."
         },
         {
             "id": "wr_l100_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The manager told us that the annual meeting was postponed indefinitely.",
@@ -1076,7 +1062,7 @@
                 7,
                 3
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Reported announcement: Subject + 'told' + 'us' + 'that' + article + noun + was + past participle + adverb.",
             "explanation": "Reported Statement: 'told' + Object + 'that' + Shifted past passive clause."
         }
     ]

@@ -6,7 +6,6 @@
         {
             "id": "wr_l41_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "You must always wear a safety helmet when riding a motorcycle.",
@@ -36,13 +35,12 @@
                 4,
                 8
             ],
-            "hint": "Start with the capitalized subject pronoun 'You'.",
+            "hint": "Obligation: Subject + must + always + base verb + object + time clause. 'Always' follows 'must'.",
             "explanation": "Modal verb of strong obligation 'must' followed by base verb."
         },
         {
             "id": "wr_l41_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Students should submit their assignments before the absolute deadline on Friday.",
@@ -72,13 +70,12 @@
                 2,
                 10
             ],
-            "hint": "Start with the plural subject 'Students'.",
+            "hint": "Recommendation: Subject + should + base verb + object + 'before' + article + noun + time.",
             "explanation": "Modal of advice or recommendation 'should' + Base form of verb."
         },
         {
             "id": "wr_l41_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "We can easily solve this complex math problem by working together.",
@@ -108,13 +105,12 @@
                 5,
                 6
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Ability: Subject + can + adverb + base verb + object + 'by' + -ing + adverb.",
             "explanation": "Modal of ability 'can' modified by adverb 'easily'."
         },
         {
             "id": "wr_l42_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "You must not enter the laboratory without wearing proper protective gear.",
@@ -144,13 +140,12 @@
                 0,
                 6
             ],
-            "hint": "Start with the capitalized second-person pronoun.",
+            "hint": "Prohibition: Subject + must + not + base verb + 'without' + -ing phrase.",
             "explanation": "Modal of prohibition 'must not' + Base verb + Prepositional constraint."
         },
         {
             "id": "wr_l42_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Employees should report any technical issues to the IT department immediately.",
@@ -180,13 +175,12 @@
                 0,
                 4
             ],
-            "hint": "Start with the capitalized plural subject.",
+            "hint": "Obligation: Subject + should + base verb + adjective + noun + 'to' + article + noun + adverb.",
             "explanation": "Modal of professional duty 'should' + Base verb + Adverb of immediacy."
         },
         {
             "id": "wr_l42_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "We must protect our planet from environmental pollution for future generations.",
@@ -216,13 +210,12 @@
                 6,
                 2
             ],
-            "hint": "Start with the capitalized plural subject pronoun.",
+            "hint": "Obligation with purpose: Subject + must + base verb + object + 'from' + noun + 'for' + noun.",
             "explanation": "Modal of absolute moral obligation 'must' + Collective direct object."
         },
         {
             "id": "wr_l43_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "You should not make important decisions when you are very angry.",
@@ -252,85 +245,86 @@
                 4,
                 3
             ],
-            "hint": "Start with the capitalized subject pronoun.",
+            "hint": "Advice with negative: Subject + should + not + base verb + adjective + noun + 'when' + clause.",
             "explanation": "Negative advice 'should not' + Temporal clause of emotional state."
         },
         {
             "id": "wr_l43_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "He can speak three foreign languages fluently after living abroad years.",
+            "sentence": "He can speak three foreign languages fluently after living abroad for years.",
             "shuffledWords": [
-                "years",
-                "speak",
+                "fluently",
                 "three",
-                "after",
                 "foreign",
+                "for",
+                "years",
+                "can",
+                "abroad",
                 "He",
                 "languages",
-                "living",
-                "fluently",
-                "can",
-                "abroad"
+                "speak",
+                "after",
+                "living"
             ],
             "correctOrder": [
+                7,
                 5,
                 9,
                 1,
                 2,
-                4,
-                6,
                 8,
-                3,
-                7,
+                0,
                 10,
-                0
+                11,
+                6,
+                3,
+                4
             ],
-            "hint": "Start with the capitalized singular pronoun.",
+            "hint": "Ability with time phrase: Subject + can + base verb + number + noun + adverb + 'after' + phrase.",
             "explanation": "Modal of multilingual ability 'can' + Complex adverbial modifiers."
         },
         {
             "id": "wr_l43_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "They must attend the mandatory safety meeting tomorrow morning in auditorium.",
+            "sentence": "They must attend the mandatory safety meeting tomorrow morning in the auditorium.",
             "shuffledWords": [
                 "auditorium",
-                "mandatory",
+                "tomorrow",
                 "must",
+                "the",
                 "morning",
+                "They",
+                "safety",
+                "attend",
+                "the",
                 "meeting",
                 "in",
-                "tomorrow",
-                "the",
-                "attend",
-                "safety",
-                "They"
+                "mandatory"
             ],
             "correctOrder": [
-                10,
-                2,
-                8,
-                7,
-                1,
-                9,
-                4,
-                6,
-                3,
                 5,
+                2,
+                7,
+                3,
+                11,
+                6,
+                9,
+                1,
+                4,
+                10,
+                8,
                 0
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Obligation with time: Subject + must + base verb + adjective + noun + time phrase + location.",
             "explanation": "Modal of administrative obligation 'must' + Scheduled time phrase."
         },
         {
             "id": "wr_l44_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "She should practice playing the piano every day to improve skills.",
@@ -360,13 +354,12 @@
                 7,
                 10
             ],
-            "hint": "Start with the capitalized female pronoun.",
+            "hint": "Recommendation: Subject + should + base verb + -ing + noun + time + 'to' + base verb + noun.",
             "explanation": "Modal of recommended growth 'should' + Gerund object + Infinitive purpose."
         },
         {
             "id": "wr_l44_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "You must always wash your hands thoroughly before eating any meals.",
@@ -396,13 +389,12 @@
                 7,
                 6
             ],
-            "hint": "Start with the capitalized subject pronoun.",
+            "hint": "Obligation: Subject + must + always + base verb + object + adverb + 'before' + -ing + noun.",
             "explanation": "Modal of hygienic obligation 'must' + Frequency + Manner adverbial."
         },
         {
             "id": "wr_l44_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Drivers should always pay close attention to the traffic signs ahead.",
@@ -432,13 +424,12 @@
                 2,
                 3
             ],
-            "hint": "Start with the capitalized plural subject.",
+            "hint": "Instruction: Subject + should + always + base verb + adjective + noun + 'to' + article + noun + adverb.",
             "explanation": "Modal of safety duty 'should' + Frequency adverb + Prepositional object."
         },
         {
             "id": "wr_l45_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "We can easily book our flight tickets online using a smartphone.",
@@ -468,13 +459,12 @@
                 9,
                 6
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Ability: Subject + can + adverb + base verb + object + adverb + 'using' + noun.",
             "explanation": "Modal of simple convenience and ability 'can' + Means modifier."
         },
         {
             "id": "wr_l45_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Visitors must not feed the wild animals inside the national park.",
@@ -504,13 +494,12 @@
                 0,
                 3
             ],
-            "hint": "Start with the capitalized plural subject.",
+            "hint": "Prohibition: Subject + must + not + base verb + article + adjective + noun + location.",
             "explanation": "Modal of absolute ecological prohibition 'must not' + Location clause."
         },
         {
             "id": "wr_l45_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "You should consult a professional doctor if the painful symptoms persist.",
@@ -540,13 +529,12 @@
                 9,
                 8
             ],
-            "hint": "Start with the capitalized second-person pronoun.",
+            "hint": "Advice with condition: Subject + should + base verb + noun + 'if' + article + adjective + noun + verb.",
             "explanation": "Modal of medical recommendation 'should' + Conditional 'if' clause."
         },
         {
             "id": "wr_l46_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "We must save enough money to buy our new family car.",
@@ -576,13 +564,12 @@
                 6,
                 9
             ],
-            "hint": "Start with the capitalized plural subject pronoun.",
+            "hint": "Obligation + purpose: Subject + must + base verb + adjective + noun + 'to' + base verb + object.",
             "explanation": "Modal of personal financial necessity 'must' + Infinitive of purpose."
         },
         {
             "id": "wr_l46_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "They should not throw plastic garbage into the clean blue ocean.",
@@ -612,13 +599,12 @@
                 10,
                 7
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Prohibition: Subject + should + not + base verb + noun + 'into' + article + adjective + noun.",
             "explanation": "Modal of moral duty 'should not' + Directional prepositional phrase."
         },
         {
             "id": "wr_l46_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "He can play the acoustic guitar beautifully while singing country songs.",
@@ -648,13 +634,12 @@
                 6,
                 10
             ],
-            "hint": "Start with the capitalized singular pronoun.",
+            "hint": "Ability: Subject + can + base verb + article + noun + adverb + 'while' + -ing + noun.",
             "explanation": "Modal of performance ability 'can' + Manner adverb + Participle clause."
         },
         {
             "id": "wr_l47_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "You must submit your final passport application before the strict deadline.",
@@ -684,13 +669,12 @@
                 3,
                 1
             ],
-            "hint": "Start with the capitalized subject pronoun.",
+            "hint": "Obligation + deadline: Subject + must + base verb + object + 'before' + article + adjective + noun.",
             "explanation": "Modal of official administrative obligation 'must' + Direct object."
         },
         {
             "id": "wr_l47_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "She should read the operating instructions carefully before using the machine.",
@@ -720,13 +704,12 @@
                 4,
                 2
             ],
-            "hint": "Start with the capitalized female pronoun.",
+            "hint": "Advice: Subject + should + base verb + article + noun + adverb + 'before' + -ing + article + noun.",
             "explanation": "Modal of safety advice 'should' + Direct object + Temporal gerund clause."
         },
         {
             "id": "wr_l47_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "You must always respect the rules of the local community school.",
@@ -756,13 +739,12 @@
                 3,
                 8
             ],
-            "hint": "Start with the capitalized subject pronoun.",
+            "hint": "Obligation with 'always': Subject + must + always + base verb + article + noun + 'of' + noun.",
             "explanation": "Modal of social obligation 'must' + Frequency + Nested possessive object."
         },
         {
             "id": "wr_l48_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Students should ask their teachers for help if they are confused.",
@@ -792,13 +774,12 @@
                 5,
                 4
             ],
-            "hint": "Start with the capitalized subject noun.",
+            "hint": "Advice with condition: Subject + should + base verb + object + 'for' + noun + 'if' + clause.",
             "explanation": "Modal of academic advice 'should' + Conditional state clause."
         },
         {
             "id": "wr_l48_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "We can easily find our way using the modern GPS navigation.",
@@ -828,13 +809,12 @@
                 6,
                 8
             ],
-            "hint": "Start with the capitalized plural subject.",
+            "hint": "Ability: Subject + can + adverb + base verb + object + 'using' + article + adjective + noun.",
             "explanation": "Modal of absolute convenience 'can' + Complex tool instrument phrase."
         },
         {
             "id": "wr_l48_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "You must not cross the busy street when light is red.",
@@ -864,13 +844,12 @@
                 8,
                 3
             ],
-            "hint": "Start with the capitalized second-person pronoun.",
+            "hint": "Prohibition: Subject + must + not + base verb + article + noun + 'when' + noun + is + adjective.",
             "explanation": "Modal of legal prohibition 'must not' + Conditional temporal clause."
         },
         {
             "id": "wr_l49_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "They should regularly back up their important computer files to cloud.",
@@ -900,49 +879,49 @@
                 1,
                 10
             ],
-            "hint": "Start with the capitalized plural subject pronoun.",
+            "hint": "Advice: Subject + should + adverb + base verb + up + possessive + adjective + noun + 'to' + noun.",
             "explanation": "Modal of practical advice 'should' + Regularity adverb + Phrasal object."
         },
         {
             "id": "wr_l49_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "We must protect the rare wild animals from extinction at costs.",
+            "sentence": "We must protect the rare wild animals from extinction at all costs.",
             "shuffledWords": [
-                "rare",
-                "extinction",
-                "must",
                 "at",
-                "costs",
-                "from",
-                "the",
+                "all",
+                "extinction",
                 "animals",
+                "the",
+                "from",
+                "protect",
+                "costs",
                 "We",
+                "must",
                 "wild",
-                "protect"
+                "rare"
             ],
             "correctOrder": [
                 8,
-                2,
-                10,
-                6,
-                0,
                 9,
-                7,
-                5,
-                1,
+                6,
+                4,
+                11,
+                10,
                 3,
-                4
+                5,
+                2,
+                0,
+                1,
+                7
             ],
-            "hint": "Start with the capitalized plural subject.",
+            "hint": "Obligation: Subject + must + base verb + article + adjective + noun + 'from' + noun + 'at all costs'.",
             "explanation": "Modal of biological duty 'must' + Direct object + Source preposition."
         },
         {
             "id": "wr_l49_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "He should exercise at least three times a week for health.",
@@ -972,13 +951,12 @@
                 3,
                 1
             ],
-            "hint": "Start with the capitalized male pronoun.",
+            "hint": "Advice with frequency: Subject + should + base verb + 'at least' + number + times + 'a week' + 'for' + noun.",
             "explanation": "Modal of physical health advice 'should' + Quantified frequency modifier."
         },
         {
             "id": "wr_l50_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "You can easily learn how to cook by watching online videos.",
@@ -1008,13 +986,12 @@
                 2,
                 1
             ],
-            "hint": "Start with the capitalized subject pronoun.",
+            "hint": "Ability: Subject + can + adverb + base verb + 'how to' + base verb + 'by' + -ing phrase.",
             "explanation": "Modal of educational possibility 'can' + Infinitive object + Instrumental gerund."
         },
         {
             "id": "wr_l50_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Visitors must obtain a valid permit before entering the secure zone.",
@@ -1044,13 +1021,12 @@
                 3,
                 7
             ],
-            "hint": "Start with the capitalized subject noun.",
+            "hint": "Obligation: Subject + must + base verb + adjective + noun + 'before' + -ing + location.",
             "explanation": "Modal of legal requirement 'must' + Direct object + Temporal clause."
         },
         {
             "id": "wr_l50_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "They should not drive their cars if they feel extremely tired.",
@@ -1080,7 +1056,7 @@
                 2,
                 3
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Advice + condition: Subject + should + not + base verb + object + 'if' + clause.",
             "explanation": "Modal of safety recommendation 'should not' + Conditional physical clause."
         }
     ]

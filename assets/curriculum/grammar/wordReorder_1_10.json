@@ -6,7 +6,6 @@
         {
             "id": "wr_l1_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The happy dog barked loudly at the mailman.",
@@ -30,13 +29,12 @@
                 7,
                 1
             ],
-            "hint": "Start with the capitalized subject article.",
+            "hint": "Past simple: Subject + past verb + adverb + prepositional phrase. Place 'loudly' after the verb.",
             "explanation": "Simple past active sentence: Subject + Verb + Adverbial phrase."
         },
         {
             "id": "wr_l1_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "She drinks hot coffee every morning before school.",
@@ -60,13 +58,12 @@
                 5,
                 3
             ],
-            "hint": "Start with the capitalized female pronoun.",
+            "hint": "Habitual actions: Subject + present verb + object + frequency phrase. 'Every morning' and 'before school' come at the end.",
             "explanation": "Present simple tense expressing a daily habitual action."
         },
         {
             "id": "wr_l1_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "My young brother plays soccer in the backyard.",
@@ -90,13 +87,12 @@
                 0,
                 5
             ],
-            "hint": "Start with the capitalized possessive adjective.",
+            "hint": "Noun phrase order: Possessive + adjective + noun. Put 'My young brother' together, then verb + object + location.",
             "explanation": "Subject (My young brother) + Action (plays) + Object (soccer) + Location."
         },
         {
             "id": "wr_l2_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "They walked to the local library yesterday afternoon.",
@@ -120,43 +116,41 @@
                 6,
                 2
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Past simple with time marker: Subject + past verb + destination + time expression. 'Yesterday afternoon' goes at the very end.",
             "explanation": "Past simple expressing a completed action with a past time marker."
         },
         {
             "id": "wr_l2_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "We will visit our grandparents next weekend morning.",
+            "sentence": "We will visit our grandparents next Saturday morning.",
             "shuffledWords": [
-                "weekend",
+                "will",
+                "grandparents",
                 "We",
                 "morning",
-                "grandparents",
+                "our",
+                "Saturday",
                 "visit",
-                "will",
-                "next",
-                "our"
+                "next"
             ],
             "correctOrder": [
-                1,
-                5,
-                4,
-                7,
-                3,
-                6,
+                2,
                 0,
-                2
+                6,
+                4,
+                1,
+                7,
+                5,
+                3
             ],
-            "hint": "Start with the capitalized plural subject pronoun.",
+            "hint": "Future with 'will': Subject + will + base verb + object + time. Place 'next Saturday morning' last.",
             "explanation": "Future simple active voice showing scheduled intent."
         },
         {
             "id": "wr_l2_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "A black cat slept peacefully on the rug.",
@@ -180,13 +174,12 @@
                 5,
                 6
             ],
-            "hint": "Start with the capitalized indefinite article.",
+            "hint": "Past simple description: Indefinite article + adjective + noun + past verb + adverb + location.",
             "explanation": "Adjective + Subject noun + Past action + Adverb + Location."
         },
         {
             "id": "wr_l3_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "He reads an interesting book every single week.",
@@ -210,43 +203,43 @@
                 7,
                 1
             ],
-            "hint": "Start with the capitalized singular male pronoun.",
+            "hint": "Frequency adverbs go between subject and verb: Subject + frequency adverb + verb + object + time phrase.",
             "explanation": "Simple present singular subject-verb agreement."
         },
         {
             "id": "wr_l3_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "The bright sun shined brightly across the sky.",
+            "sentence": "The bright sun shone gently across the morning sky.",
             "shuffledWords": [
-                "shined",
-                "bright",
                 "sky",
-                "the",
-                "The",
+                "bright",
+                "shone",
                 "across",
+                "gently",
+                "morning",
+                "The",
                 "sun",
-                "brightly"
+                "the"
             ],
             "correctOrder": [
-                4,
-                1,
                 6,
-                0,
+                1,
                 7,
-                5,
+                2,
+                4,
                 3,
-                2
+                8,
+                5,
+                0
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Past simple: Subject + past verb + adverb + location phrase. 'Across the morning sky' is the prepositional phrase.",
             "explanation": "Determiner + Adjective + Subject + Past verb + Adverb."
         },
         {
             "id": "wr_l3_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "We love eating sweet apples in the autumn.",
@@ -270,43 +263,43 @@
                 7,
                 1
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Verb of preference + gerund: 'love eating' - the -ing form follows 'love'. Location phrase ends the sentence.",
             "explanation": "Subject + Verb of preference + Gerund object."
         },
         {
             "id": "wr_l4_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "The teacher wrote the new lesson on board.",
+            "sentence": "The teacher wrote the new lesson on the board.",
             "shuffledWords": [
-                "lesson",
-                "board",
-                "new",
+                "on",
                 "the",
                 "wrote",
                 "The",
                 "teacher",
-                "on"
+                "lesson",
+                "new",
+                "board",
+                "the"
             ],
             "correctOrder": [
-                5,
-                6,
-                4,
                 3,
+                4,
                 2,
+                1,
+                6,
+                5,
                 0,
-                7,
-                1
+                8,
+                7
             ],
-            "hint": "Start with the capitalized singular subject determiner.",
+            "hint": "'On the board' is a fixed prepositional phrase. Place it after the object: Subject + past verb + object + location.",
             "explanation": "Subject (The teacher) + Action (wrote) + Object (the new lesson)."
         },
         {
             "id": "wr_l4_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "She bought a colorful umbrella for the rain.",
@@ -330,13 +323,12 @@
                 3,
                 2
             ],
-            "hint": "Start with the capitalized female singular pronoun.",
+            "hint": "Purpose phrase at end: Subject + past verb + object + purpose phrase ('for the rain' = to protect against rain).",
             "explanation": "Past simple active expressing a concrete purchase."
         },
         {
             "id": "wr_l4_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The red car stopped quickly at the light.",
@@ -360,13 +352,12 @@
                 0,
                 1
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Manner adverb 'quickly' modifies how the car stopped: Subject + past verb + adverb + prepositional phrase.",
             "explanation": "Subject noun phrase + Past verb + Manner adverb + Location."
         },
         {
             "id": "wr_l5_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "They sing beautiful songs during the music class.",
@@ -390,13 +381,12 @@
                 0,
                 5
             ],
-            "hint": "Start with the capitalized plural subject pronoun.",
+            "hint": "Present simple: Subject + verb + object + time phrase. 'During the music class' is the time/place adverbial.",
             "explanation": "Simple present expressing regular actions in class."
         },
         {
             "id": "wr_l5_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "A busy bee flew around the colorful flowers.",
@@ -420,13 +410,12 @@
                 2,
                 1
             ],
-            "hint": "Start with the capitalized indefinite article.",
+            "hint": "Indefinite article + adjective + noun: Keep 'A busy bee' together. 'Around the colorful flowers' is the location.",
             "explanation": "Subject (A busy bee) + Past verb + Directional phrase."
         },
         {
             "id": "wr_l5_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "He lost his favorite blue pen yesterday morning.",
@@ -450,13 +439,12 @@
                 7,
                 5
             ],
-            "hint": "Start with the capitalized subject pronoun.",
+            "hint": "Past simple with two time markers: Subject + past verb + possessive + adjective + noun + time + time.",
             "explanation": "Past simple transitively acting on the possessive noun phrase."
         },
         {
             "id": "wr_l6_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The children played happily in the neighborhood park.",
@@ -480,13 +468,12 @@
                 0,
                 1
             ],
-            "hint": "Start with the capitalized subject determiner.",
+            "hint": "Manner adverb 'happily' follows the verb of action: Subject + past verb + adverb + location.",
             "explanation": "Plural subject + Past simple action + Manner adverb + Location."
         },
         {
             "id": "wr_l6_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "She cooks delicious meals for her whole family.",
@@ -510,13 +497,12 @@
                 6,
                 7
             ],
-            "hint": "Start with the capitalized singular subject.",
+            "hint": "Present simple with indirect object: Subject + verb + adjective + object + 'for' + indirect object.",
             "explanation": "Simple present third-person singular habits."
         },
         {
             "id": "wr_l6_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The heavy rain fell continuously for three hours.",
@@ -540,13 +526,12 @@
                 4,
                 6
             ],
-            "hint": "Start with the capitalized subject article.",
+            "hint": "Duration phrase: Subject + adjective + noun + past verb + manner adverb + 'for' + duration.",
             "explanation": "Subject phrase + Simple past intransitive + Duration phrase."
         },
         {
             "id": "wr_l7_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "We saw a giant whale in the ocean.",
@@ -570,13 +555,12 @@
                 3,
                 2
             ],
-            "hint": "Start with the capitalized plural subject pronoun.",
+            "hint": "Past simple with object: Subject + past verb + article + adjective + noun + location phrase.",
             "explanation": "Simple past of irregular verb 'see' + Direct object."
         },
         {
             "id": "wr_l7_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The old man walked slowly down the street.",
@@ -600,13 +584,12 @@
                 7,
                 1
             ],
-            "hint": "Start with the capitalized subject determiner.",
+            "hint": "Adverb of manner follows the verb: Subject + adjective + noun + past verb + adverb + location.",
             "explanation": "Adjective + Subject noun + Past verb + Manner adverb."
         },
         {
             "id": "wr_l7_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "They built a tall sandcastle near the water.",
@@ -630,13 +613,12 @@
                 2,
                 1
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Past simple: Subject + past verb + article + adjective + noun + location phrase. 'Near the water' is the location.",
             "explanation": "Subject + Simple past build + Direct object + Location."
         },
         {
             "id": "wr_l8_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "A gentle breeze cooled the hot afternoon air.",
@@ -660,13 +642,12 @@
                 7,
                 3
             ],
-            "hint": "Start with the capitalized indefinite article.",
+            "hint": "Noun phrase as subject: 'A gentle breeze' stays together. Then verb + object phrase.",
             "explanation": "Subject noun phrase + Transitive past verb + Direct object."
         },
         {
             "id": "wr_l8_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "He paints colorful pictures of natural wild landscapes.",
@@ -690,43 +671,43 @@
                 6,
                 1
             ],
-            "hint": "Start with the capitalized singular pronoun.",
+            "hint": "Verb + adjective + plural noun + prepositional phrase: Subject + verb + adjective + noun + 'of' + noun.",
             "explanation": "Simple present action + Complex plural object phrase."
         },
         {
             "id": "wr_l8_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "The train arrived exactly on time at platform.",
+            "sentence": "The train arrived exactly on time at the platform.",
             "shuffledWords": [
-                "arrived",
-                "train",
-                "at",
-                "time",
-                "platform",
                 "The",
-                "exactly",
-                "on"
+                "time",
+                "arrived",
+                "on",
+                "at",
+                "the",
+                "platform",
+                "train",
+                "exactly"
             ],
             "correctOrder": [
-                5,
-                1,
                 0,
-                6,
                 7,
-                3,
                 2,
-                4
+                8,
+                3,
+                1,
+                4,
+                5,
+                6
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "'On time' is a fixed expression meaning 'punctually'. Place it before 'at the platform'.",
             "explanation": "Subject + Intransitive past verb + Adverbial of punctuality."
         },
         {
             "id": "wr_l9_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "She spoke softly to the crying little baby.",
@@ -750,13 +731,12 @@
                 0,
                 3
             ],
-            "hint": "Start with the capitalized female pronoun.",
+            "hint": "Adverb 'softly' comes after the verb: Subject + past verb + adverb + 'to' + article + adjective + noun.",
             "explanation": "Subject + Past verb + Adverb of manner + Prepositional object."
         },
         {
             "id": "wr_l9_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "We visited a historic castle during our trip.",
@@ -780,13 +760,12 @@
                 0,
                 2
             ],
-            "hint": "Start with the capitalized plural subject pronoun.",
+            "hint": "Past simple with 'during': Subject + past verb + article + adjective + noun + 'during' + possessive + noun.",
             "explanation": "Simple past + Direct object noun phrase + Temporal phrase."
         },
         {
             "id": "wr_l9_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The young boy caught a big green frog.",
@@ -810,13 +789,12 @@
                 6,
                 5
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Past simple: Subject + article + adjective + noun + past verb + article + adjective + adjective + noun.",
             "explanation": "Subject + Past verb + Adjectival noun phrase object."
         },
         {
             "id": "wr_l10_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "They watch interesting science documentaries on TV.",
@@ -838,13 +816,12 @@
                 3,
                 2
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Present simple: Subject + verb + adjective + noun + on + noun. 'On TV' is a fixed phrase at the end.",
             "explanation": "Subject + Simple present active + Compound direct object."
         },
         {
             "id": "wr_l10_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "A loud thunder woke the sleeping family immediately.",
@@ -868,13 +845,12 @@
                 2,
                 6
             ],
-            "hint": "Start with the capitalized indefinite article.",
+            "hint": "Past simple: Subject + adjective + noun + past verb + article + adjective + noun + adverb.",
             "explanation": "Subject + Past verb + Participle adjective direct object."
         },
         {
             "id": "wr_l10_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 1,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "I wrote a long letter to my friend.",
@@ -898,7 +874,7 @@
                 1,
                 2
             ],
-            "hint": "Start with the capitalized first-person pronoun.",
+            "hint": "Past simple with indirect object: Subject + past verb + article + adjective + noun + 'to' + possessive + noun.",
             "explanation": "Subject + Past transitive + Direct object + Indirect object."
         }
     ]

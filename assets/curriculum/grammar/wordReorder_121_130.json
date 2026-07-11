@@ -6,81 +6,82 @@
         {
             "id": "wr_l121_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "By the time the search rescue team arrived the hikers had survived.",
+            "sentence": "By the time the search and rescue team arrived the hikers had survived.",
             "shuffledWords": [
-                "By",
-                "hikers",
-                "rescue",
-                "survived",
-                "had",
+                "arrived",
+                "and",
+                "team",
+                "the",
                 "search",
                 "the",
-                "team",
+                "hikers",
+                "survived",
+                "the",
                 "time",
-                "the",
-                "the",
-                "arrived"
+                "By",
+                "rescue",
+                "had"
             ],
             "correctOrder": [
-                0,
-                6,
-                8,
+                10,
+                3,
                 9,
                 5,
-                2,
-                7,
-                11,
-                10,
-                1,
                 4,
-                3
+                1,
+                11,
+                2,
+                0,
+                8,
+                6,
+                12,
+                7
             ],
-            "hint": "Start with the temporal preposition 'By'.",
+            "hint": "Past perfect with 'by the time': 'By the time' + past simple clause + comma + past perfect clause.",
             "explanation": "Past Perfect: Use past perfect ('had survived') for the action that completed before another past action."
         },
         {
             "id": "wr_l121_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "She had already completed the annual report when manager asked her.",
+            "sentence": "She had already completed the annual report when the manager asked her.",
             "shuffledWords": [
-                "asked",
-                "manager",
-                "already",
-                "her",
-                "the",
+                "when",
                 "annual",
                 "She",
+                "already",
+                "manager",
                 "had",
-                "completed",
                 "report",
-                "when"
+                "the",
+                "the",
+                "completed",
+                "her",
+                "asked"
             ],
             "correctOrder": [
-                6,
-                7,
                 2,
+                5,
+                3,
+                9,
+                7,
+                1,
+                6,
+                0,
                 8,
                 4,
-                5,
-                9,
-                10,
-                1,
-                0,
-                3
+                11,
+                10
             ],
-            "hint": "Start with the capitalized female pronoun.",
+            "hint": "Past perfect before another past event: Subject + 'had already' + participle + object + 'when' + past clause.",
             "explanation": "Past Perfect showing action completed before a simple past interruption."
         },
         {
             "id": "wr_l121_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The train had already left the station when we finally arrived.",
@@ -110,13 +111,12 @@
                 6,
                 8
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Completed action before past event: Subject + 'had already' + participle + location + 'when' + past clause.",
             "explanation": "Past Perfect sequence representing missing the train: had left + simple past arrived."
         },
         {
             "id": "wr_l122_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Before they moved to London they had sold their big house.",
@@ -146,13 +146,12 @@
                 9,
                 10
             ],
-            "hint": "Start with the temporal preposition 'Before'.",
+            "hint": "Past perfect with 'Before': 'Before' + they + past simple + comma + subject + 'had' + participle + object.",
             "explanation": "Past Perfect: Action 'had sold' completed prior to 'moved to London'."
         },
         {
             "id": "wr_l122_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "He realized that he had lost his wallet on the bus.",
@@ -182,13 +181,12 @@
                 7,
                 5
             ],
-            "hint": "Start with the capitalized singular pronoun.",
+            "hint": "Realization of past event: Subject + 'realized' + 'that' + subject + 'had lost' + object + location.",
             "explanation": "Past Perfect: The losing ('had lost') happened before the realization ('realized')."
         },
         {
             "id": "wr_l122_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The heavy rain had stopped before the final soccer match began.",
@@ -218,13 +216,12 @@
                 8,
                 0
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Sequence: Past perfect for earlier action + 'before' + past simple for later action.",
             "explanation": "Past Perfect sequence: had stopped + past simple began."
         },
         {
             "id": "wr_l123_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "By the time she graduated she had written three excellent novels.",
@@ -254,13 +251,12 @@
                 8,
                 4
             ],
-            "hint": "Start with the temporal preposition 'By'.",
+            "hint": "Time clause with 'by the time': 'By the time' + past simple + subject + 'had' + participle + object.",
             "explanation": "Past Perfect representing lifetime achievement completed before past graduation."
         },
         {
             "id": "wr_l123_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "They had never seen such a beautiful waterfall before their trip.",
@@ -290,13 +286,12 @@
                 10,
                 7
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Past perfect for a first experience: 'Had never' + participle shows something had not happened before a specific point.",
             "explanation": "Negative past perfect representing unprecedented experiences prior to a past trip."
         },
         {
             "id": "wr_l123_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "We had already eaten dinner when my father came home late.",
@@ -326,13 +321,12 @@
                 8,
                 1
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Already completed: Subject + 'had already' + participle + noun + 'when' + subject + past verb + adverb.",
             "explanation": "Past Perfect showing domestic completion before a simple past arrival."
         },
         {
             "id": "wr_l124_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The smart student had studied hard before he took the exam.",
@@ -362,49 +356,53 @@
                 0,
                 3
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Past perfect to show preparation: Subject + 'had' + participle + adverb + 'before' + past simple clause.",
             "explanation": "Past Perfect showing preparation ('had studied') prior to evaluation ('took')."
         },
         {
             "id": "wr_l124_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "He had already closed the local shop when customer knocked door.",
+            "sentence": "He had already closed the local shop when a customer knocked on the door.",
             "shuffledWords": [
-                "knocked",
-                "door",
-                "customer",
-                "had",
-                "already",
+                "on",
                 "He",
-                "closed",
-                "when",
+                "door",
+                "a",
+                "local",
+                "knocked",
                 "the",
+                "when",
+                "customer",
                 "shop",
-                "local"
+                "the",
+                "already",
+                "closed",
+                "had"
             ],
             "correctOrder": [
-                5,
-                3,
-                4,
+                1,
+                13,
+                11,
+                12,
                 6,
-                8,
-                10,
+                4,
                 9,
                 7,
-                2,
+                3,
+                8,
+                5,
                 0,
-                1
+                10,
+                2
             ],
-            "hint": "Start with the capitalized singular pronoun.",
+            "hint": "Sequence: Subject + 'had already' + participle + object + 'when' + article + noun + past verb.",
             "explanation": "Past Perfect sequence representing commercial closure prior to interruption."
         },
         {
             "id": "wr_l124_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Before she joined our team she had worked in a bank.",
@@ -434,13 +432,12 @@
                 10,
                 9
             ],
-            "hint": "Start with the temporal preposition 'Before'.",
+            "hint": "Career history: 'Before' + subject + verb + location + subject + 'had' + participle + location.",
             "explanation": "Past Perfect: Prior employment ('had worked') before new job placement ('joined')."
         },
         {
             "id": "wr_l125_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The police discovered that the thief had already escaped the city.",
@@ -470,13 +467,12 @@
                 8,
                 5
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Discovery of past event: Subject + 'discovered' + 'that' + article + noun + 'had already' + participle.",
             "explanation": "Past Perfect showing crime sequence: had escaped prior to discovery."
         },
         {
             "id": "wr_l125_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "By the time the movie ended I had fallen asleep completely.",
@@ -506,13 +502,12 @@
                 6,
                 7
             ],
-            "hint": "Start with the temporal preposition 'By'.",
+            "hint": "Time clause: 'By the time' + past simple clause + subject + 'had' + participle + adverb.",
             "explanation": "Past Perfect sequence showing state completed before the movie finished."
         },
         {
             "id": "wr_l125_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "They had already built the sandcastle when the giant wave came.",
@@ -542,49 +537,49 @@
                 4,
                 7
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Already completed: Subject + 'had already' + participle + object + 'when' + article + noun + past verb.",
             "explanation": "Past Perfect representing architectural completion prior to natural destruction."
         },
         {
             "id": "wr_l126_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "She realized that she had forgotten her house keys at office.",
+            "sentence": "She realized that she had forgotten her house keys at the office.",
             "shuffledWords": [
-                "house",
-                "office",
-                "she",
-                "her",
                 "realized",
-                "forgotten",
-                "had",
+                "office",
+                "the",
+                "her",
                 "She",
+                "she",
+                "house",
                 "keys",
+                "had",
                 "at",
+                "forgotten",
                 "that"
             ],
             "correctOrder": [
-                7,
                 4,
-                10,
-                2,
-                6,
-                5,
-                3,
                 0,
+                11,
+                5,
                 8,
+                10,
+                3,
+                6,
+                7,
                 9,
+                2,
                 1
             ],
-            "hint": "Start with the capitalized female pronoun.",
+            "hint": "Realization: Subject + 'realized' + 'that' + subject + 'had forgotten' + object + location.",
             "explanation": "Past Perfect: The forgetting ('had forgotten') happened prior to realization."
         },
         {
             "id": "wr_l126_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The bright sun had already set before we reached the camp.",
@@ -614,13 +609,12 @@
                 3,
                 2
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Before another past action: Subject + 'had already' + participle + 'before' + subject + past verb.",
             "explanation": "Past Perfect representing environmental completion before arrival."
         },
         {
             "id": "wr_l126_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "We had lived in that old house for ten years before.",
@@ -650,13 +644,12 @@
                 0,
                 4
             ],
-            "hint": "Start with the capitalized plural subject.",
+            "hint": "Duration in past: Subject + 'had lived' + location + 'for' + duration + 'before' (implying change).",
             "explanation": "Past Perfect representing residency duration completed prior to moving."
         },
         {
             "id": "wr_l127_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "He had not received any letters from home since he left.",
@@ -686,13 +679,12 @@
                 6,
                 8
             ],
-            "hint": "Start with the capitalized male pronoun.",
+            "hint": "Negative past perfect + duration: Subject + 'had not' + participle + noun + 'since' + subject + past verb.",
             "explanation": "Negative past perfect showing continuous absence of contact since a past departure."
         },
         {
             "id": "wr_l127_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Before they started the project they had signed the legal contract.",
@@ -722,13 +714,12 @@
                 7,
                 5
             ],
-            "hint": "Start with the temporal preposition 'Before'.",
+            "hint": "Prior agreement: 'Before' + subject + verb + object + subject + 'had' + participle + article + noun.",
             "explanation": "Past Perfect: Legal signing ('had signed') took place prior to execution."
         },
         {
             "id": "wr_l127_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The historic building had collapsed before the rescue team arrived yesterday.",
@@ -758,13 +749,12 @@
                 3,
                 6
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Sequence: Subject + 'had' + participle + 'before' + article + noun + past verb.",
             "explanation": "Past Perfect showing architectural failure before arrival of support."
         },
         {
             "id": "wr_l128_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "By the time he turned thirty he had visited twenty countries.",
@@ -794,13 +784,12 @@
                 0,
                 7
             ],
-            "hint": "Start with the temporal preposition 'By'.",
+            "hint": "Achievement by age: 'By the time' + subject + verb + number + subject + 'had' + participle + number.",
             "explanation": "Past Perfect representing accumulated experiences completed prior to a past age."
         },
         {
             "id": "wr_l128_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "She had already cooked a delicious meal when guests arrived early.",
@@ -830,13 +819,12 @@
                 2,
                 1
             ],
-            "hint": "Start with the capitalized female pronoun.",
+            "hint": "Already completed: Subject + 'had already' + participle + object + 'when' + subject + past verb.",
             "explanation": "Past Perfect showing culinary completion prior to early guest arrivals."
         },
         {
             "id": "wr_l128_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The train had left when we finally reached the platform station.",
@@ -866,13 +854,12 @@
                 6,
                 3
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Too late: Subject + 'had' + participle + 'when' + subject + adverb + past verb + location.",
             "explanation": "Past Perfect representing missing the train in a simpler sequence."
         },
         {
             "id": "wr_l129_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "He had never seen a real wild bear before his trip.",
@@ -902,13 +889,12 @@
                 10,
                 2
             ],
-            "hint": "Start with the capitalized singular subject.",
+            "hint": "'Had never' before an event: Place 'had never' + past participle to show something was completely new at that past time.",
             "explanation": "Negative past perfect representing life experience prior to a trip."
         },
         {
             "id": "wr_l129_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "They had already finished the homework when the teacher checked it.",
@@ -938,49 +924,51 @@
                 10,
                 2
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Already completed: Subject + 'had already' + participle + article + noun + 'when' + subject + past verb.",
             "explanation": "Past Perfect showing academic completion prior to teacher evaluation."
         },
         {
             "id": "wr_l129_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "Before she became famous she had worked as a waitress library.",
+            "sentence": "Before she became famous she had worked as a waitress at the library.",
             "shuffledWords": [
-                "a",
-                "famous",
+                "the",
                 "as",
+                "became",
                 "worked",
+                "Before",
+                "famous",
                 "waitress",
+                "at",
+                "library",
+                "a",
                 "had",
                 "she",
-                "Before",
-                "library",
-                "she",
-                "became"
+                "she"
             ],
             "correctOrder": [
-                7,
-                6,
+                4,
+                11,
+                2,
+                5,
+                12,
                 10,
+                3,
                 1,
                 9,
-                5,
-                3,
-                2,
+                6,
+                7,
                 0,
-                4,
                 8
             ],
-            "hint": "Start with the temporal preposition 'Before'.",
+            "hint": "Career history: 'Before' + subject + verb + adjective + subject + 'had' + participle + role.",
             "explanation": "Past Perfect: Prior employment ('had worked') before celebrity status."
         },
         {
             "id": "wr_l130_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The heavy storm had already started before they reached the cabin.",
@@ -1010,13 +998,12 @@
                 3,
                 7
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Prior to arrival: Subject + 'had already' + participle + 'before' + subject + past verb + location.",
             "explanation": "Past Perfect representing environmental onset prior to arrival at shelter."
         },
         {
             "id": "wr_l130_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "We had already saved enough money when the price went up.",
@@ -1046,43 +1033,44 @@
                 8,
                 10
             ],
-            "hint": "Start with the capitalized plural pronoun.",
+            "hint": "Prior achievement: Subject + 'had already' + participle + adverb + 'when' + article + noun + past verb.",
             "explanation": "Past Perfect representing financial completion prior to market inflation."
         },
         {
             "id": "wr_l130_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "He realized that he had made a terrible mistake in report.",
+            "sentence": "He realized that he had made a terrible mistake in the report.",
             "shuffledWords": [
                 "made",
+                "had",
+                "the",
                 "that",
-                "a",
-                "in",
                 "mistake",
                 "realized",
-                "he",
-                "terrible",
-                "had",
                 "He",
-                "report"
+                "report",
+                "he",
+                "a",
+                "terrible",
+                "in"
             ],
             "correctOrder": [
-                9,
-                5,
-                1,
                 6,
-                8,
-                0,
-                2,
-                7,
-                4,
+                5,
                 3,
-                10
+                8,
+                1,
+                0,
+                9,
+                10,
+                4,
+                11,
+                2,
+                7
             ],
-            "hint": "Start with the capitalized singular pronoun.",
+            "hint": "Realization: Subject + 'realized' + 'that' + subject + 'had made' + adjective + noun + location.",
             "explanation": "Past Perfect: Error creation ('had made') happened prior to realization."
         }
     ]

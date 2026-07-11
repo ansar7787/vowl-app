@@ -6,7 +6,6 @@
         {
             "id": "wr_l111_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Neither the dedicated manager nor the employees were happy about new policies.",
@@ -38,49 +37,49 @@
                 10,
                 8
             ],
-            "hint": "Start with the negative correlative 'Neither'.",
+            "hint": "'Neither…nor' agreement: Verb agrees with the nearest subject. Find 'nor' and the noun after it.",
             "explanation": "Subject-Verb Agreement: With 'neither... nor', the verb agrees with the closer subject ('employees' is plural, so 'were')."
         },
         {
             "id": "wr_l111_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "Either the local community or the private developers are funding project.",
+            "sentence": "Either the local community or the private developers are funding the project.",
             "shuffledWords": [
-                "developers",
-                "private",
-                "are",
                 "the",
+                "private",
+                "project",
+                "local",
+                "are",
                 "community",
                 "or",
-                "project",
+                "Either",
                 "the",
                 "funding",
-                "Either",
-                "local"
+                "developers",
+                "the"
             ],
             "correctOrder": [
-                9,
+                7,
+                0,
                 3,
+                5,
+                6,
+                8,
+                1,
                 10,
                 4,
-                5,
-                7,
-                1,
-                0,
-                2,
-                8,
-                6
+                9,
+                11,
+                2
             ],
-            "hint": "Start with the correlative conjunction 'Either'.",
+            "hint": "'Either…or' agreement: Verb agrees with the nearest subject. Find 'or' and the noun after it.",
             "explanation": "Subject-Verb Agreement: Verb agrees with closer subject ('private developers' is plural, so 'are')."
         },
         {
             "id": "wr_l111_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "A large pack of hungry wolves was seen in the forest.",
@@ -110,13 +109,12 @@
                 4,
                 1
             ],
-            "hint": "Start with the capitalized indefinite article.",
+            "hint": "Collective noun: 'A large pack of wolves' is singular (one pack). Verb follows the head noun 'pack'.",
             "explanation": "Subject-Verb Agreement: Collective noun 'pack' functions as a singular subject, so 'was'."
         },
         {
             "id": "wr_l112_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Every single student in the class has submitted the homework successfully.",
@@ -146,13 +144,12 @@
                 5,
                 9
             ],
-            "hint": "Start with the singular quantifier 'Every'.",
+            "hint": "'Every' + singular noun: 'Every single student' takes a singular verb ('has'). 'Every' signals singular.",
             "explanation": "Subject-Verb Agreement: Quantifiers 'Every' and 'Each' require a singular verb ('has')."
         },
         {
             "id": "wr_l112_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The famous singer accompanied by his band members is arriving tonight.",
@@ -182,13 +179,12 @@
                 1,
                 6
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Parenthetical phrase: 'The famous singer' is the true subject. 'accompanied by…' is extra info - ignore it.",
             "explanation": "Subject-Verb Agreement: Parenthetical phrases ('accompanied by') do not affect subject number ('singer' is singular, so 'is')."
         },
         {
             "id": "wr_l112_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Ten thousand dollars is a huge sum of money for me.",
@@ -218,13 +214,12 @@
                 3,
                 6
             ],
-            "hint": "Start with the capitalized capitalized number 'Ten'.",
+            "hint": "Amount as subject: 'Ten thousand dollars' is a singular sum, so it takes 'is'. Money amounts are singular.",
             "explanation": "Subject-Verb Agreement: Sums of money, periods of time, or distances are singular ('is')."
         },
         {
             "id": "wr_l113_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Either my sister or my brother has taken my car keys.",
@@ -254,13 +249,12 @@
                 4,
                 7
             ],
-            "hint": "Start with the correlative word 'Either'.",
+            "hint": "'Either…or' agreement: The verb matches the noun nearest to it - 'brother' (singular) → 'has'.",
             "explanation": "Subject-Verb Agreement: Both subjects joined by 'or' are singular, requiring singular verb 'has'."
         },
         {
             "id": "wr_l113_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Neither the strict teacher nor the young students want the exam.",
@@ -290,13 +284,12 @@
                 10,
                 4
             ],
-            "hint": "Start with the negative correlative 'Neither'.",
+            "hint": "'Neither…nor' agreement: The verb matches the nearest noun - 'students' (plural) → 'want'.",
             "explanation": "Subject-Verb Agreement: Verb agrees with closer subject ('students' is plural, so plural 'want')."
         },
         {
             "id": "wr_l113_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "A flock of beautiful white birds was flying high in sky.",
@@ -326,13 +319,12 @@
                 1,
                 5
             ],
-            "hint": "Start with the capitalized indefinite article.",
+            "hint": "Collective noun: 'A flock of beautiful white birds' - head noun 'flock' is singular → 'was flying'.",
             "explanation": "Subject-Verb Agreement: Collective noun 'flock' acts as singular subject, so 'was'."
         },
         {
             "id": "wr_l114_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Each of the local library books has a unique barcode scanner.",
@@ -362,49 +354,49 @@
                 3,
                 8
             ],
-            "hint": "Start with the capitalized quantifier 'Each'.",
+            "hint": "'Each of' is always singular: 'Each of the books' → singular 'has'. 'Each' signals singular.",
             "explanation": "Subject-Verb Agreement: Pronoun 'Each' is grammatically singular, requiring singular 'has'."
         },
         {
             "id": "wr_l114_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "The primary school principal along with several teachers is attending meeting.",
+            "sentence": "The primary school principal along with several teachers is attending the meeting.",
             "shuffledWords": [
-                "The",
-                "is",
-                "several",
-                "attending",
-                "principal",
                 "teachers",
+                "is",
                 "along",
-                "meeting",
                 "school",
                 "primary",
-                "with"
+                "several",
+                "meeting",
+                "the",
+                "attending",
+                "with",
+                "The",
+                "principal"
             ],
             "correctOrder": [
-                0,
-                9,
-                8,
-                4,
-                6,
                 10,
-                2,
-                5,
-                1,
+                4,
                 3,
-                7
+                11,
+                2,
+                9,
+                5,
+                0,
+                1,
+                8,
+                7,
+                6
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Parenthetical phrase: 'The principal' is the true subject. 'along with teachers' is extra info → singular 'is'.",
             "explanation": "Subject-Verb Agreement: 'along with' does not pluralize the main singular subject 'principal', so 'is'."
         },
         {
             "id": "wr_l114_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Fifty miles is a very long distance to walk in day.",
@@ -434,49 +426,49 @@
                 10,
                 1
             ],
-            "hint": "Start with the capitalized distance number 'Fifty'.",
+            "hint": "Distance as subject: 'Fifty miles' is treated as a singular measurement → singular 'is'.",
             "explanation": "Subject-Verb Agreement: Quantities of distance function as singular units, so 'is'."
         },
         {
             "id": "wr_l115_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "Either your parents or your smart brother has to sign form.",
+            "sentence": "Either your parents or your smart brother has to sign the form.",
             "shuffledWords": [
-                "brother",
                 "parents",
-                "your",
+                "sign",
+                "smart",
+                "the",
+                "or",
                 "your",
                 "to",
+                "your",
                 "has",
-                "form",
-                "smart",
-                "or",
                 "Either",
-                "sign"
+                "brother",
+                "form"
             ],
             "correctOrder": [
                 9,
-                2,
-                1,
-                8,
-                3,
-                7,
-                0,
                 5,
+                0,
                 4,
+                7,
+                2,
                 10,
-                6
+                8,
+                6,
+                1,
+                3,
+                11
             ],
-            "hint": "Start with the correlative 'Either'.",
+            "hint": "'Either…or': Verb matches the nearest noun - 'brother' (singular) → 'has'.",
             "explanation": "Subject-Verb Agreement: Verb agrees with closer subject ('brother' is singular, so 'has')."
         },
         {
             "id": "wr_l115_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Neither the heavy rain nor the strong winds have stopped today.",
@@ -506,13 +498,12 @@
                 9,
                 4
             ],
-            "hint": "Start with the correlative 'Neither'.",
+            "hint": "'Neither…nor': Both subjects are plural ('rain', 'winds') → plural 'have'.",
             "explanation": "Subject-Verb Agreement: Verb agrees with closer subject ('winds' is plural, so plural 'have')."
         },
         {
             "id": "wr_l115_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "A proud team of skilled software engineers is developing the app.",
@@ -542,13 +533,12 @@
                 0,
                 8
             ],
-            "hint": "Start with the capitalized indefinite article.",
+            "hint": "Collective noun: 'A proud team of engineers' - head noun 'team' is singular → 'is developing'.",
             "explanation": "Subject-Verb Agreement: Collective noun 'team' is singular in American/standard global English, so 'is'."
         },
         {
             "id": "wr_l116_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Every young child in the neighborhood enjoys playing at the park.",
@@ -578,49 +568,47 @@
                 9,
                 5
             ],
-            "hint": "Start with the capitalized quantifier 'Every'.",
+            "hint": "'Every' + noun: 'Every young child' uses 'every', which always signals singular → 'enjoys'.",
             "explanation": "Subject-Verb Agreement: 'Every' modifies child to remain singular, requiring 'enjoys'."
         },
         {
             "id": "wr_l116_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "The dangerous thief together with his dangerous partners was caught yesterday.",
+            "sentence": "The dangerous thief together with his criminal partners was caught yesterday.",
             "shuffledWords": [
-                "thief",
-                "The",
-                "dangerous",
-                "was",
-                "caught",
-                "dangerous",
-                "partners",
-                "with",
                 "together",
+                "with",
+                "criminal",
+                "was",
+                "yesterday",
+                "The",
+                "thief",
+                "partners",
+                "dangerous",
                 "his",
-                "yesterday"
+                "caught"
             ],
             "correctOrder": [
-                1,
-                2,
-                0,
-                8,
-                7,
-                9,
                 5,
+                8,
                 6,
+                0,
+                1,
+                9,
+                2,
+                7,
                 3,
-                4,
-                10
+                10,
+                4
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Parenthetical phrase: 'The dangerous thief' is the subject. 'together with…' is extra → singular 'was'.",
             "explanation": "Subject-Verb Agreement: 'together with' does not change singular subject 'thief', so 'was'."
         },
         {
             "id": "wr_l116_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Two years is a long time to wait for news.",
@@ -648,13 +636,12 @@
                 4,
                 1
             ],
-            "hint": "Start with the capitalized temporal unit 'Two'.",
+            "hint": "Time period as subject: 'Two years' treated as one period of time → singular 'is'.",
             "explanation": "Subject-Verb Agreement: Quantified spans of time function as singular units, so 'is'."
         },
         {
             "id": "wr_l117_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Either the busy manager or the dedicated assistant answers the phone.",
@@ -684,13 +671,12 @@
                 7,
                 9
             ],
-            "hint": "Start with the correlative 'Either'.",
+            "hint": "'Either…or': Verb matches the nearest noun - 'assistant' (singular) → 'answers'.",
             "explanation": "Subject-Verb Agreement: Verb agrees with closer singular subject 'assistant', so 'answers'."
         },
         {
             "id": "wr_l117_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Neither the historic castle nor the ancient ruins are open today.",
@@ -720,49 +706,49 @@
                 2,
                 0
             ],
-            "hint": "Start with the correlative 'Neither'.",
+            "hint": "'Neither…nor': Both subjects are singular ('castle', 'ruins') → 'are' here because 'ruins' is plural.",
             "explanation": "Subject-Verb Agreement: Verb agrees with closer plural subject 'ruins', so plural 'are'."
         },
         {
             "id": "wr_l117_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "A massive crowd of excited music fans was waiting outside studio.",
+            "sentence": "A massive crowd of excited music fans was waiting outside the studio.",
             "shuffledWords": [
-                "crowd",
-                "fans",
                 "massive",
+                "outside",
                 "waiting",
                 "was",
+                "A",
+                "crowd",
+                "the",
                 "music",
                 "excited",
+                "fans",
                 "of",
-                "A",
-                "studio",
-                "outside"
+                "studio"
             ],
             "correctOrder": [
-                8,
-                2,
-                0,
-                7,
-                6,
-                5,
-                1,
                 4,
-                3,
+                0,
+                5,
                 10,
-                9
+                8,
+                7,
+                9,
+                3,
+                2,
+                1,
+                6,
+                11
             ],
-            "hint": "Start with the capitalized indefinite article.",
+            "hint": "Collective noun: 'A massive crowd of fans' - head noun 'crowd' is singular → 'was waiting'.",
             "explanation": "Subject-Verb Agreement: Collective noun 'crowd' functions as singular subject, so 'was'."
         },
         {
             "id": "wr_l118_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Each of the new technology laptops has a fast processor inside.",
@@ -792,13 +778,12 @@
                 1,
                 4
             ],
-            "hint": "Start with the singular pronoun 'Each'.",
+            "hint": "'Each of' is always singular → 'has'. 'Each' always takes a singular verb in English.",
             "explanation": "Subject-Verb Agreement: 'Each' requires a singular verb, so 'has'."
         },
         {
             "id": "wr_l118_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The famous rock band accompanied by their manager is touring India.",
@@ -828,13 +813,12 @@
                 3,
                 2
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Parenthetical phrase: 'The famous rock band' is the subject. 'accompanied by…' is extra → 'is touring'.",
             "explanation": "Subject-Verb Agreement: 'accompanied by' does not pluralize singular noun 'band', so 'is'."
         },
         {
             "id": "wr_l118_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Five kilograms is the maximum weight allowed for this carry-on bag.",
@@ -864,49 +848,51 @@
                 1,
                 4
             ],
-            "hint": "Start with the capitalized weight unit 'Five'.",
+            "hint": "Weight measurement as subject: 'Five kilograms' is treated as a single measurement → 'is'.",
             "explanation": "Subject-Verb Agreement: Quantified weights function as singular units, so 'is'."
         },
         {
             "id": "wr_l119_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
-            "sentence": "Either the local police or the alert citizens have to watch.",
+            "sentence": "Either the local police or the alert citizens have to watch the streets.",
             "shuffledWords": [
-                "have",
+                "alert",
+                "the",
                 "Either",
-                "local",
-                "watch",
-                "police",
+                "the",
                 "or",
+                "watch",
+                "local",
                 "the",
                 "to",
                 "citizens",
-                "the",
-                "alert"
+                "police",
+                "have",
+                "streets"
             ],
             "correctOrder": [
+                2,
                 1,
                 6,
-                2,
-                4,
-                5,
-                9,
                 10,
-                8,
+                4,
+                3,
                 0,
+                9,
+                11,
+                8,
+                5,
                 7,
-                3
+                12
             ],
-            "hint": "Start with the correlative 'Either'.",
+            "hint": "'Either…or': Verb matches the nearest noun - 'citizens' (plural) → 'have'.",
             "explanation": "Subject-Verb Agreement: Verb agrees with closer plural subject 'citizens', so 'have'."
         },
         {
             "id": "wr_l119_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Neither the old computer nor the modern laptops are working today.",
@@ -936,13 +922,12 @@
                 10,
                 8
             ],
-            "hint": "Start with the correlative 'Neither'.",
+            "hint": "'Neither…nor': Verb matches the nearest noun - 'laptops' (plural) → 'are'.",
             "explanation": "Subject-Verb Agreement: Verb agrees with closer plural subject 'laptops', so 'are'."
         },
         {
             "id": "wr_l119_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "A local group of talented young musicians is performing tonight.",
@@ -970,13 +955,12 @@
                 7,
                 2
             ],
-            "hint": "Start with the capitalized indefinite article.",
+            "hint": "Collective noun: 'A local group of musicians' - head noun 'group' is singular → 'is performing'.",
             "explanation": "Subject-Verb Agreement: Collective noun 'group' acts as a singular subject, so 'is'."
         },
         {
             "id": "wr_l120_q1",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Every single house in the suburb has a small backyard garden.",
@@ -1006,13 +990,12 @@
                 7,
                 10
             ],
-            "hint": "Start with the singular quantifier 'Every'.",
+            "hint": "'Every' + singular noun: 'Every single house' uses 'every' → singular 'has'.",
             "explanation": "Subject-Verb Agreement: 'Every' forces a singular verb requirement, so 'has'."
         },
         {
             "id": "wr_l120_q2",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "The historic building along with its beautiful gardens was sold recently.",
@@ -1042,13 +1025,12 @@
                 7,
                 1
             ],
-            "hint": "Start with the capitalized definite article.",
+            "hint": "Parenthetical phrase: 'The historic building' is the subject. 'along with…' is extra → singular 'was'.",
             "explanation": "Subject-Verb Agreement: 'along with' does not pluralize singular 'building', so 'was'."
         },
         {
             "id": "wr_l120_q3",
             "instruction": "REORDER WORDS",
-            "difficulty": 2,
             "subtype": "wordReorder",
             "interactionType": "Gravity Drop",
             "sentence": "Ten dollars was the price of a cinema ticket yesterday.",
@@ -1076,7 +1058,7 @@
                 3,
                 7
             ],
-            "hint": "Start with the capitalized currency number 'Ten'.",
+            "hint": "Currency amount as subject: 'Ten dollars' is a fixed price → singular 'was'. Amounts use singular verbs.",
             "explanation": "Subject-Verb Agreement: Monies act as singular units, so past singular 'was'."
         }
     ]
