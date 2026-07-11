@@ -275,10 +275,10 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
                                           height: 32.h,
                                           child: FittedBox(
                                             fit: BoxFit.scaleDown,
-                                            child: SpeakOppositeHeader(instruction: quest?.instruction),
+                                            child: SpeakOppositeHeader(instruction: quest.instruction),
                                           ),
                                         )
-                                      : SpeakOppositeHeader(instruction: quest?.instruction),
+                                      : SpeakOppositeHeader(instruction: quest.instruction),
                                     SizedBox(height: gapInstruction),
                                     
                                     isCompact
