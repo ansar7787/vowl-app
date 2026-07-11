@@ -6,482 +6,452 @@
         {
             "id": "sva_l121_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The star ___ brightly tonight in sector 2.",
-            "options": [
-                "shines",
-                "shine"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "shines",
-            "hint": "Singular subject 'star' takes a singular verb. (Sector 2 calibration)",
-            "explanation": "'shines' is correct for third-person singular. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l121_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
             "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "The stars ___ brightly tonight in sector 2.",
-            "options": [
-                "shine",
-                "shines"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "shine",
-            "hint": "Plural subject 'stars' takes a plural verb. (Sector 2 calibration)",
-            "explanation": "'shine' is correct for plural subjects. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l121_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Both the captain and the pilot ___ the chart in sector 2.",
-            "options": [
-                "study",
-                "studies"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "study",
-            "hint": "'Both...and' always creates a plural subject. (Sector 2 calibration)",
-            "explanation": "Plural subject requires the base verb 'study'. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l122_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "A scout ship ___ entering orbit in sector 2.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Singular subject 'ship' requires 'is'. (Sector 2 calibration)",
-            "explanation": "'is' aligns with the singular subject. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l122_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Scout ships ___ entering orbit in sector 2.",
+            "question": "The rich ___ not always happy.",
+            "hint": "'The + adjective' used as a noun always refers to a group - plural verb.",
+            "explanation": "When 'the' precedes an adjective to refer to a group of people ('the rich', 'the elderly', 'the young'), it is always treated as plural. 'The rich are not always happy'.",
             "options": [
                 "are",
                 "is"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "Plural subject 'ships' requires 'are'. (Sector 2 calibration)",
-            "explanation": "'are' matches the plural subject. [Verified in sector 2]."
+            "correctAnswer": "are"
         },
         {
-            "id": "sva_l122_q3",
+            "id": "sva_l121_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Neither the sensor nor the battery ___ functional in sector 2.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The elderly ___ often overlooked in discussions about technology.",
+            "hint": "'The elderly' refers to elderly people as a group - plural verb.",
+            "explanation": "'The elderly' means 'elderly people in general'. Like 'the rich' and 'the poor', it is always plural: 'the elderly are often overlooked'.",
             "options": [
                 "is",
                 "are"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "With 'neither...nor', singular subjects take a singular verb. (Sector 2 calibration)",
-            "explanation": "'is' agrees with the closer singular noun. [Verified in sector 2]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
         },
         {
-            "id": "sva_l123_q1",
+            "id": "sva_l121_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The scientist ___ the telemetry daily in sector 2.",
-            "options": [
-                "verifies",
-                "verify"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "verifies",
-            "hint": "A singular person 'scientist' requires a verb with '-s'. (Sector 2 calibration)",
-            "explanation": "'verifies' is the singular verb. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l123_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
             "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "The scientists ___ the telemetry daily in sector 2.",
-            "options": [
-                "verify",
-                "verifies"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "verify",
-            "hint": "Plural 'scientists' takes a base verb. (Sector 2 calibration)",
-            "explanation": "'verify' is the plural verb. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l123_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "The crew, along with the droids, ___ arrived in sector 2.",
-            "options": [
-                "has",
-                "have"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "hint": "'along with' is parenthetical; subject is 'crew' (singular collective). (Sector 2 calibration)",
-            "explanation": "'has' agrees with the singular main subject. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l124_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Our thruster ___ an inspection in sector 2.",
-            "options": [
-                "needs",
-                "need"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "needs",
-            "hint": "'thruster' is singular. (Sector 2 calibration)",
-            "explanation": "'needs' is third-person singular. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l124_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Our thrusters ___ an inspection in sector 2.",
-            "options": [
-                "need",
-                "needs"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "need",
-            "hint": "'thrusters' is plural. (Sector 2 calibration)",
-            "explanation": "'need' is correct. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l124_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Each of the new cadets ___ a tablet in sector 2.",
-            "options": [
-                "receives",
-                "receive"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "receives",
-            "hint": "'Each' is always singular. (Sector 2 calibration)",
-            "explanation": "'receives' is third-person singular. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l125_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "The portal ___ a massive amount of power in sector 2.",
-            "options": [
-                "consumes",
-                "consume"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "consumes",
-            "hint": "'portal' is singular. (Sector 2 calibration)",
-            "explanation": "'consumes' agrees with a singular subject. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l125_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "The portals ___ a massive amount of power in sector 2.",
-            "options": [
-                "consume",
-                "consumes"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "consume",
-            "hint": "'portals' is plural. (Sector 2 calibration)",
-            "explanation": "'consume' agrees with plural. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l125_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "One of the reactors ___ offline in sector 2.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "The subject is 'One', not 'reactors'. (Sector 2 calibration)",
-            "explanation": "'is' agrees with 'One'. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l126_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "A foreign transmission ___ detected in sector 2.",
-            "options": [
-                "has been",
-                "have been"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "has been",
-            "hint": "'transmission' is singular. (Sector 2 calibration)",
-            "explanation": "'has been' is the singular present perfect helper. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l126_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Foreign transmissions ___ detected in sector 2.",
-            "options": [
-                "have been",
-                "has been"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "have been",
-            "hint": "'transmissions' is plural. (Sector 2 calibration)",
-            "explanation": "'have been' is correct. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l126_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "A number of anomalies ___ detected in sector 2.",
+            "question": "The injured ___ rushed to hospital after the accident.",
+            "hint": "'The injured' refers to multiple injured people - plural verb.",
+            "explanation": "'The injured' refers to injured people collectively and is always treated as plural. 'The injured were rushed to hospital'.",
             "options": [
                 "were",
                 "was"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "hint": "'A number of' is a plural quantifier. (Sector 2 calibration)",
-            "explanation": "'were' matches plural count. [Verified in sector 2]."
+            "correctAnswer": "were"
+        },
+        {
+            "id": "sva_l122_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The unemployed ___ facing increasingly difficult conditions.",
+            "hint": "'The + adjective' referring to a group of people is always plural.",
+            "explanation": "'The unemployed' means 'unemployed people in general' and is always plural: 'the unemployed are facing difficult conditions'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
+        },
+        {
+            "id": "sva_l122_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The unexpected ___ often what makes a story memorable.",
+            "hint": "'The unexpected' referring to an abstract concept is singular.",
+            "explanation": "When 'the + adjective' refers to an abstract idea rather than a group of people ('the unexpected', 'the unknown', 'the impossible'), it is singular: 'the unexpected is what makes a story memorable'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l122_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The unknown ___ both exciting and frightening at the same time.",
+            "hint": "'The unknown' as an abstract concept is singular.",
+            "explanation": "'The unknown' refers to the concept of things not yet known - an abstract singular idea. 'The unknown is both exciting and frightening'.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l123_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Both the plan and its execution ___ flawed.",
+            "hint": "Two things joined by 'both…and' always form a plural subject.",
+            "explanation": "'Both…and' always creates a plural compound subject. 'Both the plan and its execution were flawed' - the verb must be plural.",
+            "options": [
+                "were",
+                "was"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "were"
+        },
+        {
+            "id": "sva_l123_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Both speed and accuracy ___ essential in this role.",
+            "hint": "'Both…and' creates a plural subject - always use a plural verb.",
+            "explanation": "'Both…and' always creates a plural subject. 'Both speed and accuracy are essential' - even if each item on its own would be singular.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
+        },
+        {
+            "id": "sva_l123_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither the design nor the functionality ___ impressive.",
+            "hint": "Both subjects after 'neither…nor' are singular - what does that tell you about the verb?",
+            "explanation": "When 'neither…nor' joins two singular subjects ('the design' and 'the functionality'), both are singular, so the verb is singular: 'was impressive'.",
+            "options": [
+                "was",
+                "were"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "was"
+        },
+        {
+            "id": "sva_l124_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither the design nor the features ___ impressive.",
+            "hint": "With 'neither…nor', look at the subject closest to the verb.",
+            "explanation": "With 'neither…nor', the verb agrees with the subject nearest to it. 'The features' is plural, so 'were impressive' is the correct choice.",
+            "options": [
+                "was",
+                "were"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "were"
+        },
+        {
+            "id": "sva_l124_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither the features nor the design ___ impressive.",
+            "hint": "The subject right before the verb is 'the design' - is it singular or plural?",
+            "explanation": "The subject nearest to the verb is 'the design', which is singular. With 'neither…nor', the verb always follows the nearer subject: 'was impressive'.",
+            "options": [
+                "was",
+                "were"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "was"
+        },
+        {
+            "id": "sva_l124_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Both the manager and the CEO ___ aware of the problem.",
+            "hint": "Two people joined by 'both…and' - how many subjects does that make?",
+            "explanation": "'Both…and' creates a compound subject from two singular items. Even though 'the manager' and 'the CEO' are each singular, joining them with 'both…and' makes the subject plural: 'were aware'.",
+            "options": [
+                "was",
+                "were"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "were"
+        },
+        {
+            "id": "sva_l125_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The new director, along with her team, ___ restructuring the department.",
+            "hint": "The main subject is 'the new director' (singular) - 'along with her team' is parenthetical.",
+            "explanation": "'Along with her team' is a parenthetical phrase and does not change the subject. The main subject is 'the new director', which is singular: 'is restructuring'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l125_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The new director, as well as her predecessors, ___ faced this challenge before.",
+            "hint": "The main subject is 'the new director' (singular) - 'as well as her predecessors' is parenthetical.",
+            "explanation": "'As well as her predecessors' is a parenthetical addition. The main subject is 'the new director', which is singular. 'The director has faced this challenge before'.",
+            "options": [
+                "have",
+                "has"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "has"
+        },
+        {
+            "id": "sva_l125_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The CEO, together with the board members, ___ announced the merger.",
+            "hint": "The main subject is 'the CEO' (singular) - 'together with the board members' is parenthetical.",
+            "explanation": "'Together with the board members' is parenthetical. The real subject is 'the CEO', which is singular. 'The CEO has announced the merger'.",
+            "options": [
+                "has",
+                "have"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "has"
+        },
+        {
+            "id": "sva_l126_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The proposal, not the individual amendments, ___ rejected by the board.",
+            "hint": "The main subject is 'the proposal' (singular) - the contrasting phrase doesn't change that.",
+            "explanation": "When a contrasting phrase introduced by 'not' follows the subject, the verb still agrees with the main subject. 'The proposal' is singular: 'was rejected'.",
+            "options": [
+                "were",
+                "was"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "was"
+        },
+        {
+            "id": "sva_l126_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The amendments, not the main proposal, ___ rejected by the board.",
+            "hint": "The main subject is 'the amendments' (plural) - the contrasting phrase doesn't change that.",
+            "explanation": "The main subject is 'the amendments', which is plural. 'Not the main proposal' is a contrasting phrase that doesn't change the agreement. 'The amendments were rejected'.",
+            "options": [
+                "were",
+                "was"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "were"
+        },
+        {
+            "id": "sva_l126_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The company, including all its subsidiaries, ___ now under investigation.",
+            "hint": "The main subject is 'the company' (singular) - 'including all its subsidiaries' is a modifier.",
+            "explanation": "'Including all its subsidiaries' is a modifier, not a second subject. The main subject is 'the company', which is singular: 'is under investigation'.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l127_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The command droid ___ instructions in sector 2.",
+            "subtype": "subjectVerbAgreement",
+            "question": "There ___ growing evidence that the vaccine is effective.",
+            "hint": "The real subject is 'growing evidence' - 'evidence' is uncountable (singular).",
+            "explanation": "In 'there is/are' sentences, the verb agrees with the real subject. 'Evidence' is uncountable and singular, so 'there is growing evidence' is correct.",
             "options": [
-                "demands",
-                "demand"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "demands",
-            "hint": "'droid' is singular. (Sector 2 calibration)",
-            "explanation": "'demands' agrees with third-person singular. [Verified in sector 2]."
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l127_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The command droids ___ instructions in sector 2.",
+            "subtype": "subjectVerbAgreement",
+            "question": "There ___ many reasons why this approach might fail.",
+            "hint": "The real subject is 'many reasons' - 'reasons' is plural.",
+            "explanation": "The real subject is 'many reasons', which is plural. 'There are many reasons' - the verb agrees with the noun after 'there'.",
             "options": [
-                "demand",
-                "demands"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "demand",
-            "hint": "'droids' is plural. (Sector 2 calibration)",
-            "explanation": "'demand' agrees with plural. [Verified in sector 2]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
         },
         {
             "id": "sva_l127_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The number of anomalies ___ increasing in sector 2.",
+            "subtype": "subjectVerbAgreement",
+            "question": "There ___ considerable debate about the right course of action.",
+            "hint": "The real subject is 'considerable debate' - 'debate' used as uncountable here is singular.",
+            "explanation": "'Debate' used as an uncountable noun (meaning 'discussion') is singular. 'There is considerable debate' - singular verb with uncountable noun.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "'The number of' is a singular quantifier. (Sector 2 calibration)",
-            "explanation": "'is' is correct. [Verified in sector 2]."
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l128_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Your custom avatar ___ ready in sector 2.",
+            "subtype": "subjectVerbAgreement",
+            "question": "There ___ a number of factors contributing to this outcome.",
+            "hint": "'A number of factors' means 'several factors' - plural verb.",
+            "explanation": "'A number of factors' = 'several factors'. In 'there is/are' sentences, the verb agrees with 'a number of factors', which is treated as plural. 'There are a number of factors'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
+        },
+        {
+            "id": "sva_l128_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "There ___ the possibility that the project will be cancelled.",
+            "hint": "The real subject is 'the possibility' (singular).",
+            "explanation": "The real subject is 'the possibility', which is singular. 'There is the possibility that the project will be cancelled'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "'avatar' is singular. (Sector 2 calibration)",
-            "explanation": "'is' matches singular subjects. [Verified in sector 2]."
+            "correctAnswer": "is"
         },
         {
-            "id": "sva_l128_q2",
+            "id": "sva_l128_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Your custom avatars ___ ready in sector 2.",
+            "subtype": "subjectVerbAgreement",
+            "question": "There ___ various approaches to solving this kind of problem.",
+            "hint": "The real subject is 'various approaches' (plural).",
+            "explanation": "The real subject is 'various approaches', which is plural. 'There are various approaches to solving this problem'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
+        },
+        {
+            "id": "sva_l129_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The key to success in this industry ___ adaptability and resilience.",
+            "hint": "The subject is 'the key to success' (singular) - the complement doesn't control the verb.",
+            "explanation": "'The key to success' is the subject, not 'adaptability and resilience'. With linking verbs, the verb agrees with the subject, not the complement. 'The key is adaptability'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l129_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Adaptability and resilience ___ the key to success in this industry.",
+            "hint": "The subject is 'adaptability and resilience' (plural compound) - not the complement.",
+            "explanation": "Now 'adaptability and resilience' is the compound subject, making it plural. 'Adaptability and resilience are the key to success'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
+        },
+        {
+            "id": "sva_l129_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The best solution ___ often the simplest one.",
+            "hint": "The subject is 'the best solution' (singular) - the complement 'the simplest one' doesn't control the verb.",
+            "explanation": "The subject is 'the best solution', which is singular. With linking verbs, the verb always agrees with the subject: 'the best solution is the simplest one'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l130_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The main concern of investors ___ whether the project will deliver returns.",
+            "hint": "The subject is 'the main concern' (singular) - 'of investors' is a modifier.",
+            "explanation": "'The main concern' is the singular subject; 'of investors' tells us whose concern it is. 'The main concern is whether the project will deliver returns'.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l130_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The concerns of investors ___ well documented in this report.",
+            "hint": "The subject is 'the concerns' (plural) - 'of investors' is a modifier.",
+            "explanation": "'The concerns' is the plural subject; 'of investors' is a modifier. 'The concerns are well documented' - plural subject, plural verb.",
             "options": [
                 "are",
                 "is"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "'avatars' is plural. (Sector 2 calibration)",
-            "explanation": "'are' is correct. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l128_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Everything in the vaults ___ secure in sector 2.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "'Everything' is an indefinite singular pronoun. (Sector 2 calibration)",
-            "explanation": "'is' is correct. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l129_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "The warp gate ___ every ten cycles in sector 2.",
-            "options": [
-                "activates",
-                "activate"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "activates",
-            "hint": "'gate' is singular. (Sector 2 calibration)",
-            "explanation": "'activates' is singular. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l129_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "The warp gates ___ every ten cycles in sector 2.",
-            "options": [
-                "activate",
-                "activates"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "activate",
-            "hint": "'gates' is plural. (Sector 2 calibration)",
-            "explanation": "'activate' is correct. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l129_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Either the coordinates or the map ___ incorrect in sector 2.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "With 'either...or', verb agrees with the nearest noun ('map' is singular). (Sector 2 calibration)",
-            "explanation": "'is' agrees with singular 'map'. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l130_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "A solar flare ___ the shields in sector 2.",
-            "options": [
-                "disrupts",
-                "disrupt"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "disrupts",
-            "hint": "'flare' is singular. (Sector 2 calibration)",
-            "explanation": "'disrupts' is singular. [Verified in sector 2]."
-        },
-        {
-            "id": "sva_l130_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Solar flares ___ the shields in sector 2.",
-            "options": [
-                "disrupt",
-                "disrupts"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "disrupt",
-            "hint": "'flares' is plural. (Sector 2 calibration)",
-            "explanation": "'disrupt' is correct. [Verified in sector 2]."
+            "correctAnswer": "are"
         },
         {
             "id": "sva_l130_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 4,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "A fleet of ships ___ approaching in sector 2.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The group of researchers who published the study ___ from three different countries.",
+            "hint": "The subject is 'the group' (singular collective) - relative clause is descriptive.",
+            "explanation": "'The group' is the subject - a singular collective noun. The relative clause 'who published the study' describes the group but doesn't change agreement. 'The group is from three countries'.",
             "options": [
-                "is",
-                "are"
+                "are",
+                "is"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Subject is 'fleet' (singular), not 'ships'. (Sector 2 calibration)",
-            "explanation": "'is' agrees with the singular 'fleet'. [Verified in sector 2]."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
         }
     ]
 }

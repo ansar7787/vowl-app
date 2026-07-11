@@ -6,482 +6,452 @@
         {
             "id": "sva_l21_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Everyone ___ the code correctly.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Tom and Maria ___ a flat near the university.",
+            "hint": "Two people joined by 'and' make a plural compound subject.",
+            "explanation": "When two subjects are joined by 'and', they form a plural subject that takes the base form of the verb. 'Tom and Maria share' - not 'shares'.",
             "options": [
-                "enters",
-                "enter"
+                "share",
+                "shares"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "enters",
-            "hint": "'Everyone' is a singular indefinite pronoun.",
-            "explanation": "'enters' is singular."
+            "correctAnswer": "share"
         },
         {
             "id": "sva_l21_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Several droids ___ repairs.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The manager and the assistant ___ the office together.",
+            "hint": "Two people connected by 'and' form a plural subject.",
+            "explanation": "'The manager and the assistant' is a compound subject joined by 'and'. Two or more subjects joined by 'and' always take a plural verb: 'run', not 'runs'.",
             "options": [
-                "require",
-                "requires"
+                "runs",
+                "run"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "require",
-            "hint": "'Several' is plural.",
-            "explanation": "'require' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "run"
         },
         {
             "id": "sva_l21_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Each of the candidates ___ an interview.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Bread and butter ___ a simple but satisfying meal.",
+            "hint": "When two things are treated as one unit or idea, they take a singular verb.",
+            "explanation": "'Bread and butter' refers to a single dish or combination, not two separate things. Pairs that function as a unit take a singular verb: 'makes', not 'make'.",
             "options": [
-                "receives",
-                "receive"
+                "makes",
+                "make"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "receives",
-            "hint": "'Each' is the singular subject.",
-            "explanation": "'receives' is third-person singular."
+            "correctAnswer": "makes"
         },
         {
             "id": "sva_l22_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Someone ___ to calibrate the core.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Either the manager or the assistant ___ that report daily.",
+            "hint": "With 'either…or', the verb agrees with the subject closer to it ('assistant' is singular).",
+            "explanation": "With 'either…or', the verb agrees with the subject nearest to it. 'The assistant' is singular, so the verb takes -s: 'prepares'.",
             "options": [
-                "needs",
-                "need"
+                "prepare",
+                "prepares"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "needs",
-            "hint": "'Someone' is singular.",
-            "explanation": "'needs' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "prepares"
         },
         {
             "id": "sva_l22_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Both droids ___ the repairs.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Either the manager or the assistants ___ that report daily.",
+            "hint": "With 'either…or', the verb agrees with the nearer subject ('assistants' is plural).",
+            "explanation": "When 'either…or' is used, the verb agrees with the subject closest to it. 'The assistants' is plural, so the verb takes the base form: 'prepare'.",
             "options": [
-                "require",
-                "requires"
+                "prepare",
+                "prepares"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "require",
-            "hint": "'Both' is plural.",
-            "explanation": "'require' is correct."
+            "correctAnswer": "prepare"
         },
         {
             "id": "sva_l22_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Everyone in the lower decks ___ warnings.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither the cat nor the dog ___ interested in their food.",
+            "hint": "With 'neither…nor', the verb agrees with the nearer subject ('dog' is singular).",
+            "explanation": "With 'neither…nor', the verb agrees with the subject nearest to it. 'The dog' is singular, so the verb is 'is', not 'are'.",
             "options": [
-                "hears",
-                "hear"
+                "are",
+                "is"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "hears",
-            "hint": "'Everyone' remains singular despite 'decks'.",
-            "explanation": "'hears' agrees with singular 'Everyone'."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l23_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "No one ___ the target coordinate.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither the cats nor the dog ___ interested in their food.",
+            "hint": "'Neither…nor' - the verb matches the nearer subject. 'Dog' is singular.",
+            "explanation": "When 'neither…nor' connects a plural and a singular subject, the verb agrees with the one closest to it. 'The dog' is singular, so 'is' is correct.",
             "options": [
-                "knows",
-                "know"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "knows",
-            "hint": "'No one' is singular.",
-            "explanation": "'knows' is correct."
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l23_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Many systems ___ offline.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither the cat nor the dogs ___ eating today.",
+            "hint": "'Neither…nor' - verb agrees with the nearer subject. 'Dogs' is plural.",
+            "explanation": "With 'neither…nor', the verb agrees with the nearest subject. 'The dogs' is plural, so the verb must be 'are', not 'is'.",
             "options": [
-                "are",
-                "is"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "'Many' is plural.",
-            "explanation": "'are' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
         },
         {
             "id": "sva_l23_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "None of the water ___ drinkable.",
+            "subtype": "subjectVerbAgreement",
+            "question": "My brother and I ___ planning a surprise party.",
+            "hint": "Two people ('my brother' + 'I') joined by 'and' create a plural subject.",
+            "explanation": "When 'I' is part of a compound subject joined by 'and', the whole subject is plural. 'My brother and I are planning' - not 'is planning'.",
             "options": [
-                "is",
-                "are"
+                "are",
+                "is"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "'None' with uncountable noun 'water' is singular.",
-            "explanation": "'is' is correct."
+            "correctAnswer": "are"
         },
         {
             "id": "sva_l24_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Somebody ___ the main switch.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The team ___ practising hard for the final.",
+            "hint": "A team is one unit - singular in standard English.",
+            "explanation": "In standard English, collective nouns like 'team', 'group', and 'committee' are treated as singular when acting as a unit. 'The team is practising.'",
             "options": [
-                "toggles",
-                "toggle"
+                "are",
+                "is"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "toggles",
-            "hint": "'Somebody' is singular.",
-            "explanation": "'toggles' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l24_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Few stars ___ visible here.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The committee ___ meeting this Thursday afternoon.",
+            "hint": "A committee acting as one group takes a singular verb.",
+            "explanation": "Collective nouns such as 'committee', 'board', and 'staff' take a singular verb when the group acts together as a unit.",
             "options": [
-                "are",
-                "is"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "'Few' is plural.",
-            "explanation": "'are' is correct."
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l24_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "None of the sensors ___ functional.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "'None' with plural 'sensors' takes plural.",
-            "explanation": "'are' is correct."
-        },
-        {
-            "id": "sva_l25_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
             "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Each of the rooms ___ a terminal.",
-            "options": [
-                "has",
-                "have"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "hint": "'Each' is singular.",
-            "explanation": "'has' is correct."
-        },
-        {
-            "id": "sva_l25_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Both parameters ___ aligned.",
-            "options": [
-                "appear",
-                "appears"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "appear",
-            "hint": "'Both' is plural.",
-            "explanation": "'appear' is correct."
-        },
-        {
-            "id": "sva_l25_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Some of the fuel ___ leaked.",
-            "options": [
-                "has",
-                "have"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "hint": "'Some' with uncountable 'fuel' is singular.",
-            "explanation": "'has' is correct."
-        },
-        {
-            "id": "sva_l26_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "One of the sensors ___ blinking.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Subject is 'One'.",
-            "explanation": "'is' is correct."
-        },
-        {
-            "id": "sva_l26_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Many cadet pilots ___ daily.",
-            "options": [
-                "train",
-                "trains"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "train",
-            "hint": "'Many' is plural.",
-            "explanation": "'train' is correct."
-        },
-        {
-            "id": "sva_l26_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Some of the core units ___ melted.",
+            "question": "The jury ___ reached a unanimous verdict.",
+            "hint": "The jury acted together as a single body - use the singular.",
+            "explanation": "When a collective noun (like 'jury') acts as a single unit, it takes a singular verb. 'The jury has reached' means they acted together.",
             "options": [
                 "have",
                 "has"
             ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "has"
+        },
+        {
+            "id": "sva_l25_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The family ___ gathering at my grandmother's house.",
+            "hint": "The family as a single unit takes a singular verb.",
+            "explanation": "In standard English, 'family' takes a singular verb when it acts as one group. 'The family is gathering' treats them as a single unit.",
+            "options": [
+                "is",
+                "are"
+            ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "have",
-            "hint": "'Some' with plural 'units' is plural.",
-            "explanation": "'have' is correct."
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l25_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The children in my class ___ very curious learners.",
+            "hint": "Focus on the true subject: 'children' (not 'class') - 'children' is plural.",
+            "explanation": "The subject is 'the children', not 'my class'. A prepositional phrase ('in my class') sits between the subject and verb but does not change the agreement. 'Children' is plural, so 'are' is correct.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
+        },
+        {
+            "id": "sva_l25_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The cost of the repairs ___ very high.",
+            "hint": "The true subject is 'cost' (singular), not 'repairs'.",
+            "explanation": "The subject is 'the cost', not 'the repairs'. Prepositional phrases do not change subject-verb agreement. 'Cost' is singular, so the verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l26_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The results of the experiment ___ surprising.",
+            "hint": "The true subject is 'results' (plural), not 'experiment'.",
+            "explanation": "The subject is 'the results', not 'the experiment'. 'Results' is plural, so the verb must be 'are'. Don't be misled by the prepositional phrase 'of the experiment'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
+        },
+        {
+            "id": "sva_l26_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The quality of these materials ___ very poor.",
+            "hint": "The subject is 'quality' (singular) - don't be misled by 'materials'.",
+            "explanation": "'The quality' is the true subject. The phrase 'of these materials' is a prepositional modifier. Since 'quality' is singular, the verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l26_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The number of applicants ___ rising each year.",
+            "hint": "'The number of' is always singular - it refers to one count.",
+            "explanation": "The phrase 'the number of' is always singular. 'The number is rising.' Don't confuse this with 'a number of', which is plural.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l27_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Nobody ___ the emergency exit.",
+            "subtype": "subjectVerbAgreement",
+            "question": "A number of students ___ absent today.",
+            "hint": "'A number of' means 'several' - it takes a plural verb.",
+            "explanation": "'A number of' is different from 'the number of'. 'A number of students' means 'several students' and takes a plural verb: 'are'.",
             "options": [
-                "uses",
-                "use"
+                "are",
+                "is"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "uses",
-            "hint": "'Nobody' is singular.",
-            "explanation": "'uses' is correct."
+            "correctAnswer": "are"
         },
         {
             "id": "sva_l27_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Several alarms ___ sounding.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The price of flights ___ usually highest in summer.",
+            "hint": "The subject is 'price' (singular), not 'flights'.",
+            "explanation": "'The price' is the true subject. The prepositional phrase 'of flights' does not affect agreement. 'Price' is singular, so the verb is 'is'.",
             "options": [
                 "are",
                 "is"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "'Several' is plural.",
-            "explanation": "'are' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l27_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Most of the data ___ verified.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The majority of the land ___ owned by the government.",
+            "hint": "'The majority of' with an uncountable noun ('land') takes a singular verb.",
+            "explanation": "When 'the majority of' is followed by an uncountable noun like 'land', the verb is singular. 'The majority of the land is owned' - not 'are owned'.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "'Most' with uncountable 'data' is singular.",
-            "explanation": "'is' is correct."
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l28_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Anyone ___ join the academy.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The majority of the voters ___ in favour of the plan.",
+            "hint": "'The majority of' with a countable plural noun ('voters') takes a plural verb.",
+            "explanation": "When 'the majority of' is followed by a countable plural noun like 'voters', the verb is plural. 'The majority of the voters are in favour.'",
             "options": [
-                "can",
-                "cans"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "can",
-            "hint": "Modal 'can' is singular/plural invariant.",
-            "explanation": "'can' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
         },
         {
             "id": "sva_l28_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Few crew members ___ the lock.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The group of tourists ___ waiting outside the museum.",
+            "hint": "'The group' is a single collective unit - singular verb.",
+            "explanation": "'The group' is the true subject, not 'tourists'. A group acting together as a unit takes a singular verb: 'is waiting'.",
             "options": [
-                "bypass",
-                "bypasses"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "bypass",
-            "hint": "'Few' is plural.",
-            "explanation": "'bypass' is correct."
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l28_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Most of the stars ___ young.",
+            "subtype": "subjectVerbAgreement",
+            "question": "A group of children ___ playing in the garden.",
+            "hint": "Focus on the children - plural individuals are acting, not one group.",
+            "explanation": "Here, 'a group of children' emphasises the individual children rather than the group as a unit, so the verb is 'are'. Context matters with collective nouns.",
             "options": [
-                "are",
-                "is"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "'Most' with plural 'stars' is plural.",
-            "explanation": "'are' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
         },
         {
             "id": "sva_l29_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Everything ___ prepared.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The staff at that school ___ highly qualified.",
+            "hint": "'Staff' as a collective unit takes a singular verb.",
+            "explanation": "In standard English, 'staff' is a collective noun that takes a singular verb when it acts as a unit. 'The staff is highly qualified.'",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "'Everything' is singular.",
-            "explanation": "'is' is correct."
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l29_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Many shields ___ failing.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Her advice and support ___ very helpful.",
+            "hint": "Two nouns joined by 'and' form a plural subject.",
+            "explanation": "'Advice and support' are two separate things joined by 'and', creating a plural subject. The verb must be 'are', not 'is'.",
             "options": [
-                "are",
-                "is"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "'Many' is plural.",
-            "explanation": "'are' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
         },
         {
             "id": "sva_l29_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "All of the energy ___ gone.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Oil and water ___ not mix.",
+            "hint": "Two different substances joined by 'and' make a plural subject.",
+            "explanation": "'Oil and water' refers to two distinct substances, making a plural compound subject. The verb is 'do not mix', not 'does not mix'.",
             "options": [
-                "is",
-                "are"
+                "do",
+                "does"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "'All' with uncountable 'energy' is singular.",
-            "explanation": "'is' is correct."
+            "correctAnswer": "do"
         },
         {
             "id": "sva_l30_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Nothing ___ impossible in space.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Each parent and child ___ a wristband at the entrance.",
+            "hint": "'Each' always makes the subject singular, even in a compound.",
+            "explanation": "When 'each' precedes a compound subject joined by 'and', the subject is still treated as singular. 'Each parent and child receives' - not 'receive'.",
+            "options": [
+                "receive",
+                "receives"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "receives"
+        },
+        {
+            "id": "sva_l30_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Every teacher and student ___ invited to the ceremony.",
+            "hint": "'Every' makes compound subjects singular in formal English.",
+            "explanation": "Like 'each', the word 'every' treats a compound subject as singular. 'Every teacher and student is invited' - because we think of each one individually.",
             "options": [
                 "is",
                 "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "'Nothing' is singular.",
-            "explanation": "'is' is correct."
-        },
-        {
-            "id": "sva_l30_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Both portals ___ online.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "'Both' is plural.",
-            "explanation": "'are' is correct."
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l30_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "All of the pilots ___ ready.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The news ___ not what we expected.",
+            "hint": "'News' ends in -s but is an uncountable singular noun.",
+            "explanation": "'News' looks plural because it ends in -s, but it is an uncountable noun and always takes a singular verb: 'The news is', not 'The news are'.",
             "options": [
                 "are",
                 "is"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "'All' with plural 'pilots' is plural.",
-            "explanation": "'are' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
         }
     ]
 }

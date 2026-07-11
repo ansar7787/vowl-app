@@ -6,482 +6,452 @@
         {
             "id": "sva_l111_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Ten dollars ___ too much for this crystal.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Quantities of money are singular units.",
-            "explanation": "'is' agrees with a singular sum."
-        },
-        {
-            "id": "sva_l111_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
             "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Ten dollar bills ___ scattered on the deck.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "Countable physical items ('bills') are plural.",
-            "explanation": "'are' matches the plural bills."
-        },
-        {
-            "id": "sva_l111_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "More than one dollar ___ spent.",
-            "options": [
-                "was",
-                "were"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "hint": "'More than one' takes a singular verb.",
-            "explanation": "'was' is correct."
-        },
-        {
-            "id": "sva_l112_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Five light-years ___ a massive distance.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Distances are treated as singular measures.",
-            "explanation": "'is' is correct."
-        },
-        {
-            "id": "sva_l112_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Five light-year milestones ___ marked.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "Physical markers are plural.",
-            "explanation": "'are' is correct."
-        },
-        {
-            "id": "sva_l112_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "More than two hours ___ passed.",
+            "question": "Profits from the new product line ___ exceeded all expectations.",
+            "hint": "'Profits' is a plural noun - plural verb required.",
+            "explanation": "'Profits' is always plural (like 'earnings' and 'savings'). 'Profits have exceeded all expectations'.",
             "options": [
                 "have",
                 "has"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "have",
-            "hint": "'More than [two or more]' takes a plural verb.",
-            "explanation": "'have' is correct."
+            "correctAnswer": "have"
         },
         {
-            "id": "sva_l113_q1",
+            "id": "sva_l111_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Two hours ___ gone already.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The profit from the new product line ___ exceeded all expectations.",
+            "hint": "'The profit' is singular - use a singular verb.",
+            "explanation": "'The profit' is singular. 'The profit has exceeded all expectations' - note how changing 'profits' to 'the profit' changes the agreement.",
+            "options": [
+                "have",
+                "has"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "has"
+        },
+        {
+            "id": "sva_l111_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The lack of resources ___ making the project very difficult.",
+            "hint": "'The lack of' is singular - 'resources' is just a modifier.",
+            "explanation": "'The lack' is the singular subject; 'of resources' tells us what is lacking. 'The lack of resources is making the project difficult'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l112_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "A lack of clear instructions ___ caused considerable confusion.",
+            "hint": "'A lack of' is singular - one deficiency is being described.",
+            "explanation": "'A lack of clear instructions' is singular - 'a lack' refers to one absence or deficiency. 'A lack has caused confusion'.",
+            "options": [
+                "have",
+                "has"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "has"
+        },
+        {
+            "id": "sva_l112_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The growing awareness of mental health issues ___ led to better support.",
+            "hint": "The subject is 'the growing awareness' (singular) - all other words are modifiers.",
+            "explanation": "'The growing awareness' is the singular subject. All the other words ('of mental health issues') are modifiers. 'The awareness has led to better support'.",
             "options": [
                 "has",
                 "have"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "hint": "Durations of time are singular.",
-            "explanation": "'has' is correct."
+            "correctAnswer": "has"
         },
         {
-            "id": "sva_l113_q2",
+            "id": "sva_l112_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Two hours ___ passed since then.",
-            "options": [
-                "have",
-                "has"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "have",
-            "hint": "Time intervals acting individually.",
-            "explanation": "'have' is correct."
-        },
-        {
-            "id": "sva_l113_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
             "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Ten dollars ___ a high price for these chips.",
+            "question": "Concerns about data privacy ___ growing across the industry.",
+            "hint": "'Concerns' is plural - plural verb required.",
+            "explanation": "'Concerns' is a countable plural noun. 'Concerns about data privacy are growing' - the prepositional phrase 'about data privacy' does not change the subject.",
             "options": [
                 "is",
                 "are"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Sum of money is singular.",
-            "explanation": "'is' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
         },
         {
-            "id": "sva_l114_q1",
+            "id": "sva_l113_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Fifty coins ___ the standard academy fee.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Money quantities are singular.",
-            "explanation": "'is' is correct."
-        },
-        {
-            "id": "sva_l114_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
             "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Fifty metal coins ___ inside the chest.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "Countable coins are plural.",
-            "explanation": "'are' is correct."
-        },
-        {
-            "id": "sva_l114_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "A total of fifty credits ___ charged.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "'A total' is singular.",
-            "explanation": "'is' is correct."
-        },
-        {
-            "id": "sva_l115_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Ten liters of fuel ___ in the tank.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Measures of volume are singular.",
-            "explanation": "'is' is correct."
-        },
-        {
-            "id": "sva_l115_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Ten fuel canisters ___ stacked.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "Canisters are plural.",
-            "explanation": "'are' is correct."
-        },
-        {
-            "id": "sva_l115_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Hundreds of light-years ___ them.",
-            "options": [
-                "separate",
-                "separates"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "separate",
-            "hint": "'Hundreds' is plural.",
-            "explanation": "'separate' is correct."
-        },
-        {
-            "id": "sva_l116_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Three kilograms ___ the probe weight.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Weight measures are singular.",
-            "explanation": "'is' is correct."
-        },
-        {
-            "id": "sva_l116_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Three kilogram weights ___ used.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "Physical weights are plural.",
-            "explanation": "'are' is correct."
-        },
-        {
-            "id": "sva_l116_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Two hours of study ___ required.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Subject is singular 'study' or duration unit.",
-            "explanation": "'is' is correct."
-        },
-        {
-            "id": "sva_l117_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Twenty seconds ___ all we have.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Time duration is singular.",
-            "explanation": "'is' is correct."
-        },
-        {
-            "id": "sva_l117_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Twenty ticks of the clock ___ heard.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "Countable ticks are plural.",
-            "explanation": "'are' is correct."
-        },
-        {
-            "id": "sva_l117_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Five miles of road ___ cleared.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Distance measure is singular.",
-            "explanation": "'is' is correct."
-        },
-        {
-            "id": "sva_l118_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Five thousand credits ___ the prize.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Credits are a singular sum.",
-            "explanation": "'is' is correct."
-        },
-        {
-            "id": "sva_l118_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Five credit chips ___ lost.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "Chips are plural.",
-            "explanation": "'are' is correct."
-        },
-        {
-            "id": "sva_l118_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "One hundred credits ___ a lot.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Money sum is singular.",
-            "explanation": "'is' is correct."
-        },
-        {
-            "id": "sva_l119_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Three miles ___ walked daily.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Distance measure is singular.",
-            "explanation": "'is' is correct."
-        },
-        {
-            "id": "sva_l119_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Three mile posts ___ passed.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "Physical posts are plural.",
-            "explanation": "'are' is correct."
-        },
-        {
-            "id": "sva_l119_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "More than one coin ___ dropped.",
+            "question": "The majority of his work ___ published after his death.",
+            "hint": "'The majority of his work' - 'work' is uncountable, so the verb is singular.",
+            "explanation": "'Work' here is uncountable (meaning his creative output). 'The majority of his work was published after his death' - singular verb with an uncountable noun.",
             "options": [
                 "was",
                 "were"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "hint": "'More than one' is singular.",
-            "explanation": "'was' is correct."
+            "correctAnswer": "was"
         },
         {
-            "id": "sva_l120_q1",
+            "id": "sva_l113_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Twelve months ___ the mission time.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The majority of his novels ___ published after his death.",
+            "hint": "'The majority of his novels' - 'novels' is countable and plural, so the verb is plural.",
+            "explanation": "'Novels' is a countable plural noun. 'The majority of his novels were published after his death' - plural verb with countable plural noun.",
             "options": [
-                "is",
-                "are"
+                "was",
+                "were"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "were"
+        },
+        {
+            "id": "sva_l113_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The collection of rare stamps ___ valued at over a million pounds.",
+            "hint": "The subject is 'the collection' (singular) - 'of rare stamps' is a modifier.",
+            "explanation": "'The collection' is the singular subject; 'of rare stamps' describes what is in the collection. 'The collection was valued at over a million pounds'.",
+            "options": [
+                "was",
+                "were"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Time duration is singular.",
-            "explanation": "'is' is correct."
+            "correctAnswer": "was"
         },
         {
-            "id": "sva_l120_q2",
+            "id": "sva_l114_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Twelve month cycles ___ completed.",
+            "subtype": "subjectVerbAgreement",
+            "question": "All the equipment needed for the experiment ___ ready.",
+            "hint": "'Equipment' is uncountable - singular verb, even with 'all the'.",
+            "explanation": "'Equipment' is uncountable. Even with 'all the', an uncountable noun takes a singular verb. 'All the equipment was ready'.",
             "options": [
-                "are",
-                "is"
+                "were",
+                "was"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "Cycles are plural.",
-            "explanation": "'are' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "was"
         },
         {
-            "id": "sva_l120_q3",
+            "id": "sva_l114_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 3,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Hundreds of coins ___ recovered.",
+            "subtype": "subjectVerbAgreement",
+            "question": "All the instruments needed for the experiment ___ ready.",
+            "hint": "'Instruments' is a countable plural noun - plural verb with 'all the'.",
+            "explanation": "'Instruments' is a countable plural noun. 'All the instruments were ready' - plural verb because the noun is plural.",
             "options": [
                 "were",
                 "was"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "hint": "'Hundreds' is plural.",
-            "explanation": "'were' is correct."
+            "correctAnswer": "were"
+        },
+        {
+            "id": "sva_l114_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The research conducted by both teams ___ published simultaneously.",
+            "hint": "The subject is 'the research' (uncountable, singular).",
+            "explanation": "'Research' is an uncountable noun, so it is always singular. 'The research was published' - not 'were published'.",
+            "options": [
+                "were",
+                "was"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "was"
+        },
+        {
+            "id": "sva_l115_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Significant progress ___ made in the field of renewable energy.",
+            "hint": "'Progress' is uncountable - always takes a singular verb.",
+            "explanation": "'Progress' is an uncountable noun. 'Significant progress has been made' - singular verb, regardless of how much progress is involved.",
+            "options": [
+                "has been",
+                "have been"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "has been"
+        },
+        {
+            "id": "sva_l115_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Several breakthroughs ___ made in the field of renewable energy.",
+            "hint": "'Breakthroughs' is countable and plural - plural verb required.",
+            "explanation": "'Breakthroughs' is a countable plural noun. 'Several breakthroughs have been made' - plural verb for a plural noun.",
+            "options": [
+                "has been",
+                "have been"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "have been"
+        },
+        {
+            "id": "sva_l115_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The feedback from all the students ___ very positive.",
+            "hint": "'Feedback' is uncountable - singular verb, even though it came from many students.",
+            "explanation": "'Feedback' is uncountable, like 'information' and 'advice'. 'The feedback was very positive' - singular verb regardless of how many people gave it.",
+            "options": [
+                "was",
+                "were"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "was"
+        },
+        {
+            "id": "sva_l116_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The advice she gave me ___ very helpful.",
+            "hint": "'Advice' is uncountable - singular verb.",
+            "explanation": "'Advice' is an uncountable noun and always takes a singular verb. 'The advice was very helpful' - not 'were helpful'.",
+            "options": [
+                "were",
+                "was"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "was"
+        },
+        {
+            "id": "sva_l116_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The recommendations she made ___ very helpful.",
+            "hint": "'Recommendations' is countable and plural - plural verb required.",
+            "explanation": "'Recommendations' is a countable plural noun. 'The recommendations were very helpful' - plural verb because the noun is plural.",
+            "options": [
+                "were",
+                "was"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "were"
+        },
+        {
+            "id": "sva_l116_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The equipment in both laboratories ___ checked regularly.",
+            "hint": "'Equipment' is uncountable - always takes a singular verb.",
+            "explanation": "'Equipment' is uncountable, even across multiple locations. 'The equipment is checked regularly' - singular verb.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l117_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The information provided by both witnesses ___ contradictory.",
+            "hint": "'Information' is uncountable - singular verb despite 'both witnesses'.",
+            "explanation": "'Information' is an uncountable noun. Even though two witnesses provided it, 'the information was contradictory' uses a singular verb.",
+            "options": [
+                "was",
+                "were"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "was"
+        },
+        {
+            "id": "sva_l117_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The statements provided by both witnesses ___ contradictory.",
+            "hint": "'Statements' is countable and plural - plural verb required.",
+            "explanation": "'Statements' is a countable plural noun. 'The statements were contradictory' - plural verb, unlike 'the information was'.",
+            "options": [
+                "was",
+                "were"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "were"
+        },
+        {
+            "id": "sva_l117_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither the approach nor the outcome ___ satisfactory.",
+            "hint": "'Neither…nor' joins two singular subjects - singular verb.",
+            "explanation": "Both 'the approach' and 'the outcome' are singular. When 'neither…nor' joins two singular subjects, the verb is singular: 'was satisfactory'.",
+            "options": [
+                "was",
+                "were"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "was"
+        },
+        {
+            "id": "sva_l118_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Stress, together with poor sleep, ___ affecting her health.",
+            "hint": "'Stress' is the main subject (singular) - 'together with' is parenthetical.",
+            "explanation": "'Together with poor sleep' is a parenthetical phrase. The main subject is 'stress', which is singular. 'Stress is affecting her health'.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l118_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Poor sleep, along with stress, ___ known to affect cognitive performance.",
+            "hint": "The main subject is 'poor sleep' (singular) - 'along with stress' is parenthetical.",
+            "explanation": "'Along with stress' is parenthetical. The main subject is 'poor sleep', which is singular (uncountable context). 'Poor sleep is known to affect cognitive performance'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l118_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The growth in online sales ___ transformed the retail industry.",
+            "hint": "The subject is 'the growth' (singular) - 'in online sales' is a modifier.",
+            "explanation": "'The growth' is the singular subject; 'in online sales' tells us what has grown. 'The growth has transformed the retail industry'.",
+            "options": [
+                "have",
+                "has"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "has"
+        },
+        {
+            "id": "sva_l119_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Rising costs and falling revenues ___ placing pressure on the business.",
+            "hint": "Two separate problems joined by 'and' form a plural compound subject.",
+            "explanation": "'Rising costs' and 'falling revenues' are two distinct issues joined by 'and', creating a plural compound subject. 'Are placing pressure' is correct.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "are"
+        },
+        {
+            "id": "sva_l119_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Rising cost and falling revenue ___ a major concern for investors.",
+            "hint": "Two singular concepts treated as one combined problem - singular verb.",
+            "explanation": "When 'rising cost and falling revenue' are treated as one combined economic situation, the verb is singular. This subtle use treats two things as one unified concept.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l119_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The majority of the country's coastline ___ affected by erosion.",
+            "hint": "'Coastline' is uncountable - singular verb with 'the majority of'.",
+            "explanation": "'Coastline' is uncountable. When 'the majority of' precedes an uncountable noun, the verb is singular: 'the majority of the coastline is affected'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l120_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The new technologies that ___ transforming the industry require skilled workers.",
+            "hint": "Inside the relative clause, 'that' refers to 'the new technologies' (plural).",
+            "explanation": "'That' in the relative clause refers to 'the new technologies', which is plural. The verb inside the clause is 'are transforming'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
+        },
+        {
+            "id": "sva_l120_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The technology that ___ transforming the industry requires skilled workers.",
+            "hint": "Inside the relative clause, 'that' refers to 'the technology' (singular).",
+            "explanation": "'That' refers to 'the technology', which is singular. The verb inside the relative clause is 'is transforming'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l120_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The board of directors ___ decided to postpone the vote.",
+            "hint": "The board acting as a single decision-making body takes a singular verb.",
+            "explanation": "When 'the board of directors' acts as a unified body making a single decision, the singular verb 'has' is used in standard English.",
+            "options": [
+                "have",
+                "has"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "has"
         }
     ]
 }

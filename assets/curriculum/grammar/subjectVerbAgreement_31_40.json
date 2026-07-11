@@ -6,482 +6,452 @@
         {
             "id": "sva_l31_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Either John or Mary ___ the beacon.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The book on the shelves ___ very old.",
+            "hint": "The subject is 'book' (singular) - 'shelves' is just the location.",
+            "explanation": "'The book' is the subject; 'on the shelves' is a prepositional phrase. Prepositional phrases do not change subject-verb agreement. 'Book' is singular, so 'is' is correct.",
             "options": [
-                "has",
-                "have"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "hint": "Singular nouns with 'either/or' take a singular verb.",
-            "explanation": "'has' agrees with the singular alternatives."
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l31_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Both John and Mary ___ the beacon.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The books on the shelf ___ very old.",
+            "hint": "The subject is 'books' (plural) - 'shelf' is just the location.",
+            "explanation": "'The books' is the subject; 'on the shelf' is a prepositional phrase. Since 'books' is plural, the verb must be 'are'.",
             "options": [
-                "have",
-                "has"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "have",
-            "hint": "Compound subjects joined by 'and' are plural.",
-            "explanation": "'have' is plural."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
         },
         {
             "id": "sva_l31_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Neither the teacher nor the students ___ the answer.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The players on the team ___ very experienced.",
+            "hint": "The subject is 'players' (plural), not 'team'.",
+            "explanation": "'The players' is the true subject; 'on the team' describes where they play. Since 'players' is plural, the verb is 'are'.",
             "options": [
-                "know",
-                "knows"
+                "are",
+                "is"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "know",
-            "hint": "Verb agrees with the nearest subject ('students').",
-            "explanation": "Plural 'students' is closer, so we use 'know'."
+            "correctAnswer": "are"
         },
         {
             "id": "sva_l32_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Neither the scout nor the cruiser ___ here.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither rain nor snow ___ expected this weekend.",
+            "hint": "With 'neither…nor' and two singular subjects, the verb is singular.",
+            "explanation": "When both subjects in a 'neither…nor' construction are singular ('rain' and 'snow'), the verb is always singular: 'is expected'.",
             "options": [
-                "is",
-                "are"
+                "are",
+                "is"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Singular alternative nouns take 'is'.",
-            "explanation": "'is' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l32_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The scout and the cruiser ___ here.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Either coffee or tea ___ served at breakfast.",
+            "hint": "With 'either…or' and two singular subjects, the verb is singular.",
+            "explanation": "When both subjects in 'either…or' are singular, the verb is singular. 'Either coffee or tea is served' - because either one alone would be singular.",
             "options": [
-                "are",
-                "is"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "'and' creates plural compound.",
-            "explanation": "'are' is correct."
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l32_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Either the monitors or the core ___ checked.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The boxes of cereal ___ on the top shelf.",
+            "hint": "The subject is 'boxes' (plural), not 'cereal'.",
+            "explanation": "'The boxes' is the true subject; 'of cereal' tells us what the boxes contain. Since 'boxes' is plural, the verb must be 'are'.",
             "options": [
                 "is",
                 "are"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Verb agrees with the nearest subject ('core').",
-            "explanation": "'is' agrees with singular 'core'."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
         },
         {
             "id": "sva_l33_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Either the captain or the pilot ___ the shuttle.",
-            "options": [
-                "flies",
-                "fly"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "flies",
-            "hint": "Singular subject alternatives take singular.",
-            "explanation": "'flies' is correct."
-        },
-        {
-            "id": "sva_l33_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
             "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "The captain and the pilot ___ the shuttle.",
-            "options": [
-                "fly",
-                "flies"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "fly",
-            "hint": "Plural compound subject takes 'fly'.",
-            "explanation": "'fly' is correct."
-        },
-        {
-            "id": "sva_l33_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Neither the droids nor the captain ___ ready.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Nearest subject is singular 'captain'.",
-            "explanation": "'is' agrees with 'captain'."
-        },
-        {
-            "id": "sva_l34_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Neither the battery nor the generator ___.",
-            "options": [
-                "works",
-                "work"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "works",
-            "hint": "Singular nouns with 'neither/nor' take singular.",
-            "explanation": "'works' is correct."
-        },
-        {
-            "id": "sva_l34_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "The battery and the generator ___.",
-            "options": [
-                "work",
-                "works"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "work",
-            "hint": "Plural compound subject.",
-            "explanation": "'work' is correct."
-        },
-        {
-            "id": "sva_l34_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Either the pilot or the droids ___ the lock.",
-            "options": [
-                "bypass",
-                "bypasses"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "bypass",
-            "hint": "Nearest subject is plural 'droids'.",
-            "explanation": "'bypass' matches 'droids'."
-        },
-        {
-            "id": "sva_l35_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Either the core or the shell ___ unstable.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "'is' is correct for singular alternatives.",
-            "explanation": "'is' matches."
-        },
-        {
-            "id": "sva_l35_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "The core and the shell ___ unstable.",
-            "options": [
-                "are",
-                "is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "'are' is correct.",
-            "explanation": "'are' is correct."
-        },
-        {
-            "id": "sva_l35_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Neither the coordinates nor the map ___ right.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Nearest subject is singular 'map'.",
-            "explanation": "'is' is correct."
-        },
-        {
-            "id": "sva_l36_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Neither the map nor the ledger ___ found.",
+            "question": "The director as well as the actors ___ interviewed.",
+            "hint": "'As well as' is not the same as 'and' - the verb agrees with 'director' (singular).",
+            "explanation": "Phrases like 'as well as', 'together with', and 'along with' do not create compound subjects. The verb agrees with the main subject: 'the director', which is singular.",
             "options": [
                 "was",
                 "were"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "hint": "'was' is correct.",
-            "explanation": "'was' is singular."
+            "correctAnswer": "was"
+        },
+        {
+            "id": "sva_l33_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The actors, along with the director, ___ interviewed.",
+            "hint": "The main subject is 'actors' (plural) - 'along with' doesn't change that.",
+            "explanation": "'The actors' is the true subject; 'along with the director' is a parenthetical addition. Since 'actors' is plural, the verb must be 'were'.",
+            "options": [
+                "was",
+                "were"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "were"
+        },
+        {
+            "id": "sva_l33_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Chicken and rice ___ a popular dish in many cultures.",
+            "hint": "This food combination is treated as one dish - singular verb.",
+            "explanation": "'Chicken and rice' names a single dish, not two separate foods. When two things are inseparable as a concept or dish, they take a singular verb: 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l34_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The museum, together with its archives, ___ closing next year.",
+            "hint": "'Together with its archives' is a parenthetical phrase - the subject is 'museum' (singular).",
+            "explanation": "'Together with its archives' is a non-essential addition. The real subject is 'the museum', which is singular, so the verb is 'is'.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l34_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Mathematics ___ my favourite subject at school.",
+            "hint": "Subjects ending in -ics ('mathematics', 'physics') take a singular verb.",
+            "explanation": "'Mathematics' ends in -s but is treated as a singular subject. Academic fields ending in -ics (mathematics, physics, economics) always take a singular verb.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l34_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The scissors ___ in the top drawer.",
+            "hint": "'Scissors' is a plural-only noun - it always takes a plural verb.",
+            "explanation": "'Scissors' is a plural noun even though it refers to one object. Like 'trousers', 'glasses', and 'pliers', it always takes a plural verb: 'are'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
+        },
+        {
+            "id": "sva_l35_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Politics ___ a subject many people feel strongly about.",
+            "hint": "'Politics' as a field of study is singular.",
+            "explanation": "Like 'mathematics' and 'economics', 'politics' ending in -ics refers to a single field and takes a singular verb: 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l35_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The glasses on the table ___ mine.",
+            "hint": "'Glasses' (eyewear) is always plural - it takes a plural verb.",
+            "explanation": "'Glasses' (spectacles) is a plural-only noun, like 'scissors' and 'trousers'. It always takes a plural verb: 'are'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
+        },
+        {
+            "id": "sva_l35_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "A pair of scissors ___ on the desk.",
+            "hint": "'A pair of' makes the subject singular - it's one pair.",
+            "explanation": "When we say 'a pair of scissors', the subject is 'a pair', which is singular. So the verb is 'is', not 'are'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l36_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The trousers ___ too long for him.",
+            "hint": "'Trousers' is always plural - it needs a plural verb.",
+            "explanation": "'Trousers' is a plural-only noun, like 'scissors' and 'glasses'. It always takes a plural verb: 'are'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
         },
         {
             "id": "sva_l36_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The map and the ledger ___ found.",
+            "subtype": "subjectVerbAgreement",
+            "question": "A pair of trousers ___ hanging in the wardrobe.",
+            "hint": "'A pair of' makes the subject singular.",
+            "explanation": "When we use 'a pair of trousers', the subject is 'a pair' - singular. So the verb is 'is', not 'are'.",
             "options": [
-                "were",
-                "was"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "hint": "'were' is correct.",
-            "explanation": "'were' is correct."
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l36_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Either the battery or the thrusters ___ fuel.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Either the nurse or the doctors ___ responsible.",
+            "hint": "'Either…or' - the verb agrees with the nearer subject ('doctors' is plural).",
+            "explanation": "With 'either…or', the verb agrees with the nearest subject. 'The doctors' is plural, so the verb must be 'are'.",
             "options": [
-                "need",
-                "needs"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "need",
-            "hint": "Nearest subject is plural 'thrusters'.",
-            "explanation": "'need' matches 'thrusters'."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
         },
         {
             "id": "sva_l37_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Either the alarm or the backup ___.",
+            "subtype": "subjectVerbAgreement",
+            "question": "There ___ a problem with the heating system.",
+            "hint": "In 'there is/are', the verb agrees with the noun that follows ('problem' is singular).",
+            "explanation": "In sentences beginning with 'there', the verb agrees with the real subject that follows it. 'A problem' is singular, so 'there is' is correct.",
             "options": [
-                "triggers",
-                "trigger"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "triggers",
-            "hint": "'triggers' is singular.",
-            "explanation": "'triggers' is correct."
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l37_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The alarm and the backup ___.",
+            "subtype": "subjectVerbAgreement",
+            "question": "There ___ several problems with the heating system.",
+            "hint": "In 'there is/are', the verb agrees with the noun that follows ('problems' is plural).",
+            "explanation": "In 'there is/are' sentences, the verb agrees with the noun after the verb. 'Several problems' is plural, so 'there are' is correct.",
             "options": [
-                "trigger",
-                "triggers"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "trigger",
-            "hint": "Plural compound subject.",
-            "explanation": "'trigger' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
         },
         {
             "id": "sva_l37_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Neither the hull nor the shields ___ repaired.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The audience ___ applauding loudly at the end.",
+            "hint": "'The audience' as a single unit takes a singular verb.",
+            "explanation": "In standard English, 'audience' is a collective noun that takes a singular verb when acting as a group. 'The audience is applauding'.",
             "options": [
-                "are",
-                "is"
+                "is",
+                "are"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "Nearest subject is plural 'shields'.",
-            "explanation": "'are' matches."
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l38_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Neither the pilot nor the sensor ___ ready.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Both the teacher and the principal ___ at the meeting.",
+            "hint": "Two people joined by 'and' form a plural compound subject.",
+            "explanation": "'The teacher and the principal' is a compound subject joined by 'and'. Compound subjects joined by 'and' take a plural verb: 'were'.",
             "options": [
-                "is",
-                "are"
+                "was",
+                "were"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "'is' is correct.",
-            "explanation": "'is' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "were"
         },
         {
             "id": "sva_l38_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The pilot and the sensor ___ ready.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither the teacher nor the principal ___ at the meeting.",
+            "hint": "Two singular subjects joined by 'neither…nor' take a singular verb.",
+            "explanation": "When 'neither…nor' joins two singular subjects, the verb is singular. Both 'teacher' and 'principal' are singular, so 'was' is correct.",
             "options": [
-                "are",
-                "is"
+                "was",
+                "were"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "'are' is correct.",
-            "explanation": "'are' is correct."
+            "correctAnswer": "was"
         },
         {
             "id": "sva_l38_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Either the portals or the wormhole ___ unstable.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The crew ___ working around the clock to fix the issue.",
+            "hint": "'The crew' acting as one unit takes a singular verb.",
+            "explanation": "'Crew' is a collective noun. When the crew acts together as a single unit, the verb is singular: 'the crew is working'.",
             "options": [
-                "is",
-                "are"
+                "are",
+                "is"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Nearest subject is singular 'wormhole'.",
-            "explanation": "'is' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l39_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Either the shield or the hull ___.",
-            "options": [
-                "fails",
-                "fail"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "fails",
-            "hint": "'fails' is singular.",
-            "explanation": "'fails' is correct."
-        },
-        {
-            "id": "sva_l39_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
             "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "The shield and the hull ___.",
-            "options": [
-                "fail",
-                "fails"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "fail",
-            "hint": "Plural compound subject.",
-            "explanation": "'fail' is correct."
-        },
-        {
-            "id": "sva_l39_q3",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Neither the droids nor the pilot ___.",
-            "options": [
-                "knows",
-                "know"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "knows",
-            "hint": "Nearest subject is singular 'pilot'.",
-            "explanation": "'knows' is correct."
-        },
-        {
-            "id": "sva_l40_q1",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "Neither the hatch nor the lock ___ open.",
-            "options": [
-                "is",
-                "are"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "'is' is correct.",
-            "explanation": "'is' is correct."
-        },
-        {
-            "id": "sva_l40_q2",
-            "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
-            "interactionType": "Marriage Ring",
-            "question": "The hatch and the lock ___ open.",
+            "question": "The bread and the butter ___ already on the table.",
+            "hint": "Two separate items (bread AND butter) form a plural compound subject.",
+            "explanation": "Here, 'the bread and the butter' refers to two separate items, not a combined concept. The compound subject takes a plural verb: 'are'.",
             "options": [
                 "are",
                 "is"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "'are' is correct.",
-            "explanation": "'are' is correct."
+            "correctAnswer": "are"
+        },
+        {
+            "id": "sva_l39_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The athlete, not the coaches, ___ responsible for the decision.",
+            "hint": "With 'not', the verb agrees with the main subject ('athlete', singular).",
+            "explanation": "Phrases introduced by 'not' do not change the main subject. 'The athlete' is the true subject and is singular, so the verb is 'is'.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l39_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Economics ___ often considered a difficult subject.",
+            "hint": "Academic fields ending in -ics take a singular verb.",
+            "explanation": "Like 'mathematics' and 'politics', 'economics' ends in -s but refers to one field of study, so it takes a singular verb: 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
+        },
+        {
+            "id": "sva_l40_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "The committee members ___ divided on the issue.",
+            "hint": "'Members' (the individuals) is plural - use a plural verb.",
+            "explanation": "When we say 'the committee members', we are referring to the individuals, not the committee as a unit. 'Members' is plural, so the verb is 'are'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
+        },
+        {
+            "id": "sva_l40_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "interactionType": "Marriage Ring",
+            "subtype": "subjectVerbAgreement",
+            "question": "Neither the investors nor the CEO ___ happy with the results.",
+            "hint": "'Neither…nor' - verb agrees with the nearer subject ('CEO' is singular).",
+            "explanation": "With 'neither…nor', the verb agrees with the subject nearest to it. 'The CEO' is singular, so the verb is 'is'.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is"
         },
         {
             "id": "sva_l40_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Either the stars or the planet ___ light.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The organisation and its partners ___ launching a new initiative.",
+            "hint": "Two entities joined by 'and' form a plural compound subject.",
+            "explanation": "'The organisation and its partners' is a compound subject joined by 'and', making it plural. The verb must be 'are'.",
             "options": [
-                "emits",
-                "emit"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "emits",
-            "hint": "Nearest subject is singular 'planet'.",
-            "explanation": "'emits' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "are"
         }
     ]
 }

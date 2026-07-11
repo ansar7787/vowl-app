@@ -6,482 +6,452 @@
         {
             "id": "sva_l1_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The star ___ brightly tonight.",
+            "subtype": "subjectVerbAgreement",
+            "question": "My sister ___ coffee every morning.",
+            "hint": "A single person ('my sister') needs the verb with -s.",
+            "explanation": "Third-person singular subjects (he, she, it, a single person or thing) require the verb to add -s or -es in the simple present.",
             "options": [
-                "shines",
-                "shine"
+                "drinks",
+                "drink"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "shines",
-            "hint": "Singular subject 'star' takes a singular verb.",
-            "explanation": "'shines' is correct for third-person singular."
+            "correctAnswer": "drinks"
         },
         {
             "id": "sva_l1_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The stars ___ brightly tonight.",
+            "subtype": "subjectVerbAgreement",
+            "question": "My sisters ___ coffee every morning.",
+            "hint": "More than one person ('my sisters') takes the base form of the verb.",
+            "explanation": "Plural subjects never add -s to the verb in the simple present. 'My sisters drink' is correct because 'sisters' is plural.",
             "options": [
-                "shine",
-                "shines"
+                "drinks",
+                "drink"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "shine",
-            "hint": "Plural subject 'stars' takes a plural verb.",
-            "explanation": "'shine' is correct for plural subjects."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "drink"
         },
         {
             "id": "sva_l1_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Both the captain and the pilot ___ the chart.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The dog ___ loudly at strangers.",
+            "hint": "One dog is singular; singular subjects need a verb ending in -s.",
+            "explanation": "'The dog' is a singular noun, so the verb must be 'barks' - adding -s to show agreement with a third-person singular subject.",
             "options": [
-                "study",
-                "studies"
+                "barks",
+                "bark"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "study",
-            "hint": "'Both...and' always creates a plural subject.",
-            "explanation": "Plural subject requires the base verb 'study'."
+            "correctAnswer": "barks"
         },
         {
             "id": "sva_l2_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "A scout ship ___ entering orbit.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The children ___ in the park after school.",
+            "hint": "'Children' is already a plural noun - no -s is needed on the verb.",
+            "explanation": "'Children' is the irregular plural of 'child'. Like all plural nouns, it takes the base form of the verb: 'play', not 'plays'.",
             "options": [
-                "is",
-                "are"
+                "plays",
+                "play"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Singular subject 'ship' requires 'is'.",
-            "explanation": "'is' aligns with the singular subject."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "play"
         },
         {
             "id": "sva_l2_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Scout ships ___ entering orbit.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The teacher ___ the lesson every day.",
+            "hint": "One teacher is a single, third-person subject - add -s to the verb.",
+            "explanation": "'The teacher' is singular, so the verb takes the third-person singular ending: 'prepares'. The -s moves from the noun to the verb.",
             "options": [
-                "are",
-                "is"
+                "prepares",
+                "prepare"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "Plural subject 'ships' requires 'are'.",
-            "explanation": "'are' matches the plural subject."
+            "correctAnswer": "prepares"
         },
         {
             "id": "sva_l2_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Neither the sensor nor the battery ___ functional.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The students ___ their assignments online.",
+            "hint": "A group of students is plural - use the base form of the verb.",
+            "explanation": "'The students' is plural, so the verb stays in its base form: 'submit'. Adding -s would be wrong because the subject is not singular.",
             "options": [
-                "is",
-                "are"
+                "submits",
+                "submit"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "With 'neither...nor', singular subjects take a singular verb.",
-            "explanation": "'is' agrees with the closer singular noun."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "submit"
         },
         {
             "id": "sva_l3_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The scientist ___ the telemetry daily.",
+            "subtype": "subjectVerbAgreement",
+            "question": "She ___ the bus to work every weekday.",
+            "hint": "'She' is a singular pronoun - the verb needs -s.",
+            "explanation": "The pronouns he, she, and it are all third-person singular and require a verb ending in -s or -es in the simple present.",
             "options": [
-                "verifies",
-                "verify"
+                "takes",
+                "take"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "verifies",
-            "hint": "A singular person 'scientist' requires a verb with '-s'.",
-            "explanation": "'verifies' is the singular verb."
+            "correctAnswer": "takes"
         },
         {
             "id": "sva_l3_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The scientists ___ the telemetry daily.",
+            "subtype": "subjectVerbAgreement",
+            "question": "They ___ the bus together every weekday.",
+            "hint": "'They' is plural - no -s on the verb.",
+            "explanation": "'They' is a plural pronoun, so the verb must stay in its base form: 'take'. 'Takes' would only be correct for a singular subject.",
             "options": [
-                "verify",
-                "verifies"
+                "takes",
+                "take"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "verify",
-            "hint": "Plural 'scientists' takes a base verb.",
-            "explanation": "'verify' is the plural verb."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "take"
         },
         {
             "id": "sva_l3_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The crew, along with the droids, ___ arrived.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The cat ___ on the sofa all afternoon.",
+            "hint": "One cat is singular - add -s to the verb.",
+            "explanation": "'The cat' is a singular subject, so the verb takes the -s ending: 'sleeps'. This rule applies to any singular noun in third person.",
             "options": [
-                "has",
-                "have"
+                "sleeps",
+                "sleep"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "hint": "'along with' is parenthetical; subject is 'crew' (singular collective).",
-            "explanation": "'has' agrees with the singular main subject."
+            "correctAnswer": "sleeps"
         },
         {
             "id": "sva_l4_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Our thruster ___ an inspection.",
+            "subtype": "subjectVerbAgreement",
+            "question": "He ___ at the hospital five days a week.",
+            "hint": "'He' is singular - the verb needs the -s ending.",
+            "explanation": "Third-person singular pronouns (he, she, it) always take a verb with -s in the simple present: 'he works', not 'he work'.",
             "options": [
-                "needs",
-                "need"
+                "work",
+                "works"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "needs",
-            "hint": "'thruster' is singular.",
-            "explanation": "'needs' is third-person singular."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "works"
         },
         {
             "id": "sva_l4_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Our thrusters ___ an inspection.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The nurses ___ long shifts at the hospital.",
+            "hint": "Multiple nurses is a plural subject - use the base form.",
+            "explanation": "'The nurses' is plural, so the verb takes its base form: 'work'. The -s ending belongs to singular subjects, not plural ones.",
             "options": [
-                "need",
-                "needs"
+                "work",
+                "works"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "need",
-            "hint": "'thrusters' is plural.",
-            "explanation": "'need' is correct."
+            "correctAnswer": "work"
         },
         {
             "id": "sva_l4_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Each of the new cadets ___ a tablet.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The market ___ at six in the morning.",
+            "hint": "One market is singular - add -s or -es to the verb.",
+            "explanation": "'The market' is a single thing (singular), so the verb must be 'opens'. Any singular noun in third person requires a verb ending in -s.",
             "options": [
-                "receives",
-                "receive"
+                "open",
+                "opens"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "receives",
-            "hint": "'Each' is always singular.",
-            "explanation": "'receives' is third-person singular."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "opens"
         },
         {
             "id": "sva_l5_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The portal ___ a massive amount of power.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The café ___ excellent sandwiches at lunchtime.",
+            "hint": "One café is singular - the verb needs -s.",
+            "explanation": "'The café' is a singular noun, so the verb is 'serves' - adding -s to show third-person singular agreement.",
             "options": [
-                "consumes",
-                "consume"
+                "serves",
+                "serve"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "consumes",
-            "hint": "'portal' is singular.",
-            "explanation": "'consumes' agrees with a singular subject."
+            "correctAnswer": "serves"
         },
         {
             "id": "sva_l5_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The portals ___ a massive amount of power.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The cafés along this street ___ excellent sandwiches.",
+            "hint": "More than one café makes a plural subject - use the base form.",
+            "explanation": "'The cafés' is plural, so the verb stays as 'serve'. Plural subjects never take the -s ending in the simple present.",
             "options": [
-                "consume",
-                "consumes"
+                "serves",
+                "serve"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "consume",
-            "hint": "'portals' is plural.",
-            "explanation": "'consume' agrees with plural."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "serve"
         },
         {
             "id": "sva_l5_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "One of the reactors ___ offline.",
+            "subtype": "subjectVerbAgreement",
+            "question": "My phone ___ a lot of storage.",
+            "hint": "One phone is a singular thing - add -s to the verb.",
+            "explanation": "'My phone' is a singular noun, so the verb must be 'uses'. This is the standard third-person singular rule applied to objects.",
             "options": [
-                "is",
-                "are"
+                "uses",
+                "use"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "The subject is 'One', not 'reactors'.",
-            "explanation": "'is' agrees with 'One'."
+            "correctAnswer": "uses"
         },
         {
             "id": "sva_l6_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "A foreign transmission ___ detected.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The app ___ your location to give directions.",
+            "hint": "One app is singular - the verb needs -s.",
+            "explanation": "'The app' is a singular noun (it), so the verb takes the -s ending: 'tracks'. Any singular thing takes this form in the simple present.",
             "options": [
-                "has been",
-                "have been"
+                "track",
+                "tracks"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "has been",
-            "hint": "'transmission' is singular.",
-            "explanation": "'has been' is the singular present perfect helper."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "tracks"
         },
         {
             "id": "sva_l6_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Foreign transmissions ___ detected.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Both apps ___ your location automatically.",
+            "hint": "'Both apps' is a plural subject - use the base form.",
+            "explanation": "'Both apps' is plural, so the verb is 'track'. 'Both' always signals a plural subject in English.",
             "options": [
-                "have been",
-                "has been"
+                "track",
+                "tracks"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "have been",
-            "hint": "'transmissions' is plural.",
-            "explanation": "'have been' is correct."
+            "correctAnswer": "track"
         },
         {
             "id": "sva_l6_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "A number of anomalies ___ detected.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The pilot ___ the plane carefully through the storm.",
+            "hint": "One pilot is singular - add -s to the verb.",
+            "explanation": "'The pilot' is singular, so the verb must be 'guides'. Singular subjects in third person always take a verb with -s in the simple present.",
             "options": [
-                "were",
-                "was"
+                "guide",
+                "guides"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "were",
-            "hint": "'A number of' is a plural quantifier.",
-            "explanation": "'were' matches plural count."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "guides"
         },
         {
             "id": "sva_l7_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The command droid ___ instructions.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The passengers ___ their seatbelts during takeoff.",
+            "hint": "Multiple passengers is a plural subject - use the base form.",
+            "explanation": "'The passengers' is plural, so the verb is 'fasten'. Adding -s would be incorrect because there is more than one person.",
             "options": [
-                "demands",
-                "demand"
+                "fasten",
+                "fastens"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "demands",
-            "hint": "'droid' is singular.",
-            "explanation": "'demands' agrees with third-person singular."
+            "correctAnswer": "fasten"
         },
         {
             "id": "sva_l7_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The command droids ___ instructions.",
+            "subtype": "subjectVerbAgreement",
+            "question": "This film ___ a lot of expensive special effects.",
+            "hint": "One film is singular - add -s or -es to the verb.",
+            "explanation": "'This film' is singular, so the verb is 'requires'. Singular subjects take a verb with -s; plural subjects take the base form.",
             "options": [
-                "demand",
-                "demands"
+                "require",
+                "requires"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "demand",
-            "hint": "'droids' is plural.",
-            "explanation": "'demand' agrees with plural."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "requires"
         },
         {
             "id": "sva_l7_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The number of anomalies ___ increasing.",
+            "subtype": "subjectVerbAgreement",
+            "question": "These films ___ a lot of expensive special effects.",
+            "hint": "'These films' is plural - use the base form of the verb.",
+            "explanation": "'These films' is plural, so the verb stays as 'require'. The -s ending is only for singular subjects in third person.",
             "options": [
-                "is",
-                "are"
+                "require",
+                "requires"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "'The number of' is a singular quantifier.",
-            "explanation": "'is' is correct."
+            "correctAnswer": "require"
         },
         {
             "id": "sva_l8_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Your custom avatar ___ ready.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The manager ___ the weekly report every Friday.",
+            "hint": "One manager is singular - the verb needs -s.",
+            "explanation": "'The manager' is a singular noun, so the verb takes -s: 'sends'. This is the core rule: singular subject → verb + -s.",
             "options": [
-                "is",
-                "are"
+                "send",
+                "sends"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "'avatar' is singular.",
-            "explanation": "'is' matches singular subjects."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "sends"
         },
         {
             "id": "sva_l8_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Your custom avatars ___ ready.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The managers ___ their reports to the director.",
+            "hint": "Multiple managers is a plural subject - use the base form.",
+            "explanation": "'The managers' is plural, so the verb stays as 'send'. Plural subjects always take the base form of the verb in simple present.",
             "options": [
-                "are",
-                "is"
+                "send",
+                "sends"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "are",
-            "hint": "'avatars' is plural.",
-            "explanation": "'are' is correct."
+            "correctAnswer": "send"
         },
         {
             "id": "sva_l8_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Everything in the vaults ___ secure.",
+            "subtype": "subjectVerbAgreement",
+            "question": "This recipe ___ two cups of flour.",
+            "hint": "One recipe is singular - add -s to the verb.",
+            "explanation": "'This recipe' is singular, so the verb is 'needs'. The -s signals agreement with a third-person singular subject.",
             "options": [
-                "is",
-                "are"
+                "need",
+                "needs"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "'Everything' is an indefinite singular pronoun.",
-            "explanation": "'is' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "needs"
         },
         {
             "id": "sva_l9_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The warp gate ___ every ten cycles.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The gym ___ at five in the morning on weekdays.",
+            "hint": "One place (the gym) is singular - add -s or -es.",
+            "explanation": "'The gym' is singular, so the verb takes -s: 'opens'. Any singular noun or pronoun in third person requires this form.",
             "options": [
-                "activates",
-                "activate"
+                "opens",
+                "open"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "activates",
-            "hint": "'gate' is singular.",
-            "explanation": "'activates' is singular."
+            "correctAnswer": "opens"
         },
         {
             "id": "sva_l9_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "The warp gates ___ every ten cycles.",
+            "subtype": "subjectVerbAgreement",
+            "question": "Both gyms ___ early on weekday mornings.",
+            "hint": "'Both gyms' is a plural subject - use the base form.",
+            "explanation": "'Both gyms' is plural, so the verb is 'open'. 'Both' always makes the subject plural, and plural subjects take the base form.",
             "options": [
-                "activate",
-                "activates"
+                "opens",
+                "open"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "activate",
-            "hint": "'gates' is plural.",
-            "explanation": "'activate' is correct."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "open"
         },
         {
             "id": "sva_l9_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Either the coordinates or the map ___ incorrect.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The artist ___ her paintings at local galleries.",
+            "hint": "One artist is singular - the verb needs -s.",
+            "explanation": "'The artist' is singular, so the verb must be 'exhibits' - adding -s for third-person singular agreement.",
             "options": [
-                "is",
-                "are"
+                "exhibits",
+                "exhibit"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "With 'either...or', verb agrees with the nearest noun ('map' is singular).",
-            "explanation": "'is' agrees with singular 'map'."
+            "correctAnswer": "exhibits"
         },
         {
             "id": "sva_l10_q1",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "A solar flare ___ the shields.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The supermarket ___ fresh bread every morning.",
+            "hint": "One supermarket is singular - the verb needs -s.",
+            "explanation": "'The supermarket' is a singular noun, so the verb takes -s: 'bakes'. This is the basic rule for third-person singular subjects.",
             "options": [
-                "disrupts",
-                "disrupt"
+                "bake",
+                "bakes"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "disrupts",
-            "hint": "'flare' is singular.",
-            "explanation": "'disrupts' is singular."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "bakes"
         },
         {
             "id": "sva_l10_q2",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "Solar flares ___ the shields.",
+            "subtype": "subjectVerbAgreement",
+            "question": "The local supermarkets ___ fresh bread daily.",
+            "hint": "'The local supermarkets' is plural - use the base form.",
+            "explanation": "'The supermarkets' is plural, so the verb is 'bake'. No -s is added when the subject is plural.",
             "options": [
-                "disrupt",
-                "disrupts"
+                "bake",
+                "bakes"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "disrupt",
-            "hint": "'flares' is plural.",
-            "explanation": "'disrupt' is correct."
+            "correctAnswer": "bake"
         },
         {
             "id": "sva_l10_q3",
             "instruction": "SYNC THE AGREEMENT",
-            "difficulty": 1,
-            "subtype": "subjectVerbAgreement",
             "interactionType": "Marriage Ring",
-            "question": "A fleet of ships ___ approaching.",
+            "subtype": "subjectVerbAgreement",
+            "question": "He ___ his emails as soon as he wakes up.",
+            "hint": "'He' is a singular pronoun - add -s to the verb.",
+            "explanation": "The pronouns 'he', 'she', and 'it' are all singular, so the verb takes -s: 'he checks', not 'he check'.",
             "options": [
-                "is",
-                "are"
+                "check",
+                "checks"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "Subject is 'fleet' (singular), not 'ships'.",
-            "explanation": "'is' agrees with the singular 'fleet'."
+            "correctAnswerIndex": 1,
+            "correctAnswer": "checks"
         }
     ]
 }
