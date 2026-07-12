@@ -215,6 +215,8 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                             },
                                             pulseController: _pulseController,
                                             color: theme.primaryColor,
+                                            emoji: quest.emoji,
+                                            isCorrectState: _isCorrect,
                                           ),
                                         ),
                                       )
@@ -227,6 +229,8 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                         },
                                         pulseController: _pulseController,
                                         color: theme.primaryColor,
+                                        emoji: quest.emoji,
+                                        isCorrectState: _isCorrect,
                                       ),
                               ],
                             ),

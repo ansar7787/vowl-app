@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class ListeningInferenceRadarCore extends StatelessWidget {
   final VoidCallback onTap;
   final AnimationController pulseController;
   final Color color;
+  final String? emoji;
+  final bool? isCorrectState;
 
   const ListeningInferenceRadarCore({
     super.key,
     required this.onTap,
     required this.pulseController,
     required this.color,
+    this.emoji,
+    this.isCorrectState,
   });
 
   @override
@@ -58,11 +63,16 @@ class ListeningInferenceRadarCore extends StatelessWidget {
                 ),
               ],
             ),
-            child: Icon(
-              Icons.psychology_rounded,
-              size: 64.r,
-              color: Colors.white,
-            ),
+            child: isCorrectState == true && emoji != null
+                ? Text(
+                    emoji!,
+                    style: TextStyle(fontSize: 64.r),
+                  ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack)
+                : Icon(
+                    Icons.psychology_rounded,
+                    size: 64.r,
+                    color: Colors.white,
+                  ),
           ),
         ],
       ),
