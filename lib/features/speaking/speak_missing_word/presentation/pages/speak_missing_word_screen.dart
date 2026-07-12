@@ -55,6 +55,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  int _attempts = 0;
 
   @override
   void initState() {
@@ -200,6 +201,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
     final bool isCorrect = wordIsCorrect && speechIsCorrect;
 
     setState(() {
+      _attempts++;
       _isAnswered = true;
       _isCorrect = isCorrect;
     });
@@ -213,6 +215,15 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
       _soundService.playWrong();
       context.read<SpeakingBloc>().add(SubmitAnswer(false));
     }
+  }
+
+  void _tutorPass() {
+    GameDialogHelper.showHonestyNudge(context);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = true;
+    });
+    context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
   @override
@@ -241,6 +252,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _attempts = 0;
               _isListening = false;
               _pullForce = 0.0;
               _selectedWord = null;
@@ -250,6 +262,15 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
+            });
+          } else if (state.lastAnswerCorrect == false) {
+            setState(() {
+              _isCorrect = false;
+              if (state.isFinalFailure || state.livesRemaining <= 0) {
+                _isAnswered = true;
+              } else {
+                _isAnswered = false;
+              }
             });
           }
           _lastLives = state.livesRemaining;
@@ -275,7 +296,8 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
         } else if (state is SpeakingGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<SpeakingBloc>().add(RestoreLife()),
+            onRestore: () => context.read<SpeakingBloc>().add(const RestoreLife()),
+            onTutorPass: _tutorPass,
           );
         }
       },
@@ -443,6 +465,9 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
                                                 primaryColor: theme.primaryColor,
                                                 onLongPressStart: _startSpeechListening,
                                                 onLongPressEnd: () => _stopSpeechListening(completedSentence),
+                                                attempts: _attempts,
+                                                isAnswered: _isAnswered,
+                                                onTutorPass: _tutorPass,
                                               ),
                                             ),
                                           )
@@ -451,6 +476,9 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
                                             primaryColor: theme.primaryColor,
                                             onLongPressStart: _startSpeechListening,
                                             onLongPressEnd: () => _stopSpeechListening(completedSentence),
+                                            attempts: _attempts,
+                                            isAnswered: _isAnswered,
+                                            onTutorPass: _tutorPass,
                                           ),
 
                                     AnimatedCrossFade(

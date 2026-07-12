@@ -47,6 +47,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
   bool? _isCorrect;
   bool _showConfetti = false;
   Timer? _autoplayTimer;
+  int _attempts = 0;
 
   // Pre-cached dynamic target amplitudes for soundwave guidelines
   final List<double> _waveAmplitudes = [];
@@ -136,6 +137,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
     final bool isCorrect = similarity >= 0.70; // 70% matching word-level accuracy to pass repeat sentence
 
     setState(() {
+      _attempts++;
       _progress = 1.0;
       _isAnswered = true;
       _isCorrect = isCorrect;
@@ -152,6 +154,16 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
     }
   }
 
+  void _tutorPass() {
+    GameDialogHelper.showHonestyNudge(context);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = true;
+      _progress = 1.0;
+    });
+    context.read<SpeakingBloc>().add(const SpeakingTutorPass());
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -166,6 +178,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _attempts = 0;
               _isListening = false;
               _progress = 0.0;
               _spokenText = "";
@@ -174,6 +187,15 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
             _autoplayTimer?.cancel();
             _autoplayTimer = Timer(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
+            });
+          } else if (state.lastAnswerCorrect == false) {
+            setState(() {
+              _isCorrect = false;
+              if (state.isFinalFailure || state.livesRemaining <= 0) {
+                _isAnswered = true;
+              } else {
+                _isAnswered = false;
+              }
             });
           }
           _lastLives = state.livesRemaining;
@@ -190,7 +212,8 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
         } else if (state is SpeakingGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<SpeakingBloc>().add(RestoreLife()),
+            onRestore: () => context.read<SpeakingBloc>().add(const RestoreLife()),
+            onTutorPass: _tutorPass,
           );
         }
       },
@@ -345,6 +368,9 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                                                 primaryColor: theme.primaryColor,
                                                 onLongPressStart: _startSpeechListening,
                                                 onLongPressEnd: () => _stopSpeechListening(quest.textToSpeak ?? ""),
+                                                attempts: _attempts,
+                                                isAnswered: _isAnswered,
+                                                onTutorPass: _tutorPass,
                                               ),
                                             ),
                                           )
@@ -353,6 +379,9 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                                             primaryColor: theme.primaryColor,
                                             onLongPressStart: _startSpeechListening,
                                             onLongPressEnd: () => _stopSpeechListening(quest.textToSpeak ?? ""),
+                                            attempts: _attempts,
+                                            isAnswered: _isAnswered,
+                                            onTutorPass: _tutorPass,
                                           ),
 
                                     AnimatedCrossFade(

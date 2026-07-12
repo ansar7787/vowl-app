@@ -48,6 +48,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen> with Sing
   int _lastProcessedIndex = -1;
   int? _lastLives;
   bool _isListening = false;
+  int _attempts = 0;
 
   late AnimationController _glowController;
   Timer? _scratchTimer;
@@ -147,6 +148,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen> with Sing
     final bool matchFound = cleanSpeech.contains(cleanExpression) || cleanExpression.contains(cleanSpeech);
 
     setState(() {
+      _attempts++;
       _isAnswered = true;
       _isCorrect = matchFound;
       _scratchProgress = matchFound ? 1.0 : 0.0;
@@ -161,6 +163,16 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen> with Sing
       _soundService.playWrong();
       context.read<SpeakingBloc>().add(SubmitAnswer(false));
     }
+  }
+
+  void _tutorPass() {
+    GameDialogHelper.showHonestyNudge(context);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = true;
+      _scratchProgress = 1.0;
+    });
+    context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
   @override
@@ -178,12 +190,22 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen> with Sing
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _attempts = 0;
               _isListening = false;
               _scratchProgress = 0.0;
               _spokenText = "";
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
+            });
+          } else if (state.lastAnswerCorrect == false) {
+            setState(() {
+              _isCorrect = false;
+              if (state.isFinalFailure || state.livesRemaining <= 0) {
+                _isAnswered = true;
+              } else {
+                _isAnswered = false;
+              }
             });
           }
           _lastLives = state.livesRemaining;
@@ -200,7 +222,8 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen> with Sing
         } else if (state is SpeakingGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<SpeakingBloc>().add(RestoreLife()),
+            onRestore: () => context.read<SpeakingBloc>().add(const RestoreLife()),
+            onTutorPass: _tutorPass,
           );
         }
       },
@@ -392,6 +415,9 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen> with Sing
                                                 isDark: isDark,
                                                 onLongPressStart: _startSpeechListening,
                                                 onLongPressEnd: _stopSpeechListening,
+                                                attempts: _attempts,
+                                                isAnswered: _isAnswered,
+                                                onTutorPass: _tutorPass,
                                               ),
                                             ),
                                           )
@@ -402,6 +428,9 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen> with Sing
                                             isDark: isDark,
                                             onLongPressStart: _startSpeechListening,
                                             onLongPressEnd: _stopSpeechListening,
+                                            attempts: _attempts,
+                                            isAnswered: _isAnswered,
+                                            onTutorPass: _tutorPass,
                                           ),
                                     SizedBox(height: gapBottom),
                                   ],

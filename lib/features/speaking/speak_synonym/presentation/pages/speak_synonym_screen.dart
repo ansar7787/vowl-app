@@ -46,6 +46,7 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen> with SingleTick
   int _lastProcessedIndex = -1;
   int? _lastLives;
   bool _isListening = false;
+  int _attempts = 0;
 
   // Animation controller for leaf swaying and core particle pulsation
   late AnimationController _swingController;
@@ -159,6 +160,7 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen> with SingleTick
     }
 
     setState(() {
+      _attempts++;
       _isAnswered = true;
       _isCorrect = matchFound;
       _bloomProgress = matchFound ? 1.0 : 0.0;
@@ -173,6 +175,16 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen> with SingleTick
       _soundService.playWrong();
       context.read<SpeakingBloc>().add(SubmitAnswer(false));
     }
+  }
+
+  void _tutorPass() {
+    GameDialogHelper.showHonestyNudge(context);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = true;
+      _bloomProgress = 1.0;
+    });
+    context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
   void _extractTargetWord(String text, List<String> synonyms) {
@@ -194,12 +206,22 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen> with SingleTick
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _attempts = 0;
               _isListening = false;
               _bloomProgress = 0.0;
               _spokenText = "";
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
+            });
+          } else if (state.lastAnswerCorrect == false) {
+            setState(() {
+              _isCorrect = false;
+              if (state.isFinalFailure || state.livesRemaining <= 0) {
+                _isAnswered = true;
+              } else {
+                _isAnswered = false;
+              }
             });
           }
           _lastLives = state.livesRemaining;
@@ -216,7 +238,8 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen> with SingleTick
         } else if (state is SpeakingGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<SpeakingBloc>().add(RestoreLife()),
+            onRestore: () => context.read<SpeakingBloc>().add(const RestoreLife()),
+            onTutorPass: _tutorPass,
           );
         }
       },
@@ -406,6 +429,9 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen> with SingleTick
                                                 timeVal: _timeVal,
                                                 onLongPressStart: _startSpeechListening,
                                                 onLongPressEnd: _stopSpeechListening,
+                                                attempts: _attempts,
+                                                isAnswered: _isAnswered,
+                                                onTutorPass: _tutorPass,
                                               ),
                                             ),
                                           )
@@ -415,6 +441,9 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen> with SingleTick
                                             timeVal: _timeVal,
                                             onLongPressStart: _startSpeechListening,
                                             onLongPressEnd: _stopSpeechListening,
+                                            attempts: _attempts,
+                                            isAnswered: _isAnswered,
+                                            onTutorPass: _tutorPass,
                                           ),
                                     SizedBox(height: gapBottom),
                                   ],

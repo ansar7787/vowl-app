@@ -47,6 +47,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
   int _lastProcessedIndex = -1;
   int? _lastLives;
   bool _isListening = false;
+  int _attempts = 0;
 
   // Animation controller for high-voltage plasma crackling oscillation
   late AnimationController _sparkController;
@@ -160,6 +161,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
     }
 
     setState(() {
+      _attempts++;
       _isAnswered = true;
       _isCorrect = matchFound;
       _pullProgress = matchFound ? 1.0 : 0.0;
@@ -174,6 +176,16 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
       _soundService.playWrong();
       context.read<SpeakingBloc>().add(SubmitAnswer(false));
     }
+  }
+
+  void _tutorPass() {
+    GameDialogHelper.showHonestyNudge(context);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = true;
+      _pullProgress = 1.0;
+    });
+    context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
   @override
@@ -191,12 +203,22 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _attempts = 0;
               _isListening = false;
               _pullProgress = 0.0;
               _spokenText = "";
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
+            });
+          } else if (state.lastAnswerCorrect == false) {
+            setState(() {
+              _isCorrect = false;
+              if (state.isFinalFailure || state.livesRemaining <= 0) {
+                _isAnswered = true;
+              } else {
+                _isAnswered = false;
+              }
             });
           }
           _lastLives = state.livesRemaining;
@@ -213,7 +235,8 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
         } else if (state is SpeakingGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<SpeakingBloc>().add(RestoreLife()),
+            onRestore: () => context.read<SpeakingBloc>().add(const RestoreLife()),
+            onTutorPass: _tutorPass,
           );
         }
       },
@@ -417,6 +440,9 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
                                                 primaryColor: theme.primaryColor,
                                                 onLongPressStart: _startSpeechListening,
                                                 onLongPressEnd: _stopSpeechListening,
+                                                attempts: _attempts,
+                                                isAnswered: _isAnswered,
+                                                onTutorPass: _tutorPass,
                                               ),
                                             ),
                                           )
@@ -425,6 +451,9 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
                                             primaryColor: theme.primaryColor,
                                             onLongPressStart: _startSpeechListening,
                                             onLongPressEnd: _stopSpeechListening,
+                                            attempts: _attempts,
+                                            isAnswered: _isAnswered,
+                                            onTutorPass: _tutorPass,
                                           ),
                                     SizedBox(height: gapBottom),
                                   ],

@@ -75,6 +75,13 @@ class RestoreLife extends RoleplayEvent {
   const RestoreLife();
 }
 
+// ── Tutor Pass ─────────────────────────────────────────────────────────────
+
+/// The player invoked the tutor pass (I spoke correctly).
+class RoleplayTutorPass extends RoleplayEvent {
+  const RoleplayTutorPass();
+}
+
 // ── Preloading ─────────────────────────────────────────────────────────────
 
 /// Fires a background preload for the next batch of quests.

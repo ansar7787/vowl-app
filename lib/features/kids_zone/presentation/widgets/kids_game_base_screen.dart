@@ -21,6 +21,7 @@ import 'package:vowl/core/utils/hint_utility.dart' as import_hint;
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_explanation_card.dart';
 
 class KidsGameBaseScreen extends StatefulWidget {
   final String title;
@@ -123,15 +124,13 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             final bloc = context.read<KidsBloc>();
             final isFinalFailure = state.isFinalFailure || state.livesRemaining <= 0;
             
-            Future.delayed(Duration(milliseconds: isFinalFailure ? 2000 : 1500), () {
-              if (mounted && context.mounted && bloc.state == state) {
-                if (isFinalFailure) {
+            if (isFinalFailure) {
+              Future.delayed(const Duration(milliseconds: 2000), () {
+                if (mounted && context.mounted && bloc.state == state) {
                   bloc.add(NextKidsQuestion());
-                } else {
-                  bloc.add(ClearKidsFeedback());
                 }
-              }
-            });
+              });
+            }
           }
           if (state.lastAnswerCorrect == null && !state.hintUsed) _speakInstruction(state.currentQuest.instruction);
           if (state.lastAnswerCorrect == null && state.hintUsed && _hintText == null) speakHint(state.currentQuest.hint);
@@ -247,7 +246,18 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                 ),
               ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1.0, 1.0), end: const Offset(1.1, 1.1), duration: 800.ms).animate().fadeIn(delay: 1.seconds),
             ),
-          if (state.lastAnswerCorrect != null)
+          if (state.lastAnswerCorrect == false && (!state.isFinalFailure && state.livesRemaining > 0))
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: KidsExplanationCard(
+                quest: state.currentQuest,
+                primaryColor: widget.primaryColor,
+                onTryAgain: () => context.read<KidsBloc>().add(ClearKidsFeedback()),
+              ),
+            ),
+          if (state.lastAnswerCorrect != null && state.lastAnswerCorrect == true)
             KidsFeedbackOverlay(
               isCorrect: state.lastAnswerCorrect!,
               attempts: state.wrongCount,

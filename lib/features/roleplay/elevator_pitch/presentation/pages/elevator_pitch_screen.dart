@@ -58,6 +58,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
   // Game scores
   int _ticksRecorded = 0;
   int _ticksInAlignment = 0;
+  int _attempts = 0;
 
   @override
   void initState() {
@@ -181,6 +182,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
     bool isCorrect = alignmentAccuracy >= 0.40 && _spokenText.length >= 12;
 
     setState(() {
+      _attempts++;
       _isAnswered = true;
       _isCorrect = isCorrect;
     });
@@ -196,6 +198,15 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
     }
   }
 
+  void _tutorPass() {
+    GameDialogHelper.showHonestyNudge(context);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = true;
+    });
+    context.read<RoleplayBloc>().add(const RoleplayTutorPass());
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -204,11 +215,12 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
     return BlocConsumer<RoleplayBloc, RoleplayState>(
       listener: (context, state) {
         if (state is RoleplayLoaded) {
-          if (state.currentIndex != _lastProcessedIndex) {
+          if (state.currentIndex != _lastProcessedIndex || (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _attempts = 0;
               _spokenText = "";
               _isListening = false;
               _capsuleY = 0.4;
@@ -216,6 +228,15 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
+            });
+          } else if (state.lastAnswerCorrect == false) {
+            setState(() {
+              _isCorrect = false;
+              if (state.isFinalFailure || state.livesRemaining <= 0) {
+                _isAnswered = true;
+              } else {
+                _isAnswered = false;
+              }
             });
           }
         }
@@ -231,7 +252,8 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
         } else if (state is RoleplayGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<RoleplayBloc>().add(RestoreLife()),
+            onRestore: () => context.read<RoleplayBloc>().add(const RestoreLife()),
+            onTutorPass: _tutorPass,
           );
         }
       },
@@ -291,6 +313,9 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
                               correctAnswer: quest.correctAnswer ?? "",
                               onStartListening: _startListening,
                               onStopListening: _stopListening,
+                              attempts: _attempts,
+                              isAnswered: _isAnswered,
+                              onTutorPass: _tutorPass,
                             ),
 
                           // Post-answer explanation cards

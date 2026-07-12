@@ -51,6 +51,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
   bool? _isCorrect;
   bool _showConfetti = false;
   Timer? _autoplayTimer;
+  int _attempts = 0;
 
   @override
   void initState() {
@@ -150,6 +151,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
     final bool isCorrect = binaryIsCorrect && speechIsCorrect;
 
     setState(() {
+      _attempts++;
       _isAnswered = true;
       _isCorrect = isCorrect;
     });
@@ -163,6 +165,15 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
       _soundService.playWrong();
       context.read<SpeakingBloc>().add(SubmitAnswer(false));
     }
+  }
+
+  void _tutorPass() {
+    GameDialogHelper.showHonestyNudge(context);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = true;
+    });
+    context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
   @override
@@ -180,6 +191,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _attempts = 0;
               _isSnapped = false;
               _tiltValue = 0.0;
               _spokenText = "";
@@ -187,6 +199,15 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
             _autoplayTimer?.cancel();
             _autoplayTimer = Timer(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
+            });
+          } else if (state.lastAnswerCorrect == false) {
+            setState(() {
+              _isCorrect = false;
+              if (state.isFinalFailure || state.livesRemaining <= 0) {
+                _isAnswered = true;
+              } else {
+                _isAnswered = false;
+              }
             });
           }
           _lastLives = state.livesRemaining;
@@ -203,7 +224,8 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
         } else if (state is SpeakingGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<SpeakingBloc>().add(RestoreLife()),
+            onRestore: () => context.read<SpeakingBloc>().add(const RestoreLife()),
+            onTutorPass: _tutorPass,
           );
         }
       },
@@ -374,6 +396,9 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                                   primaryColor: theme.primaryColor,
                                                   onLongPressStart: _startSpeechListening,
                                                   onLongPressEnd: () => _stopSpeechListening(quest.sampleAnswer ?? "", doTheyMatch),
+                                                  attempts: _attempts,
+                                                  isAnswered: _isAnswered,
+                                                  onTutorPass: _tutorPass,
                                                 ),
                                               ),
                                             )
@@ -382,6 +407,9 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                               primaryColor: theme.primaryColor,
                                               onLongPressStart: _startSpeechListening,
                                               onLongPressEnd: () => _stopSpeechListening(quest.sampleAnswer ?? "", doTheyMatch),
+                                              attempts: _attempts,
+                                              isAnswered: _isAnswered,
+                                              onTutorPass: _tutorPass,
                                             ),
                                     ],
 

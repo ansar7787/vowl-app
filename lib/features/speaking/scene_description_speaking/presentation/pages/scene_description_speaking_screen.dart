@@ -48,6 +48,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
   int _lastProcessedIndex = -1;
   int? _lastLives;
   bool _isListening = false;
+  int _attempts = 0;
 
   late AnimationController _radarController;
   String _spokenText = "";
@@ -162,9 +163,21 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
       _hapticService.error();
       _soundService.playWrong();
       setState(() {
+        _attempts++;
         _spokenText = "Detail mismatch. Focus your description and use key terms: ${keywords.join(', ')}.";
       });
+      context.read<SpeakingBloc>().add(SubmitAnswer(false));
     }
+  }
+
+  void _tutorPass() {
+    GameDialogHelper.showHonestyNudge(context);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = true;
+      _inspectedHotspots.addAll([0,1,2]);
+    });
+    context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
   void _parseQuestData(SpeakingQuest quest) {
@@ -202,6 +215,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _attempts = 0;
               _isListening = false;
               _inspectedHotspots.clear();
               _activeHotspot = -1;
@@ -209,6 +223,15 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
+            });
+          } else if (state.lastAnswerCorrect == false) {
+            setState(() {
+              _isCorrect = false;
+              if (state.isFinalFailure || state.livesRemaining <= 0) {
+                _isAnswered = true;
+              } else {
+                _isAnswered = false;
+              }
             });
           }
           _lastLives = state.livesRemaining;
@@ -225,7 +248,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
         } else if (state is SpeakingGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<SpeakingBloc>().add(RestoreLife()),
+            onRestore: () => context.read<SpeakingBloc>().add(const RestoreLife()),
+            onTutorPass: _tutorPass,
           );
         }
       },
@@ -429,6 +453,9 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
                                                 isDark: isDark,
                                                 onLongPressStart: _startSpeechListening,
                                                 onLongPressEnd: _stopSpeechListening,
+                                                attempts: _attempts,
+                                                isAnswered: _isAnswered,
+                                                onTutorPass: _tutorPass,
                                               ),
                                             ),
                                           )
@@ -439,6 +466,9 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
                                             isDark: isDark,
                                             onLongPressStart: _startSpeechListening,
                                             onLongPressEnd: _stopSpeechListening,
+                                            attempts: _attempts,
+                                            isAnswered: _isAnswered,
+                                            onTutorPass: _tutorPass,
                                           ),
                                     SizedBox(height: gapBottom),
                                   ],

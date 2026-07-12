@@ -44,6 +44,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen> with Si
   int _lastProcessedIndex = -1;
   int? _lastLives;
   bool _isListening = false;
+  int _attempts = 0;
 
   late AnimationController _synapticController;
   double _timeVal = 0.0;
@@ -130,6 +131,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen> with Si
     }
 
     setState(() {
+      _attempts++;
       _isAnswered = true;
       _isCorrect = matchFound;
     });
@@ -143,6 +145,15 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen> with Si
       _soundService.playWrong();
       context.read<SpeakingBloc>().add(SubmitAnswer(false));
     }
+  }
+
+  void _tutorPass() {
+    GameDialogHelper.showHonestyNudge(context);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = true;
+    });
+    context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
   @override
@@ -160,11 +171,21 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen> with Si
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _attempts = 0;
               _isListening = false;
               _spokenText = "";
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
+            });
+          } else if (state.lastAnswerCorrect == false) {
+            setState(() {
+              _isCorrect = false;
+              if (state.isFinalFailure || state.livesRemaining <= 0) {
+                _isAnswered = true;
+              } else {
+                _isAnswered = false;
+              }
             });
           }
           _lastLives = state.livesRemaining;
@@ -181,7 +202,8 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen> with Si
         } else if (state is SpeakingGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<SpeakingBloc>().add(RestoreLife()),
+            onRestore: () => context.read<SpeakingBloc>().add(const RestoreLife()),
+            onTutorPass: _tutorPass,
           );
         }
       },
@@ -341,6 +363,9 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen> with Si
                                                 primaryColor: theme.primaryColor,
                                                 onLongPressStart: _startSpeechListening,
                                                 onLongPressEnd: _stopSpeechListening,
+                                                attempts: _attempts,
+                                                isAnswered: _isAnswered,
+                                                onTutorPass: _tutorPass,
                                               ),
                                             ),
                                           )
@@ -349,6 +374,9 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen> with Si
                                             primaryColor: theme.primaryColor,
                                             onLongPressStart: _startSpeechListening,
                                             onLongPressEnd: _stopSpeechListening,
+                                            attempts: _attempts,
+                                            isAnswered: _isAnswered,
+                                            onTutorPass: _tutorPass,
                                           ),
                                     SizedBox(height: gapBottom),
                                   ],
