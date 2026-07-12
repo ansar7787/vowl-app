@@ -16,6 +16,7 @@ class KidsQuestModel extends KidsQuest {
     super.shader,
     super.emoji,
     super.hint = "Think carefully!",
+    super.explanation,
   });
 
   factory KidsQuestModel.fromJson(Map<String, dynamic> json) {
@@ -44,6 +45,7 @@ class KidsQuestModel extends KidsQuest {
       shader: json['shader'] as String?,
       emoji: json['emoji'] as String?,
       hint: json['hint'] as String? ?? 'Think carefully!',
+      explanation: json['explanation'] as String?,
     );
   }
 
@@ -63,6 +65,7 @@ class KidsQuestModel extends KidsQuest {
       'shader': shader,
       'emoji': emoji,
       'hint': hint,
+      'explanation': explanation,
     };
   }
 }

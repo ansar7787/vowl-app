@@ -15,6 +15,7 @@ class KidsQuest extends Equatable {
   final String? shader;
   final String? emoji;
   final String hint;
+  final String? explanation;
 
   const KidsQuest({
     required this.id,
@@ -31,6 +32,7 @@ class KidsQuest extends Equatable {
     this.shader,
     this.emoji,
     this.hint = "Think carefully!",
+    this.explanation,
   });
 
   @override
@@ -49,6 +51,7 @@ class KidsQuest extends Equatable {
     shader,
     emoji,
     hint,
+    explanation,
   ];
 
   KidsQuest copyWith({
@@ -66,6 +69,7 @@ class KidsQuest extends Equatable {
     String? shader,
     String? emoji,
     String? hint,
+    String? explanation,
   }) {
     return KidsQuest(
       id: id ?? this.id,
@@ -82,6 +86,7 @@ class KidsQuest extends Equatable {
       shader: shader ?? this.shader,
       emoji: emoji ?? this.emoji,
       hint: hint ?? this.hint,
+      explanation: explanation ?? this.explanation,
     );
   }
 }

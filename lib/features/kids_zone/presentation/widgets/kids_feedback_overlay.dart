@@ -7,25 +7,32 @@ class KidsFeedbackOverlay extends StatelessWidget {
   final bool isCorrect;
   final int attempts;
   final VoidCallback onTap;
+  final String? explanation;
 
   const KidsFeedbackOverlay({
     super.key,
     this.isCorrect = true,
     this.attempts = 1,
     required this.onTap,
+    this.explanation,
   });
 
   @override
   Widget build(BuildContext context) {
-    return _KidsFeedbackOverlayContent(isCorrect: isCorrect);
+    return _KidsFeedbackOverlayContent(
+      isCorrect: isCorrect,
+      explanation: explanation,
+    );
   }
 }
 
 class _KidsFeedbackOverlayContent extends StatefulWidget {
   final bool isCorrect;
+  final String? explanation;
 
   const _KidsFeedbackOverlayContent({
     required this.isCorrect,
+    this.explanation,
   });
 
   @override
@@ -58,9 +65,18 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
           children: [
             // CENTER ANIMATION
             Center(
-              child: widget.isCorrect 
-                ? _buildCorrectAnimation()
-                : _buildWrongAnimation(),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  widget.isCorrect 
+                    ? _buildCorrectAnimation()
+                    : _buildWrongAnimation(),
+                  if (!widget.isCorrect && widget.explanation != null) ...[
+                    SizedBox(height: 32.h),
+                    _buildExplanationCard(context, widget.explanation!),
+                  ],
+                ],
+              ),
             ),
 
             // CONFETTI
@@ -129,5 +145,58 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
     final double radius = size.width / 2;
     path.addOval(Rect.fromCircle(center: Offset(radius, radius), radius: radius));
     return path;
+  }
+
+  Widget _buildExplanationCard(BuildContext context, String explanation) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.all(24.r),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: Colors.grey.shade300, width: 3.w),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade400,
+            offset: Offset(0, 6.h),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.lightbulb_rounded, color: const Color(0xFFF59E0B), size: 28.sp),
+              SizedBox(width: 8.w),
+              Text(
+                "EXPLANATION",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w900,
+                  color: const Color(0xFF94A3B8),
+                  letterSpacing: 2,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 16.h),
+          Text(
+            explanation,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 20.sp,
+              fontWeight: FontWeight.w700,
+              color: const Color(0xFF334155),
+              height: 1.4,
+            ),
+          ),
+        ],
+      ),
+    ).animate()
+      .fadeIn(delay: 600.ms, duration: 400.ms)
+      .slideY(begin: 0.2, curve: Curves.easeOutBack, delay: 600.ms, duration: 400.ms);
   }
 }

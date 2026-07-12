@@ -251,6 +251,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             KidsFeedbackOverlay(
               isCorrect: state.lastAnswerCorrect!,
               attempts: state.wrongCount,
+              explanation: state.currentQuest.explanation,
               onTap: () {
                 if (state.lastAnswerCorrect!) { context.read<KidsBloc>().add(NextKidsQuestion()); } 
                 else { 
