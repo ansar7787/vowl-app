@@ -64,6 +64,34 @@ class ConnectedSpeechExplanationCard extends StatelessWidget {
               ),
             ),
           ],
+          if (quest.phoneticRule != null) ...[
+            SizedBox(height: isCompact ? 6.h : 10.h),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(color: color.withValues(alpha: 0.3)),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.lightbulb_outline, color: color, size: 16.r),
+                  SizedBox(width: 8.w),
+                  Expanded(
+                    child: Text(
+                      quest.phoneticRule!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: isCompact ? 10.sp : 12.sp,
+                        fontWeight: FontWeight.bold,
+                        color: color,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ],
       ),
     ).animate().shimmer(duration: 2.seconds);
