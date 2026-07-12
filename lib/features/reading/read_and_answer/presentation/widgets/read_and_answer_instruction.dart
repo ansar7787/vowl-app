@@ -4,14 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ReadAndAnswerInstruction extends StatelessWidget {
   final Color primaryColor;
 
-  /// Instruction copy displayed in the banner.
-  /// Defaults to the original design text; pass a translated string for I18n.
-  final String label;
+  final String? instruction;
 
   const ReadAndAnswerInstruction({
     super.key,
     required this.primaryColor,
-    this.label = 'DIVE THROUGH THE ABYSS TO ANCHOR TRUTH',
+    this.instruction,
   });
 
   @override
@@ -20,7 +18,7 @@ class ReadAndAnswerInstruction extends StatelessWidget {
       // 'header' signals to TalkBack/VoiceOver that this is a labelled
       // section header — players hear it once on arrival, not on every focus.
       header: true,
-      label: label,
+      label: instruction ?? 'DIVE THROUGH THE ABYSS TO ANCHOR TRUTH',
       excludeSemantics: true,
       child: Center(
         child: Container(
@@ -47,7 +45,8 @@ class ReadAndAnswerInstruction extends StatelessWidget {
                 // without forcing the Row to expand to fill available space.
                 fit: FlexFit.loose,
                 child: Text(
-                  label,
+                  (instruction ?? 'DIVE THROUGH THE ABYSS TO ANCHOR TRUTH')
+                      .toUpperCase(),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 10.sp,

@@ -212,7 +212,10 @@ class _QuestContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SizedBox(height: 16.h),
-          ReadAndAnswerInstruction(primaryColor: primaryColor),
+          ReadAndAnswerInstruction(
+            primaryColor: primaryColor,
+            instruction: quest.instruction,
+          ),
           SizedBox(height: 24.h),
           ReadAndAnswerFloatingPassage(
             text: quest.passage ?? '',
