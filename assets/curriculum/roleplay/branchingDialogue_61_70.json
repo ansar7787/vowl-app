@@ -4,11 +4,11 @@
     "levels": "61-70",
     "quests": [
         {
-            "instruction": "Captain Hektor says: 'Our mission timeline has shifted and we're now three weeks behind schedule. I need to know the impact on our overall objectives.' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: Strategy Chamber",
+            "scene": "Captain Hektor says: 'Our mission timeline has shifted and we're now three weeks behind schedule. I need to know the impact on our overall objectives.'",
             "options": [
                 "Three weeks is a significant delay in any time-sensitive operation.",
                 "A three-week delay has three main impacts: we lose the seasonal weather window we planned around, the intelligence we gathered may become partially outdated, and resupply costs will increase significantly. However, Objective C is still fully achievable within the new timeline.",
@@ -20,11 +20,11 @@
             "id": "bd_l61_q1"
         },
         {
-            "instruction": "Agent Nyx says: 'We have two pieces of intelligence that completely contradict each other. Both sources are considered reliable. How do you resolve this?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: Surveillance Room",
+            "scene": "Agent Nyx says: 'We have two pieces of intelligence that completely contradict each other. Both sources are considered reliable. How do you resolve this?'",
             "options": [
                 "Contradictory intelligence from reliable sources is a genuinely complex analytical problem.",
                 "I'd go back to each source independently to verify whether anything has changed in their environment recently. Contradictions from reliable sources usually mean the situation itself has changed, not that one of them is lying.",
@@ -36,11 +36,11 @@
             "id": "bd_l61_q2"
         },
         {
-            "instruction": "Chef O-Ring says: 'We have a guest celebrating a very significant anniversary tonight. They've asked for something special but haven't specified what. What do you propose?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Chef O-Ring",
-            "scene": "Location: Restaurant",
+            "scene": "Chef O-Ring says: 'We have a guest celebrating a very significant anniversary tonight. They've asked for something special but haven't specified what. What do you propose?'",
             "options": [
                 "Special occasion guests always appreciate a personalised dining experience.",
                 "I'd arrange a small surprise: a complimentary amuse-bouche from the chef, a bottle of champagne on arrival, and a custom dessert with a personalised message. I'd also brief their server to speak warmly about the occasion when acknowledging it.",
@@ -52,11 +52,11 @@
             "id": "bd_l61_q3"
         },
         {
-            "instruction": "Dr. Elara says: 'I want to make a significant change to your treatment protocol. I should tell you this is a relatively new approach with limited long-term data. What questions do you have?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Dr. Elara",
-            "scene": "Location: Clinic",
+            "scene": "Dr. Elara says: 'I want to make a significant change to your treatment protocol. I should tell you this is a relatively new approach with limited long-term data. What questions do you have?'",
             "options": [
                 "I have three questions: what is the evidence base so far, what are the risks of switching from my current protocol, and is there a way to monitor my response so we can adjust quickly if needed?",
                 "New medical approaches are continuously emerging from ongoing research.",
@@ -68,11 +68,11 @@
             "id": "bd_l62_q1"
         },
         {
-            "instruction": "Merchant Kael says: 'Our wholesale pricing structure is changing next quarter. How would you like to manage the transition for your existing orders?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Merchant Kael",
-            "scene": "Location: Warehouse",
+            "scene": "Merchant Kael says: 'Our wholesale pricing structure is changing next quarter. How would you like to manage the transition for your existing orders?'",
             "options": [
                 "Pricing structure changes always affect long-term business planning significantly.",
                 "I'd like to understand the new structure first. Then I'd ask to lock in current pricing for any orders I place in the next thirty days, and work on a transition plan for the orders that fall after the change.",
@@ -84,11 +84,11 @@
             "id": "bd_l62_q2"
         },
         {
-            "instruction": "Pilot Jax says: 'We're approaching a very busy international airport. Traffic control has asked us to reduce speed significantly. What is your response?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Pilot Jax",
-            "scene": "Location: Cockpit",
+            "scene": "Pilot Jax says: 'We're approaching a very busy international airport. Traffic control has asked us to reduce speed significantly. What is your response?'",
             "options": [
                 "Reducing speed at the request of ATC is a standard and mandatory procedure.",
                 "Understood. Reducing to the requested speed now and confirming our approach path. What is our updated position in the landing sequence?",
@@ -100,11 +100,11 @@
             "id": "bd_l62_q3"
         },
         {
-            "instruction": "Captain Hektor says: 'I need you to lead a difficult conversation with a crew member whose performance has declined significantly. What is your approach?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: War Room",
+            "scene": "Captain Hektor says: 'I need you to lead a difficult conversation with a crew member whose performance has declined significantly. What is your approach?'",
             "options": [
                 "Difficult performance conversations are an essential part of any leadership role.",
                 "I'd start by making the setting private and comfortable, open by acknowledging their past contributions, then address the specific performance issues clearly with examples, invite their perspective on what's driving it, and collaborate on a clear improvement plan with measurable milestones.",
@@ -116,11 +116,11 @@
             "id": "bd_l63_q1"
         },
         {
-            "instruction": "Agent Nyx says: 'We've been asked to operate in a jurisdiction where local laws conflict with our operating principles. How do you navigate that?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: Investigation Lab",
+            "scene": "Agent Nyx says: 'We've been asked to operate in a jurisdiction where local laws conflict with our operating principles. How do you navigate that?'",
             "options": [
                 "Operating across different legal jurisdictions is always a complex challenge.",
                 "This needs to be escalated to legal counsel before we proceed. We need a clear ruling on which law takes precedence and under what legal framework we're operating in that jurisdiction. We cannot act on assumptions in this situation.",
@@ -132,11 +132,11 @@
             "id": "bd_l63_q2"
         },
         {
-            "instruction": "Chef O-Ring says: 'A well-known food blogger with a large following is dining with us tonight and is known for critical reviews. How do you handle service?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Chef O-Ring",
-            "scene": "Location: Restaurant",
+            "scene": "Chef O-Ring says: 'A well-known food blogger with a large following is dining with us tonight and is known for critical reviews. How do you handle service?'",
             "options": [
                 "Food bloggers with large followings can significantly affect a restaurant's reputation.",
                 "We treat them exactly as we treat every guest - with our full and consistent service standard. The moment we change our approach for a blogger, we create two tiers of service, which is both unfair and operationally unsustainable.",
@@ -148,11 +148,11 @@
             "id": "bd_l63_q3"
         },
         {
-            "instruction": "Dr. Elara says: 'I'm considering publishing a paper on your case - anonymised, of course. Do you have any concerns?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Dr. Elara",
-            "scene": "Location: Medical Bay",
+            "scene": "Dr. Elara says: 'I'm considering publishing a paper on your case - anonymised, of course. Do you have any concerns?'",
             "options": [
                 "Medical case studies contribute significantly to the advancement of medical knowledge.",
                 "I appreciate you asking. I'm comfortable with that in principle, provided I see the anonymised version before publication and confirm I'm satisfied that I cannot be identified by any detail in it.",
@@ -164,11 +164,11 @@
             "id": "bd_l64_q1"
         },
         {
-            "instruction": "Merchant Kael says: 'A key supplier has just informed me they're going out of business. How do I mitigate the disruption to my supply chain?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Merchant Kael",
-            "scene": "Location: Trade District",
+            "scene": "Merchant Kael says: 'A key supplier has just informed me they're going out of business. How do I mitigate the disruption to my supply chain?'",
             "options": [
                 "Supplier insolvency is a serious supply chain risk that all businesses face.",
                 "Immediate steps: contact your remaining alternative suppliers to increase orders to cover the gap, identify and approach two new potential suppliers this week, and review your current inventory to calculate how long you can sustain current operations without the lost supplier.",
@@ -180,11 +180,11 @@
             "id": "bd_l64_q2"
         },
         {
-            "instruction": "Pilot Jax says: 'We've been asked by our airline to reduce our turnaround time at the destination by fifteen minutes. What is your response?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Pilot Jax",
-            "scene": "Location: Sky-Dock",
+            "scene": "Pilot Jax says: 'We've been asked by our airline to reduce our turnaround time at the destination by fifteen minutes. What is your response?'",
             "options": [
                 "Turnaround time reduction requests are common in commercial aviation.",
                 "I'd want to understand which specific ground processes they're asking us to compress. Fifteen minutes is achievable if it comes from faster catering loading and ground service coordination - but not from safety checks or refuelling, which cannot be rushed.",
@@ -196,11 +196,11 @@
             "id": "bd_l64_q3"
         },
         {
-            "instruction": "Captain Hektor says: 'We've been offered significant additional resources, but only if we take on a mission that isn't strictly within our mandate. What is your advice?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: Command Bridge",
+            "scene": "Captain Hektor says: 'We've been offered significant additional resources, but only if we take on a mission that isn't strictly within our mandate. What is your advice?'",
             "options": [
                 "Additional resources are always attractive when operating under constraints.",
                 "I'd advise declining unless the mission has explicit authorisation from above our mandate level. Accepting tasks outside our mandate sets a precedent, creates accountability gaps, and risks mission creep that can compromise our core objectives.",
@@ -212,11 +212,11 @@
             "id": "bd_l65_q1"
         },
         {
-            "instruction": "Agent Nyx says: 'We have forty-eight hours to build a case that is solid enough to stand up in court. What is your strategy?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: Safe House",
+            "scene": "Agent Nyx says: 'We have forty-eight hours to build a case that is solid enough to stand up in court. What is your strategy?'",
             "options": [
                 "Building a court-ready case in forty-eight hours is an extremely demanding challenge.",
                 "Four priorities: secure all physical evidence immediately with proper chain of custody, identify and take statements from the two strongest witnesses, build the documentary timeline from start to finish, and have everything reviewed by legal counsel before the forty-eight hours are up.",
@@ -228,11 +228,11 @@
             "id": "bd_l65_q2"
         },
         {
-            "instruction": "Chef O-Ring says: 'I want to increase our average spend per cover by twenty percent. What's the most effective approach?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Chef O-Ring",
-            "scene": "Location: Dining Hall",
+            "scene": "Chef O-Ring says: 'I want to increase our average spend per cover by twenty percent. What's the most effective approach?'",
             "options": [
                 "Increasing average spend per cover is a key revenue metric for any restaurant.",
                 "Three approaches that consistently work: train servers in confident wine pairing recommendations, introduce a premium sharing dish option that two people can add to any order, and design a dessert cart that is presented visually at the table rather than listed in the menu.",
@@ -244,11 +244,11 @@
             "id": "bd_l65_q3"
         },
         {
-            "instruction": "Captain Hektor says: 'I need to present our annual performance review to the senior command council tomorrow. What are the most critical points to make?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: Strategy Chamber",
+            "scene": "Captain Hektor says: 'I need to present our annual performance review to the senior command council tomorrow. What are the most critical points to make?'",
             "options": [
                 "Annual performance reviews for senior command councils need to be very thorough.",
                 "Three critical points: our operational success rate against defined objectives, the specific capability improvements we've made this year compared to last, and an honest account of the one or two areas where performance fell short and what we're doing about them. Councils respond better to honest assessments than perfect ones.",
@@ -260,11 +260,11 @@
             "id": "bd_l66_q1"
         },
         {
-            "instruction": "Agent Nyx says: 'I've been asked to go undercover for a minimum of six months with no contact with my handler. Are you prepared for that?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: Investigation Lab",
+            "scene": "Agent Nyx says: 'I've been asked to go undercover for a minimum of six months with no contact with my handler. Are you prepared for that?'",
             "options": [
                 "Long-duration undercover operations are among the most psychologically demanding assignments.",
                 "Before committing, I need to confirm three things: a clear dead-drop protocol for if the situation becomes critical, an agreed signal that the cover has been compromised, and a firm extraction plan. With those in place, yes, I'm prepared.",
@@ -276,11 +276,11 @@
             "id": "bd_l66_q2"
         },
         {
-            "instruction": "Chef O-Ring says: 'I'm considering a complete brand repositioning - moving upmarket from casual dining to fine dining. What should I think about before making this decision?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Chef O-Ring",
-            "scene": "Location: Restaurant",
+            "scene": "Chef O-Ring says: 'I'm considering a complete brand repositioning - moving upmarket from casual dining to fine dining. What should I think about before making this decision?'",
             "options": [
                 "Brand repositioning in the restaurant industry is always a high-risk strategic decision.",
                 "Four critical considerations: whether your current customer base can and will follow you upmarket, whether your team has the technical skills for fine dining service and cuisine, what capital investment is required in the physical space and kitchen, and what the competitive landscape looks like in your target fine dining market.",
@@ -292,11 +292,11 @@
             "id": "bd_l66_q3"
         },
         {
-            "instruction": "Dr. Elara says: 'I have a patient who is refusing the treatment I've recommended despite it being clinically necessary. How do you approach this ethically?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Dr. Elara",
-            "scene": "Location: Medical Bay",
+            "scene": "Dr. Elara says: 'I have a patient who is refusing the treatment I've recommended despite it being clinically necessary. How do you approach this ethically?'",
             "options": [
                 "Patient autonomy is a fundamental principle of modern medical ethics.",
                 "I'd ensure the patient has genuinely understood both the risks of refusing treatment and the benefits of accepting it - not just technically informed, but truly comprehended. If they still refuse after that, their autonomy must be respected unless there is a serious harm to others. I'd also ask a colleague to have a separate conversation, in case a different approach resonates.",
@@ -308,11 +308,11 @@
             "id": "bd_l67_q1"
         },
         {
-            "instruction": "Merchant Kael says: 'A competitor has launched a product nearly identical to ours at a significantly lower price. What is your recommended strategic response?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Merchant Kael",
-            "scene": "Location: Trade District",
+            "scene": "Merchant Kael says: 'A competitor has launched a product nearly identical to ours at a significantly lower price. What is your recommended strategic response?'",
             "options": [
                 "Competitive pricing pressure is one of the most common strategic challenges in any market.",
                 "Don't immediately match the price - that devalues your brand and starts a race to the bottom. Instead, reinforce your product's differentiation through targeted communication, accelerate any pipeline improvements that would justify the price premium, and closely monitor whether the competitor is actually gaining market share.",
@@ -324,11 +324,11 @@
             "id": "bd_l67_q2"
         },
         {
-            "instruction": "Pilot Jax says: 'Our airline is considering using advanced AI systems to assist with decision-making in the cockpit. What is your view on this?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Pilot Jax",
-            "scene": "Location: Cockpit",
+            "scene": "Pilot Jax says: 'Our airline is considering using advanced AI systems to assist with decision-making in the cockpit. What is your view on this?'",
             "options": [
                 "AI is making significant inroads into many different professional fields.",
                 "AI decision support in the cockpit has genuine potential for increasing safety - particularly in data synthesis and pattern recognition under stress. The key safeguard is that the human pilot must retain final authority on all critical decisions, and the system must be designed to support, not replace, human judgment.",
@@ -340,11 +340,11 @@
             "id": "bd_l67_q3"
         },
         {
-            "instruction": "Captain Hektor says: 'We've successfully completed our most challenging mission to date. How do you think we should use this experience going forward?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: Command Bridge",
+            "scene": "Captain Hektor says: 'We've successfully completed our most challenging mission to date. How do you think we should use this experience going forward?'",
             "options": [
                 "Successfully completing very challenging missions builds team confidence and resilience.",
                 "Three ways to leverage this: run a detailed debrief to capture what worked and systematically embed those practices, use the experience as a case study for training future teams, and recognise the specific contributions of individuals who performed exceptionally - recognition builds the culture that makes the next difficult mission successful.",
@@ -356,11 +356,11 @@
             "id": "bd_l68_q1"
         },
         {
-            "instruction": "Agent Nyx says: 'I need to interview a reluctant witness who is afraid to speak. What technique do you recommend?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: Safe House",
+            "scene": "Agent Nyx says: 'I need to interview a reluctant witness who is afraid to speak. What technique do you recommend?'",
             "options": [
                 "Reluctant witnesses can be very challenging to engage effectively in an investigation.",
                 "Start by addressing the fear directly and specifically - ask what they're afraid of and what would make them feel safer. Explain exactly how their information will be used and protected. Never use pressure; build trust incrementally. Often the first meeting is just about establishing enough safety for a second meeting.",
@@ -372,11 +372,11 @@
             "id": "bd_l68_q2"
         },
         {
-            "instruction": "Chef O-Ring says: 'I'm designing a new chef development programme for my team. What principles should guide its structure?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Chef O-Ring",
-            "scene": "Location: Kitchen",
+            "scene": "Chef O-Ring says: 'I'm designing a new chef development programme for my team. What principles should guide its structure?'",
             "options": [
                 "Chef development programmes are a valuable investment in a kitchen team's long-term capability.",
                 "Four guiding principles: build progression from foundational technique before creativity, use real service shifts as the primary learning environment rather than classroom time, pair each developing chef with a senior mentor who is specifically assessed on their teaching quality, and connect every skill development module to a visible improvement in a specific real dish.",
@@ -388,11 +388,11 @@
             "id": "bd_l68_q3"
         },
         {
-            "instruction": "Dr. Elara says: 'I'd like to try a treatment approach that has very strong evidence in similar cases but has never been used in exactly your specific presentation. How do you feel about that?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Dr. Elara",
-            "scene": "Location: Clinic",
+            "scene": "Dr. Elara says: 'I'd like to try a treatment approach that has very strong evidence in similar cases but has never been used in exactly your specific presentation. How do you feel about that?'",
             "options": [
                 "Applying evidence-based treatments to slightly different presentations is normal medical practice.",
                 "I'm willing to consider it. Could you explain what 'very strong evidence in similar cases' actually means in quantitative terms, and whether my case has been discussed with any colleagues who might have relevant experience?",
@@ -404,11 +404,11 @@
             "id": "bd_l69_q1"
         },
         {
-            "instruction": "Merchant Kael says: 'I'm planning to expand into a new geographic market next year. What market entry approach would you recommend?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Merchant Kael",
-            "scene": "Location: Warehouse",
+            "scene": "Merchant Kael says: 'I'm planning to expand into a new geographic market next year. What market entry approach would you recommend?'",
             "options": [
                 "Geographic market expansion is one of the most common and often challenging growth strategies.",
                 "I'd recommend a phased approach: start with a pilot distribution partnership in one city to test demand and operational viability, use that data to refine your pricing and positioning before a full launch, and only commit to significant infrastructure investment once you have actual market data, not projections.",
@@ -420,11 +420,11 @@
             "id": "bd_l69_q2"
         },
         {
-            "instruction": "Pilot Jax says: 'We're flying into a region with very different air traffic control communication conventions. How do you prepare your crew?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Pilot Jax",
-            "scene": "Location: Aviation Hub",
+            "scene": "Pilot Jax says: 'We're flying into a region with very different air traffic control communication conventions. How do you prepare your crew?'",
             "options": [
                 "Air traffic control communication conventions do vary considerably between different regions.",
                 "Three preparation steps: brief the crew on the specific phraseology differences they'll encounter, practice the key non-standard phrases in a simulated exercise before the flight, and designate the more experienced pilot as the primary communicator with ATC for this sector until the crew is fully comfortable.",
@@ -436,11 +436,11 @@
             "id": "bd_l69_q3"
         },
         {
-            "instruction": "Captain Hektor says: 'One of our key operational assumptions has turned out to be completely wrong. We're now in the middle of the mission. How do you adapt?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: Strategy Chamber",
+            "scene": "Captain Hektor says: 'One of our key operational assumptions has turned out to be completely wrong. We're now in the middle of the mission. How do you adapt?'",
             "options": [
                 "Discovering a fundamental assumption error mid-mission is an extremely critical situation.",
                 "Immediate three steps: halt any actions that were contingent on the false assumption, reassess what objectives are still achievable with the actual situation, and identify the minimum viable version of the mission that can still be accomplished. Never let sunk cost drive decisions when assumptions have fundamentally changed.",
@@ -452,11 +452,11 @@
             "id": "bd_l70_q1"
         },
         {
-            "instruction": "Agent Nyx says: 'I've just discovered that a colleague I've worked with for years has been feeding information to the other side. How do you process this professionally?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: Surveillance Room",
+            "scene": "Agent Nyx says: 'I've just discovered that a colleague I've worked with for years has been feeding information to the other side. How do you process this professionally?'",
             "options": [
                 "Betrayal by a trusted colleague is one of the most deeply damaging things that can happen in this work.",
                 "The professional response and the personal response are separate. Professionally: report immediately, secure any information they had access to, and cooperate fully with the internal investigation. Personally: the shock and sense of betrayal are real and valid - but they need to be processed separately and perhaps with professional support.",
@@ -468,11 +468,11 @@
             "id": "bd_l70_q2"
         },
         {
-            "instruction": "Chef O-Ring says: 'A regular guest has written a detailed online review that is factually wrong in several significant ways. How do you respond?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Chef O-Ring",
-            "scene": "Location: Restaurant",
+            "scene": "Chef O-Ring says: 'A regular guest has written a detailed online review that is factually wrong in several significant ways. How do you respond?'",
             "options": [
                 "Online reviews, whether positive or negative, are very powerful in shaping a restaurant's reputation.",
                 "Respond publicly, professionally, and specifically. Thank them for taking the time to write the review, address each factual inaccuracy once, clearly and without aggression, and invite them back for a complimentary visit to give you the opportunity to show them what your experience is really like.",

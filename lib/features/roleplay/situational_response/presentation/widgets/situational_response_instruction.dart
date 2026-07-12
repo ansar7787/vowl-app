@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SituationalResponseInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const SituationalResponseInstruction({super.key, required this.primaryColor});
+  const SituationalResponseInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,7 @@ class SituationalResponseInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          "Replicate the best reaction before tension peaks",
+          instruction ?? "Replicate the best reaction before tension peaks",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',

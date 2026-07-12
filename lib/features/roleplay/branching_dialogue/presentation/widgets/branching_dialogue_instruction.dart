@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BranchingDialogueInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const BranchingDialogueInstruction({super.key, required this.primaryColor});
+  const BranchingDialogueInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,7 @@ class BranchingDialogueInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          "Navigate dialogue branches to lock response target",
+          instruction ?? "Navigate dialogue branches to lock response target",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',

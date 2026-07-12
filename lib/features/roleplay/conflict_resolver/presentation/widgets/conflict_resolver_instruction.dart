@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ConflictResolverInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const ConflictResolverInstruction({super.key, required this.primaryColor});
+  const ConflictResolverInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,7 @@ class ConflictResolverInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          "Tune the console to balance the argument frequency",
+          instruction ?? "Tune the console to balance the argument frequency",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',

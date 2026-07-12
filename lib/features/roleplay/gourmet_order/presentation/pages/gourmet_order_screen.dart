@@ -193,6 +193,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                         children: [
                           GourmetOrderInstruction(
                             primaryColor: theme.primaryColor,
+                            instruction: quest.instruction,
                           ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
                           GourmetOrderBanquetHeader(

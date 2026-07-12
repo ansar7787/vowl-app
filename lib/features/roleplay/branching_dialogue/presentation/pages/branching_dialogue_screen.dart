@@ -227,6 +227,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                         children: [
                           BranchingDialogueInstruction(
                             primaryColor: theme.primaryColor,
+                            instruction: quest.instruction,
                           ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
                           BranchingDialoguePersonaConsole(

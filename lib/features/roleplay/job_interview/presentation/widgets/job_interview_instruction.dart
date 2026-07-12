@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class JobInterviewInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const JobInterviewInstruction({super.key, required this.primaryColor});
+  const JobInterviewInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,8 @@ class JobInterviewInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          "Select the answer that maximizes your Professionalism Rating",
+          instruction ??
+              "Select the answer that maximizes your Professionalism Rating",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',

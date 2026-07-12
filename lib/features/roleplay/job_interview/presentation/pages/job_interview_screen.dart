@@ -167,6 +167,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                         children: [
                           JobInterviewInstruction(
                             primaryColor: theme.primaryColor,
+                            instruction: quest.instruction,
                           ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
 

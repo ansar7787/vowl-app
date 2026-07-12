@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SocialSparkInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const SocialSparkInstruction({super.key, required this.primaryColor});
+  const SocialSparkInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,8 @@ class SocialSparkInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          "Link the floating verbal stars in correct syntactic sequence",
+          instruction ??
+              "Link the floating verbal stars in correct syntactic sequence",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',

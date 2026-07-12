@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MedicalConsultInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const MedicalConsultInstruction({super.key, required this.primaryColor});
+  const MedicalConsultInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,7 @@ class MedicalConsultInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          "Drag the scan lens to locate active patient glitches",
+          instruction ?? "Drag the scan lens to locate active patient glitches",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',

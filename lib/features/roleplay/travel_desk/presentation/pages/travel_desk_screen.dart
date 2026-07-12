@@ -167,6 +167,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                         children: [
                           TravelDeskInstruction(
                             primaryColor: theme.primaryColor,
+                            instruction: quest.instruction,
                           ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
                           TravelDeskCustomsTerminal(

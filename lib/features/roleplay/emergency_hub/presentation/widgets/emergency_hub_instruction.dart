@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EmergencyHubInstruction extends StatelessWidget {
-  const EmergencyHubInstruction({super.key});
+  final String? instruction;
+
+  const EmergencyHubInstruction({super.key, this.instruction});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,8 @@ class EmergencyHubInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          "Authenticate terminal code and spin safety valve to route unit!",
+          instruction ??
+              "Authenticate terminal code and spin safety valve to route unit!",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',

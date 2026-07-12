@@ -190,7 +190,9 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                       ),
                       child: Column(
                         children: [
-                          const EmergencyHubInstruction(),
+                          EmergencyHubInstruction(
+                            instruction: quest.instruction,
+                          ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
 
                           // Critical dispatcher prompt telex

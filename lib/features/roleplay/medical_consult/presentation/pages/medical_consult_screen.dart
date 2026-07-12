@@ -271,6 +271,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                         children: [
                           MedicalConsultInstruction(
                             primaryColor: theme.primaryColor,
+                            instruction: quest.instruction,
                           ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
                           MedicalConsultPatientRecord(

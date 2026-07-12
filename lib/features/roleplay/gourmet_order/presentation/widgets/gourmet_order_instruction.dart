@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GourmetOrderInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const GourmetOrderInstruction({super.key, required this.primaryColor});
+  const GourmetOrderInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,8 @@ class GourmetOrderInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          "Drag or tap gourmet food plates to load the serving platter",
+          instruction ??
+              "Drag or tap gourmet food plates to load the serving platter",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',

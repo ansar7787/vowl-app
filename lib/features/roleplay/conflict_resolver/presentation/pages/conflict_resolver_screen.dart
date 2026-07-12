@@ -192,6 +192,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                         children: [
                           ConflictResolverInstruction(
                             primaryColor: theme.primaryColor,
+                            instruction: quest.instruction,
                           ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
                           ConflictResolverConflictCard(

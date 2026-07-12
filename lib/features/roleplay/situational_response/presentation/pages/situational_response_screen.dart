@@ -218,6 +218,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                         children: [
                           SituationalResponseInstruction(
                             primaryColor: theme.primaryColor,
+                            instruction: quest.instruction,
                           ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
                           SituationalResponseSceneDisplay(

@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TravelDeskInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const TravelDeskInstruction({super.key, required this.primaryColor});
+  const TravelDeskInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,8 @@ class TravelDeskInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          "Drag the mechanical visa stamp onto the matching destination page",
+          instruction ??
+              "Drag the mechanical visa stamp onto the matching destination page",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',

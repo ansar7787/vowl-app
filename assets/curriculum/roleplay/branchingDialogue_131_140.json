@@ -4,11 +4,11 @@
     "levels": "131-140",
     "quests": [
         {
-            "instruction": "Captain Hektor says: 'I've been asked to take command of an operation I believe has insufficient resources to succeed. Do I accept or decline?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: War Room",
+            "scene": "Captain Hektor says: 'I've been asked to take command of an operation I believe has insufficient resources to succeed. Do I accept or decline?'",
             "options": [
                 "Accept, but formally document your resource assessment and request before accepting - so that the record shows you accepted knowing the constraints, and that your assessment was heard even if not acted on.",
                 "Decline - no professional should accept a mission they believe is under-resourced.",
@@ -20,11 +20,11 @@
             "id": "bd_l131_q1"
         },
         {
-            "instruction": "Agent Nyx says: 'I need to advise a foreign government on their internal security architecture. My government has an interest in the outcome. How do I manage the conflict between my role as an adviser and my government's interests?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: Safe House",
+            "scene": "Agent Nyx says: 'I need to advise a foreign government on their internal security architecture. My government has an interest in the outcome. How do I manage the conflict between my role as an adviser and my government's interests?'",
             "options": [
                 "Disclose the conflict fully and explicitly to the foreign government before beginning: 'My government has interests related to your security architecture, and you should know that before accepting my advice.' If they choose to continue with my involvement after full disclosure, provide the most genuinely useful advice I can. The disclosure protects both parties.",
                 "Focus on providing the best professional advice possible and let your government manage their interests separately.",
@@ -36,11 +36,11 @@
             "id": "bd_l131_q2"
         },
         {
-            "instruction": "Chef O-Ring says: 'I've been asked to create a dish that uses an ingredient that I know is sourced from ecologically destructive practices. The client insists. How do you respond?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Chef O-Ring",
-            "scene": "Location: Restaurant",
+            "scene": "Chef O-Ring says: 'I've been asked to create a dish that uses an ingredient that I know is sourced from ecologically destructive practices. The client insists. How do you respond?'",
             "options": [
                 "Decline to use the ingredient and explain why precisely: 'I won't use this ingredient because its sourcing causes ecological damage that I'm not willing to be associated with - not as a moral stance about this client, but as a consistent professional principle. I can offer you an ingredient with similar culinary properties sourced responsibly.' If the client continues to insist, decline the commission.",
                 "Use the ingredient this once as a commercial exception while advocating for change in sourcing practices.",
@@ -52,11 +52,11 @@
             "id": "bd_l131_q3"
         },
         {
-            "instruction": "Dr. Elara says: 'A pharmaceutical company is offering a very large donation to our research institute, but only if we commit to using their products in our research. What is the right response?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Dr. Elara",
-            "scene": "Location: Medical Bay",
+            "scene": "Dr. Elara says: 'A pharmaceutical company is offering a very large donation to our research institute, but only if we commit to using their products in our research. What is the right response?'",
             "options": [
                 "Decline the donation as structured. A commitment to use specific products in research creates exactly the bias that research funding must protect against. You can invite unrestricted donations from the same company - some companies will accept this if asked. But a restricted donation that influences methodology is not compatible with scientific integrity.",
                 "Accept the donation with full disclosure in all publications - transparency mitigates the conflict.",
@@ -68,11 +68,11 @@
             "id": "bd_l132_q1"
         },
         {
-            "instruction": "Merchant Kael says: 'A major customer has just told me confidentially that they're planning to move their business to a competitor at contract renewal. I still have six months on the contract. What do you do?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Merchant Kael",
-            "scene": "Location: Trade District",
+            "scene": "Merchant Kael says: 'A major customer has just told me confidentially that they're planning to move their business to a competitor at contract renewal. I still have six months on the contract. What do you do?'",
             "options": [
                 "Use the six months to understand precisely what is driving the decision, address the genuine concerns where you can, and demonstrate the value they would lose by switching - not with promises but with visible action during the six months. Don't panic-discount. Don't hold them to the contract letter beyond its spirit. Use the six months to either earn the renewal or make the transition as positive as possible.",
                 "Ask them directly what it would take to change their decision and negotiate accordingly.",
@@ -84,11 +84,11 @@
             "id": "bd_l132_q2"
         },
         {
-            "instruction": "Pilot Jax says: 'I've been asked to comment publicly on an incident at another airline that I know was handled correctly by the crew but is being misrepresented in the media. What do you do?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Pilot Jax",
-            "scene": "Location: Sky-Dock",
+            "scene": "Pilot Jax says: 'I've been asked to comment publicly on an incident at another airline that I know was handled correctly by the crew but is being misrepresented in the media. What do you do?'",
             "options": [
                 "Speak, specifically and with attribution: 'I'm not commenting on this specific incident, but I can tell you what correct procedure looks like in a situation of this type, because the media description doesn't match it.' This contributes to public understanding and corrects the misleading narrative without commenting on the specific incident.",
                 "Contact the other airline's crew through appropriate channels to offer support, but don't comment publicly.",
@@ -100,11 +100,11 @@
             "id": "bd_l132_q3"
         },
         {
-            "instruction": "Captain Hektor says: 'An experienced officer under my command believes I made the wrong tactical call in a recent operation. They've raised this formally. How do you respond?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: Strategy Chamber",
+            "scene": "Captain Hektor says: 'An experienced officer under my command believes I made the wrong tactical call in a recent operation. They've raised this formally. How do you respond?'",
             "options": [
                 "Engage with the formal challenge substantively: review the operation documentation, meet with the officer privately to hear their full argument, and provide a specific response to the specific criticism - not a defence of your position, but a genuine engagement with the question of whether they are right. If they are right, say so and document the learning. If you believe you were right, explain why specifically. A formal challenge deserves a substantive response.",
                 "Acknowledge the formal nature of the challenge and process it through the appropriate review procedures.",
@@ -116,11 +116,11 @@
             "id": "bd_l133_q1"
         },
         {
-            "instruction": "Agent Nyx says: 'I'm developing an assessment tool for identifying future intelligence analysts. What specific qualities most predict long-term excellence in analytical work?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: Surveillance Room",
+            "scene": "Agent Nyx says: 'I'm developing an assessment tool for identifying future intelligence analysts. What specific qualities most predict long-term excellence in analytical work?'",
             "options": [
                 "Five qualities that predict long-term analytical excellence: first, the ability to hold multiple competing hypotheses simultaneously without prematurely collapsing to a conclusion; second, specific calibration of confidence - analysts who know the difference between seventy percent confident and ninety percent confident; third, intellectual honesty about the limits of their knowledge, including active pursuit of disconfirming evidence; fourth, the ability to write clearly about complex uncertain things - clarity of writing is a proxy for clarity of thinking; fifth, intellectual resilience - they change their mind when the evidence changes and can explain specifically what changed and why.",
                 "Assess analytical reasoning, attention to detail, pattern recognition, and the ability to work under pressure.",
@@ -132,11 +132,11 @@
             "id": "bd_l133_q2"
         },
         {
-            "instruction": "Chef O-Ring says: 'I want to close the restaurant for a full year while I spend time in different culinary traditions around the world. What are the professional and personal questions I need to answer first?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Chef O-Ring",
-            "scene": "Location: Kitchen",
+            "scene": "Chef O-Ring says: 'I want to close the restaurant for a full year while I spend time in different culinary traditions around the world. What are the professional and personal questions I need to answer first?'",
             "options": [
                 "Seven questions: will the restaurant's identity survive a year's absence or will it need to be relaunched on return? Can your key staff be retained on a leave basis or will you lose them permanently? Is your financial position strong enough to carry the building costs for a year without revenue? What is your honest reason for wanting to do this - curiosity, burnout, or creative stagnation - and does a year away address it? What do you plan to do with the learning you bring back - is there a concrete vision for what the restaurant becomes on return? Have you told your most loyal regular guests, and how? And what is your personal relationship with the restaurant - do you need it to be there when you return, or are you open to the possibility that the return may be to something different?",
                 "Research the visa, work permit, and immigration requirements for each country you plan to visit.",
@@ -148,11 +148,11 @@
             "id": "bd_l133_q3"
         },
         {
-            "instruction": "Dr. Elara says: 'I've been asked to give a public lecture on a topic where the science is clear but the policy implications are deeply contested politically. How do you navigate this?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Dr. Elara",
-            "scene": "Location: Clinic",
+            "scene": "Dr. Elara says: 'I've been asked to give a public lecture on a topic where the science is clear but the policy implications are deeply contested politically. How do you navigate this?'",
             "options": [
                 "Be explicit about the structure of the lecture from the start: 'I will speak clearly about what the science shows, which is settled. I will then speak about the policy implications, where I have views that go beyond the science and where reasonable people disagree. I'll be transparent about which is which throughout.' This doesn't protect you from controversy - it makes your reasoning visible and honest, which is the best protection you have.",
                 "Restrict the lecture to the scientific evidence and decline to comment on policy implications.",
@@ -164,11 +164,11 @@
             "id": "bd_l134_q1"
         },
         {
-            "instruction": "Merchant Kael says: 'I'm in a negotiation where the other party has just threatened to walk away if I don't agree to their last demand. Do I believe them?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Merchant Kael",
-            "scene": "Location: Auction Hall",
+            "scene": "Merchant Kael says: 'I'm in a negotiation where the other party has just threatened to walk away if I don't agree to their last demand. Do I believe them?'",
             "options": [
                 "Three tests to assess the credibility of a walkaway threat: first, what is their BATNA - what is their alternative to a deal with you, and is it genuinely viable? Second, have they made similar threats in this negotiation that they didn't follow through on - pattern is predictive; third, does the body language and communication style suggest a genuine position change or tactical escalation - genuine walkaway threats are usually quieter and more resolute, not louder and more demonstrative.",
                 "Call their bluff - if they want to walk away they will, and no concession at this point is worth it.",
@@ -180,11 +180,11 @@
             "id": "bd_l134_q2"
         },
         {
-            "instruction": "Pilot Jax says: 'I want to develop a mentoring programme specifically for women pilots in our airline where women are significantly underrepresented. What design considerations matter most?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Pilot Jax",
-            "scene": "Location: Cockpit",
+            "scene": "Pilot Jax says: 'I want to develop a mentoring programme specifically for women pilots in our airline where women are significantly underrepresented. What design considerations matter most?'",
             "options": [
                 "Four design considerations that matter most: first, pair women pilots with mentors who have genuine operational credibility - the programme loses value if it is seen as a soft track rather than a professional development track; second, include specific coaching on navigating gender-specific dynamics in aviation without reducing the programme to a gender-dynamics programme - operational excellence is the primary goal; third, create peer networks within the cohort as well as mentor relationships - isolation compounds the underrepresentation experience and peer networks address this in ways individual mentoring cannot; fourth, gather data on specific career junctures where women leave the aviation pathway and design the programme to address those specific junctures, not to be a general mentoring programme.",
                 "Ensure the programme is visible and endorsed by senior leadership to signal its importance.",
@@ -196,11 +196,11 @@
             "id": "bd_l134_q3"
         },
         {
-            "instruction": "Captain Hektor says: 'I've been offered a senior position in a different organisation that would represent a significant career advancement. My current team is in a critical phase of a mission. What do you think about?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: Command Bridge",
+            "scene": "Captain Hektor says: 'I've been offered a senior position in a different organisation that would represent a significant career advancement. My current team is in a critical phase of a mission. What do you think about?'",
             "options": [
                 "Think about four things: the career opportunity's specific qualities versus its surface appeal - is it genuinely better work, or is it more senior work, which is not the same thing? The actual impact your departure would have on the team at this specific phase - honest assessment, not flattery to yourself; what you have committed to, explicitly and implicitly, and what departure would mean for those commitments; and whether the timing is within your influence - can you negotiate a start date that respects your current obligations?",
                 "Think about whether the career opportunity aligns with your long-term professional goals.",
@@ -212,11 +212,11 @@
             "id": "bd_l135_q1"
         },
         {
-            "instruction": "Agent Nyx says: 'I need to build public trust in an intelligence organisation that has recently experienced a major scandal. What approach actually works?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: Investigation Lab",
+            "scene": "Agent Nyx says: 'I need to build public trust in an intelligence organisation that has recently experienced a major scandal. What approach actually works?'",
             "options": [
                 "Three things actually work and three things don't. What doesn't work: communication campaigns, new leadership who promises change, and incremental reforms. What works: specific external accountability mechanisms with real authority and visible outcomes, not advisory committees; the public identification and accountability of the specific failures and the people responsible for them - not managed reputational damage control; and a sustained period where promised changes can be verified by independent external observers before trust is rebuilt. Trust is not rebuilt by claiming it - it is rebuilt by demonstrating it over time through visible, independently verified behaviour change.",
                 "Appoint a respected independent review panel and implement their recommendations transparently.",
@@ -228,11 +228,11 @@
             "id": "bd_l135_q2"
         },
         {
-            "instruction": "Chef O-Ring says: 'I've been offered the opportunity to create a permanent culinary legacy project - something that will outlast my career. What principles guide the design of something meant to endure?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Chef O-Ring",
-            "scene": "Location: Restaurant",
+            "scene": "Chef O-Ring says: 'I've been offered the opportunity to create a permanent culinary legacy project - something that will outlast my career. What principles guide the design of something meant to endure?'",
             "options": [
                 "Four principles for something meant to endure: first, design for the problem that will still exist when you're gone, not the problem that is fashionable now; second, make it transferable - if it requires your specific presence or genius to function, it is an institution of one and will not outlast you; third, build in genuine institutional humility - design structures that allow the project to be corrected and improved by those who come after, without your approval; fourth, give it to those it serves, not to those who fund it - the governance of a lasting legacy belongs to the community it is designed to serve.",
                 "Create something that represents the best of your culinary vision and can inspire future generations.",
@@ -244,11 +244,11 @@
             "id": "bd_l135_q3"
         },
         {
-            "instruction": "Dr. Elara says: 'I want to create a research environment where people feel safe admitting uncertainty and error. What specific behaviours from me as the leader create that environment?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Dr. Elara",
-            "scene": "Location: Research Lab",
+            "scene": "Dr. Elara says: 'I want to create a research environment where people feel safe admitting uncertainty and error. What specific behaviours from me as the leader create that environment?'",
             "options": [
                 "Three specific leader behaviours that create psychological safety around uncertainty and error: first, publicly share your own uncertainties and errors with the team, specifically and without excessive self-criticism - not performing vulnerability, but genuine transparency; second, when a team member shares an error, respond with curiosity rather than disappointment - 'what do we learn from this' before any assessment of what should have been done differently; third, never allow the person who identifies an error to carry a disproportionate cost for having identified it - if people learn that identifying errors leads to additional scrutiny or work, they will stop identifying them.",
                 "Create formal processes for error reporting and uncertainty acknowledgment that make them standard practice.",
@@ -260,11 +260,11 @@
             "id": "bd_l136_q1"
         },
         {
-            "instruction": "Merchant Kael says: 'I need to expand internationally but I have limited capital and cannot afford to fail. What market entry strategy minimises the risk of a costly failure?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Merchant Kael",
-            "scene": "Location: Warehouse",
+            "scene": "Merchant Kael says: 'I need to expand internationally but I have limited capital and cannot afford to fail. What market entry strategy minimises the risk of a costly failure?'",
             "options": [
                 "A capital-constrained international entry strategy has two non-negotiable characteristics: it must generate positive cash flow before it requires additional capital injection, and it must be designed to test specific assumptions before committing to them. This points to distribution partnerships rather than direct investment, a single market entry with the most conservative market size assumptions, and a clear definition of what evidence would tell you whether to proceed, hold, or exit before committing to the next phase.",
                 "Enter the market with the most potential first to generate the strongest possible return on the initial investment.",
@@ -276,11 +276,11 @@
             "id": "bd_l136_q2"
         },
         {
-            "instruction": "Pilot Jax says: 'I've been offered the chance to write the standard operating procedures for a brand new type of aircraft that has never entered commercial service before. What principles guide how you write an SOP for the genuinely unknown?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Pilot Jax",
-            "scene": "Location: Aviation Hub",
+            "scene": "Pilot Jax says: 'I've been offered the chance to write the standard operating procedures for a brand new type of aircraft that has never entered commercial service before. What principles guide how you write an SOP for the genuinely unknown?'",
             "options": [
                 "Four principles for writing an SOP for an aircraft where there is no operational experience yet: first, design for the failure modes that the manufacturer's testing identified even if they haven't occurred in operation - the testing data is your best proxy for the unknown; second, write for the scenario where the primary system fails, not just for normal operations - the gaps in safety show up at the boundaries, not in the centre; third, build in explicit review triggers - after the first hundred flights, after the first season, after the first incident; fourth, write the SOP in plain language that works for a pilot under stress, not technical language that works for an engineer reading at a desk.",
                 "Follow established aviation SOP development methodology and consult extensively with the manufacturer and test pilots.",
@@ -292,11 +292,11 @@
             "id": "bd_l136_q3"
         },
         {
-            "instruction": "Captain Hektor says: 'I need to lead a complex multi-partner operation where each partner has different rules of engagement. How do you create coherent command?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: War Room",
+            "scene": "Captain Hektor says: 'I need to lead a complex multi-partner operation where each partner has different rules of engagement. How do you create coherent command?'",
             "options": [
                 "Coherent command across partners with different rules of engagement requires making those differences explicit and managed rather than ignored. Before operations begin: map every significant operational scenario against each partner's rules of engagement and identify the points of conflict; establish a clear decision protocol for who has authority when rules of engagement conflict in real time; and ensure every partner understands every other partner's constraints. The operation will then run at the speed of the most constrained partner in the scenarios where their constraints apply, and at the speed of the least constrained in scenarios where they don't.",
                 "Establish a unified command structure with clear decision authority at each level.",
@@ -308,11 +308,11 @@
             "id": "bd_l137_q1"
         },
         {
-            "instruction": "Agent Nyx says: 'I've discovered that an operation I've been running has produced results that my organisation will want to publicise, but the methods used would be controversial if disclosed. How do you handle this tension?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: Surveillance Room",
+            "scene": "Agent Nyx says: 'I've discovered that an operation I've been running has produced results that my organisation will want to publicise, but the methods used would be controversial if disclosed. How do you handle this tension?'",
             "options": [
                 "The tension between results and methods is one of the most important integrity tests in intelligence work. The correct approach is to be completely transparent about the methods with the appropriate oversight authority - even if not publicly - and allow the oversight authority to make the decision about what is appropriate to publicise and how. Withholding the method from oversight while publicising the result would be a serious breach of professional integrity, regardless of whether the method was within operational guidelines.",
                 "Ensure the results are communicated effectively and let the oversight process handle any concerns about methods in its own time.",
@@ -324,11 +324,11 @@
             "id": "bd_l137_q2"
         },
         {
-            "instruction": "Chef O-Ring says: 'I'm being asked to consult on making an historic city's traditional street food culture sustainable in the face of rapid urban development. What framework do you bring to this challenge?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Chef O-Ring",
-            "scene": "Location: Restaurant",
+            "scene": "Chef O-Ring says: 'I'm being asked to consult on making an historic city's traditional street food culture sustainable in the face of rapid urban development. What framework do you bring to this challenge?'",
             "options": [
                 "A framework with four dimensions: cultural authenticity - who defines it and who doesn't; economic viability - for the vendors themselves, not for the tourism industry or the real estate market; institutional protection mechanisms that don't require the street food culture to become a museum exhibit to survive; and the voices that need to be central to the decision - the vendors, their families, their communities, not the urban planners or the heritage preservation industry. The greatest risk in street food 'preservation' is that the form survives while the living culture dies.",
                 "Document the existing food culture comprehensively and advocate for protected zones where traditional street food can continue to operate.",
@@ -340,11 +340,11 @@
             "id": "bd_l137_q3"
         },
         {
-            "instruction": "Dr. Elara says: 'I'm advising a national health authority on a complex ethical question about resource allocation in a context of genuine scarcity. What framework guides this type of advice?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Dr. Elara",
-            "scene": "Location: Medical Bay",
+            "scene": "Dr. Elara says: 'I'm advising a national health authority on a complex ethical question about resource allocation in a context of genuine scarcity. What framework guides this type of advice?'",
             "options": [
                 "Resource allocation in genuine scarcity requires explicit engagement with a set of ethical principles that are in tension with each other: utilitarian maximisation of aggregate outcomes; equity in distribution across different groups; priority to the worst-off; procedural fairness regardless of outcome; and respect for individual autonomy. No framework can eliminate the tension between these. The most honest framework explicitly names the tension, is transparent about which principles are being prioritised and why in this specific context, and includes a genuine process for the affected communities to understand and engage with the basis for the decision.",
                 "Apply established bioethical frameworks such as those used for organ allocation or pandemic triage.",
@@ -356,11 +356,11 @@
             "id": "bd_l138_q1"
         },
         {
-            "instruction": "Merchant Kael says: 'I want to understand why my best people keep leaving and going to my competitor. I've done exit interviews but I don't believe the answers I'm getting. How do you find the truth?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: Trade District",
+            "scene": "Merchant Kael says: 'I want to understand why my best people keep leaving and going to my competitor. I've done exit interviews but I don't believe the answers I'm getting. How do you find the truth?'",
             "options": [
                 "Three methods to find the truth that exit interviews can't reach: first, interview people who have already left and who have been gone long enough to no longer feel at risk - six to twelve months after departure, people speak more honestly about what they experienced; second, conduct anonymous surveys of current employees specifically asking about the conditions and experiences that usually drive departure - not satisfaction surveys, but targeted surveys about specific departure drivers; third, and most importantly, ask the people who stayed why they stayed and what almost made them leave - this is the most under-used and most revealing source of departure intelligence.",
                 "Conduct deeper exit interviews using an independent third party who can elicit more honest responses.",
@@ -372,11 +372,11 @@
             "id": "bd_l138_q2"
         },
         {
-            "instruction": "Chef O-Ring says: 'I've been asked to advise a government on developing a national culinary identity that can be promoted internationally. What are the most important things to get right?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Chef O-Ring",
-            "scene": "Location: Kitchen",
+            "scene": "Chef O-Ring says: 'I've been asked to advise a government on developing a national culinary identity that can be promoted internationally. What are the most important things to get right?'",
             "options": [
                 "Three things to get right that most national culinary promotion campaigns get wrong: first, resist the temptation to curate - the most powerful national culinary identity is specific and honest, not a greatest hits collection designed for international palatability; second, the identity should be defined and led by the people who make and eat the food every day, not by the tourism ministry, the restaurant industry, or the embassy circuit; third, international culinary promotion that works is built on genuine access - bringing international food professionals and media inside the living culture, not bringing the culture to them in a showcase that they observe from the outside.",
                 "Identify the most distinctive and internationally appealing elements of the national cuisine and develop a comprehensive promotion strategy around them.",
@@ -388,11 +388,11 @@
             "id": "bd_l138_q3"
         },
         {
-            "instruction": "Dr. Elara says: 'I've been asked to advise on the design of a health system for a country that has very different cultural values around health, illness, and the doctor-patient relationship from those embedded in the systems I know. How do you approach this?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Dr. Elara",
-            "scene": "Location: Clinic",
+            "scene": "Dr. Elara says: 'I've been asked to advise on the design of a health system for a country that has very different cultural values around health, illness, and the doctor-patient relationship from those embedded in the systems I know. How do you approach this?'",
             "options": [
                 "The most important first step is to spend significant time understanding the specific cultural values around health, illness, and the doctor-patient relationship in this country - not from textbooks or comparative health systems literature, but from practitioners and patients in the system itself. The second step is to identify which elements of effective health system design are genuinely universal and which are culturally contingent. Many elements that Western health system designers treat as universal turn out to be culturally specific choices that don't translate. The third step is to hold the cultural values as a design constraint, not as a problem to overcome.",
                 "Study the comparative health systems literature and case studies from similar cultural contexts.",
@@ -404,11 +404,11 @@
             "id": "bd_l139_q1"
         },
         {
-            "instruction": "Merchant Kael says: 'I'm about to enter a partnership with an organisation whose values I broadly share but where our definitions of success are quite different. How do you design a partnership that can survive this difference?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Merchant Kael",
-            "scene": "Location: Trade District",
+            "scene": "Merchant Kael says: 'I'm about to enter a partnership with an organisation whose values I broadly share but where our definitions of success are quite different. How do you design a partnership that can survive this difference?'",
             "options": [
                 "A partnership that can survive different definitions of success must do three things at the design stage: make each party's definition of success explicit - written, specific, and reviewed together before the partnership begins; design governance that gives each party genuine authority over the activities most directly connected to their specific definition of success; and create a regular joint review process that allows the parties to surface tension between their definitions of success before it becomes conflict.",
                 "Develop a shared definition of success that both parties can commit to from the start.",
@@ -420,11 +420,11 @@
             "id": "bd_l139_q2"
         },
         {
-            "instruction": "Pilot Jax says: 'I've been asked to develop a framework for making decisions about deploying autonomous systems in flight operations. What principles should govern when autonomous systems should have decision authority and when humans should retain it?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Pilot Jax",
-            "scene": "Location: Cockpit",
+            "scene": "Pilot Jax says: 'I've been asked to develop a framework for making decisions about deploying autonomous systems in flight operations. What principles should govern when autonomous systems should have decision authority and when humans should retain it?'",
             "options": [
                 "Four principles that should govern the division of decision authority: first, autonomous systems should have authority over decisions that require speed and precision beyond human reaction time - certain envelope protection and collision avoidance decisions; second, humans should retain authority over decisions that require contextual judgment about factors that are not in the system's model - novel situations, ambiguous information, conflicting priorities; third, the boundary between autonomous and human authority must be transparent to the human operator at all times - the human must always know which system is in control of which decision; fourth, degradation modes must default to increased human authority not decreased - as systems fail, humans should gain control, not lose it.",
                 "Adopt a principle of graduated autonomy where autonomous systems advise and humans decide until trust is sufficiently established.",
@@ -436,11 +436,11 @@
             "id": "bd_l139_q3"
         },
         {
-            "instruction": "Captain Hektor says: 'I've been offered an opportunity to testify before an international tribunal on events I was involved in. Some of what I know would be damaging to my own institution. What is your guidance?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Captain Hektor",
-            "scene": "Location: Strategy Chamber",
+            "scene": "Captain Hektor says: 'I've been offered an opportunity to testify before an international tribunal on events I was involved in. Some of what I know would be damaging to my own institution. What is your guidance?'",
             "options": [
                 "Testify truthfully and completely. Your obligation when testifying before an international tribunal is to the truth, not to your institution. This is not a close question. Institutions that ask their members to withhold or shape testimony before international tribunals are asking them to obstruct justice. If your institution is damaged by the truth, the institution should have behaved differently. The professional cost to you of testifying truthfully may be significant. The cost to your own integrity of testifying less than truthfully is permanent and not recoverable.",
                 "Consult with your institution's legal team before testifying to understand what you are and are not obligated to disclose.",
@@ -452,11 +452,11 @@
             "id": "bd_l140_q1"
         },
         {
-            "instruction": "Agent Nyx says: 'I've been asked to help design the operational security architecture for a major international summit. What are the most important things to get right that are commonly got wrong?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Agent Nyx",
-            "scene": "Location: Investigation Lab",
+            "scene": "Agent Nyx says: 'I've been asked to help design the operational security architecture for a major international summit. What are the most important things to get right that are commonly got wrong?'",
             "options": [
                 "Four commonly made errors in summit security architecture: first, over-investing in perimeter security and under-investing in insider threat management - the most successful attacks on summits have typically come from inside the security perimeter; second, designing the communications security for the security forces themselves rather than for the principals and their delegations - the high-value targets are the principals and their delegations, not the security personnel; third, treating the summit as a single event rather than as a series of sub-events each with their own threat profile; fourth, failing to stress-test the security plan with the actual conditions it will face rather than with controlled scenarios.",
                 "Conduct a comprehensive threat assessment and design the security architecture to address all identified threat vectors.",
@@ -468,11 +468,11 @@
             "id": "bd_l140_q2"
         },
         {
-            "instruction": "Chef O-Ring says: 'I've been asked to create a food programme for a conflict-affected community that needs to restore communal bonds as well as provide nutrition. How does food serve this function?' Choose the best response.",
+            "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
             "persona": "Chef O-Ring",
-            "scene": "Location: Kitchen",
+            "scene": "Chef O-Ring says: 'I've been asked to create a food programme for a conflict-affected community that needs to restore communal bonds as well as provide nutrition. How does food serve this function?'",
             "options": [
                 "Food serves communal restoration through three mechanisms that nutrition programmes typically ignore: first, the act of preparing food together - not delivering food, but cooking together - activates social roles, conversations, and relationships that conflict has disrupted; second, the specific foods of a shared culinary memory reconnect people to a shared identity and shared history that has been damaged or questioned; third, eating together in community reestablishes a basic trust - that what is shared is safe, that the act of sitting together is possible, that the future includes others as well as yourself. A programme that only addresses nutrition misses the most important function food can serve in a post-conflict context.",
                 "Ensure the programme provides culturally appropriate food that respects the community's traditional food practices.",

@@ -194,6 +194,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                         children: [
                           SocialSparkInstruction(
                             primaryColor: theme.primaryColor,
+                            instruction: quest.instruction,
                           ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
 

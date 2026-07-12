@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ElevatorPitchInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const ElevatorPitchInstruction({super.key, required this.primaryColor});
+  const ElevatorPitchInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,8 @@ class ElevatorPitchInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          "Keep the rocket capsule aligned in the target lift zone while pitching!",
+          instruction ??
+              "Keep the rocket capsule aligned in the target lift zone while pitching!",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',

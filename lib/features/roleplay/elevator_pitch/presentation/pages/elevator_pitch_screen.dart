@@ -285,6 +285,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
                         children: [
                           ElevatorPitchInstruction(
                             primaryColor: theme.primaryColor,
+                            instruction: quest.instruction,
                           ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
                           ElevatorPitchPromptCard(
