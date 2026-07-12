@@ -40,7 +40,7 @@ class KidsPhonicsLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildStudioMonitor(quest.question ?? "?", quest.emoji),
+                child: _buildStudioMonitor(quest),
               ),
             ),
             // Vinyl Records
@@ -90,10 +90,10 @@ class KidsPhonicsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildStudioMonitor(String text, String? emoji) {
+  Widget _buildStudioMonitor(dynamic quest) {
     return Container(
-      width: 260.w,
-      height: 160.h,
+      width: 280.w,
+      height: 200.h,
       decoration: BoxDecoration(
         color: const Color(0xFF09090B), // Deep black screen
         borderRadius: BorderRadius.circular(16.r),
@@ -122,23 +122,42 @@ class KidsPhonicsLayout extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                if (emoji != null)
+                if (quest.emoji != null)
                   Text(
-                    emoji,
+                    quest.emoji!,
                     style: TextStyle(fontSize: 48.sp),
                   ),
                 Text(
-                  text,
+                  quest.question ?? "?",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 52.sp,
+                    fontSize: 48.sp,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,
                     shadows: const [
                       Shadow(color: Color(0xFF22C55E), blurRadius: 15), // Neon green glow
                     ],
                   ),
+                  textAlign: TextAlign.center,
                 ),
+                if (quest.funFact != null) ...[
+                  SizedBox(height: 8.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: Text(
+                      quest.funFact!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFF86EFAC), // Light neon green text
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
               ],
             ),
           ),

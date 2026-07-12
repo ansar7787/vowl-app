@@ -46,7 +46,7 @@ class KidsDayNightLayout extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: Center(
-                    child: _buildSkyView(quest.question ?? "?", quest.emoji),
+                    child: _buildSkyView(quest),
                   ),
                 ),
                 // Celestial Cards (Options)
@@ -87,10 +87,10 @@ class KidsDayNightLayout extends StatelessWidget {
       .moveX(begin: -10.w, end: 10.w, duration: 6.seconds, curve: Curves.easeInOutSine);
   }
 
-  Widget _buildSkyView(String text, String? emoji) {
+  Widget _buildSkyView(dynamic quest) {
     return Container(
-      width: 240.w,
-      height: 180.h,
+      width: 280.w,
+      height: 220.h,
       decoration: BoxDecoration(
         color: const Color(0xFF0F172A),
         borderRadius: BorderRadius.circular(40.r), // Chunky rounded rectangle
@@ -119,20 +119,42 @@ class KidsDayNightLayout extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                if (emoji != null)
+                if (quest.emoji != null)
                   Text(
-                    emoji,
+                    quest.emoji!,
                     style: TextStyle(fontSize: 48.sp),
                   ),
-                Text(
-                  text,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 42.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: Text(
+                    quest.question ?? "?",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 32.sp, // slightly smaller to fit longer questions
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
+                if (quest.funFact != null) ...[
+                  SizedBox(height: 8.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: Text(
+                      quest.funFact!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFF7DD3FC), // Light sky blue
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
               ],
             ),
           ),

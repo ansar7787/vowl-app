@@ -45,7 +45,7 @@ class KidsAnimalsLayout extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: Center(
-                    child: _buildSafariFrame(quest.question ?? "?", quest.emoji),
+                    child: _buildSafariFrame(quest),
                   ),
                 ),
                 // Wooden Signposts for Options
@@ -105,10 +105,10 @@ class KidsAnimalsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildSafariFrame(String text, String? emoji) {
+  Widget _buildSafariFrame(dynamic quest) {
     return Container(
-      width: 260.w,
-      height: 160.h,
+      width: 300.w,
+      height: 200.h,
       decoration: BoxDecoration(
         color: const Color(0xFFFEF3C7), // Safari Khaki
         borderRadius: BorderRadius.circular(100.r), // Pill shape for binoculars
@@ -140,13 +140,13 @@ class KidsAnimalsLayout extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  if (emoji != null)
+                  if (quest.emoji != null)
                     Text(
-                      emoji,
+                      quest.emoji!,
                       style: TextStyle(fontSize: 48.sp),
                     ),
                   Text(
-                    text,
+                    quest.question ?? "?",
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 32.sp,
@@ -154,6 +154,21 @@ class KidsAnimalsLayout extends StatelessWidget {
                       color: const Color(0xFF1E293B),
                     ),
                   ),
+                  if (quest.funFact != null) ...[
+                    SizedBox(height: 4.h),
+                    Text(
+                      quest.funFact!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFF047857), // Jungle green
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
                 ],
               ),
             ),

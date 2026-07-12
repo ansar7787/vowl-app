@@ -38,7 +38,7 @@ class KidsTransportLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildRoadSign(quest.question ?? "?", quest.emoji),
+                child: _buildRoadSign(quest),
               ),
             ),
             // The License Plates (Options)
@@ -96,14 +96,14 @@ class KidsTransportLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildRoadSign(String text, String? emoji) {
+  Widget _buildRoadSign(dynamic quest) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         // The green highway sign
         Container(
-          width: 260.w,
-          height: 140.h,
+          width: 280.w,
+          height: 180.h,
           decoration: BoxDecoration(
             color: const Color(0xFF166534), // Highway Green
             borderRadius: BorderRadius.circular(12.r),
@@ -120,13 +120,13 @@ class KidsTransportLayout extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                if (emoji != null)
+                if (quest.emoji != null)
                   Text(
-                    emoji,
+                    quest.emoji!,
                     style: TextStyle(fontSize: 48.sp),
                   ),
                 Text(
-                  text,
+                  quest.question ?? "?",
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 42.sp,
@@ -135,6 +135,24 @@ class KidsTransportLayout extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
+                if (quest.funFact != null) ...[
+                  SizedBox(height: 8.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: Text(
+                      quest.funFact!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFF86EFAC), // Light green
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
               ],
             ),
           ),

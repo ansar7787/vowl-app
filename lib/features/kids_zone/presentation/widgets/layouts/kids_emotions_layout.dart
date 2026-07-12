@@ -38,7 +38,7 @@ class KidsEmotionsLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildTheaterStage(quest.question ?? "?", quest.emoji),
+                child: _buildTheaterStage(quest),
               ),
             ),
             // The Theater Masks (Options)
@@ -89,14 +89,14 @@ class KidsEmotionsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildTheaterStage(String text, String? emoji) {
+  Widget _buildTheaterStage(dynamic quest) {
     return Stack(
       alignment: Alignment.center,
       children: [
         // The Stage background
         Container(
           width: 280.w,
-          height: 180.h,
+          height: 200.h,
           decoration: BoxDecoration(
             color: const Color(0xFF1E293B), // Dark backstage
             borderRadius: BorderRadius.circular(8.r),
@@ -122,13 +122,13 @@ class KidsEmotionsLayout extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  if (emoji != null)
+                  if (quest.emoji != null)
                     Text(
-                      emoji,
+                      quest.emoji!,
                       style: TextStyle(fontSize: 48.sp),
                     ),
                   Text(
-                    text,
+                    quest.question ?? "?",
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 42.sp,
@@ -137,6 +137,21 @@ class KidsEmotionsLayout extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
+                  if (quest.funFact != null) ...[
+                    SizedBox(height: 8.h),
+                    Text(
+                      quest.funFact!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFF64748B), // Soft slate gray
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
                 ],
               ),
             ),

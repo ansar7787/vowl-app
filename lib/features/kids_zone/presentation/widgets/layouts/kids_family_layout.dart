@@ -38,7 +38,7 @@ class KidsFamilyLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildFramedPainting(quest.question ?? "?", quest.emoji),
+                child: _buildFramedPainting(quest),
               ),
             ),
             // The Polaroid Pictures on Mantle
@@ -96,10 +96,10 @@ class KidsFamilyLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildFramedPainting(String text, String? emoji) {
+  Widget _buildFramedPainting(dynamic quest) {
     return Container(
-      width: 240.w,
-      height: 180.h,
+      width: 280.w,
+      height: 200.h,
       decoration: BoxDecoration(
         color: const Color(0xFFFEF08A), // Warm wallpaper yellow
         borderRadius: BorderRadius.circular(4.r),
@@ -116,13 +116,13 @@ class KidsFamilyLayout extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (emoji != null)
+            if (quest.emoji != null)
               Text(
-                emoji,
+                quest.emoji!,
                 style: TextStyle(fontSize: 48.sp),
               ),
             Text(
-              text,
+              quest.question ?? "?",
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 42.sp,
@@ -131,6 +131,24 @@ class KidsFamilyLayout extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
+            if (quest.funFact != null) ...[
+              SizedBox(height: 8.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Text(
+                  quest.funFact!,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFF78350F), // Dark wood text
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
           ],
         ),
       ),

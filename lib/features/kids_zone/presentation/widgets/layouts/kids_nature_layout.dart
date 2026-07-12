@@ -47,7 +47,7 @@ class KidsNatureLayout extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: Center(
-                    child: _buildTreeSign(quest.question ?? "?", quest.emoji),
+                    child: _buildTreeSign(quest),
                   ),
                 ),
                 // Glowing River Stones (Options)
@@ -118,10 +118,10 @@ class KidsNatureLayout extends StatelessWidget {
      .fade(begin: 0.2, end: 1.0, duration: 1.seconds);
   }
 
-  Widget _buildTreeSign(String text, String? emoji) {
+  Widget _buildTreeSign(dynamic quest) {
     return Container(
-      width: 240.w,
-      height: 160.h,
+      width: 280.w,
+      height: 200.h,
       decoration: BoxDecoration(
         color: const Color(0xFF78350F), // Dark wood
         borderRadius: BorderRadius.circular(16.r),
@@ -154,13 +154,13 @@ class KidsNatureLayout extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                if (emoji != null)
+                if (quest.emoji != null)
                   Text(
-                    emoji,
+                    quest.emoji!,
                     style: TextStyle(fontSize: 48.sp),
                   ),
                 Text(
-                  text,
+                  quest.question ?? "?",
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 42.sp,
@@ -169,6 +169,24 @@ class KidsNatureLayout extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
+                if (quest.funFact != null) ...[
+                  SizedBox(height: 8.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: Text(
+                      quest.funFact!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFFFDE68A), // Warmer yellow for fact
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
               ],
             ),
           ),

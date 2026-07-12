@@ -38,7 +38,7 @@ class KidsShapesLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildBlueprintCrane(quest.question ?? "?", quest.emoji),
+                child: _buildBlueprintCrane(quest),
               ),
             ),
             // The Toy Building Blocks
@@ -72,7 +72,7 @@ class KidsShapesLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildBlueprintCrane(String text, String? emoji) {
+  Widget _buildBlueprintCrane(dynamic quest) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -96,8 +96,8 @@ class KidsShapesLayout extends StatelessWidget {
         ),
         // The Blueprint Paper
         Container(
-          width: 240.w,
-          height: 160.h,
+          width: 280.w,
+          height: 200.h,
           decoration: BoxDecoration(
             color: const Color(0xFF1E3A8A), // Blueprint Blue
             borderRadius: BorderRadius.circular(8.r),
@@ -122,13 +122,13 @@ class KidsShapesLayout extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    if (emoji != null)
+                    if (quest.emoji != null)
                       Text(
-                        emoji,
+                        quest.emoji!,
                         style: TextStyle(fontSize: 48.sp),
                       ),
                     Text(
-                      text,
+                      quest.question ?? "?",
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 42.sp,
@@ -137,6 +137,24 @@ class KidsShapesLayout extends StatelessWidget {
                         letterSpacing: 1,
                       ),
                     ),
+                    if (quest.funFact != null) ...[
+                      SizedBox(height: 8.h),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: Text(
+                          quest.funFact!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF93C5FD), // Light blue
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
                   ],
                 ),
               ),

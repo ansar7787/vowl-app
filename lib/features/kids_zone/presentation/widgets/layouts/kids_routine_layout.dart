@@ -38,7 +38,7 @@ class KidsRoutineLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildBedroomWindow(quest.question ?? "?", quest.emoji),
+                child: _buildBedroomWindow(quest),
               ),
             ),
             // The Bed with Pillows
@@ -95,14 +95,14 @@ class KidsRoutineLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildBedroomWindow(String text, String? emoji) {
+  Widget _buildBedroomWindow(dynamic quest) {
     return Stack(
       alignment: Alignment.center,
       children: [
         // The Window pane
         Container(
-          width: 220.w,
-          height: 160.h,
+          width: 240.w,
+          height: 180.h,
           decoration: BoxDecoration(
             color: const Color(0xFF38BDF8), // Light blue daytime sky
             borderRadius: BorderRadius.circular(8.r),
@@ -135,7 +135,8 @@ class KidsRoutineLayout extends StatelessWidget {
               // The text
               Center(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                  width: 180.w,
+                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
                   decoration: BoxDecoration(
                     color: Colors.white.withValues(alpha: 0.8),
                     borderRadius: BorderRadius.circular(12.r),
@@ -143,21 +144,36 @@ class KidsRoutineLayout extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      if (emoji != null)
+                      if (quest.emoji != null)
                         Text(
-                          emoji,
-                          style: TextStyle(fontSize: 48.sp),
+                          quest.emoji!,
+                          style: TextStyle(fontSize: 40.sp),
                         ),
                       Text(
-                        text,
+                        quest.question ?? "?",
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 32.sp,
+                          fontSize: 28.sp,
                           fontWeight: FontWeight.w900,
                           color: const Color(0xFF0F172A),
                         ),
                         textAlign: TextAlign.center,
                       ),
+                      if (quest.funFact != null) ...[
+                        SizedBox(height: 4.h),
+                        Text(
+                          quest.funFact!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF475569),
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
                     ],
                   ),
                 ),

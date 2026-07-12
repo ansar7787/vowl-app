@@ -17,6 +17,12 @@ class KidsQuestModel extends KidsQuest {
     super.emoji,
     super.hint = "Think carefully!",
     super.explanation,
+    super.wordExample,
+    super.wordEmoji,
+    super.capitalLetter,
+    super.phonetic,
+    super.funFact,
+    super.animalSound,
   });
 
   factory KidsQuestModel.fromJson(Map<String, dynamic> json) {
@@ -46,6 +52,12 @@ class KidsQuestModel extends KidsQuest {
       emoji: json['emoji'] as String?,
       hint: json['hint'] as String? ?? 'Think carefully!',
       explanation: json['explanation'] as String?,
+      wordExample: json['wordExample'] as String?,
+      wordEmoji: json['wordEmoji'] as String?,
+      capitalLetter: json['capitalLetter'] as String?,
+      phonetic: json['phonetic'] as String?,
+      funFact: json['funFact'] as String?,
+      animalSound: json['animalSound'] as String?,
     );
   }
 
@@ -66,6 +78,12 @@ class KidsQuestModel extends KidsQuest {
       'emoji': emoji,
       'hint': hint,
       'explanation': explanation,
+      'wordExample': wordExample,
+      'wordEmoji': wordEmoji,
+      'capitalLetter': capitalLetter,
+      'phonetic': phonetic,
+      'funFact': funFact,
+      'animalSound': animalSound,
     };
   }
 }

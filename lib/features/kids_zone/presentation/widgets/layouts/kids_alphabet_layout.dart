@@ -35,7 +35,7 @@ class KidsAlphabetLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildChalkboard(quest.question ?? "?", quest.emoji),
+                child: _buildChalkboard(quest),
               ),
             ),
             // The Wooden Blocks for Options
@@ -68,10 +68,10 @@ class KidsAlphabetLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildChalkboard(String text, String? emoji) {
+  Widget _buildChalkboard(dynamic quest) {
     return Container(
-      width: 260.w,
-      height: 180.h,
+      width: 280.w,
+      height: 200.h,
       decoration: BoxDecoration(
         color: const Color(0xFF1B4332), // Classic chalkboard green
         borderRadius: BorderRadius.circular(16.r),
@@ -88,21 +88,55 @@ class KidsAlphabetLayout extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (emoji != null)
+            if (quest.wordEmoji != null)
               Text(
-                emoji,
-                style: TextStyle(fontSize: 48.sp),
+                quest.wordEmoji!,
+                style: TextStyle(fontSize: 40.sp),
+              )
+            else if (quest.emoji != null)
+              Text(
+                quest.emoji!,
+                style: TextStyle(fontSize: 40.sp),
               ),
-            Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'ComicSans', // Or a chalk-like font if available
-                fontSize: 72.sp,
-                fontWeight: FontWeight.w900,
-                color: Colors.white.withValues(alpha: 0.9), // Chalk white
-                letterSpacing: 2,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                if (quest.capitalLetter != null) ...[
+                  Text(
+                    quest.capitalLetter!,
+                    style: TextStyle(
+                      fontFamily: 'ComicSans', // Or a chalk-like font if available
+                      fontSize: 64.sp,
+                      fontWeight: FontWeight.w900,
+                      color: const Color(0xFFFDE68A), // Chalk yellow
+                    ),
+                  ),
+                  SizedBox(width: 8.w),
+                ],
+                Text(
+                  quest.question ?? "?",
+                  style: TextStyle(
+                    fontFamily: 'ComicSans',
+                    fontSize: 72.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white.withValues(alpha: 0.9), // Chalk white
+                    letterSpacing: 2,
+                  ),
+                ),
+              ],
             ),
+            if (quest.wordExample != null) ...[
+              SizedBox(height: 4.h),
+              Text(
+                "${quest.wordExample!} ${quest.phonetic != null ? '(/${quest.phonetic}/)' : ''}",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.bold,
+                  color: const Color(0xFFA7F3D0), // Chalk mint
+                ),
+              ),
+            ],
           ],
         ),
       ),

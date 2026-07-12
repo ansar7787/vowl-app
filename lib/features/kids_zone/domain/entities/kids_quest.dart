@@ -16,6 +16,14 @@ class KidsQuest extends Equatable {
   final String? emoji;
   final String hint;
   final String? explanation;
+  
+  // Newly added fields for better learning
+  final String? wordExample;
+  final String? wordEmoji;
+  final String? capitalLetter;
+  final String? phonetic;
+  final String? funFact;
+  final String? animalSound;
 
   const KidsQuest({
     required this.id,
@@ -33,6 +41,12 @@ class KidsQuest extends Equatable {
     this.emoji,
     this.hint = "Think carefully!",
     this.explanation,
+    this.wordExample,
+    this.wordEmoji,
+    this.capitalLetter,
+    this.phonetic,
+    this.funFact,
+    this.animalSound,
   });
 
   @override
@@ -52,6 +66,12 @@ class KidsQuest extends Equatable {
     emoji,
     hint,
     explanation,
+    wordExample,
+    wordEmoji,
+    capitalLetter,
+    phonetic,
+    funFact,
+    animalSound,
   ];
 
   KidsQuest copyWith({
@@ -70,6 +90,12 @@ class KidsQuest extends Equatable {
     String? emoji,
     String? hint,
     String? explanation,
+    String? wordExample,
+    String? wordEmoji,
+    String? capitalLetter,
+    String? phonetic,
+    String? funFact,
+    String? animalSound,
   }) {
     return KidsQuest(
       id: id ?? this.id,
@@ -87,6 +113,12 @@ class KidsQuest extends Equatable {
       emoji: emoji ?? this.emoji,
       hint: hint ?? this.hint,
       explanation: explanation ?? this.explanation,
+      wordExample: wordExample ?? this.wordExample,
+      wordEmoji: wordEmoji ?? this.wordEmoji,
+      capitalLetter: capitalLetter ?? this.capitalLetter,
+      phonetic: phonetic ?? this.phonetic,
+      funFact: funFact ?? this.funFact,
+      animalSound: animalSound ?? this.animalSound,
     );
   }
 }

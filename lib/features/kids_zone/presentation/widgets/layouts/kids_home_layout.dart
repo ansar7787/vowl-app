@@ -38,7 +38,7 @@ class KidsHomeLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildDollhouse(quest.question ?? "?", quest.emoji),
+                child: _buildDollhouse(quest),
               ),
             ),
             // The Furniture pieces (Options)
@@ -89,7 +89,7 @@ class KidsHomeLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildDollhouse(String text, String? emoji) {
+  Widget _buildDollhouse(dynamic quest) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -97,15 +97,15 @@ class KidsHomeLayout extends StatelessWidget {
         ClipPath(
           clipper: _TriangleClipper(),
           child: Container(
-            width: 240.w,
+            width: 280.w,
             height: 60.h,
             color: const Color(0xFFEF4444), // Red roof
           ),
         ),
         // Dollhouse Room
         Container(
-          width: 200.w,
-          height: 120.h,
+          width: 240.w,
+          height: 140.h,
           decoration: BoxDecoration(
             color: const Color(0xFFFDE68A), // Warm yellow wallpaper
             border: Border.all(color: const Color(0xFF78350F), width: 6.r), // Wooden walls
@@ -121,13 +121,13 @@ class KidsHomeLayout extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                if (emoji != null)
+                if (quest.emoji != null)
                   Text(
-                    emoji,
+                    quest.emoji!,
                     style: TextStyle(fontSize: 48.sp),
                   ),
                 Text(
-                  text,
+                  quest.question ?? "?",
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 36.sp,
@@ -136,6 +136,24 @@ class KidsHomeLayout extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
+                if (quest.funFact != null) ...[
+                  SizedBox(height: 8.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12.w),
+                    child: Text(
+                      quest.funFact!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFF92400E), // Match wood frame
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
               ],
             ),
           ),

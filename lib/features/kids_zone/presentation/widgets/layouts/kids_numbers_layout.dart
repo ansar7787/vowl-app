@@ -38,7 +38,7 @@ class KidsNumbersLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildRocketWindow(quest.question ?? "?", quest.emoji),
+                child: _buildRocketWindow(quest),
               ),
             ),
             // The Planets/Asteroids for Options
@@ -71,10 +71,10 @@ class KidsNumbersLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildRocketWindow(String text, String? emoji) {
+  Widget _buildRocketWindow(dynamic quest) {
     return Container(
-      width: 220.r,
-      height: 220.r,
+      width: 260.r,
+      height: 260.r,
       decoration: BoxDecoration(
         color: const Color(0xFF0F172A), // Deep Space Blue
         shape: BoxShape.circle,
@@ -105,13 +105,13 @@ class KidsNumbersLayout extends StatelessWidget {
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              if (emoji != null)
+              if (quest.emoji != null)
                 Text(
-                  emoji,
+                  quest.emoji!,
                   style: TextStyle(fontSize: 48.sp),
                 ),
               Text(
-                text,
+                quest.question ?? "?",
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 80.sp,
@@ -122,6 +122,24 @@ class KidsNumbersLayout extends StatelessWidget {
                   ],
                 ),
               ),
+              if (quest.funFact != null) ...[
+                SizedBox(height: 4.h),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: Text(
+                    quest.funFact!,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.bold,
+                      color: const Color(0xFF94A3B8), // Silver text
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ],
             ],
           ),
         ],

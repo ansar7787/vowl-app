@@ -39,7 +39,7 @@ class KidsVerbsLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildScoreboard(quest.question ?? "?", quest.emoji),
+                child: _buildScoreboard(quest),
               ),
             ),
             // The Sports Balls (Bouncing slightly)
@@ -88,10 +88,10 @@ class KidsVerbsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildScoreboard(String text, String? emoji) {
+  Widget _buildScoreboard(dynamic quest) {
     return Container(
-      width: 260.w,
-      height: 140.h,
+      width: 280.w,
+      height: 180.h,
       decoration: BoxDecoration(
         color: const Color(0xFF0F172A), // Black board
         borderRadius: BorderRadius.circular(8.r),
@@ -108,16 +108,16 @@ class KidsVerbsLayout extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (emoji != null)
+            if (quest.emoji != null)
               Text(
-                emoji,
-                style: TextStyle(fontSize: 48.sp),
+                quest.emoji!,
+                style: TextStyle(fontSize: 40.sp),
               ),
             Text(
-              text,
+              quest.question ?? "?",
               style: TextStyle(
                 fontFamily: 'CourierPrime', // Use a digital/monospace looking font if possible
-                fontSize: 48.sp,
+                fontSize: 36.sp,
                 fontWeight: FontWeight.w900,
                 color: const Color(0xFFFBBF24), // Glowing yellow
                 shadows: const [
@@ -126,6 +126,24 @@ class KidsVerbsLayout extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
+            if (quest.funFact != null) ...[
+              SizedBox(height: 8.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Text(
+                  quest.funFact!,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFFFDE68A), // Light glowing yellow
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
           ],
         ),
       ),

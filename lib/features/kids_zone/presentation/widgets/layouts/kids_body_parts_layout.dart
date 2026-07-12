@@ -38,7 +38,7 @@ class KidsBodyPartsLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildXRayBoard(quest.question ?? "?", quest.emoji),
+                child: _buildXRayBoard(quest),
               ),
             ),
             // The Band-aids (Options)
@@ -89,10 +89,10 @@ class KidsBodyPartsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildXRayBoard(String text, String? emoji) {
+  Widget _buildXRayBoard(dynamic quest) {
     return Container(
-      width: 240.w,
-      height: 160.h,
+      width: 280.w,
+      height: 200.h,
       decoration: BoxDecoration(
         color: const Color(0xFF0F172A), // Dark X-Ray background
         borderRadius: BorderRadius.circular(8.r),
@@ -109,13 +109,13 @@ class KidsBodyPartsLayout extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (emoji != null)
+            if (quest.emoji != null)
               Text(
-                emoji,
+                quest.emoji!,
                 style: TextStyle(fontSize: 48.sp),
               ),
             Text(
-              text,
+              quest.question ?? "?",
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 42.sp,
@@ -127,6 +127,24 @@ class KidsBodyPartsLayout extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
+            if (quest.funFact != null) ...[
+              SizedBox(height: 8.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Text(
+                  quest.funFact!,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFF7DD3FC), // Light blue fact text
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
           ],
         ),
       ),

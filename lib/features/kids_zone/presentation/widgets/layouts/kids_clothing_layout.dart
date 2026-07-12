@@ -38,7 +38,7 @@ class KidsClothingLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildClosetBoard(quest.question ?? "?", quest.emoji),
+                child: _buildClosetBoard(quest),
               ),
             ),
             // The Clothing Hangers (Options)
@@ -94,10 +94,10 @@ class KidsClothingLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildClosetBoard(String text, String? emoji) {
+  Widget _buildClosetBoard(dynamic quest) {
     return Container(
-      width: 240.w,
-      height: 160.h,
+      width: 280.w,
+      height: 200.h,
       decoration: BoxDecoration(
         color: const Color(0xFFFEF3C7), // Light wood inside closet
         borderRadius: BorderRadius.circular(16.r),
@@ -114,13 +114,13 @@ class KidsClothingLayout extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (emoji != null)
+            if (quest.emoji != null)
               Text(
-                emoji,
+                quest.emoji!,
                 style: TextStyle(fontSize: 48.sp),
               ),
             Text(
-              text,
+              quest.question ?? "?",
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 42.sp,
@@ -129,6 +129,24 @@ class KidsClothingLayout extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
+            if (quest.funFact != null) ...[
+              SizedBox(height: 8.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Text(
+                  quest.funFact!,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFF92400E), // Medium brown fact text
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
           ],
         ),
       ),

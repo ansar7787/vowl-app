@@ -38,7 +38,7 @@ class KidsOppositesLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildSplitWorld(quest.question ?? "?", quest.emoji),
+                child: _buildSplitWorld(quest),
               ),
             ),
             // The Split Plaques (Options)
@@ -88,10 +88,10 @@ class KidsOppositesLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildSplitWorld(String text, String? emoji) {
+  Widget _buildSplitWorld(dynamic quest) {
     return Container(
-      width: 260.w,
-      height: 180.h,
+      width: 280.w,
+      height: 220.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16.r),
@@ -113,7 +113,7 @@ class KidsOppositesLayout extends StatelessWidget {
               left: 0,
               top: 0,
               bottom: 0,
-              width: 126.w, // Half width approx
+              width: 140.w, // Half width approx
               child: Container(color: const Color(0xFFFCA5A5)), // Light red
             ),
             // Right Half (Ice / Cold)
@@ -121,7 +121,7 @@ class KidsOppositesLayout extends StatelessWidget {
               right: 0,
               top: 0,
               bottom: 0,
-              width: 126.w,
+              width: 140.w,
               child: Container(color: const Color(0xFF93C5FD)), // Light blue
             ),
             // Center Divider Line
@@ -135,24 +135,24 @@ class KidsOppositesLayout extends StatelessWidget {
             // Main Text in a central circle
             Center(
               child: Container(
-                width: 120.r,
-                height: 120.r,
+                width: 200.w,
+                height: 140.h,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  shape: BoxShape.circle,
+                  borderRadius: BorderRadius.circular(16.r),
                   border: Border.all(color: const Color(0xFF1E293B), width: 4.r),
                 ),
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      if (emoji != null)
+                      if (quest.emoji != null)
                         Text(
-                          emoji,
+                          quest.emoji!,
                           style: TextStyle(fontSize: 48.sp),
                         ),
                       Text(
-                        text,
+                        quest.question ?? "?",
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 32.sp,
@@ -161,6 +161,24 @@ class KidsOppositesLayout extends StatelessWidget {
                         ),
                         textAlign: TextAlign.center,
                       ),
+                      if (quest.funFact != null) ...[
+                        SizedBox(height: 4.h),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 8.w),
+                          child: Text(
+                            quest.funFact!,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.bold,
+                              color: const Color(0xFF475569), // Slate grey
+                            ),
+                            textAlign: TextAlign.center,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
                     ],
                   ),
                 ),

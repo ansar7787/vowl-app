@@ -40,7 +40,7 @@ class KidsTimeLayout extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Center(
-                child: _buildClockFace(quest.question ?? "?", quest.emoji),
+                child: _buildClockFace(quest),
               ),
             ),
             // The Pocket Watches (Options)
@@ -90,10 +90,10 @@ class KidsTimeLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildClockFace(String text, String? emoji) {
+  Widget _buildClockFace(dynamic quest) {
     return Container(
-      width: 220.r,
-      height: 220.r,
+      width: 260.r,
+      height: 260.r,
       decoration: BoxDecoration(
         color: const Color(0xFFFEF3C7), // Antique clock face
         shape: BoxShape.circle,
@@ -122,6 +122,7 @@ class KidsTimeLayout extends StatelessWidget {
           // Main Question text in the center
           Center(
             child: Container(
+              width: 180.w,
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
               decoration: BoxDecoration(
                 color: Colors.white.withValues(alpha: 0.9),
@@ -131,21 +132,36 @@ class KidsTimeLayout extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  if (emoji != null)
+                  if (quest.emoji != null)
                     Text(
-                      emoji,
-                      style: TextStyle(fontSize: 48.sp),
+                      quest.emoji!,
+                      style: TextStyle(fontSize: 40.sp),
                     ),
                   Text(
-                    text,
+                    quest.question ?? "?",
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 42.sp,
+                      fontSize: 32.sp,
                       fontWeight: FontWeight.w900,
                       color: const Color(0xFF1E293B),
                     ),
                     textAlign: TextAlign.center,
                   ),
+                  if (quest.funFact != null) ...[
+                    SizedBox(height: 4.h),
+                    Text(
+                      quest.funFact!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFF78350F), // Dark brown
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
                 ],
               ),
             ),
