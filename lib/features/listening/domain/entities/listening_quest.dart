@@ -16,6 +16,7 @@ class ListeningQuest extends GameQuest {
   final String? location;
   final String? missingWord;
   final String? imageUrl;
+  final String? emoji;
 
   const ListeningQuest({
     required super.id,
@@ -50,6 +51,7 @@ class ListeningQuest extends GameQuest {
     this.location,
     this.missingWord,
     this.imageUrl,
+    this.emoji,
   });
 
   String? get audioTranscript => transcript ?? transcription ?? textToSpeak;
@@ -72,5 +74,6 @@ class ListeningQuest extends GameQuest {
     location,
     missingWord,
     imageUrl,
+    emoji,
   ];
 }

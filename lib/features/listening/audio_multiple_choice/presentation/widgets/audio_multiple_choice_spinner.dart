@@ -10,6 +10,7 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
   final int correct;
   final Color color;
   final String tts;
+  final String? emoji;
   final double rotation;
   final int? selectedIndex;
   final bool isAnswered;
@@ -24,6 +25,7 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
     required this.correct,
     required this.color,
     required this.tts,
+    this.emoji,
     required this.rotation,
     required this.selectedIndex,
     required this.isAnswered,
@@ -72,11 +74,18 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: Icon(
-                  Icons.graphic_eq_rounded,
-                  color: Colors.white,
-                  size: 50.r,
-                ),
+                child: isCorrectState == true && emoji != null
+                    ? Center(
+                        child: Text(emoji!, style: TextStyle(fontSize: 50.r)),
+                      ).animate().scale(
+                        duration: 400.ms,
+                        curve: Curves.easeOutBack,
+                      )
+                    : Icon(
+                        Icons.graphic_eq_rounded,
+                        color: Colors.white,
+                        size: 50.r,
+                      ),
               ),
             ),
 

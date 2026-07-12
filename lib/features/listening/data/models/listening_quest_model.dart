@@ -33,6 +33,7 @@ class ListeningQuestModel extends ListeningQuest {
     super.correctOrder,
     super.explanation,
     super.imageUrl,
+    super.emoji,
   });
 
   factory ListeningQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -114,6 +115,7 @@ class ListeningQuestModel extends ListeningQuest {
           : null,
       explanation: map['explanation'] as String?,
       imageUrl: map['imageUrl'] as String? ?? map['image_url'] as String?,
+      emoji: map['emoji'] as String?,
     );
   }
 
@@ -144,6 +146,7 @@ class ListeningQuestModel extends ListeningQuest {
       'correctOrder': correctOrder,
       'explanation': explanation,
       'imageUrl': imageUrl,
+      'emoji': emoji,
     };
   }
 }
