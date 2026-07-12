@@ -114,7 +114,7 @@ class GrammarFeedbackCard extends StatelessWidget {
                 _buildResultRow(icon, title, gradient),
                 if (hasGrammarRule) ...[
                   SizedBox(height: 16.h),
-                  _buildGrammarRuleCard(grammarRule!, shadowColor, isDark),
+                  _buildGrammarRuleCard(grammarRule, shadowColor, isDark),
                 ],
                 if (explanation != null) ...[
                   SizedBox(height: 16.h),

@@ -186,8 +186,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                         Text(
                           _isAnswered
                               ? "TARGET ACQUIRED!"
-                              : (quest.instruction?.toUpperCase() ??
-                                    "TAP THE TARGET WORD AS IT ROLLS BY"),
+                              : (quest.instruction.toUpperCase()),
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'RobotoMono',

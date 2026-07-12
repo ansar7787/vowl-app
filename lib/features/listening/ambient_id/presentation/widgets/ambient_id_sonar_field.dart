@@ -50,7 +50,7 @@ class AmbientIdSonarField extends StatelessWidget {
                   colorFilter: isCorrectState == true
                       ? null
                       : ColorFilter.mode(
-                          Colors.black.withOpacity(0.6),
+                          Colors.black.withValues(alpha: 0.6),
                           BlendMode.darken,
                         ),
                 ),
@@ -190,12 +190,14 @@ class AmbientIdSonarField extends StatelessWidget {
   IconData _getLocationIcon(String loc) {
     final l = loc.toLowerCase();
     if (l.contains('forest')) return Icons.forest_rounded;
-    if (l.contains('cyber') || l.contains('city'))
+    if (l.contains('cyber') || l.contains('city')) {
       return Icons.location_city_rounded;
+    }
     if (l.contains('space')) return Icons.rocket_launch_rounded;
     if (l.contains('ocean') || l.contains('deep')) return Icons.waves_rounded;
-    if (l.contains('base') || l.contains('military'))
+    if (l.contains('base') || l.contains('military')) {
       return Icons.security_rounded;
+    }
     if (l.contains('lab')) return Icons.science_rounded;
     if (l.contains('temple')) return Icons.temple_hindu_rounded;
     if (l.contains('vault')) return Icons.lock_rounded;

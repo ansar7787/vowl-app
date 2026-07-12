@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/features/listening/domain/entities/listening_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -216,8 +215,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                                         0,
                                                   ),
                                               imageUrl:
-                                                  (quest as ListeningQuest)
-                                                      .imageUrl,
+                                                  quest.imageUrl,
                                             ),
                                           ),
                                         ),
@@ -236,8 +234,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                               index,
                                               quest.correctAnswerIndex ?? 0,
                                             ),
-                                        imageUrl:
-                                            (quest as ListeningQuest).imageUrl,
+                                        imageUrl: quest.imageUrl,
                                       ),
                               ],
                             ),

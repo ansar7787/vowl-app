@@ -60,10 +60,11 @@ class ReadingFeedbackCard extends StatelessWidget {
 
   String _buttonText(BuildContext context) {
     if (_success) return context.tr('common.continue_text').toUpperCase();
-    if (isFinalFailure)
+    if (isFinalFailure) {
       return lives == 0
           ? context.tr('games.see_results')
           : context.tr('common.continue_text').toUpperCase();
+    }
     return context.tr('games.try_again').toUpperCase();
   }
 

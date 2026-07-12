@@ -241,8 +241,9 @@ class KidsColorsLayout extends StatelessWidget {
     if (lower.contains('purple')) return Colors.purple;
     if (lower.contains('pink')) return Colors.pink;
     if (lower.contains('black')) return Colors.black;
-    if (lower.contains('white'))
+    if (lower.contains('white')) {
       return const Color(0xFFE4E4E7); // Off-white for visibility
+    }
     if (lower.contains('brown')) return Colors.brown;
     return fallback;
   }

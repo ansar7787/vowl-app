@@ -135,8 +135,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             audio.playSuccessSFX();
             final bloc = context.read<KidsBloc>();
             Future.delayed(const Duration(milliseconds: 1500), () {
-              if (mounted && context.mounted && bloc.state == state)
+              if (mounted && context.mounted && bloc.state == state) {
                 bloc.add(NextKidsQuestion());
+              }
             });
           } else if (state.lastAnswerCorrect == false) {
             audio.playFailureSFX();
@@ -152,12 +153,14 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               });
             }
           }
-          if (state.lastAnswerCorrect == null && !state.hintUsed)
+          if (state.lastAnswerCorrect == null && !state.hintUsed) {
             _speakInstruction(state.currentQuest.instruction);
+          }
           if (state.lastAnswerCorrect == null &&
               state.hintUsed &&
-              _hintText == null)
+              _hintText == null) {
             speakHint(state.currentQuest.hint);
+          }
 
           // Lifeline Nudge Logic for Kids
           final justDroppedToLastLife =
@@ -253,8 +256,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
   }
 
   Widget _buildBody(BuildContext context, KidsState state) {
-    if (state is KidsLoading)
+    if (state is KidsLoading) {
       return const Center(child: CircularProgressIndicator());
+    }
     if (state is KidsLoaded) {
       return Stack(
         children: [

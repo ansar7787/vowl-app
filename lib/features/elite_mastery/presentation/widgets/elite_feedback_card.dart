@@ -164,7 +164,7 @@ class EliteFeedbackCard extends StatelessWidget {
                   if (hasShadowingFocus) ...[
                     SizedBox(height: 16.h),
                     _ShadowingFocusBox(
-                      text: shadowingFocus!,
+                      text: shadowingFocus,
                       accentColor: _shadowColor,
                       isDark: isDark,
                     ),
@@ -172,7 +172,7 @@ class EliteFeedbackCard extends StatelessWidget {
                   if (hasUsageContext) ...[
                     SizedBox(height: 16.h),
                     _UsageContextBox(
-                      text: usageContext!,
+                      text: usageContext,
                       accentColor: _shadowColor,
                       isDark: isDark,
                     ),
@@ -180,7 +180,7 @@ class EliteFeedbackCard extends StatelessWidget {
                   if (hasSpellingRule) ...[
                     SizedBox(height: 16.h),
                     _SpellingRuleBox(
-                      text: spellingRule!,
+                      text: spellingRule,
                       accentColor: _shadowColor,
                       isDark: isDark,
                     ),
@@ -188,7 +188,7 @@ class EliteFeedbackCard extends StatelessWidget {
                   if (hasSequenceLogic) ...[
                     SizedBox(height: 16.h),
                     _SequenceLogicBox(
-                      text: sequenceLogic!,
+                      text: sequenceLogic,
                       accentColor: _shadowColor,
                       isDark: isDark,
                     ),

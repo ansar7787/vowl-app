@@ -45,8 +45,9 @@ class IapService {
   /// Fetches the current offerings (products) from RevenueCat
   Future<Offerings?> getOfferings() async {
     if (!_isInitialized) {
-      if (kDebugMode)
+      if (kDebugMode) {
         debugPrint('IapService: Cannot fetch offerings, not initialized.');
+      }
       return null;
     }
 
