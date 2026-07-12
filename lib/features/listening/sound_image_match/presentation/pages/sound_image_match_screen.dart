@@ -208,6 +208,8 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                               _hapticService.selection();
                                             },
                                             color: theme.primaryColor,
+                                            emoji: quest.emoji,
+                                            isCorrectState: _isCorrect,
                                           ),
                                         ),
                                       )
@@ -219,6 +221,8 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                           _hapticService.selection();
                                         },
                                         color: theme.primaryColor,
+                                        emoji: quest.emoji,
+                                        isCorrectState: _isCorrect,
                                       ),
                               ],
                             ),
