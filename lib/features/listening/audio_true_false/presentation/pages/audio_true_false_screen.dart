@@ -202,6 +202,8 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                                               _hapticService.selection();
                                             },
                                             color: theme.primaryColor,
+                                            emoji: quest.emoji,
+                                            isCorrectState: _isCorrect,
                                           ),
                                         ),
                                       )
@@ -213,6 +215,8 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                                           _hapticService.selection();
                                         },
                                         color: theme.primaryColor,
+                                        emoji: quest.emoji,
+                                        isCorrectState: _isCorrect,
                                       ),
                               ],
                             ),
