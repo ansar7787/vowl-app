@@ -185,6 +185,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
                             SizedBox(height: 16.h),
                             ReadingConclusionInstruction(
                               primaryColor: theme.primaryColor,
+                              instruction: quest.instruction,
                             ),
                             SizedBox(height: 32.h),
 

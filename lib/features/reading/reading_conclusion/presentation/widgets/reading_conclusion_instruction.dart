@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ReadingConclusionInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const ReadingConclusionInstruction({super.key, required this.primaryColor});
+  const ReadingConclusionInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +27,8 @@ class ReadingConclusionInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              "BRIDGE THE PASSAGE TO THE CORRECT VERDICT",
+              instruction?.toUpperCase() ??
+                  "BRIDGE THE PASSAGE TO THE CORRECT VERDICT",
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
