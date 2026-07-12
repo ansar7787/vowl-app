@@ -153,7 +153,10 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
                     child: Column(
                       children: [
                         SizedBox(height: 16.h),
-                        ClozeTestInstruction(primaryColor: theme.primaryColor),
+                        ClozeTestInstruction(
+                          primaryColor: theme.primaryColor,
+                          instruction: quest.instruction,
+                        ),
                         SizedBox(height: 32.h),
 
                         ClozeTestPneumaticPort(

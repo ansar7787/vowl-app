@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ClozeTestInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const ClozeTestInstruction({super.key, required this.primaryColor});
+  const ClozeTestInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +31,8 @@ class ClozeTestInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              "INJECT FUEL CELLS TO POWER THE PASSAGE",
+              instruction?.toUpperCase() ??
+                  "INJECT FUEL CELLS TO POWER THE PASSAGE",
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
