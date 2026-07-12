@@ -156,6 +156,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                         SizedBox(height: 16.h),
                         ReadingInferenceInstruction(
                           primaryColor: theme.primaryColor,
+                          instruction: quest.instruction,
                         ),
                         SizedBox(height: 32.h),
 

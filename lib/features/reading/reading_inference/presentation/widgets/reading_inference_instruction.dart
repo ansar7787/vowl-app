@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ReadingInferenceInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const ReadingInferenceInstruction({super.key, required this.primaryColor});
+  const ReadingInferenceInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +27,8 @@ class ReadingInferenceInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              "RUB THE MIRROR TO REVEAL SCIENTIFIC CLUES",
+              instruction?.toUpperCase() ??
+                  "RUB THE MIRROR TO REVEAL SCIENTIFIC CLUES",
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
