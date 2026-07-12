@@ -137,6 +137,24 @@ class KidsAlphabetLayout extends StatelessWidget {
                 ),
               ),
             ],
+            if (quest.funFact != null) ...[
+              SizedBox(height: 8.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Text(
+                  quest.funFact!,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFF93C5FD), // Light chalk blue
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
           ],
         ),
       ),
