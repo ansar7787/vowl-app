@@ -42,6 +42,13 @@ class AccentQuestModel extends AccentQuest {
     super.accentName,
     super.phoneticRule,
     super.dialectNote,
+    super.pitchRule,
+    super.vowelTensionRule,
+    super.modulationPattern,
+    super.emphasisRule,
+    super.flowRule,
+    super.pacingRule,
+    super.stressRule,
   });
 
   factory AccentQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -130,6 +137,13 @@ class AccentQuestModel extends AccentQuest {
       accentName: getString(map['accentName'] ?? map['dialect']),
       phoneticRule: getString(map['phoneticRule'] ?? map['rule']),
       dialectNote: getString(map['dialectNote']),
+      pitchRule: getString(map['pitchRule']),
+      vowelTensionRule: getString(map['vowelTensionRule']),
+      modulationPattern: getString(map['modulationPattern']),
+      emphasisRule: getString(map['emphasisRule']),
+      flowRule: getString(map['flowRule']),
+      pacingRule: getString(map['pacingRule']),
+      stressRule: getString(map['stressRule']),
     );
   }
 
@@ -171,6 +185,13 @@ class AccentQuestModel extends AccentQuest {
       'accentName': accentName,
       'phoneticRule': phoneticRule,
       'dialectNote': dialectNote,
+      'pitchRule': pitchRule,
+      'vowelTensionRule': vowelTensionRule,
+      'modulationPattern': modulationPattern,
+      'emphasisRule': emphasisRule,
+      'flowRule': flowRule,
+      'pacingRule': pacingRule,
+      'stressRule': stressRule,
     };
   }
 }

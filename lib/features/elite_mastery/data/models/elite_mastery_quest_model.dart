@@ -20,6 +20,28 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
     super.visualConfig,
     super.question,
     super.sentences,
+import '../../domain/entities/elite_mastery_quest.dart';
+import '../../../../core/domain/entities/game_quest.dart';
+
+class EliteMasteryQuestModel extends EliteMasteryQuest {
+  const EliteMasteryQuestModel({
+    required super.id,
+    super.type,
+    required super.instruction,
+    required super.difficulty,
+    super.subtype,
+    super.interactionType,
+    super.xpReward,
+    super.coinReward,
+    super.livesAllowed,
+    super.options,
+    super.correctAnswerIndex,
+    super.correctAnswer,
+    super.hint,
+    super.textToSpeak,
+    super.visualConfig,
+    super.question,
+    super.sentences,
     super.correctOrder,
     super.idiom,
     super.word,
@@ -27,6 +49,10 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
     super.audioUrl,
     super.text,
     super.explanation,
+    super.shadowingFocus,
+    super.usageContext,
+    super.spellingRule,
+    super.sequenceLogic,
   });
 
   factory EliteMasteryQuestModel.fromJson(Map<String, dynamic> json) {
@@ -104,6 +130,10 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
       // across all Accent Shadowing batches) but previously never parsed —
       // it was silently discarded by every prior version of this model.
       explanation: getString(json['explanation']),
+      shadowingFocus: getString(json['shadowingFocus']),
+      usageContext: getString(json['usageContext']),
+      spellingRule: getString(json['spellingRule']),
+      sequenceLogic: getString(json['sequenceLogic']),
     );
   }
 
@@ -130,6 +160,10 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
       'text': text,
       'question': question,
       'explanation': explanation,
+      'shadowingFocus': shadowingFocus,
+      'usageContext': usageContext,
+      'spellingRule': spellingRule,
+      'sequenceLogic': sequenceLogic,
     };
   }
 }

@@ -83,6 +83,18 @@ class EliteFeedbackCard extends StatelessWidget {
         ? _resolveCorrectAnswer(state.currentQuest)
         : null;
 
+    final shadowingFocus = state.currentQuest.shadowingFocus;
+    final hasShadowingFocus = shadowingFocus != null && shadowingFocus.trim().isNotEmpty;
+
+    final usageContext = state.currentQuest.usageContext;
+    final hasUsageContext = usageContext != null && usageContext.trim().isNotEmpty;
+
+    final spellingRule = state.currentQuest.spellingRule;
+    final hasSpellingRule = spellingRule != null && spellingRule.trim().isNotEmpty;
+
+    final sequenceLogic = state.currentQuest.sequenceLogic;
+    final hasSequenceLogic = sequenceLogic != null && sequenceLogic.trim().isNotEmpty;
+
     // Curriculum "why" note (e.g. the stress/linking/intonation rule behind
     // the sentence). Shown on both success and failure — reinforcing the
     // underlying rule regardless of outcome is more valuable for retention
@@ -141,6 +153,38 @@ class EliteFeedbackCard extends StatelessWidget {
                     SizedBox(height: 16.h),
                     _ExplanationBox(
                       text: correctAnswerText,
+                      accentColor: _shadowColor,
+                      isDark: isDark,
+                    ),
+                  ],
+                  if (hasShadowingFocus) ...[
+                    SizedBox(height: 16.h),
+                    _ShadowingFocusBox(
+                      text: shadowingFocus!,
+                      accentColor: _shadowColor,
+                      isDark: isDark,
+                    ),
+                  ],
+                  if (hasUsageContext) ...[
+                    SizedBox(height: 16.h),
+                    _UsageContextBox(
+                      text: usageContext!,
+                      accentColor: _shadowColor,
+                      isDark: isDark,
+                    ),
+                  ],
+                  if (hasSpellingRule) ...[
+                    SizedBox(height: 16.h),
+                    _SpellingRuleBox(
+                      text: spellingRule!,
+                      accentColor: _shadowColor,
+                      isDark: isDark,
+                    ),
+                  ],
+                  if (hasSequenceLogic) ...[
+                    SizedBox(height: 16.h),
+                    _SequenceLogicBox(
+                      text: sequenceLogic!,
                       accentColor: _shadowColor,
                       isDark: isDark,
                     ),
@@ -414,6 +458,254 @@ class _RuleTipBox extends StatelessWidget {
         )
         .animate()
         .fadeIn(delay: 200.ms)
+        .scale(duration: 400.ms, curve: Curves.easeOutBack);
+  }
+}
+
+class _ShadowingFocusBox extends StatelessWidget {
+  final String text;
+  final Color accentColor;
+  final bool isDark;
+
+  const _ShadowingFocusBox({
+    required this.text,
+    required this.accentColor,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          decoration: BoxDecoration(
+            color: accentColor.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: accentColor.withValues(alpha: 0.2),
+              width: 1.5,
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.record_voice_over_rounded, color: accentColor, size: 14.r),
+                  SizedBox(width: 8.w),
+                  Text(
+                    "SHADOWING FOCUS",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w800,
+                      color: accentColor,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 4.h),
+              Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white : Colors.black87,
+                ),
+              ),
+            ],
+          ),
+        )
+        .animate()
+        .fadeIn(delay: 250.ms)
+        .scale(duration: 400.ms, curve: Curves.easeOutBack);
+  }
+}
+
+class _UsageContextBox extends StatelessWidget {
+  final String text;
+  final Color accentColor;
+  final bool isDark;
+
+  const _UsageContextBox({
+    required this.text,
+    required this.accentColor,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          decoration: BoxDecoration(
+            color: accentColor.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: accentColor.withValues(alpha: 0.2),
+              width: 1.5,
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.lightbulb_outline_rounded, color: accentColor, size: 14.r),
+                  SizedBox(width: 8.w),
+                  Text(
+                    "USAGE CONTEXT",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w800,
+                      color: accentColor,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 4.h),
+              Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white : Colors.black87,
+                ),
+              ),
+            ],
+          ),
+        )
+        .animate()
+        .fadeIn(delay: 250.ms)
+        .scale(duration: 400.ms, curve: Curves.easeOutBack);
+  }
+}
+
+class _SpellingRuleBox extends StatelessWidget {
+  final String text;
+  final Color accentColor;
+  final bool isDark;
+
+  const _SpellingRuleBox({
+    required this.text,
+    required this.accentColor,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          decoration: BoxDecoration(
+            color: accentColor.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: accentColor.withValues(alpha: 0.2),
+              width: 1.5,
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.spellcheck_rounded, color: accentColor, size: 14.r),
+                  SizedBox(width: 8.w),
+                  Text(
+                    "SPELLING PATTERN",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w800,
+                      color: accentColor,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 4.h),
+              Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white : Colors.black87,
+                ),
+              ),
+            ],
+          ),
+        )
+        .animate()
+        .fadeIn(delay: 250.ms)
+        .scale(duration: 400.ms, curve: Curves.easeOutBack);
+  }
+}
+
+class _SequenceLogicBox extends StatelessWidget {
+  final String text;
+  final Color accentColor;
+  final bool isDark;
+
+  const _SequenceLogicBox({
+    required this.text,
+    required this.accentColor,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          decoration: BoxDecoration(
+            color: accentColor.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: accentColor.withValues(alpha: 0.2),
+              width: 1.5,
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.account_tree_rounded, color: accentColor, size: 14.r),
+                  SizedBox(width: 8.w),
+                  Text(
+                    "LOGICAL SEQUENCE",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w800,
+                      color: accentColor,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 4.h),
+              Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white : Colors.black87,
+                ),
+              ),
+            ],
+          ),
+        )
+        .animate()
+        .fadeIn(delay: 250.ms)
         .scale(duration: 400.ms, curve: Curves.easeOutBack);
   }
 }

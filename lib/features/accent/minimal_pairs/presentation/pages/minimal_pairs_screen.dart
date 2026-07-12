@@ -225,6 +225,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                 child: MinimalPairsPromptCard(
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
+                                                  vowelTensionRule: quest.vowelTensionRule,
                                                 ),
                                               ),
                                             ),
@@ -232,6 +233,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                         : MinimalPairsPromptCard(
                                             color: theme.primaryColor,
                                             isDark: isDark,
+                                            vowelTensionRule: quest.vowelTensionRule,
                                           ),
                                     SizedBox(height: gapPrompt),
 

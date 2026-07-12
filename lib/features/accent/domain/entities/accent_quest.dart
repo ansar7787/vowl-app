@@ -21,6 +21,13 @@ class AccentQuest extends GameQuest {
   final String? accentName;
   final String? phoneticRule;
   final String? dialectNote;
+  final String? pitchRule;
+  final String? vowelTensionRule;
+  final String? modulationPattern;
+  final String? emphasisRule;
+  final String? flowRule;
+  final String? pacingRule;
+  final String? stressRule;
 
   const AccentQuest({
     required super.id,
@@ -59,6 +66,13 @@ class AccentQuest extends GameQuest {
     this.accentName,
     this.phoneticRule,
     this.dialectNote,
+    this.pitchRule,
+    this.vowelTensionRule,
+    this.modulationPattern,
+    this.emphasisRule,
+    this.flowRule,
+    this.pacingRule,
+    this.stressRule,
     super.targetWord,
     super.question,
     super.sentence,
@@ -105,6 +119,13 @@ class AccentQuest extends GameQuest {
     String? accentName,
     String? phoneticRule,
     String? dialectNote,
+    String? pitchRule,
+    String? vowelTensionRule,
+    String? modulationPattern,
+    String? emphasisRule,
+    String? flowRule,
+    String? pacingRule,
+    String? stressRule,
   }) {
     return AccentQuest(
       id: id ?? this.id,
@@ -145,6 +166,13 @@ class AccentQuest extends GameQuest {
       accentName: accentName ?? this.accentName,
       phoneticRule: phoneticRule ?? this.phoneticRule,
       dialectNote: dialectNote ?? this.dialectNote,
+      pitchRule: pitchRule ?? this.pitchRule,
+      vowelTensionRule: vowelTensionRule ?? this.vowelTensionRule,
+      modulationPattern: modulationPattern ?? this.modulationPattern,
+      emphasisRule: emphasisRule ?? this.emphasisRule,
+      flowRule: flowRule ?? this.flowRule,
+      pacingRule: pacingRule ?? this.pacingRule,
+      stressRule: stressRule ?? this.stressRule,
     );
   }
 
@@ -172,5 +200,12 @@ class AccentQuest extends GameQuest {
     accentName,
     phoneticRule,
     dialectNote,
+    pitchRule,
+    vowelTensionRule,
+    modulationPattern,
+    emphasisRule,
+    flowRule,
+    pacingRule,
+    stressRule,
   ];
 }

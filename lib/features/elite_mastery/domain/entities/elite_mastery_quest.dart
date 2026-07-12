@@ -8,6 +8,10 @@ class EliteMasteryQuest extends GameQuest {
   final double? speedMultiplier;
   final String? audioUrl;
   final String? text;
+  final String? shadowingFocus;
+  final String? usageContext;
+  final String? spellingRule;
+  final String? sequenceLogic;
 
 
   const EliteMasteryQuest({
@@ -40,6 +44,10 @@ class EliteMasteryQuest extends GameQuest {
     this.speedMultiplier,
     this.audioUrl,
     this.text,
+    this.shadowingFocus,
+    this.usageContext,
+    this.spellingRule,
+    this.sequenceLogic,
   });
 
   EliteMasteryQuest copyWith({
@@ -67,6 +75,10 @@ class EliteMasteryQuest extends GameQuest {
     String? audioUrl,
     String? text,
     String? explanation,
+    String? shadowingFocus,
+    String? usageContext,
+    String? spellingRule,
+    String? sequenceLogic,
   }) {
     return EliteMasteryQuest(
       id: id ?? this.id,
@@ -93,6 +105,10 @@ class EliteMasteryQuest extends GameQuest {
       audioUrl: audioUrl ?? this.audioUrl,
       text: text ?? this.text,
       explanation: explanation ?? this.explanation,
+      shadowingFocus: shadowingFocus ?? this.shadowingFocus,
+      usageContext: usageContext ?? this.usageContext,
+      spellingRule: spellingRule ?? this.spellingRule,
+      sequenceLogic: sequenceLogic ?? this.sequenceLogic,
     );
   }
 
@@ -107,5 +123,9 @@ class EliteMasteryQuest extends GameQuest {
     audioUrl,
     text,
     explanation,
+    shadowingFocus,
+    usageContext,
+    spellingRule,
+    sequenceLogic,
   ];
 }
