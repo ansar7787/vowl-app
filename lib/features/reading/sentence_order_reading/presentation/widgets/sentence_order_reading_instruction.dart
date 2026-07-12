@@ -3,10 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SentenceOrderReadingInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
   const SentenceOrderReadingInstruction({
     super.key,
     required this.primaryColor,
+    this.instruction,
   });
 
   @override
@@ -25,7 +27,7 @@ class SentenceOrderReadingInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              "RESTORE THE LOGICAL STRUCTURE",
+              instruction?.toUpperCase() ?? "RESTORE THE LOGICAL STRUCTURE",
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
