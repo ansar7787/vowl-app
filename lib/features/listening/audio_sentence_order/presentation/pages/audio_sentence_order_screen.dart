@@ -235,6 +235,8 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                               _hapticService.selection();
                                             },
                                             color: theme.primaryColor,
+                                            emoji: quest.emoji,
+                                            isCorrectState: _isCorrect,
                                           ),
                                         ),
                                       )
@@ -246,6 +248,8 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                           _hapticService.selection();
                                         },
                                         color: theme.primaryColor,
+                                        emoji: quest.emoji,
+                                        isCorrectState: _isCorrect,
                                       ),
                                 SizedBox(height: gapOscilloscope),
                                 SizedBox(

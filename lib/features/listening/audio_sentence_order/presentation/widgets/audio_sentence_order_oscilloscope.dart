@@ -6,11 +6,15 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 class AudioSentenceOrderOscilloscope extends StatelessWidget {
   final VoidCallback onTap;
   final Color color;
+  final String? emoji;
+  final bool? isCorrectState;
 
   const AudioSentenceOrderOscilloscope({
     super.key,
     required this.onTap,
     required this.color,
+    this.emoji,
+    this.isCorrectState,
   });
 
   @override
@@ -48,7 +52,16 @@ class AudioSentenceOrderOscilloscope extends StatelessWidget {
                         delay: (i * 50).ms,
                       ),
             ),
-            Icon(Icons.graphic_eq_rounded, color: Colors.white, size: 48.r),
+            isCorrectState == true && emoji != null
+                ? Text(
+                    emoji!,
+                    style: TextStyle(fontSize: 48.r),
+                  ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack)
+                : Icon(
+                    Icons.graphic_eq_rounded,
+                    color: Colors.white,
+                    size: 48.r,
+                  ),
           ],
         ),
       ),
