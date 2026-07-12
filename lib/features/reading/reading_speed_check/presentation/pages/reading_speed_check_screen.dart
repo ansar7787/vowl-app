@@ -201,6 +201,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
                         ReadingSpeedInstruction(
                           primaryColor: theme.primaryColor,
                           isRevealed: _isRevealed,
+                          instruction: quest.instruction,
                         ),
                         SizedBox(height: 32.h),
 

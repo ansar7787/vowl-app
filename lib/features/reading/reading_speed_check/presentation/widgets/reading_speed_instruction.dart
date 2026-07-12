@@ -4,11 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ReadingSpeedInstruction extends StatelessWidget {
   final Color primaryColor;
   final bool isRevealed;
+  final String? instruction;
 
   const ReadingSpeedInstruction({
     super.key,
     required this.primaryColor,
     required this.isRevealed,
+    this.instruction,
   });
 
   @override
@@ -27,9 +29,10 @@ class ReadingSpeedInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              isRevealed
-                  ? "ANALYZE THE COMPREHENSION QUEST"
-                  : "TAP THE GLOWING SONIC CORE TO BRIEFLY UNBLUR TEXT",
+              instruction?.toUpperCase() ??
+                  (isRevealed
+                      ? "ANALYZE THE COMPREHENSION QUEST"
+                      : "TAP THE GLOWING SONIC CORE TO BRIEFLY UNBLUR TEXT"),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
