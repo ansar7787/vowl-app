@@ -135,7 +135,10 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
                     child: Column(
                       children: [
                         SizedBox(height: 16.h),
-                        GuessTitleInstruction(primaryColor: theme.primaryColor),
+                        GuessTitleInstruction(
+                          primaryColor: theme.primaryColor,
+                          instruction: quest.instruction,
+                        ),
                         SizedBox(height: 24.h),
                         GuessTitleCargoCrate(
                           passage: quest.passage ?? "",

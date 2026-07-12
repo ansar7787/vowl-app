@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GuessTitleInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const GuessTitleInstruction({super.key, required this.primaryColor});
+  const GuessTitleInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +27,8 @@ class GuessTitleInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              "SNAP THE TITLE LABEL ONTO THE CRATE",
+              instruction?.toUpperCase() ??
+                  "SNAP THE TITLE LABEL ONTO THE CRATE",
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
