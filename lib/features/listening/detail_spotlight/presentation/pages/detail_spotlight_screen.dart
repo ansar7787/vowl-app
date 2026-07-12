@@ -217,6 +217,8 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                                               _hapticService.selection();
                                             },
                                             color: theme.primaryColor,
+                                            emoji: quest.emoji,
+                                            isCorrectState: _isCorrect,
                                           ),
                                         ),
                                       )
@@ -228,6 +230,8 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                                           _hapticService.selection();
                                         },
                                         color: theme.primaryColor,
+                                        emoji: quest.emoji,
+                                        isCorrectState: _isCorrect,
                                       ),
                                 SizedBox(height: gapEmitter),
                                 isCompact
