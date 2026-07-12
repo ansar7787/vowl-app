@@ -20,6 +20,7 @@ class GrammarQuest extends GameQuest {
   final String? passage;
   final String? passiveSentence;
   final String? activeSentence;
+  final String? grammarRule;
 
   const GrammarQuest({
     required super.id,
@@ -57,6 +58,7 @@ class GrammarQuest extends GameQuest {
     this.passage,
     this.passiveSentence,
     this.activeSentence,
+    this.grammarRule,
     super.targetWord,
     super.sentence,
     super.question,
@@ -89,5 +91,6 @@ class GrammarQuest extends GameQuest {
         passage,
         passiveSentence,
         activeSentence,
+        grammarRule,
       ];
 }

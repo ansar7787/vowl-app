@@ -36,6 +36,7 @@ class GrammarQuestModel extends GrammarQuest {
     super.explanation,
     super.incorrectPart,
     super.correctedPart,
+    super.grammarRule,
   });
 
   factory GrammarQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -102,6 +103,7 @@ class GrammarQuestModel extends GrammarQuest {
       explanation: map['explanation'] as String?,
       incorrectPart: map['incorrectPart'] as String?,
       correctedPart: map['correctedPart'] as String?,
+      grammarRule: getString(map['grammarRule']),
     );
   }
 
@@ -137,6 +139,7 @@ class GrammarQuestModel extends GrammarQuest {
       'explanation': explanation,
       'incorrectPart': incorrectPart,
       'correctedPart': correctedPart,
+      'grammarRule': grammarRule,
     };
   }
 }

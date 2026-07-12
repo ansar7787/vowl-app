@@ -75,6 +75,9 @@ class GrammarFeedbackCard extends StatelessWidget {
               : null);
     }
 
+    final grammarRule = loaded.currentQuest.grammarRule;
+    final hasGrammarRule = grammarRule != null && grammarRule.trim().isNotEmpty;
+
     return ClipRRect(
       borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
       child: BackdropFilter(
@@ -105,6 +108,10 @@ class GrammarFeedbackCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 _buildResultRow(icon, title, gradient),
+                if (hasGrammarRule) ...[
+                  SizedBox(height: 16.h),
+                  _buildGrammarRuleCard(grammarRule!, shadowColor, isDark),
+                ],
                 if (explanation != null) ...[
                   SizedBox(height: 16.h),
                   _buildExplanationCard(context, explanation, shadowColor, isDark),
@@ -205,6 +212,63 @@ class GrammarFeedbackCard extends StatelessWidget {
         )
         .animate()
         .fadeIn(delay: 300.ms)
+        .scale(duration: 400.ms, curve: Curves.easeOutBack);
+  }
+
+  Widget _buildGrammarRuleCard(
+    String rule,
+    Color accentColor,
+    bool isDark,
+  ) {
+    return Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          decoration: BoxDecoration(
+            color: accentColor.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: accentColor.withValues(alpha: 0.2),
+              width: 1.5,
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(
+                    Icons.menu_book_rounded,
+                    color: accentColor,
+                    size: 14.r,
+                  ),
+                  SizedBox(width: 8.w),
+                  Text(
+                    "GRAMMAR RULE",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w800,
+                      color: accentColor,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 4.h),
+              Text(
+                rule,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white : Colors.black87,
+                ),
+              ),
+            ],
+          ),
+        )
+        .animate()
+        .fadeIn(delay: 250.ms)
         .scale(duration: 400.ms, curve: Curves.easeOutBack);
   }
 
