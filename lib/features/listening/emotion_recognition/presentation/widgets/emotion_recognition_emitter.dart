@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class EmotionRecognitionEmitter extends StatelessWidget {
   final VoidCallback onTap;
   final Color color;
+  final String? emoji;
+  final bool? isCorrectState;
 
   const EmotionRecognitionEmitter({
     super.key,
     required this.onTap,
     required this.color,
+    this.emoji,
+    this.isCorrectState,
   });
 
   @override
@@ -30,7 +35,12 @@ class EmotionRecognitionEmitter extends StatelessWidget {
             ),
           ],
         ),
-        child: Icon(Icons.graphic_eq_rounded, color: color, size: 40.r),
+        child: isCorrectState == true && emoji != null
+            ? Text(
+                emoji!,
+                style: TextStyle(fontSize: 40.r),
+              ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack)
+            : Icon(Icons.graphic_eq_rounded, color: color, size: 40.r),
       ),
     );
   }

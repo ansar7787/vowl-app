@@ -221,6 +221,8 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                                               _hapticService.selection();
                                             },
                                             color: theme.primaryColor,
+                                            emoji: quest.emoji,
+                                            isCorrectState: _isCorrect,
                                           ),
                                         ),
                                       )
@@ -232,6 +234,8 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                                           _hapticService.selection();
                                         },
                                         color: theme.primaryColor,
+                                        emoji: quest.emoji,
+                                        isCorrectState: _isCorrect,
                                       ),
                               ],
                             ),
