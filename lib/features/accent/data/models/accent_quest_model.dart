@@ -41,6 +41,7 @@ class AccentQuestModel extends AccentQuest {
     super.slowForm,
     super.accentName,
     super.phoneticRule,
+    super.dialectNote,
   });
 
   factory AccentQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -128,6 +129,7 @@ class AccentQuestModel extends AccentQuest {
       slowForm: getString(map['slowForm']),
       accentName: getString(map['accentName'] ?? map['dialect']),
       phoneticRule: getString(map['phoneticRule'] ?? map['rule']),
+      dialectNote: getString(map['dialectNote']),
     );
   }
 
@@ -168,6 +170,7 @@ class AccentQuestModel extends AccentQuest {
       'slowForm': slowForm,
       'accentName': accentName,
       'phoneticRule': phoneticRule,
+      'dialectNote': dialectNote,
     };
   }
 }

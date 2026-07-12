@@ -20,6 +20,7 @@ class AccentQuest extends GameQuest {
   final String? slowForm;
   final String? accentName;
   final String? phoneticRule;
+  final String? dialectNote;
 
   const AccentQuest({
     required super.id,
@@ -57,6 +58,7 @@ class AccentQuest extends GameQuest {
     this.slowForm,
     this.accentName,
     this.phoneticRule,
+    this.dialectNote,
     super.targetWord,
     super.question,
     super.sentence,
@@ -102,6 +104,7 @@ class AccentQuest extends GameQuest {
     String? slowForm,
     String? accentName,
     String? phoneticRule,
+    String? dialectNote,
   }) {
     return AccentQuest(
       id: id ?? this.id,
@@ -141,6 +144,7 @@ class AccentQuest extends GameQuest {
       slowForm: slowForm ?? this.slowForm,
       accentName: accentName ?? this.accentName,
       phoneticRule: phoneticRule ?? this.phoneticRule,
+      dialectNote: dialectNote ?? this.dialectNote,
     );
   }
 
@@ -167,5 +171,6 @@ class AccentQuest extends GameQuest {
     slowForm,
     accentName,
     phoneticRule,
+    dialectNote,
   ];
 }

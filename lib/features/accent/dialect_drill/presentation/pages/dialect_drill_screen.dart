@@ -200,6 +200,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                           hint:
                                               quest.hint ??
                                               "Dialect variants represent rich cultural history.",
+                                          dialectNote: quest.dialectNote,
                                           isDark: isDark,
                                           isMidnight: false,
                                           onPlayAudio: (text, locale) {

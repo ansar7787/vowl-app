@@ -10,6 +10,7 @@ class DialectFeedbackPanel extends StatelessWidget {
   final String britishPronunciation; // "SHED-yool"
   final String americanPronunciation; // "SKED-yool"
   final String hint;
+  final String? dialectNote;
   final Function(String text, String locale) onPlayAudio;
   final bool isDark;
   final bool isMidnight;
@@ -21,6 +22,7 @@ class DialectFeedbackPanel extends StatelessWidget {
     required this.britishPronunciation,
     required this.americanPronunciation,
     required this.hint,
+    this.dialectNote,
     required this.onPlayAudio,
     required this.isDark,
     required this.isMidnight,
@@ -168,6 +170,36 @@ class DialectFeedbackPanel extends StatelessWidget {
                     color: isDark ? Colors.white70 : Colors.black87,
                   ),
                 ),
+                if (dialectNote != null) ...[
+                  SizedBox(height: 16.h),
+                  Container(
+                    padding: EdgeInsets.all(12.r),
+                    decoration: BoxDecoration(
+                      color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(
+                        color: isDark ? Colors.white24 : Colors.black12,
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.public, size: 20.r, color: isDark ? Colors.white70 : Colors.black54),
+                        SizedBox(width: 12.w),
+                        Expanded(
+                          child: Text(
+                            dialectNote!,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w600,
+                              color: isDark ? Colors.white70 : Colors.black87,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ],
             ),
           ),
