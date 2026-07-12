@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FindWordMeaningInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const FindWordMeaningInstruction({super.key, required this.primaryColor});
+  const FindWordMeaningInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +27,8 @@ class FindWordMeaningInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              "SCAN THE MANUSCRIPT WITH THE LEXICAL LENS",
+              instruction?.toUpperCase() ??
+                  "SCAN THE MANUSCRIPT WITH THE LEXICAL LENS",
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,

@@ -147,6 +147,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                         SizedBox(height: 16.h),
                         FindWordMeaningInstruction(
                           primaryColor: theme.primaryColor,
+                          instruction: quest.instruction,
                         ),
                         SizedBox(height: 24.h),
                         FindWordMeaningQuestionHeader(
