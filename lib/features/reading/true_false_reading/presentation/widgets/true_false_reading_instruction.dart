@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TrueFalseReadingInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const TrueFalseReadingInstruction({super.key, required this.primaryColor});
+  const TrueFalseReadingInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +31,7 @@ class TrueFalseReadingInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              "FLICK THE TRUTH COIN TO VALIDATE",
+              instruction?.toUpperCase() ?? "FLICK THE TRUTH COIN TO VALIDATE",
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
