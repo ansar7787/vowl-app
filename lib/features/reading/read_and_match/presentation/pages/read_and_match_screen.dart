@@ -207,6 +207,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                         SizedBox(height: 16.h),
                         ReadAndMatchInstruction(
                           primaryColor: theme.primaryColor,
+                          instruction: quest.instruction,
                         ),
                         SizedBox(height: 32.h),
 
