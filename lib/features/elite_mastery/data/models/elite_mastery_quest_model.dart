@@ -20,28 +20,6 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
     super.visualConfig,
     super.question,
     super.sentences,
-import '../../domain/entities/elite_mastery_quest.dart';
-import '../../../../core/domain/entities/game_quest.dart';
-
-class EliteMasteryQuestModel extends EliteMasteryQuest {
-  const EliteMasteryQuestModel({
-    required super.id,
-    super.type,
-    required super.instruction,
-    required super.difficulty,
-    super.subtype,
-    super.interactionType,
-    super.xpReward,
-    super.coinReward,
-    super.livesAllowed,
-    super.options,
-    super.correctAnswerIndex,
-    super.correctAnswer,
-    super.hint,
-    super.textToSpeak,
-    super.visualConfig,
-    super.question,
-    super.sentences,
     super.correctOrder,
     super.idiom,
     super.word,

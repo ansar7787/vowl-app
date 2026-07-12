@@ -23,6 +23,8 @@ class AudioFillBlanksCanvas extends StatelessWidget {
   final void Function(double delta) onSmear;
   final Color primaryColor;
   final bool isDark;
+  final String? imageUrl;
+  final bool? isCorrectState;
 
   const AudioFillBlanksCanvas({
     super.key,
@@ -31,6 +33,8 @@ class AudioFillBlanksCanvas extends StatelessWidget {
     required this.onSmear,
     required this.primaryColor,
     required this.isDark,
+    this.imageUrl,
+    this.isCorrectState,
   });
 
   @override
@@ -57,6 +61,19 @@ class AudioFillBlanksCanvas extends StatelessWidget {
           child: Stack(
             alignment: Alignment.center,
             children: [
+              // ── Image reveal (shown on correct) ───────────────────────────
+              if (imageUrl != null)
+                Positioned.fill(
+                  child: AnimatedOpacity(
+                    opacity: isCorrectState == true ? 0.4 : 0.0,
+                    duration: const Duration(milliseconds: 600),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(24.r),
+                      child: Image.network(imageUrl!, fit: BoxFit.cover),
+                    ),
+                  ),
+                ),
+
               // ── Revealed text ─────────────────────────────────────────────
               // PERF FIX: animate alpha directly on the text colour instead of
               // wrapping in Opacity (avoids a compositing layer per frame).

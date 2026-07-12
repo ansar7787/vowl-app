@@ -205,6 +205,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
               : _AudioFillBlanksContent(
                   quest: quest,
                   isAnswered: _isAnswered,
+                  isCorrect: _isCorrect,
                   revealProgress: _revealProgress,
                   controller: _controller,
                   theme: theme,
@@ -232,6 +233,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
 class _AudioFillBlanksContent extends StatelessWidget {
   final dynamic quest;
   final bool isAnswered;
+  final bool? isCorrect;
   final double revealProgress;
   final TextEditingController controller;
   final dynamic theme;
@@ -245,6 +247,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
   const _AudioFillBlanksContent({
     required this.quest,
     required this.isAnswered,
+    required this.isCorrect,
     required this.revealProgress,
     required this.controller,
     required this.theme,
@@ -349,6 +352,8 @@ class _AudioFillBlanksContent extends StatelessWidget {
                         onSmear: onSmear,
                         primaryColor: theme.primaryColor,
                         isDark: isDark,
+                        imageUrl: quest.imageUrl,
+                        isCorrectState: isCorrect,
                       ),
                     ),
                   ],
