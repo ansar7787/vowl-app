@@ -35,12 +35,7 @@ class KidsSchoolLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Bus Window
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: _buildBusWindow(quest),
-              ),
-            ),
+            Expanded(flex: 5, child: Center(child: _buildBusWindow(quest))),
             // Backpacks on Seats
             Flexible(
               flex: 5,
@@ -53,15 +48,23 @@ class KidsSchoolLayout extends StatelessWidget {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: const Color(0xFF1E293B), // Dark seat color
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(16.r)),
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(16.r),
+                      ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 10.h, left: 16.w, right: 16.w),
+                    padding: EdgeInsets.only(
+                      bottom: 10.h,
+                      left: 16.w,
+                      right: 16.w,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: List.generate(quest.options?.length ?? 0, (index) {
+                      children: List.generate(quest.options?.length ?? 0, (
+                        index,
+                      ) {
                         final option = quest.options![index];
                         return Expanded(
                           child: Padding(
@@ -94,7 +97,10 @@ class KidsSchoolLayout extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFFE0F2FE), // Sky blue outside window
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: const Color(0xFFFACC15), width: 16.r), // School bus yellow frame
+        border: Border.all(
+          color: const Color(0xFFFACC15),
+          width: 16.r,
+        ), // School bus yellow frame
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.15),
@@ -108,10 +114,7 @@ class KidsSchoolLayout extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (quest.emoji != null)
-              Text(
-                quest.emoji!,
-                style: TextStyle(fontSize: 48.sp),
-              ),
+              Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
             Text(
               quest.question ?? "?",
               style: TextStyle(
@@ -174,7 +177,10 @@ class KidsSchoolLayout extends StatelessWidget {
             height: 20.h,
             decoration: BoxDecoration(
               color: Colors.transparent,
-              border: Border.all(color: color.withValues(alpha: 0.8), width: 4.r),
+              border: Border.all(
+                color: color.withValues(alpha: 0.8),
+                width: 4.r,
+              ),
               borderRadius: BorderRadius.vertical(top: Radius.circular(10.r)),
             ),
           ),
@@ -186,7 +192,10 @@ class KidsSchoolLayout extends StatelessWidget {
               decoration: BoxDecoration(
                 color: color,
                 borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(color: Colors.black.withValues(alpha: 0.1), width: 2),
+                border: Border.all(
+                  color: Colors.black.withValues(alpha: 0.1),
+                  width: 2,
+                ),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withValues(alpha: 0.2),

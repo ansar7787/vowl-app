@@ -6,17 +6,14 @@ class FogPainter extends CustomPainter {
   final double progress;
   final double time;
 
-  FogPainter({
-    required this.progress,
-    required this.time,
-  });
+  FogPainter({required this.progress, required this.time});
 
   @override
   void paint(Canvas canvas, Size size) {
     if (progress >= 0.98) return;
 
     final rect = Rect.fromLTWH(0, 0, size.width, size.height);
-    
+
     // Draw procedural glass fog background
     final Paint fogPaint = Paint()
       ..shader = LinearGradient(
@@ -46,20 +43,20 @@ class FogPainter extends CustomPainter {
 
     // Procedural Wiping: Clear canvas from left to right based on wipe progress
     final Paint clearPaint = Paint()..blendMode = BlendMode.clear;
-    
+
     final path = Path();
     final double step = size.width * progress;
 
     if (progress > 0) {
       path.moveTo(0, 0);
       path.lineTo(step, 0);
-      
+
       // Crackling water condensation boundary
       for (double y = 0; y <= size.height; y += 8.h) {
         final double wave = math.sin(time * 24.0 + y * 0.15) * 5.w;
         path.lineTo(step + wave, y);
       }
-      
+
       path.lineTo(0, size.height);
       path.close();
       canvas.drawPath(path, clearPaint);

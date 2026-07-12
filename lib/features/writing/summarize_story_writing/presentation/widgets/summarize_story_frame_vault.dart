@@ -19,47 +19,75 @@ class SummarizeStoryFrameVault extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final slottedSentences = slots.map((s) => s.sentence).toSet();
-    final availableOptions = options.where((o) => !slottedSentences.contains(o)).toList();
+    final availableOptions = options
+        .where((o) => !slottedSentences.contains(o))
+        .toList();
 
     return Container(
       constraints: BoxConstraints(minHeight: 60.h),
       child: Wrap(
-        spacing: 10.w, runSpacing: 10.h,
+        spacing: 10.w,
+        runSpacing: 10.h,
         alignment: WrapAlignment.center,
-        children: availableOptions.map((o) => Draggable<String>(
-          data: o,
-          feedback: Material(
-            color: Colors.transparent, 
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h), 
-              decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(20.r)), 
-              child: Text(
-                o, 
-                style: TextStyle(fontFamily: 'RobotoMono', color: Colors.white, fontSize: 11.sp, fontWeight: FontWeight.bold)
-              )
+        children: availableOptions
+            .map(
+              (o) => Draggable<String>(
+                data: o,
+                feedback: Material(
+                  color: Colors.transparent,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 10.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: color,
+                      borderRadius: BorderRadius.circular(20.r),
+                    ),
+                    child: Text(
+                      o,
+                      style: TextStyle(
+                        fontFamily: 'RobotoMono',
+                        color: Colors.white,
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 10.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.black87 : Colors.white,
+                    borderRadius: BorderRadius.circular(20.r),
+                    border: Border.all(
+                      color: color.withValues(alpha: 0.3),
+                      width: 2,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: color.withValues(alpha: isDark ? 0.35 : 0.15),
+                        blurRadius: 6,
+                      ),
+                    ],
+                  ),
+                  child: Text(
+                    o,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'RobotoMono',
+                      color: isDark ? Colors.white : Colors.black87,
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
             )
-          ),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h), 
-            decoration: BoxDecoration(
-              color: isDark ? Colors.black87 : Colors.white, 
-              borderRadius: BorderRadius.circular(20.r), 
-              border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
-              boxShadow: [
-                BoxShadow(color: color.withValues(alpha: isDark ? 0.35 : 0.15), blurRadius: 6)
-              ],
-            ), 
-            child: Text(
-              o, 
-              textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'RobotoMono', 
-                color: isDark ? Colors.white : Colors.black87, 
-                fontSize: 10.sp,
-                fontWeight: FontWeight.bold
-              )
-            )
-          ),
-        )).toList(),
+            .toList(),
       ),
     );
   }

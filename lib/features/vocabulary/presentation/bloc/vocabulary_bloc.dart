@@ -348,4 +348,3 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     emit(s.copyWith(hintsAvailable: s.hintsAvailable + event.count));
   }
 }
-

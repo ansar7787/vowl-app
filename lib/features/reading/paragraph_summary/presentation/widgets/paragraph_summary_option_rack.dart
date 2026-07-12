@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ParagraphSummaryOptionRack extends StatelessWidget {
   final List<String> options;
   final String correctAnswer;
@@ -25,10 +26,10 @@ class ParagraphSummaryOptionRack extends StatelessWidget {
     return Column(
       children: options.map((opt) {
         final bool isSelected = selectedOption == opt;
-        
+
         Color cardColor = isDark ? Colors.grey.shade900 : Colors.white;
         Color borderColor = isDark ? Colors.white10 : Colors.grey.shade300;
-        
+
         if (isAnswered) {
           if (opt.trim().toLowerCase() == correctAnswer.trim().toLowerCase()) {
             cardColor = Colors.greenAccent.withValues(alpha: 0.15);
@@ -54,17 +55,18 @@ class ParagraphSummaryOptionRack extends StatelessWidget {
                 border: Border.all(color: borderColor, width: 2),
                 boxShadow: [
                   BoxShadow(
-                    color: isDark ? Colors.black45 : Colors.black12, 
-                    blurRadius: 6, 
+                    color: isDark ? Colors.black45 : Colors.black12,
+                    blurRadius: 6,
                     offset: const Offset(0, 2),
                   ),
                 ],
               ),
               child: Text(
-                opt, 
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 13.sp, 
-                  fontWeight: FontWeight.bold, 
+                opt,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.bold,
                   color: isDark ? Colors.white70 : Colors.black87,
                 ),
               ),

@@ -1,10 +1,11 @@
-
 import 'dart:io';
 import 'dart:convert';
 
 void main() async {
   final dir = Directory('assets/curriculum/vocabulary');
-  final files = dir.listSync().where((f) => f.path.contains('flashcards_') && f.path.endsWith('.json'));
+  final files = dir.listSync().where(
+    (f) => f.path.contains('flashcards_') && f.path.endsWith('.json'),
+  );
 
   for (var fileEntity in files) {
     final file = File(fileEntity.path);
@@ -20,7 +21,8 @@ void main() async {
         if (quest['hint'] == null) {
           String definition = quest['definition'] ?? "";
           if (definition.length > 20) {
-            quest['hint'] = "Definition starts with: \"${definition.substring(0, 15)}...\"";
+            quest['hint'] =
+                "Definition starts with: \"${definition.substring(0, 15)}...\"";
           } else {
             quest['hint'] = "Focus on its meaning: $definition";
           }

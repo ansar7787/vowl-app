@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class YesNoSpeakingHeaderInstruction extends StatelessWidget {
   final Color primaryColor;
   final bool isSnapped;
@@ -27,11 +28,18 @@ class YesNoSpeakingHeaderInstruction extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.edgesensor_high_rounded, size: 12.r, color: primaryColor),
+              Icon(
+                Icons.edgesensor_high_rounded,
+                size: 12.r,
+                color: primaryColor,
+              ),
               SizedBox(width: 8.w),
               Text(
-                isSnapped ? "NOW SPEAK THE TARGET SENTENCE" : "TILT THE CORE SPHERE TO ALIGN",
-                style: TextStyle(fontFamily: 'Outfit', 
+                isSnapped
+                    ? "NOW SPEAK THE TARGET SENTENCE"
+                    : "TILT THE CORE SPHERE TO ALIGN",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
                   color: primaryColor,
@@ -45,9 +53,11 @@ class YesNoSpeakingHeaderInstruction extends StatelessWidget {
         Text(
           isSnapped
               ? "Alignment locked! Hold the recording lens and read the target sentence aloud!"
-              : instruction ?? "Compare the spoken audio prompt with the written card below and slide to YES or NO!",
+              : instruction ??
+                    "Compare the spoken audio prompt with the written card below and slide to YES or NO!",
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,

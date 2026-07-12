@@ -351,8 +351,9 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                 ),
                                 SizedBox(width: isCompact ? 10.w : 16.w),
                                 ScaleButton(
-                                  onTap: () =>
-                                      _submitDiagnosis(quest.correctAnswer ?? ""),
+                                  onTap: () => _submitDiagnosis(
+                                    quest.correctAnswer ?? "",
+                                  ),
                                   child: Container(
                                     padding: EdgeInsets.symmetric(
                                       horizontal: isCompact ? 20.w : 32.w,
@@ -363,7 +364,9 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                       gradient: LinearGradient(
                                         colors: [
                                           theme.primaryColor,
-                                          theme.primaryColor.withValues(alpha: 0.8),
+                                          theme.primaryColor.withValues(
+                                            alpha: 0.8,
+                                          ),
                                         ],
                                       ),
                                       boxShadow: [

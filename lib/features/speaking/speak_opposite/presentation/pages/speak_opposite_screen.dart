@@ -35,7 +35,8 @@ class SpeakOppositeScreen extends StatefulWidget {
   State<SpeakOppositeScreen> createState() => _SpeakOppositeScreenState();
 }
 
-class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTickerProviderStateMixin {
+class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
+    with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   final _speechService = di.sl<SpeechService>();
@@ -59,16 +60,17 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
   @override
   void initState() {
     super.initState();
-    context.read<SpeakingBloc>().add(FetchSpeakingQuests(gameType: widget.gameType, level: widget.level));
+    context.read<SpeakingBloc>().add(
+      FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
+    );
 
-    _sparkController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 10),
-    )..addListener(() {
-        setState(() {
-          _timeVal = _sparkController.value;
-        });
-      });
+    _sparkController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 10))
+          ..addListener(() {
+            setState(() {
+              _timeVal = _sparkController.value;
+            });
+          });
     _sparkController.repeat();
   }
 
@@ -143,7 +145,10 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
       return;
     }
 
-    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '');
+    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
+      RegExp(r'[^\w\s]'),
+      '',
+    );
     final List<String> speechWords = cleanSpeech.split(' ');
 
     bool matchFound = false;
@@ -152,7 +157,9 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
       final String cleanWord = word.trim().replaceAll(RegExp(r'[^\w]'), '');
       for (var ant in _acceptedAntonyms) {
         final String cleanAnt = ant.trim().toLowerCase();
-        if (cleanWord == cleanAnt || cleanWord.contains(cleanAnt) || cleanAnt.contains(cleanWord)) {
+        if (cleanWord == cleanAnt ||
+            cleanWord.contains(cleanAnt) ||
+            cleanAnt.contains(cleanWord)) {
           matchFound = true;
           break;
         }
@@ -198,7 +205,9 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
       listener: (context, state) {
         if (state is SpeakingLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          if (state.currentIndex != _lastProcessedIndex ||
+              livesChanged ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -235,7 +244,8 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
         } else if (state is SpeakingGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<SpeakingBloc>().add(const RestoreLife()),
+            onRestore: () =>
+                context.read<SpeakingBloc>().add(const RestoreLife()),
             onTutorPass: _tutorPass,
           );
         }
@@ -265,25 +275,45 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
                       final bool isCompact = maxHeight < 580;
-                      
-                      final double estimatedContentHeight = 24.h + (isCompact ? 90.h : 120.h) + (isCompact ? 80.h : 110.h) + (isCompact ? 100.h : 140.h) + (isCompact ? 60.h : 80.h);
-                      final remainingHeight = maxHeight - estimatedContentHeight;
-                      
-                      final double gapUnit = remainingHeight > 0 ? remainingHeight / 8 : 0;
-                      final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
-                      final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 12.0) : 8.0;
-                      final double gapPositive = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-                      final double gapConduit = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-                      final double gapNegative = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-                      final double gapTelemetry = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 30.0) : 12.0;
-                      final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(12.0, 40.0) : 12.0;
+
+                      final double estimatedContentHeight =
+                          24.h +
+                          (isCompact ? 90.h : 120.h) +
+                          (isCompact ? 80.h : 110.h) +
+                          (isCompact ? 100.h : 140.h) +
+                          (isCompact ? 60.h : 80.h);
+                      final remainingHeight =
+                          maxHeight - estimatedContentHeight;
+
+                      final double gapUnit = remainingHeight > 0
+                          ? remainingHeight / 8
+                          : 0;
+                      final double gapTop = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(6.0, 16.0)
+                          : 6.0;
+                      final double gapInstruction = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(8.0, 12.0)
+                          : 8.0;
+                      final double gapPositive = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                          : 10.0;
+                      final double gapConduit = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                          : 10.0;
+                      final double gapNegative = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                          : 10.0;
+                      final double gapTelemetry = remainingHeight > 0
+                          ? (gapUnit * 2).clamp(12.0, 30.0)
+                          : 12.0;
+                      final double gapBottom = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(12.0, 40.0)
+                          : 12.0;
 
                       return SingleChildScrollView(
                         physics: const BouncingScrollPhysics(),
                         child: ConstrainedBox(
-                          constraints: BoxConstraints(
-                            minHeight: maxHeight,
-                          ),
+                          constraints: BoxConstraints(minHeight: maxHeight),
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 16.w),
                             child: Column(
@@ -293,85 +323,111 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapTop),
-                                    isCompact 
-                                      ? SizedBox(
-                                          height: 32.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SpeakOppositeHeader(instruction: quest.instruction),
-                                          ),
-                                        )
-                                      : SpeakOppositeHeader(instruction: quest.instruction),
-                                    SizedBox(height: gapInstruction),
-                                    
                                     isCompact
-                                      ? SizedBox(
-                                          height: 100.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SizedBox(
-                                              width: constraints.maxWidth - 16.w,
-                                              child: SpeakOppositePositivePolePanel(
-                                                quest: quest,
-                                                primaryColor: theme.primaryColor,
-                                                isDark: isDark,
-                                                onPlayTts: () => _soundService.playTts((quest.textToSpeak ?? "").replaceAll('*', '')),
+                                        ? SizedBox(
+                                            height: 32.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SpeakOppositeHeader(
+                                                instruction: quest.instruction,
                                               ),
                                             ),
+                                          )
+                                        : SpeakOppositeHeader(
+                                            instruction: quest.instruction,
                                           ),
-                                        )
-                                      : SpeakOppositePositivePolePanel(
-                                          quest: quest,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onPlayTts: () => _soundService.playTts((quest.textToSpeak ?? "").replaceAll('*', '')),
-                                        ),
+                                    SizedBox(height: gapInstruction),
+
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 100.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width:
+                                                    constraints.maxWidth - 16.w,
+                                                child:
+                                                    SpeakOppositePositivePolePanel(
+                                                      quest: quest,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      isDark: isDark,
+                                                      onPlayTts: () =>
+                                                          _soundService.playTts(
+                                                            (quest.textToSpeak ??
+                                                                    "")
+                                                                .replaceAll(
+                                                                  '*',
+                                                                  '',
+                                                                ),
+                                                          ),
+                                                    ),
+                                              ),
+                                            ),
+                                          )
+                                        : SpeakOppositePositivePolePanel(
+                                            quest: quest,
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            onPlayTts: () =>
+                                                _soundService.playTts(
+                                                  (quest.textToSpeak ?? "")
+                                                      .replaceAll('*', ''),
+                                                ),
+                                          ),
                                     SizedBox(height: gapPositive),
 
                                     isCompact
-                                      ? SizedBox(
-                                          height: 80.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SizedBox(
-                                              width: constraints.maxWidth - 16.w,
-                                              child: SpeakOppositePlasmaConduitPanel(
-                                                pullProgress: _pullProgress,
-                                                primaryColor: theme.primaryColor,
-                                                isListening: _isListening,
-                                                timeVal: _timeVal,
-                                                isDark: isDark,
+                                        ? SizedBox(
+                                            height: 80.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width:
+                                                    constraints.maxWidth - 16.w,
+                                                child:
+                                                    SpeakOppositePlasmaConduitPanel(
+                                                      pullProgress:
+                                                          _pullProgress,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      isListening: _isListening,
+                                                      timeVal: _timeVal,
+                                                      isDark: isDark,
+                                                    ),
                                               ),
                                             ),
+                                          )
+                                        : SpeakOppositePlasmaConduitPanel(
+                                            pullProgress: _pullProgress,
+                                            primaryColor: theme.primaryColor,
+                                            isListening: _isListening,
+                                            timeVal: _timeVal,
+                                            isDark: isDark,
                                           ),
-                                        )
-                                      : SpeakOppositePlasmaConduitPanel(
-                                          pullProgress: _pullProgress,
-                                          primaryColor: theme.primaryColor,
-                                          isListening: _isListening,
-                                          timeVal: _timeVal,
-                                          isDark: isDark,
-                                        ),
                                     SizedBox(height: gapConduit),
 
                                     isCompact
-                                      ? SizedBox(
-                                          height: 60.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SizedBox(
-                                              width: constraints.maxWidth - 16.w,
-                                              child: SpeakOppositeNegativePolePanel(
-                                                pullProgress: _pullProgress,
-                                                isDark: isDark,
+                                        ? SizedBox(
+                                            height: 60.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width:
+                                                    constraints.maxWidth - 16.w,
+                                                child:
+                                                    SpeakOppositeNegativePolePanel(
+                                                      pullProgress:
+                                                          _pullProgress,
+                                                      isDark: isDark,
+                                                    ),
                                               ),
                                             ),
+                                          )
+                                        : SpeakOppositeNegativePolePanel(
+                                            pullProgress: _pullProgress,
+                                            isDark: isDark,
                                           ),
-                                        )
-                                      : SpeakOppositeNegativePolePanel(
-                                          pullProgress: _pullProgress,
-                                          isDark: isDark,
-                                        ),
                                   ],
                                 ),
                                 Column(
@@ -380,81 +436,98 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> with SingleTi
                                     SizedBox(height: gapNegative),
                                     if (_spokenText.isNotEmpty)
                                       isCompact
-                                        ? SizedBox(
-                                            height: 70.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: constraints.maxWidth - 16.w,
-                                                child: SpeakOppositeFrequencyTelemetryCard(
-                                                  spokenText: _spokenText,
-                                                  isDark: isDark,
+                                          ? SizedBox(
+                                              height: 70.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: SizedBox(
+                                                  width:
+                                                      constraints.maxWidth -
+                                                      16.w,
+                                                  child:
+                                                      SpeakOppositeFrequencyTelemetryCard(
+                                                        spokenText: _spokenText,
+                                                        isDark: isDark,
+                                                      ),
                                                 ),
                                               ),
+                                            )
+                                          : SpeakOppositeFrequencyTelemetryCard(
+                                              spokenText: _spokenText,
+                                              isDark: isDark,
                                             ),
-                                          )
-                                        : SpeakOppositeFrequencyTelemetryCard(
-                                            spokenText: _spokenText,
-                                            isDark: isDark,
-                                          ),
 
                                     AnimatedCrossFade(
                                       firstChild: const SizedBox(),
                                       secondChild: isCompact
-                                        ? SizedBox(
-                                            height: 100.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: constraints.maxWidth - 16.w,
-                                                child: SpeakOppositeExplanationCard(
-                                                  quest: quest,
-                                                  isCorrect: _isCorrect ?? false,
-                                                  isDark: isDark,
-                                                  acceptedAntonyms: _acceptedAntonyms,
+                                          ? SizedBox(
+                                              height: 100.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: SizedBox(
+                                                  width:
+                                                      constraints.maxWidth -
+                                                      16.w,
+                                                  child:
+                                                      SpeakOppositeExplanationCard(
+                                                        quest: quest,
+                                                        isCorrect:
+                                                            _isCorrect ?? false,
+                                                        isDark: isDark,
+                                                        acceptedAntonyms:
+                                                            _acceptedAntonyms,
+                                                      ),
                                                 ),
                                               ),
+                                            )
+                                          : SpeakOppositeExplanationCard(
+                                              quest: quest,
+                                              isCorrect: _isCorrect ?? false,
+                                              isDark: isDark,
+                                              acceptedAntonyms:
+                                                  _acceptedAntonyms,
                                             ),
-                                          )
-                                        : SpeakOppositeExplanationCard(
-                                            quest: quest,
-                                            isCorrect: _isCorrect ?? false,
-                                            isDark: isDark,
-                                            acceptedAntonyms: _acceptedAntonyms,
-                                          ),
                                       crossFadeState: _isAnswered
                                           ? CrossFadeState.showSecond
                                           : CrossFadeState.showFirst,
-                                      duration: const Duration(milliseconds: 400),
+                                      duration: const Duration(
+                                        milliseconds: 400,
+                                      ),
                                     ),
                                     SizedBox(height: gapTelemetry),
 
                                     if (!_isAnswered)
                                       isCompact
-                                        ? SizedBox(
-                                            height: 70.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SpeakOppositeElectromagneticTrigger(
-                                                isListening: _isListening,
-                                                primaryColor: theme.primaryColor,
-                                                onLongPressStart: _startSpeechListening,
-                                                onLongPressEnd: _stopSpeechListening,
-                                                attempts: _attempts,
-                                                isAnswered: _isAnswered,
-                                                onTutorPass: _tutorPass,
+                                          ? SizedBox(
+                                              height: 70.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child:
+                                                    SpeakOppositeElectromagneticTrigger(
+                                                      isListening: _isListening,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      onLongPressStart:
+                                                          _startSpeechListening,
+                                                      onLongPressEnd:
+                                                          _stopSpeechListening,
+                                                      attempts: _attempts,
+                                                      isAnswered: _isAnswered,
+                                                      onTutorPass: _tutorPass,
+                                                    ),
                                               ),
+                                            )
+                                          : SpeakOppositeElectromagneticTrigger(
+                                              isListening: _isListening,
+                                              primaryColor: theme.primaryColor,
+                                              onLongPressStart:
+                                                  _startSpeechListening,
+                                              onLongPressEnd:
+                                                  _stopSpeechListening,
+                                              attempts: _attempts,
+                                              isAnswered: _isAnswered,
+                                              onTutorPass: _tutorPass,
                                             ),
-                                          )
-                                        : SpeakOppositeElectromagneticTrigger(
-                                            isListening: _isListening,
-                                            primaryColor: theme.primaryColor,
-                                            onLongPressStart: _startSpeechListening,
-                                            onLongPressEnd: _stopSpeechListening,
-                                            attempts: _attempts,
-                                            isAnswered: _isAnswered,
-                                            onTutorPass: _tutorPass,
-                                          ),
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),

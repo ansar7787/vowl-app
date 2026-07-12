@@ -33,7 +33,10 @@ class GrammarRemoteDataSourceImpl implements GrammarRemoteDataSource {
       if (localData.isNotEmpty) {
         return localData.map((q) {
           final questMap = Map<String, dynamic>.from(q as Map);
-          return GrammarQuestModel.fromJson(questMap, (questMap['id'] ?? '').toString());
+          return GrammarQuestModel.fromJson(
+            questMap,
+            (questMap['id'] ?? '').toString(),
+          );
         }).toList();
       }
 
@@ -87,7 +90,9 @@ class GrammarRemoteDataSourceImpl implements GrammarRemoteDataSource {
         data['id'] = doc.id;
         data['difficulty'] = level;
         data['subtype'] = gameType.name;
-        return [GrammarQuestModel.fromJson(data, (data['id'] ?? doc.id).toString())];
+        return [
+          GrammarQuestModel.fromJson(data, (data['id'] ?? doc.id).toString()),
+        ];
       } else {
         throw ServerException('Level $level not found for ${gameType.name}');
       }

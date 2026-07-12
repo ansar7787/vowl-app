@@ -25,7 +25,9 @@ class DirectIndirectSpeechMirror extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final backColor = (isCorrect == false) ? Colors.redAccent : Colors.greenAccent;
+    final backColor = (isCorrect == false)
+        ? Colors.redAccent
+        : Colors.greenAccent;
 
     return TweenAnimationBuilder(
       tween: Tween<double>(begin: 0, end: rotation),
@@ -38,63 +40,77 @@ class DirectIndirectSpeechMirror extends StatelessWidget {
             ..setEntry(3, 2, 0.001) // Perspective
             ..rotateY(value),
           alignment: Alignment.center,
-          child: Container(
-            width: isCompact ? 280.w : 320.w,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(isCompact ? 20.r : 32.r),
-              boxShadow: [
-                BoxShadow(
-                  color: (isFront ? primaryColor : backColor).withValues(alpha: 0.2),
-                  blurRadius: 30,
-                  spreadRadius: 2,
-                )
-              ],
-            ),
-            child: GlassTile(
-              padding: EdgeInsets.all(isCompact ? 16.r : 32.r),
-              borderRadius: BorderRadius.circular(isCompact ? 20.r : 32.r),
-              color: (isFront ? primaryColor : backColor).withValues(alpha: 0.1),
-              child: Transform(
-                transform: Matrix4.identity()..rotateY(isFront ? 0 : 3.14),
-                alignment: Alignment.center,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
-                      decoration: BoxDecoration(
-                        color: (isFront ? primaryColor : backColor).withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(20.r),
+          child:
+              Container(
+                    width: isCompact ? 280.w : 320.w,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        isCompact ? 20.r : 32.r,
                       ),
-                      child: Text(
-                        isFront ? "DIRECT SPEECH" : "REPORTED SPEECH",
-                        style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: isCompact ? 8.sp : 10.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isFront ? primaryColor : backColor,
-                          letterSpacing: 1.5,
+                      boxShadow: [
+                        BoxShadow(
+                          color: (isFront ? primaryColor : backColor)
+                              .withValues(alpha: 0.2),
+                          blurRadius: 30,
+                          spreadRadius: 2,
+                        ),
+                      ],
+                    ),
+                    child: GlassTile(
+                      padding: EdgeInsets.all(isCompact ? 16.r : 32.r),
+                      borderRadius: BorderRadius.circular(
+                        isCompact ? 20.r : 32.r,
+                      ),
+                      color: (isFront ? primaryColor : backColor).withValues(
+                        alpha: 0.1,
+                      ),
+                      child: Transform(
+                        transform: Matrix4.identity()
+                          ..rotateY(isFront ? 0 : 3.14),
+                        alignment: Alignment.center,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 12.w,
+                                vertical: 4.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: (isFront ? primaryColor : backColor)
+                                    .withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(20.r),
+                              ),
+                              child: Text(
+                                isFront ? "DIRECT SPEECH" : "REPORTED SPEECH",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: isCompact ? 8.sp : 10.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: isFront ? primaryColor : backColor,
+                                  letterSpacing: 1.5,
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: isCompact ? 12.h : 24.h),
+                            Text(
+                              isFront ? directText : indirectText,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: isCompact ? 16.sp : 22.sp,
+                                color: isDark ? Colors.white : Colors.black87,
+                                fontWeight: FontWeight.bold,
+                                height: 1.4,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                    SizedBox(height: isCompact ? 12.h : 24.h),
-                    Text(
-                      isFront ? directText : indirectText,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontFamily: 'Outfit', 
-                        fontSize: isCompact ? 16.sp : 22.sp,
-                        color: isDark ? Colors.white : Colors.black87,
-                        fontWeight: FontWeight.bold,
-                        height: 1.4,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ).animate(key: ValueKey(isFront)).shimmer(
-                duration: 2.seconds,
-                color: Colors.white10,
-              ),
+                  )
+                  .animate(key: ValueKey(isFront))
+                  .shimmer(duration: 2.seconds, color: Colors.white10),
         );
       },
     );

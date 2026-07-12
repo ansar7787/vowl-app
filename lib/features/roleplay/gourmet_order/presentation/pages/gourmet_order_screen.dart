@@ -191,7 +191,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                       ),
                       child: Column(
                         children: [
-                          GourmetOrderInstruction(primaryColor: theme.primaryColor),
+                          GourmetOrderInstruction(
+                            primaryColor: theme.primaryColor,
+                          ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
                           GourmetOrderBanquetHeader(
                             prompt: quest.prompt ?? "",
@@ -287,7 +289,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                       gradient: LinearGradient(
                                         colors: [
                                           theme.primaryColor,
-                                          theme.primaryColor.withValues(alpha: 0.8),
+                                          theme.primaryColor.withValues(
+                                            alpha: 0.8,
+                                          ),
                                         ],
                                       ),
                                       boxShadow: [

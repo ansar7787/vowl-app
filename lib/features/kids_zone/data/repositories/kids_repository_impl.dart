@@ -22,7 +22,10 @@ class KidsRepositoryImpl implements KidsRepository {
   ) async {
     // 1. Try Local Assets first (Free & Fast)
     try {
-      final localQuests = await localDataSource.getQuestsByLevel(gameType, level);
+      final localQuests = await localDataSource.getQuestsByLevel(
+        gameType,
+        level,
+      );
       if (localQuests.isNotEmpty) {
         return Right(localQuests);
       }
@@ -32,15 +35,20 @@ class KidsRepositoryImpl implements KidsRepository {
 
     // 2. Fallback to Firestore if local not found
     try {
-      final remoteQuests = await remoteDataSource.getQuestsByLevel(gameType, level);
+      final remoteQuests = await remoteDataSource.getQuestsByLevel(
+        gameType,
+        level,
+      );
       return Right(remoteQuests);
     } on ServerException catch (e) {
-      return Left(ServerFailure(
-        e.message,
-        code: e.code,
-        statusCode: e.statusCode,
-        details: e.details,
-      ));
+      return Left(
+        ServerFailure(
+          e.message,
+          code: e.code,
+          statusCode: e.statusCode,
+          details: e.details,
+        ),
+      );
     } catch (e) {
       return Left(ServerFailure(e.toString()));
     }

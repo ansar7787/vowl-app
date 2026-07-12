@@ -55,19 +55,19 @@ class SpeakingQuest extends GameQuest {
 
   @override
   List<Object?> get props => [
-        ...super.props,
-        missingWord,
-        prompt,
-        sampleAnswer,
-        translation,
-        situationText,
-        sceneText,
-        acceptedSynonyms,
-        phoneticHint,
-        meaning,
-        sampleUsage,
-        partnerDialogue,
-        targetPhoneme,
-        expression,
-      ];
+    ...super.props,
+    missingWord,
+    prompt,
+    sampleAnswer,
+    translation,
+    situationText,
+    sceneText,
+    acceptedSynonyms,
+    phoneticHint,
+    meaning,
+    sampleUsage,
+    partnerDialogue,
+    targetPhoneme,
+    expression,
+  ];
 }

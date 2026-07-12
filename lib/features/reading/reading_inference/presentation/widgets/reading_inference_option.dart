@@ -30,7 +30,8 @@ class ReadingInferenceOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isSelected = selectedIndex == index;
-    bool isCorrect = isAnswered && text.trim().toLowerCase() == correct.trim().toLowerCase();
+    bool isCorrect =
+        isAnswered && text.trim().toLowerCase() == correct.trim().toLowerCase();
     bool isWrong = isAnswered && isSelected && !isCorrect;
     bool isDisabled = clarity < 0.3 && !isAnswered;
 
@@ -44,18 +45,23 @@ class ReadingInferenceOption extends StatelessWidget {
           child: GlassTile(
             padding: EdgeInsets.all(20.r),
             borderRadius: BorderRadius.circular(20.r),
-            color: isCorrect 
-                ? Colors.greenAccent.withValues(alpha: 0.25) 
-                : (isWrong 
-                    ? Colors.redAccent.withValues(alpha: 0.25) 
-                    : (isSelected ? color.withValues(alpha: 0.15) : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.04)))),
+            color: isCorrect
+                ? Colors.greenAccent.withValues(alpha: 0.25)
+                : (isWrong
+                      ? Colors.redAccent.withValues(alpha: 0.25)
+                      : (isSelected
+                            ? color.withValues(alpha: 0.15)
+                            : (isDark
+                                  ? Colors.white10
+                                  : Colors.black.withValues(alpha: 0.04)))),
             child: Center(
               child: Text(
-                text, 
+                text,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 14.sp, 
-                  fontWeight: FontWeight.bold, 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.bold,
                   color: isDark ? Colors.white : Colors.black87,
                 ),
               ),

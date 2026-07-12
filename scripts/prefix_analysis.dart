@@ -9,14 +9,17 @@ void main() async {
 
   for (final entity in entities) {
     if (entity is File && entity.path.endsWith('.json')) {
-      final String relativePath = entity.path.split('assets\\curriculum\\').last;
+      final String relativePath = entity.path
+          .split('assets\\curriculum\\')
+          .last;
       String gameName = '';
       if (relativePath.contains('kids')) {
         final parts = relativePath.split('\\');
         gameName = 'kids/${parts[1]}';
       } else {
         final filename = relativePath.split('\\').last;
-        gameName = relativePath.split('\\').first + '/' + filename.split('_').first;
+        gameName =
+            relativePath.split('\\').first + '/' + filename.split('_').first;
       }
 
       if (gamePrefixes.containsKey(gameName)) continue;

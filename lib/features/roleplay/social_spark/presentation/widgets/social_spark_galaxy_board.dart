@@ -33,10 +33,14 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
       width: 1.sw,
       height: 380.h,
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF07070F) : Colors.black.withValues(alpha: 0.02),
+        color: isDark
+            ? const Color(0xFF07070F)
+            : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(36.r),
         border: Border.all(
-          color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.03),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.03)
+              : Colors.black.withValues(alpha: 0.03),
         ),
       ),
       child: LayoutBuilder(
@@ -49,7 +53,7 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
             double angle = (i * 2 * math.pi / words.length) + (i * 0.15);
             double radiusX = (width / 2) - 60.w;
             double radiusY = (height / 2) - 50.h;
-            
+
             // Alternating wave depth
             double depth = (i % 2 == 0) ? 0.95 : 0.65;
 
@@ -65,7 +69,10 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     gradient: RadialGradient(
-                      colors: [color.withValues(alpha: 0.05), Colors.transparent],
+                      colors: [
+                        color.withValues(alpha: 0.05),
+                        Colors.transparent,
+                      ],
                     ),
                   ),
                 ),
@@ -97,7 +104,13 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
     );
   }
 
-  Widget _buildStarNode(int index, String text, Offset pos, Color color, bool isDark) {
+  Widget _buildStarNode(
+    int index,
+    String text,
+    Offset pos,
+    Color color,
+    bool isDark,
+  ) {
     final bool isSelected = selectedIndices.contains(index);
     final int selectOrderIndex = selectedIndices.indexOf(index) + 1;
 
@@ -109,89 +122,106 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
     return Positioned(
       left: pos.dx - 48.w,
       top: pos.dy - 32.h,
-      child: ScaleButton(
-        onTap: () => onStarTap(index),
-        child: Container(
-          width: 96.w,
-          height: 64.h,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20.r),
-            color: isSelected ? nodeColor : (isDark ? const Color(0xFF0F0F1B) : Colors.white),
-            border: Border.all(
-              color: isSelected ? Colors.white : color.withValues(alpha: 0.4),
-              width: isSelected ? 2.5 : 1.5,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: (isSelected ? nodeColor : color).withValues(alpha: isSelected ? 0.4 : 0.1),
-                blurRadius: 10,
-                spreadRadius: 1,
-              ),
-            ],
-          ),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              // Tiny connection index tag
-              if (isSelected)
-                Positioned(
-                  top: 4.h,
-                  left: 6.w,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.25),
-                      borderRadius: BorderRadius.circular(4.r),
-                    ),
-                    child: Text(
-                      "$selectOrderIndex",
-                      style: TextStyle(fontFamily: 'RobotoMono', 
-                        fontSize: 8.sp,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-
-              // Sparkle particle stars
-              Positioned(
-                right: 6.w,
-                top: 4.h,
-                child: Icon(
-                  Icons.star_rounded,
-                  size: 10.r,
-                  color: isSelected ? Colors.white : color.withValues(alpha: 0.3),
-                ),
-              ),
-
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                child: Text(
-                  text,
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.bold,
+      child:
+          ScaleButton(
+                onTap: () => onStarTap(index),
+                child: Container(
+                  width: 96.w,
+                  height: 64.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.r),
                     color: isSelected
-                        ? Colors.white
-                        : (isDark ? Colors.white70 : Colors.black87),
+                        ? nodeColor
+                        : (isDark ? const Color(0xFF0F0F1B) : Colors.white),
+                    border: Border.all(
+                      color: isSelected
+                          ? Colors.white
+                          : color.withValues(alpha: 0.4),
+                      width: isSelected ? 2.5 : 1.5,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: (isSelected ? nodeColor : color).withValues(
+                          alpha: isSelected ? 0.4 : 0.1,
+                        ),
+                        blurRadius: 10,
+                        spreadRadius: 1,
+                      ),
+                    ],
+                  ),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      // Tiny connection index tag
+                      if (isSelected)
+                        Positioned(
+                          top: 4.h,
+                          left: 6.w,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 4.w,
+                              vertical: 1.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.25),
+                              borderRadius: BorderRadius.circular(4.r),
+                            ),
+                            child: Text(
+                              "$selectOrderIndex",
+                              style: TextStyle(
+                                fontFamily: 'RobotoMono',
+                                fontSize: 8.sp,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+
+                      // Sparkle particle stars
+                      Positioned(
+                        right: 6.w,
+                        top: 4.h,
+                        child: Icon(
+                          Icons.star_rounded,
+                          size: 10.r,
+                          color: isSelected
+                              ? Colors.white
+                              : color.withValues(alpha: 0.3),
+                        ),
+                      ),
+
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 8.w,
+                          vertical: 4.h,
+                        ),
+                        child: Text(
+                          text,
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.bold,
+                            color: isSelected
+                                ? Colors.white
+                                : (isDark ? Colors.white70 : Colors.black87),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .moveY(
+                begin: -4,
+                end: 4,
+                duration: (1.8 + index * 0.35).seconds,
+                curve: Curves.easeInOut,
               ),
-            ],
-          ),
-        ),
-      ).animate(
-        onPlay: (c) => c.repeat(reverse: true),
-      ).moveY(
-        begin: -4,
-        end: 4,
-        duration: (1.8 + index * 0.35).seconds,
-        curve: Curves.easeInOut,
-      ),
     );
   }
 }

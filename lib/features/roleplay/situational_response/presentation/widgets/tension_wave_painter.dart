@@ -25,7 +25,9 @@ class TensionWavePainter extends CustomPainter {
       waveColor = (isCorrect ?? false) ? Colors.greenAccent : Colors.redAccent;
     } else {
       // Transition from cyan/blue to red based on time/tension progress
-      waveColor = Color.lerp(themeColor, const Color(0xFFFF3366), progress) ?? themeColor;
+      waveColor =
+          Color.lerp(themeColor, const Color(0xFFFF3366), progress) ??
+          themeColor;
     }
 
     final wavePaint = Paint()
@@ -33,7 +35,11 @@ class TensionWavePainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     // Pulse circles
-    canvas.drawCircle(center, baseRadius * (0.8 + 0.15 * pulseValue), wavePaint);
+    canvas.drawCircle(
+      center,
+      baseRadius * (0.8 + 0.15 * pulseValue),
+      wavePaint,
+    );
 
     final linePaint = Paint()
       ..color = waveColor.withValues(alpha: 0.2 + (0.3 * progress))

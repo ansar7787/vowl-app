@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+
 class AudioTrueFalseScreenDisplay extends StatelessWidget {
   final String statement;
   final Color color;
@@ -33,18 +34,19 @@ class AudioTrueFalseScreenDisplay extends StatelessWidget {
               15,
               (i) => Positioned(
                 left: (i * 20).w,
-                child: Container(
-                  width: 2.w,
-                  height: 180.h,
-                  color: Colors.white10.withValues(alpha: 1.0 - clarity),
-                ).animate(onPlay: (c) => c.repeat()).moveX(
-                  begin: 0,
-                  end: 10,
-                  duration: 100.ms,
-                ),
+                child:
+                    Container(
+                          width: 2.w,
+                          height: 180.h,
+                          color: Colors.white10.withValues(
+                            alpha: 1.0 - clarity,
+                          ),
+                        )
+                        .animate(onPlay: (c) => c.repeat())
+                        .moveX(begin: 0, end: 10, duration: 100.ms),
               ),
             ),
-            
+
           // The Statement
           Opacity(
             opacity: clarity.clamp(0.1, 1.0),
@@ -53,7 +55,8 @@ class AudioTrueFalseScreenDisplay extends StatelessWidget {
               child: Text(
                 statement,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                   color: Color.lerp(Colors.white24, Colors.white, clarity),

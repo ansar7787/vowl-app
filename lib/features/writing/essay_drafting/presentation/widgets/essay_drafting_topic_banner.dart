@@ -22,20 +22,24 @@ class EssayDraftingTopicBanner extends StatelessWidget {
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.05 : 0.08),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white12 : Colors.black12, width: 2),
+        border: Border.all(
+          color: isDark ? Colors.white12 : Colors.black12,
+          width: 2,
+        ),
       ),
       child: Stack(
         children: [
           const TechPatternOverlay(opacity: 0.05),
           Text(
-            topic, 
-            textAlign: TextAlign.center, 
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 15.sp, 
-              fontWeight: FontWeight.w800, 
+            topic,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w800,
               color: isDark ? Colors.white : Colors.black87,
-              height: 1.4
-            )
+              height: 1.4,
+            ),
           ),
         ],
       ),

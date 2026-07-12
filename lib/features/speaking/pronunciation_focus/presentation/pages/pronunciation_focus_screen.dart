@@ -32,10 +32,12 @@ class PronunciationFocusScreen extends StatefulWidget {
   });
 
   @override
-  State<PronunciationFocusScreen> createState() => _PronunciationFocusScreenState();
+  State<PronunciationFocusScreen> createState() =>
+      _PronunciationFocusScreenState();
 }
 
-class _PronunciationFocusScreenState extends State<PronunciationFocusScreen> with SingleTickerProviderStateMixin {
+class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
+    with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   final _speechService = di.sl<SpeechService>();
@@ -58,16 +60,17 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen> wit
   @override
   void initState() {
     super.initState();
-    context.read<SpeakingBloc>().add(FetchSpeakingQuests(gameType: widget.gameType, level: widget.level));
+    context.read<SpeakingBloc>().add(
+      FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
+    );
 
-    _tickerController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 10),
-    )..addListener(() {
-        setState(() {
-          _timeVal = _tickerController.value;
-        });
-      });
+    _tickerController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 10))
+          ..addListener(() {
+            setState(() {
+              _timeVal = _tickerController.value;
+            });
+          });
     _tickerController.repeat();
   }
 
@@ -123,7 +126,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen> wit
   void _stopListening(String expectedText) async {
     _heatTimer?.cancel();
     await _speechService.stop();
-    
+
     setState(() {
       _isListening = false;
     });
@@ -141,8 +144,14 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen> wit
       return;
     }
 
-    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '');
-    final String cleanExpected = expected.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '');
+    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
+      RegExp(r'[^\w\s]'),
+      '',
+    );
+    final String cleanExpected = expected.trim().toLowerCase().replaceAll(
+      RegExp(r'[^\w\s]'),
+      '',
+    );
 
     final List<String> speechWords = cleanSpeech.split(' ');
     final List<String> expectedWords = cleanExpected.split(' ');
@@ -154,7 +163,9 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen> wit
       }
     }
 
-    final double similarity = expectedWords.isNotEmpty ? matches / expectedWords.length : 0.0;
+    final double similarity = expectedWords.isNotEmpty
+        ? matches / expectedWords.length
+        : 0.0;
     final bool passed = similarity >= 0.75;
 
     setState(() {
@@ -195,7 +206,9 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen> wit
       listener: (context, state) {
         if (state is SpeakingLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          if (state.currentIndex != _lastProcessedIndex ||
+              livesChanged ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -233,7 +246,8 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen> wit
         } else if (state is SpeakingGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<SpeakingBloc>().add(const RestoreLife()),
+            onRestore: () =>
+                context.read<SpeakingBloc>().add(const RestoreLife()),
             onTutorPass: _tutorPass,
           );
         }
@@ -259,25 +273,45 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen> wit
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
                       final bool isCompact = maxHeight < 580;
-                      
-                      final double estimatedContentHeight = 24.h + (isCompact ? 90.h : 120.h) + (isCompact ? 80.h : 110.h) + (isCompact ? 100.h : 140.h) + (isCompact ? 60.h : 80.h);
-                      final remainingHeight = maxHeight - estimatedContentHeight;
-                      
-                      final double gapUnit = remainingHeight > 0 ? remainingHeight / 8 : 0;
-                      final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
-                      final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 12.0) : 8.0;
-                      final double gapCrucible = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-                      final double gapGrid = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-                      final double gapSentence = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-                      final double gapTelemetry = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 30.0) : 12.0;
-                      final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(12.0, 40.0) : 12.0;
+
+                      final double estimatedContentHeight =
+                          24.h +
+                          (isCompact ? 90.h : 120.h) +
+                          (isCompact ? 80.h : 110.h) +
+                          (isCompact ? 100.h : 140.h) +
+                          (isCompact ? 60.h : 80.h);
+                      final remainingHeight =
+                          maxHeight - estimatedContentHeight;
+
+                      final double gapUnit = remainingHeight > 0
+                          ? remainingHeight / 8
+                          : 0;
+                      final double gapTop = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(6.0, 16.0)
+                          : 6.0;
+                      final double gapInstruction = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(8.0, 12.0)
+                          : 8.0;
+                      final double gapCrucible = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                          : 10.0;
+                      final double gapGrid = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                          : 10.0;
+                      final double gapSentence = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                          : 10.0;
+                      final double gapTelemetry = remainingHeight > 0
+                          ? (gapUnit * 2).clamp(12.0, 30.0)
+                          : 12.0;
+                      final double gapBottom = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(12.0, 40.0)
+                          : 12.0;
 
                       return SingleChildScrollView(
                         physics: const BouncingScrollPhysics(),
                         child: ConstrainedBox(
-                          constraints: BoxConstraints(
-                            minHeight: maxHeight,
-                          ),
+                          constraints: BoxConstraints(minHeight: maxHeight),
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 16.w),
                             child: Column(
@@ -287,101 +321,116 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen> wit
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapTop),
-                                    isCompact 
-                                      ? SizedBox(
-                                          height: 32.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: PronunciationFocusHeader(
-                                              primaryColor: theme.primaryColor,
-                                              instruction: quest.instruction,
-                                            ),
-                                          ),
-                                        )
-                                      : PronunciationFocusHeader(
-                                          primaryColor: theme.primaryColor,
-                                          instruction: quest.instruction,
-                                        ),
-                                    SizedBox(height: gapInstruction),
-                                    
                                     isCompact
-                                      ? SizedBox(
-                                          height: 100.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SizedBox(
-                                              width: constraints.maxWidth - 16.w,
-                                              child: PronunciationFocusPhonemeCrucible(
-                                                quest: quest,
-                                                primaryColor: theme.primaryColor,
-                                                isDark: isDark,
-                                                heatLevel: _heatLevel,
-                                                showGuide: _showGuide,
-                                                onToggleGuide: () {
-                                                  _hapticService.selection();
-                                                  setState(() => _showGuide = !_showGuide);
-                                                },
+                                        ? SizedBox(
+                                            height: 32.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: PronunciationFocusHeader(
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                instruction: quest.instruction,
                                               ),
                                             ),
+                                          )
+                                        : PronunciationFocusHeader(
+                                            primaryColor: theme.primaryColor,
+                                            instruction: quest.instruction,
                                           ),
-                                        )
-                                      : PronunciationFocusPhonemeCrucible(
-                                          quest: quest,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          heatLevel: _heatLevel,
-                                          showGuide: _showGuide,
-                                          onToggleGuide: () {
-                                            _hapticService.selection();
-                                            setState(() => _showGuide = !_showGuide);
-                                          },
-                                        ),
+                                    SizedBox(height: gapInstruction),
+
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 100.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width:
+                                                    constraints.maxWidth - 16.w,
+                                                child:
+                                                    PronunciationFocusPhonemeCrucible(
+                                                      quest: quest,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      isDark: isDark,
+                                                      heatLevel: _heatLevel,
+                                                      showGuide: _showGuide,
+                                                      onToggleGuide: () {
+                                                        _hapticService
+                                                            .selection();
+                                                        setState(
+                                                          () => _showGuide =
+                                                              !_showGuide,
+                                                        );
+                                                      },
+                                                    ),
+                                              ),
+                                            ),
+                                          )
+                                        : PronunciationFocusPhonemeCrucible(
+                                            quest: quest,
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            heatLevel: _heatLevel,
+                                            showGuide: _showGuide,
+                                            onToggleGuide: () {
+                                              _hapticService.selection();
+                                              setState(
+                                                () => _showGuide = !_showGuide,
+                                              );
+                                            },
+                                          ),
                                     SizedBox(height: gapCrucible),
 
                                     isCompact
-                                      ? SizedBox(
-                                          height: 80.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SizedBox(
-                                              width: constraints.maxWidth - 16.w,
-                                              child: PronunciationFocusThermalGrid(
-                                                heatLevel: _heatLevel,
-                                                isListening: _isListening,
-                                                timeVal: _timeVal,
-                                                isDark: isDark,
+                                        ? SizedBox(
+                                            height: 80.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width:
+                                                    constraints.maxWidth - 16.w,
+                                                child:
+                                                    PronunciationFocusThermalGrid(
+                                                      heatLevel: _heatLevel,
+                                                      isListening: _isListening,
+                                                      timeVal: _timeVal,
+                                                      isDark: isDark,
+                                                    ),
                                               ),
                                             ),
+                                          )
+                                        : PronunciationFocusThermalGrid(
+                                            heatLevel: _heatLevel,
+                                            isListening: _isListening,
+                                            timeVal: _timeVal,
+                                            isDark: isDark,
                                           ),
-                                        )
-                                      : PronunciationFocusThermalGrid(
-                                          heatLevel: _heatLevel,
-                                          isListening: _isListening,
-                                          timeVal: _timeVal,
-                                          isDark: isDark,
-                                        ),
                                     SizedBox(height: gapGrid),
 
                                     isCompact
-                                      ? SizedBox(
-                                          height: 80.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SizedBox(
-                                              width: constraints.maxWidth - 16.w,
-                                              child: PronunciationFocusHighlightedSentence(
-                                                quest: quest,
-                                                primaryColor: theme.primaryColor,
-                                                isDark: isDark,
+                                        ? SizedBox(
+                                            height: 80.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width:
+                                                    constraints.maxWidth - 16.w,
+                                                child:
+                                                    PronunciationFocusHighlightedSentence(
+                                                      quest: quest,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
                                               ),
                                             ),
+                                          )
+                                        : PronunciationFocusHighlightedSentence(
+                                            quest: quest,
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
                                           ),
-                                        )
-                                      : PronunciationFocusHighlightedSentence(
-                                          quest: quest,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                        ),
                                   ],
                                 ),
                                 Column(
@@ -390,83 +439,102 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen> wit
                                     SizedBox(height: gapSentence),
                                     if (_spokenText.isNotEmpty)
                                       isCompact
-                                        ? SizedBox(
-                                            height: 70.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: constraints.maxWidth - 16.w,
-                                                child: PronunciationFocusTelemetryCard(
-                                                  spokenText: _spokenText,
-                                                  isDark: isDark,
+                                          ? SizedBox(
+                                              height: 70.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: SizedBox(
+                                                  width:
+                                                      constraints.maxWidth -
+                                                      16.w,
+                                                  child:
+                                                      PronunciationFocusTelemetryCard(
+                                                        spokenText: _spokenText,
+                                                        isDark: isDark,
+                                                      ),
                                                 ),
                                               ),
+                                            )
+                                          : PronunciationFocusTelemetryCard(
+                                              spokenText: _spokenText,
+                                              isDark: isDark,
                                             ),
-                                          )
-                                        : PronunciationFocusTelemetryCard(
-                                            spokenText: _spokenText,
-                                            isDark: isDark,
-                                          ),
 
                                     AnimatedCrossFade(
                                       firstChild: const SizedBox(),
                                       secondChild: isCompact
-                                        ? SizedBox(
-                                            height: 100.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: constraints.maxWidth - 16.w,
-                                                child: PronunciationFocusExplanationCard(
-                                                  quest: quest,
-                                                  isCorrect: _isCorrect ?? false,
-                                                  isDark: isDark,
+                                          ? SizedBox(
+                                              height: 100.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: SizedBox(
+                                                  width:
+                                                      constraints.maxWidth -
+                                                      16.w,
+                                                  child:
+                                                      PronunciationFocusExplanationCard(
+                                                        quest: quest,
+                                                        isCorrect:
+                                                            _isCorrect ?? false,
+                                                        isDark: isDark,
+                                                      ),
                                                 ),
                                               ),
+                                            )
+                                          : PronunciationFocusExplanationCard(
+                                              quest: quest,
+                                              isCorrect: _isCorrect ?? false,
+                                              isDark: isDark,
                                             ),
-                                          )
-                                        : PronunciationFocusExplanationCard(
-                                            quest: quest,
-                                            isCorrect: _isCorrect ?? false,
-                                            isDark: isDark,
-                                          ),
                                       crossFadeState: _isAnswered
                                           ? CrossFadeState.showSecond
                                           : CrossFadeState.showFirst,
-                                      duration: const Duration(milliseconds: 400),
+                                      duration: const Duration(
+                                        milliseconds: 400,
+                                      ),
                                     ),
                                     SizedBox(height: gapTelemetry),
 
                                     if (!_isAnswered)
                                       isCompact
-                                        ? SizedBox(
-                                            height: 70.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: PronunciationFocusMicCoreButton(
-                                                isListening: _isListening,
-                                                timeVal: _timeVal,
-                                                primaryColor: theme.primaryColor,
-                                                isDark: isDark,
-                                                onLongPressStart: _startListening,
-                                                onLongPressEnd: () => _stopListening(quest.textToSpeak ?? ""),
-                                                attempts: _attempts,
-                                                isAnswered: _isAnswered,
-                                                onTutorPass: _tutorPass,
+                                          ? SizedBox(
+                                              height: 70.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child:
+                                                    PronunciationFocusMicCoreButton(
+                                                      isListening: _isListening,
+                                                      timeVal: _timeVal,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      isDark: isDark,
+                                                      onLongPressStart:
+                                                          _startListening,
+                                                      onLongPressEnd: () =>
+                                                          _stopListening(
+                                                            quest.textToSpeak ??
+                                                                "",
+                                                          ),
+                                                      attempts: _attempts,
+                                                      isAnswered: _isAnswered,
+                                                      onTutorPass: _tutorPass,
+                                                    ),
                                               ),
+                                            )
+                                          : PronunciationFocusMicCoreButton(
+                                              isListening: _isListening,
+                                              timeVal: _timeVal,
+                                              primaryColor: theme.primaryColor,
+                                              isDark: isDark,
+                                              onLongPressStart: _startListening,
+                                              onLongPressEnd: () =>
+                                                  _stopListening(
+                                                    quest.textToSpeak ?? "",
+                                                  ),
+                                              attempts: _attempts,
+                                              isAnswered: _isAnswered,
+                                              onTutorPass: _tutorPass,
                                             ),
-                                          )
-                                        : PronunciationFocusMicCoreButton(
-                                            isListening: _isListening,
-                                            timeVal: _timeVal,
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                            onLongPressStart: _startListening,
-                                            onLongPressEnd: () => _stopListening(quest.textToSpeak ?? ""),
-                                            attempts: _attempts,
-                                            isAnswered: _isAnswered,
-                                            onTutorPass: _tutorPass,
-                                          ),
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),

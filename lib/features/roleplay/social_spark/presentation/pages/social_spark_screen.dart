@@ -192,7 +192,9 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                       ),
                       child: Column(
                         children: [
-                          SocialSparkInstruction(primaryColor: theme.primaryColor),
+                          SocialSparkInstruction(
+                            primaryColor: theme.primaryColor,
+                          ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
 
                           SocialSparkConnectionMonitor(
@@ -276,7 +278,9 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                       gradient: LinearGradient(
                                         colors: [
                                           theme.primaryColor,
-                                          theme.primaryColor.withValues(alpha: 0.8),
+                                          theme.primaryColor.withValues(
+                                            alpha: 0.8,
+                                          ),
                                         ],
                                       ),
                                       boxShadow: [

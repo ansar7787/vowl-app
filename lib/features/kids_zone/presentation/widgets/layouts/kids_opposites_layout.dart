@@ -35,12 +35,7 @@ class KidsOppositesLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Split Mirror / Split World
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: _buildSplitWorld(quest),
-              ),
-            ),
+            Expanded(flex: 5, child: Center(child: _buildSplitWorld(quest))),
             // The Split Plaques (Options)
             Flexible(
               flex: 5,
@@ -58,11 +53,17 @@ class KidsOppositesLayout extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 10.h, left: 16.w, right: 16.w),
+                    padding: EdgeInsets.only(
+                      bottom: 10.h,
+                      left: 16.w,
+                      right: 16.w,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: List.generate(quest.options?.length ?? 0, (index) {
+                      children: List.generate(quest.options?.length ?? 0, (
+                        index,
+                      ) {
                         final option = quest.options![index];
                         return Expanded(
                           child: Padding(
@@ -95,7 +96,10 @@ class KidsOppositesLayout extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: const Color(0xFF1E293B), width: 8.r), // Dark frame
+        border: Border.all(
+          color: const Color(0xFF1E293B),
+          width: 8.r,
+        ), // Dark frame
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.2),
@@ -140,17 +144,17 @@ class KidsOppositesLayout extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(color: const Color(0xFF1E293B), width: 4.r),
+                  border: Border.all(
+                    color: const Color(0xFF1E293B),
+                    width: 4.r,
+                  ),
                 ),
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       if (quest.emoji != null)
-                        Text(
-                          quest.emoji!,
-                          style: TextStyle(fontSize: 48.sp),
-                        ),
+                        Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
                       Text(
                         quest.question ?? "?",
                         style: TextStyle(
@@ -219,12 +223,18 @@ class KidsOppositesLayout extends StatelessWidget {
             children: [
               // Top half
               Positioned(
-                top: 0, left: 0, right: 0, height: 35.h,
+                top: 0,
+                left: 0,
+                right: 0,
+                height: 35.h,
                 child: Container(color: const Color(0xFFFDE047)), // Yellow
               ),
               // Bottom half
               Positioned(
-                bottom: 0, left: 0, right: 0, height: 35.h,
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: 35.h,
                 child: Container(color: const Color(0xFFC4B5FD)), // Purple
               ),
               // Divider
@@ -242,7 +252,10 @@ class KidsOppositesLayout extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(4.r),
-                    border: Border.all(color: const Color(0xFF1E293B), width: 1),
+                    border: Border.all(
+                      color: const Color(0xFF1E293B),
+                      width: 1,
+                    ),
                   ),
                   child: Text(
                     text,

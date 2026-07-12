@@ -27,7 +27,7 @@ class StampRipplePainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     double radius = 40.r * animationValue;
-    
+
     // Draw expanding shockwave ring
     canvas.drawCircle(impactOffset, radius, ringPaint);
     canvas.drawCircle(impactOffset, radius * 0.7, auraPaint);
@@ -42,7 +42,11 @@ class StampRipplePainter extends CustomPainter {
       double dist = radius * 1.2;
       double px = impactOffset.dx + dist * math.cos(angle);
       double py = impactOffset.dy + dist * math.sin(angle);
-      canvas.drawCircle(Offset(px, py), 2.5.r * (1.0 - animationValue), sparkPaint);
+      canvas.drawCircle(
+        Offset(px, py),
+        2.5.r * (1.0 - animationValue),
+        sparkPaint,
+      );
     }
   }
 

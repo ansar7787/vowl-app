@@ -36,12 +36,7 @@ class SituationSpeakingFogScrubberPanel extends StatelessWidget {
           color: isDark ? const Color(0xFF131326) : Colors.white,
           borderRadius: BorderRadius.circular(28.r),
           border: Border.all(color: Colors.white10),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black26,
-              blurRadius: 15.r,
-            )
-          ],
+          boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 15.r)],
         ),
         child: Stack(
           children: [
@@ -52,7 +47,10 @@ class SituationSpeakingFogScrubberPanel extends StatelessWidget {
                   gradient: LinearGradient(
                     colors: isDark
                         ? [const Color(0xFF1B1B33), const Color(0xFF0F0F1D)]
-                        : [Colors.cyan.shade50.withValues(alpha: 0.15), Colors.white],
+                        : [
+                            Colors.cyan.shade50.withValues(alpha: 0.15),
+                            Colors.white,
+                          ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -66,7 +64,8 @@ class SituationSpeakingFogScrubberPanel extends StatelessWidget {
                       children: [
                         Text(
                           "THE SOCIAL SCENE",
-                          style: TextStyle(fontFamily: 'RobotoMono', 
+                          style: TextStyle(
+                            fontFamily: 'RobotoMono',
                             fontSize: 10.sp,
                             color: primaryColor,
                             letterSpacing: 1.5,
@@ -74,7 +73,11 @@ class SituationSpeakingFogScrubberPanel extends StatelessWidget {
                         ),
                         ScaleButton(
                           onTap: onPlayTts,
-                          child: Icon(Icons.volume_up_rounded, color: primaryColor, size: 18.r),
+                          child: Icon(
+                            Icons.volume_up_rounded,
+                            color: primaryColor,
+                            size: 18.r,
+                          ),
                         ),
                       ],
                     ),
@@ -82,7 +85,8 @@ class SituationSpeakingFogScrubberPanel extends StatelessWidget {
                     Text(
                       quest.situationText ?? "Situation description.",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w600,
                         color: isDark ? Colors.white : Colors.black87,
@@ -102,10 +106,7 @@ class SituationSpeakingFogScrubberPanel extends StatelessWidget {
                   onHorizontalDragUpdate: (details) =>
                       onScrubUpdate(details.primaryDelta! / 260.w),
                   child: CustomPaint(
-                    painter: FogPainter(
-                      progress: scrubProgress,
-                      time: timeVal,
-                    ),
+                    painter: FogPainter(progress: scrubProgress, time: timeVal),
                   ),
                 ),
               ),
@@ -120,7 +121,11 @@ class SituationSpeakingFogScrubberPanel extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.swipe_rounded, color: Colors.cyanAccent, size: 30.r)
+                          Icon(
+                                Icons.swipe_rounded,
+                                color: Colors.cyanAccent,
+                                size: 30.r,
+                              )
                               .animate(onPlay: (c) => c.repeat())
                               .shake(hz: 2, curve: Curves.easeInOut)
                               .then()
@@ -128,9 +133,12 @@ class SituationSpeakingFogScrubberPanel extends StatelessWidget {
                           SizedBox(height: 8.h),
                           Text(
                             "SWIPE TO WIPE CONDENSATION",
-                            style: TextStyle(fontFamily: 'RobotoMono', 
+                            style: TextStyle(
+                              fontFamily: 'RobotoMono',
                               fontSize: 10.sp,
-                              color: isDark ? Colors.black54 : Colors.grey.shade600,
+                              color: isDark
+                                  ? Colors.black54
+                                  : Colors.grey.shade600,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 1.0,
                             ),

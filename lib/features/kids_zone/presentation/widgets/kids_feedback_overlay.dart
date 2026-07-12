@@ -36,16 +36,20 @@ class _KidsFeedbackOverlayContent extends StatefulWidget {
   });
 
   @override
-  State<_KidsFeedbackOverlayContent> createState() => _KidsFeedbackOverlayContentState();
+  State<_KidsFeedbackOverlayContent> createState() =>
+      _KidsFeedbackOverlayContentState();
 }
 
-class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent> {
+class _KidsFeedbackOverlayContentState
+    extends State<_KidsFeedbackOverlayContent> {
   late ConfettiController _confettiController;
 
   @override
   void initState() {
     super.initState();
-    _confettiController = ConfettiController(duration: const Duration(seconds: 1));
+    _confettiController = ConfettiController(
+      duration: const Duration(seconds: 1),
+    );
     if (widget.isCorrect) {
       _confettiController.play();
     }
@@ -68,9 +72,9 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  widget.isCorrect 
-                    ? _buildCorrectAnimation()
-                    : _buildWrongAnimation(),
+                  widget.isCorrect
+                      ? _buildCorrectAnimation()
+                      : _buildWrongAnimation(),
                   if (!widget.isCorrect && widget.explanation != null) ...[
                     SizedBox(height: 32.h),
                     _buildExplanationCard(context, widget.explanation!),
@@ -87,7 +91,14 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
                   confettiController: _confettiController,
                   blastDirectionality: BlastDirectionality.explosive,
                   shouldLoop: false,
-                  colors: const [Colors.green, Colors.blue, Colors.pink, Colors.orange, Colors.purple, Colors.yellow],
+                  colors: const [
+                    Colors.green,
+                    Colors.blue,
+                    Colors.pink,
+                    Colors.orange,
+                    Colors.purple,
+                    Colors.yellow,
+                  ],
                   createParticlePath: _drawCircle,
                 ),
               ),
@@ -99,104 +110,125 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
 
   Widget _buildCorrectAnimation() {
     return Container(
-      padding: EdgeInsets.all(32.r),
-      decoration: BoxDecoration(
-        color: const Color(0xFF10B981), // Emerald 500
-        shape: BoxShape.circle,
-        border: Border.all(color: Colors.white, width: 8.w),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xFF047857), // Emerald 700
-            offset: Offset(0, 8.h),
+          padding: EdgeInsets.all(32.r),
+          decoration: BoxDecoration(
+            color: const Color(0xFF10B981), // Emerald 500
+            shape: BoxShape.circle,
+            border: Border.all(color: Colors.white, width: 8.w),
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFF047857), // Emerald 700
+                offset: Offset(0, 8.h),
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Icon(Icons.star_rounded, color: Colors.white, size: 80.sp),
-    ).animate()
-      .scale(curve: Curves.elasticOut, duration: 800.ms)
-      .then(delay: 400.ms)
-      .scale(begin: const Offset(1, 1), end: const Offset(0.0, 0.0), curve: Curves.easeInBack, duration: 300.ms);
+          child: Icon(Icons.star_rounded, color: Colors.white, size: 80.sp),
+        )
+        .animate()
+        .scale(curve: Curves.elasticOut, duration: 800.ms)
+        .then(delay: 400.ms)
+        .scale(
+          begin: const Offset(1, 1),
+          end: const Offset(0.0, 0.0),
+          curve: Curves.easeInBack,
+          duration: 300.ms,
+        );
   }
 
   Widget _buildWrongAnimation() {
     return Container(
-      padding: EdgeInsets.all(32.r),
-      decoration: BoxDecoration(
-        color: const Color(0xFFEF4444), // Red 500
-        shape: BoxShape.circle,
-        border: Border.all(color: Colors.white, width: 8.w),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xFFB91C1C), // Red 700
-            offset: Offset(0, 8.h),
+          padding: EdgeInsets.all(32.r),
+          decoration: BoxDecoration(
+            color: const Color(0xFFEF4444), // Red 500
+            shape: BoxShape.circle,
+            border: Border.all(color: Colors.white, width: 8.w),
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFFB91C1C), // Red 700
+                offset: Offset(0, 8.h),
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Icon(Icons.close_rounded, color: Colors.white, size: 80.sp),
-    ).animate()
-      .scale(curve: Curves.elasticOut, duration: 600.ms)
-      .shake(hz: 4, curve: Curves.easeInOutCubic, duration: 400.ms)
-      .then(delay: 200.ms)
-      .scale(begin: const Offset(1, 1), end: const Offset(0.0, 0.0), curve: Curves.easeInBack, duration: 300.ms);
+          child: Icon(Icons.close_rounded, color: Colors.white, size: 80.sp),
+        )
+        .animate()
+        .scale(curve: Curves.elasticOut, duration: 600.ms)
+        .shake(hz: 4, curve: Curves.easeInOutCubic, duration: 400.ms)
+        .then(delay: 200.ms)
+        .scale(
+          begin: const Offset(1, 1),
+          end: const Offset(0.0, 0.0),
+          curve: Curves.easeInBack,
+          duration: 300.ms,
+        );
   }
 
   Path _drawCircle(Size size) {
     final path = Path();
     final double radius = size.width / 2;
-    path.addOval(Rect.fromCircle(center: Offset(radius, radius), radius: radius));
+    path.addOval(
+      Rect.fromCircle(center: Offset(radius, radius), radius: radius),
+    );
     return path;
   }
 
   Widget _buildExplanationCard(BuildContext context, String explanation) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 24.w),
-      padding: EdgeInsets.all(24.r),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: Colors.grey.shade300, width: 3.w),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade400,
-            offset: Offset(0, 6.h),
+          margin: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.all(24.r),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(color: Colors.grey.shade300, width: 3.w),
+            boxShadow: [
+              BoxShadow(color: Colors.grey.shade400, offset: Offset(0, 6.h)),
+            ],
           ),
-        ],
-      ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Column(
             children: [
-              Icon(Icons.lightbulb_rounded, color: const Color(0xFFF59E0B), size: 28.sp),
-              SizedBox(width: 8.w),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.lightbulb_rounded,
+                    color: const Color(0xFFF59E0B),
+                    size: 28.sp,
+                  ),
+                  SizedBox(width: 8.w),
+                  Text(
+                    "EXPLANATION",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w900,
+                      color: const Color(0xFF94A3B8),
+                      letterSpacing: 2,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 16.h),
               Text(
-                "EXPLANATION",
+                explanation,
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w900,
-                  color: const Color(0xFF94A3B8),
-                  letterSpacing: 2,
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w700,
+                  color: const Color(0xFF334155),
+                  height: 1.4,
                 ),
               ),
             ],
           ),
-          SizedBox(height: 16.h),
-          Text(
-            explanation,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 20.sp,
-              fontWeight: FontWeight.w700,
-              color: const Color(0xFF334155),
-              height: 1.4,
-            ),
-          ),
-        ],
-      ),
-    ).animate()
-      .fadeIn(delay: 600.ms, duration: 400.ms)
-      .slideY(begin: 0.2, curve: Curves.easeOutBack, delay: 600.ms, duration: 400.ms);
+        )
+        .animate()
+        .fadeIn(delay: 600.ms, duration: 400.ms)
+        .slideY(
+          begin: 0.2,
+          curve: Curves.easeOutBack,
+          delay: 600.ms,
+          duration: 400.ms,
+        );
   }
 }

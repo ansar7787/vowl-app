@@ -19,22 +19,39 @@ import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
 
 class MockGetAccentQuest extends Mock implements GetAccentQuest {}
+
 class MockPreloadAccentQuest extends Mock implements PreloadAccentQuest {}
+
 class MockClearAccentQuestCache extends Mock implements ClearAccentQuestCache {}
+
 class MockUpdateUserCoins extends Mock implements UpdateUserCoins {}
+
 class MockUpdateUserRewards extends Mock implements UpdateUserRewards {}
+
 class MockUpdateCategoryStats extends Mock implements UpdateCategoryStats {}
+
 class MockUpdateUnlockedLevel extends Mock implements UpdateUnlockedLevel {}
+
 class MockAwardBadge extends Mock implements AwardBadge {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockHapticService extends Mock implements HapticService {}
+
 class MockUseHint extends Mock implements UseHint {}
+
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
 class FakeGetAccentQuestParams extends Fake implements GetAccentQuestParams {}
-class FakeUpdateUserRewardsParams extends Fake implements UpdateUserRewardsParams {}
-class FakeUpdateCategoryStatsParams extends Fake implements UpdateCategoryStatsParams {}
-class FakeUpdateUnlockedLevelParams extends Fake implements UpdateUnlockedLevelParams {}
+
+class FakeUpdateUserRewardsParams extends Fake
+    implements UpdateUserRewardsParams {}
+
+class FakeUpdateCategoryStatsParams extends Fake
+    implements UpdateCategoryStatsParams {}
+
+class FakeUpdateUnlockedLevelParams extends Fake
+    implements UpdateUnlockedLevelParams {}
 
 void main() {
   late AccentBloc bloc;
@@ -105,13 +122,22 @@ void main() {
     blocTest<AccentBloc, AccentState>(
       'should emit [Loading, Loaded] when data is fetched successfully',
       build: () {
-        when(() => mockGetQuest(any())).thenAnswer((_) async => const Right(tQuests));
+        when(
+          () => mockGetQuest(any()),
+        ).thenAnswer((_) async => const Right(tQuests));
         return bloc;
       },
-      act: (bloc) => bloc.add(FetchAccentQuests(gameType: tGameType, level: tLevel)),
+      act: (bloc) =>
+          bloc.add(FetchAccentQuests(gameType: tGameType, level: tLevel)),
       expect: () => [
         AccentLoading(),
-        AccentLoaded(quests: tQuests, currentIndex: 0, livesRemaining: 3, gameType: tGameType, level: tLevel),
+        AccentLoaded(
+          quests: tQuests,
+          currentIndex: 0,
+          livesRemaining: 3,
+          gameType: tGameType,
+          level: tLevel,
+        ),
       ],
     );
   });
@@ -134,9 +160,7 @@ void main() {
       },
       seed: () => tLoadedState,
       act: (bloc) => bloc.add(SubmitAnswer(true)),
-      expect: () => [
-        tLoadedState.copyWith(lastAnswerCorrect: true),
-      ],
+      expect: () => [tLoadedState.copyWith(lastAnswerCorrect: true)],
     );
 
     blocTest<AccentBloc, AccentState>(

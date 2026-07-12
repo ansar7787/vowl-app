@@ -6,10 +6,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 class KidsCategoryGrid extends StatelessWidget {
   final bool isDark;
 
-  const KidsCategoryGrid({
-    super.key,
-    required this.isDark,
-  });
+  const KidsCategoryGrid({super.key, required this.isDark});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +22,13 @@ class KidsCategoryGrid extends StatelessWidget {
         delegate: SliverChildListDelegate([
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/alphabet', extra: {'title': 'Alphabet', 'primaryColor': const Color(0xFFF43F5E)}),
+            () => context.push(
+              '/kids/map/alphabet',
+              extra: {
+                'title': 'Alphabet',
+                'primaryColor': const Color(0xFFF43F5E),
+              },
+            ),
             'ABC',
             'Letters & Phonics',
             const Color(0xFFF43F5E),
@@ -33,7 +36,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/numbers', extra: {'title': 'Numbers', 'primaryColor': const Color(0xFF0EA5E9)}),
+            () => context.push(
+              '/kids/map/numbers',
+              extra: {
+                'title': 'Numbers',
+                'primaryColor': const Color(0xFF0EA5E9),
+              },
+            ),
             '123',
             'Numbers & Math',
             const Color(0xFF0EA5E9),
@@ -41,7 +50,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/colors', extra: {'title': 'Colors', 'primaryColor': const Color(0xFFF59E0B)}),
+            () => context.push(
+              '/kids/map/colors',
+              extra: {
+                'title': 'Colors',
+                'primaryColor': const Color(0xFFF59E0B),
+              },
+            ),
             'Colors',
             'Rainbow Fun',
             const Color(0xFFF59E0B),
@@ -49,7 +64,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/shapes', extra: {'title': 'Shapes', 'primaryColor': const Color(0xFF10B981)}),
+            () => context.push(
+              '/kids/map/shapes',
+              extra: {
+                'title': 'Shapes',
+                'primaryColor': const Color(0xFF10B981),
+              },
+            ),
             'Shapes',
             'Geometry Fun',
             const Color(0xFF10B981),
@@ -57,7 +78,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/animals', extra: {'title': 'Animals', 'primaryColor': const Color(0xFF8B5CF6)}),
+            () => context.push(
+              '/kids/map/animals',
+              extra: {
+                'title': 'Animals',
+                'primaryColor': const Color(0xFF8B5CF6),
+              },
+            ),
             'Animals',
             'Farm & Wild',
             const Color(0xFF8B5CF6),
@@ -65,7 +92,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/fruits', extra: {'title': 'Fruits', 'primaryColor': const Color(0xFFEC4899)}),
+            () => context.push(
+              '/kids/map/fruits',
+              extra: {
+                'title': 'Fruits',
+                'primaryColor': const Color(0xFFEC4899),
+              },
+            ),
             'Fruits',
             'Healthy Eating',
             const Color(0xFFEC4899),
@@ -73,7 +106,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/family', extra: {'title': 'Family', 'primaryColor': const Color(0xFFEC4899)}),
+            () => context.push(
+              '/kids/map/family',
+              extra: {
+                'title': 'Family',
+                'primaryColor': const Color(0xFFEC4899),
+              },
+            ),
             'Family',
             'Love & Home',
             const Color(0xFFEC4899),
@@ -81,7 +120,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/school', extra: {'title': 'School', 'primaryColor': const Color(0xFFF59E0B)}),
+            () => context.push(
+              '/kids/map/school',
+              extra: {
+                'title': 'School',
+                'primaryColor': const Color(0xFFF59E0B),
+              },
+            ),
             'School',
             'Let\'s Learn',
             const Color(0xFFF59E0B),
@@ -89,7 +134,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/verbs', extra: {'title': 'Verbs', 'primaryColor': const Color(0xFF8B5CF6)}),
+            () => context.push(
+              '/kids/map/verbs',
+              extra: {
+                'title': 'Verbs',
+                'primaryColor': const Color(0xFF8B5CF6),
+              },
+            ),
             'Verbs',
             'Action Words',
             const Color(0xFF8B5CF6),
@@ -97,7 +148,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/routine', extra: {'title': 'Routine', 'primaryColor': const Color(0xFFF97316)}),
+            () => context.push(
+              '/kids/map/routine',
+              extra: {
+                'title': 'Routine',
+                'primaryColor': const Color(0xFFF97316),
+              },
+            ),
             'Routine',
             'My Day',
             const Color(0xFFF97316),
@@ -105,7 +162,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/emotions', extra: {'title': 'Emotions', 'primaryColor': const Color(0xFF06B6D4)}),
+            () => context.push(
+              '/kids/map/emotions',
+              extra: {
+                'title': 'Emotions',
+                'primaryColor': const Color(0xFF06B6D4),
+              },
+            ),
             'Emotions',
             'Feelings',
             const Color(0xFF06B6D4),
@@ -113,7 +176,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/prepositions', extra: {'title': 'Prepositions', 'primaryColor': const Color(0xFF64748B)}),
+            () => context.push(
+              '/kids/map/prepositions',
+              extra: {
+                'title': 'Prepositions',
+                'primaryColor': const Color(0xFF64748B),
+              },
+            ),
             'Positions',
             'Where is it?',
             const Color(0xFF64748B),
@@ -121,7 +190,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/phonics', extra: {'title': 'Phonics', 'primaryColor': const Color(0xFFFFCC00)}),
+            () => context.push(
+              '/kids/map/phonics',
+              extra: {
+                'title': 'Phonics',
+                'primaryColor': const Color(0xFFFFCC00),
+              },
+            ),
             'Phonics',
             'Sound Out',
             const Color(0xFFFFCC00),
@@ -129,7 +204,10 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/time', extra: {'title': 'Time', 'primaryColor': const Color(0xFF333333)}),
+            () => context.push(
+              '/kids/map/time',
+              extra: {'title': 'Time', 'primaryColor': const Color(0xFF333333)},
+            ),
             'Time',
             'Tick Tock',
             const Color(0xFF333333),
@@ -137,7 +215,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/opposites', extra: {'title': 'Opposites', 'primaryColor': const Color(0xFF94A3B8)}),
+            () => context.push(
+              '/kids/map/opposites',
+              extra: {
+                'title': 'Opposites',
+                'primaryColor': const Color(0xFF94A3B8),
+              },
+            ),
             'Opposites',
             'Flip It',
             const Color(0xFF94A3B8),
@@ -145,7 +229,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/day_night', extra: {'title': 'Day/Night', 'primaryColor': const Color(0xFF1E293B)}),
+            () => context.push(
+              '/kids/map/day_night',
+              extra: {
+                'title': 'Day/Night',
+                'primaryColor': const Color(0xFF1E293B),
+              },
+            ),
             'Day & Night',
             'Sun & Moon',
             const Color(0xFF1E293B),
@@ -153,7 +243,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/nature', extra: {'title': 'Nature', 'primaryColor': const Color(0xFF16A34A)}),
+            () => context.push(
+              '/kids/map/nature',
+              extra: {
+                'title': 'Nature',
+                'primaryColor': const Color(0xFF16A34A),
+              },
+            ),
             'Nature',
             'Outdoors',
             const Color(0xFF16A34A),
@@ -161,7 +257,10 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/home', extra: {'title': 'Home', 'primaryColor': const Color(0xFFD946EF)}),
+            () => context.push(
+              '/kids/map/home',
+              extra: {'title': 'Home', 'primaryColor': const Color(0xFFD946EF)},
+            ),
             'Home',
             'Rooms & Items',
             const Color(0xFFD946EF),
@@ -169,7 +268,10 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/food', extra: {'title': 'Food', 'primaryColor': const Color(0xFFFB923C)}),
+            () => context.push(
+              '/kids/map/food',
+              extra: {'title': 'Food', 'primaryColor': const Color(0xFFFB923C)},
+            ),
             'Food',
             'Yummy!',
             const Color(0xFFFB923C),
@@ -177,7 +279,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/transport', extra: {'title': 'Transport', 'primaryColor': const Color(0xFF2563EB)}),
+            () => context.push(
+              '/kids/map/transport',
+              extra: {
+                'title': 'Transport',
+                'primaryColor': const Color(0xFF2563EB),
+              },
+            ),
             'Transport',
             'Vroom Vroom',
             const Color(0xFF2563EB),
@@ -185,7 +293,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/body_parts', extra: {'title': 'Body Parts', 'primaryColor': const Color(0xFFF43F5E)}),
+            () => context.push(
+              '/kids/map/body_parts',
+              extra: {
+                'title': 'Body Parts',
+                'primaryColor': const Color(0xFFF43F5E),
+              },
+            ),
             'Body',
             'My Body',
             const Color(0xFFF43F5E),
@@ -193,7 +307,13 @@ class KidsCategoryGrid extends StatelessWidget {
           ),
           _buildCategoryCard(
             context,
-            () => context.push('/kids/map/clothing', extra: {'title': 'Clothing', 'primaryColor': const Color(0xFF8B5CF6)}),
+            () => context.push(
+              '/kids/map/clothing',
+              extra: {
+                'title': 'Clothing',
+                'primaryColor': const Color(0xFF8B5CF6),
+              },
+            ),
             'Clothing',
             'Dress Up',
             const Color(0xFF8B5CF6),
@@ -244,7 +364,8 @@ class KidsCategoryGrid extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -252,7 +373,8 @@ class KidsCategoryGrid extends StatelessWidget {
                 ),
                 Text(
                   subtitle,
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 11.sp,
                     fontWeight: FontWeight.w500,
                     color: isDark ? Colors.white60 : Colors.black45,

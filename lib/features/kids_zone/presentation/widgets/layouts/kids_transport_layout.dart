@@ -35,12 +35,7 @@ class KidsTransportLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Traffic Light / Road Sign
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: _buildRoadSign(quest),
-              ),
-            ),
+            Expanded(flex: 5, child: Center(child: _buildRoadSign(quest))),
             // The License Plates (Options)
             Flexible(
               flex: 5,
@@ -53,24 +48,36 @@ class KidsTransportLayout extends StatelessWidget {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: const Color(0xFF334155), // Dark asphalt
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(24.r),
+                      ),
                     ),
                     child: Center(
                       // Yellow dashed line
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: List.generate(10, (index) {
-                          return Container(width: 20.w, height: 4.h, color: const Color(0xFFFACC15));
+                          return Container(
+                            width: 20.w,
+                            height: 4.h,
+                            color: const Color(0xFFFACC15),
+                          );
                         }),
                       ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 20.h, left: 16.w, right: 16.w),
+                    padding: EdgeInsets.only(
+                      bottom: 20.h,
+                      left: 16.w,
+                      right: 16.w,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: List.generate(quest.options?.length ?? 0, (index) {
+                      children: List.generate(quest.options?.length ?? 0, (
+                        index,
+                      ) {
                         final option = quest.options![index];
                         return Expanded(
                           child: Padding(
@@ -121,10 +128,7 @@ class KidsTransportLayout extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (quest.emoji != null)
-                  Text(
-                    quest.emoji!,
-                    style: TextStyle(fontSize: 48.sp),
-                  ),
+                  Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
                 Text(
                   quest.question ?? "?",
                   style: TextStyle(
@@ -209,14 +213,15 @@ class KidsTransportLayout extends StatelessWidget {
             Positioned(top: 4.h, right: 6.w, child: _buildScrew()),
             Positioned(bottom: 4.h, left: 6.w, child: _buildScrew()),
             Positioned(bottom: 4.h, right: 6.w, child: _buildScrew()),
-            
+
             Center(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: Text(
                   text.toUpperCase(),
                   style: TextStyle(
-                    fontFamily: 'Outfit', // A rigid font looks more like a license plate
+                    fontFamily:
+                        'Outfit', // A rigid font looks more like a license plate
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w900,
                     color: const Color(0xFF0F172A),

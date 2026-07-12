@@ -6,10 +6,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 class FixTheSentenceWipedAlert extends StatelessWidget {
   final Color primaryColor;
 
-  const FixTheSentenceWipedAlert({
-    super.key,
-    required this.primaryColor,
-  });
+  const FixTheSentenceWipedAlert({super.key, required this.primaryColor});
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +23,20 @@ class FixTheSentenceWipedAlert extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.check_circle_outline_rounded, color: displayColor, size: 16.r),
+          Icon(
+            Icons.check_circle_outline_rounded,
+            color: displayColor,
+            size: 16.r,
+          ),
           SizedBox(width: 8.w),
           Text(
             "DECAY WIPED! CHOOSE REPLACEMENT CELL",
-            style: TextStyle(fontFamily: 'RobotoMono', 
-              fontSize: 10.sp, 
-              fontWeight: FontWeight.bold, 
-              color: displayColor
-            )
+            style: TextStyle(
+              fontFamily: 'RobotoMono',
+              fontSize: 10.sp,
+              fontWeight: FontWeight.bold,
+              color: displayColor,
+            ),
           ),
         ],
       ),
@@ -61,7 +63,7 @@ class FixTheSentenceCorrectionOptions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      spacing: 12.w, 
+      spacing: 12.w,
       runSpacing: 12.h,
       alignment: WrapAlignment.center,
       children: options.map((o) {
@@ -74,7 +76,10 @@ class FixTheSentenceCorrectionOptions extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(color: color, width: 2),
               boxShadow: [
-                BoxShadow(color: color.withValues(alpha: isDark ? 0.35 : 0.15), blurRadius: 8)
+                BoxShadow(
+                  color: color.withValues(alpha: isDark ? 0.35 : 0.15),
+                  blurRadius: 8,
+                ),
               ],
             ),
             child: Row(
@@ -84,11 +89,12 @@ class FixTheSentenceCorrectionOptions extends StatelessWidget {
                 SizedBox(width: 8.w),
                 Text(
                   o.toUpperCase(),
-                  style: TextStyle(fontFamily: 'RobotoMono', 
-                    fontSize: 12.sp, 
-                    fontWeight: FontWeight.bold, 
-                    color: isDark ? Colors.white : Colors.black87
-                  )
+                  style: TextStyle(
+                    fontFamily: 'RobotoMono',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.bold,
+                    color: isDark ? Colors.white : Colors.black87,
+                  ),
                 ),
               ],
             ),

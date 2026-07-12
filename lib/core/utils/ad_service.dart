@@ -140,17 +140,16 @@ class AdService {
 
     MobileAds.instance.updateRequestConfiguration(
       RequestConfiguration(
-        testDeviceIds: kDebugMode
-            ? ['6739FCB31DECCBA1A191319DC27E562A']
-            : null,
+        testDeviceIds: kDebugMode ? ['6739FCB31DECCBA1A191319DC27E562A'] : null,
         tagForChildDirectedTreatment: isAdult
             ? TagForChildDirectedTreatment.unspecified
             : TagForChildDirectedTreatment.yes,
         tagForUnderAgeOfConsent: isAdult
             ? TagForUnderAgeOfConsent.unspecified
             : TagForUnderAgeOfConsent.yes,
-        maxAdContentRating:
-            isAdult ? MaxAdContentRating.ma : MaxAdContentRating.g,
+        maxAdContentRating: isAdult
+            ? MaxAdContentRating.ma
+            : MaxAdContentRating.g,
       ),
     );
 
@@ -428,6 +427,7 @@ class AdService {
     required bool isPremium,
     required Function(RewardItem) onUserEarnedReward,
     required VoidCallback onDismissed,
+
     /// When true, forces child-safe ad request parameters.
     /// All Kids Zone call sites should pass `childSafe: true`.
     bool childSafe = false,

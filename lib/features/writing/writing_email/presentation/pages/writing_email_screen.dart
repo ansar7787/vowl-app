@@ -91,7 +91,8 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     bool isSignOffCorrect =
         _slots['SIGN-OFF'] == options[correctOrderIndices[3]];
 
-    final isCorrect = isSubjectCorrect &&
+    final isCorrect =
+        isSubjectCorrect &&
         isSalutationCorrect &&
         isBodyCorrect &&
         isSignOffCorrect;
@@ -177,7 +178,8 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                             slotValue: _slots[k],
                             color: theme.primaryColor,
                             isDark: isDark,
-                            onSlot: (key, data) => _onSlot(key, data, isAnswered),
+                            onSlot: (key, data) =>
+                                _onSlot(key, data, isAnswered),
                             onClearSlot: (key) => _clearSlot(key, isAnswered),
                           ),
                         ),
@@ -193,7 +195,9 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
 
                         if (!isAnswered)
                           ScaleButton(
-                            onTap: slotsFilled ? () => _submitAnswer(isAnswered) : null,
+                            onTap: slotsFilled
+                                ? () => _submitAnswer(isAnswered)
+                                : null,
                             child: Container(
                               width: double.infinity,
                               height: 60.h,

@@ -50,7 +50,9 @@ class RadarBeaconPainter extends CustomPainter {
     } else {
       // Gentle floating sleeping beacons
       final Paint sleepPaint = Paint()
-        ..color = primaryColor.withValues(alpha: 0.2 + (0.3 * math.sin(progress * math.pi * 2)))
+        ..color = primaryColor.withValues(
+          alpha: 0.2 + (0.3 * math.sin(progress * math.pi * 2)),
+        )
         ..style = PaintingStyle.fill;
 
       canvas.drawCircle(center, maxRadius * 0.45, sleepPaint);

@@ -30,10 +30,12 @@ class SituationSpeakingScreen extends StatefulWidget {
   });
 
   @override
-  State<SituationSpeakingScreen> createState() => _SituationSpeakingScreenState();
+  State<SituationSpeakingScreen> createState() =>
+      _SituationSpeakingScreenState();
 }
 
-class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with SingleTickerProviderStateMixin {
+class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
+    with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   final _speechService = di.sl<SpeechService>();
@@ -55,16 +57,17 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
   @override
   void initState() {
     super.initState();
-    context.read<SpeakingBloc>().add(FetchSpeakingQuests(gameType: widget.gameType, level: widget.level));
+    context.read<SpeakingBloc>().add(
+      FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
+    );
 
-    _shimmerController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 4),
-    )..addListener(() {
-        setState(() {
-          _timeVal = _shimmerController.value;
-        });
-      });
+    _shimmerController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 4))
+          ..addListener(() {
+            setState(() {
+              _timeVal = _shimmerController.value;
+            });
+          });
     _shimmerController.repeat();
   }
 
@@ -120,11 +123,17 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
       return;
     }
 
-    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '');
+    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
+      RegExp(r'[^\w\s]'),
+      '',
+    );
     bool matchFound = false;
 
     for (var sub in _acceptedSubstrings) {
-      final String cleanSub = sub.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '');
+      final String cleanSub = sub.trim().toLowerCase().replaceAll(
+        RegExp(r'[^\w\s]'),
+        '',
+      );
       if (cleanSpeech.contains(cleanSub)) {
         matchFound = true;
         break;
@@ -179,7 +188,9 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
       listener: (context, state) {
         if (state is SpeakingLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          if (state.currentIndex != _lastProcessedIndex ||
+              livesChanged ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -216,7 +227,8 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
         } else if (state is SpeakingGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<SpeakingBloc>().add(const RestoreLife()),
+            onRestore: () =>
+                context.read<SpeakingBloc>().add(const RestoreLife()),
             onTutorPass: _tutorPass,
           );
         }
@@ -246,24 +258,42 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
                       final bool isCompact = maxHeight < 580;
-                      
-                      final double estimatedContentHeight = 24.h + (isCompact ? 90.h : 120.h) + (isCompact ? 80.h : 110.h) + (isCompact ? 100.h : 140.h) + (isCompact ? 60.h : 80.h);
-                      final remainingHeight = maxHeight - estimatedContentHeight;
-                      
-                      final double gapUnit = remainingHeight > 0 ? remainingHeight / 8 : 0;
-                      final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
-                      final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 16.0) : 8.0;
-                      final double gapScrubber = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-                      final double gapTelemetry = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-                      final double gapMic = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 30.0) : 12.0;
-                      final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(12.0, 40.0) : 12.0;
+
+                      final double estimatedContentHeight =
+                          24.h +
+                          (isCompact ? 90.h : 120.h) +
+                          (isCompact ? 80.h : 110.h) +
+                          (isCompact ? 100.h : 140.h) +
+                          (isCompact ? 60.h : 80.h);
+                      final remainingHeight =
+                          maxHeight - estimatedContentHeight;
+
+                      final double gapUnit = remainingHeight > 0
+                          ? remainingHeight / 8
+                          : 0;
+                      final double gapTop = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(6.0, 16.0)
+                          : 6.0;
+                      final double gapInstruction = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(8.0, 16.0)
+                          : 8.0;
+                      final double gapScrubber = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                          : 10.0;
+                      final double gapTelemetry = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                          : 10.0;
+                      final double gapMic = remainingHeight > 0
+                          ? (gapUnit * 2).clamp(12.0, 30.0)
+                          : 12.0;
+                      final double gapBottom = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(12.0, 40.0)
+                          : 12.0;
 
                       return SingleChildScrollView(
                         physics: const BouncingScrollPhysics(),
                         child: ConstrainedBox(
-                          constraints: BoxConstraints(
-                            minHeight: maxHeight,
-                          ),
+                          constraints: BoxConstraints(minHeight: maxHeight),
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 16.w),
                             child: Column(
@@ -273,72 +303,88 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapTop),
-                                    isCompact 
-                                      ? SizedBox(
-                                          height: 32.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SituationSpeakingHeader(
-                                              primaryColor: theme.primaryColor,
-                                              instruction: quest.instruction,
-                                            ),
-                                          ),
-                                        )
-                                      : SituationSpeakingHeader(
-                                          primaryColor: theme.primaryColor,
-                                          instruction: quest.instruction,
-                                        ),
-                                    SizedBox(height: gapInstruction),
-                                    
                                     isCompact
-                                      ? SizedBox(
-                                          height: 120.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SizedBox(
-                                              width: constraints.maxWidth - 16.w,
-                                              child: SituationSpeakingFogScrubberPanel(
-                                                quest: quest,
-                                                primaryColor: theme.primaryColor,
-                                                isDark: isDark,
-                                                scrubProgress: _scrubProgress,
-                                                timeVal: _timeVal,
-                                                onScrubUpdate: _onScrubUpdate,
-                                                onPlayTts: () => _soundService.playTts(quest.situationText ?? ""),
+                                        ? SizedBox(
+                                            height: 32.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SituationSpeakingHeader(
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                instruction: quest.instruction,
                                               ),
                                             ),
+                                          )
+                                        : SituationSpeakingHeader(
+                                            primaryColor: theme.primaryColor,
+                                            instruction: quest.instruction,
                                           ),
-                                        )
-                                      : SituationSpeakingFogScrubberPanel(
-                                          quest: quest,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          scrubProgress: _scrubProgress,
-                                          timeVal: _timeVal,
-                                          onScrubUpdate: _onScrubUpdate,
-                                          onPlayTts: () => _soundService.playTts(quest.situationText ?? ""),
-                                        ),
+                                    SizedBox(height: gapInstruction),
+
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 120.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width:
+                                                    constraints.maxWidth - 16.w,
+                                                child:
+                                                    SituationSpeakingFogScrubberPanel(
+                                                      quest: quest,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      isDark: isDark,
+                                                      scrubProgress:
+                                                          _scrubProgress,
+                                                      timeVal: _timeVal,
+                                                      onScrubUpdate:
+                                                          _onScrubUpdate,
+                                                      onPlayTts: () =>
+                                                          _soundService.playTts(
+                                                            quest.situationText ??
+                                                                "",
+                                                          ),
+                                                    ),
+                                              ),
+                                            ),
+                                          )
+                                        : SituationSpeakingFogScrubberPanel(
+                                            quest: quest,
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            scrubProgress: _scrubProgress,
+                                            timeVal: _timeVal,
+                                            onScrubUpdate: _onScrubUpdate,
+                                            onPlayTts: () =>
+                                                _soundService.playTts(
+                                                  quest.situationText ?? "",
+                                                ),
+                                          ),
                                     SizedBox(height: gapScrubber),
 
                                     if (_spokenText.isNotEmpty)
                                       isCompact
-                                        ? SizedBox(
-                                            height: 70.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: constraints.maxWidth - 16.w,
-                                                child: SituationSpeakingTelemetryCard(
-                                                  spokenText: _spokenText,
-                                                  isDark: isDark,
+                                          ? SizedBox(
+                                              height: 70.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: SizedBox(
+                                                  width:
+                                                      constraints.maxWidth -
+                                                      16.w,
+                                                  child:
+                                                      SituationSpeakingTelemetryCard(
+                                                        spokenText: _spokenText,
+                                                        isDark: isDark,
+                                                      ),
                                                 ),
                                               ),
+                                            )
+                                          : SituationSpeakingTelemetryCard(
+                                              spokenText: _spokenText,
+                                              isDark: isDark,
                                             ),
-                                          )
-                                        : SituationSpeakingTelemetryCard(
-                                            spokenText: _spokenText,
-                                            isDark: isDark,
-                                          ),
                                   ],
                                 ),
                                 Column(
@@ -348,62 +394,75 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> with 
                                     AnimatedCrossFade(
                                       firstChild: const SizedBox(),
                                       secondChild: isCompact
-                                        ? SizedBox(
-                                            height: 100.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: constraints.maxWidth - 16.w,
-                                                child: SituationSpeakingExplanationCard(
-                                                  quest: quest,
-                                                  isCorrect: _isCorrect ?? false,
-                                                  isDark: isDark,
+                                          ? SizedBox(
+                                              height: 100.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: SizedBox(
+                                                  width:
+                                                      constraints.maxWidth -
+                                                      16.w,
+                                                  child:
+                                                      SituationSpeakingExplanationCard(
+                                                        quest: quest,
+                                                        isCorrect:
+                                                            _isCorrect ?? false,
+                                                        isDark: isDark,
+                                                      ),
                                                 ),
                                               ),
+                                            )
+                                          : SituationSpeakingExplanationCard(
+                                              quest: quest,
+                                              isCorrect: _isCorrect ?? false,
+                                              isDark: isDark,
                                             ),
-                                          )
-                                        : SituationSpeakingExplanationCard(
-                                            quest: quest,
-                                            isCorrect: _isCorrect ?? false,
-                                            isDark: isDark,
-                                          ),
                                       crossFadeState: _isAnswered
                                           ? CrossFadeState.showSecond
                                           : CrossFadeState.showFirst,
-                                      duration: const Duration(milliseconds: 400),
+                                      duration: const Duration(
+                                        milliseconds: 400,
+                                      ),
                                     ),
                                     SizedBox(height: gapMic),
 
                                     if (!_isAnswered)
                                       isCompact
-                                        ? SizedBox(
-                                            height: 70.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SituationSpeakingScrubbedMicTrigger(
-                                                isListening: _isListening,
-                                                scrubProgress: _scrubProgress,
-                                                primaryColor: theme.primaryColor,
-                                                isDark: isDark,
-                                                onLongPressStart: _startSpeechListening,
-                                                onLongPressEnd: _stopSpeechListening,
-                                                attempts: _attempts,
-                                                isAnswered: _isAnswered,
-                                                onTutorPass: _tutorPass,
+                                          ? SizedBox(
+                                              height: 70.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child:
+                                                    SituationSpeakingScrubbedMicTrigger(
+                                                      isListening: _isListening,
+                                                      scrubProgress:
+                                                          _scrubProgress,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      isDark: isDark,
+                                                      onLongPressStart:
+                                                          _startSpeechListening,
+                                                      onLongPressEnd:
+                                                          _stopSpeechListening,
+                                                      attempts: _attempts,
+                                                      isAnswered: _isAnswered,
+                                                      onTutorPass: _tutorPass,
+                                                    ),
                                               ),
+                                            )
+                                          : SituationSpeakingScrubbedMicTrigger(
+                                              isListening: _isListening,
+                                              scrubProgress: _scrubProgress,
+                                              primaryColor: theme.primaryColor,
+                                              isDark: isDark,
+                                              onLongPressStart:
+                                                  _startSpeechListening,
+                                              onLongPressEnd:
+                                                  _stopSpeechListening,
+                                              attempts: _attempts,
+                                              isAnswered: _isAnswered,
+                                              onTutorPass: _tutorPass,
                                             ),
-                                          )
-                                        : SituationSpeakingScrubbedMicTrigger(
-                                            isListening: _isListening,
-                                            scrubProgress: _scrubProgress,
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                            onLongPressStart: _startSpeechListening,
-                                            onLongPressEnd: _stopSpeechListening,
-                                            attempts: _attempts,
-                                            isAnswered: _isAnswered,
-                                            onTutorPass: _tutorPass,
-                                          ),
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),

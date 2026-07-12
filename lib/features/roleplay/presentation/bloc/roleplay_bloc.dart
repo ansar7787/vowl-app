@@ -322,13 +322,9 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
   void _onTutorPass(RoleplayTutorPass event, Emitter<RoleplayState> emit) {
     if (state is! RoleplayLoaded) return;
     final s = state as RoleplayLoaded;
-    
+
     emit(
-      s.copyWith(
-        lastAnswerCorrect: true,
-        wrongCount: 0,
-        isFinalFailure: false,
-      ),
+      s.copyWith(lastAnswerCorrect: true, wrongCount: 0, isFinalFailure: false),
     );
     soundService.playCorrect();
     hapticService.success();
@@ -356,4 +352,3 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     }
   }
 }
-

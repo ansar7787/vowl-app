@@ -198,7 +198,8 @@ class _SummarizeStoryWritingScreenState
                           slots: _slots,
                           color: theme.primaryColor,
                           isDark: isDark,
-                          onDropFrame: (idx, sentence) => _onDropFrame(idx, sentence, isAnswered),
+                          onDropFrame: (idx, sentence) =>
+                              _onDropFrame(idx, sentence, isAnswered),
                           onRemoveFrame: (idx) => _removeFrame(idx, isAnswered),
                         ),
                         SizedBox(height: 24.h),

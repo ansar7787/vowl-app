@@ -17,19 +17,33 @@ import 'package:vowl/features/vocabulary/domain/usecases/get_vocabulary_quests.d
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 
 class MockGetVocabularyQuests extends Mock implements GetVocabularyQuests {}
+
 class MockUpdateUserCoins extends Mock implements UpdateUserCoins {}
+
 class MockUpdateUserRewards extends Mock implements UpdateUserRewards {}
+
 class MockUpdateCategoryStats extends Mock implements UpdateCategoryStats {}
+
 class MockUpdateUnlockedLevel extends Mock implements UpdateUnlockedLevel {}
+
 class MockAwardBadge extends Mock implements AwardBadge {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockHapticService extends Mock implements HapticService {}
+
 class MockUseHint extends Mock implements UseHint {}
+
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
-class FakeUpdateUserRewardsParams extends Fake implements UpdateUserRewardsParams {}
-class FakeUpdateCategoryStatsParams extends Fake implements UpdateCategoryStatsParams {}
-class FakeUpdateUnlockedLevelParams extends Fake implements UpdateUnlockedLevelParams {}
+class FakeUpdateUserRewardsParams extends Fake
+    implements UpdateUserRewardsParams {}
+
+class FakeUpdateCategoryStatsParams extends Fake
+    implements UpdateCategoryStatsParams {}
+
+class FakeUpdateUnlockedLevelParams extends Fake
+    implements UpdateUnlockedLevelParams {}
 
 void main() {
   late VocabularyBloc bloc;
@@ -92,16 +106,23 @@ void main() {
     blocTest<VocabularyBloc, VocabularyState>(
       'should emit [Loading, Loaded] when data is fetched successfully',
       build: () {
-        when(() => mockGetQuests(any())).thenAnswer((_) async => const Right(tQuests));
+        when(
+          () => mockGetQuests(any()),
+        ).thenAnswer((_) async => const Right(tQuests));
         return bloc;
       },
-      act: (bloc) => bloc.add(FetchVocabularyQuests(gameType: tGameType, level: tLevel)),
+      act: (bloc) =>
+          bloc.add(FetchVocabularyQuests(gameType: tGameType, level: tLevel)),
       expect: () => [
         VocabularyLoading(),
         VocabularyLoaded(quests: tQuests, currentIndex: 0, livesRemaining: 3),
       ],
       verify: (_) {
-        verify(() => mockGetQuests(GetVocabularyQuestsParams(gameType: tGameType.name, level: tLevel)));
+        verify(
+          () => mockGetQuests(
+            GetVocabularyQuestsParams(gameType: tGameType.name, level: tLevel),
+          ),
+        );
       },
     );
 
@@ -111,11 +132,9 @@ void main() {
         when(() => mockGetQuests(any())).thenThrow(Exception('failed'));
         return bloc;
       },
-      act: (bloc) => bloc.add(FetchVocabularyQuests(gameType: tGameType, level: tLevel)),
-      expect: () => [
-        VocabularyLoading(),
-        isA<VocabularyError>(),
-      ],
+      act: (bloc) =>
+          bloc.add(FetchVocabularyQuests(gameType: tGameType, level: tLevel)),
+      expect: () => [VocabularyLoading(), isA<VocabularyError>()],
     );
   });
 
@@ -135,9 +154,7 @@ void main() {
       },
       seed: () => tLoadedState,
       act: (bloc) => bloc.add(SubmitAnswer(true)),
-      expect: () => [
-        tLoadedState.copyWith(lastAnswerCorrect: true),
-      ],
+      expect: () => [tLoadedState.copyWith(lastAnswerCorrect: true)],
       verify: (_) {
         verify(() => mockSoundService.playCorrect()).called(1);
         verify(() => mockHapticService.success()).called(1);
@@ -217,18 +234,32 @@ void main() {
       seed: () => tLoadedState,
       act: (bloc) => bloc.add(NextQuestion()),
       expect: () => [
-        tLoadedState.copyWith(currentIndex: 1, lastAnswerCorrect: null, hintUsed: false),
+        tLoadedState.copyWith(
+          currentIndex: 1,
+          lastAnswerCorrect: null,
+          hintUsed: false,
+        ),
       ],
     );
 
     blocTest<VocabularyBloc, VocabularyState>(
       'should emit VocabularyGameComplete when completing the last question',
       build: () {
-        when(() => mockSoundService.playLevelComplete()).thenAnswer((_) async => {});
-        when(() => mockUpdateUserRewards(any())).thenAnswer((_) async => const Right(null));
-        when(() => mockUpdateCategoryStats(any())).thenAnswer((_) async => const Right(null));
-        when(() => mockUpdateUnlockedLevel(any())).thenAnswer((_) async => const Right(null));
-        when(() => mockAwardBadge(any())).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockSoundService.playLevelComplete(),
+        ).thenAnswer((_) async => {});
+        when(
+          () => mockUpdateUserRewards(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateCategoryStats(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateUnlockedLevel(any()),
+        ).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockAwardBadge(any()),
+        ).thenAnswer((_) async => const Right(null));
         return bloc;
       },
       seed: () => tLoadedState.copyWith(
@@ -236,9 +267,7 @@ void main() {
         lastAnswerCorrect: true,
       ),
       act: (bloc) => bloc.add(NextQuestion()),
-      expect: () => [
-        isA<VocabularyGameComplete>(),
-      ],
+      expect: () => [isA<VocabularyGameComplete>()],
     );
   });
 }

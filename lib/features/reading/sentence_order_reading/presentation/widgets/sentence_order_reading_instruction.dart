@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class SentenceOrderReadingInstruction extends StatelessWidget {
   final Color primaryColor;
 
@@ -25,7 +26,8 @@ class SentenceOrderReadingInstruction extends StatelessWidget {
           Flexible(
             child: Text(
               "RESTORE THE LOGICAL STRUCTURE",
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: primaryColor,

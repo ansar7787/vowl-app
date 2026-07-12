@@ -36,9 +36,13 @@ class VortexPainter extends CustomPainter {
 
     const int numPoints = 8;
     for (int i = 0; i < numPoints; i++) {
-      final double angle = (i * 2 * math.pi / numPoints) + (animationTime * 2 * math.pi);
-      final double distance = 30.w + math.sin(animationTime * 2 * math.pi + i) * 10.w;
-      final Offset particlePos = center + Offset(math.cos(angle) * distance, math.sin(angle) * distance);
+      final double angle =
+          (i * 2 * math.pi / numPoints) + (animationTime * 2 * math.pi);
+      final double distance =
+          30.w + math.sin(animationTime * 2 * math.pi + i) * 10.w;
+      final Offset particlePos =
+          center +
+          Offset(math.cos(angle) * distance, math.sin(angle) * distance);
       canvas.drawCircle(particlePos, 3.r, particlesPaint);
     }
 

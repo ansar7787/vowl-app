@@ -45,39 +45,46 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
               if (isListening)
                 ...List.generate(8, (i) {
                   final double angle = (i * math.pi * 2) / 8 + (timeVal * 15.0);
-                  final double dist = 60.w + (math.sin(timeVal * 20.0 + i) * 15.w);
+                  final double dist =
+                      60.w + (math.sin(timeVal * 20.0 + i) * 15.w);
                   return Positioned(
-                    child: Icon(
-                      Icons.star_rounded,
-                      color: Colors.amberAccent.withValues(alpha: 0.8),
-                      size: (12.r + i * 2.r).clamp(10, 24).toDouble(),
-                    )
-                    .animate(onPlay: (c) => c.repeat())
-                    .move(
-                      begin: Offset.zero,
-                      end: Offset(math.cos(angle) * dist, -50.h + math.sin(angle) * dist * 0.4),
-                      duration: Duration(milliseconds: 400 + i * 80),
-                      curve: Curves.easeOut,
-                    )
-                    .fadeOut(),
+                    child:
+                        Icon(
+                              Icons.star_rounded,
+                              color: Colors.amberAccent.withValues(alpha: 0.8),
+                              size: (12.r + i * 2.r).clamp(10, 24).toDouble(),
+                            )
+                            .animate(onPlay: (c) => c.repeat())
+                            .move(
+                              begin: Offset.zero,
+                              end: Offset(
+                                math.cos(angle) * dist,
+                                -50.h + math.sin(angle) * dist * 0.4,
+                              ),
+                              duration: Duration(milliseconds: 400 + i * 80),
+                              curve: Curves.easeOut,
+                            )
+                            .fadeOut(),
                   );
                 }),
 
               // Outer aura ring
               Container(
-                width: 96.r,
-                height: 96.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: isListening
-                        ? Colors.amberAccent.withValues(alpha: 0.3)
-                        : primaryColor.withValues(alpha: 0.1),
-                    width: 4.r,
-                  ),
-                ),
-              ).animate(target: isListening ? 1 : 0).scale(
+                    width: 96.r,
+                    height: 96.r,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.transparent,
+                      border: Border.all(
+                        color: isListening
+                            ? Colors.amberAccent.withValues(alpha: 0.3)
+                            : primaryColor.withValues(alpha: 0.1),
+                        width: 4.r,
+                      ),
+                    ),
+                  )
+                  .animate(target: isListening ? 1 : 0)
+                  .scale(
                     begin: const Offset(1.0, 1.0),
                     end: const Offset(1.18, 1.18),
                     duration: const Duration(seconds: 1),
@@ -103,17 +110,19 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
                               color: Colors.amberAccent.withValues(alpha: 0.45),
                               blurRadius: 25.r,
                               spreadRadius: 2.r,
-                            )
+                            ),
                           ]
                         : [
                             BoxShadow(
                               color: Colors.black.withValues(alpha: 0.3),
                               blurRadius: 10.r,
-                            )
+                            ),
                           ],
                   ),
                   child: Icon(
-                    isListening ? Icons.auto_fix_normal_rounded : Icons.mic_none_rounded,
+                    isListening
+                        ? Icons.auto_fix_normal_rounded
+                        : Icons.mic_none_rounded,
                     color: Colors.white,
                     size: 32.r,
                   ),
@@ -123,9 +132,12 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
           ),
           SizedBox(height: 12.h),
           Text(
-            isListening ? "RELEASE CAN TO REVEAL CARD" : "HOLD COIN TO VOICE-SCRATCH CARD",
+            isListening
+                ? "RELEASE CAN TO REVEAL CARD"
+                : "HOLD COIN TO VOICE-SCRATCH CARD",
             textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'RobotoMono', 
+            style: TextStyle(
+              fontFamily: 'RobotoMono',
               fontSize: 9.sp,
               color: Colors.grey,
               letterSpacing: 1.5,
@@ -162,7 +174,9 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
                             ),
                             SizedBox(width: 8.w),
                             Text(
-                              context.tr('games.i_spoke_correctly').toUpperCase(),
+                              context
+                                  .tr('games.i_spoke_correctly')
+                                  .toUpperCase(),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 color: Colors.amber,

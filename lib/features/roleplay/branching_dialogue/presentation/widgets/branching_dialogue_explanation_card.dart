@@ -17,7 +17,9 @@ class BranchingDialogueExplanationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color cardColor = (isCorrect ?? false) ? Colors.greenAccent : Colors.orangeAccent;
+    final Color cardColor = (isCorrect ?? false)
+        ? Colors.greenAccent
+        : Colors.orangeAccent;
 
     return Container(
       width: 1.sw,
@@ -30,10 +32,7 @@ class BranchingDialogueExplanationCard extends StatelessWidget {
           width: 1.5,
         ),
         boxShadow: [
-          BoxShadow(
-            color: cardColor.withValues(alpha: 0.1),
-            blurRadius: 12,
-          ),
+          BoxShadow(color: cardColor.withValues(alpha: 0.1), blurRadius: 12),
         ],
       ),
       child: Column(
@@ -42,14 +41,19 @@ class BranchingDialogueExplanationCard extends StatelessWidget {
           Row(
             children: [
               Icon(
-                (isCorrect ?? false) ? Icons.verified_rounded : Icons.info_rounded,
+                (isCorrect ?? false)
+                    ? Icons.verified_rounded
+                    : Icons.info_rounded,
                 color: cardColor,
                 size: 24.r,
               ),
               SizedBox(width: 8.w),
               Text(
-                (isCorrect ?? false) ? "Branch Navigation Integrity Verified!" : "Incorrect Dialogue Lane!",
-                style: TextStyle(fontFamily: 'Outfit', 
+                (isCorrect ?? false)
+                    ? "Branch Navigation Integrity Verified!"
+                    : "Incorrect Dialogue Lane!",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
                   color: isDark ? Colors.white : Colors.black87,
@@ -59,8 +63,10 @@ class BranchingDialogueExplanationCard extends StatelessWidget {
           ),
           SizedBox(height: 12.h),
           Text(
-            quest.explanation ?? "Mastering your dialogue path selections improves vocabulary and conversational fluency.",
-            style: TextStyle(fontFamily: 'Outfit', 
+            quest.explanation ??
+                "Mastering your dialogue path selections improves vocabulary and conversational fluency.",
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 14.sp,
               color: isDark ? Colors.white70 : Colors.black54,
               height: 1.3,

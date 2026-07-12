@@ -29,25 +29,31 @@ class SpeakingRepositoryImpl implements SpeakingRepository {
       return Right(remoteQuests);
     } on ServerException catch (e) {
       if (!await networkInfo.isConnected) {
-        return const Left(NetworkFailure(
-          'No internet connection. Please verify your connection status.',
-          code: 'OFFLINE_ERR',
-        ));
+        return const Left(
+          NetworkFailure(
+            'No internet connection. Please verify your connection status.',
+            code: 'OFFLINE_ERR',
+          ),
+        );
       }
-      return Left(ServerFailure(
-        e.message,
-        code: e.code,
-        statusCode: e.statusCode,
-        details: e.details,
-      ));
+      return Left(
+        ServerFailure(
+          e.message,
+          code: e.code,
+          statusCode: e.statusCode,
+          details: e.details,
+        ),
+      );
     } on NetworkException catch (e) {
       return Left(NetworkFailure(e.message, code: e.code, details: e.details));
     } catch (e) {
       if (!await networkInfo.isConnected) {
-        return const Left(NetworkFailure(
-          'No internet connection. Please verify your connection status.',
-          code: 'OFFLINE_ERR',
-        ));
+        return const Left(
+          NetworkFailure(
+            'No internet connection. Please verify your connection status.',
+            code: 'OFFLINE_ERR',
+          ),
+        );
       }
       return Left(ServerFailure(e.toString()));
     }

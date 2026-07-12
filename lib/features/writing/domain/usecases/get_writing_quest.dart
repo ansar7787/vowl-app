@@ -16,13 +16,16 @@ class GetWritingQuestParams extends Equatable {
   List<Object?> get props => [gameType, level];
 }
 
-class GetWritingQuest implements UseCase<List<WritingQuest>, GetWritingQuestParams> {
+class GetWritingQuest
+    implements UseCase<List<WritingQuest>, GetWritingQuestParams> {
   final WritingRepository repository;
 
   GetWritingQuest(this.repository);
 
   @override
-  Future<Either<Failure, List<WritingQuest>>> call(GetWritingQuestParams params) async {
+  Future<Either<Failure, List<WritingQuest>>> call(
+    GetWritingQuestParams params,
+  ) async {
     return await repository.getWritingQuest(
       gameType: params.gameType,
       level: params.level,

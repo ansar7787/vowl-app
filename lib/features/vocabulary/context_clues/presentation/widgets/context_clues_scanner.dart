@@ -7,10 +7,7 @@ import 'package:vowl/features/vocabulary/context_clues/presentation/widgets/cont
 class ContextCluesScanner extends StatelessWidget {
   final Color color;
 
-  const ContextCluesScanner({
-    super.key,
-    required this.color,
-  });
+  const ContextCluesScanner({super.key, required this.color});
 
   @override
   Widget build(BuildContext context) {

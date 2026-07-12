@@ -33,7 +33,8 @@ class SpeakSynonymSentencePanel extends StatelessWidget {
             children: [
               Text(
                 "SUBSTITUTE HIGHLIGHTED SEED",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 10.sp,
                   color: Colors.grey.shade400,
                   letterSpacing: 1.0,
@@ -41,7 +42,11 @@ class SpeakSynonymSentencePanel extends StatelessWidget {
               ),
               ScaleButton(
                 onTap: onPlayTts,
-                child: Icon(Icons.volume_up_rounded, color: primaryColor, size: 18.r),
+                child: Icon(
+                  Icons.volume_up_rounded,
+                  color: primaryColor,
+                  size: 18.r,
+                ),
               ),
             ],
           ),
@@ -49,7 +54,8 @@ class SpeakSynonymSentencePanel extends StatelessWidget {
           RichText(
             textAlign: TextAlign.center,
             text: TextSpan(
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 18.sp,
                 color: isDark ? Colors.white70 : Colors.black54,
                 height: 1.4,
@@ -61,21 +67,28 @@ class SpeakSynonymSentencePanel extends StatelessWidget {
                     alignment: PlaceholderAlignment.middle,
                     child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 4.w),
-                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10.w,
+                        vertical: 4.h,
+                      ),
                       decoration: BoxDecoration(
                         color: primaryColor.withValues(alpha: 0.15),
                         borderRadius: BorderRadius.circular(12.r),
-                        border: Border.all(color: primaryColor.withValues(alpha: 0.6), width: 1.5.w),
+                        border: Border.all(
+                          color: primaryColor.withValues(alpha: 0.6),
+                          width: 1.5.w,
+                        ),
                         boxShadow: [
                           BoxShadow(
                             color: primaryColor.withValues(alpha: 0.1),
                             blurRadius: 8,
-                          )
+                          ),
                         ],
                       ),
                       child: Text(
                         e.value,
-                        style: TextStyle(fontFamily: 'Outfit', 
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
                           fontSize: 18.sp,
                           fontWeight: FontWeight.bold,
                           color: primaryColor,

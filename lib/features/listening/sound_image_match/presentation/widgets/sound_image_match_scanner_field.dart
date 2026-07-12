@@ -41,7 +41,8 @@ class SoundImageMatchScannerField extends StatelessWidget {
                 crossAxisCount: 2,
                 crossAxisSpacing: 16.w,
                 mainAxisSpacing: 16.h,
-                childAspectRatio: constraints.maxWidth / (constraints.maxHeight / 2 * 1.8),
+                childAspectRatio:
+                    constraints.maxWidth / (constraints.maxHeight / 2 * 1.8),
               ),
               itemCount: options.length,
               itemBuilder: (context, index) => _buildEncryptedTile(
@@ -52,7 +53,7 @@ class SoundImageMatchScannerField extends StatelessWidget {
                 constraints,
               ),
             ),
-          
+
             // The Scanning Lens
             Positioned(
               left: lensPosition.dx - 50.r,
@@ -74,17 +75,18 @@ class SoundImageMatchScannerField extends StatelessWidget {
                     ],
                   ),
                   child: Center(
-                    child: Icon(
-                      Icons.filter_center_focus_rounded,
-                      color: Colors.cyanAccent,
-                      size: 24.r,
-                    )
-                    .animate(onPlay: (c) => c.repeat(reverse: true))
-                    .scale(
-                      begin: const Offset(0.8, 0.8),
-                      end: const Offset(1.2, 1.2),
-                      duration: 800.ms,
-                    ),
+                    child:
+                        Icon(
+                              Icons.filter_center_focus_rounded,
+                              color: Colors.cyanAccent,
+                              size: 24.r,
+                            )
+                            .animate(onPlay: (c) => c.repeat(reverse: true))
+                            .scale(
+                              begin: const Offset(0.8, 0.8),
+                              end: const Offset(1.2, 1.2),
+                              duration: 800.ms,
+                            ),
                   ),
                 ),
               ),
@@ -103,11 +105,13 @@ class SoundImageMatchScannerField extends StatelessWidget {
     BoxConstraints fieldConstraints,
   ) {
     double tileWidth = fieldConstraints.maxWidth / 2;
-    double tileHeight = tileWidth / (fieldConstraints.maxWidth / (fieldConstraints.maxHeight / 2 * 1.8));
-    
+    double tileHeight =
+        tileWidth /
+        (fieldConstraints.maxWidth / (fieldConstraints.maxHeight / 2 * 1.8));
+
     double centerX = (index % 2 == 0) ? tileWidth / 2 : tileWidth * 1.5;
     double centerY = (index < 2) ? tileHeight / 2 : tileHeight * 1.5;
-    
+
     double dist = (lensPosition - Offset(centerX, centerY)).distance;
     bool isRevealed = dist < 60.r;
     bool isSelected = isAnswered && selectedIndex == index;
@@ -137,7 +141,8 @@ class SoundImageMatchScannerField extends StatelessWidget {
                     SizedBox(height: 8.h),
                     Text(
                       text.toUpperCase(),
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w900,
                         color: isSelected ? Colors.white : color,
@@ -156,13 +161,20 @@ class SoundImageMatchScannerField extends StatelessWidget {
 
   IconData _getCategoryIcon(String category) {
     switch (category.toLowerCase()) {
-      case 'fruits': return Icons.apple_rounded;
-      case 'tools': return Icons.build_rounded;
-      case 'vehicles': return Icons.directions_car_rounded;
-      case 'professions': return Icons.work_rounded;
-      case 'animals': return Icons.pets_rounded;
-      case 'places': return Icons.location_on_rounded;
-      default: return Icons.category_rounded;
+      case 'fruits':
+        return Icons.apple_rounded;
+      case 'tools':
+        return Icons.build_rounded;
+      case 'vehicles':
+        return Icons.directions_car_rounded;
+      case 'professions':
+        return Icons.work_rounded;
+      case 'animals':
+        return Icons.pets_rounded;
+      case 'places':
+        return Icons.location_on_rounded;
+      default:
+        return Icons.category_rounded;
     }
   }
 }

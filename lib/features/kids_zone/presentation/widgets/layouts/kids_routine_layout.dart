@@ -35,12 +35,7 @@ class KidsRoutineLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Bedroom Window
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: _buildBedroomWindow(quest),
-              ),
-            ),
+            Expanded(flex: 5, child: Center(child: _buildBedroomWindow(quest))),
             // The Bed with Pillows
             Flexible(
               flex: 5,
@@ -54,8 +49,13 @@ class KidsRoutineLayout extends StatelessWidget {
                     margin: EdgeInsets.symmetric(horizontal: 16.w),
                     decoration: BoxDecoration(
                       color: const Color(0xFF6366F1), // Indigo blanket
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
-                      border: Border.all(color: const Color(0xFF4338CA), width: 2),
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(24.r),
+                      ),
+                      border: Border.all(
+                        color: const Color(0xFF4338CA),
+                        width: 2,
+                      ),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withValues(alpha: 0.15),
@@ -66,11 +66,17 @@ class KidsRoutineLayout extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 20.h, left: 24.w, right: 24.w),
+                    padding: EdgeInsets.only(
+                      bottom: 20.h,
+                      left: 24.w,
+                      right: 24.w,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: List.generate(quest.options?.length ?? 0, (index) {
+                      children: List.generate(quest.options?.length ?? 0, (
+                        index,
+                      ) {
                         final option = quest.options![index];
                         return Expanded(
                           child: Padding(
@@ -106,7 +112,10 @@ class KidsRoutineLayout extends StatelessWidget {
           decoration: BoxDecoration(
             color: const Color(0xFF38BDF8), // Light blue daytime sky
             borderRadius: BorderRadius.circular(8.r),
-            border: Border.all(color: Colors.white, width: 8.r), // White window frame
+            border: Border.all(
+              color: Colors.white,
+              width: 8.r,
+            ), // White window frame
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.1),
@@ -145,10 +154,7 @@ class KidsRoutineLayout extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       if (quest.emoji != null)
-                        Text(
-                          quest.emoji!,
-                          style: TextStyle(fontSize: 40.sp),
-                        ),
+                        Text(quest.emoji!, style: TextStyle(fontSize: 40.sp)),
                       Text(
                         quest.question ?? "?",
                         style: TextStyle(
@@ -202,7 +208,9 @@ class KidsRoutineLayout extends StatelessWidget {
             width: 40.w,
             decoration: BoxDecoration(
               color: const Color(0xFFF43F5E), // Rose red curtains
-              borderRadius: BorderRadius.horizontal(right: Radius.circular(8.r)),
+              borderRadius: BorderRadius.horizontal(
+                right: Radius.circular(8.r),
+              ),
             ),
           ),
         ),

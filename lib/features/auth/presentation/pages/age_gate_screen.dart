@@ -30,7 +30,7 @@ class AgeGateScreen extends StatelessWidget {
   }) async {
     HapticFeedback.mediumImpact();
     await AgeGateService.completeAgeGate(isAdult: isAdult);
-    
+
     try {
       di.sl<AdService>().refreshAdConfig();
     } catch (_) {
@@ -49,8 +49,9 @@ class AgeGateScreen extends StatelessWidget {
       value: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
-        systemNavigationBarColor:
-            isDark ? const Color(0xFF0F172A) : Colors.white,
+        systemNavigationBarColor: isDark
+            ? const Color(0xFF0F172A)
+            : Colors.white,
       ),
       child: Scaffold(
         backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
@@ -63,32 +64,34 @@ class AgeGateScreen extends StatelessWidget {
 
                 // Icon
                 Container(
-                  width: 80.r,
-                  height: 80.r,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        const Color(0xFF6366F1),
-                        const Color(0xFF8B5CF6),
-                      ],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    borderRadius: BorderRadius.circular(24.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: const Color(0xFF6366F1).withValues(alpha: 0.3),
-                        blurRadius: 20,
-                        offset: const Offset(0, 8),
+                      width: 80.r,
+                      height: 80.r,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            const Color(0xFF6366F1),
+                            const Color(0xFF8B5CF6),
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        borderRadius: BorderRadius.circular(24.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(
+                              0xFF6366F1,
+                            ).withValues(alpha: 0.3),
+                            blurRadius: 20,
+                            offset: const Offset(0, 8),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  child: Icon(
-                    Icons.verified_user_rounded,
-                    size: 40.r,
-                    color: Colors.white,
-                  ),
-                )
+                      child: Icon(
+                        Icons.verified_user_rounded,
+                        size: 40.r,
+                        color: Colors.white,
+                      ),
+                    )
                     .animate()
                     .fadeIn(duration: 600.ms)
                     .scale(
@@ -100,10 +103,7 @@ class AgeGateScreen extends StatelessWidget {
 
                 // Title
                 Text(
-                  context.tr(
-                    'age_gate.title',
-                    fallback: 'Before we begin',
-                  ),
+                  context.tr('age_gate.title', fallback: 'Before we begin'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 28.sp,
@@ -148,8 +148,7 @@ class AgeGateScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16.r),
                       boxShadow: [
                         BoxShadow(
-                          color:
-                              const Color(0xFF6366F1).withValues(alpha: 0.3),
+                          color: const Color(0xFF6366F1).withValues(alpha: 0.3),
                           blurRadius: 12,
                           offset: const Offset(0, 6),
                         ),

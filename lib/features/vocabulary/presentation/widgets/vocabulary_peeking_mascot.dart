@@ -25,16 +25,13 @@ class VocabularyPeekingMascot extends StatelessWidget {
     required this.isAnswered,
   });
 
-
-
-
-
   // ── Build ─────────────────────────────────────────────────────────────────
 
   @override
   Widget build(BuildContext context) {
-    final mascotId = context.read<AuthBloc>().state.user?.vowlMascot ?? 'vowl_prime';
-    
+    final mascotId =
+        context.read<AuthBloc>().state.user?.vowlMascot ?? 'vowl_prime';
+
     final message = MascotMessageHelper.getMessage(
       context,
       category: 'vocabulary',
@@ -44,7 +41,7 @@ class VocabularyPeekingMascot extends StatelessWidget {
       isCorrect: isCorrect,
       lives: lives,
     );
-    
+
     final mascotState = MascotMessageHelper.getMascotState(
       isComplete: state is VocabularyGameComplete,
       isGameOver: state is VocabularyGameOver,

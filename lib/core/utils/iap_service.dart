@@ -6,7 +6,7 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
 class IapService {
   bool _isInitialized = false;
-  
+
   /// Initialize RevenueCat SDK
   Future<void> init() async {
     if (_isInitialized) return;
@@ -34,23 +34,32 @@ class IapService {
       }
     } catch (e, stack) {
       if (kDebugMode) debugPrint('IapService Init Error: $e');
-      FirebaseCrashlytics.instance.recordError(e, stack, reason: 'IapService Init Failed');
+      FirebaseCrashlytics.instance.recordError(
+        e,
+        stack,
+        reason: 'IapService Init Failed',
+      );
     }
   }
 
   /// Fetches the current offerings (products) from RevenueCat
   Future<Offerings?> getOfferings() async {
     if (!_isInitialized) {
-      if (kDebugMode) debugPrint('IapService: Cannot fetch offerings, not initialized.');
+      if (kDebugMode)
+        debugPrint('IapService: Cannot fetch offerings, not initialized.');
       return null;
     }
-    
+
     try {
       final offerings = await Purchases.getOfferings();
       return offerings;
     } on Exception catch (e, stack) {
       if (kDebugMode) debugPrint('IapService fetchOfferings Error: $e');
-      FirebaseCrashlytics.instance.recordError(e, stack, reason: 'Failed to fetch offerings');
+      FirebaseCrashlytics.instance.recordError(
+        e,
+        stack,
+        reason: 'Failed to fetch offerings',
+      );
       return null;
     }
   }
@@ -72,7 +81,11 @@ class IapService {
       if (e.toString().contains('Purchase was cancelled')) {
         return false;
       }
-      FirebaseCrashlytics.instance.recordError(e, stack, reason: 'Purchase failed');
+      FirebaseCrashlytics.instance.recordError(
+        e,
+        stack,
+        reason: 'Purchase failed',
+      );
       return false;
     }
   }

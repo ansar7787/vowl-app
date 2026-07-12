@@ -19,15 +19,26 @@ class AmbientIdEmitterNode extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(28.r),
         decoration: BoxDecoration(
-          shape: BoxShape.circle, 
-          color: color, 
-          border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 2.5),
+          shape: BoxShape.circle,
+          color: color,
+          border: Border.all(
+            color: Colors.white.withValues(alpha: 0.5),
+            width: 2.5,
+          ),
           boxShadow: [
             BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 25),
-            BoxShadow(color: Colors.black.withValues(alpha: 0.4), offset: const Offset(0, 4), blurRadius: 10),
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.4),
+              offset: const Offset(0, 4),
+              blurRadius: 10,
+            ),
           ],
         ),
-        child: Icon(Icons.settings_input_antenna_rounded, size: 52.r, color: Colors.white),
+        child: Icon(
+          Icons.settings_input_antenna_rounded,
+          size: 52.r,
+          color: Colors.white,
+        ),
       ),
     );
   }

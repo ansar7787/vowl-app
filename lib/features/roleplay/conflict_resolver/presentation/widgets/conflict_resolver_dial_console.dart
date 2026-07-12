@@ -31,10 +31,14 @@ class ConflictResolverDialConsole extends StatelessWidget {
       width: 1.sw,
       padding: EdgeInsets.symmetric(vertical: 24.h),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF07070F) : Colors.black.withValues(alpha: 0.02),
+        color: isDark
+            ? const Color(0xFF07070F)
+            : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(36.r),
         border: Border.all(
-          color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.03),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.03)
+              : Colors.black.withValues(alpha: 0.03),
         ),
       ),
       child: Column(
@@ -81,7 +85,10 @@ class ConflictResolverDialConsole extends StatelessWidget {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: isDark
-                              ? [const Color(0xFF2A2A3E), const Color(0xFF131326)]
+                              ? [
+                                  const Color(0xFF2A2A3E),
+                                  const Color(0xFF131326),
+                                ]
                               : [Colors.white, Colors.grey.shade300],
                         ),
                         boxShadow: [
@@ -103,7 +110,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
                         children: [
                           // Rotary position notch marker
                           Positioned(
-                           top: 8.r,
+                            top: 8.r,
                             child: Container(
                               width: 6.r,
                               height: 16.r,
@@ -114,8 +121,12 @@ class ConflictResolverDialConsole extends StatelessWidget {
                             ),
                           ),
                           Icon(
-                            isMatched ? Icons.check_rounded : Icons.tune_rounded,
-                            color: isMatched ? Colors.greenAccent : color.withValues(alpha: 0.7),
+                            isMatched
+                                ? Icons.check_rounded
+                                : Icons.tune_rounded,
+                            color: isMatched
+                                ? Colors.greenAccent
+                                : color.withValues(alpha: 0.7),
                             size: 32.r,
                           ),
                         ],
@@ -127,14 +138,15 @@ class ConflictResolverDialConsole extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20.h),
-          
+
           // Calibration level metrics
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 "DIAL LEVEL: ",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 10.sp,
                   color: Colors.grey,
                   letterSpacing: 1.5,
@@ -142,12 +154,17 @@ class ConflictResolverDialConsole extends StatelessWidget {
               ),
               Text(
                 "${(rotation * 100).toInt()}% empathy",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 12.sp,
                   fontWeight: FontWeight.bold,
                   color: isMatched
                       ? Colors.greenAccent
-                      : Color.lerp(Colors.cyanAccent, Colors.redAccent, rotation),
+                      : Color.lerp(
+                          Colors.cyanAccent,
+                          Colors.redAccent,
+                          rotation,
+                        ),
                 ),
               ),
             ],

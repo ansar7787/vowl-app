@@ -30,8 +30,6 @@ class ReadingPeekingMascot extends StatelessWidget {
     required this.mascotName,
   });
 
-
-
   @override
   Widget build(BuildContext context) {
     final message = MascotMessageHelper.getMessage(
@@ -43,7 +41,7 @@ class ReadingPeekingMascot extends StatelessWidget {
       isCorrect: isCorrect,
       lives: lives,
     );
-    
+
     final mascotState = MascotMessageHelper.getMascotState(
       isComplete: isGameComplete,
       isGameOver: isGameOver,
@@ -51,7 +49,7 @@ class ReadingPeekingMascot extends StatelessWidget {
       isCorrect: isCorrect,
       lives: lives,
     );
-    
+
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
 
     Widget bubble = Container(

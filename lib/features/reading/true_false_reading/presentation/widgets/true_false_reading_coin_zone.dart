@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class TrueFalseReadingCoinZone extends StatelessWidget {
   final double coinX;
   final double coinY;
@@ -27,9 +28,15 @@ class TrueFalseReadingCoinZone extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           // Slots
-          Positioned(left: 20.w, child: _buildSlot("FALSE", Colors.redAccent, isDark)),
-          Positioned(right: 20.w, child: _buildSlot("TRUE", Colors.greenAccent, isDark)),
-          
+          Positioned(
+            left: 20.w,
+            child: _buildSlot("FALSE", Colors.redAccent, isDark),
+          ),
+          Positioned(
+            right: 20.w,
+            child: _buildSlot("TRUE", Colors.greenAccent, isDark),
+          ),
+
           // The Coin
           Transform.translate(
             offset: Offset(coinX, coinY),
@@ -57,7 +64,11 @@ class TrueFalseReadingCoinZone extends StatelessWidget {
                     border: Border.all(color: Colors.white30, width: 2),
                   ),
                   child: Center(
-                    child: Icon(Icons.stars_rounded, color: Colors.white, size: 48.r),
+                    child: Icon(
+                      Icons.stars_rounded,
+                      color: Colors.white,
+                      size: 48.r,
+                    ),
                   ),
                 ),
               ),
@@ -69,7 +80,8 @@ class TrueFalseReadingCoinZone extends StatelessWidget {
   }
 
   Widget _buildSlot(String label, Color color, bool isDark) {
-    bool isTargeted = (coinX > 0 && label == "TRUE") || (coinX < 0 && label == "FALSE");
+    bool isTargeted =
+        (coinX > 0 && label == "TRUE") || (coinX < 0 && label == "FALSE");
     return Opacity(
       opacity: isTargeted ? 1.0 : (isDark ? 0.3 : 0.15),
       child: Container(
@@ -78,15 +90,18 @@ class TrueFalseReadingCoinZone extends StatelessWidget {
           color: color.withValues(alpha: isDark ? 0.1 : 0.05),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
-            color: isTargeted ? color : color.withValues(alpha: isDark ? 0.4 : 0.2), 
+            color: isTargeted
+                ? color
+                : color.withValues(alpha: isDark ? 0.4 : 0.2),
             width: 2,
           ),
         ),
         child: RotatedBox(
           quarterTurns: 3,
           child: Text(
-            label, 
-            style: TextStyle(fontFamily: 'Outfit', 
+            label,
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 16.sp,
               fontWeight: FontWeight.w900,
               color: color,

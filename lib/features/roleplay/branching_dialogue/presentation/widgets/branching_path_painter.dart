@@ -35,7 +35,9 @@ class BranchingPathPainter extends CustomPainter {
 
       if (isAnswered) {
         if (isSelected) {
-          lineColor = (i == correctIndex) ? Colors.greenAccent : Colors.redAccent;
+          lineColor = (i == correctIndex)
+              ? Colors.greenAccent
+              : Colors.redAccent;
           strokeWidth = 3.0;
         } else if (i == correctIndex) {
           lineColor = Colors.greenAccent.withValues(alpha: 0.4);
@@ -56,12 +58,15 @@ class BranchingPathPainter extends CustomPainter {
       // Draw beautiful Bezier control curves connecting terminals to launcher
       final Path path = Path();
       path.moveTo(launchCenter.dx, launchCenter.dy);
-      
+
       final double controlY = (launchCenter.dy + termPos.dy) / 2;
       path.cubicTo(
-        launchCenter.dx, controlY,
-        termPos.dx, controlY,
-        termPos.dx, termPos.dy,
+        launchCenter.dx,
+        controlY,
+        termPos.dx,
+        controlY,
+        termPos.dx,
+        termPos.dy,
       );
 
       canvas.drawPath(path, paint);

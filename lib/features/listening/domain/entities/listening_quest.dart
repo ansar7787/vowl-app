@@ -15,6 +15,7 @@ class ListeningQuest extends GameQuest {
   final String? impliedMeaning;
   final String? location;
   final String? missingWord;
+  final String? imageUrl;
 
   const ListeningQuest({
     required super.id,
@@ -48,26 +49,28 @@ class ListeningQuest extends GameQuest {
     this.impliedMeaning,
     this.location,
     this.missingWord,
+    this.imageUrl,
   });
 
   String? get audioTranscript => transcript ?? transcription ?? textToSpeak;
 
   @override
   List<Object?> get props => [
-        ...super.props,
-        audioUrl,
-        transcription,
-        statement,
-        shuffledSentences,
-        correctOrder,
-        prompt,
-        textWithBlanks,
-        audioOptions,
-        transcript,
-        targetEmotion,
-        targetDetail,
-        impliedMeaning,
-        location,
-        missingWord,
-      ];
+    ...super.props,
+    audioUrl,
+    transcription,
+    statement,
+    shuffledSentences,
+    correctOrder,
+    prompt,
+    textWithBlanks,
+    audioOptions,
+    transcript,
+    targetEmotion,
+    targetDetail,
+    impliedMeaning,
+    location,
+    missingWord,
+    imageUrl,
+  ];
 }

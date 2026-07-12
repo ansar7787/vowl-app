@@ -35,12 +35,7 @@ class KidsHomeLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Dollhouse Cross-section
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: _buildDollhouse(quest),
-              ),
-            ),
+            Expanded(flex: 5, child: Center(child: _buildDollhouse(quest))),
             // The Furniture pieces (Options)
             Flexible(
               flex: 5,
@@ -54,16 +49,29 @@ class KidsHomeLayout extends StatelessWidget {
                     margin: EdgeInsets.symmetric(horizontal: 16.w),
                     decoration: BoxDecoration(
                       color: const Color(0xFFB45309), // Hardwood floor
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(8.r)),
-                      border: Border(top: BorderSide(color: const Color(0xFF78350F), width: 4.h)),
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(8.r),
+                      ),
+                      border: Border(
+                        top: BorderSide(
+                          color: const Color(0xFF78350F),
+                          width: 4.h,
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 25.h, left: 16.w, right: 16.w),
+                    padding: EdgeInsets.only(
+                      bottom: 25.h,
+                      left: 16.w,
+                      right: 16.w,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: List.generate(quest.options?.length ?? 0, (index) {
+                      children: List.generate(quest.options?.length ?? 0, (
+                        index,
+                      ) {
                         final option = quest.options![index];
                         return Expanded(
                           child: Padding(
@@ -108,7 +116,10 @@ class KidsHomeLayout extends StatelessWidget {
           height: 140.h,
           decoration: BoxDecoration(
             color: const Color(0xFFFDE68A), // Warm yellow wallpaper
-            border: Border.all(color: const Color(0xFF78350F), width: 6.r), // Wooden walls
+            border: Border.all(
+              color: const Color(0xFF78350F),
+              width: 6.r,
+            ), // Wooden walls
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.15),
@@ -122,10 +133,7 @@ class KidsHomeLayout extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (quest.emoji != null)
-                  Text(
-                    quest.emoji!,
-                    style: TextStyle(fontSize: 48.sp),
-                  ),
+                  Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
                 Text(
                   quest.question ?? "?",
                   style: TextStyle(

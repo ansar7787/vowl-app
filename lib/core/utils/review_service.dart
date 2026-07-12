@@ -114,7 +114,9 @@ class InAppReviewService implements ReviewService {
         DateTime.now().millisecondsSinceEpoch,
       );
 
-      sl<AppLogger>().debug("ReviewService: Requesting native in-app review popup.");
+      sl<AppLogger>().debug(
+        "ReviewService: Requesting native in-app review popup.",
+      );
 
       await _inAppReview.requestReview();
     } catch (e) {

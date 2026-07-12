@@ -223,6 +223,10 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
     String message,
     CustomSnackBarType type,
   ) {
-    CustomSnackBar.show(context: context, message: context.tr(message), type: type);
+    CustomSnackBar.show(
+      context: context,
+      message: context.tr(message),
+      type: type,
+    );
   }
 }

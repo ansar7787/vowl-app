@@ -296,4 +296,3 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
     }
   }
 }
-

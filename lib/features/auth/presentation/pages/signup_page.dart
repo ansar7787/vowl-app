@@ -308,6 +308,10 @@ class _SignUpViewState extends State<SignUpView> {
     String message,
     CustomSnackBarType type,
   ) {
-    CustomSnackBar.show(context: context, message: context.tr(message), type: type);
+    CustomSnackBar.show(
+      context: context,
+      message: context.tr(message),
+      type: type,
+    );
   }
 }

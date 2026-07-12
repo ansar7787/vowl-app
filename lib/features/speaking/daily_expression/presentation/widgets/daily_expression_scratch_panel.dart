@@ -36,12 +36,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
           color: isDark ? const Color(0xFF131326) : Colors.white,
           borderRadius: BorderRadius.circular(28.r),
           border: Border.all(color: Colors.white10),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black26,
-              blurRadius: 15.r,
-            )
-          ],
+          boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 15.r)],
         ),
         child: Stack(
           children: [
@@ -52,7 +47,10 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                   gradient: LinearGradient(
                     colors: isDark
                         ? [const Color(0xFF1E1E38), const Color(0xFF111124)]
-                        : [Colors.amber.shade50.withValues(alpha: 0.2), Colors.white],
+                        : [
+                            Colors.amber.shade50.withValues(alpha: 0.2),
+                            Colors.white,
+                          ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -66,7 +64,8 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                       children: [
                         Text(
                           "DAILY IDIOM",
-                          style: TextStyle(fontFamily: 'RobotoMono', 
+                          style: TextStyle(
+                            fontFamily: 'RobotoMono',
                             fontSize: 10.sp,
                             color: Colors.amberAccent,
                             letterSpacing: 1.5,
@@ -74,7 +73,11 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                         ),
                         ScaleButton(
                           onTap: onPlayTts,
-                          child: Icon(Icons.volume_up_rounded, color: Colors.amberAccent, size: 18.r),
+                          child: Icon(
+                            Icons.volume_up_rounded,
+                            color: Colors.amberAccent,
+                            size: 18.r,
+                          ),
                         ),
                       ],
                     ),
@@ -82,7 +85,8 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                     Text(
                       quest.expression ?? "Bite the bullet",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 26.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.amberAccent,
@@ -90,7 +94,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                           Shadow(
                             color: Colors.amberAccent.withValues(alpha: 0.3),
                             blurRadius: 10.r,
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -100,7 +104,8 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                       textAlign: TextAlign.center,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 11.sp,
                         fontWeight: FontWeight.bold,
                         color: isDark ? Colors.white70 : Colors.black87,
@@ -133,7 +138,11 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.swipe_rounded, color: Colors.white, size: 30.r)
+                        Icon(
+                              Icons.swipe_rounded,
+                              color: Colors.white,
+                              size: 30.r,
+                            )
                             .animate(onPlay: (c) => c.repeat())
                             .shake(hz: 2, curve: Curves.easeInOut)
                             .then()
@@ -141,7 +150,8 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                         SizedBox(height: 8.h),
                         Text(
                           "SPOKEN FREQUENCY DISSOLVES FOIL",
-                          style: TextStyle(fontFamily: 'RobotoMono', 
+                          style: TextStyle(
+                            fontFamily: 'RobotoMono',
                             fontSize: 10.sp,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

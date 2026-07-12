@@ -62,7 +62,8 @@ class ConnectorOptionGrid extends StatelessWidget {
             child: Center(
               child: Text(
                 options[index],
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w800,
                   color: (isSelected || showResult)

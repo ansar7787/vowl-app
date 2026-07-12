@@ -40,11 +40,15 @@ class BiometricRadarPainter extends CustomPainter {
     final Paint laserGlowPaint = Paint()
       ..color = themeColor.withValues(alpha: 0.08)
       ..style = PaintingStyle.fill;
-    canvas.drawRect(Rect.fromLTWH(0, laserY - 8.h, width, 16.h), laserGlowPaint);
+    canvas.drawRect(
+      Rect.fromLTWH(0, laserY - 8.h, width, 16.h),
+      laserGlowPaint,
+    );
   }
 
   @override
   bool shouldRepaint(covariant BiometricRadarPainter oldDelegate) {
-    return oldDelegate.animationValue != animationValue || oldDelegate.themeColor != themeColor;
+    return oldDelegate.animationValue != animationValue ||
+        oldDelegate.themeColor != themeColor;
   }
 }

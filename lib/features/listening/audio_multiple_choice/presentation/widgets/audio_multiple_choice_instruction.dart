@@ -30,7 +30,8 @@ class AudioMultipleChoiceInstruction extends StatelessWidget {
               fit: BoxFit.scaleDown,
               child: Text(
                 instruction.toUpperCase(),
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
                   color: color,

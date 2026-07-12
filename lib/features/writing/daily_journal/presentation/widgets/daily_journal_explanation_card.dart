@@ -27,15 +27,25 @@ class DailyJournalExplanationCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: displayColor.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+        border: Border.all(
+          color: displayColor.withValues(alpha: 0.3),
+          width: 2,
+        ),
       ),
       child: Column(
         children: [
-          Icon(isCorrect ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          Icon(
+            isCorrect ? Icons.check_circle_rounded : Icons.cancel_rounded,
+            color: displayColor,
+            size: 36.r,
+          ),
           SizedBox(height: 10.h),
           Text(
-            isCorrect ? context.tr('games.correct').toUpperCase() : context.tr('games.incorrect_caps'),
-            style: TextStyle(fontFamily: 'Outfit', 
+            isCorrect
+                ? context.tr('games.correct').toUpperCase()
+                : context.tr('games.incorrect_caps'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 15.sp,
               fontWeight: FontWeight.w900,
               color: displayColor,
@@ -46,17 +56,19 @@ class DailyJournalExplanationCard extends StatelessWidget {
             SizedBox(height: 16.h),
             Text(
               "SAMPLE JOURNAL LOG",
-              style: TextStyle(fontFamily: 'RobotoMono', 
-                fontSize: 10.sp, 
-                color: primaryColor, 
-                fontWeight: FontWeight.bold
-              )
+              style: TextStyle(
+                fontFamily: 'RobotoMono',
+                fontSize: 10.sp,
+                color: primaryColor,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 6.h),
             Text(
               quest.sampleAnswer!,
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Spectral', 
+              style: TextStyle(
+                fontFamily: 'Spectral',
                 fontSize: 14.sp,
                 fontWeight: FontWeight.bold,
                 color: isDark ? Colors.white70 : Colors.black87,
@@ -68,7 +80,8 @@ class DailyJournalExplanationCard extends StatelessWidget {
             Text(
               quest.explanation!,
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 12.sp,
                 color: isDark ? Colors.white60 : Colors.black54,
               ),

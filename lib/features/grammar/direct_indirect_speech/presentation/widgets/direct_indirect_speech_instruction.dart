@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class DirectIndirectSpeechInstruction extends StatelessWidget {
   final Color primaryColor;
-  const DirectIndirectSpeechInstruction({super.key, required this.primaryColor});
+  const DirectIndirectSpeechInstruction({
+    super.key,
+    required this.primaryColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,13 @@ class DirectIndirectSpeechInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             "CHOOSE THE CORRECT REFLECTION",
-            style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 10.sp,
+              fontWeight: FontWeight.w900,
+              color: primaryColor,
+              letterSpacing: 1.5,
+            ),
           ),
         ],
       ),

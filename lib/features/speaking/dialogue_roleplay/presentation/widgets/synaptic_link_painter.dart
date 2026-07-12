@@ -60,7 +60,8 @@ class SynapticLinkPainter extends CustomPainter {
           tangent.position,
           8.r,
           Paint()
-            ..color = (isConnected ? Colors.greenAccent : themeColor).withValues(alpha: 0.4)
+            ..color = (isConnected ? Colors.greenAccent : themeColor)
+                .withValues(alpha: 0.4)
             ..maskFilter = MaskFilter.blur(BlurStyle.normal, 4.r),
         );
       }

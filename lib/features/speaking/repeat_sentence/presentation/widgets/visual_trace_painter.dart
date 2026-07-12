@@ -61,10 +61,16 @@ class VisualTracePainter extends CustomPainter {
         final double ratio = x / width;
         final int index = (ratio * points).floor();
         final double amp = amplitudes.length > index ? amplitudes[index] : 16.0;
-        
+
         // Add random microphone flutter while recording
-        final double flutter = isListening ? (math.sin(x * 0.1 + DateTime.now().millisecondsSinceEpoch * 0.05) * 4.h) : 0;
-        final double y = midY + math.sin(ratio * points * 0.3) * (amp + flutter);
+        final double flutter = isListening
+            ? (math.sin(
+                    x * 0.1 + DateTime.now().millisecondsSinceEpoch * 0.05,
+                  ) *
+                  4.h)
+            : 0;
+        final double y =
+            midY + math.sin(ratio * points * 0.3) * (amp + flutter);
         activePath.lineTo(x, y);
       }
 

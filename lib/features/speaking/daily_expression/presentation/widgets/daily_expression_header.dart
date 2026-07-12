@@ -23,11 +23,16 @@ class DailyExpressionHeader extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.auto_awesome_rounded, size: 14.r, color: Colors.amberAccent),
+          Icon(
+            Icons.auto_awesome_rounded,
+            size: 14.r,
+            color: Colors.amberAccent,
+          ),
           SizedBox(width: 8.w),
           Text(
             instruction.toUpperCase(),
-            style: TextStyle(fontFamily: 'RobotoMono', 
+            style: TextStyle(
+              fontFamily: 'RobotoMono',
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,
               color: Colors.amberAccent,

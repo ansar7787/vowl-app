@@ -15,7 +15,9 @@ class SpeakOppositeFrequencyTelemetryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool hasInput = spokenText != "Calibrating reverse polarization channel..." && spokenText != "No magnetic frequency detected.";
+    final bool hasInput =
+        spokenText != "Calibrating reverse polarization channel..." &&
+        spokenText != "No magnetic frequency detected.";
 
     return GlassTile(
       padding: EdgeInsets.all(18.r),
@@ -33,7 +35,8 @@ class SpeakOppositeFrequencyTelemetryCard extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "DECODED REVERSE FREQUENCY",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 10.sp,
                   color: Colors.grey,
                   letterSpacing: 1.0,
@@ -44,9 +47,12 @@ class SpeakOppositeFrequencyTelemetryCard extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             spokenText,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 15.sp,
-              color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.9)
+                  : Colors.black87,
               height: 1.35,
             ),
           ),

@@ -31,10 +31,12 @@ class SpeakingRemoteDataSourceImpl implements SpeakingRemoteDataSource {
         for (final q in localData) {
           try {
             final questMap = Map<String, dynamic>.from(q);
-            quests.add(SpeakingQuestModel.fromJson(
-              questMap,
-              questMap['id']?.toString() ?? '',
-            ));
+            quests.add(
+              SpeakingQuestModel.fromJson(
+                questMap,
+                questMap['id']?.toString() ?? '',
+              ),
+            );
           } catch (e, stack) {
             debugPrint('Error parsing speaking quest from local assets: $e');
             debugPrint(stack.toString());
@@ -85,12 +87,16 @@ class SpeakingRemoteDataSourceImpl implements SpeakingRemoteDataSource {
               questMap['subtype'] = gameType.name;
               questMap['difficulty'] ??= level;
               try {
-                results.add(SpeakingQuestModel.fromJson(
-                  questMap,
-                  questMap['id']?.toString() ?? doc.id,
-                ));
+                results.add(
+                  SpeakingQuestModel.fromJson(
+                    questMap,
+                    questMap['id']?.toString() ?? doc.id,
+                  ),
+                );
               } catch (e, stack) {
-                debugPrint('Error parsing speaking quest item from Firestore list: $e');
+                debugPrint(
+                  'Error parsing speaking quest item from Firestore list: $e',
+                );
                 debugPrint(stack.toString());
               }
             }
@@ -107,7 +113,7 @@ class SpeakingRemoteDataSourceImpl implements SpeakingRemoteDataSource {
           SpeakingQuestModel.fromJson(
             questMap,
             questMap['id']?.toString() ?? doc.id,
-          )
+          ),
         ];
       } else {
         throw const ServerException(

@@ -35,17 +35,18 @@ class ReadingInferenceFoggyMirror extends StatelessWidget {
             borderRadius: BorderRadius.circular(24.r),
             color: color.withValues(alpha: isDark ? 0.05 : 0.08),
             child: Text(
-              passage, 
-              textAlign: TextAlign.center, 
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 16.sp, 
+              passage,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
                 height: 1.4,
-                color: isDark ? Colors.white : Colors.black87, 
+                color: isDark ? Colors.white : Colors.black87,
                 fontWeight: FontWeight.w500,
               ),
             ),
           ),
-          
+
           // Fog Cover Layer
           if (!isAnswered)
             Positioned.fill(
@@ -53,23 +54,28 @@ class ReadingInferenceFoggyMirror extends StatelessWidget {
                 borderRadius: BorderRadius.circular(24.r),
                 child: CustomPaint(
                   painter: FogPainter(
-                    points: rubPoints, 
-                    clarity: clarity, 
-                    color: isDark ? Colors.grey.shade800 : Colors.blueGrey.shade100,
+                    points: rubPoints,
+                    clarity: clarity,
+                    color: isDark
+                        ? Colors.grey.shade800
+                        : Colors.blueGrey.shade100,
                   ),
                 ),
               ),
             ),
-          
+
           // Glowing clues overlay
           if (clarity > 0.5 && !isAnswered)
             Positioned.fill(
               child: Center(
-                child: Icon(
-                  Icons.lightbulb_outline_rounded, 
-                  color: Colors.amber.withValues(alpha: 0.35), 
-                  size: 80.r,
-                ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
+                child:
+                    Icon(
+                          Icons.lightbulb_outline_rounded,
+                          color: Colors.amber.withValues(alpha: 0.35),
+                          size: 80.r,
+                        )
+                        .animate(onPlay: (c) => c.repeat())
+                        .shimmer(duration: 2.seconds),
               ),
             ),
         ],
@@ -95,14 +101,14 @@ class FogPainter extends CustomPainter {
       ..color = color.withValues(alpha: 0.95 - (clarity * 0.4))
       ..style = PaintingStyle.fill;
     canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
-    
+
     final clearPaint = Paint()
       ..blendMode = BlendMode.clear
       ..strokeWidth = 35.r
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12);
-      
+
     for (int i = 0; i < points.length - 1; i++) {
       canvas.drawLine(points[i], points[i + 1], clearPaint);
     }

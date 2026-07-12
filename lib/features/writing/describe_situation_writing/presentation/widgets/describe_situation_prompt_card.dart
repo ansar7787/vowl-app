@@ -32,22 +32,24 @@ class DescribeSituationPromptCard extends StatelessWidget {
             children: [
               Text(
                 "SITUATION PROMPT",
-                style: TextStyle(fontFamily: 'RobotoMono', 
-                  fontSize: 11.sp, 
-                  color: color, 
-                  fontWeight: FontWeight.bold, 
-                  letterSpacing: 1.5
-                )
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
+                  fontSize: 11.sp,
+                  color: color,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.5,
+                ),
               ),
               SizedBox(height: 8.h),
               Text(
                 prompt,
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 16.sp, 
-                  color: isDark ? Colors.white70 : Colors.black87, 
-                  fontWeight: FontWeight.bold, 
-                  height: 1.4
-                )
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  color: isDark ? Colors.white70 : Colors.black87,
+                  fontWeight: FontWeight.bold,
+                  height: 1.4,
+                ),
               ),
             ],
           ),

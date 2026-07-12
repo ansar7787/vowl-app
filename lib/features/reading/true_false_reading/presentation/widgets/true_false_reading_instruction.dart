@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class TrueFalseReadingInstruction extends StatelessWidget {
   final Color primaryColor;
 
-  const TrueFalseReadingInstruction({
-    super.key,
-    required this.primaryColor,
-  });
+  const TrueFalseReadingInstruction({super.key, required this.primaryColor});
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +18,17 @@ class TrueFalseReadingInstruction extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.published_with_changes_rounded, size: 14.r, color: primaryColor),
+          Icon(
+            Icons.published_with_changes_rounded,
+            size: 14.r,
+            color: primaryColor,
+          ),
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
               "FLICK THE TRUTH COIN TO VALIDATE",
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: primaryColor,

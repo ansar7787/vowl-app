@@ -35,8 +35,7 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
               child: _buildRedactedBlock(),
               alignment: PlaceholderAlignment.middle,
             ),
-            if (parts.length > 1)
-              _buildTextSpan(parts[1]),
+            if (parts.length > 1) _buildTextSpan(parts[1]),
           ],
         ),
       ),
@@ -87,14 +86,14 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
     }
 
     return Container(
-      width: isCompact ? 70.w : 100.w,
-      height: isCompact ? 18.h : 24.h,
-      decoration: BoxDecoration(
-        color: const Color(0xFF1A1A1A),
-        borderRadius: BorderRadius.circular(2.r),
-      ),
-    )
-    .animate(onPlay: (c) => c.repeat(reverse: true))
-    .shimmer(duration: 2.seconds, color: Colors.white10);
+          width: isCompact ? 70.w : 100.w,
+          height: isCompact ? 18.h : 24.h,
+          decoration: BoxDecoration(
+            color: const Color(0xFF1A1A1A),
+            borderRadius: BorderRadius.circular(2.r),
+          ),
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .shimmer(duration: 2.seconds, color: Colors.white10);
   }
 }

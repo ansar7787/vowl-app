@@ -20,7 +20,9 @@ class DailyExpressionUsagePanel extends StatelessWidget {
       width: 1.sw,
       padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 16.h),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F0F1A) : Colors.black.withValues(alpha: 0.02),
+        color: isDark
+            ? const Color(0xFF0F0F1A)
+            : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: Colors.white10),
       ),
@@ -29,11 +31,16 @@ class DailyExpressionUsagePanel extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.format_quote_rounded, color: Colors.amberAccent, size: 16.r),
+              Icon(
+                Icons.format_quote_rounded,
+                color: Colors.amberAccent,
+                size: 16.r,
+              ),
               SizedBox(width: 8.w),
               Text(
                 "CONTEXTUAL SAMPLE USAGE",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 10.sp,
                   color: Colors.grey,
                   letterSpacing: 1.0,
@@ -45,7 +52,8 @@ class DailyExpressionUsagePanel extends StatelessWidget {
           Text(
             "\"${quest.sampleUsage ?? 'Sample usage'}\"",
             textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 16.sp,
               color: isDark ? Colors.white70 : Colors.black87,
               height: 1.35,

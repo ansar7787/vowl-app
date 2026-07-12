@@ -39,18 +39,24 @@ class RepeatSentenceTactileMic extends StatelessWidget {
               if (isListening)
                 ...List.generate(
                   3,
-                  (i) => Container(
-                    width: 90.r + (i * 24.r),
-                    height: 90.r + (i * 24.r),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-                    ),
-                  ).animate(onPlay: (c) => c.repeat()).scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.3, 1.3),
-                        duration: const Duration(seconds: 1),
-                      ).fadeOut(),
+                  (i) =>
+                      Container(
+                            width: 90.r + (i * 24.r),
+                            height: 90.r + (i * 24.r),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: primaryColor.withValues(alpha: 0.2),
+                              ),
+                            ),
+                          )
+                          .animate(onPlay: (c) => c.repeat())
+                          .scale(
+                            begin: const Offset(1, 1),
+                            end: const Offset(1.3, 1.3),
+                            duration: const Duration(seconds: 1),
+                          )
+                          .fadeOut(),
                 ),
               ScaleButton(
                 onTap: () {},
@@ -69,12 +75,14 @@ class RepeatSentenceTactileMic extends StatelessWidget {
                             BoxShadow(
                               color: primaryColor.withValues(alpha: 0.4),
                               blurRadius: 18,
-                            )
+                            ),
                           ]
                         : [],
                   ),
                   child: Icon(
-                    isListening ? Icons.graphic_eq_rounded : Icons.mic_none_rounded,
+                    isListening
+                        ? Icons.graphic_eq_rounded
+                        : Icons.mic_none_rounded,
                     color: Colors.white,
                     size: 32.r,
                   ),
@@ -85,8 +93,11 @@ class RepeatSentenceTactileMic extends StatelessWidget {
         ),
         SizedBox(height: 12.h),
         Text(
-          isListening ? "RELEASE LENS TO PROCESS PHONEMES" : "HOLD LENS TO RECORD YOUR SPEECH",
-          style: TextStyle(fontFamily: 'RobotoMono', 
+          isListening
+              ? "RELEASE LENS TO PROCESS PHONEMES"
+              : "HOLD LENS TO RECORD YOUR SPEECH",
+          style: TextStyle(
+            fontFamily: 'RobotoMono',
             fontSize: 9.sp,
             color: Colors.grey,
             letterSpacing: 1.5,

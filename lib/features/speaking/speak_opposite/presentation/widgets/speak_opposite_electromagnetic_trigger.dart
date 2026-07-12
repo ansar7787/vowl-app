@@ -40,41 +40,43 @@ class SpeakOppositeElectromagneticTrigger extends StatelessWidget {
               if (isListening)
                 ...List.generate(4, (i) {
                   return Container(
-                    width: 76.r + (i * 24.r),
-                    height: 76.r + (i * 24.r),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: Colors.cyanAccent.withValues(alpha: 0.15),
-                        width: 1.5.r,
-                      ),
-                    ),
-                  )
-                  .animate(onPlay: (c) => c.repeat())
-                  .scale(
-                    begin: const Offset(1.0, 1.0), 
-                    end: const Offset(1.15, 1.15), 
-                    duration: const Duration(milliseconds: 800), 
-                    curve: Curves.easeOut
-                  )
-                  .fadeOut();
+                        width: 76.r + (i * 24.r),
+                        height: 76.r + (i * 24.r),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.cyanAccent.withValues(alpha: 0.15),
+                            width: 1.5.r,
+                          ),
+                        ),
+                      )
+                      .animate(onPlay: (c) => c.repeat())
+                      .scale(
+                        begin: const Offset(1.0, 1.0),
+                        end: const Offset(1.15, 1.15),
+                        duration: const Duration(milliseconds: 800),
+                        curve: Curves.easeOut,
+                      )
+                      .fadeOut();
                 }),
 
               // Outer hub border
               Container(
-                width: 96.r,
-                height: 96.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: isListening
-                        ? Colors.cyanAccent.withValues(alpha: 0.3)
-                        : Colors.redAccent.withValues(alpha: 0.1),
-                    width: 4.r,
-                  ),
-                ),
-              ).animate(target: isListening ? 1 : 0).scale(
+                    width: 96.r,
+                    height: 96.r,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.transparent,
+                      border: Border.all(
+                        color: isListening
+                            ? Colors.cyanAccent.withValues(alpha: 0.3)
+                            : Colors.redAccent.withValues(alpha: 0.1),
+                        width: 4.r,
+                      ),
+                    ),
+                  )
+                  .animate(target: isListening ? 1 : 0)
+                  .scale(
                     begin: const Offset(1.0, 1.0),
                     end: const Offset(1.18, 1.18),
                     duration: const Duration(seconds: 1),
@@ -100,17 +102,19 @@ class SpeakOppositeElectromagneticTrigger extends StatelessWidget {
                               color: Colors.cyanAccent.withValues(alpha: 0.45),
                               blurRadius: 25.r,
                               spreadRadius: 2.r,
-                            )
+                            ),
                           ]
                         : [
                             BoxShadow(
                               color: Colors.black.withValues(alpha: 0.3),
                               blurRadius: 10.r,
-                            )
+                            ),
                           ],
                   ),
                   child: Icon(
-                    isListening ? Icons.flash_on_rounded : Icons.mic_none_rounded,
+                    isListening
+                        ? Icons.flash_on_rounded
+                        : Icons.mic_none_rounded,
                     color: Colors.white,
                     size: 32.r,
                   ),
@@ -121,9 +125,12 @@ class SpeakOppositeElectromagneticTrigger extends StatelessWidget {
         ),
         SizedBox(height: 12.h),
         Text(
-          isListening ? "RELEASE CAN TO INJECT FREQUENCY" : "HOLD TO BRIDGE POLAR OPPOSITE",
+          isListening
+              ? "RELEASE CAN TO INJECT FREQUENCY"
+              : "HOLD TO BRIDGE POLAR OPPOSITE",
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'RobotoMono', 
+          style: TextStyle(
+            fontFamily: 'RobotoMono',
             fontSize: 9.sp,
             color: Colors.grey,
             letterSpacing: 1.5,

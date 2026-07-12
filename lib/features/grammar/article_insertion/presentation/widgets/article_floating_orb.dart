@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ArticleFloatingOrb extends StatefulWidget {
   final String article;
   final int index;
@@ -39,8 +40,12 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
   @override
   void initState() {
     super.initState();
-    _top = widget.index * (widget.isCompact ? 40.h : 70.h) + (widget.isCompact ? 5.h : 20.h);
-    _left = (widget.index % 2 == 0) ? (widget.isCompact ? 55.w : 45.w) : (widget.isCompact ? 220.w : 210.w);
+    _top =
+        widget.index * (widget.isCompact ? 40.h : 70.h) +
+        (widget.isCompact ? 5.h : 20.h);
+    _left = (widget.index % 2 == 0)
+        ? (widget.isCompact ? 55.w : 45.w)
+        : (widget.isCompact ? 220.w : 210.w);
     _driftController = AnimationController(
       vsync: this,
       duration: Duration(seconds: 4 + widget.index),
@@ -145,36 +150,38 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
             opacity: opacity,
             child: GestureDetector(
               onTap: widget.onTap,
-              child: Container(
-                width: widget.isCompact ? 65.r : 90.r,
-                height: widget.isCompact ? 65.r : 90.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: RadialGradient(
-                    center: const Alignment(-0.3, -0.3),
-                    colors: gradientColors,
-                  ),
-                  border: Border.all(color: borderColor, width: 1.5),
-                  boxShadow: shadows,
-                ),
-                child: Center(
-                  child: Text(
-                    widget.article.toUpperCase(),
-                    style: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: widget.isCompact ? 14.sp : 18.sp,
-                      fontWeight: FontWeight.w900,
-                      color: textColor,
-                    ),
-                  ),
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.08, 1.08),
-                duration: 2500.ms,
-                curve: Curves.easeInOutSine,
-              ),
+              child:
+                  Container(
+                        width: widget.isCompact ? 65.r : 90.r,
+                        height: widget.isCompact ? 65.r : 90.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: RadialGradient(
+                            center: const Alignment(-0.3, -0.3),
+                            colors: gradientColors,
+                          ),
+                          border: Border.all(color: borderColor, width: 1.5),
+                          boxShadow: shadows,
+                        ),
+                        child: Center(
+                          child: Text(
+                            widget.article.toUpperCase(),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: widget.isCompact ? 14.sp : 18.sp,
+                              fontWeight: FontWeight.w900,
+                              color: textColor,
+                            ),
+                          ),
+                        ),
+                      )
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .scale(
+                        begin: const Offset(1, 1),
+                        end: const Offset(1.08, 1.08),
+                        duration: 2500.ms,
+                        curve: Curves.easeInOutSine,
+                      ),
             ),
           ),
         );

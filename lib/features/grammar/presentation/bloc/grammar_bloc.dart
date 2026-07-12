@@ -318,4 +318,3 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
     );
   }
 }
-

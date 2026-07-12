@@ -102,7 +102,13 @@ void main() {
           bloc.add(FetchEliteMasteryQuests(gameType: tGameType, level: tLevel)),
       expect: () => [
         EliteMasteryLoading(),
-        EliteMasteryLoaded(quests: tQuests, currentIndex: 0, livesRemaining: 3, gameType: tGameType, level: tLevel),
+        EliteMasteryLoaded(
+          quests: tQuests,
+          currentIndex: 0,
+          livesRemaining: 3,
+          gameType: tGameType,
+          level: tLevel,
+        ),
       ],
     );
   });

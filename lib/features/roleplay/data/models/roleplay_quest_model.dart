@@ -59,7 +59,7 @@ class RoleplayQuestModel extends RoleplayQuest {
         final nodeJson = Map<String, dynamic>.from(nodeElement);
         final String nodeId = nodeJson['id']?.toString() ?? '';
         if (nodeId.isEmpty) continue;
-        
+
         List<DialogueChoice>? choices;
         if (nodeJson['choices'] != null && nodeJson['choices'] is List) {
           choices = (nodeJson['choices'] as List)
@@ -94,7 +94,8 @@ class RoleplayQuestModel extends RoleplayQuest {
       id: id,
       type: subtype.category,
       subtype: subtype,
-      instruction: map['instruction']?.toString() ?? 'Participate in the dialogue.',
+      instruction:
+          map['instruction']?.toString() ?? 'Participate in the dialogue.',
       difficulty: (map['difficulty'] as num?)?.toInt() ?? 1,
       interactionType: InteractionType.fromString(
         map['interactionType'],
@@ -109,26 +110,34 @@ class RoleplayQuestModel extends RoleplayQuest {
       correctAnswerIndex: (map['correctAnswerIndex'] as num?)?.toInt(),
       correctAnswer: map['correctAnswer']?.toString(),
       hint: map['hint']?.toString(),
-      visualConfig: map['visual_config'] != null 
-          ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'])) 
+      visualConfig: map['visual_config'] != null
+          ? VisualConfig.fromJson(
+              Map<String, dynamic>.from(map['visual_config']),
+            )
           : null,
       dialogues: dialoguesMap,
-      situation: (map['situation'] ?? map['context'] ?? map['story'] ?? map['scenario'])?.toString(),
+      situation:
+          (map['situation'] ??
+                  map['context'] ??
+                  map['story'] ??
+                  map['scenario'])
+              ?.toString(),
       keywords: _parseStringList(map['keywords']),
       scene: (map['scene'] ?? map['location'])?.toString(),
       lastLine: map['lastLine']?.toString(),
       dispatcherQuestion: map['dispatcherQuestion']?.toString(),
       interviewerQuestion: map['interviewerQuestion']?.toString(),
       persona: (map['persona'] ?? map['role'])?.toString(),
-      prompt: (map['prompt'] ?? map['question'] ?? map['instruction'])?.toString(),
+      prompt: (map['prompt'] ?? map['question'] ?? map['instruction'])
+          ?.toString(),
       sampleAnswer: (map['sampleAnswer'] ?? map['correctAnswer'])?.toString(),
       empathyScore: (map['empathyScore'] as num?)?.toDouble(),
       professionalismRating: (map['professionalismRating'] as num?)?.toInt(),
       symptoms: _parseStringList(map['symptoms']),
       itinerary: _parseStringList(map['itinerary']),
       explanation: map['explanation']?.toString(),
-      shuffledWords: map['shuffledWords'] != null 
-          ? _parseStringList(map['shuffledWords']) 
+      shuffledWords: map['shuffledWords'] != null
+          ? _parseStringList(map['shuffledWords'])
           : _parseStringList(map['keywords']),
     );
   }

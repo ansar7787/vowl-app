@@ -32,6 +32,7 @@ class ListeningQuestModel extends ListeningQuest {
     super.shuffledSentences,
     super.correctOrder,
     super.explanation,
+    super.imageUrl,
   });
 
   factory ListeningQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -75,25 +76,44 @@ class ListeningQuestModel extends ListeningQuest {
       correctAnswer: getString(map['correctAnswer']),
       hint: map['hint'] as String?,
       visualConfig: map['visual_config'] != null
-          ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'] as Map))
+          ? VisualConfig.fromJson(
+              Map<String, dynamic>.from(map['visual_config'] as Map),
+            )
           : null,
       audioUrl: map['audioUrl'] as String? ?? map['ambientAudioUrl'] as String?,
-      question: map['question'] as String? ?? map['sentence'] as String? ?? map['statement'] as String?,
+      question:
+          map['question'] as String? ??
+          map['sentence'] as String? ??
+          map['statement'] as String?,
       statement: map['statement'] as String? ?? map['text'] as String?,
-      textWithBlanks: map['textWithBlanks'] as String? ?? map['sentenceWithBlank'] as String?,
+      textWithBlanks:
+          map['textWithBlanks'] as String? ??
+          map['sentenceWithBlank'] as String?,
       audioOptions: parseStringList(map['audioOptions']),
-      transcript: map['transcript'] as String? ?? map['text'] as String? ?? map['sentence'] as String? ?? map['audioTranscript'] as String?,
+      transcript:
+          map['transcript'] as String? ??
+          map['text'] as String? ??
+          map['sentence'] as String? ??
+          map['audioTranscript'] as String?,
       targetEmotion: map['targetEmotion'] as String?,
-      textToSpeak: getString(map['textToSpeak'] ?? map['transcript'] ?? map['text'] ?? map['sentence']),
+      textToSpeak: getString(
+        map['textToSpeak'] ??
+            map['transcript'] ??
+            map['text'] ??
+            map['sentence'],
+      ),
       missingWord: map['missingWord'] as String?,
       targetDetail: map['targetDetail'] as String?,
       impliedMeaning: map['impliedMeaning'] as String?,
       location: map['location'] as String?,
       shuffledSentences: parseStringList(map['shuffledSentences']),
       correctOrder: map['correctOrder'] != null
-          ? (map['correctOrder'] as List).map((e) => int.tryParse(e.toString()) ?? 0).toList()
+          ? (map['correctOrder'] as List)
+                .map((e) => int.tryParse(e.toString()) ?? 0)
+                .toList()
           : null,
       explanation: map['explanation'] as String?,
+      imageUrl: map['imageUrl'] as String? ?? map['image_url'] as String?,
     );
   }
 
@@ -123,6 +143,7 @@ class ListeningQuestModel extends ListeningQuest {
       'shuffledSentences': shuffledSentences,
       'correctOrder': correctOrder,
       'explanation': explanation,
+      'imageUrl': imageUrl,
     };
   }
 }

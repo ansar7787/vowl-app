@@ -114,7 +114,7 @@ class _LeaderboardContent extends StatelessWidget {
               child: LeaderboardPodium(top3: state.users.take(3).toList()),
             ),
           ),
-          
+
           // Sticky Current User Rank (Pins to top when scrolling)
           SliverPersistentHeader(
             pinned: true,
@@ -122,7 +122,9 @@ class _LeaderboardContent extends StatelessWidget {
               minHeight: 140.h,
               maxHeight: 140.h,
               child: Container(
-                color: Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.8), // subtle backdrop for when pinned
+                color: Theme.of(context).scaffoldBackgroundColor.withValues(
+                  alpha: 0.8,
+                ), // subtle backdrop for when pinned
                 padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
                 alignment: Alignment.center,
                 child: LeaderboardRankCard(allUsers: state.users),
@@ -164,7 +166,8 @@ class _LeaderboardContent extends StatelessWidget {
                   final isMe = currentUser?.id == user.id;
 
                   return RepaintBoundary(
-                    child: LeaderboardRankTile(user: user, rank: rank, isMe: isMe)
+                    child:
+                        LeaderboardRankTile(user: user, rank: rank, isMe: isMe)
                             .animate()
                             .fadeIn(duration: 250.ms, curve: Curves.easeOut)
                             .slideX(begin: 0.05, end: 0, curve: Curves.easeOut),
@@ -204,7 +207,11 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
   double get maxExtent => math.max(maxHeight, minHeight);
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
     return SizedBox.expand(child: child);
   }
 

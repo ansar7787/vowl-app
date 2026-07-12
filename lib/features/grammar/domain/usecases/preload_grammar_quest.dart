@@ -9,7 +9,10 @@ class PreloadGrammarQuestParams extends Equatable {
   final GameSubtype gameType;
   final int level;
 
-  const PreloadGrammarQuestParams({required this.gameType, required this.level});
+  const PreloadGrammarQuestParams({
+    required this.gameType,
+    required this.level,
+  });
 
   @override
   List<Object?> get props => [gameType, level];

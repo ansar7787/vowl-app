@@ -20,7 +20,10 @@ class EmergencyHubTelexCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
         borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: Colors.redAccent.withValues(alpha: 0.2), width: 1.5),
+        border: Border.all(
+          color: Colors.redAccent.withValues(alpha: 0.2),
+          width: 1.5,
+        ),
         boxShadow: [
           BoxShadow(
             color: Colors.redAccent.withValues(alpha: 0.08),
@@ -34,13 +37,19 @@ class EmergencyHubTelexCard extends StatelessWidget {
           Row(
             children: [
               Container(
-                padding: EdgeInsets.all(8.r),
-                decoration: BoxDecoration(
-                  color: Colors.redAccent.withValues(alpha: 0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(Icons.warning_amber_rounded, color: Colors.redAccent, size: 20.r),
-              ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
+                    padding: EdgeInsets.all(8.r),
+                    decoration: BoxDecoration(
+                      color: Colors.redAccent.withValues(alpha: 0.1),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      Icons.warning_amber_rounded,
+                      color: Colors.redAccent,
+                      size: 20.r,
+                    ),
+                  )
+                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                  .scale(
                     begin: const Offset(1, 1),
                     end: const Offset(1.15, 1.15),
                     duration: 1.2.seconds,
@@ -49,7 +58,8 @@ class EmergencyHubTelexCard extends StatelessWidget {
               SizedBox(width: 10.w),
               Text(
                 "CRITICAL INCOMING HAZARD ALERT",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 10.sp,
                   color: Colors.redAccent,
                   letterSpacing: 2.0,
@@ -61,7 +71,8 @@ class EmergencyHubTelexCard extends StatelessWidget {
           SizedBox(height: 12.h),
           Text(
             telex,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 18.sp,
               color: isDark ? Colors.white : Colors.black87,
               height: 1.35,

@@ -17,7 +17,9 @@ class MedicalConsultExplanationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color cardColor = (isCorrect ?? false) ? Colors.greenAccent : Colors.orangeAccent;
+    final Color cardColor = (isCorrect ?? false)
+        ? Colors.greenAccent
+        : Colors.orangeAccent;
 
     return Container(
       width: 1.sw,
@@ -30,10 +32,7 @@ class MedicalConsultExplanationCard extends StatelessWidget {
           width: 1.5,
         ),
         boxShadow: [
-          BoxShadow(
-            color: cardColor.withValues(alpha: 0.15),
-            blurRadius: 15,
-          ),
+          BoxShadow(color: cardColor.withValues(alpha: 0.15), blurRadius: 15),
         ],
       ),
       child: Column(
@@ -42,14 +41,19 @@ class MedicalConsultExplanationCard extends StatelessWidget {
           Row(
             children: [
               Icon(
-                (isCorrect ?? false) ? Icons.verified_rounded : Icons.info_rounded,
+                (isCorrect ?? false)
+                    ? Icons.verified_rounded
+                    : Icons.info_rounded,
                 color: cardColor,
                 size: 24.r,
               ),
               SizedBox(width: 8.w),
               Text(
-                (isCorrect ?? false) ? "Glitch Purified!" : "Diagnostics Contamination!",
-                style: TextStyle(fontFamily: 'Outfit', 
+                (isCorrect ?? false)
+                    ? "Glitch Purified!"
+                    : "Diagnostics Contamination!",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
                   color: isDark ? Colors.white : Colors.black87,
@@ -59,8 +63,10 @@ class MedicalConsultExplanationCard extends StatelessWidget {
           ),
           SizedBox(height: 12.h),
           Text(
-            quest.explanation ?? "Correlating patient symptoms to physiological glitch vectors builds strong diagnostic and context vocabulary recall.",
-            style: TextStyle(fontFamily: 'Outfit', 
+            quest.explanation ??
+                "Correlating patient symptoms to physiological glitch vectors builds strong diagnostic and context vocabulary recall.",
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 14.sp,
               color: isDark ? Colors.white70 : Colors.black54,
               height: 1.35,

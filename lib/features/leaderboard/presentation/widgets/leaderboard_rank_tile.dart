@@ -50,7 +50,9 @@ class LeaderboardRankTile extends StatelessWidget {
                     : const Color(0xFFCBD5E1).withValues(alpha: 0.6)),
           color: isDark
               ? Colors.white.withValues(alpha: 0.06)
-              : Colors.white.withValues(alpha: 0.75), // More translucent for frosty effect
+              : Colors.white.withValues(
+                  alpha: 0.75,
+                ), // More translucent for frosty effect
           borderWidth: isMe ? 1.5 : 1,
           child: Row(
             children: [

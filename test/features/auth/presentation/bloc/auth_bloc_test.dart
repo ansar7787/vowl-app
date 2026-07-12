@@ -16,12 +16,19 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/network/network_info.dart';
 
 class MockGetUserStream extends Mock implements GetUserStream {}
+
 class MockLogOut extends Mock implements LogOut {}
+
 class MockReloadUser extends Mock implements ReloadUser {}
+
 class MockDeleteAccount extends Mock implements DeleteAccount {}
+
 class MockForgotPassword extends Mock implements ForgotPassword {}
+
 class MockGetCurrentUser extends Mock implements GetCurrentUser {}
+
 class MockSendEmailVerification extends Mock implements SendEmailVerification {}
+
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
 class FakeNoParams extends Fake implements NoParams {}
@@ -61,7 +68,9 @@ void main() {
 
     when(() => mockNetworkInfo.setPremiumOverride(any())).thenReturn(null);
 
-    when(() => mockGetUserStream()).thenAnswer((_) => userStreamController.stream);
+    when(
+      () => mockGetUserStream(),
+    ).thenAnswer((_) => userStreamController.stream);
 
     bloc = AuthBloc(
       getUserStream: mockGetUserStream,
@@ -89,18 +98,14 @@ void main() {
       'should emit [unauthenticated] when user stream emits null',
       build: () => bloc,
       act: (bloc) => userStreamController.add(null),
-      expect: () => [
-        const AuthState.unauthenticated(),
-      ],
+      expect: () => [const AuthState.unauthenticated()],
     );
 
     blocTest<AuthBloc, AuthState>(
       'should emit [authenticated] when user stream emits user',
       build: () => bloc,
       act: (bloc) => userStreamController.add(tUser),
-      expect: () => [
-        AuthState.authenticated(tUser),
-      ],
+      expect: () => [AuthState.authenticated(tUser)],
     );
   });
 
@@ -108,13 +113,23 @@ void main() {
     blocTest<AuthBloc, AuthState>(
       'should emit [loggingOut, unauthenticated] and call logOut',
       build: () {
-        when(() => mockLogOut(any())).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockLogOut(any()),
+        ).thenAnswer((_) async => const Right(null));
         return bloc;
       },
       act: (bloc) => bloc.add(const AuthLogoutRequested()),
       expect: () => [
-        isA<AuthState>().having((s) => s.status, 'status', AuthStatus.loggingOut),
-        isA<AuthState>().having((s) => s.status, 'status', AuthStatus.unauthenticated),
+        isA<AuthState>().having(
+          (s) => s.status,
+          'status',
+          AuthStatus.loggingOut,
+        ),
+        isA<AuthState>().having(
+          (s) => s.status,
+          'status',
+          AuthStatus.unauthenticated,
+        ),
       ],
       verify: (_) {
         verify(() => mockLogOut(any())).called(1);

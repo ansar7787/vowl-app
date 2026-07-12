@@ -23,7 +23,11 @@ class PlasmaPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 6.w
       ..strokeCap = StrokeCap.round;
-    canvas.drawLine(Offset(size.width / 2, 10.h), Offset(size.width / 2, size.height - 10.h), conduitPaint);
+    canvas.drawLine(
+      Offset(size.width / 2, 10.h),
+      Offset(size.width / 2, size.height - 10.h),
+      conduitPaint,
+    );
 
     // Draw charging base poles (Top and Bottom hubs)
     final Paint hubPaint = Paint()
@@ -32,16 +36,36 @@ class PlasmaPainter extends CustomPainter {
 
     // Top Positive Hub aura
     hubPaint.color = Colors.redAccent.withValues(alpha: 0.15);
-    canvas.drawCircle(Offset(size.width / 2, 10.h), 14.r + math.sin(time * 4) * 2.r, hubPaint);
+    canvas.drawCircle(
+      Offset(size.width / 2, 10.h),
+      14.r + math.sin(time * 4) * 2.r,
+      hubPaint,
+    );
     hubPaint.color = Colors.redAccent;
-    canvas.drawCircle(Offset(size.width / 2, 10.h), 6.r, hubPaint..style = PaintingStyle.fill);
+    canvas.drawCircle(
+      Offset(size.width / 2, 10.h),
+      6.r,
+      hubPaint..style = PaintingStyle.fill,
+    );
 
     // Bottom Negative Hub aura
-    final Color bottomHubColor = Color.lerp(Colors.cyanAccent.withValues(alpha: 0.3), Colors.cyanAccent, progress)!;
+    final Color bottomHubColor = Color.lerp(
+      Colors.cyanAccent.withValues(alpha: 0.3),
+      Colors.cyanAccent,
+      progress,
+    )!;
     hubPaint.color = bottomHubColor.withValues(alpha: 0.15);
-    canvas.drawCircle(Offset(size.width / 2, size.height - 10.h), 14.r + math.cos(time * 4) * 2.r, hubPaint..style = PaintingStyle.stroke);
+    canvas.drawCircle(
+      Offset(size.width / 2, size.height - 10.h),
+      14.r + math.cos(time * 4) * 2.r,
+      hubPaint..style = PaintingStyle.stroke,
+    );
     hubPaint.color = bottomHubColor;
-    canvas.drawCircle(Offset(size.width / 2, size.height - 10.h), 6.r, hubPaint..style = PaintingStyle.fill);
+    canvas.drawCircle(
+      Offset(size.width / 2, size.height - 10.h),
+      6.r,
+      hubPaint..style = PaintingStyle.fill,
+    );
 
     // Draw active electromagnetic plasma arcs
     if (progress > 0) {

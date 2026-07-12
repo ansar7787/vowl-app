@@ -139,7 +139,14 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
   void _onRetry(RetryCurrentQuestion event, Emitter<SpeakingState> emit) {
     final s = state;
     if (s is SpeakingLoaded) {
-      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false, removedIndices: const [], isLetterRevealed: false));
+      emit(
+        s.copyWith(
+          lastAnswerCorrect: null,
+          hintUsed: false,
+          removedIndices: const [],
+          isLetterRevealed: false,
+        ),
+      );
     }
   }
 
@@ -219,7 +226,14 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
       if (wasCorrect) {
         await _handleLevelComplete(s, emit);
       } else {
-        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false, removedIndices: const [], isLetterRevealed: false));
+        emit(
+          s.copyWith(
+            lastAnswerCorrect: null,
+            hintUsed: false,
+            removedIndices: const [],
+            isLetterRevealed: false,
+          ),
+        );
       }
       return;
     }
@@ -237,7 +251,14 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
         ),
       );
     } else {
-      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false, removedIndices: const [], isLetterRevealed: false));
+      emit(
+        s.copyWith(
+          lastAnswerCorrect: null,
+          hintUsed: false,
+          removedIndices: const [],
+          isLetterRevealed: false,
+        ),
+      );
     }
   }
 
@@ -328,11 +349,13 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
         }
       }
 
-      emit(latest.copyWith(
-        hintUsed: true, 
-        removedIndices: removedIndices, 
-        isLetterRevealed: isLetterRevealed
-      ));
+      emit(
+        latest.copyWith(
+          hintUsed: true,
+          removedIndices: removedIndices,
+          isLetterRevealed: isLetterRevealed,
+        ),
+      );
       unawaited(hapticService.selection());
     }
   }
@@ -399,4 +422,3 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
     }
   }
 }
-

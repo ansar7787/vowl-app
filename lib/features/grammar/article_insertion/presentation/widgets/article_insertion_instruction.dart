@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ArticleInsertionInstruction extends StatelessWidget {
   final Color primaryColor;
   const ArticleInsertionInstruction({super.key, required this.primaryColor});
@@ -20,7 +21,8 @@ class ArticleInsertionInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             "POP THE CORRECT ARTICLE ORB",
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,

@@ -263,7 +263,9 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                 : CrossFadeState.showFirst,
                             duration: const Duration(milliseconds: 400),
                           ),
-                          SizedBox(height: isCompact ? 40.h : 80.h), // Safe spacing for base layouts
+                          SizedBox(
+                            height: isCompact ? 40.h : 80.h,
+                          ), // Safe spacing for base layouts
                         ],
                       ),
                     );

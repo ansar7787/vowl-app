@@ -102,7 +102,9 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
         _rightPanArgs.length == 2 &&
         _rightPanArgs.every((arg) => correctCons.contains(arg));
 
-    context.read<WritingBloc>().add(SubmitAnswer(isLeftCorrect && isRightCorrect));
+    context.read<WritingBloc>().add(
+      SubmitAnswer(isLeftCorrect && isRightCorrect),
+    );
   }
 
   @override
@@ -183,8 +185,10 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                           rightPanArgs: _rightPanArgs,
                           color: theme.primaryColor,
                           isDark: isDark,
-                          onDropArg: (arg, isLeft) => _onDropArg(arg, isLeft, isAnswered),
-                          onRemoveArg: (arg, isLeft) => _removeArg(arg, isLeft, isAnswered),
+                          onDropArg: (arg, isLeft) =>
+                              _onDropArg(arg, isLeft, isAnswered),
+                          onRemoveArg: (arg, isLeft) =>
+                              _removeArg(arg, isLeft, isAnswered),
                         ),
                         SizedBox(height: 32.h),
 
@@ -199,7 +203,9 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
 
                         if (!isAnswered)
                           ScaleButton(
-                            onTap: totalPlaced == 4 ? () => _submitAnswer(isAnswered) : null,
+                            onTap: totalPlaced == 4
+                                ? () => _submitAnswer(isAnswered)
+                                : null,
                             child: Container(
                               width: double.infinity,
                               height: 60.h,

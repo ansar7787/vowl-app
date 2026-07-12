@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+
 class AntonymPulsar extends StatelessWidget {
   final bool isTop;
   final bool targetIsPositive;
@@ -17,41 +18,42 @@ class AntonymPulsar extends StatelessWidget {
     final isActive = isTop != targetIsPositive;
 
     return Positioned(
-      top: isTop ? 10.h : null,
-      bottom: isTop ? null : 10.h,
-      left: 20.w,
-      right: 20.w,
-      child: Container(
-        height: 80.h,
-        decoration: BoxDecoration(
-          color: const Color(0xFF0F172A).withValues(alpha: 0.9),
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: color.withValues(alpha: isActive ? 1.0 : 0.2),
-            width: isActive ? 3 : 1,
-          ),
-          boxShadow: [
-            if (isActive)
-              BoxShadow(
-                color: color.withValues(alpha: 0.3),
-                blurRadius: 25,
+          top: isTop ? 10.h : null,
+          bottom: isTop ? null : 10.h,
+          left: 20.w,
+          right: 20.w,
+          child: Container(
+            height: 80.h,
+            decoration: BoxDecoration(
+              color: const Color(0xFF0F172A).withValues(alpha: 0.9),
+              borderRadius: BorderRadius.circular(16.r),
+              border: Border.all(
+                color: color.withValues(alpha: isActive ? 1.0 : 0.2),
+                width: isActive ? 3 : 1,
               ),
-          ],
-        ),
-        child: Center(
-          child: Text(
-            isTop ? "POSITIVE PULSAR [+]" : "NEGATIVE PULSAR [-]",
-            style: TextStyle(fontFamily: 'RobotoMono', 
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w900,
-              color: color.withValues(alpha: isActive ? 1.0 : 0.3),
-              letterSpacing: 3,
+              boxShadow: [
+                if (isActive)
+                  BoxShadow(
+                    color: color.withValues(alpha: 0.3),
+                    blurRadius: 25,
+                  ),
+              ],
+            ),
+            child: Center(
+              child: Text(
+                isTop ? "POSITIVE PULSAR [+]" : "NEGATIVE PULSAR [-]",
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w900,
+                  color: color.withValues(alpha: isActive ? 1.0 : 0.3),
+                  letterSpacing: 3,
+                ),
+              ),
             ),
           ),
-        ),
-      ),
-    )
-    .animate(onPlay: (c) => c.repeat(reverse: true))
-    .shimmer(duration: 4.seconds);
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .shimmer(duration: 4.seconds);
   }
 }

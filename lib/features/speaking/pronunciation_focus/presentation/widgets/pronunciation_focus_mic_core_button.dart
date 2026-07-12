@@ -42,25 +42,27 @@ class PronunciationFocusMicCoreButton extends StatelessWidget {
             children: [
               // Outer thermo glow aura ring
               Container(
-                width: 96.r,
-                height: 96.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: isListening
-                        ? Colors.orangeAccent.withValues(alpha: 0.3)
-                        : Colors.blueAccent.withValues(alpha: 0.1),
-                    width: 4.r,
-                  ),
-                ),
-              ).animate(target: isListening ? 1 : 0).scale(
+                    width: 96.r,
+                    height: 96.r,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.transparent,
+                      border: Border.all(
+                        color: isListening
+                            ? Colors.orangeAccent.withValues(alpha: 0.3)
+                            : Colors.blueAccent.withValues(alpha: 0.1),
+                        width: 4.r,
+                      ),
+                    ),
+                  )
+                  .animate(target: isListening ? 1 : 0)
+                  .scale(
                     begin: const Offset(1.0, 1.0),
                     end: const Offset(1.15, 1.15),
                     duration: const Duration(seconds: 1),
                     curve: Curves.easeInOut,
                   ),
-              
+
               // Inner sizzling button core
               ScaleButton(
                 onTap: () {},
@@ -77,20 +79,24 @@ class PronunciationFocusMicCoreButton extends StatelessWidget {
                     boxShadow: isListening
                         ? [
                             BoxShadow(
-                              color: Colors.orangeAccent.withValues(alpha: 0.45),
+                              color: Colors.orangeAccent.withValues(
+                                alpha: 0.45,
+                              ),
                               blurRadius: 25.r,
                               spreadRadius: 2.r,
-                            )
+                            ),
                           ]
                         : [
                             BoxShadow(
                               color: Colors.black.withValues(alpha: 0.3),
                               blurRadius: 10.r,
-                            )
+                            ),
                           ],
                   ),
                   child: Icon(
-                    isListening ? Icons.local_fire_department_rounded : Icons.mic_none_rounded,
+                    isListening
+                        ? Icons.local_fire_department_rounded
+                        : Icons.mic_none_rounded,
                     color: Colors.white,
                     size: 32.r,
                   ),
@@ -100,9 +106,12 @@ class PronunciationFocusMicCoreButton extends StatelessWidget {
           ),
           SizedBox(height: 12.h),
           Text(
-            isListening ? "RELEASE CORE TO INITIATE FUSION" : "HOLD SIZZLE CORE TO RECORD PHONEME ACCENT",
+            isListening
+                ? "RELEASE CORE TO INITIATE FUSION"
+                : "HOLD SIZZLE CORE TO RECORD PHONEME ACCENT",
             textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'RobotoMono', 
+            style: TextStyle(
+              fontFamily: 'RobotoMono',
               fontSize: 9.sp,
               color: Colors.grey,
               letterSpacing: 1.5,
@@ -139,7 +148,9 @@ class PronunciationFocusMicCoreButton extends StatelessWidget {
                             ),
                             SizedBox(width: 8.w),
                             Text(
-                              context.tr('games.i_spoke_correctly').toUpperCase(),
+                              context
+                                  .tr('games.i_spoke_correctly')
+                                  .toUpperCase(),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 color: Colors.amber,

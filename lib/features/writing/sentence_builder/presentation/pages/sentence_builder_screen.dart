@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -161,7 +160,8 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
                   isDark: isDark,
                   onSnap: (piece) => _onSnap(piece, isAnswered),
                   onRemovePiece: (idx) => _onRemovePiece(idx, isAnswered),
-                  onSubmit: () => _submitAnswer(quest.correctAnswer ?? '', isAnswered),
+                  onSubmit: () =>
+                      _submitAnswer(quest.correctAnswer ?? '', isAnswered),
                 ),
         );
       },

@@ -189,7 +189,8 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
 
                         if (!isAnswered)
                           ScaleButton(
-                            onTap: () => _submitAnswer(targetKeywords, isAnswered),
+                            onTap: () =>
+                                _submitAnswer(targetKeywords, isAnswered),
                             child: Container(
                               width: double.infinity,
                               height: 60.h,

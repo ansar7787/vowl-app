@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class EmergencyHubTerminalInput extends StatelessWidget {
   final TextEditingController controller;
   final String correctAnswer;
@@ -16,17 +17,22 @@ class EmergencyHubTerminalInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isCodeValid = controller.text.trim().replaceAll(' ', '').toLowerCase() ==
+    final bool isCodeValid =
+        controller.text.trim().replaceAll(' ', '').toLowerCase() ==
         correctAnswer.trim().replaceAll(' ', '').toLowerCase();
 
     return Container(
       width: 1.sw,
       padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF07070F) : Colors.black.withValues(alpha: 0.02),
+        color: isDark
+            ? const Color(0xFF07070F)
+            : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(28.r),
         border: Border.all(
-          color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.03),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.03)
+              : Colors.black.withValues(alpha: 0.03),
         ),
       ),
       child: Column(
@@ -37,7 +43,8 @@ class EmergencyHubTerminalInput extends StatelessWidget {
             children: [
               Text(
                 "DECRYPTION KEYBOARD SLATE",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 10.sp,
                   color: isCodeValid ? Colors.greenAccent : Colors.amberAccent,
                   letterSpacing: 1.5,
@@ -52,11 +59,12 @@ class EmergencyHubTerminalInput extends StatelessWidget {
             ],
           ),
           SizedBox(height: 12.h),
-          
+
           TextField(
             controller: controller,
             onChanged: (_) => onChanged(),
-            style: TextStyle(fontFamily: 'RobotoMono', 
+            style: TextStyle(
+              fontFamily: 'RobotoMono',
               fontSize: 18.sp,
               color: isCodeValid ? Colors.greenAccent : Colors.redAccent,
               fontWeight: FontWeight.bold,
@@ -64,7 +72,8 @@ class EmergencyHubTerminalInput extends StatelessWidget {
             ),
             decoration: InputDecoration(
               hintText: "ENTER CODE (e.g. CODE RED 99)",
-              hintStyle: TextStyle(fontFamily: 'RobotoMono', 
+              hintStyle: TextStyle(
+                fontFamily: 'RobotoMono',
                 fontSize: 14.sp,
                 color: isDark ? Colors.white24 : Colors.black26,
                 letterSpacing: 1.5,
@@ -74,7 +83,9 @@ class EmergencyHubTerminalInput extends StatelessWidget {
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16.r),
                 borderSide: BorderSide(
-                  color: isCodeValid ? Colors.greenAccent.withValues(alpha: 0.4) : Colors.redAccent.withValues(alpha: 0.3),
+                  color: isCodeValid
+                      ? Colors.greenAccent.withValues(alpha: 0.4)
+                      : Colors.redAccent.withValues(alpha: 0.3),
                   width: 2,
                 ),
               ),

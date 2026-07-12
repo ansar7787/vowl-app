@@ -28,7 +28,6 @@ import 'package:vowl/core/utils/locale_service.dart';
 // Layout constants
 // ---------------------------------------------------------------------------
 
-
 const int _kNudgeDelayMs = 1200;
 const int _kBriefingTriggerLevel = 1;
 const int _kBriefingTutorialLevel = 100;

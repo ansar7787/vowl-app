@@ -5,7 +5,8 @@ import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart' as import_dialogs;
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart'
+    as import_dialogs;
 
 class KidsGameHeader extends StatelessWidget {
   final String title;
@@ -31,13 +32,15 @@ class KidsGameHeader extends StatelessWidget {
 
     if (state is KidsLoaded) {
       final s = state as KidsLoaded;
-      int correctlyAnswered = s.currentIndex - (s.quests.length - s.originalTotalQuests);
+      int correctlyAnswered =
+          s.currentIndex - (s.quests.length - s.originalTotalQuests);
       currentIndex = correctlyAnswered.clamp(0, s.originalTotalQuests);
       totalQuests = s.originalTotalQuests;
       lives = s.livesRemaining;
     } else if (state is KidsGameOver) {
       final s = state as KidsGameOver;
-      int correctlyAnswered = s.currentIndex - (s.quests.length - s.originalTotalQuests);
+      int correctlyAnswered =
+          s.currentIndex - (s.quests.length - s.originalTotalQuests);
       currentIndex = correctlyAnswered.clamp(0, s.originalTotalQuests);
       totalQuests = s.originalTotalQuests;
       lives = 0;
@@ -58,26 +61,31 @@ class KidsGameHeader extends StatelessWidget {
                 shape: BoxShape.circle,
                 border: Border.all(color: Colors.grey.shade300, width: 3.w),
                 boxShadow: [
-                  BoxShadow(color: Colors.grey.shade300, offset: Offset(0, 4.h)),
+                  BoxShadow(
+                    color: Colors.grey.shade300,
+                    offset: Offset(0, 4.h),
+                  ),
                 ],
               ),
-              child: Icon(Icons.close_rounded, color: Colors.grey.shade400, size: 20.sp),
+              child: Icon(
+                Icons.close_rounded,
+                color: Colors.grey.shade400,
+                size: 20.sp,
+              ),
             ),
           ),
           SizedBox(width: 12.w),
-          
+
           // Progress Bar
-          Expanded(
-            child: _buildChunkyProgressBar(currentIndex, totalQuests),
-          ),
-          
+          Expanded(child: _buildChunkyProgressBar(currentIndex, totalQuests)),
+
           SizedBox(width: 12.w),
-          
+
           // Hint Button
           _buildHintButton(context),
-          
+
           SizedBox(width: 8.w),
-          
+
           // Lives
           _buildLives(lives),
         ],
@@ -101,7 +109,9 @@ class KidsGameHeader extends StatelessWidget {
         children: [
           LayoutBuilder(
             builder: (context, constraints) {
-              final availableWidth = constraints.maxWidth > 0 ? constraints.maxWidth : 0.0;
+              final availableWidth = constraints.maxWidth > 0
+                  ? constraints.maxWidth
+                  : 0.0;
               final targetWidth = availableWidth * progress;
               return AnimatedContainer(
                 duration: const Duration(milliseconds: 600),
@@ -135,9 +145,15 @@ class KidsGameHeader extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: Colors.redAccent.withValues(alpha: 0.3), width: 3.w),
+        border: Border.all(
+          color: Colors.redAccent.withValues(alpha: 0.3),
+          width: 3.w,
+        ),
         boxShadow: [
-          BoxShadow(color: Colors.redAccent.withValues(alpha: 0.2), offset: Offset(0, 4.h)),
+          BoxShadow(
+            color: Colors.redAccent.withValues(alpha: 0.2),
+            offset: Offset(0, 4.h),
+          ),
         ],
       ),
       child: Row(
@@ -146,7 +162,9 @@ class KidsGameHeader extends StatelessWidget {
           return Padding(
             padding: EdgeInsets.symmetric(horizontal: 2.w),
             child: Icon(
-              index < lives ? Icons.favorite_rounded : Icons.favorite_border_rounded,
+              index < lives
+                  ? Icons.favorite_rounded
+                  : Icons.favorite_border_rounded,
               color: index < lives ? Colors.redAccent : Colors.grey.shade300,
               size: 20.sp,
             ),
@@ -164,7 +182,7 @@ class KidsGameHeader extends StatelessWidget {
       builder: (context, authState) {
         final hints = authState.user?.hintCount ?? 0;
         final isUsed = s.hintUsed;
-        
+
         return ScaleButton(
           onTap: () {
             if (isUsed) return;
@@ -172,7 +190,7 @@ class KidsGameHeader extends StatelessWidget {
               context.read<KidsBloc>().add(const UseKidsHint());
             } else {
               import_dialogs.GameDialogHelper.showHintAdDialog(
-                context, 
+                context,
                 persistToAccount: false,
                 onHintEarned: () {
                   context.read<KidsBloc>().add(const UseKidsHint(isFree: true));
@@ -186,12 +204,12 @@ class KidsGameHeader extends StatelessWidget {
               color: isUsed ? Colors.grey.shade300 : Colors.amber.shade400,
               borderRadius: BorderRadius.circular(20.r),
               border: Border.all(
-                color: isUsed ? Colors.grey.shade400 : Colors.amber.shade600, 
+                color: isUsed ? Colors.grey.shade400 : Colors.amber.shade600,
                 width: 3.w,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: isUsed ? Colors.grey.shade400 : Colors.amber.shade600, 
+                  color: isUsed ? Colors.grey.shade400 : Colors.amber.shade600,
                   offset: Offset(0, 4.h),
                 ),
               ],
@@ -199,11 +217,20 @@ class KidsGameHeader extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.lightbulb_rounded, color: isUsed ? Colors.grey.shade400 : Colors.white, size: 18.sp),
+                Icon(
+                  Icons.lightbulb_rounded,
+                  color: isUsed ? Colors.grey.shade400 : Colors.white,
+                  size: 18.sp,
+                ),
                 SizedBox(width: 4.w),
                 Text(
-                  hints.toString(), 
-                  style: TextStyle(fontFamily: 'Outfit', fontSize: 14.sp, fontWeight: FontWeight.w900, color: isUsed ? Colors.grey.shade400 : Colors.white)
+                  hints.toString(),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isUsed ? Colors.grey.shade400 : Colors.white,
+                  ),
                 ),
               ],
             ),

@@ -39,18 +39,24 @@ class SpeakMissingWordTactileMic extends StatelessWidget {
               if (isSpeechActive)
                 ...List.generate(
                   3,
-                  (i) => Container(
-                    width: 90.r + (i * 24.r),
-                    height: 90.r + (i * 24.r),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-                    ),
-                  ).animate(onPlay: (c) => c.repeat()).scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.3, 1.3),
-                        duration: const Duration(seconds: 1),
-                      ).fadeOut(),
+                  (i) =>
+                      Container(
+                            width: 90.r + (i * 24.r),
+                            height: 90.r + (i * 24.r),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: primaryColor.withValues(alpha: 0.2),
+                              ),
+                            ),
+                          )
+                          .animate(onPlay: (c) => c.repeat())
+                          .scale(
+                            begin: const Offset(1, 1),
+                            end: const Offset(1.3, 1.3),
+                            duration: const Duration(seconds: 1),
+                          )
+                          .fadeOut(),
                 ),
               ScaleButton(
                 onTap: () {},
@@ -69,12 +75,14 @@ class SpeakMissingWordTactileMic extends StatelessWidget {
                             BoxShadow(
                               color: primaryColor.withValues(alpha: 0.4),
                               blurRadius: 18,
-                            )
+                            ),
                           ]
                         : [],
                   ),
                   child: Icon(
-                    isSpeechActive ? Icons.graphic_eq_rounded : Icons.mic_none_rounded,
+                    isSpeechActive
+                        ? Icons.graphic_eq_rounded
+                        : Icons.mic_none_rounded,
                     color: Colors.white,
                     size: 32.r,
                   ),
@@ -85,9 +93,12 @@ class SpeakMissingWordTactileMic extends StatelessWidget {
         ),
         SizedBox(height: 12.h),
         Text(
-          isSpeechActive ? "RELEASE LENS TO PROCESS SENTENCE" : "HOLD LENS TO RECORD FULL COMPLETED SENTENCE",
+          isSpeechActive
+              ? "RELEASE LENS TO PROCESS SENTENCE"
+              : "HOLD LENS TO RECORD FULL COMPLETED SENTENCE",
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'RobotoMono', 
+          style: TextStyle(
+            fontFamily: 'RobotoMono',
             fontSize: 9.sp,
             color: Colors.grey,
             letterSpacing: 1.5,

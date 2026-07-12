@@ -6,7 +6,6 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 
-
 /// Music Studio Theme for Phonics Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
@@ -37,12 +36,7 @@ class KidsPhonicsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Studio Monitor
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: _buildStudioMonitor(quest),
-              ),
-            ),
+            Expanded(flex: 5, child: Center(child: _buildStudioMonitor(quest))),
             // Vinyl Records
             Flexible(
               flex: 5,
@@ -55,16 +49,29 @@ class KidsPhonicsLayout extends StatelessWidget {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: const Color(0xFF334155), // Slate desk
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(8.r)),
-                      border: Border(top: BorderSide(color: const Color(0xFF475569), width: 4.h)),
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(8.r),
+                      ),
+                      border: Border(
+                        top: BorderSide(
+                          color: const Color(0xFF475569),
+                          width: 4.h,
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 10.h, left: 16.w, right: 16.w),
+                    padding: EdgeInsets.only(
+                      bottom: 10.h,
+                      left: 16.w,
+                      right: 16.w,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: List.generate(quest.options?.length ?? 0, (index) {
+                      children: List.generate(quest.options?.length ?? 0, (
+                        index,
+                      ) {
                         final option = quest.options![index];
                         return Expanded(
                           child: Padding(
@@ -97,7 +104,10 @@ class KidsPhonicsLayout extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF09090B), // Deep black screen
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: const Color(0xFF52525B), width: 12.r), // Silver monitor frame
+        border: Border.all(
+          color: const Color(0xFF52525B),
+          width: 12.r,
+        ), // Silver monitor frame
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.4),
@@ -117,16 +127,13 @@ class KidsPhonicsLayout extends StatelessWidget {
               return _buildEqBar(index);
             }),
           ),
-          
+
           Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (quest.emoji != null)
-                  Text(
-                    quest.emoji!,
-                    style: TextStyle(fontSize: 48.sp),
-                  ),
+                  Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
                 Text(
                   quest.question ?? "?",
                   style: TextStyle(
@@ -135,7 +142,10 @@ class KidsPhonicsLayout extends StatelessWidget {
                     fontWeight: FontWeight.w900,
                     color: Colors.white,
                     shadows: const [
-                      Shadow(color: Color(0xFF22C55E), blurRadius: 15), // Neon green glow
+                      Shadow(
+                        color: Color(0xFF22C55E),
+                        blurRadius: 15,
+                      ), // Neon green glow
                     ],
                   ),
                   textAlign: TextAlign.center,
@@ -167,18 +177,37 @@ class KidsPhonicsLayout extends StatelessWidget {
   }
 
   Widget _buildEqBar(int index) {
-    final heightMap = [20.0, 50.0, 30.0, 80.0, 40.0, 60.0, 100.0, 70.0, 40.0, 90.0, 50.0, 30.0, 60.0, 20.0, 40.0];
+    final heightMap = [
+      20.0,
+      50.0,
+      30.0,
+      80.0,
+      40.0,
+      60.0,
+      100.0,
+      70.0,
+      40.0,
+      90.0,
+      50.0,
+      30.0,
+      60.0,
+      20.0,
+      40.0,
+    ];
     final baseHeight = heightMap[index % heightMap.length];
-    
+
     return Container(
-      width: 8.w,
-      height: baseHeight.h,
-      decoration: BoxDecoration(
-        color: const Color(0xFF22C55E).withValues(alpha: 0.3), // Faint green EQ bars
-        borderRadius: BorderRadius.circular(4.r),
-      ),
-    ).animate(onPlay: (c) => c.repeat(reverse: true))
-     .scaleY(begin: 0.5, end: 1.5, duration: (300 + (index * 50)).ms);
+          width: 8.w,
+          height: baseHeight.h,
+          decoration: BoxDecoration(
+            color: const Color(
+              0xFF22C55E,
+            ).withValues(alpha: 0.3), // Faint green EQ bars
+            borderRadius: BorderRadius.circular(4.r),
+          ),
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .scaleY(begin: 0.5, end: 1.5, duration: (300 + (index * 50)).ms);
   }
 
   Widget _buildVinylRecordOption(
@@ -205,44 +234,67 @@ class KidsPhonicsLayout extends StatelessWidget {
         children: [
           // The Vinyl Record (Black disc)
           Container(
-            height: 90.r,
-            width: 90.r,
-            decoration: BoxDecoration(
-              color: const Color(0xFF18181B),
-              shape: BoxShape.circle,
-              border: Border.all(color: const Color(0xFF3F3F46), width: 1),
-              boxShadow: [
-                BoxShadow(color: Colors.black.withValues(alpha: 0.3), offset: const Offset(0, 4)),
-              ],
-            ),
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                // Grooves
-                Container(width: 70.r, height: 70.r, decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: const Color(0xFF27272A)))),
-                Container(width: 50.r, height: 50.r, decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: const Color(0xFF27272A)))),
-                
-                // Center Label
-                Container(
-                  width: 35.r,
-                  height: 35.r,
-                  decoration: BoxDecoration(
-                    color: labelColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Center(
-                    child: Container(
-                      width: 5.r,
-                      height: 5.r,
-                      decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle), // Hole
+                height: 90.r,
+                width: 90.r,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF18181B),
+                  shape: BoxShape.circle,
+                  border: Border.all(color: const Color(0xFF3F3F46), width: 1),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.3),
+                      offset: const Offset(0, 4),
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
-          ).animate(onPlay: (c) => c.repeat())
-           .rotate(duration: 5.seconds, curve: Curves.linear), // Spin record slowly
-           
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    // Grooves
+                    Container(
+                      width: 70.r,
+                      height: 70.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: const Color(0xFF27272A)),
+                      ),
+                    ),
+                    Container(
+                      width: 50.r,
+                      height: 50.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: const Color(0xFF27272A)),
+                      ),
+                    ),
+
+                    // Center Label
+                    Container(
+                      width: 35.r,
+                      height: 35.r,
+                      decoration: BoxDecoration(
+                        color: labelColor,
+                        shape: BoxShape.circle,
+                      ),
+                      child: Center(
+                        child: Container(
+                          width: 5.r,
+                          height: 5.r,
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                          ), // Hole
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat())
+              .rotate(
+                duration: 5.seconds,
+                curve: Curves.linear,
+              ), // Spin record slowly
           // The overlay with text (does not spin)
           Container(
             padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),

@@ -316,7 +316,9 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
             ),
             SizedBox(height: isCompact ? 4.h : 12.h),
             Text(
-              correct ? context.tr('games.correct').toUpperCase() : context.tr('games.incorrect_caps'),
+              correct
+                  ? context.tr('games.correct').toUpperCase()
+                  : context.tr('games.incorrect_caps'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: isCompact ? 12.sp : 16.sp,

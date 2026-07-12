@@ -12,13 +12,19 @@ import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 
 class MockRepairStreak extends Mock implements RepairStreak {}
+
 class MockPurchaseStreakFreeze extends Mock implements PurchaseStreakFreeze {}
+
 class MockActivateDoubleXP extends Mock implements ActivateDoubleXP {}
+
 class MockUpdateUser extends Mock implements UpdateUser {}
+
 class MockAuthBloc extends Mock implements AuthBloc {}
+
 class MockNotificationService extends Mock implements NotificationService {}
 
 class FakeNoParams extends Fake implements NoParams {}
+
 class FakeUpdateUserParams extends Fake implements UpdateUserParams {}
 
 void main() {
@@ -61,12 +67,18 @@ void main() {
     blocTest<ProgressionBloc, ProgressionState>(
       'should call activateDoubleXP and emit message on success',
       build: () {
-        when(() => mockActivateDoubleXP(any())).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockActivateDoubleXP(any()),
+        ).thenAnswer((_) async => const Right(null));
         return bloc;
       },
       act: (bloc) => bloc.add(const ProgressionActivateDoubleXPRequested(100)),
       expect: () => [
-        isA<ProgressionState>().having((s) => s.message, 'message', 'Double XP Activated!'),
+        isA<ProgressionState>().having(
+          (s) => s.message,
+          'message',
+          'Double XP Activated!',
+        ),
       ],
       verify: (_) {
         verify(() => mockActivateDoubleXP(any())).called(1);

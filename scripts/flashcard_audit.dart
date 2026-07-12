@@ -3,7 +3,8 @@ import 'dart:io';
 
 void main() async {
   final directory = Directory('assets/curriculum/vocabulary');
-  final files = directory.listSync()
+  final files = directory
+      .listSync()
       .where((f) => f.path.contains('flashcards_') && f.path.endsWith('.json'))
       .toList();
 
@@ -26,7 +27,9 @@ void main() async {
         final word = quest['word'];
         final interactionType = quest['interactionType'];
 
-        bool isPlaceholder = word.toString().contains('Lexicon-') || word.toString().contains('TODO');
+        bool isPlaceholder =
+            word.toString().contains('Lexicon-') ||
+            word.toString().contains('TODO');
         if (isPlaceholder) {
           placeholders++;
         } else {
@@ -47,14 +50,18 @@ void main() async {
 
         // 3. Check Interaction Type
         if (interactionType != 'flip') {
-          errors.add('[${file.path}] Wrong interactionType: $interactionType for quest $id');
+          errors.add(
+            '[${file.path}] Wrong interactionType: $interactionType for quest $id',
+          );
         }
 
         // 4. Check Required Fields
         final requiredFields = ['word', 'definition', 'example'];
         for (var field in requiredFields) {
           if (quest[field] == null || quest[field].toString().isEmpty) {
-            errors.add('[${file.path}] Missing/Empty field "$field" in quest $id');
+            errors.add(
+              '[${file.path}] Missing/Empty field "$field" in quest $id',
+            );
           }
         }
       }
@@ -69,9 +76,11 @@ void main() async {
   print('Placeholders: $placeholders');
   print('Unique Words: ${words.length}');
   print('Unique IDs: ${globalIds.length}');
-  
+
   if (errors.isEmpty) {
-    print('✅ SUCCESS: All flashcards are unique and properly formatted (ignoring placeholder status).');
+    print(
+      '✅ SUCCESS: All flashcards are unique and properly formatted (ignoring placeholder status).',
+    );
   } else {
     print('❌ ERRORS FOUND (${errors.length}):');
     errors.forEach(print);

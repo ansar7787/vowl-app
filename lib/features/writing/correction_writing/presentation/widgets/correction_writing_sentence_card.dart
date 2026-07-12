@@ -21,7 +21,7 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final startIdx = passage.indexOf('[');
     final endIdx = passage.indexOf(']');
-    
+
     if (startIdx == -1 || endIdx == -1) {
       return Container(
         padding: EdgeInsets.all(24.r),
@@ -32,7 +32,8 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
         ),
         child: Text(
           passage,
-          style: TextStyle(fontFamily: 'Spectral', 
+          style: TextStyle(
+            fontFamily: 'Spectral',
             fontSize: 16.sp,
             color: isDark ? Colors.white : Colors.black87,
             height: 1.6,
@@ -40,7 +41,7 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
         ),
       );
     }
-    
+
     final preText = passage.substring(0, startIdx);
     final errorText = passage.substring(startIdx + 1, endIdx);
     final postText = passage.substring(endIdx + 1);
@@ -51,7 +52,10 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.05 : 0.08),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white12 : Colors.black12, width: 2),
+        border: Border.all(
+          color: isDark ? Colors.white12 : Colors.black12,
+          width: 2,
+        ),
       ),
       child: Stack(
         children: [
@@ -59,11 +63,12 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
           RichText(
             textAlign: TextAlign.center,
             text: TextSpan(
-              style: TextStyle(fontFamily: 'Spectral', 
+              style: TextStyle(
+                fontFamily: 'Spectral',
                 fontSize: 16.sp,
                 color: isDark ? Colors.white70 : Colors.black87,
                 height: 1.6,
-                fontWeight: FontWeight.w500
+                fontWeight: FontWeight.w500,
               ),
               children: [
                 TextSpan(text: preText),
@@ -72,16 +77,23 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
                   child: AnimatedContainer(
                     duration: 300.milliseconds,
                     margin: EdgeInsets.symmetric(horizontal: 8.w),
-                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.w,
+                      vertical: 6.h,
+                    ),
                     decoration: BoxDecoration(
-                      color: selectedCorrection != null 
-                        ? Colors.greenAccent.withValues(alpha: 0.1) 
-                        : Colors.redAccent.withValues(alpha: 0.1),
+                      color: selectedCorrection != null
+                          ? Colors.greenAccent.withValues(alpha: 0.1)
+                          : Colors.redAccent.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12.r),
                       border: Border.all(
-                        color: selectedCorrection != null ? Colors.greenAccent : Colors.redAccent,
+                        color: selectedCorrection != null
+                            ? Colors.greenAccent
+                            : Colors.redAccent,
                         width: 2,
-                        style: selectedCorrection != null ? BorderStyle.solid : BorderStyle.none
+                        style: selectedCorrection != null
+                            ? BorderStyle.solid
+                            : BorderStyle.none,
                       ),
                     ),
                     child: Row(
@@ -89,18 +101,25 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
                       children: [
                         Text(
                           selectedCorrection ?? errorText.toUpperCase(),
-                          style: TextStyle(fontFamily: 'RobotoMono', 
+                          style: TextStyle(
+                            fontFamily: 'RobotoMono',
                             fontSize: 14.sp,
-                            color: selectedCorrection != null ? Colors.greenAccent : Colors.redAccent,
-                            fontWeight: FontWeight.bold
-                          )
+                            color: selectedCorrection != null
+                                ? Colors.greenAccent
+                                : Colors.redAccent,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                         SizedBox(width: 6.w),
                         Icon(
-                          selectedCorrection != null ? Icons.check_circle_outline_rounded : Icons.cancel_outlined,
+                          selectedCorrection != null
+                              ? Icons.check_circle_outline_rounded
+                              : Icons.cancel_outlined,
                           size: 14.r,
-                          color: selectedCorrection != null ? Colors.greenAccent : Colors.redAccent,
-                        )
+                          color: selectedCorrection != null
+                              ? Colors.greenAccent
+                              : Colors.redAccent,
+                        ),
                       ],
                     ),
                   ),

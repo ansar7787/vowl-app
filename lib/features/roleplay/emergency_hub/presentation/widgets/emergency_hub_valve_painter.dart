@@ -28,9 +28,7 @@ class EmergencyValvePainter extends CustomPainter {
       final double angleStart = (i * 2 * math.pi / numStripes);
       final double sweep = math.pi / numStripes;
 
-      hazardPaint.color = (i % 2 == 0)
-          ? Colors.amberAccent
-          : Colors.black87;
+      hazardPaint.color = (i % 2 == 0) ? Colors.amberAccent : Colors.black87;
 
       canvas.drawArc(
         Rect.fromCircle(center: center, radius: radius - 8.w),
@@ -50,7 +48,9 @@ class EmergencyValvePainter extends CustomPainter {
 
     // Indicator sectors (AWAITING / ALIGNED)
     final Paint sectorPaint = Paint()
-      ..color = isCodeCorrect ? Colors.redAccent.withValues(alpha: 0.15) : Colors.grey.withValues(alpha: 0.05)
+      ..color = isCodeCorrect
+          ? Colors.redAccent.withValues(alpha: 0.15)
+          : Colors.grey.withValues(alpha: 0.05)
       ..style = PaintingStyle.fill;
     canvas.drawCircle(center, radius - 20.w, sectorPaint);
   }

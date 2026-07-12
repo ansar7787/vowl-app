@@ -11,7 +11,6 @@ import 'package:vowl/features/auth/domain/usecases/award_kids_sticker.dart';
 import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 
-
 // Events
 abstract class KidsEvent extends Equatable {
   const KidsEvent();
@@ -117,7 +116,9 @@ class KidsLoaded extends KidsState {
       originalTotalQuests: originalTotalQuests ?? this.originalTotalQuests,
       currentIndex: currentIndex ?? this.currentIndex,
       livesRemaining: livesRemaining ?? this.livesRemaining,
-      lastAnswerCorrect: resetLastAnswer ? null : (lastAnswerCorrect ?? this.lastAnswerCorrect),
+      lastAnswerCorrect: resetLastAnswer
+          ? null
+          : (lastAnswerCorrect ?? this.lastAnswerCorrect),
       gameType: gameType ?? this.gameType,
       level: level ?? this.level,
       hintUsed: hintUsed ?? this.hintUsed,
@@ -171,7 +172,13 @@ class KidsGameOver extends KidsState {
   });
 
   @override
-  List<Object?> get props => [quests, originalTotalQuests, currentIndex, gameType, level];
+  List<Object?> get props => [
+    quests,
+    originalTotalQuests,
+    currentIndex,
+    gameType,
+    level,
+  ];
 }
 
 class KidsError extends KidsState {
@@ -218,17 +225,17 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
       if (state is KidsLoaded) {
         final s = state as KidsLoaded;
         final currentQuest = s.quests[s.currentIndex];
-        
+
         if (currentQuest.options != null && currentQuest.options!.isNotEmpty) {
           // Re-shuffle options for the context.tr('games.try_again') moment
-          final reshuffledOptions = List<String>.from(currentQuest.options!)..shuffle();
+          final reshuffledOptions = List<String>.from(currentQuest.options!)
+            ..shuffle();
           final updatedQuests = List<KidsQuest>.from(s.quests);
-          updatedQuests[s.currentIndex] = currentQuest.copyWith(options: reshuffledOptions);
-          
-          emit(s.copyWith(
-            quests: updatedQuests,
-            resetLastAnswer: true,
-          ));
+          updatedQuests[s.currentIndex] = currentQuest.copyWith(
+            options: reshuffledOptions,
+          );
+
+          emit(s.copyWith(quests: updatedQuests, resetLastAnswer: true));
         } else {
           emit(s.copyWith(resetLastAnswer: true));
         }
@@ -316,7 +323,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
         final updatedQuests = List<KidsQuest>.from(s.quests);
         final failedQuest = updatedQuests[s.currentIndex];
         updatedQuests.add(failedQuest);
-        
+
         emit(
           s.copyWith(
             quests: updatedQuests,
@@ -332,7 +339,8 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
             livesRemaining: newLives,
             lastAnswerCorrect: event.isCorrect,
             wrongCount: event.isCorrect ? 0 : s.wrongCount + 1,
-            isFinalFailure: !event.isCorrect && (s.wrongCount + 1 >= 2), // 2nd strike
+            isFinalFailure:
+                !event.isCorrect && (s.wrongCount + 1 >= 2), // 2nd strike
           ),
         );
       }
@@ -381,16 +389,20 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
           ]);
         } else {
           // Wrong answer on the very last quest
-          emit(s.copyWith(resetLastAnswer: true, hintUsed: false, wrongCount: 0));
+          emit(
+            s.copyWith(resetLastAnswer: true, hintUsed: false, wrongCount: 0),
+          );
         }
       } else if (s.lastAnswerCorrect == true || s.isFinalFailure) {
-        emit(s.copyWith(
-          currentIndex: nextIndex, 
-          resetLastAnswer: true,
-          hintUsed: false,
-          wrongCount: 0,
-          isFinalFailure: false,
-        ));
+        emit(
+          s.copyWith(
+            currentIndex: nextIndex,
+            resetLastAnswer: true,
+            hintUsed: false,
+            wrongCount: 0,
+            isFinalFailure: false,
+          ),
+        );
       } else {
         // First-time wrong answer, stay and retry
         emit(s.copyWith(resetLastAnswer: true, hintUsed: false));
@@ -438,7 +450,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
   Future<void> _onUseHint(UseKidsHint event, Emitter<KidsState> emit) async {
     if (state is KidsLoaded) {
       final s = state as KidsLoaded;
-      
+
       // If hint already used for this question, don't consume again
       if (s.hintUsed) return;
 
@@ -451,7 +463,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
       if (result.isRight()) {
         emit(s.copyWith(hintUsed: true));
       } else {
-        // If hint deduction failed on backend but they had local hints, 
+        // If hint deduction failed on backend but they had local hints,
         // we still allow them to use the hint in-game so the session doesn't crash.
         emit(s.copyWith(hintUsed: true));
       }

@@ -210,7 +210,11 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                       ),
                                     ),
                                   )
-                                : _buildInstruction(theme.primaryColor, isDark, quest.instruction),
+                                : _buildInstruction(
+                                    theme.primaryColor,
+                                    isDark,
+                                    quest.instruction,
+                                  ),
                             SizedBox(height: gapInstruction),
                             isCompact
                                 ? SizedBox(

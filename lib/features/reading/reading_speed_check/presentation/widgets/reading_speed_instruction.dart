@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ReadingSpeedInstruction extends StatelessWidget {
   final Color primaryColor;
   final bool isRevealed;
@@ -26,13 +27,14 @@ class ReadingSpeedInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              isRevealed 
-                  ? "ANALYZE THE COMPREHENSION QUEST" 
-                  : "TAP THE GLOWING SONIC CORE TO BRIEFLY UNBLUR TEXT", 
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 10.sp, 
-                fontWeight: FontWeight.w900, 
-                color: primaryColor, 
+              isRevealed
+                  ? "ANALYZE THE COMPREHENSION QUEST"
+                  : "TAP THE GLOWING SONIC CORE TO BRIEFLY UNBLUR TEXT",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
                 letterSpacing: 1.5,
               ),
             ),

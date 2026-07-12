@@ -33,12 +33,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
         color: isDark ? const Color(0xFF131326) : Colors.white,
         borderRadius: BorderRadius.circular(28.r),
         border: Border.all(color: Colors.white10),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black26,
-            blurRadius: 15.r,
-          )
-        ],
+        boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 15.r)],
       ),
       child: Stack(
         children: [
@@ -66,12 +61,17 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.photo_size_select_large_rounded, color: primaryColor, size: 36.r),
+                  Icon(
+                    Icons.photo_size_select_large_rounded,
+                    color: primaryColor,
+                    size: 36.r,
+                  ),
                   SizedBox(height: 8.h),
                   Text(
                     sceneTitle.toUpperCase(),
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w900,
                       color: isDark ? Colors.white : Colors.black87,
@@ -81,9 +81,12 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
                   SizedBox(height: 6.h),
                   Text(
                     "${inspectedHotspots.length} OF 3 FEATURES STABILIZED",
-                    style: TextStyle(fontFamily: 'RobotoMono', 
+                    style: TextStyle(
+                      fontFamily: 'RobotoMono',
                       fontSize: 10.sp,
-                      color: inspectedHotspots.length == 3 ? Colors.greenAccent : Colors.grey,
+                      color: inspectedHotspots.length == 3
+                          ? Colors.greenAccent
+                          : Colors.grey,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -103,7 +106,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
 
   Widget _buildPulsingBeacon(int index, Alignment alignment) {
     if (hotspotLabels.length <= index) return const SizedBox();
-    
+
     final isInspected = inspectedHotspots.contains(index);
     final isActive = activeHotspot == index;
 
@@ -150,7 +153,9 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
                     child: Icon(
                       isInspected
                           ? Icons.check_rounded
-                          : (isActive ? Icons.spatial_tracking_rounded : Icons.radar_rounded),
+                          : (isActive
+                                ? Icons.spatial_tracking_rounded
+                                : Icons.radar_rounded),
                       color: Colors.white,
                       size: 14.r,
                     ),
@@ -161,7 +166,8 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
             SizedBox(height: 4.h),
             Text(
               hotspotLabels[index].toUpperCase(),
-              style: TextStyle(fontFamily: 'RobotoMono', 
+              style: TextStyle(
+                fontFamily: 'RobotoMono',
                 fontSize: 8.sp,
                 color: isInspected
                     ? Colors.greenAccent

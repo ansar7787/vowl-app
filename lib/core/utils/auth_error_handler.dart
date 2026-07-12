@@ -143,6 +143,4 @@ class AuthErrorHandler {
 
     return _kGeneric;
   }
-
-
 }

@@ -37,39 +37,48 @@ class ElevatorPitchRecordControl extends StatelessWidget {
           onLongPressEnd: (_) => onStopListening(correctAnswer),
           child: ScaleButton(
             onTap: () {},
-            child: Container(
-              width: 90.r,
-              height: 90.r,
-              decoration: BoxDecoration(
-                color: isListening ? Colors.redAccent : color,
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: (isListening ? Colors.redAccent : color).withValues(alpha: 0.35),
-                    blurRadius: 18,
-                  ),
-                ],
-              ),
-              child: Center(
-                child: Icon(
-                  isListening ? Icons.mic_rounded : Icons.mic_none_rounded,
-                  color: Colors.white,
-                  size: 40.r,
-                ),
-              ),
-            ).animate(target: isListening ? 1.0 : 0.0).scale(
-                  begin: const Offset(1, 1),
-                  end: const Offset(1.15, 1.15),
-                  duration: 1.seconds,
-                  curve: Curves.easeInOut,
-                ),
+            child:
+                Container(
+                      width: 90.r,
+                      height: 90.r,
+                      decoration: BoxDecoration(
+                        color: isListening ? Colors.redAccent : color,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: (isListening ? Colors.redAccent : color)
+                                .withValues(alpha: 0.35),
+                            blurRadius: 18,
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Icon(
+                          isListening
+                              ? Icons.mic_rounded
+                              : Icons.mic_none_rounded,
+                          color: Colors.white,
+                          size: 40.r,
+                        ),
+                      ),
+                    )
+                    .animate(target: isListening ? 1.0 : 0.0)
+                    .scale(
+                      begin: const Offset(1, 1),
+                      end: const Offset(1.15, 1.15),
+                      duration: 1.seconds,
+                      curve: Curves.easeInOut,
+                    ),
           ),
         ),
         SizedBox(height: 12.h),
         Text(
-          isListening ? "RELEASE TO ANALYZE LIFT PITCH" : "HOLD LENS TO RECORD PITCH & TAP SHAFT TO BOOST",
+          isListening
+              ? "RELEASE TO ANALYZE LIFT PITCH"
+              : "HOLD LENS TO RECORD PITCH & TAP SHAFT TO BOOST",
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'RobotoMono', 
+          style: TextStyle(
+            fontFamily: 'RobotoMono',
             fontSize: 9.sp,
             color: Colors.grey,
             letterSpacing: 1.5,

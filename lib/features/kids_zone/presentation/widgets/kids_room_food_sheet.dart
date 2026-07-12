@@ -23,16 +23,13 @@ class KidsRoomFoodSheet extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).brightness == Brightness.dark 
-            ? const Color(0xFF1E293B) 
+        color: Theme.of(context).brightness == Brightness.dark
+            ? const Color(0xFF1E293B)
             : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
         border: Border.all(color: Colors.pink, width: 4.w),
         boxShadow: [
-          BoxShadow(
-            color: Colors.pink.shade700,
-            offset: Offset(0, -4.h),
-          ),
+          BoxShadow(color: Colors.pink.shade700, offset: Offset(0, -4.h)),
         ],
       ),
       child: Container(
@@ -51,7 +48,8 @@ class KidsRoomFoodSheet extends StatelessWidget {
             SizedBox(height: 20.h),
             Text(
               "YUMMY TREATS",
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 22.sp,
                 fontWeight: FontWeight.w900,
                 color: Colors.pink.shade700,
@@ -88,19 +86,18 @@ class KidsRoomFoodSheet extends StatelessWidget {
                 ),
               ],
             ),
-            child: Text(
-              f['icon'] as String,
-              style: TextStyle(fontSize: 40.sp),
-            ),
+            child: Text(f['icon'] as String, style: TextStyle(fontSize: 40.sp)),
           ),
           SizedBox(height: 12.h),
           Text(
             (f['name'] as String).toUpperCase(),
             style: TextStyle(
-              fontFamily: 'Outfit', 
+              fontFamily: 'Outfit',
               fontSize: 14.sp,
               fontWeight: FontWeight.w900,
-              color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.white
+                  : Colors.black87,
             ),
           ),
           if ((f['price'] as int) > 0) ...[
@@ -110,9 +107,18 @@ class KidsRoomFoodSheet extends StatelessWidget {
               children: [
                 Text(
                   "${f['price']} ",
-                  style: TextStyle(fontFamily: 'Outfit', fontSize: 13.sp, fontWeight: FontWeight.w900, color: Colors.pink.shade700),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.pink.shade700,
+                  ),
                 ),
-                Icon(Icons.monetization_on_rounded, size: 13.sp, color: Colors.pink.shade700),
+                Icon(
+                  Icons.monetization_on_rounded,
+                  size: 13.sp,
+                  color: Colors.pink.shade700,
+                ),
               ],
             ),
           ],
@@ -129,10 +135,8 @@ class KidsRoomFoodSheet extends StatelessWidget {
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
-      builder: (context) => KidsRoomFoodSheet(
-        user: user,
-        onFoodSelected: onFoodSelected,
-      ),
+      builder: (context) =>
+          KidsRoomFoodSheet(user: user, onFoodSelected: onFoodSelected),
     );
   }
 }

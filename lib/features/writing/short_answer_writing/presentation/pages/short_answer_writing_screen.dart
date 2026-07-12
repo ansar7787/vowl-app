@@ -176,7 +176,8 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
 
                         if (!isAnswered)
                           ScaleButton(
-                            onTap: () => _submitAnswer(targetKeywords, isAnswered),
+                            onTap: () =>
+                                _submitAnswer(targetKeywords, isAnswered),
                             child: Container(
                               width: double.infinity,
                               height: 60.h,

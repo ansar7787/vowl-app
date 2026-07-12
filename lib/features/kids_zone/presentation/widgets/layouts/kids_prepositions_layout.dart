@@ -37,12 +37,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Magical Floating Stage
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: _buildMagicStage(quest),
-              ),
-            ),
+            Expanded(flex: 5, child: Center(child: _buildMagicStage(quest))),
             // The Magician Top Hats (Options)
             Flexible(
               flex: 5,
@@ -76,81 +71,91 @@ class KidsPrepositionsLayout extends StatelessWidget {
 
   Widget _buildMagicStage(dynamic quest) {
     return Container(
-      width: 280.w,
-      height: 200.h,
-      decoration: BoxDecoration(
-        color: const Color(0xFF2E1065), // Deep magical purple
-        borderRadius: BorderRadius.circular(100.r), // Magical orb shape
-        border: Border.all(color: const Color(0xFFC084FC), width: 4.r), // Glowing border
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xFF9333EA).withValues(alpha: 0.5),
-            blurRadius: 20,
-            spreadRadius: 5,
+          width: 280.w,
+          height: 200.h,
+          decoration: BoxDecoration(
+            color: const Color(0xFF2E1065), // Deep magical purple
+            borderRadius: BorderRadius.circular(100.r), // Magical orb shape
+            border: Border.all(
+              color: const Color(0xFFC084FC),
+              width: 4.r,
+            ), // Glowing border
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFF9333EA).withValues(alpha: 0.5),
+                blurRadius: 20,
+                spreadRadius: 5,
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // Magic sparkles
-          Positioned(top: 30.h, left: 40.w, child: _buildSparkle(15)),
-          Positioned(bottom: 40.h, right: 30.w, child: _buildSparkle(20)),
-          Positioned(top: 80.h, right: 20.w, child: _buildSparkle(10)),
-          
-          Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (quest.emoji != null)
-                  Text(
-                    quest.emoji!,
-                    style: TextStyle(fontSize: 48.sp),
-                  ),
-                Text(
-                  quest.question ?? "?",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 48.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    shadows: const [
-                      Shadow(color: Color(0xFFD8B4FE), blurRadius: 10),
-                    ],
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                if (quest.funFact != null) ...[
-                  SizedBox(height: 8.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Text(
-                      quest.funFact!,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              // Magic sparkles
+              Positioned(top: 30.h, left: 40.w, child: _buildSparkle(15)),
+              Positioned(bottom: 40.h, right: 30.w, child: _buildSparkle(20)),
+              Positioned(top: 80.h, right: 20.w, child: _buildSparkle(10)),
+
+              Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (quest.emoji != null)
+                      Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
+                    Text(
+                      quest.question ?? "?",
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFFE9D5FF), // Light purple text
+                        fontSize: 48.sp,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
+                        shadows: const [
+                          Shadow(color: Color(0xFFD8B4FE), blurRadius: 10),
+                        ],
                       ),
                       textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
                     ),
-                  ),
-                ],
-              ],
-            ),
+                    if (quest.funFact != null) ...[
+                      SizedBox(height: 8.h),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Text(
+                          quest.funFact!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFFE9D5FF), // Light purple text
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
-    ).animate(onPlay: (c) => c.repeat(reverse: true))
-     .moveY(begin: -5.h, end: 5.h, duration: 2.seconds, curve: Curves.easeInOutSine);
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .moveY(
+          begin: -5.h,
+          end: 5.h,
+          duration: 2.seconds,
+          curve: Curves.easeInOutSine,
+        );
   }
 
   Widget _buildSparkle(double size) {
     return Icon(Icons.star_rounded, color: Colors.yellow, size: size.r)
-      .animate(onPlay: (c) => c.repeat(reverse: true))
-      .scale(begin: const Offset(0.5, 0.5), end: const Offset(1.5, 1.5), duration: 1.seconds);
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .scale(
+          begin: const Offset(0.5, 0.5),
+          end: const Offset(1.5, 1.5),
+          duration: 1.seconds,
+        );
   }
 
   Widget _buildTopHatOption(
@@ -175,17 +180,33 @@ class KidsPrepositionsLayout extends StatelessWidget {
               children: [
                 Transform.rotate(
                   angle: -math.pi / 8,
-                  child: Container(width: 8.w, height: 25.h, decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.r), border: Border.all(color: Colors.pink[200]!))),
+                  child: Container(
+                    width: 8.w,
+                    height: 25.h,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10.r),
+                      border: Border.all(color: Colors.pink[200]!),
+                    ),
+                  ),
                 ),
                 SizedBox(width: 5.w),
                 Transform.rotate(
                   angle: math.pi / 8,
-                  child: Container(width: 8.w, height: 25.h, decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.r), border: Border.all(color: Colors.pink[200]!))),
+                  child: Container(
+                    width: 8.w,
+                    height: 25.h,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10.r),
+                      border: Border.all(color: Colors.pink[200]!),
+                    ),
+                  ),
                 ),
               ],
             ),
           ),
-          
+
           // Main Top Hat body
           Column(
             mainAxisSize: MainAxisSize.min,
@@ -196,7 +217,9 @@ class KidsPrepositionsLayout extends StatelessWidget {
                 width: 60.w,
                 decoration: BoxDecoration(
                   color: const Color(0xFF1E293B), // Black/dark grey hat
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(8.r)),
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(8.r),
+                  ),
                   border: Border.all(color: Colors.white24, width: 1),
                 ),
                 child: Column(
@@ -219,7 +242,10 @@ class KidsPrepositionsLayout extends StatelessWidget {
                   color: const Color(0xFF0F172A),
                   borderRadius: BorderRadius.circular(10.r),
                   boxShadow: [
-                    BoxShadow(color: Colors.black.withValues(alpha: 0.3), offset: const Offset(0, 4)),
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.3),
+                      offset: const Offset(0, 4),
+                    ),
                   ],
                 ),
               ),

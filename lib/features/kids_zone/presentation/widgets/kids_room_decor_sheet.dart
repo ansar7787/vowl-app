@@ -19,16 +19,13 @@ class KidsRoomDecorSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).brightness == Brightness.dark 
-            ? const Color(0xFF1E293B) 
+        color: Theme.of(context).brightness == Brightness.dark
+            ? const Color(0xFF1E293B)
             : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
         border: Border.all(color: Colors.amber, width: 4.w),
         boxShadow: [
-          BoxShadow(
-            color: Colors.amber.shade700,
-            offset: Offset(0, -4.h),
-          ),
+          BoxShadow(color: Colors.amber.shade700, offset: Offset(0, -4.h)),
         ],
       ),
       child: Container(
@@ -49,7 +46,8 @@ class KidsRoomDecorSheet extends StatelessWidget {
               SizedBox(height: 20.h),
               Text(
                 "DECORATE ROOM",
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 22.sp,
                   fontWeight: FontWeight.w900,
                   color: Colors.amber.shade700,
@@ -58,12 +56,19 @@ class KidsRoomDecorSheet extends StatelessWidget {
               ),
               SizedBox(height: 10.h),
               TabBar(
-                tabs: const [Tab(text: "BEDS"), Tab(text: "WINDOWS")],
+                tabs: const [
+                  Tab(text: "BEDS"),
+                  Tab(text: "WINDOWS"),
+                ],
                 labelColor: Colors.amber.shade700,
                 unselectedLabelColor: Colors.grey,
                 indicatorColor: Colors.amber.shade700,
                 indicatorWeight: 4,
-                labelStyle: TextStyle(fontFamily: 'Outfit', fontSize: 14.sp, fontWeight: FontWeight.w900),
+                labelStyle: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w900,
+                ),
               ),
               SizedBox(
                 height: 250.h,
@@ -100,17 +105,21 @@ class KidsRoomDecorSheet extends StatelessWidget {
           onTap: () => onItemTap(category, item),
           child: Container(
             decoration: BoxDecoration(
-              color: isEquipped 
-                  ? Colors.amber.withValues(alpha: 0.1) 
-                  : (Theme.of(context).brightness == Brightness.dark ? Colors.white.withValues(alpha: 0.05) : Colors.white),
+              color: isEquipped
+                  ? Colors.amber.withValues(alpha: 0.1)
+                  : (Theme.of(context).brightness == Brightness.dark
+                        ? Colors.white.withValues(alpha: 0.05)
+                        : Colors.white),
               borderRadius: BorderRadius.circular(20.r),
               border: Border.all(
-                color: isEquipped ? Colors.amber : Colors.grey.shade300, 
+                color: isEquipped ? Colors.amber : Colors.grey.shade300,
                 width: isEquipped ? 4.w : 2.w,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: isEquipped ? Colors.amber.withValues(alpha: 0.5) : Colors.grey.shade300,
+                  color: isEquipped
+                      ? Colors.amber.withValues(alpha: 0.5)
+                      : Colors.grey.shade300,
                   offset: Offset(0, 4.h),
                 ),
               ],
@@ -121,12 +130,14 @@ class KidsRoomDecorSheet extends StatelessWidget {
                 Text(item['icon'] as String, style: TextStyle(fontSize: 32.sp)),
                 SizedBox(height: 6.h),
                 Text(
-                  item['name'] as String, 
+                  item['name'] as String,
                   style: TextStyle(
-                    fontFamily: 'Outfit', 
-                    fontSize: 13.sp, 
-                    fontWeight: FontWeight.w900, 
-                    color: Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black87
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Theme.of(context).brightness == Brightness.dark
+                        ? Colors.white70
+                        : Colors.black87,
                   ),
                 ),
                 if (!isOwned) ...[
@@ -136,9 +147,18 @@ class KidsRoomDecorSheet extends StatelessWidget {
                     children: [
                       Text(
                         "${item['price']} ",
-                        style: TextStyle(fontFamily: 'Outfit', fontSize: 12.sp, fontWeight: FontWeight.w900, color: Colors.amber.shade700),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.amber.shade700,
+                        ),
                       ),
-                      Icon(Icons.monetization_on_rounded, size: 14.sp, color: Colors.amber.shade700),
+                      Icon(
+                        Icons.monetization_on_rounded,
+                        size: 14.sp,
+                        color: Colors.amber.shade700,
+                      ),
                     ],
                   ),
                 ],

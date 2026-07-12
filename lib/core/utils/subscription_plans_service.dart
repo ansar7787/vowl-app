@@ -57,7 +57,9 @@ class SubscriptionPlansService {
 
   Future<List<SubscriptionPlan>> _fetchPlansFromFirestore() async {
     try {
-      sl<AppLogger>().debug('SubscriptionPlansService: Fetching plans from Firebase');
+      sl<AppLogger>().debug(
+        'SubscriptionPlansService: Fetching plans from Firebase',
+      );
       final snapshot = await _firestore
           .collection(_plansCollection)
           .orderBy('displayOrder')
@@ -96,7 +98,9 @@ class SubscriptionPlansService {
           .timeout(_fetchTimeout);
 
       if (!doc.exists) {
-        sl<AppLogger>().warning('SubscriptionPlansService: Plan not found - $planId');
+        sl<AppLogger>().warning(
+          'SubscriptionPlansService: Plan not found - $planId',
+        );
         return null;
       }
 

@@ -31,9 +31,7 @@ class AudioMultipleChoiceSatellite extends StatelessWidget {
     final isWrong = isAnswered && isSelected && isCorrectState == false;
     final tileColor = isCorrect
         ? Colors.greenAccent
-        : (isWrong
-            ? Colors.redAccent
-            : (isSelected ? Colors.white : color));
+        : (isWrong ? Colors.redAccent : (isSelected ? Colors.white : color));
 
     return ScaleButton(
       onTap: onTap,
@@ -50,7 +48,7 @@ class AudioMultipleChoiceSatellite extends StatelessWidget {
                   BoxShadow(
                     color: tileColor.withValues(alpha: 0.5),
                     blurRadius: 15,
-                  )
+                  ),
                 ]
               : [],
         ),
@@ -58,7 +56,8 @@ class AudioMultipleChoiceSatellite extends StatelessWidget {
           child: Text(
             text,
             textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: Colors.white,

@@ -34,17 +34,24 @@ class ThermalGridPainter extends CustomPainter {
         final double distance = math.sqrt(dx * dx + dy * dy);
 
         // Ripple wave calculation using sine curves
-        final double wave = math.sin((distance / 20.0) - (time * 5.0)) * 0.5 + 0.5;
+        final double wave =
+            math.sin((distance / 20.0) - (time * 5.0)) * 0.5 + 0.5;
 
         // Interpolate grid cell sizes and colors
         final double baseSize = 4.0.r;
-        final double activeMultiplier = isListening ? (3.0 + wave * 5.0) * (0.3 + heatLevel * 0.7) : 1.0;
+        final double activeMultiplier = isListening
+            ? (3.0 + wave * 5.0) * (0.3 + heatLevel * 0.7)
+            : 1.0;
         final double finalSize = baseSize * activeMultiplier;
 
         // Sizzle heat colors: cold cobalt blue -> superheated thermodynamic orange
         final Color coldColor = const Color(0xFF1D2671).withValues(alpha: 0.2);
         final Color hotColor = const Color(0xFFFF5722).withValues(alpha: 0.95);
-        final Color activeColor = Color.lerp(coldColor, hotColor, heatLevel * 0.8 + wave * 0.2)!;
+        final Color activeColor = Color.lerp(
+          coldColor,
+          hotColor,
+          heatLevel * 0.8 + wave * 0.2,
+        )!;
 
         paint.color = activeColor;
         canvas.drawCircle(Offset(cx, cy), finalSize, paint);

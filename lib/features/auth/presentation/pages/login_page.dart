@@ -343,6 +343,10 @@ class _LoginViewState extends State<LoginView> {
     String message,
     CustomSnackBarType type,
   ) {
-    CustomSnackBar.show(context: context, message: context.tr(message), type: type);
+    CustomSnackBar.show(
+      context: context,
+      message: context.tr(message),
+      type: type,
+    );
   }
 }

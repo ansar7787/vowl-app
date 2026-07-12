@@ -18,7 +18,7 @@ class ScratchPainter extends CustomPainter {
     if (progress >= 0.98) return;
 
     final rect = Rect.fromLTWH(0, 0, size.width, size.height);
-    
+
     // Draw metallic silver-grey base foil layer
     final Paint foilPaint = Paint()
       ..shader = LinearGradient(
@@ -51,7 +51,7 @@ class ScratchPainter extends CustomPainter {
 
     // Procedural Scratching: Clear the canvas based on progress
     final Paint clearPaint = Paint()..blendMode = BlendMode.clear;
-    
+
     // Create organic scratching path
     final path = Path();
     final double step = size.width * progress;
@@ -59,13 +59,13 @@ class ScratchPainter extends CustomPainter {
     if (progress > 0) {
       path.moveTo(0, 0);
       path.lineTo(step, 0);
-      
+
       // Scratch border turbulence
       for (double y = 0; y <= size.height; y += 10.h) {
         final double wobble = math.sin(time * 30 + y * 0.1) * 8.w;
         path.lineTo(step + wobble, y);
       }
-      
+
       path.lineTo(0, size.height);
       path.close();
       canvas.drawPath(path, clearPaint);

@@ -18,7 +18,8 @@ class ConflictResolverConflictCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color emotionalColor = Color.lerp(Colors.cyanAccent, Colors.redAccent, rotation) ?? color;
+    Color emotionalColor =
+        Color.lerp(Colors.cyanAccent, Colors.redAccent, rotation) ?? color;
     if ((rotation - 0.75).abs() < 0.12) {
       emotionalColor = Colors.greenAccent;
     }
@@ -29,7 +30,10 @@ class ConflictResolverConflictCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
         borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: emotionalColor.withValues(alpha: 0.25), width: 1.5),
+        border: Border.all(
+          color: emotionalColor.withValues(alpha: 0.25),
+          width: 1.5,
+        ),
         boxShadow: [
           BoxShadow(
             color: emotionalColor.withValues(alpha: 0.08),
@@ -41,13 +45,19 @@ class ConflictResolverConflictCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.all(12.r),
-            decoration: BoxDecoration(
-              color: emotionalColor.withValues(alpha: 0.1),
-              shape: BoxShape.circle,
-            ),
-            child: Icon(Icons.forum_rounded, color: emotionalColor, size: 24.r),
-          ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
+                padding: EdgeInsets.all(12.r),
+                decoration: BoxDecoration(
+                  color: emotionalColor.withValues(alpha: 0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.forum_rounded,
+                  color: emotionalColor,
+                  size: 24.r,
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .scale(
                 begin: const Offset(1, 1),
                 end: const Offset(1.15, 1.15),
                 duration: 1.5.seconds,
@@ -60,7 +70,8 @@ class ConflictResolverConflictCard extends StatelessWidget {
               children: [
                 Text(
                   "CONFLICT SCENARIO DETECTED:",
-                  style: TextStyle(fontFamily: 'RobotoMono', 
+                  style: TextStyle(
+                    fontFamily: 'RobotoMono',
                     fontSize: 10.sp,
                     color: emotionalColor,
                     letterSpacing: 1.5,
@@ -70,7 +81,8 @@ class ConflictResolverConflictCard extends StatelessWidget {
                 SizedBox(height: 6.h),
                 Text(
                   scene,
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 17.sp,
                     color: isDark ? Colors.white : Colors.black87,
                     height: 1.35,

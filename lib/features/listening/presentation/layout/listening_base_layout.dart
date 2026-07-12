@@ -136,8 +136,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
   Timer? _nudgeTimer;
 
   static const Duration _kNudgeDelay = Duration(milliseconds: 1200);
-  String get _kNudgeMessage =>
-      context.tr('games.kids_nudge');
+  String get _kNudgeMessage => context.tr('games.kids_nudge');
 
   @override
   void initState() {

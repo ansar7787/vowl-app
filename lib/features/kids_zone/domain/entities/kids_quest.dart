@@ -16,7 +16,7 @@ class KidsQuest extends Equatable {
   final String? emoji;
   final String hint;
   final String? explanation;
-  
+
   // Newly added fields for better learning
   final String? wordExample;
   final String? wordEmoji;

@@ -24,7 +24,8 @@ class AntonymNebulaCore extends StatelessWidget {
       children: [
         Text(
           "DRAG TO OPPOSITE",
-          style: TextStyle(fontFamily: 'RobotoMono', 
+          style: TextStyle(
+            fontFamily: 'RobotoMono',
             fontSize: 12.sp,
             fontWeight: FontWeight.bold,
             color: color,
@@ -33,65 +34,67 @@ class AntonymNebulaCore extends StatelessWidget {
         ).animate().fadeIn(),
         SizedBox(height: 15.h),
         Container(
-          width: 140.r,
-          height: 140.r,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: isDark ? Colors.black : Colors.white,
-            border: Border.all(
-              color: color.withValues(alpha: 0.8),
-              width: 3,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: color.withValues(alpha: 0.3),
-                blurRadius: 30,
-              ),
-            ],
-          ),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              Positioned.fill(
-                child: CustomPaint(painter: CorePainter(color)),
-              )
-              .animate(onPlay: (c) => c.repeat())
-              .rotate(duration: 12.seconds),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    targetIsPositive ? "[+]" : "[-]",
-                    style: TextStyle(fontFamily: 'RobotoMono', 
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.bold,
-                      color: color,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w),
-                    child: FittedBox(
-                      child: Text(
-                        word.toUpperCase(),
-                        style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isDark ? Colors.white : Colors.black87,
-                        ),
-                      ),
-                    ),
+              width: 140.r,
+              height: 140.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: isDark ? Colors.black : Colors.white,
+                border: Border.all(
+                  color: color.withValues(alpha: 0.8),
+                  width: 3,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: color.withValues(alpha: 0.3),
+                    blurRadius: 30,
                   ),
                 ],
               ),
-            ],
-          ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .scale(
-          begin: const Offset(1, 1),
-          end: const Offset(1.04, 1.04),
-          duration: 2.seconds,
-        ),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Positioned.fill(
+                        child: CustomPaint(painter: CorePainter(color)),
+                      )
+                      .animate(onPlay: (c) => c.repeat())
+                      .rotate(duration: 12.seconds),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        targetIsPositive ? "[+]" : "[-]",
+                        style: TextStyle(
+                          fontFamily: 'RobotoMono',
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.bold,
+                          color: color,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10.w),
+                        child: FittedBox(
+                          child: Text(
+                            word.toUpperCase(),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w900,
+                              color: isDark ? Colors.white : Colors.black87,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            )
+            .animate(onPlay: (c) => c.repeat(reverse: true))
+            .scale(
+              begin: const Offset(1, 1),
+              end: const Offset(1.04, 1.04),
+              duration: 2.seconds,
+            ),
       ],
     );
   }

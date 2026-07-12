@@ -35,7 +35,8 @@ class TravelDeskStampStation extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "STAMP SLAM TERMINAL",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 10.sp,
                   color: color,
                   letterSpacing: 2,
@@ -67,7 +68,8 @@ class TravelDeskStampStation extends StatelessWidget {
           Text(
             "DRAG STAMP UPWARDS TO SLAM ON TARGET",
             textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 11.sp,
               fontWeight: FontWeight.w600,
               color: Colors.grey.shade500,
@@ -86,43 +88,40 @@ class TravelDeskStampStation extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            width: 72.r,
-            height: 80.r,
-            decoration: BoxDecoration(
-              color: color,
-              borderRadius: BorderRadius.circular(16.r),
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  color,
-                  color.withValues(alpha: 0.75),
-                ],
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: color.withValues(alpha: isGlowing ? 0.65 : 0.35),
-                  blurRadius: isGlowing ? 20 : 12,
-                  offset: const Offset(0, 4),
-                  spreadRadius: isGlowing ? 2 : 0,
+                width: 72.r,
+                height: 80.r,
+                decoration: BoxDecoration(
+                  color: color,
+                  borderRadius: BorderRadius.circular(16.r),
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [color, color.withValues(alpha: 0.75)],
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: color.withValues(alpha: isGlowing ? 0.65 : 0.35),
+                      blurRadius: isGlowing ? 20 : 12,
+                      offset: const Offset(0, 4),
+                      spreadRadius: isGlowing ? 2 : 0,
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            child: Center(
-              child: Icon(
-                Icons.approval_rounded,
-                color: Colors.white,
-                size: 32.r,
+                child: Center(
+                  child: Icon(
+                    Icons.approval_rounded,
+                    color: Colors.white,
+                    size: 32.r,
+                  ),
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.05, 1.05),
+                duration: 2.seconds,
+                curve: Curves.easeInOut,
               ),
-            ),
-          ).animate(
-            onPlay: (c) => c.repeat(reverse: true),
-          ).scale(
-            begin: const Offset(1, 1),
-            end: const Offset(1.05, 1.05),
-            duration: 2.seconds,
-            curve: Curves.easeInOut,
-          ),
           SizedBox(height: 4.h),
           Container(
             width: 86.w,

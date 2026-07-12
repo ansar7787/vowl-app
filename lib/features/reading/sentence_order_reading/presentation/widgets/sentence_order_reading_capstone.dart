@@ -21,7 +21,9 @@ class SentenceOrderReadingCapstone extends StatelessWidget {
         height: 70.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.r),
-          gradient: LinearGradient(colors: [color, color.withValues(alpha: 0.7)]),
+          gradient: LinearGradient(
+            colors: [color, color.withValues(alpha: 0.7)],
+          ),
           boxShadow: [
             BoxShadow(
               color: color.withValues(alpha: 0.4),
@@ -38,7 +40,8 @@ class SentenceOrderReadingCapstone extends StatelessWidget {
               SizedBox(width: 16.w),
               Text(
                 "LOCK CAPSTONE",
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w900,
                   color: Colors.white,

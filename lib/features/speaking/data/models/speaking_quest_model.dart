@@ -82,9 +82,13 @@ class SpeakingQuestModel extends SpeakingQuest {
       targetWord: getString(map['targetWord']),
       hint: map['hint'] as String?,
       visualConfig: map['visual_config'] != null
-          ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config']))
+          ? VisualConfig.fromJson(
+              Map<String, dynamic>.from(map['visual_config']),
+            )
           : null,
-      textToSpeak: getString(map['textToSpeak'] ?? map['text'] ?? map['sentence'] ?? map['question']),
+      textToSpeak: getString(
+        map['textToSpeak'] ?? map['text'] ?? map['sentence'] ?? map['question'],
+      ),
       prompt: getString(map['prompt']),
       sampleAnswer: getString(map['sampleAnswer']),
       translation: getString(map['translation']),
@@ -186,7 +190,8 @@ class SpeakingQuestModel extends SpeakingQuest {
       options: options ?? this.options,
       correctAnswerIndex: correctAnswerIndex ?? this.correctAnswerIndex,
       correctAnswer: correctAnswer ?? this.correctAnswer,
-      correctAnswerCategory: correctAnswerCategory ?? this.correctAnswerCategory,
+      correctAnswerCategory:
+          correctAnswerCategory ?? this.correctAnswerCategory,
       question: question ?? this.question,
       sentence: sentence ?? this.sentence,
       targetWord: targetWord ?? this.targetWord,

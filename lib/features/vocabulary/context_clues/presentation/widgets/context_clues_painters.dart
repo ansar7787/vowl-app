@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class PaperGridPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -20,7 +21,8 @@ class PaperGridPainter extends CustomPainter {
     final textPainter = TextPainter(
       text: TextSpan(
         text: "CONFIDENTIAL",
-        style: TextStyle(fontFamily: 'Outfit', 
+        style: TextStyle(
+          fontFamily: 'Outfit',
           fontSize: 60.sp,
           color: Colors.red.withValues(alpha: 0.03),
           fontWeight: FontWeight.w900,

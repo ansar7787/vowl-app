@@ -23,7 +23,8 @@ class SentenceDisplay extends StatelessWidget {
     if (!text.contains("___")) {
       return Text(
         text,
-        style: TextStyle(fontFamily: 'Outfit', 
+        style: TextStyle(
+          fontFamily: 'Outfit',
           fontSize: 22.sp,
           fontWeight: FontWeight.w700,
           color: isDark ? Colors.white : Colors.black87,
@@ -46,7 +47,8 @@ class SentenceDisplay extends StatelessWidget {
         if (prefix.isNotEmpty)
           Text(
             prefix,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 22.sp,
               fontWeight: FontWeight.w700,
               color: isDark ? Colors.white : Colors.black87,
@@ -60,7 +62,8 @@ class SentenceDisplay extends StatelessWidget {
         if (suffix.isNotEmpty)
           Text(
             suffix,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 22.sp,
               fontWeight: FontWeight.w700,
               color: isDark ? Colors.white : Colors.black87,

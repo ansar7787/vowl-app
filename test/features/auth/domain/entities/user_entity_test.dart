@@ -7,15 +7,12 @@ void main() {
       id: '1',
       email: 'test@vowl.com',
       totalExp: 250, // Should be Level 3 ((250/100).floor() + 1 = 2+1 = 3)
-      categoryStats: {
-        'sentenceCorrection': 50,
-        'wordReorder': 30,
-      },
+      categoryStats: {'sentenceCorrection': 50, 'wordReorder': 30},
     );
 
     test('should calculate level correctly from totalExp', () {
       expect(tUser.level, 3);
-      
+
       final level10User = tUser.copyWith(totalExp: 950);
       expect(level10User.level, 10);
     });
@@ -23,11 +20,10 @@ void main() {
     test('should calculate category progress as the max of its subtypes', () {
       // sentenceCorrection and wordReorder are subtypes of Grammar
       expect(tUser.grammarMastery, 50);
-      
-      final updatedUser = tUser.copyWith(categoryStats: {
-        'sentenceCorrection': 50,
-        'wordReorder': 80,
-      });
+
+      final updatedUser = tUser.copyWith(
+        categoryStats: {'sentenceCorrection': 50, 'wordReorder': 80},
+      );
       expect(updatedUser.grammarMastery, 80);
     });
 

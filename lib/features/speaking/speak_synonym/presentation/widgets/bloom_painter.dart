@@ -68,7 +68,8 @@ class BloomPainter extends CustomPainter {
       // Angular spacing
       final double angle = (i * math.pi * 2) / numPetals + (time * 0.1);
       final double petalDist = 38.r * progress;
-      final double petalSize = (14.r + math.sin(time * 4.0 + i) * 2.r) * (0.4 + progress * 0.6);
+      final double petalSize =
+          (14.r + math.sin(time * 4.0 + i) * 2.r) * (0.4 + progress * 0.6);
 
       // Color mapping: sleep indigo -> radiant pink-violet bloom
       final Color sleepColor = primaryColor.withValues(alpha: 0.25);
@@ -110,7 +111,8 @@ class BloomPainter extends CustomPainter {
     final Paint corePaint = Paint()
       ..color = Color.lerp(Colors.orangeAccent, Colors.yellowAccent, progress)!
       ..style = PaintingStyle.fill;
-    final double coreRadius = (12.r + math.sin(time * 5.0) * 1.r) * (0.8 + progress * 0.4);
+    final double coreRadius =
+        (12.r + math.sin(time * 5.0) * 1.r) * (0.8 + progress * 0.4);
 
     // Core Glow
     final Paint coreGlow = Paint()

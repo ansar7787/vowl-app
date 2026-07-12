@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+
 class IdiomsSystemMessage extends StatelessWidget {
   final String text;
   final Color color;
@@ -23,7 +24,8 @@ class IdiomsSystemMessage extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: TextStyle(fontFamily: 'RobotoMono', 
+          style: TextStyle(
+            fontFamily: 'RobotoMono',
             fontSize: 9.sp,
             color: color,
             letterSpacing: 1.5,
@@ -50,35 +52,34 @@ class IdiomsStrangerMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(maxWidth: 0.75.sw),
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(24.r),
-          topRight: Radius.circular(24.r),
-          bottomRight: Radius.circular(24.r),
-        ),
-        border: Border.all(
-          color: isDark ? color.withValues(alpha: 0.3) : color.withValues(alpha: 0.15),
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: color.withValues(alpha: isDark ? 0.2 : 0.05),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
+          constraints: BoxConstraints(maxWidth: 0.75.sw),
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(24.r),
+              topRight: Radius.circular(24.r),
+              bottomRight: Radius.circular(24.r),
+            ),
+            border: Border.all(
+              color: isDark
+                  ? color.withValues(alpha: 0.3)
+                  : color.withValues(alpha: 0.15),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: color.withValues(alpha: isDark ? 0.2 : 0.05),
+                blurRadius: 20,
+                offset: const Offset(0, 10),
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Text(
-        emojis,
-        style: TextStyle(fontSize: 48.sp),
-      ),
-    )
-    .animate()
-    .slideX(begin: -0.1, duration: 500.ms, curve: Curves.easeOutCubic)
-    .fadeIn();
+          child: Text(emojis, style: TextStyle(fontSize: 48.sp)),
+        )
+        .animate()
+        .slideX(begin: -0.1, duration: 500.ms, curve: Curves.easeOutCubic)
+        .fadeIn();
   }
 }
 
@@ -98,53 +99,61 @@ class IdiomsUserMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bgColor = isCorrect == true ? Colors.green : (isCorrect == false ? Colors.red : color);
+    final bgColor = isCorrect == true
+        ? Colors.green
+        : (isCorrect == false ? Colors.red : color);
     return Container(
-      constraints: BoxConstraints(maxWidth: 0.75.sw),
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-      decoration: BoxDecoration(
-        color: isDark ? bgColor.withValues(alpha: 0.15) : bgColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(24.r),
-          topRight: Radius.circular(24.r),
-          bottomLeft: Radius.circular(24.r),
-        ),
-        border: Border.all(color: bgColor.withValues(alpha: 0.5), width: 1.5),
-        boxShadow: [
-          BoxShadow(
-            color: bgColor.withValues(alpha: 0.05),
-            blurRadius: 15,
-            offset: const Offset(0, 5),
-          ),
-        ],
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Flexible(
-            child: Text(
-              text.toUpperCase(),
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w800,
-                color: isDark ? Colors.white : Colors.black87,
-                letterSpacing: 0.5,
-              ),
+          constraints: BoxConstraints(maxWidth: 0.75.sw),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          decoration: BoxDecoration(
+            color: isDark
+                ? bgColor.withValues(alpha: 0.15)
+                : bgColor.withValues(alpha: 0.05),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(24.r),
+              topRight: Radius.circular(24.r),
+              bottomLeft: Radius.circular(24.r),
             ),
+            border: Border.all(
+              color: bgColor.withValues(alpha: 0.5),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: bgColor.withValues(alpha: 0.05),
+                blurRadius: 15,
+                offset: const Offset(0, 5),
+              ),
+            ],
           ),
-          if (isCorrect != null) ...[
-            SizedBox(width: 10.w),
-            Icon(
-              isCorrect! ? Icons.verified_rounded : Icons.gpp_bad_rounded,
-              color: isCorrect! ? Colors.greenAccent : Colors.redAccent,
-              size: 18.r,
-            ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
-          ],
-        ],
-      ),
-    )
-    .animate()
-    .slideX(begin: 0.1, duration: 500.ms, curve: Curves.easeOutCubic)
-    .fadeIn();
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Flexible(
+                child: Text(
+                  text.toUpperCase(),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w800,
+                    color: isDark ? Colors.white : Colors.black87,
+                    letterSpacing: 0.5,
+                  ),
+                ),
+              ),
+              if (isCorrect != null) ...[
+                SizedBox(width: 10.w),
+                Icon(
+                  isCorrect! ? Icons.verified_rounded : Icons.gpp_bad_rounded,
+                  color: isCorrect! ? Colors.greenAccent : Colors.redAccent,
+                  size: 18.r,
+                ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
+              ],
+            ],
+          ),
+        )
+        .animate()
+        .slideX(begin: 0.1, duration: 500.ms, curve: Curves.easeOutCubic)
+        .fadeIn();
   }
 }

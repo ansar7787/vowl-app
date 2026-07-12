@@ -16,7 +16,9 @@ class KidsRewardAdCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    const kidsPrimaryColor = Color(0xFFF43F5E); // Matching Rose color for Kids Zone
+    const kidsPrimaryColor = Color(
+      0xFFF43F5E,
+    ); // Matching Rose color for Kids Zone
 
     return Container(
       margin: EdgeInsets.symmetric(vertical: 8.h),
@@ -29,23 +31,30 @@ class KidsRewardAdCard extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  padding: EdgeInsets.all(10.r),
-                  decoration: BoxDecoration(
-                    color: kidsPrimaryColor.withValues(alpha: 0.1),
-                    shape: BoxShape.circle,
-                    border: Border.all(color: kidsPrimaryColor.withValues(alpha: 0.2)),
-                  ),
-                  child: Icon(
-                    Icons.star_rounded, // Star coin icon for Kids Zone
-                    color: kidsPrimaryColor,
-                    size: 18.r,
-                  ),
-                ).animate(onPlay: (c) => c.repeat())
-                 .shimmer(duration: 2.seconds, color: kidsPrimaryColor.withValues(alpha: 0.2)),
+                      padding: EdgeInsets.all(10.r),
+                      decoration: BoxDecoration(
+                        color: kidsPrimaryColor.withValues(alpha: 0.1),
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: kidsPrimaryColor.withValues(alpha: 0.2),
+                        ),
+                      ),
+                      child: Icon(
+                        Icons.star_rounded, // Star coin icon for Kids Zone
+                        color: kidsPrimaryColor,
+                        size: 18.r,
+                      ),
+                    )
+                    .animate(onPlay: (c) => c.repeat())
+                    .shimmer(
+                      duration: 2.seconds,
+                      color: kidsPrimaryColor.withValues(alpha: 0.2),
+                    ),
                 SizedBox(width: 12.w),
                 Text(
                   'KIDS WATCH & EARN',
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w900,
                     color: kidsPrimaryColor,
@@ -64,17 +73,21 @@ class KidsRewardAdCard extends StatelessWidget {
                     children: [
                       Text(
                         'Claim 10 Coins!',
-                        style: TextStyle(fontFamily: 'Outfit', 
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w900,
-                          color: isDark ? Colors.white : const Color(0xFF0F172A),
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF0F172A),
                           letterSpacing: -0.5,
                         ),
                       ),
                       SizedBox(height: 4.h),
                       Text(
                         'Watch a quick video to unlock rewards',
-                        style: TextStyle(fontFamily: 'Outfit', 
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w600,
                           color: isDark ? Colors.white38 : Colors.black45,
@@ -87,7 +100,10 @@ class KidsRewardAdCard extends StatelessWidget {
                 ScaleButton(
                   onTap: () => _showRewardAd(context),
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.w,
+                      vertical: 12.h,
+                    ),
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
                         colors: [Color(0xFFF43F5E), Color(0xFFFB7185)],
@@ -106,11 +122,16 @@ class KidsRewardAdCard extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Icons.play_arrow_rounded, color: Colors.white, size: 20.r),
+                        Icon(
+                          Icons.play_arrow_rounded,
+                          color: Colors.white,
+                          size: 20.r,
+                        ),
                         SizedBox(width: 6.w),
                         Text(
                           'START',
-                          style: TextStyle(fontFamily: 'Outfit', 
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w900,
                             color: Colors.white,
@@ -144,10 +165,10 @@ class KidsRewardAdCard extends StatelessWidget {
       onDismissed: () {
         if (rewardEarned && context.mounted) {
           CustomSnackBar.show(
-      context: context,
-      message: 'Great! You earned 10 Kids Coins! ⭐',
-      type: CustomSnackBarType.info,
-    );
+            context: context,
+            message: 'Great! You earned 10 Kids Coins! ⭐',
+            type: CustomSnackBarType.info,
+          );
         }
       },
     );

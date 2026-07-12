@@ -38,7 +38,8 @@ class KidsQuestModel extends KidsQuest {
       id: json['id'] as String? ?? '',
       gameType: json['gameType'] as String? ?? 'unknown',
       level: (json['level'] as num?)?.toInt() ?? 1,
-      instruction: json['instruction'] as String? ?? 'Look and find the answer!',
+      instruction:
+          json['instruction'] as String? ?? 'Look and find the answer!',
       question: json['question'] as String?,
       correctAnswer: json['correctAnswer'] as String?,
       options: parseStringList(json['options']),

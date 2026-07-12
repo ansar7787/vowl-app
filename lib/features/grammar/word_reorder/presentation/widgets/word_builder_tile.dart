@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class WordBuilderTile extends StatelessWidget {
   final String word;
   final VoidCallback onTap;
@@ -30,8 +31,8 @@ class WordBuilderTile extends StatelessWidget {
             color: isDragged
                 ? primaryColor.withValues(alpha: 0.8)
                 : (isMidnight
-                    ? Colors.white.withValues(alpha: 0.05)
-                    : (isDark ? Colors.white10 : Colors.white)),
+                      ? Colors.white.withValues(alpha: 0.05)
+                      : (isDark ? Colors.white10 : Colors.white)),
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
               color: isDragged
@@ -51,7 +52,8 @@ class WordBuilderTile extends StatelessWidget {
           ),
           child: Text(
             word,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 18.sp,
               fontWeight: FontWeight.w800,
               color: isDragged

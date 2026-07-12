@@ -92,7 +92,10 @@ class LocalSmartTutor implements SmartTutor {
 
     // Moving mastery scoring adjustment
     final adjustment = isCorrect ? scoreStepAdjustment : -scoreStepAdjustment;
-    final newScore = (currentScore + adjustment).clamp(minMasteryScore, maxMasteryScore);
+    final newScore = (currentScore + adjustment).clamp(
+      minMasteryScore,
+      maxMasteryScore,
+    );
 
     newStats[categoryId] = newScore;
     return newStats;

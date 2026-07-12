@@ -22,7 +22,9 @@ class PronunciationFocusThermalGrid extends StatelessWidget {
       width: 1.sw,
       height: 120.h,
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0C0C16) : Colors.black.withValues(alpha: 0.02),
+        color: isDark
+            ? const Color(0xFF0C0C16)
+            : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: Colors.white10),
       ),

@@ -35,12 +35,7 @@ class KidsColorsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Artist Easel
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: _buildEasel(quest),
-              ),
-            ),
+            Expanded(flex: 5, child: Center(child: _buildEasel(quest))),
             // The Squeezed Paint Tubes
             Flexible(
               flex: 5,
@@ -110,10 +105,7 @@ class KidsColorsLayout extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (quest.emoji != null)
-                  Text(
-                    quest.emoji!,
-                    style: TextStyle(fontSize: 48.sp),
-                  ),
+                  Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
                 Text(
                   quest.question ?? "?",
                   style: TextStyle(
@@ -172,7 +164,7 @@ class KidsColorsLayout extends StatelessWidget {
   ) {
     // Determine color based on text if possible, otherwise fallback to primary
     Color tubeColor = _getColorFromName(text, primaryColor);
-    
+
     return ScaleButton(
       onTap: () {
         context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
@@ -195,10 +187,7 @@ class KidsColorsLayout extends StatelessWidget {
               ),
               border: Border.all(color: const Color(0xFFE4E4E7), width: 2),
               boxShadow: [
-                BoxShadow(
-                  color: Colors.black12,
-                  offset: Offset(0, 6.h),
-                ),
+                BoxShadow(color: Colors.black12, offset: Offset(0, 6.h)),
               ],
             ),
             child: Column(
@@ -252,7 +241,8 @@ class KidsColorsLayout extends StatelessWidget {
     if (lower.contains('purple')) return Colors.purple;
     if (lower.contains('pink')) return Colors.pink;
     if (lower.contains('black')) return Colors.black;
-    if (lower.contains('white')) return const Color(0xFFE4E4E7); // Off-white for visibility
+    if (lower.contains('white'))
+      return const Color(0xFFE4E4E7); // Off-white for visibility
     if (lower.contains('brown')) return Colors.brown;
     return fallback;
   }

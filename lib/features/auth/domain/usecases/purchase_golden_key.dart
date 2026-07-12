@@ -8,10 +8,7 @@ class PurchaseGoldenKeyParams extends Equatable {
   final int cost;
   final bool isKidsMode;
 
-  const PurchaseGoldenKeyParams({
-    required this.cost,
-    required this.isKidsMode,
-  });
+  const PurchaseGoldenKeyParams({required this.cost, required this.isKidsMode});
 
   @override
   List<Object?> get props => [cost, isKidsMode];

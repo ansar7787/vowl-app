@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class PunctuationMasteryInstruction extends StatelessWidget {
   final Color primaryColor;
   const PunctuationMasteryInstruction({super.key, required this.primaryColor});
@@ -20,7 +21,8 @@ class PunctuationMasteryInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             "APPLY HOLOGRAPHIC DECALS",
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,

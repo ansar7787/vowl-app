@@ -34,10 +34,16 @@ class SoundwaveSpectrumPainter extends CustomPainter {
     for (int i = 0; i <= points; i++) {
       final double x = (width / points) * i;
       // Combine multiple harmonic frequencies for a high-tech biosensor audio wave look
-      final double wave1 = math.sin((i * 0.25) - (animationValue * 2 * math.pi * 3));
-      final double wave2 = math.cos((i * 0.12) + (animationValue * 2 * math.pi * 1.5));
-      final double envelope = math.sin((i / points) * math.pi); // Fade edges to 0
-      
+      final double wave1 = math.sin(
+        (i * 0.25) - (animationValue * 2 * math.pi * 3),
+      );
+      final double wave2 = math.cos(
+        (i * 0.12) + (animationValue * 2 * math.pi * 1.5),
+      );
+      final double envelope = math.sin(
+        (i / points) * math.pi,
+      ); // Fade edges to 0
+
       final double y = midY + (wave1 * 12.h + wave2 * 6.h) * envelope;
       path.lineTo(x, y);
     }

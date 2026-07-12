@@ -31,7 +31,12 @@ class KidsGameBaseScreen extends StatefulWidget {
   final List<Color> backgroundColors;
   final String? painterName;
   final String? shaderName;
-  final Widget Function(BuildContext context, KidsLoaded state, VoidCallback onHintTap) buildGameUI;
+  final Widget Function(
+    BuildContext context,
+    KidsLoaded state,
+    VoidCallback onHintTap,
+  )
+  buildGameUI;
 
   const KidsGameBaseScreen({
     super.key,
@@ -65,7 +70,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
           _completionDialogShown = false;
           _showBriefing = widget.level == 1;
         });
-        context.read<KidsBloc>().add(FetchKidsQuests(widget.gameType, widget.level));
+        context.read<KidsBloc>().add(
+          FetchKidsQuests(widget.gameType, widget.level),
+        );
       }
     });
   }
@@ -80,14 +87,16 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
     try {
       final tts = di.sl<KidsTTSService>();
       if (await tts.isNarrationEnabled()) await tts.speak(instruction);
-    } catch (e) { debugPrint("KIDS_TTS_ERROR: \$e"); }
+    } catch (e) {
+      debugPrint("KIDS_TTS_ERROR: \$e");
+    }
   }
 
   Future<void> speakHint(String hint) async {
     try {
       final isGeneric = import_hint.HintUtility.isGenericHint(hint);
-      final displayHint = isGeneric 
-          ? "Pro Tip: Look closely at the pictures and tap!" 
+      final displayHint = isGeneric
+          ? "Pro Tip: Look closely at the pictures and tap!"
           : hint;
 
       setState(() => _hintText = displayHint);
@@ -95,7 +104,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
       Future.delayed(const Duration(seconds: 5), () {
         if (mounted) setState(() => _hintText = null);
       });
-    } catch (e) { debugPrint("KIDS_HINT_TTS_ERROR: \$e"); }
+    } catch (e) {
+      debugPrint("KIDS_HINT_TTS_ERROR: \$e");
+    }
   }
 
   @override
@@ -107,23 +118,32 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
           if (!_completionDialogShown) {
             _completionDialogShown = true;
             audio.playLevelCompleteSFX();
-            KidsGameDialogs.showCompletionDialog(context: context, state: state, primaryColor: widget.primaryColor);
+            KidsGameDialogs.showCompletionDialog(
+              context: context,
+              state: state,
+              primaryColor: widget.primaryColor,
+            );
           }
         } else if (state is KidsGameOver) {
           audio.playFailureSFX();
-          KidsGameDialogs.showGameOverDialog(context: context, primaryColor: widget.primaryColor);
+          KidsGameDialogs.showGameOverDialog(
+            context: context,
+            primaryColor: widget.primaryColor,
+          );
         } else if (state is KidsLoaded) {
           if (state.lastAnswerCorrect == true) {
             audio.playSuccessSFX();
             final bloc = context.read<KidsBloc>();
             Future.delayed(const Duration(milliseconds: 1500), () {
-              if (mounted && context.mounted && bloc.state == state) bloc.add(NextKidsQuestion());
+              if (mounted && context.mounted && bloc.state == state)
+                bloc.add(NextKidsQuestion());
             });
           } else if (state.lastAnswerCorrect == false) {
             audio.playFailureSFX();
             final bloc = context.read<KidsBloc>();
-            final isFinalFailure = state.isFinalFailure || state.livesRemaining <= 0;
-            
+            final isFinalFailure =
+                state.isFinalFailure || state.livesRemaining <= 0;
+
             if (isFinalFailure) {
               Future.delayed(const Duration(milliseconds: 2000), () {
                 if (mounted && context.mounted && bloc.state == state) {
@@ -132,11 +152,16 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               });
             }
           }
-          if (state.lastAnswerCorrect == null && !state.hintUsed) _speakInstruction(state.currentQuest.instruction);
-          if (state.lastAnswerCorrect == null && state.hintUsed && _hintText == null) speakHint(state.currentQuest.hint);
+          if (state.lastAnswerCorrect == null && !state.hintUsed)
+            _speakInstruction(state.currentQuest.instruction);
+          if (state.lastAnswerCorrect == null &&
+              state.hintUsed &&
+              _hintText == null)
+            speakHint(state.currentQuest.hint);
 
           // Lifeline Nudge Logic for Kids
-          final justDroppedToLastLife = _lastLives == 2 && state.livesRemaining == 1;
+          final justDroppedToLastLife =
+              _lastLives == 2 && state.livesRemaining == 1;
           if (justDroppedToLastLife && !_hasSpokenNudge) {
             _hasSpokenNudge = true;
             final nudgeMsg = context.tr('games.kids_nudge');
@@ -169,7 +194,12 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             resizeToAvoidBottomInset: false,
             body: Stack(
               children: [
-                KidsBackgroundRenderer(painterName: "KidsWorldBackground", shaderName: widget.shaderName ?? "", primaryColor: widget.primaryColor, gameType: widget.gameType),
+                KidsBackgroundRenderer(
+                  painterName: "KidsWorldBackground",
+                  shaderName: widget.shaderName ?? "",
+                  primaryColor: widget.primaryColor,
+                  gameType: widget.gameType,
+                ),
                 SafeArea(
                   child: Column(
                     children: [
@@ -184,7 +214,8 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                         child: Stack(
                           children: [
                             _buildBody(context, state),
-                            if (state is KidsLoaded) _buildDynamicMascot(context, state),
+                            if (state is KidsLoaded)
+                              _buildDynamicMascot(context, state),
                           ],
                         ),
                       ),
@@ -195,7 +226,12 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                   Builder(
                     builder: (context) {
                       // Get briefing using the gameType (category) as the fallback title
-                      final briefing = GameInstructionService.getBriefing(context, null, widget.gameType, level: widget.level);
+                      final briefing = GameInstructionService.getBriefing(
+                        context,
+                        null,
+                        widget.gameType,
+                        level: widget.level,
+                      );
                       return QuestBriefingOverlay(
                         title: briefing.title,
                         objective: briefing.objective,
@@ -217,36 +253,77 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
   }
 
   Widget _buildBody(BuildContext context, KidsState state) {
-    if (state is KidsLoading) return const Center(child: CircularProgressIndicator());
+    if (state is KidsLoading)
+      return const Center(child: CircularProgressIndicator());
     if (state is KidsLoaded) {
       return Stack(
         children: [
-          widget.buildGameUI(context, state, () => speakHint(state.currentQuest.hint)),
+          widget.buildGameUI(
+            context,
+            state,
+            () => speakHint(state.currentQuest.hint),
+          ),
           if (state.lastAnswerCorrect == true)
             Positioned(
               bottom: 30.h,
               right: 25.w,
-              child: ScaleButton(
-                onTap: () => context.read<KidsBloc>().add(NextKidsQuestion()),
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30.r),
-                    border: Border.all(color: Colors.grey.shade300, width: 3.w),
-                    boxShadow: [
-                      BoxShadow(color: Colors.grey.shade300, offset: Offset(0, 5.h)),
-                    ],
-                  ),
-                  child: Row(mainAxisSize: MainAxisSize.min, children: [
-                    Text(context.tr('common.next').toUpperCase(), style: TextStyle(fontFamily: 'Outfit', color: widget.primaryColor, fontWeight: FontWeight.w900, fontSize: 16.sp, letterSpacing: 1)),
-                    SizedBox(width: 8.w),
-                    Icon(Icons.arrow_forward_rounded, color: widget.primaryColor, size: 22.sp),
-                  ]),
-                ),
-              ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1.0, 1.0), end: const Offset(1.1, 1.1), duration: 800.ms).animate().fadeIn(delay: 1.seconds),
+              child:
+                  ScaleButton(
+                        onTap: () =>
+                            context.read<KidsBloc>().add(NextKidsQuestion()),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20.w,
+                            vertical: 12.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30.r),
+                            border: Border.all(
+                              color: Colors.grey.shade300,
+                              width: 3.w,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.shade300,
+                                offset: Offset(0, 5.h),
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                context.tr('common.next').toUpperCase(),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  color: widget.primaryColor,
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 16.sp,
+                                  letterSpacing: 1,
+                                ),
+                              ),
+                              SizedBox(width: 8.w),
+                              Icon(
+                                Icons.arrow_forward_rounded,
+                                color: widget.primaryColor,
+                                size: 22.sp,
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .scale(
+                        begin: const Offset(1.0, 1.0),
+                        end: const Offset(1.1, 1.1),
+                        duration: 800.ms,
+                      )
+                      .animate()
+                      .fadeIn(delay: 1.seconds),
             ),
-          if (state.lastAnswerCorrect == false && (!state.isFinalFailure && state.livesRemaining > 0))
+          if (state.lastAnswerCorrect == false &&
+              (!state.isFinalFailure && state.livesRemaining > 0))
             Positioned(
               bottom: 0,
               left: 0,
@@ -254,17 +331,20 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               child: KidsExplanationCard(
                 quest: state.currentQuest,
                 primaryColor: widget.primaryColor,
-                onTryAgain: () => context.read<KidsBloc>().add(ClearKidsFeedback()),
+                onTryAgain: () =>
+                    context.read<KidsBloc>().add(ClearKidsFeedback()),
               ),
             ),
-          if (state.lastAnswerCorrect != null && state.lastAnswerCorrect == true)
+          if (state.lastAnswerCorrect != null &&
+              state.lastAnswerCorrect == true)
             KidsFeedbackOverlay(
               isCorrect: state.lastAnswerCorrect!,
               attempts: state.wrongCount,
               explanation: state.currentQuest.explanation,
               onTap: () {
-                if (state.lastAnswerCorrect!) { context.read<KidsBloc>().add(NextKidsQuestion()); } 
-                else { 
+                if (state.lastAnswerCorrect!) {
+                  context.read<KidsBloc>().add(NextKidsQuestion());
+                } else {
                   if (state.isFinalFailure || state.livesRemaining <= 0) {
                     context.read<KidsBloc>().add(NextKidsQuestion());
                   } else {
@@ -298,7 +378,8 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               SizedBox(height: 32.h),
               Text(
                 context.tr('games.kids_error_title'),
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 28.sp,
                   fontWeight: FontWeight.w900,
                   color: Colors.white,
@@ -309,7 +390,8 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               Text(
                 context.tr('games.kids_error_body'),
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: Colors.white.withValues(alpha: 0.9),
@@ -318,35 +400,54 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               ).animate().fadeIn(delay: 200.ms),
               SizedBox(height: 48.h),
               ScaleButton(
-                onTap: () => context.read<KidsBloc>().add(FetchKidsQuests(widget.gameType, widget.level)),
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 16.h),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30.r),
-                    border: Border.all(color: Colors.grey.shade300, width: 3.w),
-                    boxShadow: [
-                      BoxShadow(color: Colors.grey.shade300, offset: Offset(0, 5.h)),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.refresh_rounded, color: widget.primaryColor, size: 24.r),
-                      SizedBox(width: 12.w),
-                      Text(
-                        context.tr('games.try_again').toUpperCase(),
-                        style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w900,
-                          color: widget.primaryColor,
-                          letterSpacing: 1,
-                        ),
+                    onTap: () => context.read<KidsBloc>().add(
+                      FetchKidsQuests(widget.gameType, widget.level),
+                    ),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 40.w,
+                        vertical: 16.h,
                       ),
-                    ],
-                  ),
-                ),
-              ).animate().fadeIn(delay: 400.ms).scale(begin: const Offset(0.8, 0.8)),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30.r),
+                        border: Border.all(
+                          color: Colors.grey.shade300,
+                          width: 3.w,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.shade300,
+                            offset: Offset(0, 5.h),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.refresh_rounded,
+                            color: widget.primaryColor,
+                            size: 24.r,
+                          ),
+                          SizedBox(width: 12.w),
+                          Text(
+                            context.tr('games.try_again').toUpperCase(),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w900,
+                              color: widget.primaryColor,
+                              letterSpacing: 1,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                  .animate()
+                  .fadeIn(delay: 400.ms)
+                  .scale(begin: const Offset(0.8, 0.8)),
             ],
           ),
         ),
@@ -433,6 +534,10 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
           height: 1.2,
         ),
       ),
-    ).animate().scale(begin: Offset.zero, duration: 400.ms, curve: Curves.easeOutBack);
+    ).animate().scale(
+      begin: Offset.zero,
+      duration: 400.ms,
+      curve: Curves.easeOutBack,
+    );
   }
 }

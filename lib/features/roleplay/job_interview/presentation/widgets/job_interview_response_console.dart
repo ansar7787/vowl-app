@@ -42,81 +42,91 @@ class JobInterviewResponseConsole extends StatelessWidget {
     Color stoneColor = color;
     if (isAnswered) {
       if (isSelected) {
-        stoneColor = (isCorrect ?? false) ? Colors.greenAccent : Colors.redAccent;
+        stoneColor = (isCorrect ?? false)
+            ? Colors.greenAccent
+            : Colors.redAccent;
       } else if (index == correctIndex) {
-        stoneColor = Colors.greenAccent; // Highlight correct answer if incorrect chosen
+        stoneColor =
+            Colors.greenAccent; // Highlight correct answer if incorrect chosen
       }
     }
 
     return Padding(
-      padding: EdgeInsets.only(bottom: 12.h),
-      child: ScaleButton(
-        onTap: () => onOptionSelected(index, correctIndex),
-        child: Container(
-          padding: EdgeInsets.all(18.r),
-          decoration: BoxDecoration(
-            color: isSelected
-                ? stoneColor
-                : (isDark ? const Color(0xFF0F0F1B) : Colors.white),
-            borderRadius: BorderRadius.circular(22.r),
-            border: Border.all(
-              color: isSelected
-                  ? Colors.white
-                  : (isAnswered && index == correctIndex)
+          padding: EdgeInsets.only(bottom: 12.h),
+          child: ScaleButton(
+            onTap: () => onOptionSelected(index, correctIndex),
+            child: Container(
+              padding: EdgeInsets.all(18.r),
+              decoration: BoxDecoration(
+                color: isSelected
+                    ? stoneColor
+                    : (isDark ? const Color(0xFF0F0F1B) : Colors.white),
+                borderRadius: BorderRadius.circular(22.r),
+                border: Border.all(
+                  color: isSelected
+                      ? Colors.white
+                      : (isAnswered && index == correctIndex)
                       ? Colors.greenAccent
                       : color.withValues(alpha: 0.35),
-              width: (isSelected || (isAnswered && index == correctIndex)) ? 2.5 : 1.5,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: (isSelected ? stoneColor : color).withValues(alpha: isSelected ? 0.35 : 0.06),
-                blurRadius: isSelected ? 12 : 6,
-              ),
-            ],
-          ),
-          child: Row(
-            children: [
-              Container(
-                padding: EdgeInsets.all(8.r),
-                decoration: BoxDecoration(
-                  color: isSelected
-                      ? Colors.white.withValues(alpha: 0.25)
-                      : color.withValues(alpha: 0.1),
-                  shape: BoxShape.circle,
+                  width: (isSelected || (isAnswered && index == correctIndex))
+                      ? 2.5
+                      : 1.5,
                 ),
-                child: Icon(
-                  isSelected
-                      ? ((isCorrect ?? false) ? Icons.verified_rounded : Icons.cancel_rounded)
-                      : Icons.diamond_rounded,
-                  color: isSelected ? Colors.white : color,
-                  size: 16.r,
-                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: (isSelected ? stoneColor : color).withValues(
+                      alpha: isSelected ? 0.35 : 0.06,
+                    ),
+                    blurRadius: isSelected ? 12 : 6,
+                  ),
+                ],
               ),
-              SizedBox(width: 14.w),
-              Expanded(
-                child: Text(
-                  text,
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.bold,
-                    color: isSelected
-                        ? Colors.white
-                        : (isAnswered && index == correctIndex)
+              child: Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(8.r),
+                    decoration: BoxDecoration(
+                      color: isSelected
+                          ? Colors.white.withValues(alpha: 0.25)
+                          : color.withValues(alpha: 0.1),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      isSelected
+                          ? ((isCorrect ?? false)
+                                ? Icons.verified_rounded
+                                : Icons.cancel_rounded)
+                          : Icons.diamond_rounded,
+                      color: isSelected ? Colors.white : color,
+                      size: 16.r,
+                    ),
+                  ),
+                  SizedBox(width: 14.w),
+                  Expanded(
+                    child: Text(
+                      text,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.bold,
+                        color: isSelected
+                            ? Colors.white
+                            : (isAnswered && index == correctIndex)
                             ? (isDark ? Colors.greenAccent : Colors.green)
                             : (isDark ? Colors.white70 : Colors.black87),
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
-      ),
-    ).animate(
-      target: isSelected ? 1.0 : 0.0,
-    ).scale(
-      begin: const Offset(1, 1),
-      end: const Offset(1.02, 1.02),
-      duration: 150.ms,
-    );
+        )
+        .animate(target: isSelected ? 1.0 : 0.0)
+        .scale(
+          begin: const Offset(1, 1),
+          end: const Offset(1.02, 1.02),
+          duration: 150.ms,
+        );
   }
 }

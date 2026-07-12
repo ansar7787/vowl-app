@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ClozeTestFuelCells extends StatelessWidget {
   final List<String> options;
   final Color color;
@@ -17,7 +18,7 @@ class ClozeTestFuelCells extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      spacing: 12.w, 
+      spacing: 12.w,
       runSpacing: 12.h,
       alignment: WrapAlignment.center,
       children: options.map((o) {
@@ -33,7 +34,7 @@ class ClozeTestFuelCells extends StatelessWidget {
                 child: _buildCellWidget(o, color, isDark, true),
               ),
               childWhenDragging: Opacity(
-                opacity: 0.3, 
+                opacity: 0.3,
                 child: _buildCellWidget(o, color, isDark, false),
               ),
               child: _buildCellWidget(o, color, isDark, false),
@@ -44,7 +45,12 @@ class ClozeTestFuelCells extends StatelessWidget {
     );
   }
 
-  Widget _buildCellWidget(String text, Color color, bool isDark, bool isFeedback) {
+  Widget _buildCellWidget(
+    String text,
+    Color color,
+    bool isDark,
+    bool isFeedback,
+  ) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 12.h),
       decoration: BoxDecoration(
@@ -53,12 +59,12 @@ class ClozeTestFuelCells extends StatelessWidget {
         border: Border.all(color: color, width: 2),
         boxShadow: [
           BoxShadow(
-            color: color.withValues(alpha: isDark ? 0.4 : 0.15), 
+            color: color.withValues(alpha: isDark ? 0.4 : 0.15),
             blurRadius: isFeedback ? 20 : 10,
           ),
-          if (isFeedback) 
+          if (isFeedback)
             BoxShadow(
-              color: Colors.white.withValues(alpha: 0.25), 
+              color: Colors.white.withValues(alpha: 0.25),
               blurRadius: 40,
             ),
         ],
@@ -69,10 +75,11 @@ class ClozeTestFuelCells extends StatelessWidget {
           Icon(Icons.bolt_rounded, size: 16.r, color: color),
           SizedBox(width: 8.w),
           Text(
-            text.toUpperCase(), 
-            style: TextStyle(fontFamily: 'RobotoMono', 
-              fontSize: 12.sp, 
-              fontWeight: FontWeight.bold, 
+            text.toUpperCase(),
+            style: TextStyle(
+              fontFamily: 'RobotoMono',
+              fontSize: 12.sp,
+              fontWeight: FontWeight.bold,
               color: isDark ? Colors.white : Colors.black87,
             ),
           ),

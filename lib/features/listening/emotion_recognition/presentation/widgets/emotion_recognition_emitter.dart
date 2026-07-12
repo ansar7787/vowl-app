@@ -27,7 +27,7 @@ class EmotionRecognitionEmitter extends StatelessWidget {
               color: color.withValues(alpha: 0.1),
               blurRadius: 20,
               spreadRadius: 5,
-            )
+            ),
           ],
         ),
         child: Icon(Icons.graphic_eq_rounded, color: color, size: 40.r),

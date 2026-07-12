@@ -254,7 +254,9 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                 : CrossFadeState.showFirst,
                             duration: const Duration(milliseconds: 450),
                           ),
-                          SizedBox(height: isCompact ? 40.h : 80.h), // Safe spacing for base layouts
+                          SizedBox(
+                            height: isCompact ? 40.h : 80.h,
+                          ), // Safe spacing for base layouts
                         ],
                       ),
                     );

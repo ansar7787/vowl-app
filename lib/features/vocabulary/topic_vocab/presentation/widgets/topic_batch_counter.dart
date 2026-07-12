@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+
 class TopicBatchCounter extends StatelessWidget {
   final int count;
   final int total;
@@ -27,7 +28,8 @@ class TopicBatchCounter extends StatelessWidget {
         children: [
           Text(
             "BATCH PROGRESS: $count / $total",
-            style: TextStyle(fontFamily: 'RobotoMono', 
+            style: TextStyle(
+              fontFamily: 'RobotoMono',
               color: color.withValues(alpha: 0.8),
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,

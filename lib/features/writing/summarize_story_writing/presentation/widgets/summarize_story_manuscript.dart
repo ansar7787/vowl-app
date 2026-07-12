@@ -30,14 +30,15 @@ class SummarizeStoryManuscript extends StatelessWidget {
           SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Text(
-              story, 
-              textAlign: TextAlign.center, 
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 16.sp, 
-                color: isDark ? Colors.white70 : Colors.black87, 
+              story,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                color: isDark ? Colors.white70 : Colors.black87,
                 height: 1.5,
-                fontWeight: FontWeight.bold
-              )
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],

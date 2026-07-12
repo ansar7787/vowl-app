@@ -42,14 +42,19 @@ class GourmetOrderPlateTray extends StatelessWidget {
             children: [
               Text(
                 "BANQUET PLATE TRAY",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 10.sp,
                   color: color,
                   letterSpacing: 2,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Icon(Icons.kitchen_rounded, color: color.withValues(alpha: 0.5), size: 16.r),
+              Icon(
+                Icons.kitchen_rounded,
+                color: color.withValues(alpha: 0.5),
+                size: 16.r,
+              ),
             ],
           ),
           SizedBox(height: 18.h),
@@ -82,21 +87,45 @@ class GourmetOrderPlateTray extends StatelessWidget {
       child: Draggable<String>(
         data: item,
         onDragStarted: onDragStarted,
-        feedback: _buildPlateCore(item, plateColor, isSelected, isDark, isDraggingFeedback: true),
+        feedback: _buildPlateCore(
+          item,
+          plateColor,
+          isSelected,
+          isDark,
+          isDraggingFeedback: true,
+        ),
         childWhenDragging: Opacity(
           opacity: 0.3,
-          child: _buildPlateCore(item, plateColor, isSelected, isDark, isDraggingFeedback: false),
+          child: _buildPlateCore(
+            item,
+            plateColor,
+            isSelected,
+            isDark,
+            isDraggingFeedback: false,
+          ),
         ),
         child: InkWell(
           onTap: () => onItemTapped(item),
           borderRadius: BorderRadius.circular(100.r),
-          child: _buildPlateCore(item, plateColor, isSelected, isDark, isDraggingFeedback: false),
+          child: _buildPlateCore(
+            item,
+            plateColor,
+            isSelected,
+            isDark,
+            isDraggingFeedback: false,
+          ),
         ),
       ),
     );
   }
 
-  Widget _buildPlateCore(String item, Color color, bool isSelected, bool isDark, {required bool isDraggingFeedback}) {
+  Widget _buildPlateCore(
+    String item,
+    Color color,
+    bool isSelected,
+    bool isDark, {
+    required bool isDraggingFeedback,
+  }) {
     return Material(
       color: Colors.transparent,
       child: Container(
@@ -104,14 +133,18 @@ class GourmetOrderPlateTray extends StatelessWidget {
         height: 100.r,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: isSelected ? color : (isDark ? const Color(0xFF131326) : Colors.white),
+          color: isSelected
+              ? color
+              : (isDark ? const Color(0xFF131326) : Colors.white),
           border: Border.all(
             color: isSelected ? Colors.white : color.withValues(alpha: 0.4),
             width: isSelected ? 3.0 : 1.5,
           ),
           boxShadow: [
             BoxShadow(
-              color: (isSelected ? color : Colors.black).withValues(alpha: isDraggingFeedback ? 0.45 : 0.08),
+              color: (isSelected ? color : Colors.black).withValues(
+                alpha: isDraggingFeedback ? 0.45 : 0.08,
+              ),
               blurRadius: isDraggingFeedback ? 15 : 6,
               offset: const Offset(0, 4),
             ),
@@ -127,7 +160,8 @@ class GourmetOrderPlateTray extends StatelessWidget {
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
                   color: isSelected

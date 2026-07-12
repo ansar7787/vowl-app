@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class JobInterviewInstruction extends StatelessWidget {
   final Color primaryColor;
 
-  const JobInterviewInstruction({
-    super.key,
-    required this.primaryColor,
-  });
+  const JobInterviewInstruction({super.key, required this.primaryColor});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,8 @@ class JobInterviewInstruction extends StatelessWidget {
           ),
           child: Text(
             "BOARDROOM INTERVIEW SIMULATOR",
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,
@@ -33,7 +32,8 @@ class JobInterviewInstruction extends StatelessWidget {
         Text(
           "Select the answer that maximizes your Professionalism Rating",
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,

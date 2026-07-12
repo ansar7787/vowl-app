@@ -530,13 +530,19 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
 
     final currentCoins = event.isKidsMode ? user.kidsCoins : user.coins;
     if (currentCoins < event.cost) {
-      emit(state.copyWith(message: () => 'Not enough ${event.isKidsMode ? 'toys' : 'coins'}!'));
+      emit(
+        state.copyWith(
+          message: () => 'Not enough ${event.isKidsMode ? 'toys' : 'coins'}!',
+        ),
+      );
       return;
     }
 
     final updatedUser = user.copyWith(
       coins: event.isKidsMode ? user.coins : user.coins - event.cost,
-      kidsCoins: event.isKidsMode ? user.kidsCoins - event.cost : user.kidsCoins,
+      kidsCoins: event.isKidsMode
+          ? user.kidsCoins - event.cost
+          : user.kidsCoins,
       keys: (user.keys + 1).clamp(0, 9999),
     );
 

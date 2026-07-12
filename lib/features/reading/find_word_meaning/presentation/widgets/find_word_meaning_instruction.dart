@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class FindWordMeaningInstruction extends StatelessWidget {
   final Color primaryColor;
 
-  const FindWordMeaningInstruction({
-    super.key,
-    required this.primaryColor,
-  });
+  const FindWordMeaningInstruction({super.key, required this.primaryColor});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +23,8 @@ class FindWordMeaningInstruction extends StatelessWidget {
           Flexible(
             child: Text(
               "SCAN THE MANUSCRIPT WITH THE LEXICAL LENS",
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: primaryColor,

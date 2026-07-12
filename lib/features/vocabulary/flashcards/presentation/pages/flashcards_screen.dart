@@ -294,7 +294,10 @@ class _ErrorScaffold extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 24.h),
-              TextButton(onPressed: onRetry, child: Text(context.tr('games.try_again').toUpperCase())),
+              TextButton(
+                onPressed: onRetry,
+                child: Text(context.tr('games.try_again').toUpperCase()),
+              ),
             ],
           ),
         ),

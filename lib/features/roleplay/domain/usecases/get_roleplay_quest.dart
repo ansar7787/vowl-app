@@ -16,13 +16,19 @@ class GetRoleplayQuestParams extends Equatable {
   List<Object?> get props => [gameType, level];
 }
 
-class GetRoleplayQuest implements UseCase<List<RoleplayQuest>, GetRoleplayQuestParams> {
+class GetRoleplayQuest
+    implements UseCase<List<RoleplayQuest>, GetRoleplayQuestParams> {
   final RoleplayRepository repository;
 
   GetRoleplayQuest(this.repository);
 
   @override
-  Future<Either<Failure, List<RoleplayQuest>>> call(GetRoleplayQuestParams params) {
-    return repository.getRoleplayQuests(gameType: params.gameType, level: params.level);
+  Future<Either<Failure, List<RoleplayQuest>>> call(
+    GetRoleplayQuestParams params,
+  ) {
+    return repository.getRoleplayQuests(
+      gameType: params.gameType,
+      level: params.level,
+    );
   }
 }

@@ -71,7 +71,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
       _hapticService.error();
       _soundService.playWrong();
     }
-    
+
     context.read<WritingBloc>().add(SubmitAnswer(correct));
   }
 
@@ -152,7 +152,8 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                           selectedCorrection: _selectedCorrection,
                           color: theme.primaryColor,
                           isDark: isDark,
-                          onSelectCorrection: (choice) => _onSelectCorrection(choice, isAnswered),
+                          onSelectCorrection: (choice) =>
+                              _onSelectCorrection(choice, isAnswered),
                         ),
                         SizedBox(height: 36.h),
 

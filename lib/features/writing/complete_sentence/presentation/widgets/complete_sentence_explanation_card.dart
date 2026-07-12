@@ -28,7 +28,9 @@ class CompleteSentenceExplanationCard extends StatelessWidget {
     // FIX: local variable avoids repeated null check and force-unwrap.
     final explanation = quest.explanation;
 
-    final resultLabel = isCorrect ? context.tr('games.correct') : context.tr('games.incorrect');
+    final resultLabel = isCorrect
+        ? context.tr('games.correct')
+        : context.tr('games.incorrect');
     final semanticLabel = explanation != null
         ? '$resultLabel ${context.tr('games.explanation')}: $explanation'
         : resultLabel;
@@ -57,7 +59,9 @@ class CompleteSentenceExplanationCard extends StatelessWidget {
             ),
             SizedBox(height: 10.h),
             Text(
-              isCorrect ? context.tr('games.correct_caps') : context.tr('games.incorrect_caps'),
+              isCorrect
+                  ? context.tr('games.correct_caps')
+                  : context.tr('games.incorrect_caps'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 15.sp,

@@ -28,14 +28,15 @@ class OpinionWritingThesisCard extends StatelessWidget {
         children: [
           const TechPatternOverlay(opacity: 0.05),
           Text(
-            text, 
-            textAlign: TextAlign.center, 
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 16.sp, 
-              fontWeight: FontWeight.w800, 
+            text,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w800,
               color: isDark ? Colors.white : Colors.black87,
-              height: 1.4
-            )
+              height: 1.4,
+            ),
           ),
         ],
       ),

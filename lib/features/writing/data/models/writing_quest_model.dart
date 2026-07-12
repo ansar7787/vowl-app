@@ -77,7 +77,9 @@ class WritingQuestModel extends WritingQuest {
       correctAnswer: getString(map['correctAnswer']),
       hint: map['hint'],
       visualConfig: map['visual_config'] != null
-          ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config']))
+          ? VisualConfig.fromJson(
+              Map<String, dynamic>.from(map['visual_config']),
+            )
           : null,
       prefix: map['prefix'],
       suffix: map['suffix'],
@@ -90,16 +92,24 @@ class WritingQuestModel extends WritingQuest {
       passage: map['passage'] ?? map['text'] ?? map['content'] ?? map['story'],
       question: map['question'] ?? map['instruction'] ?? map['prompt'],
       missingWord: map['missingWord'],
-      prompt: map['prompt'] ?? map['journalPrompt'] ?? map['question'] ?? map['instruction'],
+      prompt:
+          map['prompt'] ??
+          map['journalPrompt'] ??
+          map['question'] ??
+          map['instruction'],
       sampleAnswer: getString(map['sampleAnswer'] ?? map['correctAnswer']),
       explanation: map['explanation'],
       shuffledWords: map['shuffledWords'] != null
           ? List<String>.from(map['shuffledWords'])
           : (map['shuffledSentences'] != null
-              ? List<String>.from(map['shuffledSentences'])
-              : (map['options'] != null ? List<String>.from(map['options']) : null)),
+                ? List<String>.from(map['shuffledSentences'])
+                : (map['options'] != null
+                      ? List<String>.from(map['options'])
+                      : null)),
       correctOrder: map['correctOrder'] != null
-          ? (map['correctOrder'] as List).map((e) => int.tryParse(e.toString()) ?? 0).toList()
+          ? (map['correctOrder'] as List)
+                .map((e) => int.tryParse(e.toString()) ?? 0)
+                .toList()
           : null,
       dayDescription: map['dayDescription'],
       context: map['context'] ?? map['situation'],
@@ -156,4 +166,3 @@ class WritingQuestModel extends WritingQuest {
     };
   }
 }
-

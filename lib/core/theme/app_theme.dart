@@ -11,10 +11,14 @@ class AppTheme {
   // ---------------------------------------------------------------------------
 
   /// Primary brand colour: Indigo (Trust + Focus).
-  static const Color primaryIndigo = Color(0xFF4338CA); // Deepened to Indigo 700 for LCD consistency
+  static const Color primaryIndigo = Color(
+    0xFF4338CA,
+  ); // Deepened to Indigo 700 for LCD consistency
 
   /// Secondary brand colour: Emerald (Success + Progress).
-  static const Color secondaryEmerald = Color(0xFF059669); // Deepened to Emerald 600
+  static const Color secondaryEmerald = Color(
+    0xFF059669,
+  ); // Deepened to Emerald 600
 
   /// Accent colour: Amber (Rewards + Stars).
   static const Color accentAmber = Color(0xFFD97706); // Deepened to Amber 600

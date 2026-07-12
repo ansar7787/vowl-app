@@ -35,12 +35,7 @@ class KidsFruitsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Fruit Stand Awning
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: _buildAwningFrame(quest),
-              ),
-            ),
+            Expanded(flex: 5, child: Center(child: _buildAwningFrame(quest))),
             // Wicker Baskets for Options
             Flexible(
               flex: 5,
@@ -83,7 +78,10 @@ class KidsFruitsLayout extends StatelessWidget {
           decoration: BoxDecoration(
             color: const Color(0xFFFEF3C7), // Light wood
             borderRadius: BorderRadius.circular(8.r),
-            border: Border.all(color: const Color(0xFF92400E), width: 6.r), // Dark wood frame
+            border: Border.all(
+              color: const Color(0xFF92400E),
+              width: 6.r,
+            ), // Dark wood frame
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.15),
@@ -97,10 +95,7 @@ class KidsFruitsLayout extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (quest.emoji != null)
-                  Text(
-                    quest.emoji!,
-                    style: TextStyle(fontSize: 48.sp),
-                  ),
+                  Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
                 Text(
                   quest.question ?? "?",
                   style: TextStyle(
@@ -174,7 +169,7 @@ class KidsFruitsLayout extends StatelessWidget {
     bool isCorrect,
   ) {
     final basketColor = const Color(0xFFD97706); // Wicker yellow/brown
-    
+
     return ScaleButton(
       onTap: () {
         context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
@@ -223,9 +218,7 @@ class KidsFruitsLayout extends StatelessWidget {
                 ),
               ],
             ),
-            child: CustomPaint(
-              painter: _WickerPainter(),
-            ),
+            child: CustomPaint(painter: _WickerPainter()),
           ),
         ],
       ),

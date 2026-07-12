@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class PronounResolutionGravityPainter extends CustomPainter {
   final double rotation;
   final Offset centerPoint;
@@ -59,7 +60,11 @@ class PronounResolutionGravityPainter extends CustomPainter {
           : (isWrong ? Colors.redAccent : primaryColor);
 
       // Node Container (Glass Morph)
-      final rect = Rect.fromCenter(center: nodes[i], width: nodeW, height: nodeH);
+      final rect = Rect.fromCenter(
+        center: nodes[i],
+        width: nodeW,
+        height: nodeH,
+      );
       canvas.drawRRect(
         RRect.fromRectAndRadius(rect, Radius.circular(nodeRadius)),
         Paint()
@@ -78,14 +83,14 @@ class PronounResolutionGravityPainter extends CustomPainter {
         text: TextSpan(
           text: options[i].toUpperCase(),
           style: TextStyle(
-            fontFamily: 'Outfit', 
+            fontFamily: 'Outfit',
             fontSize: labelSize,
             fontWeight: FontWeight.bold,
             color: isHit
                 ? Colors.greenAccent
                 : (isWrong
-                    ? Colors.redAccent
-                    : (isDark ? Colors.white : Colors.black87)),
+                      ? Colors.redAccent
+                      : (isDark ? Colors.white : Colors.black87)),
           ),
         ),
         textDirection: TextDirection.ltr,
@@ -139,7 +144,7 @@ class PronounResolutionGravityPainter extends CustomPainter {
       text: TextSpan(
         text: pronoun.toUpperCase(),
         style: TextStyle(
-          fontFamily: 'Outfit', 
+          fontFamily: 'Outfit',
           fontSize: labelSize,
           fontWeight: FontWeight.w900,
           color: Colors.white,
@@ -149,8 +154,7 @@ class PronounResolutionGravityPainter extends CustomPainter {
     )..layout();
     pronounPainter.paint(
       canvas,
-      centerPoint -
-          Offset(pronounPainter.width / 2, pronounPainter.height / 2),
+      centerPoint - Offset(pronounPainter.width / 2, pronounPainter.height / 2),
     );
   }
 

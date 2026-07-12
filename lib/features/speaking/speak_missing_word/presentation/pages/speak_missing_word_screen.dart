@@ -32,7 +32,8 @@ class SpeakMissingWordScreen extends StatefulWidget {
   State<SpeakMissingWordScreen> createState() => _SpeakMissingWordScreenState();
 }
 
-class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with TickerProviderStateMixin {
+class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
+    with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   final _speechService = di.sl<SpeechService>();
@@ -65,7 +66,9 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
       duration: const Duration(seconds: 4),
     )..repeat();
 
-    context.read<SpeakingBloc>().add(FetchSpeakingQuests(gameType: widget.gameType, level: widget.level));
+    context.read<SpeakingBloc>().add(
+      FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   @override
@@ -82,8 +85,15 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
 
   void _generateDynamicOptions(String correctWord) {
     final List<String> distractors = [
-      "satellite", "reactor", "circuit", "database",
-      "system", "portal", "shield", "drone", "module"
+      "satellite",
+      "reactor",
+      "circuit",
+      "database",
+      "system",
+      "portal",
+      "shield",
+      "drone",
+      "module",
     ];
 
     distractors.remove(correctWord.toLowerCase());
@@ -102,15 +112,30 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
     final String cleanText = text;
     final List<String> nouns = [
       missingWord.toLowerCase(),
-      "circuit", "database", "satellite", "shield",
-      "reactor", "module", "engine", "network", "laser",
-      "drone", "system", "portal", "archive", "data"
+      "circuit",
+      "database",
+      "satellite",
+      "shield",
+      "reactor",
+      "module",
+      "engine",
+      "network",
+      "laser",
+      "drone",
+      "system",
+      "portal",
+      "archive",
+      "data",
     ];
 
     for (var noun in nouns) {
       final int index = cleanText.toLowerCase().indexOf(noun);
       if (index != -1) {
-        return cleanText.replaceRange(index, index + noun.length, " [ ______ ] ");
+        return cleanText.replaceRange(
+          index,
+          index + noun.length,
+          " [ ______ ] ",
+        );
       }
     }
 
@@ -180,10 +205,17 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
       return;
     }
 
-    final bool wordIsCorrect = _selectedWord?.toLowerCase() == expected.toLowerCase();
+    final bool wordIsCorrect =
+        _selectedWord?.toLowerCase() == expected.toLowerCase();
 
-    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '');
-    final String cleanExpected = expected.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '');
+    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
+      RegExp(r'[^\w\s]'),
+      '',
+    );
+    final String cleanExpected = expected.trim().toLowerCase().replaceAll(
+      RegExp(r'[^\w\s]'),
+      '',
+    );
 
     final List<String> speechWords = cleanSpeech.split(' ');
     final List<String> expectedWords = cleanExpected.split(' ');
@@ -195,7 +227,9 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
       }
     }
 
-    final double similarity = expectedWords.isNotEmpty ? matches / expectedWords.length : 0.0;
+    final double similarity = expectedWords.isNotEmpty
+        ? matches / expectedWords.length
+        : 0.0;
     final bool speechIsCorrect = similarity >= 0.70;
 
     final bool isCorrect = wordIsCorrect && speechIsCorrect;
@@ -247,7 +281,9 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
       listener: (context, state) {
         if (state is SpeakingLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          if (state.currentIndex != _lastProcessedIndex ||
+              livesChanged ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -258,7 +294,9 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
               _selectedWord = null;
               _isWordPlaced = false;
               _spokenText = "";
-              _generateDynamicOptions(state.currentQuest.missingWord ?? "drone");
+              _generateDynamicOptions(
+                state.currentQuest.missingWord ?? "drone",
+              );
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -276,7 +314,8 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
           _lastLives = state.livesRemaining;
 
           if (state.isLetterRevealed && _dynamicOptions.length > 1) {
-            final correctWord = state.currentQuest.missingWord?.toLowerCase() ?? "";
+            final correctWord =
+                state.currentQuest.missingWord?.toLowerCase() ?? "";
             if (_dynamicOptions.contains(correctWord)) {
               setState(() {
                 _dynamicOptions = [correctWord];
@@ -296,7 +335,8 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
         } else if (state is SpeakingGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<SpeakingBloc>().add(const RestoreLife()),
+            onRestore: () =>
+                context.read<SpeakingBloc>().add(const RestoreLife()),
             onTutorPass: _tutorPass,
           );
         }
@@ -304,10 +344,14 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
 
-        final String rawSentence = quest?.textToSpeak ?? "The robot operates the system safely.";
+        final String rawSentence =
+            quest?.textToSpeak ?? "The robot operates the system safely.";
         final String missingWord = quest?.missingWord ?? "robot";
-        
-        final String initialBlankSentence = _formatBlankSentence(rawSentence, missingWord);
+
+        final String initialBlankSentence = _formatBlankSentence(
+          rawSentence,
+          missingWord,
+        );
         final String completedSentence = rawSentence;
 
         return MediaQuery(
@@ -328,23 +372,39 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
                       final bool isCompact = maxHeight < 580;
-                      
-                      final double estimatedContentHeight = 24.h + (isCompact ? 90.h : 120.h) + (isCompact ? 70.h : 100.h) + (isCompact ? 100.h : 140.h) + (isCompact ? 60.h : 80.h);
-                      final remainingHeight = maxHeight - estimatedContentHeight;
-                      
-                      final double gapUnit = remainingHeight > 0 ? remainingHeight / 8 : 0;
-                      final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
-                      final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 16.0) : 8.0;
-                      final double gapSentence = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-                      final double gapTelemetry = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 30.0) : 12.0;
-                      final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(12.0, 40.0) : 12.0;
+
+                      final double estimatedContentHeight =
+                          24.h +
+                          (isCompact ? 90.h : 120.h) +
+                          (isCompact ? 70.h : 100.h) +
+                          (isCompact ? 100.h : 140.h) +
+                          (isCompact ? 60.h : 80.h);
+                      final remainingHeight =
+                          maxHeight - estimatedContentHeight;
+
+                      final double gapUnit = remainingHeight > 0
+                          ? remainingHeight / 8
+                          : 0;
+                      final double gapTop = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(6.0, 16.0)
+                          : 6.0;
+                      final double gapInstruction = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(8.0, 16.0)
+                          : 8.0;
+                      final double gapSentence = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                          : 10.0;
+                      final double gapTelemetry = remainingHeight > 0
+                          ? (gapUnit * 2).clamp(12.0, 30.0)
+                          : 12.0;
+                      final double gapBottom = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(12.0, 40.0)
+                          : 12.0;
 
                       return SingleChildScrollView(
                         physics: const BouncingScrollPhysics(),
                         child: ConstrainedBox(
-                          constraints: BoxConstraints(
-                            minHeight: maxHeight,
-                          ),
+                          constraints: BoxConstraints(minHeight: maxHeight),
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 16.w),
                             child: Column(
@@ -354,100 +414,128 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapTop),
-                                    isCompact 
-                                      ? SizedBox(
-                                          height: 32.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SpeakMissingWordInstruction(
-                                              primaryColor: theme.primaryColor,
-                                              isWordPlaced: _isWordPlaced,
-                                              instruction: quest.instruction,
-                                            ),
-                                          ),
-                                        )
-                                      : SpeakMissingWordInstruction(
-                                          primaryColor: theme.primaryColor,
-                                          isWordPlaced: _isWordPlaced,
-                                          instruction: quest.instruction,
-                                        ),
-                                    SizedBox(height: gapInstruction),
-                                    
                                     isCompact
-                                      ? SizedBox(
-                                          height: 90.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SizedBox(
-                                              width: constraints.maxWidth - 16.w,
-                                              child: SpeakMissingWordVortexSentence(
-                                                text: _isWordPlaced ? completedSentence : initialBlankSentence,
-                                                insertedWord: _isWordPlaced ? (_selectedWord ?? "") : "",
-                                                primaryColor: theme.primaryColor,
-                                                isDark: isDark,
+                                        ? SizedBox(
+                                            height: 32.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child:
+                                                  SpeakMissingWordInstruction(
+                                                    primaryColor:
+                                                        theme.primaryColor,
+                                                    isWordPlaced: _isWordPlaced,
+                                                    instruction:
+                                                        quest.instruction,
+                                                  ),
+                                            ),
+                                          )
+                                        : SpeakMissingWordInstruction(
+                                            primaryColor: theme.primaryColor,
+                                            isWordPlaced: _isWordPlaced,
+                                            instruction: quest.instruction,
+                                          ),
+                                    SizedBox(height: gapInstruction),
+
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 90.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width:
+                                                    constraints.maxWidth - 16.w,
+                                                child:
+                                                    SpeakMissingWordVortexSentence(
+                                                      text: _isWordPlaced
+                                                          ? completedSentence
+                                                          : initialBlankSentence,
+                                                      insertedWord:
+                                                          _isWordPlaced
+                                                          ? (_selectedWord ??
+                                                                "")
+                                                          : "",
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
                                               ),
                                             ),
+                                          )
+                                        : SpeakMissingWordVortexSentence(
+                                            text: _isWordPlaced
+                                                ? completedSentence
+                                                : initialBlankSentence,
+                                            insertedWord: _isWordPlaced
+                                                ? (_selectedWord ?? "")
+                                                : "",
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
                                           ),
-                                        )
-                                      : SpeakMissingWordVortexSentence(
-                                          text: _isWordPlaced ? completedSentence : initialBlankSentence,
-                                          insertedWord: _isWordPlaced ? (_selectedWord ?? "") : "",
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                        ),
                                     SizedBox(height: gapSentence),
 
                                     if (!_isWordPlaced)
                                       isCompact
-                                        ? SizedBox(
-                                            height: 110.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: constraints.maxWidth - 16.w,
-                                                child: SpeakMissingWordMagnetArena(
-                                                  dynamicOptions: _dynamicOptions,
-                                                  selectedWord: _selectedWord,
-                                                  pullForce: _pullForce,
-                                                  primaryColor: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  vortexController: _vortexController,
-                                                  onPullStart: _onPullStart,
-                                                  onPullEnd: _onPullEnd,
+                                          ? SizedBox(
+                                              height: 110.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: SizedBox(
+                                                  width:
+                                                      constraints.maxWidth -
+                                                      16.w,
+                                                  child:
+                                                      SpeakMissingWordMagnetArena(
+                                                        dynamicOptions:
+                                                            _dynamicOptions,
+                                                        selectedWord:
+                                                            _selectedWord,
+                                                        pullForce: _pullForce,
+                                                        primaryColor:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                        vortexController:
+                                                            _vortexController,
+                                                        onPullStart:
+                                                            _onPullStart,
+                                                        onPullEnd: _onPullEnd,
+                                                      ),
                                                 ),
                                               ),
+                                            )
+                                          : SpeakMissingWordMagnetArena(
+                                              dynamicOptions: _dynamicOptions,
+                                              selectedWord: _selectedWord,
+                                              pullForce: _pullForce,
+                                              primaryColor: theme.primaryColor,
+                                              isDark: isDark,
+                                              vortexController:
+                                                  _vortexController,
+                                              onPullStart: _onPullStart,
+                                              onPullEnd: _onPullEnd,
                                             ),
-                                          )
-                                        : SpeakMissingWordMagnetArena(
-                                            dynamicOptions: _dynamicOptions,
-                                            selectedWord: _selectedWord,
-                                            pullForce: _pullForce,
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                            vortexController: _vortexController,
-                                            onPullStart: _onPullStart,
-                                            onPullEnd: _onPullEnd,
-                                          ),
 
                                     if (_isWordPlaced)
                                       isCompact
-                                        ? SizedBox(
-                                            height: 70.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: constraints.maxWidth - 16.w,
-                                                child: SpeakMissingWordTelemetryCard(
-                                                  spokenText: _spokenText,
-                                                  isDark: isDark,
+                                          ? SizedBox(
+                                              height: 70.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: SizedBox(
+                                                  width:
+                                                      constraints.maxWidth -
+                                                      16.w,
+                                                  child:
+                                                      SpeakMissingWordTelemetryCard(
+                                                        spokenText: _spokenText,
+                                                        isDark: isDark,
+                                                      ),
                                                 ),
                                               ),
+                                            )
+                                          : SpeakMissingWordTelemetryCard(
+                                              spokenText: _spokenText,
+                                              isDark: isDark,
                                             ),
-                                          )
-                                        : SpeakMissingWordTelemetryCard(
-                                            spokenText: _spokenText,
-                                            isDark: isDark,
-                                          ),
                                   ],
                                 ),
                                 Column(
@@ -456,57 +544,74 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> with Ti
                                     SizedBox(height: gapTelemetry),
                                     if (_isWordPlaced && !_isAnswered)
                                       isCompact
-                                        ? SizedBox(
-                                            height: 70.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SpeakMissingWordTactileMic(
-                                                isSpeechActive: _isSpeechActive,
-                                                primaryColor: theme.primaryColor,
-                                                onLongPressStart: _startSpeechListening,
-                                                onLongPressEnd: () => _stopSpeechListening(completedSentence),
-                                                attempts: _attempts,
-                                                isAnswered: _isAnswered,
-                                                onTutorPass: _tutorPass,
+                                          ? SizedBox(
+                                              height: 70.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child:
+                                                    SpeakMissingWordTactileMic(
+                                                      isSpeechActive:
+                                                          _isSpeechActive,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      onLongPressStart:
+                                                          _startSpeechListening,
+                                                      onLongPressEnd: () =>
+                                                          _stopSpeechListening(
+                                                            completedSentence,
+                                                          ),
+                                                      attempts: _attempts,
+                                                      isAnswered: _isAnswered,
+                                                      onTutorPass: _tutorPass,
+                                                    ),
                                               ),
+                                            )
+                                          : SpeakMissingWordTactileMic(
+                                              isSpeechActive: _isSpeechActive,
+                                              primaryColor: theme.primaryColor,
+                                              onLongPressStart:
+                                                  _startSpeechListening,
+                                              onLongPressEnd: () =>
+                                                  _stopSpeechListening(
+                                                    completedSentence,
+                                                  ),
+                                              attempts: _attempts,
+                                              isAnswered: _isAnswered,
+                                              onTutorPass: _tutorPass,
                                             ),
-                                          )
-                                        : SpeakMissingWordTactileMic(
-                                            isSpeechActive: _isSpeechActive,
-                                            primaryColor: theme.primaryColor,
-                                            onLongPressStart: _startSpeechListening,
-                                            onLongPressEnd: () => _stopSpeechListening(completedSentence),
-                                            attempts: _attempts,
-                                            isAnswered: _isAnswered,
-                                            onTutorPass: _tutorPass,
-                                          ),
 
                                     AnimatedCrossFade(
                                       firstChild: const SizedBox(),
                                       secondChild: isCompact
-                                        ? SizedBox(
-                                            height: 100.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: constraints.maxWidth - 16.w,
-                                                child: SpeakMissingWordExplanationCard(
-                                                  quest: quest,
-                                                  isCorrect: _isCorrect ?? false,
-                                                  isDark: isDark,
+                                          ? SizedBox(
+                                              height: 100.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: SizedBox(
+                                                  width:
+                                                      constraints.maxWidth -
+                                                      16.w,
+                                                  child:
+                                                      SpeakMissingWordExplanationCard(
+                                                        quest: quest,
+                                                        isCorrect:
+                                                            _isCorrect ?? false,
+                                                        isDark: isDark,
+                                                      ),
                                                 ),
                                               ),
+                                            )
+                                          : SpeakMissingWordExplanationCard(
+                                              quest: quest,
+                                              isCorrect: _isCorrect ?? false,
+                                              isDark: isDark,
                                             ),
-                                          )
-                                        : SpeakMissingWordExplanationCard(
-                                            quest: quest,
-                                            isCorrect: _isCorrect ?? false,
-                                            isDark: isDark,
-                                          ),
                                       crossFadeState: _isAnswered
                                           ? CrossFadeState.showSecond
                                           : CrossFadeState.showFirst,
-                                      duration: const Duration(milliseconds: 400),
+                                      duration: const Duration(
+                                        milliseconds: 400,
+                                      ),
                                     ),
                                     SizedBox(height: gapBottom),
                                   ],

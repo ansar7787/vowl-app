@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class DetailSpotlightInstruction extends StatelessWidget {
   final bool isAnswered;
   final Color color;
@@ -29,7 +30,8 @@ class DetailSpotlightInstruction extends StatelessWidget {
           Flexible(
             child: Text(
               instruction.toUpperCase(),
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: color,

@@ -35,12 +35,7 @@ class KidsFoodLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Chef's Hat / Board
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: _buildKitchenBoard(quest),
-              ),
-            ),
+            Expanded(flex: 5, child: Center(child: _buildKitchenBoard(quest))),
             // Serving Platters (Options)
             Flexible(
               flex: 5,
@@ -53,16 +48,24 @@ class KidsFoodLayout extends StatelessWidget {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: Colors.red[600],
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(8.r)),
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(8.r),
+                      ),
                     ),
                     child: CustomPaint(painter: _CheckeredPainter()),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 20.h, left: 16.w, right: 16.w),
+                    padding: EdgeInsets.only(
+                      bottom: 20.h,
+                      left: 16.w,
+                      right: 16.w,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: List.generate(quest.options?.length ?? 0, (index) {
+                      children: List.generate(quest.options?.length ?? 0, (
+                        index,
+                      ) {
                         final option = quest.options![index];
                         return Expanded(
                           child: Padding(
@@ -99,7 +102,10 @@ class KidsFoodLayout extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(color: const Color(0xFFD4D4D8), width: 4.r), // Light grey tile border
+            border: Border.all(
+              color: const Color(0xFFD4D4D8),
+              width: 4.r,
+            ), // Light grey tile border
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.1),
@@ -113,10 +119,7 @@ class KidsFoodLayout extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (quest.emoji != null)
-                  Text(
-                    quest.emoji!,
-                    style: TextStyle(fontSize: 48.sp),
-                  ),
+                  Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
                 Text(
                   quest.question ?? "?",
                   style: TextStyle(
@@ -163,9 +166,21 @@ class KidsFoodLayout extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(width: 2.w, height: 20.h, color: const Color(0xFFE4E4E7)),
-                Container(width: 2.w, height: 25.h, color: const Color(0xFFE4E4E7)),
-                Container(width: 2.w, height: 20.h, color: const Color(0xFFE4E4E7)),
+                Container(
+                  width: 2.w,
+                  height: 20.h,
+                  color: const Color(0xFFE4E4E7),
+                ),
+                Container(
+                  width: 2.w,
+                  height: 25.h,
+                  color: const Color(0xFFE4E4E7),
+                ),
+                Container(
+                  width: 2.w,
+                  height: 20.h,
+                  color: const Color(0xFFE4E4E7),
+                ),
               ],
             ),
           ),
@@ -219,10 +234,15 @@ class KidsFoodLayout extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
               color: const Color(0xFFF1F5F9), // Light silver plate
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(16.r)),
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(16.r),
+              ),
               border: Border.all(color: const Color(0xFF94A3B8), width: 2),
               boxShadow: [
-                BoxShadow(color: Colors.black.withValues(alpha: 0.3), offset: const Offset(0, 4)),
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.3),
+                  offset: const Offset(0, 4),
+                ),
               ],
             ),
             child: Center(
@@ -254,7 +274,7 @@ class _CheckeredPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final paint = Paint()..color = Colors.white;
     final squareSize = 20.0;
-    
+
     for (double y = 0; y < size.height; y += squareSize) {
       for (double x = 0; x < size.width; x += squareSize) {
         if (((x / squareSize).floor() + (y / squareSize).floor()) % 2 == 0) {

@@ -45,10 +45,16 @@ class RoleplayFeedbackCard extends StatelessWidget {
         ? const Color(0xFF10B981)
         : const Color(0xFFE11D48);
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
-    final title = success ? context.tr('games.excellent') : context.tr('games.not_quite');
+    final title = success
+        ? context.tr('games.excellent')
+        : context.tr('games.not_quite');
     final buttonText = success
         ? context.tr('common.continue_text').toUpperCase()
-        : (isFinal ? (lives == 0 ? context.tr('games.see_results') : context.tr('common.continue_text').toUpperCase()) : context.tr('games.try_again').toUpperCase());
+        : (isFinal
+              ? (lives == 0
+                    ? context.tr('games.see_results')
+                    : context.tr('common.continue_text').toUpperCase())
+              : context.tr('games.try_again').toUpperCase());
     final explanation = (!success && isFinal)
         ? loadedState?.currentQuest.explanation
         : null;

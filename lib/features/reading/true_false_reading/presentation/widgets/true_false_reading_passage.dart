@@ -21,10 +21,11 @@ class TrueFalseReadingPassage extends StatelessWidget {
       borderRadius: BorderRadius.circular(20.r),
       color: color.withValues(alpha: isDark ? 0.05 : 0.08),
       child: Text(
-        passage, 
-        style: TextStyle(fontFamily: 'Outfit', 
-          fontSize: 16.sp, 
-          height: 1.5, 
+        passage,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 16.sp,
+          height: 1.5,
           color: isDark ? Colors.white70 : Colors.black87,
         ),
       ),

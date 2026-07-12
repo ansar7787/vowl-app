@@ -38,8 +38,10 @@ class DescribeSituationConstellationMap extends StatelessWidget {
       child: Stack(
         children: List.generate(emojis.length, (index) {
           final isExpanded = expandedEmojiIndex == index;
-          
-          final double leftPos = count > 1 ? 15.w + (index * step) : (availableWidth - 50.r) / 2;
+
+          final double leftPos = count > 1
+              ? 15.w + (index * step)
+              : (availableWidth - 50.r) / 2;
           final double topPos = (index % 2 == 0) ? 25.h : 95.h;
           final showLeft = index >= count / 2;
 
@@ -58,45 +60,67 @@ class DescribeSituationConstellationMap extends StatelessWidget {
                       color: isDark ? Colors.black87 : Colors.white,
                       borderRadius: BorderRadius.circular(12.r),
                       border: Border.all(color: color),
-                      boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 10)],
+                      boxShadow: const [
+                        BoxShadow(color: Colors.black26, blurRadius: 10),
+                      ],
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: (keywords[index.toString()] ?? []).map((k) => TextButton(
-                        onPressed: () => onInjectKeyword(k),
-                        style: TextButton.styleFrom(
-                          minimumSize: Size.zero,
-                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                        ),
-                        child: Text(
-                          k, 
-                          style: TextStyle(fontFamily: 'RobotoMono', 
-                            color: isDark ? Colors.white : Colors.black87, 
-                            fontSize: 11.sp, 
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      )).toList(),
+                      children: (keywords[index.toString()] ?? [])
+                          .map(
+                            (k) => TextButton(
+                              onPressed: () => onInjectKeyword(k),
+                              style: TextButton.styleFrom(
+                                minimumSize: Size.zero,
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 8.w,
+                                  vertical: 4.h,
+                                ),
+                              ),
+                              child: Text(
+                                k,
+                                style: TextStyle(
+                                  fontFamily: 'RobotoMono',
+                                  color: isDark ? Colors.white : Colors.black87,
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          )
+                          .toList(),
                     ),
                   ).animate().scale(alignment: Alignment.centerRight).fadeIn(),
                   SizedBox(width: 8.w),
                 ],
                 GestureDetector(
                   onTap: () => onEmojiTap(index),
-                  child: Container(
-                    width: 50.r, height: 50.r,
-                    decoration: BoxDecoration(
-                      color: isExpanded ? color : (isDark ? Colors.white10 : Colors.black12),
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        if (isExpanded) 
-                          BoxShadow(color: color.withValues(alpha: 0.5), blurRadius: 15),
-                      ],
-                    ),
-                    child: Center(
-                      child: Text(emojis[index], style: TextStyle(fontSize: 22.sp)),
-                    ),
-                  ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
+                  child:
+                      Container(
+                            width: 50.r,
+                            height: 50.r,
+                            decoration: BoxDecoration(
+                              color: isExpanded
+                                  ? color
+                                  : (isDark ? Colors.white10 : Colors.black12),
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                if (isExpanded)
+                                  BoxShadow(
+                                    color: color.withValues(alpha: 0.5),
+                                    blurRadius: 15,
+                                  ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Text(
+                                emojis[index],
+                                style: TextStyle(fontSize: 22.sp),
+                              ),
+                            ),
+                          )
+                          .animate(onPlay: (c) => c.repeat())
+                          .shimmer(duration: 2.seconds),
                 ),
                 if (isExpanded && !showLeft) ...[
                   SizedBox(width: 8.w),
@@ -106,25 +130,35 @@ class DescribeSituationConstellationMap extends StatelessWidget {
                       color: isDark ? Colors.black87 : Colors.white,
                       borderRadius: BorderRadius.circular(12.r),
                       border: Border.all(color: color),
-                      boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 10)],
+                      boxShadow: const [
+                        BoxShadow(color: Colors.black26, blurRadius: 10),
+                      ],
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: (keywords[index.toString()] ?? []).map((k) => TextButton(
-                        onPressed: () => onInjectKeyword(k),
-                        style: TextButton.styleFrom(
-                          minimumSize: Size.zero,
-                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                        ),
-                        child: Text(
-                          k, 
-                          style: TextStyle(fontFamily: 'RobotoMono', 
-                            color: isDark ? Colors.white : Colors.black87, 
-                            fontSize: 11.sp, 
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      )).toList(),
+                      children: (keywords[index.toString()] ?? [])
+                          .map(
+                            (k) => TextButton(
+                              onPressed: () => onInjectKeyword(k),
+                              style: TextButton.styleFrom(
+                                minimumSize: Size.zero,
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 8.w,
+                                  vertical: 4.h,
+                                ),
+                              ),
+                              child: Text(
+                                k,
+                                style: TextStyle(
+                                  fontFamily: 'RobotoMono',
+                                  color: isDark ? Colors.white : Colors.black87,
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          )
+                          .toList(),
                     ),
                   ).animate().scale(alignment: Alignment.centerLeft).fadeIn(),
                 ],

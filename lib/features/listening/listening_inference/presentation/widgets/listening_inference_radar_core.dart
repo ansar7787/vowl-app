@@ -41,22 +41,28 @@ class ListeningInferenceRadarCore extends StatelessWidget {
               },
             );
           }),
-          
+
           // Central Core
           Container(
             padding: EdgeInsets.all(32.r),
             decoration: BoxDecoration(
-              shape: BoxShape.circle, 
-              gradient: RadialGradient(colors: [color, color.withValues(alpha: 0.7)]),
+              shape: BoxShape.circle,
+              gradient: RadialGradient(
+                colors: [color, color.withValues(alpha: 0.7)],
+              ),
               boxShadow: [
                 BoxShadow(
                   color: color.withValues(alpha: 0.3),
                   blurRadius: 30,
                   spreadRadius: 5,
-                )
+                ),
               ],
             ),
-            child: Icon(Icons.psychology_rounded, size: 64.r, color: Colors.white),
+            child: Icon(
+              Icons.psychology_rounded,
+              size: 64.r,
+              color: Colors.white,
+            ),
           ),
         ],
       ),

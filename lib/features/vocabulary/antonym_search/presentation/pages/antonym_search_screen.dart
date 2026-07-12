@@ -174,7 +174,6 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                       ),
                     ),
 
-
                   Center(
                     child: isCompact
                         ? SizedBox(

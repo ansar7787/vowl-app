@@ -548,7 +548,11 @@ class VowlCoinsScreen extends StatelessWidget {
   Widget _buildCoinHistory(BuildContext context, UserEntity user) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     // Take the 10 most recent transactions, but display them with the newest at the bottom
-    final recentHistory = user.coinHistory.reversed.take(10).toList().reversed.toList();
+    final recentHistory = user.coinHistory.reversed
+        .take(10)
+        .toList()
+        .reversed
+        .toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

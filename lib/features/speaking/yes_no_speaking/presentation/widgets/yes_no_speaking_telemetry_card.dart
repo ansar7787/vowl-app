@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class YesNoSpeakingTelemetryCard extends StatelessWidget {
   final String spokenText;
   final bool isDark;
@@ -19,7 +20,9 @@ class YesNoSpeakingTelemetryCard extends StatelessWidget {
         color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
-          color: isDark ? Colors.white.withValues(alpha: 0.04) : Colors.black.withValues(alpha: 0.04),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.04)
+              : Colors.black.withValues(alpha: 0.04),
         ),
       ),
       child: Column(
@@ -27,7 +30,8 @@ class YesNoSpeakingTelemetryCard extends StatelessWidget {
         children: [
           Text(
             "VOCAL DECRYPTION OUTPUT",
-            style: TextStyle(fontFamily: 'RobotoMono', 
+            style: TextStyle(
+              fontFamily: 'RobotoMono',
               fontSize: 9.sp,
               color: Colors.grey,
               letterSpacing: 1.5,
@@ -35,10 +39,15 @@ class YesNoSpeakingTelemetryCard extends StatelessWidget {
           ),
           SizedBox(height: 8.h),
           Text(
-            spokenText.isEmpty ? "Hold record lens and speak target sentence..." : spokenText,
-            style: TextStyle(fontFamily: 'Outfit', 
+            spokenText.isEmpty
+                ? "Hold record lens and speak target sentence..."
+                : spokenText,
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 14.sp,
-              fontStyle: spokenText.isEmpty ? FontStyle.normal : FontStyle.italic,
+              fontStyle: spokenText.isEmpty
+                  ? FontStyle.normal
+                  : FontStyle.italic,
               color: spokenText.isEmpty
                   ? (isDark ? Colors.white30 : Colors.black38)
                   : (isDark ? Colors.white70 : Colors.black87),

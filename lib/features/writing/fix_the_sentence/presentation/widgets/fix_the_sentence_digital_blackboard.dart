@@ -28,7 +28,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final parts = fullText.split(targetWord);
-    
+
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(24.r),
@@ -46,52 +46,71 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
             child: RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 18.sp, 
-                  color: isDark ? Colors.white70 : Colors.black87, 
-                  height: 1.5
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 18.sp,
+                  color: isDark ? Colors.white70 : Colors.black87,
+                  height: 1.5,
                 ),
                 children: [
                   if (parts.isNotEmpty) TextSpan(text: parts[0]),
                   WidgetSpan(
                     alignment: PlaceholderAlignment.middle,
-                    child: isWiped 
+                    child: isWiped
                         ? Builder(
                             builder: (context) {
-                              final successColor = isDark ? Colors.greenAccent : const Color(0xFF16A34A);
+                              final successColor = isDark
+                                  ? Colors.greenAccent
+                                  : const Color(0xFF16A34A);
                               return Container(
                                 margin: EdgeInsets.symmetric(horizontal: 8.w),
-                                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 12.w,
+                                  vertical: 6.h,
+                                ),
                                 decoration: BoxDecoration(
-                                  color: selectedReplacement != null 
+                                  color: selectedReplacement != null
                                       ? successColor.withValues(alpha: 0.25)
-                                      : (isDark ? Colors.white12 : Colors.black12),
+                                      : (isDark
+                                            ? Colors.white12
+                                            : Colors.black12),
                                   borderRadius: BorderRadius.circular(10.r),
                                   border: Border.all(
-                                    color: selectedReplacement != null 
-                                        ? successColor 
-                                        : (isDark ? Colors.white30 : Colors.black26), 
-                                    width: 2
+                                    color: selectedReplacement != null
+                                        ? successColor
+                                        : (isDark
+                                              ? Colors.white30
+                                              : Colors.black26),
+                                    width: 2,
                                   ),
                                 ),
                                 child: Text(
                                   selectedReplacement?.toUpperCase() ?? "____",
-                                  style: TextStyle(fontFamily: 'RobotoMono', 
-                                    fontSize: 13.sp, 
+                                  style: TextStyle(
+                                    fontFamily: 'RobotoMono',
+                                    fontSize: 13.sp,
                                     fontWeight: FontWeight.w900,
-                                    color: selectedReplacement != null 
-                                        ? (isDark ? Colors.white : Colors.black87)
-                                        : (isDark ? Colors.white30 : Colors.black38)
-                                  )
+                                    color: selectedReplacement != null
+                                        ? (isDark
+                                              ? Colors.white
+                                              : Colors.black87)
+                                        : (isDark
+                                              ? Colors.white30
+                                              : Colors.black38),
+                                  ),
                                 ),
                               );
-                            }
+                            },
                           )
                         : GestureDetector(
-                            onPanUpdate: (details) => onErase(details.localPosition),
+                            onPanUpdate: (details) =>
+                                onErase(details.localPosition),
                             child: Container(
                               margin: EdgeInsets.symmetric(horizontal: 8.w),
-                              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 12.w,
+                                vertical: 6.h,
+                              ),
                               decoration: BoxDecoration(
                                 color: color.withValues(alpha: 0.15),
                                 borderRadius: BorderRadius.circular(10.r),
@@ -101,16 +120,22 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                 children: [
                                   Text(
                                     targetWord.toUpperCase(),
-                                    style: TextStyle(fontFamily: 'RobotoMono', 
-                                      fontSize: 13.sp, 
-                                      fontWeight: FontWeight.w900, 
-                                      color: isDark ? Colors.redAccent : const Color(0xFFDC2626)
-                                    )
+                                    style: TextStyle(
+                                      fontFamily: 'RobotoMono',
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: isDark
+                                          ? Colors.redAccent
+                                          : const Color(0xFFDC2626),
+                                    ),
                                   ),
                                   if (erasePoints.isNotEmpty)
                                     Positioned.fill(
                                       child: CustomPaint(
-                                        painter: FixTheSentenceScratchOverlayPainter(points: erasePoints),
+                                        painter:
+                                            FixTheSentenceScratchOverlayPainter(
+                                              points: erasePoints,
+                                            ),
                                       ),
                                     ),
                                 ],

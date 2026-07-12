@@ -37,7 +37,7 @@ void main() {
       final result = VocabularyQuestModel.fromJson(jsonMap, tId);
 
       // Assert
-      // Note: correct index might change due to shuffle in fromJson, 
+      // Note: correct index might change due to shuffle in fromJson,
       // but we can check other properties.
       expect(result.id, tId);
       expect(result.word, 'ubiquitous');

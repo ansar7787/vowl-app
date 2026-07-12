@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ClozeTestInstruction extends StatelessWidget {
   final Color primaryColor;
 
-  const ClozeTestInstruction({
-    super.key,
-    required this.primaryColor,
-  });
+  const ClozeTestInstruction({super.key, required this.primaryColor});
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +18,20 @@ class ClozeTestInstruction extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.settings_input_component_rounded, size: 14.r, color: primaryColor),
+          Icon(
+            Icons.settings_input_component_rounded,
+            size: 14.r,
+            color: primaryColor,
+          ),
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              "INJECT FUEL CELLS TO POWER THE PASSAGE", 
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 10.sp, 
-                fontWeight: FontWeight.w900, 
-                color: primaryColor, 
+              "INJECT FUEL CELLS TO POWER THE PASSAGE",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
                 letterSpacing: 1.5,
               ),
             ),

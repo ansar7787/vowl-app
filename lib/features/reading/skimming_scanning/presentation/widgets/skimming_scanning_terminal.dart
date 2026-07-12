@@ -22,20 +22,26 @@ class SkimmingScanningTerminal extends StatelessWidget {
   });
 
   String _cleanWord(String word) {
-    return word.replaceAll(RegExp(r'[.,\/#!$%\^&\*;:{}=\-_`~()\[\]]'), '').trim();
+    return word
+        .replaceAll(RegExp(r'[.,\/#!$%\^&\*;:{}=\-_`~()\[\]]'), '')
+        .trim();
   }
 
   @override
   Widget build(BuildContext context) {
     final List<String> words = text.split(RegExp(r'\s+'));
-    
+
     return Container(
       decoration: BoxDecoration(
         color: Colors.black,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: Colors.white10, width: 4),
         boxShadow: [
-          BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 30, spreadRadius: 2),
+          BoxShadow(
+            color: color.withValues(alpha: 0.15),
+            blurRadius: 30,
+            spreadRadius: 2,
+          ),
         ],
       ),
       child: Stack(
@@ -49,7 +55,7 @@ class SkimmingScanningTerminal extends StatelessWidget {
               int start = index * 4;
               int end = (start + 4).clamp(0, words.length);
               final List<String> rowWords = words.sublist(start, end);
-              
+
               return Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.h),
                 child: Wrap(
@@ -57,34 +63,41 @@ class SkimmingScanningTerminal extends StatelessWidget {
                   runSpacing: 8.h,
                   children: rowWords.map((word) {
                     final clean = _cleanWord(word);
-                    final isCorrectTarget = clean.toLowerCase() == correct.toLowerCase();
+                    final isCorrectTarget =
+                        clean.toLowerCase() == correct.toLowerCase();
                     final bool isTapped = isAnswered && isCorrectTarget;
-                    
+
                     return GestureDetector(
                       onTap: () => onTapWord(clean),
                       child: AnimatedContainer(
                         duration: 300.milliseconds,
-                        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 6.h,
+                        ),
                         decoration: BoxDecoration(
-                          color: isTapped 
-                              ? Colors.greenAccent.withValues(alpha: 0.25) 
+                          color: isTapped
+                              ? Colors.greenAccent.withValues(alpha: 0.25)
                               : Colors.transparent,
                           borderRadius: BorderRadius.circular(8.r),
                           border: Border.all(
-                            color: isTapped 
-                                ? Colors.greenAccent 
+                            color: isTapped
+                                ? Colors.greenAccent
                                 : Colors.transparent,
                             width: 1.5,
                           ),
                         ),
                         child: Text(
                           word,
-                          style: TextStyle(fontFamily: 'RobotoMono', 
+                          style: TextStyle(
+                            fontFamily: 'RobotoMono',
                             fontSize: 18.sp,
-                            color: isTapped 
-                                ? Colors.greenAccent 
+                            color: isTapped
+                                ? Colors.greenAccent
                                 : Colors.greenAccent.withValues(alpha: 0.8),
-                            fontWeight: isTapped ? FontWeight.bold : FontWeight.normal,
+                            fontWeight: isTapped
+                                ? FontWeight.bold
+                                : FontWeight.normal,
                             letterSpacing: 1,
                           ),
                         ),
@@ -95,7 +108,7 @@ class SkimmingScanningTerminal extends StatelessWidget {
               );
             },
           ),
-          
+
           // CRT Overlay
           IgnorePointer(
             child: Container(
@@ -104,13 +117,17 @@ class SkimmingScanningTerminal extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [Colors.black.withValues(alpha: 0.3), Colors.transparent, Colors.black.withValues(alpha: 0.3)],
+                  colors: [
+                    Colors.black.withValues(alpha: 0.3),
+                    Colors.transparent,
+                    Colors.black.withValues(alpha: 0.3),
+                  ],
                   stops: const [0, 0.5, 1],
                 ),
               ),
             ),
           ),
-          
+
           // Scanline
           const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
         ],

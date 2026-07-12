@@ -51,7 +51,9 @@ class LeaderboardRankCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(24.r),
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFF3B82F6).withValues(alpha: isDark ? 0.25 : 0.15),
+              color: const Color(
+                0xFF3B82F6,
+              ).withValues(alpha: isDark ? 0.25 : 0.15),
               blurRadius: 32,
               spreadRadius: 4,
               offset: const Offset(0, 8),

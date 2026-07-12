@@ -47,16 +47,17 @@ class WordReorderAssemblyCard extends StatelessWidget {
             children: assembledIndices.isEmpty
                 ? [
                     Text(
-                      "WAITING FOR DATA...",
-                      style: TextStyle(fontFamily: 'Outfit', 
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w700,
-                        color: primaryColor.withValues(alpha: 0.3),
-                        letterSpacing: 2,
-                      ),
-                    )
-                    .animate(onPlay: (c) => c.repeat(reverse: true))
-                    .shimmer(duration: 2.seconds),
+                          "WAITING FOR DATA...",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w700,
+                            color: primaryColor.withValues(alpha: 0.3),
+                            letterSpacing: 2,
+                          ),
+                        )
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .shimmer(duration: 2.seconds),
                   ]
                 : assembledIndices.map((idx) {
                     final word = shuffledWords[idx];
@@ -76,7 +77,8 @@ class WordReorderAssemblyCard extends StatelessWidget {
                         ),
                         child: Text(
                           word,
-                          style: TextStyle(fontFamily: 'Outfit', 
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
                             fontSize: 18.sp,
                             fontWeight: FontWeight.w600,
                             color: primaryColor,

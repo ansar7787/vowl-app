@@ -104,7 +104,11 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     });
   }
 
-  void _submitAnswer(int minWords, List<String> availableKeywords, bool isAnswered) {
+  void _submitAnswer(
+    int minWords,
+    List<String> availableKeywords,
+    bool isAnswered,
+  ) {
     if (isAnswered) return;
 
     final composedText = _textController.text.trim().toLowerCase();
@@ -160,9 +164,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
-        final WritingQuest? quest = isLoaded
-            ? state.currentQuest
-            : null;
+        final WritingQuest? quest = isLoaded ? state.currentQuest : null;
 
         final emojis = quest?.emojis ?? ["🌋", "💧", "🔬", "🐠"];
         final rawKeywords =
@@ -227,14 +229,18 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                           isDark: isDark,
                           expandedEmojiIndex: _expandedEmojiIndex,
                           onEmojiTap: (idx) => _onEmojiTap(idx, isAnswered),
-                          onInjectKeyword: (kw) => _injectKeyword(kw, isAnswered),
+                          onInjectKeyword: (kw) =>
+                              _injectKeyword(kw, isAnswered),
                         ),
                         SizedBox(height: 30.h),
 
                         if (!isAnswered)
                           ScaleButton(
-                            onTap: () =>
-                                _submitAnswer(minWords, allKeywordPool, isAnswered),
+                            onTap: () => _submitAnswer(
+                              minWords,
+                              allKeywordPool,
+                              isAnswered,
+                            ),
                             child: Container(
                               width: double.infinity,
                               height: 60.h,

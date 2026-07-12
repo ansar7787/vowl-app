@@ -22,12 +22,7 @@ class KidsBackgroundRenderer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Stack(
-      children: [
-        _buildPainter(isDark),
-        _buildShaderEffect(),
-      ],
-    );
+    return Stack(children: [_buildPainter(isDark), _buildShaderEffect()]);
   }
 
   Widget _buildPainter(bool isDark) {
@@ -36,7 +31,7 @@ class KidsBackgroundRenderer extends StatelessWidget {
         return KidsWorldBackgroundPainter(gameType: gameType);
       case 'SunnyMeadow':
         return GenericKidsBackgroundPainter(
-          gradientColors: isDark 
+          gradientColors: isDark
               ? [const Color(0xFF1E293B), const Color(0xFF0F172A)]
               : [const Color(0xFF87CEEB), const Color(0xFFE0F7FA)],
           emojis: const ['☀️', '☁️', '🌸', '🦋'],
@@ -45,21 +40,21 @@ class KidsBackgroundRenderer extends StatelessWidget {
         return const _OceanWavePainter();
       case 'CandyCloud':
         return GenericKidsBackgroundPainter(
-          gradientColors: isDark 
+          gradientColors: isDark
               ? [const Color(0xFF831843), const Color(0xFF500724)]
               : [const Color(0xFFFFC0CB), const Color(0xFFF8BBD0)],
           emojis: const ['🍭', '🍬', '☁️', '🍦'],
         );
       case 'ForestFriend':
         return GenericKidsBackgroundPainter(
-          gradientColors: isDark 
+          gradientColors: isDark
               ? [const Color(0xFF064E3B), const Color(0xFF022C22)]
               : [const Color(0xFF388E3C), const Color(0xFFC8E6C9)],
           icon: Icons.eco_rounded,
         );
       case 'StarryNight':
         return GenericKidsBackgroundPainter(
-          gradientColors: isDark 
+          gradientColors: isDark
               ? [const Color(0xFF1E1B4B), const Color(0xFF0F172A)]
               : [const Color(0xFF1A237E), const Color(0xFF3949AB)],
           icon: Icons.star_rounded,
@@ -78,7 +73,7 @@ class KidsBackgroundRenderer extends StatelessWidget {
   }
 
   Widget _buildShaderEffect() {
-    // Shaders can be added here as needed, but for performance 
+    // Shaders can be added here as needed, but for performance
     // we keep them minimal in the refactor.
     return const SizedBox.shrink();
   }
@@ -96,9 +91,7 @@ class _OceanWavePainter extends StatelessWidget {
           colors: [Color(0xFF00B4DB), Color(0xFF0083B0)],
         ),
       ),
-      child: Stack(
-        children: List.generate(10, (i) => _buildBubble(i)),
-      ),
+      child: Stack(children: List.generate(10, (i) => _buildBubble(i))),
     );
   }
 
@@ -107,15 +100,25 @@ class _OceanWavePainter extends StatelessWidget {
     return Positioned(
       bottom: -50,
       left: random.nextDouble() * 1.sw,
-      child: Container(
-        width: random.nextDouble() * 40 + 10,
-        height: 40,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 1.5),
-        ),
-      ).animate(onPlay: (c) => c.repeat())
-       .moveY(begin: 0, end: -1.sh - 100, duration: (5 + random.nextDouble() * 5).seconds, curve: Curves.linear),
+      child:
+          Container(
+                width: random.nextDouble() * 40 + 10,
+                height: 40,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.2),
+                    width: 1.5,
+                  ),
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat())
+              .moveY(
+                begin: 0,
+                end: -1.sh - 100,
+                duration: (5 + random.nextDouble() * 5).seconds,
+                curve: Curves.linear,
+              ),
     );
   }
 }

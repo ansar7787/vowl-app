@@ -56,12 +56,16 @@ class GrammarFeedbackCard extends StatelessWidget {
     final gradient = success ? _successGradient : _failGradient;
     final shadowColor = success ? _successShadow : _failShadow;
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
-    final title = success ? context.tr('games.excellent') : context.tr('games.not_quite');
+    final title = success
+        ? context.tr('games.excellent')
+        : context.tr('games.not_quite');
 
     final buttonText = success
         ? context.tr('common.continue_text').toUpperCase()
         : (isFinalFailure
-              ? (lives == 0 ? context.tr('common.see_results').toUpperCase() : context.tr('common.continue_text').toUpperCase())
+              ? (lives == 0
+                    ? context.tr('common.see_results').toUpperCase()
+                    : context.tr('common.continue_text').toUpperCase())
               : context.tr('games.try_again').toUpperCase());
 
     // Build explanation string for mastery-loop failures.
@@ -114,7 +118,12 @@ class GrammarFeedbackCard extends StatelessWidget {
                 ],
                 if (explanation != null) ...[
                   SizedBox(height: 16.h),
-                  _buildExplanationCard(context, explanation, shadowColor, isDark),
+                  _buildExplanationCard(
+                    context,
+                    explanation,
+                    shadowColor,
+                    isDark,
+                  ),
                 ],
                 SizedBox(height: 28.h),
                 _buildActionButton(buttonText, gradient, shadowColor),
@@ -215,11 +224,7 @@ class GrammarFeedbackCard extends StatelessWidget {
         .scale(duration: 400.ms, curve: Curves.easeOutBack);
   }
 
-  Widget _buildGrammarRuleCard(
-    String rule,
-    Color accentColor,
-    bool isDark,
-  ) {
+  Widget _buildGrammarRuleCard(String rule, Color accentColor, bool isDark) {
     return Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
@@ -236,11 +241,7 @@ class GrammarFeedbackCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(
-                    Icons.menu_book_rounded,
-                    color: accentColor,
-                    size: 14.r,
-                  ),
+                  Icon(Icons.menu_book_rounded, color: accentColor, size: 14.r),
                   SizedBox(width: 8.w),
                   Text(
                     "GRAMMAR RULE",

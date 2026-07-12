@@ -85,7 +85,7 @@ abstract final class UserGameConstants {
     'vowl_prime',
     'silver_wing',
     'crystal_swan',
-    'neon_parrot'
+    'neon_parrot',
   ];
 
   // ---------------------------------------------------------------------------

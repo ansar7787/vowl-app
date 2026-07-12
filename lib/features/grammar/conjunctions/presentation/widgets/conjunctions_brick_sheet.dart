@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ConjunctionsBrickSheet extends StatelessWidget {
   final List<String> options;
   final String? placedBrick;
@@ -32,10 +33,7 @@ class ConjunctionsBrickSheet extends StatelessWidget {
     return Draggable<String>(
       data: text,
       feedback: _buildTactileBrick(text, isDragging: true),
-      childWhenDragging: Opacity(
-        opacity: 0.2,
-        child: _buildTactileBrick(text),
-      ),
+      childWhenDragging: Opacity(opacity: 0.2, child: _buildTactileBrick(text)),
       child: isPlaced
           ? SizedBox(
               width: isCompact ? 60.w : 80.w,
@@ -63,11 +61,15 @@ class ConjunctionsBrickSheet extends StatelessWidget {
               offset: isDragging ? const Offset(5, 5) : const Offset(2, 2),
             ),
           ],
-          border: Border.all(color: primaryColor.withValues(alpha: 0.5), width: 2),
+          border: Border.all(
+            color: primaryColor.withValues(alpha: 0.5),
+            width: 2,
+          ),
         ),
         child: Text(
           text.toUpperCase(),
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: isCompact ? 12.sp : 16.sp,
             fontWeight: FontWeight.w900,
             color: primaryColor,

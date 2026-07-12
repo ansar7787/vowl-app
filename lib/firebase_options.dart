@@ -70,9 +70,10 @@ class DefaultFirebaseOptions {
     messagingSenderId: '497469756340',
     projectId: 'vowl-acbc5',
     storageBucket: 'vowl-acbc5.firebasestorage.app',
-    androidClientId: '497469756340-egcfg3el3ukuvhjtmvj72lt1pdgkshnb.apps.googleusercontent.com',
-    iosClientId: '497469756340-2pk07gdnbu949ab108gemr99dequ78in.apps.googleusercontent.com',
+    androidClientId:
+        '497469756340-egcfg3el3ukuvhjtmvj72lt1pdgkshnb.apps.googleusercontent.com',
+    iosClientId:
+        '497469756340-2pk07gdnbu949ab108gemr99dequ78in.apps.googleusercontent.com',
     iosBundleId: 'com.vowl.app',
   );
-
 }

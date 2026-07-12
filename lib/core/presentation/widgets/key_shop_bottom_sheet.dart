@@ -319,7 +319,9 @@ class _KeyShopContent extends StatelessWidget {
                     // hardcoding `false`. Premium users who open the key
                     // shop (e.g. via Kids Zone toll gate) should get the
                     // premium bypass, not be forced to watch an ad.
-                    final isPremium = parentContext.read<AuthBloc>().state.user?.isPremium ?? false;
+                    final isPremium =
+                        parentContext.read<AuthBloc>().state.user?.isPremium ??
+                        false;
                     if (!isPremium && !adService.isRewardedAdLoaded) {
                       Navigator.pop(context);
                       showDialog(
@@ -477,7 +479,7 @@ class _KeyShopContent extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 16.h),
-                
+
                 // Open Premium Store
                 ScaleButton(
                   onTap: () {

@@ -12,11 +12,17 @@ import 'package:vowl/features/kids_zone/domain/usecases/get_kids_quests.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 
 class MockGetKidsQuests extends Mock implements GetKidsQuests {}
+
 class MockUpdateUserRewards extends Mock implements UpdateUserRewards {}
+
 class MockUpdateUnlockedLevel extends Mock implements UpdateUnlockedLevel {}
+
 class MockAwardKidsSticker extends Mock implements AwardKidsSticker {}
+
 class MockUseHint extends Mock implements UseHint {}
+
 class MockSoundService extends Mock implements SoundService {}
+
 class MockHapticService extends Mock implements HapticService {}
 
 void main() {
@@ -54,8 +60,22 @@ void main() {
   });
 
   final tQuests = [
-    const KidsQuest(id: '1', instruction: 'i1', gameType: 'day_night', level: 1, correctAnswer: 'day', options: ['day', 'night']),
-    const KidsQuest(id: '2', instruction: 'i2', gameType: 'day_night', level: 1, correctAnswer: 'night', options: ['day', 'night']),
+    const KidsQuest(
+      id: '1',
+      instruction: 'i1',
+      gameType: 'day_night',
+      level: 1,
+      correctAnswer: 'day',
+      options: ['day', 'night'],
+    ),
+    const KidsQuest(
+      id: '2',
+      instruction: 'i2',
+      gameType: 'day_night',
+      level: 1,
+      correctAnswer: 'night',
+      options: ['day', 'night'],
+    ),
   ];
 
   group('SubmitKidsAnswer', () {
@@ -116,9 +136,7 @@ void main() {
       },
       seed: () => tLoadedState.copyWith(livesRemaining: 1),
       act: (bloc) => bloc.add(const SubmitKidsAnswer(false)),
-      expect: () => [
-        isA<KidsGameOver>(),
-      ],
+      expect: () => [isA<KidsGameOver>()],
     );
   });
 }

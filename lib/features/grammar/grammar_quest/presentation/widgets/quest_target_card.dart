@@ -30,8 +30,8 @@ class QuestTargetCard extends StatelessWidget {
       color: isMidnight
           ? Colors.black.withValues(alpha: 0.2)
           : (isDark
-              ? Colors.white.withValues(alpha: 0.05)
-              : Colors.black.withValues(alpha: 0.02)),
+                ? Colors.white.withValues(alpha: 0.05)
+                : Colors.black.withValues(alpha: 0.02)),
       child: Container(
         width: double.infinity,
         constraints: BoxConstraints(minHeight: 120.h),
@@ -60,7 +60,8 @@ class QuestTargetCard extends StatelessWidget {
         Text(
               "ANALYZING SYNTAX...",
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w900,
                 color: primaryColor.withValues(alpha: 0.7),
@@ -89,7 +90,8 @@ class QuestTargetCard extends StatelessWidget {
           ),
           child: Text(
             "MASTER SENTENCE",
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: const Color(0xFF10B981),
@@ -101,7 +103,8 @@ class QuestTargetCard extends StatelessWidget {
         Text(
               question ?? "",
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 22.sp,
                 fontWeight: FontWeight.w800,
                 color: isMidnight

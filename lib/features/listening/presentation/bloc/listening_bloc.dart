@@ -323,4 +323,3 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
     debugPrint('[ListeningBloc] All $_kMaxSaveRetries save attempts failed.');
   }
 }
-

@@ -81,7 +81,9 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
     final bool highlight = isUser && isAnswered && isCorrect;
     final Color borderCol = highlight
         ? Colors.greenAccent
-        : (isUser ? color.withValues(alpha: 0.4) : color.withValues(alpha: 0.6));
+        : (isUser
+              ? color.withValues(alpha: 0.4)
+              : color.withValues(alpha: 0.6));
 
     return Container(
       width: 1.sw,
@@ -95,13 +97,13 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                 BoxShadow(
                   color: Colors.greenAccent.withValues(alpha: 0.25),
                   blurRadius: 15.r,
-                )
+                ),
               ]
             : [
                 BoxShadow(
                   color: Colors.black.withValues(alpha: 0.1),
                   blurRadius: 8.r,
-                )
+                ),
               ],
       ),
       child: Row(
@@ -109,8 +111,14 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 20.r,
-            backgroundColor: highlight ? Colors.greenAccent.withValues(alpha: 0.1) : color.withValues(alpha: 0.1),
-            child: Icon(avatarIcon, color: highlight ? Colors.greenAccent : color, size: 20.r),
+            backgroundColor: highlight
+                ? Colors.greenAccent.withValues(alpha: 0.1)
+                : color.withValues(alpha: 0.1),
+            child: Icon(
+              avatarIcon,
+              color: highlight ? Colors.greenAccent : color,
+              size: 20.r,
+            ),
           ),
           SizedBox(width: 14.w),
           Expanded(
@@ -122,7 +130,8 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: TextStyle(fontFamily: 'RobotoMono', 
+                      style: TextStyle(
+                        fontFamily: 'RobotoMono',
                         fontSize: 9.sp,
                         color: highlight ? Colors.greenAccent : color,
                         fontWeight: FontWeight.bold,
@@ -132,16 +141,23 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                     if (!isUser)
                       ScaleButton(
                         onTap: () => soundService.playTts(content),
-                        child: Icon(Icons.volume_up_rounded, color: color, size: 16.r),
+                        child: Icon(
+                          Icons.volume_up_rounded,
+                          color: color,
+                          size: 16.r,
+                        ),
                       ),
                   ],
                 ),
                 SizedBox(height: 6.h),
                 Text(
                   content,
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 14.sp,
-                    color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.9)
+                        : Colors.black87,
                     height: 1.35,
                   ),
                 ),

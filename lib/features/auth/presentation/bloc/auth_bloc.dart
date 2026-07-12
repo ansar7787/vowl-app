@@ -172,7 +172,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   void _onUserChanged(AuthUserChanged event, Emitter<AuthState> emit) {
     _networkInfo.setPremiumOverride(event.user?.isPremium ?? false);
-    
+
     if (event.user != null) {
       emit(AuthState.authenticated(event.user!));
     } else {

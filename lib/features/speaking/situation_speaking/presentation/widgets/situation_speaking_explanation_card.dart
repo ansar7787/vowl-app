@@ -20,73 +20,81 @@ class SituationSpeakingExplanationCard extends StatelessWidget {
     final Color cardColor = isCorrect ? Colors.cyanAccent : Colors.redAccent;
 
     return Container(
-      width: 1.sw,
-      padding: EdgeInsets.all(22.r),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF131326) : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: cardColor.withValues(alpha: 0.25),
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: cardColor.withValues(alpha: 0.15),
-            blurRadius: 15,
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            children: [
-              Icon(
-                isCorrect ? Icons.verified_rounded : Icons.info_rounded,
-                color: cardColor,
-                size: 24.r,
-              ),
-              SizedBox(width: 8.w),
-              Text(
-                isCorrect ? "Response Decoded!" : "Semantic Decode Failed",
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.bold,
-                  color: isDark ? Colors.white : Colors.black87,
-                ),
+          width: 1.sw,
+          padding: EdgeInsets.all(22.r),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF131326) : Colors.white,
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(
+              color: cardColor.withValues(alpha: 0.25),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: cardColor.withValues(alpha: 0.15),
+                blurRadius: 15,
               ),
             ],
           ),
-          SizedBox(height: 12.h),
-          Text(
-            quest.explanation ?? "Responding politely to daily situational constraints forms the bedrock of real native fluency.",
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 14.sp,
-              color: isDark ? Colors.white70 : Colors.black54,
-              height: 1.35,
-            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                children: [
+                  Icon(
+                    isCorrect ? Icons.verified_rounded : Icons.info_rounded,
+                    color: cardColor,
+                    size: 24.r,
+                  ),
+                  SizedBox(width: 8.w),
+                  Text(
+                    isCorrect ? "Response Decoded!" : "Semantic Decode Failed",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.bold,
+                      color: isDark ? Colors.white : Colors.black87,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 12.h),
+              Text(
+                quest.explanation ??
+                    "Responding politely to daily situational constraints forms the bedrock of real native fluency.",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  color: isDark ? Colors.white70 : Colors.black54,
+                  height: 1.35,
+                ),
+              ),
+              if (isCorrect && quest.sampleAnswer != null) ...[
+                SizedBox(height: 14.h),
+                Text(
+                  "NATIVE SAMPLE REPLY:",
+                  style: TextStyle(
+                    fontFamily: 'RobotoMono',
+                    fontSize: 10.sp,
+                    color: Colors.cyanAccent,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 6.h),
+                Text(
+                  quest.sampleAnswer!,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    color: Colors.cyanAccent,
+                  ),
+                ),
+              ],
+            ],
           ),
-          if (isCorrect && quest.sampleAnswer != null) ...[
-            SizedBox(height: 14.h),
-            Text(
-              "NATIVE SAMPLE REPLY:",
-              style: TextStyle(fontFamily: 'RobotoMono', 
-                fontSize: 10.sp,
-                color: Colors.cyanAccent,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 6.h),
-            Text(
-              quest.sampleAnswer!,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 14.sp,
-                color: Colors.cyanAccent,
-              ),
-            ),
-          ]
-        ],
-      ),
-    ).animate().fadeIn(duration: const Duration(milliseconds: 400)).slideY(begin: 0.05);
+        )
+        .animate()
+        .fadeIn(duration: const Duration(milliseconds: 400))
+        .slideY(begin: 0.05);
   }
 }

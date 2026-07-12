@@ -46,12 +46,12 @@ class _SplashPageState extends State<SplashPage> {
     }
 
     _hasNavigated = true;
-    
+
     // INDUSTRY STANDARD: We hold the Android 12 Native Splash Screen over the UI
     // until we know exactly where the user is going. Once auth resolves, we drop
     // the native splash and immediately route them. No "double splash" effect!
     FlutterNativeSplash.remove();
-    
+
     // GoRouter redirect logic determines whether to land on Home or Login.
     context.go(AppRouter.homeRoute);
   }

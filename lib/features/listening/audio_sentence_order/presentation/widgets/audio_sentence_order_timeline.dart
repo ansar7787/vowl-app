@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class AudioSentenceOrderTimeline extends StatelessWidget {
   final List<String> slots;
   final Color color;
@@ -41,7 +42,8 @@ class AudioSentenceOrderTimeline extends StatelessWidget {
               ),
               child: Text(
                 slots[index].isEmpty ? "???" : slots[index],
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.bold,
                   color: slots[index].isEmpty

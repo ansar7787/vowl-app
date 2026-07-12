@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class PronunciationFocusHeader extends StatelessWidget {
   final Color primaryColor;
   final String instruction;
@@ -24,11 +25,16 @@ class PronunciationFocusHeader extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.whatshot_rounded, size: 14.r, color: Colors.orangeAccent),
+              Icon(
+                Icons.whatshot_rounded,
+                size: 14.r,
+                color: Colors.orangeAccent,
+              ),
               SizedBox(width: 8.w),
               Text(
                 "THERMOGRAPHIC ACCENT CALIBRATOR",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                   color: Colors.orangeAccent,
@@ -42,7 +48,8 @@ class PronunciationFocusHeader extends StatelessWidget {
         Text(
           instruction,
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,

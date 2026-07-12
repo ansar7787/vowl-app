@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class MedicalConsultInstruction extends StatelessWidget {
   final Color primaryColor;
 
-  const MedicalConsultInstruction({
-    super.key,
-    required this.primaryColor,
-  });
+  const MedicalConsultInstruction({super.key, required this.primaryColor});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,8 @@ class MedicalConsultInstruction extends StatelessWidget {
           ),
           child: Text(
             "BIOMETRIC DIAGNOSIS SLIP",
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,
@@ -33,7 +32,8 @@ class MedicalConsultInstruction extends StatelessWidget {
         Text(
           "Drag the scan lens to locate active patient glitches",
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,

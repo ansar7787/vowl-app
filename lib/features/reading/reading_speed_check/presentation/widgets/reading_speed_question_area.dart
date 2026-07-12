@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ReadingSpeedQuestionArea extends StatelessWidget {
   final String question;
   final Color color;
@@ -19,11 +20,12 @@ class ReadingSpeedQuestionArea extends StatelessWidget {
         Icon(Icons.query_stats_rounded, color: color, size: 48.r),
         SizedBox(height: 16.h),
         Text(
-          question, 
-          textAlign: TextAlign.center, 
-          style: TextStyle(fontFamily: 'Outfit', 
-            fontSize: 22.sp, 
-            fontWeight: FontWeight.w900, 
+          question,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 22.sp,
+            fontWeight: FontWeight.w900,
             color: isDark ? Colors.white : Colors.black87,
           ),
         ),

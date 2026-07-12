@@ -442,7 +442,8 @@ class UserModel extends UserEntity {
     if (raw == null) return const {};
     final outer = raw as Map<Object?, Object?>;
     return outer.map((categoryKey, categoryMapRaw) {
-      if (categoryMapRaw == null) return MapEntry(categoryKey.toString(), const {});
+      if (categoryMapRaw == null)
+        return MapEntry(categoryKey.toString(), const {});
       final inner = categoryMapRaw as Map<Object?, Object?>;
       final parsedInner = inner.map((levelKey, starsRaw) {
         return MapEntry(levelKey.toString(), (starsRaw as num?)?.toInt() ?? 0);

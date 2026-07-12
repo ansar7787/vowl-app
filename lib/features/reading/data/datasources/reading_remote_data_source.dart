@@ -26,14 +26,21 @@ class ReadingRemoteDataSourceImpl implements ReadingRemoteDataSource {
     try {
       // 1. Try to load from Local Assets (Free & Fast)
       final localData = await assetQuestService.getQuests(gameType.name, level);
-      debugPrint('ReadingRemoteDataSourceImpl: Found ${localData.length} quests for ${gameType.name} at level $level');
+      debugPrint(
+        'ReadingRemoteDataSourceImpl: Found ${localData.length} quests for ${gameType.name} at level $level',
+      );
 
       if (localData.isNotEmpty) {
         final List<ReadingQuestModel> quests = [];
         for (final q in localData) {
           try {
             final questMap = Map<String, dynamic>.from(q as Map);
-            quests.add(ReadingQuestModel.fromJson(questMap, (questMap['id'] ?? '').toString()));
+            quests.add(
+              ReadingQuestModel.fromJson(
+                questMap,
+                (questMap['id'] ?? '').toString(),
+              ),
+            );
           } catch (e) {
             debugPrint('Error parsing reading quest ${q['id']}: $e');
           }
@@ -90,9 +97,13 @@ class ReadingRemoteDataSourceImpl implements ReadingRemoteDataSource {
         data['id'] = doc.id;
         data['difficulty'] = level;
         data['subtype'] = gameType.name;
-        return [ReadingQuestModel.fromJson(data, (data['id'] ?? doc.id).toString())];
+        return [
+          ReadingQuestModel.fromJson(data, (data['id'] ?? doc.id).toString()),
+        ];
       } else {
-        throw const ServerException("We're having trouble loading this level. Please check your internet or try again later.");
+        throw const ServerException(
+          "We're having trouble loading this level. Please check your internet or try again later.",
+        );
       }
     } on FirebaseException catch (e) {
       debugPrint('FirebaseException in getReadingQuest: $e');

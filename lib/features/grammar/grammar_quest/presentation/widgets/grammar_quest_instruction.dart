@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class GrammarQuestInstruction extends StatelessWidget {
   final Color primaryColor;
 
-  const GrammarQuestInstruction({
-    super.key,
-    required this.primaryColor,
-  });
+  const GrammarQuestInstruction({super.key, required this.primaryColor});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +22,8 @@ class GrammarQuestInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             "STEER TO THE CORRECT RULE",
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,

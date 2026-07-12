@@ -15,7 +15,9 @@ class PronunciationFocusTelemetryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool hasValidVoice = spokenText != "Calibrating mouth audio streams..." && spokenText != "No audible voice input recorded.";
+    final bool hasValidVoice =
+        spokenText != "Calibrating mouth audio streams..." &&
+        spokenText != "No audible voice input recorded.";
 
     return GlassTile(
       padding: EdgeInsets.all(18.r),
@@ -26,14 +28,17 @@ class PronunciationFocusTelemetryCard extends StatelessWidget {
           Row(
             children: [
               Icon(
-                hasValidVoice ? Icons.graphic_eq_rounded : Icons.warning_amber_rounded,
+                hasValidVoice
+                    ? Icons.graphic_eq_rounded
+                    : Icons.warning_amber_rounded,
                 color: Colors.orangeAccent,
                 size: 16.r,
               ),
               SizedBox(width: 8.w),
               Text(
                 "DECODED PHONETIC SPEECH",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 10.sp,
                   color: Colors.grey,
                   letterSpacing: 1.0,
@@ -44,9 +49,12 @@ class PronunciationFocusTelemetryCard extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             spokenText,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 15.sp,
-              color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.9)
+                  : Colors.black87,
               height: 1.35,
             ),
           ),

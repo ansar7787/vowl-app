@@ -37,9 +37,7 @@ class KidsFamilyLayout extends StatelessWidget {
             // The Framed Painting
             Expanded(
               flex: 5,
-              child: Center(
-                child: _buildFramedPainting(quest),
-              ),
+              child: Center(child: _buildFramedPainting(quest)),
             ),
             // The Polaroid Pictures on Mantle
             Flexible(
@@ -54,7 +52,9 @@ class KidsFamilyLayout extends StatelessWidget {
                     margin: EdgeInsets.symmetric(horizontal: 16.w),
                     decoration: BoxDecoration(
                       color: const Color(0xFF78350F), // Dark wood mantle
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(4.r)),
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(4.r),
+                      ),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withValues(alpha: 0.3),
@@ -66,11 +66,17 @@ class KidsFamilyLayout extends StatelessWidget {
                   ),
                   // Polaroids resting on mantle
                   Padding(
-                    padding: EdgeInsets.only(bottom: 24.h, left: 16.w, right: 16.w),
+                    padding: EdgeInsets.only(
+                      bottom: 24.h,
+                      left: 16.w,
+                      right: 16.w,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: List.generate(quest.options?.length ?? 0, (index) {
+                      children: List.generate(quest.options?.length ?? 0, (
+                        index,
+                      ) {
                         final option = quest.options![index];
                         return Expanded(
                           child: Padding(
@@ -103,7 +109,10 @@ class KidsFamilyLayout extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFFFEF08A), // Warm wallpaper yellow
         borderRadius: BorderRadius.circular(4.r),
-        border: Border.all(color: const Color(0xFFB45309), width: 16.r), // Ornate wooden frame
+        border: Border.all(
+          color: const Color(0xFFB45309),
+          width: 16.r,
+        ), // Ornate wooden frame
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.25),
@@ -117,10 +126,7 @@ class KidsFamilyLayout extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (quest.emoji != null)
-              Text(
-                quest.emoji!,
-                style: TextStyle(fontSize: 48.sp),
-              ),
+              Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
             Text(
               quest.question ?? "?",
               style: TextStyle(
@@ -193,7 +199,11 @@ class KidsFamilyLayout extends StatelessWidget {
                   width: double.infinity,
                   color: const Color(0xFFE2E8F0), // Blank photo grey
                   child: Center(
-                    child: Icon(Icons.photo_rounded, color: const Color(0xFF94A3B8), size: 24.r),
+                    child: Icon(
+                      Icons.photo_rounded,
+                      color: const Color(0xFF94A3B8),
+                      size: 24.r,
+                    ),
                   ),
                 ),
               ),

@@ -57,56 +57,60 @@ class VoiceSwapToggle extends StatelessWidget {
                   children: [
                     // Energy Pulse Track
                     Center(
-                      child: Container(
-                        width: 100.w,
-                        height: 4.h,
-                        decoration: BoxDecoration(
-                          color: primaryColor.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(10.r),
-                        ),
-                      )
-                      .animate(onPlay: (c) => c.repeat())
-                      .shimmer(duration: 2.seconds),
+                      child:
+                          Container(
+                                width: 100.w,
+                                height: 4.h,
+                                decoration: BoxDecoration(
+                                  color: primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                              )
+                              .animate(onPlay: (c) => c.repeat())
+                              .shimmer(duration: 2.seconds),
                     ),
                     AnimatedPositioned(
                       duration: const Duration(milliseconds: 400),
                       curve: Curves.elasticOut,
                       left: isPassive ? 66.w : 4.w,
                       top: 4.h,
-                      child: Container(
-                        width: 58.w,
-                        height: 53.h,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              primaryColor,
-                              primaryColor.withValues(alpha: 0.8),
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
-                          borderRadius: BorderRadius.circular(30.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: primaryColor.withValues(alpha: 0.4),
-                              blurRadius: 15,
-                              offset: const Offset(0, 5),
-                            ),
-                          ],
-                        ),
-                        child: Icon(
-                          isPassive
-                              ? Icons.waves_rounded
-                              : Icons.bolt_rounded,
-                          color: Colors.white,
-                          size: 26.r,
-                        ),
-                      )
-                      .animate(key: ValueKey(isPassive))
-                      .scale(
-                        begin: const Offset(0.8, 0.8),
-                        end: const Offset(1, 1),
-                      ),
+                      child:
+                          Container(
+                                width: 58.w,
+                                height: 53.h,
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      primaryColor,
+                                      primaryColor.withValues(alpha: 0.8),
+                                    ],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                  ),
+                                  borderRadius: BorderRadius.circular(30.r),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: primaryColor.withValues(
+                                        alpha: 0.4,
+                                      ),
+                                      blurRadius: 15,
+                                      offset: const Offset(0, 5),
+                                    ),
+                                  ],
+                                ),
+                                child: Icon(
+                                  isPassive
+                                      ? Icons.waves_rounded
+                                      : Icons.bolt_rounded,
+                                  color: Colors.white,
+                                  size: 26.r,
+                                ),
+                              )
+                              .animate(key: ValueKey(isPassive))
+                              .scale(
+                                begin: const Offset(0.8, 0.8),
+                                end: const Offset(1, 1),
+                              ),
                     ),
                   ],
                 ),
@@ -118,17 +122,18 @@ class VoiceSwapToggle extends StatelessWidget {
         ),
         SizedBox(height: 32.h),
         Text(
-          "MODE: ${(isPassive ? "PASSIVE" : "ACTIVE")}",
-          style: TextStyle(fontFamily: 'Outfit', 
-            fontSize: 10.sp,
-            fontWeight: FontWeight.w900,
-            color: primaryColor.withValues(alpha: 0.6),
-            letterSpacing: 2,
-          ),
-        )
-        .animate(key: ValueKey(isPassive))
-        .fadeIn()
-        .scale(begin: const Offset(0.9, 0.9)),
+              "MODE: ${(isPassive ? "PASSIVE" : "ACTIVE")}",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor.withValues(alpha: 0.6),
+                letterSpacing: 2,
+              ),
+            )
+            .animate(key: ValueKey(isPassive))
+            .fadeIn()
+            .scale(begin: const Offset(0.9, 0.9)),
       ],
     );
   }
@@ -136,7 +141,8 @@ class VoiceSwapToggle extends StatelessWidget {
   Widget _buildToggleLabel(String label, bool isActive) {
     return AnimatedDefaultTextStyle(
       duration: const Duration(milliseconds: 300),
-      style: TextStyle(fontFamily: 'Outfit', 
+      style: TextStyle(
+        fontFamily: 'Outfit',
         fontSize: 14.sp,
         fontWeight: isActive ? FontWeight.w900 : FontWeight.w500,
         color: isActive

@@ -37,10 +37,14 @@ class SituationalResponseReactionZone extends StatelessWidget {
       width: 1.sw,
       height: 380.h,
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF07070F) : Colors.black.withValues(alpha: 0.02),
+        color: isDark
+            ? const Color(0xFF07070F)
+            : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(36.r),
         border: Border.all(
-          color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.03),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.03)
+              : Colors.black.withValues(alpha: 0.03),
         ),
       ),
       child: LayoutBuilder(
@@ -70,7 +74,8 @@ class SituationalResponseReactionZone extends StatelessWidget {
 
               // Orbiting Reaction Orbs arranged symmetrically using trigonometry
               ...List.generate(options.length, (i) {
-                final double angle = -math.pi / 2 + (i * (2 * math.pi / options.length));
+                final double angle =
+                    -math.pi / 2 + (i * (2 * math.pi / options.length));
                 final double targetX = cx + r * math.cos(angle);
                 final double targetY = cy + r * math.sin(angle);
 
@@ -99,7 +104,8 @@ class SituationalResponseReactionZone extends StatelessWidget {
         label = "TENSION OVERLOAD";
       }
     } else {
-      coreColor = Color.lerp(color, const Color(0xFFFF3366), timerValue) ?? color;
+      coreColor =
+          Color.lerp(color, const Color(0xFFFF3366), timerValue) ?? color;
       if (timerValue > 0.7) {
         coreIcon = Icons.priority_high_rounded;
         label = "TENSION DANGER";
@@ -107,7 +113,8 @@ class SituationalResponseReactionZone extends StatelessWidget {
     }
 
     final double speedFactor = 1.0 + (timerValue * 3.5);
-    final double pulseScale = 1.0 + (0.08 * math.sin(pulseValue * speedFactor * math.pi * 2)).abs();
+    final double pulseScale =
+        1.0 + (0.08 * math.sin(pulseValue * speedFactor * math.pi * 2)).abs();
 
     return Positioned(
       left: cx - 60.r,
@@ -136,7 +143,8 @@ class SituationalResponseReactionZone extends StatelessWidget {
               SizedBox(height: 6.h),
               Text(
                 label,
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 8.sp,
                   fontWeight: FontWeight.bold,
                   color: coreColor,
@@ -147,7 +155,8 @@ class SituationalResponseReactionZone extends StatelessWidget {
                 SizedBox(height: 4.h),
                 Text(
                   "${(12 * (1.0 - timerValue)).ceil()}s",
-                  style: TextStyle(fontFamily: 'RobotoMono', 
+                  style: TextStyle(
+                    fontFamily: 'RobotoMono',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w900,
                     color: coreColor,
@@ -189,52 +198,58 @@ class SituationalResponseReactionZone extends StatelessWidget {
       child: AnimatedOpacity(
         duration: const Duration(milliseconds: 300),
         opacity: hideOther ? 0.0 : 1.0,
-        child: ScaleButton(
-          onTap: () => onOrbTap(index, correctIndex),
-          child: Container(
-            width: 108.r,
-            height: 108.r,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
-              border: Border.all(
-                color: isSelected ? orbColor : color.withValues(alpha: 0.5),
-                width: isSelected ? 3.0 : 1.5,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: (isSelected ? orbColor : color).withValues(alpha: 0.15),
-                  blurRadius: 10,
-                  spreadRadius: 1,
-                ),
-              ],
-            ),
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.all(12.r),
-                child: Text(
-                  text,
-                  textAlign: TextAlign.center,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontFamily: 'Outfit', 
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.bold,
-                    color: isDark ? Colors.white70 : Colors.black87,
-                    height: 1.2,
+        child:
+            ScaleButton(
+                  onTap: () => onOrbTap(index, correctIndex),
+                  child: Container(
+                    width: 108.r,
+                    height: 108.r,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
+                      border: Border.all(
+                        color: isSelected
+                            ? orbColor
+                            : color.withValues(alpha: 0.5),
+                        width: isSelected ? 3.0 : 1.5,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: (isSelected ? orbColor : color).withValues(
+                            alpha: 0.15,
+                          ),
+                          blurRadius: 10,
+                          spreadRadius: 1,
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Padding(
+                        padding: EdgeInsets.all(12.r),
+                        child: Text(
+                          text,
+                          textAlign: TextAlign.center,
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.bold,
+                            color: isDark ? Colors.white70 : Colors.black87,
+                            height: 1.2,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
+                )
+                .animate(onPlay: (c) => c.repeat())
+                .moveY(
+                  begin: -3,
+                  end: 3,
+                  duration: (1.5 + index * 0.4).seconds,
+                  curve: Curves.easeInOut,
                 ),
-              ),
-            ),
-          ),
-        ).animate(
-          onPlay: (c) => c.repeat(),
-        ).moveY(
-          begin: -3,
-          end: 3,
-          duration: (1.5 + index * 0.4).seconds,
-          curve: Curves.easeInOut,
-        ),
       ),
     );
   }

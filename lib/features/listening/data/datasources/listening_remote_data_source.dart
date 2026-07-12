@@ -31,7 +31,10 @@ class ListeningRemoteDataSourceImpl implements ListeningRemoteDataSource {
       if (localData.isNotEmpty) {
         return localData.map((q) {
           final questMap = Map<String, dynamic>.from(q as Map);
-          return ListeningQuestModel.fromJson(questMap, (questMap['id'] ?? '').toString());
+          return ListeningQuestModel.fromJson(
+            questMap,
+            (questMap['id'] ?? '').toString(),
+          );
         }).toList();
       }
 

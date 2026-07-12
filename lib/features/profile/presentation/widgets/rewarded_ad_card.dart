@@ -43,8 +43,7 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
     if (_isLoading) return;
     setState(() => _isLoading = true);
 
-    final isPremium =
-        context.read<AuthBloc>().state.user?.isPremium ?? false;
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
     bool rewardEarned = false;
 

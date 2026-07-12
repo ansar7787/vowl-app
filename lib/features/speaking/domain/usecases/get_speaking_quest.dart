@@ -16,13 +16,16 @@ class GetSpeakingQuestParams extends Equatable {
   List<Object?> get props => [gameType, level];
 }
 
-class GetSpeakingQuest implements UseCase<List<SpeakingQuest>, GetSpeakingQuestParams> {
+class GetSpeakingQuest
+    implements UseCase<List<SpeakingQuest>, GetSpeakingQuestParams> {
   final SpeakingRepository repository;
 
   const GetSpeakingQuest(this.repository);
 
   @override
-  Future<Either<Failure, List<SpeakingQuest>>> call(GetSpeakingQuestParams params) {
+  Future<Either<Failure, List<SpeakingQuest>>> call(
+    GetSpeakingQuestParams params,
+  ) {
     return repository.getSpeakingQuest(
       gameType: params.gameType,
       level: params.level,

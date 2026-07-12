@@ -21,25 +21,31 @@ void main() async {
   // Key: Game Name (e.g., "accent/consonantClarity"), Value: Set of levels found
   final Map<String, Set<int>> gameLevels = {};
 
-  final List<FileSystemEntity> entities = curriculumDir.listSync(recursive: true);
+  final List<FileSystemEntity> entities = curriculumDir.listSync(
+    recursive: true,
+  );
 
   for (final entity in entities) {
     if (entity is File && entity.path.endsWith('.json')) {
       totalFiles++;
       final normalizedPath = entity.path.replaceAll('\\', '/');
-      final pathParts = normalizedPath.split('assets/curriculum/').last.split('/');
-      
+      final pathParts = normalizedPath
+          .split('assets/curriculum/')
+          .last
+          .split('/');
+
       String gameName = '';
       if (normalizedPath.contains('/kids/')) {
         gameName = 'KIDS/${pathParts[1]}';
       } else {
-        gameName = '${pathParts[0].toUpperCase()}/${pathParts.last.split('_').first}';
+        gameName =
+            '${pathParts[0].toUpperCase()}/${pathParts.last.split('_').first}';
       }
 
       try {
         final content = await entity.readAsString();
         final dynamic data = jsonDecode(content);
-        
+
         List<dynamic> quests = [];
         Set<int> levelsInFile = {};
 
@@ -54,7 +60,7 @@ void main() async {
                   errorLogs.add('[$normalizedPath] Duplicate ID found: $id');
                 }
                 globalIds.add(id);
-                
+
                 // Extract level from ID (New format: CATEGORY_GAME_L123_Q1)
                 final idStr = id.toString();
                 final levelMatch = RegExp(r'_L(\d+)_').firstMatch(idStr);
@@ -87,7 +93,9 @@ void main() async {
                   if (quest is Map && quest.containsKey('id')) {
                     final id = quest['id'];
                     if (globalIds.contains(id)) {
-                      errorLogs.add('[$normalizedPath] Duplicate ID found: $id');
+                      errorLogs.add(
+                        '[$normalizedPath] Duplicate ID found: $id',
+                      );
                     }
                     globalIds.add(id);
                   }
@@ -98,7 +106,7 @@ void main() async {
         }
 
         totalQuests += quests.length;
-        
+
         // Update global game levels
         gameLevels.putIfAbsent(gameName, () => {}).addAll(levelsInFile);
 
@@ -108,22 +116,29 @@ void main() async {
             // Check for empty fields
             quest.forEach((key, value) {
               if (value == null || (value is String && value.trim().isEmpty)) {
-                warningLogs.add('[$normalizedPath] Empty field "$key" in quest ${quest['id']}');
+                warningLogs.add(
+                  '[$normalizedPath] Empty field "$key" in quest ${quest['id']}',
+                );
               }
               if (value is String && value.contains('TODO')) {
-                errorLogs.add('[$normalizedPath] Placeholder "TODO" found in field "$key" of quest ${quest['id']}');
+                errorLogs.add(
+                  '[$normalizedPath] Placeholder "TODO" found in field "$key" of quest ${quest['id']}',
+                );
               }
             });
 
             // Check for missing options in choice games
-            if (quest['interactionType'] == 'choice' || quest['gameType'] == 'choice_multi') {
-              if (!quest.containsKey('options') || (quest['options'] as List).isEmpty) {
-                errorLogs.add('[$normalizedPath] Missing options for choice quest ${quest['id']}');
+            if (quest['interactionType'] == 'choice' ||
+                quest['gameType'] == 'choice_multi') {
+              if (!quest.containsKey('options') ||
+                  (quest['options'] as List).isEmpty) {
+                errorLogs.add(
+                  '[$normalizedPath] Missing options for choice quest ${quest['id']}',
+                );
               }
             }
           }
         }
-
       } catch (e) {
         errorLogs.add('[$normalizedPath] Critical: Failed to parse JSON: $e');
       }
@@ -155,14 +170,16 @@ void main() async {
     if (errorLogs.isNotEmpty) {
       print('❌ Errors Found: ${errorLogs.length}');
       for (var log in errorLogs.take(20)) print('   - $log');
-      if (errorLogs.length > 20) print('   ... and ${errorLogs.length - 20} more errors.');
+      if (errorLogs.length > 20)
+        print('   ... and ${errorLogs.length - 20} more errors.');
     }
     if (warningLogs.isNotEmpty) {
       print('⚠️ Warnings Found: ${warningLogs.length}');
       for (var log in warningLogs.take(10)) print('   - $log');
-      if (warningLogs.length > 10) print('   ... and ${warningLogs.length - 10} more warnings.');
+      if (warningLogs.length > 10)
+        print('   ... and ${warningLogs.length - 10} more warnings.');
     }
-    
+
     // Save full report to file
     final report = File('artifacts/curriculum_audit_report.txt');
     final buffer = StringBuffer();
@@ -178,7 +195,7 @@ void main() async {
     errorLogs.forEach((log) => buffer.writeln('- $log'));
     buffer.writeln('\nWarnings Detail:');
     warningLogs.forEach((log) => buffer.writeln('- $log'));
-    
+
     // await report.writeAsString(buffer.toString()); // Error path fix below
   }
 }

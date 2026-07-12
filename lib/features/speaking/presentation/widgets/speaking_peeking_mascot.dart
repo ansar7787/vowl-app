@@ -38,7 +38,7 @@ class SpeakingPeekingMascot extends StatelessWidget {
       isCorrect: isCorrect,
       lives: lives,
     );
-    
+
     final mascotState = MascotMessageHelper.getMascotState(
       isComplete: state is SpeakingGameComplete,
       isGameOver: state is SpeakingGameOver,
@@ -101,5 +101,4 @@ class SpeakingPeekingMascot extends StatelessWidget {
       ],
     ).animate().fadeIn().slideX(begin: 0.1, end: 0);
   }
-
 }

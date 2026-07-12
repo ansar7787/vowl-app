@@ -75,25 +75,41 @@ class ReadingQuestModel extends ReadingQuest {
       correctAnswer: getString(map['correctAnswer']),
       hint: map['hint'] as String?,
       visualConfig: map['visual_config'] != null
-          ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'] as Map))
+          ? VisualConfig.fromJson(
+              Map<String, dynamic>.from(map['visual_config'] as Map),
+            )
           : null,
-      passage: getString(map['passage'] ?? map['text'] ?? map['content'] ?? map['story'] ?? map['sentence']),
+      passage: getString(
+        map['passage'] ??
+            map['text'] ??
+            map['content'] ??
+            map['story'] ??
+            map['sentence'],
+      ),
       question: map['question'] as String? ?? map['instruction'] as String?,
-      highlightedWord: map['highlightedWord'] as String? ?? map['targetWord'] as String?,
+      highlightedWord:
+          map['highlightedWord'] as String? ?? map['targetWord'] as String?,
       statement: map['statement'] as String? ?? map['text'] as String?,
       shuffledSentences: parseStringList(map['shuffledSentences']),
       correctOrder: map['correctOrder'] != null
-          ? (map['correctOrder'] as List).map((e) => int.tryParse(e.toString()) ?? 0).toList()
+          ? (map['correctOrder'] as List)
+                .map((e) => int.tryParse(e.toString()) ?? 0)
+                .toList()
           : null,
       pairs: map['pairs'] != null
           ? List<Map<String, String>>.from(
-              (map['pairs'] as List).map((e) => Map<String, String>.from(e as Map)),
+              (map['pairs'] as List).map(
+                (e) => Map<String, String>.from(e as Map),
+              ),
             )
           : null,
-      phoneticHint: map['phoneticHint'] as String? ?? map['phonetic'] as String?,
+      phoneticHint:
+          map['phoneticHint'] as String? ?? map['phonetic'] as String?,
       targetWord: map['targetWord'] as String? ?? map['word'] as String?,
       explanation: map['explanation'] as String?,
-      textToSpeak: getString(map['textToSpeak'] ?? map['passage'] ?? map['text']),
+      textToSpeak: getString(
+        map['textToSpeak'] ?? map['passage'] ?? map['text'],
+      ),
       prompt: map['prompt'] as String?,
       keywords: parseStringList(map['keywords']),
       timeLimit: (map['timeLimit'] as num?)?.toInt(),

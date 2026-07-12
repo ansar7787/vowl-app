@@ -41,9 +41,10 @@ class ClozeTestPneumaticPort extends StatelessWidget {
             child: RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 18.sp, 
-                  color: isDark ? Colors.white70 : Colors.black87, 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 18.sp,
+                  color: isDark ? Colors.white70 : Colors.black87,
                   height: 1.5,
                 ),
                 children: [
@@ -53,46 +54,73 @@ class ClozeTestPneumaticPort extends StatelessWidget {
                     child: DragTarget<String>(
                       onAcceptWithDetails: (details) => onDock(details.data),
                       builder: (context, candidateData, rejectedData) {
-                        final bool correctDocked = isAnswered && dockedOption?.trim().toLowerCase() == correct.trim().toLowerCase();
+                        final bool correctDocked =
+                            isAnswered &&
+                            dockedOption?.trim().toLowerCase() ==
+                                correct.trim().toLowerCase();
                         final bool wrongDocked = isAnswered && !correctDocked;
 
                         return Container(
-                          margin: EdgeInsets.symmetric(horizontal: 8.w),
-                          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-                          decoration: BoxDecoration(
-                            color: correctDocked 
-                                ? Colors.greenAccent.withValues(alpha: 0.25)
-                                : (wrongDocked 
-                                    ? Colors.redAccent.withValues(alpha: 0.25)
-                                    : (dockedOption != null ? color.withValues(alpha: 0.2) : (isDark ? Colors.black45 : Colors.grey.shade200))),
-                            borderRadius: BorderRadius.circular(10.r),
-                            border: Border.all(
-                              color: correctDocked 
-                                  ? Colors.greenAccent 
-                                  : (wrongDocked 
-                                      ? Colors.redAccent 
-                                      : (dockedOption != null ? color : (isDark ? Colors.white24 : Colors.black12))), 
-                              width: 2,
-                            ),
-                            boxShadow: [
-                              if (dockedOption != null) 
-                                BoxShadow(
-                                  color: (correctDocked ? Colors.greenAccent : (wrongDocked ? Colors.redAccent : color)).withValues(alpha: 0.3), 
-                                  blurRadius: 15,
+                              margin: EdgeInsets.symmetric(horizontal: 8.w),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 12.w,
+                                vertical: 6.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: correctDocked
+                                    ? Colors.greenAccent.withValues(alpha: 0.25)
+                                    : (wrongDocked
+                                          ? Colors.redAccent.withValues(
+                                              alpha: 0.25,
+                                            )
+                                          : (dockedOption != null
+                                                ? color.withValues(alpha: 0.2)
+                                                : (isDark
+                                                      ? Colors.black45
+                                                      : Colors.grey.shade200))),
+                                borderRadius: BorderRadius.circular(10.r),
+                                border: Border.all(
+                                  color: correctDocked
+                                      ? Colors.greenAccent
+                                      : (wrongDocked
+                                            ? Colors.redAccent
+                                            : (dockedOption != null
+                                                  ? color
+                                                  : (isDark
+                                                        ? Colors.white24
+                                                        : Colors.black12))),
+                                  width: 2,
                                 ),
-                            ],
-                          ),
-                          child: Text(
-                            dockedOption?.toUpperCase() ?? "DRAG HERE", 
-                            style: TextStyle(fontFamily: 'RobotoMono', 
-                              fontSize: 12.sp, 
-                              color: dockedOption != null 
-                                  ? (isDark ? Colors.white : Colors.black87) 
-                                  : (isDark ? Colors.white30 : Colors.black38), 
-                              fontWeight: FontWeight.w900,
-                            ),
-                          ),
-                        ).animate(target: dockedOption != null ? 1 : 0).shimmer(duration: 1.seconds);
+                                boxShadow: [
+                                  if (dockedOption != null)
+                                    BoxShadow(
+                                      color:
+                                          (correctDocked
+                                                  ? Colors.greenAccent
+                                                  : (wrongDocked
+                                                        ? Colors.redAccent
+                                                        : color))
+                                              .withValues(alpha: 0.3),
+                                      blurRadius: 15,
+                                    ),
+                                ],
+                              ),
+                              child: Text(
+                                dockedOption?.toUpperCase() ?? "DRAG HERE",
+                                style: TextStyle(
+                                  fontFamily: 'RobotoMono',
+                                  fontSize: 12.sp,
+                                  color: dockedOption != null
+                                      ? (isDark ? Colors.white : Colors.black87)
+                                      : (isDark
+                                            ? Colors.white30
+                                            : Colors.black38),
+                                  fontWeight: FontWeight.w900,
+                                ),
+                              ),
+                            )
+                            .animate(target: dockedOption != null ? 1 : 0)
+                            .shimmer(duration: 1.seconds);
                       },
                     ),
                   ),

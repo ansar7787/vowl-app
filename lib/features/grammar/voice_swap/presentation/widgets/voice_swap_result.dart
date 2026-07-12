@@ -43,8 +43,11 @@ class VoiceSwapResult extends StatelessWidget {
             ),
             SizedBox(height: 12.h),
             Text(
-              isCorrect ? context.tr('games.correct').toUpperCase() : context.tr('games.incorrect_caps'),
-              style: TextStyle(fontFamily: 'Outfit', 
+              isCorrect
+                  ? context.tr('games.correct').toUpperCase()
+                  : context.tr('games.incorrect_caps'),
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
@@ -55,7 +58,8 @@ class VoiceSwapResult extends StatelessWidget {
             Text(
               "This sentence is in the ${correctVoice.toUpperCase()} voice.",
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600,
                 color: displayColor,
@@ -66,7 +70,8 @@ class VoiceSwapResult extends StatelessWidget {
               Text(
                 quest.explanation!,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 13.sp,
                   color: isDark ? Colors.white60 : Colors.black54,
                 ),

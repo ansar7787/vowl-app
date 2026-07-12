@@ -209,11 +209,13 @@ class LoginCubit extends Cubit<LoginState> {
           errorMessage: () => AuthErrorHandler.getKey(failure.message),
         ),
       ),
-      (isNewUser) => emit(state.copyWith(
-        isSubmitting: false, 
-        isSuccess: true,
-        isNewUser: isNewUser,
-      )),
+      (isNewUser) => emit(
+        state.copyWith(
+          isSubmitting: false,
+          isSuccess: true,
+          isNewUser: isNewUser,
+        ),
+      ),
     );
   }
 }

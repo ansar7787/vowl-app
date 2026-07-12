@@ -26,7 +26,8 @@ class GourmetOrderTableSetting extends StatefulWidget {
   });
 
   @override
-  State<GourmetOrderTableSetting> createState() => _GourmetOrderTableSettingState();
+  State<GourmetOrderTableSetting> createState() =>
+      _GourmetOrderTableSettingState();
 }
 
 class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
@@ -36,7 +37,9 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
   Widget build(BuildContext context) {
     Color ringColor = widget.color;
     if (widget.isAnswered) {
-      ringColor = (widget.isCorrect ?? false) ? Colors.greenAccent : Colors.redAccent;
+      ringColor = (widget.isCorrect ?? false)
+          ? Colors.greenAccent
+          : Colors.redAccent;
     }
 
     return DragTarget<String>(
@@ -55,100 +58,118 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
         setState(() => _isHoveringPlatter = false);
       },
       builder: (context, candidateData, rejectedData) {
-        final bool isActiveGlow = _isHoveringPlatter || widget.selectedItems.isNotEmpty;
+        final bool isActiveGlow =
+            _isHoveringPlatter || widget.selectedItems.isNotEmpty;
 
         return AnimatedContainer(
-          duration: const Duration(milliseconds: 250),
-          width: 210.r,
-          height: 210.r,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: widget.isDark ? const Color(0xFF07070F) : Colors.black.withValues(alpha: 0.02),
-            border: Border.all(
-              color: ringColor.withValues(alpha: isActiveGlow ? 0.75 : 0.2),
-              width: isActiveGlow ? 4.5 : 2.5,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: ringColor.withValues(alpha: isActiveGlow ? 0.22 : 0.04),
-                blurRadius: isActiveGlow ? 20 : 10,
-              ),
-            ],
-          ),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              // Glowing steam custom wave painter
-              if (widget.selectedItems.isNotEmpty)
-                Positioned.fill(
-                  child: ClipOval(
-                    child: AnimatedBuilder(
-                      animation: widget.steamAnimation,
-                      builder: (context, child) {
-                        return CustomPaint(
-                          painter: SteamWavesPainter(
-                            animationValue: widget.steamAnimation.value,
-                            themeColor: ringColor,
-                          ),
-                        );
-                      },
-                    ),
-                  ),
+              duration: const Duration(milliseconds: 250),
+              width: 210.r,
+              height: 210.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: widget.isDark
+                    ? const Color(0xFF07070F)
+                    : Colors.black.withValues(alpha: 0.02),
+                border: Border.all(
+                  color: ringColor.withValues(alpha: isActiveGlow ? 0.75 : 0.2),
+                  width: isActiveGlow ? 4.5 : 2.5,
                 ),
-
-              // Cloche cover icon/platter details
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    widget.isAnswered
-                        ? ((widget.isCorrect ?? false) ? Icons.done_all_rounded : Icons.close_rounded)
-                        : Icons.room_service_outlined,
-                    color: ringColor.withValues(alpha: isActiveGlow ? 0.9 : 0.25),
-                    size: 72.r,
-                  ),
-                  SizedBox(height: 8.h),
-                  Text(
-                    widget.isAnswered
-                        ? ((widget.isCorrect ?? false) ? "SERVED PERFECTLY" : "WRONG DISHES")
-                        : "SERVING PLATTER",
-                    style: TextStyle(fontFamily: 'RobotoMono', 
-                      fontSize: 10.sp,
-                      color: ringColor.withValues(alpha: isActiveGlow ? 0.9 : 0.35),
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1.5,
+                boxShadow: [
+                  BoxShadow(
+                    color: ringColor.withValues(
+                      alpha: isActiveGlow ? 0.22 : 0.04,
                     ),
+                    blurRadius: isActiveGlow ? 20 : 10,
                   ),
-                  if (widget.selectedItems.isNotEmpty) ...[
-                    SizedBox(height: 8.h),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-                      decoration: BoxDecoration(
-                        color: ringColor.withValues(alpha: 0.15),
-                        borderRadius: BorderRadius.circular(12.r),
-                      ),
-                      child: Text(
-                        "${widget.selectedItems.length} PLATES LOADED",
-                        style: TextStyle(fontFamily: 'Outfit', 
-                          fontSize: 9.sp,
-                          fontWeight: FontWeight.bold,
-                          color: ringColor,
+                ],
+              ),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  // Glowing steam custom wave painter
+                  if (widget.selectedItems.isNotEmpty)
+                    Positioned.fill(
+                      child: ClipOval(
+                        child: AnimatedBuilder(
+                          animation: widget.steamAnimation,
+                          builder: (context, child) {
+                            return CustomPaint(
+                              painter: SteamWavesPainter(
+                                animationValue: widget.steamAnimation.value,
+                                themeColor: ringColor,
+                              ),
+                            );
+                          },
                         ),
                       ),
                     ),
-                  ]
+
+                  // Cloche cover icon/platter details
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        widget.isAnswered
+                            ? ((widget.isCorrect ?? false)
+                                  ? Icons.done_all_rounded
+                                  : Icons.close_rounded)
+                            : Icons.room_service_outlined,
+                        color: ringColor.withValues(
+                          alpha: isActiveGlow ? 0.9 : 0.25,
+                        ),
+                        size: 72.r,
+                      ),
+                      SizedBox(height: 8.h),
+                      Text(
+                        widget.isAnswered
+                            ? ((widget.isCorrect ?? false)
+                                  ? "SERVED PERFECTLY"
+                                  : "WRONG DISHES")
+                            : "SERVING PLATTER",
+                        style: TextStyle(
+                          fontFamily: 'RobotoMono',
+                          fontSize: 10.sp,
+                          color: ringColor.withValues(
+                            alpha: isActiveGlow ? 0.9 : 0.35,
+                          ),
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.5,
+                        ),
+                      ),
+                      if (widget.selectedItems.isNotEmpty) ...[
+                        SizedBox(height: 8.h),
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10.w,
+                            vertical: 4.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: ringColor.withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(12.r),
+                          ),
+                          child: Text(
+                            "${widget.selectedItems.length} PLATES LOADED",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 9.sp,
+                              fontWeight: FontWeight.bold,
+                              color: ringColor,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
                 ],
               ),
-            ],
-          ),
-        ).animate(
-          onPlay: (c) => c.repeat(reverse: true),
-        ).scale(
-          begin: const Offset(1, 1),
-          end: const Offset(1.03, 1.03),
-          duration: 2.2.seconds,
-          curve: Curves.easeInOut,
-        );
+            )
+            .animate(onPlay: (c) => c.repeat(reverse: true))
+            .scale(
+              begin: const Offset(1, 1),
+              end: const Offset(1.03, 1.03),
+              duration: 2.2.seconds,
+              curve: Curves.easeInOut,
+            );
       },
     );
   }

@@ -24,23 +24,26 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
         borderRadius: BorderRadius.circular(30.r),
         border: Border.all(color: color.withValues(alpha: 0.15), width: 1.5),
         boxShadow: [
-          BoxShadow(
-            color: color.withValues(alpha: 0.08),
-            blurRadius: 15,
-          ),
+          BoxShadow(color: color.withValues(alpha: 0.08), blurRadius: 15),
         ],
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.all(12.r),
-            decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
-              shape: BoxShape.circle,
-            ),
-            child: Icon(Icons.flight_takeoff_rounded, color: color, size: 24.r),
-          ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
+                padding: EdgeInsets.all(12.r),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.flight_takeoff_rounded,
+                  color: color,
+                  size: 24.r,
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .scale(
                 begin: const Offset(1, 1),
                 end: const Offset(1.15, 1.15),
                 duration: 1.5.seconds,
@@ -53,7 +56,8 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
               children: [
                 Text(
                   "TRAVELER DECLARED REQUEST:",
-                  style: TextStyle(fontFamily: 'RobotoMono', 
+                  style: TextStyle(
+                    fontFamily: 'RobotoMono',
                     fontSize: 10.sp,
                     color: color,
                     letterSpacing: 1.5,
@@ -63,7 +67,8 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
                 SizedBox(height: 6.h),
                 Text(
                   "\"$prompt\"",
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 17.sp,
                     color: isDark ? Colors.white : Colors.black87,
                     height: 1.35,

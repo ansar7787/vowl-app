@@ -21,15 +21,21 @@ class GetVocabularyQuestsParams extends Equatable {
   List<Object?> get props => [gameType, level];
 }
 
-class GetVocabularyQuests implements UseCase<List<VocabularyQuest>, GetVocabularyQuestsParams> {
+class GetVocabularyQuests
+    implements UseCase<List<VocabularyQuest>, GetVocabularyQuestsParams> {
   final VocabularyRepository repository;
 
   GetVocabularyQuests(this.repository);
 
   @override
-  Future<Either<Failure, List<VocabularyQuest>>> call(GetVocabularyQuestsParams params) async {
+  Future<Either<Failure, List<VocabularyQuest>>> call(
+    GetVocabularyQuestsParams params,
+  ) async {
     try {
-      final quests = await repository.getVocabularyQuests(params.gameType, params.level);
+      final quests = await repository.getVocabularyQuests(
+        params.gameType,
+        params.level,
+      );
       return Right(quests);
     } catch (e) {
       // In a more robust implementation, the Repository would catch exceptions and return Failures.

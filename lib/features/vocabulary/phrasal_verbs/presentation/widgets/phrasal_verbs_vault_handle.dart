@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+
 class PhrasalVerbsVaultHandle extends StatelessWidget {
   final String verb;
   final Color color;
@@ -89,7 +90,8 @@ class PhrasalVerbsVaultHandle extends StatelessWidget {
           child: Center(
             child: Text(
               verb.toUpperCase(),
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w900,
                 color: isDark ? Colors.white : Colors.black87,

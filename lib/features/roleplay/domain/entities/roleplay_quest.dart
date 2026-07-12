@@ -57,7 +57,7 @@ class RoleplayQuest extends GameQuest {
   });
 
   String? get roleName => persona;
-  
+
   @override
   List<Object?> get props => [
     ...super.props,

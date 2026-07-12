@@ -53,7 +53,8 @@ class ProfessionalismFusionPainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     for (int i = 0; i < 3; i++) {
-      double sparkAngle = (animationValue * 2 * math.pi) + (i * 2 * math.pi / 3);
+      double sparkAngle =
+          (animationValue * 2 * math.pi) + (i * 2 * math.pi / 3);
       double sx = center.dx + (radius - 6) * math.cos(sparkAngle);
       double sy = center.dy + (radius - 6) * math.sin(sparkAngle);
       canvas.drawCircle(Offset(sx, sy), 3.r, sparkPaint);

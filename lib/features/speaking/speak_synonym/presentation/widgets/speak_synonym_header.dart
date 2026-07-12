@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class SpeakSynonymHeader extends StatelessWidget {
   final Color primaryColor;
   final String? instruction;
@@ -28,7 +29,8 @@ class SpeakSynonymHeader extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "LEXICAL SYNONYM SEED",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                   color: Colors.greenAccent,
@@ -43,7 +45,8 @@ class SpeakSynonymHeader extends StatelessWidget {
           Text(
             instruction!,
             textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 14.sp,
               fontWeight: FontWeight.w500,
               color: Colors.grey.shade400,

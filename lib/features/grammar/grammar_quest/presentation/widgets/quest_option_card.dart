@@ -92,7 +92,8 @@ class QuestOptionCard extends StatelessWidget {
                 child: Center(
                   child: Text(
                     String.fromCharCode(64 + (index + 1)),
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w900,
                       color: isSelected ? Colors.white : primaryColor,
@@ -104,7 +105,8 @@ class QuestOptionCard extends StatelessWidget {
               Expanded(
                 child: Text(
                   option,
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w700,
                     color: isSelected

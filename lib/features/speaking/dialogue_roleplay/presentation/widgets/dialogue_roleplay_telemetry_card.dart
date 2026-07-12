@@ -15,7 +15,9 @@ class DialogueRoleplayTelemetryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool hasInput = spokenText != "Awaiting verbal speech input..." && spokenText != "No vocal signals transcribed.";
+    final bool hasInput =
+        spokenText != "Awaiting verbal speech input..." &&
+        spokenText != "No vocal signals transcribed.";
 
     return GlassTile(
       padding: EdgeInsets.all(18.r),
@@ -26,14 +28,17 @@ class DialogueRoleplayTelemetryCard extends StatelessWidget {
           Row(
             children: [
               Icon(
-                hasInput ? Icons.check_circle_rounded : Icons.warning_amber_rounded,
+                hasInput
+                    ? Icons.check_circle_rounded
+                    : Icons.warning_amber_rounded,
                 color: Colors.cyanAccent,
                 size: 16.r,
               ),
               SizedBox(width: 8.w),
               Text(
                 "DECODED DIALOGUE ANALYSIS",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 10.sp,
                   color: Colors.grey,
                   letterSpacing: 1.0,
@@ -44,9 +49,12 @@ class DialogueRoleplayTelemetryCard extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             spokenText,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 14.sp,
-              color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.9)
+                  : Colors.black87,
               height: 1.35,
             ),
           ),

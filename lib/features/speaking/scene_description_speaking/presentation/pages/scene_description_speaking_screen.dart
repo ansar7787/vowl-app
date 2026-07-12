@@ -35,7 +35,8 @@ class SceneDescriptionScreen extends StatefulWidget {
   State<SceneDescriptionScreen> createState() => _SceneDescriptionScreenState();
 }
 
-class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with SingleTickerProviderStateMixin {
+class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
+    with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   final _speechService = di.sl<SpeechService>();
@@ -60,7 +61,9 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
   @override
   void initState() {
     super.initState();
-    context.read<SpeakingBloc>().add(FetchSpeakingQuests(gameType: widget.gameType, level: widget.level));
+    context.read<SpeakingBloc>().add(
+      FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
+    );
 
     _radarController = AnimationController(
       vsync: this,
@@ -131,7 +134,10 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
       return;
     }
 
-    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '');
+    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
+      RegExp(r'[^\w\s]'),
+      '',
+    );
     final List<String> keywords = _hotspotKeywords[_activeHotspot];
 
     bool matchFound = false;
@@ -148,7 +154,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
       _soundService.playCorrect();
       setState(() {
         _inspectedHotspots.add(_activeHotspot);
-        _spokenText = "DECODED SUCCESSFULLY! '${_hotspotLabels[_activeHotspot]}' visual verified.";
+        _spokenText =
+            "DECODED SUCCESSFULLY! '${_hotspotLabels[_activeHotspot]}' visual verified.";
         _activeHotspot = -1;
       });
 
@@ -164,7 +171,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
       _soundService.playWrong();
       setState(() {
         _attempts++;
-        _spokenText = "Detail mismatch. Focus your description and use key terms: ${keywords.join(', ')}.";
+        _spokenText =
+            "Detail mismatch. Focus your description and use key terms: ${keywords.join(', ')}.";
       });
       context.read<SpeakingBloc>().add(SubmitAnswer(false));
     }
@@ -175,25 +183,30 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
     setState(() {
       _isAnswered = true;
       _isCorrect = true;
-      _inspectedHotspots.addAll([0,1,2]);
+      _inspectedHotspots.addAll([0, 1, 2]);
     });
     context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
   void _parseQuestData(SpeakingQuest quest) {
     _hotspotLabels = quest.options ?? ["Object A", "Object B", "Object C"];
-    
-    final String text = quest.sceneText ?? "Visual Space Cabin|Describe features.|Describe features.|Describe features.";
+
+    final String text =
+        quest.sceneText ??
+        "Visual Space Cabin|Describe features.|Describe features.|Describe features.";
     final List<String> parts = text.split('|');
     _sceneTitle = parts[0];
-    
+
     _hotspotPrompts = [];
     for (int i = 1; i <= 3; i++) {
-      _hotspotPrompts.add(parts.length > i ? parts[i] : "Describe this scenic component.");
+      _hotspotPrompts.add(
+        parts.length > i ? parts[i] : "Describe this scenic component.",
+      );
     }
 
     _hotspotKeywords = [];
-    final List<String> list = quest.acceptedSynonyms ?? ["feature", "object", "item"];
+    final List<String> list =
+        quest.acceptedSynonyms ?? ["feature", "object", "item"];
     for (int i = 0; i < 3; i++) {
       final String keywordsString = list.length > i ? list[i] : "feature,item";
       _hotspotKeywords.add(keywordsString.split(','));
@@ -210,7 +223,9 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
       listener: (context, state) {
         if (state is SpeakingLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          if (state.currentIndex != _lastProcessedIndex ||
+              livesChanged ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -248,7 +263,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
         } else if (state is SpeakingGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<SpeakingBloc>().add(const RestoreLife()),
+            onRestore: () =>
+                context.read<SpeakingBloc>().add(const RestoreLife()),
             onTutorPass: _tutorPass,
           );
         }
@@ -278,24 +294,42 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
                       final bool isCompact = maxHeight < 580;
-                      
-                      final double estimatedContentHeight = 24.h + (isCompact ? 90.h : 120.h) + (isCompact ? 80.h : 110.h) + (isCompact ? 100.h : 140.h) + (isCompact ? 60.h : 80.h);
-                      final remainingHeight = maxHeight - estimatedContentHeight;
-                      
-                      final double gapUnit = remainingHeight > 0 ? remainingHeight / 8 : 0;
-                      final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
-                      final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 16.0) : 8.0;
-                      final double gapMap = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-                      final double gapPrompt = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-                      final double gapTelemetry = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 30.0) : 12.0;
-                      final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(12.0, 40.0) : 12.0;
+
+                      final double estimatedContentHeight =
+                          24.h +
+                          (isCompact ? 90.h : 120.h) +
+                          (isCompact ? 80.h : 110.h) +
+                          (isCompact ? 100.h : 140.h) +
+                          (isCompact ? 60.h : 80.h);
+                      final remainingHeight =
+                          maxHeight - estimatedContentHeight;
+
+                      final double gapUnit = remainingHeight > 0
+                          ? remainingHeight / 8
+                          : 0;
+                      final double gapTop = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(6.0, 16.0)
+                          : 6.0;
+                      final double gapInstruction = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(8.0, 16.0)
+                          : 8.0;
+                      final double gapMap = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                          : 10.0;
+                      final double gapPrompt = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                          : 10.0;
+                      final double gapTelemetry = remainingHeight > 0
+                          ? (gapUnit * 2).clamp(12.0, 30.0)
+                          : 12.0;
+                      final double gapBottom = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(12.0, 40.0)
+                          : 12.0;
 
                       return SingleChildScrollView(
                         physics: const BouncingScrollPhysics(),
                         child: ConstrainedBox(
-                          constraints: BoxConstraints(
-                            minHeight: maxHeight,
-                          ),
+                          constraints: BoxConstraints(minHeight: maxHeight),
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 16.w),
                             child: Column(
@@ -305,108 +339,136 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapTop),
-                                    isCompact 
-                                       ? SizedBox(
-                                           height: 32.h,
-                                           child: FittedBox(
-                                             fit: BoxFit.scaleDown,
-                                             child: SceneDescriptionHeader(
-                                               primaryColor: theme.primaryColor,
-                                               instruction: quest.instruction,
-                                             ),
-                                           ),
-                                         )
-                                       : SceneDescriptionHeader(
-                                           primaryColor: theme.primaryColor,
-                                           instruction: quest.instruction,
-                                         ),
-                                    SizedBox(height: gapInstruction),
-                                    
                                     isCompact
-                                      ? SizedBox(
-                                          height: 120.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SizedBox(
-                                              width: constraints.maxWidth - 16.w,
-                                              child: SceneDescriptionScenicRadarMap(
-                                                sceneTitle: _sceneTitle,
-                                                inspectedHotspots: _inspectedHotspots,
-                                                activeHotspot: _activeHotspot,
-                                                hotspotLabels: _hotspotLabels,
-                                                radarController: _radarController,
-                                                primaryColor: theme.primaryColor,
-                                                isDark: isDark,
-                                                onHotspotTap: _onHotspotTap,
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : SceneDescriptionScenicRadarMap(
-                                          sceneTitle: _sceneTitle,
-                                          inspectedHotspots: _inspectedHotspots,
-                                          activeHotspot: _activeHotspot,
-                                          hotspotLabels: _hotspotLabels,
-                                          radarController: _radarController,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onHotspotTap: _onHotspotTap,
-                                        ),
-                                    SizedBox(height: gapMap),
-
-                                    isCompact
-                                      ? SizedBox(
-                                          height: 80.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SizedBox(
-                                              width: constraints.maxWidth - 16.w,
-                                              child: AnimatedSwitcher(
-                                                duration: const Duration(milliseconds: 300),
-                                                child: _activeHotspot != -1
-                                                    ? SceneDescriptionActivePromptCard(
-                                                        activeHotspot: _activeHotspot,
-                                                        activePrompt: _hotspotPrompts[_activeHotspot],
-                                                        primaryColor: theme.primaryColor,
-                                                        isDark: isDark,
-                                                      )
-                                                    : SceneDescriptionExplorerGuideCard(isDark: isDark),
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : AnimatedSwitcher(
-                                          duration: const Duration(milliseconds: 300),
-                                          child: _activeHotspot != -1
-                                              ? SceneDescriptionActivePromptCard(
-                                                  activeHotspot: _activeHotspot,
-                                                  activePrompt: _hotspotPrompts[_activeHotspot],
-                                                  primaryColor: theme.primaryColor,
-                                                  isDark: isDark,
-                                                )
-                                              : SceneDescriptionExplorerGuideCard(isDark: isDark),
-                                        ),
-                                    SizedBox(height: gapPrompt),
-
-                                    if (_spokenText.isNotEmpty)
-                                      isCompact
                                         ? SizedBox(
-                                            height: 70.h,
+                                            height: 32.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SceneDescriptionHeader(
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                instruction: quest.instruction,
+                                              ),
+                                            ),
+                                          )
+                                        : SceneDescriptionHeader(
+                                            primaryColor: theme.primaryColor,
+                                            instruction: quest.instruction,
+                                          ),
+                                    SizedBox(height: gapInstruction),
+
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 120.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
                                               child: SizedBox(
-                                                width: constraints.maxWidth - 16.w,
-                                                child: SceneDescriptionTelemetryCard(
-                                                  spokenText: _spokenText,
-                                                  isDark: isDark,
+                                                width:
+                                                    constraints.maxWidth - 16.w,
+                                                child:
+                                                    SceneDescriptionScenicRadarMap(
+                                                      sceneTitle: _sceneTitle,
+                                                      inspectedHotspots:
+                                                          _inspectedHotspots,
+                                                      activeHotspot:
+                                                          _activeHotspot,
+                                                      hotspotLabels:
+                                                          _hotspotLabels,
+                                                      radarController:
+                                                          _radarController,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      isDark: isDark,
+                                                      onHotspotTap:
+                                                          _onHotspotTap,
+                                                    ),
+                                              ),
+                                            ),
+                                          )
+                                        : SceneDescriptionScenicRadarMap(
+                                            sceneTitle: _sceneTitle,
+                                            inspectedHotspots:
+                                                _inspectedHotspots,
+                                            activeHotspot: _activeHotspot,
+                                            hotspotLabels: _hotspotLabels,
+                                            radarController: _radarController,
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            onHotspotTap: _onHotspotTap,
+                                          ),
+                                    SizedBox(height: gapMap),
+
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 80.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width:
+                                                    constraints.maxWidth - 16.w,
+                                                child: AnimatedSwitcher(
+                                                  duration: const Duration(
+                                                    milliseconds: 300,
+                                                  ),
+                                                  child: _activeHotspot != -1
+                                                      ? SceneDescriptionActivePromptCard(
+                                                          activeHotspot:
+                                                              _activeHotspot,
+                                                          activePrompt:
+                                                              _hotspotPrompts[_activeHotspot],
+                                                          primaryColor: theme
+                                                              .primaryColor,
+                                                          isDark: isDark,
+                                                        )
+                                                      : SceneDescriptionExplorerGuideCard(
+                                                          isDark: isDark,
+                                                        ),
                                                 ),
                                               ),
                                             ),
                                           )
-                                        : SceneDescriptionTelemetryCard(
-                                            spokenText: _spokenText,
-                                            isDark: isDark,
+                                        : AnimatedSwitcher(
+                                            duration: const Duration(
+                                              milliseconds: 300,
+                                            ),
+                                            child: _activeHotspot != -1
+                                                ? SceneDescriptionActivePromptCard(
+                                                    activeHotspot:
+                                                        _activeHotspot,
+                                                    activePrompt:
+                                                        _hotspotPrompts[_activeHotspot],
+                                                    primaryColor:
+                                                        theme.primaryColor,
+                                                    isDark: isDark,
+                                                  )
+                                                : SceneDescriptionExplorerGuideCard(
+                                                    isDark: isDark,
+                                                  ),
                                           ),
+                                    SizedBox(height: gapPrompt),
+
+                                    if (_spokenText.isNotEmpty)
+                                      isCompact
+                                          ? SizedBox(
+                                              height: 70.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: SizedBox(
+                                                  width:
+                                                      constraints.maxWidth -
+                                                      16.w,
+                                                  child:
+                                                      SceneDescriptionTelemetryCard(
+                                                        spokenText: _spokenText,
+                                                        isDark: isDark,
+                                                      ),
+                                                ),
+                                              ),
+                                            )
+                                          : SceneDescriptionTelemetryCard(
+                                              spokenText: _spokenText,
+                                              isDark: isDark,
+                                            ),
                                   ],
                                 ),
                                 Column(
@@ -416,60 +478,72 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen> with Si
                                     AnimatedCrossFade(
                                       firstChild: const SizedBox(),
                                       secondChild: isCompact
-                                        ? SizedBox(
-                                            height: 100.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: constraints.maxWidth - 16.w,
-                                                child: SceneDescriptionExplanationCard(
-                                                  quest: quest,
-                                                  isDark: isDark,
+                                          ? SizedBox(
+                                              height: 100.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: SizedBox(
+                                                  width:
+                                                      constraints.maxWidth -
+                                                      16.w,
+                                                  child:
+                                                      SceneDescriptionExplanationCard(
+                                                        quest: quest,
+                                                        isDark: isDark,
+                                                      ),
                                                 ),
                                               ),
+                                            )
+                                          : SceneDescriptionExplanationCard(
+                                              quest: quest,
+                                              isDark: isDark,
                                             ),
-                                          )
-                                        : SceneDescriptionExplanationCard(
-                                            quest: quest,
-                                            isDark: isDark,
-                                          ),
                                       crossFadeState: _isAnswered
                                           ? CrossFadeState.showSecond
                                           : CrossFadeState.showFirst,
-                                      duration: const Duration(milliseconds: 400),
+                                      duration: const Duration(
+                                        milliseconds: 400,
+                                      ),
                                     ),
                                     SizedBox(height: gapBottom),
 
                                     if (!_isAnswered)
                                       isCompact
-                                        ? SizedBox(
-                                            height: 70.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SceneDescriptionMicTrigger(
-                                                isListening: _isListening,
-                                                activeHotspot: _activeHotspot,
-                                                primaryColor: theme.primaryColor,
-                                                isDark: isDark,
-                                                onLongPressStart: _startSpeechListening,
-                                                onLongPressEnd: _stopSpeechListening,
-                                                attempts: _attempts,
-                                                isAnswered: _isAnswered,
-                                                onTutorPass: _tutorPass,
+                                          ? SizedBox(
+                                              height: 70.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child:
+                                                    SceneDescriptionMicTrigger(
+                                                      isListening: _isListening,
+                                                      activeHotspot:
+                                                          _activeHotspot,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      isDark: isDark,
+                                                      onLongPressStart:
+                                                          _startSpeechListening,
+                                                      onLongPressEnd:
+                                                          _stopSpeechListening,
+                                                      attempts: _attempts,
+                                                      isAnswered: _isAnswered,
+                                                      onTutorPass: _tutorPass,
+                                                    ),
                                               ),
+                                            )
+                                          : SceneDescriptionMicTrigger(
+                                              isListening: _isListening,
+                                              activeHotspot: _activeHotspot,
+                                              primaryColor: theme.primaryColor,
+                                              isDark: isDark,
+                                              onLongPressStart:
+                                                  _startSpeechListening,
+                                              onLongPressEnd:
+                                                  _stopSpeechListening,
+                                              attempts: _attempts,
+                                              isAnswered: _isAnswered,
+                                              onTutorPass: _tutorPass,
                                             ),
-                                          )
-                                        : SceneDescriptionMicTrigger(
-                                            isListening: _isListening,
-                                            activeHotspot: _activeHotspot,
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                            onLongPressStart: _startSpeechListening,
-                                            onLongPressEnd: _stopSpeechListening,
-                                            attempts: _attempts,
-                                            isAnswered: _isAnswered,
-                                            onTutorPass: _tutorPass,
-                                          ),
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),

@@ -16,54 +16,60 @@ class SceneDescriptionExplanationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 1.sw,
-      padding: EdgeInsets.all(22.r),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF131326) : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: Colors.greenAccent.withValues(alpha: 0.25),
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.greenAccent.withValues(alpha: 0.15),
-            blurRadius: 15,
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            children: [
-              Icon(
-                Icons.verified_rounded,
-                color: Colors.greenAccent,
-                size: 24.r,
+          width: 1.sw,
+          padding: EdgeInsets.all(22.r),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF131326) : Colors.white,
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(
+              color: Colors.greenAccent.withValues(alpha: 0.25),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.greenAccent.withValues(alpha: 0.15),
+                blurRadius: 15,
               ),
-              SizedBox(width: 8.w),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                children: [
+                  Icon(
+                    Icons.verified_rounded,
+                    color: Colors.greenAccent,
+                    size: 24.r,
+                  ),
+                  SizedBox(width: 8.w),
+                  Text(
+                    "All Features Decoded!",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.bold,
+                      color: isDark ? Colors.white : Colors.black87,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 12.h),
               Text(
-                "All Features Decoded!",
-                style: TextStyle(fontFamily: 'Outfit', 
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.bold,
-                  color: isDark ? Colors.white : Colors.black87,
+                quest.explanation ??
+                    "Detailed visual description tests the extreme boundaries of native structural vocabulary and situational syntax.",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  color: isDark ? Colors.white70 : Colors.black54,
+                  height: 1.35,
                 ),
               ),
             ],
           ),
-          SizedBox(height: 12.h),
-          Text(
-            quest.explanation ?? "Detailed visual description tests the extreme boundaries of native structural vocabulary and situational syntax.",
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 14.sp,
-              color: isDark ? Colors.white70 : Colors.black54,
-              height: 1.35,
-            ),
-          ),
-        ],
-      ),
-    ).animate().fadeIn(duration: const Duration(milliseconds: 400)).slideY(begin: 0.05);
+        )
+        .animate()
+        .fadeIn(duration: const Duration(milliseconds: 400))
+        .slideY(begin: 0.05);
   }
 }

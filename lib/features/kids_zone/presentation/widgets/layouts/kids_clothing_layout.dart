@@ -35,12 +35,7 @@ class KidsClothingLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Open Closet
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: _buildClosetBoard(quest),
-              ),
-            ),
+            Expanded(flex: 5, child: Center(child: _buildClosetBoard(quest))),
             // The Clothing Hangers (Options)
             Flexible(
               flex: 5,
@@ -58,17 +53,26 @@ class KidsClothingLayout extends StatelessWidget {
                         color: const Color(0xFF94A3B8), // Silver rod
                         borderRadius: BorderRadius.circular(4.r),
                         boxShadow: const [
-                          BoxShadow(color: Colors.black26, offset: Offset(0, 2)),
+                          BoxShadow(
+                            color: Colors.black26,
+                            offset: Offset(0, 2),
+                          ),
                         ],
                       ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 20.h, left: 16.w, right: 16.w),
+                    padding: EdgeInsets.only(
+                      bottom: 20.h,
+                      left: 16.w,
+                      right: 16.w,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: List.generate(quest.options?.length ?? 0, (index) {
+                      children: List.generate(quest.options?.length ?? 0, (
+                        index,
+                      ) {
                         final option = quest.options![index];
                         return Expanded(
                           child: Padding(
@@ -101,7 +105,10 @@ class KidsClothingLayout extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFFFEF3C7), // Light wood inside closet
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: const Color(0xFFB45309), width: 12.r), // Dark wood frame
+        border: Border.all(
+          color: const Color(0xFFB45309),
+          width: 12.r,
+        ), // Dark wood frame
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.2),
@@ -115,10 +122,7 @@ class KidsClothingLayout extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (quest.emoji != null)
-              Text(
-                quest.emoji!,
-                style: TextStyle(fontSize: 48.sp),
-              ),
+              Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
             Text(
               quest.question ?? "?",
               style: TextStyle(

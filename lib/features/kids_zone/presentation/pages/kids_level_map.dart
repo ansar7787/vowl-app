@@ -242,15 +242,21 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                             width: 36.r,
                             height: 36.r,
                             decoration: BoxDecoration(
-                              color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                              color: isDark
+                                  ? const Color(0xFF1E293B)
+                                  : Colors.white,
                               shape: BoxShape.circle,
                               border: Border.all(
-                                color: isDark ? Colors.blue.shade700 : Colors.blue.shade200, 
+                                color: isDark
+                                    ? Colors.blue.shade700
+                                    : Colors.blue.shade200,
                                 width: 3.w,
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: isDark ? Colors.blue.shade900 : Colors.blue.shade100,
+                                  color: isDark
+                                      ? Colors.blue.shade900
+                                      : Colors.blue.shade100,
                                   offset: Offset(0, 4.h),
                                 ),
                               ],
@@ -353,7 +359,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                   right: 24.w,
                   child: _buildStarVaultButton(),
                 ),
-                
+
                 // Golden Keys FAB
                 Positioned(
                   bottom: 32.h,
@@ -715,10 +721,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
         decoration: BoxDecoration(
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(32.r),
-          border: Border.all(
-            color: widget.primaryColor,
-            width: 3.w,
-          ),
+          border: Border.all(color: widget.primaryColor, width: 3.w),
           boxShadow: [
             BoxShadow(
               color: widget.primaryColor.withValues(alpha: 0.6),
@@ -941,7 +944,11 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
         final keys = state.user?.keys ?? 0;
 
         return ScaleButton(
-          onTap: () => KeyShopBottomSheet.show(context: context, isKidsMode: true, primaryColor: widget.primaryColor),
+          onTap: () => KeyShopBottomSheet.show(
+            context: context,
+            isKidsMode: true,
+            primaryColor: widget.primaryColor,
+          ),
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
             decoration: BoxDecoration(
@@ -963,7 +970,12 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                 SizedBox(width: 8.w),
                 Text(
                   "$keys",
-                  style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.white, fontSize: 16.sp),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                    fontSize: 16.sp,
+                  ),
                 ),
               ],
             ),

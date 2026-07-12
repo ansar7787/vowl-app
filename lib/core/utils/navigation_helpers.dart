@@ -115,8 +115,5 @@ Page<T> fadeTransitionPage<T>({
   required Widget child,
   required GoRouterState state,
 }) {
-  return NavigationHelpers.fadeTransitionPage<T>(
-    child: child,
-    state: state,
-  );
+  return NavigationHelpers.fadeTransitionPage<T>(child: child, state: state);
 }

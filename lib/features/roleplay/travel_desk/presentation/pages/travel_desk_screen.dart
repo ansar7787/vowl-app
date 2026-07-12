@@ -165,7 +165,9 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                       ),
                       child: Column(
                         children: [
-                          TravelDeskInstruction(primaryColor: theme.primaryColor),
+                          TravelDeskInstruction(
+                            primaryColor: theme.primaryColor,
+                          ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
                           TravelDeskCustomsTerminal(
                             prompt: quest.prompt ?? "",

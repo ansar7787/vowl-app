@@ -6,7 +6,6 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 
-
 /// Magical Forest Theme for Nature Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
@@ -39,17 +38,12 @@ class KidsNatureLayout extends StatelessWidget {
             Positioned(top: 100.h, left: 20.w, child: _buildFirefly()),
             Positioned(top: 180.h, right: 30.w, child: _buildFirefly()),
             Positioned(top: 250.h, left: 50.w, child: _buildFirefly()),
-            
+
             Column(
               children: [
                 SizedBox(height: 120.h),
                 // The Wooden Tree Sign
-                Expanded(
-                  flex: 5,
-                  child: Center(
-                    child: _buildTreeSign(quest),
-                  ),
-                ),
+                Expanded(flex: 5, child: Center(child: _buildTreeSign(quest))),
                 // Glowing River Stones (Options)
                 Flexible(
                   flex: 5,
@@ -62,15 +56,23 @@ class KidsNatureLayout extends StatelessWidget {
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: const Color(0xFF14532D), // Dark green moss
-                          borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(24.r),
+                          ),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(bottom: 20.h, left: 16.w, right: 16.w),
+                        padding: EdgeInsets.only(
+                          bottom: 20.h,
+                          left: 16.w,
+                          right: 16.w,
+                        ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.end,
-                          children: List.generate(quest.options?.length ?? 0, (index) {
+                          children: List.generate(quest.options?.length ?? 0, (
+                            index,
+                          ) {
                             final option = quest.options![index];
                             return Expanded(
                               child: Padding(
@@ -100,22 +102,27 @@ class KidsNatureLayout extends StatelessWidget {
 
   Widget _buildFirefly() {
     return Container(
-      width: 10.r,
-      height: 10.r,
-      decoration: BoxDecoration(
-        color: const Color(0xFFFEF08A),
-        shape: BoxShape.circle,
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xFFEAB308),
-            blurRadius: 10,
-            spreadRadius: 2,
+          width: 10.r,
+          height: 10.r,
+          decoration: BoxDecoration(
+            color: const Color(0xFFFEF08A),
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFFEAB308),
+                blurRadius: 10,
+                spreadRadius: 2,
+              ),
+            ],
           ),
-        ],
-      ),
-    ).animate(onPlay: (c) => c.repeat(reverse: true))
-     .scale(begin: const Offset(0.5, 0.5), end: const Offset(1.5, 1.5), duration: 2.seconds)
-     .fade(begin: 0.2, end: 1.0, duration: 1.seconds);
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .scale(
+          begin: const Offset(0.5, 0.5),
+          end: const Offset(1.5, 1.5),
+          duration: 2.seconds,
+        )
+        .fade(begin: 0.2, end: 1.0, duration: 1.seconds);
   }
 
   Widget _buildTreeSign(dynamic quest) {
@@ -142,23 +149,28 @@ class KidsNatureLayout extends StatelessWidget {
           Positioned(
             top: -20.h,
             left: -10.w,
-            child: Icon(Icons.eco_rounded, color: const Color(0xFF16A34A), size: 60.r),
+            child: Icon(
+              Icons.eco_rounded,
+              color: const Color(0xFF16A34A),
+              size: 60.r,
+            ),
           ),
           Positioned(
             bottom: -15.h,
             right: -10.w,
-            child: Icon(Icons.eco_rounded, color: const Color(0xFF15803D), size: 50.r),
+            child: Icon(
+              Icons.eco_rounded,
+              color: const Color(0xFF15803D),
+              size: 50.r,
+            ),
           ),
-          
+
           Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (quest.emoji != null)
-                  Text(
-                    quest.emoji!,
-                    style: TextStyle(fontSize: 48.sp),
-                  ),
+                  Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
                 Text(
                   quest.question ?? "?",
                   style: TextStyle(
@@ -179,7 +191,9 @@ class KidsNatureLayout extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 14.sp,
                         fontWeight: FontWeight.bold,
-                        color: const Color(0xFFFDE68A), // Warmer yellow for fact
+                        color: const Color(
+                          0xFFFDE68A,
+                        ), // Warmer yellow for fact
                       ),
                       textAlign: TextAlign.center,
                       maxLines: 2,
@@ -231,7 +245,9 @@ class KidsNatureLayout extends StatelessWidget {
               ),
               // Magic glow inside
               BoxShadow(
-                color: const Color(0xFF6EE7B7).withValues(alpha: 0.3), // Mint green glow
+                color: const Color(
+                  0xFF6EE7B7,
+                ).withValues(alpha: 0.3), // Mint green glow
                 blurRadius: 15,
                 spreadRadius: 2,
               ),

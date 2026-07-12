@@ -175,7 +175,9 @@ class DialectFeedbackPanel extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.all(12.r),
                     decoration: BoxDecoration(
-                      color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.1)
+                          : Colors.black.withValues(alpha: 0.05),
                       borderRadius: BorderRadius.circular(12.r),
                       border: Border.all(
                         color: isDark ? Colors.white24 : Colors.black12,
@@ -183,7 +185,11 @@ class DialectFeedbackPanel extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Icon(Icons.public, size: 20.r, color: isDark ? Colors.white70 : Colors.black54),
+                        Icon(
+                          Icons.public,
+                          size: 20.r,
+                          color: isDark ? Colors.white70 : Colors.black54,
+                        ),
                         SizedBox(width: 12.w),
                         Expanded(
                           child: Text(

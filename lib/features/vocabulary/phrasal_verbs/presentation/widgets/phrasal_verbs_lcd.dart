@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+
 class PhrasalVerbsLcd extends StatelessWidget {
   final String text;
   final Color color;
@@ -34,28 +35,30 @@ class PhrasalVerbsLcd extends StatelessWidget {
       child: Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.radar_rounded, size: 12.sp, color: color),
-              SizedBox(width: 8.w),
-              Text(
-                "DECRYPTING TARGET",
-                style: TextStyle(fontFamily: 'RobotoMono', 
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.bold,
-                  color: color,
-                  letterSpacing: 2,
-                ),
-              ),
-            ],
-          )
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .fade(duration: 1.seconds),
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.radar_rounded, size: 12.sp, color: color),
+                  SizedBox(width: 8.w),
+                  Text(
+                    "DECRYPTING TARGET",
+                    style: TextStyle(
+                      fontFamily: 'RobotoMono',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.bold,
+                      color: color,
+                      letterSpacing: 2,
+                    ),
+                  ),
+                ],
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .fade(duration: 1.seconds),
           SizedBox(height: 10.h),
           Text(
             text.toUpperCase(),
             textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 15.sp,
               fontWeight: FontWeight.bold,
               color: isDark ? Colors.white : Colors.black87,

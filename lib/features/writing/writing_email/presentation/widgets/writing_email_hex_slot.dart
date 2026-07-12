@@ -28,9 +28,11 @@ class WritingEmailHexSlot extends StatelessWidget {
       onAcceptWithDetails: (details) => onSlot(slotKey, details.data),
       builder: (context, candidateData, rejectedData) {
         final highlight = candidateData.isNotEmpty;
-        
-        final successColor = isDark ? Colors.greenAccent : const Color(0xFF16A34A);
-        
+
+        final successColor = isDark
+            ? Colors.greenAccent
+            : const Color(0xFF16A34A);
+
         return GestureDetector(
           onTap: () => onClearSlot(slotKey),
           child: Container(
@@ -40,46 +42,59 @@ class WritingEmailHexSlot extends StatelessWidget {
               color: isDark ? Colors.black45 : Colors.white,
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: highlight ? successColor : (hasData ? color : color.withValues(alpha: 0.2)), 
-                width: 2
+                color: highlight
+                    ? successColor
+                    : (hasData ? color : color.withValues(alpha: 0.2)),
+                width: 2,
               ),
               boxShadow: [
-                BoxShadow(color: color.withValues(alpha: isDark ? 0.25 : 0.08), blurRadius: 8)
+                BoxShadow(
+                  color: color.withValues(alpha: isDark ? 0.25 : 0.08),
+                  blurRadius: 8,
+                ),
               ],
             ),
             child: Row(
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 6.h,
+                  ),
                   decoration: BoxDecoration(
                     color: color.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(8.r)
+                    borderRadius: BorderRadius.circular(8.r),
                   ),
                   child: Text(
-                    slotKey, 
-                    style: TextStyle(fontFamily: 'RobotoMono', 
-                      color: color, 
-                      fontSize: 9.sp, 
-                      fontWeight: FontWeight.bold
-                    )
+                    slotKey,
+                    style: TextStyle(
+                      fontFamily: 'RobotoMono',
+                      color: color,
+                      fontSize: 9.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 SizedBox(width: 16.w),
                 Expanded(
                   child: Text(
-                    slotValue ?? "--- PULL NEURAL SEGMENT HERE ---", 
-                    style: TextStyle(fontFamily: 'RobotoMono', 
-                      color: hasData 
-                        ? (isDark ? Colors.white70 : Colors.black87) 
-                        : (isDark ? Colors.white24 : Colors.black26),
+                    slotValue ?? "--- PULL NEURAL SEGMENT HERE ---",
+                    style: TextStyle(
+                      fontFamily: 'RobotoMono',
+                      color: hasData
+                          ? (isDark ? Colors.white70 : Colors.black87)
+                          : (isDark ? Colors.white24 : Colors.black26),
                       fontSize: 11.sp,
-                      fontWeight: hasData ? FontWeight.bold : FontWeight.normal
-                    )
-                  )
+                      fontWeight: hasData ? FontWeight.bold : FontWeight.normal,
+                    ),
+                  ),
                 ),
                 if (hasData)
-                  Icon(Icons.check_circle_rounded, color: successColor, size: 18.r)
-                    .animate().scale().fadeIn(),
+                  Icon(
+                    Icons.check_circle_rounded,
+                    color: successColor,
+                    size: 18.r,
+                  ).animate().scale().fadeIn(),
               ],
             ),
           ),

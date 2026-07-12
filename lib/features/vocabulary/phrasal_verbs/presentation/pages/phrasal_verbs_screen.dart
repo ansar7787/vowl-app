@@ -230,7 +230,10 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                       ),
                                 if (quest.instruction.isNotEmpty) ...[
                                   SizedBox(height: gapTop / 2),
-                                  _buildInstruction(quest.instruction, theme.primaryColor),
+                                  _buildInstruction(
+                                    quest.instruction,
+                                    theme.primaryColor,
+                                  ),
                                 ],
                                 SizedBox(height: gapMiddle),
 

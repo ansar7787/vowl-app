@@ -491,13 +491,17 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
         ? const Color(0xFF10B981)
         : const Color(0xFFE11D48);
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
-    final title = success ? context.tr('games.excellent') : context.tr('games.not_quite');
+    final title = success
+        ? context.tr('games.excellent')
+        : context.tr('games.not_quite');
     final showCorrectAnswer =
         !success && (state as WritingLoaded).isFinalFailure;
     final buttonText = success
         ? context.tr('common.continue_text').toUpperCase()
         : ((state as WritingLoaded).isFinalFailure
-              ? (lives == 0 ? context.tr('common.see_results').toUpperCase() : context.tr('common.continue_text').toUpperCase())
+              ? (lives == 0
+                    ? context.tr('common.see_results').toUpperCase()
+                    : context.tr('common.continue_text').toUpperCase())
               : context.tr('games.try_again').toUpperCase());
 
     String? explanation;

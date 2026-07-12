@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class QuestionFormatterInstruction extends StatelessWidget {
   final Color primaryColor;
   const QuestionFormatterInstruction({super.key, required this.primaryColor});
@@ -20,7 +21,8 @@ class QuestionFormatterInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             "CRANK TO INVERT LOGIC",
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,

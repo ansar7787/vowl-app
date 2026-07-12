@@ -34,19 +34,29 @@ class KidsAnimalsLayout extends StatelessWidget {
         return Stack(
           children: [
             // Lush jungle framing the screen edges
-            Positioned(top: 100.h, left: -20.w, child: _buildLeaf(const Color(0xFF166534), 80.r, 0.5)),
-            Positioned(top: 180.h, right: -10.w, child: _buildLeaf(const Color(0xFF14532D), 100.r, -0.8)),
-            Positioned(bottom: 200.h, left: -30.w, child: _buildLeaf(const Color(0xFF15803D), 120.r, 0.3)),
-            
+            Positioned(
+              top: 100.h,
+              left: -20.w,
+              child: _buildLeaf(const Color(0xFF166534), 80.r, 0.5),
+            ),
+            Positioned(
+              top: 180.h,
+              right: -10.w,
+              child: _buildLeaf(const Color(0xFF14532D), 100.r, -0.8),
+            ),
+            Positioned(
+              bottom: 200.h,
+              left: -30.w,
+              child: _buildLeaf(const Color(0xFF15803D), 120.r, 0.3),
+            ),
+
             Column(
               children: [
                 SizedBox(height: 120.h),
                 // The Binoculars / Safari Frame
                 Expanded(
                   flex: 5,
-                  child: Center(
-                    child: _buildSafariFrame(quest),
-                  ),
+                  child: Center(child: _buildSafariFrame(quest)),
                 ),
                 // Wooden Signposts for Options
                 Flexible(
@@ -56,7 +66,9 @@ class KidsAnimalsLayout extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: List.generate(quest.options?.length ?? 0, (index) {
+                      children: List.generate(quest.options?.length ?? 0, (
+                        index,
+                      ) {
                         final option = quest.options![index];
                         return Expanded(
                           child: Padding(
@@ -112,7 +124,10 @@ class KidsAnimalsLayout extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFFFEF3C7), // Safari Khaki
         borderRadius: BorderRadius.circular(100.r), // Pill shape for binoculars
-        border: Border.all(color: const Color(0xFF78350F), width: 8.r), // Dark leather
+        border: Border.all(
+          color: const Color(0xFF78350F),
+          width: 8.r,
+        ), // Dark leather
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.2),
@@ -141,10 +156,7 @@ class KidsAnimalsLayout extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   if (quest.emoji != null)
-                    Text(
-                      quest.emoji!,
-                      style: TextStyle(fontSize: 48.sp),
-                    ),
+                    Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
                   Text(
                     quest.question ?? "?",
                     style: TextStyle(
@@ -186,7 +198,7 @@ class KidsAnimalsLayout extends StatelessWidget {
   ) {
     final baseColor = const Color(0xFFD97706); // Wood
     final shadowColor = const Color(0xFF92400E); // Dark Wood
-    
+
     return ScaleButton(
       onTap: () {
         context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));

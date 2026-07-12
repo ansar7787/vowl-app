@@ -35,12 +35,7 @@ class KidsBodyPartsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The X-Ray Board
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: _buildXRayBoard(quest),
-              ),
-            ),
+            Expanded(flex: 5, child: Center(child: _buildXRayBoard(quest))),
             // The Band-aids (Options)
             Flexible(
               flex: 5,
@@ -54,16 +49,27 @@ class KidsBodyPartsLayout extends StatelessWidget {
                     margin: EdgeInsets.symmetric(horizontal: 16.w),
                     decoration: BoxDecoration(
                       color: const Color(0xFFF1F5F9),
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(8.r)),
-                      border: Border.all(color: const Color(0xFFCBD5E1), width: 2),
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(8.r),
+                      ),
+                      border: Border.all(
+                        color: const Color(0xFFCBD5E1),
+                        width: 2,
+                      ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 10.h, left: 16.w, right: 16.w),
+                    padding: EdgeInsets.only(
+                      bottom: 10.h,
+                      left: 16.w,
+                      right: 16.w,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: List.generate(quest.options?.length ?? 0, (index) {
+                      children: List.generate(quest.options?.length ?? 0, (
+                        index,
+                      ) {
                         final option = quest.options![index];
                         return Expanded(
                           child: Padding(
@@ -96,10 +102,15 @@ class KidsBodyPartsLayout extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF0F172A), // Dark X-Ray background
         borderRadius: BorderRadius.circular(8.r),
-        border: Border.all(color: const Color(0xFFE2E8F0), width: 12.r), // Medical white frame
+        border: Border.all(
+          color: const Color(0xFFE2E8F0),
+          width: 12.r,
+        ), // Medical white frame
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF38BDF8).withValues(alpha: 0.3), // Blue glowing backlight
+            color: const Color(
+              0xFF38BDF8,
+            ).withValues(alpha: 0.3), // Blue glowing backlight
             blurRadius: 20,
             spreadRadius: 5,
           ),
@@ -110,10 +121,7 @@ class KidsBodyPartsLayout extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (quest.emoji != null)
-              Text(
-                quest.emoji!,
-                style: TextStyle(fontSize: 48.sp),
-              ),
+              Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
             Text(
               quest.question ?? "?",
               style: TextStyle(
@@ -175,7 +183,10 @@ class KidsBodyPartsLayout extends StatelessWidget {
         decoration: BoxDecoration(
           color: bandaidColor,
           borderRadius: BorderRadius.circular(30.r), // Pill shape for bandaid
-          border: Border.all(color: Colors.black.withValues(alpha: 0.1), width: 1),
+          border: Border.all(
+            color: Colors.black.withValues(alpha: 0.1),
+            width: 1,
+          ),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: 0.15),
@@ -190,7 +201,7 @@ class KidsBodyPartsLayout extends StatelessWidget {
             Positioned(left: 10.w, bottom: 20.h, child: _buildDot()),
             Positioned(right: 10.w, top: 20.h, child: _buildDot()),
             Positioned(right: 10.w, bottom: 20.h, child: _buildDot()),
-            
+
             // White pad in the middle
             Center(
               child: Container(

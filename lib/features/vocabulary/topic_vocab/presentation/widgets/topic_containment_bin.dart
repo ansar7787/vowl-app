@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+
 class TopicContainmentBin extends StatelessWidget {
   final int index;
   final String label;
@@ -31,13 +32,15 @@ class TopicContainmentBin extends StatelessWidget {
     final target1 = "$cleanLabel:$cleanWord";
     final target2 = "$cleanLabel: $cleanWord";
     final lowerAnswer = correctAnswer.toLowerCase();
-    
-    bool isHinted = isHintActive && (lowerAnswer.contains(target1) || lowerAnswer.contains(target2));
+
+    bool isHinted =
+        isHintActive &&
+        (lowerAnswer.contains(target1) || lowerAnswer.contains(target2));
 
     // Contextual Icons for Categories
     IconData bucketIcon = Icons.settings_input_component_rounded;
     final lLabel = label.toLowerCase();
-    
+
     if (lLabel.contains("positive")) {
       bucketIcon = Icons.sentiment_very_satisfied_rounded;
     } else if (lLabel.contains("negative")) {
@@ -93,29 +96,46 @@ class TopicContainmentBin extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             children: [
               Container(
-                width: 130.w, height: 160.h,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(10.r),
-                    bottom: Radius.circular(30.r),
+                    width: 130.w,
+                    height: 160.h,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(10.r),
+                        bottom: Radius.circular(30.r),
+                      ),
+                      border: Border.all(
+                        color: isHinted
+                            ? Colors.white
+                            : color.withValues(alpha: 0.4),
+                        width: isHinted ? 3.5 : 2,
+                      ),
+                      boxShadow: [
+                        if (isHinted)
+                          const BoxShadow(
+                            color: Colors.white,
+                            blurRadius: 25,
+                            spreadRadius: 2,
+                          ),
+                        BoxShadow(
+                          color: color.withValues(alpha: 0.2),
+                          blurRadius: 20,
+                          spreadRadius: -5,
+                        ),
+                      ],
+                    ),
+                  )
+                  .animate(target: isHinted ? 1 : 0)
+                  .shimmer(
+                    duration: 1.seconds,
+                    color: Colors.white.withValues(alpha: 0.3),
                   ),
-                  border: Border.all(
-                    color: isHinted ? Colors.white : color.withValues(alpha: 0.4),
-                    width: isHinted ? 3.5 : 2,
-                  ),
-                  boxShadow: [
-                    if (isHinted)
-                      const BoxShadow(color: Colors.white, blurRadius: 25, spreadRadius: 2),
-                    BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 20, spreadRadius: -5)
-                  ],
-                ),
-              ).animate(target: isHinted ? 1 : 0).shimmer(duration: 1.seconds, color: Colors.white.withValues(alpha: 0.3)),
 
               Positioned(
                 bottom: 10.h,
                 child: Container(
-                  width: 110.w, height: 130.h,
+                  width: 110.w,
+                  height: 130.h,
                   decoration: BoxDecoration(
                     color: Colors.white.withValues(alpha: 0.05),
                     borderRadius: BorderRadius.circular(20.r),
@@ -130,17 +150,23 @@ class TopicContainmentBin extends StatelessWidget {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: words.reversed.take(4).map((w) => Padding(
-                              padding: EdgeInsets.only(bottom: 4.h),
-                              child: Text(
-                                w.toUpperCase(),
-                                style: TextStyle(fontFamily: 'RobotoMono', 
-                                  fontSize: 9.sp,
-                                  color: color.withValues(alpha: 0.8),
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            )).toList(),
+                            children: words.reversed
+                                .take(4)
+                                .map(
+                                  (w) => Padding(
+                                    padding: EdgeInsets.only(bottom: 4.h),
+                                    child: Text(
+                                      w.toUpperCase(),
+                                      style: TextStyle(
+                                        fontFamily: 'RobotoMono',
+                                        fontSize: 9.sp,
+                                        color: color.withValues(alpha: 0.8),
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                                .toList(),
                           ),
                         ),
                       ],
@@ -152,11 +178,19 @@ class TopicContainmentBin extends StatelessWidget {
               Positioned(
                 top: 0,
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12.w,
+                    vertical: 4.h,
+                  ),
                   decoration: BoxDecoration(
                     color: color,
                     borderRadius: BorderRadius.circular(10.r),
-                    boxShadow: [BoxShadow(color: color.withValues(alpha: 0.5), blurRadius: 10)],
+                    boxShadow: [
+                      BoxShadow(
+                        color: color.withValues(alpha: 0.5),
+                        blurRadius: 10,
+                      ),
+                    ],
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -165,7 +199,8 @@ class TopicContainmentBin extends StatelessWidget {
                       SizedBox(width: 4.w),
                       Text(
                         label.toUpperCase(),
-                        style: TextStyle(fontFamily: 'RobotoMono', 
+                        style: TextStyle(
+                          fontFamily: 'RobotoMono',
                           fontSize: 10.sp,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -185,21 +220,26 @@ class TopicContainmentBin extends StatelessWidget {
 
   Widget _buildPlasmaFill(Color color) {
     return Positioned.fill(
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-            colors: [
-              color.withValues(alpha: 0.3),
-              color.withValues(alpha: 0.1),
-              Colors.transparent,
-            ],
-            stops: const [0.0, 0.6, 1.0],
-          ),
-        ),
-      ).animate(onPlay: (c) => c.repeat(reverse: true))
-       .shimmer(duration: 3.seconds, color: Colors.white.withValues(alpha: 0.1)),
+      child:
+          Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    colors: [
+                      color.withValues(alpha: 0.3),
+                      color.withValues(alpha: 0.1),
+                      Colors.transparent,
+                    ],
+                    stops: const [0.0, 0.6, 1.0],
+                  ),
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .shimmer(
+                duration: 3.seconds,
+                color: Colors.white.withValues(alpha: 0.1),
+              ),
     );
   }
 }

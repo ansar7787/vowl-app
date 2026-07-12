@@ -44,41 +44,64 @@ void main() {
       expect(result.correctOrder, [1, 0]);
     });
 
-    test('getCorrectIndices should correctly match don\'t for Level 1 Quest 1', () {
-      final sentence = "He don't know the answer at the outpost.";
-      final incorrectPart = "don't";
-      
-      final cleanSentence = sentence.replaceAll('"', '').replaceAll('Fix:', '').trim();
-      final words = cleanSentence.split(' ').where((w) => w.isNotEmpty).toList();
-      
-      expect(words[1], "don't");
-      
-      // Mimic the _getCorrectIndices logic
-      final cleanTarget = incorrectPart.toLowerCase().replaceAll('"', '').trim();
-      final targetWords = cleanTarget.split(' ').where((w) => w.isNotEmpty).toList();
-      
-      final cleanSentenceWords = words.map((w) => w.toLowerCase().replaceAll(RegExp(r'[^\w]'), '')).toList();
-      final cleanTargetWords = targetWords.map((w) => w.replaceAll(RegExp(r'[^\w]'), '')).toList();
-      
-      List<int> matchingIndices = [];
-      for (int i = 0; i <= cleanSentenceWords.length - cleanTargetWords.length; i++) {
-        bool match = true;
-        for (int j = 0; j < cleanTargetWords.length; j++) {
-          if (!cleanSentenceWords[i + j].contains(cleanTargetWords[j]) && 
-              !cleanTargetWords[j].contains(cleanSentenceWords[i + j])) {
-            match = false;
+    test(
+      'getCorrectIndices should correctly match don\'t for Level 1 Quest 1',
+      () {
+        final sentence = "He don't know the answer at the outpost.";
+        final incorrectPart = "don't";
+
+        final cleanSentence = sentence
+            .replaceAll('"', '')
+            .replaceAll('Fix:', '')
+            .trim();
+        final words = cleanSentence
+            .split(' ')
+            .where((w) => w.isNotEmpty)
+            .toList();
+
+        expect(words[1], "don't");
+
+        // Mimic the _getCorrectIndices logic
+        final cleanTarget = incorrectPart
+            .toLowerCase()
+            .replaceAll('"', '')
+            .trim();
+        final targetWords = cleanTarget
+            .split(' ')
+            .where((w) => w.isNotEmpty)
+            .toList();
+
+        final cleanSentenceWords = words
+            .map((w) => w.toLowerCase().replaceAll(RegExp(r'[^\w]'), ''))
+            .toList();
+        final cleanTargetWords = targetWords
+            .map((w) => w.replaceAll(RegExp(r'[^\w]'), ''))
+            .toList();
+
+        List<int> matchingIndices = [];
+        for (
+          int i = 0;
+          i <= cleanSentenceWords.length - cleanTargetWords.length;
+          i++
+        ) {
+          bool match = true;
+          for (int j = 0; j < cleanTargetWords.length; j++) {
+            if (!cleanSentenceWords[i + j].contains(cleanTargetWords[j]) &&
+                !cleanTargetWords[j].contains(cleanSentenceWords[i + j])) {
+              match = false;
+              break;
+            }
+          }
+          if (match) {
+            for (int j = 0; j < cleanTargetWords.length; j++) {
+              matchingIndices.add(i + j);
+            }
             break;
           }
         }
-        if (match) {
-          for (int j = 0; j < cleanTargetWords.length; j++) {
-            matchingIndices.add(i + j);
-          }
-          break;
-        }
-      }
-      
-      expect(matchingIndices, [1]);
-    });
+
+        expect(matchingIndices, [1]);
+      },
+    );
   });
 }

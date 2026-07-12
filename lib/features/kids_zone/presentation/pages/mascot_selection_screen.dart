@@ -17,8 +17,8 @@ class MascotSelectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
-    final bgColor = isMidnight 
-        ? Colors.black 
+    final bgColor = isMidnight
+        ? Colors.black
         : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
 
     return Scaffold(
@@ -27,10 +27,22 @@ class MascotSelectionScreen extends StatelessWidget {
         children: [
           MeshGradientBackground(
             colors: isMidnight
-                ? [Colors.black, const Color(0xFF020617), const Color(0xFF0F172A)]
+                ? [
+                    Colors.black,
+                    const Color(0xFF020617),
+                    const Color(0xFF0F172A),
+                  ]
                 : (isDark
-                    ? [const Color(0xFF0F172A), const Color(0xFF1E1B4B), const Color(0xFF312E81)]
-                    : [const Color(0xFFE0F2FE), const Color(0xFFF0FDF4), const Color(0xFFFFF7ED)]),
+                      ? [
+                          const Color(0xFF0F172A),
+                          const Color(0xFF1E1B4B),
+                          const Color(0xFF312E81),
+                        ]
+                      : [
+                          const Color(0xFFE0F2FE),
+                          const Color(0xFFF0FDF4),
+                          const Color(0xFFFFF7ED),
+                        ]),
           ),
           SafeArea(
             child: Column(
@@ -39,7 +51,8 @@ class MascotSelectionScreen extends StatelessWidget {
                 SizedBox(height: 20.h),
                 Text(
                   "Choose Your Buddy!",
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 28.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -47,7 +60,8 @@ class MascotSelectionScreen extends StatelessWidget {
                 ),
                 Text(
                   "Which friend will join your quest?",
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
                     color: isDark ? Colors.white70 : Colors.black45,
@@ -110,7 +124,7 @@ class MascotSelectionScreen extends StatelessWidget {
                 color: isDark ? const Color(0xFF1E293B) : Colors.white,
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: isDark ? Colors.blue.shade700 : Colors.blue.shade200, 
+                  color: isDark ? Colors.blue.shade700 : Colors.blue.shade200,
                   width: 3.w,
                 ),
                 boxShadow: [
@@ -121,7 +135,7 @@ class MascotSelectionScreen extends StatelessWidget {
                 ],
               ),
               child: Icon(
-                Icons.arrow_back_rounded, 
+                Icons.arrow_back_rounded,
                 size: 28.r,
                 color: isDark ? Colors.white : Colors.black87,
               ),
@@ -155,13 +169,15 @@ class MascotSelectionScreen extends StatelessWidget {
               color: isDark ? const Color(0xFF1E293B) : Colors.white,
               borderRadius: BorderRadius.circular(32.r),
               border: Border.all(
-                color: isSelected ? color : (isDark ? Colors.blue.shade900 : Colors.blue.shade100),
+                color: isSelected
+                    ? color
+                    : (isDark ? Colors.blue.shade900 : Colors.blue.shade100),
                 width: 3.w,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: isSelected 
-                      ? color.withValues(alpha: 0.6) 
+                  color: isSelected
+                      ? color.withValues(alpha: 0.6)
                       : (isDark ? Colors.blue.shade900 : Colors.blue.shade100),
                   offset: Offset(0, 6.h),
                 ),
@@ -187,7 +203,8 @@ class MascotSelectionScreen extends StatelessWidget {
                 SizedBox(height: 12.h),
                 Text(
                   name,
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -196,7 +213,8 @@ class MascotSelectionScreen extends StatelessWidget {
                 Text(
                   trait,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w600,
                     color: isDark ? Colors.white54 : Colors.black38,
@@ -227,40 +245,55 @@ class MascotSelectionScreen extends StatelessWidget {
         right: 20.w,
         child: Material(
           color: Colors.transparent,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
-            decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.9),
-              borderRadius: BorderRadius.circular(25.r),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.1),
-                  blurRadius: 20,
-                  offset: const Offset(0, 10),
-                ),
-              ],
-              border: Border.all(
-                color: Colors.greenAccent.withValues(alpha: 0.5),
-                width: 2,
-              ),
-            ),
-            child: Row(
-              children: [
-                const Icon(Icons.check_circle_outline_rounded, color: Colors.greenAccent, size: 24),
-                SizedBox(width: 12.w),
-                Expanded(
-                  child: Text(
-                    message, 
-                    style: TextStyle(fontFamily: 'Outfit', 
-                      fontSize: 13.sp, 
-                      fontWeight: FontWeight.w800, 
-                      color: const Color(0xFF1E293B),
+          child:
+              Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.w,
+                      vertical: 15.h,
                     ),
-                  ),
-                ),
-              ],
-            ),
-          ).animate().slideY(begin: -1, end: 0, curve: Curves.easeOutBack).fadeIn().then(delay: 2000.ms).fadeOut().slideY(begin: 0, end: -1),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.9),
+                      borderRadius: BorderRadius.circular(25.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.1),
+                          blurRadius: 20,
+                          offset: const Offset(0, 10),
+                        ),
+                      ],
+                      border: Border.all(
+                        color: Colors.greenAccent.withValues(alpha: 0.5),
+                        width: 2,
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.check_circle_outline_rounded,
+                          color: Colors.greenAccent,
+                          size: 24,
+                        ),
+                        SizedBox(width: 12.w),
+                        Expanded(
+                          child: Text(
+                            message,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w800,
+                              color: const Color(0xFF1E293B),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                  .animate()
+                  .slideY(begin: -1, end: 0, curve: Curves.easeOutBack)
+                  .fadeIn()
+                  .then(delay: 2000.ms)
+                  .fadeOut()
+                  .slideY(begin: 0, end: -1),
         ),
       ),
     );
@@ -269,4 +302,3 @@ class MascotSelectionScreen extends StatelessWidget {
     Future.delayed(const Duration(seconds: 3), () => entry.remove());
   }
 }
-

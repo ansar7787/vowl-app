@@ -166,7 +166,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
     final userCredential = await _firebaseAuth.signInWithCredential(credential);
     final user = userCredential.user;
-    
+
     bool isNewUser = userCredential.additionalUserInfo?.isNewUser ?? false;
 
     if (user != null) {
@@ -187,7 +187,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         await _firestore.collection('users').doc(user.uid).set(newUser.toMap());
       }
     }
-    
+
     return isNewUser;
   }
 

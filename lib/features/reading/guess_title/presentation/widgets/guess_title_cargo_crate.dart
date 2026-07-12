@@ -36,10 +36,11 @@ class GuessTitleCargoCrate extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            passage, 
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 16.sp, 
-              height: 1.5, 
+            passage,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              height: 1.5,
               color: isDark ? Colors.white70 : Colors.black87,
             ),
           ),
@@ -51,35 +52,45 @@ class GuessTitleCargoCrate extends StatelessWidget {
             },
             builder: (context, candidateData, rejectedData) {
               final isHovered = candidateData.isNotEmpty;
-              final Color borderClr = isAnswered 
-                  ? (isCorrect == true ? Colors.greenAccent : Colors.redAccent) 
+              final Color borderClr = isAnswered
+                  ? (isCorrect == true ? Colors.greenAccent : Colors.redAccent)
                   : (isHovered ? color : color.withValues(alpha: 0.4));
-              
+
               return Container(
                 height: 70.h,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: borderClr.withValues(alpha: isHovered ? 0.15 : 0.05),
                   borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(color: borderClr, width: 2, style: BorderStyle.solid),
+                  border: Border.all(
+                    color: borderClr,
+                    width: 2,
+                    style: BorderStyle.solid,
+                  ),
                 ),
                 child: Center(
                   child: AnimatedSwitcher(
                     duration: 300.milliseconds,
                     child: selectedTitle != null
                         ? Text(
-                            selectedTitle!.toUpperCase(), 
+                            selectedTitle!.toUpperCase(),
                             textAlign: TextAlign.center,
-                            style: TextStyle(fontFamily: 'Outfit', 
-                              fontSize: 13.sp, 
-                              fontWeight: FontWeight.w900, 
-                              color: isCorrect == true ? Colors.greenAccent : Colors.redAccent,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w900,
+                              color: isCorrect == true
+                                  ? Colors.greenAccent
+                                  : Colors.redAccent,
                             ),
                           )
                         : Text(
-                            "DRAG & DROP TITLE HERE", 
-                            style: TextStyle(fontFamily: 'RobotoMono', 
-                              color: color.withValues(alpha: isHovered ? 0.8 : 0.4), 
+                            "DRAG & DROP TITLE HERE",
+                            style: TextStyle(
+                              fontFamily: 'RobotoMono',
+                              color: color.withValues(
+                                alpha: isHovered ? 0.8 : 0.4,
+                              ),
                               fontSize: 13.sp,
                               letterSpacing: 1.5,
                             ),

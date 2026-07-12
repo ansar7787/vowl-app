@@ -16,13 +16,16 @@ class GetListeningQuestsParams extends Equatable {
   List<Object?> get props => [gameType, level];
 }
 
-class GetListeningQuests implements UseCase<List<ListeningQuest>, GetListeningQuestsParams> {
+class GetListeningQuests
+    implements UseCase<List<ListeningQuest>, GetListeningQuestsParams> {
   final ListeningRepository repository;
 
   const GetListeningQuests(this.repository);
 
   @override
-  Future<Either<Failure, List<ListeningQuest>>> call(GetListeningQuestsParams params) {
+  Future<Either<Failure, List<ListeningQuest>>> call(
+    GetListeningQuestsParams params,
+  ) {
     return repository.getListeningQuests(
       gameType: params.gameType,
       level: params.level,

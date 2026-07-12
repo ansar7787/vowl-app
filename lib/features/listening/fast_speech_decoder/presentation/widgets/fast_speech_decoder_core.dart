@@ -91,7 +91,8 @@ class FastSpeechDecoderCore extends StatelessWidget {
                     bottom: 20.r,
                     child: Text(
                       "LISTEN",
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 7.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.white70,

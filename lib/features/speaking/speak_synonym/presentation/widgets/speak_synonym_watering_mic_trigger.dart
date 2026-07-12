@@ -42,41 +42,45 @@ class SpeakSynonymWateringMicTrigger extends StatelessWidget {
               // Beautiful glowing water droplet streams floating up while recording is active
               if (isListening)
                 ...List.generate(6, (i) {
-                  final double shiftX = -30.w + (i * 12.w) + (math.sin(timeVal * 10.0 + i) * 4.w);
+                  final double shiftX =
+                      -30.w + (i * 12.w) + (math.sin(timeVal * 10.0 + i) * 4.w);
                   return Positioned(
                     bottom: 50.h,
                     left: 1.sw / 2 + shiftX,
-                    child: Icon(
-                      Icons.water_drop_rounded,
-                      color: Colors.cyanAccent.withValues(alpha: 0.7),
-                      size: (12.r + i * 2.r).clamp(10, 24).toDouble(),
-                    )
-                    .animate(onPlay: (c) => c.repeat())
-                    .moveY(
-                      begin: 0, 
-                      end: -120.h, 
-                      duration: Duration(milliseconds: 600 + i * 150), 
-                      curve: Curves.easeOut
-                    )
-                    .fadeOut(),
+                    child:
+                        Icon(
+                              Icons.water_drop_rounded,
+                              color: Colors.cyanAccent.withValues(alpha: 0.7),
+                              size: (12.r + i * 2.r).clamp(10, 24).toDouble(),
+                            )
+                            .animate(onPlay: (c) => c.repeat())
+                            .moveY(
+                              begin: 0,
+                              end: -120.h,
+                              duration: Duration(milliseconds: 600 + i * 150),
+                              curve: Curves.easeOut,
+                            )
+                            .fadeOut(),
                   );
                 }),
 
               // Outer aura ring
               Container(
-                width: 96.r,
-                height: 96.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: isListening
-                        ? Colors.greenAccent.withValues(alpha: 0.3)
-                        : primaryColor.withValues(alpha: 0.1),
-                    width: 4.r,
-                  ),
-                ),
-              ).animate(target: isListening ? 1 : 0).scale(
+                    width: 96.r,
+                    height: 96.r,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.transparent,
+                      border: Border.all(
+                        color: isListening
+                            ? Colors.greenAccent.withValues(alpha: 0.3)
+                            : primaryColor.withValues(alpha: 0.1),
+                        width: 4.r,
+                      ),
+                    ),
+                  )
+                  .animate(target: isListening ? 1 : 0)
+                  .scale(
                     begin: const Offset(1.0, 1.0),
                     end: const Offset(1.18, 1.18),
                     duration: const Duration(seconds: 1),
@@ -102,17 +106,19 @@ class SpeakSynonymWateringMicTrigger extends StatelessWidget {
                               color: Colors.greenAccent.withValues(alpha: 0.45),
                               blurRadius: 25.r,
                               spreadRadius: 2.r,
-                            )
+                            ),
                           ]
                         : [
                             BoxShadow(
                               color: Colors.black.withValues(alpha: 0.3),
                               blurRadius: 10.r,
-                            )
+                            ),
                           ],
                   ),
                   child: Icon(
-                    isListening ? Icons.opacity_rounded : Icons.mic_none_rounded,
+                    isListening
+                        ? Icons.opacity_rounded
+                        : Icons.mic_none_rounded,
                     color: Colors.white,
                     size: 32.r,
                   ),
@@ -123,9 +129,12 @@ class SpeakSynonymWateringMicTrigger extends StatelessWidget {
         ),
         SizedBox(height: 12.h),
         Text(
-          isListening ? "RELEASE CORE TO STOP WATERING" : "HOLD CAN TO WATER WITH A SPOKEN SYNONYM",
+          isListening
+              ? "RELEASE CORE TO STOP WATERING"
+              : "HOLD CAN TO WATER WITH A SPOKEN SYNONYM",
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'RobotoMono', 
+          style: TextStyle(
+            fontFamily: 'RobotoMono',
             fontSize: 9.sp,
             color: Colors.grey,
             letterSpacing: 1.5,

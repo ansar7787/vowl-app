@@ -33,7 +33,8 @@ class MockHapticService extends Mock implements HapticService {}
 
 class MockUseHint extends Mock implements UseHint {}
 
-class FakeGetSpeakingQuestParams extends Fake implements GetSpeakingQuestParams {}
+class FakeGetSpeakingQuestParams extends Fake
+    implements GetSpeakingQuestParams {}
 
 class FakeUpdateUserRewardsParams extends Fake
     implements UpdateUserRewardsParams {}
@@ -56,7 +57,6 @@ void main() {
   late MockHapticService mockHapticService;
   late MockUseHint mockUseHint;
 
-
   setUpAll(() {
     registerFallbackValue(FakeGetSpeakingQuestParams());
     registerFallbackValue(FakeUpdateUserRewardsParams());
@@ -76,7 +76,6 @@ void main() {
     mockHapticService = MockHapticService();
     mockUseHint = MockUseHint();
 
-
     bloc = SpeakingBloc(
       getQuest: mockGetQuest,
       updateUserCoins: mockUpdateUserCoins,
@@ -87,7 +86,6 @@ void main() {
       soundService: mockSoundService,
       hapticService: mockHapticService,
       useHint: mockUseHint,
-
     );
   });
 
@@ -116,7 +114,13 @@ void main() {
           bloc.add(FetchSpeakingQuests(gameType: tGameType, level: tLevel)),
       expect: () => [
         SpeakingLoading(),
-        SpeakingLoaded(quests: tQuests, currentIndex: 0, livesRemaining: 3, gameType: tGameType, level: tLevel),
+        SpeakingLoaded(
+          quests: tQuests,
+          currentIndex: 0,
+          livesRemaining: 3,
+          gameType: tGameType,
+          level: tLevel,
+        ),
       ],
     );
   });

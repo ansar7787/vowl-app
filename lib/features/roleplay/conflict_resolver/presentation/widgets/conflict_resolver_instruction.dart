@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ConflictResolverInstruction extends StatelessWidget {
   final Color primaryColor;
 
-  const ConflictResolverInstruction({
-    super.key,
-    required this.primaryColor,
-  });
+  const ConflictResolverInstruction({super.key, required this.primaryColor});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,8 @@ class ConflictResolverInstruction extends StatelessWidget {
           ),
           child: Text(
             "EMPATHY DIAL SPECTRUM",
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,
@@ -33,7 +32,8 @@ class ConflictResolverInstruction extends StatelessWidget {
         Text(
           "Tune the console to balance the argument frequency",
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -122,7 +121,10 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
         decoration: BoxDecoration(
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(color: isDark ? Colors.blue.shade700 : Colors.blue.shade200, width: 3.w),
+          border: Border.all(
+            color: isDark ? Colors.blue.shade700 : Colors.blue.shade200,
+            width: 3.w,
+          ),
           boxShadow: [
             BoxShadow(
               color: isDark ? Colors.blue.shade900 : Colors.blue.shade100,
@@ -311,15 +313,9 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
             decoration: BoxDecoration(
               color: isDark ? const Color(0xFF1E293B) : Colors.white,
               borderRadius: BorderRadius.circular(32.r),
-              border: Border.all(
-                color: Colors.amber,
-                width: 3.w,
-              ),
+              border: Border.all(color: Colors.amber, width: 3.w),
               boxShadow: [
-                BoxShadow(
-                  color: Colors.amber.shade700,
-                  offset: Offset(0, 8.h),
-                ),
+                BoxShadow(color: Colors.amber.shade700, offset: Offset(0, 8.h)),
               ],
             ),
             child: Row(
@@ -429,23 +425,29 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         decoration: BoxDecoration(
-          color: isSelected ? color : (isDark ? const Color(0xFF1E293B) : Colors.white),
+          color: isSelected
+              ? color
+              : (isDark ? const Color(0xFF1E293B) : Colors.white),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
-            color: isSelected ? color : (isDark ? Colors.grey.shade700 : Colors.grey.shade300),
+            color: isSelected
+                ? color
+                : (isDark ? Colors.grey.shade700 : Colors.grey.shade300),
             width: 2.w,
           ),
-          boxShadow: isSelected ? [
-            BoxShadow(
-              color: color.withValues(alpha: 0.6),
-              offset: Offset(0, 4.h),
-            ),
-          ] : [
-            BoxShadow(
-              color: isDark ? Colors.grey.shade900 : Colors.grey.shade200,
-              offset: Offset(0, 4.h),
-            ),
-          ],
+          boxShadow: isSelected
+              ? [
+                  BoxShadow(
+                    color: color.withValues(alpha: 0.6),
+                    offset: Offset(0, 4.h),
+                  ),
+                ]
+              : [
+                  BoxShadow(
+                    color: isDark ? Colors.grey.shade900 : Colors.grey.shade200,
+                    offset: Offset(0, 4.h),
+                  ),
+                ],
         ),
         child: Row(
           children: [
@@ -529,10 +531,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
               ? itemColor.withValues(alpha: 0.1)
               : (isDark ? const Color(0xFF1E293B) : Colors.white),
           borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(
-            color: itemColor,
-            width: 3.w,
-          ),
+          border: Border.all(color: itemColor, width: 3.w),
           boxShadow: [
             BoxShadow(
               color: itemColor.withValues(alpha: 0.5),
@@ -563,11 +562,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
             ),
             SizedBox(height: 8.h),
             if (isEquipped)
-              _buildItemStatusTag(
-                "EQUIPPED",
-                itemColor,
-                itemColor,
-              )
+              _buildItemStatusTag("EQUIPPED", itemColor, itemColor)
             else if (isOwned)
               _buildItemStatusTag(
                 "EQUIP",
@@ -612,7 +607,11 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Icon(Icons.monetization_on_rounded, color: Color(0xFFF59E0B), size: 14),
+          const Icon(
+            Icons.monetization_on_rounded,
+            color: Color(0xFFF59E0B),
+            size: 14,
+          ),
           SizedBox(width: 4.w),
           Text(
             "$price",

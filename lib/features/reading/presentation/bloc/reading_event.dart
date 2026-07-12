@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 
-
 /// Base class for all reading feature events.
 abstract class ReadingEvent extends Equatable {
   const ReadingEvent();

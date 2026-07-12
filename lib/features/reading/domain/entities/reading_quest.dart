@@ -49,17 +49,17 @@ class ReadingQuest extends GameQuest {
 
   @override
   List<Object?> get props => [
-        ...super.props,
-        passage,
-        highlightedWord,
-        statement,
-        shuffledSentences,
-        correctOrder,
-        pairs,
-        phoneticHint,
-        prompt,
-        keywords,
-        timeLimit,
-        targetItem,
-      ];
+    ...super.props,
+    passage,
+    highlightedWord,
+    statement,
+    shuffledSentences,
+    correctOrder,
+    pairs,
+    phoneticHint,
+    prompt,
+    keywords,
+    timeLimit,
+    targetItem,
+  ];
 }

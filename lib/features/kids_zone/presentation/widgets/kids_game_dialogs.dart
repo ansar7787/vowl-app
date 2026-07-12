@@ -48,8 +48,12 @@ class KidsGameDialogs {
                     child: Container(
                       padding: EdgeInsets.all(20.w),
                       decoration: BoxDecoration(
-                        color: isDark 
-                            ? Color.lerp(const Color(0xFF1E293B), primaryColor, 0.15)
+                        color: isDark
+                            ? Color.lerp(
+                                const Color(0xFF1E293B),
+                                primaryColor,
+                                0.15,
+                              )
                             : Color.lerp(Colors.white, primaryColor, 0.08),
                         borderRadius: BorderRadius.circular(40.r),
                         border: Border.all(color: primaryColor, width: 6.w),
@@ -456,7 +460,7 @@ class KidsGameDialogs {
           child: Container(
             padding: EdgeInsets.all(20.w),
             decoration: BoxDecoration(
-              color: isDark 
+              color: isDark
                   ? Color.lerp(const Color(0xFF1E293B), primaryColor, 0.15)
                   : Color.lerp(Colors.white, primaryColor, 0.08),
               borderRadius: BorderRadius.circular(40.r),

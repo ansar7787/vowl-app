@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ReadingConclusionTerminals extends StatelessWidget {
   final List<String> options;
   final String correct;
@@ -30,10 +31,14 @@ class ReadingConclusionTerminals extends StatelessWidget {
         (index) => Padding(
           padding: EdgeInsets.only(bottom: 12.h),
           child: DragTarget<String>(
-            onAcceptWithDetails: (details) => onBridgeEnd(index, options[index]),
+            onAcceptWithDetails: (details) =>
+                onBridgeEnd(index, options[index]),
             builder: (context, candidateData, rejectedData) {
               bool isSelected = selectedIndex == index;
-              bool isCorrect = isAnswered && options[index].trim().toLowerCase() == correct.trim().toLowerCase();
+              bool isCorrect =
+                  isAnswered &&
+                  options[index].trim().toLowerCase() ==
+                      correct.trim().toLowerCase();
               bool isWrong = isAnswered && isSelected && !isCorrect;
 
               return GestureDetector(
@@ -43,25 +48,34 @@ class ReadingConclusionTerminals extends StatelessWidget {
                   width: double.infinity,
                   padding: EdgeInsets.all(18.r),
                   decoration: BoxDecoration(
-                    color: isCorrect 
-                        ? Colors.greenAccent.withValues(alpha: 0.25) 
-                        : (isWrong 
-                            ? Colors.redAccent.withValues(alpha: 0.25) 
-                            : (isSelected ? color.withValues(alpha: 0.15) : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.04)))),
+                    color: isCorrect
+                        ? Colors.greenAccent.withValues(alpha: 0.25)
+                        : (isWrong
+                              ? Colors.redAccent.withValues(alpha: 0.25)
+                              : (isSelected
+                                    ? color.withValues(alpha: 0.15)
+                                    : (isDark
+                                          ? Colors.white10
+                                          : Colors.black.withValues(
+                                              alpha: 0.04,
+                                            )))),
                     borderRadius: BorderRadius.circular(16.r),
                     border: Border.all(
-                      color: isCorrect || isWrong || isSelected 
-                          ? (isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : color)) 
-                          : (isDark ? Colors.white24 : Colors.black12), 
+                      color: isCorrect || isWrong || isSelected
+                          ? (isCorrect
+                                ? Colors.greenAccent
+                                : (isWrong ? Colors.redAccent : color))
+                          : (isDark ? Colors.white24 : Colors.black12),
                       width: 2,
                     ),
                   ),
                   child: Text(
-                    options[index].toUpperCase(), 
-                    textAlign: TextAlign.center, 
-                    style: TextStyle(fontFamily: 'RobotoMono', 
-                      fontSize: 12.sp, 
-                      fontWeight: FontWeight.bold, 
+                    options[index].toUpperCase(),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'RobotoMono',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.bold,
                       color: isDark ? Colors.white : Colors.black87,
                     ),
                   ),

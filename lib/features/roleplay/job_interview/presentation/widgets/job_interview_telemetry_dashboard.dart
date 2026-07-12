@@ -59,7 +59,8 @@ class JobInterviewTelemetryDashboard extends StatelessWidget {
               children: [
                 Text(
                   "PROFESSIONAL HARMONICS:",
-                  style: TextStyle(fontFamily: 'RobotoMono', 
+                  style: TextStyle(
+                    fontFamily: 'RobotoMono',
                     fontSize: 9.sp,
                     color: ringColor,
                     letterSpacing: 1.5,
@@ -69,7 +70,8 @@ class JobInterviewTelemetryDashboard extends StatelessWidget {
                 SizedBox(height: 4.h),
                 Text(
                   "${(mercuryLevel * 100).toInt()}% COMPATIBLE",
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 18.sp,
                     color: isDark ? Colors.white : Colors.black87,
                     fontWeight: FontWeight.w900,

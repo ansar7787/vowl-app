@@ -107,9 +107,7 @@ void main() {
     blocTest<RoleplayBloc, RoleplayState>(
       'should emit [Loading, Loaded] when data is fetched successfully',
       build: () {
-        when(
-          () => mockGetQuest(any()),
-        ).thenAnswer((_) async => Right(tQuests));
+        when(() => mockGetQuest(any())).thenAnswer((_) async => Right(tQuests));
         return bloc;
       },
       act: (bloc) =>

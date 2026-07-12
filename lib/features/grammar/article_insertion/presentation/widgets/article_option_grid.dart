@@ -93,7 +93,8 @@ class _ArticleOptionGridState extends State<ArticleOptionGrid> {
                 child: Center(
                   child: Text(
                     widget.quest.options![originalIndex],
-                    style: TextStyle(fontFamily: 'Outfit', 
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w800,
                       color: (isSelected || showResult)

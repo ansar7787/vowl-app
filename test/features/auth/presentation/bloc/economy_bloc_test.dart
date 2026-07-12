@@ -16,17 +16,27 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
 class MockUpdateUserCoins extends Mock implements UpdateUserCoins {}
+
 class MockPurchaseHint extends Mock implements PurchaseHint {}
+
 class MockClaimVipGift extends Mock implements ClaimVipGift {}
+
 class MockClaimDailyGift extends Mock implements ClaimDailyGift {}
+
 class MockUpdateUser extends Mock implements UpdateUser {}
+
 class MockClaimDailyChest extends Mock implements ClaimDailyChest {}
+
 class MockClaimKidsDailyReward extends Mock implements ClaimKidsDailyReward {}
+
 class MockAwardKidsCoins extends Mock implements AwardKidsCoins {}
+
 class MockUseHint extends Mock implements UseHint {}
+
 class MockAuthBloc extends Mock implements AuthBloc {}
 
 class FakeNoParams extends Fake implements NoParams {}
+
 class FakeUpdateUserCoinsParams extends Fake implements UpdateUserCoinsParams {}
 
 void main() {
@@ -81,7 +91,9 @@ void main() {
     blocTest<EconomyBloc, EconomyState>(
       'should call updateUserCoins and emit no message on success',
       build: () {
-        when(() => mockUpdateUserCoins(any())).thenAnswer((_) async => const Right(null));
+        when(
+          () => mockUpdateUserCoins(any()),
+        ).thenAnswer((_) async => const Right(null));
         return bloc;
       },
       act: (bloc) => bloc.add(const EconomyAddCoinsRequested(100)),

@@ -20,7 +20,8 @@ class AudioMultipleChoiceQuestion extends StatelessWidget {
       child: Text(
         text,
         textAlign: TextAlign.center,
-        style: TextStyle(fontFamily: 'Outfit', 
+        style: TextStyle(
+          fontFamily: 'Outfit',
           fontSize: 18.sp,
           fontWeight: FontWeight.w700,
           color: isDark ? Colors.white : Colors.black87,

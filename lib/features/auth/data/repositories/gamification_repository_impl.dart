@@ -101,13 +101,14 @@ class GamificationRepositoryImpl
         if (data['starRatings'] != null) {
           final rawOuter = data['starRatings'] as Map<Object?, Object?>;
           for (final entry in rawOuter.entries) {
-             final k = entry.key.toString();
-             final rawInner = entry.value as Map<Object?, Object?>;
-             final innerMap = <String, int>{};
-             for (final innerEntry in rawInner.entries) {
-                 innerMap[innerEntry.key.toString()] = (innerEntry.value as num?)?.toInt() ?? 0;
-             }
-             starRatings[k] = innerMap;
+            final k = entry.key.toString();
+            final rawInner = entry.value as Map<Object?, Object?>;
+            final innerMap = <String, int>{};
+            for (final innerEntry in rawInner.entries) {
+              innerMap[innerEntry.key.toString()] =
+                  (innerEntry.value as num?)?.toInt() ?? 0;
+            }
+            starRatings[k] = innerMap;
           }
         }
 
@@ -157,7 +158,7 @@ class GamificationRepositoryImpl
         }
 
         final int finalStarsEarned = starsEarned ?? 3;
-        
+
         // Update the reactive notifier immediately so the Victory Screen rebuilds
         if (starsEarned != null) {
           Future.microtask(() {
@@ -165,8 +166,10 @@ class GamificationRepositoryImpl
           });
         }
 
-        final categoryStars = Map<String, int>.from(starRatings[gameType] ?? {});
-        
+        final categoryStars = Map<String, int>.from(
+          starRatings[gameType] ?? {},
+        );
+
         // 1. Update Gameplay Stars
         if (starsEarned != null) {
           final currentStars = categoryStars[level.toString()] ?? 0;
@@ -188,7 +191,7 @@ class GamificationRepositoryImpl
             categoryStars['claimed_chests'] = claimChestTier;
           }
         }
-        
+
         starRatings[gameType] = categoryStars;
 
         // ---- Daily XP history ----
@@ -562,7 +565,7 @@ class GamificationRepositoryImpl
 
         final data = doc.data()!;
         final currentKeys = (data['keys'] as num?)?.toInt() ?? 0;
-        
+
         if (currentKeys < cost) throw Exception('Not enough Golden Keys');
 
         var unlockedLevels = <String, int>{};
@@ -630,9 +633,7 @@ class GamificationRepositoryImpl
   }
 
   @override
-  Future<Either<Failure, void>> addGoldenKey({
-    required int amount,
-  }) async {
+  Future<Either<Failure, void>> addGoldenKey({required int amount}) async {
     try {
       final user = _firebaseAuth.currentUser;
       if (user == null) return Left(AuthFailure('User not logged in'));
@@ -647,9 +648,7 @@ class GamificationRepositoryImpl
         final data = doc.data()!;
         final currentKeys = (data['keys'] as num?)?.toInt() ?? 0;
 
-        transaction.update(docRef, {
-          'keys': currentKeys + amount,
-        });
+        transaction.update(docRef, {'keys': currentKeys + amount});
       });
       return const Right(null);
     } catch (e) {

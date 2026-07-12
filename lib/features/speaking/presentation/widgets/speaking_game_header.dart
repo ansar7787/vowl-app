@@ -24,8 +24,6 @@ class SpeakingGameHeader extends StatelessWidget {
   final bool hintUsed;
   final SoundService soundService;
 
-
-
   final bool isDark;
   final VoidCallback onBack;
   final VoidCallback onHintTap;

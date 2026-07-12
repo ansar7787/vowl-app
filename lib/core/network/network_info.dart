@@ -52,7 +52,7 @@ class NetworkInfoImpl implements NetworkInfo {
     return _connectionChecker.onStatusChange.map(
       (status) {
         if (_isPremiumOverride) return AppNetworkStatus.online;
-        
+
         switch (status) {
           case InternetStatus.connected:
             return AppNetworkStatus.online;

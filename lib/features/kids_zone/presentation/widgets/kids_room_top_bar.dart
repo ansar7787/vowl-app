@@ -34,7 +34,10 @@ class KidsRoomTopBar extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20.r),
                     border: Border.all(color: Colors.grey.shade300, width: 3.w),
                     boxShadow: [
-                      BoxShadow(color: Colors.grey.shade300, offset: Offset(0, 4.h)),
+                      BoxShadow(
+                        color: Colors.grey.shade300,
+                        offset: Offset(0, 4.h),
+                      ),
                     ],
                   ),
                   child: Icon(
@@ -65,23 +68,21 @@ class KidsRoomTopBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: const Color(0xFFFBBF24), width: 3.w),
         boxShadow: [
-          BoxShadow(
-            color: const Color(0xFFD97706),
-            offset: Offset(0, 4.h),
-          ),
+          BoxShadow(color: const Color(0xFFD97706), offset: Offset(0, 4.h)),
         ],
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            KidsAssets.mascotMap[user.kidsMascot] ?? "🦉", 
-            style: TextStyle(fontSize: 18.sp)
+            KidsAssets.mascotMap[user.kidsMascot] ?? "🦉",
+            style: TextStyle(fontSize: 18.sp),
           ),
           SizedBox(width: 8.w),
           Text(
             "BUDDY ROOM",
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 14.sp,
               fontWeight: FontWeight.w900,
               color: const Color(0xFFD97706),
@@ -110,7 +111,8 @@ class KidsRoomTopBar extends StatelessWidget {
           SizedBox(width: 8.w),
           Text(
             "${user.kidsCoins}",
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 16.sp,
               fontWeight: FontWeight.w900,
               color: Colors.amber.shade700,
@@ -155,14 +157,24 @@ class KidsRoomTopBar extends StatelessWidget {
                 width: 120.w * happiness,
                 height: 12.h,
                 decoration: BoxDecoration(
-                  gradient: const LinearGradient(colors: [Color(0xFFFB7185), Color(0xFFE11D48)]),
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFFFB7185), Color(0xFFE11D48)],
+                  ),
                   borderRadius: BorderRadius.circular(10.r),
                 ),
               ),
             ],
           ),
           SizedBox(width: 12.w),
-          Text("${(happiness * 100).toInt()}%", style: TextStyle(fontFamily: 'Outfit', fontSize: 12.sp, fontWeight: FontWeight.w900, color: const Color(0xFFE11D48))),
+          Text(
+            "${(happiness * 100).toInt()}%",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w900,
+              color: const Color(0xFFE11D48),
+            ),
+          ),
         ],
       ),
     ).animate().fadeIn().slideY(begin: -0.2, end: 0);

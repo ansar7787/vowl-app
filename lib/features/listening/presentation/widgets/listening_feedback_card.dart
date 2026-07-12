@@ -45,7 +45,9 @@ class ListeningFeedbackCard extends StatelessWidget {
     final gradient = success ? _successGradient : _failureGradient;
     final shadowColor = success ? _successShadow : _failureShadow;
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
-    final title = success ? context.tr('games.excellent') : context.tr('games.not_quite');
+    final title = success
+        ? context.tr('games.excellent')
+        : context.tr('games.not_quite');
 
     final showExplanation = !success && state.isFinalFailure;
     final explanation = showExplanation ? state.currentQuest.explanation : null;
@@ -55,7 +57,9 @@ class ListeningFeedbackCard extends StatelessWidget {
     final buttonText = success
         ? context.tr('common.continue_text').toUpperCase()
         : (state.isFinalFailure
-              ? (state.livesRemaining == 0 ? context.tr('common.see_results').toUpperCase() : context.tr('common.continue_text').toUpperCase())
+              ? (state.livesRemaining == 0
+                    ? context.tr('common.see_results').toUpperCase()
+                    : context.tr('common.continue_text').toUpperCase())
               : context.tr('games.try_again').toUpperCase());
 
     return Semantics(

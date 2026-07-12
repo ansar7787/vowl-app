@@ -193,7 +193,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 SizedBox(height: gapTop),
-                                        isCompact
+                                isCompact
                                     ? SizedBox(
                                         height: 35.h,
                                         child: FittedBox(

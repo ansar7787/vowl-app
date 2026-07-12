@@ -32,12 +32,7 @@ class KidsAlphabetLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h), // Mascot space
             // The Chalkboard for the Question
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: _buildChalkboard(quest),
-              ),
-            ),
+            Expanded(flex: 5, child: Center(child: _buildChalkboard(quest))),
             // The Wooden Blocks for Options
             Flexible(
               flex: 5,
@@ -75,7 +70,10 @@ class KidsAlphabetLayout extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF1B4332), // Classic chalkboard green
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: const Color(0xFF8B5A2B), width: 12.r), // Wooden frame
+        border: Border.all(
+          color: const Color(0xFF8B5A2B),
+          width: 12.r,
+        ), // Wooden frame
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.2),
@@ -89,15 +87,9 @@ class KidsAlphabetLayout extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (quest.wordEmoji != null)
-              Text(
-                quest.wordEmoji!,
-                style: TextStyle(fontSize: 40.sp),
-              )
+              Text(quest.wordEmoji!, style: TextStyle(fontSize: 40.sp))
             else if (quest.emoji != null)
-              Text(
-                quest.emoji!,
-                style: TextStyle(fontSize: 40.sp),
-              ),
+              Text(quest.emoji!, style: TextStyle(fontSize: 40.sp)),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -105,7 +97,8 @@ class KidsAlphabetLayout extends StatelessWidget {
                   Text(
                     quest.capitalLetter!,
                     style: TextStyle(
-                      fontFamily: 'ComicSans', // Or a chalk-like font if available
+                      fontFamily:
+                          'ComicSans', // Or a chalk-like font if available
                       fontSize: 64.sp,
                       fontWeight: FontWeight.w900,
                       color: const Color(0xFFFDE68A), // Chalk yellow
@@ -180,12 +173,7 @@ class KidsAlphabetLayout extends StatelessWidget {
           color: baseColor,
           borderRadius: BorderRadius.circular(16.r),
           border: Border.all(color: shadowColor, width: 2),
-          boxShadow: [
-            BoxShadow(
-              color: shadowColor,
-              offset: Offset(0, 8.h),
-            ),
-          ],
+          boxShadow: [BoxShadow(color: shadowColor, offset: Offset(0, 8.h))],
         ),
         child: Center(
           child: Text(

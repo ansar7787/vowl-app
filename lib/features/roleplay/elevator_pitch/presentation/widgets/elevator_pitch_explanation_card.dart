@@ -21,8 +21,12 @@ class ElevatorPitchExplanationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color cardColor = (isCorrect ?? false) ? Colors.greenAccent : Colors.orangeAccent;
-    final double accuracy = ticksRecorded > 0 ? (ticksInAlignment / ticksRecorded) * 100 : 0.0;
+    final Color cardColor = (isCorrect ?? false)
+        ? Colors.greenAccent
+        : Colors.orangeAccent;
+    final double accuracy = ticksRecorded > 0
+        ? (ticksInAlignment / ticksRecorded) * 100
+        : 0.0;
 
     return Container(
       width: 1.sw,
@@ -35,10 +39,7 @@ class ElevatorPitchExplanationCard extends StatelessWidget {
           width: 1.5,
         ),
         boxShadow: [
-          BoxShadow(
-            color: cardColor.withValues(alpha: 0.15),
-            blurRadius: 15,
-          ),
+          BoxShadow(color: cardColor.withValues(alpha: 0.15), blurRadius: 15),
         ],
       ),
       child: Column(
@@ -47,14 +48,19 @@ class ElevatorPitchExplanationCard extends StatelessWidget {
           Row(
             children: [
               Icon(
-                (isCorrect ?? false) ? Icons.verified_rounded : Icons.info_rounded,
+                (isCorrect ?? false)
+                    ? Icons.verified_rounded
+                    : Icons.info_rounded,
                 color: cardColor,
                 size: 24.r,
               ),
               SizedBox(width: 8.w),
               Text(
-                (isCorrect ?? false) ? "Stabilization Successful!" : "Stabilization Failure!",
-                style: TextStyle(fontFamily: 'Outfit', 
+                (isCorrect ?? false)
+                    ? "Stabilization Successful!"
+                    : "Stabilization Failure!",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
                   color: isDark ? Colors.white : Colors.black87,
@@ -64,8 +70,10 @@ class ElevatorPitchExplanationCard extends StatelessWidget {
           ),
           SizedBox(height: 12.h),
           Text(
-            quest.explanation ?? "Keeping speech parameters aligned inside target margins creates robust voice control confidence.",
-            style: TextStyle(fontFamily: 'Outfit', 
+            quest.explanation ??
+                "Keeping speech parameters aligned inside target margins creates robust voice control confidence.",
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 14.sp,
               color: isDark ? Colors.white70 : Colors.black54,
               height: 1.35,
@@ -74,7 +82,8 @@ class ElevatorPitchExplanationCard extends StatelessWidget {
           SizedBox(height: 12.h),
           Text(
             "Vocal Stability Proximity: ${accuracy.toStringAsFixed(0)}%",
-            style: TextStyle(fontFamily: 'RobotoMono', 
+            style: TextStyle(
+              fontFamily: 'RobotoMono',
               fontSize: 11.sp,
               color: cardColor,
               fontWeight: FontWeight.bold,

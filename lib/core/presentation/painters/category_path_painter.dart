@@ -74,32 +74,43 @@ class CategoryPathPainter extends CustomPainter {
 
       canvas.drawPath(activePath, activePaint);
     }
-    
+
     // ── Toll Gate Path (Dashed Gold) ──────────────────────────────────────
-    if (points.isNotEmpty && completedLevels == unlockedLevels && completedLevels < points.length) {
+    if (points.isNotEmpty &&
+        completedLevels == unlockedLevels &&
+        completedLevels < points.length) {
       // The segment from completedLevels to completedLevels + 1 is the toll gate segment
-      final tollStart = completedLevels == 0 ? topCenter : points[completedLevels - 1];
+      final tollStart = completedLevels == 0
+          ? topCenter
+          : points[completedLevels - 1];
       final tollEnd = points[completedLevels];
-      
+
       final tollPath = Path()..moveTo(tollStart.dx, tollStart.dy);
       final mid = (tollEnd.dy - tollStart.dy) / 2;
-      tollPath.cubicTo(tollStart.dx, tollStart.dy + mid, tollEnd.dx, tollEnd.dy - mid, tollEnd.dx, tollEnd.dy);
-      
+      tollPath.cubicTo(
+        tollStart.dx,
+        tollStart.dy + mid,
+        tollEnd.dx,
+        tollEnd.dy - mid,
+        tollEnd.dx,
+        tollEnd.dy,
+      );
+
       final tollPaint = Paint()
         ..color = Colors.amber
         ..style = PaintingStyle.stroke
         ..strokeWidth = 6.0
         ..strokeCap = StrokeCap.round;
-        
+
       _drawDashedPath(canvas, tollPath, tollPaint);
     }
   }
-  
+
   void _drawDashedPath(Canvas canvas, Path path, Paint paint) {
     const dashWidth = 15.0;
     const dashSpace = 10.0;
     double distance = 0.0;
-    
+
     for (final pathMetric in path.computeMetrics()) {
       while (distance < pathMetric.length) {
         canvas.drawPath(

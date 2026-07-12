@@ -11,7 +11,9 @@ import 'package:vowl/features/auth/presentation/bloc/login_cubit.dart';
 import 'package:vowl/features/auth/presentation/pages/login_page.dart';
 
 class MockLoginCubit extends MockCubit<LoginState> implements LoginCubit {}
+
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
+
 class MockThemeCubit extends MockCubit<ThemeState> implements ThemeCubit {}
 
 void main() {
@@ -30,7 +32,9 @@ void main() {
 
     when(() => mockLoginCubit.state).thenReturn(const LoginState());
     when(() => mockAuthBloc.state).thenReturn(const AuthState.unknown());
-    when(() => mockThemeCubit.state).thenReturn(ThemeState(themeMode: ThemeMode.system, isMidnight: false));
+    when(
+      () => mockThemeCubit.state,
+    ).thenReturn(ThemeState(themeMode: ThemeMode.system, isMidnight: false));
   });
 
   Widget createWidgetUnderTest() {
@@ -44,9 +48,7 @@ void main() {
           BlocProvider<AuthBloc>.value(value: mockAuthBloc),
           BlocProvider<ThemeCubit>.value(value: mockThemeCubit),
         ],
-        child: const MaterialApp(
-          home: LoginPage(),
-        ),
+        child: const MaterialApp(home: LoginPage()),
       ),
     );
   }
@@ -69,7 +71,9 @@ void main() {
     expect(find.text('Sign in with Google'), findsOneWidget);
   });
 
-  testWidgets('should show error message when LoginState has error', (tester) async {
+  testWidgets('should show error message when LoginState has error', (
+    tester,
+  ) async {
     tester.view.physicalSize = const Size(800, 600);
     tester.view.devicePixelRatio = 1.0;
     addTearDown(tester.view.resetPhysicalSize);

@@ -165,7 +165,9 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                       ),
                       child: Column(
                         children: [
-                          JobInterviewInstruction(primaryColor: theme.primaryColor),
+                          JobInterviewInstruction(
+                            primaryColor: theme.primaryColor,
+                          ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
 
                           // Professionalism telemetry reactor bar

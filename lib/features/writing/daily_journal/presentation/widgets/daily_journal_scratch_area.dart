@@ -28,9 +28,16 @@ class DailyJournalScratchArea extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark ? Colors.black87 : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white10 : Colors.black12, width: 3),
+        border: Border.all(
+          color: isDark ? Colors.white10 : Colors.black12,
+          width: 3,
+        ),
         boxShadow: [
-          BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 20, spreadRadius: -5)
+          BoxShadow(
+            color: color.withValues(alpha: 0.15),
+            blurRadius: 20,
+            spreadRadius: -5,
+          ),
         ],
       ),
       child: Column(
@@ -39,15 +46,19 @@ class DailyJournalScratchArea extends StatelessWidget {
             controller: controller,
             maxLines: 5,
             enabled: !isAnswered,
-            style: TextStyle(fontFamily: 'Spectral', 
-              fontSize: 16.sp, 
-              color: isDark ? Colors.white : Colors.black87, 
+            style: TextStyle(
+              fontFamily: 'Spectral',
+              fontSize: 16.sp,
+              color: isDark ? Colors.white : Colors.black87,
               height: 1.5,
-              fontWeight: FontWeight.bold
+              fontWeight: FontWeight.bold,
             ),
             decoration: InputDecoration(
               hintText: "Reflect on your achievements...",
-              hintStyle: TextStyle(fontFamily: 'Spectral', color: isDark ? Colors.white30 : Colors.black38),
+              hintStyle: TextStyle(
+                fontFamily: 'Spectral',
+                color: isDark ? Colors.white30 : Colors.black38,
+              ),
               border: InputBorder.none,
             ),
           ),
@@ -57,15 +68,23 @@ class DailyJournalScratchArea extends StatelessWidget {
             children: [
               Text(
                 "Reflective depth:",
-                style: TextStyle(fontFamily: 'RobotoMono', fontSize: 10.sp, color: color, fontWeight: FontWeight.bold)
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
+                  fontSize: 10.sp,
+                  color: color,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               Text(
                 "$wordCount words",
-                style: TextStyle(fontFamily: 'RobotoMono', 
-                  fontSize: 10.sp, 
-                  color: wordCount >= 10 ? Colors.greenAccent : Colors.redAccent,
-                  fontWeight: FontWeight.bold
-                )
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
+                  fontSize: 10.sp,
+                  color: wordCount >= 10
+                      ? Colors.greenAccent
+                      : Colors.redAccent,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -73,21 +92,29 @@ class DailyJournalScratchArea extends StatelessWidget {
           Stack(
             children: [
               Container(
-                width: double.infinity, 
-                height: 6.h, 
+                width: double.infinity,
+                height: 6.h,
                 decoration: BoxDecoration(
-                  color: isDark ? Colors.white10 : Colors.black12, 
-                  borderRadius: BorderRadius.circular(3.r)
-                )
+                  color: isDark ? Colors.white10 : Colors.black12,
+                  borderRadius: BorderRadius.circular(3.r),
+                ),
               ),
               AnimatedContainer(
                 duration: 300.milliseconds,
-                width: MediaQuery.of(context).size.width * journalProgress * 0.7,
+                width:
+                    MediaQuery.of(context).size.width * journalProgress * 0.7,
                 height: 6.h,
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [color, color.withValues(alpha: 0.5)]),
+                  gradient: LinearGradient(
+                    colors: [color, color.withValues(alpha: 0.5)],
+                  ),
                   borderRadius: BorderRadius.circular(3.r),
-                  boxShadow: [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 8)],
+                  boxShadow: [
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.4),
+                      blurRadius: 8,
+                    ),
+                  ],
                 ),
               ),
             ],

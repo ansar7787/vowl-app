@@ -69,8 +69,8 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
               color: showCorrect
                   ? Colors.green.withValues(alpha: 0.5)
                   : (isWrong
-                      ? Colors.red.withValues(alpha: 0.5)
-                      : color.withValues(alpha: 0.1)),
+                        ? Colors.red.withValues(alpha: 0.5)
+                        : color.withValues(alpha: 0.1)),
               blurRadius: showCorrect || isSelected ? 15 : 8,
               offset: const Offset(0, 4),
             ),
@@ -79,7 +79,8 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
         child: Center(
           child: Text(
             text.toUpperCase(),
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 15.sp,
               fontWeight: FontWeight.bold,
               color: textColor,

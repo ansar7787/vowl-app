@@ -37,7 +37,8 @@ class ContextCluesEvidenceTags extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "IDENTIFY REDACTED COMPONENT",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                   color: color.withValues(alpha: 0.7),
@@ -57,8 +58,7 @@ class ContextCluesEvidenceTags extends StatelessWidget {
               final showCorrect =
                   (isAnswered && isCorrect == true && o == correct) ||
                   (isAnswered && isFinalFailure && o == correct);
-              final showWrong =
-                  isAnswered && isSelected && isCorrect == false;
+              final showWrong = isAnswered && isSelected && isCorrect == false;
 
               return Padding(
                 padding: EdgeInsets.only(right: 15.w),
@@ -104,7 +104,8 @@ class ContextCluesEvidenceTags extends StatelessWidget {
                             ),
                             child: Text(
                               o.toUpperCase(),
-                              style: TextStyle(fontFamily: 'RobotoMono', 
+                              style: TextStyle(
+                                fontFamily: 'RobotoMono',
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.bold,
                                 color: showCorrect

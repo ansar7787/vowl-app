@@ -92,7 +92,8 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
     bool isSlot3Correct =
         _blueprintSlots[points[3]] == options[correctOrderIndices[3]];
 
-    final isCorrect = isSlot0Correct && isSlot1Correct && isSlot2Correct && isSlot3Correct;
+    final isCorrect =
+        isSlot0Correct && isSlot1Correct && isSlot2Correct && isSlot3Correct;
 
     context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
   }
@@ -181,7 +182,8 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                             slotValue: _blueprintSlots[k],
                             color: theme.primaryColor,
                             isDark: isDark,
-                            onSlot: (key, data) => _onSlot(key, data, isAnswered),
+                            onSlot: (key, data) =>
+                                _onSlot(key, data, isAnswered),
                             onClearSlot: (key) => _clearSlot(key, isAnswered),
                           ),
                         ),
@@ -197,7 +199,9 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
 
                         if (!isAnswered)
                           ScaleButton(
-                            onTap: slotsFilled ? () => _submitAnswer(isAnswered) : null,
+                            onTap: slotsFilled
+                                ? () => _submitAnswer(isAnswered)
+                                : null,
                             child: Container(
                               width: double.infinity,
                               height: 60.h,

@@ -35,14 +35,15 @@ class ShortAnswerQuillPrompt extends StatelessWidget {
                   .moveY(begin: -5, end: 5),
               SizedBox(height: 16.h),
               Text(
-                prompt, 
-                style: TextStyle(fontFamily: 'Spectral', 
-                  fontSize: 18.sp, 
-                  fontWeight: FontWeight.w600, 
-                  color: isDark ? Colors.white70 : Colors.black87, 
-                  height: 1.6
-                ), 
-                textAlign: TextAlign.center
+                prompt,
+                style: TextStyle(
+                  fontFamily: 'Spectral',
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white70 : Colors.black87,
+                  height: 1.6,
+                ),
+                textAlign: TextAlign.center,
               ),
             ],
           ),

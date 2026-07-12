@@ -57,7 +57,8 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
     final user = state.user;
     if (user != null) {
       final serverLastClaim = user.lastKidsDailyRewardDate;
-      final lastClaim = (_lastClaimedLocally != null &&
+      final lastClaim =
+          (_lastClaimedLocally != null &&
               (serverLastClaim == null ||
                   _lastClaimedLocally!.isAfter(serverLastClaim)))
           ? _lastClaimedLocally
@@ -89,7 +90,8 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
         if (user == null) return const SizedBox.shrink();
 
         final serverLastClaim = user.lastKidsDailyRewardDate;
-        final lastClaim = (_lastClaimedLocally != null &&
+        final lastClaim =
+            (_lastClaimedLocally != null &&
                 (serverLastClaim == null ||
                     _lastClaimedLocally!.isAfter(serverLastClaim)))
             ? _lastClaimedLocally
@@ -111,14 +113,16 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                     _isClaiming = true;
                     _lastClaimedLocally = claimTime;
                   });
-                  
+
                   widget.onClaimed(); // Trigger confetti/animations in parent
-                  
+
                   // 1 to 30 coin shuffle
                   final amount = 1 + _random.nextInt(30);
 
                   if (context.mounted) {
-                    context.read<EconomyBloc>().add(EconomyClaimKidsDailyRewardRequested(amount));
+                    context.read<EconomyBloc>().add(
+                      EconomyClaimKidsDailyRewardRequested(amount),
+                    );
                     widget.showNotification(
                       context,
                       "🎁 HOORAY! YOU FOUND $amount 🪙!",
@@ -137,8 +141,10 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                 colors: canClaim
                     ? [const Color(0xFFFBBF24), const Color(0xFFF59E0B)]
                     : [
-                        (isDark ? Colors.grey.shade900 : Colors.indigo.shade50).withValues(alpha: isDark ? 0.4 : 0.8),
-                        (isDark ? Colors.black : Colors.indigo.shade100).withValues(alpha: isDark ? 0.3 : 0.4),
+                        (isDark ? Colors.grey.shade900 : Colors.indigo.shade50)
+                            .withValues(alpha: isDark ? 0.4 : 0.8),
+                        (isDark ? Colors.black : Colors.indigo.shade100)
+                            .withValues(alpha: isDark ? 0.3 : 0.4),
                       ],
               ),
               borderRadius: BorderRadius.circular(30.r),
@@ -154,7 +160,9 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
               border: Border.all(
                 color: canClaim
                     ? Colors.white.withValues(alpha: 0.5)
-                    : (isDark ? Colors.white : Colors.black).withValues(alpha: 0.1),
+                    : (isDark ? Colors.white : Colors.black).withValues(
+                        alpha: 0.1,
+                      ),
                 width: 1.5,
               ),
             ),
@@ -173,8 +181,12 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                         ),
                       ),
                     Icon(
-                      canClaim ? Icons.card_giftcard_rounded : Icons.lock_clock_rounded,
-                      color: canClaim ? Colors.white : (isDark ? Colors.white24 : Colors.black26),
+                      canClaim
+                          ? Icons.card_giftcard_rounded
+                          : Icons.lock_clock_rounded,
+                      color: canClaim
+                          ? Colors.white
+                          : (isDark ? Colors.white24 : Colors.black26),
                       size: 32.sp,
                     ),
                   ],
@@ -186,10 +198,17 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                     children: [
                       Text(
                         canClaim ? "MAGIC CHEST" : "CHEST CLAIMED",
-                        style: TextStyle(fontFamily: 'Outfit', 
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w900,
-                          color: canClaim ? Colors.white : (isDark ? Colors.white38 : Colors.indigo.shade900.withValues(alpha: 0.6)),
+                          color: canClaim
+                              ? Colors.white
+                              : (isDark
+                                    ? Colors.white38
+                                    : Colors.indigo.shade900.withValues(
+                                        alpha: 0.6,
+                                      )),
                           letterSpacing: 1,
                         ),
                       ),
@@ -197,10 +216,17 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                         canClaim
                             ? "Open for daily Kids Coins!"
                             : "Next claim in $_timeRemaining",
-                        style: TextStyle(fontFamily: 'Outfit', 
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
-                          color: canClaim ? Colors.white70 : (isDark ? Colors.white24 : Colors.indigo.shade800.withValues(alpha: 0.5)),
+                          color: canClaim
+                              ? Colors.white70
+                              : (isDark
+                                    ? Colors.white24
+                                    : Colors.indigo.shade800.withValues(
+                                        alpha: 0.5,
+                                      )),
                         ),
                       ),
                     ],
@@ -208,14 +234,18 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                 ),
                 if (canClaim)
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.w,
+                      vertical: 6.h,
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.white.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(12.r),
                     ),
                     child: Text(
                       "CLAIM",
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.white,

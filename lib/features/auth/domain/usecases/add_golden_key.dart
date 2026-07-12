@@ -7,9 +7,7 @@ import 'package:vowl/features/auth/domain/repositories/gamification_repository.d
 class AddGoldenKeyParams extends Equatable {
   final int amount;
 
-  const AddGoldenKeyParams({
-    required this.amount,
-  });
+  const AddGoldenKeyParams({required this.amount});
 
   @override
   List<Object?> get props => [amount];
@@ -22,8 +20,6 @@ class AddGoldenKey implements UseCase<void, AddGoldenKeyParams> {
 
   @override
   Future<Either<Failure, void>> call(AddGoldenKeyParams params) async {
-    return await repository.addGoldenKey(
-      amount: params.amount,
-    );
+    return await repository.addGoldenKey(amount: params.amount);
   }
 }

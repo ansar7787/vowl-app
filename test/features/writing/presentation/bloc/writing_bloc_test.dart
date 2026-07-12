@@ -115,7 +115,13 @@ void main() {
           bloc.add(FetchWritingQuests(gameType: tGameType, level: tLevel)),
       expect: () => [
         WritingLoading(),
-        WritingLoaded(quests: tQuests, currentIndex: 0, livesRemaining: 3, gameType: tGameType, level: tLevel),
+        WritingLoaded(
+          quests: tQuests,
+          currentIndex: 0,
+          livesRemaining: 3,
+          gameType: tGameType,
+          level: tLevel,
+        ),
       ],
     );
   });

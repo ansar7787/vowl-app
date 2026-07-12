@@ -30,10 +30,14 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
       height: 150.h,
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF07070F) : Colors.black.withValues(alpha: 0.02),
+        color: isDark
+            ? const Color(0xFF07070F)
+            : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(32.r),
         border: Border.all(
-          color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.03),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.03)
+              : Colors.black.withValues(alpha: 0.03),
         ),
       ),
       child: Stack(
@@ -52,17 +56,26 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
           // 2. Boundary gate zones
           Positioned(
             left: 12.w,
-            child: _buildGateZone("NO (MISMATCH)", Colors.redAccent, tiltValue <= -0.85),
+            child: _buildGateZone(
+              "NO (MISMATCH)",
+              Colors.redAccent,
+              tiltValue <= -0.85,
+            ),
           ),
           Positioned(
             right: 12.w,
-            child: _buildGateZone("YES (MATCH)", Colors.greenAccent, tiltValue >= 0.85),
+            child: _buildGateZone(
+              "YES (MATCH)",
+              Colors.greenAccent,
+              tiltValue >= 0.85,
+            ),
           ),
 
           // 3. Central dragging glowing sphere
           Positioned(
             child: GestureDetector(
-              onHorizontalDragUpdate: (details) => onTiltDragged(details, trackWidth),
+              onHorizontalDragUpdate: (details) =>
+                  onTiltDragged(details, trackWidth),
               onHorizontalDragEnd: (_) => onTiltDragEnd(),
               child: Transform.translate(
                 offset: Offset(tiltValue * (trackWidth / 2 - 40.w), 0),
@@ -78,15 +91,20 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
                           Colors.white,
                           tiltValue < 0
                               ? Colors.redAccent
-                              : (tiltValue > 0 ? Colors.greenAccent : primaryColor),
+                              : (tiltValue > 0
+                                    ? Colors.greenAccent
+                                    : primaryColor),
                         ],
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: (tiltValue < 0
-                                  ? Colors.redAccent
-                                  : (tiltValue > 0 ? Colors.greenAccent : primaryColor))
-                              .withValues(alpha: 0.45),
+                          color:
+                              (tiltValue < 0
+                                      ? Colors.redAccent
+                                      : (tiltValue > 0
+                                            ? Colors.greenAccent
+                                            : primaryColor))
+                                  .withValues(alpha: 0.45),
                           blurRadius: 18,
                         ),
                       ],
@@ -117,17 +135,13 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
           width: 1.5,
         ),
         boxShadow: isActive
-            ? [
-                BoxShadow(
-                  color: color.withValues(alpha: 0.4),
-                  blurRadius: 12,
-                )
-              ]
+            ? [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 12)]
             : [],
       ),
       child: Text(
         label,
-        style: TextStyle(fontFamily: 'RobotoMono', 
+        style: TextStyle(
+          fontFamily: 'RobotoMono',
           fontSize: 10.sp,
           fontWeight: FontWeight.bold,
           color: isActive ? Colors.white : color,

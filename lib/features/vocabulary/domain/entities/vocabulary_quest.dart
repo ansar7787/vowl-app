@@ -63,4 +63,3 @@ class VocabularyQuest extends GameQuest {
   String? get example => contextSentence ?? explanation;
   String? get meaning => definition;
 }
-

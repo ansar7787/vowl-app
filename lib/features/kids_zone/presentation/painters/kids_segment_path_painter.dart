@@ -29,13 +29,17 @@ class SegmentPathPainter extends CustomPainter {
     final double startX = currentOffset + 50.r;
     final double endX = nextOffset + 50.r;
     final double centerY = size.height / 2;
-    
+
     final path = Path();
-    
+
     if (level == 1) {
       // 1. Clean Connection from Dashboard
-      canvas.drawCircle(Offset(size.width / 2, 0), 10.r, Paint()..color = Colors.white);
-      
+      canvas.drawCircle(
+        Offset(size.width / 2, 0),
+        10.r,
+        Paint()..color = Colors.white,
+      );
+
       path.moveTo(size.width / 2, 0);
       path.lineTo(startX, centerY);
     } else {
@@ -46,25 +50,18 @@ class SegmentPathPainter extends CustomPainter {
 
     // 3. Smooth Modern Curve
     final midY = centerY + (size.height - centerY) * 0.5;
-    
-    path.cubicTo(
-      startX,
-      centerY + 50.h,
-      endX,
-      midY - 50.h,
-      endX,
-      size.height,
-    );
+
+    path.cubicTo(startX, centerY + 50.h, endX, midY - 50.h, endX, size.height);
 
     // Subtle Shadow for the line
     canvas.drawPath(
-      path, 
+      path,
       Paint()
         ..color = Colors.black.withValues(alpha: 0.05)
         ..style = PaintingStyle.stroke
         ..strokeWidth = 14.r
         ..strokeCap = StrokeCap.round
-        ..maskFilter = MaskFilter.blur(BlurStyle.normal, 4.r)
+        ..maskFilter = MaskFilter.blur(BlurStyle.normal, 4.r),
     );
 
     canvas.drawPath(path, paint);

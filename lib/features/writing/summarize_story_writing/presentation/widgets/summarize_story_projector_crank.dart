@@ -23,42 +23,51 @@ class SummarizeStoryProjectorCrank extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 80.r, height: 80.r,
+            width: 80.r,
+            height: 80.r,
             decoration: BoxDecoration(
-              color: isDark ? Colors.black87 : Colors.white, 
-              shape: BoxShape.circle, 
-              border: Border.all(color: color, width: 3), 
-              boxShadow: [BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 20)]
+              color: isDark ? Colors.black87 : Colors.white,
+              shape: BoxShape.circle,
+              border: Border.all(color: color, width: 3),
+              boxShadow: [
+                BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 20),
+              ],
             ),
             child: Transform.rotate(
-              angle: crankProgress * 10, 
-              child: Icon(Icons.settings_backup_restore_rounded, color: color, size: 36.r)
+              angle: crankProgress * 10,
+              child: Icon(
+                Icons.settings_backup_restore_rounded,
+                color: color,
+                size: 36.r,
+              ),
             ),
           ),
           SizedBox(height: 12.h),
           Text(
-            "SPIN TO PROJECT SUMMARY", 
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 10.sp, 
-              fontWeight: FontWeight.w900, 
-              color: color, 
-              letterSpacing: 2
-            )
+            "SPIN TO PROJECT SUMMARY",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 10.sp,
+              fontWeight: FontWeight.w900,
+              color: color,
+              letterSpacing: 2,
+            ),
           ),
           SizedBox(height: 8.h),
           Container(
-            width: 120.w, height: 5.h, 
+            width: 120.w,
+            height: 5.h,
             decoration: BoxDecoration(
-              color: Colors.white10, 
-              borderRadius: BorderRadius.circular(2.r)
-            ), 
+              color: Colors.white10,
+              borderRadius: BorderRadius.circular(2.r),
+            ),
             child: Align(
-              alignment: Alignment.centerLeft, 
+              alignment: Alignment.centerLeft,
               child: SizedBox(
-                width: 120.w * crankProgress, 
-                child: ColoredBox(color: color)
-              )
-            )
+                width: 120.w * crankProgress,
+                child: ColoredBox(color: color),
+              ),
+            ),
           ),
         ],
       ),

@@ -73,8 +73,18 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     'window': [
       {'id': 'default_window', 'name': 'Sunny View', 'icon': '🪟', 'price': 0},
       {'id': 'moon_window', 'name': 'Space View', 'icon': '🌙', 'price': 1000},
-      {'id': 'forest_window', 'name': 'Secret Forest', 'icon': '🌲', 'price': 1000},
-      {'id': 'undersea_window', 'name': 'Deep Sea', 'icon': '🌊', 'price': 1500},
+      {
+        'id': 'forest_window',
+        'name': 'Secret Forest',
+        'icon': '🌲',
+        'price': 1000,
+      },
+      {
+        'id': 'undersea_window',
+        'name': 'Deep Sea',
+        'icon': '🌊',
+        'price': 1500,
+      },
     ],
   };
 
@@ -110,7 +120,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     setState(() {
       final index = _themes.indexOf(_currentTheme);
       _currentTheme = _themes[(index + 1) % _themes.length];
-      
+
       if (_currentTheme == 'space') {
         _weather = 'starry';
       } else if (_currentTheme == 'ocean') {
@@ -153,9 +163,11 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
             builder: (context) {
               final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
               final isDark = Theme.of(context).brightness == Brightness.dark;
-              final bgColor = isMidnight 
-                  ? Colors.black 
-                  : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+              final bgColor = isMidnight
+                  ? Colors.black
+                  : (isDark
+                        ? const Color(0xFF0F172A)
+                        : const Color(0xFFF8FAFC));
               return Scaffold(
                 backgroundColor: bgColor,
                 body: Stack(
@@ -180,10 +192,18 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             onFeed: () => _showFoodMenu(context, user),
                             onSleepToggle: () {
                               setState(() => _isSleeping = !_isSleeping);
-                              _speak(_isSleeping ? "Goodnight! Shhh..." : "I'm awake! Let's play!");
+                              _speak(
+                                _isSleeping
+                                    ? "Goodnight! Shhh..."
+                                    : "I'm awake! Let's play!",
+                              );
                             },
                             onTalk: () {
-                              _speak(_encouragements[Random().nextInt(_encouragements.length)]);
+                              _speak(
+                                _encouragements[Random().nextInt(
+                                  _encouragements.length,
+                                )],
+                              );
                               _addHappiness(0.02, user);
                             },
                             onThemeCycle: _cycleTheme,
@@ -202,36 +222,84 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                           color: const Color(0xFF0F172A).withValues(alpha: 0.6),
                           child: Stack(
                             children: [
-                              ...List.generate(25, (i) => Positioned(
-                                top: Random().nextDouble() * 1.sh,
-                                left: Random().nextDouble() * 1.sw,
-                                child: const Text("⭐", style: TextStyle(fontSize: 10, color: Colors.white30))
-                                    .animate(onPlay: (c) => c.repeat(reverse: true))
-                                    .fadeOut(duration: (1 + Random().nextDouble() * 2).seconds),
-                              )),
+                              ...List.generate(
+                                25,
+                                (i) => Positioned(
+                                  top: Random().nextDouble() * 1.sh,
+                                  left: Random().nextDouble() * 1.sw,
+                                  child:
+                                      const Text(
+                                            "⭐",
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              color: Colors.white30,
+                                            ),
+                                          )
+                                          .animate(
+                                            onPlay: (c) =>
+                                                c.repeat(reverse: true),
+                                          )
+                                          .fadeOut(
+                                            duration:
+                                                (1 + Random().nextDouble() * 2)
+                                                    .seconds,
+                                          ),
+                                ),
+                              ),
                               Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     SizedBox(height: 200.h),
                                     Container(
-                                      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-                                      decoration: BoxDecoration(
-                                        color: Colors.white.withValues(alpha: 0.1),
-                                        borderRadius: BorderRadius.circular(30.r),
-                                        border: Border.all(color: Colors.white24),
-                                      ),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Icon(Icons.touch_app_rounded, color: Colors.white, size: 20.sp),
-                                          SizedBox(width: 10.w),
-                                          Text(context.tr('games.kids_tap_wake'), 
-                                            style: TextStyle(fontFamily: 'Outfit', fontSize: 12.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 1)),
-                                        ],
-                                      ),
-                                    ).animate(onPlay: (c) => c.repeat(reverse: true))
-                                     .scale(begin: const Offset(1, 1), end: const Offset(1.05, 1.05), duration: 1.seconds),
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 24.w,
+                                            vertical: 12.h,
+                                          ),
+                                          decoration: BoxDecoration(
+                                            color: Colors.white.withValues(
+                                              alpha: 0.1,
+                                            ),
+                                            borderRadius: BorderRadius.circular(
+                                              30.r,
+                                            ),
+                                            border: Border.all(
+                                              color: Colors.white24,
+                                            ),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Icon(
+                                                Icons.touch_app_rounded,
+                                                color: Colors.white,
+                                                size: 20.sp,
+                                              ),
+                                              SizedBox(width: 10.w),
+                                              Text(
+                                                context.tr(
+                                                  'games.kids_tap_wake',
+                                                ),
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 12.sp,
+                                                  fontWeight: FontWeight.w900,
+                                                  color: Colors.white,
+                                                  letterSpacing: 1,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        )
+                                        .animate(
+                                          onPlay: (c) =>
+                                              c.repeat(reverse: true),
+                                        )
+                                        .scale(
+                                          begin: const Offset(1, 1),
+                                          end: const Offset(1.05, 1.05),
+                                          duration: 1.seconds,
+                                        ),
                                   ],
                                 ),
                               ),
@@ -269,32 +337,54 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
             primaryColor: _themeColors[_currentTheme]!,
           ),
         ),
-        
+
         if (_weather == 'rainy')
-          ...List.generate(15, (i) => Positioned(
-            top: -20,
-            left: Random().nextDouble() * 1.sw,
-            child: const Text("💧", style: TextStyle(fontSize: 10, color: Colors.blue))
-                .animate(onPlay: (c) => c.repeat())
-                .moveY(begin: -50, end: 1.sh + 50, duration: (1 + Random().nextDouble()).seconds)
-                .fadeOut(),
-          )),
-          
+          ...List.generate(
+            15,
+            (i) => Positioned(
+              top: -20,
+              left: Random().nextDouble() * 1.sw,
+              child:
+                  const Text(
+                        "💧",
+                        style: TextStyle(fontSize: 10, color: Colors.blue),
+                      )
+                      .animate(onPlay: (c) => c.repeat())
+                      .moveY(
+                        begin: -50,
+                        end: 1.sh + 50,
+                        duration: (1 + Random().nextDouble()).seconds,
+                      )
+                      .fadeOut(),
+            ),
+          ),
+
         if (_weather == 'party')
-          ...List.generate(15, (i) => Positioned(
-            top: -20,
-            left: Random().nextDouble() * 1.sw,
-            child: Text("🎊", style: TextStyle(fontSize: 14.sp))
-                .animate(onPlay: (c) => c.repeat())
-                .moveY(begin: -50, end: 1.sh + 50, duration: (2 + Random().nextDouble()).seconds)
-                .rotate(begin: 0, end: 2, duration: 1.seconds),
-          )),
+          ...List.generate(
+            15,
+            (i) => Positioned(
+              top: -20,
+              left: Random().nextDouble() * 1.sw,
+              child: Text("🎊", style: TextStyle(fontSize: 14.sp))
+                  .animate(onPlay: (c) => c.repeat())
+                  .moveY(
+                    begin: -50,
+                    end: 1.sh + 50,
+                    duration: (2 + Random().nextDouble()).seconds,
+                  )
+                  .rotate(begin: 0, end: 2, duration: 1.seconds),
+            ),
+          ),
 
         Positioned.fill(
           child: IgnorePointer(
             child: const Text("✨", style: TextStyle(fontSize: 20))
                 .animate(key: ValueKey(_currentTheme))
-                .scale(begin: const Offset(0, 0), end: const Offset(5, 5), duration: 600.ms)
+                .scale(
+                  begin: const Offset(0, 0),
+                  end: const Offset(5, 5),
+                  duration: 600.ms,
+                )
                 .fadeOut(duration: 600.ms),
           ),
         ),
@@ -316,11 +406,32 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     return Positioned(
       top: top,
       left: -50.w,
-      child: Text("🕊️", style: TextStyle(fontSize: 20.sp, color: Colors.black.withValues(alpha: 0.15)))
-          .animate(onPlay: (c) => c.repeat())
-          .moveX(begin: -50, end: 1.sw + 50, duration: (isSlow ? 12 : 8).seconds, delay: delay)
-          .moveY(begin: 0, end: 20, duration: 2.seconds, curve: Curves.easeInOutSine)
-          .scale(begin: const Offset(1, 1), end: const Offset(0.8, 0.8), duration: 2.seconds),
+      child:
+          Text(
+                "🕊️",
+                style: TextStyle(
+                  fontSize: 20.sp,
+                  color: Colors.black.withValues(alpha: 0.15),
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat())
+              .moveX(
+                begin: -50,
+                end: 1.sw + 50,
+                duration: (isSlow ? 12 : 8).seconds,
+                delay: delay,
+              )
+              .moveY(
+                begin: 0,
+                end: 20,
+                duration: 2.seconds,
+                curve: Curves.easeInOutSine,
+              )
+              .scale(
+                begin: const Offset(1, 1),
+                end: const Offset(0.8, 0.8),
+                duration: 2.seconds,
+              ),
     );
   }
 
@@ -328,10 +439,22 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     return Positioned(
       top: top,
       left: left,
-      child: Text(emoji, style: TextStyle(fontSize: 18.sp, color: Colors.black.withValues(alpha: 0.1)))
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(begin: 0, end: -20, duration: 3.seconds, curve: Curves.easeInOutSine)
-          .fadeOut(begin: 0.2),
+      child:
+          Text(
+                emoji,
+                style: TextStyle(
+                  fontSize: 18.sp,
+                  color: Colors.black.withValues(alpha: 0.1),
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .moveY(
+                begin: 0,
+                end: -20,
+                duration: 3.seconds,
+                curve: Curves.easeInOutSine,
+              )
+              .fadeOut(begin: 0.2),
     );
   }
 
@@ -345,7 +468,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         Positioned(
           top: 180.h,
           left: 30.w,
-          child: _buildFurnitureItem("window", windowId, 90.r, user), 
+          child: _buildFurnitureItem("window", windowId, 90.r, user),
         ),
         Positioned(
           bottom: 120.h,
@@ -356,7 +479,12 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     );
   }
 
-  Widget _buildFurnitureItem(String category, String id, double size, UserEntity user) {
+  Widget _buildFurnitureItem(
+    String category,
+    String id,
+    double size,
+    UserEntity user,
+  ) {
     String emoji = '🏠';
     for (var cat in _furnitureStore.values) {
       for (var item in cat) {
@@ -364,7 +492,8 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       }
     }
 
-    final isHidingCoin = _hasHiddenCoin && _coinLocation == category && !_isCoinFound;
+    final isHidingCoin =
+        _hasHiddenCoin && _coinLocation == category && !_isCoinFound;
 
     return ScaleButton(
       onTap: () {
@@ -383,7 +512,11 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
               top: -10,
               child: Icon(Icons.star_rounded, color: Colors.amber, size: 24.sp)
                   .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .scale(begin: const Offset(0.8, 0.8), end: const Offset(1.2, 1.2), duration: 1.seconds)
+                  .scale(
+                    begin: const Offset(0.8, 0.8),
+                    end: const Offset(1.2, 1.2),
+                    duration: 1.seconds,
+                  )
                   .shimmer(),
             ),
 
@@ -395,10 +528,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
               shape: BoxShape.circle,
               border: Border.all(color: Colors.amber, width: 4.w),
               boxShadow: [
-                BoxShadow(
-                  color: Colors.amber.shade700,
-                  offset: Offset(0, 6.h),
-                ),
+                BoxShadow(color: Colors.amber.shade700, offset: Offset(0, 6.h)),
               ],
             ),
             child: Center(
@@ -414,10 +544,10 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     setState(() => _isCoinFound = true);
     di.sl<SoundService>().playCorrect();
     Haptics.vibrate(HapticsType.success);
-    
+
     context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(15));
     _speak("WOW! You found a hidden treasure! ⭐💎");
-    
+
     _showModernNotification(context, "FOUND 15 KIDS COINS! ⭐✨");
   }
 
@@ -434,72 +564,112 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
               Positioned(
                 top: -80.h,
                 left: -60.w,
-                child: _buildGlossySticker(KidsAssets.getStickerEmoji(stickerId), 70.r)
-                    .animate(onPlay: (c) => c.repeat(reverse: true))
-                    .moveY(begin: -5, end: 5, duration: 2.seconds),
+                child:
+                    _buildGlossySticker(
+                          KidsAssets.getStickerEmoji(stickerId),
+                          70.r,
+                        )
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .moveY(begin: -5, end: 5, duration: 2.seconds),
               ),
 
             GestureDetector(
               onTap: () {
-                _speak(_encouragements[Random().nextInt(_encouragements.length)]);
+                _speak(
+                  _encouragements[Random().nextInt(_encouragements.length)],
+                );
                 _addHappiness(0.01, user);
               },
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  if (_happiness > 0.5)
-                    Container(
-                      width: 150.r,
-                      height: 150.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.amber.withValues(alpha: (_happiness - 0.5) * 0.5),
-                            blurRadius: 40 * _happiness,
-                            spreadRadius: 20 * _happiness,
+              child:
+                  Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          if (_happiness > 0.5)
+                            Container(
+                                  width: 150.r,
+                                  height: 150.r,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.amber.withValues(
+                                          alpha: (_happiness - 0.5) * 0.5,
+                                        ),
+                                        blurRadius: 40 * _happiness,
+                                        spreadRadius: 20 * _happiness,
+                                      ),
+                                    ],
+                                  ),
+                                )
+                                .animate(onPlay: (c) => c.repeat(reverse: true))
+                                .scale(
+                                  begin: const Offset(0.9, 0.9),
+                                  end: const Offset(1.1, 1.1),
+                                  duration: 2.seconds,
+                                ),
+
+                          if (_happiness > 0.8)
+                            ...List.generate(
+                              5,
+                              (i) => Positioned(
+                                top: Random().nextDouble() * 100 - 50,
+                                left: Random().nextDouble() * 100 - 50,
+                                child:
+                                    const Text(
+                                          "✨",
+                                          style: TextStyle(fontSize: 16),
+                                        )
+                                        .animate(onPlay: (c) => c.repeat())
+                                        .scale(duration: 1.seconds)
+                                        .fadeOut(),
+                              ),
+                            ),
+
+                          VowlMascot(
+                            size: 130.r,
+                            state: _isSleeping
+                                ? VowlMascotState.neutral
+                                : (_isFeeding || _happiness > 0.8
+                                      ? VowlMascotState.happy
+                                      : VowlMascotState.neutral),
+                            useFloatingAnimation: !_isSleeping,
+                            isKidsMode: true,
                           ),
                         ],
+                      )
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .moveY(
+                        begin: -5,
+                        end: 5,
+                        duration: 2.seconds,
+                        curve: Curves.easeInOutSine,
+                      )
+                      .animate(target: _isTalking ? 1 : 0)
+                      .shake(hz: 4, curve: Curves.easeInOut)
+                      .animate(target: _isFeeding ? 1 : 0)
+                      .scale(
+                        begin: const Offset(1, 1),
+                        end: const Offset(1.1, 1.1),
+                        duration: 200.ms,
                       ),
-                    ).animate(onPlay: (c) => c.repeat(reverse: true))
-                     .scale(begin: const Offset(0.9, 0.9), end: const Offset(1.1, 1.1), duration: 2.seconds),
-
-                  if (_happiness > 0.8)
-                    ...List.generate(5, (i) => Positioned(
-                      top: Random().nextDouble() * 100 - 50,
-                      left: Random().nextDouble() * 100 - 50,
-                      child: const Text("✨", style: TextStyle(fontSize: 16))
-                          .animate(onPlay: (c) => c.repeat())
-                          .scale(duration: 1.seconds)
-                          .fadeOut(),
-                    )),
-
-                  VowlMascot(
-                    size: 130.r,
-                    state: _isSleeping 
-                        ? VowlMascotState.neutral 
-                        : (_isFeeding || _happiness > 0.8 
-                            ? VowlMascotState.happy 
-                            : VowlMascotState.neutral),
-                    useFloatingAnimation: !_isSleeping,
-                    isKidsMode: true,
-                  ),
-                ],
-              ).animate(onPlay: (c) => c.repeat(reverse: true))
-               .moveY(begin: -5, end: 5, duration: 2.seconds, curve: Curves.easeInOutSine)
-               .animate(target: _isTalking ? 1 : 0)
-               .shake(hz: 4, curve: Curves.easeInOut)
-               .animate(target: _isFeeding ? 1 : 0)
-               .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1), duration: 200.ms),
             ),
 
             if (_isSleeping)
               Positioned(
                 top: -30.h,
-                child: Text(context.tr('games.kids_zzz'), style: TextStyle(fontFamily: 'Outfit', color: Colors.white70, fontSize: 18.sp, fontWeight: FontWeight.bold))
-                    .animate(onPlay: (c) => c.repeat())
-                    .moveY(begin: 0, end: -30, duration: 2.seconds)
-                    .fadeOut(),
+                child:
+                    Text(
+                          context.tr('games.kids_zzz'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            color: Colors.white70,
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                        .animate(onPlay: (c) => c.repeat())
+                        .moveY(begin: 0, end: -30, duration: 2.seconds)
+                        .fadeOut(),
               ),
 
             if (_isFeeding)
@@ -507,8 +677,17 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                 top: -100.h,
                 child: Text(_currentFood, style: TextStyle(fontSize: 45.sp))
                     .animate(key: ValueKey(_currentFood))
-                    .moveY(begin: -50, end: 120, duration: 800.ms, curve: Curves.bounceOut)
-                    .scale(begin: const Offset(1, 1), end: const Offset(0.5, 0.5), duration: 800.ms)
+                    .moveY(
+                      begin: -50,
+                      end: 120,
+                      duration: 800.ms,
+                      curve: Curves.bounceOut,
+                    )
+                    .scale(
+                      begin: const Offset(1, 1),
+                      end: const Offset(0.5, 0.5),
+                      duration: 800.ms,
+                    )
                     .fadeOut(delay: 600.ms),
               ),
           ],
@@ -516,24 +695,31 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         SizedBox(height: 20.h),
         if (_isTalking)
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(color: Colors.lightBlue, width: 4.w),
-              boxShadow: [
-                BoxShadow(color: Colors.lightBlue.shade700, offset: Offset(0, 6.h)),
-              ],
-            ),
-            child: Text(
-              _buddyMessage,
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w900,
-                color: Colors.lightBlue.shade700,
-              ),
-            ),
-          ).animate().scale(curve: Curves.easeOutBack, duration: 400.ms).fadeIn(),
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20.r),
+                  border: Border.all(color: Colors.lightBlue, width: 4.w),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.lightBlue.shade700,
+                      offset: Offset(0, 6.h),
+                    ),
+                  ],
+                ),
+                child: Text(
+                  _buddyMessage,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.lightBlue.shade700,
+                  ),
+                ),
+              )
+              .animate()
+              .scale(curve: Curves.easeOutBack, duration: 400.ms)
+              .fadeIn(),
       ],
     );
   }
@@ -546,10 +732,20 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         color: Colors.white,
         shape: BoxShape.circle,
         border: Border.all(color: Colors.white, width: 4),
-        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.08), blurRadius: 12, offset: const Offset(0, 5))],
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.08),
+            blurRadius: 12,
+            offset: const Offset(0, 5),
+          ),
+        ],
       ),
       child: Center(
-        child: AnimatedKidsAsset(emoji: emoji, size: size * 0.7, animation: KidsAssetAnimation.none),
+        child: AnimatedKidsAsset(
+          emoji: emoji,
+          size: size * 0.7,
+          animation: KidsAssetAnimation.none,
+        ),
       ),
     );
   }
@@ -563,13 +759,25 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     );
   }
 
-  void _handleFurnitureTap(String category, Map<String, dynamic> item, UserEntity user) {
+  void _handleFurnitureTap(
+    String category,
+    Map<String, dynamic> item,
+    UserEntity user,
+  ) {
     final isOwned = user.kidsOwnedFurniture.contains(item['id']);
     if (isOwned) {
-      context.read<ProfileBloc>().add(ProfileUpdateFurnitureRequested(category, item['id'] as String));
+      context.read<ProfileBloc>().add(
+        ProfileUpdateFurnitureRequested(category, item['id'] as String),
+      );
       Navigator.pop(context);
     } else if (user.kidsCoins >= (item['price'] as int)) {
-      context.read<ProfileBloc>().add(ProfileBuyFurnitureRequested(category, item['id'] as String, item['price'] as int));
+      context.read<ProfileBloc>().add(
+        ProfileBuyFurnitureRequested(
+          category,
+          item['id'] as String,
+          item['price'] as int,
+        ),
+      );
       _speak("New item unlocked!");
       Navigator.pop(context);
     } else {
@@ -584,7 +792,9 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       user: user,
       onFoodSelected: (f) {
         if (user.kidsCoins >= (f['price'] as int)) {
-          context.read<EconomyBloc>().add(EconomyAddKidsCoinsRequested(-(f['price'] as int)));
+          context.read<EconomyBloc>().add(
+            EconomyAddKidsCoinsRequested(-(f['price'] as int)),
+          );
           Navigator.pop(context);
           setState(() {
             _currentFood = f['icon'] as String;
@@ -598,7 +808,11 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         } else {
           di.sl<SoundService>().playWrong();
           Navigator.pop(context);
-          _showModernNotification(context, "NOT ENOUGH COINS! ⭐", isError: true);
+          _showModernNotification(
+            context,
+            "NOT ENOUGH COINS! ⭐",
+            isError: true,
+          );
         }
       },
     );
@@ -614,7 +828,11 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     );
   }
 
-  void _showModernNotification(BuildContext context, String message, {bool isError = false}) {
+  void _showModernNotification(
+    BuildContext context,
+    String message, {
+    bool isError = false,
+  }) {
     final overlay = Overlay.of(context);
     final entry = OverlayEntry(
       builder: (context) => Positioned(
@@ -623,21 +841,48 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         right: 20.w,
         child: Material(
           color: Colors.transparent,
-          child: GlassTile(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
-            borderRadius: BorderRadius.circular(25.r),
-            borderColor: isError ? Colors.redAccent.withValues(alpha: 0.3) : Colors.greenAccent.withValues(alpha: 0.3),
-            child: Row(
-              children: [
-                Icon(isError ? Icons.warning_amber_rounded : Icons.check_circle_outline_rounded, 
-                     color: isError ? Colors.redAccent : Colors.greenAccent, size: 24.sp),
-                SizedBox(width: 12.w),
-                Expanded(
-                  child: Text(message, style: TextStyle(fontFamily: 'Outfit', fontSize: 13.sp, fontWeight: FontWeight.w800, color: Colors.black87)),
-                ),
-              ],
-            ),
-          ).animate().slideY(begin: -1, end: 0, curve: Curves.easeOutBack).fadeIn().then(delay: 2.seconds).fadeOut().slideY(begin: 0, end: -1),
+          child:
+              GlassTile(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.w,
+                      vertical: 15.h,
+                    ),
+                    borderRadius: BorderRadius.circular(25.r),
+                    borderColor: isError
+                        ? Colors.redAccent.withValues(alpha: 0.3)
+                        : Colors.greenAccent.withValues(alpha: 0.3),
+                    child: Row(
+                      children: [
+                        Icon(
+                          isError
+                              ? Icons.warning_amber_rounded
+                              : Icons.check_circle_outline_rounded,
+                          color: isError
+                              ? Colors.redAccent
+                              : Colors.greenAccent,
+                          size: 24.sp,
+                        ),
+                        SizedBox(width: 12.w),
+                        Expanded(
+                          child: Text(
+                            message,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.black87,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                  .animate()
+                  .slideY(begin: -1, end: 0, curve: Curves.easeOutBack)
+                  .fadeIn()
+                  .then(delay: 2.seconds)
+                  .fadeOut()
+                  .slideY(begin: 0, end: -1),
         ),
       ),
     );

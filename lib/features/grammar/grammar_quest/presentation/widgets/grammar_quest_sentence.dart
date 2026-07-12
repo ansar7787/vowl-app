@@ -23,7 +23,7 @@ class GrammarQuestSentence extends StatelessWidget {
         text,
         textAlign: TextAlign.center,
         style: TextStyle(
-          fontFamily: 'Outfit', 
+          fontFamily: 'Outfit',
           fontSize: isCompact ? 15.sp : 20.sp,
           color: isDark ? Colors.white : Colors.black87,
           height: 1.4,

@@ -19,7 +19,6 @@ class MockGetGrammarQuest extends Mock implements GetGrammarQuest {}
 
 class MockPreloadGrammarQuest extends Mock implements PreloadGrammarQuest {}
 
-
 class MockUpdateUserRewards extends Mock implements UpdateUserRewards {}
 
 class MockUpdateCategoryStats extends Mock implements UpdateCategoryStats {}

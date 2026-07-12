@@ -34,7 +34,10 @@ class ModifierMagneticArena extends StatelessWidget {
 
     return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: isCompact ? 8.h : 16.h),
+        padding: EdgeInsets.symmetric(
+          horizontal: 24.w,
+          vertical: isCompact ? 8.h : 16.h,
+        ),
         child: Wrap(
           alignment: WrapAlignment.center,
           crossAxisAlignment: WrapCrossAlignment.center,
@@ -45,7 +48,7 @@ class ModifierMagneticArena extends StatelessWidget {
               return Text(
                 words[index ~/ 2],
                 style: TextStyle(
-                  fontFamily: 'Outfit', 
+                  fontFamily: 'Outfit',
                   fontSize: isCompact ? 16.sp : 22.sp,
                   fontWeight: FontWeight.w500,
                   color: isDark ? Colors.white : Colors.black87,
@@ -67,61 +70,69 @@ class ModifierMagneticArena extends StatelessWidget {
                       ? primaryColor
                       : primaryColor.withValues(alpha: 0.15);
 
-                  final double slotWidth = isOccupied 
-                      ? (isCompact ? 65.w : 90.w) 
+                  final double slotWidth = isOccupied
+                      ? (isCompact ? 65.w : 90.w)
                       : (isCompact ? 26.r : 36.r);
                   final double slotHeight = isCompact ? 26.r : 36.r;
 
                   return Container(
-                    width: slotWidth,
-                    height: slotHeight,
-                    decoration: BoxDecoration(
-                      color: isOccupied
-                          ? primaryColor.withValues(alpha: 0.1)
-                          : (isHighlight
-                              ? primaryColor.withValues(alpha: 0.2)
-                              : Colors.transparent),
-                      borderRadius: BorderRadius.circular(isCompact ? 13.r : 18.r),
-                      border: Border.all(
-                        color: isOccupied ? primaryColor : borderCol,
-                        width: isHighlight || isOccupied ? 2 : 1.5,
-                      ),
-                    ),
-                    child: Center(
-                      child: isOccupied
-                          ? GestureDetector(
-                              onTap: () {
-                                if (isAnswered) return;
-                                hapticService.selection();
-                                onSlotReset();
-                              },
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: isCompact ? 6.w : 10.w,
-                                  vertical: isCompact ? 2.h : 4.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: primaryColor,
-                                  borderRadius: BorderRadius.circular(isCompact ? 8.r : 12.r),
-                                ),
-                                child: Text(
-                                  modifier,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit', 
-                                    fontSize: isCompact ? 10.sp : 14.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ).animate().shimmer(duration: 2.seconds),
-                            )
-                          : (isHighlight
-                              ? Icon(Icons.add, color: primaryColor, size: isCompact ? 12.r : 18.r)
-                              : null),
-                    ),
-                  )
-                  .animate(target: isOccupied ? 1 : 0)
-                  .scale(duration: 300.ms, curve: Curves.easeOutBack);
+                        width: slotWidth,
+                        height: slotHeight,
+                        decoration: BoxDecoration(
+                          color: isOccupied
+                              ? primaryColor.withValues(alpha: 0.1)
+                              : (isHighlight
+                                    ? primaryColor.withValues(alpha: 0.2)
+                                    : Colors.transparent),
+                          borderRadius: BorderRadius.circular(
+                            isCompact ? 13.r : 18.r,
+                          ),
+                          border: Border.all(
+                            color: isOccupied ? primaryColor : borderCol,
+                            width: isHighlight || isOccupied ? 2 : 1.5,
+                          ),
+                        ),
+                        child: Center(
+                          child: isOccupied
+                              ? GestureDetector(
+                                  onTap: () {
+                                    if (isAnswered) return;
+                                    hapticService.selection();
+                                    onSlotReset();
+                                  },
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: isCompact ? 6.w : 10.w,
+                                      vertical: isCompact ? 2.h : 4.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: primaryColor,
+                                      borderRadius: BorderRadius.circular(
+                                        isCompact ? 8.r : 12.r,
+                                      ),
+                                    ),
+                                    child: Text(
+                                      modifier,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: isCompact ? 10.sp : 14.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ).animate().shimmer(duration: 2.seconds),
+                                )
+                              : (isHighlight
+                                    ? Icon(
+                                        Icons.add,
+                                        color: primaryColor,
+                                        size: isCompact ? 12.r : 18.r,
+                                      )
+                                    : null),
+                        ),
+                      )
+                      .animate(target: isOccupied ? 1 : 0)
+                      .scale(duration: 300.ms, curve: Curves.easeOutBack);
                 },
               );
             }

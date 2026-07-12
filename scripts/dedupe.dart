@@ -6,14 +6,16 @@ void main() {
   final files = dir.listSync(recursive: true).whereType<File>();
 
   for (final file in files) {
-    if (file.path.endsWith('_quest.dart') && file.path.contains('domain') && file.path.contains('entities')) {
+    if (file.path.endsWith('_quest.dart') &&
+        file.path.contains('domain') &&
+        file.path.contains('entities')) {
       final lines = file.readAsLinesSync();
       final newLines = <String>[];
-      
+
       bool seenFinalTranscript = false;
       bool seenThisTranscript = false;
       bool seenPropTranscript = false;
-      
+
       for (final line in lines) {
         if (line.contains('final String? audioTranscript;')) {
           if (seenFinalTranscript) continue;
@@ -30,7 +32,7 @@ void main() {
         }
         newLines.add(line);
       }
-      
+
       file.writeAsStringSync(newLines.join('\n'));
     }
   }

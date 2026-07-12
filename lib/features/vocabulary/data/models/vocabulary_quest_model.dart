@@ -83,9 +83,11 @@ class VocabularyQuestModel extends VocabularyQuest {
       hint: map['hint'],
       visualConfig: map['visual_config'] != null
           ? VisualConfig.fromJson(
-              Map<String, dynamic>.from(map['visual_config']))
+              Map<String, dynamic>.from(map['visual_config']),
+            )
           : null,
-      word: map['word'] ??
+      word:
+          map['word'] ??
           map['targetWord'] ??
           map['topic'] ??
           (subtype == GameSubtype.wordFormation
@@ -94,24 +96,29 @@ class VocabularyQuestModel extends VocabularyQuest {
       definition: map['definition'] ?? map['meaning'],
       synonym: map['synonym'],
       antonym: map['antonym'],
-      contextSentence: map['contextSentence'] ??
+      contextSentence:
+          map['contextSentence'] ??
           map['example'] ??
           map['sentence'] ??
           map['transcript'] ??
           map['passage'],
-      explanation: map['explanation'] ??
+      explanation:
+          map['explanation'] ??
           (subtype == GameSubtype.wordFormation
               ? "Synthesis complete. The root was modified to form the correct word class."
               : (subtype == GameSubtype.topicVocab
-                  ? "Nexus synced. This term is core to the topic's data structure."
-                  : null)),
+                    ? "Nexus synced. This term is core to the topic's data structure."
+                    : null)),
       audioUrl: map['audioUrl'],
       passage: map['passage'] ?? map['contextSentence'] ?? map['text'],
-      synonyms:
-          map['synonyms'] != null ? List<String>.from(map['synonyms']) : null,
-      antonyms:
-          map['antonyms'] != null ? List<String>.from(map['antonyms']) : null,
-      textToSpeak: map['textToSpeak'] ??
+      synonyms: map['synonyms'] != null
+          ? List<String>.from(map['synonyms'])
+          : null,
+      antonyms: map['antonyms'] != null
+          ? List<String>.from(map['antonyms'])
+          : null,
+      textToSpeak:
+          map['textToSpeak'] ??
           map['word'] ??
           map['definition'] ??
           map['contextSentence'],
@@ -121,7 +128,9 @@ class VocabularyQuestModel extends VocabularyQuest {
       rootWord: map['rootWord'],
       prefix: map['prefix'],
       suffix: map['suffix'],
-      topicBuckets: map['topicBuckets'] != null ? List<String>.from(map['topicBuckets']) : null,
+      topicBuckets: map['topicBuckets'] != null
+          ? List<String>.from(map['topicBuckets'])
+          : null,
     );
   }
 

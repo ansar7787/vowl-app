@@ -26,11 +26,12 @@ class FindWordMeaningQuestionHeader extends StatelessWidget {
           SizedBox(width: 16.w),
           Expanded(
             child: Text(
-              "LOCATE THE WORD MEANING: $text", 
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 14.sp, 
-                fontWeight: FontWeight.w700, 
-                color: isDark ? color : color.withValues(alpha: 0.9), 
+              "LOCATE THE WORD MEANING: $text",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w700,
+                color: isDark ? color : color.withValues(alpha: 0.9),
                 letterSpacing: 0.5,
               ),
             ),

@@ -20,8 +20,11 @@ class DetailSpotlightPrompt extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
       borderRadius: BorderRadius.circular(30.r),
       child: Text(
-        isAnswered ? "TARGET: ${detail.toUpperCase()}" : "SCAN FOR AUDITORY TARGET",
-        style: TextStyle(fontFamily: 'Outfit', 
+        isAnswered
+            ? "TARGET: ${detail.toUpperCase()}"
+            : "SCAN FOR AUDITORY TARGET",
+        style: TextStyle(
+          fontFamily: 'Outfit',
           fontSize: 14.sp,
           fontWeight: FontWeight.w900,
           color: color,

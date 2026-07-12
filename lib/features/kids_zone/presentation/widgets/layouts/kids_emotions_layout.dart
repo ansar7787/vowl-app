@@ -35,12 +35,7 @@ class KidsEmotionsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Theater Stage
-            Expanded(
-              flex: 5,
-              child: Center(
-                child: _buildTheaterStage(quest),
-              ),
-            ),
+            Expanded(flex: 5, child: Center(child: _buildTheaterStage(quest))),
             // The Theater Masks (Options)
             Flexible(
               flex: 5,
@@ -54,16 +49,25 @@ class KidsEmotionsLayout extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: const Color(0xFF92400E), // Wooden stage
                       border: Border(
-                        top: BorderSide(color: const Color(0xFFB45309), width: 6.h),
+                        top: BorderSide(
+                          color: const Color(0xFFB45309),
+                          width: 6.h,
+                        ),
                       ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 20.h, left: 16.w, right: 16.w),
+                    padding: EdgeInsets.only(
+                      bottom: 20.h,
+                      left: 16.w,
+                      right: 16.w,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: List.generate(quest.options?.length ?? 0, (index) {
+                      children: List.generate(quest.options?.length ?? 0, (
+                        index,
+                      ) {
                         final option = quest.options![index];
                         return Expanded(
                           child: Padding(
@@ -116,17 +120,18 @@ class KidsEmotionsLayout extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20.r),
                 boxShadow: const [
-                  BoxShadow(color: Colors.black26, offset: Offset(0, 4), blurRadius: 4),
+                  BoxShadow(
+                    color: Colors.black26,
+                    offset: Offset(0, 4),
+                    blurRadius: 4,
+                  ),
                 ],
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   if (quest.emoji != null)
-                    Text(
-                      quest.emoji!,
-                      style: TextStyle(fontSize: 48.sp),
-                    ),
+                    Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
                   Text(
                     quest.question ?? "?",
                     style: TextStyle(
@@ -168,7 +173,10 @@ class KidsEmotionsLayout extends StatelessWidget {
               color: const Color(0xFF9F1239), // Velvet red
               borderRadius: BorderRadius.horizontal(left: Radius.circular(4.r)),
               border: Border(
-                right: BorderSide(color: const Color(0xFFE11D48), width: 4.w), // Curtain fold highlight
+                right: BorderSide(
+                  color: const Color(0xFFE11D48),
+                  width: 4.w,
+                ), // Curtain fold highlight
               ),
             ),
           ),
@@ -182,7 +190,9 @@ class KidsEmotionsLayout extends StatelessWidget {
             width: 40.w,
             decoration: BoxDecoration(
               color: const Color(0xFF9F1239),
-              borderRadius: BorderRadius.horizontal(right: Radius.circular(4.r)),
+              borderRadius: BorderRadius.horizontal(
+                right: Radius.circular(4.r),
+              ),
               border: Border(
                 left: BorderSide(color: const Color(0xFFE11D48), width: 4.w),
               ),
@@ -200,7 +210,11 @@ class KidsEmotionsLayout extends StatelessWidget {
               color: const Color(0xFFBE123C),
               borderRadius: BorderRadius.vertical(top: Radius.circular(4.r)),
               boxShadow: const [
-                BoxShadow(color: Colors.black45, offset: Offset(0, 4), blurRadius: 4),
+                BoxShadow(
+                  color: Colors.black45,
+                  offset: Offset(0, 4),
+                  blurRadius: 4,
+                ),
               ],
             ),
           ),
@@ -219,7 +233,9 @@ class KidsEmotionsLayout extends StatelessWidget {
     // Alternate between "comedy" (yellow) and "tragedy" (blue) base colors for flair
     final isComedy = index % 2 == 0;
     final color = isComedy ? const Color(0xFFFDE047) : const Color(0xFF7DD3FC);
-    final shadowColor = isComedy ? const Color(0xFFCA8A04) : const Color(0xFF0284C7);
+    final shadowColor = isComedy
+        ? const Color(0xFFCA8A04)
+        : const Color(0xFF0284C7);
 
     return ScaleButton(
       onTap: () {
@@ -237,10 +253,7 @@ class KidsEmotionsLayout extends StatelessWidget {
           ), // Mask shape
           border: Border.all(color: Colors.white, width: 2),
           boxShadow: [
-            BoxShadow(
-              color: shadowColor,
-              offset: const Offset(0, 6),
-            ),
+            BoxShadow(color: shadowColor, offset: const Offset(0, 6)),
           ],
         ),
         child: Center(

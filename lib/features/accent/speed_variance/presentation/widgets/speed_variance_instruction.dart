@@ -31,10 +31,7 @@ class SpeedVarianceInstruction extends StatelessWidget {
                   ? "IDENTIFY THE SPEAKING SPEED"
                   : instruction.toUpperCase(),
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 8.sp,
-                letterSpacing: 1.5,
-              ),
+              style: TextStyle(fontSize: 8.sp, letterSpacing: 1.5),
             ),
           ),
         ],

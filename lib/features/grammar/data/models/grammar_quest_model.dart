@@ -66,7 +66,10 @@ class GrammarQuestModel extends GrammarQuest {
       id: id,
       type: subtype.category,
       subtype: subtype,
-      instruction: map['instruction'] as String? ?? map['question'] as String? ?? 'Solve the grammar puzzle.',
+      instruction:
+          map['instruction'] as String? ??
+          map['question'] as String? ??
+          'Solve the grammar puzzle.',
       difficulty: (map['difficulty'] as num?)?.toInt() ?? 1,
       interactionType: InteractionType.fromString(
         map['interactionType'] as String?,
@@ -80,9 +83,14 @@ class GrammarQuestModel extends GrammarQuest {
       correctAnswer: getString(map['correctAnswer']),
       hint: map['hint'] as String?,
       visualConfig: map['visual_config'] != null
-          ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'] as Map))
+          ? VisualConfig.fromJson(
+              Map<String, dynamic>.from(map['visual_config'] as Map),
+            )
           : null,
-      sentence: map['sentence'] as String? ?? map['question'] as String? ?? map['text'] as String?,
+      sentence:
+          map['sentence'] as String? ??
+          map['question'] as String? ??
+          map['text'] as String?,
       verb: map['verb'] as String?,
       word: map['word'] as String?,
       targetTense: map['targetTense'] as String?,
@@ -90,7 +98,8 @@ class GrammarQuestModel extends GrammarQuest {
       firstClause: map['firstClause'] as String?,
       secondClause: map['secondClause'] as String?,
       connectorToUse: map['connectorToUse'] as String?,
-      sentenceWithBlank: map['sentenceWithBlank'] as String? ?? map['sentence'] as String?,
+      sentenceWithBlank:
+          map['sentenceWithBlank'] as String? ?? map['sentence'] as String?,
       articleToInsert: map['articleToInsert'] as String?,
       targetWord: map['targetWord'] as String?,
       passage: map['passage'] as String?,
@@ -98,7 +107,9 @@ class GrammarQuestModel extends GrammarQuest {
       activeSentence: map['activeSentence'] as String?,
       shuffledWords: parseStringList(map['shuffledWords']),
       correctOrder: map['correctOrder'] != null
-          ? (map['correctOrder'] as List).map((e) => int.tryParse(e.toString()) ?? 0).toList()
+          ? (map['correctOrder'] as List)
+                .map((e) => int.tryParse(e.toString()) ?? 0)
+                .toList()
           : null,
       explanation: map['explanation'] as String?,
       incorrectPart: map['incorrectPart'] as String?,

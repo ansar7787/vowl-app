@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class SpeakMissingWordInstruction extends StatelessWidget {
   final Color primaryColor;
   final bool isWordPlaced;
@@ -30,7 +31,8 @@ class SpeakMissingWordInstruction extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 isWordPlaced ? "READ THE SENTENCE" : "FIND THE WORD",
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
                   color: primaryColor,
@@ -42,11 +44,10 @@ class SpeakMissingWordInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          isWordPlaced
-              ? "Read the full sentence aloud."
-              : instruction,
+          isWordPlaced ? "Read the full sentence aloud." : instruction,
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,

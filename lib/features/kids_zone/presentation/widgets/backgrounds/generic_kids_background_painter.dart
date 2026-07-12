@@ -40,7 +40,11 @@ class GenericKidsBackgroundPainter extends StatelessWidget {
       left: random.nextDouble() * 1.sw,
       child: _buildContent(random)
           .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(begin: 0, end: (random.nextBool() ? 30.h : -30.h), duration: (4 + random.nextDouble() * 4).seconds)
+          .moveY(
+            begin: 0,
+            end: (random.nextBool() ? 30.h : -30.h),
+            duration: (4 + random.nextDouble() * 4).seconds,
+          )
           .fadeOut(begin: 0.3, duration: 2.seconds),
     );
   }
@@ -62,7 +66,10 @@ class GenericKidsBackgroundPainter extends StatelessWidget {
     return Container(
       width: 4.r,
       height: 4.r,
-      decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        shape: BoxShape.circle,
+      ),
     );
   }
 }

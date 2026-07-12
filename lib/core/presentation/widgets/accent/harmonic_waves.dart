@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:math' as math;
 
 /// A premium, highly-performant accent widget that displays layered, oscillating sine waves.
-/// 
+///
 /// Incorporates GPU repaint boundary isolation and precise paint caching schemes to
 /// guarantee rock-solid frame rate execution during intensive gameplay modules.
 class HarmonicWaves extends StatelessWidget {
@@ -24,7 +24,9 @@ class HarmonicWaves extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final h = height ?? 200.h;
-        final w = width ?? (constraints.hasBoundedWidth ? constraints.maxWidth : 1.sw);
+        final w =
+            width ??
+            (constraints.hasBoundedWidth ? constraints.maxWidth : 1.sw);
 
         return RepaintBoundary(
           child: SizedBox(
@@ -37,25 +39,26 @@ class HarmonicWaves extends StatelessWidget {
                     bottom: -(h * 0.25) + (index * (h * 0.1)),
                     left: -w * 0.2,
                     right: -w * 0.2,
-                    child: Opacity(
-                      opacity: (0.1 - (index * 0.02)).clamp(0.01, 1.0),
-                      child: CustomPaint(
-                        size: Size(w, h),
-                        painter: WavePainter(
-                          color: color,
-                          phase: index * math.pi / 4,
-                          frequency: 1 + (index * 0.5),
-                          waveHeight: h * 0.25,
-                        ),
-                      ),
-                    )
-                    .animate(onPlay: (c) => c.repeat())
-                    .moveX(
-                      begin: -w * 0.1,
-                      end: w * 0.1,
-                      duration: (3000 + index * 1000).ms,
-                      curve: Curves.easeInOutSine,
-                    ),
+                    child:
+                        Opacity(
+                              opacity: (0.1 - (index * 0.02)).clamp(0.01, 1.0),
+                              child: CustomPaint(
+                                size: Size(w, h),
+                                painter: WavePainter(
+                                  color: color,
+                                  phase: index * math.pi / 4,
+                                  frequency: 1 + (index * 0.5),
+                                  waveHeight: h * 0.25,
+                                ),
+                              ),
+                            )
+                            .animate(onPlay: (c) => c.repeat())
+                            .moveX(
+                              begin: -w * 0.1,
+                              end: w * 0.1,
+                              duration: (3000 + index * 1000).ms,
+                              curve: Curves.easeInOutSine,
+                            ),
                   );
                 }),
               ),

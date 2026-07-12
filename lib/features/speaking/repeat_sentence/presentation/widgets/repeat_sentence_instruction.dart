@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class RepeatSentenceInstruction extends StatelessWidget {
   final Color primaryColor;
   final String instruction;
@@ -28,7 +29,8 @@ class RepeatSentenceInstruction extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "HOLD TO TRACE SOUND WAVE",
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
                   color: primaryColor,
@@ -42,7 +44,8 @@ class RepeatSentenceInstruction extends StatelessWidget {
         Text(
           instruction,
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,

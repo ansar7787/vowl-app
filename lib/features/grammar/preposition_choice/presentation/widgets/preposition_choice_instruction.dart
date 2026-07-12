@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class PrepositionChoiceInstruction extends StatelessWidget {
   final Color primaryColor;
   const PrepositionChoiceInstruction({super.key, required this.primaryColor});
@@ -20,7 +21,8 @@ class PrepositionChoiceInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             "TRACE THE ENERGY PATH",
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,

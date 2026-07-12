@@ -56,7 +56,9 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<SpeakingBloc>().add(FetchSpeakingQuests(gameType: widget.gameType, level: widget.level));
+    context.read<SpeakingBloc>().add(
+      FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   @override
@@ -73,13 +75,13 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
 
   void _onTiltDragged(DragUpdateDetails details, double trackWidth) {
     if (_isAnswered || _isSnapped) return;
-    
+
     final double deltaNormalized = details.delta.dx / (trackWidth / 2);
     _hapticService.selection();
 
     setState(() {
       _tiltValue = (_tiltValue + deltaNormalized).clamp(-1.0, 1.0);
-      
+
       if (_tiltValue <= -0.85) {
         _tiltValue = -1.0;
         _isSnapped = true;
@@ -132,8 +134,14 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
     final bool chosenMatch = _tiltValue > 0;
     final bool binaryIsCorrect = chosenMatch == expectedMatch;
 
-    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '');
-    final String cleanExpected = expectedText.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '');
+    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
+      RegExp(r'[^\w\s]'),
+      '',
+    );
+    final String cleanExpected = expectedText.trim().toLowerCase().replaceAll(
+      RegExp(r'[^\w\s]'),
+      '',
+    );
 
     final List<String> speechWords = cleanSpeech.split(' ');
     final List<String> expectedWords = cleanExpected.split(' ');
@@ -145,7 +153,9 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
       }
     }
 
-    final double similarity = expectedWords.isNotEmpty ? matches / expectedWords.length : 0.0;
+    final double similarity = expectedWords.isNotEmpty
+        ? matches / expectedWords.length
+        : 0.0;
     final bool speechIsCorrect = similarity >= 0.70;
 
     final bool isCorrect = binaryIsCorrect && speechIsCorrect;
@@ -186,7 +196,9 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
       listener: (context, state) {
         if (state is SpeakingLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          if (state.currentIndex != _lastProcessedIndex ||
+              livesChanged ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -224,7 +236,8 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
         } else if (state is SpeakingGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<SpeakingBloc>().add(const RestoreLife()),
+            onRestore: () =>
+                context.read<SpeakingBloc>().add(const RestoreLife()),
             onTutorPass: _tutorPass,
           );
         }
@@ -234,7 +247,8 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
 
         final String rawPrompt = quest?.prompt ?? "";
         final String rawSample = quest?.sampleAnswer ?? "";
-        final bool doTheyMatch = rawPrompt.trim().toLowerCase() == rawSample.trim().toLowerCase();
+        final bool doTheyMatch =
+            rawPrompt.trim().toLowerCase() == rawSample.trim().toLowerCase();
 
         return MediaQuery(
           data: mediaQuery.copyWith(
@@ -254,24 +268,42 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
                       final bool isCompact = maxHeight < 580;
-                      
-                      final double estimatedContentHeight = 24.h + (isCompact ? 90.h : 120.h) + (isCompact ? 80.h : 110.h) + (isCompact ? 100.h : 140.h) + (isCompact ? 60.h : 80.h);
-                      final remainingHeight = maxHeight - estimatedContentHeight;
-                      
-                      final double gapUnit = remainingHeight > 0 ? remainingHeight / 8 : 0;
-                      final double gapTop = remainingHeight > 0 ? (gapUnit * 1).clamp(6.0, 16.0) : 6.0;
-                      final double gapInstruction = remainingHeight > 0 ? (gapUnit * 1).clamp(8.0, 16.0) : 8.0;
-                      final double gapAudition = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-                      final double gapTilt = remainingHeight > 0 ? (gapUnit * 1.5).clamp(10.0, 24.0) : 10.0;
-                      final double gapTelemetry = remainingHeight > 0 ? (gapUnit * 2).clamp(12.0, 30.0) : 12.0;
-                      final double gapBottom = remainingHeight > 0 ? (gapUnit * 1).clamp(12.0, 40.0) : 12.0;
+
+                      final double estimatedContentHeight =
+                          24.h +
+                          (isCompact ? 90.h : 120.h) +
+                          (isCompact ? 80.h : 110.h) +
+                          (isCompact ? 100.h : 140.h) +
+                          (isCompact ? 60.h : 80.h);
+                      final remainingHeight =
+                          maxHeight - estimatedContentHeight;
+
+                      final double gapUnit = remainingHeight > 0
+                          ? remainingHeight / 8
+                          : 0;
+                      final double gapTop = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(6.0, 16.0)
+                          : 6.0;
+                      final double gapInstruction = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(8.0, 16.0)
+                          : 8.0;
+                      final double gapAudition = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                          : 10.0;
+                      final double gapTilt = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                          : 10.0;
+                      final double gapTelemetry = remainingHeight > 0
+                          ? (gapUnit * 2).clamp(12.0, 30.0)
+                          : 12.0;
+                      final double gapBottom = remainingHeight > 0
+                          ? (gapUnit * 1).clamp(12.0, 40.0)
+                          : 12.0;
 
                       return SingleChildScrollView(
                         physics: const BouncingScrollPhysics(),
                         child: ConstrainedBox(
-                          constraints: BoxConstraints(
-                            minHeight: maxHeight,
-                          ),
+                          constraints: BoxConstraints(minHeight: maxHeight),
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 16.w),
                             child: Column(
@@ -281,83 +313,99 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapTop),
-                                    isCompact 
-                                      ? SizedBox(
-                                          height: 32.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: YesNoSpeakingHeaderInstruction(
-                                              primaryColor: theme.primaryColor,
-                                              isSnapped: _isSnapped,
-                                              instruction: quest.instruction,
-                                            ),
-                                          ),
-                                        )
-                                      : YesNoSpeakingHeaderInstruction(
-                                          primaryColor: theme.primaryColor,
-                                          isSnapped: _isSnapped,
-                                          instruction: quest.instruction,
-                                        ),
-                                    SizedBox(height: gapInstruction),
-                                    
                                     isCompact
-                                      ? SizedBox(
-                                          height: 100.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SizedBox(
-                                              width: constraints.maxWidth - 16.w,
-                                              child: YesNoSpeakingAuditionCard(
-                                                quest: quest,
-                                                primaryColor: theme.primaryColor,
-                                                isDark: isDark,
-                                                onPlayTts: () => _soundService.playTts(quest.prompt ?? ""),
+                                        ? SizedBox(
+                                            height: 32.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child:
+                                                  YesNoSpeakingHeaderInstruction(
+                                                    primaryColor:
+                                                        theme.primaryColor,
+                                                    isSnapped: _isSnapped,
+                                                    instruction:
+                                                        quest.instruction,
+                                                  ),
+                                            ),
+                                          )
+                                        : YesNoSpeakingHeaderInstruction(
+                                            primaryColor: theme.primaryColor,
+                                            isSnapped: _isSnapped,
+                                            instruction: quest.instruction,
+                                          ),
+                                    SizedBox(height: gapInstruction),
+
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 100.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width:
+                                                    constraints.maxWidth - 16.w,
+                                                child:
+                                                    YesNoSpeakingAuditionCard(
+                                                      quest: quest,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      isDark: isDark,
+                                                      onPlayTts: () =>
+                                                          _soundService.playTts(
+                                                            quest.prompt ?? "",
+                                                          ),
+                                                    ),
                                               ),
                                             ),
+                                          )
+                                        : YesNoSpeakingAuditionCard(
+                                            quest: quest,
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            onPlayTts: () => _soundService
+                                                .playTts(quest.prompt ?? ""),
                                           ),
-                                        )
-                                      : YesNoSpeakingAuditionCard(
-                                          quest: quest,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onPlayTts: () => _soundService.playTts(quest.prompt ?? ""),
-                                        ),
                                     SizedBox(height: gapAudition),
 
                                     isCompact
-                                      ? SizedBox(
-                                          height: 80.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SizedBox(
-                                              width: constraints.maxWidth - 16.w,
-                                              child: YesNoSpeakingTiltArena(
-                                                tiltValue: _tiltValue,
-                                                isSnapped: _isSnapped,
-                                                primaryColor: theme.primaryColor,
-                                                isDark: isDark,
-                                                onTiltDragged: _onTiltDragged,
-                                                onTiltDragEnd: () {
-                                                  if (!_isSnapped) {
-                                                    setState(() => _tiltValue = 0.0);
-                                                  }
-                                                },
+                                        ? SizedBox(
+                                            height: 80.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width:
+                                                    constraints.maxWidth - 16.w,
+                                                child: YesNoSpeakingTiltArena(
+                                                  tiltValue: _tiltValue,
+                                                  isSnapped: _isSnapped,
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                  isDark: isDark,
+                                                  onTiltDragged: _onTiltDragged,
+                                                  onTiltDragEnd: () {
+                                                    if (!_isSnapped) {
+                                                      setState(
+                                                        () => _tiltValue = 0.0,
+                                                      );
+                                                    }
+                                                  },
+                                                ),
                                               ),
                                             ),
+                                          )
+                                        : YesNoSpeakingTiltArena(
+                                            tiltValue: _tiltValue,
+                                            isSnapped: _isSnapped,
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            onTiltDragged: _onTiltDragged,
+                                            onTiltDragEnd: () {
+                                              if (!_isSnapped) {
+                                                setState(
+                                                  () => _tiltValue = 0.0,
+                                                );
+                                              }
+                                            },
                                           ),
-                                        )
-                                      : YesNoSpeakingTiltArena(
-                                          tiltValue: _tiltValue,
-                                          isSnapped: _isSnapped,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onTiltDragged: _onTiltDragged,
-                                          onTiltDragEnd: () {
-                                            if (!_isSnapped) {
-                                              setState(() => _tiltValue = 0.0);
-                                            }
-                                          },
-                                        ),
                                   ],
                                 ),
                                 Column(
@@ -366,79 +414,102 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                     SizedBox(height: gapTilt),
                                     if (_isSnapped) ...[
                                       isCompact
-                                        ? SizedBox(
-                                            height: 70.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: constraints.maxWidth - 16.w,
-                                                child: YesNoSpeakingTelemetryCard(
-                                                  spokenText: _spokenText,
-                                                  isDark: isDark,
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        : YesNoSpeakingTelemetryCard(
-                                            spokenText: _spokenText,
-                                            isDark: isDark,
-                                          ),
-                                      SizedBox(height: gapTelemetry),
-
-                                      if (!_isAnswered)
-                                        isCompact
                                           ? SizedBox(
                                               height: 70.h,
                                               child: FittedBox(
                                                 fit: BoxFit.scaleDown,
-                                                child: YesNoSpeakingTactileMic(
-                                                  isSpeechActive: _isSpeechActive,
-                                                  primaryColor: theme.primaryColor,
-                                                  onLongPressStart: _startSpeechListening,
-                                                  onLongPressEnd: () => _stopSpeechListening(quest.sampleAnswer ?? "", doTheyMatch),
-                                                  attempts: _attempts,
-                                                  isAnswered: _isAnswered,
-                                                  onTutorPass: _tutorPass,
+                                                child: SizedBox(
+                                                  width:
+                                                      constraints.maxWidth -
+                                                      16.w,
+                                                  child:
+                                                      YesNoSpeakingTelemetryCard(
+                                                        spokenText: _spokenText,
+                                                        isDark: isDark,
+                                                      ),
                                                 ),
                                               ),
                                             )
-                                          : YesNoSpeakingTactileMic(
-                                              isSpeechActive: _isSpeechActive,
-                                              primaryColor: theme.primaryColor,
-                                              onLongPressStart: _startSpeechListening,
-                                              onLongPressEnd: () => _stopSpeechListening(quest.sampleAnswer ?? "", doTheyMatch),
-                                              attempts: _attempts,
-                                              isAnswered: _isAnswered,
-                                              onTutorPass: _tutorPass,
+                                          : YesNoSpeakingTelemetryCard(
+                                              spokenText: _spokenText,
+                                              isDark: isDark,
                                             ),
+                                      SizedBox(height: gapTelemetry),
+
+                                      if (!_isAnswered)
+                                        isCompact
+                                            ? SizedBox(
+                                                height: 70.h,
+                                                child: FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: YesNoSpeakingTactileMic(
+                                                    isSpeechActive:
+                                                        _isSpeechActive,
+                                                    primaryColor:
+                                                        theme.primaryColor,
+                                                    onLongPressStart:
+                                                        _startSpeechListening,
+                                                    onLongPressEnd: () =>
+                                                        _stopSpeechListening(
+                                                          quest.sampleAnswer ??
+                                                              "",
+                                                          doTheyMatch,
+                                                        ),
+                                                    attempts: _attempts,
+                                                    isAnswered: _isAnswered,
+                                                    onTutorPass: _tutorPass,
+                                                  ),
+                                                ),
+                                              )
+                                            : YesNoSpeakingTactileMic(
+                                                isSpeechActive: _isSpeechActive,
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                onLongPressStart:
+                                                    _startSpeechListening,
+                                                onLongPressEnd: () =>
+                                                    _stopSpeechListening(
+                                                      quest.sampleAnswer ?? "",
+                                                      doTheyMatch,
+                                                    ),
+                                                attempts: _attempts,
+                                                isAnswered: _isAnswered,
+                                                onTutorPass: _tutorPass,
+                                              ),
                                     ],
 
                                     AnimatedCrossFade(
                                       firstChild: const SizedBox(),
                                       secondChild: isCompact
-                                        ? SizedBox(
-                                            height: 100.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: constraints.maxWidth - 16.w,
-                                                child: YesNoSpeakingExplanationCard(
-                                                  quest: quest,
-                                                  isCorrect: _isCorrect ?? false,
-                                                  isDark: isDark,
+                                          ? SizedBox(
+                                              height: 100.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: SizedBox(
+                                                  width:
+                                                      constraints.maxWidth -
+                                                      16.w,
+                                                  child:
+                                                      YesNoSpeakingExplanationCard(
+                                                        quest: quest,
+                                                        isCorrect:
+                                                            _isCorrect ?? false,
+                                                        isDark: isDark,
+                                                      ),
                                                 ),
                                               ),
+                                            )
+                                          : YesNoSpeakingExplanationCard(
+                                              quest: quest,
+                                              isCorrect: _isCorrect ?? false,
+                                              isDark: isDark,
                                             ),
-                                          )
-                                        : YesNoSpeakingExplanationCard(
-                                            quest: quest,
-                                            isCorrect: _isCorrect ?? false,
-                                            isDark: isDark,
-                                          ),
                                       crossFadeState: _isAnswered
                                           ? CrossFadeState.showSecond
                                           : CrossFadeState.showFirst,
-                                      duration: const Duration(milliseconds: 400),
+                                      duration: const Duration(
+                                        milliseconds: 400,
+                                      ),
                                     ),
                                     SizedBox(height: gapBottom),
                                   ],

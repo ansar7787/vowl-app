@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class TenseMasteryTimelineSlider extends StatelessWidget {
   final double sliderValue;
   final String currentTense;
@@ -93,7 +94,9 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                               boxShadow: isCurrent
                                   ? [
                                       BoxShadow(
-                                        color: primaryColor.withValues(alpha: 0.4),
+                                        color: primaryColor.withValues(
+                                          alpha: 0.4,
+                                        ),
                                         blurRadius: 15,
                                         spreadRadius: 4,
                                       ),
@@ -105,9 +108,12 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                           Text(
                             tense.toUpperCase(),
                             textAlign: TextAlign.center,
-                            style: TextStyle(fontFamily: 'Outfit', 
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
                               fontSize: 12.sp,
-                              fontWeight: isCurrent ? FontWeight.w900 : FontWeight.w600,
+                              fontWeight: isCurrent
+                                  ? FontWeight.w900
+                                  : FontWeight.w600,
                               color: isCurrent
                                   ? primaryColor
                                   : (isDark ? Colors.white24 : Colors.black26),
@@ -123,7 +129,9 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
 
               // The Draggable Chrono-Sphere
               AnimatedPositioned(
-                duration: isDragging ? Duration.zero : const Duration(milliseconds: 300),
+                duration: isDragging
+                    ? Duration.zero
+                    : const Duration(milliseconds: 300),
                 curve: Curves.easeOutBack,
                 left: leftPos,
                 child: GestureDetector(
@@ -134,7 +142,8 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                   onHorizontalDragUpdate: (details) {
                     if (isAnswered) return;
                     onDraggingChanged(true);
-                    final newValue = (sliderValue + details.delta.dx / maxLeft).clamp(0.0, 1.0);
+                    final newValue = (sliderValue + details.delta.dx / maxLeft)
+                        .clamp(0.0, 1.0);
                     onSliderChanged(newValue);
 
                     if ((newValue - 0.0).abs() < 0.02 ||
@@ -155,28 +164,38 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                     }
                     onHeavyHapticFeedback();
                   },
-                  child: Container(
-                    width: sphereWidth,
-                    height: sphereWidth,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: primaryColor.withValues(alpha: 0.4),
-                          blurRadius: 25,
-                          spreadRadius: 5,
-                        ),
-                      ],
-                      border: Border.all(color: primaryColor, width: 6.r),
-                    ),
-                    child: Center(
-                      child: Icon(Icons.timer_rounded, color: primaryColor, size: 28.r),
-                    ),
-                  ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(
-                        duration: 1500.ms,
-                        color: primaryColor.withValues(alpha: 0.2),
-                      ),
+                  child:
+                      Container(
+                            width: sphereWidth,
+                            height: sphereWidth,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: primaryColor.withValues(alpha: 0.4),
+                                  blurRadius: 25,
+                                  spreadRadius: 5,
+                                ),
+                              ],
+                              border: Border.all(
+                                color: primaryColor,
+                                width: 6.r,
+                              ),
+                            ),
+                            child: Center(
+                              child: Icon(
+                                Icons.timer_rounded,
+                                color: primaryColor,
+                                size: 28.r,
+                              ),
+                            ),
+                          )
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .shimmer(
+                            duration: 1500.ms,
+                            color: primaryColor.withValues(alpha: 0.2),
+                          ),
                 ),
               ),
             ],

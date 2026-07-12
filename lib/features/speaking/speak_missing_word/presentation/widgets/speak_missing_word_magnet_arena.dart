@@ -32,7 +32,7 @@ class SpeakMissingWordMagnetArena extends StatelessWidget {
     final double arenaHeight = 240.h;
     final double radius = 100.w;
     final double pullRatio = pullForce;
-    
+
     // Vortex Center Position relative to the arena Stack
     final Offset localCenter = Offset(0.5.sw - 16.w, arenaHeight / 2);
 
@@ -52,9 +52,16 @@ class SpeakMissingWordMagnetArena extends StatelessWidget {
                 if (selectedWord != null) {
                   final int index = dynamicOptions.indexOf(selectedWord!);
                   if (index != -1) {
-                    final double angle = (index * 2 * math.pi / dynamicOptions.length) - math.pi / 2;
+                    final double angle =
+                        (index * 2 * math.pi / dynamicOptions.length) -
+                        math.pi / 2;
                     final double currentDist = radius * (1.0 - pullRatio);
-                    optionOffset = localCenter + Offset(math.cos(angle) * currentDist, math.sin(angle) * currentDist);
+                    optionOffset =
+                        localCenter +
+                        Offset(
+                          math.cos(angle) * currentDist,
+                          math.sin(angle) * currentDist,
+                        );
                   }
                 }
 
@@ -72,36 +79,41 @@ class SpeakMissingWordMagnetArena extends StatelessWidget {
 
           // 2. Center vortex black hole icon
           Container(
-            width: 80.r,
-            height: 80.r,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.grey.shade900,
-              border: Border.all(color: primaryColor, width: 2.5),
-              boxShadow: [
-                BoxShadow(
-                  color: primaryColor.withValues(alpha: 0.3),
-                  blurRadius: 15,
+                width: 80.r,
+                height: 80.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.grey.shade900,
+                  border: Border.all(color: primaryColor, width: 2.5),
+                  boxShadow: [
+                    BoxShadow(
+                      color: primaryColor.withValues(alpha: 0.3),
+                      blurRadius: 15,
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            child: Icon(
-              Icons.blur_circular_rounded,
-              color: Colors.white70,
-              size: 40.r,
-            ),
-          ).animate(onPlay: (c) => c.repeat()).rotate(duration: const Duration(seconds: 4)),
+                child: Icon(
+                  Icons.blur_circular_rounded,
+                  color: Colors.white70,
+                  size: 40.r,
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat())
+              .rotate(duration: const Duration(seconds: 4)),
 
           // 3. Polar positioned floating options
           ...dynamicOptions.asMap().entries.map((e) {
             final int index = e.key;
             final String word = e.value;
 
-            final double angle = (index * 2 * math.pi / dynamicOptions.length) - math.pi / 2;
+            final double angle =
+                (index * 2 * math.pi / dynamicOptions.length) - math.pi / 2;
             final bool isPulled = selectedWord == word;
-            
-            final double currentDist = isPulled ? radius * (1.0 - pullRatio) : radius;
-            
+
+            final double currentDist = isPulled
+                ? radius * (1.0 - pullRatio)
+                : radius;
+
             final double xOffset = math.cos(angle) * currentDist;
             final double yOffset = math.sin(angle) * currentDist;
 
@@ -113,14 +125,19 @@ class SpeakMissingWordMagnetArena extends StatelessWidget {
                 child: ScaleButton(
                   onTap: () {},
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.w,
+                      vertical: 8.h,
+                    ),
                     decoration: BoxDecoration(
                       color: isPulled
                           ? primaryColor.withValues(alpha: 0.25)
                           : (isDark ? const Color(0xFF0F0F1B) : Colors.white),
                       borderRadius: BorderRadius.circular(16.r),
                       border: Border.all(
-                        color: isPulled ? primaryColor : primaryColor.withValues(alpha: 0.15),
+                        color: isPulled
+                            ? primaryColor
+                            : primaryColor.withValues(alpha: 0.15),
                         width: 1.5,
                       ),
                       boxShadow: [
@@ -132,10 +149,13 @@ class SpeakMissingWordMagnetArena extends StatelessWidget {
                     ),
                     child: Text(
                       word.toUpperCase(),
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 13.sp,
                         fontWeight: FontWeight.bold,
-                        color: isPulled ? Colors.white : (isDark ? Colors.white70 : Colors.black87),
+                        color: isPulled
+                            ? Colors.white
+                            : (isDark ? Colors.white70 : Colors.black87),
                       ),
                     ),
                   ),

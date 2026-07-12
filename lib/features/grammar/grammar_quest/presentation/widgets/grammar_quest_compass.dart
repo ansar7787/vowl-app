@@ -180,7 +180,9 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
             // Quadrants and Selection Beams
             ...List.generate(4, (index) {
               final angle = index * (math.pi * 2) / 4;
-              final optionText = index < widget.options.length ? widget.options[index] : "";
+              final optionText = index < widget.options.length
+                  ? widget.options[index]
+                  : "";
               final isSelected =
                   widget.isAnswered &&
                   (index ==
@@ -228,7 +230,9 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                           child: Container(
                             constraints: BoxConstraints(maxWidth: size * 0.35),
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(widget.isCompact ? 8.r : 12.r),
+                              borderRadius: BorderRadius.circular(
+                                widget.isCompact ? 8.r : 12.r,
+                              ),
                               child: BackdropFilter(
                                 filter: ui.ImageFilter.blur(
                                   sigmaX: 8,
@@ -241,7 +245,9 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                                   ),
                                   decoration: BoxDecoration(
                                     color: isSelected
-                                        ? widget.primaryColor.withValues(alpha: 0.3)
+                                        ? widget.primaryColor.withValues(
+                                            alpha: 0.3,
+                                          )
                                         : (widget.isDark
                                               ? Colors.white.withValues(
                                                   alpha: 0.12,
@@ -249,11 +255,15 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                                               : Colors.black.withValues(
                                                   alpha: 0.06,
                                                 )),
-                                    borderRadius: BorderRadius.circular(widget.isCompact ? 8.r : 12.r),
+                                    borderRadius: BorderRadius.circular(
+                                      widget.isCompact ? 8.r : 12.r,
+                                    ),
                                     border: Border.all(
                                       color: isSelected
                                           ? Colors.white
-                                          : widget.primaryColor.withValues(alpha: 0.3),
+                                          : widget.primaryColor.withValues(
+                                              alpha: 0.3,
+                                            ),
                                       width: 1.5.r,
                                     ),
                                   ),
@@ -263,7 +273,7 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                                     maxLines: 2,
                                     overflow: TextOverflow.visible,
                                     style: TextStyle(
-                                      fontFamily: 'Outfit', 
+                                      fontFamily: 'Outfit',
                                       fontSize: widget.isCompact ? 8.sp : 10.sp,
                                       fontWeight: FontWeight.w900,
                                       color: isSelected
@@ -305,7 +315,11 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                     ),
                   ),
                   // Asymmetric HUD Vector Needle
-                  _buildNeedleShape(widget.primaryColor, needleHeight, isGlass: true),
+                  _buildNeedleShape(
+                    widget.primaryColor,
+                    needleHeight,
+                    isGlass: true,
+                  ),
                   // Pointer Emitter (Top)
                   Positioned(
                     top: widget.isCompact ? 2.h : 5.h,
@@ -314,23 +328,24 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
                       children: [
                         // Pulsing Halo (Visual Feedback)
                         RepaintBoundary(
-                          child: Container(
-                            width: widget.isCompact ? 16.r : 24.r,
-                            height: widget.isCompact ? 16.r : 24.r,
-                            decoration: BoxDecoration(
-                              color: widget.primaryColor.withValues(
-                                alpha: 0.3,
-                              ),
-                              shape: BoxShape.circle,
-                            ),
-                          )
-                          .animate(onPlay: (c) => c.repeat())
-                          .scale(
-                            begin: const Offset(0.8, 0.8),
-                            end: const Offset(1.2, 1.2),
-                            duration: 1.seconds,
-                          )
-                          .fadeOut(),
+                          child:
+                              Container(
+                                    width: widget.isCompact ? 16.r : 24.r,
+                                    height: widget.isCompact ? 16.r : 24.r,
+                                    decoration: BoxDecoration(
+                                      color: widget.primaryColor.withValues(
+                                        alpha: 0.3,
+                                      ),
+                                      shape: BoxShape.circle,
+                                    ),
+                                  )
+                                  .animate(onPlay: (c) => c.repeat())
+                                  .scale(
+                                    begin: const Offset(0.8, 0.8),
+                                    end: const Offset(1.2, 1.2),
+                                    duration: 1.seconds,
+                                  )
+                                  .fadeOut(),
                         ),
                         // Emitter Core
                         RepaintBoundary(

@@ -38,10 +38,14 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
       width: 1.sw,
       height: 400.h,
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF07070F) : Colors.black.withValues(alpha: 0.02),
+        color: isDark
+            ? const Color(0xFF07070F)
+            : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(36.r),
         border: Border.all(
-          color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.03),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.03)
+              : Colors.black.withValues(alpha: 0.03),
         ),
       ),
       child: LayoutBuilder(
@@ -54,11 +58,16 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
 
           // Calculate horizontal positioning of 3 terminal nodes evenly spaced along a curved arc
           final double leftPadding = 45.w;
-          final List<Offset> terminalCenters = List.generate(options.length, (i) {
-            double x = leftPadding + i * (width - 2 * leftPadding) / (options.length - 1);
-            
+          final List<Offset> terminalCenters = List.generate(options.length, (
+            i,
+          ) {
+            double x =
+                leftPadding +
+                i * (width - 2 * leftPadding) / (options.length - 1);
+
             // Dip in vertical height at centers to create a beautiful sweeping arc curve
-            double arcOffset = 25.h * math.sin((i / (options.length - 1)) * math.pi);
+            double arcOffset =
+                25.h * math.sin((i / (options.length - 1)) * math.pi);
             double y = 80.h - arcOffset;
             return Offset(x, y);
           });
@@ -97,8 +106,13 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
                   height: 90.r,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    border: Border.all(color: color.withValues(alpha: 0.2), width: 1.5),
-                    color: isDark ? Colors.white.withValues(alpha: 0.02) : Colors.black.withValues(alpha: 0.01),
+                    border: Border.all(
+                      color: color.withValues(alpha: 0.2),
+                      width: 1.5,
+                    ),
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.02)
+                        : Colors.black.withValues(alpha: 0.01),
                   ),
                 ),
               ),
@@ -110,34 +124,39 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
                   top: launchCenter.dy + probeOffset.dy - 36.r,
                   child: GestureDetector(
                     onPanStart: onProbeDragStart,
-                    onPanUpdate: (details) => onProbeDragUpdate(details, launchCenter, terminalCenters),
-                    onPanEnd: (_) => onProbeDragEnd(correctIndex),
-                    child: Container(
-                      width: 72.r,
-                      height: 72.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: color,
-                        boxShadow: [
-                          BoxShadow(
-                            color: color.withValues(alpha: 0.4),
-                            blurRadius: 15,
-                            spreadRadius: 2,
-                          ),
-                        ],
-                      ),
-                      child: Icon(
-                        Icons.gps_fixed_rounded,
-                        color: Colors.white,
-                        size: 32.r,
-                      ),
-                    ).animate(
-                      onPlay: (c) => c.repeat(reverse: true),
-                    ).scale(
-                      begin: const Offset(1, 1),
-                      end: const Offset(1.1, 1.1),
-                      duration: 800.ms,
+                    onPanUpdate: (details) => onProbeDragUpdate(
+                      details,
+                      launchCenter,
+                      terminalCenters,
                     ),
+                    onPanEnd: (_) => onProbeDragEnd(correctIndex),
+                    child:
+                        Container(
+                              width: 72.r,
+                              height: 72.r,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: color,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: color.withValues(alpha: 0.4),
+                                    blurRadius: 15,
+                                    spreadRadius: 2,
+                                  ),
+                                ],
+                              ),
+                              child: Icon(
+                                Icons.gps_fixed_rounded,
+                                color: Colors.white,
+                                size: 32.r,
+                              ),
+                            )
+                            .animate(onPlay: (c) => c.repeat(reverse: true))
+                            .scale(
+                              begin: const Offset(1, 1),
+                              end: const Offset(1.1, 1.1),
+                              duration: 800.ms,
+                            ),
                   ),
                 ),
             ],
@@ -147,18 +166,16 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
     );
   }
 
-  Widget _buildPathTerminalNode(
-    int index,
-    String text,
-    Offset position,
-  ) {
+  Widget _buildPathTerminalNode(int index, String text, Offset position) {
     final bool isHovered = hoveredIndex == index;
     final bool isSelected = selectedIndex == index;
     final bool hideOther = isAnswered && !isSelected;
 
     Color termColor = color;
     if (isAnswered && isSelected) {
-      termColor = (index == correctIndex) ? Colors.greenAccent : Colors.redAccent;
+      termColor = (index == correctIndex)
+          ? Colors.greenAccent
+          : Colors.redAccent;
     }
 
     return AnimatedPositioned(
@@ -175,14 +192,18 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
               height: 72.r,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: isHovered ? color : (isDark ? const Color(0xFF0F0F1B) : Colors.white),
+                color: isHovered
+                    ? color
+                    : (isDark ? const Color(0xFF0F0F1B) : Colors.white),
                 border: Border.all(
                   color: isSelected ? termColor : color.withValues(alpha: 0.5),
                   width: isSelected || isHovered ? 3.0 : 1.5,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: (isSelected ? termColor : color).withValues(alpha: isHovered || isSelected ? 0.35 : 0.1),
+                    color: (isSelected ? termColor : color).withValues(
+                      alpha: isHovered || isSelected ? 0.35 : 0.1,
+                    ),
                     blurRadius: 12,
                     spreadRadius: 1,
                   ),
@@ -190,7 +211,9 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
               ),
               child: Icon(
                 isAnswered && isSelected
-                    ? (index == correctIndex ? Icons.verified_rounded : Icons.cancel_outlined)
+                    ? (index == correctIndex
+                          ? Icons.verified_rounded
+                          : Icons.cancel_outlined)
                     : Icons.alt_route_rounded,
                 color: isHovered || (isAnswered && isSelected)
                     ? Colors.white
@@ -206,7 +229,8 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
                 textAlign: TextAlign.center,
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                   color: isHovered

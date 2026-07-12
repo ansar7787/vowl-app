@@ -29,7 +29,8 @@ class ClauseCard extends StatelessWidget {
           : Colors.black.withValues(alpha: 0.04),
       child: Text(
         text,
-        style: TextStyle(fontFamily: 'Outfit', 
+        style: TextStyle(
+          fontFamily: 'Outfit',
           fontSize: 18.sp,
           fontWeight: FontWeight.w600,
           color: isDark ? Colors.white : Colors.black87,

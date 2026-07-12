@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class SituationalResponseInstruction extends StatelessWidget {
   final Color primaryColor;
 
-  const SituationalResponseInstruction({
-    super.key,
-    required this.primaryColor,
-  });
+  const SituationalResponseInstruction({super.key, required this.primaryColor});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,8 @@ class SituationalResponseInstruction extends StatelessWidget {
           ),
           child: Text(
             "TENSION REEL DECISION MATRIX",
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,
@@ -33,7 +32,8 @@ class SituationalResponseInstruction extends StatelessWidget {
         Text(
           "Replicate the best reaction before tension peaks",
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 16.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class MorphInjectionRail extends StatefulWidget {
   final int index;
   final String suffix;
@@ -217,7 +218,8 @@ class _HandleDecoration extends StatelessWidget {
             Flexible(
               child: Text(
                 suffix.toUpperCase(),
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 15.sp,
                   fontWeight: FontWeight.w900,
                   color: Colors.white,

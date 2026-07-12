@@ -49,7 +49,8 @@ class WordReorderCheckButton extends StatelessWidget {
           child: Center(
             child: Text(
               "CHECK SENTENCE",
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w900,
                 color: hasWords

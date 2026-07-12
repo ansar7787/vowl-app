@@ -47,7 +47,9 @@ class _KidsExplanationCardState extends State<KidsExplanationCard> {
   @override
   Widget build(BuildContext context) {
     final bool isDark = Theme.of(context).brightness == Brightness.dark;
-    final String explanation = widget.quest.explanation ?? "Oops! Let's look closely and try that again.";
+    final String explanation =
+        widget.quest.explanation ??
+        "Oops! Let's look closely and try that again.";
 
     return Container(
       width: double.infinity,
@@ -141,6 +143,11 @@ class _KidsExplanationCardState extends State<KidsExplanationCard> {
           SizedBox(height: MediaQuery.of(context).padding.bottom + 8.h),
         ],
       ),
-    ).animate().slideY(begin: 1.0, end: 0.0, duration: 400.ms, curve: Curves.easeOutBack);
+    ).animate().slideY(
+      begin: 1.0,
+      end: 0.0,
+      duration: 400.ms,
+      curve: Curves.easeOutBack,
+    );
   }
 }

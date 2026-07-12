@@ -307,4 +307,3 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
     }
   }
 }
-

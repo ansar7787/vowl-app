@@ -49,11 +49,15 @@ class SpeakingFeedbackCard extends StatelessWidget {
   IconData get _icon =>
       success ? Icons.check_circle_rounded : Icons.error_rounded;
 
-  String _title(BuildContext context) => success ? context.tr('games.excellent') : context.tr('games.not_quite');
+  String _title(BuildContext context) =>
+      success ? context.tr('games.excellent') : context.tr('games.not_quite');
 
   String _buttonText(BuildContext context) {
     if (success) return context.tr('common.continue_text').toUpperCase();
-    if (isFinalFailure) return livesRemaining == 0 ? context.tr('games.see_results') : context.tr('common.continue_text').toUpperCase();
+    if (isFinalFailure)
+      return livesRemaining == 0
+          ? context.tr('games.see_results')
+          : context.tr('common.continue_text').toUpperCase();
     return context.tr('games.try_again').toUpperCase();
   }
 
@@ -61,8 +65,14 @@ class SpeakingFeedbackCard extends StatelessWidget {
     if (success) return context.tr('games.semantic_correct_continue');
     if (isFinalFailure) {
       return livesRemaining == 0
-          ? context.tr('games.semantic_incorrect_explanation', args: ['', context.tr('games.see_results')])
-          : context.tr('games.semantic_incorrect_explanation', args: ['', context.tr('common.continue_text')]);
+          ? context.tr(
+              'games.semantic_incorrect_explanation',
+              args: ['', context.tr('games.see_results')],
+            )
+          : context.tr(
+              'games.semantic_incorrect_explanation',
+              args: ['', context.tr('common.continue_text')],
+            );
     }
     return context.tr('games.semantic_incorrect_try_again');
   }
@@ -115,7 +125,9 @@ class SpeakingFeedbackCard extends StatelessWidget {
     return Row(
       children: [
         Semantics(
-          label: success ? context.tr('games.correct') : context.tr('games.incorrect'),
+          label: success
+              ? context.tr('games.correct')
+              : context.tr('games.incorrect'),
           child: Container(
             padding: EdgeInsets.all(8.r),
             decoration: BoxDecoration(

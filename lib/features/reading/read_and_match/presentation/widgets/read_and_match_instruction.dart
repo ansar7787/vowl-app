@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ReadAndMatchInstruction extends StatelessWidget {
   final Color primaryColor;
 
-  const ReadAndMatchInstruction({
-    super.key,
-    required this.primaryColor,
-  });
+  const ReadAndMatchInstruction({super.key, required this.primaryColor});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +23,8 @@ class ReadAndMatchInstruction extends StatelessWidget {
           Flexible(
             child: Text(
               "TAP A CONCEPT ON LEFT, THEN ITS DEFINITION ON RIGHT",
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: primaryColor,

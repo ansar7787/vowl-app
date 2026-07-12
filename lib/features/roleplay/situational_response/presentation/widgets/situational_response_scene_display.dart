@@ -30,11 +30,7 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
         borderRadius: BorderRadius.circular(30.r),
         border: Border.all(color: color.withValues(alpha: 0.15), width: 1.5),
         boxShadow: [
-          BoxShadow(
-            color: glowColor,
-            blurRadius: 15,
-            spreadRadius: -3,
-          ),
+          BoxShadow(color: glowColor, blurRadius: 15, spreadRadius: -3),
         ],
       ),
       child: Column(
@@ -46,7 +42,8 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "ACTIVE SCENARIO",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 12.sp,
                   fontWeight: FontWeight.bold,
                   color: color,
@@ -57,7 +54,10 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
               ScaleButton(
                 onTap: onListen,
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 4.h,
+                  ),
                   decoration: BoxDecoration(
                     color: color.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12.r),
@@ -68,7 +68,8 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
                       SizedBox(width: 4.w),
                       Text(
                         "LISTEN",
-                        style: TextStyle(fontFamily: 'Outfit', 
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
                           fontSize: 10.sp,
                           fontWeight: FontWeight.bold,
                           color: color,
@@ -84,7 +85,8 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
           Text(
             quest.scene ?? "",
             textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 20.sp,
               color: isDark ? Colors.white : Colors.black87,
               height: 1.3,

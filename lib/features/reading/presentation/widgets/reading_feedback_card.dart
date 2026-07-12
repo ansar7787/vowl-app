@@ -55,11 +55,15 @@ class ReadingFeedbackCard extends StatelessWidget {
   IconData get _icon =>
       _success ? Icons.check_circle_rounded : Icons.error_rounded;
 
-  String _title(BuildContext context) => _success ? context.tr('games.excellent') : context.tr('games.not_quite');
+  String _title(BuildContext context) =>
+      _success ? context.tr('games.excellent') : context.tr('games.not_quite');
 
   String _buttonText(BuildContext context) {
     if (_success) return context.tr('common.continue_text').toUpperCase();
-    if (isFinalFailure) return lives == 0 ? context.tr('games.see_results') : context.tr('common.continue_text').toUpperCase();
+    if (isFinalFailure)
+      return lives == 0
+          ? context.tr('games.see_results')
+          : context.tr('common.continue_text').toUpperCase();
     return context.tr('games.try_again').toUpperCase();
   }
 
@@ -75,7 +79,10 @@ class ReadingFeedbackCard extends StatelessWidget {
     if (_showExplanation) {
       // _showExplanation guards non-null; ?? keeps the static analyser happy.
       final answer = currentQuest.correctAnswer ?? '';
-      return context.tr('games.semantic_incorrect_explanation', args: [answer, _buttonText(context)]);
+      return context.tr(
+        'games.semantic_incorrect_explanation',
+        args: [answer, _buttonText(context)],
+      );
     }
     return context.tr('games.semantic_incorrect_try_again');
   }

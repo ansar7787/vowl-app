@@ -18,14 +18,24 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
     required this.isDark,
   });
 
-  List<Widget> _buildHighlightedSentence(String text, String targetPhoneme, bool isDark) {
+  List<Widget> _buildHighlightedSentence(
+    String text,
+    String targetPhoneme,
+    bool isDark,
+  ) {
     final soundService = di.sl<SoundService>();
     final words = text.split(' ');
-    final String phonemeChar = targetPhoneme.replaceAll('[', '').replaceAll(']', '').toLowerCase();
+    final String phonemeChar = targetPhoneme
+        .replaceAll('[', '')
+        .replaceAll(']', '')
+        .toLowerCase();
 
     return words.map((word) {
-      final String cleanWord = word.replaceAll(RegExp(r'[^\w]'), '').toLowerCase();
-      final bool hasPhoneme = cleanWord.contains(phonemeChar) && phonemeChar.isNotEmpty;
+      final String cleanWord = word
+          .replaceAll(RegExp(r'[^\w]'), '')
+          .toLowerCase();
+      final bool hasPhoneme =
+          cleanWord.contains(phonemeChar) && phonemeChar.isNotEmpty;
 
       return GestureDetector(
         onTap: () => soundService.playTts(word),
@@ -34,7 +44,9 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
           decoration: BoxDecoration(
             color: hasPhoneme
-                ? (isDark ? Colors.orange[900]!.withValues(alpha: 0.25) : Colors.orange[100]!)
+                ? (isDark
+                      ? Colors.orange[900]!.withValues(alpha: 0.25)
+                      : Colors.orange[100]!)
                 : Colors.transparent,
             borderRadius: BorderRadius.circular(8.r),
             border: Border.all(
@@ -48,13 +60,14 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
                     BoxShadow(
                       color: Colors.orangeAccent.withValues(alpha: 0.1),
                       blurRadius: 6,
-                    )
+                    ),
                   ]
                 : [],
           ),
           child: Text(
             word,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 18.sp,
               fontWeight: hasPhoneme ? FontWeight.bold : FontWeight.w500,
               color: hasPhoneme
@@ -81,14 +94,19 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
             children: [
               Text(
                 "HEATMAP SENTENCE (TAP TO LISTEN)",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 10.sp,
                   color: Colors.grey,
                 ),
               ),
               ScaleButton(
                 onTap: () => soundService.playTts(quest.textToSpeak ?? ""),
-                child: Icon(Icons.volume_up_rounded, color: primaryColor, size: 18.r),
+                child: Icon(
+                  Icons.volume_up_rounded,
+                  color: primaryColor,
+                  size: 18.r,
+                ),
               ),
             ],
           ),

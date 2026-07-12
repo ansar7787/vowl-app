@@ -6,10 +6,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 class KidsRoomExitDialog extends StatelessWidget {
   final VoidCallback onExit;
 
-  const KidsRoomExitDialog({
-    super.key,
-    required this.onExit,
-  });
+  const KidsRoomExitDialog({super.key, required this.onExit});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +33,8 @@ class KidsRoomExitDialog extends StatelessWidget {
               children: [
                 Text(
                   "LEAVING SO SOON?",
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 22.sp,
                     fontWeight: FontWeight.w900,
                     color: const Color(0xFF7E22CE),
@@ -47,7 +45,8 @@ class KidsRoomExitDialog extends StatelessWidget {
                 Text(
                   "Your buddy will miss you! Stay a bit longer to earn more coins? ❤️",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: 'Outfit', 
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
                     fontSize: 14.sp,
                     color: Colors.black54,
                     fontWeight: FontWeight.w800,
@@ -64,15 +63,22 @@ class KidsRoomExitDialog extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20.r),
-                            border: Border.all(color: Colors.grey.shade300, width: 3.w),
+                            border: Border.all(
+                              color: Colors.grey.shade300,
+                              width: 3.w,
+                            ),
                             boxShadow: [
-                              BoxShadow(color: Colors.grey.shade300, offset: Offset(0, 4.h)),
+                              BoxShadow(
+                                color: Colors.grey.shade300,
+                                offset: Offset(0, 4.h),
+                              ),
                             ],
                           ),
                           child: Center(
                             child: Text(
                               "EXIT",
-                              style: TextStyle(fontFamily: 'Outfit', 
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w900,
                                 color: Colors.grey.shade600,
@@ -91,7 +97,10 @@ class KidsRoomExitDialog extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: const Color(0xFF10B981),
                             borderRadius: BorderRadius.circular(20.r),
-                            border: Border.all(color: const Color(0xFF047857), width: 3.w),
+                            border: Border.all(
+                              color: const Color(0xFF047857),
+                              width: 3.w,
+                            ),
                             boxShadow: [
                               BoxShadow(
                                 color: const Color(0xFF047857),
@@ -102,7 +111,8 @@ class KidsRoomExitDialog extends StatelessWidget {
                           child: Center(
                             child: Text(
                               "STAY",
-                              style: TextStyle(fontFamily: 'Outfit', 
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w900,
                                 color: Colors.white,

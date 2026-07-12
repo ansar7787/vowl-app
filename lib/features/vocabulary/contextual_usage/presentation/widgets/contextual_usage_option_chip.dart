@@ -63,7 +63,8 @@ class ContextualUsageOptionChip extends StatelessWidget {
         child: Text(
           text.toUpperCase(),
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 14.sp,
             fontWeight: FontWeight.w800,
             color: textColor,

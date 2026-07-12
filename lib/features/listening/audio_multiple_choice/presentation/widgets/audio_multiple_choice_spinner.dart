@@ -49,10 +49,13 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
               height: 300.r,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                border: Border.all(color: color.withValues(alpha: 0.1), width: 2),
+                border: Border.all(
+                  color: color.withValues(alpha: 0.1),
+                  width: 2,
+                ),
               ),
             ),
-            
+
             // Central Core
             ScaleButton(
               onTap: onTapCore,
@@ -66,21 +69,29 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                     BoxShadow(
                       color: color.withValues(alpha: 0.4),
                       blurRadius: 20,
-                    )
+                    ),
                   ],
                 ),
-                child: Icon(Icons.graphic_eq_rounded, color: Colors.white, size: 50.r),
+                child: Icon(
+                  Icons.graphic_eq_rounded,
+                  color: Colors.white,
+                  size: 50.r,
+                ),
               ),
             ),
-            
+
             // Satellite Options
             ...List.generate(options.length, (index) {
-              double angle = (index * (2 * 3.14159 / options.length)) + rotation;
+              double angle =
+                  (index * (2 * 3.14159 / options.length)) + rotation;
               double radius = 130.r;
               return Align(
                 alignment: Alignment.center,
                 child: Transform.translate(
-                  offset: Offset(radius * math.cos(angle), radius * math.sin(angle)),
+                  offset: Offset(
+                    radius * math.cos(angle),
+                    radius * math.sin(angle),
+                  ),
                   child: AudioMultipleChoiceSatellite(
                     index: index,
                     text: options[index],
@@ -94,18 +105,21 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                 ),
               );
             }),
-            
+
             // Target Zone
             Positioned(
               top: 40.h,
-              child: Container(
-                width: 40.w,
-                height: 10.h,
-                decoration: BoxDecoration(
-                  color: Colors.white24,
-                  borderRadius: BorderRadius.circular(5.r),
-                ),
-              ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 1.seconds),
+              child:
+                  Container(
+                        width: 40.w,
+                        height: 10.h,
+                        decoration: BoxDecoration(
+                          color: Colors.white24,
+                          borderRadius: BorderRadius.circular(5.r),
+                        ),
+                      )
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .shimmer(duration: 1.seconds),
             ),
           ],
         ),

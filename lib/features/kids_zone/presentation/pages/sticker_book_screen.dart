@@ -533,10 +533,11 @@ class _StickerBookScreenState extends State<StickerBookScreen>
               : () {
                   Haptics.vibrate(HapticsType.warning);
                   CustomSnackBar.show(
-      context: context,
-      message: "🔒 Complete $level quests in this category to unlock this sticker!",
-      type: CustomSnackBarType.info,
-    );
+                    context: context,
+                    message:
+                        "🔒 Complete $level quests in this category to unlock this sticker!",
+                    type: CustomSnackBarType.info,
+                  );
                 },
           child: Container(
             decoration: BoxDecoration(

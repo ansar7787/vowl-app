@@ -79,7 +79,7 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
               child: AnimatedDefaultTextStyle(
                 duration: 300.ms,
                 style: TextStyle(
-                  fontFamily: 'Outfit', 
+                  fontFamily: 'Outfit',
                   fontSize: widget.isCompact ? 12.sp : 16.sp,
                   fontWeight: isSelected ? FontWeight.w900 : FontWeight.w600,
                   color: isSelected
@@ -97,17 +97,23 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
           onPanStart: (details) {
             if (widget.isAnswered) return;
             final pos = details.localPosition;
-            _panStartAngle = atan2(pos.dy - gestureCenter.dy, pos.dx - gestureCenter.dx) - _rotation;
+            _panStartAngle =
+                atan2(pos.dy - gestureCenter.dy, pos.dx - gestureCenter.dx) -
+                _rotation;
           },
           onPanUpdate: (details) {
             if (widget.isAnswered) return;
             final pos = details.localPosition;
-            final currentAngle = atan2(pos.dy - gestureCenter.dy, pos.dx - gestureCenter.dx);
+            final currentAngle = atan2(
+              pos.dy - gestureCenter.dy,
+              pos.dx - gestureCenter.dx,
+            );
             final newRotation = currentAngle - _panStartAngle;
 
             final count = widget.options.length;
             final normalizedRot = (newRotation + pi / 2) % (2 * pi);
-            final rawIndex = (count - (normalizedRot / (2 * pi) * count).round()) % count;
+            final rawIndex =
+                (count - (normalizedRot / (2 * pi) * count).round()) % count;
             final selected = rawIndex.clamp(0, count - 1);
 
             if (selected != _selectedIndex) {
@@ -170,7 +176,9 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
                         child: Container(
                           width: 2.r,
                           height: widget.isCompact ? 4.r : 8.r,
-                          margin: EdgeInsets.only(top: widget.isCompact ? 6.r : 10.r),
+                          margin: EdgeInsets.only(
+                            top: widget.isCompact ? 6.r : 10.r,
+                          ),
                           color: widget.primaryColor.withValues(alpha: 0.2),
                         ),
                       ),
@@ -182,7 +190,9 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
                     child: Container(
                       width: widget.isCompact ? 4.r : 6.r,
                       height: widget.isCompact ? 22.r : 35.r,
-                      margin: EdgeInsets.only(top: widget.isCompact ? 10.r : 15.r),
+                      margin: EdgeInsets.only(
+                        top: widget.isCompact ? 10.r : 15.r,
+                      ),
                       decoration: BoxDecoration(
                         color: widget.primaryColor,
                         borderRadius: BorderRadius.circular(3.r),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+
 class EmotionRecognitionNeuralField extends StatelessWidget {
   final List<String> options;
   final int correctAnswerIndex;
@@ -45,26 +46,32 @@ class EmotionRecognitionNeuralField extends StatelessWidget {
                     size: Size(constraints.maxWidth, constraints.maxHeight),
                     painter: NeuralGridPainter(color.withValues(alpha: 0.1)),
                   ),
-  
+
                   // The Neural Grid Targets
                   ...List.generate(options.length, (index) {
                     double xDist = 110.w;
                     double yDist = 130.h;
                     double x = (index % 2 == 0) ? -xDist : xDist;
                     double y = (index < 2) ? -yDist : yDist;
-                    
+
                     return Transform.translate(
                       offset: Offset(x, y),
-                      child: _buildReservoir(index, options[index], correctAnswerIndex, color),
+                      child: _buildReservoir(
+                        index,
+                        options[index],
+                        correctAnswerIndex,
+                        color,
+                      ),
                     );
                   }),
-                  
+
                   // The Psychology Core (Draggable Orb)
                   Transform.translate(
                     offset: offset,
                     child: GestureDetector(
                       behavior: HitTestBehavior.opaque,
-                      onPanUpdate: (details) => onCoreMove(details.delta, constraints),
+                      onPanUpdate: (details) =>
+                          onCoreMove(details.delta, constraints),
                       onPanEnd: (_) {
                         for (int i = 0; i < options.length; i++) {
                           double xDist = 110.w;
@@ -84,15 +91,31 @@ class EmotionRecognitionNeuralField extends StatelessWidget {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           gradient: RadialGradient(
-                            colors: [Colors.white, color, color.withValues(alpha: 0.8)],
+                            colors: [
+                              Colors.white,
+                              color,
+                              color.withValues(alpha: 0.8),
+                            ],
                             stops: const [0.1, 0.4, 1.0],
                           ),
                           boxShadow: [
-                            BoxShadow(color: color.withValues(alpha: 0.6), blurRadius: 20, spreadRadius: 5),
-                            BoxShadow(color: Colors.white.withValues(alpha: 0.4), blurRadius: 10, spreadRadius: 2),
+                            BoxShadow(
+                              color: color.withValues(alpha: 0.6),
+                              blurRadius: 20,
+                              spreadRadius: 5,
+                            ),
+                            BoxShadow(
+                              color: Colors.white.withValues(alpha: 0.4),
+                              blurRadius: 10,
+                              spreadRadius: 2,
+                            ),
                           ],
                         ),
-                        child: Icon(Icons.blur_on_rounded, color: Colors.white.withValues(alpha: 0.9), size: 35.r),
+                        child: Icon(
+                          Icons.blur_on_rounded,
+                          color: Colors.white.withValues(alpha: 0.9),
+                          size: 35.r,
+                        ),
                       ),
                     ),
                   ),
@@ -109,8 +132,10 @@ class EmotionRecognitionNeuralField extends StatelessWidget {
     bool isSelected = selectedIndex == index;
     bool isCorrect = isAnswered && index == correct && isCorrectState == true;
     bool isWrong = isAnswered && isSelected && isCorrectState == false;
-    
-    Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : color);
+
+    Color tileColor = isCorrect
+        ? Colors.greenAccent
+        : (isWrong ? Colors.redAccent : color);
 
     return AnimatedContainer(
       duration: 300.ms,
@@ -121,11 +146,19 @@ class EmotionRecognitionNeuralField extends StatelessWidget {
         color: tileColor.withValues(alpha: 0.05),
         shape: BoxShape.circle,
         border: Border.all(
-          color: tileColor.withValues(alpha: (isCorrect || isWrong) ? 0.8 : 0.2), 
+          color: tileColor.withValues(
+            alpha: (isCorrect || isWrong) ? 0.8 : 0.2,
+          ),
           width: (isCorrect || isWrong) ? 3 : 1.5,
         ),
-        boxShadow: (isCorrect || isWrong) 
-            ? [BoxShadow(color: tileColor.withValues(alpha: 0.3), blurRadius: 15, spreadRadius: 2)]
+        boxShadow: (isCorrect || isWrong)
+            ? [
+                BoxShadow(
+                  color: tileColor.withValues(alpha: 0.3),
+                  blurRadius: 15,
+                  spreadRadius: 2,
+                ),
+              ]
             : [],
       ),
       child: Center(
@@ -133,14 +166,19 @@ class EmotionRecognitionNeuralField extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(_getEmotionEmoji(text), style: TextStyle(fontSize: 22.sp))
-              .animate(target: (isCorrect || isWrong) ? 1 : 0)
-              .scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2), curve: Curves.elasticOut),
+                .animate(target: (isCorrect || isWrong) ? 1 : 0)
+                .scale(
+                  begin: const Offset(1, 1),
+                  end: const Offset(1.2, 1.2),
+                  curve: Curves.elasticOut,
+                ),
             SizedBox(height: 2.h),
             FittedBox(
               child: Text(
-                text.toUpperCase(), 
-                textAlign: TextAlign.center, 
-                style: TextStyle(fontFamily: 'Outfit', 
+                text.toUpperCase(),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 8.sp,
                   fontWeight: FontWeight.w900,
                   color: tileColor,
@@ -157,23 +195,34 @@ class EmotionRecognitionNeuralField extends StatelessWidget {
   String _getEmotionEmoji(String emotion) {
     switch (emotion.toLowerCase()) {
       case 'angry':
-      case 'anger': return '😡';
+      case 'anger':
+        return '😡';
       case 'excited':
-      case 'excitement': return '🤩';
+      case 'excitement':
+        return '🤩';
       case 'sad':
-      case 'sadness': return '😢';
+      case 'sadness':
+        return '😢';
       case 'bored':
-      case 'boredom': return '😑';
+      case 'boredom':
+        return '😑';
       case 'happy':
-      case 'happiness': return '😊';
+      case 'happiness':
+        return '😊';
       case 'surprised':
-      case 'surprise': return '😲';
-      case 'curious': return '🤔';
-      case 'neutral': return '😐';
+      case 'surprise':
+        return '😲';
+      case 'curious':
+        return '🤔';
+      case 'neutral':
+        return '😐';
       case 'fear':
-      case 'afraid': return '😨';
-      case 'confident': return '😎';
-      default: return '🎭';
+      case 'afraid':
+        return '😨';
+      case 'confident':
+        return '😎';
+      default:
+        return '🎭';
     }
   }
 }
@@ -188,25 +237,43 @@ class NeuralGridPainter extends CustomPainter {
       ..color = color
       ..strokeWidth = 1.5
       ..style = PaintingStyle.stroke;
-      
+
     double centerX = size.width / 2;
     double centerY = size.height / 2;
-    
+
     final lineGradient = RadialGradient(
       colors: [color.withValues(alpha: 0.5), color.withValues(alpha: 0.0)],
       stops: const [0.5, 1.0],
     ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
-    
+
     final linePaint = Paint()
       ..shader = lineGradient
       ..strokeWidth = 1;
-      
-    canvas.drawLine(Offset(centerX, 0), Offset(centerX, size.height), linePaint);
+
+    canvas.drawLine(
+      Offset(centerX, 0),
+      Offset(centerX, size.height),
+      linePaint,
+    );
     canvas.drawLine(Offset(0, centerY), Offset(size.width, centerY), linePaint);
-    
+
     canvas.drawCircle(Offset(centerX, centerY), 50.r, paint);
-    canvas.drawCircle(Offset(centerX, centerY), 100.r, Paint()..color = color.withAlpha(40)..style = PaintingStyle.stroke..strokeWidth = 1.5);
-    canvas.drawCircle(Offset(centerX, centerY), 150.r, Paint()..color = color.withAlpha(20)..style = PaintingStyle.stroke..strokeWidth = 1.5);
+    canvas.drawCircle(
+      Offset(centerX, centerY),
+      100.r,
+      Paint()
+        ..color = color.withAlpha(40)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.5,
+    );
+    canvas.drawCircle(
+      Offset(centerX, centerY),
+      150.r,
+      Paint()
+        ..color = color.withAlpha(20)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.5,
+    );
   }
 
   @override

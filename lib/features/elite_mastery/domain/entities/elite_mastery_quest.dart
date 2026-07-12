@@ -13,7 +13,6 @@ class EliteMasteryQuest extends GameQuest {
   final String? spellingRule;
   final String? sequenceLogic;
 
-
   const EliteMasteryQuest({
     required super.id,
     super.type,

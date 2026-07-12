@@ -255,14 +255,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildKeyShopBanner(BuildContext context, user) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final keys = user.keys ?? 0;
-    
+
     return ScaleButton(
       onTap: () {
         di.sl<HapticService>().selection();
-        KeyShopBottomSheet.show(
-          context: context,
-          isKidsMode: false,
-        );
+        KeyShopBottomSheet.show(context: context, isKidsMode: false);
       },
       child: GlassTile(
         borderRadius: BorderRadius.circular(24.r),

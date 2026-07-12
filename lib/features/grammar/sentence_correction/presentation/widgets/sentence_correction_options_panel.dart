@@ -46,7 +46,8 @@ class SentenceCorrectionOptionsPanel extends StatelessWidget {
           children: [
             Text(
               "GLITCH IDENTIFIED: CHOOSE THE CORRECTION",
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 11.sp,
                 fontWeight: FontWeight.w900,
                 color: primaryColor,
@@ -61,9 +62,7 @@ class SentenceCorrectionOptionsPanel extends StatelessWidget {
               children: options.map((option) {
                 final isThisSelected = selectedOption == option;
                 return ScaleButton(
-                  onTap: isAnswered
-                      ? null
-                      : () => onOptionSelect(option),
+                  onTap: isAnswered ? null : () => onOptionSelect(option),
                   child: Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: 18.w,
@@ -73,8 +72,8 @@ class SentenceCorrectionOptionsPanel extends StatelessWidget {
                       color: isThisSelected
                           ? primaryColor.withValues(alpha: 0.15)
                           : (isDark
-                              ? Colors.white.withValues(alpha: 0.05)
-                              : Colors.black.withValues(alpha: 0.03)),
+                                ? Colors.white.withValues(alpha: 0.05)
+                                : Colors.black.withValues(alpha: 0.03)),
                       borderRadius: BorderRadius.circular(18.r),
                       border: Border.all(
                         color: isThisSelected
@@ -93,7 +92,8 @@ class SentenceCorrectionOptionsPanel extends StatelessWidget {
                     ),
                     child: Text(
                       option,
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w700,
                         color: isThisSelected
@@ -120,10 +120,7 @@ class SentenceCorrectionOptionsPanel extends StatelessWidget {
                               Colors.grey.withValues(alpha: 0.3),
                               Colors.grey.withValues(alpha: 0.4),
                             ]
-                          : [
-                              primaryColor,
-                              primaryColor.withValues(alpha: 0.8),
-                            ],
+                          : [primaryColor, primaryColor.withValues(alpha: 0.8)],
                     ),
                     boxShadow: !isOptionSelected
                         ? []
@@ -138,7 +135,8 @@ class SentenceCorrectionOptionsPanel extends StatelessWidget {
                   child: Center(
                     child: Text(
                       "EXECUTE REPAIR",
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w900,
                         color: !isOptionSelected

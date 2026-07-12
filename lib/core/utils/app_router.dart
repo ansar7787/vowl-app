@@ -127,7 +127,7 @@ class AppRouter {
     final isSignupRoute = path == signupRoute;
     final isForgotPasswordRoute = path == forgotPasswordRoute;
     final isSplashRoute = path == splashRoute;
-    
+
     final isAuthRoute = isLoginRoute || isSignupRoute || isForgotPasswordRoute;
     final isAllowedUnauth = isAuthRoute || isSplashRoute;
 
@@ -165,7 +165,10 @@ class AppRouter {
     }
 
     // 6. Authenticated, verified, and age-gated — redirect away from auth/verify/root/ageGate.
-    if (isAuthRoute || path == verifyEmailRoute || path == ageGateRoute || path == '/') {
+    if (isAuthRoute ||
+        path == verifyEmailRoute ||
+        path == ageGateRoute ||
+        path == '/') {
       // FIX (TESTABILITY): resolve FirebaseAuth through the DI container,
       // like every other dependency this method reads (`di.sl<AuthBloc>()`
       // above), rather than the static `FirebaseAuth.instance` singleton

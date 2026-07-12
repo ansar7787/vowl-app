@@ -163,7 +163,11 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                             correct: quest.correctAnswer ?? "",
                             color: theme.primaryColor,
                             isDark: isDark,
-                            onSelect: (selected, correct) => _selectReplacement(selected, correct, isAnswered),
+                            onSelect: (selected, correct) => _selectReplacement(
+                              selected,
+                              correct,
+                              isAnswered,
+                            ),
                           ),
                         ],
 

@@ -55,7 +55,9 @@ class WritingRemoteDataSourceImpl implements WritingRemoteDataSource {
             .toList();
       }
 
-      throw ServerException("We're having trouble loading this writing exercise. Please try again in a moment.");
+      throw ServerException(
+        "We're having trouble loading this writing exercise. Please try again in a moment.",
+      );
     } catch (e) {
       debugPrint('Error in getWritingQuest: $e');
       if (e is ServerException) rethrow;

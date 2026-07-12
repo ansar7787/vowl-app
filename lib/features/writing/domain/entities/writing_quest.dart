@@ -67,4 +67,3 @@ class WritingQuest extends GameQuest {
   String? get incorrectSentence => passage;
   String? get correctSentence => correctAnswer;
 }
-

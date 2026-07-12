@@ -8,10 +8,7 @@ class GetKidsQuests {
 
   const GetKidsQuests(this.repository);
 
-  Future<Either<Failure, List<KidsQuest>>> call(
-    String gameType,
-    int level,
-  ) {
+  Future<Either<Failure, List<KidsQuest>>> call(String gameType, int level) {
     return repository.getQuestsByLevel(gameType, level);
   }
 }

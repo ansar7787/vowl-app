@@ -25,19 +25,25 @@ class ClozeTestResult extends StatelessWidget {
       decoration: BoxDecoration(
         color: displayColor.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+        border: Border.all(
+          color: displayColor.withValues(alpha: 0.3),
+          width: 2,
+        ),
       ),
       child: Column(
         children: [
           Icon(
-            isCorrect ? Icons.check_circle_rounded : Icons.cancel_rounded, 
-            color: displayColor, 
+            isCorrect ? Icons.check_circle_rounded : Icons.cancel_rounded,
+            color: displayColor,
             size: 36.r,
           ),
           SizedBox(height: 10.h),
           Text(
-            isCorrect ? context.tr('games.correct').toUpperCase() : context.tr('games.incorrect_caps'),
-            style: TextStyle(fontFamily: 'Outfit', 
+            isCorrect
+                ? context.tr('games.correct').toUpperCase()
+                : context.tr('games.incorrect_caps'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 15.sp,
               fontWeight: FontWeight.w900,
               color: displayColor,
@@ -49,7 +55,8 @@ class ClozeTestResult extends StatelessWidget {
             Text(
               quest.explanation!,
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 12.sp,
                 color: isDark ? Colors.white60 : Colors.black54,
               ),

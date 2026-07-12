@@ -73,7 +73,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
   @override
   void initState() {
     super.initState();
-    _confettiController = ConfettiController(duration: const Duration(seconds: 3));
+    _confettiController = ConfettiController(
+      duration: const Duration(seconds: 3),
+    );
     _paymentService.init(
       onSuccess: _handlePaymentSuccess,
       onFailure: _handlePaymentFailure,
@@ -89,7 +91,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
         setState(() => _activePlans = plans);
       }
     } catch (e) {
-      di.sl<AppLogger>().warning('Failed to load dynamic plans, falling back to local defaults.');
+      di.sl<AppLogger>().warning(
+        'Failed to load dynamic plans, falling back to local defaults.',
+      );
     }
   }
 
@@ -140,7 +144,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
           di.sl<HapticService>().success();
           _confettiController.play();
-          
+
           setState(() {
             _isProcessing = false;
             _paymentCompleted = true;

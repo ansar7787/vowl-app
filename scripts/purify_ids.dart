@@ -7,7 +7,7 @@ void main() async {
   if (!curriculumDir.existsSync()) return;
 
   final entities = curriculumDir.listSync(recursive: true);
-  
+
   int totalFiles = 0;
   int totalRenamed = 0;
 
@@ -28,13 +28,17 @@ void main() async {
   for (final entity in entities) {
     if (entity is File && entity.path.endsWith('.json')) {
       totalFiles++;
-      
+
       final normalizedPath = entity.path.replaceAll('\\', '/');
-      final pathParts = normalizedPath.split('assets/curriculum/').last.split('/');
-      
+      final pathParts = normalizedPath
+          .split('assets/curriculum/')
+          .last
+          .split('/');
+
       String categoryKey = pathParts.first;
-      String category = categoryMap[categoryKey] ?? categoryKey.toUpperCase().substring(0, 3);
-      
+      String category =
+          categoryMap[categoryKey] ?? categoryKey.toUpperCase().substring(0, 3);
+
       String gameName = '';
       if (category == 'KID') {
         gameName = pathParts[1].toUpperCase();
@@ -59,23 +63,24 @@ void main() async {
         void processQuests(List quests, [int? fixedLevel]) {
           // Track quest index per level
           Map<int, int> levelQuestCounter = {};
-          
+
           for (var i = 0; i < quests.length; i++) {
             final quest = quests[i];
             if (quest is Map) {
               int currentLevel = fixedLevel ?? 0;
-              
+
               if (fixedLevel == null) {
                 // Try to determine level based on quest index and baseLevel
                 // Assuming 3 quests per level in Core games
                 currentLevel = baseLevel + (i ~/ 3);
               }
 
-              levelQuestCounter[currentLevel] = (levelQuestCounter[currentLevel] ?? 0) + 1;
+              levelQuestCounter[currentLevel] =
+                  (levelQuestCounter[currentLevel] ?? 0) + 1;
               final qIndex = levelQuestCounter[currentLevel];
-              
+
               final newId = '${category}_${gameName}_L${currentLevel}_Q$qIndex';
-              
+
               if (quest['id'] != newId) {
                 quest['id'] = newId;
                 modified = true;
@@ -91,7 +96,9 @@ void main() async {
           }
         } else if (data is List) {
           for (var levelObj in data) {
-            if (levelObj is Map && levelObj.containsKey('level') && levelObj.containsKey('quests')) {
+            if (levelObj is Map &&
+                levelObj.containsKey('level') &&
+                levelObj.containsKey('quests')) {
               processQuests(levelObj['quests'] as List, levelObj['level']);
             }
           }
@@ -101,7 +108,6 @@ void main() async {
           final encoder = const JsonEncoder.withIndent('  ');
           await entity.writeAsString(encoder.convert(data));
         }
-
       } catch (e) {
         print('❌ Error processing ${entity.path}: $e');
       }

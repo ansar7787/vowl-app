@@ -22,7 +22,9 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
   Widget build(BuildContext context) {
     Color outlineColor = color;
     if (isAnswered) {
-      outlineColor = (isCorrect ?? false) ? Colors.greenAccent : Colors.redAccent;
+      outlineColor = (isCorrect ?? false)
+          ? Colors.greenAccent
+          : Colors.redAccent;
     }
 
     return Container(
@@ -31,7 +33,10 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
         borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: outlineColor.withValues(alpha: 0.2), width: 1.5),
+        border: Border.all(
+          color: outlineColor.withValues(alpha: 0.2),
+          width: 1.5,
+        ),
         boxShadow: [
           BoxShadow(
             color: outlineColor.withValues(alpha: 0.08),
@@ -48,9 +53,12 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 isAnswered
-                    ? ((isCorrect ?? false) ? "ALIGNMENT STABLE" : "SIGNAL COLLAPSED")
+                    ? ((isCorrect ?? false)
+                          ? "ALIGNMENT STABLE"
+                          : "SIGNAL COLLAPSED")
                     : "CONSTELLATION HARMONICS",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 11.sp,
                   fontWeight: FontWeight.bold,
                   color: outlineColor,
@@ -67,13 +75,16 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
               decoration: BoxDecoration(
-                color: isDark ? Colors.black.withValues(alpha: 0.25) : Colors.black.withValues(alpha: 0.02),
+                color: isDark
+                    ? Colors.black.withValues(alpha: 0.25)
+                    : Colors.black.withValues(alpha: 0.02),
                 borderRadius: BorderRadius.circular(16.r),
               ),
               child: Text(
                 text.isEmpty ? "SELECT INITIAL STAR NODE..." : text,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Outfit', 
+                style: TextStyle(
+                  fontFamily: 'Outfit',
                   fontSize: 20.sp,
                   color: text.isEmpty
                       ? Colors.grey.shade600

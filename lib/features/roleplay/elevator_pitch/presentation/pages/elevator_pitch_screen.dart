@@ -215,7 +215,8 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
     return BlocConsumer<RoleplayBloc, RoleplayState>(
       listener: (context, state) {
         if (state is RoleplayLoaded) {
-          if (state.currentIndex != _lastProcessedIndex || (state.lastAnswerCorrect == null && _isAnswered)) {
+          if (state.currentIndex != _lastProcessedIndex ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -252,7 +253,8 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
         } else if (state is RoleplayGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRestore: () => context.read<RoleplayBloc>().add(const RestoreLife()),
+            onRestore: () =>
+                context.read<RoleplayBloc>().add(const RestoreLife()),
             onTutorPass: _tutorPass,
           );
         }

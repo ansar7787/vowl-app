@@ -287,7 +287,10 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
         _persistRewardSafely(
           'updateUnlockedLevel',
           () => updateUnlockedLevel(
-            UpdateUnlockedLevelParams(categoryId: gameTypeName, newLevel: level + 1),
+            UpdateUnlockedLevelParams(
+              categoryId: gameTypeName,
+              newLevel: level + 1,
+            ),
           ),
         ),
       ]);

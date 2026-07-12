@@ -140,8 +140,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Future<void> _handleLegalLink(BuildContext context, String title) async {
     final isTerms = title == context.tr('settings.terms_of_service');
-    
-    final urlString = isTerms 
+
+    final urlString = isTerms
         ? 'https://ansar7787.github.io/vowl-legal/terms.html'
         : 'https://ansar7787.github.io/vowl-legal/privacy.html';
 
@@ -153,7 +153,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
       if (context.mounted) {
         CustomSnackBar.show(
           context: context,
-          message: context.tr('settings.email_error', fallback: 'Could not open link'),
+          message: context.tr(
+            'settings.email_error',
+            fallback: 'Could not open link',
+          ),
           type: CustomSnackBarType.error,
         );
       }
@@ -398,13 +401,20 @@ class _SettingsPreferencesGroup extends StatelessWidget {
             ),
             if (isDark)
               SettingsSwitchTile(
-                title: context.tr('settings.midnight_mode', fallback: 'Midnight Mode'),
-                subtitle: context.tr('settings.midnight_mode_subtitle', fallback: 'True black background for OLED screens'),
+                title: context.tr(
+                  'settings.midnight_mode',
+                  fallback: 'Midnight Mode',
+                ),
+                subtitle: context.tr(
+                  'settings.midnight_mode_subtitle',
+                  fallback: 'True black background for OLED screens',
+                ),
                 icon: Icons.nightlight_round,
                 color: Colors.indigo,
                 value: context.watch<ThemeCubit>().state.isMidnight,
                 isLoading: false,
-                onChanged: (val) => context.read<ThemeCubit>().toggleMidnight(val),
+                onChanged: (val) =>
+                    context.read<ThemeCubit>().toggleMidnight(val),
               ),
             SettingsTile(
               title: context.tr('settings.language_selection'),

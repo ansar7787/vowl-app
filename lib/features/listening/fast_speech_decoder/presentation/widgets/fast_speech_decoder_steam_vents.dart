@@ -31,7 +31,8 @@ class FastSpeechDecoderSteamVents extends StatelessWidget {
         final isSelected = selectedIndex == index;
         final isChoiceCorrect =
             isAnswered && index == correctAnswerIndex && isCorrectState == true;
-        final isChoiceWrong = isAnswered && isSelected && isCorrectState == false;
+        final isChoiceWrong =
+            isAnswered && isSelected && isCorrectState == false;
 
         return Padding(
           padding: EdgeInsets.only(bottom: 10.h),
@@ -43,12 +44,12 @@ class FastSpeechDecoderSteamVents extends StatelessWidget {
                 color: isChoiceCorrect
                     ? Colors.greenAccent.withValues(alpha: 0.8)
                     : (isChoiceWrong
-                        ? Colors.redAccent.withValues(alpha: 0.8)
-                        : (isSelected ? color : const Color(0xFF1E1E24))),
+                          ? Colors.redAccent.withValues(alpha: 0.8)
+                          : (isSelected ? color : const Color(0xFF1E1E24))),
                 borderRadius: BorderRadius.circular(12.r),
                 border: Border.all(
-                  color: isChoiceCorrect || isChoiceWrong || isSelected 
-                      ? Colors.white.withValues(alpha: 0.5) 
+                  color: isChoiceCorrect || isChoiceWrong || isSelected
+                      ? Colors.white.withValues(alpha: 0.5)
                       : color.withValues(alpha: 0.2),
                   width: 1.5,
                 ),
@@ -60,10 +61,11 @@ class FastSpeechDecoderSteamVents extends StatelessWidget {
                   ),
                   if (isSelected || isChoiceCorrect || isChoiceWrong)
                     BoxShadow(
-                      color: (isChoiceCorrect
-                              ? Colors.greenAccent
-                              : (isChoiceWrong ? Colors.redAccent : color))
-                          .withValues(alpha: 0.4),
+                      color:
+                          (isChoiceCorrect
+                                  ? Colors.greenAccent
+                                  : (isChoiceWrong ? Colors.redAccent : color))
+                              .withValues(alpha: 0.4),
                       blurRadius: 15,
                       spreadRadius: 2,
                     ),
@@ -75,8 +77,8 @@ class FastSpeechDecoderSteamVents extends StatelessWidget {
                     isChoiceCorrect
                         ? Icons.verified_rounded
                         : (isChoiceWrong
-                            ? Icons.error_outline_rounded
-                            : Icons.air_rounded),
+                              ? Icons.error_outline_rounded
+                              : Icons.air_rounded),
                     color: Colors.white,
                     size: 18.r,
                   ),
@@ -84,9 +86,12 @@ class FastSpeechDecoderSteamVents extends StatelessWidget {
                   Expanded(
                     child: Text(
                       options[index],
-                      style: TextStyle(fontFamily: 'Outfit', 
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
                         fontSize: 14.sp,
-                        fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
+                        fontWeight: isSelected
+                            ? FontWeight.bold
+                            : FontWeight.w500,
                         color: Colors.white,
                       ),
                     ),

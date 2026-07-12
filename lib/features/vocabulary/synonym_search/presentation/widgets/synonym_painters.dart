@@ -7,7 +7,9 @@ class CosmicGridPainter extends CustomPainter {
   CosmicGridPainter(this.color);
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = color..strokeWidth = 1.0;
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = 1.0;
     const spacing = 40.0;
     for (double i = 0; i < size.width; i += spacing) {
       canvas.drawLine(Offset(i, 0), Offset(i, size.height), paint);
@@ -16,7 +18,9 @@ class CosmicGridPainter extends CustomPainter {
       canvas.drawLine(Offset(0, i), Offset(size.width, i), paint);
     }
   }
-  @override bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
 class TrailPainter extends CustomPainter {
@@ -44,7 +48,9 @@ class TrailPainter extends CustomPainter {
       canvas.drawCircle(points[i], (2 + progress * 3).r, dotPaint);
     }
   }
-  @override bool shouldRepaint(TrailPainter oldDelegate) => true;
+
+  @override
+  bool shouldRepaint(TrailPainter oldDelegate) => true;
 }
 
 class VortexPainter extends CustomPainter {
@@ -63,12 +69,18 @@ class VortexPainter extends CustomPainter {
       double angle = i * math.pi / 2;
       canvas.drawLine(
         center + Offset(math.cos(angle) * radius, math.sin(angle) * radius),
-        center + Offset(math.cos(angle + 0.5) * (radius + 10), math.sin(angle + 0.5) * (radius + 10)),
+        center +
+            Offset(
+              math.cos(angle + 0.5) * (radius + 10),
+              math.sin(angle + 0.5) * (radius + 10),
+            ),
         paint,
       );
     }
   }
-  @override bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
 class TechPatternPainter extends CustomPainter {
@@ -76,12 +88,29 @@ class TechPatternPainter extends CustomPainter {
   TechPatternPainter(this.color);
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = color..strokeWidth = 1.5..style = PaintingStyle.stroke;
-    canvas.drawLine(Offset(0, size.height * 0.2), Offset(size.width * 0.3, size.height * 0.2), paint);
-    canvas.drawLine(Offset(size.width * 0.3, size.height * 0.2), Offset(size.width * 0.5, size.height * 0.5), paint);
-    canvas.drawLine(Offset(size.width * 0.7, size.height * 0.8), Offset(size.width, size.height * 0.8), paint);
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = 1.5
+      ..style = PaintingStyle.stroke;
+    canvas.drawLine(
+      Offset(0, size.height * 0.2),
+      Offset(size.width * 0.3, size.height * 0.2),
+      paint,
+    );
+    canvas.drawLine(
+      Offset(size.width * 0.3, size.height * 0.2),
+      Offset(size.width * 0.5, size.height * 0.5),
+      paint,
+    );
+    canvas.drawLine(
+      Offset(size.width * 0.7, size.height * 0.8),
+      Offset(size.width, size.height * 0.8),
+      paint,
+    );
     canvas.drawCircle(Offset(size.width * 0.1, size.height * 0.8), 3, paint);
     canvas.drawCircle(Offset(size.width * 0.9, size.height * 0.2), 3, paint);
   }
-  @override bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }

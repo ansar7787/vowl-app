@@ -84,16 +84,20 @@ class EliteFeedbackCard extends StatelessWidget {
         : null;
 
     final shadowingFocus = state.currentQuest.shadowingFocus;
-    final hasShadowingFocus = shadowingFocus != null && shadowingFocus.trim().isNotEmpty;
+    final hasShadowingFocus =
+        shadowingFocus != null && shadowingFocus.trim().isNotEmpty;
 
     final usageContext = state.currentQuest.usageContext;
-    final hasUsageContext = usageContext != null && usageContext.trim().isNotEmpty;
+    final hasUsageContext =
+        usageContext != null && usageContext.trim().isNotEmpty;
 
     final spellingRule = state.currentQuest.spellingRule;
-    final hasSpellingRule = spellingRule != null && spellingRule.trim().isNotEmpty;
+    final hasSpellingRule =
+        spellingRule != null && spellingRule.trim().isNotEmpty;
 
     final sequenceLogic = state.currentQuest.sequenceLogic;
-    final hasSequenceLogic = sequenceLogic != null && sequenceLogic.trim().isNotEmpty;
+    final hasSequenceLogic =
+        sequenceLogic != null && sequenceLogic.trim().isNotEmpty;
 
     // Curriculum "why" note (e.g. the stress/linking/intonation rule behind
     // the sentence). Shown on both success and failure — reinforcing the
@@ -491,7 +495,11 @@ class _ShadowingFocusBox extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(Icons.record_voice_over_rounded, color: accentColor, size: 14.r),
+                  Icon(
+                    Icons.record_voice_over_rounded,
+                    color: accentColor,
+                    size: 14.r,
+                  ),
                   SizedBox(width: 8.w),
                   Text(
                     "SHADOWING FOCUS",
@@ -553,7 +561,11 @@ class _UsageContextBox extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(Icons.lightbulb_outline_rounded, color: accentColor, size: 14.r),
+                  Icon(
+                    Icons.lightbulb_outline_rounded,
+                    color: accentColor,
+                    size: 14.r,
+                  ),
                   SizedBox(width: 8.w),
                   Text(
                     "USAGE CONTEXT",
@@ -615,7 +627,11 @@ class _SpellingRuleBox extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(Icons.spellcheck_rounded, color: accentColor, size: 14.r),
+                  Icon(
+                    Icons.spellcheck_rounded,
+                    color: accentColor,
+                    size: 14.r,
+                  ),
                   SizedBox(width: 8.w),
                   Text(
                     "SPELLING PATTERN",
@@ -677,7 +693,11 @@ class _SequenceLogicBox extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(Icons.account_tree_rounded, color: accentColor, size: 14.r),
+                  Icon(
+                    Icons.account_tree_rounded,
+                    color: accentColor,
+                    size: 14.r,
+                  ),
                   SizedBox(width: 8.w),
                   Text(
                     "LOGICAL SEQUENCE",

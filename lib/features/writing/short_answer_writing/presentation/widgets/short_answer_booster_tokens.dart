@@ -23,27 +23,34 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
       children: [
         Text(
           "BOOSTER KEYWORDS REQUIRED (USE AT LEAST 2)",
-          style: TextStyle(fontFamily: 'RobotoMono', 
-            fontSize: 10.sp, 
-            color: isDark ? Colors.white54 : Colors.black54, 
-            fontWeight: FontWeight.bold
-          )
+          style: TextStyle(
+            fontFamily: 'RobotoMono',
+            fontSize: 10.sp,
+            color: isDark ? Colors.white54 : Colors.black54,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         SizedBox(height: 12.h),
         Wrap(
-          spacing: 12.w, 
+          spacing: 12.w,
           runSpacing: 8.h,
           alignment: WrapAlignment.center,
           children: keywords.map((k) {
             final bool isUsed = text.contains(k.toLowerCase());
-            final successColor = isDark ? Colors.greenAccent : const Color(0xFF16A34A);
-            final displayColor = isUsed ? successColor : (isDark ? Colors.white24 : Colors.black26);
-            
+            final successColor = isDark
+                ? Colors.greenAccent
+                : const Color(0xFF16A34A);
+            final displayColor = isUsed
+                ? successColor
+                : (isDark ? Colors.white24 : Colors.black26);
+
             return AnimatedContainer(
               duration: 300.milliseconds,
               padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
               decoration: BoxDecoration(
-                color: isUsed ? successColor.withValues(alpha: 0.15) : Colors.transparent,
+                color: isUsed
+                    ? successColor.withValues(alpha: 0.15)
+                    : Colors.transparent,
                 borderRadius: BorderRadius.circular(20.r),
                 border: Border.all(color: displayColor, width: 2),
               ),
@@ -51,18 +58,25 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    isUsed ? Icons.check_circle_rounded : Icons.radio_button_unchecked_rounded,
+                    isUsed
+                        ? Icons.check_circle_rounded
+                        : Icons.radio_button_unchecked_rounded,
                     size: 14.r,
-                    color: isUsed ? successColor : (isDark ? Colors.white30 : Colors.black38),
+                    color: isUsed
+                        ? successColor
+                        : (isDark ? Colors.white30 : Colors.black38),
                   ),
                   SizedBox(width: 8.w),
                   Text(
                     k.toUpperCase(),
-                    style: TextStyle(fontFamily: 'RobotoMono', 
-                      color: isUsed ? successColor : (isDark ? Colors.white60 : Colors.black54),
+                    style: TextStyle(
+                      fontFamily: 'RobotoMono',
+                      color: isUsed
+                          ? successColor
+                          : (isDark ? Colors.white60 : Colors.black54),
                       fontSize: 11.sp,
-                      fontWeight: FontWeight.bold
-                    )
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),

@@ -155,11 +155,13 @@ class _ActionButton extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(icon,
-                    color: onTap == null
-                        ? textColor.withValues(alpha: 0.5)
-                        : textColor,
-                    size: 24.r),
+                Icon(
+                  icon,
+                  color: onTap == null
+                      ? textColor.withValues(alpha: 0.5)
+                      : textColor,
+                  size: 24.r,
+                ),
                 SizedBox(width: 8.w),
                 Text(
                   label,

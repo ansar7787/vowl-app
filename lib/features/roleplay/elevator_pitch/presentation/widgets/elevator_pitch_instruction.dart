@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ElevatorPitchInstruction extends StatelessWidget {
   final Color primaryColor;
 
-  const ElevatorPitchInstruction({
-    super.key,
-    required this.primaryColor,
-  });
+  const ElevatorPitchInstruction({super.key, required this.primaryColor});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,8 @@ class ElevatorPitchInstruction extends StatelessWidget {
           ),
           child: Text(
             "VOCAL STABILITY LIFT CHAMBER",
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,
@@ -33,7 +32,8 @@ class ElevatorPitchInstruction extends StatelessWidget {
         Text(
           "Keep the rocket capsule aligned in the target lift zone while pitching!",
           textAlign: TextAlign.center,
-          style: TextStyle(fontFamily: 'Outfit', 
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,

@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // Holographic audio wave equalizer spectrum painter
 class EqualizerArcPainter extends CustomPainter {
   final double rotationValue; // Selected dial level (0.0 to 1.0)
-  final double targetValue;   // Empathy target level (0.0 to 1.0)
+  final double targetValue; // Empathy target level (0.0 to 1.0)
   final double timeAnimation; // Wave time tick
   final Color themeColor;
 
@@ -35,9 +35,10 @@ class EqualizerArcPainter extends CustomPainter {
       ..strokeWidth = 10.0
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
-    
+
     // Convert target empathy decimal value to radians arc
-    final double targetAngleStart = -math.pi + (targetValue * 2 * math.pi) - 0.18;
+    final double targetAngleStart =
+        -math.pi + (targetValue * 2 * math.pi) - 0.18;
     canvas.drawArc(
       Rect.fromCircle(center: center, radius: radius - 12),
       targetAngleStart,
@@ -69,23 +70,34 @@ class EqualizerArcPainter extends CustomPainter {
     final int numSpokes = 64;
     for (int i = 0; i < numSpokes; i++) {
       final double angle = (i * 2 * math.pi / numSpokes) - math.pi / 2;
-      
+
       // Jagged dynamic oscillation height based on current selected level
       double frequencySpeed = 5.0 + (rotationValue * 25.0);
-      double phase = (timeAnimation * 2 * math.pi) + (i * frequencySpeed * 0.15);
+      double phase =
+          (timeAnimation * 2 * math.pi) + (i * frequencySpeed * 0.15);
       double waveHeight = math.sin(phase) * (4.r + (rotationValue * 14.r));
 
       final double startR = radius - 6.r;
       final double endR = radius + 2.r + waveHeight;
 
-      final Offset startPt = Offset(center.dx + startR * math.cos(angle), center.dy + startR * math.sin(angle));
-      final Offset endPt = Offset(center.dx + endR * math.cos(angle), center.dy + endR * math.sin(angle));
+      final Offset startPt = Offset(
+        center.dx + startR * math.cos(angle),
+        center.dy + startR * math.sin(angle),
+      );
+      final Offset endPt = Offset(
+        center.dx + endR * math.cos(angle),
+        center.dy + endR * math.sin(angle),
+      );
 
       // Color fades from deep blue (soft) to red (aggressive) based on spoke index
-      Color spokeColor = Color.lerp(Colors.cyanAccent, Colors.redAccent, rotationValue) ?? themeColor;
+      Color spokeColor =
+          Color.lerp(Colors.cyanAccent, Colors.redAccent, rotationValue) ??
+          themeColor;
       if (isMatched) spokeColor = Colors.greenAccent;
 
-      spectrumPaint.color = spokeColor.withValues(alpha: 0.35 + (0.6 * math.sin(phase).abs()));
+      spectrumPaint.color = spokeColor.withValues(
+        alpha: 0.35 + (0.6 * math.sin(phase).abs()),
+      );
       canvas.drawLine(startPt, endPt, spectrumPaint);
     }
   }

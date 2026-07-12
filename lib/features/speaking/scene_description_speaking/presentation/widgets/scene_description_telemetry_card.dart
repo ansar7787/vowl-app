@@ -33,7 +33,8 @@ class SceneDescriptionTelemetryCard extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "DECODED SPEECH ANALYSIS",
-                style: TextStyle(fontFamily: 'RobotoMono', 
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
                   fontSize: 10.sp,
                   color: Colors.grey,
                   letterSpacing: 1.0,
@@ -44,11 +45,14 @@ class SceneDescriptionTelemetryCard extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             spokenText,
-            style: TextStyle(fontFamily: 'Outfit', 
+            style: TextStyle(
+              fontFamily: 'Outfit',
               fontSize: 14.sp,
               color: isSuccess
                   ? Colors.greenAccent
-                  : (isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87),
+                  : (isDark
+                        ? Colors.white.withValues(alpha: 0.9)
+                        : Colors.black87),
               height: 1.35,
             ),
           ),

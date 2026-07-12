@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class PunctuationStickerSheet extends StatelessWidget {
   final List<String> marks;
   final Color primaryColor;
@@ -35,43 +36,44 @@ class PunctuationStickerSheet extends StatelessWidget {
 
   Widget _buildTactileSticker(String mark, {bool isDragging = false}) {
     return Material(
-      color: Colors.transparent,
-      child: Container(
-        width: 54.r,
-        height: 54.r,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          shape: BoxShape.circle,
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Colors.white, primaryColor.withValues(alpha: 0.1)],
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.15),
-              blurRadius: isDragging ? 20 : 8,
-              offset: isDragging ? const Offset(0, 10) : const Offset(0, 4),
+          color: Colors.transparent,
+          child: Container(
+            width: 54.r,
+            height: 54.r,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.white, primaryColor.withValues(alpha: 0.1)],
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.15),
+                  blurRadius: isDragging ? 20 : 8,
+                  offset: isDragging ? const Offset(0, 10) : const Offset(0, 4),
+                ),
+              ],
+              border: Border.all(
+                color: primaryColor.withValues(alpha: 0.4),
+                width: 2,
+              ),
             ),
-          ],
-          border: Border.all(
-            color: primaryColor.withValues(alpha: 0.4),
-            width: 2,
-          ),
-        ),
-        child: Center(
-          child: Text(
-            mark,
-            style: TextStyle(fontFamily: 'Outfit', 
-              fontSize: 26.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
+            child: Center(
+              child: Text(
+                mark,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 26.sp,
+                  fontWeight: FontWeight.w900,
+                  color: primaryColor,
+                ),
+              ),
             ),
           ),
-        ),
-      ),
-    )
-    .animate(onPlay: (c) => c.repeat(reverse: true))
-    .rotate(begin: -0.05, end: 0.05, duration: 2.seconds);
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .rotate(begin: -0.05, end: 0.05, duration: 2.seconds);
   }
 }

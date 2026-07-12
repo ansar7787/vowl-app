@@ -45,8 +45,6 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
 
   int? _selectedIndex;
 
-
-
   @override
   void initState() {
     super.initState();

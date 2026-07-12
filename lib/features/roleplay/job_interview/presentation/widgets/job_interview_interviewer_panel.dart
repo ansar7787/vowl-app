@@ -20,10 +20,14 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
       width: 1.sw,
       padding: EdgeInsets.all(22.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF07070F) : Colors.black.withValues(alpha: 0.02),
+        color: isDark
+            ? const Color(0xFF07070F)
+            : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(32.r),
         border: Border.all(
-          color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.03),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.03)
+              : Colors.black.withValues(alpha: 0.03),
         ),
       ),
       child: Column(
@@ -37,7 +41,11 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
                   color: color.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
-                child: Icon(Icons.business_center_rounded, color: color, size: 20.r),
+                child: Icon(
+                  Icons.business_center_rounded,
+                  color: color,
+                  size: 20.r,
+                ),
               ),
               SizedBox(width: 12.w),
               Column(
@@ -45,7 +53,8 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
                 children: [
                   Text(
                     "CHIEF EXECUTIVE V-407",
-                    style: TextStyle(fontFamily: 'RobotoMono', 
+                    style: TextStyle(
+                      fontFamily: 'RobotoMono',
                       fontSize: 10.sp,
                       color: color,
                       fontWeight: FontWeight.bold,
@@ -54,7 +63,8 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
                   ),
                   Text(
                     "ACTIVE BIO-TRANSCEIVER",
-                    style: TextStyle(fontFamily: 'RobotoMono', 
+                    style: TextStyle(
+                      fontFamily: 'RobotoMono',
                       fontSize: 7.sp,
                       color: color.withValues(alpha: 0.5),
                     ),
@@ -68,13 +78,16 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
             width: double.infinity,
             padding: EdgeInsets.all(16.r),
             decoration: BoxDecoration(
-              color: isDark ? Colors.black.withValues(alpha: 0.25) : Colors.black.withValues(alpha: 0.02),
+              color: isDark
+                  ? Colors.black.withValues(alpha: 0.25)
+                  : Colors.black.withValues(alpha: 0.02),
               borderRadius: BorderRadius.circular(20.r),
               border: Border.all(color: color.withValues(alpha: 0.05)),
             ),
             child: Text(
               text,
-              style: TextStyle(fontFamily: 'Outfit', 
+              style: TextStyle(
+                fontFamily: 'Outfit',
                 fontSize: 18.sp,
                 color: isDark ? Colors.white : Colors.black87,
                 height: 1.35,

@@ -37,9 +37,7 @@ class KidsShapesLayout extends StatelessWidget {
             // The Crane holding Blueprint
             Expanded(
               flex: 5,
-              child: Center(
-                child: _buildBlueprintCrane(quest),
-              ),
+              child: Center(child: _buildBlueprintCrane(quest)),
             ),
             // The Toy Building Blocks
             Flexible(
@@ -84,7 +82,7 @@ class KidsShapesLayout extends StatelessWidget {
             color: const Color(0xFFFBBF24), // Construction Yellow
             borderRadius: BorderRadius.circular(4.r),
             border: Border.all(color: const Color(0xFF92400E), width: 2),
-            // A simple stripe effect would require a custom painter, 
+            // A simple stripe effect would require a custom painter,
             // but we keep it solid yellow for performance and clean aesthetic
           ),
         ),
@@ -114,25 +112,21 @@ class KidsShapesLayout extends StatelessWidget {
             children: [
               // Grid pattern for blueprint
               Positioned.fill(
-                child: CustomPaint(
-                  painter: _BlueprintGridPainter(),
-                ),
+                child: CustomPaint(painter: _BlueprintGridPainter()),
               ),
               Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     if (quest.emoji != null)
-                      Text(
-                        quest.emoji!,
-                        style: TextStyle(fontSize: 48.sp),
-                      ),
+                      Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
                     Text(
                       quest.question ?? "?",
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 42.sp,
-                        fontWeight: FontWeight.w400, // Thinner weight for blueprint aesthetic
+                        fontWeight: FontWeight
+                            .w400, // Thinner weight for blueprint aesthetic
                         color: Colors.white,
                         letterSpacing: 1,
                       ),
@@ -200,7 +194,10 @@ class KidsShapesLayout extends StatelessWidget {
             decoration: BoxDecoration(
               color: color,
               borderRadius: BorderRadius.circular(4.r),
-              border: Border.all(color: Colors.black.withValues(alpha: 0.1), width: 1),
+              border: Border.all(
+                color: Colors.black.withValues(alpha: 0.1),
+                width: 1,
+              ),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withValues(alpha: 0.2),
@@ -241,8 +238,14 @@ class KidsShapesLayout extends StatelessWidget {
         borderRadius: BorderRadius.vertical(top: Radius.circular(4.r)),
         border: Border(
           top: BorderSide(color: Colors.white.withValues(alpha: 0.4), width: 1),
-          left: BorderSide(color: Colors.black.withValues(alpha: 0.1), width: 1),
-          right: BorderSide(color: Colors.black.withValues(alpha: 0.1), width: 1),
+          left: BorderSide(
+            color: Colors.black.withValues(alpha: 0.1),
+            width: 1,
+          ),
+          right: BorderSide(
+            color: Colors.black.withValues(alpha: 0.1),
+            width: 1,
+          ),
         ),
       ),
     );
@@ -258,12 +261,12 @@ class _BlueprintGridPainter extends CustomPainter {
       ..strokeWidth = 1;
 
     final spacing = 20.w;
-    
+
     // Draw vertical lines
     for (double x = 0; x <= size.width; x += spacing) {
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), paint);
     }
-    
+
     // Draw horizontal lines
     for (double y = 0; y <= size.height; y += spacing) {
       canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);

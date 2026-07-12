@@ -17,10 +17,7 @@ import 'package:vowl/features/auth/domain/usecases/add_golden_key.dart';
 class PremiumStoreBottomSheet extends StatefulWidget {
   final bool isKidsMode;
 
-  const PremiumStoreBottomSheet({
-    super.key,
-    this.isKidsMode = false,
-  });
+  const PremiumStoreBottomSheet({super.key, this.isKidsMode = false});
 
   static Future<void> show({
     required BuildContext context,
@@ -35,7 +32,8 @@ class PremiumStoreBottomSheet extends StatefulWidget {
   }
 
   @override
-  State<PremiumStoreBottomSheet> createState() => _PremiumStoreBottomSheetState();
+  State<PremiumStoreBottomSheet> createState() =>
+      _PremiumStoreBottomSheetState();
 }
 
 class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
@@ -58,7 +56,13 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     }
   }
 
-  void _handlePurchase(BuildContext context, {Package? package, String? packName, required int coins, required int keys}) async {
+  void _handlePurchase(
+    BuildContext context, {
+    Package? package,
+    String? packName,
+    required int coins,
+    required int keys,
+  }) async {
     if (package != null) {
       CustomSnackBar.show(
         context: context,
@@ -67,14 +71,15 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
       );
       final success = await di.sl<IapService>().purchasePackage(package);
       if (!context.mounted) return;
-      
+
       if (success) {
         // Grant the items!
         if (coins > 0) {
           context.read<EconomyBloc>().add(
             EconomyAddCoinsRequested(
               coins,
-              title: 'iap_${packName?.replaceAll(' ', '_').toLowerCase() ?? 'store'}',
+              title:
+                  'iap_${packName?.replaceAll(' ', '_').toLowerCase() ?? 'store'}',
             ),
           );
         }
@@ -122,234 +127,267 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return BackdropFilter(
-      filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-      child: Container(
-        height: MediaQuery.of(context).size.height * 0.85,
-        decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
-          borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-          border: Border(
-            top: BorderSide(
-              color: Colors.white.withValues(alpha: 0.2),
-              width: 1,
-            ),
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.4),
-              blurRadius: 40,
-              offset: const Offset(0, -10),
-            ),
-          ],
-        ),
-        child: Column(
-          children: [
-            // Handle
-            Center(
-              child: Container(
-                margin: EdgeInsets.only(top: 12.h, bottom: 20.h),
-                width: 48.w,
-                height: 5.h,
-                decoration: BoxDecoration(
-                  color: isDark ? Colors.white24 : Colors.black12,
-                  borderRadius: BorderRadius.circular(10.r),
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Container(
+            height: MediaQuery.of(context).size.height * 0.85,
+            decoration: BoxDecoration(
+              color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
+              borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+              border: Border(
+                top: BorderSide(
+                  color: Colors.white.withValues(alpha: 0.2),
+                  width: 1,
                 ),
               ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.4),
+                  blurRadius: 40,
+                  offset: const Offset(0, -10),
+                ),
+              ],
             ),
-
-            // Header
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(12.r),
+            child: Column(
+              children: [
+                // Handle
+                Center(
+                  child: Container(
+                    margin: EdgeInsets.only(top: 12.h, bottom: 20.h),
+                    width: 48.w,
+                    height: 5.h,
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      borderRadius: BorderRadius.circular(16.r),
-                    ),
-                    child: Icon(
-                      Icons.storefront_rounded,
-                      color: Colors.white,
-                      size: 28.r,
+                      color: isDark ? Colors.white24 : Colors.black12,
+                      borderRadius: BorderRadius.circular(10.r),
                     ),
                   ),
-                  SizedBox(width: 16.w),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'PREMIUM STORE',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w800,
-                            color: const Color(0xFF8B5CF6),
-                            letterSpacing: 2,
+                ),
+
+                // Header
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(12.r),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(16.r),
+                        ),
+                        child: Icon(
+                          Icons.storefront_rounded,
+                          color: Colors.white,
+                          size: 28.r,
+                        ),
+                      ),
+                      SizedBox(width: 16.w),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'PREMIUM STORE',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w800,
+                                color: const Color(0xFF8B5CF6),
+                                letterSpacing: 2,
+                              ),
+                            ),
+                            Text(
+                              'Stock up on supplies!',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 22.sp,
+                                fontWeight: FontWeight.w900,
+                                color: isDark
+                                    ? Colors.white
+                                    : const Color(0xFF0F172A),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      ScaleButton(
+                        onTap: () => Navigator.pop(context),
+                        child: Container(
+                          padding: EdgeInsets.all(8.r),
+                          decoration: BoxDecoration(
+                            color: isDark
+                                ? Colors.white10
+                                : Colors.black.withValues(alpha: 0.05),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.close_rounded,
+                            color: isDark ? Colors.white70 : Colors.black54,
+                            size: 20.r,
                           ),
                         ),
-                        Text(
-                          'Stock up on supplies!',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 22.sp,
-                            fontWeight: FontWeight.w900,
-                            color: isDark ? Colors.white : const Color(0xFF0F172A),
-                          ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                SizedBox(height: 24.h),
+
+                // Content
+                Expanded(
+                  child: ListView(
+                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                    physics: const BouncingScrollPhysics(),
+                    children: [
+                      // Vowl Premium Subscription Upsell
+                      _buildPremiumUpsell(context, isDark)
+                          .animate()
+                          .fadeIn()
+                          .moveX(begin: -20, end: 0, delay: 100.ms),
+
+                      SizedBox(height: 32.h),
+
+                      Text(
+                        'COINS & KEYS',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w800,
+                          color: isDark
+                              ? Colors.grey.shade400
+                              : Colors.grey.shade600,
+                          letterSpacing: 1.5,
                         ),
-                      ],
-                    ),
-                  ),
-                  ScaleButton(
-                    onTap: () => Navigator.pop(context),
-                    child: Container(
-                      padding: EdgeInsets.all(8.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                        size: 20.r,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+                      ).animate().fadeIn(delay: 200.ms),
 
-            SizedBox(height: 24.h),
+                      SizedBox(height: 16.h),
 
-            // Content
-            Expanded(
-              child: ListView(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                physics: const BouncingScrollPhysics(),
-                children: [
-                  // Vowl Premium Subscription Upsell
-                  _buildPremiumUpsell(context, isDark)
-                      .animate()
-                      .fadeIn()
-                      .moveX(begin: -20, end: 0, delay: 100.ms),
-                  
-                  SizedBox(height: 32.h),
-                  
-                  Text(
-                    'COINS & KEYS',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w800,
-                      color: isDark ? Colors.grey.shade400 : Colors.grey.shade600,
-                      letterSpacing: 1.5,
-                    ),
-                  ).animate().fadeIn(delay: 200.ms),
-                  
-                  SizedBox(height: 16.h),
-                  
-                  if (_isLoading)
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 40.h),
-                      child: const Center(child: CircularProgressIndicator()),
-                    )
-                  else if (_offerings?.current != null && _offerings!.current!.availablePackages.isNotEmpty)
-                    ..._offerings!.current!.availablePackages.asMap().entries.map((entry) {
-                      final index = entry.key;
-                      final package = entry.value;
-                      // RevenueCat packages have a StoreProduct
-                      final product = package.storeProduct;
-                      final pkgId = package.identifier.toLowerCase();
-                      
-                      int parsedCoins = 0;
-                      int parsedKeys = 0;
-                      
-                      if (pkgId.contains('starter') || pkgId.contains('500') || product.title.toLowerCase().contains('starter')) {
-                        parsedCoins = 500;
-                      } else if (pkgId.contains('explorer') || pkgId.contains('1200') || product.title.toLowerCase().contains('explorer')) {
-                        parsedCoins = 1200;
-                        parsedKeys = 2;
-                      } else if (pkgId.contains('master') || pkgId.contains('4000') || product.title.toLowerCase().contains('master')) {
-                        parsedCoins = 4000;
-                        parsedKeys = 8;
-                      }
-                      
-                      return Padding(
-                        padding: EdgeInsets.only(bottom: 16.h),
-                        child: _buildPackCard(
+                      if (_isLoading)
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: 40.h),
+                          child: const Center(
+                            child: CircularProgressIndicator(),
+                          ),
+                        )
+                      else if (_offerings?.current != null &&
+                          _offerings!.current!.availablePackages.isNotEmpty)
+                        ..._offerings!.current!.availablePackages
+                            .asMap()
+                            .entries
+                            .map((entry) {
+                              final index = entry.key;
+                              final package = entry.value;
+                              // RevenueCat packages have a StoreProduct
+                              final product = package.storeProduct;
+                              final pkgId = package.identifier.toLowerCase();
+
+                              int parsedCoins = 0;
+                              int parsedKeys = 0;
+
+                              if (pkgId.contains('starter') ||
+                                  pkgId.contains('500') ||
+                                  product.title.toLowerCase().contains(
+                                    'starter',
+                                  )) {
+                                parsedCoins = 500;
+                              } else if (pkgId.contains('explorer') ||
+                                  pkgId.contains('1200') ||
+                                  product.title.toLowerCase().contains(
+                                    'explorer',
+                                  )) {
+                                parsedCoins = 1200;
+                                parsedKeys = 2;
+                              } else if (pkgId.contains('master') ||
+                                  pkgId.contains('4000') ||
+                                  product.title.toLowerCase().contains(
+                                    'master',
+                                  )) {
+                                parsedCoins = 4000;
+                                parsedKeys = 8;
+                              }
+
+                              return Padding(
+                                padding: EdgeInsets.only(bottom: 16.h),
+                                child: _buildPackCard(
+                                  context: context,
+                                  isDark: isDark,
+                                  title: product.title.split('(').first.trim(),
+                                  coins: parsedCoins,
+                                  keys: parsedKeys,
+                                  price: product.priceString,
+                                  icon: Icons.shopping_bag_rounded,
+                                  color: Colors.amber,
+                                  isBestValue:
+                                      index ==
+                                      _offerings!
+                                              .current!
+                                              .availablePackages
+                                              .length -
+                                          1, // Make last one best value
+                                  delay: 300 + (index * 100),
+                                  package: package,
+                                ),
+                              );
+                            })
+                      else ...[
+                        // Fallback to placeholder UI if RevenueCat isn't configured yet
+                        _buildPackCard(
                           context: context,
                           isDark: isDark,
-                          title: product.title.split('(').first.trim(),
-                          coins: parsedCoins,
-                          keys: parsedKeys,
-                          price: product.priceString,
-                          icon: Icons.shopping_bag_rounded,
+                          title: 'Starter Pack',
+                          coins: 500,
+                          keys: 0,
+                          price: '₹49',
+                          icon: Icons.monetization_on_rounded,
                           color: Colors.amber,
-                          isBestValue: index == _offerings!.current!.availablePackages.length - 1, // Make last one best value
-                          delay: 300 + (index * 100),
-                          package: package,
+                          isBestValue: false,
+                          delay: 300,
                         ),
-                      );
-                    })
-                  else ...[
-                    // Fallback to placeholder UI if RevenueCat isn't configured yet
-                    _buildPackCard(
-                      context: context,
-                      isDark: isDark,
-                      title: 'Starter Pack',
-                      coins: 500,
-                      keys: 0,
-                      price: '₹49',
-                      icon: Icons.monetization_on_rounded,
-                      color: Colors.amber,
-                      isBestValue: false,
-                      delay: 300,
-                    ),
-                    
-                    SizedBox(height: 16.h),
-                    
-                    _buildPackCard(
-                      context: context,
-                      isDark: isDark,
-                      title: 'Explorer Pack',
-                      coins: 1200,
-                      keys: 2,
-                      price: '₹99',
-                      icon: Icons.explore_rounded,
-                      color: const Color(0xFF3B82F6),
-                      isBestValue: false,
-                      delay: 400,
-                    ),
-                    
-                    SizedBox(height: 16.h),
-                    
-                    _buildPackCard(
-                      context: context,
-                      isDark: isDark,
-                      title: 'Master Pack',
-                      coins: 4000,
-                      keys: 8,
-                      price: '₹299',
-                      icon: Icons.diamond_rounded,
-                      color: const Color(0xFFEC4899),
-                      isBestValue: true,
-                      delay: 500,
-                    ),
-                  ],
 
-                  SizedBox(height: 40.h),
-                ],
-              ),
+                        SizedBox(height: 16.h),
+
+                        _buildPackCard(
+                          context: context,
+                          isDark: isDark,
+                          title: 'Explorer Pack',
+                          coins: 1200,
+                          keys: 2,
+                          price: '₹99',
+                          icon: Icons.explore_rounded,
+                          color: const Color(0xFF3B82F6),
+                          isBestValue: false,
+                          delay: 400,
+                        ),
+
+                        SizedBox(height: 16.h),
+
+                        _buildPackCard(
+                          context: context,
+                          isDark: isDark,
+                          title: 'Master Pack',
+                          coins: 4000,
+                          keys: 8,
+                          price: '₹299',
+                          icon: Icons.diamond_rounded,
+                          color: const Color(0xFFEC4899),
+                          isBestValue: true,
+                          delay: 500,
+                        ),
+                      ],
+
+                      SizedBox(height: 40.h),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
-    ).animate().fadeIn(duration: 300.ms).moveY(begin: 40, end: 0, curve: Curves.easeOutBack);
+          ),
+        )
+        .animate()
+        .fadeIn(duration: 300.ms)
+        .moveY(begin: 40, end: 0, curve: Curves.easeOutBack);
   }
 
   Widget _buildPremiumUpsell(BuildContext context, bool isDark) {
@@ -445,161 +483,196 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     Package? package,
   }) {
     return ScaleButton(
-      onTap: () => _handlePurchase(context, packName: title, package: package, coins: coins, keys: keys),
-      child: Container(
-        padding: EdgeInsets.all(20.r),
-        decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E293B) : Colors.white,
-          borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(
-            color: isBestValue ? color : (isDark ? Colors.white10 : Colors.black12),
-            width: isBestValue ? 2.w : 1.w,
+          onTap: () => _handlePurchase(
+            context,
+            packName: title,
+            package: package,
+            coins: coins,
+            keys: keys,
           ),
-          boxShadow: [
-            if (isBestValue)
-              BoxShadow(
-                color: color.withValues(alpha: 0.2),
-                blurRadius: 20,
-                offset: const Offset(0, 10),
-              )
-            else
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.05),
-                blurRadius: 10,
-                offset: const Offset(0, 5),
+          child: Container(
+            padding: EdgeInsets.all(20.r),
+            decoration: BoxDecoration(
+              color: isDark ? const Color(0xFF1E293B) : Colors.white,
+              borderRadius: BorderRadius.circular(24.r),
+              border: Border.all(
+                color: isBestValue
+                    ? color
+                    : (isDark ? Colors.white10 : Colors.black12),
+                width: isBestValue ? 2.w : 1.w,
               ),
-          ],
-        ),
-        child: Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Row(
-              children: [
-                // Icon Box
-                Container(
-                  width: 60.r,
-                  height: 60.r,
-                  decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.15),
-                    borderRadius: BorderRadius.circular(16.r),
+              boxShadow: [
+                if (isBestValue)
+                  BoxShadow(
+                    color: color.withValues(alpha: 0.2),
+                    blurRadius: 20,
+                    offset: const Offset(0, 10),
+                  )
+                else
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.05),
+                    blurRadius: 10,
+                    offset: const Offset(0, 5),
                   ),
-                  child: Center(
-                    child: Icon(
-                      icon,
-                      color: color,
-                      size: 32.r,
-                    ),
-                  ),
-                ),
-                SizedBox(width: 16.w),
-                
-                // Details
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w800,
-                          color: isDark ? Colors.white : const Color(0xFF0F172A),
-                        ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Row(
-                        children: [
-                          Icon(Icons.monetization_on_rounded, color: Colors.amber, size: 14.r),
-                          SizedBox(width: 4.w),
-                          Text(
-                            '$coins',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w700,
-                              color: isDark ? Colors.grey.shade300 : Colors.grey.shade700,
-                            ),
-                          ),
-                          if (keys > 0) ...[
-                            SizedBox(width: 12.w),
-                            Icon(Icons.key_rounded, color: Colors.amber.shade700, size: 14.r),
-                            SizedBox(width: 4.w),
-                            Text(
-                              '$keys',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w700,
-                                color: isDark ? Colors.grey.shade300 : Colors.grey.shade700,
-                              ),
-                            ),
-                          ],
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                
-                // Price Button
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-                  decoration: BoxDecoration(
-                    color: color,
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  child: Text(
-                    price,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w800,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
               ],
             ),
-            
-            // Best Value Badge
-            if (isBestValue)
-              Positioned(
-                top: -30.h,
-                right: 10.w,
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
-                  decoration: BoxDecoration(
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.circular(8.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.amber.withValues(alpha: 0.4),
-                        blurRadius: 8,
-                        offset: const Offset(0, 4),
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Row(
+                  children: [
+                    // Icon Box
+                    Container(
+                      width: 60.r,
+                      height: 60.r,
+                      decoration: BoxDecoration(
+                        color: color.withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(16.r),
                       ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.local_fire_department_rounded, color: Colors.white, size: 12.r),
-                      SizedBox(width: 4.w),
-                      Text(
-                        'BEST VALUE',
+                      child: Center(
+                        child: Icon(icon, color: color, size: 32.r),
+                      ),
+                    ),
+                    SizedBox(width: 16.w),
+
+                    // Details
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            title,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w800,
+                              color: isDark
+                                  ? Colors.white
+                                  : const Color(0xFF0F172A),
+                            ),
+                          ),
+                          SizedBox(height: 6.h),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.monetization_on_rounded,
+                                color: Colors.amber,
+                                size: 14.r,
+                              ),
+                              SizedBox(width: 4.w),
+                              Text(
+                                '$coins',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: isDark
+                                      ? Colors.grey.shade300
+                                      : Colors.grey.shade700,
+                                ),
+                              ),
+                              if (keys > 0) ...[
+                                SizedBox(width: 12.w),
+                                Icon(
+                                  Icons.key_rounded,
+                                  color: Colors.amber.shade700,
+                                  size: 14.r,
+                                ),
+                                SizedBox(width: 4.w),
+                                Text(
+                                  '$keys',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: isDark
+                                        ? Colors.grey.shade300
+                                        : Colors.grey.shade700,
+                                  ),
+                                ),
+                              ],
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    // Price Button
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: 10.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: color,
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                      child: Text(
+                        price,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w900,
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w800,
                           color: Colors.white,
                         ),
                       ),
-                    ],
+                    ),
+                  ],
+                ),
+
+                // Best Value Badge
+                if (isBestValue)
+                  Positioned(
+                    top: -30.h,
+                    right: 10.w,
+                    child:
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 12.w,
+                            vertical: 4.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.amber,
+                            borderRadius: BorderRadius.circular(8.r),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.amber.withValues(alpha: 0.4),
+                                blurRadius: 8,
+                                offset: const Offset(0, 4),
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.local_fire_department_rounded,
+                                color: Colors.white,
+                                size: 12.r,
+                              ),
+                              SizedBox(width: 4.w),
+                              Text(
+                                'BEST VALUE',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ).animate().scale(
+                          delay: (delay + 300).ms,
+                          curve: Curves.elasticOut,
+                        ),
                   ),
-                ).animate().scale(delay: (delay + 300).ms, curve: Curves.elasticOut),
-              ),
-          ],
-        ),
-      ),
-    ).animate().fadeIn(delay: delay.ms).moveY(begin: 20, end: 0, curve: Curves.easeOutBack);
+              ],
+            ),
+          ),
+        )
+        .animate()
+        .fadeIn(delay: delay.ms)
+        .moveY(begin: 20, end: 0, curve: Curves.easeOutBack);
   }
 }

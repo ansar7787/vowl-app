@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -12,6 +13,7 @@ class AmbientIdSonarField extends StatelessWidget {
   final bool? isCorrectState;
   final int? selectedIndex;
   final Function(int) onSubmitAnswer;
+  final String? imageUrl;
 
   const AmbientIdSonarField({
     super.key,
@@ -23,6 +25,7 @@ class AmbientIdSonarField extends StatelessWidget {
     required this.isCorrectState,
     required this.selectedIndex,
     required this.onSubmitAnswer,
+    this.imageUrl,
   });
 
   @override
@@ -33,6 +36,35 @@ class AmbientIdSonarField extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: [
+          // Image Background
+          if (imageUrl != null)
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 800),
+              width: 320.r,
+              height: 320.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: NetworkImage(imageUrl!),
+                  fit: BoxFit.cover,
+                  colorFilter: isCorrectState == true
+                      ? null
+                      : ColorFilter.mode(
+                          Colors.black.withOpacity(0.6),
+                          BlendMode.darken,
+                        ),
+                ),
+              ),
+              child: isCorrectState == true
+                  ? const SizedBox()
+                  : ClipOval(
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 25.0, sigmaY: 25.0),
+                        child: Container(color: Colors.transparent),
+                      ),
+                    ),
+            ),
+
           // Radar Sweep Animation
           AnimatedBuilder(
             animation: radarController,
@@ -45,7 +77,10 @@ class AmbientIdSonarField extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     gradient: SweepGradient(
-                      colors: [color.withValues(alpha: 0.2), Colors.transparent],
+                      colors: [
+                        color.withValues(alpha: 0.2),
+                        Colors.transparent,
+                      ],
                       stops: const [0.1, 0.25],
                     ),
                   ),
@@ -53,17 +88,20 @@ class AmbientIdSonarField extends StatelessWidget {
               );
             },
           ),
-          
+
           // Spatial Rings
-          ...List.generate(3, (i) => Container(
-            width: (i + 1) * 120.r,
-            height: (i + 1) * 120.r,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(color: color.withValues(alpha: 0.1)),
+          ...List.generate(
+            3,
+            (i) => Container(
+              width: (i + 1) * 120.r,
+              height: (i + 1) * 120.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: color.withValues(alpha: 0.1)),
+              ),
             ),
-          )),
-          
+          ),
+
           // Location Hubs
           ...List.generate(options.length, (index) {
             double angle = (index * 6.28 / options.length) - 1.57;
@@ -80,7 +118,8 @@ class AmbientIdSonarField extends StatelessWidget {
 
   Widget _buildLocationHub(int index, String text) {
     bool isSelected = selectedIndex == index;
-    bool isChoiceCorrect = isAnswered && index == correctAnswerIndex && isCorrectState == true;
+    bool isChoiceCorrect =
+        isAnswered && index == correctAnswerIndex && isCorrectState == true;
     bool isChoiceWrong = isAnswered && isSelected && isCorrectState == false;
 
     return ScaleButton(
@@ -89,21 +128,27 @@ class AmbientIdSonarField extends StatelessWidget {
         width: 90.r,
         height: 90.r,
         decoration: BoxDecoration(
-          color: isChoiceCorrect 
-              ? Colors.greenAccent 
-              : (isChoiceWrong ? Colors.redAccent : (isSelected ? color : const Color(0xFF1E1E24))),
+          color: isChoiceCorrect
+              ? Colors.greenAccent
+              : (isChoiceWrong
+                    ? Colors.redAccent
+                    : (isSelected ? color : const Color(0xFF1E1E24))),
           shape: BoxShape.circle,
           border: Border.all(
-            color: isChoiceCorrect || isChoiceWrong || isSelected 
-                ? Colors.white.withValues(alpha: 0.5) 
-                : color.withValues(alpha: 0.3), 
+            color: isChoiceCorrect || isChoiceWrong || isSelected
+                ? Colors.white.withValues(alpha: 0.5)
+                : color.withValues(alpha: 0.3),
             width: 2,
           ),
           boxShadow: [
-            if (isSelected || isChoiceCorrect || isChoiceWrong) 
+            if (isSelected || isChoiceCorrect || isChoiceWrong)
               BoxShadow(
-                color: (isChoiceCorrect ? Colors.greenAccent : (isChoiceWrong ? Colors.redAccent : color)).withValues(alpha: 0.4), 
-                blurRadius: 15, 
+                color:
+                    (isChoiceCorrect
+                            ? Colors.greenAccent
+                            : (isChoiceWrong ? Colors.redAccent : color))
+                        .withValues(alpha: 0.4),
+                blurRadius: 15,
                 spreadRadius: 2,
               ),
             // Permanent subtle base shadow
@@ -124,9 +169,14 @@ class AmbientIdSonarField extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 4.w),
                 child: FittedBox(
                   child: Text(
-                    text.toUpperCase(), 
-                    textAlign: TextAlign.center, 
-                    style: TextStyle(fontFamily: 'RobotoMono', fontSize: 8.sp, fontWeight: FontWeight.w900, color: Colors.white),
+                    text.toUpperCase(),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'RobotoMono',
+                      fontSize: 8.sp,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -140,10 +190,12 @@ class AmbientIdSonarField extends StatelessWidget {
   IconData _getLocationIcon(String loc) {
     final l = loc.toLowerCase();
     if (l.contains('forest')) return Icons.forest_rounded;
-    if (l.contains('cyber') || l.contains('city')) return Icons.location_city_rounded;
+    if (l.contains('cyber') || l.contains('city'))
+      return Icons.location_city_rounded;
     if (l.contains('space')) return Icons.rocket_launch_rounded;
     if (l.contains('ocean') || l.contains('deep')) return Icons.waves_rounded;
-    if (l.contains('base') || l.contains('military')) return Icons.security_rounded;
+    if (l.contains('base') || l.contains('military'))
+      return Icons.security_rounded;
     if (l.contains('lab')) return Icons.science_rounded;
     if (l.contains('temple')) return Icons.temple_hindu_rounded;
     if (l.contains('vault')) return Icons.lock_rounded;

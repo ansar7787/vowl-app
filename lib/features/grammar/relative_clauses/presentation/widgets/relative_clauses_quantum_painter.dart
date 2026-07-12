@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class RelativeClausesQuantumPainter extends CustomPainter {
   final Offset? hookPoint;
   final Offset startPoint;
@@ -78,7 +79,7 @@ class RelativeClausesQuantumPainter extends CustomPainter {
         text: TextSpan(
           text: nodeLabels[i].toUpperCase(),
           style: TextStyle(
-            fontFamily: 'Outfit', 
+            fontFamily: 'Outfit',
             fontSize: labelFontSize,
             fontWeight: FontWeight.w900,
             color: isCaught
@@ -97,7 +98,9 @@ class RelativeClausesQuantumPainter extends CustomPainter {
 
     // Draw Kinetic Data Stream
     if (hookPoint != null || isAnswered) {
-      final end = isAnswered && targetNode != -1 ? nodePoints[targetNode] : hookPoint!;
+      final end = isAnswered && targetNode != -1
+          ? nodePoints[targetNode]
+          : hookPoint!;
       final path = Path()
         ..moveTo(startPoint.dx, startPoint.dy)
         ..cubicTo(
@@ -137,8 +140,16 @@ class RelativeClausesQuantumPainter extends CustomPainter {
       );
 
       // Terminals
-      canvas.drawCircle(startPoint, isCompact ? 5.r : 8.r, Paint()..color = primaryColor);
-      canvas.drawCircle(end, isCompact ? 7.r : 10.r, Paint()..color = beamColor);
+      canvas.drawCircle(
+        startPoint,
+        isCompact ? 5.r : 8.r,
+        Paint()..color = primaryColor,
+      );
+      canvas.drawCircle(
+        end,
+        isCompact ? 7.r : 10.r,
+        Paint()..color = beamColor,
+      );
     }
   }
 

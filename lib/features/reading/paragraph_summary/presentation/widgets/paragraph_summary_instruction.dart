@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class ParagraphSummaryInstruction extends StatelessWidget {
   final Color primaryColor;
 
-  const ParagraphSummaryInstruction({
-    super.key,
-    required this.primaryColor,
-  });
+  const ParagraphSummaryInstruction({super.key, required this.primaryColor});
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +22,12 @@ class ParagraphSummaryInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              "SQUEEZE TUBE TO DISTILL & SUMMARIZE", 
-              style: TextStyle(fontFamily: 'Outfit', 
-                fontSize: 10.sp, 
-                fontWeight: FontWeight.w900, 
-                color: primaryColor, 
+              "SQUEEZE TUBE TO DISTILL & SUMMARIZE",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
                 letterSpacing: 1.5,
               ),
             ),

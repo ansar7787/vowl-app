@@ -310,7 +310,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
               color: isDark ? const Color(0xFF1E293B) : Colors.white,
               shape: BoxShape.circle,
               border: Border.all(
-                color: isDark ? Colors.blue.shade700 : Colors.blue.shade200, 
+                color: isDark ? Colors.blue.shade700 : Colors.blue.shade200,
                 width: 3.w,
               ),
               boxShadow: [
@@ -343,7 +343,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         final keys = state.user?.keys ?? 0;
-        
+
         return ScaleButton(
           onTap: () {
             KeyShopBottomSheet.show(
@@ -359,10 +359,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
               borderRadius: BorderRadius.circular(20.r),
               border: Border.all(color: Colors.amber.shade700, width: 3.w),
               boxShadow: [
-                BoxShadow(
-                  color: Colors.amber.shade700,
-                  offset: Offset(0, 4.h),
-                ),
+                BoxShadow(color: Colors.amber.shade700, offset: Offset(0, 4.h)),
               ],
             ),
             child: Row(

@@ -33,9 +33,7 @@ Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 /// DI container, or AppRouter. The only safe action is to persist the
 /// payload so that the main isolate can pick it up on startup.
 @pragma('vm:entry-point')
-void onDidReceiveBackgroundNotificationResponse(
-  NotificationResponse response,
-) {
+void onDidReceiveBackgroundNotificationResponse(NotificationResponse response) {
   // We cannot navigate here — no router, no DI, no widget tree.
   // Instead, persist the payload to SharedPreferences so the main
   // isolate can read it during init() and set pendingDeepLink.
@@ -302,7 +300,9 @@ class NotificationService {
       }
     } catch (e) {
       if (kDebugMode) {
-        debugPrint('NotificationService: Error reading pending notification route: $e');
+        debugPrint(
+          'NotificationService: Error reading pending notification route: $e',
+        );
       }
     }
   }

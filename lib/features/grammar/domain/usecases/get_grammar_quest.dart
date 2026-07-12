@@ -16,13 +16,16 @@ class GetGrammarQuestParams extends Equatable {
   List<Object?> get props => [gameType, level];
 }
 
-class GetGrammarQuest implements UseCase<List<GrammarQuest>, GetGrammarQuestParams> {
+class GetGrammarQuest
+    implements UseCase<List<GrammarQuest>, GetGrammarQuestParams> {
   final GrammarRepository repository;
 
   const GetGrammarQuest(this.repository);
 
   @override
-  Future<Either<Failure, List<GrammarQuest>>> call(GetGrammarQuestParams params) {
+  Future<Either<Failure, List<GrammarQuest>>> call(
+    GetGrammarQuestParams params,
+  ) {
     return repository.getGrammarQuest(
       gameType: params.gameType,
       level: params.level,

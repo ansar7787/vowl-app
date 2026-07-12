@@ -27,7 +27,9 @@ void main() {
       try {
         final lines = file.readAsLinesSync().length;
         if (lines > 350) {
-          heavyScreens.add("${file.path.split(Platform.pathSeparator).last} ($lines lines)");
+          heavyScreens.add(
+            "${file.path.split(Platform.pathSeparator).last} ($lines lines)",
+          );
         }
       } catch (e) {
         // Safe check for empty or unreadable files
@@ -36,7 +38,9 @@ void main() {
   }
 
   if (heavyScreens.isNotEmpty) {
-    print("⚠️ Alert: The following screens are currently larger than 350 lines:");
+    print(
+      "⚠️ Alert: The following screens are currently larger than 350 lines:",
+    );
     for (final screen in heavyScreens) {
       print("  - $screen");
     }
@@ -60,7 +64,9 @@ void main() {
         if (trimmed.startsWith('-')) {
           final path = trimmed.replaceFirst('-', '').trim();
           assets.add(path);
-        } else if (trimmed.isNotEmpty && !line.startsWith('    ') && !line.startsWith('  ')) {
+        } else if (trimmed.isNotEmpty &&
+            !line.startsWith('    ') &&
+            !line.startsWith('  ')) {
           inAssets = false;
         }
       }
@@ -96,7 +102,9 @@ void main() {
   if (envFile.existsSync()) {
     final content = envFile.readAsStringSync();
     if (content.contains('rzp_test_')) {
-      print("⚠️ WARNING: Razorpay key is configured for TEST mode (rzp_test_...). Replace it with 'rzp_live_...'!");
+      print(
+        "⚠️ WARNING: Razorpay key is configured for TEST mode (rzp_test_...). Replace it with 'rzp_live_...'!",
+      );
       issuesFound++;
     } else {
       print("✓ Razorpay key looks solid.");
@@ -113,7 +121,9 @@ void main() {
   // 4. Verify native configs
   final googleJson = File('android/app/google-services.json');
   if (!googleJson.existsSync()) {
-    print("❌ Missing: android/app/google-services.json (Android app will crash on startup!)");
+    print(
+      "❌ Missing: android/app/google-services.json (Android app will crash on startup!)",
+    );
     issuesFound++;
   } else {
     print("✓ Found android/app/google-services.json");
@@ -121,7 +131,9 @@ void main() {
 
   final googlePlist = File('ios/Runner/GoogleService-Info.plist');
   if (!googlePlist.existsSync()) {
-    print("⚠️ Alert: ios/Runner/GoogleService-Info.plist not found. Remember to add in Xcode!");
+    print(
+      "⚠️ Alert: ios/Runner/GoogleService-Info.plist not found. Remember to add in Xcode!",
+    );
   } else {
     print("✓ Found ios/Runner/GoogleService-Info.plist");
   }
@@ -131,7 +143,9 @@ void main() {
   if (gradle.existsSync()) {
     final content = gradle.readAsStringSync();
     if (content.contains('signingConfig = signingConfigs.getByName("debug")')) {
-      print("⚠️ WARNING: Release build signs with debug keys! Keystore must be configured for release!");
+      print(
+        "⚠️ WARNING: Release build signs with debug keys! Keystore must be configured for release!",
+      );
       issuesFound++;
     } else {
       print("✓ Android signing configs look ready.");
@@ -155,7 +169,9 @@ void main() {
 
   print("✓ Found $todos active TODOs in files.");
   if (prints > 50) {
-    print("⚠️ WARNING: Found $prints raw print() statements. Use loggers or debugPrint() in production.");
+    print(
+      "⚠️ WARNING: Found $prints raw print() statements. Use loggers or debugPrint() in production.",
+    );
   } else {
     print("✓ Minimal raw print statements.");
   }
@@ -165,7 +181,9 @@ void main() {
     print("❌ SCAN COMPLETED WITH $issuesFound CRITICAL ISSUES / WARNINGS.");
     print("Please resolve all warnings before building for production!");
   } else {
-    print("🎉 CONGRATULATIONS! ALL CHECKS PASSED. YOUR APP IS 100% PRODUCTION READY!");
+    print(
+      "🎉 CONGRATULATIONS! ALL CHECKS PASSED. YOUR APP IS 100% PRODUCTION READY!",
+    );
   }
   print("Total Files Traversed: $totalFilesChecked");
   print("=========================================================");

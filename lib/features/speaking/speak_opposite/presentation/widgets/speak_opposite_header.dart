@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class SpeakOppositeHeader extends StatelessWidget {
   final String? instruction;
   const SpeakOppositeHeader({super.key, this.instruction});
@@ -16,11 +17,16 @@ class SpeakOppositeHeader extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.swap_vertical_circle_rounded, size: 14.r, color: Colors.redAccent),
+          Icon(
+            Icons.swap_vertical_circle_rounded,
+            size: 14.r,
+            color: Colors.redAccent,
+          ),
           SizedBox(width: 8.w),
           Text(
             instruction?.toUpperCase() ?? "POLAR ELECTROMAGNETIC CONDUIT",
-            style: TextStyle(fontFamily: 'RobotoMono', 
+            style: TextStyle(
+              fontFamily: 'RobotoMono',
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,
               color: Colors.redAccent,

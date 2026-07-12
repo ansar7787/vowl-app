@@ -25,49 +25,57 @@ class LeaderboardPodium extends StatelessWidget {
             .clamp(220.0, 320.0);
 
         return SizedBox(
-          height: maxPodiumHeight,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              // 2nd Place (left)
-              if (top3.length > 1)
-                Expanded(
-                  child: _PodiumSlot(
-                    user: top3[1],
-                    rank: 2,
-                    maxHeight: maxPodiumHeight,
+              height: maxPodiumHeight,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  // 2nd Place (left)
+                  if (top3.length > 1)
+                    Expanded(
+                      child: _PodiumSlot(
+                        user: top3[1],
+                        rank: 2,
+                        maxHeight: maxPodiumHeight,
+                      ),
+                    )
+                  else
+                    const Expanded(child: SizedBox.shrink()),
+
+                  SizedBox(width: 8.w),
+
+                  // 1st Place (centre)
+                  Expanded(
+                    child: _PodiumSlot(
+                      user: top3[0],
+                      rank: 1,
+                      maxHeight: maxPodiumHeight,
+                    ),
                   ),
-                )
-              else
-                const Expanded(child: SizedBox.shrink()),
 
-              SizedBox(width: 8.w),
+                  SizedBox(width: 8.w),
 
-              // 1st Place (centre)
-              Expanded(
-                child: _PodiumSlot(
-                  user: top3[0],
-                  rank: 1,
-                  maxHeight: maxPodiumHeight,
-                ),
+                  // 3rd Place (right)
+                  if (top3.length > 2)
+                    Expanded(
+                      child: _PodiumSlot(
+                        user: top3[2],
+                        rank: 3,
+                        maxHeight: maxPodiumHeight,
+                      ),
+                    )
+                  else
+                    const Expanded(child: SizedBox.shrink()),
+                ],
               ),
-
-              SizedBox(width: 8.w),
-
-              // 3rd Place (right)
-              if (top3.length > 2)
-                Expanded(
-                  child: _PodiumSlot(
-                    user: top3[2],
-                    rank: 3,
-                    maxHeight: maxPodiumHeight,
-                  ),
-                )
-              else
-                const Expanded(child: SizedBox.shrink()),
-            ],
-          ),
-        ).animate().fadeIn(duration: 600.ms, curve: Curves.easeOutCirc).slideY(begin: 0.2, end: 0, curve: Curves.easeOutBack, duration: 800.ms);
+            )
+            .animate()
+            .fadeIn(duration: 600.ms, curve: Curves.easeOutCirc)
+            .slideY(
+              begin: 0.2,
+              end: 0,
+              curve: Curves.easeOutBack,
+              duration: 800.ms,
+            );
       },
     );
   }
@@ -119,25 +127,30 @@ class _PodiumSlot extends StatelessWidget {
             children: [
               // Glow ring
               Container(
-                width: avatarSize + 12,
-                height: avatarSize + 12,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: colors[0].withValues(alpha: 0.4),
-                    width: 2.5,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: colors[0].withValues(alpha: 0.25),
-                      blurRadius: 16,
-                      spreadRadius: 2,
+                    width: avatarSize + 12,
+                    height: avatarSize + 12,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: colors[0].withValues(alpha: 0.4),
+                        width: 2.5,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: colors[0].withValues(alpha: 0.25),
+                          blurRadius: 16,
+                          spreadRadius: 2,
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ).animate(onPlay: (c) => c.repeat(reverse: true))
-               .scaleXY(begin: 1.0, end: isFirst ? 1.08 : 1.0, duration: 1500.ms)
-               .fade(begin: 0.8, end: 1.0),
+                  )
+                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                  .scaleXY(
+                    begin: 1.0,
+                    end: isFirst ? 1.08 : 1.0,
+                    duration: 1500.ms,
+                  )
+                  .fade(begin: 0.8, end: 1.0),
               // Photo
               Container(
                 width: avatarSize,
