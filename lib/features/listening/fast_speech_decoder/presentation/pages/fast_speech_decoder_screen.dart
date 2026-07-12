@@ -236,6 +236,8 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                             );
                                             _hapticService.selection();
                                           },
+                                          emoji: quest.emoji,
+                                          isCorrectState: _isCorrect,
                                         ),
                                       ],
                                     );

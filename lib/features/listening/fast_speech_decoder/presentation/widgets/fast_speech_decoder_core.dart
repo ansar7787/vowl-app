@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class FastSpeechDecoderCore extends StatelessWidget {
@@ -9,6 +10,8 @@ class FastSpeechDecoderCore extends StatelessWidget {
   final double rotation;
   final Function(double) onRotate;
   final VoidCallback onTapTts;
+  final String? emoji;
+  final bool? isCorrectState;
 
   const FastSpeechDecoderCore({
     super.key,
@@ -18,6 +21,8 @@ class FastSpeechDecoderCore extends StatelessWidget {
     required this.rotation,
     required this.onRotate,
     required this.onTapTts,
+    this.emoji,
+    this.isCorrectState,
   });
 
   @override
@@ -82,23 +87,29 @@ class FastSpeechDecoderCore extends StatelessWidget {
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  Icon(
-                    Icons.play_arrow_rounded,
-                    color: Colors.white,
-                    size: 60.r,
-                  ),
-                  Positioned(
-                    bottom: 20.r,
-                    child: Text(
-                      "LISTEN",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 7.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white70,
+                  if (isCorrectState == true && emoji != null)
+                    Text(emoji!, style: TextStyle(fontSize: 48.r))
+                        .animate()
+                        .scale(duration: 400.ms, curve: Curves.easeOutBack)
+                  else ...[
+                    Icon(
+                      Icons.play_arrow_rounded,
+                      color: Colors.white,
+                      size: 60.r,
+                    ),
+                    Positioned(
+                      bottom: 20.r,
+                      child: Text(
+                        "LISTEN",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 7.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white70,
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ],
               ),
             ),
