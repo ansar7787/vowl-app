@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 /// A one-time age verification screen shown before the user enters the app.
 ///
@@ -160,6 +161,15 @@ class AgeGateScreen extends StatelessWidget {
     }
 
     if (!context.mounted) return;
+
+    if (isAdult) {
+      CustomSnackBar.show(
+        context: context,
+        message: context.tr('age_gate.adult_welcome_toast', fallback: '🎉 Full Experience Unlocked! You have access to all courses and the Kids Zone. You can switch modes anytime in Settings.'),
+        type: CustomSnackBarType.success,
+      );
+    }
+
     context.go('/');
   }
 
