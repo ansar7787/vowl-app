@@ -29,12 +29,12 @@ class PremiumSuccessOverlay extends StatelessWidget {
             color: Colors.white.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(32.r),
             border: Border.all(
-              color: const Color(0xFF3B82F6).withValues(alpha: 0.4),
+              color: const Color(0xFF6366F1).withValues(alpha: 0.4),
               width: 1.5,
             ),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF3B82F6).withValues(alpha: 0.15),
+                color: const Color(0xFF6366F1).withValues(alpha: 0.15),
                 blurRadius: 50,
                 spreadRadius: 10,
               ),
@@ -53,13 +53,13 @@ class PremiumSuccessOverlay extends StatelessWidget {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       gradient: const LinearGradient(
-                        colors: [Color(0xFF60A5FA), Color(0xFF3B82F6)],
+                        colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF3B82F6).withValues(alpha: 0.5),
+                          color: const Color(0xFF6366F1).withValues(alpha: 0.5),
                           blurRadius: 20,
                           offset: const Offset(0, 10),
                         ),
@@ -79,7 +79,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
                 SizedBox(height: 28.h),
                 ShaderMask(
                   shaderCallback: (bounds) => const LinearGradient(
-                    colors: [Color(0xFF60A5FA), Color(0xFF3B82F6)],
+                    colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ).createShader(bounds),
@@ -157,14 +157,14 @@ class PremiumSuccessOverlay extends StatelessWidget {
                       padding: EdgeInsets.symmetric(vertical: 16.h),
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
-                          colors: [Color(0xFF60A5FA), Color(0xFF3B82F6)],
+                          colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
                         borderRadius: BorderRadius.circular(24.r),
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(0xFF3B82F6).withValues(alpha: 0.4),
+                            color: const Color(0xFF6366F1).withValues(alpha: 0.4),
                             blurRadius: 15,
                             offset: const Offset(0, 5),
                           ),
