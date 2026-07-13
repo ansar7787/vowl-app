@@ -6,6 +6,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
+import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 
 /// A single streak milestone: the day count it unlocks at, and its reward.
 class StreakMilestone {
@@ -21,53 +22,12 @@ class StreakMilestoneCalculator {
   StreakMilestoneCalculator._();
 
   static List<StreakMilestone> compute(UserEntity user) {
-    final Map<int, int> rewardsByDay = {};
-
-    void addMilestone(int d) {
-      if (rewardsByDay.containsKey(d)) return;
-      int reward;
-      if (d == 10) {
-        reward = 500;
-      } else if (d == 50) {
-        reward = 2500;
-      } else if (d == 100) {
-        reward = 6000;
-      } else if (d == 200) {
-        reward = 15000;
-      } else if (d == 300) {
-        reward = 25000;
-      } else if (d % 365 == 0) {
-        reward = 50000 * (d ~/ 365);
-      } else {
-        reward = d * 50;
-      }
-      rewardsByDay[d] = reward;
-    }
-
-    const starterSet = [10, 50, 100, 200, 300, 365];
-    for (final d in starterSet) {
-      addMilestone(d);
-    }
-    for (final d in user.claimedStreakMilestones) {
-      addMilestone(d);
-    }
-
-    final int current = user.currentStreak;
-    final int lastCentury = (current ~/ 100) * 100;
-    if (lastCentury > 0) addMilestone(lastCentury);
-
-    final int nextCentury = ((current ~/ 100) + 1) * 100;
-    addMilestone(nextCentury);
-    addMilestone(nextCentury + 100);
-
-    final int nextYear = ((current ~/ 365) + 1) * 365;
-    addMilestone(nextYear);
-
-    final milestones =
-        rewardsByDay.entries
-            .map((e) => StreakMilestone(days: e.key, reward: e.value))
-            .toList()
-          ..sort((a, b) => a.days.compareTo(b.days));
+    // Single Source of Truth: UI now precisely matches the backend rewards.
+    // This prevents the bug where UI displayed "350 coins" but backend awarded 100.
+    final milestones = UserGameConstants.kStreakMilestoneRewards.entries
+        .map((e) => StreakMilestone(days: e.key, reward: e.value))
+        .toList()
+      ..sort((a, b) => a.days.compareTo(b.days));
 
     return milestones;
   }
