@@ -164,6 +164,22 @@ class AppRouter {
       return null; // Let them stay on the age gate
     }
 
+    // 5.5. COPPA Loophole Preventer: Restrict under-16 users to Kids Zone
+    if (!AgeGateService.isAdultCached) {
+      final isKidsRoute = path.startsWith('/kids') || path == kidsZoneRoute;
+      // Let them complete onboarding (hatching) or auth if needed.
+      // We also allow settingsRoute so they can reset their age if they made a mistake.
+      if (!isKidsRoute && 
+          !isAuthRoute && 
+          path != verifyEmailRoute && 
+          path != splashRoute && 
+          path != ageGateRoute && 
+          path != settingsRoute &&
+          path != hatchingRoute) {
+        return kidsZoneRoute; // Force into Kids Zone
+      }
+    }
+
     // 6. Authenticated, verified, and age-gated — redirect away from auth/verify/root/ageGate.
     if (isAuthRoute ||
         path == verifyEmailRoute ||
@@ -190,7 +206,8 @@ class AppRouter {
         final name = currentUser.displayName ?? 'Traveler';
         return '$hatchingRoute?name=${Uri.encodeComponent(name)}';
       }
-      return homeRoute;
+      // Route directly to the appropriate home based on age gate status
+      return AgeGateService.isAdultCached ? homeRoute : kidsZoneRoute;
     }
 
     return null;

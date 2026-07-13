@@ -18,6 +18,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_zone_home_head
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
+import 'package:vowl/core/utils/age_gate_service.dart';
 
 class KidsZoneScreen extends StatefulWidget {
   const KidsZoneScreen({super.key});
@@ -303,7 +304,18 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
       automaticallyImplyLeading: false,
       leading: Center(
         child: ScaleButton(
-          onTap: () => Navigator.pop(context),
+          onTap: () {
+            // If locked to kids zone, back button acts as settings button
+            if (!AgeGateService.isAdultCached) {
+              context.push('/settings');
+            } else {
+              if (context.canPop()) {
+                context.pop();
+              } else {
+                context.go('/home');
+              }
+            }
+          },
           child: Container(
             padding: EdgeInsets.all(10.r),
             decoration: BoxDecoration(
@@ -321,7 +333,10 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
               ],
             ),
             child: Icon(
-              Icons.arrow_back_ios_new_rounded,
+              // If they can't leave, show settings icon instead of back
+              AgeGateService.isAdultCached 
+                  ? Icons.arrow_back_ios_new_rounded 
+                  : Icons.settings_rounded,
               color: contrastColor,
               size: 20.sp,
             ),

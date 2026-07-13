@@ -54,4 +54,14 @@ class AgeGateService {
     _cachedIsCompleted = true;
     _cachedIsAdult = isAdult;
   }
+
+  /// Resets the age gate so it will be shown again on next route evaluation.
+  /// Called from Settings → "Reset Age Verification".
+  static Future<void> resetAgeGate() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove(_keyAgeGateCompleted);
+    await prefs.remove(_keyIsAdult);
+    _cachedIsCompleted = false;
+    _cachedIsAdult = false;
+  }
 }

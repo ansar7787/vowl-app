@@ -21,6 +21,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/age_gate_service.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -345,6 +346,38 @@ class _SettingsAccountGroup extends StatelessWidget {
                 context,
                 context.read<AuthBloc>().state.user?.email ?? '',
               ),
+            ),
+            SettingsTile(
+              title: context.tr('settings.age_verification', fallback: 'Age Verification'),
+              icon: Icons.verified_user_rounded,
+              color: Colors.deepPurple,
+              onTap: () async {
+                final confirm = await showDialog<bool>(
+                  context: context,
+                  builder: (ctx) => AlertDialog(
+                    title: Text(context.tr('settings.reset_age_title', fallback: 'Reset Age Verification?')),
+                    content: Text(context.tr('settings.reset_age_desc', fallback: 'This will reset your age verification status. You will be asked to verify your age again on the next screen.')),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(ctx, false),
+                        child: Text(context.tr('common.cancel', fallback: 'Cancel')),
+                      ),
+                      TextButton(
+                        onPressed: () => Navigator.pop(ctx, true),
+                        child: Text(context.tr('common.continue', fallback: 'Continue')),
+                      ),
+                    ],
+                  ),
+                );
+                
+                if (confirm == true && context.mounted) {
+                  await AgeGateService.resetAgeGate();
+                  if (context.mounted) {
+                    context.go('/age-gate');
+                  }
+                }
+              },
             ),
           ],
         ),
