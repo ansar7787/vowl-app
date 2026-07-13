@@ -18,7 +18,7 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/home/presentation/widgets/bento_arena.dart';
 import 'package:vowl/features/home/presentation/widgets/command_pod.dart';
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
-import 'package:vowl/features/home/presentation/widgets/hoot_of_wisdom.dart';
+import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.dart';
 import 'package:vowl/features/home/presentation/widgets/mystery_chest_dialog.dart';
 import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_reward_ad_card.dart';
@@ -344,7 +344,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         sliver: SliverList(
                           delegate: SliverChildListDelegate([
                             SizedBox(height: 28.h),
-                            const HootOfWisdom(),
+                            DailyMotivationCard(streakCount: user.currentStreak),
                             SizedBox(height: 24.h),
                             const AdRewardCard(margin: EdgeInsets.zero),
                             SizedBox(height: 16.h),
