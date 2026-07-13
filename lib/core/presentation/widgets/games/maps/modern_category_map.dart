@@ -1216,7 +1216,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          context.tr('home.level_label'),
+                          context.tr('home.level_label', fallback: 'Level'),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 8.sp,

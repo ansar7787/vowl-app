@@ -89,7 +89,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
           Semantics(
             // Inform screen readers that content is loading.
             liveRegion: true,
-            label: context.tr('loading.synchronizing_title'),
+            label: context.tr('loading.synchronizing_title', fallback: 'Synchronizing...'),
             child: AbsorbPointer(
               child: Animate(
                 effects: const [

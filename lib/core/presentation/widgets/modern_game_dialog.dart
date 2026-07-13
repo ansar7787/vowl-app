@@ -294,7 +294,7 @@ class ModernGameDialog extends StatelessWidget {
                 SizedBox(height: 12.h),
                 Semantics(
                   button: true,
-                  label: secondaryButtonText ?? context.tr('common.cancel'),
+                  label: secondaryButtonText ?? context.tr('common.cancel', fallback: 'Cancel'),
                   child: TextButton(
                     onPressed: onSecondaryPressed,
                     style: TextButton.styleFrom(
@@ -306,7 +306,7 @@ class ModernGameDialog extends StatelessWidget {
                     ),
                     child: Text(
                       secondaryButtonText ??
-                          context.tr('common.cancel').toUpperCase(),
+                          context.tr('common.cancel', fallback: 'Cancel').toUpperCase(),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 15.sp,

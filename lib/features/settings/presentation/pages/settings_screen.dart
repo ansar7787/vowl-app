@@ -123,7 +123,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       if (context.mounted) {
         CustomSnackBar.show(
           context: context,
-          message: context.tr('settings.email_error'),
+          message: context.tr('settings.email_error', fallback: 'Email Error'),
           type: CustomSnackBarType.error,
         );
       }
@@ -140,7 +140,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   Future<void> _handleLegalLink(BuildContext context, String title) async {
-    final isTerms = title == context.tr('settings.terms_of_service');
+    final isTerms = title == context.tr('settings.terms_of_service', fallback: 'Terms of Service');
 
     final urlString = isTerms
         ? 'https://ansar7787.github.io/vowl-legal/terms.html'
@@ -189,7 +189,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       if (context.mounted) {
         CustomSnackBar.show(
           context: context,
-          message: context.tr('settings.cache_cleared'),
+          message: context.tr('settings.cache_cleared', fallback: 'Cache Cleared'),
           type: CustomSnackBarType.success,
         );
       }
@@ -197,7 +197,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       if (context.mounted) {
         CustomSnackBar.show(
           context: context,
-          message: context.tr('settings.cache_clear_error'),
+          message: context.tr('settings.cache_clear_error', fallback: 'Error clearing cache'),
           type: CustomSnackBarType.error,
         );
       }
@@ -306,7 +306,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         },
       ),
       title: Text(
-        context.tr('settings.title'),
+        context.tr('settings.title', fallback: 'Settings'),
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 22.sp,
@@ -333,13 +333,13 @@ class _SettingsAccountGroup extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SettingsSectionTitle(
-          title: context.tr('settings.account'),
+          title: context.tr('settings.account', fallback: 'Account'),
           isDark: isDark,
         ),
         SettingsGroup(
           children: [
             SettingsTile(
-              title: context.tr('settings.security_password'),
+              title: context.tr('settings.security_password', fallback: 'Security & Password'),
               icon: Icons.lock_person_rounded,
               color: Colors.blue,
               onTap: () => SettingsDialogs.showPasswordReset(
@@ -409,14 +409,14 @@ class _SettingsPreferencesGroup extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SettingsSectionTitle(
-          title: context.tr('settings.app_preferences'),
+          title: context.tr('settings.app_preferences', fallback: 'App Preferences'),
           isDark: isDark,
         ),
         SettingsGroup(
           children: [
             SettingsSwitchTile(
-              title: context.tr('settings.sound_effects'),
-              subtitle: context.tr('settings.sound_effects_subtitle'),
+              title: context.tr('settings.sound_effects', fallback: 'Sound Effects'),
+              subtitle: context.tr('settings.sound_effects_subtitle', fallback: 'Game sounds and music'),
               icon: Icons.volume_up_rounded,
               color: Colors.pink,
               value: soundEnabled,
@@ -424,8 +424,8 @@ class _SettingsPreferencesGroup extends StatelessWidget {
               onChanged: onToggleSound,
             ),
             SettingsSwitchTile(
-              title: context.tr('settings.push_notifications'),
-              subtitle: context.tr('settings.push_notifications_subtitle'),
+              title: context.tr('settings.push_notifications', fallback: 'Push Notifications'),
+              subtitle: context.tr('settings.push_notifications_subtitle', fallback: 'Daily reminders and alerts'),
               icon: Icons.notifications_active_rounded,
               color: Colors.orange,
               value: notificationsEnabled,
@@ -450,7 +450,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                     context.read<ThemeCubit>().toggleMidnight(val),
               ),
             SettingsTile(
-              title: context.tr('settings.language_selection'),
+              title: context.tr('settings.language_selection', fallback: 'Language Selection'),
               icon: Icons.language_rounded,
               color: Colors.teal,
               onTap: () => LanguagePickerSheet.show(context),
@@ -493,31 +493,31 @@ class _SettingsSupportGroup extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SettingsSectionTitle(
-          title: context.tr('settings.support_legal'),
+          title: context.tr('settings.support_legal', fallback: 'Support & Legal'),
           isDark: isDark,
         ),
         SettingsGroup(
           children: [
             SettingsTile(
-              title: context.tr('settings.help_center'),
+              title: context.tr('settings.help_center', fallback: 'Help Center'),
               icon: Icons.help_center_rounded,
               color: Colors.green,
               onTap: onSupportTap,
             ),
             SettingsTile(
-              title: context.tr('settings.terms_of_service'),
+              title: context.tr('settings.terms_of_service', fallback: 'Terms of Service'),
               icon: Icons.description_rounded,
               color: Colors.blueGrey,
-              onTap: () => onLegalTap(context.tr('settings.terms_of_service')),
+              onTap: () => onLegalTap(context.tr('settings.terms_of_service', fallback: 'Terms of Service')),
             ),
             SettingsTile(
-              title: context.tr('settings.privacy_policy'),
+              title: context.tr('settings.privacy_policy', fallback: 'Privacy Policy'),
               icon: Icons.policy_rounded,
               color: Colors.blueGrey,
-              onTap: () => onLegalTap(context.tr('settings.privacy_policy')),
+              onTap: () => onLegalTap(context.tr('settings.privacy_policy', fallback: 'Privacy Policy')),
             ),
             SettingsTile(
-              title: context.tr('settings.app_version'),
+              title: context.tr('settings.app_version', fallback: 'App Version'),
               icon: Icons.info_outline_rounded,
               color: Colors.grey,
               trailing: Text(
@@ -549,19 +549,19 @@ class _SettingsDangerGroup extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SettingsSectionTitle(
-          title: context.tr('settings.danger_zone'),
+          title: context.tr('settings.danger_zone', fallback: 'Danger Zone'),
           isDark: isDark,
         ),
         SettingsGroup(
           children: [
             SettingsTile(
-              title: context.tr('settings.clear_cache'),
+              title: context.tr('settings.clear_cache', fallback: 'Clear Cache'),
               icon: Icons.cleaning_services_rounded,
               color: Colors.amber,
               onTap: onClearCache,
             ),
             SettingsTile(
-              title: context.tr('settings.delete_account'),
+              title: context.tr('settings.delete_account', fallback: 'Delete Account'),
               icon: Icons.delete_forever_rounded,
               color: Colors.red,
               onTap: () => SettingsDialogs.showDeleteAccount(context),

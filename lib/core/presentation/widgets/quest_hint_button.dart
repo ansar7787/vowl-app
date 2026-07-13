@@ -42,11 +42,11 @@ class QuestHintButton extends StatelessWidget {
       if (hintText != null) {
         final isDynamic = HintUtility.isGenericHint(hintText);
         final displayText = isDynamic
-            ? context.tr('hint.pro_tip_generic')
+            ? context.tr('hint.pro_tip_generic', fallback: 'Pro Tip')
             : hintText!;
 
         di.sl<TtsService>().speak(
-          isDynamic ? context.tr('hint.pro_tip_tts') : hintText!,
+          isDynamic ? context.tr('hint.pro_tip_tts', fallback: 'Listen carefully to the pronunciation.') : hintText!,
         );
 
         CustomSnackBar.show(

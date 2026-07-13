@@ -57,9 +57,9 @@ class GameDialogHelper {
     final isPremium = authState.user?.isPremium ?? false;
     final hasMultiplier = userLevel >= 100 || isPremium;
 
-    final resolvedTitle = title ?? context.tr('games.level_complete');
+    final resolvedTitle = title ?? context.tr('games.level_complete', fallback: 'Level Complete!');
     final resolvedButtonText =
-        buttonText ?? context.tr('common.ok').toUpperCase();
+        buttonText ?? context.tr('common.ok', fallback: 'OK').toUpperCase();
 
     String coinDesc = context.tr(
       'games.reward_earned_title',
@@ -118,7 +118,7 @@ class GameDialogHelper {
                     if (!adService.isRewardedAdLoaded) {
                       showPremiumSnackBar(
                         context,
-                        context.tr('games.ad_not_ready'),
+                        context.tr('games.ad_not_ready', fallback: 'Ad not ready yet, try again soon.'),
                         icon: Icons.hourglass_empty_rounded,
                         color: Colors.orange,
                       );
@@ -139,7 +139,7 @@ class GameDialogHelper {
                         );
                         showPremiumSnackBar(
                           context,
-                          context.tr('games.coins_tripled'),
+                          context.tr('games.coins_tripled', fallback: 'Coins Tripled!'),
                           icon: Icons.auto_awesome_rounded,
                           color: const Color(0xFF10B981),
                         );
@@ -234,7 +234,7 @@ class GameDialogHelper {
                 if (!adService.isRewardedAdLoaded) {
                   showPremiumSnackBar(
                     context,
-                    context.tr('games.ad_not_ready'),
+                    context.tr('games.ad_not_ready', fallback: 'Ad not ready yet, try again soon.'),
                     icon: Icons.hourglass_empty_rounded,
                     color: Colors.orange,
                   );
@@ -295,7 +295,7 @@ class GameDialogHelper {
         isSuccess: true,
         onButtonPressed: () => Navigator.of(dialogCtx).pop(),
         isExitConfirmation: true,
-        adButtonText: context.tr('games.kids_quit_button'),
+        adButtonText: context.tr('games.kids_quit_button', fallback: 'Quit'),
         onAdAction: () {
           Navigator.of(dialogCtx).pop();
           onQuit();
@@ -312,13 +312,13 @@ class GameDialogHelper {
     required String hint,
     String? title,
   }) {
-    final resolvedTitle = title ?? context.tr('games.hint').toUpperCase();
+    final resolvedTitle = title ?? context.tr('games.hint', fallback: 'Hint').toUpperCase();
     showDialog(
       context: context,
       builder: (dialogCtx) => ModernGameDialog(
         title: resolvedTitle,
         description: hint,
-        buttonText: context.tr('games.got_it'),
+        buttonText: context.tr('games.got_it', fallback: 'Got It!'),
         onButtonPressed: () => Navigator.of(dialogCtx).pop(),
       ),
     );
@@ -391,7 +391,7 @@ class GameDialogHelper {
           fallback:
               'You are out of hints! Watch a quick ad to get 1 Strategic Hint for free.',
         ),
-        buttonText: context.tr('notification_card.not_now').toUpperCase(),
+        buttonText: context.tr('notification_card.not_now', fallback: 'Not Now').toUpperCase(),
         onButtonPressed: () => Navigator.of(dialogCtx).pop(),
         onAdAction: () {
           final isPremium =
@@ -401,7 +401,7 @@ class GameDialogHelper {
           if (!isPremium && !adService.isRewardedAdLoaded) {
             showPremiumSnackBar(
               context,
-              context.tr('games.ad_not_ready'),
+              context.tr('games.ad_not_ready', fallback: 'Ad not ready yet, try again soon.'),
               icon: Icons.hourglass_empty_rounded,
               color: Colors.orange,
             );
