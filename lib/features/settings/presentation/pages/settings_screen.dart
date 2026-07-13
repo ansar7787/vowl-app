@@ -559,6 +559,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
             ),
             SettingsTile(
               title: context.tr('settings.translation_language', fallback: 'Translation Language'),
+              subtitle: context.tr('settings.translation_language_subtitle', fallback: 'Used for hints and explanations in games'),
               icon: Icons.g_translate_rounded,
               color: Colors.amber,
               onTap: () => LanguageSelectionBottomSheet.show(context),

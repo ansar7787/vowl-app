@@ -1,10 +1,12 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
-/// A bottom sheet that allows users to select or change their native translation language.
+/// A sleek 2026 glassmorphic bottom sheet for selecting the native translation language.
 class LanguageSelectionBottomSheet extends StatefulWidget {
   const LanguageSelectionBottomSheet({super.key});
 
@@ -27,141 +29,227 @@ class _LanguageSelectionBottomSheetState extends State<LanguageSelectionBottomSh
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(
-        left: 20.w,
-        right: 20.w,
-        top: 20.h,
-        bottom: MediaQuery.of(context).padding.bottom + 20.h,
-      ),
-      decoration: BoxDecoration(
-        color: Theme.of(context).scaffoldBackgroundColor,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-      ),
-      constraints: BoxConstraints(
-        maxHeight: MediaQuery.of(context).size.height * 0.8,
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(
-            child: Container(
-              width: 40.w,
-              height: 4.h,
-              decoration: BoxDecoration(
-                color: Colors.grey.withValues(alpha: 0.3),
-                borderRadius: BorderRadius.circular(2.r),
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final primaryIndigo = const Color(0xFF6366F1);
+
+    return ClipRRect(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+        child: Container(
+          padding: EdgeInsets.only(
+            left: 20.w,
+            right: 20.w,
+            top: 20.h,
+            bottom: MediaQuery.of(context).padding.bottom + 20.h,
+          ),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF0F172A).withValues(alpha: 0.85) : Colors.white.withValues(alpha: 0.9),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+            border: Border(
+              top: BorderSide(
+                color: Colors.white.withValues(alpha: 0.2),
+                width: 1,
               ),
             ),
           ),
-          SizedBox(height: 24.h),
-          Text(
-            context.tr('translation.first_time_title', fallback: 'What is your native language?'),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 24.sp,
-              fontWeight: FontWeight.w900,
-            ),
+          constraints: BoxConstraints(
+            maxHeight: MediaQuery.of(context).size.height * 0.85,
           ),
-          SizedBox(height: 8.h),
-          Text(
-            context.tr(
-              'translation.language_selection_subtitle',
-              fallback: 'Select the language you want explanations translated into.',
-            ),
-            style: TextStyle(
-              fontSize: 14.sp,
-              color: Colors.grey,
-            ),
-          ),
-          SizedBox(height: 24.h),
-          Expanded(
-            child: ListView.separated(
-              itemCount: TranslationService.supportedLanguages.length,
-              separatorBuilder: (context, index) => SizedBox(height: 8.h),
-              itemBuilder: (context, index) {
-                final entry = TranslationService.supportedLanguages.entries.elementAt(index);
-                final isSelected = _selectedLanguage == entry.key;
-
-                return InkWell(
-                  onTap: () => setState(() => _selectedLanguage = entry.key),
-                  borderRadius: BorderRadius.circular(16.r),
-                  child: Container(
-                    padding: EdgeInsets.all(16.r),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: Container(
+                  width: 48.w,
+                  height: 5.h,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withValues(alpha: 0.3),
+                    borderRadius: BorderRadius.circular(2.5.r),
+                  ),
+                ),
+              ),
+              SizedBox(height: 24.h),
+              
+              // Premium Header
+              Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(12.r),
                     decoration: BoxDecoration(
-                      color: isSelected ? Colors.amber.withValues(alpha: 0.1) : Colors.transparent,
-                      borderRadius: BorderRadius.circular(16.r),
-                      border: Border.all(
-                        color: isSelected ? Colors.amber : Colors.grey.withValues(alpha: 0.2),
-                        width: 2,
-                      ),
+                      color: primaryIndigo.withValues(alpha: 0.15),
+                      shape: BoxShape.circle,
                     ),
-                    child: Row(
+                    child: Icon(LucideIcons.languages, color: primaryIndigo, size: 24.r),
+                  ),
+                  SizedBox(width: 16.w),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          entry.key,
+                          context.tr('translation.first_time_title', fallback: 'Translation Language'),
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 18.sp,
-                            fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
-                            color: isSelected ? Colors.amber : null,
+                            fontSize: 22.sp,
+                            fontWeight: FontWeight.w900,
+                            color: isDark ? Colors.white : Colors.black87,
+                            letterSpacing: -0.5,
                           ),
                         ),
-                        const Spacer(),
-                        if (isSelected)
-                          Icon(LucideIcons.checkCircle2, color: Colors.amber, size: 24.r),
+                        SizedBox(height: 4.h),
+                        Text(
+                          context.tr(
+                            'translation.language_selection_subtitle',
+                            fallback: 'We will translate in-game hints & explanations into this language.',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            color: isDark ? Colors.white60 : Colors.black54,
+                            height: 1.3,
+                          ),
+                        ),
                       ],
                     ),
                   ),
-                );
-              },
-            ),
-          ),
-          SizedBox(height: 16.h),
-          SizedBox(
-            width: double.infinity,
-            height: 56.h,
-            child: ElevatedButton(
-              onPressed: (_selectedLanguage == null || _isLoading)
-                  ? null
-                  : () async {
-                      setState(() => _isLoading = true);
-                      final target = TranslationService.supportedLanguages[_selectedLanguage]!;
-                      
-                      try {
-                        await TranslationService().setTargetLanguage(target);
-                        if (context.mounted) Navigator.pop(context);
-                      } catch (e) {
-                        if (mounted) {
-                          setState(() => _isLoading = false);
-                        }
-                        if (context.mounted) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text(context.tr('translation.error'))),
-                          );
-                        }
-                      }
-                    },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.amber,
-                foregroundColor: Colors.black,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
-                disabledBackgroundColor: Colors.grey.withValues(alpha: 0.2),
+                ],
               ),
-              child: _isLoading
-                  ? const CircularProgressIndicator(color: Colors.black)
-                  : Text(
-                      context.tr('common.continue_text', fallback: 'Continue'),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w800,
+              SizedBox(height: 24.h),
+              
+              // Searchable-like List (Future proofing for search)
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.black.withValues(alpha: 0.2) : Colors.black.withValues(alpha: 0.02),
+                    borderRadius: BorderRadius.circular(24.r),
+                    border: Border.all(
+                      color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
+                    ),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(24.r),
+                    child: ListView.separated(
+                      padding: EdgeInsets.all(16.r),
+                      itemCount: TranslationService.supportedLanguages.length,
+                      separatorBuilder: (context, index) => SizedBox(height: 8.h),
+                      itemBuilder: (context, index) {
+                        final entry = TranslationService.supportedLanguages.entries.elementAt(index);
+                        final isSelected = _selectedLanguage == entry.key;
+
+                        return Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            onTap: () => setState(() => _selectedLanguage = entry.key),
+                            borderRadius: BorderRadius.circular(16.r),
+                            child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+                              decoration: BoxDecoration(
+                                color: isSelected ? primaryIndigo.withValues(alpha: 0.1) : Colors.transparent,
+                                borderRadius: BorderRadius.circular(16.r),
+                                border: Border.all(
+                                  color: isSelected ? primaryIndigo.withValues(alpha: 0.5) : Colors.transparent,
+                                  width: 1.5,
+                                ),
+                              ),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    entry.key,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 16.sp,
+                                      fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
+                                      color: isSelected 
+                                          ? primaryIndigo 
+                                          : (isDark ? Colors.white70 : Colors.black87),
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                  if (isSelected)
+                                    Icon(LucideIcons.checkCircle2, color: primaryIndigo, size: 22.r),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.h),
+              
+              // Premium CTA Button
+              SizedBox(
+                width: double.infinity,
+                child: Semantics(
+                  button: true,
+                  label: context.tr('common.continue_text', fallback: 'Continue'),
+                  child: ScaleButton(
+                    onTap: (_selectedLanguage == null || _isLoading)
+                        ? () {}
+                        : () async {
+                            setState(() => _isLoading = true);
+                            final target = TranslationService.supportedLanguages[_selectedLanguage]!;
+                            
+                            try {
+                              await TranslationService().setTargetLanguage(target);
+                              if (context.mounted) Navigator.pop(context);
+                            } catch (e) {
+                              if (mounted) setState(() => _isLoading = false);
+                              if (context.mounted) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(context.tr('translation.error', fallback: 'Failed to set language')),
+                                    backgroundColor: const Color(0xFFF43F5E),
+                                  ),
+                                );
+                              }
+                            }
+                          },
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 300),
+                      padding: EdgeInsets.symmetric(vertical: 16.h),
+                      decoration: BoxDecoration(
+                        color: _selectedLanguage == null ? Colors.grey.withValues(alpha: 0.3) : primaryIndigo,
+                        borderRadius: BorderRadius.circular(20.r),
+                        boxShadow: _selectedLanguage != null
+                            ? [
+                                BoxShadow(
+                                  color: primaryIndigo.withValues(alpha: 0.4),
+                                  blurRadius: 15,
+                                  offset: const Offset(0, 5),
+                                )
+                              ]
+                            : [],
+                      ),
+                      child: Center(
+                        child: _isLoading
+                            ? SizedBox(
+                                width: 24.r,
+                                height: 24.r,
+                                child: const CircularProgressIndicator(color: Colors.white, strokeWidth: 2.5),
+                              )
+                            : Text(
+                                context.tr('common.continue_text', fallback: 'Continue').toUpperCase(),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: _selectedLanguage == null ? Colors.grey.withValues(alpha: 0.8) : Colors.white,
+                                  letterSpacing: 1,
+                                ),
+                              ),
                       ),
                     ),
-            ),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
