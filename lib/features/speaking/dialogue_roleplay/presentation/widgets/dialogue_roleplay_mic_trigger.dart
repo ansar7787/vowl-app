@@ -138,7 +138,7 @@ class DialogueRoleplayMicTrigger extends StatelessWidget {
               padding: EdgeInsets.only(top: 20.h),
               child: Semantics(
                 button: true,
-                hint: context.tr('games.semantic_tutor_pass_hint'),
+                hint: context.tr('games.semantic_tutor_pass_hint', fallback: 'Speak now'),
                 child: ScaleButton(
                   onTap: onTutorPass,
                   child: ConstrainedBox(

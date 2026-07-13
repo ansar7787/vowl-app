@@ -46,8 +46,8 @@ class ListeningFeedbackCard extends StatelessWidget {
     final shadowColor = success ? _successShadow : _failureShadow;
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
     final title = success
-        ? context.tr('games.excellent')
-        : context.tr('games.not_quite');
+        ? context.tr('games.excellent', fallback: 'Excellent!')
+        : context.tr('games.not_quite', fallback: 'Not Quite');
 
     final showExplanation = !success && state.isFinalFailure;
     final explanation = showExplanation ? state.currentQuest.explanation : null;
@@ -55,12 +55,12 @@ class ListeningFeedbackCard extends StatelessWidget {
     // Overflow-safe button label: Flexible + FittedBox handles long
     // translations without the 'letterSpacing: 3' causing overflow.
     final buttonText = success
-        ? context.tr('common.continue_text').toUpperCase()
+        ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : (state.isFinalFailure
               ? (state.livesRemaining == 0
-                    ? context.tr('common.see_results').toUpperCase()
-                    : context.tr('common.continue_text').toUpperCase())
-              : context.tr('games.try_again').toUpperCase());
+                    ? context.tr('common.see_results', fallback: 'See Results').toUpperCase()
+                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
+              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
 
     return Semantics(
       container: true,
@@ -268,7 +268,7 @@ class _ExplanationCard extends StatelessWidget {
                   ),
                   SizedBox(width: 8.w),
                   Text(
-                    context.tr('games.explanation_caps'),
+                    context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,

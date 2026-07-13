@@ -45,7 +45,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
           children: [
             Semantics(
               liveRegion: true,
-              label: context.tr('premium.success_title'),
+              label: context.tr('premium.success_title', fallback: 'Welcome to Premium!'),
               child:
                   Container(
                         width: 80.r,
@@ -66,7 +66,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
             ),
             SizedBox(height: 24.h),
             Text(
-              context.tr('premium.success_title'),
+              context.tr('premium.success_title', fallback: 'Welcome to Premium!'),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'RobotoMono',
@@ -78,7 +78,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
             ),
             SizedBox(height: 12.h),
             Text(
-              context.tr('premium.success_subtitle'),
+              context.tr('premium.success_subtitle', fallback: 'Your upgrade was successful.'),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -101,7 +101,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      context.tr('premium.transaction_id_label'),
+                      context.tr('premium.transaction_id_label', fallback: 'Transaction ID'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
@@ -127,7 +127,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
             SizedBox(height: 24.h),
             Semantics(
               button: true,
-              label: context.tr('premium.begin_adventure_button'),
+              label: context.tr('premium.begin_adventure_button', fallback: 'Begin Adventure'),
               child: ScaleButton(
                 onTap: onBeginAdventure,
                 child: Container(
@@ -140,7 +140,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20.r),
                   ),
                   child: Text(
-                    context.tr('premium.begin_adventure_button'),
+                    context.tr('premium.begin_adventure_button', fallback: 'Begin Adventure'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       color: Colors.black,

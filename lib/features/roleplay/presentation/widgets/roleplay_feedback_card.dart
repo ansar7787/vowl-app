@@ -46,15 +46,15 @@ class RoleplayFeedbackCard extends StatelessWidget {
         : const Color(0xFFE11D48);
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
     final title = success
-        ? context.tr('games.excellent')
-        : context.tr('games.not_quite');
+        ? context.tr('games.excellent', fallback: 'Excellent!')
+        : context.tr('games.not_quite', fallback: 'Not Quite');
     final buttonText = success
-        ? context.tr('common.continue_text').toUpperCase()
+        ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : (isFinal
               ? (lives == 0
-                    ? context.tr('games.see_results')
-                    : context.tr('common.continue_text').toUpperCase())
-              : context.tr('games.try_again').toUpperCase());
+                    ? context.tr('games.see_results', fallback: 'See Results')
+                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
+              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
     final explanation = (!success && isFinal)
         ? loadedState?.currentQuest.explanation
         : null;
@@ -80,10 +80,10 @@ class RoleplayFeedbackCard extends StatelessWidget {
               children: [
                 Semantics(
                   label: success
-                      ? context.tr('games.correct')
+                      ? context.tr('games.correct', fallback: 'Correct')
                       : (isFinal
-                            ? '${context.tr('games.incorrect')} ${explanation != null ? context.tr('games.explanation') : ''}'
-                            : context.tr('games.semantic_incorrect_try_again')),
+                            ? '${context.tr('games.incorrect', fallback: 'Incorrect')} ${explanation != null ? context.tr('games.explanation', fallback: 'Explanation') : ''}'
+                            : context.tr('games.semantic_incorrect_try_again', fallback: 'Incorrect. Tap to try again.')),
                   child: _ResultHeader(
                     icon: icon,
                     title: title,
@@ -185,7 +185,7 @@ class _ExplanationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-          label: '${context.tr('games.explanation')}: $explanation',
+          label: '${context.tr('games.explanation', fallback: 'Explanation')}: $explanation',
           child: Container(
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
@@ -212,7 +212,7 @@ class _ExplanationCard extends StatelessWidget {
                     SizedBox(width: 8.w),
                     ExcludeSemantics(
                       child: Text(
-                        context.tr('games.explanation_caps'),
+                        context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 10.sp,

@@ -78,7 +78,7 @@ class ReadAndAnswerResult extends StatelessWidget {
                 Text(
                   isCorrect
                       ? 'CORRECT INSIGHT!'
-                      : context.tr('games.incorrect_caps'),
+                      : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,

@@ -109,7 +109,7 @@ class YesNoSpeakingTactileMic extends StatelessWidget {
             padding: EdgeInsets.only(top: 20.h),
             child: Semantics(
               button: true,
-              hint: context.tr('games.semantic_tutor_pass_hint'),
+              hint: context.tr('games.semantic_tutor_pass_hint', fallback: 'Speak now'),
               child: ScaleButton(
                 onTap: onTutorPass,
                 child: ConstrainedBox(
@@ -135,7 +135,7 @@ class YesNoSpeakingTactileMic extends StatelessWidget {
                           ),
                           SizedBox(width: 8.w),
                           Text(
-                            context.tr('games.i_spoke_correctly').toUpperCase(),
+                            context.tr('games.i_spoke_correctly', fallback: 'I spoke correctly').toUpperCase(),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               color: Colors.amber,

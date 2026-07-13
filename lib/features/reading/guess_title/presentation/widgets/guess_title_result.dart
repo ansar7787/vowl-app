@@ -40,8 +40,8 @@ class GuessTitleResult extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             isCorrect
-                ? context.tr('games.correct').toUpperCase()
-                : context.tr('games.incorrect_caps'),
+                ? context.tr('games.correct', fallback: 'Correct').toUpperCase()
+                : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 15.sp,

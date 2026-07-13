@@ -29,10 +29,10 @@ class CompleteSentenceExplanationCard extends StatelessWidget {
     final explanation = quest.explanation;
 
     final resultLabel = isCorrect
-        ? context.tr('games.correct')
-        : context.tr('games.incorrect');
+        ? context.tr('games.correct', fallback: 'Correct')
+        : context.tr('games.incorrect', fallback: 'Incorrect');
     final semanticLabel = explanation != null
-        ? '$resultLabel ${context.tr('games.explanation')}: $explanation'
+        ? '$resultLabel ${context.tr('games.explanation', fallback: 'Explanation')}: $explanation'
         : resultLabel;
 
     Widget card = Semantics(
@@ -60,8 +60,8 @@ class CompleteSentenceExplanationCard extends StatelessWidget {
             SizedBox(height: 10.h),
             Text(
               isCorrect
-                  ? context.tr('games.correct_caps')
-                  : context.tr('games.incorrect_caps'),
+                  ? context.tr('games.correct_caps', fallback: 'CORRECT')
+                  : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 15.sp,

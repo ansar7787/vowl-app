@@ -99,7 +99,7 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
 
           if (justDroppedToLastLife && !_hasSpokenNudge) {
             _hasSpokenNudge = true; // Permanent for this session
-            final nudgeMessage = context.tr('games.kids_nudge');
+            final nudgeMessage = context.tr('games.kids_nudge', fallback: 'Let\\'s go!');
             // Delay to allow the "Wrong" sound effect to finish
             Future.delayed(const Duration(milliseconds: 1200), () {
               if (mounted) {
@@ -492,17 +492,17 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
         : const Color(0xFFE11D48);
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
     final title = success
-        ? context.tr('games.excellent')
-        : context.tr('games.not_quite');
+        ? context.tr('games.excellent', fallback: 'Excellent!')
+        : context.tr('games.not_quite', fallback: 'Not Quite');
     final showCorrectAnswer =
         !success && (state as WritingLoaded).isFinalFailure;
     final buttonText = success
-        ? context.tr('common.continue_text').toUpperCase()
+        ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : ((state as WritingLoaded).isFinalFailure
               ? (lives == 0
-                    ? context.tr('common.see_results').toUpperCase()
-                    : context.tr('common.continue_text').toUpperCase())
-              : context.tr('games.try_again').toUpperCase());
+                    ? context.tr('common.see_results', fallback: 'See Results').toUpperCase()
+                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
+              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
 
     String? explanation;
     if (showCorrectAnswer) {
@@ -581,7 +581,7 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
                           ),
                           SizedBox(width: 8.w),
                           Text(
-                            context.tr('games.explanation_caps'),
+                            context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,

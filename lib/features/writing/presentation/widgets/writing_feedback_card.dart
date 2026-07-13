@@ -48,17 +48,17 @@ class WritingFeedbackCard extends StatelessWidget {
         : const Color(0xFFE11D48);
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
     final title = success
-        ? context.tr('games.excellent')
-        : context.tr('games.not_quite');
+        ? context.tr('games.excellent', fallback: 'Excellent!')
+        : context.tr('games.not_quite', fallback: 'Not Quite');
 
     final showCorrectAnswer = !success && isFinalFailure;
     final buttonText = success
-        ? context.tr('common.continue_text').toUpperCase()
+        ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : (isFinalFailure
               ? (lives == 0
-                    ? context.tr('common.see_results').toUpperCase()
-                    : context.tr('common.continue_text').toUpperCase())
-              : context.tr('games.try_again').toUpperCase());
+                    ? context.tr('common.see_results', fallback: 'See Results').toUpperCase()
+                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
+              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
 
     final String? explanation = showCorrectAnswer
         ? s.currentQuest.explanation
@@ -211,7 +211,7 @@ class _ExplanationCard extends StatelessWidget {
                           ),
                         ),
                         child: Text(
-                          context.tr('games.explanation_caps'),
+                          context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,

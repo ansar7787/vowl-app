@@ -31,28 +31,28 @@ class ModernFeatureBar extends StatelessWidget {
           Expanded(
             child: FeatureItem(
               icon: Icons.block_rounded,
-              label: context.tr('premium.feature_zero_ads'),
+              label: context.tr('premium.feature_zero_ads', fallback: 'Zero Ads'),
               isDark: isDark,
             ),
           ),
           Expanded(
             child: FeatureItem(
               icon: Icons.auto_graph_rounded,
-              label: context.tr('premium.feature_2x_speed'),
+              label: context.tr('premium.feature_2x_speed', fallback: '2x Learning Speed'),
               isDark: isDark,
             ),
           ),
           Expanded(
             child: FeatureItem(
               icon: Icons.emoji_events_rounded,
-              label: context.tr('premium.feature_vip_badges'),
+              label: context.tr('premium.feature_vip_badges', fallback: 'VIP Badges'),
               isDark: isDark,
             ),
           ),
           Expanded(
             child: FeatureItem(
               icon: Icons.lock_open_rounded,
-              label: context.tr('premium.feature_unlimited_levels'),
+              label: context.tr('premium.feature_unlimited_levels', fallback: 'Unlimited Levels'),
               isDark: isDark,
             ),
           ),

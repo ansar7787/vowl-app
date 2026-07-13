@@ -118,7 +118,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
         _isProcessing = false;
         _paymentCompleted = true;
         _paymentSuccess = false;
-        _errorMessage = context.tr('premium.error_timeout');
+        _errorMessage = context.tr('premium.error_timeout', fallback: 'Request timed out');
       });
     }
   }
@@ -172,7 +172,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
           _isProcessing = false;
           _paymentCompleted = true;
           _paymentSuccess = false;
-          _errorMessage = context.tr('premium.error_upgrade_failed');
+          _errorMessage = context.tr('premium.error_upgrade_failed', fallback: 'Upgrade Failed');
         });
       }
     }
@@ -189,7 +189,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
         // Razorpay's `response.message` is already a user-safe,
         // gateway-provided description (not a raw exception), so it is
         // fine to surface directly, with a localized fallback.
-        _errorMessage = response.message ?? context.tr('premium.error_generic');
+        _errorMessage = response.message ?? context.tr('premium.error_generic', fallback: 'An error occurred');
       });
     }
   }
@@ -352,7 +352,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
               Semantics(
                 liveRegion: true,
                 child: Text(
-                  context.tr('premium.processing_title'),
+                  context.tr('premium.processing_title', fallback: 'Processing...'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     color: Colors.white,
@@ -363,7 +363,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
               ),
               SizedBox(height: 8.h),
               Text(
-                context.tr('premium.processing_subtitle'),
+                context.tr('premium.processing_subtitle', fallback: 'Please wait while we confirm your purchase.'),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -422,8 +422,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
   Widget _buildCTAButton() {
     final ctaLabel = _isProcessing
-        ? context.tr('premium.cta_processing')
-        : context.tr('premium.cta_activate');
+        ? context.tr('premium.cta_processing', fallback: 'Processing...')
+        : context.tr('premium.cta_activate', fallback: 'Activate Premium');
 
     return Semantics(
       button: true,
@@ -505,7 +505,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   Widget _buildSecureTag() {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Text(
-      context.tr('premium.secure_transaction_tag'),
+      context.tr('premium.secure_transaction_tag', fallback: 'Secure Transaction'),
       textAlign: TextAlign.center,
       style: TextStyle(
         fontFamily: 'Outfit',

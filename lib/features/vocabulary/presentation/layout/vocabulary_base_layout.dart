@@ -83,7 +83,7 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
     _hasSpokenNudge = true;
     Future.delayed(_kNudgeDelay, () {
       if (!mounted) return;
-      _ttsService.speak(context.tr('games.kids_nudge'));
+      _ttsService.speak(context.tr('games.kids_nudge', fallback: 'Let\\'s go!'));
       _hapticService.warning();
     });
   }

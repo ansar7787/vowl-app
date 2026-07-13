@@ -42,7 +42,7 @@ class PremiumFailureOverlay extends StatelessWidget {
           children: [
             Semantics(
               liveRegion: true,
-              label: context.tr('premium.failure_title'),
+              label: context.tr('premium.failure_title', fallback: 'Payment Failed'),
               child: Container(
                 width: 80.r,
                 height: 80.r,
@@ -59,7 +59,7 @@ class PremiumFailureOverlay extends StatelessWidget {
             ),
             SizedBox(height: 24.h),
             Text(
-              context.tr('premium.failure_title'),
+              context.tr('premium.failure_title', fallback: 'Payment Failed'),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'RobotoMono',
@@ -96,8 +96,8 @@ class PremiumFailureOverlay extends StatelessWidget {
               ),
             Text(
               errorMessage == null
-                  ? context.tr('premium.failure_body_default')
-                  : context.tr('premium.failure_body_retry_hint'),
+                  ? context.tr('premium.failure_body_default', fallback: 'We could not process your payment.')
+                  : context.tr('premium.failure_body_retry_hint', fallback: 'Please check your connection and try again.'),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -112,7 +112,7 @@ class PremiumFailureOverlay extends StatelessWidget {
               children: [
                 Semantics(
                   button: true,
-                  label: context.tr('premium.retry_button'),
+                  label: context.tr('premium.retry_button', fallback: 'Retry'),
                   child: ScaleButton(
                     onTap: onRetry,
                     child: Container(
@@ -125,7 +125,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20.r),
                       ),
                       child: Text(
-                        context.tr('premium.retry_button'),
+                        context.tr('premium.retry_button', fallback: 'Retry'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           color: Colors.white,
@@ -139,7 +139,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                 SizedBox(width: 12.w),
                 Semantics(
                   button: true,
-                  label: context.tr('common.close'),
+                  label: context.tr('common.close', fallback: 'Close'),
                   child: ScaleButton(
                     onTap: onClose,
                     child: Container(
@@ -152,7 +152,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20.r),
                       ),
                       child: Text(
-                        context.tr('common.close'),
+                        context.tr('common.close', fallback: 'Close'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           color: Colors.black,

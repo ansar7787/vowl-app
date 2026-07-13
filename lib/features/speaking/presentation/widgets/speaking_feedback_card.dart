@@ -7,10 +7,10 @@ import 'package:vowl/core/utils/locale_service.dart';
 /// Bottom-sheet style feedback card shown after each answer.
 ///
 /// Handles three outcomes:
-///   • Correct answer → green card, context.tr('common.continue_text').toUpperCase() button.
-///   • First wrong answer → red card, context.tr('games.try_again').toUpperCase() button.
+///   • Correct answer → green card, context.tr('common.continue_text', fallback: 'Continue').toUpperCase() button.
+///   • First wrong answer → red card, context.tr('games.try_again', fallback: 'Try Again').toUpperCase() button.
 ///   • Final failure (2nd wrong or 0 lives) → red card, explanation,
-///     context.tr('common.continue_text').toUpperCase() or context.tr('common.see_results').toUpperCase() depending on lives remaining.
+///     context.tr('common.continue_text', fallback: 'Continue').toUpperCase() or context.tr('common.see_results', fallback: 'See Results').toUpperCase() depending on lives remaining.
 ///
 /// All interactive and informational elements carry [Semantics] labels
 /// for full screen-reader compatibility.
@@ -50,32 +50,32 @@ class SpeakingFeedbackCard extends StatelessWidget {
       success ? Icons.check_circle_rounded : Icons.error_rounded;
 
   String _title(BuildContext context) =>
-      success ? context.tr('games.excellent') : context.tr('games.not_quite');
+      success ? context.tr('games.excellent', fallback: 'Excellent!') : context.tr('games.not_quite', fallback: 'Not Quite');
 
   String _buttonText(BuildContext context) {
-    if (success) return context.tr('common.continue_text').toUpperCase();
+    if (success) return context.tr('common.continue_text', fallback: 'Continue').toUpperCase();
     if (isFinalFailure) {
       return livesRemaining == 0
-          ? context.tr('games.see_results')
-          : context.tr('common.continue_text').toUpperCase();
+          ? context.tr('games.see_results', fallback: 'See Results')
+          : context.tr('common.continue_text', fallback: 'Continue').toUpperCase();
     }
-    return context.tr('games.try_again').toUpperCase();
+    return context.tr('games.try_again', fallback: 'Try Again').toUpperCase();
   }
 
   String _buttonSemanticLabel(BuildContext context) {
-    if (success) return context.tr('games.semantic_correct_continue');
+    if (success) return context.tr('games.semantic_correct_continue', fallback: 'Correct. Tap to continue.');
     if (isFinalFailure) {
       return livesRemaining == 0
           ? context.tr(
               'games.semantic_incorrect_explanation',
-              args: ['', context.tr('games.see_results')],
+              args: ['', context.tr('games.see_results', fallback: 'See Results')],
             )
           : context.tr(
               'games.semantic_incorrect_explanation',
-              args: ['', context.tr('common.continue_text')],
+              args: ['', context.tr('common.continue_text', fallback: 'Continue')],
             );
     }
-    return context.tr('games.semantic_incorrect_try_again');
+    return context.tr('games.semantic_incorrect_try_again', fallback: 'Incorrect. Tap to try again.');
   }
 
   // ---------------------------------------------------------------------------
@@ -127,8 +127,8 @@ class SpeakingFeedbackCard extends StatelessWidget {
       children: [
         Semantics(
           label: success
-              ? context.tr('games.correct')
-              : context.tr('games.incorrect'),
+              ? context.tr('games.correct', fallback: 'Correct')
+              : context.tr('games.incorrect', fallback: 'Incorrect'),
           child: Container(
             padding: EdgeInsets.all(8.r),
             decoration: BoxDecoration(
@@ -173,7 +173,7 @@ class SpeakingFeedbackCard extends StatelessWidget {
   Widget _buildExplanation(BuildContext context) {
     final text = explanation!;
     return Semantics(
-          label: '${context.tr('games.explanation')}: $text',
+          label: '${context.tr('games.explanation', fallback: 'Explanation')}: $text',
           child: Container(
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
@@ -198,7 +198,7 @@ class SpeakingFeedbackCard extends StatelessWidget {
                       ),
                       SizedBox(width: 8.w),
                       Text(
-                        context.tr('games.explanation_caps'),
+                        context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 10.sp,

@@ -54,16 +54,16 @@ class VocabularyFeedbackCard extends StatelessWidget {
         ? Icons.check_circle_rounded
         : Icons.error_rounded;
     final String title = success
-        ? context.tr('games.excellent')
-        : context.tr('games.not_quite');
+        ? context.tr('games.excellent', fallback: 'Excellent!')
+        : context.tr('games.not_quite', fallback: 'Not Quite');
     final bool showCorrectAnswer = !success && s.isFinalFailure;
     final String buttonText = success
-        ? context.tr('common.continue_text').toUpperCase()
+        ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : (s.isFinalFailure
               ? (lives == 0
-                    ? context.tr('common.see_results').toUpperCase()
-                    : context.tr('common.continue_text').toUpperCase())
-              : context.tr('games.try_again').toUpperCase());
+                    ? context.tr('common.see_results', fallback: 'See Results').toUpperCase()
+                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
+              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
 
     final correctAnswerText = showCorrectAnswer
         ? _resolveCorrectAnswer(s)
