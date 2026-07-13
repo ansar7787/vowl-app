@@ -54,7 +54,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
             ),
             Semantics(
               label: context.tr(
-                'home.coins_value_label', fallback: 'Coins',
+                'home.coins_value_label',
                 args: [user.coins.toString()],
                 fallback: '${user.coins} coins',
               ),
@@ -157,7 +157,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                       }
                       CustomSnackBar.show(
                         context: context,
-                        message: context.tr('adventure.streak_repaired', fallback: 'Streak Repaired!', fallback: 'Streak Repaired!'),
+                        message: context.tr('adventure.streak_repaired', fallback: 'Streak Repaired!'),
                         type: CustomSnackBarType.success,
                       );
                     },
@@ -206,7 +206,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
           onTap: () => _handlePurchase(
             context,
             name: context.tr(
-              'adventure.double_xp', fallback: 'Double XP',
+              'adventure.double_xp',
               fallback: 'Double XP Boost',
             ),
             cost: 300,
@@ -240,7 +240,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
       CustomSnackBar.show(
         context: context,
         message: context.tr(
-          'streak.insufficient_coins', fallback: 'Insufficient Coins',
+          'streak.insufficient_coins',
           args: [cost.toString()],
           fallback: 'Insufficient Vowl Coins! Needed: $cost',
         ),
@@ -293,17 +293,17 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
     final locale = Localizations.localeOf(context).toString();
 
     final statusLabel = isDisabled
-        ? context.tr('streak.status_not_needed', fallback: 'Not Needed', fallback: 'NOT NEEDED')
+        ? context.tr('streak.status_not_needed', fallback: 'NOT NEEDED')
         : (isActive
-              ? context.tr('streak.status_active', fallback: 'Active', fallback: 'ACTIVE')
+              ? context.tr('streak.status_active', fallback: 'ACTIVE')
               : (canAfford
                     ? context.tr(
-                        'streak.cost_label', fallback: 'Cost',
+                        'streak.cost_label',
                         args: [cost.toString()],
                         fallback: '$cost coins',
                       )
                     : context.tr(
-                        'streak.cant_afford_label', fallback: 'Can\\'t Afford',
+                        'streak.cant_afford_label',
                         args: [cost.toString()],
                         fallback: 'Need $cost coins',
                       )));
@@ -440,11 +440,11 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                                     child: Text(
                                       isActive
                                           ? context.tr(
-                                              'streak.status_active', fallback: 'Active',
+                                              'streak.status_active',
                                               fallback: 'ACTIVE',
                                             )
                                           : context.tr(
-                                              'streak.status_not_needed', fallback: 'Not Needed',
+                                              'streak.status_not_needed',
                                               fallback: 'NOT NEEDED',
                                             ),
                                       style: TextStyle(
@@ -481,7 +481,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                             SizedBox(height: 4.h),
                             Text(
                               context.tr(
-                                'streak.expires_label', fallback: 'Expires',
+                                'streak.expires_label',
                                 args: [
                                   DateFormat(
                                     'MMM d, h:mm a',
@@ -590,7 +590,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                                     SizedBox(width: 4.w),
                                     Text(
                                       context.tr(
-                                        'streak.free_label', fallback: 'Free',
+                                        'streak.free_label',
                                         fallback: 'FREE',
                                       ),
                                       style: TextStyle(

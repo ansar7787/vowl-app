@@ -73,15 +73,15 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
       context: context,
       builder: (ctx) => ModernGameDialog(
         title: context.tr(
-          'store.reward_failed_title', fallback: 'Reward Failed',
+          'store.reward_failed_title',
           fallback: 'REWARD FAILED',
         ),
         description: context.tr(
-          'store.reward_failed_desc', fallback: 'There was an issue processing your reward.',
+          'store.reward_failed_desc',
           fallback:
               "We couldn't grant your reward. Please contact support if this keeps happening.",
         ),
-        buttonText: context.tr('common.ok', fallback: 'OK', fallback: 'OK').toUpperCase(),
+        buttonText: context.tr('common.ok', fallback: 'OK').toUpperCase(),
         isSuccess: false,
         onButtonPressed: () => Navigator.of(ctx).pop(),
       ),
@@ -157,7 +157,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                 fallback: 'CHEST UNLOCKED!',
               ),
               description: context.tr(
-                'store.chest_reward_desc', fallback: 'Open the chest to get your reward!',
+                'store.chest_reward_desc',
                 args: ['$coinReward', currencyName],
                 fallback:
                     'You found +$coinReward $currencyName in the magical chest!',
@@ -242,7 +242,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                     'store.magic_stars_earned_desc',
                     fallback: 'You got +2 Magic Stars for watching the ad!',
                   ),
-                  buttonText: context.tr('store.awesome', fallback: 'Awesome!', fallback: 'AWESOME'),
+                  buttonText: context.tr('store.awesome', fallback: 'AWESOME'),
                   isSuccess: true,
                   onButtonPressed: () => Navigator.of(ctx).pop(),
                   customIcon: Icon(
@@ -346,7 +346,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                               SizedBox(width: 12.w),
                               Text(
                                 context.tr(
-                                  'store.vault_title', fallback: 'Star Vault',
+                                  'store.vault_title',
                                   fallback: 'Star Vault',
                                 ),
                                 style: TextStyle(
@@ -361,7 +361,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                           SizedBox(height: 8.h),
                           Text(
                             context.tr(
-                              'store.vault_subtitle', fallback: 'Unlock amazing rewards with your stars.',
+                              'store.vault_subtitle',
                               fallback:
                                   'Collect stars to unlock massive rewards!',
                             ),
@@ -392,7 +392,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                   children: [
                                     Text(
                                       context.tr(
-                                        'store.your_stars', fallback: 'Your Stars',
+                                        'store.your_stars',
                                         fallback: 'Your Stars',
                                       ),
                                       style: TextStyle(
@@ -436,7 +436,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                   children: [
                                     Text(
                                       context.tr(
-                                        'store.next_chest', fallback: 'Next Chest',
+                                        'store.next_chest',
                                         fallback: 'Next Chest',
                                       ),
                                       style: TextStyle(
@@ -498,20 +498,20 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                 // status. Explicit descriptive label added.
                                 final String semanticLabel = isClaimed
                                     ? context.tr(
-                                        'store.chest_claimed_semantic', fallback: 'Chest already claimed',
+                                        'store.chest_claimed_semantic',
                                         args: ['$requirement'],
                                         fallback:
                                             'Chest requiring $requirement stars, already opened',
                                       )
                                     : canClaim
                                     ? context.tr(
-                                        'store.chest_claimable_semantic', fallback: 'Chest ready to claim',
+                                        'store.chest_claimable_semantic',
                                         args: ['$requirement'],
                                         fallback:
                                             'Chest requiring $requirement stars, ready to open',
                                       )
                                     : context.tr(
-                                        'store.chest_locked_semantic', fallback: 'Chest locked',
+                                        'store.chest_locked_semantic',
                                         args: [
                                           '$requirement',
                                           '${requirement - totalStars}',
@@ -532,16 +532,16 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                           context: context,
                                           builder: (ctx) => ModernGameDialog(
                                             title: context.tr(
-                                              'store.already_claimed_title', fallback: 'Already Claimed',
+                                              'store.already_claimed_title',
                                               fallback: 'ALREADY CLAIMED',
                                             ),
                                             description: context.tr(
-                                              'store.already_claimed_desc', fallback: 'You have already opened this chest.',
+                                              'store.already_claimed_desc',
                                               fallback:
                                                   'You have already opened this chest!',
                                             ),
                                             buttonText: context.tr(
-                                              'store.ok', fallback: 'OK',
+                                              'store.ok',
                                               fallback: 'OK',
                                             ),
                                             isSuccess: true,
@@ -555,17 +555,17 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                           context: context,
                                           builder: (ctx) => ModernGameDialog(
                                             title: context.tr(
-                                              'store.not_enough_stars_title', fallback: 'Need More Stars',
+                                              'store.not_enough_stars_title',
                                               fallback: 'NOT ENOUGH STARS',
                                             ),
                                             description: context.tr(
-                                              'store.not_enough_stars_desc', fallback: 'You need more stars to open this chest.',
+                                              'store.not_enough_stars_desc',
                                               args: ['$needed'],
                                               fallback:
                                                   'You need $needed more stars to open this chest!',
                                             ),
                                             buttonText: context.tr(
-                                              'games.keep_playing', fallback: 'Keep Playing',
+                                              'games.keep_playing',
                                               fallback: 'KEEP PLAYING',
                                             ),
                                             isSuccess: false,
@@ -685,7 +685,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                             SizedBox(height: 6.h),
                                             Text(
                                               context.tr(
-                                                'store.chest_opened', fallback: 'Chest Opened!',
+                                                'store.chest_opened',
                                                 fallback: 'OPENED',
                                               ),
                                               style: TextStyle(
@@ -708,7 +708,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                               ),
                                               child: Text(
                                                 context.tr(
-                                                  'store.chest_open', fallback: 'Open Chest',
+                                                  'store.chest_open',
                                                   fallback: 'OPEN',
                                                 ),
                                                 style: TextStyle(
@@ -775,7 +775,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                             SizedBox(width: 12.w),
                                             Text(
                                               context.tr(
-                                                'store.loading_ad', fallback: 'Loading Ad...',
+                                                'store.loading_ad',
                                                 fallback: 'Loading Ad...',
                                               ),
                                               style: TextStyle(
@@ -799,7 +799,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                             SizedBox(width: 12.w),
                                             Text(
                                               context.tr(
-                                                'store.watch_ad_magic_stars', fallback: 'Watch Ad for Stars',
+                                                'store.watch_ad_magic_stars',
                                                 fallback:
                                                     'Watch Ad for +2 Magic Stars',
                                               ),
@@ -818,7 +818,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                             SizedBox(height: 12.h),
                             Text(
                               context.tr(
-                                'store.magic_stars_hint', fallback: 'Get magic stars by watching an ad',
+                                'store.magic_stars_hint',
                                 fallback:
                                     'Magic Stars permanently count towards your total!',
                               ),

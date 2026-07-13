@@ -173,7 +173,7 @@ class PremiumPlanCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4.r),
                     ),
                     child: Text(
-                      '${context.tr('premium.save', fallback: 'Save', fallback: 'Save')} ${currencyFormat.format(savings)}',
+                      '${context.tr('premium.save', fallback: 'Save')} ${currencyFormat.format(savings)}',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(

@@ -93,7 +93,7 @@ class GlobalProgressCard extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              context.tr('home.quest_journey', fallback: 'Quest Journey', fallback: 'Quest Journey'),
+                              context.tr('home.quest_journey', fallback: 'Quest Journey'),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 8.sp,
@@ -106,7 +106,7 @@ class GlobalProgressCard extends StatelessWidget {
                             ),
                             SizedBox(height: 2.h),
                             Text(
-                              context.tr('home.total_levels_cleared', fallback: 'Total Levels Cleared', fallback: 'Total Levels Cleared'),
+                              context.tr('home.total_levels_cleared', fallback: 'Total Levels Cleared'),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 14.sp,
@@ -158,7 +158,7 @@ class GlobalProgressCard extends StatelessWidget {
                                 maxLines: 1,
                               ),
                               Text(
-                                context.tr('home.rank', fallback: 'Rank', fallback: 'Rank'),
+                                context.tr('home.rank', fallback: 'Rank'),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 7.sp,

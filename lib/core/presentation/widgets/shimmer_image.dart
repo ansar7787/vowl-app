@@ -44,7 +44,7 @@ class ShimmerImage extends StatelessWidget {
         label:
             semanticsLabel ??
             context.tr(
-              'common.image_placeholder', fallback: 'Image',
+              'common.image_placeholder',
               fallback: 'Image placeholder',
             ),
         child: Container(

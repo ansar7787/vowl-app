@@ -86,7 +86,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
   // ── Constants ────────────────────────────────────────────────────────────
   static const int _kMaxLives = 3;
   static const Duration _kNudgeDelay = Duration(milliseconds: 1200);
-  String get _kNudgeMessage => context.tr('games.kids_nudge', fallback: 'Let\\'s go!');
+  String get _kNudgeMessage => context.tr('games.kids_nudge', fallback: 'Let\'s go!');
 
   // ── Lifecycle ────────────────────────────────────────────────────────────
 

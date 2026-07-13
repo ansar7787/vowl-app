@@ -61,7 +61,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                     Text(
                       isCorrect
                           ? context.tr('games.correct', fallback: 'Correct')
-                          : context.tr('games.lets_review', fallback: 'Let\\'s Review'),
+                          : context.tr('games.lets_review', fallback: 'Let\'s Review'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 22.sp,

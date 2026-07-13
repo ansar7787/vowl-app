@@ -60,7 +60,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: context.tr('common.mission_briefing', fallback: 'Mission Briefing', fallback: 'Mission Briefing'),
+      label: context.tr('common.mission_briefing', fallback: 'Mission Briefing'),
       child: Material(
         color: Colors.transparent,
         child: Stack(

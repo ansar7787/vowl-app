@@ -200,7 +200,7 @@ class _RoleplayBaseLayoutState extends State<RoleplayBaseLayout> {
           _nudgeTimer?.cancel();
           _nudgeTimer = Timer(kRoleplayNudgeDelay, () {
             if (mounted) {
-              _ttsService.speak(context.tr('games.kids_nudge', fallback: 'Let\\'s go!', fallback: 'Let\\'s go!'));
+              _ttsService.speak(context.tr('games.kids_nudge', fallback: 'Let\'s go!'));
               _hapticService.warning();
             }
           });

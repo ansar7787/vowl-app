@@ -64,7 +64,7 @@ class GameProgressHeader extends StatelessWidget {
           // (e.g. GameErrorWidget's buttons use `minHeight: 48.h`).
           Semantics(
             button: true,
-            label: context.tr('common.back', fallback: 'Back', fallback: 'Back'),
+            label: context.tr('common.back', fallback: 'Back'),
             child: SizedBox(
               width: 48.w,
               height: 48.h,

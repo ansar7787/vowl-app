@@ -41,7 +41,7 @@ class ProfilePreferencesList extends StatelessWidget {
             ),
             _buildPreferenceTile(
               context,
-              context.tr('profile.admin_dashboard', fallback: 'Admin Dashboard', fallback: 'Admin Dashboard'),
+              context.tr('profile.admin_dashboard', fallback: 'Admin Dashboard'),
               Icons.admin_panel_settings_rounded,
               Colors.orange,
               () {

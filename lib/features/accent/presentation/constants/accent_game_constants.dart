@@ -36,7 +36,7 @@ abstract final class AccentGameConstants {
 
   /// Message spoken when the player drops to their last life.
   static String nudgeMessage(BuildContext context) =>
-      context.tr('games.kids_nudge', fallback: 'Let\\'s go!');
+      context.tr('games.kids_nudge', fallback: 'Let\'s go!');
 
   // ── Briefing ──────────────────────────────────────────────────────────────
   /// Levels that auto-show the quest briefing overlay on entry.

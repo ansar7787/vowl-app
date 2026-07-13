@@ -1232,7 +1232,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
       );
       CustomSnackBar.show(
         context: context,
-        message: context.tr('games.kids_under_construction', fallback: 'Under Construction', fallback: 'Under Construction'),
+        message: context.tr('games.kids_under_construction', fallback: 'Under Construction'),
         type: CustomSnackBarType.warning,
       );
     }

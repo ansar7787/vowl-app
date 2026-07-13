@@ -56,7 +56,7 @@ class ForgotPasswordHeader extends StatelessWidget {
           ],
         ),
         Text(
-          context.tr('auth.recover_account_subtitle', fallback: 'Let\\'s get you back on track.', fallback: 'Let\\'s get you back on track.'),
+          context.tr('auth.recover_account_subtitle', fallback: 'Let\'s get you back on track.'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 15.sp,
@@ -101,8 +101,8 @@ class ForgotPasswordEmailInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: context.tr('auth.email_field_label', fallback: 'Email', fallback: 'Email'),
-      hint: context.tr('auth.email_field_hint_forgot_password', fallback: 'Enter your email address', fallback: 'Enter your email address'),
+      label: context.tr('auth.email_field_label', fallback: 'Email'),
+      hint: context.tr('auth.email_field_hint_forgot_password', fallback: 'Enter your email address'),
       textField: true,
       child: TextFormField(
         key: fieldKey,
@@ -112,10 +112,10 @@ class ForgotPasswordEmailInput extends StatelessWidget {
         validator: (value) {
           final trimmed = value?.trim() ?? '';
           if (trimmed.isEmpty) {
-            return context.tr('auth.validation_email_required', fallback: 'Email is required', fallback: 'Email is required');
+            return context.tr('auth.validation_email_required', fallback: 'Email is required');
           }
           if (!_emailRegex.hasMatch(trimmed)) {
-            return context.tr('auth.validation_email_invalid', fallback: 'Invalid email address', fallback: 'Invalid email address');
+            return context.tr('auth.validation_email_invalid', fallback: 'Invalid email address');
           }
           return null;
         },
@@ -124,7 +124,7 @@ class ForgotPasswordEmailInput extends StatelessWidget {
         autofillHints: const [AutofillHints.email],
         style: TextStyle(color: contrastColor),
         decoration: InputDecoration(
-          hintText: context.tr('auth.email_hint_full', fallback: 'e.g., explorer@vowl.com', fallback: 'e.g., explorer@vowl.com'),
+          hintText: context.tr('auth.email_hint_full', fallback: 'e.g., explorer@vowl.com'),
           hintStyle: TextStyle(color: contrastColor.withValues(alpha: 0.5)),
           errorStyle: TextStyle(
             fontFamily: 'Outfit',
@@ -188,7 +188,7 @@ class SendResetLinkButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: context.tr('auth.send_reset_link', fallback: 'Send Reset Link', fallback: 'Send Reset Link'),
+      label: context.tr('auth.send_reset_link', fallback: 'Send Reset Link'),
       child: ElevatedButton(
         onPressed: isSubmitting ? null : onPressed,
         style: ElevatedButton.styleFrom(
@@ -211,7 +211,7 @@ class SendResetLinkButton extends StatelessWidget {
             // full-width, fixed-height button at high accessibility text
             // scale.
             : Text(
-                context.tr('auth.send_reset_link', fallback: 'Send Reset Link', fallback: 'Send Reset Link'),
+                context.tr('auth.send_reset_link', fallback: 'Send Reset Link'),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -239,7 +239,7 @@ class RememberPasswordFooter extends StatelessWidget {
         // RenderFlex overflow next to the "Login" button.
         Flexible(
           child: Text(
-            context.tr('auth.remember_password_prompt', fallback: 'Remember your password?', fallback: 'Remember your password?'),
+            context.tr('auth.remember_password_prompt', fallback: 'Remember your password?'),
             style: TextStyle(
               fontFamily: 'Outfit',
               color: secondaryColor,
@@ -252,7 +252,7 @@ class RememberPasswordFooter extends StatelessWidget {
           onPressed: () => context.go(AppRouter.loginRoute),
           style: TextButton.styleFrom(minimumSize: const Size(48, 48)),
           child: Text(
-            context.tr('auth.login', fallback: 'Log In', fallback: 'Log In'),
+            context.tr('auth.login', fallback: 'Log In'),
             style: const TextStyle(
               fontFamily: 'Outfit',
               color: Color(0xFF2563EB),

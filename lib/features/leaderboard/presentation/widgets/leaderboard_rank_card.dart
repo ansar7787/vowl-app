@@ -40,12 +40,12 @@ class LeaderboardRankCard extends StatelessWidget {
       // FIX (HIGH-5): Full accessibility label so TalkBack/VoiceOver
       // announces the user's rank and progress in one utterance.
       label: isRanked
-          ? '${context.tr('leaderboard.your_standing', fallback: 'Your Standing', fallback: 'Your Standing')}. '
-                '${context.tr('leaderboard.rank', fallback: 'Rank', fallback: 'Rank')}: $rank. '
-                '$levelsCleared ${context.tr('leaderboard.levels_cleared', fallback: 'Levels Cleared', fallback: 'Levels Cleared')}. '
+          ? '${context.tr('leaderboard.your_standing', fallback: 'Your Standing')}. '
+                '${context.tr('leaderboard.rank', fallback: 'Rank')}: $rank. '
+                '$levelsCleared ${context.tr('leaderboard.levels_cleared', fallback: 'Levels Cleared')}. '
                 '${(progress * 100).toStringAsFixed(1)}% complete.'
-          : '${context.tr('leaderboard.join_competition', fallback: 'Join Competition', fallback: 'Join Competition')}. '
-                '$levelsCleared ${context.tr('leaderboard.levels_cleared', fallback: 'Levels Cleared', fallback: 'Levels Cleared')}.',
+          : '${context.tr('leaderboard.join_competition', fallback: 'Join Competition')}. '
+                '$levelsCleared ${context.tr('leaderboard.levels_cleared', fallback: 'Levels Cleared')}.',
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24.r),
@@ -133,8 +133,8 @@ class LeaderboardRankCard extends StatelessWidget {
                       children: [
                         Text(
                           isRanked
-                              ? context.tr('leaderboard.your_standing', fallback: 'Your Standing', fallback: 'Your Standing')
-                              : context.tr('leaderboard.join_competition', fallback: 'Join Competition', fallback: 'Join Competition'),
+                              ? context.tr('leaderboard.your_standing', fallback: 'Your Standing')
+                              : context.tr('leaderboard.join_competition', fallback: 'Join Competition'),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 8.sp,
@@ -147,7 +147,7 @@ class LeaderboardRankCard extends StatelessWidget {
                         ),
                         Text(
                           currentUser.displayName?.toUpperCase() ??
-                              context.tr('leaderboard.player', fallback: 'Player', fallback: 'Player'),
+                              context.tr('leaderboard.player', fallback: 'Player'),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 15.sp,
@@ -193,7 +193,7 @@ class LeaderboardRankCard extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          context.tr('leaderboard.levels', fallback: 'Levels', fallback: 'Levels'),
+                          context.tr('leaderboard.levels', fallback: 'Levels'),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 7.sp,

@@ -121,16 +121,16 @@ class StreakMilestones extends StatelessWidget {
               final daysLabel = (days % 365 == 0)
                   ? ((days ~/ 365) == 1
                         ? context.tr(
-                            'streak.milestone_year_singular', fallback: 'Year',
+                            'streak.milestone_year_singular',
                             fallback: '1 YEAR',
                           )
                         : context.tr(
-                            'streak.milestone_years_plural', fallback: 'Years',
+                            'streak.milestone_years_plural',
                             args: [(days ~/ 365).toString()],
                             fallback: '${days ~/ 365} YEARS',
                           ))
                   : context.tr(
-                      'streak.milestone_days', fallback: 'Days',
+                      'streak.milestone_days',
                       args: [days.toString()],
                       fallback: '$days DAYS',
                     );
@@ -139,11 +139,11 @@ class StreakMilestones extends StatelessWidget {
                   ? context.tr('streak.milestone_claimed', fallback: 'CLAIMED')
                   : (isReached
                         ? context.tr(
-                            'streak.milestone_claim_cta', fallback: 'Claim',
+                            'streak.milestone_claim_cta',
                             fallback: 'CLAIM',
                           )
                         : context.tr(
-                            'streak.milestone_progress_label', fallback: 'Progress',
+                            'streak.milestone_progress_label',
                             args: [
                               user.currentStreak.toString(),
                               days.toString(),

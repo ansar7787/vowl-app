@@ -103,7 +103,7 @@ class AgeGateScreen extends StatelessWidget {
 
                 // Title
                 Text(
-                  context.tr('age_gate.title', fallback: 'Age Check', fallback: 'Before we begin'),
+                  context.tr('age_gate.title', fallback: 'Before we begin'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 28.sp,
@@ -119,7 +119,7 @@ class AgeGateScreen extends StatelessWidget {
                 // Subtitle
                 Text(
                   context.tr(
-                    'age_gate.subtitle', fallback: 'Please confirm your age',
+                    'age_gate.subtitle',
                     fallback:
                         'We need to know your age to give you the best experience.',
                   ),
@@ -157,7 +157,7 @@ class AgeGateScreen extends StatelessWidget {
                     alignment: Alignment.center,
                     child: Text(
                       context.tr(
-                        'age_gate.adult_button', fallback: 'I am 16 or older',
+                        'age_gate.adult_button',
                         fallback: "I'm 16 or older",
                       ),
                       style: TextStyle(
@@ -194,7 +194,7 @@ class AgeGateScreen extends StatelessWidget {
                     alignment: Alignment.center,
                     child: Text(
                       context.tr(
-                        'age_gate.child_button', fallback: 'I am under 16',
+                        'age_gate.child_button',
                         fallback: "I'm under 16",
                       ),
                       style: TextStyle(
@@ -215,7 +215,7 @@ class AgeGateScreen extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Text(
                     context.tr(
-                      'age_gate.privacy_note', fallback: 'We do not collect personal info.',
+                      'age_gate.privacy_note',
                       fallback:
                           'This is stored only on your device and is never shared. You can change this later in Settings.',
                     ),

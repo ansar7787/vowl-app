@@ -167,7 +167,7 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
           _nudgeTimer = Timer(const Duration(milliseconds: 1200), () {
             if (!mounted) return;
             _ttsService.stop();
-            _ttsService.speak(context.tr('games.kids_nudge', fallback: 'Let\\'s go!', fallback: 'Let\\'s go!'));
+            _ttsService.speak(context.tr('games.kids_nudge', fallback: 'Let\'s go!'));
             _hapticService.warning();
           });
         }

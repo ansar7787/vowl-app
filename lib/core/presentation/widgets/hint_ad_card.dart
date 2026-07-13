@@ -90,7 +90,7 @@ class _HintAdCardState extends State<HintAdCard> {
               Text(
                 (widget.title ??
                         context.tr(
-                          'games.watch_earn_hints_title', fallback: 'Watch & Earn',
+                          'games.watch_earn_hints_title',
                           fallback: 'WATCH AND EARN HINTS',
                         ))
                     .toUpperCase(),
@@ -130,7 +130,7 @@ class _HintAdCardState extends State<HintAdCard> {
                           child: Text(
                             widget.subtitle ??
                                 context.tr(
-                                  'games.one_strategic_hint', fallback: '1 Strategic Hint',
+                                  'games.one_strategic_hint',
                                   fallback: '1 STRATEGIC HINT',
                                 ),
                             style: TextStyle(
@@ -158,7 +158,7 @@ class _HintAdCardState extends State<HintAdCard> {
                         button: true,
                         enabled: !loading,
                         label: context.tr(
-                          'games.hint_semantic_label', fallback: 'Hint',
+                          'games.hint_semantic_label',
                           fallback: 'Watch ad to earn a strategic hint',
                         ),
                         child: ScaleButton(
@@ -216,7 +216,7 @@ class _HintAdCardState extends State<HintAdCard> {
                                       SizedBox(width: 4.w),
                                       Text(
                                         context.tr(
-                                          'games.watch_button', fallback: 'Watch Ad',
+                                          'games.watch_button',
                                           fallback: 'WATCH',
                                         ),
                                         style: TextStyle(

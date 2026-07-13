@@ -88,7 +88,7 @@ class StreakCalendar extends StatelessWidget {
                         SizedBox(width: 4.w),
                         Text(
                           context.tr(
-                            'streak.protected_badge', fallback: 'Protected',
+                            'streak.protected_badge',
                             fallback: 'PROTECTED',
                           ),
                           style: TextStyle(
@@ -191,16 +191,16 @@ class StreakCalendar extends StatelessWidget {
                     )
                   : (isPlayed
                         ? context.tr(
-                            'streak.day_completed', fallback: 'Completed',
+                            'streak.day_completed',
                             fallback: 'Completed',
                           )
                         : (isToday
                               ? context.tr(
-                                  'streak.day_today_pending', fallback: 'Pending',
+                                  'streak.day_today_pending',
                                   fallback: "Today, not played yet",
                                 )
                               : context.tr(
-                                  'streak.day_missed', fallback: 'Missed',
+                                  'streak.day_missed',
                                   fallback: 'Missed',
                                 ))));
 

@@ -112,7 +112,7 @@ class HintPurchaseDialog {
                           padding: EdgeInsets.symmetric(vertical: 16.h),
                         ),
                         child: Text(
-                          context.tr('common.cancel', fallback: 'Cancel', fallback: 'Cancel').toUpperCase(),
+                          context.tr('common.cancel', fallback: 'Cancel').toUpperCase(),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontWeight: FontWeight.w800,
@@ -139,7 +139,7 @@ class HintPurchaseDialog {
                           onConfirm();
                         },
                         child: Text(
-                          context.tr('common.confirm', fallback: 'Confirm', fallback: 'Confirm').toUpperCase(),
+                          context.tr('common.confirm', fallback: 'Confirm').toUpperCase(),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontWeight: FontWeight.w900,

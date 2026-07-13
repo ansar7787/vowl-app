@@ -103,7 +103,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
 
               return LoadingOverlay(
                 isLoading: state.isSubmitting,
-                message: context.tr('auth.sending_recovery_link', fallback: 'Sending recovery link...', fallback: 'Sending recovery link...'),
+                message: context.tr('auth.sending_recovery_link', fallback: 'Sending recovery link...'),
                 child: Scaffold(
                   backgroundColor: bgColor,
                   resizeToAvoidBottomInset: false,

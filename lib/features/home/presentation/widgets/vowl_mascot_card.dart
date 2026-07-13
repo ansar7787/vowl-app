@@ -163,7 +163,7 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                               Semantics(
                                 button: true,
                                 label: context.tr(
-                                  'vowl_mascot_card.pet_action', fallback: 'Pet Vowl',
+                                  'vowl_mascot_card.pet_action',
                                   fallback: 'Pet your mascot',
                                 ),
                                 child: Container(

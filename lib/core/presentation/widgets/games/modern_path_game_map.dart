@@ -171,7 +171,7 @@ class ModernPathGameMap extends StatelessWidget {
       centerTitle: true,
       leading: Semantics(
         button: true,
-        label: context.tr('common.back', fallback: 'Back', fallback: 'Back'),
+        label: context.tr('common.back', fallback: 'Back'),
         child: IconButton(
           icon: Icon(
             isRtl ? Icons.chevron_right_rounded : Icons.chevron_left_rounded,

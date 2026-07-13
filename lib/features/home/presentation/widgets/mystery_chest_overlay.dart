@@ -81,10 +81,10 @@ class MysteryChestOverlay extends StatelessWidget {
                   // Title with premium glow
                   Text(
                     isOpened
-                        ? context.tr('home.chest_claimed', fallback: 'Chest Claimed', fallback: 'Chest Claimed')
+                        ? context.tr('home.chest_claimed', fallback: 'Chest Claimed')
                         : (isPremium
-                              ? context.tr('home.chest_vip_gift', fallback: 'VIP Gift', fallback: 'VIP Gift')
-                              : context.tr('home.chest_daily_mystery', fallback: 'Daily Mystery', fallback: 'Daily Mystery')),
+                              ? context.tr('home.chest_vip_gift', fallback: 'VIP Gift')
+                              : context.tr('home.chest_daily_mystery', fallback: 'Daily Mystery')),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: isPremium && !isOpened ? 26.sp : 28.sp,
@@ -116,10 +116,10 @@ class MysteryChestOverlay extends StatelessWidget {
 
                   Text(
                     isOpened
-                        ? context.tr('home.chest_treasure_unlocked', fallback: 'Treasure Unlocked!', fallback: 'Treasure Unlocked!')
+                        ? context.tr('home.chest_treasure_unlocked', fallback: 'Treasure Unlocked!')
                         : (isPremium
-                              ? context.tr('home.chest_pro_reward', fallback: 'Pro Reward', fallback: 'Pro Reward')
-                              : context.tr('home.chest_ready_to_open', fallback: 'Ready to open', fallback: 'Ready to open')),
+                              ? context.tr('home.chest_pro_reward', fallback: 'Pro Reward')
+                              : context.tr('home.chest_ready_to_open', fallback: 'Ready to open')),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 14.sp,
@@ -140,10 +140,10 @@ class MysteryChestOverlay extends StatelessWidget {
                     button: true,
                     enabled: !isOpened,
                     label: isOpened
-                        ? context.tr('home.chest_claimed', fallback: 'Chest Claimed', fallback: 'Chest Claimed')
+                        ? context.tr('home.chest_claimed', fallback: 'Chest Claimed')
                         : (isPremium
-                              ? context.tr('home.chest_vip_gift', fallback: 'VIP Gift', fallback: 'VIP Gift')
-                              : context.tr('home.chest_daily_mystery', fallback: 'Daily Mystery', fallback: 'Daily Mystery')),
+                              ? context.tr('home.chest_vip_gift', fallback: 'VIP Gift')
+                              : context.tr('home.chest_daily_mystery', fallback: 'Daily Mystery')),
                     child: GestureDetector(
                       onTap: isOpened ? null : onOpen,
                       child: Stack(
@@ -344,8 +344,8 @@ class MysteryChestOverlay extends StatelessWidget {
                       child:
                           Text(
                                 isPremium
-                                    ? context.tr('home.chest_tap_vip_loot', fallback: 'Tap for VIP Loot', fallback: 'Tap for VIP Loot')
-                                    : context.tr('home.chest_tap_unveil', fallback: 'Tap to unveil', fallback: 'Tap to unveil'),
+                                    ? context.tr('home.chest_tap_vip_loot', fallback: 'Tap for VIP Loot')
+                                    : context.tr('home.chest_tap_unveil', fallback: 'Tap to unveil'),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 12.sp,

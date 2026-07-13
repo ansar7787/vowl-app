@@ -141,32 +141,30 @@ class _KeyShopContent extends StatelessWidget {
                             builder: (ctx) => ModernGameDialog(
                               title: isKidsMode
                                   ? context.tr(
-                                      'store.not_enough_toys_title', fallback: 'Not Enough Toys',
+                                      'store.not_enough_toys_title',
                                       fallback: 'NOT ENOUGH TOYS',
                                     )
                                   : context.tr(
-                                      'store.not_enough_coins_title', fallback: 'Not Enough Coins',
+                                      'store.not_enough_coins_title',
                                       fallback: 'NOT ENOUGH COINS',
                                     ),
                               description: context.tr(
-                                'store.not_enough_currency_desc', fallback: 'Keep playing to earn more.',
+                                'store.not_enough_currency_desc',
                                 args: [
                                   '$cost',
                                   isKidsMode
                                       ? context.tr(
-                                          'store.toys_lower', fallback: 'toys',
-                                          fallback: 'toys',
+                                          'store.toys_lower',
                                         )
                                       : context.tr(
-                                          'store.coins_lower', fallback: 'coins',
-                                          fallback: 'coins',
+                                          'store.coins_lower',
                                         ),
                                 ],
                                 fallback:
                                     'You need $cost ${isKidsMode ? 'toys' : 'coins'} to get a key!',
                               ),
                               buttonText: context.tr(
-                                'games.keep_playing', fallback: 'Keep Playing',
+                                'games.keep_playing',
                                 fallback: 'KEEP PLAYING',
                               ),
                               isSuccess: false,
@@ -199,11 +197,11 @@ class _KeyShopContent extends StatelessWidget {
                               context: parentContext,
                               builder: (ctx) => ModernGameDialog(
                                 title: context.tr(
-                                  'store.purchase_failed_title', fallback: 'Purchase Failed',
+                                  'store.purchase_failed_title',
                                   fallback: 'PURCHASE FAILED',
                                 ),
                                 description: context.tr(
-                                  'store.purchase_failed_desc', fallback: 'Could not complete the purchase. Please try again.',
+                                  'store.purchase_failed_desc',
                                   fallback:
                                       'Something went wrong and your coins were not spent. Please try again.',
                                 ),
@@ -228,15 +226,15 @@ class _KeyShopContent extends StatelessWidget {
                                   children: [
                                     ModernGameDialog(
                                       title: context.tr(
-                                        'store.got_key_title', fallback: 'Key Unlocked!',
+                                        'store.got_key_title',
                                         fallback: 'GOT A KEY!',
                                       ),
                                       description: context.tr(
-                                        'store.got_key_desc', fallback: 'You can now open the gate.',
+                                        'store.got_key_desc',
                                         fallback: 'You got a Golden Key! 🗝️',
                                       ),
                                       buttonText: context.tr(
-                                        'store.awesome', fallback: 'Awesome!',
+                                        'store.awesome',
                                         fallback: 'AWESOME',
                                       ),
                                       isSuccess: true,
@@ -290,7 +288,7 @@ class _KeyShopContent extends StatelessWidget {
                             SizedBox(width: 8.w),
                             Text(
                               context.tr(
-                                'store.buy_for', fallback: 'Buy for',
+                                'store.buy_for',
                                 args: ['$cost'],
                                 fallback: 'Buy for $cost',
                               ),
@@ -328,15 +326,15 @@ class _KeyShopContent extends StatelessWidget {
                         context: parentContext,
                         builder: (ctx) => ModernGameDialog(
                           title: context.tr(
-                            'store.ad_not_ready_title', fallback: 'Ad Not Ready',
+                            'store.ad_not_ready_title',
                             fallback: 'AD NOT READY',
                           ),
                           description: context.tr(
-                            'games.ad_not_ready', fallback: 'Ad not ready yet, try again soon.',
+                            'games.ad_not_ready',
                             fallback:
                                 'Ad not ready yet, try again in a moment.',
                           ),
-                          buttonText: context.tr('store.ok', fallback: 'OK', fallback: 'OK'),
+                          buttonText: context.tr('store.ok', fallback: 'OK'),
                           isSuccess: false,
                           onButtonPressed: () => Navigator.of(ctx).pop(),
                           customIcon: Icon(
@@ -375,11 +373,11 @@ class _KeyShopContent extends StatelessWidget {
                               context: parentContext,
                               builder: (ctx) => ModernGameDialog(
                                 title: context.tr(
-                                  'store.reward_failed_title', fallback: 'Reward Failed',
+                                  'store.reward_failed_title',
                                   fallback: 'REWARD FAILED',
                                 ),
                                 description: context.tr(
-                                  'store.reward_failed_desc', fallback: 'There was an issue processing your reward.',
+                                  'store.reward_failed_desc',
                                   fallback:
                                       "We couldn't grant your reward. Please contact support if this keeps happening.",
                                 ),
@@ -404,15 +402,15 @@ class _KeyShopContent extends StatelessWidget {
                                   children: [
                                     ModernGameDialog(
                                       title: context.tr(
-                                        'store.reward_unlocked_title', fallback: 'Reward Unlocked!',
+                                        'store.reward_unlocked_title',
                                         fallback: 'REWARD UNLOCKED!',
                                       ),
                                       description: context.tr(
-                                        'store.got_key_desc', fallback: 'You can now open the gate.',
+                                        'store.got_key_desc',
                                         fallback: 'You got a Golden Key! 🗝️',
                                       ),
                                       buttonText: context.tr(
-                                        'store.awesome', fallback: 'Awesome!',
+                                        'store.awesome',
                                         fallback: 'AWESOME',
                                       ),
                                       isSuccess: true,
@@ -463,7 +461,7 @@ class _KeyShopContent extends StatelessWidget {
                         SizedBox(width: 8.w),
                         Text(
                           context.tr(
-                            'store.watch_ad_for_key', fallback: 'Watch Ad for Key',
+                            'store.watch_ad_for_key',
                             fallback: 'Watch Ad for 1 Key',
                           ),
                           style: TextStyle(
@@ -519,7 +517,7 @@ class _KeyShopContent extends StatelessWidget {
                         SizedBox(width: 8.w),
                         Text(
                           context.tr(
-                          'store.get_more_coins_keys', fallback: 'Get more coins or keys in the store',
+                          'store.get_more_coins_keys',
                           fallback: 'Get More Coins & Keys',
                         ),
                           style: TextStyle(
@@ -580,7 +578,7 @@ class _KeyShopContent extends StatelessWidget {
                             children: [
                               Text(
                                 context.tr(
-                                  'store.tired_of_keys', fallback: 'Tired of keys?',
+                                  'store.tired_of_keys',
                                   fallback: 'Tired of Keys?',
                                 ),
                                 style: TextStyle(
@@ -593,7 +591,7 @@ class _KeyShopContent extends StatelessWidget {
                               SizedBox(height: 2.h),
                               Text(
                                 context.tr(
-                                  'store.premium_bypass_gates', fallback: 'Go Premium to bypass all gates!',
+                                  'store.premium_bypass_gates',
                                   fallback: 'Premium users bypass all gates!',
                                 ),
                                 style: TextStyle(

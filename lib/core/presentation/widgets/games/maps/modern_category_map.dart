@@ -172,7 +172,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
             );
             setState(() {
               _buddyMessage = context.tr(
-                'category_map.first_level_greeting', fallback: 'Start here!',
+                'category_map.first_level_greeting',
                 args: [mascotName],
                 fallback: "Hey! $mascotName here. Let's start Level 1! 🚀",
               );
@@ -328,7 +328,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                       alignment: AlignmentDirectional.centerStart,
                       child: Semantics(
                         button: true,
-                        label: context.tr('common.back', fallback: 'Back', fallback: 'Back'),
+                        label: context.tr('common.back', fallback: 'Back'),
                         child: ScaleButton(
                           onTap: () {
                             if (context.canPop()) {
@@ -849,12 +849,12 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
       );
     } else if (isTollGate) {
       statusLabel = context.tr(
-        'games.level_locked_toll', fallback: 'Gate Locked',
+        'games.level_locked_toll',
         fallback: 'Unlock required',
       );
     } else if (isHalfUnlocked) {
       statusLabel = context.tr(
-        'games.level_locked_sequence', fallback: 'Level Locked',
+        'games.level_locked_sequence',
         fallback: 'Complete previous to play',
       );
     } else {
@@ -1216,7 +1216,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          context.tr('home.level_label', fallback: 'Level', fallback: 'Level'),
+                          context.tr('home.level_label', fallback: 'Level'),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 8.sp,

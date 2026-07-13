@@ -182,7 +182,7 @@ class ModernGameDialog extends StatelessWidget {
                         label:
                             adButtonText ??
                             context.tr(
-                              'games.triple_coins_button', fallback: 'Triple Coins',
+                              'games.triple_coins_button',
                               fallback: 'Triple rewards',
                             ),
                         child: ScaleButton(
@@ -227,7 +227,7 @@ class ModernGameDialog extends StatelessWidget {
                                     Text(
                                       adButtonText ??
                                           context.tr(
-                                            'games.triple_coins_button', fallback: 'Triple Coins',
+                                            'games.triple_coins_button',
                                             fallback: 'TRIPLE REWARDS (3X)',
                                           ),
                                       style: TextStyle(
@@ -294,7 +294,7 @@ class ModernGameDialog extends StatelessWidget {
                 SizedBox(height: 12.h),
                 Semantics(
                   button: true,
-                  label: secondaryButtonText ?? context.tr('common.cancel', fallback: 'Cancel', fallback: 'Cancel'),
+                  label: secondaryButtonText ?? context.tr('common.cancel', fallback: 'Cancel'),
                   child: TextButton(
                     onPressed: onSecondaryPressed,
                     style: TextButton.styleFrom(
@@ -306,7 +306,7 @@ class ModernGameDialog extends StatelessWidget {
                     ),
                     child: Text(
                       secondaryButtonText ??
-                          context.tr('common.cancel', fallback: 'Cancel', fallback: 'Cancel').toUpperCase(),
+                          context.tr('common.cancel', fallback: 'Cancel').toUpperCase(),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 15.sp,

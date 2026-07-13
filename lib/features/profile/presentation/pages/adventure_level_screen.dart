@@ -371,24 +371,24 @@ class AdventureLevelScreen extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final perks = [
       {
-        'title': context.tr('adventure.perk_streak_protection_title', fallback: 'Streak Protection', fallback: 'Streak Protection'),
-        'desc': context.tr('adventure.perk_streak_protection_desc', fallback: 'Keep your streak alive even if you miss a day!', fallback: 'Keep your streak alive even if you miss a day!'),
+        'title': context.tr('adventure.perk_streak_protection_title', fallback: 'Streak Protection'),
+        'desc': context.tr('adventure.perk_streak_protection_desc', fallback: 'Keep your streak alive even if you miss a day!'),
         'level': 50,
         'icon': Icons.security_rounded,
         'color': const Color(0xFF10B981),
         'active': user.level >= 50,
       },
       {
-        'title': context.tr('adventure.perk_coin_multiplier_title', fallback: 'Coin Multiplier', fallback: 'Coin Multiplier'),
-        'desc': context.tr('adventure.perk_coin_multiplier_desc', fallback: 'Earn bonus coins on every quest.', fallback: 'Earn bonus coins on every quest.'),
+        'title': context.tr('adventure.perk_coin_multiplier_title', fallback: 'Coin Multiplier'),
+        'desc': context.tr('adventure.perk_coin_multiplier_desc', fallback: 'Earn bonus coins on every quest.'),
         'level': 100,
         'icon': Icons.stars_rounded,
         'color': const Color(0xFFF59E0B),
         'active': user.level >= 100,
       },
       {
-        'title': context.tr('adventure.perk_avatar_aura_title', fallback: 'Avatar Aura', fallback: 'Avatar Aura'),
-        'desc': context.tr('adventure.perk_avatar_aura_desc', fallback: 'Unlock a special glowing aura for your profile.', fallback: 'Unlock a special glowing aura for your profile.'),
+        'title': context.tr('adventure.perk_avatar_aura_title', fallback: 'Avatar Aura'),
+        'desc': context.tr('adventure.perk_avatar_aura_desc', fallback: 'Unlock a special glowing aura for your profile.'),
         'level': 200,
         'icon': Icons.auto_awesome_rounded,
         'color': const Color(0xFF8B5CF6),
@@ -402,7 +402,7 @@ class AdventureLevelScreen extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Text(
-            context.tr('adventure.level_mastery_perks_header', fallback: 'Mastery Perks', fallback: 'Mastery Perks'),
+            context.tr('adventure.level_mastery_perks_header', fallback: 'Mastery Perks'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 12.sp,
@@ -461,8 +461,8 @@ class AdventureLevelScreen extends StatelessWidget {
                           ),
                           child: Text(
                             isActive
-                                ? context.tr('adventure.perk_status_active', fallback: 'Active', fallback: 'Active')
-                                : context.tr('adventure.perk_status_locked', fallback: 'Locked', fallback: 'Locked'),
+                                ? context.tr('adventure.perk_status_active', fallback: 'Active')
+                                : context.tr('adventure.perk_status_locked', fallback: 'Locked'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
@@ -531,7 +531,7 @@ class AdventureLevelScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          context.tr('adventure.upcoming_milestones_header', fallback: 'Upcoming Milestones', fallback: 'Upcoming Milestones'),
+          context.tr('adventure.upcoming_milestones_header', fallback: 'Upcoming Milestones'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 12.sp,
@@ -842,8 +842,8 @@ class AdventureLevelScreen extends StatelessWidget {
       cost: cost,
       amount: amount,
       titleBuilder: (amount) => amount > 5
-          ? context.tr('adventure.hint_pack_grand_master', fallback: 'Grandmaster Hints', fallback: 'Grandmaster Hints')
-          : context.tr('adventure.hint_pack_strategic', fallback: 'Strategic Hints', fallback: 'Strategic Hints'),
+          ? context.tr('adventure.hint_pack_grand_master', fallback: 'Grandmaster Hints')
+          : context.tr('adventure.hint_pack_strategic', fallback: 'Strategic Hints'),
       bodyBuilder: (cost, amount) => context.tr(
         'adventure.hint_pack_exchange_body', fallback: 'Trade coins for premium hint packs.',
         args: ['$cost', '$amount'],

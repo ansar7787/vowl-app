@@ -1,0 +1,172 @@
+# I18N Audit Task Tracker
+## Overview
+- Total Missing Keys in en.json: 88
+- Files with missing fallbacks: 86
+
+## Missing Keys to Add to en.json
+- [ ] `store.reward_failed_title`
+- [ ] `store.reward_failed_desc`
+- [ ] `store.chest_claimed_semantic`
+- [ ] `store.chest_claimable_semantic`
+- [ ] `store.chest_locked_semantic`
+- [ ] `store.purchase_failed_title`
+- [ ] `store.purchase_failed_desc`
+- [ ] `games.level_locked_toll`
+- [ ] `games.level_locked_sequence`
+- [ ] `store.get_more_coins_keys`
+- [ ] `hint.already_used_semantic`
+- [ ] `hint.use_hint_semantic`
+- [ ] `hint.watch_ad_semantic`
+- [ ] `common.image_placeholder`
+- [ ] `age_gate.title`
+- [ ] `age_gate.subtitle`
+- [ ] `age_gate.adult_button`
+- [ ] `age_gate.child_button`
+- [ ] `age_gate.privacy_note`
+- [ ] `auth.sending_recovery_link`
+- [ ] `auth.forgot_password_instructions`
+- [ ] `auth.preparing_adventure`
+- [ ] `auth.login_subtitle`
+- [ ] `auth.forgot_password_question`
+- [ ] `auth.no_account_prompt`
+- [ ] `auth.preparing_journey`
+- [ ] `auth.signup_subtitle`
+- [ ] `auth.have_account_prompt`
+- [ ] `auth.recover_account_subtitle`
+- [ ] `auth.email_field_label`
+- [ ] `auth.email_field_hint_forgot_password`
+- [ ] `auth.validation_email_required`
+- [ ] `auth.validation_email_invalid`
+- [ ] `auth.email_hint_full`
+- [ ] `auth.remember_password_prompt`
+- [ ] `auth.email_field_hint_generic`
+- [ ] `auth.email_hint_short`
+- [ ] `auth.password_field_label`
+- [ ] `auth.password_field_hint_generic`
+- [ ] `auth.validation_password_required`
+- [ ] `auth.validation_password_too_short`
+- [ ] `auth.password_hint_text`
+- [ ] `auth.hide_password`
+- [ ] `auth.show_password`
+- [ ] `auth.name_field_label`
+- [ ] `auth.name_field_hint`
+- [ ] `auth.validation_name_required`
+- [ ] `auth.validation_name_too_short`
+- [ ] `auth.name_hint_text`
+- [ ] `auth.password_field_hint_signup`
+- [ ] `auth.verify_email_icon_label`
+- [ ] `auth.verify_email_title`
+- [ ] `auth.verify_email_description`
+- [ ] `auth.resend_in`
+- [ ] `auth.seconds_unit`
+- [ ] `auth.resend_email`
+- [ ] `auth.resend_verification_email_semantic`
+- [ ] `auth.verified_confirmation_semantic`
+- [ ] `auth.verified_confirmation`
+- [ ] `auth.cancel_and_logout_semantic`
+- [ ] `auth.cancel_and_logout`
+- [ ] `games.semantic_transcribed_speech`
+- [ ] `games.error_no_quests_for_level`
+- [ ] `games.error_load_failed`
+- [ ] `games.semantic_pro_tip`
+- [ ] `games.semantic_level_progress`
+- [ ] `games.semantic_show_instructions`
+- [ ] `games.semantic_hint_used`
+- [ ] `games.semantic_show_hint`
+- [ ] `home.quest_journey_progress_label`
+- [ ] `adventure.streak_repair`
+- [ ] `games.kids_level_locked_sequence`
+- [ ] `leaderboard.updated_at`
+- [ ] `premium.feature_play_offline`
+- [ ] `settings.age_verification`
+- [ ] `settings.reset_age_title`
+- [ ] `settings.reset_age_desc`
+- [ ] `common.continue`
+
+## Files Needing Fallbacks
+- [x] `lib\core\presentation\pages\quest_sequence_page.dart` (Keys: quest_sequence.completed_description, quest_sequence.status_part, quest_sequence.progress_label, quest_sequence.start_part_button)
+- [x] `lib\core\presentation\utils\mascot_message_helper.dart` (Keys: mascot.idle_kids)
+- [x] `lib\core\presentation\widgets\ad_reward_card.dart` (Keys: games.coins_reward_earned_snack, games.vowl_coins_amount, games.coins_semantic_label, games.watch_button)
+- [x] `lib\core\presentation\widgets\games\maps\components\glass_map_header.dart` (Keys: home.coins_value_label, games.coins_count)
+- [x] `lib\core\presentation\widgets\games\maps\components\star_vault_bottom_sheet.dart` (Keys: store.chest_reward_desc, store.vault_title, store.vault_subtitle, store.your_stars, store.next_chest, store.chest_claimed_semantic, store.chest_claimable_semantic, store.chest_locked_semantic, store.already_claimed_title, store.already_claimed_desc, store.ok, store.not_enough_stars_title, store.not_enough_stars_desc, games.keep_playing, store.chest_opened, store.chest_open, store.loading_ad, store.watch_ad_magic_stars, store.magic_stars_hint)
+- [x] `lib\core\presentation\widgets\games\maps\components\toll_gate_bottom_sheet.dart` (Keys: store.purchase_failed_title, store.purchase_failed_desc, store.gate_unlocked_title, games.level_unlocked_success, store.awesome, store.use_key_to_unlock, store.get_a_key, games.premium_upsell_title, games.premium_upsell_desc)
+- [x] `lib\core\presentation\widgets\games\maps\modern_category_map.dart` (Keys: category_map.first_level_greeting)
+- [x] `lib\core\presentation\widgets\game_progress_header.dart` (Keys: game_progress.level_label, game_progress.progress_label, game_progress.lives_label)
+- [x] `lib\core\presentation\widgets\hint_ad_card.dart` (Keys: games.watch_earn_hints_title, games.one_strategic_hint, games.hint_semantic_label, games.watch_button)
+- [x] `lib\core\presentation\widgets\hint_purchase_dialog.dart` (Keys: economy.insufficient_coins, economy.inventory_updated_hints)
+- [x] `lib\core\presentation\widgets\key_shop_bottom_sheet.dart` (Keys: store.not_enough_toys_title, store.not_enough_coins_title, store.not_enough_currency_desc, store.toys_lower, store.coins_lower, games.keep_playing, store.purchase_failed_title, store.purchase_failed_desc, store.got_key_title, store.got_key_desc, store.awesome, store.buy_for, store.ad_not_ready_title, store.reward_failed_title, store.reward_failed_desc, store.reward_unlocked_title, store.watch_ad_for_key, store.get_more_coins_keys, store.tired_of_keys, store.premium_bypass_gates)
+- [x] `lib\core\presentation\widgets\loading_overlay.dart` (Keys: loading.synchronizing_title)
+- [x] `lib\core\presentation\widgets\modern_game_dialog.dart` (Keys: games.triple_coins_button)
+- [x] `lib\core\presentation\widgets\quest_hint_button.dart` (Keys: hint.use_hint_semantic)
+- [x] `lib\core\utils\story_service.dart` (Keys: story.fallback_kids, story.fallback_modern)
+- [x] `lib\features\accent\dialect_drill\presentation\pages\dialect_drill_screen.dart` (Keys: games.british)
+- [x] `lib\features\accent\dialect_drill\presentation\widgets\dialect_feedback_panel.dart` (Keys: games.correct, games.lets_review, games.accent_comparison, games.british, games.american)
+- [x] `lib\features\accent\presentation\constants\accent_game_constants.dart` (Keys: games.kids_nudge)
+- [x] `lib\features\accent\presentation\widgets\accent_feedback_card.dart` (Keys: games.excellent, games.not_quite, common.continue_text, games.see_results, games.try_again, games.correct, games.incorrect, games.explanation_caps, games.explanation)
+- [x] `lib\features\auth\presentation\pages\forgot_password_page.dart` (Keys: auth.forgot_password_instructions)
+- [x] `lib\features\auth\presentation\pages\login_page.dart` (Keys: auth.forgot_password_question, auth.no_account_prompt)
+- [x] `lib\features\auth\presentation\pages\signup_page.dart` (Keys: auth.have_account_prompt)
+- [x] `lib\features\elite_mastery\accent_shadowing\presentation\pages\accent_shadowing_screen.dart` (Keys: games.mic_unavailable, games.accent_legend_title, games.accent_shadowing_title, games.target_text_fallback, games.semantic_transcribed_speech)
+- [x] `lib\features\elite_mastery\accent_shadowing\presentation\widgets\accent_shadowing_mic_trigger.dart` (Keys: games.semantic_mic_stop, games.semantic_mic_start, games.semantic_tutor_pass_hint, games.i_spoke_correctly)
+- [x] `lib\features\elite_mastery\accent_shadowing\presentation\widgets\accent_shadowing_target_panel.dart` (Keys: games.semantic_listen_example, games.semantic_target_sentence)
+- [x] `lib\features\elite_mastery\idiom_match\presentation\pages\idiom_match_screen.dart` (Keys: games.idiom_legend_title, games.idiom_master_title)
+- [x] `lib\features\elite_mastery\idiom_match\presentation\widgets\idiom_match_options_panel.dart` (Keys: games.semantic_correct_suffix, games.semantic_incorrect_suffix)
+- [x] `lib\features\elite_mastery\presentation\layout\elite_base_layout.dart` (Keys: games.kids_nudge, games.error_no_quests_for_level, games.error_load_failed)
+- [x] `lib\features\elite_mastery\presentation\widgets\elite_feedback_card.dart` (Keys: games.excellent, games.not_quite, common.continue_text, games.see_results, games.try_again, games.semantic_correct_continue, games.semantic_incorrect_explanation, games.semantic_incorrect_try_again, games.pro_tip_caps, games.semantic_pro_tip, games.explanation_caps)
+- [x] `lib\features\elite_mastery\presentation\widgets\elite_game_header.dart` (Keys: games.semantic_level_progress, games.semantic_show_instructions, games.semantic_hint_used, games.semantic_show_hint)
+- [x] `lib\features\elite_mastery\presentation\widgets\elite_hint_card.dart` (Keys: games.need_a_hint, games.lifeline_activated, games.hint_fallback_default, games.expert_hint)
+- [x] `lib\features\elite_mastery\speed_spelling\presentation\pages\speed_spelling_screen.dart` (Keys: games.spelling_legend_title, games.speed_spelling_title_fallback, games.submit_caps)
+- [x] `lib\features\elite_mastery\speed_spelling\presentation\widgets\speed_spelling_character_deck.dart` (Keys: games.semantic_letter_tile, games.semantic_letter_tile_used)
+- [x] `lib\features\elite_mastery\speed_spelling\presentation\widgets\speed_spelling_input_field.dart` (Keys: games.semantic_spelling_empty, games.semantic_current_spelling, games.semantic_backspace, games.semantic_clear_input)
+- [x] `lib\features\elite_mastery\story_builder\presentation\pages\story_builder_screen.dart` (Keys: games.story_master_title, games.story_builder_title, games.finalize_story_caps)
+- [x] `lib\features\elite_mastery\story_builder\presentation\widgets\story_builder_narrative_tile.dart` (Keys: games.semantic_story_tile_position, games.semantic_correct_suffix, games.semantic_incorrect_suffix)
+- [x] `lib\features\games\presentation\pages\games_screen.dart` (Keys: games.quest_hub, common.see_all)
+- [x] `lib\features\grammar\conditionals\presentation\pages\conditionals_screen.dart` (Keys: games.correct, games.incorrect_caps)
+- [x] `lib\features\grammar\conjunctions\presentation\pages\conjunctions_screen.dart` (Keys: games.correct, games.incorrect_caps)
+- [x] `lib\features\grammar\direct_indirect_speech\presentation\pages\direct_indirect_speech_screen.dart` (Keys: games.correct, games.incorrect_caps)
+- [x] `lib\features\grammar\modals_selection\presentation\pages\modals_selection_screen.dart` (Keys: games.correct, games.incorrect_caps)
+- [x] `lib\features\grammar\modifier_placement\presentation\pages\modifier_placement_screen.dart` (Keys: games.correct, games.incorrect_caps)
+- [x] `lib\features\grammar\preposition_choice\presentation\pages\preposition_choice_screen.dart` (Keys: games.correct, games.incorrect_caps)
+- [x] `lib\features\grammar\presentation\layout\grammar_base_layout.dart` (Keys: games.kids_nudge)
+- [x] `lib\features\grammar\presentation\widgets\grammar_feedback_card.dart` (Keys: games.excellent, games.not_quite, common.continue_text, common.see_results, games.try_again, games.explanation_caps)
+- [x] `lib\features\grammar\pronoun_resolution\presentation\pages\pronoun_resolution_screen.dart` (Keys: games.correct, games.incorrect_caps)
+- [x] `lib\features\grammar\punctuation_mastery\presentation\pages\punctuation_mastery_screen.dart` (Keys: games.correct, games.incorrect_caps)
+- [x] `lib\features\grammar\question_formatter\presentation\pages\question_formatter_screen.dart` (Keys: games.correct, games.incorrect_caps)
+- [x] `lib\features\grammar\relative_clauses\presentation\pages\relative_clauses_screen.dart` (Keys: games.correct, games.incorrect_caps)
+- [x] `lib\features\grammar\voice_swap\presentation\widgets\voice_swap_result.dart` (Keys: games.correct, games.incorrect_caps)
+- [x] `lib\features\home\presentation\pages\category_games_page.dart` (Keys: category_games.mastery_summary_label, category_games.percent_completed, category_games.levels_count_short, category_games.mission_progress)
+- [x] `lib\features\home\presentation\pages\home_screen.dart` (Keys: home.quest_arena_subtitle, home.elite_companion_subtitle)
+- [x] `lib\features\home\presentation\pages\quest_library_page.dart` (Keys: quest_archive.mastery, quest_archive.levels_cleared, quest_archive.completed, categories.${subtype.category.name.toLowerCase()})
+- [x] `lib\features\home\presentation\pages\streak_screen.dart` (Keys: home.coins_value_label)
+- [x] `lib\features\home\presentation\pages\vowl_mascot_screen.dart` (Keys: home.coins_value_label, vowl_mascot.price_label, vowl_mascot.feedback_insufficient_credits)
+- [x] `lib\features\home\presentation\widgets\bento_arena.dart` (Keys: home.step, home.levels_cleared_max)
+- [x] `lib\features\home\presentation\widgets\command_pod.dart` (Keys: home.level, home.completed_percent)
+- [x] `lib\features\home\presentation\widgets\discovery_deck.dart` (Keys: home.discovery_page_indicator, home.quests_count)
+- [x] `lib\features\home\presentation\widgets\global_progress_card.dart` (Keys: home.quest_journey_progress_label, home.levels_suffix, home.percent_complete, home.levels_count)
+- [x] `lib\features\home\presentation\widgets\inline_notification_card.dart` (Keys: notification_card.remind_me)
+- [x] `lib\features\home\presentation\widgets\mastery_avatar.dart` (Keys: home.avatar_progress_label)
+- [x] `lib\features\home\presentation\widgets\mystery_chest_overlay.dart` (Keys: home.chest_daily_mystery, home.chest_coins_collected_value, home.chest_coins_collected)
+- [x] `lib\features\home\presentation\widgets\streak_boosters_shop.dart` (Keys: home.coins_value_label, adventure.streak_shield, streak.insufficient_coins, streak.cost_label, streak.cant_afford_label, streak.status_active, streak.status_not_needed, streak.expires_label, streak.free_label)
+- [x] `lib\features\home\presentation\widgets\streak_calendar.dart` (Keys: streak.protected_badge, streak.day_completed, streak.day_today_pending, streak.day_missed)
+- [x] `lib\features\home\presentation\widgets\streak_hero.dart` (Keys: streak.hero_summary_label)
+- [x] `lib\features\home\presentation\widgets\streak_milestones.dart` (Keys: streak.milestone_year_singular, streak.milestone_years_plural, streak.milestone_days, streak.milestone_claim_cta, streak.milestone_progress_label)
+- [x] `lib\features\home\presentation\widgets\vowl_mascot_card.dart` (Keys: vowl_mascot_card.pet_action)
+- [x] `lib\features\kids_zone\presentation\pages\kids_room_screen.dart` (Keys: games.kids_tap_wake)
+- [x] `lib\features\kids_zone\presentation\widgets\kids_toll_gate_bottom_sheet.dart` (Keys: store.purchase_failed_title, store.purchase_failed_desc, games.magic_lock_success, games.premium_upsell_title, games.premium_upsell_desc)
+- [x] `lib\features\leaderboard\presentation\widgets\leaderboard_header.dart` (Keys: leaderboard.updated_at, leaderboard.mins_ago, leaderboard.hours_ago, leaderboard.days_ago)
+- [x] `lib\features\leaderboard\presentation\widgets\leaderboard_rank_card.dart` (Keys: leaderboard.all_quests)
+- [x] `lib\features\leaderboard\presentation\widgets\leaderboard_rank_tile.dart` (Keys: leaderboard.lvs)
+- [x] `lib\features\premium\presentation\widgets\premium_plan_card.dart` (Keys: premium.days_of_elite_access)
+- [x] `lib\features\profile\presentation\pages\adventure_level_screen.dart` (Keys: adventure.perk_unlocks_at_level, adventure.reach_level, adventure.hint_pack_exchange_body)
+- [x] `lib\features\profile\presentation\pages\adventure_xp_screen.dart` (Keys: adventure.activity_default_subtitle, adventure.time_days_ago, adventure.time_hours_ago, adventure.time_minutes_ago)
+- [x] `lib\features\profile\presentation\pages\profile_screen.dart` (Keys: settings.app_preferences)
+- [x] `lib\features\profile\presentation\pages\quest_coins_screen.dart` (Keys: adventure.hint_pack_exchange_body_with_hint)
+- [x] `lib\features\profile\presentation\pages\trophy_room_screen.dart` (Keys: profile.level)
+- [x] `lib\features\profile\presentation\widgets\profile_badges_list.dart` (Keys: profile.badge_semantic_label, profile.level_achieved)
+- [x] `lib\features\profile\presentation\widgets\profile_bento_stats.dart` (Keys: profile.streak_days, profile.level_value, profile.total_experience, profile.progress_to_level)
+- [x] `lib\features\profile\presentation\widgets\profile_preferences_list.dart` (Keys: settings.title)
+- [x] `lib\features\profile\presentation\widgets\profile_stickers_progress.dart` (Keys: profile.stickers_count)
+- [x] `lib\features\profile\presentation\widgets\rewarded_ad_card.dart` (Keys: economy.reward_earned_coins, economy.get_free_coins_subtitle, economy.watch_ad_button)
+- [x] `lib\features\reading\presentation\widgets\reading_feedback_card.dart` (Keys: games.semantic_incorrect_explanation)
+- [x] `lib\features\settings\presentation\widgets\settings_dialogs.dart` (Keys: settings_dialogs.reset_password_body, settings_dialogs.reset_link_sent)
+- [x] `lib\features\speaking\presentation\widgets\speaking_feedback_card.dart` (Keys: games.semantic_incorrect_explanation)

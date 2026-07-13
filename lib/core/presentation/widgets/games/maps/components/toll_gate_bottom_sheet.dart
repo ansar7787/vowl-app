@@ -145,11 +145,11 @@ class TollGateBottomSheet {
                                   context: parentContext,
                                   builder: (ctx) => ModernGameDialog(
                                     title: context.tr(
-                                      'store.purchase_failed_title', fallback: 'Purchase Failed',
+                                      'store.purchase_failed_title',
                                       fallback: 'PURCHASE FAILED',
                                     ),
                                     description: context.tr(
-                                      'store.purchase_failed_desc', fallback: 'Could not complete the purchase. Please try again.',
+                                      'store.purchase_failed_desc',
                                       fallback:
                                           'Something went wrong and your key was not spent. Please try again.',
                                     ),
@@ -177,15 +177,15 @@ class TollGateBottomSheet {
                                       children: [
                                         ModernGameDialog(
                                           title: context.tr(
-                                            'store.gate_unlocked_title', fallback: 'Gate Unlocked!',
+                                            'store.gate_unlocked_title',
                                             fallback: 'GATE UNLOCKED!',
                                           ),
                                           description: context.tr(
-                                            'games.level_unlocked_success', fallback: 'You have unlocked the next level!',
+                                            'games.level_unlocked_success',
                                             fallback: 'Next 3 Levels Unlocked!',
                                           ),
                                           buttonText: context.tr(
-                                            'store.awesome', fallback: 'Awesome!',
+                                            'store.awesome',
                                             fallback: 'AWESOME',
                                           ),
                                           isSuccess: true,
@@ -252,11 +252,11 @@ class TollGateBottomSheet {
                                 Text(
                                   hasKey
                                       ? context.tr(
-                                          'store.use_key_to_unlock', fallback: 'Use a key to unlock the gate.',
+                                          'store.use_key_to_unlock',
                                           fallback: 'USE 1 KEY TO UNLOCK',
                                         )
                                       : context.tr(
-                                          'store.get_a_key', fallback: 'Get a Key',
+                                          'store.get_a_key',
                                           fallback: 'GET A KEY',
                                         ),
                                   style: TextStyle(
@@ -319,7 +319,7 @@ class TollGateBottomSheet {
                                 children: [
                                   Text(
                                     context.tr(
-                                      'games.premium_upsell_title', fallback: 'Go Premium',
+                                      'games.premium_upsell_title',
                                       fallback: 'Tired of locks & ads?',
                                     ),
                                     style: TextStyle(
@@ -336,7 +336,7 @@ class TollGateBottomSheet {
                                   SizedBox(height: 4.h),
                                   Text(
                                     context.tr(
-                                      'games.premium_upsell_desc', fallback: 'Unlock all gates and play without limits.',
+                                      'games.premium_upsell_desc',
                                       fallback:
                                           'Get Premium for unlimited levels!',
                                     ),

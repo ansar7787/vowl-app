@@ -21,8 +21,8 @@ class SignUpNameInput extends StatelessWidget {
       builder: (context, state) {
         final contrastColor = MeshGradientBackground.getContrastColor(context);
         return Semantics(
-          label: context.tr('auth.name_field_label', fallback: 'Name', fallback: 'Name'),
-          hint: context.tr('auth.name_field_hint', fallback: 'Enter your name', fallback: 'Enter your name'),
+          label: context.tr('auth.name_field_label', fallback: 'Name'),
+          hint: context.tr('auth.name_field_hint', fallback: 'Enter your name'),
           textField: true,
           child: TextFormField(
             key: fieldKey,
@@ -30,10 +30,10 @@ class SignUpNameInput extends StatelessWidget {
             onChanged: (name) => context.read<SignUpCubit>().nameChanged(name),
             validator: (value) {
               if (value == null || value.trim().isEmpty) {
-                return context.tr('auth.validation_name_required', fallback: 'Name is required', fallback: 'Name is required');
+                return context.tr('auth.validation_name_required', fallback: 'Name is required');
               }
               if (value.trim().length < 2) {
-                return context.tr('auth.validation_name_too_short', fallback: 'Name is too short', fallback: 'Name is too short');
+                return context.tr('auth.validation_name_too_short', fallback: 'Name is too short');
               }
               return null;
             },
@@ -44,7 +44,7 @@ class SignUpNameInput extends StatelessWidget {
             decoration: _buildDecoration(
               context: context,
               contrastColor: contrastColor,
-              hint: context.tr('auth.name_hint_text', fallback: 'What should we call you?', fallback: 'What should we call you?'),
+              hint: context.tr('auth.name_hint_text', fallback: 'What should we call you?'),
               prefixIcon: Icons.person_outline,
             ),
           ),
@@ -77,8 +77,8 @@ class SignUpEmailInput extends StatelessWidget {
       builder: (context, state) {
         final contrastColor = MeshGradientBackground.getContrastColor(context);
         return Semantics(
-          label: context.tr('auth.email_field_label', fallback: 'Email', fallback: 'Email'),
-          hint: context.tr('auth.email_field_hint_generic', fallback: 'Email Address', fallback: 'Email Address'),
+          label: context.tr('auth.email_field_label', fallback: 'Email'),
+          hint: context.tr('auth.email_field_hint_generic', fallback: 'Email Address'),
           textField: true,
           child: TextFormField(
             key: fieldKey,
@@ -87,10 +87,10 @@ class SignUpEmailInput extends StatelessWidget {
                 context.read<SignUpCubit>().emailChanged(email),
             validator: (value) {
               if (value == null || value.trim().isEmpty) {
-                return context.tr('auth.validation_email_required', fallback: 'Email is required', fallback: 'Email is required');
+                return context.tr('auth.validation_email_required', fallback: 'Email is required');
               }
               if (!_emailRegex.hasMatch(value.trim())) {
-                return context.tr('auth.validation_email_invalid', fallback: 'Invalid email address', fallback: 'Invalid email address');
+                return context.tr('auth.validation_email_invalid', fallback: 'Invalid email address');
               }
               return null;
             },
@@ -101,7 +101,7 @@ class SignUpEmailInput extends StatelessWidget {
             decoration: _buildDecoration(
               context: context,
               contrastColor: contrastColor,
-              hint: context.tr('auth.email_hint_short', fallback: 'explorer@vowl.com', fallback: 'explorer@vowl.com'),
+              hint: context.tr('auth.email_hint_short', fallback: 'explorer@vowl.com'),
               prefixIcon: Icons.email_outlined,
             ),
           ),
@@ -130,8 +130,8 @@ class SignUpPasswordInput extends StatelessWidget {
       builder: (context, state) {
         final contrastColor = MeshGradientBackground.getContrastColor(context);
         return Semantics(
-          label: context.tr('auth.password_field_label', fallback: 'Password', fallback: 'Password'),
-          hint: context.tr('auth.password_field_hint_signup', fallback: 'Create a password', fallback: 'Create a password'),
+          label: context.tr('auth.password_field_label', fallback: 'Password'),
+          hint: context.tr('auth.password_field_hint_signup', fallback: 'Create a password'),
           textField: true,
           child: TextFormField(
             key: fieldKey,
@@ -140,10 +140,10 @@ class SignUpPasswordInput extends StatelessWidget {
                 context.read<SignUpCubit>().passwordChanged(password),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return context.tr('auth.validation_password_required', fallback: 'Password is required', fallback: 'Password is required');
+                return context.tr('auth.validation_password_required', fallback: 'Password is required');
               }
               if (value.length < 6) {
-                return context.tr('auth.validation_password_too_short', fallback: 'Password must be at least 6 characters', fallback: 'Password must be at least 6 characters');
+                return context.tr('auth.validation_password_too_short', fallback: 'Password must be at least 6 characters');
               }
               return null;
             },
@@ -155,12 +155,12 @@ class SignUpPasswordInput extends StatelessWidget {
             decoration: _buildDecoration(
               context: context,
               contrastColor: contrastColor,
-              hint: context.tr('auth.password_hint_text', fallback: 'Make it strong!', fallback: 'Make it strong!'),
+              hint: context.tr('auth.password_hint_text', fallback: 'Make it strong!'),
               prefixIcon: Icons.lock_outlined,
               suffixIcon: Semantics(
                 label: state.isPasswordVisible
-                    ? context.tr('auth.hide_password', fallback: 'Hide password', fallback: 'Hide password')
-                    : context.tr('auth.show_password', fallback: 'Show password', fallback: 'Show password'),
+                    ? context.tr('auth.hide_password', fallback: 'Hide password')
+                    : context.tr('auth.show_password', fallback: 'Show password'),
                 button: true,
                 child: IconButton(
                   icon: Icon(
@@ -203,7 +203,7 @@ class SignUpButton extends StatelessWidget {
       builder: (context, state) {
         return Semantics(
           button: true,
-          label: context.tr('auth.signup', fallback: 'Sign Up', fallback: 'Sign Up'),
+          label: context.tr('auth.signup', fallback: 'Sign Up'),
           child: ElevatedButton(
             onPressed: state.isSubmitting
                 ? null
@@ -229,7 +229,7 @@ class SignUpButton extends StatelessWidget {
                 // maxLines + overflow, not Flexible — see LoginButton's
                 // identical comment for why.
                 : Text(
-                    context.tr('auth.signup', fallback: 'Sign Up', fallback: 'Sign Up'),
+                    context.tr('auth.signup', fallback: 'Sign Up'),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),

@@ -659,7 +659,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                 top: -30.h,
                 child:
                     Text(
-                          context.tr('games.kids_zzz', fallback: 'Zzz...', fallback: 'Zzz...'),
+                          context.tr('games.kids_zzz', fallback: 'Zzz...'),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             color: Colors.white70,

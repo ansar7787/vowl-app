@@ -523,7 +523,7 @@ class StoryServiceImpl implements StoryService {
       // Check Granular Modern First
       if (modernGameScripts.containsKey(categoryId)) {
         return StoryBeat(
-          title: context.tr('story.new_quest', fallback: 'New Quest', fallback: 'New Quest'),
+          title: context.tr('story.new_quest', fallback: 'New Quest'),
           text: context.tr(
             'story_scripts.$categoryId',
             fallback: modernGameScripts[categoryId]!,
@@ -536,7 +536,7 @@ class StoryServiceImpl implements StoryService {
       // Check Kids (using cleanId)
       if (kidsScripts.containsKey(cleanId)) {
         return StoryBeat(
-          title: context.tr('story.new_quest', fallback: 'New Quest', fallback: 'New Quest'),
+          title: context.tr('story.new_quest', fallback: 'New Quest'),
           text: context.tr(
             'story_scripts.$cleanId',
             fallback: kidsScripts[cleanId]![0],
@@ -580,9 +580,9 @@ class StoryServiceImpl implements StoryService {
           : "Vowl";
 
       return StoryBeat(
-        title: context.tr('story.new_quest', fallback: 'New Quest', fallback: 'New Quest'),
+        title: context.tr('story.new_quest', fallback: 'New Quest'),
         text: isKids
-            ? context.tr('story.fallback_kids', fallback: 'Let\\'s go on an adventure!', args: [categoryName])
+            ? context.tr('story.fallback_kids', fallback: 'Let\'s go on an adventure!', args: [categoryName])
             : context.tr('story.fallback_modern', fallback: 'Your mission begins now.', args: [categoryName]),
         mascotEmoji: isKids ? "✨" : "🚀",
         themeColor: _getCategoryColor(cleanId),
@@ -594,7 +594,7 @@ class StoryServiceImpl implements StoryService {
       final script = kidsScripts[cleanId]!;
       if (beatIndex < script.length) {
         return StoryBeat(
-          title: context.tr('story.adventure_log', fallback: 'Adventure Log', fallback: 'Adventure Log'),
+          title: context.tr('story.adventure_log', fallback: 'Adventure Log'),
           text: context.tr(
             'story_scripts.${cleanId}_beat_$beatIndex',
             fallback: script[beatIndex],
@@ -611,7 +611,7 @@ class StoryServiceImpl implements StoryService {
       final script = legacyAdultScripts[broadId]!;
       if (beatIndex < script.length && script[beatIndex].isNotEmpty) {
         return StoryBeat(
-          title: context.tr('story.system_update', fallback: 'System Update', fallback: 'System Update'),
+          title: context.tr('story.system_update', fallback: 'System Update'),
           text: context.tr(
             'story_scripts.${broadId}_beat_$beatIndex',
             fallback: script[beatIndex],
