@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 
 // ---------------------------------------------------------------------------
@@ -159,7 +160,7 @@ class _Header extends StatelessWidget {
   }
 }
 
-class _ExplanationCard extends StatelessWidget {
+class _ExplanationCard extends StatefulWidget {
   final String explanation;
   final Color color;
   final bool isDark;
@@ -171,17 +172,25 @@ class _ExplanationCard extends StatelessWidget {
   });
 
   @override
+  State<_ExplanationCard> createState() => _ExplanationCardState();
+}
+
+class _ExplanationCardState extends State<_ExplanationCard> {
+  String? _translatedText;
+
+  @override
   Widget build(BuildContext context) {
+    final displayText = _translatedText ?? widget.explanation;
     return Semantics(
-          label: 'Explanation: $explanation',
+          label: 'Explanation: $displayText',
           child: Container(
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.08),
+              color: widget.color.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(20.r),
               border: Border.all(
-                color: color.withValues(alpha: 0.2),
+                color: widget.color.withValues(alpha: 0.2),
                 width: 1.5,
               ),
             ),
@@ -190,17 +199,14 @@ class _ExplanationCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    // ACCESSIBILITY: purely decorative icon beside the label
                     ExcludeSemantics(
                       child: Icon(
                         Icons.info_outline_rounded,
-                        color: color,
+                        color: widget.color,
                         size: 14.r,
                       ),
                     ),
                     SizedBox(width: 8.w),
-                    // ACCESSIBILITY: wrap in MediaQuery clamp so small label
-                    // doesn't overflow at 2× text scale on accessibility settings.
                     Flexible(
                       child: MediaQuery(
                         data: MediaQuery.of(context).copyWith(
@@ -216,22 +222,30 @@ class _ExplanationCard extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,
                             fontWeight: FontWeight.w800,
-                            color: color,
+                            color: widget.color,
                             letterSpacing: 1,
                           ),
                         ),
                       ),
                     ),
+                    const Spacer(),
+                    if (_translatedText == null)
+                      TranslateButtonWidget(
+                        originalText: widget.explanation,
+                        onTranslationComplete: (translated) {
+                          if (mounted) setState(() => _translatedText = translated);
+                        },
+                      ),
                   ],
                 ),
                 SizedBox(height: 4.h),
                 Text(
-                  explanation,
+                  displayText,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white : Colors.black87,
+                    color: widget.isDark ? Colors.white : Colors.black87,
                   ),
                 ),
               ],

@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
@@ -143,19 +145,38 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
       },
     );
 
-    if (!hintShouldGlow) return button;
+    Widget animatedButton = button;
+    if (hintShouldGlow) {
+      animatedButton = button
+          .animate(
+            key: ValueKey<bool>(hintShouldGlow),
+            onPlay: (c) => c.repeat(reverse: true),
+          )
+          .shimmer(
+            color: Colors.white.withValues(alpha: 0.5),
+            duration: 1.seconds,
+          )
+          .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1));
+    }
 
-    // ValueKey forces a fresh AnimationController when glow state toggles,
-    // preventing the repeat loop from continuing after hintShouldGlow → false.
-    return button
-        .animate(
-          key: ValueKey<bool>(hintShouldGlow),
-          onPlay: (c) => c.repeat(reverse: true),
-        )
-        .shimmer(
-          color: Colors.white.withValues(alpha: 0.5),
-          duration: 1.seconds,
-        )
-        .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1));
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        animatedButton,
+        if (currentQuest.hint != null && widget.gameType != GameSubtype.topicVocab) ...[
+          SizedBox(width: 8.w),
+          TranslateButtonWidget(
+            originalText: currentQuest.hint!,
+            onTranslationComplete: (translated) {
+              CustomSnackBar.show(
+                context: context,
+                message: translated,
+                type: CustomSnackBarType.info,
+              );
+            },
+          ),
+        ],
+      ],
+    );
   }
 }

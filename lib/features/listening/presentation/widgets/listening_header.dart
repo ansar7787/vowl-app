@@ -5,6 +5,8 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
 
 /// Top navigation and progress bar for the listening game.
@@ -156,7 +158,9 @@ class _HintButton extends StatelessWidget {
     return Semantics(
       button: true,
       label: used ? 'Hint already used' : 'Use hint',
-      child:
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
           QuestHintButton(
                 used: used,
                 primaryColor: theme.primaryColor,
@@ -176,6 +180,21 @@ class _HintButton extends StatelessWidget {
                 duration: 1.seconds,
               )
               .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
+          if (quest.hint != null) ...[
+            SizedBox(width: 8.w),
+            TranslateButtonWidget(
+              originalText: quest.hint,
+              onTranslationComplete: (translated) {
+                CustomSnackBar.show(
+                  context: context,
+                  message: translated,
+                  type: CustomSnackBarType.info,
+                );
+              },
+            ),
+          ],
+        ],
+      ),
     );
   }
 }

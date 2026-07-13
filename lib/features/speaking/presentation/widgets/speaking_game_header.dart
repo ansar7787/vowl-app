@@ -3,7 +3,9 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
@@ -71,13 +73,31 @@ class SpeakingGameHeader extends StatelessWidget {
           if (showQuestControls) ...[
             _InfoButton(primaryColor: primaryColor, onTap: onInfoTap),
             SizedBox(width: 8.w),
-            _HintButton(
-              hintUsed: hintUsed,
-              hintShouldGlow: hintShouldGlow,
-              primaryColor: primaryColor,
-              hintText: quest!.hint,
-              soundService: soundService,
-              onTap: onHintTap,
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _HintButton(
+                  hintUsed: hintUsed,
+                  hintShouldGlow: hintShouldGlow,
+                  primaryColor: primaryColor,
+                  hintText: quest!.hint,
+                  soundService: soundService,
+                  onTap: onHintTap,
+                ),
+                if (quest!.hint != null) ...[
+                  SizedBox(width: 8.w),
+                  TranslateButtonWidget(
+                    originalText: quest!.hint!,
+                    onTranslationComplete: (translated) {
+                      CustomSnackBar.show(
+                        context: context,
+                        message: translated,
+                        type: CustomSnackBarType.info,
+                      );
+                    },
+                  ),
+                ],
+              ],
             ),
           ],
         ],

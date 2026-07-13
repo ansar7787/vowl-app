@@ -17,6 +17,9 @@ import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
 import 'package:vowl/core/presentation/widgets/writing/ink_streak.dart';
 import 'package:vowl/core/presentation/widgets/quest_briefing_overlay.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
+import 'package:vowl/features/writing/presentation/widgets/writing_feedback_card.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/game_instruction_service.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -284,11 +287,12 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
                           bottom: 0,
                           left: 0,
                           right: 0,
-                          child: _buildModernFeedbackCard(
-                            context,
-                            state,
-                            theme,
-                            isDark,
+                          child: WritingFeedbackCard(
+                            state: state,
+                            isCorrect: widget.isCorrect,
+                            onContinue: widget.onContinue,
+                            isDark: isDark,
+                            theme: theme,
                           ),
                         ),
                       if (widget.showConfetti) const GameConfetti(),
@@ -380,29 +384,46 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
             ),
             Padding(
               padding: EdgeInsets.only(left: 8.w),
-              child:
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
                   QuestHintButton(
-                        used: (state is WritingLoaded) ? state.hintUsed : false,
-                        primaryColor: theme.primaryColor,
-                        hintText: quest.hint,
-                        soundService: _soundService,
-                        onTap: () {
-                          context.read<WritingBloc>().add(WritingHintUsed());
-                          widget.onHint();
-                        },
-                      )
-                      .animate(
-                        target: hintShouldGlow ? 1 : 0,
-                        onPlay: (c) => c.repeat(reverse: true),
-                      )
-                      .shimmer(
-                        color: Colors.white.withValues(alpha: 0.5),
-                        duration: 1.seconds,
-                      )
-                      .scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.1, 1.1),
-                      ),
+                    used: (state is WritingLoaded) ? state.hintUsed : false,
+                    primaryColor: theme.primaryColor,
+                    hintText: quest.hint,
+                    soundService: _soundService,
+                    onTap: () {
+                      context.read<WritingBloc>().add(WritingHintUsed());
+                      widget.onHint();
+                    },
+                  )
+                  .animate(
+                    target: hintShouldGlow ? 1 : 0,
+                    onPlay: (c) => c.repeat(reverse: true),
+                  )
+                  .shimmer(
+                    color: Colors.white.withValues(alpha: 0.5),
+                    duration: 1.seconds,
+                  )
+                  .scale(
+                    begin: const Offset(1, 1),
+                    end: const Offset(1.1, 1.1),
+                  ),
+                  if (quest.hint != null) ...[
+                    SizedBox(width: 8.w),
+                    TranslateButtonWidget(
+                      originalText: quest.hint,
+                      onTranslationComplete: (translated) {
+                        CustomSnackBar.show(
+                          context: context,
+                          message: translated,
+                          type: CustomSnackBarType.info,
+                        );
+                      },
+                    ),
+                  ],
+                ],
+              ),
             ),
           ],
         ],
@@ -476,187 +497,7 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
     ).animate().fadeIn().slideX(begin: 0.1, end: 0);
   }
 
-  Widget _buildModernFeedbackCard(
-    BuildContext context,
-    WritingState state,
-    dynamic theme,
-    bool isDark,
-  ) {
-    final success = widget.isCorrect ?? false;
-    final lives = (state is WritingLoaded) ? state.livesRemaining : 3;
-    final primaryGradient = success
-        ? [const Color(0xFF2DD4BF), const Color(0xFF10B981)]
-        : [const Color(0xFFF43F5E), const Color(0xFFE11D48)];
-    final shadowColor = success
-        ? const Color(0xFF10B981)
-        : const Color(0xFFE11D48);
-    final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
-    final title = success
-        ? context.tr('games.excellent', fallback: 'Excellent!')
-        : context.tr('games.not_quite', fallback: 'Not Quite');
-    final showCorrectAnswer =
-        !success && (state as WritingLoaded).isFinalFailure;
-    final buttonText = success
-        ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
-        : ((state as WritingLoaded).isFinalFailure
-              ? (lives == 0
-                    ? context.tr('common.see_results', fallback: 'See Results').toUpperCase()
-                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
-              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
 
-    String? explanation;
-    if (showCorrectAnswer) {
-      explanation = state.currentQuest.explanation;
-    }
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(28.r),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F172A) : Colors.white,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-        boxShadow: [
-          BoxShadow(
-            color: shadowColor.withValues(alpha: 0.2),
-            blurRadius: 40,
-            offset: const Offset(0, -10),
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Row(
-            children: [
-              Container(
-                padding: EdgeInsets.all(8.r),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: primaryGradient),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(icon, color: Colors.white, size: 28.r),
-              ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
-              SizedBox(width: 16.w),
-              Expanded(
-                child: Text(
-                  title,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w900,
-                    foreground: Paint()
-                      ..shader = LinearGradient(
-                        colors: primaryGradient,
-                      ).createShader(const Rect.fromLTWH(0, 0, 200, 70)),
-                    letterSpacing: 1.5,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          if (explanation != null) ...[
-            SizedBox(height: 16.h),
-            Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 20.w,
-                    vertical: 14.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: shadowColor.withValues(alpha: 0.08),
-                    borderRadius: BorderRadius.circular(20.r),
-                    border: Border.all(
-                      color: shadowColor.withValues(alpha: 0.2),
-                      width: 1.5,
-                    ),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.info_outline_rounded,
-                            color: shadowColor,
-                            size: 14.r,
-                          ),
-                          SizedBox(width: 8.w),
-                          Text(
-                            context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w800,
-                              color: shadowColor,
-                              letterSpacing: 1,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 4.h),
-                      Text(
-                        explanation,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w600,
-                          color: isDark ? Colors.white : Colors.black87,
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-                .animate()
-                .fadeIn(delay: 300.ms)
-                .scale(duration: 400.ms, curve: Curves.easeOutBack),
-          ],
-          SizedBox(height: 28.h),
-          ScaleButton(
-            onTap: widget.onContinue,
-            child: Container(
-              width: double.infinity,
-              height: 65.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.r),
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: primaryGradient,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: shadowColor.withValues(alpha: 0.4),
-                    blurRadius: 15,
-                    offset: const Offset(0, 8),
-                  ),
-                ],
-              ),
-              child: Center(
-                child: Text(
-                  buttonText,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    letterSpacing: 3,
-                  ),
-                ),
-              ),
-            ),
-          ).animate().scale(
-            delay: 500.ms,
-            duration: 400.ms,
-            curve: Curves.elasticOut,
-          ),
-        ],
-      ),
-    ).animate().slideY(
-      begin: 1,
-      end: 0,
-      curve: Curves.easeOutCubic,
-      duration: 500.ms,
-    );
-  }
 
   VowlMascotState _getMascotState(WritingState state, int lives) {
     if (state is WritingGameComplete) return VowlMascotState.happy;

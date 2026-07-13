@@ -4,7 +4,9 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
 
@@ -88,13 +90,31 @@ class AccentHeader extends StatelessWidget {
             SizedBox(width: 8.w),
             _InfoButton(primaryColor: primaryColor, onTap: onShowBriefing),
             SizedBox(width: 8.w),
-            _HintButton(
-              quest: quest!,
-              hintUsed: hintUsed,
-              primaryColor: primaryColor,
-              soundService: soundService,
-              shouldGlow: hintShouldGlow,
-              onTap: onHintTap,
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _HintButton(
+                  quest: quest!,
+                  hintUsed: hintUsed,
+                  primaryColor: primaryColor,
+                  soundService: soundService,
+                  shouldGlow: hintShouldGlow,
+                  onTap: onHintTap,
+                ),
+                if (quest!.hint != null) ...[
+                  SizedBox(width: 8.w),
+                  TranslateButtonWidget(
+                    originalText: quest!.hint!,
+                    onTranslationComplete: (translated) {
+                      CustomSnackBar.show(
+                        context: context,
+                        message: translated,
+                        type: CustomSnackBarType.info,
+                      );
+                    },
+                  ),
+                ],
+              ],
             ),
           ],
         ],

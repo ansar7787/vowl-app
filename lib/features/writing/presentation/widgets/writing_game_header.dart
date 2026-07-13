@@ -4,7 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
@@ -89,6 +91,19 @@ class WritingGameHeader extends StatelessWidget {
                 onHint();
               },
             ),
+            if (quest!.hint != null) ...[
+              SizedBox(width: 8.w),
+              TranslateButtonWidget(
+                originalText: quest!.hint!,
+                onTranslationComplete: (translated) {
+                  CustomSnackBar.show(
+                    context: context,
+                    message: translated,
+                    type: CustomSnackBarType.info,
+                  );
+                },
+              ),
+            ],
           ],
         ],
       ),

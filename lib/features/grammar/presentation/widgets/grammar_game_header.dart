@@ -3,7 +3,9 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
@@ -81,15 +83,33 @@ class GrammarGameHeader extends StatelessWidget {
               onTap: onShowBriefing,
             ),
             SizedBox(width: 8.w),
-            _HintButton(
-              state: state,
-              quest: quest!,
-              isLoaded: isLoaded,
-              isFinalFailure: isFinalFailure,
-              hintShouldGlow: hintShouldGlow,
-              primaryColor: theme.primaryColor as Color,
-              soundService: soundService,
-              onHint: onHint,
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _HintButton(
+                  state: state,
+                  quest: quest!,
+                  isLoaded: isLoaded,
+                  isFinalFailure: isFinalFailure,
+                  hintShouldGlow: hintShouldGlow,
+                  primaryColor: theme.primaryColor as Color,
+                  soundService: soundService,
+                  onHint: onHint,
+                ),
+                if (quest!.hint != null) ...[
+                  SizedBox(width: 8.w),
+                  TranslateButtonWidget(
+                    originalText: quest!.hint!,
+                    onTranslationComplete: (translated) {
+                      CustomSnackBar.show(
+                        context: context,
+                        message: translated,
+                        type: CustomSnackBarType.info,
+                      );
+                    },
+                  ),
+                ],
+              ],
             ),
           ],
         ],

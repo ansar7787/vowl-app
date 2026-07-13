@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_state.dart';
 
 /// Bottom-sheet feedback card shown after the user submits an answer.
@@ -172,56 +173,11 @@ class GrammarFeedbackCard extends StatelessWidget {
     Color accentColor,
     bool isDark,
   ) {
-    return Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-          decoration: BoxDecoration(
-            color: accentColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: accentColor.withValues(alpha: 0.2),
-              width: 1.5,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    Icons.info_outline_rounded,
-                    color: accentColor,
-                    size: 14.r,
-                  ),
-                  SizedBox(width: 8.w),
-                  Text(
-                    context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      color: accentColor,
-                      letterSpacing: 1,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                explanation,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white : Colors.black87,
-                ),
-              ),
-            ],
-          ),
-        )
-        .animate()
-        .fadeIn(delay: 300.ms)
-        .scale(duration: 400.ms, curve: Curves.easeOutBack);
+    return _ExplanationCard(
+      originalExplanation: explanation,
+      accentColor: accentColor,
+      isDark: isDark,
+    );
   }
 
   Widget _buildGrammarRuleCard(String rule, Color accentColor, bool isDark) {
@@ -321,5 +277,87 @@ class GrammarFeedbackCard extends StatelessWidget {
             curve: Curves.elasticOut,
           ),
     );
+  }
+}
+
+class _ExplanationCard extends StatefulWidget {
+  final String originalExplanation;
+  final Color accentColor;
+  final bool isDark;
+
+  const _ExplanationCard({
+    required this.originalExplanation,
+    required this.accentColor,
+    required this.isDark,
+  });
+
+  @override
+  State<_ExplanationCard> createState() => _ExplanationCardState();
+}
+
+class _ExplanationCardState extends State<_ExplanationCard> {
+  String? _translatedText;
+
+  @override
+  Widget build(BuildContext context) {
+    final displayText = _translatedText ?? widget.originalExplanation;
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+      decoration: BoxDecoration(
+        color: widget.accentColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: widget.accentColor.withValues(alpha: 0.2),
+          width: 1.5,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(
+                Icons.info_outline_rounded,
+                color: widget.accentColor,
+                size: 14.r,
+              ),
+              SizedBox(width: 8.w),
+              Text(
+                context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.w800,
+                  color: widget.accentColor,
+                  letterSpacing: 1,
+                ),
+              ),
+              const Spacer(),
+              if (_translatedText == null)
+                TranslateButtonWidget(
+                  originalText: widget.originalExplanation,
+                  onTranslationComplete: (translated) {
+                    if (mounted) setState(() => _translatedText = translated);
+                  },
+                ),
+            ],
+          ),
+          SizedBox(height: 4.h),
+          Text(
+            displayText,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w600,
+              color: widget.isDark ? Colors.white : Colors.black87,
+            ),
+          ),
+        ],
+      ),
+    )
+    .animate()
+    .fadeIn(delay: 300.ms)
+    .scale(duration: 400.ms, curve: Curves.easeOutBack);
   }
 }

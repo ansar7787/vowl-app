@@ -3,7 +3,9 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
@@ -113,12 +115,28 @@ class EliteGameHeader extends StatelessWidget {
               // button fires on a loop. Without the boundary, every animation
               // frame triggers a repaint of the entire header row.
               RepaintBoundary(
-                child: _HintButton(
-                  isHintUsed: isHintUsed,
-                  hintText: hintText!,
-                  primaryColor: theme.primaryColor,
-                  hintShouldGlow: hintShouldGlow,
-                  onTap: onHint,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    _HintButton(
+                      isHintUsed: isHintUsed,
+                      hintText: hintText!,
+                      primaryColor: theme.primaryColor,
+                      hintShouldGlow: hintShouldGlow,
+                      onTap: onHint,
+                    ),
+                    SizedBox(width: 8.w),
+                    TranslateButtonWidget(
+                      originalText: hintText!,
+                      onTranslationComplete: (translated) {
+                        CustomSnackBar.show(
+                          context: context,
+                          message: translated,
+                          type: CustomSnackBarType.info,
+                        );
+                      },
+                    ),
+                  ],
                 ),
               ),
             ],

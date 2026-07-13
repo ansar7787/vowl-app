@@ -11,7 +11,9 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/presentation/widgets/accent/harmonic_waves.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/presentation/widgets/quest_briefing_overlay.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/game_error_widget.dart';
 import 'package:vowl/core/utils/game_instruction_service.dart';
@@ -394,31 +396,48 @@ class _RoleplayBaseLayoutState extends State<RoleplayBaseLayout> {
             ),
             Padding(
               padding: EdgeInsets.only(left: 8.w),
-              child:
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
                   QuestHintButton(
-                        used: state is RoleplayLoaded ? state.hintUsed : false,
-                        primaryColor: theme.primaryColor,
-                        hintText: quest.hint,
-                        soundService: _soundService,
-                        onTap: () {
-                          context.read<RoleplayBloc>().add(
-                            const RoleplayHintUsed(),
-                          );
-                          widget.onHint();
-                        },
-                      )
-                      .animate(
-                        target: hintShouldGlow ? 1 : 0,
-                        onPlay: (c) => c.repeat(reverse: true),
-                      )
-                      .shimmer(
-                        color: Colors.white.withValues(alpha: 0.5),
-                        duration: 1.seconds,
-                      )
-                      .scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.1, 1.1),
-                      ),
+                    used: state is RoleplayLoaded ? state.hintUsed : false,
+                    primaryColor: theme.primaryColor,
+                    hintText: quest.hint,
+                    soundService: _soundService,
+                    onTap: () {
+                      context.read<RoleplayBloc>().add(
+                        const RoleplayHintUsed(),
+                      );
+                      widget.onHint();
+                    },
+                  )
+                  .animate(
+                    target: hintShouldGlow ? 1 : 0,
+                    onPlay: (c) => c.repeat(reverse: true),
+                  )
+                  .shimmer(
+                    color: Colors.white.withValues(alpha: 0.5),
+                    duration: 1.seconds,
+                  )
+                  .scale(
+                    begin: const Offset(1, 1),
+                    end: const Offset(1.1, 1.1),
+                  ),
+                  if (quest.hint != null) ...[
+                    SizedBox(width: 8.w),
+                    TranslateButtonWidget(
+                      originalText: quest.hint,
+                      onTranslationComplete: (translated) {
+                        CustomSnackBar.show(
+                          context: context,
+                          message: translated,
+                          type: CustomSnackBarType.info,
+                        );
+                      },
+                    ),
+                  ],
+                ],
+              ),
             ),
           ],
         ],

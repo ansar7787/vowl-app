@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 
 /// Top header bar for the reading game screen.
@@ -131,6 +133,24 @@ class ReadingHeader extends StatelessWidget {
           .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1));
     }
 
-    return button;
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        button,
+        if (currentQuest?.hint != null) ...[
+          SizedBox(width: 8.w),
+          TranslateButtonWidget(
+            originalText: currentQuest!.hint!,
+            onTranslationComplete: (translated) {
+              CustomSnackBar.show(
+                context: context,
+                message: translated,
+                type: CustomSnackBarType.info,
+              );
+            },
+          ),
+        ],
+      ],
+    );
   }
 }
