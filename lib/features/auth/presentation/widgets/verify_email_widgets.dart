@@ -18,12 +18,12 @@ class VerifyEmailIconHeader extends StatelessWidget {
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: const Color(0xFF2563EB).withValues(alpha: 0.1),
+          color: const Color(0xFF6366F1).withValues(alpha: 0.1),
         ),
         child: Icon(
           Icons.mark_email_unread_rounded,
           size: 64.r,
-          color: const Color(0xFF2563EB),
+          color: const Color(0xFF6366F1),
         ),
       ),
     );
@@ -48,7 +48,7 @@ class VerifyEmailStatusText extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 28.sp,
             fontWeight: FontWeight.w800,
-            color: const Color(0xFF2563EB),
+            color: const Color(0xFF6366F1),
           ),
           textAlign: TextAlign.center,
         ),
@@ -113,7 +113,7 @@ class ResendEmailButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: canResendEmail ? onPressed : null,
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFF2563EB),
+          backgroundColor: const Color(0xFF6366F1),
           foregroundColor: Colors.white,
           minimumSize: Size(double.infinity, 56.h),
           shape: RoundedRectangleBorder(
@@ -155,7 +155,7 @@ class VerifyConfirmationButton extends StatelessWidget {
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
-          side: const BorderSide(color: Color(0xFF2563EB), width: 1.5),
+          side: const BorderSide(color: Color(0xFF6366F1), width: 1.5),
           minimumSize: Size(double.infinity, 56.h),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.r),
@@ -167,7 +167,7 @@ class VerifyConfirmationButton extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 16.sp,
             fontWeight: FontWeight.bold,
-            color: const Color(0xFF2563EB),
+            color: const Color(0xFF6366F1),
           ),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,

@@ -173,7 +173,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
             return Scaffold(
               backgroundColor: bgColor,
               body: const Center(
-                child: CircularProgressIndicator(color: Color(0xFF2563EB)),
+                child: CircularProgressIndicator(color: Color(0xFF6366F1)),
               ),
             );
           }

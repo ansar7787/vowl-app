@@ -53,7 +53,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
         title: context.tr('home.discovery_dailyduo_title', fallback: 'Daily Duo'),
         subtitle: context.tr('home.discovery_dailyduo_subtitle', fallback: 'Quick Practice'),
         icon: Icons.auto_awesome_motion_rounded,
-        color: const Color(0xFF2563EB),
+        color: const Color(0xFF6366F1),
         quests: 2,
         difficulty: context.tr('home.discovery_diff_medium', fallback: 'Medium'),
         onTap: () => widget.onLaunchQuest('daily_duo'),

@@ -47,7 +47,7 @@ class ForgotPasswordHeader extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 44.sp,
                     fontWeight: FontWeight.w900,
-                    color: const Color(0xFF2563EB),
+                    color: const Color(0xFF6366F1),
                     letterSpacing: -1.5,
                   ),
                 ),
@@ -150,7 +150,7 @@ class ForgotPasswordEmailInput extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.r),
-            borderSide: const BorderSide(color: Color(0xFF2563EB), width: 1.5),
+            borderSide: const BorderSide(color: Color(0xFF6366F1), width: 1.5),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.r),
@@ -255,7 +255,7 @@ class RememberPasswordFooter extends StatelessWidget {
             context.tr('auth.login', fallback: 'Log In'),
             style: const TextStyle(
               fontFamily: 'Outfit',
-              color: Color(0xFF2563EB),
+              color: Color(0xFF6366F1),
               fontWeight: FontWeight.w900,
             ),
           ),

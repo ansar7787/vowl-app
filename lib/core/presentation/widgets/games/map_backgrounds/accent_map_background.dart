@@ -13,7 +13,7 @@ class AccentMapBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CategoryMapBackground(
-      gradientColors: const [Color(0xFF1E1B4B), Color(0xFF4338CA)],
+      gradientColors: const [Color(0xFF1E1B4B), Color(0xFF6366F1)],
       decorationBuilder: (context) => Stack(
         children: List.generate(4, (i) {
           return Positioned(
@@ -24,7 +24,7 @@ class AccentMapBackground extends StatelessWidget {
                 Icon(
                       Icons.waves_rounded,
                       size: 500.r,
-                      color: const Color(0xFF818CF8).withValues(alpha: 0.1),
+                      color: const Color(0xFF8B5CF6).withValues(alpha: 0.1),
                     )
                     .animate(onPlay: (c) => c.repeat(reverse: true))
                     .moveX(

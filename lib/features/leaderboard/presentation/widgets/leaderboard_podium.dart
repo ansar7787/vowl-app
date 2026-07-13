@@ -327,7 +327,7 @@ class _PodiumSlot extends StatelessWidget {
       case 3:
         return [const Color(0xFFCD7F32), const Color(0xFFA3713B)];
       default:
-        return [const Color(0xFF3B82F6), const Color(0xFF2563EB)];
+        return [const Color(0xFF3B82F6), const Color(0xFF6366F1)];
     }
   }
 }

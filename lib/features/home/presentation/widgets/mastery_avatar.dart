@@ -36,7 +36,7 @@ class MasteryAvatar extends StatelessWidget {
                 value: progress,
                 strokeWidth: 5.r,
                 backgroundColor: isDark ? Colors.white10 : Colors.black12,
-                color: const Color(0xFF2563EB),
+                color: const Color(0xFF6366F1),
                 strokeCap: StrokeCap.round,
               ),
             ).animate().scale(duration: 600.ms, curve: Curves.easeOutBack),
@@ -59,7 +59,7 @@ class MasteryAvatar extends StatelessWidget {
                     ? ShimmerImage(imageUrl: user.photoUrl!)
                     : Icon(
                         Icons.face_retouching_natural_rounded,
-                        color: const Color(0xFF2563EB),
+                        color: const Color(0xFF6366F1),
                         size: 32.r,
                       ),
               ),

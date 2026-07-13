@@ -26,7 +26,7 @@ class ProfileHeader extends StatelessWidget {
     final isPremium = user.isPremium;
     final glowColor = isPremium
         ? const Color(0xFFF59E0B)
-        : const Color(0xFF2563EB);
+        : const Color(0xFF6366F1);
 
     return Column(
       children: [
@@ -180,7 +180,7 @@ class ProfileHeader extends StatelessWidget {
                       ),
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
-                          colors: [Color(0xFF2563EB), Color(0xFF4F46E5)],
+                          colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
                         ),
                         borderRadius: BorderRadius.circular(10.r),
                       ),

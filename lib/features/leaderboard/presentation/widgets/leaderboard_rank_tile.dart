@@ -44,7 +44,7 @@ class LeaderboardRankTile extends StatelessWidget {
           borderColor: isMe
               ? (isDark
                     ? const Color(0xFF3B82F6).withValues(alpha: 0.4)
-                    : const Color(0xFF2563EB).withValues(alpha: 0.3))
+                    : const Color(0xFF6366F1).withValues(alpha: 0.3))
               : (isDark
                     ? Colors.white.withValues(alpha: 0.1)
                     : const Color(0xFFCBD5E1).withValues(alpha: 0.6)),
@@ -137,7 +137,7 @@ class LeaderboardRankTile extends StatelessWidget {
                                 ),
                                 decoration: BoxDecoration(
                                   color: const Color(
-                                    0xFF2563EB,
+                                    0xFF6366F1,
                                   ).withValues(alpha: 0.2),
                                   borderRadius: BorderRadius.circular(6.r),
                                 ),

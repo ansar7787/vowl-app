@@ -60,7 +60,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               context.read<AuthBloc>().add(const AuthReloadUser());
               await Future.delayed(const Duration(milliseconds: 500));
             },
-            color: const Color(0xFF2563EB),
+            color: const Color(0xFF6366F1),
             displacement: 100.h,
             child: Stack(
               children: [
@@ -464,13 +464,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         padding: EdgeInsets.symmetric(vertical: 20.h),
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
-                            colors: [Color(0xFF2563EB), Color(0xFF4F46E5)],
+                            colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
                           ),
                           borderRadius: BorderRadius.circular(24.r),
                           boxShadow: [
                             BoxShadow(
                               color: const Color(
-                                0xFF2563EB,
+                                0xFF6366F1,
                               ).withValues(alpha: 0.3),
                               blurRadius: 20,
                               offset: const Offset(0, 10),
@@ -635,10 +635,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Container(
                 padding: EdgeInsets.all(16.r),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF2563EB).withValues(alpha: 0.1),
+                  color: const Color(0xFF6366F1).withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
-                child: Icon(icon, color: const Color(0xFF2563EB), size: 32.r),
+                child: Icon(icon, color: const Color(0xFF6366F1), size: 32.r),
               ),
               SizedBox(height: 16.h),
               Text(

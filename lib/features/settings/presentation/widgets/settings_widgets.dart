@@ -243,7 +243,7 @@ class SettingsSwitchTile extends StatelessWidget {
                     di.sl<HapticService>().light();
                     onChanged(val);
                   },
-                  activeThumbColor: const Color(0xFF2563EB),
+                  activeThumbColor: const Color(0xFF6366F1),
                 ),
               ),
           ],

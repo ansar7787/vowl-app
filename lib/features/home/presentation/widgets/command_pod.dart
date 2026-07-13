@@ -53,7 +53,7 @@ class CommandPod extends StatelessWidget {
         borderRadius: BorderRadius.circular(32.r),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF2563EB).withValues(alpha: 0.15),
+            color: const Color(0xFF6366F1).withValues(alpha: 0.15),
             blurRadius: 40,
             offset: const Offset(0, 15),
           ),
@@ -77,7 +77,7 @@ class CommandPod extends StatelessWidget {
                             shape: BoxShape.circle,
                             border: Border.all(
                               color: const Color(
-                                0xFF2563EB,
+                                0xFF6366F1,
                               ).withValues(alpha: 0.2),
                               width: 2,
                             ),
@@ -99,12 +99,12 @@ class CommandPod extends StatelessWidget {
                       child: Container(
                         padding: EdgeInsets.all(5.r),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF2563EB),
+                          color: const Color(0xFF6366F1),
                           shape: BoxShape.circle,
                           boxShadow: [
                             BoxShadow(
                               color: const Color(
-                                0xFF2563EB,
+                                0xFF6366F1,
                               ).withValues(alpha: 0.4),
                               blurRadius: 10,
                             ),
@@ -132,7 +132,7 @@ class CommandPod extends StatelessWidget {
                           vertical: 4.h,
                         ),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF2563EB).withValues(alpha: 0.1),
+                          color: const Color(0xFF6366F1).withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(12.r),
                         ),
                         child: Text(
@@ -141,7 +141,7 @@ class CommandPod extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 9.sp,
                             fontWeight: FontWeight.w800,
-                            color: const Color(0xFF2563EB),
+                            color: const Color(0xFF6366F1),
                             letterSpacing: 1.0,
                           ),
                           maxLines: 1,
@@ -174,7 +174,7 @@ class CommandPod extends StatelessWidget {
                   Icon(
                     Icons.auto_awesome_rounded,
                     size: 14.r,
-                    color: const Color(0xFF2563EB),
+                    color: const Color(0xFF6366F1),
                   ),
                   SizedBox(width: 6.w),
                   Flexible(
@@ -205,7 +205,7 @@ class CommandPod extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w800,
-                color: const Color(0xFF2563EB),
+                color: const Color(0xFF6366F1),
               ),
               maxLines: 1,
             ),
@@ -694,7 +694,7 @@ class CommandPod extends StatelessWidget {
             fontSize: 14.sp,
             fontWeight: FontWeight.w700,
             color: const Color(
-              0xFF2563EB,
+              0xFF6366F1,
             ).withValues(alpha: isDark ? 0.7 : 0.9),
             letterSpacing: 0.5,
           ),

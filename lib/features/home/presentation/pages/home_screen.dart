@@ -164,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                     await Future.delayed(const Duration(milliseconds: 600));
                   },
-                  color: const Color(0xFF2563EB),
+                  color: const Color(0xFF6366F1),
                   displacement: 40.h,
                   child: CustomScrollView(
                     controller: di.sl<ScrollController>(instanceName: 'home'),

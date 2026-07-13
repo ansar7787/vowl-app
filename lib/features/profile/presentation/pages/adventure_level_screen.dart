@@ -654,7 +654,7 @@ class AdventureLevelScreen extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
-                        colors: [Color(0xFF2563EB), Color(0xFF1D4ED8)],
+                        colors: [Color(0xFF6366F1), Color(0xFF1D4ED8)],
                       ),
                       borderRadius: BorderRadius.circular(12.r),
                       boxShadow: [

@@ -138,7 +138,7 @@ class KidsRoutes {
       case 'food':
         return const Color(0xFFFB923C);
       case 'transport':
-        return const Color(0xFF2563EB);
+        return const Color(0xFF6366F1);
       case 'body_parts':
         return const Color(0xFFF43F5E);
       case 'clothing':

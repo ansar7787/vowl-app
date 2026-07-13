@@ -331,7 +331,7 @@ class ModernGameDialog extends StatelessWidget {
       return const [Color(0xFF64748B), Color(0xFF475569)];
     }
     if (isRescueLife) {
-      return const [Color(0xFF2563EB), Color(0xFF1E3A8A)];
+      return const [Color(0xFF6366F1), Color(0xFF1E3A8A)];
     }
     return const [Color(0xFFFFD700), Color(0xFFFFA500)];
   }

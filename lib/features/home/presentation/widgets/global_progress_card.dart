@@ -358,7 +358,7 @@ class GlobalProgressCard extends StatelessWidget {
     if (rank == 1) return [const Color(0xFFFFD700), const Color(0xFFF59E0B)];
     if (rank == 2) return [const Color(0xFFC0C0C0), const Color(0xFF94A3B8)];
     if (rank == 3) return [const Color(0xFFCD7F32), const Color(0xFFA3713B)];
-    if (rank <= 10) return [const Color(0xFF3B82F6), const Color(0xFF2563EB)];
+    if (rank <= 10) return [const Color(0xFF3B82F6), const Color(0xFF6366F1)];
     return [const Color(0xFF6366F1), const Color(0xFF8B5CF6)];
   }
 }

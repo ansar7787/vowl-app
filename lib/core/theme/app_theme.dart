@@ -12,7 +12,7 @@ class AppTheme {
 
   /// Primary brand colour: Indigo (Trust + Focus).
   static const Color primaryIndigo = Color(
-    0xFF4338CA,
+    0xFF6366F1,
   ); // Deepened to Indigo 700 for LCD consistency
 
   /// Secondary brand colour: Emerald (Success + Progress).
@@ -33,11 +33,11 @@ class AppTheme {
   /// Dark-surface indigo tint (Indigo 950).
   static const Color primaryIndigoTintDark = Color(0xFF1E1B4B);
 
-  // FIX (MEDIUM-1): Extracted repeated `Color(0xFF818CF8)` into a named
+  // FIX (MEDIUM-1): Extracted repeated `Color(0xFF8B5CF6)` into a named
   // constant. Previously appeared in both darkTheme and midnightTheme without
   // a name, risking silent drift if one was changed and the other was not.
   /// Lighter indigo for dark-surface primary text/icons (Indigo 400).
-  static const Color primaryIndigoDark = Color(0xFF818CF8);
+  static const Color primaryIndigoDark = Color(0xFF8B5CF6);
 
   // FIX (MEDIUM-1): Extracted repeated `Color(0xFF0B0F19)` into a named
   // constant used for the midnight mode card/surface colour.

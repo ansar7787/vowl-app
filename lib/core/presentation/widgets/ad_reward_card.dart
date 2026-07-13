@@ -105,7 +105,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
-                color: const Color(0xFF2563EB),
+                color: const Color(0xFF6366F1),
                 letterSpacing: 2.0,
               ),
             ),
@@ -180,12 +180,12 @@ class _AdRewardCardState extends State<AdRewardCard> {
                                 ? null
                                 : const LinearGradient(
                                     colors: [
-                                      Color(0xFF2563EB),
+                                      Color(0xFF6366F1),
                                       Color(0xFF6366F1),
                                     ],
                                   ),
                             color: loading
-                                ? const Color(0xFF2563EB).withValues(alpha: 0.4)
+                                ? const Color(0xFF6366F1).withValues(alpha: 0.4)
                                 : null,
                             borderRadius: BorderRadius.circular(20.r),
                             boxShadow: loading
@@ -193,7 +193,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
                                 : [
                                     BoxShadow(
                                       color: const Color(
-                                        0xFF2563EB,
+                                        0xFF6366F1,
                                       ).withValues(alpha: 0.3),
                                       blurRadius: 10,
                                       offset: const Offset(0, 4),

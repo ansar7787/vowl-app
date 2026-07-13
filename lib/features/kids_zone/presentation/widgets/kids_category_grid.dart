@@ -283,12 +283,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/transport',
               extra: {
                 'title': 'Transport',
-                'primaryColor': const Color(0xFF2563EB),
+                'primaryColor': const Color(0xFF6366F1),
               },
             ),
             'Transport',
             'Vroom Vroom',
-            const Color(0xFF2563EB),
+            const Color(0xFF6366F1),
             Icons.directions_car_rounded,
           ),
           _buildCategoryCard(

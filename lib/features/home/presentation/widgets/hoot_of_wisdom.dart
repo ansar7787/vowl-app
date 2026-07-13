@@ -128,12 +128,12 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
                           ),
                           decoration: BoxDecoration(
                             color: const Color(
-                              0xFF2563EB,
+                              0xFF6366F1,
                             ).withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(12.r),
                             border: Border.all(
                               color: const Color(
-                                0xFF2563EB,
+                                0xFF6366F1,
                               ).withValues(alpha: 0.2),
                             ),
                           ),
@@ -146,7 +146,7 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
                                   fontFamily: 'Outfit',
                                   fontSize: 9.sp,
                                   fontWeight: FontWeight.w900,
-                                  color: const Color(0xFF2563EB),
+                                  color: const Color(0xFF6366F1),
                                 ),
                                 maxLines: 1,
                               ),
@@ -179,7 +179,7 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
                                     fontFamily: 'Outfit',
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w900,
-                                    color: const Color(0xFF2563EB),
+                                    color: const Color(0xFF6366F1),
                                     letterSpacing: 2,
                                   ),
                                   maxLines: 1,

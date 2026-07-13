@@ -65,7 +65,7 @@ class LeaderboardRankCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(24.r),
           borderColor: isDark
               ? const Color(0xFF3B82F6).withValues(alpha: 0.5)
-              : const Color(0xFF2563EB).withValues(alpha: 0.3),
+              : const Color(0xFF6366F1).withValues(alpha: 0.3),
           color: isDark
               ? const Color(0xFF0F172A).withValues(alpha: 0.75)
               : Colors.white.withValues(alpha: 0.95),
@@ -81,12 +81,12 @@ class LeaderboardRankCard extends StatelessWidget {
                     height: 48.w,
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
-                        colors: [Color(0xFF2563EB), Color(0xFF3B82F6)],
+                        colors: [Color(0xFF6366F1), Color(0xFF3B82F6)],
                       ),
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF2563EB).withValues(alpha: 0.4),
+                          color: const Color(0xFF6366F1).withValues(alpha: 0.4),
                           blurRadius: 12,
                         ),
                       ],

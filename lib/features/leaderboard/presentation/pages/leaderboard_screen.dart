@@ -88,7 +88,7 @@ class _LeaderboardContent extends StatelessWidget {
         await completer.future;
       },
       backgroundColor: Colors.transparent,
-      color: const Color(0xFF2563EB),
+      color: const Color(0xFF6366F1),
       child: CustomScrollView(
         physics: const AlwaysScrollableScrollPhysics(
           parent: BouncingScrollPhysics(),

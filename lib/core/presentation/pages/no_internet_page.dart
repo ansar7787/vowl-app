@@ -294,7 +294,7 @@ class _RetryButton extends StatelessWidget {
                           Colors.blue.withValues(alpha: 0.5),
                           Colors.blue.withValues(alpha: 0.3),
                         ]
-                      : const [Color(0xFF2563EB), Color(0xFF1D4ED8)],
+                      : const [Color(0xFF6366F1), Color(0xFF1D4ED8)],
                 ),
                 boxShadow: [
                   BoxShadow(

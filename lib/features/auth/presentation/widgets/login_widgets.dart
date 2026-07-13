@@ -78,7 +78,7 @@ class LoginEmailInput extends StatelessWidget {
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16.r),
                 borderSide: const BorderSide(
-                  color: Color(0xFF2563EB),
+                  color: Color(0xFF6366F1),
                   width: 1.5,
                 ),
               ),
@@ -193,7 +193,7 @@ class LoginPasswordInput extends StatelessWidget {
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16.r),
                 borderSide: const BorderSide(
-                  color: Color(0xFF2563EB),
+                  color: Color(0xFF6366F1),
                   width: 1.5,
                 ),
               ),

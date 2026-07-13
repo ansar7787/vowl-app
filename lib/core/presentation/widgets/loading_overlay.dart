@@ -123,7 +123,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                                             valueColor:
                                                 AlwaysStoppedAnimation<Color>(
                                                   const Color(
-                                                    0xFF2563EB,
+                                                    0xFF6366F1,
                                                   ).withValues(alpha: 0.5),
                                                 ),
                                           ),
@@ -187,7 +187,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                                         .fadeIn(duration: 1000.ms)
                                         .shimmer(
                                           color: const Color(
-                                            0xFF2563EB,
+                                            0xFF6366F1,
                                           ).withValues(alpha: 0.3),
                                         ),
                               ),

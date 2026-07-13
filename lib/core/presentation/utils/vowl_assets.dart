@@ -155,7 +155,7 @@ class VowlAssets {
   /// Resolves the theme colour for a mascot or accessory [key].
   static Color getItemColor(
     String key, {
-    Color fallback = const Color(0xFF2563EB),
+    Color fallback = const Color(0xFF6366F1),
   }) => itemColors[key] ?? fallback;
 
   /// Resolves the emoji for a mascot [key].

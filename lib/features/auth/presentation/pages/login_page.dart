@@ -209,7 +209,7 @@ class _LoginViewState extends State<LoginView> {
                                                     fontSize: 44.sp,
                                                     fontWeight: FontWeight.w900,
                                                     color: const Color(
-                                                      0xFF2563EB,
+                                                      0xFF6366F1,
                                                     ),
                                                     letterSpacing: -1.5,
                                                   ),
@@ -280,7 +280,7 @@ class _LoginViewState extends State<LoginView> {
                                                     ),
                                                     style: const TextStyle(
                                                       fontFamily: 'Outfit',
-                                                      color: Color(0xFF2563EB),
+                                                      color: Color(0xFF6366F1),
                                                       fontWeight:
                                                           FontWeight.w700,
                                                     ),
@@ -353,7 +353,7 @@ class _LoginViewState extends State<LoginView> {
                                                 context.tr('auth.signup', fallback: 'Sign Up'),
                                                 style: const TextStyle(
                                                   fontFamily: 'Outfit',
-                                                  color: Color(0xFF2563EB),
+                                                  color: Color(0xFF6366F1),
                                                   fontWeight: FontWeight.w900,
                                                 ),
                                               ),
