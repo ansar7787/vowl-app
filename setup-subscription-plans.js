@@ -39,8 +39,8 @@ const subscriptionPlans = [
   {
     id: 'weekly_offer',
     name: 'Weekly',
-    price: 39.0,
-    oldPrice: 49.0,
+    price: 49.0,
+    oldPrice: 59.0,
     days: 7,
     tag: 'FESTIVE OFFER',
     color: '#FFF43F5E',
@@ -51,8 +51,8 @@ const subscriptionPlans = [
   {
     id: 'monthly_offer',
     name: 'Monthly',
-    price: 99.0,
-    oldPrice: 149.0,
+    price: 129.0,
+    oldPrice: 199.0,
     days: 30,
     tag: 'MOST POPULAR',
     color: '#FF6366F1',
@@ -63,8 +63,8 @@ const subscriptionPlans = [
   {
     id: 'yearly_offer',
     name: 'Yearly',
-    price: 799.0,
-    oldPrice: 1499.0,
+    price: 999.0,
+    oldPrice: 1799.0,
     days: 365,
     tag: 'BEST VALUE',
     color: '#FF10B981',

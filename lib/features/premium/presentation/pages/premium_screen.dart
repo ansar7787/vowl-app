@@ -39,8 +39,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
     SubscriptionPlan(
       id: 'weekly',
       name: 'Weekly',
-      price: 39.0,
-      oldPrice: 49.0,
+      price: 49.0,
+      oldPrice: 59.0,
       days: 7,
       tag: 'FESTIVE OFFER',
       color: '#F43F5E',
@@ -49,8 +49,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
     SubscriptionPlan(
       id: 'monthly',
       name: 'Monthly',
-      price: 99.0,
-      oldPrice: 149.0,
+      price: 129.0,
+      oldPrice: 199.0,
       days: 30,
       tag: 'MOST POPULAR',
       color: '#6366F1',
@@ -59,8 +59,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
     SubscriptionPlan(
       id: 'yearly',
       name: 'Yearly',
-      price: 799.0,
-      oldPrice: 1499.0,
+      price: 999.0,
+      oldPrice: 1799.0,
       days: 365,
       tag: 'BEST VALUE',
       color: '#10B981',

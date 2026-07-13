@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class ModernFeatureBar extends StatelessWidget {
   const ModernFeatureBar({super.key});
@@ -8,107 +9,114 @@ class ModernFeatureBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    
+    // Convert from a congested horizontal row to a beautiful, scroll-safe vertical list
+    // This allows ample room for localization text expansion and accessibility scaling.
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 12.w),
+      padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0x0CFFFFFF) : const Color(0x08000000),
-        borderRadius: BorderRadius.circular(20.r),
+        color: isDark ? const Color(0x0CFFFFFF) : const Color(0x04000000),
+        borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
-          color: isDark ? const Color(0x1AFFFFFF) : const Color(0x0F000000),
+          color: isDark ? const Color(0x1AFFFFFF) : const Color(0x0A000000),
         ),
       ),
-      child: Row(
-        // RESPONSIVENESS FIX: the original Row let each FeatureItem take
-        // its intrinsic (unconstrained) width. On a small phone combined
-        // with longer translated labels (German compounds, Indian
-        // regional scripts), four tightly-packed unconstrained items can
-        // exceed the row's available width and overflow horizontally.
-        // Giving each item equal `Expanded` width, with the label allowed
-        // to wrap to two lines instead, makes this overflow-proof at any
-        // text length while preserving the original "4 equal columns"
-        // layout exactly when text is short (English).
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(
-            child: FeatureItem(
-              icon: Icons.block_rounded,
-              label: context.tr('premium.feature_zero_ads', fallback: 'Zero Ads'),
-              isDark: isDark,
-            ),
+          _buildFeatureRow(
+            context,
+            icon: LucideIcons.sparkles,
+            title: context.tr('premium.feature_translations', fallback: 'Instant Translations'),
+            subtitle: context.tr('premium.feature_translations_desc', fallback: 'Ad-free, on-device AI hints in your native language.'),
+            isDark: isDark,
+            isHighlight: true,
           ),
-          Expanded(
-            child: FeatureItem(
-              icon: Icons.auto_graph_rounded,
-              label: context.tr('premium.feature_2x_speed', fallback: '2x Learning Speed'),
-              isDark: isDark,
-            ),
+          SizedBox(height: 16.h),
+          _buildFeatureRow(
+            context,
+            icon: Icons.block_rounded,
+            title: context.tr('premium.feature_zero_ads', fallback: 'Zero Interruptions'),
+            subtitle: context.tr('premium.feature_zero_ads_desc', fallback: 'Completely ad-free learning experience.'),
+            isDark: isDark,
           ),
-          Expanded(
-            child: FeatureItem(
-              icon: Icons.emoji_events_rounded,
-              label: context.tr('premium.feature_vip_badges', fallback: 'VIP Badges'),
-              isDark: isDark,
-            ),
+          SizedBox(height: 16.h),
+          _buildFeatureRow(
+            context,
+            icon: Icons.auto_graph_rounded,
+            title: context.tr('premium.feature_2x_speed', fallback: '2x Learning Speed'),
+            subtitle: context.tr('premium.feature_2x_speed_desc', fallback: 'Master concepts faster with advanced tracking.'),
+            isDark: isDark,
           ),
-          Expanded(
-            child: FeatureItem(
-              icon: Icons.lock_open_rounded,
-              label: context.tr('premium.feature_unlimited_levels', fallback: 'Unlimited Levels'),
-              isDark: isDark,
-            ),
+          SizedBox(height: 16.h),
+          _buildFeatureRow(
+            context,
+            icon: Icons.airplanemode_active_rounded,
+            title: context.tr('premium.feature_play_offline', fallback: 'Offline Mode'),
+            subtitle: context.tr('premium.feature_play_offline_desc', fallback: 'Download lessons and learn anywhere.'),
+            isDark: isDark,
           ),
-          Expanded(
-            child: FeatureItem(
-              icon: Icons.airplanemode_active_rounded,
-              label: context.tr(
-                'premium.feature_play_offline',
-                fallback: 'Play Offline',
-              ),
-              isDark: isDark,
-            ),
+          SizedBox(height: 16.h),
+          _buildFeatureRow(
+            context,
+            icon: Icons.lock_open_rounded,
+            title: context.tr('premium.feature_unlimited_levels', fallback: 'Unlimited Access'),
+            subtitle: context.tr('premium.feature_unlimited_levels_desc', fallback: 'Unlock all elite and master difficulty levels.'),
+            isDark: isDark,
           ),
         ],
       ),
     );
   }
-}
 
-class FeatureItem extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final bool isDark;
-
-  const FeatureItem({
-    super.key,
-    required this.icon,
-    required this.label,
-    required this.isDark,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
+  Widget _buildFeatureRow(
+    BuildContext context, {
+    required IconData icon,
+    required String title,
+    required String subtitle,
+    required bool isDark,
+    bool isHighlight = false,
+  }) {
+    final primaryColor = isHighlight ? const Color(0xFF10B981) : const Color(0xFFF59E0B);
+    
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding: EdgeInsets.all(8.r),
+          padding: EdgeInsets.all(10.r),
           decoration: BoxDecoration(
-            color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(10.r),
+            color: primaryColor.withValues(alpha: 0.15),
+            borderRadius: BorderRadius.circular(12.r),
           ),
-          child: Icon(icon, color: const Color(0xFFF59E0B), size: 18.r),
+          child: Icon(icon, color: primaryColor, size: 20.r),
         ),
-        SizedBox(height: 6.h),
-        Text(
-          label,
-          textAlign: TextAlign.center,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            color: isDark ? const Color(0x61FFFFFF) : const Color(0x61000000),
-            fontSize: 7.sp,
-            fontWeight: FontWeight.w900,
-            letterSpacing: 0.5,
+        SizedBox(width: 16.w),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: isDark ? Colors.white : Colors.black87,
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 0.5,
+                ),
+              ),
+              SizedBox(height: 4.h),
+              Text(
+                subtitle,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: isDark ? Colors.white60 : Colors.black54,
+                  fontSize: 13.sp,
+                  height: 1.3,
+                ),
+              ),
+            ],
           ),
         ),
       ],
