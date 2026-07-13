@@ -48,9 +48,6 @@ class WritingGameHeader extends StatelessWidget {
     final hintUsed = state is WritingLoaded
         ? (state as WritingLoaded).hintUsed
         : false;
-    final streak = state is WritingLoaded
-        ? (state as WritingLoaded).currentIndex
-        : 0;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -61,7 +58,6 @@ class WritingGameHeader extends StatelessWidget {
               level: level,
               progress: progress,
               lives: lives,
-              streak: streak,
               theme: theme,
               isDark: isDark,
               // FIX 1: Removed Semantics() wrapper that was incorrectly placed

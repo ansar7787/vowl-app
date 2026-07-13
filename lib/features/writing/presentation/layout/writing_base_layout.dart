@@ -350,7 +350,6 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
               level: level,
               progress: progress,
               lives: lives,
-              streak: (state is WritingLoaded) ? state.currentIndex : 0,
               theme: theme,
               isDark: isDark,
               onBack: () => GameDialogHelper.showExitConfirmation(

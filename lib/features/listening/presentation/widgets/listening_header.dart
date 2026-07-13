@@ -60,9 +60,6 @@ class ListeningHeader extends StatelessWidget {
                 level: level,
                 progress: progress,
                 lives: lives,
-                streak: state is ListeningLoaded
-                    ? (state as ListeningLoaded).currentIndex
-                    : 0,
                 theme: theme,
                 isDark: isDark,
                 onBack: onBack,

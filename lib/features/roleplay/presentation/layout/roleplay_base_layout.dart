@@ -359,7 +359,6 @@ class _RoleplayBaseLayoutState extends State<RoleplayBaseLayout> {
               level: widget.level,
               progress: progress,
               lives: lives,
-              streak: state is RoleplayLoaded ? state.currentIndex : 0,
               theme: theme,
               isDark: isDark,
               onBack: () => GameDialogHelper.showExitConfirmation(

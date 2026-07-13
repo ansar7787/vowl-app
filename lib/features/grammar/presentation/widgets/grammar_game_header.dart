@@ -70,7 +70,6 @@ class GrammarGameHeader extends StatelessWidget {
               level: level,
               progress: progress,
               lives: lives,
-              streak: isLoaded ? (state as GrammarLoaded).currentIndex : 0,
               theme: theme,
               isDark: Theme.of(context).brightness == Brightness.dark,
               onBack: onShowBriefing,

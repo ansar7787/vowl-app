@@ -79,7 +79,6 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
               level: widget.level,
               progress: widget.progress,
               lives: widget.lives,
-              streak: loadedState?.currentIndex ?? 0,
               theme: widget.theme.source,
               isDark: widget.isDark,
               onBack: widget.onExit,

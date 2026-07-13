@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'dart:ui';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -26,6 +28,34 @@ class LanguageSelectionBottomSheet extends StatefulWidget {
 class _LanguageSelectionBottomSheetState extends State<LanguageSelectionBottomSheet> {
   String? _selectedLanguage;
   bool _isLoading = false;
+  int _downloadProgress = 0;
+  Timer? _progressTimer;
+
+  @override
+  void dispose() {
+    _progressTimer?.cancel();
+    super.dispose();
+  }
+
+  void _startFakeProgress() {
+    setState(() => _downloadProgress = 0);
+    _progressTimer?.cancel();
+    _progressTimer = Timer.periodic(const Duration(milliseconds: 150), (timer) {
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
+      setState(() {
+        if (_downloadProgress < 85) {
+          _downloadProgress += 2;
+        } else if (_downloadProgress < 95) {
+          if (timer.tick % 3 == 0) _downloadProgress += 1;
+        } else if (_downloadProgress < 99) {
+          if (timer.tick % 10 == 0) _downloadProgress += 1;
+        }
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -192,10 +222,17 @@ class _LanguageSelectionBottomSheetState extends State<LanguageSelectionBottomSh
                         ? () {}
                         : () async {
                             setState(() => _isLoading = true);
+                            _startFakeProgress();
                             final target = TranslationService.supportedLanguages[_selectedLanguage]!;
                             
                             try {
                               await TranslationService().setTargetLanguage(target);
+                              _progressTimer?.cancel();
+                              if (mounted) {
+                                setState(() => _downloadProgress = 100);
+                              }
+                              // Add a tiny delay so user can see 100%
+                              await Future.delayed(const Duration(milliseconds: 300));
                               if (context.mounted) Navigator.pop(context);
                             } catch (e) {
                               if (mounted) setState(() => _isLoading = false);
@@ -227,11 +264,51 @@ class _LanguageSelectionBottomSheetState extends State<LanguageSelectionBottomSh
                       ),
                       child: Center(
                         child: _isLoading
-                            ? SizedBox(
-                                width: 24.r,
-                                height: 24.r,
-                                child: const CircularProgressIndicator(color: Colors.white, strokeWidth: 2.5),
-                              )
+                            ? Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  SizedBox(
+                                    width: 24.r,
+                                    height: 24.r,
+                                    child: Stack(
+                                      alignment: Alignment.center,
+                                      children: [
+                                        CircularProgressIndicator(
+                                          value: _downloadProgress == 0 ? null : _downloadProgress / 100,
+                                          color: Colors.white,
+                                          backgroundColor: Colors.white.withValues(alpha: 0.2),
+                                          strokeWidth: 2.5,
+                                        ),
+                                        Text(
+                                          '$_downloadProgress%',
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 8.sp,
+                                            fontWeight: FontWeight.w900,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 12.w),
+                                  Flexible(
+                                    child: Text(
+                                      context.tr('translation.downloading_short', fallback: 'Downloading...'),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.white,
+                                        letterSpacing: 1,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 1500.ms, color: Colors.white54)
                             : Text(
                                 context.tr('common.continue_text', fallback: 'Continue').toUpperCase(),
                                 style: TextStyle(

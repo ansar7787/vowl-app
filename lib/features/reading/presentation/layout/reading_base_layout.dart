@@ -208,7 +208,6 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
         final progress = isLoaded
             ? (state.currentIndex + 1) / state.quests.length
             : (isComplete ? 1.0 : 0.0);
-        final streak = isLoaded ? state.currentIndex : 0;
         final hintUsed = isLoaded ? state.hintUsed : false;
         final currentQuest = isLoaded ? state.currentQuest : null;
 
@@ -228,7 +227,6 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
           level: widget.level,
           progress: progress,
           lives: lives,
-          streak: streak,
           theme: theme, // typed via inference — no dynamic
           isDark: isDark,
           onBack: () => GameDialogHelper.showExitConfirmation(

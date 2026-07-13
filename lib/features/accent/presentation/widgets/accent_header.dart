@@ -80,7 +80,6 @@ class AccentHeader extends StatelessWidget {
               level: level,
               progress: progress,
               lives: lives,
-              streak: streak,
               theme: rawTheme,
               isDark: isDark,
               onBack: onBack,

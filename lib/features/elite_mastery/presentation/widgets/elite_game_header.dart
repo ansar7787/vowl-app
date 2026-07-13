@@ -102,7 +102,6 @@ class EliteGameHeader extends StatelessWidget {
                 level: level,
                 progress: progress,
                 lives: lives,
-                streak: streak,
                 theme: theme,
                 isDark: isDark,
                 onBack: onBack,

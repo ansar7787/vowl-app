@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -12,7 +11,6 @@ class GameProgressHeader extends StatelessWidget {
   final int level;
   final double progress;
   final int lives;
-  final int streak;
   final ThemeResult theme;
   final bool isDark;
   final VoidCallback onBack;
@@ -22,7 +20,6 @@ class GameProgressHeader extends StatelessWidget {
     required this.level,
     required this.progress,
     required this.lives,
-    required this.streak,
     required this.theme,
     required this.isDark,
     required this.onBack,
@@ -108,10 +105,6 @@ class GameProgressHeader extends StatelessWidget {
                         color: subColor,
                       ),
                     ),
-                    if (streak > 0) ...[
-                      SizedBox(width: 8.w),
-                      _StreakBadge(streak: streak),
-                    ],
                   ],
                 ),
                 SizedBox(height: 8.h),
@@ -138,30 +131,6 @@ class GameProgressHeader extends StatelessWidget {
 // Private sub-widgets
 // ---------------------------------------------------------------------------
 
-class _StreakBadge extends StatelessWidget {
-  final int streak;
-  const _StreakBadge({required this.streak});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
-      decoration: BoxDecoration(
-        color: Colors.orange.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(6.r),
-      ),
-      child: Text(
-        '🔥 $streak',
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 10.sp,
-          fontWeight: FontWeight.w900,
-          color: Colors.orange,
-        ),
-      ),
-    ).animate().scale().shake();
-  }
-}
 
 class _ProgressBar extends StatelessWidget {
   final double progress;
