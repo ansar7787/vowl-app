@@ -352,23 +352,114 @@ class _SettingsAccountGroup extends StatelessWidget {
               icon: Icons.verified_user_rounded,
               color: Colors.deepPurple,
               onTap: () async {
-                final confirm = await showDialog<bool>(
+                final confirm = await showModalBottomSheet<bool>(
                   context: context,
-                  builder: (ctx) => AlertDialog(
-                    title: Text(context.tr('settings.reset_age_title', fallback: 'Reset Age Verification?')),
-                    content: Text(context.tr('settings.reset_age_desc', fallback: 'This will reset your age verification status. You will be asked to verify your age again on the next screen.')),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(ctx, false),
-                        child: Text(context.tr('common.cancel', fallback: 'Cancel')),
+                  backgroundColor: Colors.transparent,
+                  isScrollControlled: true,
+                  builder: (ctx) {
+                    final isDarkSheet = Theme.of(ctx).brightness == Brightness.dark;
+                    return Container(
+                      decoration: BoxDecoration(
+                        color: isDarkSheet ? const Color(0xFF1E293B) : Colors.white,
+                        borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
                       ),
-                      TextButton(
-                        onPressed: () => Navigator.pop(ctx, true),
-                        child: Text(context.tr('common.continue', fallback: 'Continue')),
+                      padding: EdgeInsets.fromLTRB(24.w, 12.h, 24.w, 32.h + MediaQuery.of(ctx).padding.bottom),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            width: 40.w,
+                            height: 4.h,
+                            decoration: BoxDecoration(
+                              color: isDarkSheet ? Colors.white24 : Colors.black12,
+                              borderRadius: BorderRadius.circular(2.r),
+                            ),
+                          ),
+                          SizedBox(height: 24.h),
+                          Container(
+                            padding: EdgeInsets.all(16.r),
+                            decoration: BoxDecoration(
+                              color: Colors.deepPurple.withValues(alpha: 0.1),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              Icons.verified_user_rounded,
+                              color: Colors.deepPurple,
+                              size: 32.r,
+                            ),
+                          ),
+                          SizedBox(height: 16.h),
+                          Text(
+                            context.tr('settings.reset_age_title', fallback: 'Reset Age Verification?'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: 8.h),
+                          Text(
+                            context.tr('settings.reset_age_desc', fallback: 'This will reset your age verification status. You will be asked to verify your age again on the next screen.'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              color: isDarkSheet ? Colors.white70 : Colors.black54,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: 32.h),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: TextButton(
+                                  onPressed: () => Navigator.pop(ctx, false),
+                                  style: TextButton.styleFrom(
+                                    padding: EdgeInsets.symmetric(vertical: 16.h),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(16.r),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    context.tr('common.cancel', fallback: 'Cancel'),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: isDarkSheet ? Colors.white70 : Colors.black54,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 12.w),
+                              Expanded(
+                                child: ElevatedButton(
+                                  onPressed: () => Navigator.pop(ctx, true),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.deepPurple,
+                                    foregroundColor: Colors.white,
+                                    padding: EdgeInsets.symmetric(vertical: 16.h),
+                                    elevation: 0,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(16.r),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    context.tr('common.continue', fallback: 'Continue'),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    );
+                  },
                 );
                 
                 if (confirm == true && context.mounted) {

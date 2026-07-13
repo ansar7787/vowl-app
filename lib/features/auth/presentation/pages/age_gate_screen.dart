@@ -155,18 +155,36 @@ class AgeGateScreen extends StatelessWidget {
                       ],
                     ),
                     alignment: Alignment.center,
-                    child: Text(
-                      context.tr(
-                        'age_gate.adult_button',
-                        fallback: "I'm 16 or older",
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 17.sp,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.white,
-                        letterSpacing: 0.3,
-                      ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          context.tr(
+                            'age_gate.adult_button',
+                            fallback: "I'm 16 or older",
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 17.sp,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
+                            letterSpacing: 0.3,
+                          ),
+                        ),
+                        SizedBox(height: 2.h),
+                        Text(
+                          context.tr(
+                            'age_gate.adult_subtitle',
+                            fallback: "Access the full learning experience",
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white.withValues(alpha: 0.8),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ).animate().fadeIn(delay: 600.ms).moveY(begin: 20, end: 0),
@@ -192,18 +210,36 @@ class AgeGateScreen extends StatelessWidget {
                       ),
                     ),
                     alignment: Alignment.center,
-                    child: Text(
-                      context.tr(
-                        'age_gate.child_button',
-                        fallback: "I'm under 16",
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 17.sp,
-                        fontWeight: FontWeight.w800,
-                        color: isDark ? Colors.white70 : Colors.grey.shade700,
-                        letterSpacing: 0.3,
-                      ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          context.tr(
+                            'age_gate.child_button',
+                            fallback: "I'm under 16",
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 17.sp,
+                            fontWeight: FontWeight.w800,
+                            color: isDark ? Colors.white70 : Colors.grey.shade700,
+                            letterSpacing: 0.3,
+                          ),
+                        ),
+                        SizedBox(height: 2.h),
+                        Text(
+                          context.tr(
+                            'age_gate.child_subtitle',
+                            fallback: "Fun, ad-free kids zone only",
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                            color: isDark ? Colors.white54 : Colors.grey.shade500,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ).animate().fadeIn(delay: 700.ms).moveY(begin: 20, end: 0),
