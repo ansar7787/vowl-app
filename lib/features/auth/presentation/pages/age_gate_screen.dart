@@ -29,6 +29,128 @@ class AgeGateScreen extends StatelessWidget {
     required bool isAdult,
   }) async {
     HapticFeedback.mediumImpact();
+
+    if (!isAdult) {
+      final confirm = await showModalBottomSheet<bool>(
+        context: context,
+        backgroundColor: Colors.transparent,
+        isScrollControlled: true,
+        builder: (ctx) {
+          final isDarkSheet = Theme.of(ctx).brightness == Brightness.dark;
+          return Container(
+            decoration: BoxDecoration(
+              color: isDarkSheet ? const Color(0xFF1E293B) : Colors.white,
+              borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
+            ),
+            padding: EdgeInsets.fromLTRB(24.w, 12.h, 24.w, 32.h + MediaQuery.of(ctx).padding.bottom),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 40.w,
+                  height: 4.h,
+                  decoration: BoxDecoration(
+                    color: isDarkSheet ? Colors.white24 : Colors.black12,
+                    borderRadius: BorderRadius.circular(2.r),
+                  ),
+                ),
+                SizedBox(height: 24.h),
+                Container(
+                  padding: EdgeInsets.all(16.r),
+                  decoration: BoxDecoration(
+                    color: Colors.amber.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.warning_amber_rounded,
+                    color: Colors.amber,
+                    size: 32.r,
+                  ),
+                ),
+                SizedBox(height: 16.h),
+                Text(
+                  context.tr('age_gate.confirm_kid_title', fallback: 'Wait, Are You Sure?'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 8.h),
+                Text(
+                  context.tr('age_gate.confirm_kid_desc', fallback: 'By selecting this, advanced courses, speaking practice, and grammar features will be hidden to keep the app safe for kids.'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    color: isDarkSheet ? Colors.white70 : Colors.black54,
+                    height: 1.4,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 32.h),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextButton(
+                        onPressed: () => Navigator.pop(ctx, false),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.symmetric(vertical: 16.h),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.r),
+                          ),
+                        ),
+                        child: Text(
+                          context.tr('age_gate.oops_adult', fallback: "Oops, I'm an Adult"),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w600,
+                            color: isDarkSheet ? Colors.white70 : Colors.black54,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 8.w),
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () => Navigator.pop(ctx, true),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.amber.shade700,
+                          foregroundColor: Colors.white,
+                          padding: EdgeInsets.symmetric(vertical: 16.h),
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.r),
+                          ),
+                        ),
+                        child: Text(
+                          context.tr('age_gate.yes_kid', fallback: "Yes, I'm a Kid"),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w700,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          );
+        },
+      );
+
+      if (confirm == null) return; // User dismissed by swiping down
+      if (!confirm) {
+        if (!context.mounted) return;
+        return _handleSelection(context, isAdult: true);
+      }
+    }
+
     await AgeGateService.completeAgeGate(isAdult: isAdult);
 
     try {
