@@ -42,6 +42,14 @@ class TranslationService {
     return prefs.containsKey(_kTargetLangKey);
   }
 
+  /// Returns true if the ML kit model for the target language is fully downloaded.
+  Future<bool> isTargetModelDownloaded() async {
+    final prefs = await SharedPreferences.getInstance();
+    final bcpCode = prefs.getString(_kTargetLangKey);
+    if (bcpCode == null) return false;
+    return await _modelManager.isModelDownloaded(bcpCode);
+  }
+
   /// Sets the user's preferred target language. This triggers the 30MB model download.
   Future<void> setTargetLanguage(TranslateLanguage target) async {
     final prefs = await SharedPreferences.getInstance();
@@ -92,6 +100,17 @@ class TranslationService {
     }
 
     return await _translator!.translateText(englishText);
+  }
+
+  /// Explicitly starts the model download for the configured language and waits for completion.
+  Future<void> ensureModelDownloaded() async {
+    final prefs = await SharedPreferences.getInstance();
+    final bcpCode = prefs.getString(_kTargetLangKey);
+    if (bcpCode == null) return;
+    final isDownloaded = await _modelManager.isModelDownloaded(bcpCode);
+    if (!isDownloaded) {
+      await _modelManager.downloadModel(bcpCode);
+    }
   }
 
   Future<void> dispose() async {

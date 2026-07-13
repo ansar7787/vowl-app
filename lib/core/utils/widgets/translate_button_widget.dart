@@ -4,6 +4,8 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/core/utils/translation_monetization_controller.dart';
 import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
+import 'package:vowl/core/utils/widgets/translation_download_sheet.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 /// A reusable button that triggers the translation flow.
 ///
@@ -49,13 +51,23 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
         }
       }
 
-      // 2. Pass to monetization controller (Free users watch an ad, Premium instantly translates)
+      // 2. Check if we need to show the download UI
+      final isDownloaded = await TranslationService().isTargetModelDownloaded();
+
+      // 3. Pass to monetization controller (Free users watch an ad, Premium instantly translates)
       if (!mounted) return;
       await TranslationMonetizationController.attemptTranslation(
         context,
         isKidsZone: widget.isKidsZone,
         onSuccess: () async {
-          // 3. Perform the actual ML Kit translation
+          if (!isDownloaded && mounted) {
+            // Show the cool dopamine UI while the model is downloading
+            await TranslationDownloadSheet.show(
+              context,
+              TranslationService().ensureModelDownloaded(),
+            );
+          }
+          // 4. Perform the actual ML Kit translation
           final translated = await TranslationService().translate(widget.originalText);
           widget.onTranslationComplete(translated);
         },
@@ -76,10 +88,23 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
   @override
   Widget build(BuildContext context) {
     if (_isTranslating) {
-      return SizedBox(
-        width: 24.r,
-        height: 24.r,
-        child: const CircularProgressIndicator(strokeWidth: 2),
+      return Container(
+        width: 32.r,
+        height: 32.r,
+        decoration: BoxDecoration(
+          color: widget.isKidsZone ? Colors.white24 : Theme.of(context).primaryColor.withValues(alpha: 0.1),
+          shape: BoxShape.circle,
+        ),
+        child: Center(
+          child: Icon(
+            LucideIcons.sparkles,
+            size: 18.r,
+            color: widget.isKidsZone ? Colors.white : Theme.of(context).primaryColor,
+          ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.2, 1.2),
+          ),
+        ),
       );
     }
 
