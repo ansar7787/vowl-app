@@ -34,7 +34,7 @@ class AdventureXPScreen extends StatelessWidget {
 
           String displayMessage;
           if (lowerMsg.contains('not enough')) {
-            displayMessage = context.tr('adventure.insufficient_coins');
+            displayMessage = context.tr('adventure.insufficient_coins', fallback: 'Not enough coins!');
           } else if (rawMessage.startsWith('Exception: ') ||
               rawMessage.startsWith('ServerFailure: ')) {
             // Do not surface raw exception/server-failure text to the
@@ -46,7 +46,7 @@ class AdventureXPScreen extends StatelessWidget {
               'Unhandled ProgressionBloc message shown as generic error',
               error: rawMessage,
             );
-            displayMessage = context.tr('adventure.generic_error');
+            displayMessage = context.tr('adventure.generic_error', fallback: 'Something went wrong.');
           } else {
             displayMessage = rawMessage;
           }
@@ -589,7 +589,7 @@ class AdventureXPScreen extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final offers = [
       {
-        'title': context.tr('adventure.streak_shield'),
+        'title': context.tr('adventure.streak_shield', fallback: 'Streak Shield'),
         'desc': 'Protects progress (+1 Freeze)',
         'cost': 150,
         'icon': Icons.shield_rounded,
@@ -597,7 +597,7 @@ class AdventureXPScreen extends StatelessWidget {
         'type': 'shield',
       },
       {
-        'title': context.tr('adventure.double_xp'),
+        'title': context.tr('adventure.double_xp', fallback: 'Double XP'),
         'desc': '2x Multiplier (24hr active)',
         'cost': 300,
         'icon': Icons.bolt_rounded,
@@ -630,7 +630,7 @@ class AdventureXPScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    context.tr('adventure.title').toUpperCase(),
+                    context.tr('adventure.title', fallback: 'Adventure Details').toUpperCase(),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
@@ -863,7 +863,7 @@ class AdventureXPScreen extends StatelessWidget {
                         children: [
                           Text(
                             (activity['title'] as String?) ??
-                                context.tr('adventure.activity_default_title'),
+                                context.tr('adventure.activity_default_title', fallback: 'Activity'),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
@@ -917,7 +917,7 @@ class AdventureXPScreen extends StatelessWidget {
   /// screen ("Crash Safety" in the production audit). Now falls back to a
   /// safe localized default instead.
   String _formatRelativeTime(BuildContext context, dynamic timestamp) {
-    if (timestamp == null) return context.tr('adventure.time_now');
+    if (timestamp == null) return context.tr('adventure.time_now', fallback: 'Just now');
 
     DateTime? dt;
     try {
@@ -932,7 +932,7 @@ class AdventureXPScreen extends StatelessWidget {
       dt = null;
     }
 
-    if (dt == null) return context.tr('adventure.time_now');
+    if (dt == null) return context.tr('adventure.time_now', fallback: 'Just now');
 
     final diff = DateTime.now().difference(dt);
     if (diff.inDays > 0) {
@@ -947,6 +947,6 @@ class AdventureXPScreen extends StatelessWidget {
         args: ['${diff.inMinutes}'],
       );
     }
-    return context.tr('adventure.time_just_now');
+    return context.tr('adventure.time_just_now', fallback: 'Just now');
   }
 }

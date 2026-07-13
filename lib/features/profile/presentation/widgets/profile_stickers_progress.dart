@@ -50,7 +50,7 @@ class ProfileStickersProgress extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      context.tr('profile.collection_progress'),
+                      context.tr('profile.collection_progress', fallback: 'Collection Progress'),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -84,7 +84,7 @@ class ProfileStickersProgress extends StatelessWidget {
               // without changing the visible pill's size at all.
               Semantics(
                 button: true,
-                label: context.tr('profile.view_all_stickers'),
+                label: context.tr('profile.view_all_stickers', fallback: 'View All Stickers'),
                 child: SizedBox(
                   height: 48.r,
                   child: Center(
@@ -100,7 +100,7 @@ class ProfileStickersProgress extends StatelessWidget {
                           borderRadius: BorderRadius.circular(16.r),
                         ),
                         child: Text(
-                          context.tr('profile.view_all'),
+                          context.tr('profile.view_all', fallback: 'View All'),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 11.sp,
@@ -139,7 +139,7 @@ class ProfileStickersProgress extends StatelessWidget {
                   final stickerId = earnedStickers[revIndex];
                   final emoji = KidsAssets.getStickerEmoji(stickerId);
                   return Semantics(
-                    label: context.tr('profile.sticker_earned'),
+                    label: context.tr('profile.sticker_earned', fallback: 'Sticker Earned'),
                     child: Container(
                       margin: EdgeInsets.only(right: 12.w),
                       width: 50.r,
@@ -165,7 +165,7 @@ class ProfileStickersProgress extends StatelessWidget {
           ] else ...[
             SizedBox(height: 12.h),
             Text(
-              context.tr('profile.start_collection_hint'),
+              context.tr('profile.start_collection_hint', fallback: 'Complete Kids quests to start collecting!'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 12.sp,

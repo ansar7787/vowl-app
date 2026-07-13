@@ -103,8 +103,8 @@ class ProfileHeader extends StatelessWidget {
                     child: Semantics(
                       button: true,
                       label: isPremium
-                          ? context.tr('profile.edit_photo_premium')
-                          : context.tr('profile.edit_photo'),
+                          ? context.tr('profile.edit_photo_premium', fallback: 'Edit Photo (Premium)')
+                          : context.tr('profile.edit_photo', fallback: 'Edit Photo'),
                       child: ScaleButton(
                         onTap: () {
                           di.sl<HapticService>().light();
@@ -158,7 +158,7 @@ class ProfileHeader extends StatelessWidget {
                   children: [
                     Flexible(
                       child: Text(
-                        user.displayName ?? context.tr('profile.default_name'),
+                        user.displayName ?? context.tr('profile.default_name', fallback: 'Explorer'),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
@@ -185,7 +185,7 @@ class ProfileHeader extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10.r),
                       ),
                       child: Text(
-                        context.tr('profile.id_badge'),
+                        context.tr('profile.id_badge', fallback: 'ID Badge'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 10.sp,
@@ -213,7 +213,7 @@ class ProfileHeader extends StatelessWidget {
                 ),
                 SizedBox(width: 4.w),
                 Text(
-                  context.tr('profile.premium_member_badge'),
+                  context.tr('profile.premium_member_badge', fallback: 'Premium Member'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,

@@ -81,7 +81,7 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
 
   @override
   Widget build(BuildContext context) {
-    final title = widget.title ?? context.tr('economy.get_free_coins_title');
+    final title = widget.title ?? context.tr('economy.get_free_coins_title', fallback: 'Free Coins!');
     final subtitle =
         widget.subtitle ??
         context.tr(

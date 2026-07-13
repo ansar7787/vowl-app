@@ -13,7 +13,7 @@ class VerifyEmailIconHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       image: true,
-      label: context.tr('auth.verify_email_icon_label'),
+      label: context.tr('auth.verify_email_icon_label', fallback: 'Verify Email'),
       child: Container(
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
@@ -43,7 +43,7 @@ class VerifyEmailStatusText extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          context.tr('auth.verify_email_title'),
+          context.tr('auth.verify_email_title', fallback: 'Check your inbox'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 28.sp,
@@ -54,7 +54,7 @@ class VerifyEmailStatusText extends StatelessWidget {
         ),
         SizedBox(height: 16.h),
         Text(
-          context.tr('auth.verify_email_description'),
+          context.tr('auth.verify_email_description', fallback: 'We sent a verification link to your email. Please click the link to verify your account.'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 15.sp,
@@ -96,19 +96,19 @@ class ResendEmailButton extends StatelessWidget {
     // locale_service.dart's tr() extension actually supports for
     // placeholders/pluralization. Guessing at an unverified method
     // signature risks a compile error, and concatenating translated
-    // fragments around the number (e.g. '${context.tr('auth.resend_in')}
-    // $secondsRemaining ${context.tr('auth.seconds_unit')}') is a worse
+    // fragments around the number (e.g. '${context.tr('auth.resend_in', fallback: 'Resend in')}
+    // $secondsRemaining ${context.tr('auth.seconds_unit', fallback: 's')}') is a worse
     // localization anti-pattern than what's here now — word order and
     // pluralization both vary by language, and fragment concatenation
     // can't express either correctly. Left as English pending confirmation
     // of the real parameterization API; see the review notes.
     final label = canResendEmail
-        ? context.tr('auth.resend_email')
+        ? context.tr('auth.resend_email', fallback: 'Resend Email')
         : 'Resend in $secondsRemaining s';
     return Semantics(
       button: true,
       label: canResendEmail
-          ? context.tr('auth.resend_verification_email_semantic')
+          ? context.tr('auth.resend_verification_email_semantic', fallback: 'Resend verification email')
           : 'Resend available in $secondsRemaining seconds',
       child: ElevatedButton(
         onPressed: canResendEmail ? onPressed : null,
@@ -151,7 +151,7 @@ class VerifyConfirmationButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: context.tr('auth.verified_confirmation_semantic'),
+      label: context.tr('auth.verified_confirmation_semantic', fallback: 'Email verified, you can now continue'),
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
@@ -162,7 +162,7 @@ class VerifyConfirmationButton extends StatelessWidget {
           ),
         ),
         child: Text(
-          context.tr('auth.verified_confirmation'),
+          context.tr('auth.verified_confirmation', fallback: 'Email Verified!'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 16.sp,
@@ -190,14 +190,14 @@ class VerifyLogoutButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: context.tr('auth.cancel_and_logout_semantic'),
+      label: context.tr('auth.cancel_and_logout_semantic', fallback: 'Cancel and log out'),
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
           minimumSize: const Size(double.infinity, 48),
         ),
         child: Text(
-          context.tr('auth.cancel_and_logout'),
+          context.tr('auth.cancel_and_logout', fallback: 'Cancel'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 16.sp,

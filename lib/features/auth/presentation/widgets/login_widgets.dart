@@ -29,8 +29,8 @@ class LoginEmailInput extends StatelessWidget {
       builder: (context, state) {
         final contrastColor = MeshGradientBackground.getContrastColor(context);
         return Semantics(
-          label: context.tr('auth.email_field_label'),
-          hint: context.tr('auth.email_field_hint_generic'),
+          label: context.tr('auth.email_field_label', fallback: 'Email'),
+          hint: context.tr('auth.email_field_hint_generic', fallback: 'Email Address'),
           textField: true,
           child: TextFormField(
             key: fieldKey,
@@ -39,10 +39,10 @@ class LoginEmailInput extends StatelessWidget {
                 context.read<LoginCubit>().emailChanged(email),
             validator: (value) {
               if (value == null || value.trim().isEmpty) {
-                return context.tr('auth.validation_email_required');
+                return context.tr('auth.validation_email_required', fallback: 'Email is required');
               }
               if (!_emailRegex.hasMatch(value.trim())) {
-                return context.tr('auth.validation_email_invalid');
+                return context.tr('auth.validation_email_invalid', fallback: 'Invalid email address');
               }
               return null;
             },
@@ -51,7 +51,7 @@ class LoginEmailInput extends StatelessWidget {
             autofillHints: const [AutofillHints.email],
             style: TextStyle(color: contrastColor),
             decoration: InputDecoration(
-              hintText: context.tr('auth.email_hint_short'),
+              hintText: context.tr('auth.email_hint_short', fallback: 'explorer@vowl.com'),
               hintStyle: TextStyle(color: contrastColor.withValues(alpha: 0.5)),
               errorStyle: TextStyle(
                 fontFamily: 'Outfit',
@@ -127,8 +127,8 @@ class LoginPasswordInput extends StatelessWidget {
       builder: (context, state) {
         final contrastColor = MeshGradientBackground.getContrastColor(context);
         return Semantics(
-          label: context.tr('auth.password_field_label'),
-          hint: context.tr('auth.password_field_hint_generic'),
+          label: context.tr('auth.password_field_label', fallback: 'Password'),
+          hint: context.tr('auth.password_field_hint_generic', fallback: 'Enter your password'),
           textField: true,
           child: TextFormField(
             key: fieldKey,
@@ -137,10 +137,10 @@ class LoginPasswordInput extends StatelessWidget {
                 context.read<LoginCubit>().passwordChanged(password),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return context.tr('auth.validation_password_required');
+                return context.tr('auth.validation_password_required', fallback: 'Password is required');
               }
               if (value.length < 6) {
-                return context.tr('auth.validation_password_too_short');
+                return context.tr('auth.validation_password_too_short', fallback: 'Password must be at least 6 characters');
               }
               return null;
             },
@@ -150,7 +150,7 @@ class LoginPasswordInput extends StatelessWidget {
             autofillHints: const [AutofillHints.password],
             style: TextStyle(color: contrastColor),
             decoration: InputDecoration(
-              hintText: context.tr('auth.password_hint_text'),
+              hintText: context.tr('auth.password_hint_text', fallback: 'Make it strong!'),
               hintStyle: TextStyle(color: contrastColor.withValues(alpha: 0.5)),
               errorStyle: TextStyle(
                 fontFamily: 'Outfit',
@@ -164,8 +164,8 @@ class LoginPasswordInput extends StatelessWidget {
               ),
               suffixIcon: Semantics(
                 label: state.isPasswordVisible
-                    ? context.tr('auth.hide_password')
-                    : context.tr('auth.show_password'),
+                    ? context.tr('auth.hide_password', fallback: 'Hide password')
+                    : context.tr('auth.show_password', fallback: 'Show password'),
                 button: true,
                 child: IconButton(
                   icon: Icon(
@@ -239,7 +239,7 @@ class LoginButton extends StatelessWidget {
       builder: (context, state) {
         return Semantics(
           button: true,
-          label: context.tr('auth.login'),
+          label: context.tr('auth.login', fallback: 'Log In'),
           child: ElevatedButton(
             onPressed: state.isSubmitting
                 ? null
@@ -268,7 +268,7 @@ class LoginButton extends StatelessWidget {
                 // runtime. This still guards against a longer translation
                 // wrapping to two lines at high text scale.
                 : Text(
-                    context.tr('auth.login'),
+                    context.tr('auth.login', fallback: 'Log In'),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -295,7 +295,7 @@ class GoogleLoginButton extends StatelessWidget {
         final contrastColor = MeshGradientBackground.getContrastColor(context);
         return Semantics(
           button: true,
-          label: context.tr('auth.sign_in_with_google'),
+          label: context.tr('auth.sign_in_with_google', fallback: 'Sign in with Google'),
           child: OutlinedButton(
             onPressed: state.isSubmitting
                 ? null
@@ -333,7 +333,7 @@ class GoogleLoginButton extends StatelessWidget {
                       // Flexible needs.
                       Flexible(
                         child: Text(
-                          context.tr('auth.sign_in_with_google'),
+                          context.tr('auth.sign_in_with_google', fallback: 'Sign in with Google'),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 16.sp,

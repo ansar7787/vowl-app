@@ -147,7 +147,7 @@ class _LoginViewState extends State<LoginView> {
 
               return LoadingOverlay(
                 isLoading: state.isSubmitting || state.isSuccess,
-                message: context.tr('auth.preparing_adventure'),
+                message: context.tr('auth.preparing_adventure', fallback: 'Preparing your adventure...'),
                 child: Scaffold(
                   backgroundColor: bgColor,
                   resizeToAvoidBottomInset: false,
@@ -219,7 +219,7 @@ class _LoginViewState extends State<LoginView> {
                                           ],
                                         ),
                                         Text(
-                                          context.tr('auth.login_subtitle'),
+                                          context.tr('auth.login_subtitle', fallback: 'Welcome back! Your journey continues here.'),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
                                             fontSize: 15.sp,
@@ -350,7 +350,7 @@ class _LoginViewState extends State<LoginView> {
                                                 minimumSize: const Size(48, 48),
                                               ),
                                               child: Text(
-                                                context.tr('auth.signup'),
+                                                context.tr('auth.signup', fallback: 'Sign Up'),
                                                 style: const TextStyle(
                                                   fontFamily: 'Outfit',
                                                   color: Color(0xFF2563EB),

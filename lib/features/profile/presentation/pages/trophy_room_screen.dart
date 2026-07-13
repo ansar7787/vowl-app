@@ -55,7 +55,7 @@ class TrophyRoomScreen extends StatelessWidget {
                         _buildMascotStage(context, isDark, isMidnight),
                         SizedBox(height: 48.h),
                         _buildSectionTitle(
-                          context.tr('profile.trophies_badges'),
+                          context.tr('profile.trophies_badges', fallback: 'Trophies & Badges'),
                           isDark,
                           isMidnight,
                         ),
@@ -74,7 +74,7 @@ class TrophyRoomScreen extends StatelessWidget {
                       if (badges.isEmpty) {
                         return SliverToBoxAdapter(
                           child: _buildEmptySection(
-                            context.tr('profile.no_trophies'),
+                            context.tr('profile.no_trophies', fallback: 'No trophies yet'),
                             isDark,
                             isMidnight,
                             icon: Icons.military_tech_rounded,
@@ -110,7 +110,7 @@ class TrophyRoomScreen extends StatelessWidget {
                       children: [
                         SizedBox(height: 48.h),
                         _buildSectionTitle(
-                          context.tr('profile.collectibles_vault'),
+                          context.tr('profile.collectibles_vault', fallback: 'Collectibles Vault'),
                           isDark,
                           isMidnight,
                         ),
@@ -247,7 +247,7 @@ class TrophyRoomScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              context.tr('profile.trophy_room'),
+                              context.tr('profile.trophy_room', fallback: 'Trophy Room'),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 26.sp,
@@ -261,7 +261,7 @@ class TrophyRoomScreen extends StatelessWidget {
                             ),
                             SizedBox(height: 8.h),
                             Text(
-                              context.tr('profile.trophy_subtitle'),
+                              context.tr('profile.trophy_subtitle', fallback: 'Your achievements'),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 14.sp,
@@ -651,7 +651,7 @@ class TrophyRoomScreen extends StatelessWidget {
 
         if (owned.isEmpty) {
           return _buildEmptySection(
-            context.tr('profile.empty_vault'),
+            context.tr('profile.empty_vault', fallback: 'Your vault is empty.'),
             isDark,
             isMidnight,
             icon: Icons.inventory_2_rounded,
