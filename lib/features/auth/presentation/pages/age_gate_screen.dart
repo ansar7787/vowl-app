@@ -362,7 +362,7 @@ class AgeGateScreen extends StatelessWidget {
                         Text(
                           context.tr(
                             'age_gate.child_subtitle',
-                            fallback: "Fun, ad-free kids zone only",
+                            fallback: "Fun, simplified games for kids",
                           ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
