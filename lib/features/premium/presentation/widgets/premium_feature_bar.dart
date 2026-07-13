@@ -11,89 +11,72 @@ class ModernFeatureBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     
-    // Convert from a congested horizontal row to a beautiful, scroll-safe vertical list
-    // This allows ample room for localization text expansion and accessibility scaling.
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(24.r),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
-        child: Container(
-          padding: EdgeInsets.all(20.r),
-          decoration: BoxDecoration(
-            color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.02),
-            borderRadius: BorderRadius.circular(24.r),
-            border: Border.all(
-              color: isDark ? Colors.white.withValues(alpha: 0.08) : Colors.black.withValues(alpha: 0.05),
-            ),
-          ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _buildFeatureRow(
-            context,
-            icon: LucideIcons.sparkles,
-            title: context.tr('premium.feature_translations', fallback: 'Instant Translations'),
-            subtitle: context.tr('premium.feature_translations_desc', fallback: 'Ad-free, on-device AI hints in your native language.'),
-            isDark: isDark,
-            isHighlight: true,
-          ),
-          SizedBox(height: 16.h),
-          _buildFeatureRow(
-            context,
-            icon: Icons.block_rounded,
-            title: context.tr('premium.feature_zero_ads', fallback: 'Zero Interruptions'),
-            subtitle: context.tr('premium.feature_zero_ads_desc', fallback: 'Completely ad-free learning experience.'),
-            isDark: isDark,
-          ),
-          SizedBox(height: 16.h),
-          _buildFeatureRow(
-            context,
-            icon: Icons.auto_graph_rounded,
-            title: context.tr('premium.feature_2x_speed', fallback: '2x Learning Speed'),
-            subtitle: context.tr('premium.feature_2x_speed_desc', fallback: 'Master concepts faster with advanced tracking.'),
-            isDark: isDark,
-          ),
-          SizedBox(height: 16.h),
-          _buildFeatureRow(
-            context,
-            icon: Icons.airplanemode_active_rounded,
-            title: context.tr('premium.feature_play_offline', fallback: 'Offline Mode'),
-            subtitle: context.tr('premium.feature_play_offline_desc', fallback: 'Download lessons and learn anywhere.'),
-            isDark: isDark,
-          ),
-          SizedBox(height: 16.h),
-          _buildFeatureRow(
-            context,
-            icon: Icons.card_giftcard_rounded,
-            title: context.tr('premium.feature_vip_loot', fallback: 'Daily VIP Loot'),
-            subtitle: context.tr('premium.feature_vip_loot_desc', fallback: 'Claim 100 free bonus coins every single day.'),
-            isDark: isDark,
-          ),
-          SizedBox(height: 16.h),
-          _buildFeatureRow(
-            context,
-            icon: Icons.lock_open_rounded,
-            title: context.tr('premium.feature_unlimited_levels', fallback: 'Unlimited Access'),
-            subtitle: context.tr('premium.feature_unlimited_levels_desc', fallback: 'Unlock all elite and master difficulty levels.'),
-            isDark: isDark,
-          ),
-          SizedBox(height: 16.h),
-          _buildFeatureRow(
-            context,
-            icon: Icons.workspace_premium_rounded,
-            title: context.tr('premium.feature_vip_badges', fallback: 'VIP Badges'),
-            subtitle: context.tr('premium.feature_vip_badges_desc', fallback: 'Exclusive golden badges on the global leaderboard.'),
-            isDark: isDark,
-          ),
-        ],
-      ),
-    ),
-      ),
+    // An ultra-premium 2026 staggered list of glassmorphic feature cards
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _buildFeatureCard(
+          context,
+          icon: LucideIcons.sparkles,
+          title: context.tr('premium.feature_translations', fallback: 'Instant AI Translations'),
+          subtitle: context.tr('premium.feature_translations_desc', fallback: 'Ad-free, real-time native hints powered by local AI.'),
+          isDark: isDark,
+          isHighlight: true,
+        ),
+        SizedBox(height: 12.h),
+        _buildFeatureCard(
+          context,
+          icon: LucideIcons.shieldCheck,
+          title: context.tr('premium.feature_zero_ads', fallback: 'Zero Interruptions'),
+          subtitle: context.tr('premium.feature_zero_ads_desc', fallback: 'A completely pure, ad-free learning experience.'),
+          isDark: isDark,
+        ),
+        SizedBox(height: 12.h),
+        _buildFeatureCard(
+          context,
+          icon: LucideIcons.zap,
+          title: context.tr('premium.feature_2x_speed', fallback: '2x Learning Velocity'),
+          subtitle: context.tr('premium.feature_2x_speed_desc', fallback: 'Master concepts twice as fast with advanced XP tracking.'),
+          isDark: isDark,
+        ),
+        SizedBox(height: 12.h),
+        _buildFeatureCard(
+          context,
+          icon: LucideIcons.wifiOff,
+          title: context.tr('premium.feature_play_offline', fallback: 'Anywhere Offline Mode'),
+          subtitle: context.tr('premium.feature_play_offline_desc', fallback: 'Download curriculum and learn off the grid.'),
+          isDark: isDark,
+        ),
+        SizedBox(height: 12.h),
+        _buildFeatureCard(
+          context,
+          icon: LucideIcons.gift,
+          title: context.tr('premium.feature_vip_loot', fallback: 'Daily Elite Loot'),
+          subtitle: context.tr('premium.feature_vip_loot_desc', fallback: 'Claim 100 free bonus coins every single day.'),
+          isDark: isDark,
+        ),
+        SizedBox(height: 12.h),
+        _buildFeatureCard(
+          context,
+          icon: LucideIcons.unlock,
+          title: context.tr('premium.feature_unlimited_levels', fallback: 'Unlimited Vault Access'),
+          subtitle: context.tr('premium.feature_unlimited_levels_desc', fallback: 'Instantly unlock all elite and master difficulty tiers.'),
+          isDark: isDark,
+        ),
+        SizedBox(height: 12.h),
+        _buildFeatureCard(
+          context,
+          icon: LucideIcons.award,
+          title: context.tr('premium.feature_vip_badges', fallback: 'Golden VIP Badges'),
+          subtitle: context.tr('premium.feature_vip_badges_desc', fallback: 'Flaunt your exclusive elite status on the global leaderboards.'),
+          isDark: isDark,
+        ),
+      ],
     );
   }
 
-  Widget _buildFeatureRow(
+  Widget _buildFeatureCard(
     BuildContext context, {
     required IconData icon,
     required String title,
@@ -103,46 +86,71 @@ class ModernFeatureBar extends StatelessWidget {
   }) {
     final primaryColor = isHighlight ? const Color(0xFF10B981) : const Color(0xFFF59E0B);
     
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          padding: EdgeInsets.all(10.r),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20.r),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
           decoration: BoxDecoration(
-            color: primaryColor.withValues(alpha: 0.15),
-            borderRadius: BorderRadius.circular(12.r),
+            color: isHighlight
+                ? primaryColor.withValues(alpha: 0.1)
+                : (isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.02)),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: isHighlight
+                  ? primaryColor.withValues(alpha: 0.3)
+                  : (isDark ? Colors.white.withValues(alpha: 0.08) : Colors.black.withValues(alpha: 0.05)),
+              width: isHighlight ? 1.5 : 1,
+            ),
           ),
-          child: Icon(icon, color: primaryColor, size: 20.r),
-        ),
-        SizedBox(width: 16.w),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                title,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: isDark ? Colors.white : Colors.black87,
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 0.5,
+              Container(
+                padding: EdgeInsets.all(12.r),
+                decoration: BoxDecoration(
+                  color: primaryColor.withValues(alpha: 0.15),
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: primaryColor.withValues(alpha: 0.3),
+                  ),
                 ),
+                child: Icon(icon, color: primaryColor, size: 24.r),
               ),
-              SizedBox(height: 4.h),
-              Text(
-                subtitle,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: isDark ? Colors.white60 : Colors.black54,
-                  fontSize: 13.sp,
-                  height: 1.3,
+              SizedBox(width: 16.w),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: isDark ? Colors.white : Colors.black87,
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                    SizedBox(height: 4.h),
+                    Text(
+                      subtitle,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: isDark ? Colors.white60 : Colors.black54,
+                        fontSize: 13.sp,
+                        height: 1.4,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
           ),
         ),
-      ],
+      ),
     );
   }
 }

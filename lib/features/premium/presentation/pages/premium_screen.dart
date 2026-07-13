@@ -265,13 +265,65 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   radius: 200,
                 ),
               ),
-              SafeArea(
-                child: Column(
-                  children: [
-                    const PremiumHeader(),
-                    Expanded(child: _buildScrollableBody()),
-                  ],
-                ),
+              CustomScrollView(
+                slivers: [
+                  SliverAppBar(
+                    backgroundColor: Colors.transparent,
+                    elevation: 0,
+                    pinned: true,
+                    centerTitle: false,
+                    leading: IconButton(
+                      icon: Icon(Icons.arrow_back_ios_new_rounded, color: isDark ? Colors.white : Colors.black),
+                      onPressed: () {
+                        if (context.canPop()) {
+                          context.pop();
+                        } else {
+                          context.go('/home');
+                        }
+                      },
+                    ),
+                    actions: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 16.w),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                const Color(0xFFF59E0B).withValues(alpha: 0.2),
+                                const Color(0xFFEA580C).withValues(alpha: 0.1),
+                              ],
+                            ),
+                            borderRadius: BorderRadius.circular(20.r),
+                            border: Border.all(
+                              color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(Icons.workspace_premium_rounded, color: const Color(0xFFF59E0B), size: 14.r),
+                              SizedBox(width: 4.w),
+                              Text(
+                                context.tr('premium.verified_pro_badge', fallback: 'Verified Pro'),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  color: isDark ? Colors.white : Colors.black,
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: _buildScrollableBody(),
+                  ),
+                ],
               ),
               if (_isProcessing) _buildProcessingOverlay(),
               if (_paymentCompleted) _buildCompletedOverlay(),
@@ -326,16 +378,12 @@ class _PremiumScreenState extends State<PremiumScreen> {
   /// original four `Spacer`/`Spacer(flex: 2)` had), since flexible gaps
   /// cannot be used inside a scrollable's unbounded main axis.
   Widget _buildScrollableBody() {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: ConstrainedBox(
-            constraints: BoxConstraints(minHeight: constraints.maxHeight),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
                 SizedBox(height: 16.h),
                 const PremiumHero(),
                 SizedBox(height: 24.h),
@@ -349,9 +397,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 SizedBox(height: 12.h),
               ],
             ),
-          ),
-        );
-      },
     );
   }
 
@@ -507,9 +552,11 @@ class _PremiumScreenState extends State<PremiumScreen> {
               ],
             ),
           ),
-        ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(
-            duration: 2.seconds,
-            color: Colors.white.withValues(alpha: 0.3),
+        ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.02, 1.02),
+            duration: 1.5.seconds,
+            curve: Curves.easeInOut,
           ),
       ),
     );
