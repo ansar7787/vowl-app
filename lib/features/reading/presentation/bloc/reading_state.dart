@@ -53,7 +53,7 @@ class ReadingLoaded extends ReadingState {
   final int wrongCount;
 
   /// True when the correct answer has been revealed and the player
-  /// must tap context.tr('common.continue_text', fallback: 'Continue') to move on (question re-queued at the end).
+  /// must tap context.tr('common.continue_text', fallback: 'Continue', fallback: 'Continue') to move on (question re-queued at the end).
   final bool isFinalFailure;
 
   /// Always valid while in this state — [currentIndex] is guarded by the BLoC.

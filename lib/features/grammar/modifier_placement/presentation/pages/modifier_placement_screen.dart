@@ -414,8 +414,8 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
             SizedBox(height: isCompact ? 4.h : 12.h),
             Text(
               correct
-                  ? context.tr('games.correct').toUpperCase()
-                  : context.tr('games.incorrect_caps'),
+                  ? context.tr('games.correct', fallback: 'Correct').toUpperCase()
+                  : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: isCompact ? 12.sp : 16.sp,

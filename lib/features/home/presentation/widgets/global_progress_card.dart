@@ -35,7 +35,7 @@ class GlobalProgressCard extends StatelessWidget {
     return Semantics(
       button: true,
       label: context.tr(
-        'home.quest_journey_progress_label',
+        'home.quest_journey_progress_label', fallback: 'Journey Progress',
         args: [completed.toString(), totalLevels.toString(), percentage],
       ),
       child: ScaleButton(
@@ -93,7 +93,7 @@ class GlobalProgressCard extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              context.tr('home.quest_journey', fallback: 'Quest Journey'),
+                              context.tr('home.quest_journey', fallback: 'Quest Journey', fallback: 'Quest Journey'),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 8.sp,
@@ -106,7 +106,7 @@ class GlobalProgressCard extends StatelessWidget {
                             ),
                             SizedBox(height: 2.h),
                             Text(
-                              context.tr('home.total_levels_cleared', fallback: 'Total Levels Cleared'),
+                              context.tr('home.total_levels_cleared', fallback: 'Total Levels Cleared', fallback: 'Total Levels Cleared'),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 14.sp,
@@ -158,7 +158,7 @@ class GlobalProgressCard extends StatelessWidget {
                                 maxLines: 1,
                               ),
                               Text(
-                                context.tr('home.rank', fallback: 'Rank'),
+                                context.tr('home.rank', fallback: 'Rank', fallback: 'Rank'),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 7.sp,
@@ -195,7 +195,7 @@ class GlobalProgressCard extends StatelessWidget {
                             ),
                             TextSpan(
                               text: context.tr(
-                                'home.levels_suffix',
+                                'home.levels_suffix', fallback: 'Levels',
                                 args: [totalLevels.toString()],
                               ),
                               style: TextStyle(
@@ -217,7 +217,7 @@ class GlobalProgressCard extends StatelessWidget {
                         children: [
                           Text(
                             context.tr(
-                              'home.percent_complete',
+                              'home.percent_complete', fallback: 'Complete',
                               args: [percentage.toString()],
                             ),
                             style: TextStyle(
@@ -339,7 +339,7 @@ class GlobalProgressCard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(left: 3.w),
       child: Tooltip(
-        message: context.tr('home.levels_count', args: [count.toString()]),
+        message: context.tr('home.levels_count', fallback: 'Levels', args: [count.toString()]),
         child: Container(
           padding: EdgeInsets.all(4.r),
           decoration: BoxDecoration(

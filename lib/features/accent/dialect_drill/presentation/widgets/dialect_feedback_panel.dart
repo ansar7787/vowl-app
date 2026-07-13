@@ -60,8 +60,8 @@ class DialectFeedbackPanel extends StatelessWidget {
                   children: [
                     Text(
                       isCorrect
-                          ? context.tr('games.correct')
-                          : context.tr('games.lets_review'),
+                          ? context.tr('games.correct', fallback: 'Correct')
+                          : context.tr('games.lets_review', fallback: 'Let\\'s Review'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 22.sp,
@@ -70,7 +70,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      context.tr('games.accent_comparison'),
+                      context.tr('games.accent_comparison', fallback: 'Accent Comparison'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
@@ -113,7 +113,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "${context.tr('games.british')}: ",
+                      "${context.tr('games.british', fallback: 'British')}: ",
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
@@ -139,7 +139,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "${context.tr('games.american')}: ",
+                      "${context.tr('games.american', fallback: 'American')}: ",
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
@@ -216,7 +216,7 @@ class DialectFeedbackPanel extends StatelessWidget {
             children: [
               Expanded(
                 child: _buildAudioButton(
-                  title: context.tr('games.british').toUpperCase(),
+                  title: context.tr('games.british', fallback: 'British').toUpperCase(),
                   icon: Icons.record_voice_over_rounded,
                   textToPlay: word,
                   locale: "en-GB",
@@ -230,7 +230,7 @@ class DialectFeedbackPanel extends StatelessWidget {
               SizedBox(width: 16.w),
               Expanded(
                 child: _buildAudioButton(
-                  title: context.tr('games.american').toUpperCase(),
+                  title: context.tr('games.american', fallback: 'American').toUpperCase(),
                   icon: Icons.record_voice_over_rounded,
                   textToPlay: word,
                   locale: "en-US",

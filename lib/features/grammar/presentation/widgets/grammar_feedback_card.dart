@@ -57,16 +57,16 @@ class GrammarFeedbackCard extends StatelessWidget {
     final shadowColor = success ? _successShadow : _failShadow;
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
     final title = success
-        ? context.tr('games.excellent')
-        : context.tr('games.not_quite');
+        ? context.tr('games.excellent', fallback: 'Excellent!')
+        : context.tr('games.not_quite', fallback: 'Not Quite');
 
     final buttonText = success
-        ? context.tr('common.continue_text').toUpperCase()
+        ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : (isFinalFailure
               ? (lives == 0
-                    ? context.tr('common.see_results').toUpperCase()
-                    : context.tr('common.continue_text').toUpperCase())
-              : context.tr('games.try_again').toUpperCase());
+                    ? context.tr('common.see_results', fallback: 'See Results').toUpperCase()
+                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
+              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
 
     // Build explanation string for mastery-loop failures.
     String? explanation;
@@ -195,7 +195,7 @@ class GrammarFeedbackCard extends StatelessWidget {
                   ),
                   SizedBox(width: 8.w),
                   Text(
-                    context.tr('games.explanation_caps'),
+                    context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,

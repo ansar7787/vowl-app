@@ -36,7 +36,7 @@ class PremiumPlanCard extends StatelessWidget {
       selected: isSelected,
       label:
           '${plan.name}, ${currencyFormat.format(plan.price)}, '
-          '${context.tr('premium.days_of_elite_access', args: ['${plan.days}'])}',
+          '${context.tr('premium.days_of_elite_access', fallback: 'Days of Elite Access', args: ['${plan.days}'])}',
       child: GestureDetector(
         onTap: onTap,
         child: AnimatedContainer(
@@ -115,7 +115,7 @@ class PremiumPlanCard extends StatelessWidget {
                     SizedBox(height: 4.h),
                     Text(
                       context.tr(
-                        'premium.days_of_elite_access',
+                        'premium.days_of_elite_access', fallback: 'Days of Elite Access',
                         args: ['${plan.days}'],
                       ),
                       maxLines: 1,
@@ -173,7 +173,7 @@ class PremiumPlanCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4.r),
                     ),
                     child: Text(
-                      '${context.tr('premium.save', fallback: 'Save')} ${currencyFormat.format(savings)}',
+                      '${context.tr('premium.save', fallback: 'Save', fallback: 'Save')} ${currencyFormat.format(savings)}',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(

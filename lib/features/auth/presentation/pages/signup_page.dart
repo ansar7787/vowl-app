@@ -132,7 +132,7 @@ class _SignUpViewState extends State<SignUpView> {
 
               return LoadingOverlay(
                 isLoading: state.isSubmitting || state.isSuccess,
-                message: context.tr('auth.preparing_journey', fallback: 'Preparing your journey...'),
+                message: context.tr('auth.preparing_journey', fallback: 'Preparing your journey...', fallback: 'Preparing your journey...'),
                 child: Scaffold(
                   backgroundColor: bgColor,
                   resizeToAvoidBottomInset: false,
@@ -206,7 +206,7 @@ class _SignUpViewState extends State<SignUpView> {
                                           ],
                                         ),
                                         Text(
-                                          context.tr('auth.signup_subtitle', fallback: 'Create an account to start your learning adventure.'),
+                                          context.tr('auth.signup_subtitle', fallback: 'Create an account to start your learning adventure.', fallback: 'Create an account to start your learning adventure.'),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
                                             fontSize: 15.sp,
@@ -291,7 +291,7 @@ class _SignUpViewState extends State<SignUpView> {
                                             Flexible(
                                               child: Text(
                                                 context.tr(
-                                                  'auth.have_account_prompt',
+                                                  'auth.have_account_prompt', fallback: 'Already have an account?',
                                                 ),
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
@@ -309,7 +309,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                 minimumSize: const Size(48, 48),
                                               ),
                                               child: Text(
-                                                context.tr('auth.login', fallback: 'Log In'),
+                                                context.tr('auth.login', fallback: 'Log In', fallback: 'Log In'),
                                                 style: const TextStyle(
                                                   fontFamily: 'Outfit',
                                                   color: Color(0xFF2563EB),

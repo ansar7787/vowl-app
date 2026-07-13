@@ -136,7 +136,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('games.spelling_legend_title'),
+            title: context.tr('games.spelling_legend_title', fallback: 'Spelling Legend'),
             enableDoubleUp: true,
           );
         } else if (state is EliteMasteryLoaded) {
@@ -215,7 +215,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
           showConfetti: _showConfetti,
           title:
               quest?.instruction ??
-              context.tr('games.speed_spelling_title_fallback'),
+              context.tr('games.speed_spelling_title_fallback', fallback: 'Speed Spelling'),
           onContinue: () {
             setState(() {
               _isAnswered = false;
@@ -350,7 +350,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
             if (!_isAnswered)
               Semantics(
                 button: true,
-                label: context.tr('games.submit_caps'),
+                label: context.tr('games.submit_caps', fallback: 'SUBMIT'),
                 excludeSemantics: true,
                 child: ScaleButton(
                   // FIX: was `_submit(quest.word!)` — see _onClear for
@@ -384,7 +384,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
                     ),
                     child: Center(
                       child: Text(
-                        context.tr('games.submit_caps'),
+                        context.tr('games.submit_caps', fallback: 'SUBMIT'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: isCompact ? 16.sp : 18.sp,

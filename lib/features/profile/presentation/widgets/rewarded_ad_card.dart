@@ -63,7 +63,7 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
         CustomSnackBar.show(
           context: context,
           message: context.tr(
-            'economy.reward_earned_coins',
+            'economy.reward_earned_coins', fallback: 'Coins Earned!',
             args: ['${widget.rewardAmount}'],
           ),
           type: CustomSnackBarType.success,
@@ -81,11 +81,11 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
 
   @override
   Widget build(BuildContext context) {
-    final title = widget.title ?? context.tr('economy.get_free_coins_title', fallback: 'Free Coins!');
+    final title = widget.title ?? context.tr('economy.get_free_coins_title', fallback: 'Free Coins!', fallback: 'Free Coins!');
     final subtitle =
         widget.subtitle ??
         context.tr(
-          'economy.get_free_coins_subtitle',
+          'economy.get_free_coins_subtitle', fallback: 'Watch an ad to earn 20 coins.',
           args: ['${widget.rewardAmount}'],
         );
 
@@ -155,7 +155,7 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
             button: true,
             enabled: !_isLoading,
             label: context.tr(
-              'economy.watch_ad_button',
+              'economy.watch_ad_button', fallback: 'Watch Ad',
               args: ['${widget.rewardAmount}'],
             ),
             child: ElevatedButton(

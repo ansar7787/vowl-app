@@ -32,8 +32,8 @@ class GameErrorWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final resolvedTitle = title ?? context.tr('game_error.title', fallback: 'Oops! Something went wrong.');
-    final resolvedMessage = message ?? context.tr('game_error.message', fallback: 'There was a problem loading the game.');
+    final resolvedTitle = title ?? context.tr('game_error.title', fallback: 'Oops! Something went wrong.', fallback: 'Oops! Something went wrong.');
+    final resolvedMessage = message ?? context.tr('game_error.message', fallback: 'There was a problem loading the game.', fallback: 'There was a problem loading the game.');
 
     return RepaintBoundary(
       child: LayoutBuilder(
@@ -119,7 +119,7 @@ class GameErrorWidget extends StatelessWidget {
                       // ── Retry ────────────────────────────────────────────
                       Semantics(
                         button: true,
-                        label: context.tr('games.try_again', fallback: 'Try Again'),
+                        label: context.tr('games.try_again', fallback: 'Try Again', fallback: 'Try Again'),
                         child: ScaleButton(
                           onTap: onRetry,
                           child: Container(
@@ -143,7 +143,7 @@ class GameErrorWidget extends StatelessWidget {
                               ],
                             ),
                             child: Text(
-                              context.tr('games.try_again', fallback: 'Try Again').toUpperCase(),
+                              context.tr('games.try_again', fallback: 'Try Again', fallback: 'Try Again').toUpperCase(),
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
@@ -162,7 +162,7 @@ class GameErrorWidget extends StatelessWidget {
                       // ── Go back ──────────────────────────────────────────
                       Semantics(
                         button: true,
-                        label: context.tr('common.go_back', fallback: 'Go Back'),
+                        label: context.tr('common.go_back', fallback: 'Go Back', fallback: 'Go Back'),
                         child: ScaleButton(
                           onTap: onBack,
                           child: Container(
@@ -176,7 +176,7 @@ class GameErrorWidget extends StatelessWidget {
                               borderRadius: BorderRadius.circular(16.r),
                             ),
                             child: Text(
-                              context.tr('common.go_back', fallback: 'Go Back').toUpperCase(),
+                              context.tr('common.go_back', fallback: 'Go Back', fallback: 'Go Back').toUpperCase(),
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Outfit',

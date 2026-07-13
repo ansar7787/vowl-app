@@ -46,7 +46,7 @@ class HintPurchaseDialog {
       di.sl<HapticService>().light();
       CustomSnackBar.show(
         context: context,
-        message: context.tr('economy.insufficient_coins', args: ['$cost']),
+        message: context.tr('economy.insufficient_coins', fallback: 'Not enough coins', args: ['$cost']),
         type: CustomSnackBarType.error,
       );
       return;
@@ -112,7 +112,7 @@ class HintPurchaseDialog {
                           padding: EdgeInsets.symmetric(vertical: 16.h),
                         ),
                         child: Text(
-                          context.tr('common.cancel', fallback: 'Cancel').toUpperCase(),
+                          context.tr('common.cancel', fallback: 'Cancel', fallback: 'Cancel').toUpperCase(),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontWeight: FontWeight.w800,
@@ -139,7 +139,7 @@ class HintPurchaseDialog {
                           onConfirm();
                         },
                         child: Text(
-                          context.tr('common.confirm', fallback: 'Confirm').toUpperCase(),
+                          context.tr('common.confirm', fallback: 'Confirm', fallback: 'Confirm').toUpperCase(),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontWeight: FontWeight.w900,
@@ -164,7 +164,7 @@ class HintPurchaseDialog {
   static void showSuccessSnackbar(BuildContext context, int amount) {
     CustomSnackBar.show(
       context: context,
-      message: context.tr('economy.inventory_updated_hints', args: ['$amount']),
+      message: context.tr('economy.inventory_updated_hints', fallback: 'Hints added to your inventory!', args: ['$amount']),
       type: CustomSnackBarType.success,
     );
   }

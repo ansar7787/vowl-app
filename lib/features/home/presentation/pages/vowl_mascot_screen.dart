@@ -75,15 +75,15 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
           _showModernSnackbar(
             context,
             state.lastPurchaseType == 'vowl_mascot'
-                ? context.tr('vowl_mascot.feedback_mascot_linked', fallback: 'Mascot Linked!')
-                : context.tr('vowl_mascot.feedback_augment_integrated', fallback: 'Augment Integrated!'),
+                ? context.tr('vowl_mascot.feedback_mascot_linked', fallback: 'Mascot Linked!', fallback: 'Mascot Linked!')
+                : context.tr('vowl_mascot.feedback_augment_integrated', fallback: 'Augment Integrated!', fallback: 'Augment Integrated!'),
             true,
           );
         } else if (state.lastPurchaseSuccess == false) {
           _hapticService.error();
           _showModernSnackbar(
             context,
-            state.message ?? context.tr('vowl_mascot.feedback_sync_failed', fallback: 'Sync Failed'),
+            state.message ?? context.tr('vowl_mascot.feedback_sync_failed', fallback: 'Sync Failed', fallback: 'Sync Failed'),
             false,
           );
         }
@@ -226,7 +226,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                       children: [
                         Semantics(
                           button: true,
-                          label: context.tr('common.back', fallback: 'Back'),
+                          label: context.tr('common.back', fallback: 'Back', fallback: 'Back'),
                           child: ScaleButton(
                             onTap: () {
                               if (context.canPop()) {
@@ -271,7 +271,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  context.tr('vowl_mascot.nest_title', fallback: 'Vowl Nest'),
+                                  context.tr('vowl_mascot.nest_title', fallback: 'Vowl Nest', fallback: 'Vowl Nest'),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 12.sp,
@@ -283,7 +283,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                   overflow: TextOverflow.ellipsis,
                                 ).animate().fadeIn(),
                                 Text(
-                                  context.tr('vowl_mascot.nest_subtitle', fallback: 'Manage your companion'),
+                                  context.tr('vowl_mascot.nest_subtitle', fallback: 'Manage your companion', fallback: 'Manage your companion'),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 7.sp,
@@ -300,7 +300,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                         else
                           Flexible(
                             child: Text(
-                              context.tr('vowl_mascot.nest_title', fallback: 'Vowl Nest'),
+                              context.tr('vowl_mascot.nest_title', fallback: 'Vowl Nest', fallback: 'Vowl Nest'),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 10.sp,
@@ -339,7 +339,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
   ) {
     return Semantics(
       label: context.tr(
-        'home.coins_value_label',
+        'home.coins_value_label', fallback: 'Coins',
         args: [user.coins.toString()],
       ),
       child: Container(
@@ -385,12 +385,12 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
           children: [
             _buildTabItem(
               0,
-              context.tr('vowl_mascot.tab_companion', fallback: 'Companion'),
+              context.tr('vowl_mascot.tab_companion', fallback: 'Companion', fallback: 'Companion'),
               primaryColor,
             ),
             _buildTabItem(
               1,
-              context.tr('vowl_mascot.tab_boutique', fallback: 'Boutique'),
+              context.tr('vowl_mascot.tab_boutique', fallback: 'Boutique', fallback: 'Boutique'),
               primaryColor,
             ),
           ],
@@ -478,7 +478,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
       sliver: SliverList(
         delegate: SliverChildListDelegate([
           _buildSectionHeader(
-            context.tr('vowl_mascot.section_synchronized_elites', fallback: 'Synchronized Elites'),
+            context.tr('vowl_mascot.section_synchronized_elites', fallback: 'Synchronized Elites', fallback: 'Synchronized Elites'),
             textColor,
           ),
           SizedBox(height: 20.h),
@@ -556,7 +556,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
       sliver: SliverList(
         delegate: SliverChildListDelegate([
           _buildSectionHeader(
-            context.tr('vowl_mascot.section_cybernetic_augments', fallback: 'Cybernetic Augments'),
+            context.tr('vowl_mascot.section_cybernetic_augments', fallback: 'Cybernetic Augments', fallback: 'Cybernetic Augments'),
             textColor,
           ),
           SizedBox(height: 20.h),
@@ -619,9 +619,9 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     UserEntity user,
   ) {
     final statusLabel = isSelected
-        ? context.tr('vowl_mascot.equipped_status', fallback: 'Equipped')
+        ? context.tr('vowl_mascot.equipped_status', fallback: 'Equipped', fallback: 'Equipped')
         : isOwned
-        ? context.tr('vowl_mascot.sync_ready', fallback: 'Sync Ready')
+        ? context.tr('vowl_mascot.sync_ready', fallback: 'Sync Ready', fallback: 'Sync Ready')
         : '$price 🪙';
 
     return Semantics(
@@ -734,7 +734,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                     ).animate().scale()
                   else if (isOwned)
                     Text(
-                      context.tr('vowl_mascot.sync_ready', fallback: 'Sync Ready'),
+                      context.tr('vowl_mascot.sync_ready', fallback: 'Sync Ready', fallback: 'Sync Ready'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 8.sp,
@@ -787,16 +787,16 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     ).toUpperCase();
     final accessoryLabel = user.vowlEquippedAccessory != null
         ? VowlAssets.getAccessoryName(user.vowlEquippedAccessory!)
-        : context.tr('vowl_mascot.no_augmentations', fallback: 'No augmentations yet');
+        : context.tr('vowl_mascot.no_augmentations', fallback: 'No augmentations yet', fallback: 'No augmentations yet');
 
     return Semantics(
       label:
-          '${context.tr('vowl_mascot.elite_interface_label', fallback: 'Elite Interface')} $mascotName. $accessoryLabel',
+          '${context.tr('vowl_mascot.elite_interface_label', fallback: 'Elite Interface', fallback: 'Elite Interface')} $mascotName. $accessoryLabel',
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _buildSectionHeader(
-            context.tr('vowl_mascot.section_elite_neural_link', fallback: 'Elite Neural Link'),
+            context.tr('vowl_mascot.section_elite_neural_link', fallback: 'Elite Neural Link', fallback: 'Elite Neural Link'),
             textColor,
           ),
           SizedBox(height: 20.h),
@@ -846,7 +846,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            context.tr('vowl_mascot.elite_interface_label', fallback: 'Elite Interface'),
+                            context.tr('vowl_mascot.elite_interface_label', fallback: 'Elite Interface', fallback: 'Elite Interface'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 9.sp,
@@ -921,9 +921,9 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     final canAfford = user.coins >= price;
     final statusLabel = isOwned
         ? (isEquipped
-              ? context.tr('vowl_mascot.action_disconnect', fallback: 'Disconnect')
-              : context.tr('vowl_mascot.action_link', fallback: 'Link'))
-        : context.tr('vowl_mascot.price_label', args: [price.toString()]);
+              ? context.tr('vowl_mascot.action_disconnect', fallback: 'Disconnect', fallback: 'Disconnect')
+              : context.tr('vowl_mascot.action_link', fallback: 'Link', fallback: 'Link'))
+        : context.tr('vowl_mascot.price_label', fallback: 'Price', args: [price.toString()]);
     final accessibleActionLabel = '${name.toUpperCase()}, $statusLabel';
 
     return GlassTile(
@@ -978,8 +978,8 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                 child: isOwned
                     ? _buildActionButton(
                         label: isEquipped
-                            ? context.tr('vowl_mascot.action_disconnect', fallback: 'Disconnect')
-                            : context.tr('vowl_mascot.action_link', fallback: 'Link'),
+                            ? context.tr('vowl_mascot.action_disconnect', fallback: 'Disconnect', fallback: 'Disconnect')
+                            : context.tr('vowl_mascot.action_link', fallback: 'Link', fallback: 'Link'),
                         color: isEquipped
                             ? Colors.redAccent.withValues(alpha: 0.2)
                             : primaryColor.withValues(alpha: 0.15),
@@ -1029,7 +1029,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                   _showModernSnackbar(
                                     context,
                                     context.tr(
-                                      'vowl_mascot.feedback_insufficient_credits',
+                                      'vowl_mascot.feedback_insufficient_credits', fallback: 'Insufficient Credits',
                                     ),
                                     false,
                                   );
@@ -1162,7 +1162,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                     SizedBox(width: 12.w),
                     Expanded(
                       child: Text(
-                        context.tr('vowl_mascot.status_bar_text', fallback: 'Status OK'),
+                        context.tr('vowl_mascot.status_bar_text', fallback: 'Status OK', fallback: 'Status OK'),
                         style: TextStyle(
                           fontFamily: 'RobotoMono',
                           fontSize: 8.sp,

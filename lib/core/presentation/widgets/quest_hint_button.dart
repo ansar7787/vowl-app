@@ -42,11 +42,11 @@ class QuestHintButton extends StatelessWidget {
       if (hintText != null) {
         final isDynamic = HintUtility.isGenericHint(hintText);
         final displayText = isDynamic
-            ? context.tr('hint.pro_tip_generic', fallback: 'Pro Tip')
+            ? context.tr('hint.pro_tip_generic', fallback: 'Pro Tip', fallback: 'Pro Tip')
             : hintText!;
 
         di.sl<TtsService>().speak(
-          isDynamic ? context.tr('hint.pro_tip_tts', fallback: 'Listen carefully to the pronunciation.') : hintText!,
+          isDynamic ? context.tr('hint.pro_tip_tts', fallback: 'Listen carefully to the pronunciation.', fallback: 'Listen carefully to the pronunciation.') : hintText!,
         );
 
         CustomSnackBar.show(
@@ -79,17 +79,17 @@ class QuestHintButton extends StatelessWidget {
           // English-only descriptions for this button.
           label: used
               ? context.tr(
-                  'hint.already_used_semantic',
+                  'hint.already_used_semantic', fallback: 'Hint already used',
                   fallback: 'Hint already used',
                 )
               : canUseHint
               ? context.tr(
-                  'hint.use_hint_semantic',
+                  'hint.use_hint_semantic', fallback: 'Use a hint',
                   args: ['$hintCount'],
                   fallback: 'Use hint ($hintCount remaining)',
                 )
               : context.tr(
-                  'hint.watch_ad_semantic',
+                  'hint.watch_ad_semantic', fallback: 'Watch ad for hint',
                   fallback: 'Watch ad to earn a hint',
                 ),
           child: ScaleButton(

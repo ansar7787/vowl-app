@@ -36,13 +36,13 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
   String get _sequenceTitle {
     switch (widget.sequenceId) {
       case 'daily_duo':
-        return context.tr('home.discovery_dailyduo_title', fallback: 'Daily Duo');
+        return context.tr('home.discovery_dailyduo_title', fallback: 'Daily Duo', fallback: 'Daily Duo');
       case 'speed_blitz':
-        return context.tr('home.discovery_speedblitz_title', fallback: 'Speed Blitz');
+        return context.tr('home.discovery_speedblitz_title', fallback: 'Speed Blitz', fallback: 'Speed Blitz');
       case 'grammar_pro':
-        return context.tr('home.discovery_grammarpro_title', fallback: 'Grammar Pro');
+        return context.tr('home.discovery_grammarpro_title', fallback: 'Grammar Pro', fallback: 'Grammar Pro');
       default:
-        return context.tr('home.discovery_default_title', fallback: 'Quest Sequence');
+        return context.tr('home.discovery_default_title', fallback: 'Quest Sequence', fallback: 'Quest Sequence');
     }
   }
 
@@ -96,7 +96,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     } else {
       GameDialogHelper.showPremiumSnackBar(
         context,
-        context.tr('quest_sequence.part_cancelled', fallback: 'Part Cancelled'),
+        context.tr('quest_sequence.part_cancelled', fallback: 'Part Cancelled', fallback: 'Part Cancelled'),
         icon: Icons.info_outline_rounded,
         color: Colors.orange,
       );
@@ -108,12 +108,12 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
       context,
       xp: 0,
       coins: 0,
-      title: context.tr('quest_sequence.completed_title', fallback: 'Sequence Completed!'),
+      title: context.tr('quest_sequence.completed_title', fallback: 'Sequence Completed!', fallback: 'Sequence Completed!'),
       description: context.tr(
-        'quest_sequence.completed_description',
+        'quest_sequence.completed_description', fallback: 'You have successfully completed all parts.',
         args: [_sequenceTitle],
       ),
-      buttonText: context.tr('quest_sequence.finish_button', fallback: 'Finish'),
+      buttonText: context.tr('quest_sequence.finish_button', fallback: 'Finish', fallback: 'Finish'),
       popResult: true,
     );
   }
@@ -224,9 +224,9 @@ class _Header extends StatelessWidget {
               ),
               Text(
                 isCompleted
-                    ? context.tr('quest_sequence.status_completed', fallback: 'Completed')
+                    ? context.tr('quest_sequence.status_completed', fallback: 'Completed', fallback: 'Completed')
                     : context.tr(
-                        'quest_sequence.status_part',
+                        'quest_sequence.status_part', fallback: 'Part',
                         args: ['${currentIndex + 1}', '$totalQuests'],
                       ),
                 style: TextStyle(
@@ -255,7 +255,7 @@ class _ProgressBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       label: context.tr(
-        'quest_sequence.progress_label',
+        'quest_sequence.progress_label', fallback: 'Progress',
         args: ['${(progress * 100).round()}'],
       ),
       child: ClipRRect(
@@ -308,8 +308,8 @@ class _QuestCard extends StatelessWidget {
           SizedBox(height: 24.h),
           Text(
             isFinished
-                ? context.tr('quest_sequence.card_summary', fallback: 'Summary')
-                : context.tr('quest_sequence.card_up_next', fallback: 'Up Next'),
+                ? context.tr('quest_sequence.card_summary', fallback: 'Summary', fallback: 'Summary')
+                : context.tr('quest_sequence.card_up_next', fallback: 'Up Next', fallback: 'Up Next'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 14.sp,
@@ -321,7 +321,7 @@ class _QuestCard extends StatelessWidget {
           SizedBox(height: 8.h),
           Text(
             isFinished
-                ? context.tr('quest_sequence.all_parts_done', fallback: 'All Done')
+                ? context.tr('quest_sequence.all_parts_done', fallback: 'All Done', fallback: 'All Done')
                 // BUG FIX: `quest.instruction` holds a *localization key*
                 // (e.g. 'quest_sequences.strengthen_weak_spots'), not
                 // literal display text - see discovery_helper.dart's class
@@ -363,11 +363,11 @@ class _QuestCard extends StatelessWidget {
                 ),
                 child: Text(
                   isLaunching
-                      ? context.tr('common.loading', fallback: 'Loading...').toUpperCase()
+                      ? context.tr('common.loading', fallback: 'Loading...', fallback: 'Loading...').toUpperCase()
                       : isFinished
-                      ? context.tr('quest_sequence.finish_button', fallback: 'Finish').toUpperCase()
+                      ? context.tr('quest_sequence.finish_button', fallback: 'Finish', fallback: 'Finish').toUpperCase()
                       : context.tr(
-                          'quest_sequence.start_part_button',
+                          'quest_sequence.start_part_button', fallback: 'Start Part',
                           args: ['${currentIndex + 1}'],
                         ),
                   style: TextStyle(

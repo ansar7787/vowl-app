@@ -17,7 +17,7 @@ class LeaderboardHeader extends StatelessWidget {
       // FIX (HIGH-5): Screen readers now announce the leaderboard title,
       // subtitle, and when it was last updated in a single label.
       label:
-          '${context.tr('leaderboard.title', fallback: 'Leaderboard')}. ${context.tr('leaderboard.subtitle', fallback: 'See how you rank')}. ${context.tr('leaderboard.updated_at', args: [timeAgo])}',
+          '${context.tr('leaderboard.title', fallback: 'Leaderboard', fallback: 'Leaderboard')}. ${context.tr('leaderboard.subtitle', fallback: 'See how you rank', fallback: 'See how you rank')}. ${context.tr('leaderboard.updated_at', fallback: 'Updated at', args: [timeAgo])}',
       header: true,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,7 +48,7 @@ class LeaderboardHeader extends StatelessWidget {
                       children: [
                         Flexible(
                           child: Text(
-                            context.tr('leaderboard.title', fallback: 'Leaderboard'),
+                            context.tr('leaderboard.title', fallback: 'Leaderboard', fallback: 'Leaderboard'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 22.sp,
@@ -105,7 +105,7 @@ class LeaderboardHeader extends StatelessWidget {
                       ],
                     ),
                     Text(
-                      context.tr('leaderboard.subtitle', fallback: 'See how you rank'),
+                      context.tr('leaderboard.subtitle', fallback: 'See how you rank', fallback: 'See how you rank'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
@@ -128,22 +128,22 @@ class LeaderboardHeader extends StatelessWidget {
   String _formatTimeAgo(BuildContext context, DateTime dateTime) {
     final difference = DateTime.now().difference(dateTime);
     if (difference.inMinutes < 1) {
-      return context.tr('leaderboard.just_now', fallback: 'Just now');
+      return context.tr('leaderboard.just_now', fallback: 'Just now', fallback: 'Just now');
     }
     if (difference.inMinutes < 60) {
       return context.tr(
-        'leaderboard.mins_ago',
+        'leaderboard.mins_ago', fallback: 'mins ago',
         args: [difference.inMinutes.toString()],
       );
     }
     if (difference.inHours < 24) {
       return context.tr(
-        'leaderboard.hours_ago',
+        'leaderboard.hours_ago', fallback: 'hours ago',
         args: [difference.inHours.toString()],
       );
     }
     return context.tr(
-      'leaderboard.days_ago',
+      'leaderboard.days_ago', fallback: 'days ago',
       args: [difference.inDays.toString()],
     );
   }

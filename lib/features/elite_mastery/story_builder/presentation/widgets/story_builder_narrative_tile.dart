@@ -181,13 +181,13 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
 
   String _buildSemanticLabel(BuildContext context, bool isCorrectPosition) {
     final position = context.tr(
-      'games.semantic_story_tile_position',
+      'games.semantic_story_tile_position', fallback: 'Position',
       args: [(index + 1).toString()],
     );
     if (isCorrect == true) {
-      return '$position $sentence. ${context.tr('games.semantic_correct_suffix')}';
+      return '$position $sentence. ${context.tr('games.semantic_correct_suffix', fallback: 'Correct')}';
     } else if (isCorrect == false) {
-      return '$position $sentence. ${context.tr('games.semantic_incorrect_suffix')}';
+      return '$position $sentence. ${context.tr('games.semantic_incorrect_suffix', fallback: 'Incorrect')}';
     }
     return '$position $sentence';
   }

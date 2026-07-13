@@ -278,7 +278,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                               SizedBox(width: 10.w),
                                               Text(
                                                 context.tr(
-                                                  'games.kids_tap_wake',
+                                                  'games.kids_tap_wake', fallback: 'Tap to wake',
                                                 ),
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
@@ -659,7 +659,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                 top: -30.h,
                 child:
                     Text(
-                          context.tr('games.kids_zzz', fallback: 'Zzz...'),
+                          context.tr('games.kids_zzz', fallback: 'Zzz...', fallback: 'Zzz...'),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             color: Colors.white70,

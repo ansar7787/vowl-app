@@ -113,7 +113,7 @@ class _PodiumSlot extends StatelessWidget {
       // levels cleared, and XP for each podium position.
       // FIX (HIGH-2): "Player" fallback localised via context.tr().
       label:
-          'Rank $rank: ${user.displayName ?? context.tr("leaderboard.player")}. '
+          'Rank $rank: ${user.displayName ?? context.tr("leaderboard.player", fallback: 'Player')}. '
           '$levelsCleared levels cleared. ${user.totalExp} XP.',
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,

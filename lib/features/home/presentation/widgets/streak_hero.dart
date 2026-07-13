@@ -28,7 +28,7 @@ class StreakHero extends StatelessWidget {
 
     return Semantics(
       label: context.tr(
-        'streak.hero_summary_label',
+        'streak.hero_summary_label', fallback: 'Hero Summary',
         args: [streak.toString()],
         fallback: '$streak day streak. $statusText',
       ),

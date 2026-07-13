@@ -40,7 +40,7 @@ class PremiumHero extends StatelessWidget {
         // scrollable column (see premium_screen.dart) and has no fixed
         // height neighbor depending on it.
         Text(
-          context.tr('premium.hero_title', fallback: 'Unlock Everything'),
+          context.tr('premium.hero_title', fallback: 'Unlock Everything', fallback: 'Unlock Everything'),
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',
@@ -52,7 +52,7 @@ class PremiumHero extends StatelessWidget {
         ),
         SizedBox(height: 8.h),
         Text(
-          context.tr('premium.hero_subtitle', fallback: 'Reach your full potential with Vowl Premium.'),
+          context.tr('premium.hero_subtitle', fallback: 'Reach your full potential with Vowl Premium.', fallback: 'Reach your full potential with Vowl Premium.'),
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',

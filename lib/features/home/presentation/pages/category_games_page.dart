@@ -177,7 +177,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
             children: [
               Semantics(
                 button: true,
-                label: context.tr('common.back', fallback: 'Back'),
+                label: context.tr('common.back', fallback: 'Back', fallback: 'Back'),
                 child: ScaleButton(
                   onTap: () {
                     if (context.canPop()) {
@@ -305,7 +305,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
 
     return Semantics(
       label: context.tr(
-        'category_games.mastery_summary_label',
+        'category_games.mastery_summary_label', fallback: 'Mastery Summary',
         args: [percentLabel, clearedLevels.toString(), totalLevels.toString()],
       ),
       child: Padding(
@@ -338,7 +338,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            context.tr('category_games.overall_mastery', fallback: 'Overall Mastery'),
+                            context.tr('category_games.overall_mastery', fallback: 'Overall Mastery', fallback: 'Overall Mastery'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
@@ -355,7 +355,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                             alignment: AlignmentDirectional.centerStart,
                             child: Text(
                               context.tr(
-                                'category_games.percent_completed',
+                                'category_games.percent_completed', fallback: 'Completed',
                                 args: [percentLabel],
                               ),
                               style: TextStyle(
@@ -385,7 +385,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                           fit: BoxFit.scaleDown,
                           child: Text(
                             context.tr(
-                              'category_games.levels_count_short',
+                              'category_games.levels_count_short', fallback: 'Levels',
                               args: [
                                 clearedLevels.toString(),
                                 totalLevels.toString(),
@@ -416,7 +416,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                     Expanded(
                       child: _buildStatMini(
                         Icons.bolt_rounded,
-                        context.tr('category_games.power', fallback: 'Power'),
+                        context.tr('category_games.power', fallback: 'Power', fallback: 'Power'),
                         '${clearedLevels * 10} ${context.tr('common.xp_suffix', fallback: 'XP')}',
                         theme.primaryColor,
                         isDark,
@@ -426,7 +426,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                       child: Center(
                         child: _buildStatMini(
                           Icons.sports_esports_rounded,
-                          context.tr('category_games.games', fallback: 'Games'),
+                          context.tr('category_games.games', fallback: 'Games', fallback: 'Games'),
                           '${games.length}',
                           theme.primaryColor,
                           isDark,
@@ -438,7 +438,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                         alignment: AlignmentDirectional.centerEnd,
                         child: _buildStatMini(
                           Icons.stars_rounded,
-                          context.tr('home.rank', fallback: 'Rank'),
+                          context.tr('home.rank', fallback: 'Rank', fallback: 'Rank'),
                           _getRank(progress),
                           theme.primaryColor,
                           isDark,
@@ -456,15 +456,15 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
   }
 
   String _getRank(double progress) {
-    if (progress <= 0.0) return context.tr('category_games.rank_beginner', fallback: 'Beginner');
-    if (progress < 0.15) return context.tr('category_games.rank_novice', fallback: 'Novice');
-    if (progress < 0.35) return context.tr('category_games.rank_scholar', fallback: 'Scholar');
+    if (progress <= 0.0) return context.tr('category_games.rank_beginner', fallback: 'Beginner', fallback: 'Beginner');
+    if (progress < 0.15) return context.tr('category_games.rank_novice', fallback: 'Novice', fallback: 'Novice');
+    if (progress < 0.35) return context.tr('category_games.rank_scholar', fallback: 'Scholar', fallback: 'Scholar');
     if (progress < 0.55) {
-      return context.tr('home.discovery_diff_expert', fallback: 'Expert').toUpperCase();
+      return context.tr('home.discovery_diff_expert', fallback: 'Expert', fallback: 'Expert').toUpperCase();
     }
-    if (progress < 0.80) return context.tr('category_games.rank_virtuoso', fallback: 'Virtuoso');
-    if (progress < 0.99) return context.tr('quest_archive.status_grandmaster', fallback: 'Grandmaster');
-    return context.tr('quest_archive.status_legendary', fallback: 'Legendary');
+    if (progress < 0.80) return context.tr('category_games.rank_virtuoso', fallback: 'Virtuoso', fallback: 'Virtuoso');
+    if (progress < 0.99) return context.tr('quest_archive.status_grandmaster', fallback: 'Grandmaster', fallback: 'Grandmaster');
+    return context.tr('quest_archive.status_legendary', fallback: 'Legendary', fallback: 'Legendary');
   }
 
   Widget _buildStatMini(
@@ -542,7 +542,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     return Semantics(
       button: true,
       label:
-          '${theme.title}, ${context.tr('category_games.mission_progress', args: [missionPercent.toString()])}',
+          '${theme.title}, ${context.tr('category_games.mission_progress', fallback: 'Mission Progress', args: [missionPercent.toString()])}',
       child: RepaintBoundary(
         child: ScaleButton(
           onTap: () => context.push(
@@ -584,7 +584,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                             SizedBox(height: 8.h),
                             Text(
                               context.tr(
-                                'category_games.mission_progress',
+                                'category_games.mission_progress', fallback: 'Mission Progress',
                                 args: [missionPercent.toString()],
                               ),
                               style: TextStyle(
@@ -697,7 +697,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
           ],
         ),
         child: Text(
-          context.tr('quest_archive.new_badge', fallback: 'New'),
+          context.tr('quest_archive.new_badge', fallback: 'New', fallback: 'New'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 10.sp,

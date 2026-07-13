@@ -66,7 +66,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
             CustomSnackBar.show(
               context: context,
               message: context.tr(
-                'games.coins_reward_earned_snack',
+                'games.coins_reward_earned_snack', fallback: 'Coins Earned!',
                 args: ['$_coinReward'],
                 fallback: 'Reward Earned! +$_coinReward Vowl Coins',
               ),
@@ -134,7 +134,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
                       Flexible(
                         child: Text(
                           context.tr(
-                            'games.vowl_coins_amount',
+                            'games.vowl_coins_amount', fallback: 'Coins',
                             args: ['$_coinReward'],
                             fallback: '$_coinReward VOWL COINS',
                           ),
@@ -163,7 +163,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
                       button: true,
                       enabled: !loading,
                       label: context.tr(
-                        'games.coins_semantic_label',
+                        'games.coins_semantic_label', fallback: 'Coins amount',
                         args: ['$_coinReward'],
                         fallback: 'Watch ad to earn $_coinReward coins',
                       ),
@@ -220,7 +220,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
                                     SizedBox(width: 4.w),
                                     Text(
                                       context.tr(
-                                        'games.watch_button',
+                                        'games.watch_button', fallback: 'Watch Ad',
                                         fallback: 'WATCH',
                                       ),
                                       style: TextStyle(

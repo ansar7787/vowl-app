@@ -31,7 +31,7 @@ class SubmitAnswer extends ReadingEvent {
   List<Object?> get props => [isCorrect];
 }
 
-/// Player tapped context.tr('common.continue_text', fallback: 'Continue') / context.tr('games.try_again', fallback: 'Try Again') to advance the game loop.
+/// Player tapped context.tr('common.continue_text', fallback: 'Continue', fallback: 'Continue') / context.tr('games.try_again', fallback: 'Try Again', fallback: 'Try Again') to advance the game loop.
 class NextQuestion extends ReadingEvent {
   const NextQuestion();
 }

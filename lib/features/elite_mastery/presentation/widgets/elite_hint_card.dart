@@ -27,7 +27,7 @@ class EliteHintCard extends StatelessWidget {
     if (!isVisible) {
       return Semantics(
         button: true,
-        label: context.tr('games.need_a_hint'),
+        label: context.tr('games.need_a_hint', fallback: 'Need a hint?'),
         excludeSemantics: true,
         child: ScaleButton(
           onTap: onShowHint,
@@ -58,7 +58,7 @@ class EliteHintCard extends StatelessWidget {
                     ),
                     SizedBox(width: 10.w),
                     Text(
-                      context.tr('games.need_a_hint'),
+                      context.tr('games.need_a_hint', fallback: 'Need a hint?'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,
@@ -87,14 +87,14 @@ class EliteHintCard extends StatelessWidget {
     // other case with no real hint text to show.
     final hasRealHint = hintText != null && hintText!.trim().isNotEmpty;
     final resolvedHint = HintUtility.isGenericHint(hintText)
-        ? context.tr('games.lifeline_activated')
-        : (hasRealHint ? hintText! : context.tr('games.hint_fallback_default'));
+        ? context.tr('games.lifeline_activated', fallback: 'Lifeline Activated')
+        : (hasRealHint ? hintText! : context.tr('games.hint_fallback_default', fallback: 'Use a hint for help.'));
 
     return Semantics(
       // `liveRegion`: announce automatically the moment the hint reveals,
       // since this card can appear without the player re-focusing it.
       liveRegion: true,
-      label: '${context.tr('games.expert_hint')}. $resolvedHint',
+      label: '${context.tr('games.expert_hint', fallback: 'Expert Hint')}. $resolvedHint',
       excludeSemantics: true,
       child: GlassTile(
         borderRadius: BorderRadius.circular(24.r),
@@ -108,7 +108,7 @@ class EliteHintCard extends StatelessWidget {
                 Icon(Icons.lightbulb_rounded, color: primaryColor, size: 24.r),
                 SizedBox(width: 12.w),
                 Text(
-                  context.tr('games.expert_hint'),
+                  context.tr('games.expert_hint', fallback: 'Expert Hint'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,

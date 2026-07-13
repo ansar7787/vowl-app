@@ -97,7 +97,7 @@ class GlassMapHeader extends StatelessWidget {
                   // Coins Mini-Pill
                   Semantics(
                     label: context.tr(
-                      'home.coins_value_label',
+                      'home.coins_value_label', fallback: 'Coins',
                       args: [coins.toString()],
                       fallback: '$coins coins',
                     ),
@@ -122,7 +122,7 @@ class GlassMapHeader extends StatelessWidget {
                             SizedBox(width: 4.w),
                             Text(
                               context.tr(
-                                'games.coins_count',
+                                'games.coins_count', fallback: 'Total Coins',
                                 args: [coins.toString()],
                                 fallback: '$coins COINS',
                               ),

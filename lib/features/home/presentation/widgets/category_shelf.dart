@@ -170,7 +170,7 @@ class _GameEntryCard extends StatelessWidget {
           border: Border.all(color: color.withValues(alpha: 0.3)),
         ),
         child: Text(
-          context.tr('quest_archive.new_badge', fallback: 'New'),
+          context.tr('quest_archive.new_badge', fallback: 'New', fallback: 'New'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 8.sp,

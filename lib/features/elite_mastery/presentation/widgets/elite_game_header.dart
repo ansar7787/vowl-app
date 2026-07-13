@@ -88,7 +88,7 @@ class EliteGameHeader extends StatelessWidget {
       // life/lives plural, e.g. via that framework's plural syntax if
       // supported, or two args as used here in the interim.
       label: context.tr(
-        'games.semantic_level_progress',
+        'games.semantic_level_progress', fallback: 'Level Progress',
         args: [level.toString(), lives.toString()],
       ),
       child: Padding(
@@ -146,7 +146,7 @@ class _BriefingButton extends StatelessWidget {
       // the correct side of the button regardless of text direction.
       padding: EdgeInsetsDirectional.only(start: 8.w),
       child: Semantics(
-        label: context.tr('games.semantic_show_instructions'),
+        label: context.tr('games.semantic_show_instructions', fallback: 'Show Instructions'),
         button: true,
         child: ScaleButton(
           onTap: onTap,
@@ -207,8 +207,8 @@ class _HintButton extends StatelessWidget {
       // `games.semantic_show_hint` are new localization keys needed in the
       // ARB/localization files (outside this feature slice).
       label: isHintUsed
-          ? context.tr('games.semantic_hint_used')
-          : context.tr('games.semantic_show_hint'),
+          ? context.tr('games.semantic_hint_used', fallback: 'Hint Used')
+          : context.tr('games.semantic_show_hint', fallback: 'Show Hint'),
       button: true,
       child:
           QuestHintButton(

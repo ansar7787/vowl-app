@@ -53,19 +53,19 @@ class EliteFeedbackCard extends StatelessWidget {
       _success ? const Color(0xFF10B981) : const Color(0xFFE11D48);
 
   String _title(BuildContext context) =>
-      _success ? context.tr('games.excellent') : context.tr('games.not_quite');
+      _success ? context.tr('games.excellent', fallback: 'Excellent!') : context.tr('games.not_quite', fallback: 'Not Quite');
 
   IconData get _icon =>
       _success ? Icons.check_circle_rounded : Icons.error_rounded;
 
   String _buttonLabel(BuildContext context) {
-    if (_success) return context.tr('common.continue_text').toUpperCase();
+    if (_success) return context.tr('common.continue_text', fallback: 'Continue').toUpperCase();
     if (state.isFinalFailure) {
       return state.livesRemaining == 0
-          ? context.tr('games.see_results')
-          : context.tr('common.continue_text').toUpperCase();
+          ? context.tr('games.see_results', fallback: 'See Results')
+          : context.tr('common.continue_text', fallback: 'Continue').toUpperCase();
     }
-    return context.tr('games.try_again').toUpperCase();
+    return context.tr('games.try_again', fallback: 'Try Again').toUpperCase();
   }
 
   // ── Build ───────────────────────────────────────────────────────────────
@@ -260,27 +260,27 @@ class EliteFeedbackCard extends StatelessWidget {
   ) {
     final buffer = StringBuffer();
     if (_success) {
-      buffer.write(context.tr('games.semantic_correct_continue'));
+      buffer.write(context.tr('games.semantic_correct_continue', fallback: 'Correct. Tap to continue.'));
     } else if (correctAnswerText != null) {
       buffer.write(
         context.tr(
-          'games.semantic_incorrect_explanation',
+          'games.semantic_incorrect_explanation', fallback: 'Incorrect. Read explanation.',
           args: [correctAnswerText, _buttonLabel(context)],
         ),
       );
     } else {
-      buffer.write(context.tr('games.semantic_incorrect_try_again'));
+      buffer.write(context.tr('games.semantic_incorrect_try_again', fallback: 'Incorrect. Tap to try again.'));
     }
     if (ruleTip != null) {
       // FIX: previously concatenated a raw label + the tip text directly
-      // (`context.tr('games.pro_tip_caps') + ruleTip`), inconsistent with
+      // (`context.tr('games.pro_tip_caps', fallback: 'PRO TIP') + ruleTip`), inconsistent with
       // the properly parameterized template used a few lines above
       // (`games.semantic_incorrect_explanation`, args: [...]). Naive
       // concatenation can't be reordered for languages with different word
       // order/grammar around an inserted value. NOTE: `games.semantic_pro_tip`
       // is a new localization key needed in the ARB/localization files
       // (outside this feature slice), e.g. English: "Pro tip: {0}".
-      buffer.write(context.tr('games.semantic_pro_tip', args: [ruleTip]));
+      buffer.write(context.tr('games.semantic_pro_tip', fallback: 'Pro tip available', args: [ruleTip]));
     }
     return buffer.toString();
   }
@@ -369,7 +369,7 @@ class _ExplanationBox extends StatelessWidget {
                   ),
                   SizedBox(width: 8.w),
                   Text(
-                    context.tr('games.explanation_caps'),
+                    context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,
@@ -436,7 +436,7 @@ class _RuleTipBox extends StatelessWidget {
                   Icon(Icons.menu_book_rounded, color: accentColor, size: 14.r),
                   SizedBox(width: 8.w),
                   Text(
-                    context.tr('games.pro_tip_caps'),
+                    context.tr('games.pro_tip_caps', fallback: 'PRO TIP'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,

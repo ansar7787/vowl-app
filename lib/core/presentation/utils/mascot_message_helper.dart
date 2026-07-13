@@ -161,7 +161,7 @@ class MascotMessageHelper {
 
     // Idle — kids only use emoji; all others use name + emoji.
     if (isKids) {
-      return context.tr('mascot.idle_kids', args: [mascotEmoji]);
+      return context.tr('mascot.idle_kids', fallback: 'Ready to play?', args: [mascotEmoji]);
     }
     return context.tr(
       _idleKeys[catKey] ?? _idleKeys['']!,

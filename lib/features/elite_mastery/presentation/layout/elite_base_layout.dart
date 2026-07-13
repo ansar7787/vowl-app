@@ -86,7 +86,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
   // ── Constants ────────────────────────────────────────────────────────────
   static const int _kMaxLives = 3;
   static const Duration _kNudgeDelay = Duration(milliseconds: 1200);
-  String get _kNudgeMessage => context.tr('games.kids_nudge');
+  String get _kNudgeMessage => context.tr('games.kids_nudge', fallback: 'Let\\'s go!');
 
   // ── Lifecycle ────────────────────────────────────────────────────────────
 
@@ -486,9 +486,9 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
   String _localizedErrorMessage(BuildContext context, EliteMasteryError state) {
     switch (state.reason) {
       case EliteMasteryErrorReason.noQuestsForLevel:
-        return context.tr('games.error_no_quests_for_level');
+        return context.tr('games.error_no_quests_for_level', fallback: 'No quests available for this level.');
       case EliteMasteryErrorReason.loadFailed:
-        return context.tr('games.error_load_failed');
+        return context.tr('games.error_load_failed', fallback: 'Failed to load.');
       case EliteMasteryErrorReason.unknown:
         return state.message;
     }

@@ -139,11 +139,11 @@ class KidsTollGateBottomSheet {
                                   context: parentContext,
                                   builder: (ctx) => ModernGameDialog(
                                     title: context.tr(
-                                      'store.purchase_failed_title',
+                                      'store.purchase_failed_title', fallback: 'Purchase Failed',
                                       fallback: 'UNLOCK FAILED',
                                     ),
                                     description: context.tr(
-                                      'store.purchase_failed_desc',
+                                      'store.purchase_failed_desc', fallback: 'Could not complete the purchase. Please try again.',
                                       fallback:
                                           'Something went wrong and your key was not spent. Please try again.',
                                     ),
@@ -173,7 +173,7 @@ class KidsTollGateBottomSheet {
                                         ModernGameDialog(
                                           title: 'GATE UNLOCKED!',
                                           description: context.tr(
-                                            'games.magic_lock_success',
+                                            'games.magic_lock_success', fallback: 'Magic Lock Opened!',
                                             fallback: '3 Levels Unlocked! ✨',
                                           ),
                                           buttonText: 'AWESOME',
@@ -286,7 +286,7 @@ class KidsTollGateBottomSheet {
                                 children: [
                                   Text(
                                     context.tr(
-                                      'games.premium_upsell_title',
+                                      'games.premium_upsell_title', fallback: 'Go Premium',
                                       fallback: 'Tired of locks & ads?',
                                     ),
                                     style: TextStyle(
@@ -303,7 +303,7 @@ class KidsTollGateBottomSheet {
                                   SizedBox(height: 4.h),
                                   Text(
                                     context.tr(
-                                      'games.premium_upsell_desc',
+                                      'games.premium_upsell_desc', fallback: 'Unlock all gates and play without limits.',
                                       fallback:
                                           'Get Premium for unlimited levels!',
                                     ),

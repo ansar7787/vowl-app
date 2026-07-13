@@ -355,8 +355,8 @@ class _DirectIndirectSpeechScreenState
           SizedBox(height: isCompact ? 4.h : 10.h),
           Text(
             correct
-                ? context.tr('games.correct').toUpperCase()
-                : context.tr('games.incorrect_caps'),
+                ? context.tr('games.correct', fallback: 'Correct').toUpperCase()
+                : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: isCompact ? 12.sp : 15.sp,

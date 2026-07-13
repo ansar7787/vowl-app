@@ -125,7 +125,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             SizedBox(height: 20.h),
                             _buildSectionHeader(
                               context,
-                              context.tr('profile.adventure_stats', fallback: 'Adventure Stats'),
+                              context.tr('profile.adventure_stats', fallback: 'Adventure Stats', fallback: 'Adventure Stats'),
                             ),
                             SizedBox(height: 12.h),
                             ProfileBentoStats(user: user),
@@ -133,7 +133,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             SizedBox(height: 40.h),
                             _buildSectionHeader(
                               context,
-                              context.tr('profile.hall_of_fame', fallback: 'Hall of Fame'),
+                              context.tr('profile.hall_of_fame', fallback: 'Hall of Fame', fallback: 'Hall of Fame'),
                             ),
                             SizedBox(height: 20.h),
                             ProfileBadgesList(user: user),
@@ -141,7 +141,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             SizedBox(height: 40.h),
                             _buildSectionHeader(
                               context,
-                              context.tr('profile.kids_stickers', fallback: 'Sticker Book'),
+                              context.tr('profile.kids_stickers', fallback: 'Sticker Book', fallback: 'Sticker Book'),
                             ),
                             SizedBox(height: 20.h),
                             ProfileStickersProgress(user: user),
@@ -149,7 +149,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             SizedBox(height: 40.h),
                             _buildSectionHeader(
                               context,
-                              context.tr('settings.app_preferences'),
+                              context.tr('settings.app_preferences', fallback: 'App Preferences'),
                             ),
                             SizedBox(height: 20.h),
                             ProfilePreferencesList(
@@ -217,7 +217,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    context.tr('profile.upgrade_to_premium', fallback: 'Upgrade to Premium'),
+                    context.tr('profile.upgrade_to_premium', fallback: 'Upgrade to Premium', fallback: 'Upgrade to Premium'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -228,7 +228,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    context.tr('profile.upgrade_to_premium_subtitle', fallback: 'Unlock all features and remove limits.'),
+                    context.tr('profile.upgrade_to_premium_subtitle', fallback: 'Unlock all features and remove limits.', fallback: 'Unlock all features and remove limits.'),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -390,7 +390,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      context.tr('profile.update_identity_title', fallback: 'Update Identity'),
+                      context.tr('profile.update_identity_title', fallback: 'Update Identity', fallback: 'Update Identity'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 24.sp,
@@ -401,7 +401,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     SizedBox(height: 8.h),
                     Text(
-                      context.tr('profile.update_identity_subtitle', fallback: 'Change your display name and avatar.'),
+                      context.tr('profile.update_identity_subtitle', fallback: 'Change your display name and avatar.', fallback: 'Change your display name and avatar.'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 14.sp,
@@ -434,7 +434,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               : const Color(0xFF0F172A),
                         ),
                         decoration: InputDecoration(
-                          hintText: context.tr('profile.enter_new_name_hint', fallback: 'Enter new name'),
+                          hintText: context.tr('profile.enter_new_name_hint', fallback: 'Enter new name', fallback: 'Enter new name'),
                           hintStyle: TextStyle(
                             fontFamily: 'Outfit',
                             color: Colors.grey,
@@ -479,7 +479,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         child: Center(
                           child: Text(
-                            context.tr('profile.save_changes_button', fallback: 'Save Changes'),
+                            context.tr('profile.save_changes_button', fallback: 'Save Changes', fallback: 'Save Changes'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 18.sp,
@@ -555,7 +555,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               SizedBox(height: 32.h),
               Text(
-                context.tr('profile.avatar_projection_title', fallback: 'Avatar Projection'),
+                context.tr('profile.avatar_projection_title', fallback: 'Avatar Projection', fallback: 'Avatar Projection'),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -567,7 +567,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               SizedBox(height: 12.h),
               Text(
-                context.tr('profile.avatar_projection_subtitle', fallback: 'Select a new avatar style.'),
+                context.tr('profile.avatar_projection_subtitle', fallback: 'Select a new avatar style.', fallback: 'Select a new avatar style.'),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -582,8 +582,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: _buildSourceOption(
                       context: context,
                       icon: Icons.camera_rounded,
-                      label: context.tr('profile.source_reality_label', fallback: 'Reality'),
-                      subtitle: context.tr('profile.source_reality_subtitle', fallback: 'Use your device camera.'),
+                      label: context.tr('profile.source_reality_label', fallback: 'Reality', fallback: 'Reality'),
+                      subtitle: context.tr('profile.source_reality_subtitle', fallback: 'Use your device camera.', fallback: 'Use your device camera.'),
                       onTap: () {
                         Navigator.pop(context);
                         _pickImage(ImageSource.camera);
@@ -595,8 +595,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: _buildSourceOption(
                       context: context,
                       icon: Icons.image_search_rounded,
-                      label: context.tr('profile.source_memory_label', fallback: 'Memory'),
-                      subtitle: context.tr('profile.source_memory_subtitle', fallback: 'Choose from your photo library.'),
+                      label: context.tr('profile.source_memory_label', fallback: 'Memory', fallback: 'Memory'),
+                      subtitle: context.tr('profile.source_memory_subtitle', fallback: 'Choose from your photo library.', fallback: 'Choose from your photo library.'),
                       onTap: () {
                         Navigator.pop(context);
                         _pickImage(ImageSource.gallery);

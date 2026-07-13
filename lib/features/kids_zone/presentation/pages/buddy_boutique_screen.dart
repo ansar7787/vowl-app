@@ -338,7 +338,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        context.tr('games.kids_coins', fallback: 'Kids Coins'),
+                        context.tr('games.kids_coins', fallback: 'Kids Coins', fallback: 'Kids Coins'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 10.sp,
@@ -734,7 +734,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            context.tr('games.watch_and_earn', fallback: 'Watch & Earn'),
+                            context.tr('games.watch_and_earn', fallback: 'Watch & Earn', fallback: 'Watch & Earn'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
@@ -744,7 +744,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                             ),
                           ),
                           Text(
-                            context.tr('games.get_10_coins', fallback: 'Get 10 Coins'),
+                            context.tr('games.get_10_coins', fallback: 'Get 10 Coins', fallback: 'Get 10 Coins'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 18.sp,

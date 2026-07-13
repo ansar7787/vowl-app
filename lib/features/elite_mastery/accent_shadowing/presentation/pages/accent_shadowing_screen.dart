@@ -133,7 +133,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
         _hapticService.error();
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(context.tr('games.mic_unavailable')),
+            content: Text(context.tr('games.mic_unavailable', fallback: 'Microphone Unavailable')),
             behavior: SnackBarBehavior.floating,
           ),
         );
@@ -197,7 +197,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('games.accent_legend_title'),
+            title: context.tr('games.accent_legend_title', fallback: 'Accent Legend'),
             enableDoubleUp: true,
           );
         } else if (state is EliteMasteryLoaded) {
@@ -267,7 +267,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               : false,
           showConfetti: _showConfetti,
           title:
-              quest?.instruction ?? context.tr('games.accent_shadowing_title'),
+              quest?.instruction ?? context.tr('games.accent_shadowing_title', fallback: 'Accent Shadowing'),
           onContinue: () {
             setState(() {
               _isAnswered = false;
@@ -350,7 +350,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
         return Column(
           children: [
             AccentShadowingTargetPanel(
-              text: targetText ?? context.tr('games.target_text_fallback'),
+              text: targetText ?? context.tr('games.target_text_fallback', fallback: 'Target Text'),
               matchedIndices: _matchedIndices,
               isDark: isDark,
               primaryColor: theme.primaryColor,
@@ -376,7 +376,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               Semantics(
                 liveRegion: true,
                 label: context.tr(
-                  'games.semantic_transcribed_speech',
+                  'games.semantic_transcribed_speech', fallback: 'Transcribed Speech',
                   args: [_lastWords],
                 ),
                 excludeSemantics: true,

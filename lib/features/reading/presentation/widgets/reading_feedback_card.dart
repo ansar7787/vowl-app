@@ -56,16 +56,16 @@ class ReadingFeedbackCard extends StatelessWidget {
       _success ? Icons.check_circle_rounded : Icons.error_rounded;
 
   String _title(BuildContext context) =>
-      _success ? context.tr('games.excellent', fallback: 'Excellent!') : context.tr('games.not_quite', fallback: 'Not Quite');
+      _success ? context.tr('games.excellent', fallback: 'Excellent!', fallback: 'Excellent!') : context.tr('games.not_quite', fallback: 'Not Quite', fallback: 'Not Quite');
 
   String _buttonText(BuildContext context) {
-    if (_success) return context.tr('common.continue_text', fallback: 'Continue').toUpperCase();
+    if (_success) return context.tr('common.continue_text', fallback: 'Continue', fallback: 'Continue').toUpperCase();
     if (isFinalFailure) {
       return lives == 0
-          ? context.tr('games.see_results', fallback: 'See Results')
-          : context.tr('common.continue_text', fallback: 'Continue').toUpperCase();
+          ? context.tr('games.see_results', fallback: 'See Results', fallback: 'See Results')
+          : context.tr('common.continue_text', fallback: 'Continue', fallback: 'Continue').toUpperCase();
     }
-    return context.tr('games.try_again', fallback: 'Try Again').toUpperCase();
+    return context.tr('games.try_again', fallback: 'Try Again', fallback: 'Try Again').toUpperCase();
   }
 
   // Only show the explanation block when correctAnswer is available.
@@ -76,16 +76,16 @@ class ReadingFeedbackCard extends StatelessWidget {
       (currentQuest.correctAnswer?.isNotEmpty ?? false);
 
   String _semanticLabel(BuildContext context) {
-    if (_success) return context.tr('games.semantic_correct_continue', fallback: 'Correct. Tap to continue.');
+    if (_success) return context.tr('games.semantic_correct_continue', fallback: 'Correct. Tap to continue.', fallback: 'Correct. Tap to continue.');
     if (_showExplanation) {
       // _showExplanation guards non-null; ?? keeps the static analyser happy.
       final answer = currentQuest.correctAnswer ?? '';
       return context.tr(
-        'games.semantic_incorrect_explanation',
+        'games.semantic_incorrect_explanation', fallback: 'Incorrect. Read explanation.',
         args: [answer, _buttonText(context)],
       );
     }
-    return context.tr('games.semantic_incorrect_try_again', fallback: 'Incorrect. Tap to try again.');
+    return context.tr('games.semantic_incorrect_try_again', fallback: 'Incorrect. Tap to try again.', fallback: 'Incorrect. Tap to try again.');
   }
 
   // ---------------------------------------------------------------------------
@@ -214,7 +214,7 @@ class ReadingFeedbackCard extends StatelessWidget {
               ),
               SizedBox(width: 8.w),
               Text(
-                context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
+                context.tr('games.explanation_caps', fallback: 'EXPLANATION', fallback: 'EXPLANATION'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,

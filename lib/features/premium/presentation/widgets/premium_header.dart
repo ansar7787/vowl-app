@@ -19,7 +19,7 @@ class PremiumHeader extends StatelessWidget {
             // is announced by TalkBack/VoiceOver as just "button", giving
             // no indication of what it does. The default IconButton hit
             // target (48x48) already satisfies the minimum touch target.
-            tooltip: context.tr('common.back', fallback: 'Back'),
+            tooltip: context.tr('common.back', fallback: 'Back', fallback: 'Back'),
             onPressed: () {
               if (context.canPop()) {
                 context.pop();
@@ -58,7 +58,7 @@ class PremiumHeader extends StatelessWidget {
                   SizedBox(width: 6.w),
                   Flexible(
                     child: Text(
-                      context.tr('premium.verified_pro_badge', fallback: 'Verified Pro'),
+                      context.tr('premium.verified_pro_badge', fallback: 'Verified Pro', fallback: 'Verified Pro'),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(

@@ -150,7 +150,7 @@ class _StreakScreenState extends State<StreakScreen> {
             children: [
               Semantics(
                 button: true,
-                label: context.tr('common.back', fallback: 'Back'),
+                label: context.tr('common.back', fallback: 'Back', fallback: 'Back'),
                 child: ScaleButton(
                   onTap: () {
                     if (context.canPop()) {
@@ -209,7 +209,7 @@ class _StreakScreenState extends State<StreakScreen> {
                     ),
                     SizedBox(width: 8.w),
                     Text(
-                      context.tr('streak.daily_streak_title', fallback: 'Daily Streak'),
+                      context.tr('streak.daily_streak_title', fallback: 'Daily Streak', fallback: 'Daily Streak'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 14.sp,
@@ -235,7 +235,7 @@ class _StreakScreenState extends State<StreakScreen> {
   Widget _buildCoinsChip(BuildContext context, UserEntity user) {
     return Semantics(
       label: context.tr(
-        'home.coins_value_label',
+        'home.coins_value_label', fallback: 'Coins',
         args: [user.coins.toString()],
       ),
       child: Container(

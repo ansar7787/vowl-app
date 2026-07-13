@@ -263,7 +263,7 @@ class SettingsLogoutButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: context.tr('settings.sign_out', fallback: 'Sign Out'),
+      label: context.tr('settings.sign_out', fallback: 'Sign Out', fallback: 'Sign Out'),
       button: true,
       child: Container(
         width: double.infinity,
@@ -321,7 +321,7 @@ class SettingsLogoutButton extends StatelessWidget {
                         SizedBox(width: 16.w),
                         Flexible(
                           child: Text(
-                            context.tr('settings.sign_out', fallback: 'Sign Out'),
+                            context.tr('settings.sign_out', fallback: 'Sign Out', fallback: 'Sign Out'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 14.sp,
@@ -367,9 +367,9 @@ class SettingsProfileSection extends StatelessWidget {
 
     return Semantics(
       label:
-          '${currentUser.displayName ?? context.tr('settings.explorer', fallback: 'Explorer')}. '
+          '${currentUser.displayName ?? context.tr('settings.explorer', fallback: 'Explorer', fallback: 'Explorer')}. '
           '${currentUser.email}. '
-          '${currentUser.isPremium ? context.tr('settings.premium_quester', fallback: 'Premium Quester') : context.tr('settings.free_account', fallback: 'Free Account')}. '
+          '${currentUser.isPremium ? context.tr('settings.premium_quester', fallback: 'Premium Quester', fallback: 'Premium Quester') : context.tr('settings.free_account', fallback: 'Free Account', fallback: 'Free Account')}. '
           '${context.tr("settings.tap_to_edit_profile")}',
       button: true,
       child: GlassTile(
@@ -460,7 +460,7 @@ class SettingsProfileSection extends StatelessWidget {
                 children: [
                   Text(
                     // FIX (HIGH-2): Hardcoded 'Explorer' fallback now localised.
-                    currentUser.displayName ?? context.tr('settings.explorer', fallback: 'Explorer'),
+                    currentUser.displayName ?? context.tr('settings.explorer', fallback: 'Explorer', fallback: 'Explorer'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 22.sp,
@@ -509,8 +509,8 @@ class SettingsProfileSection extends StatelessWidget {
                         Flexible(
                           child: Text(
                             currentUser.isPremium
-                                ? context.tr('settings.premium_quester', fallback: 'Premium Quester')
-                                : context.tr('settings.free_account', fallback: 'Free Account'),
+                                ? context.tr('settings.premium_quester', fallback: 'Premium Quester', fallback: 'Premium Quester')
+                                : context.tr('settings.free_account', fallback: 'Free Account', fallback: 'Free Account'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,

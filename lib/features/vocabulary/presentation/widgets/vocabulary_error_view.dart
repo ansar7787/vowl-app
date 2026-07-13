@@ -96,7 +96,7 @@ class _RetryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: context.tr('common.retry', fallback: 'Retry'),
+      label: context.tr('common.retry', fallback: 'Retry', fallback: 'Retry'),
       child: ScaleButton(
         onTap: onRetry,
         child: Container(
@@ -118,7 +118,7 @@ class _RetryButton extends StatelessWidget {
               const Icon(Icons.refresh_rounded, color: Colors.white),
               SizedBox(width: 8.w),
               Text(
-                context.tr('games.try_again', fallback: 'Try Again').toUpperCase(),
+                context.tr('games.try_again', fallback: 'Try Again', fallback: 'Try Again').toUpperCase(),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,

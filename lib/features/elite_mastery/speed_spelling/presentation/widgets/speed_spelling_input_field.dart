@@ -123,9 +123,9 @@ class SpeedSpellingInputField extends StatelessWidget {
                 child: Semantics(
                   liveRegion: true,
                   label: currentInput.isEmpty
-                      ? context.tr('games.semantic_spelling_empty')
+                      ? context.tr('games.semantic_spelling_empty', fallback: 'Spelling input is empty')
                       : context.tr(
-                          'games.semantic_current_spelling',
+                          'games.semantic_current_spelling', fallback: 'Current Spelling',
                           args: [currentInput],
                         ),
                   excludeSemantics: true,
@@ -166,7 +166,7 @@ class SpeedSpellingInputField extends StatelessWidget {
                   children: [
                     Semantics(
                       button: true,
-                      label: context.tr('games.semantic_backspace'),
+                      label: context.tr('games.semantic_backspace', fallback: 'Backspace'),
                       excludeSemantics: true,
                       child: ScaleButton(
                         onTap: onBackspace,
@@ -202,7 +202,7 @@ class SpeedSpellingInputField extends StatelessWidget {
                     SizedBox(width: 8.w),
                     Semantics(
                       button: true,
-                      label: context.tr('games.semantic_clear_input'),
+                      label: context.tr('games.semantic_clear_input', fallback: 'Clear Input'),
                       excludeSemantics: true,
                       child: ScaleButton(
                         onTap: onClear,

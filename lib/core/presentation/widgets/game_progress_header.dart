@@ -64,7 +64,7 @@ class GameProgressHeader extends StatelessWidget {
           // (e.g. GameErrorWidget's buttons use `minHeight: 48.h`).
           Semantics(
             button: true,
-            label: context.tr('common.back', fallback: 'Back'),
+            label: context.tr('common.back', fallback: 'Back', fallback: 'Back'),
             child: SizedBox(
               width: 48.w,
               height: 48.h,
@@ -85,7 +85,7 @@ class GameProgressHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  context.tr('game_progress.level_label', args: ['$level']),
+                  context.tr('game_progress.level_label', fallback: 'Level', args: ['$level']),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -183,7 +183,7 @@ class _ProgressBar extends StatelessWidget {
 
     return Semantics(
       label: context.tr(
-        'game_progress.progress_label',
+        'game_progress.progress_label', fallback: 'Progress',
         args: ['$progressPercent'],
       ),
       child: ClipRRect(
@@ -233,7 +233,7 @@ class _LivesBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: context.tr('game_progress.lives_label', args: ['$lives']),
+      label: context.tr('game_progress.lives_label', fallback: 'Lives', args: ['$lives']),
       child: Container(
         constraints: BoxConstraints(minHeight: 32.h, minWidth: 48.w),
         padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),

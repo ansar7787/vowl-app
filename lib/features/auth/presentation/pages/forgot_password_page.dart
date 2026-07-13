@@ -103,7 +103,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
 
               return LoadingOverlay(
                 isLoading: state.isSubmitting,
-                message: context.tr('auth.sending_recovery_link', fallback: 'Sending recovery link...'),
+                message: context.tr('auth.sending_recovery_link', fallback: 'Sending recovery link...', fallback: 'Sending recovery link...'),
                 child: Scaffold(
                   backgroundColor: bgColor,
                   resizeToAvoidBottomInset: false,
@@ -151,7 +151,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                             children: [
                                               Text(
                                                 context.tr(
-                                                  'auth.forgot_password_instructions',
+                                                  'auth.forgot_password_instructions', fallback: 'Enter your email address and we will send you a link to reset your password.',
                                                 ),
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',

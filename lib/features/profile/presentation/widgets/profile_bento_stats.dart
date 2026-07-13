@@ -25,7 +25,7 @@ class ProfileBentoStats extends StatelessWidget {
           children: [
             Expanded(
               child: _StatPod(
-                title: context.tr('profile.vowl_treasury', fallback: 'Vowl Treasury'),
+                title: context.tr('profile.vowl_treasury', fallback: 'Vowl Treasury', fallback: 'Vowl Treasury'),
                 value: '${user.coins}',
                 icon: Icons.paid_rounded,
                 color: const Color(0xFF10B981),
@@ -35,9 +35,9 @@ class ProfileBentoStats extends StatelessWidget {
             SizedBox(width: 16.w),
             Expanded(
               child: _StatPod(
-                title: context.tr('profile.daily_streak', fallback: 'Daily Streak'),
+                title: context.tr('profile.daily_streak', fallback: 'Daily Streak', fallback: 'Daily Streak'),
                 value: context.tr(
-                  'profile.streak_days',
+                  'profile.streak_days', fallback: 'Days',
                   args: ['${user.currentStreak}'],
                 ),
                 icon: Icons.local_fire_department_rounded,
@@ -94,7 +94,7 @@ class _AdventureLevelCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    context.tr('profile.current_level_label', fallback: 'Current Level'),
+                    context.tr('profile.current_level_label', fallback: 'Current Level', fallback: 'Current Level'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
@@ -105,7 +105,7 @@ class _AdventureLevelCard extends StatelessWidget {
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    context.tr('profile.level_value', args: ['${user.level}']),
+                    context.tr('profile.level_value', fallback: 'Lvl', args: ['${user.level}']),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -116,7 +116,7 @@ class _AdventureLevelCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    context.tr('profile.tap_view_rank_details', fallback: 'Tap to view rank details'),
+                    context.tr('profile.tap_view_rank_details', fallback: 'Tap to view rank details', fallback: 'Tap to view rank details'),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -178,7 +178,7 @@ class _AdventureXPCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        context.tr('profile.adventure_xp_label', fallback: 'Adventure XP'),
+                        context.tr('profile.adventure_xp_label', fallback: 'Adventure XP', fallback: 'Adventure XP'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
@@ -189,7 +189,7 @@ class _AdventureXPCard extends StatelessWidget {
                       ),
                       Text(
                         context.tr(
-                          'profile.total_experience',
+                          'profile.total_experience', fallback: 'Total Experience',
                           args: ['${user.totalExp}'],
                         ),
                         maxLines: 1,
@@ -223,7 +223,7 @@ class _AdventureXPCard extends StatelessWidget {
                     Flexible(
                       child: Text(
                         context.tr(
-                          'profile.progress_to_level',
+                          'profile.progress_to_level', fallback: 'Progress to next level',
                           args: ['${user.level + 1}'],
                         ),
                         maxLines: 1,

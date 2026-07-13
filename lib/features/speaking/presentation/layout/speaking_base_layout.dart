@@ -105,7 +105,7 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
   late bool _showBriefing;
   Timer? _nudgeTimer;
 
-  String get _kLastLifeNudge => context.tr('games.kids_nudge', fallback: 'Let\\'s go!');
+  String get _kLastLifeNudge => context.tr('games.kids_nudge', fallback: 'Let\\'s go!', fallback: 'Let\\'s go!');
 
   // ---------------------------------------------------------------------------
   // Lifecycle

@@ -44,20 +44,20 @@ class AccentFeedbackCard extends StatelessWidget {
 
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
     final title = success
-        ? context.tr('games.excellent')
-        : context.tr('games.not_quite');
+        ? context.tr('games.excellent', fallback: 'Excellent!')
+        : context.tr('games.not_quite', fallback: 'Not Quite');
 
     // Explanation is shown on correct answers and on the final failure attempt.
     final showExplanation = success || (!success && state.isFinalFailure);
     final explanation = showExplanation ? state.currentQuest.explanation : null;
 
     final buttonText = success
-        ? context.tr('common.continue_text').toUpperCase()
+        ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : (state.isFinalFailure
               ? (lives == 0
-                    ? context.tr('games.see_results')
-                    : context.tr('common.continue_text').toUpperCase())
-              : context.tr('games.try_again').toUpperCase());
+                    ? context.tr('games.see_results', fallback: 'See Results')
+                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
+              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
 
     return Container(
       width: 342.w,
@@ -95,8 +95,8 @@ class AccentFeedbackCard extends StatelessWidget {
                 child: Semantics(
                   header: true,
                   label: success
-                      ? context.tr('games.correct')
-                      : context.tr('games.incorrect'),
+                      ? context.tr('games.correct', fallback: 'Correct')
+                      : context.tr('games.incorrect', fallback: 'Incorrect'),
                   child: ExcludeSemantics(
                     // Gradient-painted text is not readable by TalkBack/VoiceOver;
                     // the parent Semantics node carries the accessible label.
@@ -150,7 +150,7 @@ class AccentFeedbackCard extends StatelessWidget {
                           ),
                           SizedBox(width: 8.w),
                           Text(
-                            context.tr('games.explanation_caps'),
+                            context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 11.sp,
@@ -168,7 +168,7 @@ class AccentFeedbackCard extends StatelessWidget {
                           physics: const BouncingScrollPhysics(),
                           child: Semantics(
                             label:
-                                '${context.tr('games.explanation')}: $explanation',
+                                '${context.tr('games.explanation', fallback: 'Explanation')}: $explanation',
                             child: Text(
                               explanation ??
                                   (success

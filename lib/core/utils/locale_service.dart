@@ -285,7 +285,7 @@ class LocaleInfo {
 /// Extension on BuildContext for convenient translation access.
 extension LocaleContextExtension on BuildContext {
   /// Shorthand for translating a key using the LocaleService.
-  /// Usage: `context.tr('settings.title', fallback: 'Settings')`
+  /// Usage: `context.tr('settings.title', fallback: 'Settings', fallback: 'Settings')`
   String tr(String key, {List<String> args = const [], String? fallback}) {
     try {
       // Access from the widget tree via the InheritedWidget / ChangeNotifierProvider

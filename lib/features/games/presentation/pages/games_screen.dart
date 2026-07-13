@@ -180,7 +180,7 @@ class _GamesAppBar extends StatelessWidget {
                   ),
                   SizedBox(width: 10.w),
                   Text(
-                    context.tr('games.quest_hub'),
+                    context.tr('games.quest_hub', fallback: 'Quest Hub'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
@@ -332,7 +332,7 @@ class _GameSectionHeader extends StatelessWidget {
                 border: Border.all(color: color.withValues(alpha: 0.2)),
               ),
               child: Text(
-                context.tr('common.see_all'),
+                context.tr('common.see_all', fallback: 'See All'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,

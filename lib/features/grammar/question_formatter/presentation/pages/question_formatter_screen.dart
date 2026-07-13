@@ -366,8 +366,8 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
             SizedBox(height: isCompact ? 6.h : 16.h),
             Text(
               correct
-                  ? context.tr('games.correct').toUpperCase()
-                  : context.tr('games.incorrect_caps'),
+                  ? context.tr('games.correct', fallback: 'Correct').toUpperCase()
+                  : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: isCompact ? 13.sp : 16.sp,

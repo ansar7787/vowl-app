@@ -227,7 +227,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
         final currentQuest = s.quests[s.currentIndex];
 
         if (currentQuest.options != null && currentQuest.options!.isNotEmpty) {
-          // Re-shuffle options for the context.tr('games.try_again', fallback: 'Try Again') moment
+          // Re-shuffle options for the context.tr('games.try_again', fallback: 'Try Again', fallback: 'Try Again') moment
           final reshuffledOptions = List<String>.from(currentQuest.options!)
             ..shuffle();
           final updatedQuests = List<KidsQuest>.from(s.quests);

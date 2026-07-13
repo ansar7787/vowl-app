@@ -162,8 +162,8 @@ class _HatchingPageState extends State<HatchingPage> {
       child: Semantics(
         // FIX (HIGH-2): Semantics label now goes through the l10n system.
         label: _stage < 2
-            ? context.tr('hatching.egg_semantics', fallback: 'A mysterious glowing egg')
-            : context.tr('hatching.mascot_semantics', fallback: 'Your new learning companion'),
+            ? context.tr('hatching.egg_semantics', fallback: 'A mysterious glowing egg', fallback: 'A mysterious glowing egg')
+            : context.tr('hatching.mascot_semantics', fallback: 'Your new learning companion', fallback: 'Your new learning companion'),
         button: _stage < 2,
         child: Stack(
           alignment: Alignment.center,
@@ -304,8 +304,8 @@ class _HatchingPageState extends State<HatchingPage> {
     }
 
     final String text = _stage == 0
-        ? context.tr('hatching.tap_to_begin', fallback: 'Tap to begin')
-        : context.tr('hatching.something_happening', fallback: 'Something is happening...');
+        ? context.tr('hatching.tap_to_begin', fallback: 'Tap to begin', fallback: 'Tap to begin')
+        : context.tr('hatching.something_happening', fallback: 'Something is happening...', fallback: 'Something is happening...');
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 40.w),
@@ -347,7 +347,7 @@ class _HatchingPageState extends State<HatchingPage> {
           alignment: Alignment.center,
           child: Text(
             // FIX (HIGH-2): Localised CTA button text.
-            context.tr('hatching.enter_world', fallback: 'Enter World'),
+            context.tr('hatching.enter_world', fallback: 'Enter World', fallback: 'Enter World'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 18.sp,
