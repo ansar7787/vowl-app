@@ -157,7 +157,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                       }
                       CustomSnackBar.show(
                         context: context,
-                        message: context.tr('adventure.streak_repaired'),
+                        message: context.tr('adventure.streak_repaired', fallback: 'Streak Repaired!'),
                         type: CustomSnackBarType.success,
                       );
                     },

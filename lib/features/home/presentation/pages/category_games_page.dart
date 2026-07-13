@@ -177,7 +177,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
             children: [
               Semantics(
                 button: true,
-                label: context.tr('common.back'),
+                label: context.tr('common.back', fallback: 'Back'),
                 child: ScaleButton(
                   onTap: () {
                     if (context.canPop()) {
@@ -338,7 +338,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            context.tr('category_games.overall_mastery'),
+                            context.tr('category_games.overall_mastery', fallback: 'Overall Mastery'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
@@ -416,8 +416,8 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                     Expanded(
                       child: _buildStatMini(
                         Icons.bolt_rounded,
-                        context.tr('category_games.power'),
-                        '${clearedLevels * 10} ${context.tr('common.xp_suffix')}',
+                        context.tr('category_games.power', fallback: 'Power'),
+                        '${clearedLevels * 10} ${context.tr('common.xp_suffix', fallback: 'XP')}',
                         theme.primaryColor,
                         isDark,
                       ),
@@ -426,7 +426,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                       child: Center(
                         child: _buildStatMini(
                           Icons.sports_esports_rounded,
-                          context.tr('category_games.games'),
+                          context.tr('category_games.games', fallback: 'Games'),
                           '${games.length}',
                           theme.primaryColor,
                           isDark,
@@ -438,7 +438,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                         alignment: AlignmentDirectional.centerEnd,
                         child: _buildStatMini(
                           Icons.stars_rounded,
-                          context.tr('home.rank'),
+                          context.tr('home.rank', fallback: 'Rank'),
                           _getRank(progress),
                           theme.primaryColor,
                           isDark,
@@ -456,15 +456,15 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
   }
 
   String _getRank(double progress) {
-    if (progress <= 0.0) return context.tr('category_games.rank_beginner');
-    if (progress < 0.15) return context.tr('category_games.rank_novice');
-    if (progress < 0.35) return context.tr('category_games.rank_scholar');
+    if (progress <= 0.0) return context.tr('category_games.rank_beginner', fallback: 'Beginner');
+    if (progress < 0.15) return context.tr('category_games.rank_novice', fallback: 'Novice');
+    if (progress < 0.35) return context.tr('category_games.rank_scholar', fallback: 'Scholar');
     if (progress < 0.55) {
-      return context.tr('home.discovery_diff_expert').toUpperCase();
+      return context.tr('home.discovery_diff_expert', fallback: 'Expert').toUpperCase();
     }
-    if (progress < 0.80) return context.tr('category_games.rank_virtuoso');
-    if (progress < 0.99) return context.tr('quest_archive.status_grandmaster');
-    return context.tr('quest_archive.status_legendary');
+    if (progress < 0.80) return context.tr('category_games.rank_virtuoso', fallback: 'Virtuoso');
+    if (progress < 0.99) return context.tr('quest_archive.status_grandmaster', fallback: 'Grandmaster');
+    return context.tr('quest_archive.status_legendary', fallback: 'Legendary');
   }
 
   Widget _buildStatMini(
@@ -697,7 +697,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
           ],
         ),
         child: Text(
-          context.tr('quest_archive.new_badge'),
+          context.tr('quest_archive.new_badge', fallback: 'New'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 10.sp,

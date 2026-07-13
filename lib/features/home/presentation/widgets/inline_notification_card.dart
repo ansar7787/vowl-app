@@ -135,7 +135,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
         context
             .tr('notification_card.streak_strong')
             .replaceAll('{}', streak.toString()),
-        context.tr('notification_card.streak_unstoppable'),
+        context.tr('notification_card.streak_unstoppable', fallback: 'Unstoppable!'),
         context
             .tr('notification_card.streak_dont_lose')
             .replaceAll('{}', streak.toString()),
@@ -143,30 +143,30 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
       return streakTitles[hour % streakTitles.length];
     } else if (streak == 1 || streak == 2) {
       final starterTitles = [
-        context.tr('notification_card.starter_on_roll'),
-        context.tr('notification_card.starter_momentum'),
-        context.tr('notification_card.starter_begun'),
+        context.tr('notification_card.starter_on_roll', fallback: 'On a Roll!'),
+        context.tr('notification_card.starter_momentum', fallback: 'Keep the Momentum!'),
+        context.tr('notification_card.starter_begun', fallback: 'Journey Begun!'),
       ];
       return starterTitles[hour % starterTitles.length];
     }
 
     // Streak is 0
     if (hour < 12) {
-      return context.tr('notification_card.morning_quest');
+      return context.tr('notification_card.morning_quest', fallback: 'Morning Quest');
     } else if (hour < 17) {
-      return context.tr('notification_card.afternoon_practice');
+      return context.tr('notification_card.afternoon_practice', fallback: 'Afternoon Practice');
     } else if (hour < 21) {
-      return context.tr('notification_card.evening_boost');
+      return context.tr('notification_card.evening_boost', fallback: 'Evening Boost');
     } else {
-      return context.tr('notification_card.night_owl');
+      return context.tr('notification_card.night_owl', fallback: 'Night Owl');
     }
   }
 
   String _getDynamicSubtitle() {
     if (widget.streak >= 3) {
-      return context.tr('notification_card.subtitle_streak');
+      return context.tr('notification_card.subtitle_streak', fallback: 'Your streak is growing.');
     }
-    return context.tr('notification_card.subtitle_default');
+    return context.tr('notification_card.subtitle_default', fallback: 'Time for your next quest.');
   }
 
   @override
@@ -327,7 +327,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                                         ),
                                       ),
                                       child: Text(
-                                        context.tr('notification_card.not_now'),
+                                        context.tr('notification_card.not_now', fallback: 'Not Now'),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 13.sp,
@@ -353,7 +353,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                   end: 0,
                   child: Semantics(
                     button: true,
-                    label: context.tr('common.close'),
+                    label: context.tr('common.close', fallback: 'Close'),
                     child: GestureDetector(
                       onTap: _dismissCard,
                       behavior: HitTestBehavior.opaque,

@@ -89,7 +89,7 @@ class _KidsExplanationCardState extends State<KidsExplanationCard> {
               SizedBox(width: 12.w),
               Expanded(
                 child: Text(
-                  context.tr('games.try_again'),
+                  context.tr('games.try_again', fallback: 'Try Again'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 22.sp,
@@ -128,7 +128,7 @@ class _KidsExplanationCardState extends State<KidsExplanationCard> {
               ),
               child: Center(
                 child: Text(
-                  context.tr('games.try_again').toUpperCase(),
+                  context.tr('games.try_again', fallback: 'Try Again').toUpperCase(),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 18.sp,

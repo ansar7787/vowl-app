@@ -137,7 +137,7 @@ class _LeaderboardContent extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
               child: Text(
-                context.tr('leaderboard.top_challengers'),
+                context.tr('leaderboard.top_challengers', fallback: 'Top Challengers'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
@@ -262,7 +262,7 @@ class _LeaderboardErrorView extends StatelessWidget {
               onPressed: onRetry,
               icon: const Icon(Icons.refresh_rounded),
               label: Text(
-                context.tr('common.retry'),
+                context.tr('common.retry', fallback: 'Retry'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontWeight: FontWeight.w700,

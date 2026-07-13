@@ -19,7 +19,7 @@ class HomeQuickStats extends StatelessWidget {
         Expanded(
           child: _buildMiniStatTile(
             context,
-            context.tr('home.streak'),
+            context.tr('home.streak', fallback: 'Streak'),
             '${user.currentStreak}',
             Icons.local_fire_department_rounded,
             const Color(0xFFF97316),
@@ -30,7 +30,7 @@ class HomeQuickStats extends StatelessWidget {
         Expanded(
           child: _buildMiniStatTile(
             context,
-            context.tr('home.coins'),
+            context.tr('home.coins', fallback: 'Coins'),
             '${user.coins}',
             Icons.paid_rounded,
             const Color(0xFF10B981),
@@ -41,7 +41,7 @@ class HomeQuickStats extends StatelessWidget {
         Expanded(
           child: _buildMiniStatTile(
             context,
-            context.tr('home.kids'),
+            context.tr('home.kids', fallback: 'Kids'),
             '${user.kidsCoins}',
             Icons.monetization_on_rounded,
             const Color(0xFFF59E0B),

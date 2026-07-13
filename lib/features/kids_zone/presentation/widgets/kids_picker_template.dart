@@ -202,7 +202,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
                     ],
                   ),
                   child: Text(
-                    context.tr('games.kids_drop_here'),
+                    context.tr('games.kids_drop_here', fallback: 'Drop here'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
