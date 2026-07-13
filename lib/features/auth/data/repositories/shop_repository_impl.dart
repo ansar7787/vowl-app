@@ -630,7 +630,7 @@ class ShopRepositoryImpl
     final updated = List<Map<String, dynamic>>.from(existing)
       ..insert(0, {
         'titleKey': titleKey,
-        if (params != null) 'params': params,
+        'params': ?params,
         'amount': amount,
         'isEarned': isEarned,
         'date': DateTime.now().toIso8601String(),
