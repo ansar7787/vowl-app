@@ -16,6 +16,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/settings/presentation/widgets/language_picker_sheet.dart';
+import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
@@ -555,6 +556,12 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                 ),
               ),
+            ),
+            SettingsTile(
+              title: context.tr('settings.translation_language', fallback: 'Translation Language'),
+              icon: Icons.g_translate_rounded,
+              color: Colors.amber,
+              onTap: () => LanguageSelectionBottomSheet.show(context),
             ),
           ],
         ),
