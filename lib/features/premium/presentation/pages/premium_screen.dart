@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'dart:async';
@@ -233,13 +234,35 @@ class _PremiumScreenState extends State<PremiumScreen> {
           decoration: BoxDecoration(color: backgroundColor),
           child: Stack(
             children: [
+              // 2026 Ultra-Premium Mesh Gradient Background
               Positioned(
-                top: -100,
-                right: -50,
+                top: -150.h,
+                right: -100.w,
                 child: StaticGlow(
                   color: isDark
-                      ? const Color(0x14F59E0B)
-                      : const Color(0x08F59E0B),
+                      ? const Color(0xFFF59E0B).withValues(alpha: 0.15)
+                      : const Color(0xFFF59E0B).withValues(alpha: 0.08),
+                  radius: 300,
+                ),
+              ),
+              Positioned(
+                bottom: -100.h,
+                left: -100.w,
+                child: StaticGlow(
+                  color: isDark
+                      ? const Color(0xFFEA580C).withValues(alpha: 0.15)
+                      : const Color(0xFFEA580C).withValues(alpha: 0.08),
+                  radius: 250,
+                ),
+              ),
+              Positioned(
+                top: 200.h,
+                left: -50.w,
+                child: StaticGlow(
+                  color: isDark
+                      ? const Color(0xFF8B5CF6).withValues(alpha: 0.1)
+                      : const Color(0xFF8B5CF6).withValues(alpha: 0.05),
+                  radius: 200,
                 ),
               ),
               SafeArea(
@@ -436,16 +459,21 @@ class _PremiumScreenState extends State<PremiumScreen> {
           height: 60.h,
           decoration: BoxDecoration(
             gradient: const LinearGradient(
-              colors: [Color(0xFFF59E0B), Color(0xFFEA580C)],
+              colors: [Color(0xFFFCD34D), Color(0xFFF59E0B), Color(0xFFEA580C)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
-            borderRadius: BorderRadius.circular(20.r),
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(
+              color: Colors.white.withValues(alpha: 0.3),
+              width: 1.5,
+            ),
             boxShadow: [
               BoxShadow(
-                color: const Color(0x4DF59E0B),
-                blurRadius: 20,
-                offset: const Offset(0, 8),
+                color: const Color(0xFFF59E0B).withValues(alpha: 0.4),
+                blurRadius: 25,
+                spreadRadius: 2,
+                offset: const Offset(0, 10),
               ),
             ],
           ),
@@ -479,7 +507,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
               ],
             ),
           ),
-        ),
+        ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(
+            duration: 2.seconds,
+            color: Colors.white.withValues(alpha: 0.3),
+          ),
       ),
     );
   }

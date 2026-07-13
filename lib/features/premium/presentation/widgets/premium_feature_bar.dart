@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -12,15 +13,19 @@ class ModernFeatureBar extends StatelessWidget {
     
     // Convert from a congested horizontal row to a beautiful, scroll-safe vertical list
     // This allows ample room for localization text expansion and accessibility scaling.
-    return Container(
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0x0CFFFFFF) : const Color(0x04000000),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: isDark ? const Color(0x1AFFFFFF) : const Color(0x0A000000),
-        ),
-      ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(24.r),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+        child: Container(
+          padding: EdgeInsets.all(20.r),
+          decoration: BoxDecoration(
+            color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.02),
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(
+              color: isDark ? Colors.white.withValues(alpha: 0.08) : Colors.black.withValues(alpha: 0.05),
+            ),
+          ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -82,6 +87,8 @@ class ModernFeatureBar extends StatelessWidget {
             isDark: isDark,
           ),
         ],
+      ),
+    ),
       ),
     );
   }
