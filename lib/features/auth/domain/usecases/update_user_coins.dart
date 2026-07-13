@@ -11,6 +11,10 @@ import 'package:vowl/features/auth/domain/repositories/shop_repository.dart';
 /// When [UpdateUserCoinsParams.title] is supplied, a corresponding coin-history
 /// ledger entry is appended in the same transaction. When omitted, only the
 /// balance is updated.
+///
+/// Returns [AuthFailure('insufficient-coins')] when [UpdateUserCoinsParams.amountChange]
+/// is negative (a spend) and would drive the balance below zero. Earning
+/// coins (a positive [UpdateUserCoinsParams.amountChange]) always succeeds.
 class UpdateUserCoins extends UseCase<void, UpdateUserCoinsParams> {
   final ShopRepository repository;
 

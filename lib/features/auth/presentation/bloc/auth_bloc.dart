@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -71,6 +72,12 @@ class AuthSendEmailVerificationRequested extends AuthEvent {
   const AuthSendEmailVerificationRequested();
 }
 
+/// Internal event carrying an error observed on the underlying user stream.
+/// Not dispatched by the presentation layer.
+class AuthStreamErrorOccurred extends AuthEvent {
+  const AuthStreamErrorOccurred();
+}
+
 // ============================================================================
 // STATE
 // ============================================================================
@@ -92,8 +99,22 @@ class AuthState extends Equatable {
 
   const AuthState.unknown() : this._();
 
-  const AuthState.authenticated(UserEntity user)
-    : this._(status: AuthStatus.authenticated, user: user);
+  /// [isEmailVerified] is always derived from [user] here, so every path
+  /// that constructs an authenticated state — the live user-stream listener
+  /// and the one-shot refresh — gets it for free. Previously this field was
+  /// declared on [AuthState] but never actually set anywhere: every
+  /// authenticated state kept it at its `false` default regardless of the
+  /// user's real verification status, since callers only ever read it from
+  /// `state.user?.isEmailVerified` while `state.isEmailVerified` quietly sat
+  /// unused. Any code that *was* reading `state.isEmailVerified` directly
+  /// (e.g. to gate a "please verify your email" banner) would have seen
+  /// `false` forever, even for verified users.
+  AuthState.authenticated(UserEntity user)
+    : this._(
+        status: AuthStatus.authenticated,
+        user: user,
+        isEmailVerified: user.isEmailVerified,
+      );
 
   const AuthState.unauthenticated()
     : this._(status: AuthStatus.unauthenticated);
@@ -159,10 +180,20 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<AuthDeleteAccountRequested>(_onDeleteAccountRequested);
     on<AuthPasswordResetRequested>(_onPasswordResetRequested);
     on<AuthSendEmailVerificationRequested>(_onSendEmailVerification);
+    on<AuthStreamErrorOccurred>(_onStreamError);
 
     _userSubscription = _getUserStream().listen(
       (user) => add(AuthUserChanged(user)),
-      onError: (_) {},
+      // Previously `onError: (_) {}` — silently discarded every error from
+      // the user stream with no logging and no signal to the UI. The
+      // repository layer already filters out the one *expected* noisy case
+      // (permission-denied immediately after logout) before it ever reaches
+      // here, so anything that does arrive is a genuine, unexpected failure
+      // worth knowing about. `onError` callbacks can't call `emit`
+      // directly (only registered event handlers can), so this dispatches
+      // an event instead, following the same pattern as the `onData` branch
+      // right above it.
+      onError: (_) => add(const AuthStreamErrorOccurred()),
     );
   }
 
@@ -178,6 +209,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     } else {
       emit(const AuthState.unauthenticated());
     }
+  }
+
+  void _onStreamError(AuthStreamErrorOccurred event, Emitter<AuthState> emit) {
+    if (kDebugMode) {
+      debugPrint('AuthBloc: unexpected user-stream error.');
+    }
+    // Deliberately not forcing a logout or clearing `state.user` here — a
+    // stream error (e.g. a transient Firestore hiccup) is not the same
+    // signal as an explicit auth-state-changed(null) event, and treating it
+    // as one could log a still-valid session out from under the user over
+    // a blip that would have self-corrected on reconnection.
+    emit(state.copyWith(message: () => 'auth.stream_error'));
   }
 
   Future<void> _onLogoutRequested(

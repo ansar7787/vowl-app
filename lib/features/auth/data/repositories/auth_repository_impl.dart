@@ -23,6 +23,14 @@ import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
 ///   2. Firestore `.snapshots()` — inner real-time profile, re-subscribed on
 ///      every auth state change and cancelled immediately before each re-sub.
 ///
+/// All emissions go through [_emit]/[_emitError], which guard against the
+/// controller having already been closed by [dispose] — the underlying
+/// Firebase subscriptions are cancelled in [dispose] but `cancel()` is not
+/// awaited (it can't be — [dispose] must stay synchronous to satisfy the
+/// [AuthRepository] interface), so a callback that was already in flight can
+/// still land after `close()`. Without the guard that throws
+/// `StateError: Cannot add event after closing`.
+///
 /// All subscriptions are cancelled and the controller is closed when [dispose]
 /// is called, making this safe for test environments that create/destroy
 /// repository instances repeatedly.
@@ -77,7 +85,7 @@ class AuthRepositoryImpl
       _onAuthStateChanged,
       onError: (Object error, StackTrace stack) {
         _log('AuthRepository: auth stream error: $error');
-        _userStreamController.addError(error, stack);
+        _emitError(error, stack);
       },
     );
   }
@@ -87,6 +95,24 @@ class AuthRepositoryImpl
     _firestoreSubscription = null;
     _authSubscription?.cancel();
     _authSubscription = null;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Safe stream emission — guards against emitting after dispose()
+  // ---------------------------------------------------------------------------
+
+  /// Adds [value] to [_userStreamController] unless it has already been
+  /// closed. See the class doc for why this guard is necessary.
+  void _emit(UserEntity? value) {
+    if (_userStreamController.isClosed) return;
+    _userStreamController.add(value);
+  }
+
+  /// Adds an error to [_userStreamController] unless it has already been
+  /// closed.
+  void _emitError(Object error, [StackTrace? stackTrace]) {
+    if (_userStreamController.isClosed) return;
+    _userStreamController.addError(error, stackTrace);
   }
 
   // ---------------------------------------------------------------------------
@@ -100,7 +126,7 @@ class AuthRepositoryImpl
     _firestoreSubscription = null;
 
     if (firebaseUser == null) {
-      _userStreamController.add(null);
+      _emit(null);
       return;
     }
 
@@ -125,27 +151,15 @@ class AuthRepositoryImpl
     try {
       if (doc.exists && doc.data() != null) {
         final userModel = UserModel.fromMap(doc.data()!);
-        _userStreamController.add(
-          userModel.copyWith(isEmailVerified: firebaseUser.emailVerified),
-        );
+        _emit(userModel.copyWith(isEmailVerified: firebaseUser.emailVerified));
       } else {
         // Document doesn't exist yet (e.g., Firestore write is in-flight).
         // Emit a minimal entity derived from Firebase Auth credentials.
-        _userStreamController.add(
-          UserModel(
-            id: firebaseUser.uid,
-            email: firebaseUser.email ?? '',
-            displayName: firebaseUser.displayName,
-            photoUrl: firebaseUser.photoURL,
-            isEmailVerified: firebaseUser.emailVerified,
-            dailyXpHistory: const {},
-            recentActivities: const [],
-          ),
-        );
+        _emit(_minimalUserFrom(firebaseUser));
       }
     } catch (e, stack) {
       _log('AuthRepository: Firestore snapshot mapping error: $e\n$stack');
-      _userStreamController.add(null);
+      _emit(null);
     }
   }
 
@@ -163,10 +177,10 @@ class AuthRepositoryImpl
       _log(
         'AuthRepository: Firestore permission denied (expected during logout).',
       );
-      _userStreamController.add(null);
+      _emit(null);
       return;
     }
-    _userStreamController.addError(error);
+    _emitError(error);
   }
 
   // ---------------------------------------------------------------------------
@@ -192,10 +206,21 @@ class AuthRepositoryImpl
           .get();
 
       if (doc.exists && doc.data() != null) {
-        final user = UserModel.fromMap(
-          doc.data()!,
-        ).copyWith(isEmailVerified: firebaseUser.emailVerified);
-        return Right(user);
+        try {
+          final user = UserModel.fromMap(
+            doc.data()!,
+          ).copyWith(isEmailVerified: firebaseUser.emailVerified);
+          return Right(user);
+        } catch (e, stack) {
+          // Malformed Firestore data (bad migration, manual console edit,
+          // etc). Don't block app entry over a parsing hiccup — degrade to
+          // a minimal entity built from Auth credentials, the same fallback
+          // AuthRemoteDataSource.logInWithEmail already uses. This is never
+          // written back to Firestore, so the next successful read still
+          // recovers the real profile.
+          _log('AuthRepository: getCurrentUser parse error: $e\n$stack');
+          return Right(_minimalUserFrom(firebaseUser));
+        }
       }
 
       // Firestore document missing — provision it and return the new entity.
@@ -210,7 +235,16 @@ class AuthRepositoryImpl
         dailyXpHistory: const {},
         recentActivities: const [],
       );
-      await _firestore.collection('users').doc(newUser.id).set(newUser.toMap());
+      try {
+        await _firestore
+            .collection('users')
+            .doc(newUser.id)
+            .set(newUser.toMap());
+      } catch (e) {
+        // Non-fatal: the caller still gets a fully-formed in-memory entity;
+        // the next getCurrentUser() or auth-state change retries provisioning.
+        _log('AuthRepository: getCurrentUser provisioning write failed: $e');
+      }
       return Right(newUser);
     } catch (e) {
       return Left(handleFirebaseException(e));
@@ -308,7 +342,7 @@ class AuthRepositoryImpl
     try {
       final user = _firebaseAuth.currentUser;
       if (user == null) {
-        return Left(AuthFailure('User not logged in'));
+        return Left(AuthFailure('user-not-logged-in'));
       }
 
       // STOP LISTENING to Firestore before we delete the document.
@@ -376,6 +410,22 @@ class AuthRepositoryImpl
   // ---------------------------------------------------------------------------
   // Private helpers
   // ---------------------------------------------------------------------------
+
+  /// Builds a minimal [UserModel] from Firebase Auth credential fields alone
+  /// (no Firestore data). Used as a non-destructive fallback — never written
+  /// back to Firestore, so the real profile is recovered as soon as a
+  /// subsequent read succeeds.
+  UserModel _minimalUserFrom(firebase_auth.User firebaseUser) {
+    return UserModel(
+      id: firebaseUser.uid,
+      email: firebaseUser.email ?? '',
+      displayName: firebaseUser.displayName,
+      photoUrl: firebaseUser.photoURL,
+      isEmailVerified: firebaseUser.emailVerified,
+      dailyXpHistory: const {},
+      recentActivities: const [],
+    );
+  }
 
   /// Debug-only log helper. Produces no output in release builds.
   void _log(String message) {

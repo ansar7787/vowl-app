@@ -57,7 +57,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           }
           return RefreshIndicator(
             onRefresh: () async {
-              context.read<AuthBloc>().add(AuthReloadUser());
+              context.read<AuthBloc>().add(const AuthReloadUser());
               await Future.delayed(const Duration(milliseconds: 500));
             },
             color: const Color(0xFF2563EB),

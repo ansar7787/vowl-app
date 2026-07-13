@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 // ---------------------------------------------------------------------------
 // Icon Header
@@ -12,7 +13,7 @@ class VerifyEmailIconHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       image: true,
-      label: 'Email verification icon',
+      label: context.tr('auth.verify_email_icon_label'),
       child: Container(
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
@@ -42,7 +43,7 @@ class VerifyEmailStatusText extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          'Verify your email',
+          context.tr('auth.verify_email_title'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 28.sp,
@@ -53,8 +54,7 @@ class VerifyEmailStatusText extends StatelessWidget {
         ),
         SizedBox(height: 16.h),
         Text(
-          'We have sent a verification email to your address. '
-          'Please check your inbox and click the link to verify your account.',
+          context.tr('auth.verify_email_description'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 15.sp,
@@ -88,13 +88,27 @@ class ResendEmailButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // NOTE — not fully localizable yet: 'Resend in $secondsRemaining s'
+    // interpolates a number directly into English text. None of the eight
+    // files in this review contain a single example of a *parameterized*
+    // context.tr() call (every existing call site is a bare string key with
+    // no arguments), so there's no confirmed evidence of what signature
+    // locale_service.dart's tr() extension actually supports for
+    // placeholders/pluralization. Guessing at an unverified method
+    // signature risks a compile error, and concatenating translated
+    // fragments around the number (e.g. '${context.tr('auth.resend_in')}
+    // $secondsRemaining ${context.tr('auth.seconds_unit')}') is a worse
+    // localization anti-pattern than what's here now — word order and
+    // pluralization both vary by language, and fragment concatenation
+    // can't express either correctly. Left as English pending confirmation
+    // of the real parameterization API; see the review notes.
     final label = canResendEmail
-        ? 'Resend Email'
+        ? context.tr('auth.resend_email')
         : 'Resend in $secondsRemaining s';
     return Semantics(
       button: true,
       label: canResendEmail
-          ? 'Resend verification email'
+          ? context.tr('auth.resend_verification_email_semantic')
           : 'Resend available in $secondsRemaining seconds',
       child: ElevatedButton(
         onPressed: canResendEmail ? onPressed : null,
@@ -113,6 +127,11 @@ class ResendEmailButton extends StatelessWidget {
             fontSize: 16.sp,
             fontWeight: FontWeight.bold,
           ),
+          // maxLines + overflow, not Flexible — this Text is the button's
+          // direct child (no Row ancestor), and Flexible requires an
+          // immediate Flex ancestor or it throws at runtime.
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
       ),
     );
@@ -132,7 +151,7 @@ class VerifyConfirmationButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: 'I have verified my email',
+      label: context.tr('auth.verified_confirmation_semantic'),
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
@@ -143,13 +162,15 @@ class VerifyConfirmationButton extends StatelessWidget {
           ),
         ),
         child: Text(
-          "I've Verified",
+          context.tr('auth.verified_confirmation'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 16.sp,
             fontWeight: FontWeight.bold,
             color: const Color(0xFF2563EB),
           ),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
       ),
     );
@@ -169,20 +190,22 @@ class VerifyLogoutButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: 'Cancel and logout',
+      label: context.tr('auth.cancel_and_logout_semantic'),
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
           minimumSize: const Size(double.infinity, 48),
         ),
         child: Text(
-          'Cancel & Logout',
+          context.tr('auth.cancel_and_logout'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 16.sp,
             color: const Color(0xFF6B7280),
             fontWeight: FontWeight.w600,
           ),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
       ),
     );

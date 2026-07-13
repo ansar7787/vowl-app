@@ -5,12 +5,14 @@ import 'package:vowl/features/auth/domain/repositories/shop_repository.dart';
 
 /// Claims the standard daily gift reward.
 ///
-/// Returns [AuthFailure('Daily gift already claimed today')] when the gift was
-/// already claimed within the current calendar day.
+/// Returns [AuthFailure('daily-gift-already-claimed')] when the gift was
+/// already claimed within the current calendar day. (Failure messages are
+/// stable codes, not English sentences — see `FirebaseFailureHandlerMixin`'s
+/// class doc for how the presentation layer should map them.)
 class ClaimDailyGift extends UseCase<void, NoParams> {
   final ShopRepository repository;
 
-  ClaimDailyGift(this.repository);
+  const ClaimDailyGift(this.repository);
 
   @override
   Future<Either<Failure, void>> call(NoParams params) =>

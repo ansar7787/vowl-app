@@ -137,11 +137,16 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
           return;
         }
 
-        // Verification email sent: restart resend cooldown and show snackbar
+        // Verification email sent: restart resend cooldown and show snackbar.
+        // Previously showed a hardcoded English sentence here instead of
+        // translating the same 'auth.email_verification_sent' key every
+        // other success path in AuthBloc already resolves through
+        // context.tr() — this was the one message on this screen that
+        // could never have been localized.
         if (state.message == 'auth.email_verification_sent') {
           _startResendCooldown();
           _showSnackBar(
-            'Verification email sent! Please check your inbox.',
+            context.tr('auth.email_verification_sent'),
             CustomSnackBarType.success,
           );
           return;

@@ -518,7 +518,10 @@ class _KeyShopContent extends StatelessWidget {
                         ),
                         SizedBox(width: 8.w),
                         Text(
-                          'Get More Coins & Keys',
+                          context.tr(
+                          'store.get_more_coins_keys',
+                          fallback: 'Get More Coins & Keys',
+                        ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 16.sp,

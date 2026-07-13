@@ -90,6 +90,12 @@ class LoginState extends Equatable {
 /// Password-reset is the responsibility of [ForgotPasswordCubit] which has
 /// its own dedicated page. The previous duplication (having [forgotPassword]
 /// in both this cubit and [ForgotPasswordCubit]) has been removed.
+///
+/// ### Error messages
+/// Every error, client-side validation included, now flows through
+/// [AuthErrorHandler.getKey] — see [ForgotPasswordCubit]'s class doc for why
+/// this changed (the validation checks below previously set [errorMessage]
+/// to raw, unlocalizable English sentences directly).
 class LoginCubit extends Cubit<LoginState> {
   final LogInWithEmail _logInWithEmail;
   final LogInWithGoogle _logInWithGoogle;
@@ -133,26 +139,32 @@ class LoginCubit extends Cubit<LoginState> {
     final trimmedEmail = state.email.trim();
     if (trimmedEmail.isEmpty) {
       emit(
-        state.copyWith(errorMessage: () => 'Email address cannot be empty.'),
+        state.copyWith(
+          errorMessage: () => AuthErrorHandler.getKey('email-empty'),
+        ),
       );
       return;
     }
     if (!_emailRegex.hasMatch(trimmedEmail)) {
       emit(
         state.copyWith(
-          errorMessage: () => 'Please enter a valid email address.',
+          errorMessage: () => AuthErrorHandler.getKey('email-invalid'),
         ),
       );
       return;
     }
     if (state.password.isEmpty) {
-      emit(state.copyWith(errorMessage: () => 'Password cannot be empty.'));
+      emit(
+        state.copyWith(
+          errorMessage: () => AuthErrorHandler.getKey('password-empty'),
+        ),
+      );
       return;
     }
     if (state.password.length < 6) {
       emit(
         state.copyWith(
-          errorMessage: () => 'Password must be at least 6 characters long.',
+          errorMessage: () => AuthErrorHandler.getKey('password-too-short'),
         ),
       );
       return;
@@ -161,8 +173,7 @@ class LoginCubit extends Cubit<LoginState> {
     if (_networkInfo != null && !(await _networkInfo.isConnected)) {
       emit(
         state.copyWith(
-          errorMessage: () =>
-              'No internet connection. Please check your network.',
+          errorMessage: () => AuthErrorHandler.getKey('network-unreachable'),
         ),
       );
       return;
@@ -191,8 +202,7 @@ class LoginCubit extends Cubit<LoginState> {
     if (_networkInfo != null && !(await _networkInfo.isConnected)) {
       emit(
         state.copyWith(
-          errorMessage: () =>
-              'No internet connection. Please check your network.',
+          errorMessage: () => AuthErrorHandler.getKey('network-unreachable'),
         ),
       );
       return;

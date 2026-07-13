@@ -157,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 const MeshGradientBackground(showLetters: false),
                 RefreshIndicator(
                   onRefresh: () async {
-                    context.read<AuthBloc>().add(AuthReloadUser());
+                    context.read<AuthBloc>().add(const AuthReloadUser());
                     _hasCheckedDailyChestThisSession = false;
                     context.read<EconomyBloc>().add(
                       const EconomyCheckDailyRewardRequested(),

@@ -142,10 +142,12 @@ class UserModel extends UserEntity {
       kidsOwnedFurniture: map['kidsOwnedFurniture'] != null
           ? _parseStringList(map['kidsOwnedFurniture'])
           : UserGameConstants.kDefaultKidsOwnedFurniture,
+      // Was a raw, unguarded `Map<String, String>.from(...)` cast — any
+      // non-String value under a key (e.g. a null written by some future
+      // "unequip" path) would throw mid-parse. Routed through the same
+      // defensive-per-value pattern every other Map field here already uses.
       kidsEquippedFurniture: map['kidsEquippedFurniture'] != null
-          ? Map<String, String>.from(
-              map['kidsEquippedFurniture'] as Map<Object?, Object?>,
-            )
+          ? _parseStringMap(map['kidsEquippedFurniture'])
           : UserGameConstants.kDefaultKidsEquippedFurniture,
       keys: (map['keys'] as num?)?.toInt() ?? 0,
     );
@@ -154,6 +156,70 @@ class UserModel extends UserEntity {
   /// Alias for [fromMap] retained for backwards compatibility.
   factory UserModel.fromJson(Map<String, dynamic> map) =>
       UserModel.fromMap(map);
+
+  /// Builds a [UserModel] from an existing [UserEntity], copying every field.
+  ///
+  /// Use this whenever a domain-layer [UserEntity] (e.g. one built via
+  /// [UserEntity.copyWith] in a BLoC, or passed into [UserRepository.updateUser])
+  /// needs to be persisted. Centralizing the field-by-field mapping here means
+  /// a newly-added field only has to be wired up in one place — the call site
+  /// just does `UserModel.fromEntity(entity).toMap()` — instead of every
+  /// repository method that needs an entity→model conversion re-listing all
+  /// ~48 fields by hand (which is exactly how a future field can silently
+  /// fail to persist: added to the entity, forgotten at some scattered call
+  /// site).
+  factory UserModel.fromEntity(UserEntity entity) {
+    return UserModel(
+      id: entity.id,
+      email: entity.email,
+      displayName: entity.displayName,
+      photoUrl: entity.photoUrl,
+      fcmToken: entity.fcmToken,
+      coins: entity.coins,
+      totalExp: entity.totalExp,
+      isAdmin: entity.isAdmin,
+      currentStreak: entity.currentStreak,
+      lastLoginDate: entity.lastLoginDate,
+      isEmailVerified: entity.isEmailVerified,
+      isPremium: entity.isPremium,
+      premiumExpiryDate: entity.premiumExpiryDate,
+      categoryStats: entity.categoryStats,
+      unlockedLevels: entity.unlockedLevels,
+      completedLevels: entity.completedLevels,
+      starRatings: entity.starRatings,
+      badges: entity.badges,
+      streakFreezes: entity.streakFreezes,
+      hintCount: entity.hintCount,
+      hintPacks: entity.hintPacks,
+      doubleXP: entity.doubleXP,
+      doubleXPExpiry: entity.doubleXPExpiry,
+      dailyXpHistory: entity.dailyXpHistory,
+      recentActivities: entity.recentActivities,
+      lastVipGiftDate: entity.lastVipGiftDate,
+      lastDailyRewardDate: entity.lastDailyRewardDate,
+      lastKidsDailyRewardDate: entity.lastKidsDailyRewardDate,
+      kidsCoins: entity.kidsCoins,
+      kidsStickers: entity.kidsStickers,
+      kidsMascot: entity.kidsMascot,
+      kidsEquippedSticker: entity.kidsEquippedSticker,
+      kidsOwnedAccessories: entity.kidsOwnedAccessories,
+      kidsEquippedAccessory: entity.kidsEquippedAccessory,
+      vowlMascot: entity.vowlMascot,
+      vowlEquippedAccessory: entity.vowlEquippedAccessory,
+      vowlOwnedAccessories: entity.vowlOwnedAccessories,
+      vowlOwnedMascots: entity.vowlOwnedMascots,
+      claimedStreakMilestones: entity.claimedStreakMilestones,
+      claimedLevelMilestones: entity.claimedLevelMilestones,
+      coinHistory: entity.coinHistory,
+      hasPermanentXPBoost: entity.hasPermanentXPBoost,
+      lastFreeSpinDate: entity.lastFreeSpinDate,
+      lastAdSpinDate: entity.lastAdSpinDate,
+      adSpinsUsedToday: entity.adSpinsUsedToday,
+      kidsOwnedFurniture: entity.kidsOwnedFurniture,
+      kidsEquippedFurniture: entity.kidsEquippedFurniture,
+      keys: entity.keys,
+    );
+  }
 
   // ---------------------------------------------------------------------------
   // Serialization
@@ -400,6 +466,22 @@ class UserModel extends UserEntity {
     if (raw == null) return const {};
     final map = raw as Map<Object?, Object?>;
     return map.map((k, v) => MapEntry(k.toString(), (v as num?)?.toInt() ?? 0));
+  }
+
+  /// Parses a Firestore map of {String → String} defensively, skipping any
+  /// entry whose value isn't actually a [String] (e.g. a `null` written by
+  /// some future "unequip" flow) instead of throwing mid-parse.
+  static Map<String, String> _parseStringMap(dynamic raw) {
+    if (raw == null) return const {};
+    final map = raw as Map<Object?, Object?>;
+    final result = <String, String>{};
+    for (final entry in map.entries) {
+      final value = entry.value;
+      if (value is String) {
+        result[entry.key.toString()] = value;
+      }
+    }
+    return result;
   }
 
   /// Parses a Firestore list of strings defensively.

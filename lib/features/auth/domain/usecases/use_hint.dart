@@ -6,8 +6,8 @@ import 'package:vowl/features/auth/domain/repositories/shop_repository.dart';
 /// Consumes one hint from the authenticated user's [hintCount].
 ///
 /// Runs inside a Firestore transaction to prevent the count from going
-/// negative under concurrent requests. Returns [ServerFailure('No hints available')]
-/// when [hintCount] is already zero.
+/// negative under concurrent requests. Returns
+/// [AuthFailure('no-hints-available')] when [hintCount] is already zero.
 class UseHint extends UseCase<void, NoParams> {
   final ShopRepository repository;
 

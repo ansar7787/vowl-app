@@ -16,6 +16,10 @@ class LoginEmailInput extends StatelessWidget {
 
   const LoginEmailInput({super.key, this.fieldKey, this.focusNode});
 
+  // Identical pattern also exists (independently — Dart's per-file privacy
+  // means a private static field can't be shared) in signup_widgets.dart,
+  // forgot_password_widgets.dart, and all three auth Cubits. Verified
+  // byte-identical across all six.
   static final _emailRegex = RegExp(r'^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$');
 
   @override
@@ -25,8 +29,8 @@ class LoginEmailInput extends StatelessWidget {
       builder: (context, state) {
         final contrastColor = MeshGradientBackground.getContrastColor(context);
         return Semantics(
-          label: 'Email address',
-          hint: 'Enter your email address',
+          label: context.tr('auth.email_field_label'),
+          hint: context.tr('auth.email_field_hint_generic'),
           textField: true,
           child: TextFormField(
             key: fieldKey,
@@ -35,10 +39,10 @@ class LoginEmailInput extends StatelessWidget {
                 context.read<LoginCubit>().emailChanged(email),
             validator: (value) {
               if (value == null || value.trim().isEmpty) {
-                return 'Please enter your email';
+                return context.tr('auth.validation_email_required');
               }
               if (!_emailRegex.hasMatch(value.trim())) {
-                return 'Please enter a valid email';
+                return context.tr('auth.validation_email_invalid');
               }
               return null;
             },
@@ -47,7 +51,7 @@ class LoginEmailInput extends StatelessWidget {
             autofillHints: const [AutofillHints.email],
             style: TextStyle(color: contrastColor),
             decoration: InputDecoration(
-              hintText: 'Email',
+              hintText: context.tr('auth.email_hint_short'),
               hintStyle: TextStyle(color: contrastColor.withValues(alpha: 0.5)),
               errorStyle: TextStyle(
                 fontFamily: 'Outfit',
@@ -123,8 +127,8 @@ class LoginPasswordInput extends StatelessWidget {
       builder: (context, state) {
         final contrastColor = MeshGradientBackground.getContrastColor(context);
         return Semantics(
-          label: 'Password',
-          hint: 'Enter your password',
+          label: context.tr('auth.password_field_label'),
+          hint: context.tr('auth.password_field_hint_generic'),
           textField: true,
           child: TextFormField(
             key: fieldKey,
@@ -133,10 +137,10 @@ class LoginPasswordInput extends StatelessWidget {
                 context.read<LoginCubit>().passwordChanged(password),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter your password';
+                return context.tr('auth.validation_password_required');
               }
               if (value.length < 6) {
-                return 'Password must be at least 6 characters';
+                return context.tr('auth.validation_password_too_short');
               }
               return null;
             },
@@ -146,7 +150,7 @@ class LoginPasswordInput extends StatelessWidget {
             autofillHints: const [AutofillHints.password],
             style: TextStyle(color: contrastColor),
             decoration: InputDecoration(
-              hintText: 'Password',
+              hintText: context.tr('auth.password_hint_text'),
               hintStyle: TextStyle(color: contrastColor.withValues(alpha: 0.5)),
               errorStyle: TextStyle(
                 fontFamily: 'Outfit',
@@ -160,8 +164,8 @@ class LoginPasswordInput extends StatelessWidget {
               ),
               suffixIcon: Semantics(
                 label: state.isPasswordVisible
-                    ? 'Hide password'
-                    : 'Show password',
+                    ? context.tr('auth.hide_password')
+                    : context.tr('auth.show_password'),
                 button: true,
                 child: IconButton(
                   icon: Icon(
@@ -235,7 +239,7 @@ class LoginButton extends StatelessWidget {
       builder: (context, state) {
         return Semantics(
           button: true,
-          label: 'Log in',
+          label: context.tr('auth.login'),
           child: ElevatedButton(
             onPressed: state.isSubmitting
                 ? null
@@ -258,7 +262,16 @@ class LoginButton extends StatelessWidget {
                       strokeWidth: 2,
                     ),
                   )
-                : Text(context.tr('auth.login')),
+                // maxLines + overflow, not Flexible — this Text is the
+                // button's direct child (no Row ancestor), and Flexible
+                // requires an immediate Flex ancestor or it throws at
+                // runtime. This still guards against a longer translation
+                // wrapping to two lines at high text scale.
+                : Text(
+                    context.tr('auth.login'),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
           ),
         );
       },
@@ -282,7 +295,7 @@ class GoogleLoginButton extends StatelessWidget {
         final contrastColor = MeshGradientBackground.getContrastColor(context);
         return Semantics(
           button: true,
-          label: 'Sign in with Google',
+          label: context.tr('auth.sign_in_with_google'),
           child: OutlinedButton(
             onPressed: state.isSubmitting
                 ? null
@@ -314,6 +327,10 @@ class GoogleLoginButton extends StatelessWidget {
                         fit: BoxFit.contain,
                       ),
                       SizedBox(width: 12.w),
+                      // Flexible is valid here (unlike the buttons above)
+                      // because this Text's immediate parent is the Row
+                      // right above it, which provides the Flex context
+                      // Flexible needs.
                       Flexible(
                         child: Text(
                           context.tr('auth.sign_in_with_google'),

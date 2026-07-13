@@ -229,6 +229,15 @@ class UserEntity {
 
   /// Maps a raw level index to its effective (display) level, wrapping levels
   /// above 200 into a 150–199 repeating range.
+  ///
+  /// NOTE: [categoryOrGame] is intentionally accepted but not currently used
+  /// in the wrap calculation — every category wraps identically today. It is
+  /// kept in the signature (rather than removed) because removing a public
+  /// parameter would be a breaking change for every call site across the app,
+  /// which is outside the visibility of this review. If a future requirement
+  /// needs per-category wrap thresholds, this is where that branch belongs;
+  /// if it's confirmed nothing will ever need that, this parameter is safe to
+  /// delete in a dedicated follow-up that also updates all call sites.
   int getEffectiveLevel(String categoryOrGame, int level) {
     if (level <= 200) return level;
     return 150 + ((level - 201) % 50);
@@ -444,7 +453,10 @@ class UserEntity {
 
   @override
   int get hashCode {
-    // Split into groups because Object.hash has a 20-argument ceiling.
+    // Split into groups for readability — Object.hashAll(Iterable) has no
+    // argument-count ceiling (unlike the variadic Object.hash(a, b, ...),
+    // which is capped at 20), so this chunking is a style choice, not a
+    // technical requirement.
     final h1 = Object.hashAll([
       id,
       email,

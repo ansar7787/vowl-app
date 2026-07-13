@@ -6,7 +6,7 @@ import 'package:vowl/features/auth/domain/repositories/gamification_repository.d
 /// Deducts [cost] coins and repairs a broken streak, restoring it to at least
 /// 2 days (or incrementing it by 1 if it was already greater than 1).
 ///
-/// Returns [ServerFailure('Not enough coins')] when the balance is
+/// Returns [AuthFailure('insufficient-coins')] when the balance is
 /// insufficient. Runs atomically inside a Firestore transaction to prevent
 /// concurrent balance exploits.
 class RepairStreak extends UseCase<void, int> {

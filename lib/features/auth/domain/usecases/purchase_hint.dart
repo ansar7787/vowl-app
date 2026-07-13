@@ -11,8 +11,8 @@ import 'package:vowl/features/auth/domain/repositories/shop_repository.dart';
 /// Runs inside a Firestore transaction, so the balance check and deduction
 /// are atomic — concurrent purchases cannot cause the balance to go negative.
 ///
-/// Returns [ServerFailure('Not enough coins')] when the user's current balance
-/// is less than [PurchaseHintParams.cost].
+/// Returns [AuthFailure('insufficient-coins')] when the user's current
+/// balance is less than [PurchaseHintParams.cost].
 class PurchaseHint extends UseCase<void, PurchaseHintParams> {
   final ShopRepository repository;
 

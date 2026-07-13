@@ -6,6 +6,10 @@ import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/features/auth/domain/usecases/activate_double_xp.dart';
 import 'package:vowl/features/auth/domain/usecases/purchase_streak_freeze.dart';
 import 'package:vowl/features/auth/domain/usecases/repair_streak.dart';
+import 'package:vowl/features/auth/domain/usecases/repair_streak_free.dart';
+import 'package:vowl/features/auth/domain/usecases/purchase_permanent_xp_boost.dart';
+import 'package:vowl/features/auth/domain/usecases/claim_streak_milestone.dart';
+import 'package:vowl/features/auth/domain/usecases/claim_level_milestone.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
@@ -22,6 +26,15 @@ class MockUpdateUser extends Mock implements UpdateUser {}
 class MockAuthBloc extends Mock implements AuthBloc {}
 
 class MockNotificationService extends Mock implements NotificationService {}
+
+class MockRepairStreakFree extends Mock implements RepairStreakFree {}
+
+class MockPurchasePermanentXPBoost extends Mock
+    implements PurchasePermanentXPBoost {}
+
+class MockClaimStreakMilestone extends Mock implements ClaimStreakMilestone {}
+
+class MockClaimLevelMilestone extends Mock implements ClaimLevelMilestone {}
 
 class FakeNoParams extends Fake implements NoParams {}
 
@@ -40,6 +53,10 @@ void main() {
   late MockUpdateUser mockUpdateUser;
   late MockAuthBloc mockAuthBloc;
   late MockNotificationService mockNotificationService;
+  late MockRepairStreakFree mockRepairStreakFree;
+  late MockPurchasePermanentXPBoost mockPurchasePermanentXPBoost;
+  late MockClaimStreakMilestone mockClaimStreakMilestone;
+  late MockClaimLevelMilestone mockClaimLevelMilestone;
 
   setUp(() {
     mockRepairStreak = MockRepairStreak();
@@ -48,6 +65,10 @@ void main() {
     mockUpdateUser = MockUpdateUser();
     mockAuthBloc = MockAuthBloc();
     mockNotificationService = MockNotificationService();
+    mockRepairStreakFree = MockRepairStreakFree();
+    mockPurchasePermanentXPBoost = MockPurchasePermanentXPBoost();
+    mockClaimStreakMilestone = MockClaimStreakMilestone();
+    mockClaimLevelMilestone = MockClaimLevelMilestone();
 
     bloc = ProgressionBloc(
       repairStreak: mockRepairStreak,
@@ -56,6 +77,10 @@ void main() {
       updateUser: mockUpdateUser,
       authBloc: mockAuthBloc,
       notificationService: mockNotificationService,
+      repairStreakFree: mockRepairStreakFree,
+      purchasePermanentXPBoost: mockPurchasePermanentXPBoost,
+      claimStreakMilestone: mockClaimStreakMilestone,
+      claimLevelMilestone: mockClaimLevelMilestone,
     );
   });
 
@@ -77,7 +102,7 @@ void main() {
         isA<ProgressionState>().having(
           (s) => s.message,
           'message',
-          'Double XP Activated!',
+          'progression.double_xp_activated',
         ),
       ],
       verify: (_) {

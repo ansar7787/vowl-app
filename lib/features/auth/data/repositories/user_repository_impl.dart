@@ -16,12 +16,13 @@ import 'package:vowl/features/auth/domain/repositories/user_repository.dart';
 /// profile picture storage, and VIP daily reward claims.
 ///
 /// ### updateUser note
-/// [updateUser] serialises the full [UserEntity] via [UserModel.toMap] and
-/// performs a [SetOptions(merge: true)] write. This means null fields explicitly
-/// overwrite the corresponding server values — intended behaviour when the
-/// caller provides a complete entity snapshot. For partial field updates prefer
-/// the targeted methods ([updateDisplayName], [updateProfilePicture]) which only
-/// write the affected fields.
+/// [updateUser] serialises the full [UserEntity] via [UserModel.fromEntity]
+/// then [UserModel.toMap], and performs a [SetOptions(merge: true)] write.
+/// This means null fields explicitly overwrite the corresponding server
+/// values — intended behaviour when the caller provides a complete entity
+/// snapshot. For partial field updates prefer the targeted methods
+/// ([updateDisplayName], [updateProfilePicture]) which only write the
+/// affected fields.
 class UserRepositoryImpl
     with FirebaseFailureHandlerMixin
     implements UserRepository {
@@ -45,58 +46,17 @@ class UserRepositoryImpl
   Future<Either<Failure, void>> updateUser(UserEntity user) async {
     try {
       final docRef = _firestore.collection('users').doc(user.id);
-      final userModel = UserModel(
-        id: user.id,
-        email: user.email,
-        displayName: user.displayName,
-        photoUrl: user.photoUrl,
-        fcmToken: user.fcmToken,
-        coins: user.coins,
-        totalExp: user.totalExp,
-        isAdmin: user.isAdmin,
-        currentStreak: user.currentStreak,
-        lastLoginDate: user.lastLoginDate,
-        isEmailVerified: user.isEmailVerified,
-        isPremium: user.isPremium,
-        premiumExpiryDate: user.premiumExpiryDate,
-        categoryStats: user.categoryStats,
-        unlockedLevels: user.unlockedLevels,
-        completedLevels: user.completedLevels,
-        badges: user.badges,
-        streakFreezes: user.streakFreezes,
-        hintCount: user.hintCount,
-        hintPacks: user.hintPacks,
-        doubleXP: user.doubleXP,
-        doubleXPExpiry: user.doubleXPExpiry,
-        dailyXpHistory: user.dailyXpHistory,
-        recentActivities: user.recentActivities,
-        lastVipGiftDate: user.lastVipGiftDate,
-        lastDailyRewardDate: user.lastDailyRewardDate,
-        lastKidsDailyRewardDate: user.lastKidsDailyRewardDate,
-        kidsCoins: user.kidsCoins,
-        kidsStickers: user.kidsStickers,
-        kidsMascot: user.kidsMascot,
-        kidsEquippedSticker: user.kidsEquippedSticker,
-        kidsOwnedAccessories: user.kidsOwnedAccessories,
-        kidsEquippedAccessory: user.kidsEquippedAccessory,
-        kidsOwnedFurniture: user.kidsOwnedFurniture,
-        kidsEquippedFurniture: user.kidsEquippedFurniture,
-        vowlMascot: user.vowlMascot,
-        vowlEquippedAccessory: user.vowlEquippedAccessory,
-        vowlOwnedAccessories: user.vowlOwnedAccessories,
-        vowlOwnedMascots: user.vowlOwnedMascots,
-        claimedStreakMilestones: user.claimedStreakMilestones,
-        claimedLevelMilestones: user.claimedLevelMilestones,
-        coinHistory: user.coinHistory,
-        hasPermanentXPBoost: user.hasPermanentXPBoost,
-        lastFreeSpinDate: user.lastFreeSpinDate,
-        lastAdSpinDate: user.lastAdSpinDate,
-        adSpinsUsedToday: user.adSpinsUsedToday,
-      );
+      // UserModel.fromEntity is the single source of truth for the
+      // entity→model field mapping (see its doc comment) — previously this
+      // method hand-listed all ~48 fields itself, which meant a field added
+      // to UserEntity in the future could silently never get persisted here
+      // unless someone remembered to also update this call site.
+      final userModel = UserModel.fromEntity(user);
 
       await docRef.set(userModel.toMap(), SetOptions(merge: true));
       return const Right(null);
     } catch (e) {
+      _log('UserRepository: updateUser failed for ${user.id}: $e');
       return Left(handleFirebaseException(e));
     }
   }
@@ -109,7 +69,7 @@ class UserRepositoryImpl
   Future<Either<Failure, void>> updateDisplayName(String displayName) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(ServerFailure('User not authenticated'));
+      if (user == null) return Left(ServerFailure('user-not-authenticated'));
 
       await Future.wait([
         user.updateDisplayName(displayName),
@@ -132,12 +92,27 @@ class UserRepositoryImpl
   Future<Either<Failure, String>> updateProfilePicture(String filePath) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(ServerFailure('User not authenticated'));
+      if (user == null) return Left(ServerFailure('user-not-authenticated'));
 
       final file = File(filePath);
-      final ref = _storage.ref().child('profile_pics').child('${user.uid}.jpg');
 
-      await ref.putFile(file);
+      // Deliberately no extension on the storage path: it stays stable
+      // (`profile_pics/{uid}`) no matter what format the source image is,
+      // so re-uploading a PNG after a JPG (or vice versa) overwrites the
+      // same object instead of leaving the old one orphaned in Storage
+      // forever. The Content-Type header — which is what actually matters
+      // for correct rendering and for any image-processing Storage
+      // extension keyed off it — is set explicitly from the source file's
+      // real extension via [_contentTypeForPath], instead of relying on
+      // Storage's own filename-based guess (which previously always guessed
+      // "image/jpeg" because the path itself was hardcoded to end in .jpg,
+      // regardless of what the user actually picked).
+      final ref = _storage.ref().child('profile_pics').child(user.uid);
+      final metadata = SettableMetadata(
+        contentType: _contentTypeForPath(filePath),
+      );
+
+      await ref.putFile(file, metadata);
       final downloadUrl = await ref.getDownloadURL();
 
       await Future.wait([
@@ -149,6 +124,7 @@ class UserRepositoryImpl
 
       return Right(downloadUrl);
     } catch (e) {
+      _log('UserRepository: updateProfilePicture failed: $e');
       return Left(handleFirebaseException(e));
     }
   }
@@ -161,32 +137,33 @@ class UserRepositoryImpl
   Future<Either<Failure, void>> claimVipGift() async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('User not logged in'));
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
       final docRef = _firestore.collection('users').doc(user.uid);
 
       return await _firestore.runTransaction((transaction) async {
         final doc = await transaction.get(docRef);
         if (!doc.exists || doc.data() == null) {
-          return Left(AuthFailure('User data not found'));
+          return Left(AuthFailure('user-data-not-found'));
         }
 
         final userData = UserModel.fromMap(doc.data()!);
 
         if (!userData.isPremium) {
-          return Left(AuthFailure('User is not premium'));
+          _log('UserRepository: claimVipGift rejected — user is not premium.');
+          return Left(AuthFailure('user-not-premium'));
         }
 
         final now = DateTime.now();
         final lastGift = userData.lastVipGiftDate;
         final bool available =
-            lastGift == null ||
-            lastGift.year != now.year ||
-            lastGift.month != now.month ||
-            lastGift.day != now.day;
+            lastGift == null || !_isSameCalendarDay(lastGift, now);
 
         if (!available) {
-          return Left(AuthFailure('Daily VIP gift already claimed today'));
+          _log(
+            'UserRepository: claimVipGift rejected — already claimed today.',
+          );
+          return Left(AuthFailure('vip-gift-already-claimed'));
         }
 
         transaction.update(docRef, {
@@ -204,9 +181,35 @@ class UserRepositoryImpl
   // Private helpers
   // ---------------------------------------------------------------------------
 
-  // Retained for future use; production logging should be routed through an
-  // injected Logger rather than debugPrint.
-  // ignore: unused_element
+  /// Maps a file's extension to its `Content-Type`, defaulting to
+  /// `image/jpeg` for anything unrecognized (profile pictures are always
+  /// picked through an image picker/cropper upstream, so an unknown
+  /// extension here means "assume a photo," not "reject the upload").
+  static const Map<String, String> _kImageContentTypes = {
+    'jpg': 'image/jpeg',
+    'jpeg': 'image/jpeg',
+    'png': 'image/png',
+    'heic': 'image/heic',
+    'heif': 'image/heif',
+    'webp': 'image/webp',
+    'gif': 'image/gif',
+  };
+
+  static String _contentTypeForPath(String filePath) {
+    final dotIndex = filePath.lastIndexOf('.');
+    if (dotIndex == -1 || dotIndex == filePath.length - 1) {
+      return 'image/jpeg';
+    }
+    final extension = filePath.substring(dotIndex + 1).toLowerCase();
+    return _kImageContentTypes[extension] ?? 'image/jpeg';
+  }
+
+  /// True if [a] and [b] fall on the same calendar day (year/month/day) in
+  /// local time. Used by the various "claim once per day" guards.
+  static bool _isSameCalendarDay(DateTime a, DateTime b) =>
+      a.year == b.year && a.month == b.month && a.day == b.day;
+
+  /// Debug-only log helper. Produces no output in release builds.
   void _log(String message) {
     if (kDebugMode) debugPrint(message);
   }

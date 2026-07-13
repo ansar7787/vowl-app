@@ -1,7 +1,12 @@
 import 'package:equatable/equatable.dart';
+import 'package:vowl/features/auth/domain/usecases/add_golden_key.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/domain/usecases/buy_kids_accessory.dart';
+import 'package:vowl/features/auth/domain/usecases/buy_kids_furniture.dart';
+import 'package:vowl/features/auth/domain/usecases/buy_vowl_accessory.dart';
+import 'package:vowl/features/auth/domain/usecases/buy_vowl_mascot.dart';
 import 'package:vowl/features/auth/domain/usecases/equip_kids_accessory.dart';
+import 'package:vowl/features/auth/domain/usecases/purchase_golden_key.dart';
 import 'package:vowl/features/auth/domain/usecases/update_display_name.dart';
 import 'package:vowl/features/auth/domain/usecases/update_kids_mascot.dart';
 import 'package:vowl/features/auth/domain/usecases/update_profile_picture.dart';
@@ -141,11 +146,23 @@ class ProfileState extends Equatable {
   final String? lastPurchaseType;
   final bool? lastPurchaseSuccess;
 
+  /// The freshly-uploaded profile picture's download URL, available
+  /// immediately on a successful [ProfileUpdatePictureRequested] — before
+  /// [AuthBloc]'s reload round-trip completes. Previously
+  /// [UpdateProfilePicture]'s [Right] value (documented on that use case as
+  /// existing specifically so "the presentation layer can update the UI
+  /// immediately without waiting for [GetUserStream] to re-emit") was
+  /// discarded entirely in [_onUpdatePicture] — this state had nowhere to
+  /// put it. Purely additive: any existing UI that doesn't read this new
+  /// field behaves exactly as before.
+  final String? photoUrl;
+
   const ProfileState({
     this.message,
     this.isLoading = false,
     this.lastPurchaseType,
     this.lastPurchaseSuccess,
+    this.photoUrl,
   });
 
   ProfileState copyWith({
@@ -153,6 +170,7 @@ class ProfileState extends Equatable {
     bool? isLoading,
     String? Function()? lastPurchaseType,
     bool? Function()? lastPurchaseSuccess,
+    String? Function()? photoUrl,
   }) {
     return ProfileState(
       message: message != null ? message() : this.message,
@@ -163,6 +181,7 @@ class ProfileState extends Equatable {
       lastPurchaseSuccess: lastPurchaseSuccess != null
           ? lastPurchaseSuccess()
           : this.lastPurchaseSuccess,
+      photoUrl: photoUrl != null ? photoUrl() : this.photoUrl,
     );
   }
 
@@ -172,6 +191,7 @@ class ProfileState extends Equatable {
     isLoading,
     lastPurchaseType,
     lastPurchaseSuccess,
+    photoUrl,
   ];
 }
 
@@ -188,6 +208,15 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   final UpdateUser updateUser;
   final AuthBloc authBloc;
 
+  // Added to replace unsafe client-side purchase/credit logic previously
+  // implemented via a generic `updateUser` full-document write — see each
+  // handler's doc comment below for what specifically changed and why.
+  final BuyKidsFurniture buyKidsFurniture;
+  final BuyVowlMascot buyVowlMascot;
+  final BuyVowlAccessory buyVowlAccessory;
+  final PurchaseGoldenKey purchaseGoldenKey;
+  final AddGoldenKey addGoldenKey;
+
   ProfileBloc({
     required this.updateDisplayName,
     required this.updateProfilePicture,
@@ -196,6 +225,11 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     required this.equipKidsAccessory,
     required this.updateUser,
     required this.authBloc,
+    required this.buyKidsFurniture,
+    required this.buyVowlMascot,
+    required this.buyVowlAccessory,
+    required this.purchaseGoldenKey,
+    required this.addGoldenKey,
   }) : super(const ProfileState()) {
     on<ProfileUpdateDisplayNameRequested>(_onUpdateDisplayName);
     on<ProfileUpdatePictureRequested>(_onUpdatePicture);
@@ -241,7 +275,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
-        emit(state.copyWith(message: () => 'Name updated!'));
+        // 'profile.display_name_updated' is a stable key, not English
+        // display text — see GamificationRepositoryImpl's class doc for the
+        // full localization rationale applied consistently across this
+        // review; the previous literal ('Name updated!') could never be
+        // localized for any of this app's other 17 target languages.
+        emit(state.copyWith(message: () => 'profile.display_name_updated'));
         authBloc.add(const AuthReloadUser());
       },
     );
@@ -255,8 +294,18 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final result = await updateProfilePicture(event.filePath);
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) {
-        emit(state.copyWith(message: () => 'Profile picture updated!'));
+      (downloadUrl) {
+        // Previously this branch was `(_) { ... }` — discarding the
+        // download URL entirely and relying solely on AuthReloadUser's
+        // round trip. That throws away exactly the immediacy
+        // UpdateProfilePicture's own doc comment says this Right value
+        // exists to provide. Now surfaced via ProfileState.photoUrl.
+        emit(
+          state.copyWith(
+            message: () => 'profile.picture_updated',
+            photoUrl: () => downloadUrl,
+          ),
+        );
         authBloc.add(const AuthReloadUser());
       },
     );
@@ -304,6 +353,12 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     ProfileUpdateFurnitureRequested event,
     Emitter<ProfileState> emit,
   ) async {
+    // Equip-only, no coin deduction — kept on the generic updateUser path.
+    // Unlike the purchase handlers below, there's no balance to protect
+    // here, and this matches the same "trust the client to only equip an
+    // already-owned item" pattern equipKidsAccessory/updateKidsMascot
+    // already use elsewhere in this app; the worst case on a race is a
+    // benign last-write-wins between two equip taps, not a currency bug.
     if (!_isAuthenticated) return;
     final user = authBloc.state.user;
     if (user == null) return;
@@ -318,37 +373,25 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     );
   }
 
-  /// Purchases a furniture item by deducting [event.cost] from [kidsCoins]
-  /// client-side and persisting the full user document.
+  /// Purchases (or re-equips) a furniture item via the transaction-safe
+  /// [ShopRepository.buyKidsFurniture].
   ///
-  /// ⚠️ The coin deduction is performed client-side (read-then-write without
-  /// a Firestore transaction). A concurrent purchase on another device could
-  /// allow the balance to go negative. Add a dedicated
-  /// `ShopRepository.buyFurniture()` transaction method to fix this.
+  /// Previously deducted [event.cost] from [kidsCoins] client-side and
+  /// persisted the full user document with no transaction — this method's
+  /// own doc comment flagged exactly that as needing "a dedicated
+  /// `ShopRepository.buyFurniture()` transaction method", which now exists.
   Future<void> _onBuyFurniture(
     ProfileBuyFurnitureRequested event,
     Emitter<ProfileState> emit,
   ) async {
     if (!_isAuthenticated) return;
-    final user = authBloc.state.user;
-    if (user == null) return;
-
-    if (user.kidsCoins < event.cost) {
-      emit(state.copyWith(message: () => 'Not enough coins!'));
-      return;
-    }
-
-    final newOwned = [...user.kidsOwnedFurniture, event.furnitureId];
-    final newEquipped = Map<String, String>.from(user.kidsEquippedFurniture)
-      ..[event.category] = event.furnitureId;
-
-    final updatedUser = user.copyWith(
-      kidsCoins: user.kidsCoins - event.cost,
-      kidsOwnedFurniture: newOwned,
-      kidsEquippedFurniture: newEquipped,
+    final result = await buyKidsFurniture(
+      BuyKidsFurnitureParams(
+        category: event.category,
+        furnitureId: event.furnitureId,
+        cost: event.cost,
+      ),
     );
-
-    final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) => authBloc.add(const AuthReloadUser()),
@@ -359,6 +402,8 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     ProfileUpdateVowlMascotRequested event,
     Emitter<ProfileState> emit,
   ) async {
+    // Equip-only — see _onUpdateFurniture's comment for why this stays on
+    // the generic updateUser path.
     if (!_isAuthenticated) return;
     final user = authBloc.state.user;
     if (user == null) return;
@@ -371,33 +416,17 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     );
   }
 
+  /// Purchases (or re-equips) a Vowl mascot via the transaction-safe
+  /// [ShopRepository.buyVowlMascot]. See [_onBuyFurniture]'s doc comment —
+  /// same fix, same reason.
   Future<void> _onBuyVowlMascot(
     ProfileBuyVowlMascotRequested event,
     Emitter<ProfileState> emit,
   ) async {
     if (!_isAuthenticated) return;
-    final user = authBloc.state.user;
-    if (user == null) return;
-
-    if (user.coins < event.cost) {
-      emit(
-        state.copyWith(
-          message: () => 'Not enough coins!',
-          lastPurchaseType: () => 'vowl_mascot',
-          lastPurchaseSuccess: () => false,
-        ),
-      );
-      return;
-    }
-
-    final newOwned = [...user.vowlOwnedMascots, event.mascotId];
-    final updatedUser = user.copyWith(
-      coins: user.coins - event.cost,
-      vowlOwnedMascots: newOwned,
-      vowlMascot: event.mascotId,
+    final result = await buyVowlMascot(
+      BuyVowlMascotParams(mascotId: event.mascotId, cost: event.cost),
     );
-
-    final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(
         state.copyWith(
@@ -418,38 +447,18 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     );
   }
 
-  /// Purchases a Vowl accessory by deducting [event.cost] from [coins]
-  /// client-side.
-  ///
-  /// ⚠️ Same concurrency caveat as [_onBuyFurniture]. Requires a
-  /// server-side transaction for production safety.
+  /// Purchases (or re-equips) a Vowl accessory via the transaction-safe
+  /// [ShopRepository.buyVowlAccessory]. See [_onBuyFurniture]'s doc comment
+  /// — same fix, same reason (this method's own comment previously flagged
+  /// it as sharing "the same concurrency caveat as [_onBuyFurniture]").
   Future<void> _onBuyVowlAccessory(
     ProfileBuyVowlAccessoryRequested event,
     Emitter<ProfileState> emit,
   ) async {
     if (!_isAuthenticated) return;
-    final user = authBloc.state.user;
-    if (user == null) return;
-
-    if (user.coins < event.cost) {
-      emit(
-        state.copyWith(
-          message: () => 'Not enough coins!',
-          lastPurchaseType: () => 'vowl_accessory',
-          lastPurchaseSuccess: () => false,
-        ),
-      );
-      return;
-    }
-
-    final newOwned = [...user.vowlOwnedAccessories, event.accessoryId];
-    final updatedUser = user.copyWith(
-      coins: user.coins - event.cost,
-      vowlOwnedAccessories: newOwned,
-      vowlEquippedAccessory: event.accessoryId,
+    final result = await buyVowlAccessory(
+      BuyVowlAccessoryParams(accessoryId: event.accessoryId, cost: event.cost),
     );
-
-    final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(
         state.copyWith(
@@ -502,51 +511,50 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     );
   }
 
+  /// Credits [event.amount] Golden Keys via the atomic
+  /// [GamificationRepository.addGoldenKey].
+  ///
+  /// Previously read `user.keys` from the (potentially stale) cached
+  /// [AuthBloc] state, computed `(user.keys + event.amount).clamp(0, 9999)`
+  /// client-side, and wrote it back via a generic `updateUser` call — a
+  /// lost-update race if this fires twice before the cache refreshes, and
+  /// (independently) `.clamp(0, 9999)` on an `int` returns `num`, which is
+  /// not assignable to `UserEntity.copyWith`'s `int? keys` parameter — the
+  /// same static-type error found and fixed in
+  /// `GamificationRepositoryImpl.updateCategoryStats` during the earlier
+  /// repository-layer review. Both issues disappear together: the atomic
+  /// `FieldValue.increment` this now delegates to needs no client-side
+  /// arithmetic at all.
   Future<void> _onUpdateKeys(
     ProfileUpdateKeysRequested event,
     Emitter<ProfileState> emit,
   ) async {
     if (!_isAuthenticated) return;
-    final user = authBloc.state.user;
-    if (user == null) return;
-
-    final updatedUser = user.copyWith(
-      keys: (user.keys + event.amount).clamp(0, 9999),
-    );
-    final result = await updateUser(UpdateUserParams(user: updatedUser));
+    final result = await addGoldenKey(AddGoldenKeyParams(amount: event.amount));
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) => authBloc.add(const AuthReloadUser()),
     );
   }
 
+  /// Purchases a Golden Key via the transaction-safe
+  /// [GamificationRepository.purchaseGoldenKey].
+  ///
+  /// Previously read `user.coins`/`user.kidsCoins` from the cached
+  /// [AuthBloc] state, validated and deducted client-side, and wrote the
+  /// result back via a generic `updateUser` call with no transaction —
+  /// exactly the kind of concurrent-purchase race this whole review's
+  /// repository-layer batch introduced Firestore transactions to close for
+  /// every *other* currency operation. This use case already existed and
+  /// was already safe; this handler just wasn't using it.
   Future<void> _onBuyKey(
     ProfileBuyKeyRequested event,
     Emitter<ProfileState> emit,
   ) async {
     if (!_isAuthenticated) return;
-    final user = authBloc.state.user;
-    if (user == null) return;
-
-    final currentCoins = event.isKidsMode ? user.kidsCoins : user.coins;
-    if (currentCoins < event.cost) {
-      emit(
-        state.copyWith(
-          message: () => 'Not enough ${event.isKidsMode ? 'toys' : 'coins'}!',
-        ),
-      );
-      return;
-    }
-
-    final updatedUser = user.copyWith(
-      coins: event.isKidsMode ? user.coins : user.coins - event.cost,
-      kidsCoins: event.isKidsMode
-          ? user.kidsCoins - event.cost
-          : user.kidsCoins,
-      keys: (user.keys + 1).clamp(0, 9999),
+    final result = await purchaseGoldenKey(
+      PurchaseGoldenKeyParams(cost: event.cost, isKidsMode: event.isKidsMode),
     );
-
-    final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) => authBloc.add(const AuthReloadUser()),

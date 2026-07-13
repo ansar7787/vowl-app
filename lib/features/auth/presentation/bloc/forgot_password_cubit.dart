@@ -59,6 +59,18 @@ class ForgotPasswordState extends Equatable {
 ///
 /// Separated from [LoginCubit] to respect single-responsibility:
 /// this cubit owns only the forgot-password submission lifecycle.
+///
+/// ### Error messages
+/// Every error — client-side validation as much as a server/network
+/// [Failure] — flows through the same [AuthErrorHandler.getKey] lookup, so
+/// [errorMessage] is always a stable code the presentation layer can
+/// localize, never a hardcoded English sentence. Previously the client-side
+/// validation checks below (empty email, invalid format, no network) set
+/// [errorMessage] to raw English text directly, bypassing
+/// [AuthErrorHandler] entirely — meaning those three specific messages could
+/// never have been localized no matter what l10n infrastructure existed
+/// elsewhere, even though the *other* half of this same method (an actual
+/// [Failure] from [_forgotPassword]) was already doing it correctly.
 class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
   final ForgotPassword _forgotPassword;
   final NetworkInfo? _networkInfo;
@@ -85,8 +97,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
     if (trimmedEmail.isEmpty) {
       emit(
         state.copyWith(
-          errorMessage: () =>
-              'Please enter your email address to receive reset links.',
+          errorMessage: () => AuthErrorHandler.getKey('email-empty'),
         ),
       );
       return;
@@ -94,7 +105,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
     if (!_emailRegex.hasMatch(trimmedEmail)) {
       emit(
         state.copyWith(
-          errorMessage: () => 'Please enter a valid email address.',
+          errorMessage: () => AuthErrorHandler.getKey('email-invalid'),
         ),
       );
       return;
@@ -103,8 +114,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
     if (_networkInfo != null && !(await _networkInfo.isConnected)) {
       emit(
         state.copyWith(
-          errorMessage: () =>
-              'No internet connection. Please check your network.',
+          errorMessage: () => AuthErrorHandler.getKey('network-unreachable'),
         ),
       );
       return;
@@ -132,7 +142,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
         state.copyWith(
           isSubmitting: false,
           isSuccess: true,
-          successMessage: () => 'Password reset link sent! Check your email.',
+          successMessage: () => 'forgot_password.reset_link_sent',
         ),
       ),
     );

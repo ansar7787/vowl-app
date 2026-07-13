@@ -9,7 +9,7 @@ import 'package:vowl/features/auth/domain/repositories/gamification_repository.d
 /// A streak freeze prevents the user's streak from resetting on a day they
 /// miss a lesson, consuming one freeze automatically at midnight.
 ///
-/// Returns [ServerFailure('Not enough coins')] when the balance is
+/// Returns [AuthFailure('insufficient-coins')] when the balance is
 /// insufficient. Runs atomically inside a Firestore transaction.
 class PurchaseStreakFreeze extends UseCase<void, int> {
   final GamificationRepository repository;

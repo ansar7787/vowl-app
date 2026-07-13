@@ -71,6 +71,10 @@ class _LoginViewState extends State<LoginView> {
               // visible without flashing the login form during the transition.
             }
             if (state.errorMessage != null) {
+              // errorMessage is a stable code (from AuthErrorHandler.getKey),
+              // never already-localized text, so checking for a "cancel"-style
+              // code here is locale-independent — this runs before
+              // _showSnackBar's context.tr() call translates it for display.
               final isWarning = state.errorMessage!.contains('cancel');
               _showSnackBar(
                 context,
@@ -111,6 +115,19 @@ class _LoginViewState extends State<LoginView> {
               : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
 
           return BlocBuilder<LoginCubit, LoginState>(
+            // Previously had no buildWhen at all, so this entire subtree
+            // (gradient background, holographic card, every child widget)
+            // rebuilt on *every* LoginState change — including typing in the
+            // email field, which this builder's own output never depends on.
+            // The individual field widgets already scope their own rebuilds
+            // precisely (see LoginEmailInput/LoginPasswordInput's buildWhen);
+            // this builder only needs to react to what it actually reads
+            // below: password (for the aura color) and the submit/success
+            // flags (for the loading overlay).
+            buildWhen: (previous, current) =>
+                previous.password != current.password ||
+                previous.isSubmitting != current.isSubmitting ||
+                previous.isSuccess != current.isSuccess,
             builder: (context, state) {
               final contrastColor = MeshGradientBackground.getContrastColor(
                 context,
@@ -130,7 +147,7 @@ class _LoginViewState extends State<LoginView> {
 
               return LoadingOverlay(
                 isLoading: state.isSubmitting || state.isSuccess,
-                message: 'Preparing your adventure',
+                message: context.tr('auth.preparing_adventure'),
                 child: Scaffold(
                   backgroundColor: bgColor,
                   resizeToAvoidBottomInset: false,
@@ -178,6 +195,9 @@ class _LoginViewState extends State<LoginView> {
                                               size: 60,
                                             ),
                                             SizedBox(width: 8.w),
+                                            // 'Vowl' is the app's brand name —
+                                            // deliberately not localized, same
+                                            // as everywhere else it appears.
                                             Hero(
                                               tag: 'auth_title',
                                               child: Material(
@@ -199,7 +219,7 @@ class _LoginViewState extends State<LoginView> {
                                           ],
                                         ),
                                         Text(
-                                          'Login to continue your adventure',
+                                          context.tr('auth.login_subtitle'),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
                                             fontSize: 15.sp,
@@ -231,8 +251,18 @@ class _LoginViewState extends State<LoginView> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment:
-                                                    Alignment.centerRight,
+                                                // AlignmentDirectional.centerEnd,
+                                                // not Alignment.centerRight —
+                                                // the latter is a physical
+                                                // (non-mirroring) alignment
+                                                // that would stay pinned to
+                                                // the visual right even in
+                                                // Arabic, where this link
+                                                // should sit on the visual
+                                                // left (the "end" of the
+                                                // line in an RTL layout).
+                                                alignment: AlignmentDirectional
+                                                    .centerEnd,
                                                 child: TextButton(
                                                   onPressed: () => context.go(
                                                     AppRouter
@@ -244,9 +274,11 @@ class _LoginViewState extends State<LoginView> {
                                                       48,
                                                     ),
                                                   ),
-                                                  child: const Text(
-                                                    'Forgot Password?',
-                                                    style: TextStyle(
+                                                  child: Text(
+                                                    context.tr(
+                                                      'auth.forgot_password_question',
+                                                    ),
+                                                    style: const TextStyle(
                                                       fontFamily: 'Outfit',
                                                       color: Color(0xFF2563EB),
                                                       fontWeight:
@@ -291,12 +323,23 @@ class _LoginViewState extends State<LoginView> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            Text(
-                                              "Don't have an account? ",
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                color: secondaryColor,
-                                                fontWeight: FontWeight.w600,
+                                            // Flexible + ellipsis: a longer
+                                            // translation of this prompt on a
+                                            // narrow (320px) device could
+                                            // otherwise push this Row into a
+                                            // RenderFlex overflow next to the
+                                            // "Sign Up" button.
+                                            Flexible(
+                                              child: Text(
+                                                context.tr(
+                                                  'auth.no_account_prompt',
+                                                ),
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  color: secondaryColor,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                                overflow: TextOverflow.ellipsis,
                                               ),
                                             ),
                                             TextButton(
@@ -306,9 +349,9 @@ class _LoginViewState extends State<LoginView> {
                                               style: TextButton.styleFrom(
                                                 minimumSize: const Size(48, 48),
                                               ),
-                                              child: const Text(
-                                                'Sign Up',
-                                                style: TextStyle(
+                                              child: Text(
+                                                context.tr('auth.signup'),
+                                                style: const TextStyle(
                                                   fontFamily: 'Outfit',
                                                   color: Color(0xFF2563EB),
                                                   fontWeight: FontWeight.w900,

@@ -67,6 +67,10 @@ class UpdateUserRewardsParams extends Equatable {
     this.claimChestTier,
   });
 
+  // Previously omitted isVaultReward, addMagicStars, and claimChestTier —
+  // two instances differing only in those 3 fields compared equal, which is
+  // exactly the sort of thing that quietly breaks a bloc_test expectLater
+  // state match or any other equality-based deduplication.
   @override
   List<Object?> get props => [
     gameType,
@@ -74,6 +78,9 @@ class UpdateUserRewardsParams extends Equatable {
     xpIncrease,
     coinIncrease,
     isDoubleReward,
+    isVaultReward,
     starsEarned,
+    addMagicStars,
+    claimChestTier,
   ];
 }

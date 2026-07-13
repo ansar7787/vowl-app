@@ -59,22 +59,42 @@ class _SignUpViewState extends State<SignUpView> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<SignUpCubit, SignUpState>(
-      listenWhen: (previous, current) =>
-          previous.isSuccess != current.isSuccess ||
-          previous.errorMessage != current.errorMessage,
-      listener: (context, state) {
-        if (state.isSuccess) {
-          context.read<AuthBloc>().add(const AuthReloadUser());
-          // Do nothing. We rely on GoRouter's automatic redirect (refreshListenable)
-          // which evaluates _redirect in app_router.dart when AuthBloc completes its
-          // backend synchronization. This ensures the LoadingOverlay remains perfectly
-          // visible without flashing any intermediate UI during the transition.
-        }
-        if (state.errorMessage != null) {
-          _showSnackBar(context, state.errorMessage!, CustomSnackBarType.error);
-        }
-      },
+    return MultiBlocListener(
+      listeners: [
+        BlocListener<SignUpCubit, SignUpState>(
+          listenWhen: (previous, current) =>
+              previous.isSuccess != current.isSuccess ||
+              previous.errorMessage != current.errorMessage,
+          listener: (context, state) {
+            if (state.isSuccess) {
+              context.read<AuthBloc>().add(const AuthReloadUser());
+              // Do nothing. We rely on GoRouter's automatic redirect (refreshListenable)
+              // which evaluates _redirect in app_router.dart when AuthBloc completes its
+              // backend synchronization. This ensures the LoadingOverlay remains perfectly
+              // visible without flashing any intermediate UI during the transition.
+            }
+            if (state.errorMessage != null) {
+              _showSnackBar(
+                context,
+                state.errorMessage!,
+                CustomSnackBarType.error,
+              );
+            }
+          },
+        ),
+        // Added for parity with LoginPage's equivalent listener — AuthBloc
+        // can independently emit a message (e.g. the new
+        // AuthStreamErrorOccurred → 'auth.stream_error' path), and this
+        // page previously had no way to surface that while the user was
+        // still on the sign-up screen.
+        BlocListener<AuthBloc, AuthState>(
+          listenWhen: (previous, current) =>
+              previous.message != current.message && current.message != null,
+          listener: (context, state) {
+            _showSnackBar(context, state.message!, CustomSnackBarType.success);
+          },
+        ),
+      ],
       // Separate ThemeCubit watch from SignUpCubit watch to prevent
       // theme changes from triggering full SignUpCubit rebuilds.
       child: BlocSelector<ThemeCubit, ThemeState, bool>(
@@ -86,6 +106,13 @@ class _SignUpViewState extends State<SignUpView> {
               : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
 
           return BlocBuilder<SignUpCubit, SignUpState>(
+            // Same rebuild-scoping fix as LoginPage: previously rebuilt this
+            // whole subtree on every keystroke in every field, even fields
+            // this builder's own output doesn't depend on.
+            buildWhen: (previous, current) =>
+                previous.password != current.password ||
+                previous.isSubmitting != current.isSubmitting ||
+                previous.isSuccess != current.isSuccess,
             builder: (context, state) {
               final contrastColor = MeshGradientBackground.getContrastColor(
                 context,
@@ -105,7 +132,7 @@ class _SignUpViewState extends State<SignUpView> {
 
               return LoadingOverlay(
                 isLoading: state.isSubmitting || state.isSuccess,
-                message: 'Preparing your journey...',
+                message: context.tr('auth.preparing_journey'),
                 child: Scaffold(
                   backgroundColor: bgColor,
                   resizeToAvoidBottomInset: false,
@@ -156,6 +183,8 @@ class _SignUpViewState extends State<SignUpView> {
                                               isSignup: true,
                                             ),
                                             SizedBox(width: 10.w),
+                                            // 'Vowl' is the app's brand name —
+                                            // deliberately not localized.
                                             Hero(
                                               tag: 'auth_title',
                                               child: Material(
@@ -177,7 +206,7 @@ class _SignUpViewState extends State<SignUpView> {
                                           ],
                                         ),
                                         Text(
-                                          'Begin your journey to fluency',
+                                          context.tr('auth.signup_subtitle'),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
                                             fontSize: 15.sp,
@@ -256,12 +285,20 @@ class _SignUpViewState extends State<SignUpView> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            Text(
-                                              'Already have an account? ',
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                color: secondaryColor,
-                                                fontWeight: FontWeight.w600,
+                                            // Flexible + ellipsis — same
+                                            // overflow-safety reasoning as
+                                            // LoginPage's equivalent Row.
+                                            Flexible(
+                                              child: Text(
+                                                context.tr(
+                                                  'auth.have_account_prompt',
+                                                ),
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  color: secondaryColor,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                                overflow: TextOverflow.ellipsis,
                                               ),
                                             ),
                                             TextButton(

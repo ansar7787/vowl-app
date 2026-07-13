@@ -54,6 +54,13 @@ import 'package:vowl/features/auth/domain/usecases/update_unlocked_level.dart';
 import 'package:vowl/features/auth/domain/usecases/purchase_level_unlock.dart';
 import 'package:vowl/features/auth/domain/usecases/purchase_golden_key.dart';
 import 'package:vowl/features/auth/domain/usecases/add_golden_key.dart';
+import 'package:vowl/features/auth/domain/usecases/repair_streak_free.dart';
+import 'package:vowl/features/auth/domain/usecases/purchase_permanent_xp_boost.dart';
+import 'package:vowl/features/auth/domain/usecases/claim_streak_milestone.dart';
+import 'package:vowl/features/auth/domain/usecases/claim_level_milestone.dart';
+import 'package:vowl/features/auth/domain/usecases/buy_kids_furniture.dart';
+import 'package:vowl/features/auth/domain/usecases/buy_vowl_mascot.dart';
+import 'package:vowl/features/auth/domain/usecases/buy_vowl_accessory.dart';
 import 'package:vowl/features/writing/domain/usecases/use_writing_hint.dart';
 
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -213,6 +220,27 @@ void initAuthFeature(GetIt sl) {
   sl.registerLazySingleton<AwardKidsCoins>(
     () => AwardKidsCoins(sl<ShopRepository>()),
   );
+  sl.registerLazySingleton<RepairStreakFree>(
+    () => RepairStreakFree(sl<GamificationRepository>()),
+  );
+  sl.registerLazySingleton<PurchasePermanentXPBoost>(
+    () => PurchasePermanentXPBoost(sl<GamificationRepository>()),
+  );
+  sl.registerLazySingleton<ClaimStreakMilestone>(
+    () => ClaimStreakMilestone(sl<GamificationRepository>()),
+  );
+  sl.registerLazySingleton<ClaimLevelMilestone>(
+    () => ClaimLevelMilestone(sl<GamificationRepository>()),
+  );
+  sl.registerLazySingleton<BuyKidsFurniture>(
+    () => BuyKidsFurniture(sl<ShopRepository>()),
+  );
+  sl.registerLazySingleton<BuyVowlMascot>(
+    () => BuyVowlMascot(sl<ShopRepository>()),
+  );
+  sl.registerLazySingleton<BuyVowlAccessory>(
+    () => BuyVowlAccessory(sl<ShopRepository>()),
+  );
 
   // ============================================================
   // PRESENTATION — SINGLETON BLOCS
@@ -269,6 +297,10 @@ void initAuthFeature(GetIt sl) {
       updateUser: sl<UpdateUser>(),
       authBloc: sl<AuthBloc>(),
       notificationService: sl<NotificationService>(),
+      repairStreakFree: sl<RepairStreakFree>(),
+      purchasePermanentXPBoost: sl<PurchasePermanentXPBoost>(),
+      claimStreakMilestone: sl<ClaimStreakMilestone>(),
+      claimLevelMilestone: sl<ClaimLevelMilestone>(),
     ),
     dispose: (bloc) => bloc.close(),
   );
@@ -281,6 +313,11 @@ void initAuthFeature(GetIt sl) {
       equipKidsAccessory: sl<EquipKidsAccessory>(),
       updateUser: sl<UpdateUser>(),
       authBloc: sl<AuthBloc>(),
+      buyKidsFurniture: sl<BuyKidsFurniture>(),
+      buyVowlMascot: sl<BuyVowlMascot>(),
+      buyVowlAccessory: sl<BuyVowlAccessory>(),
+      purchaseGoldenKey: sl<PurchaseGoldenKey>(),
+      addGoldenKey: sl<AddGoldenKey>(),
     ),
     dispose: (bloc) => bloc.close(),
   );

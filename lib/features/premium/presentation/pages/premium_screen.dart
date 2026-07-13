@@ -140,7 +140,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
         if (mounted) {
           // Refresh user state to reflect premium status
-          context.read<AuthBloc>().add(AuthReloadUser());
+          context.read<AuthBloc>().add(const AuthReloadUser());
 
           di.sl<HapticService>().success();
           _confettiController.play();

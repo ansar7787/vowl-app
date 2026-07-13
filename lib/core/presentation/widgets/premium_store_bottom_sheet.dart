@@ -105,20 +105,14 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         );
       }
     } else {
-      // Fallback for UI-only mode
+      // Fallback: RevenueCat isn't configured yet — no real IAP package
+      // available for this card. Direct the user to the Premium screen
+      // (Razorpay-backed) or inform them the coin store is being set up.
       CustomSnackBar.show(
         context: context,
-        message: 'Processing your purchase...',
+        message: 'Coin packs are being configured. Check back soon!',
         type: CustomSnackBarType.info,
       );
-      Future.delayed(const Duration(seconds: 1), () {
-        if (!context.mounted) return;
-        CustomSnackBar.show(
-          context: context,
-          message: 'Real-money purchases are currently in development!',
-          type: CustomSnackBarType.warning,
-        );
-      });
     }
   }
 
@@ -339,7 +333,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                           title: 'Starter Pack',
                           coins: 500,
                           keys: 0,
-                          price: '₹49',
+                          price: '₹9',
                           icon: Icons.monetization_on_rounded,
                           color: Colors.amber,
                           isBestValue: false,
@@ -354,7 +348,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                           title: 'Explorer Pack',
                           coins: 1200,
                           keys: 2,
-                          price: '₹99',
+                          price: '₹19',
                           icon: Icons.explore_rounded,
                           color: const Color(0xFF3B82F6),
                           isBestValue: false,
@@ -369,7 +363,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                           title: 'Master Pack',
                           coins: 4000,
                           keys: 8,
-                          price: '₹299',
+                          price: '₹29',
                           icon: Icons.diamond_rounded,
                           color: const Color(0xFFEC4899),
                           isBestValue: true,

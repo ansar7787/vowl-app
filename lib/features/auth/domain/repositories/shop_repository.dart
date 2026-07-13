@@ -6,7 +6,7 @@ import 'package:vowl/core/error/failures.dart';
 abstract class ShopRepository {
   /// Adjusts the user's [coins] balance by [amountChange] (positive = earn,
   /// negative = spend). When [title] is supplied, appends a corresponding
-  /// entry to [coinHistory].
+  /// entry to [coinHistory]. Rejects a spend that would overdraw the balance.
   Future<Either<Failure, void>> updateUserCoins(
     int amountChange, {
     String? title,
@@ -28,7 +28,7 @@ abstract class ShopRepository {
   /// once-per-calendar-day limit via [lastKidsDailyRewardDate].
   Future<Either<Failure, void>> claimKidsDailyReward(int amount);
 
-  /// Decrements [hintCount] by one. Returns a [ServerFailure] if no hints
+  /// Decrements [hintCount] by one. Returns a [Failure] if no hints
   /// remain rather than allowing the count to go negative.
   Future<Either<Failure, void>> useHint();
 
@@ -47,4 +47,44 @@ abstract class ShopRepository {
 
   /// Sets [kidsEquippedAccessory] to [accessoryId] (or null to unequip).
   Future<Either<Failure, void>> equipKidsAccessory(String? accessoryId);
+
+  /// Deducts [cost] from [kidsCoins] (only if [furnitureId] isn't already
+  /// owned) and sets `kidsEquippedFurniture[category]` to [furnitureId],
+  /// adding it to [kidsOwnedFurniture] if new. Re-equipping an already-owned
+  /// item is always free. Runs atomically inside a Firestore transaction.
+  ///
+  /// Added to close a client-side read-then-write purchase in the
+  /// presentation layer (`ProfileBloc._onBuyFurniture`, previously
+  /// implemented via a full-document [updateUserCoins]-less `updateUser`
+  /// write with no transaction) that could let a concurrent purchase on a
+  /// second device drive the balance negative.
+  Future<Either<Failure, void>> buyKidsFurniture({
+    required String category,
+    required String furnitureId,
+    required int cost,
+  });
+
+  /// Deducts [cost] from [coins] (only if [mascotId] isn't already owned)
+  /// and equips it as [vowlMascot], adding it to [vowlOwnedMascots] if new.
+  /// Re-equipping an already-owned mascot is always free. Runs atomically
+  /// inside a Firestore transaction.
+  ///
+  /// Added for the same reason as [buyKidsFurniture] — replaces a client-side
+  /// read-then-write purchase in `ProfileBloc._onBuyVowlMascot`.
+  Future<Either<Failure, void>> buyVowlMascot({
+    required String mascotId,
+    required int cost,
+  });
+
+  /// Deducts [cost] from [coins] (only if [accessoryId] isn't already owned)
+  /// and equips it as [vowlEquippedAccessory], adding it to
+  /// [vowlOwnedAccessories] if new. Re-equipping an already-owned accessory
+  /// is always free. Runs atomically inside a Firestore transaction.
+  ///
+  /// Added for the same reason as [buyKidsFurniture] — replaces a client-side
+  /// read-then-write purchase in `ProfileBloc._onBuyVowlAccessory`.
+  Future<Either<Failure, void>> buyVowlAccessory({
+    required String accessoryId,
+    required int cost,
+  });
 }

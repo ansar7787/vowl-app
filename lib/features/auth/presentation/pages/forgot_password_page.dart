@@ -87,6 +87,14 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
 
           return BlocBuilder<ForgotPasswordCubit, ForgotPasswordState>(
+            // Previously rebuilt this entire subtree (gradient background,
+            // holographic card, header, footer) on every keystroke in the
+            // email field, even though this builder only actually reads
+            // isSubmitting below — the email TextFormField manages its own
+            // visible text internally and doesn't need this rebuild to
+            // reflect what's typed.
+            buildWhen: (previous, current) =>
+                previous.isSubmitting != current.isSubmitting,
             builder: (context, state) {
               final contrastColor = MeshGradientBackground.getContrastColor(
                 context,
@@ -95,7 +103,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
 
               return LoadingOverlay(
                 isLoading: state.isSubmitting,
-                message: 'Sending Recovery Link...',
+                message: context.tr('auth.sending_recovery_link'),
                 child: Scaffold(
                   backgroundColor: bgColor,
                   resizeToAvoidBottomInset: false,
@@ -142,7 +150,9 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                                 CrossAxisAlignment.stretch,
                                             children: [
                                               Text(
-                                                'Enter your email address below and we will send you a link to reset your password.',
+                                                context.tr(
+                                                  'auth.forgot_password_instructions',
+                                                ),
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
                                                   fontSize: 14.sp,

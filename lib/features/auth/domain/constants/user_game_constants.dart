@@ -5,6 +5,18 @@
 /// [UserEntity] and [UserModel] (100+ lines each).
 ///
 /// All repository implementations and domain entities import from here.
+///
+/// ### Internal composition
+/// [kDefaultUnlockedLevels] is composed from private per-category sub-maps
+/// (`_kSpeakingLevels`, `_kListeningLevels`, ... `_kKidsZoneLevels`, etc.) via
+/// const spreads. This is more than an organizational nicety: [kKidsGameTypes]
+/// is *derived* from `_kKidsZoneLevels.keys`, so the Kids Zone identifiers can
+/// never drift out of sync between the two collections the way two
+/// hand-typed, independently-maintained literals could. Adding a new Kids
+/// Zone game only requires touching `_kKidsZoneLevels`; every place that
+/// depends on "is this a kids game" or "what's its default level" updates
+/// automatically. The public surface (exactly [kDefaultUnlockedLevels] and
+/// [kKidsGameTypes]) is unchanged, so this is a pure internal refactor.
 abstract final class UserGameConstants {
   // ---------------------------------------------------------------------------
   // History & Collection Limits
@@ -62,6 +74,23 @@ abstract final class UserGameConstants {
   static const int kDailyGiftCycleIncrement = 10;
 
   // ---------------------------------------------------------------------------
+  // Milestone Rewards
+  // ---------------------------------------------------------------------------
+
+  /// Coin reward for reaching each streak-day milestone. The single source of
+  /// truth consulted server-side by
+  /// `GamificationRepositoryImpl.claimStreakMilestone`, so a caller can never
+  /// claim an unrecognized milestone or supply its own reward amount.
+  ///
+  /// Previously duplicated as a private `_streakMilestones` field inside
+  /// `ProgressionBloc` with no server-side counterpart to validate against.
+  static const Map<int, int> kStreakMilestoneRewards = {
+    7: 100,
+    14: 250,
+    30: 500,
+  };
+
+  // ---------------------------------------------------------------------------
   // Kids Zone Defaults
   // ---------------------------------------------------------------------------
 
@@ -96,30 +125,10 @@ abstract final class UserGameConstants {
   ///
   /// Used by [GamificationRepositoryImpl.updateUserRewards] to route rewards
   /// into [kidsCoins] instead of the standard [coins] bucket.
-  static const Set<String> kKidsGameTypes = {
-    'alphabet',
-    'numbers',
-    'colors',
-    'shapes',
-    'animals',
-    'fruits',
-    'family',
-    'school',
-    'verbs',
-    'routine',
-    'emotions',
-    'prepositions',
-    'phonics',
-    'day_night',
-    'nature',
-    'home_kids',
-    'food_kids',
-    'transport',
-    'time',
-    'opposites',
-    'body_parts',
-    'clothing',
-  };
+  ///
+  /// Derived from [_kKidsZoneLevels] (computed once, on first access, then
+  /// cached) rather than a second hand-typed literal — see class doc.
+  static final Set<String> kKidsGameTypes = _kKidsZoneLevels.keys.toSet();
 
   // ---------------------------------------------------------------------------
   // Default Unlocked Levels
@@ -130,7 +139,21 @@ abstract final class UserGameConstants {
   /// Every game and category starts at level 1. Previously this was duplicated
   /// verbatim in both [UserEntity] and [UserModel]; it now lives here alone.
   static const Map<String, int> kDefaultUnlockedLevels = {
-    // 1. Speaking (10 Games)
+    ..._kSpeakingLevels,
+    ..._kListeningLevels,
+    ..._kReadingLevels,
+    ..._kWritingLevels,
+    ..._kGrammarLevels,
+    ..._kVocabularyLevels,
+    ..._kAccentLevels,
+    ..._kRoleplayLevels,
+    ..._kEliteMasteryLevels,
+    ..._kKidsZoneLevels,
+    ..._kMetaCategoryLevels,
+  };
+
+  // 1. Speaking (10 Games)
+  static const Map<String, int> _kSpeakingLevels = {
     'repeatSentence': 1,
     'speakMissingWord': 1,
     'situationSpeaking': 1,
@@ -141,8 +164,10 @@ abstract final class UserGameConstants {
     'pronunciationFocus': 1,
     'speakOpposite': 1,
     'dailyExpression': 1,
+  };
 
-    // 2. Listening (10 Games)
+  // 2. Listening (10 Games)
+  static const Map<String, int> _kListeningLevels = {
     'audioFillBlanks': 1,
     'audioMultipleChoice': 1,
     'audioSentenceOrder': 1,
@@ -153,8 +178,10 @@ abstract final class UserGameConstants {
     'detailSpotlight': 1,
     'listeningInference': 1,
     'ambientId': 1,
+  };
 
-    // 3. Reading (12 Games)
+  // 3. Reading (12 Games)
+  static const Map<String, int> _kReadingLevels = {
     'readAndAnswer': 1,
     'findWordMeaning': 1,
     'trueFalseReading': 1,
@@ -167,8 +194,10 @@ abstract final class UserGameConstants {
     'readingConclusion': 1,
     'clozeTest': 1,
     'skimmingScanning': 1,
+  };
 
-    // 4. Writing (11 Games)
+  // 4. Writing (11 Games)
+  static const Map<String, int> _kWritingLevels = {
     'sentenceBuilder': 1,
     'completeSentence': 1,
     'describeSituationWriting': 1,
@@ -180,8 +209,10 @@ abstract final class UserGameConstants {
     'writingEmail': 1,
     'correctionWriting': 1,
     'essayDrafting': 1,
+  };
 
-    // 5. Grammar (19 Games)
+  // 5. Grammar (19 Games)
+  static const Map<String, int> _kGrammarLevels = {
     'grammarQuest': 1,
     'sentenceCorrection': 1,
     'wordReorder': 1,
@@ -201,8 +232,10 @@ abstract final class UserGameConstants {
     'conditionals': 1,
     'conjunctions': 1,
     'directIndirectSpeech': 1,
+  };
 
-    // 6. Vocabulary (12 Games)
+  // 6. Vocabulary (12 Games)
+  static const Map<String, int> _kVocabularyLevels = {
     'flashcards': 1,
     'synonymSearch': 1,
     'antonymSearch': 1,
@@ -215,8 +248,10 @@ abstract final class UserGameConstants {
     'prefixSuffix': 1,
     'collocations': 1,
     'contextualUsage': 1,
+  };
 
-    // 7. Accent (12 Games)
+  // 7. Accent (12 Games)
+  static const Map<String, int> _kAccentLevels = {
     'minimalPairs': 1,
     'intonationMimic': 1,
     'syllableStress': 1,
@@ -229,8 +264,10 @@ abstract final class UserGameConstants {
     'dialectDrill': 1,
     'connectedSpeech': 1,
     'pitchModulation': 1,
+  };
 
-    // 8. Roleplay (10 Games)
+  // 8. Roleplay (10 Games)
+  static const Map<String, int> _kRoleplayLevels = {
     'branchingDialogue': 1,
     'situationalResponse': 1,
     'jobInterview': 1,
@@ -241,14 +278,22 @@ abstract final class UserGameConstants {
     'elevatorPitch': 1,
     'socialSpark': 1,
     'emergencyHub': 1,
+  };
 
-    // 9. Elite Mastery (4 Games)
+  // 9. Elite Mastery (4 Games)
+  static const Map<String, int> _kEliteMasteryLevels = {
     'storyBuilder': 1,
     'idiomMatch': 1,
     'speedSpelling': 1,
     'accentShadowing': 1,
+  };
 
-    // 10. Kids Zone (22 Games)
+  // 10. Kids Zone (22 Games)
+  //
+  // This is the single source of truth for Kids Zone game identifiers.
+  // [kKidsGameTypes] is derived from this map's keys — do not add a kids
+  // game anywhere else without adding it here first.
+  static const Map<String, int> _kKidsZoneLevels = {
     'alphabet': 1,
     'numbers': 1,
     'colors': 1,
@@ -271,8 +316,10 @@ abstract final class UserGameConstants {
     'opposites': 1,
     'body_parts': 1,
     'clothing': 1,
+  };
 
-    // Meta-categories (9 Categories)
+  // Meta-categories (9 Categories)
+  static const Map<String, int> _kMetaCategoryLevels = {
     'reading': 1,
     'writing': 1,
     'speaking': 1,

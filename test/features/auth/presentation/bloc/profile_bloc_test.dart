@@ -3,7 +3,12 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:vowl/features/auth/domain/usecases/buy_kids_accessory.dart';
+import 'package:vowl/features/auth/domain/usecases/buy_kids_furniture.dart';
+import 'package:vowl/features/auth/domain/usecases/buy_vowl_accessory.dart';
+import 'package:vowl/features/auth/domain/usecases/buy_vowl_mascot.dart';
 import 'package:vowl/features/auth/domain/usecases/equip_kids_accessory.dart';
+import 'package:vowl/features/auth/domain/usecases/purchase_golden_key.dart';
+import 'package:vowl/features/auth/domain/usecases/add_golden_key.dart';
 import 'package:vowl/features/auth/domain/usecases/update_display_name.dart';
 import 'package:vowl/features/auth/domain/usecases/update_kids_mascot.dart';
 import 'package:vowl/features/auth/domain/usecases/update_profile_picture.dart';
@@ -25,6 +30,16 @@ class MockUpdateUser extends Mock implements UpdateUser {}
 
 class MockAuthBloc extends Mock implements AuthBloc {}
 
+class MockBuyKidsFurniture extends Mock implements BuyKidsFurniture {}
+
+class MockBuyVowlMascot extends Mock implements BuyVowlMascot {}
+
+class MockBuyVowlAccessory extends Mock implements BuyVowlAccessory {}
+
+class MockPurchaseGoldenKey extends Mock implements PurchaseGoldenKey {}
+
+class MockAddGoldenKey extends Mock implements AddGoldenKey {}
+
 void main() {
   late ProfileBloc bloc;
   late MockUpdateProfilePicture mockUpdateProfilePicture;
@@ -34,6 +49,11 @@ void main() {
   late MockEquipKidsAccessory mockEquipKidsAccessory;
   late MockUpdateUser mockUpdateUser;
   late MockAuthBloc mockAuthBloc;
+  late MockBuyKidsFurniture mockBuyKidsFurniture;
+  late MockBuyVowlMascot mockBuyVowlMascot;
+  late MockBuyVowlAccessory mockBuyVowlAccessory;
+  late MockPurchaseGoldenKey mockPurchaseGoldenKey;
+  late MockAddGoldenKey mockAddGoldenKey;
 
   setUp(() {
     mockUpdateProfilePicture = MockUpdateProfilePicture();
@@ -43,6 +63,11 @@ void main() {
     mockEquipKidsAccessory = MockEquipKidsAccessory();
     mockUpdateUser = MockUpdateUser();
     mockAuthBloc = MockAuthBloc();
+    mockBuyKidsFurniture = MockBuyKidsFurniture();
+    mockBuyVowlMascot = MockBuyVowlMascot();
+    mockBuyVowlAccessory = MockBuyVowlAccessory();
+    mockPurchaseGoldenKey = MockPurchaseGoldenKey();
+    mockAddGoldenKey = MockAddGoldenKey();
 
     bloc = ProfileBloc(
       updateProfilePicture: mockUpdateProfilePicture,
@@ -52,6 +77,11 @@ void main() {
       equipKidsAccessory: mockEquipKidsAccessory,
       updateUser: mockUpdateUser,
       authBloc: mockAuthBloc,
+      buyKidsFurniture: mockBuyKidsFurniture,
+      buyVowlMascot: mockBuyVowlMascot,
+      buyVowlAccessory: mockBuyVowlAccessory,
+      purchaseGoldenKey: mockPurchaseGoldenKey,
+      addGoldenKey: mockAddGoldenKey,
     );
   });
 
@@ -74,7 +104,7 @@ void main() {
         isA<ProfileState>().having(
           (s) => s.message,
           'message',
-          'Name updated!',
+          'profile.display_name_updated',
         ),
       ],
       verify: (_) {

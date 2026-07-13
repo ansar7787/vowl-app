@@ -27,9 +27,14 @@ class EconomyAddCoinsRequested extends EconomyEvent {
   final int amount;
   final String title;
   final bool isEarned;
+  // 'coin_history.earned_coins' is a stable lookup key, not English display
+  // text — the previous default ('Earned Coins') was persisted verbatim
+  // into Firestore's coinHistory and could never be localized for any
+  // caller that didn't override it. See GamificationRepositoryImpl's class
+  // doc for the full rationale; the same fix was applied there.
   const EconomyAddCoinsRequested(
     this.amount, {
-    this.title = 'Earned Coins',
+    this.title = 'coin_history.earned_coins',
     this.isEarned = true,
   });
   @override
@@ -320,6 +325,16 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     );
   }
 
+  /// ⚠️ Client-side XP/coin credit via a full-document [updateUser] write —
+  /// same pattern flagged (and fixed, where a safe fix was possible) in
+  /// `ProfileBloc` and `ProgressionBloc`. Not changed here: unlike a
+  /// milestone claim, there's no server-side reference table this review
+  /// has visibility into for what a legitimate "triple up" amount should
+  /// be, so a repository method could only re-implement the same
+  /// trust-the-caller behavior with extra ceremony, not actually close the
+  /// gap. At minimum this should become an atomic `FieldValue.increment`
+  /// inside a transaction (closing the lost-update race) once the intended
+  /// validation rule is decided; see the review notes for the full pattern.
   Future<void> _onTripleUp(
     EconomyTripleUpRewardsRequested event,
     Emitter<EconomyState> emit,
@@ -339,6 +354,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     );
   }
 
+  /// ⚠️ Same caveat as [_onTripleUp] — see its doc comment.
   Future<void> _onAddBonusRewards(
     EconomyAddBonusRewardsRequested event,
     Emitter<EconomyState> emit,
@@ -411,12 +427,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
       return;
     }
 
-    final now = DateTime.now();
-    final isSameDay =
-        now.year == lastReward.year &&
-        now.month == lastReward.month &&
-        now.day == lastReward.day;
-
+    final isSameDay = _isSameCalendarDay(lastReward, DateTime.now());
     emit(state.copyWith(isDailyRewardAvailable: !isSameDay));
   }
 
@@ -426,6 +437,14 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
   // ---------------------------------------------------------------------------
   // Private helpers
   // ---------------------------------------------------------------------------
+
+  /// True if [a] and [b] fall on the same calendar day (year/month/day) in
+  /// local time. The same "already claimed today?" comparison this repeats
+  /// exists independently in several repository implementations too (Dart's
+  /// per-file privacy means none of them can share one helper) — see the
+  /// review notes for the full list.
+  static bool _isSameCalendarDay(DateTime a, DateTime b) =>
+      a.year == b.year && a.month == b.month && a.day == b.day;
 
   void _log(String message) {
     if (kDebugMode) debugPrint(message);

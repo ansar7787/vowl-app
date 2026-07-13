@@ -65,6 +65,11 @@ class SignUpState extends Equatable {
 // CUBIT
 // ============================================================================
 
+/// ### Error messages
+/// Every error, client-side validation included, flows through
+/// [AuthErrorHandler.getKey] — see `ForgotPasswordCubit`'s class doc for why
+/// (the validation checks below previously set [SignUpState.errorMessage] to
+/// raw English sentences directly, bypassing localization entirely).
 class SignUpCubit extends Cubit<SignUpState> {
   final SignUp _signUp;
   final SendEmailVerification _sendEmailVerification;
@@ -99,13 +104,17 @@ class SignUpCubit extends Cubit<SignUpState> {
 
     final trimmedName = state.name.trim();
     if (trimmedName.isEmpty) {
-      emit(state.copyWith(errorMessage: () => 'Name cannot be empty.'));
+      emit(
+        state.copyWith(
+          errorMessage: () => AuthErrorHandler.getKey('name-empty'),
+        ),
+      );
       return;
     }
     if (trimmedName.length < 2) {
       emit(
         state.copyWith(
-          errorMessage: () => 'Name must be at least 2 characters long.',
+          errorMessage: () => AuthErrorHandler.getKey('name-too-short'),
         ),
       );
       return;
@@ -114,27 +123,33 @@ class SignUpCubit extends Cubit<SignUpState> {
     final trimmedEmail = state.email.trim();
     if (trimmedEmail.isEmpty) {
       emit(
-        state.copyWith(errorMessage: () => 'Email address cannot be empty.'),
+        state.copyWith(
+          errorMessage: () => AuthErrorHandler.getKey('email-empty'),
+        ),
       );
       return;
     }
     if (!_emailRegex.hasMatch(trimmedEmail)) {
       emit(
         state.copyWith(
-          errorMessage: () => 'Please enter a valid email address.',
+          errorMessage: () => AuthErrorHandler.getKey('email-invalid'),
         ),
       );
       return;
     }
 
     if (state.password.isEmpty) {
-      emit(state.copyWith(errorMessage: () => 'Password cannot be empty.'));
+      emit(
+        state.copyWith(
+          errorMessage: () => AuthErrorHandler.getKey('password-empty'),
+        ),
+      );
       return;
     }
     if (state.password.length < 6) {
       emit(
         state.copyWith(
-          errorMessage: () => 'Password must be at least 6 characters long.',
+          errorMessage: () => AuthErrorHandler.getKey('password-too-short'),
         ),
       );
       return;
@@ -143,8 +158,7 @@ class SignUpCubit extends Cubit<SignUpState> {
     if (_networkInfo != null && !(await _networkInfo.isConnected)) {
       emit(
         state.copyWith(
-          errorMessage: () =>
-              'No internet connection. Please check your network.',
+          errorMessage: () => AuthErrorHandler.getKey('network-unreachable'),
         ),
       );
       return;
@@ -178,12 +192,19 @@ class SignUpCubit extends Cubit<SignUpState> {
         if (isClosed) return;
 
         verificationResult.fold(
+          // isSuccess stays true either way: the account WAS created — a
+          // failed verification email is a secondary, non-blocking issue.
+          // Previously this interpolated the raw failure code straight into
+          // an English sentence ('...verification email failed: $code'),
+          // which can't be localized (a l10n key can't absorb an arbitrary
+          // spliced-in value and still read as a coherent sentence in every
+          // target language) and would show a cryptic code to the user.
+          // Now it's a stable key with no interpolation.
           (failure) => emit(
             state.copyWith(
               isSubmitting: false,
               isSuccess: true,
-              errorMessage: () =>
-                  'Account created, but verification email failed: ${failure.message}',
+              errorMessage: () => 'signup.verification_email_failed',
             ),
           ),
           (_) => emit(state.copyWith(isSubmitting: false, isSuccess: true)),

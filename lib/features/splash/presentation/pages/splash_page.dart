@@ -16,10 +16,8 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   bool _hasNavigated = false;
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-  }
+
+
 
   @override
   void initState() {

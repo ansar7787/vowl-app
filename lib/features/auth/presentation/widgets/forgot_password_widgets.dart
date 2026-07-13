@@ -36,6 +36,7 @@ class ForgotPasswordHeader extends StatelessWidget {
               isForgotPassword: true,
             ),
             SizedBox(width: 8.w),
+            // 'Vowl' is the app's brand name — deliberately not localized.
             Hero(
               tag: 'auth_title',
               child: Material(
@@ -55,7 +56,7 @@ class ForgotPasswordHeader extends StatelessWidget {
           ],
         ),
         Text(
-          'Recover your account safely',
+          context.tr('auth.recover_account_subtitle'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 15.sp,
@@ -90,13 +91,18 @@ class ForgotPasswordEmailInput extends StatelessWidget {
     required this.contrastColor,
   });
 
+  // Identical pattern also exists (independently — Dart's per-file privacy
+  // means a private static field can't be shared) in login_widgets.dart,
+  // signup_widgets.dart, and all three auth Cubits. Verified byte-identical
+  // across all six; see the review notes for why this can't be fully
+  // deduplicated within this feature's file list.
   static final _emailRegex = RegExp(r'^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$');
 
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: 'Email address',
-      hint: 'Enter the email address linked to your account',
+      label: context.tr('auth.email_field_label'),
+      hint: context.tr('auth.email_field_hint_forgot_password'),
       textField: true,
       child: TextFormField(
         key: fieldKey,
@@ -105,9 +111,11 @@ class ForgotPasswordEmailInput extends StatelessWidget {
             context.read<ForgotPasswordCubit>().emailChanged(email),
         validator: (value) {
           final trimmed = value?.trim() ?? '';
-          if (trimmed.isEmpty) return 'Please enter your email';
+          if (trimmed.isEmpty) {
+            return context.tr('auth.validation_email_required');
+          }
           if (!_emailRegex.hasMatch(trimmed)) {
-            return 'Please enter a valid email';
+            return context.tr('auth.validation_email_invalid');
           }
           return null;
         },
@@ -116,7 +124,7 @@ class ForgotPasswordEmailInput extends StatelessWidget {
         autofillHints: const [AutofillHints.email],
         style: TextStyle(color: contrastColor),
         decoration: InputDecoration(
-          hintText: 'Email Address',
+          hintText: context.tr('auth.email_hint_full'),
           hintStyle: TextStyle(color: contrastColor.withValues(alpha: 0.5)),
           errorStyle: TextStyle(
             fontFamily: 'Outfit',
@@ -180,7 +188,7 @@ class SendResetLinkButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: 'Send password reset link',
+      label: context.tr('auth.send_reset_link'),
       child: ElevatedButton(
         onPressed: isSubmitting ? null : onPressed,
         style: ElevatedButton.styleFrom(
@@ -195,7 +203,18 @@ class SendResetLinkButton extends StatelessWidget {
                   strokeWidth: 2,
                 ),
               )
-            : Text(context.tr('auth.send_reset_link')),
+            // maxLines + overflow (not Flexible — this Text is the button's
+            // direct child, not inside a Row/Column, and Flexible requires
+            // an immediate Flex ancestor or it throws an "Incorrect use of
+            // ParentDataWidget" error) guards against a longer translation
+            // wrapping to two lines and looking visually broken inside this
+            // full-width, fixed-height button at high accessibility text
+            // scale.
+            : Text(
+                context.tr('auth.send_reset_link'),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
       ),
     );
   }
@@ -215,12 +234,18 @@ class RememberPasswordFooter extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          'Remember your password? ',
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            color: secondaryColor,
-            fontWeight: FontWeight.w600,
+        // Flexible + ellipsis: a longer translation of this prompt on a
+        // narrow (320px) device could otherwise push this Row into a
+        // RenderFlex overflow next to the "Login" button.
+        Flexible(
+          child: Text(
+            context.tr('auth.remember_password_prompt'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              color: secondaryColor,
+              fontWeight: FontWeight.w600,
+            ),
+            overflow: TextOverflow.ellipsis,
           ),
         ),
         TextButton(

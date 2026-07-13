@@ -66,7 +66,21 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       password: password,
     );
 
-    final firebaseUser = credential.user!;
+    final firebaseUser = credential.user;
+    if (firebaseUser == null) {
+      // Firebase Auth's own contract is that `user` is non-null on a
+      // successful create call — this only trips if that contract is ever
+      // violated (SDK bug, mocked test double, etc). Throwing a typed
+      // FirebaseAuthException here (instead of letting a bare null-check
+      // fail) keeps it flowing through the same handleFirebaseException
+      // mapping every other failure in this app goes through, rather than
+      // surfacing as an unrelated "Null check operator used on a null
+      // value" message if it's ever displayed or logged.
+      throw FirebaseAuthException(
+        code: 'null-user-after-create',
+        message: 'Firebase returned no user after account creation.',
+      );
+    }
 
     // Persist the display name in Firebase Auth for downstream consumers
     // (e.g., profile screens that read from FirebaseAuth.currentUser).
@@ -83,7 +97,22 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       recentActivities: const [],
     );
 
-    await _firestore.collection('users').doc(newUser.id).set(newUser.toMap());
+    // Best-effort: the Auth account (the critical step) already exists at
+    // this point. If this write fails (offline, transient Firestore error),
+    // don't fail the whole signUp and strand the caller on an error screen
+    // for an account that was actually created successfully — that would
+    // send them into a confusing "email already in use" loop on retry.
+    // AuthRepositoryImpl.getCurrentUser() self-heals by provisioning the
+    // document on the next read if it's still missing.
+    try {
+      await _firestore.collection('users').doc(newUser.id).set(newUser.toMap());
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint(
+          'AuthRemoteDataSource: Firestore provisioning write after signUp failed: $e',
+        );
+      }
+    }
 
     return newUser;
   }
@@ -102,7 +131,13 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       password: password,
     );
 
-    final firebaseUser = credential.user!;
+    final firebaseUser = credential.user;
+    if (firebaseUser == null) {
+      throw FirebaseAuthException(
+        code: 'null-user-after-signin',
+        message: 'Firebase returned no user after sign-in.',
+      );
+    }
 
     // Fetch the full Firestore profile so the caller receives real user data
     // (coins, XP, streak, etc.) immediately — not just the auth credential
@@ -129,15 +164,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     }
 
     // Fallback: return a minimal model built from auth credentials only.
-    return UserModel(
-      id: firebaseUser.uid,
-      email: firebaseUser.email ?? '',
-      displayName: firebaseUser.displayName,
-      photoUrl: firebaseUser.photoURL,
-      isEmailVerified: firebaseUser.emailVerified,
-      dailyXpHistory: const {},
-      recentActivities: const [],
-    );
+    return _minimalUserFrom(firebaseUser);
   }
 
   // ---------------------------------------------------------------------------
@@ -167,24 +194,47 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     final userCredential = await _firebaseAuth.signInWithCredential(credential);
     final user = userCredential.user;
 
-    bool isNewUser = userCredential.additionalUserInfo?.isNewUser ?? false;
+    if (user == null) {
+      throw FirebaseAuthException(
+        code: 'null-user-after-google-signin',
+        message: 'Firebase returned no user after Google sign-in.',
+      );
+    }
 
-    if (user != null) {
-      final userDoc = await _firestore.collection('users').doc(user.uid).get();
-      if (!userDoc.exists) {
-        isNewUser = true;
-        final newUser = UserModel(
-          id: user.uid,
-          email: user.email ?? '',
-          displayName: user.displayName,
-          photoUrl: user.photoURL,
-          isAdmin: false,
-          lastLoginDate: DateTime.now(),
-          currentStreak: 1,
-          dailyXpHistory: const {},
-          recentActivities: const [],
-        );
-        await _firestore.collection('users').doc(user.uid).set(newUser.toMap());
+    // Firestore document existence is the single source of truth for
+    // "is this a new user" — it's what actually gates provisioning below, so
+    // it's what we report. (Firebase's own userCredential.additionalUserInfo
+    // ?.isNewUser tracks Auth-account newness, which can in rare edge cases
+    // diverge from Firestore-document newness — e.g. a doc that was deleted
+    // out from under an existing Auth account. Using one authoritative
+    // signal instead of two keeps this deterministic.)
+    final userDocRef = _firestore.collection('users').doc(user.uid);
+    final userDoc = await userDocRef.get();
+    final isNewUser = !userDoc.exists;
+
+    if (isNewUser) {
+      final newUser = UserModel(
+        id: user.uid,
+        email: user.email ?? '',
+        displayName: user.displayName,
+        photoUrl: user.photoURL,
+        isAdmin: false,
+        lastLoginDate: DateTime.now(),
+        currentStreak: 1,
+        dailyXpHistory: const {},
+        recentActivities: const [],
+      );
+      // Best-effort, same reasoning as signUp() above: the Auth session
+      // already exists; don't fail this call over a transient Firestore
+      // write error and leave the caller unsure whether sign-in worked.
+      try {
+        await userDocRef.set(newUser.toMap());
+      } catch (e) {
+        if (kDebugMode) {
+          debugPrint(
+            'AuthRemoteDataSource: Firestore provisioning write after Google sign-in failed: $e',
+          );
+        }
       }
     }
 
@@ -212,5 +262,26 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
     // Firebase Auth sign-out must always succeed; propagate any exception.
     await _firebaseAuth.signOut();
+  }
+
+  // ---------------------------------------------------------------------------
+  // Private helpers
+  // ---------------------------------------------------------------------------
+
+  /// Builds a minimal [UserModel] from Firebase Auth credential fields alone
+  /// (no Firestore data). Used as a non-destructive fallback when a Firestore
+  /// read fails or the profile document isn't available yet — this is never
+  /// written back to Firestore, so the real profile is recovered as soon as
+  /// a subsequent read succeeds.
+  UserModel _minimalUserFrom(User firebaseUser) {
+    return UserModel(
+      id: firebaseUser.uid,
+      email: firebaseUser.email ?? '',
+      displayName: firebaseUser.displayName,
+      photoUrl: firebaseUser.photoURL,
+      isEmailVerified: firebaseUser.emailVerified,
+      dailyXpHistory: const {},
+      recentActivities: const [],
+    );
   }
 }

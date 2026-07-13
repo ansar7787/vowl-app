@@ -39,50 +39,52 @@ class ShopRepositoryImpl
   }) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('User not logged in'));
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
       final docRef = _firestore.collection('users').doc(user.uid);
 
       // Always use a transaction to keep the coin history log consistent with
       // the balance change — even when no title is provided.
-      await _firestore.runTransaction((transaction) async {
+      return await _firestore.runTransaction<Either<Failure, void>>((
+        transaction,
+      ) async {
         final doc = await transaction.get(docRef);
         if (!doc.exists || doc.data() == null) {
-          throw Exception('User data not found');
+          return Left(ServerFailure('user-data-not-found'));
         }
 
         final data = doc.data()!;
+        final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
+
+        // Only a spend (negative delta) can ever overdraw the balance;
+        // earning coins is always safe to apply unconditionally. This check
+        // did not exist before — any caller passing a negative amountChange
+        // larger than the current balance could silently push coins below
+        // zero, since FieldValue.increment has no floor of its own.
+        if (amountChange < 0 && currentCoins + amountChange < 0) {
+          _log(
+            'ShopRepository: updateUserCoins rejected — insufficient balance for ${user.uid}.',
+          );
+          return Left(AuthFailure('insufficient-coins'));
+        }
+
         final updates = <String, dynamic>{
           'coins': FieldValue.increment(amountChange),
         };
 
         if (title != null) {
-          var history = <Map<String, dynamic>>[];
-          if (data['coinHistory'] != null) {
-            history = List<Map<String, dynamic>>.from(
-              (data['coinHistory'] as List<dynamic>)
-                  .whereType<Map<Object?, Object?>>()
-                  .map((m) => m.map((k, v) => MapEntry(k.toString(), v))),
-            );
-          }
-          history.insert(0, {
-            'title': title,
-            'amount': amountChange,
-            'isEarned': isEarned ?? (amountChange > 0),
-            'date': DateTime.now().toIso8601String(),
-          });
-          if (history.length > UserGameConstants.kActivityHistoryLimit) {
-            history = history.sublist(
-              0,
-              UserGameConstants.kActivityHistoryLimit,
-            );
-          }
+          final history = _recordCoinHistory(
+            _parseMapList(data['coinHistory']),
+            titleKey: title,
+            amount: amountChange,
+            isEarned: isEarned ?? (amountChange > 0),
+          );
           updates['coinHistory'] = history;
         }
 
         transaction.update(docRef, updates);
+        return const Right<Failure, void>(null);
       });
-      return const Right(null);
     } catch (e) {
       return Left(handleFirebaseException(e));
     }
@@ -96,7 +98,7 @@ class ShopRepositoryImpl
   Future<Either<Failure, void>> awardKidsCoins(int amount) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('User not logged in'));
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
       // FieldValue.increment is atomically safe for server-side increments.
       await _firestore.collection('users').doc(user.uid).update({
@@ -116,14 +118,16 @@ class ShopRepositoryImpl
   Future<Either<Failure, void>> claimDailyGift() async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('User not logged in'));
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
       final docRef = _firestore.collection('users').doc(user.uid);
 
-      return await _firestore.runTransaction((transaction) async {
+      return await _firestore.runTransaction<Either<Failure, void>>((
+        transaction,
+      ) async {
         final doc = await transaction.get(docRef);
         if (!doc.exists || doc.data() == null) {
-          return Left(AuthFailure('User data not found'));
+          return Left(ServerFailure('user-data-not-found'));
         }
 
         final userData = UserModel.fromMap(doc.data()!);
@@ -131,13 +135,10 @@ class ShopRepositoryImpl
         final lastGift = userData.lastDailyRewardDate;
 
         final bool available =
-            lastGift == null ||
-            lastGift.year != now.year ||
-            lastGift.month != now.month ||
-            lastGift.day != now.day;
+            lastGift == null || !_isSameCalendarDay(lastGift, now);
 
         if (!available) {
-          return Left(AuthFailure('Daily gift already claimed today'));
+          return Left(AuthFailure('daily-gift-already-claimed'));
         }
 
         // Reward scales with the day of month to provide variety.
@@ -170,31 +171,31 @@ class ShopRepositoryImpl
   Future<Either<Failure, void>> claimDailyChest(int amount) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('User not logged in'));
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
       final docRef = _firestore.collection('users').doc(user.uid);
       _log(
         'ShopRepository: Daily Chest claim initiated for ${user.uid} (amount: $amount)',
       );
 
-      return await _firestore.runTransaction((transaction) async {
+      return await _firestore.runTransaction<Either<Failure, void>>((
+        transaction,
+      ) async {
         final doc = await transaction.get(docRef);
         if (!doc.exists || doc.data() == null) {
-          return Left(AuthFailure('User data not found'));
+          return Left(ServerFailure('user-data-not-found'));
         }
 
-        // Guard: reject if chest was already claimed today.
-        final lastRaw = doc.data()!['lastDailyRewardDate'];
-        if (lastRaw != null) {
-          final lastClaim = (lastRaw as Timestamp).toDate();
-          final now = DateTime.now();
-          final alreadyClaimed =
-              lastClaim.year == now.year &&
-              lastClaim.month == now.month &&
-              lastClaim.day == now.day;
-          if (alreadyClaimed) {
-            return Left(AuthFailure('Daily chest already claimed today'));
-          }
+        // Guard: reject if chest was already claimed today. Parsed through
+        // UserModel.fromMap (same as claimDailyGift) rather than a direct
+        // `as Timestamp` cast — the raw cast would throw if this field was
+        // ever anything else (an ISO string from a migration, for example),
+        // where UserModel's parser already handles that defensively.
+        final userData = UserModel.fromMap(doc.data()!);
+        final lastClaim = userData.lastDailyRewardDate;
+        if (lastClaim != null &&
+            _isSameCalendarDay(lastClaim, DateTime.now())) {
+          return Left(AuthFailure('daily-chest-already-claimed'));
         }
 
         transaction.update(docRef, {
@@ -221,29 +222,25 @@ class ShopRepositoryImpl
   Future<Either<Failure, void>> claimKidsDailyReward(int amount) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('User not logged in'));
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
       final docRef = _firestore.collection('users').doc(user.uid);
       _log('ShopRepository: Kids Daily Reward claim initiated for ${user.uid}');
 
-      return await _firestore.runTransaction((transaction) async {
+      return await _firestore.runTransaction<Either<Failure, void>>((
+        transaction,
+      ) async {
         final doc = await transaction.get(docRef);
         if (!doc.exists || doc.data() == null) {
-          return Left(AuthFailure('User data not found'));
+          return Left(ServerFailure('user-data-not-found'));
         }
 
-        // Guard: reject if kids reward was already claimed today.
-        final lastRaw = doc.data()!['lastKidsDailyRewardDate'];
-        if (lastRaw != null) {
-          final lastClaim = (lastRaw as Timestamp).toDate();
-          final now = DateTime.now();
-          final alreadyClaimed =
-              lastClaim.year == now.year &&
-              lastClaim.month == now.month &&
-              lastClaim.day == now.day;
-          if (alreadyClaimed) {
-            return Left(AuthFailure('Kids daily reward already claimed today'));
-          }
+        // Same defensive-parsing rationale as claimDailyChest above.
+        final userData = UserModel.fromMap(doc.data()!);
+        final lastClaim = userData.lastKidsDailyRewardDate;
+        if (lastClaim != null &&
+            _isSameCalendarDay(lastClaim, DateTime.now())) {
+          return Left(AuthFailure('kids-daily-reward-already-claimed'));
         }
 
         transaction.update(docRef, {
@@ -266,14 +263,16 @@ class ShopRepositoryImpl
   Future<Either<Failure, void>> useHint() async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('User not logged in'));
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
       final docRef = _firestore.collection('users').doc(user.uid);
 
-      return await _firestore.runTransaction((transaction) async {
+      return await _firestore.runTransaction<Either<Failure, void>>((
+        transaction,
+      ) async {
         final snapshot = await transaction.get(docRef);
         if (!snapshot.exists) {
-          return Left(ServerFailure('User data not found'));
+          return Left(ServerFailure('user-data-not-found'));
         }
 
         final hintCount = (snapshot.data()?['hintCount'] as num?)?.toInt() ?? 0;
@@ -282,7 +281,7 @@ class ShopRepositoryImpl
           return const Right<Failure, void>(null);
         } else {
           _log('ShopRepository: useHint failed — no hints available.');
-          return Left(ServerFailure('No hints available'));
+          return Left(AuthFailure('no-hints-available'));
         }
       });
     } catch (e) {
@@ -299,39 +298,30 @@ class ShopRepositoryImpl
   Future<Either<Failure, void>> purchaseHint(int cost, int hintAmount) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('User not logged in'));
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
       final docRef = _firestore.collection('users').doc(user.uid);
 
-      return await _firestore.runTransaction((transaction) async {
+      return await _firestore.runTransaction<Either<Failure, void>>((
+        transaction,
+      ) async {
         final doc = await transaction.get(docRef);
         if (!doc.exists || doc.data() == null) {
-          return Left(ServerFailure('User data not found'));
+          return Left(ServerFailure('user-data-not-found'));
         }
 
         final data = doc.data()!;
         final coins = (data['coins'] as num?)?.toInt() ?? 0;
         if (coins < cost) {
-          return Left(ServerFailure('Not enough coins'));
+          return Left(AuthFailure('insufficient-coins'));
         }
 
-        var history = <Map<String, dynamic>>[];
-        if (data['coinHistory'] != null) {
-          history = List<Map<String, dynamic>>.from(
-            (data['coinHistory'] as List<dynamic>)
-                .whereType<Map<Object?, Object?>>()
-                .map((m) => m.map((k, v) => MapEntry(k.toString(), v))),
-          );
-        }
-        history.insert(0, {
-          'title': 'Purchased Hint Pack',
-          'amount': -cost,
-          'isEarned': false,
-          'date': DateTime.now().toIso8601String(),
-        });
-        if (history.length > UserGameConstants.kActivityHistoryLimit) {
-          history = history.sublist(0, UserGameConstants.kActivityHistoryLimit);
-        }
+        final history = _recordCoinHistory(
+          _parseMapList(data['coinHistory']),
+          titleKey: 'coin_history.purchased_hint_pack',
+          amount: -cost,
+          isEarned: false,
+        );
 
         transaction.update(docRef, {
           'coins': FieldValue.increment(-cost),
@@ -353,7 +343,7 @@ class ShopRepositoryImpl
   Future<Either<Failure, void>> awardKidsSticker(String stickerId) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('User not logged in'));
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
       await _firestore.collection('users').doc(user.uid).update({
         'kidsStickers': FieldValue.arrayUnion([stickerId]),
@@ -372,7 +362,7 @@ class ShopRepositoryImpl
   Future<Either<Failure, void>> updateKidsMascot(String mascotId) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('User not logged in'));
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
       await _firestore.collection('users').doc(user.uid).update({
         'kidsMascot': mascotId,
@@ -394,12 +384,16 @@ class ShopRepositoryImpl
   ) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('User not logged in'));
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
       final docRef = _firestore.collection('users').doc(user.uid);
-      await _firestore.runTransaction((transaction) async {
+      return await _firestore.runTransaction<Either<Failure, void>>((
+        transaction,
+      ) async {
         final snapshot = await transaction.get(docRef);
-        if (!snapshot.exists) throw Exception('User not found');
+        if (!snapshot.exists) {
+          return Left(ServerFailure('user-data-not-found'));
+        }
 
         final data = snapshot.data()!;
         final currentCoins = (data['kidsCoins'] as num?)?.toInt() ?? 0;
@@ -408,16 +402,20 @@ class ShopRepositoryImpl
         );
 
         // Idempotent: silently succeed if already owned.
-        if (owned.contains(accessoryId)) return;
+        if (owned.contains(accessoryId)) {
+          return const Right<Failure, void>(null);
+        }
 
-        if (currentCoins < cost) throw Exception('Not enough Kids Coins');
+        if (currentCoins < cost) {
+          return Left(AuthFailure('insufficient-kids-coins'));
+        }
 
         transaction.update(docRef, {
           'kidsCoins': currentCoins - cost,
           'kidsOwnedAccessories': FieldValue.arrayUnion([accessoryId]),
         });
+        return const Right<Failure, void>(null);
       });
-      return const Right(null);
     } catch (e) {
       return Left(handleFirebaseException(e));
     }
@@ -431,7 +429,7 @@ class ShopRepositoryImpl
   Future<Either<Failure, void>> equipKidsAccessory(String? accessoryId) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user == null) return Left(AuthFailure('User not logged in'));
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
 
       await _firestore.collection('users').doc(user.uid).update({
         'kidsEquippedAccessory': accessoryId,
@@ -443,8 +441,210 @@ class ShopRepositoryImpl
   }
 
   // ---------------------------------------------------------------------------
+  // buyKidsFurniture
+  // ---------------------------------------------------------------------------
+
+  /// Replaces ProfileBloc._onBuyFurniture's previous client-side
+  /// read-then-write via a generic UpdateUser call (flagged in that
+  /// method's own doc comment as needing exactly this).
+  @override
+  Future<Either<Failure, void>> buyKidsFurniture({
+    required String category,
+    required String furnitureId,
+    required int cost,
+  }) async {
+    try {
+      final user = _firebaseAuth.currentUser;
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
+
+      final docRef = _firestore.collection('users').doc(user.uid);
+      return await _firestore.runTransaction<Either<Failure, void>>((
+        transaction,
+      ) async {
+        final snapshot = await transaction.get(docRef);
+        if (!snapshot.exists) {
+          return Left(ServerFailure('user-data-not-found'));
+        }
+
+        final data = snapshot.data()!;
+        final currentCoins = (data['kidsCoins'] as num?)?.toInt() ?? 0;
+        final owned = List<String>.from(
+          data['kidsOwnedFurniture'] as List? ?? [],
+        );
+        final equipped = Map<String, String>.from(
+          data['kidsEquippedFurniture'] as Map? ?? {},
+        );
+
+        // Re-equipping something already owned is always free — only a new
+        // purchase needs the balance check.
+        final alreadyOwned = owned.contains(furnitureId);
+        if (!alreadyOwned && currentCoins < cost) {
+          return Left(AuthFailure('insufficient-kids-coins'));
+        }
+
+        equipped[category] = furnitureId;
+        final updates = <String, dynamic>{'kidsEquippedFurniture': equipped};
+        if (!alreadyOwned) {
+          updates['kidsCoins'] = currentCoins - cost;
+          updates['kidsOwnedFurniture'] = FieldValue.arrayUnion([furnitureId]);
+        }
+
+        transaction.update(docRef, updates);
+        return const Right<Failure, void>(null);
+      });
+    } catch (e) {
+      return Left(handleFirebaseException(e));
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // buyVowlMascot
+  // ---------------------------------------------------------------------------
+
+  /// Replaces ProfileBloc._onBuyVowlMascot's previous client-side
+  /// read-then-write via a generic UpdateUser call.
+  @override
+  Future<Either<Failure, void>> buyVowlMascot({
+    required String mascotId,
+    required int cost,
+  }) async {
+    try {
+      final user = _firebaseAuth.currentUser;
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
+
+      final docRef = _firestore.collection('users').doc(user.uid);
+      return await _firestore.runTransaction<Either<Failure, void>>((
+        transaction,
+      ) async {
+        final snapshot = await transaction.get(docRef);
+        if (!snapshot.exists) {
+          return Left(ServerFailure('user-data-not-found'));
+        }
+
+        final data = snapshot.data()!;
+        final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
+        final owned = List<String>.from(
+          data['vowlOwnedMascots'] as List? ?? [],
+        );
+
+        final alreadyOwned = owned.contains(mascotId);
+        if (!alreadyOwned && currentCoins < cost) {
+          return Left(AuthFailure('insufficient-coins'));
+        }
+
+        final updates = <String, dynamic>{'vowlMascot': mascotId};
+        if (!alreadyOwned) {
+          updates['coins'] = currentCoins - cost;
+          updates['vowlOwnedMascots'] = FieldValue.arrayUnion([mascotId]);
+        }
+
+        transaction.update(docRef, updates);
+        return const Right<Failure, void>(null);
+      });
+    } catch (e) {
+      return Left(handleFirebaseException(e));
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // buyVowlAccessory
+  // ---------------------------------------------------------------------------
+
+  /// Replaces ProfileBloc._onBuyVowlAccessory's previous client-side
+  /// read-then-write via a generic UpdateUser call (flagged in that
+  /// method's own doc comment as needing exactly this).
+  @override
+  Future<Either<Failure, void>> buyVowlAccessory({
+    required String accessoryId,
+    required int cost,
+  }) async {
+    try {
+      final user = _firebaseAuth.currentUser;
+      if (user == null) return Left(AuthFailure('user-not-logged-in'));
+
+      final docRef = _firestore.collection('users').doc(user.uid);
+      return await _firestore.runTransaction<Either<Failure, void>>((
+        transaction,
+      ) async {
+        final snapshot = await transaction.get(docRef);
+        if (!snapshot.exists) {
+          return Left(ServerFailure('user-data-not-found'));
+        }
+
+        final data = snapshot.data()!;
+        final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
+        final owned = List<String>.from(
+          data['vowlOwnedAccessories'] as List? ?? [],
+        );
+
+        final alreadyOwned = owned.contains(accessoryId);
+        if (!alreadyOwned && currentCoins < cost) {
+          return Left(AuthFailure('insufficient-coins'));
+        }
+
+        final updates = <String, dynamic>{'vowlEquippedAccessory': accessoryId};
+        if (!alreadyOwned) {
+          updates['coins'] = currentCoins - cost;
+          updates['vowlOwnedAccessories'] = FieldValue.arrayUnion([
+            accessoryId,
+          ]);
+        }
+
+        transaction.update(docRef, updates);
+        return const Right<Failure, void>(null);
+      });
+    } catch (e) {
+      return Left(handleFirebaseException(e));
+    }
+  }
+
+  // ---------------------------------------------------------------------------
   // Private helpers
   // ---------------------------------------------------------------------------
+
+  /// Parses a Firestore list of coin-history entries defensively. Local
+  /// counterpart to the equivalent helper in GamificationRepositoryImpl —
+  /// Dart's per-file privacy means neither can import the other's.
+  static List<Map<String, dynamic>> _parseMapList(dynamic raw) {
+    if (raw == null) return <Map<String, dynamic>>[];
+    return (raw as List<dynamic>)
+        .whereType<Map<Object?, Object?>>()
+        .map((m) => m.map((k, v) => MapEntry(k.toString(), v)))
+        .toList();
+  }
+
+  /// Prepends a coin-history entry and trims to the configured retention
+  /// limit. Shared by [updateUserCoins] and [purchaseHint].
+  ///
+  /// [titleKey] is a stable lookup key, never English display text — see
+  /// [GamificationRepositoryImpl]'s class doc for the localization rationale
+  /// (the same fix was applied there for the identical reason). [params]
+  /// carries any values the presentation layer needs to interpolate.
+  static List<Map<String, dynamic>> _recordCoinHistory(
+    List<Map<String, dynamic>> existing, {
+    required String titleKey,
+    required int amount,
+    required bool isEarned,
+    Map<String, dynamic>? params,
+  }) {
+    final updated = List<Map<String, dynamic>>.from(existing)
+      ..insert(0, {
+        'titleKey': titleKey,
+        if (params != null) 'params': params,
+        'amount': amount,
+        'isEarned': isEarned,
+        'date': DateTime.now().toIso8601String(),
+      });
+    if (updated.length > UserGameConstants.kActivityHistoryLimit) {
+      return updated.sublist(0, UserGameConstants.kActivityHistoryLimit);
+    }
+    return updated;
+  }
+
+  /// True if [a] and [b] fall on the same calendar day (year/month/day) in
+  /// local time. Used by every "claim once per day" guard in this file.
+  static bool _isSameCalendarDay(DateTime a, DateTime b) =>
+      a.year == b.year && a.month == b.month && a.day == b.day;
 
   void _log(String message) {
     if (kDebugMode) debugPrint(message);

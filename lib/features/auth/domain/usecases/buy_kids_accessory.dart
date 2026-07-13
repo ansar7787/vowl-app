@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:equatable/equatable.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/features/auth/domain/repositories/shop_repository.dart';
@@ -19,9 +20,12 @@ class BuyKidsAccessory extends UseCase<void, BuyKidsAccessoryParams> {
 }
 
 /// Parameters for [BuyKidsAccessory].
-class BuyKidsAccessoryParams {
+class BuyKidsAccessoryParams extends Equatable {
   final String accessoryId;
   final int cost;
 
   const BuyKidsAccessoryParams({required this.accessoryId, required this.cost});
+
+  @override
+  List<Object?> get props => [accessoryId, cost];
 }

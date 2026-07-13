@@ -13,7 +13,7 @@ class AddGoldenKeyParams extends Equatable {
   List<Object?> get props => [amount];
 }
 
-class AddGoldenKey implements UseCase<void, AddGoldenKeyParams> {
+class AddGoldenKey extends UseCase<void, AddGoldenKeyParams> {
   final GamificationRepository repository;
 
   AddGoldenKey(this.repository);

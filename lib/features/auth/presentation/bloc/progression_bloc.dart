@@ -1,11 +1,16 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/domain/usecases/activate_double_xp.dart';
+import 'package:vowl/features/auth/domain/usecases/claim_level_milestone.dart';
+import 'package:vowl/features/auth/domain/usecases/claim_streak_milestone.dart';
+import 'package:vowl/features/auth/domain/usecases/purchase_permanent_xp_boost.dart';
 import 'package:vowl/features/auth/domain/usecases/purchase_streak_freeze.dart';
 import 'package:vowl/features/auth/domain/usecases/repair_streak.dart';
+import 'package:vowl/features/auth/domain/usecases/repair_streak_free.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -46,6 +51,12 @@ class ProgressionActivateDoubleXPRequested extends ProgressionEvent {
 
 class ProgressionClaimStreakMilestoneRequested extends ProgressionEvent {
   final int milestone;
+
+  /// Retained on the event for backwards API compatibility with existing
+  /// call sites, but no longer used by the handler — see
+  /// [ProgressionBloc._onClaimStreakMilestone]'s doc comment. The reward is
+  /// now looked up server-side from `UserGameConstants.kStreakMilestoneRewards`
+  /// rather than trusted from whatever dispatched this event.
   final int reward;
   const ProgressionClaimStreakMilestoneRequested(this.milestone, this.reward);
   @override
@@ -139,6 +150,21 @@ class ProgressionState extends Equatable {
 // BLOC
 // ============================================================================
 
+/// ### Currency/reward safety — read this before touching a handler below
+/// Several handlers here used to read balances/counters straight off the
+/// (possibly stale) cached [AuthBloc] user, mutate them client-side, and
+/// persist the result via a generic full-document [updateUser] write with
+/// no Firestore transaction. Two of those (`_onClaimStreakMilestone`,
+/// `_onClaimLevelMilestone`) had no check at all for whether the milestone
+/// had *already* been claimed, and trusted a `reward` amount carried
+/// straight through from the triggering event — a double-tap, or anything
+/// dispatching the event directly, could mint coins with no bound. Every
+/// handler below that could be safely rewired onto a transaction-backed,
+/// server-validated repository method now is. [_onAddXp] could not be
+/// (there's no dedicated backing method for a bare XP grant, and inventing
+/// server-side validation for "how much XP is legitimate here" isn't a call
+/// this review can make blind) — its doc comment explains why it's flagged
+/// rather than changed.
 class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   final RepairStreak repairStreak;
   final PurchaseStreakFreeze purchaseStreakFreeze;
@@ -147,13 +173,17 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   final AuthBloc authBloc;
   final NotificationService notificationService;
 
+  // Added to replace unsafe client-side purchase/claim logic — see each
+  // handler's doc comment below for what changed and why.
+  final RepairStreakFree repairStreakFree;
+  final PurchasePermanentXPBoost purchasePermanentXPBoost;
+  final ClaimStreakMilestone claimStreakMilestone;
+  final ClaimLevelMilestone claimLevelMilestone;
+
   // Prevents reprocessing the same [UserEntity] snapshot when the stream
   // fires multiple times with identical data. Relies on [UserEntity.operator==]
   // which performs deep equality across all fields.
   UserEntity? _lastProcessedUser;
-
-  /// Streak milestone thresholds mapped to their coin rewards.
-  static const Map<int, int> _streakMilestones = {7: 100, 14: 250, 30: 500};
 
   ProgressionBloc({
     required this.repairStreak,
@@ -162,6 +192,10 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     required this.updateUser,
     required this.authBloc,
     required this.notificationService,
+    required this.repairStreakFree,
+    required this.purchasePermanentXPBoost,
+    required this.claimStreakMilestone,
+    required this.claimLevelMilestone,
   }) : super(const ProgressionState()) {
     on<ProgressionRepairStreakRequested>(_onRepairStreak);
     on<ProgressionRepairStreakWithAdRequested>(_onRepairStreakWithAd);
@@ -232,43 +266,41 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     }
 
     if (dayDifference == 1) {
-      // Consecutive day — increment streak
-      UserEntity updatedUser = user.copyWith(
+      // Consecutive day — increment streak. The streak/lastLoginDate update
+      // itself stays on the client-computed + updateUser path (unlike the
+      // purchase/claim handlers below, this is a broad multi-field state
+      // transition with shield/auto-shield branches — not a narrow,
+      // template-able "spend X get Y" operation, so redesigning it into a
+      // transaction isn't a safe change to make without much deeper
+      // context on every edge case it needs to preserve).
+      final updatedUser = user.copyWith(
         currentStreak: user.currentStreak + 1,
         lastLoginDate: now,
       );
-
-      // Auto-claim milestone if applicable
       final newStreak = updatedUser.currentStreak;
-      final milestoneReward = _streakMilestones[newStreak];
-      if (milestoneReward != null &&
-          !updatedUser.claimedStreakMilestones.contains(newStreak)) {
-        final newHistory = List<Map<String, dynamic>>.from(
-          updatedUser.coinHistory,
-        );
-        newHistory.insert(0, {
-          'title': 'Auto-Claimed Milestone ($newStreak Days)',
-          'amount': milestoneReward,
-          'isEarned': true,
-          'date': now.toIso8601String(),
-        });
-        if (newHistory.length > UserGameConstants.kActivityHistoryLimit) {
-          newHistory.length = UserGameConstants.kActivityHistoryLimit;
-        }
-        updatedUser = updatedUser.copyWith(
-          coins: updatedUser.coins + milestoneReward,
-          claimedStreakMilestones: [
-            ...updatedUser.claimedStreakMilestones,
-            newStreak,
-          ],
-          coinHistory: newHistory,
-        );
-      }
 
       final result = await updateUser(UpdateUserParams(user: updatedUser));
       if (result.isRight()) {
-        notificationService.scheduleStreakReminder(updatedUser.currentStreak);
+        notificationService.scheduleStreakReminder(newStreak);
         emit(state.copyWith(streakUpdatedToday: true));
+
+        // Milestone auto-claim now goes through the same atomic,
+        // server-validated ClaimStreakMilestone use case as the
+        // user-triggered claim flow, instead of being folded into the
+        // updatedUser.copyWith(...) above. That previous version *did*
+        // already check claimedStreakMilestones before crediting (so this
+        // specific path was not the exploitable one — see class doc), but
+        // it was still a non-transactional read-then-write, so a second
+        // near-simultaneous trigger (e.g. two sessions) could still race.
+        // The cheap local .contains check here just avoids a pointless
+        // network round trip in the common case where the streak has
+        // looped back through an already-claimed number after a reset.
+        final isNewMilestone =
+            UserGameConstants.kStreakMilestoneRewards.containsKey(newStreak) &&
+            !user.claimedStreakMilestones.contains(newStreak);
+        if (isNewMilestone) {
+          await claimStreakMilestone(newStreak);
+        }
       }
     } else {
       // Missed day — check for streak protection
@@ -288,8 +320,8 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
           state.copyWith(
             streakUpdatedToday: true,
             message: () => hasAutoShield
-                ? 'Elite Shield Protected Your Streak!'
-                : 'Streak Shield Activated!',
+                ? 'progression.elite_shield_protected'
+                : 'progression.streak_shield_activated',
           ),
         );
       } else {
@@ -299,7 +331,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
         emit(
           state.copyWith(
             streakUpdatedToday: true,
-            message: () => 'Streak Lost! Starting Fresh at 1.',
+            message: () => 'progression.streak_lost_reset',
           ),
         );
       }
@@ -314,24 +346,31 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     final result = await repairStreak(event.cost);
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) => emit(state.copyWith(message: () => 'Streak Repaired!')),
+      (_) => emit(state.copyWith(message: () => 'progression.streak_repaired')),
     );
   }
 
+  /// Repairs the streak with no coin cost via the transaction-safe
+  /// [GamificationRepository.repairStreakFree] (the "watch an ad instead"
+  /// variant of [_onRepairStreak]).
+  ///
+  /// Previously read `user.currentStreak` from the cached [AuthBloc] state,
+  /// computed the same restoration formula
+  /// [GamificationRepositoryImpl.repairStreak] already used server-side, and
+  /// wrote it back via a generic `updateUser` call — duplicating
+  /// server-side logic client-side with no transaction protecting the read.
   Future<void> _onRepairStreakWithAd(
     ProgressionRepairStreakWithAdRequested event,
     Emitter<ProgressionState> emit,
   ) async {
     if (!_isAuthenticated) return;
-    final user = authBloc.state.user;
-    if (user == null) return;
-
-    final newStreak = user.currentStreak <= 1 ? 2 : user.currentStreak + 1;
-    final updatedUser = user.copyWith(currentStreak: newStreak);
-    final result = await updateUser(UpdateUserParams(user: updatedUser));
+    final result = await repairStreakFree(const NoParams());
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) => emit(state.copyWith(message: () => 'Streak Repaired!')),
+      (_) {
+        emit(state.copyWith(message: () => 'progression.streak_repaired'));
+        authBloc.add(const AuthRefreshUser());
+      },
     );
   }
 
@@ -351,7 +390,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
       ),
       (_) => emit(
         state.copyWith(
-          message: () => 'Streak Shield Purchased!',
+          message: () => 'progression.streak_shield_purchased',
           lastPurchaseType: () => 'shield',
           lastPurchaseSuccess: () => true,
         ),
@@ -375,7 +414,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
       ),
       (_) => emit(
         state.copyWith(
-          message: () => 'Double XP Activated!',
+          message: () => 'progression.double_xp_activated',
           lastPurchaseType: () => 'warp',
           lastPurchaseSuccess: () => true,
         ),
@@ -383,46 +422,21 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     );
   }
 
-  /// ⚠️ Client-side coin deduction. Requires a dedicated
-  /// `ShopRepository.buyPermanentXPBoost()` Firestore transaction for
-  /// production-safe atomic operation.
+  /// Purchases the permanent XP boost via the transaction-safe
+  /// [GamificationRepository.purchasePermanentXPBoost].
+  ///
+  /// Previously deducted [event.cost] from `coins` client-side and
+  /// persisted the full user document with no transaction — this method's
+  /// own doc comment previously flagged exactly that as needing "a
+  /// dedicated `ShopRepository.buyPermanentXPBoost()` Firestore
+  /// transaction", which now exists (on `GamificationRepository`, since
+  /// `hasPermanentXPBoost` is a gamification field, not a shop one).
   Future<void> _onPurchasePermanentXPBoost(
     ProgressionPurchasePermanentXPBoostRequested event,
     Emitter<ProgressionState> emit,
   ) async {
     if (!_isAuthenticated) return;
-    final user = authBloc.state.user;
-    if (user == null) return;
-
-    if (user.coins < event.cost) {
-      emit(
-        state.copyWith(
-          message: () => 'Not enough coins!',
-          lastPurchaseType: () => 'scroll',
-          lastPurchaseSuccess: () => false,
-        ),
-      );
-      return;
-    }
-
-    final newHistory = List<Map<String, dynamic>>.from(user.coinHistory);
-    newHistory.insert(0, {
-      'title': 'Purchased Golden Scroll',
-      'amount': -event.cost,
-      'isEarned': false,
-      'date': DateTime.now().toIso8601String(),
-    });
-    if (newHistory.length > UserGameConstants.kActivityHistoryLimit) {
-      newHistory.length = UserGameConstants.kActivityHistoryLimit;
-    }
-
-    final updatedUser = user.copyWith(
-      coins: user.coins - event.cost,
-      hasPermanentXPBoost: true,
-      coinHistory: newHistory,
-    );
-
-    final result = await updateUser(UpdateUserParams(user: updatedUser));
+    final result = await purchasePermanentXPBoost(event.cost);
     result.fold(
       (failure) => emit(
         state.copyWith(
@@ -431,85 +445,90 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
           lastPurchaseSuccess: () => false,
         ),
       ),
-      (_) => emit(
-        state.copyWith(
-          message: () => 'Golden Scroll Activated!',
-          lastPurchaseType: () => 'scroll',
-          lastPurchaseSuccess: () => true,
-        ),
-      ),
+      (_) {
+        authBloc.add(const AuthRefreshUser());
+        emit(
+          state.copyWith(
+            message: () => 'progression.permanent_xp_boost_activated',
+            lastPurchaseType: () => 'scroll',
+            lastPurchaseSuccess: () => true,
+          ),
+        );
+      },
     );
   }
 
-  /// ⚠️ Client-side coin award. Requires a dedicated Firestore transaction
-  /// for production-safe atomic milestone claiming.
+  /// Claims the streak-milestone reward via the transaction-safe,
+  /// server-validated [GamificationRepository.claimStreakMilestone].
+  ///
+  /// [event.reward] is deliberately **not** passed through — see that
+  /// event field's own doc comment. Previously this handler credited
+  /// `event.reward` coins and appended `event.milestone` to
+  /// `claimedStreakMilestones` with **no check that it hadn't already been
+  /// claimed**, via a generic `updateUser` write. A double-tap on the claim
+  /// button, or anything dispatching this event directly, could claim the
+  /// same milestone repeatedly for whatever reward amount it specified —
+  /// this was the most severe issue found in this review.
   Future<void> _onClaimStreakMilestone(
     ProgressionClaimStreakMilestoneRequested event,
     Emitter<ProgressionState> emit,
   ) async {
     if (!_isAuthenticated) return;
-    final user = authBloc.state.user;
-    if (user == null) return;
-
-    final newHistory = List<Map<String, dynamic>>.from(user.coinHistory);
-    newHistory.insert(0, {
-      'title': 'Streak Milestone Reward',
-      'amount': event.reward,
-      'isEarned': true,
-      'date': DateTime.now().toIso8601String(),
-    });
-    if (newHistory.length > UserGameConstants.kActivityHistoryLimit) {
-      newHistory.length = UserGameConstants.kActivityHistoryLimit;
-    }
-
-    final updatedUser = user.copyWith(
-      coins: user.coins + event.reward,
-      claimedStreakMilestones: [
-        ...user.claimedStreakMilestones,
-        event.milestone,
-      ],
-      coinHistory: newHistory,
-    );
-
-    final result = await updateUser(UpdateUserParams(user: updatedUser));
+    final result = await claimStreakMilestone(event.milestone);
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) => emit(state.copyWith(message: () => 'Milestone Claimed!')),
+      (_) {
+        emit(state.copyWith(message: () => 'progression.milestone_claimed'));
+        authBloc.add(const AuthRefreshUser());
+      },
     );
   }
 
+  /// Claims the level-milestone reward via
+  /// [GamificationRepository.claimLevelMilestone].
+  ///
+  /// [event.reward] **is** still passed through here — see that method's
+  /// doc comment for why the fix is only partial for level milestones (no
+  /// server-side level-reward table exists anywhere in this feature slice
+  /// to validate against, unlike streak milestones). What this closes:
+  /// duplicate claims, and claims for a level the user hasn't reached —
+  /// both of which this handler previously had zero protection against,
+  /// identical to [_onClaimStreakMilestone]'s issue.
   Future<void> _onClaimLevelMilestone(
     ProgressionClaimLevelMilestoneRequested event,
     Emitter<ProgressionState> emit,
   ) async {
     if (!_isAuthenticated) return;
-    final user = authBloc.state.user;
-    if (user == null) return;
-
-    final newHistory = List<Map<String, dynamic>>.from(user.coinHistory);
-    newHistory.insert(0, {
-      'title': 'Level Milestone Reward',
-      'amount': event.reward,
-      'isEarned': true,
-      'date': DateTime.now().toIso8601String(),
-    });
-    if (newHistory.length > UserGameConstants.kActivityHistoryLimit) {
-      newHistory.length = UserGameConstants.kActivityHistoryLimit;
-    }
-
-    final updatedUser = user.copyWith(
-      coins: user.coins + event.reward,
-      claimedLevelMilestones: [...user.claimedLevelMilestones, event.milestone],
-      coinHistory: newHistory,
+    final result = await claimLevelMilestone(
+      ClaimLevelMilestoneParams(
+        milestone: event.milestone,
+        reward: event.reward,
+      ),
     );
-
-    final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) => emit(state.copyWith(message: () => 'Milestone Claimed!')),
+      (_) {
+        emit(state.copyWith(message: () => 'progression.milestone_claimed'));
+        authBloc.add(const AuthRefreshUser());
+      },
     );
   }
 
+  /// ⚠️ Not fixed — flagged. This is the same client-side,
+  /// non-transactional, unvalidated-amount pattern as the handlers above
+  /// (`user.totalExp + event.amount`, then a full-document `updateUser`
+  /// write), and in principle a modified client could dispatch this event
+  /// directly with an arbitrary `amount` to farm XP. It's left as-is rather
+  /// than force-fixed because, unlike the milestone claims, there's no
+  /// dedicated repository method backing a bare XP grant and no reference
+  /// table this review has visibility into for what a legitimate `amount`
+  /// should look like — inventing one blind risks being simply wrong. XP
+  /// (unlike coins/keys) isn't directly spendable, which makes this lower
+  /// severity than the fixes above, but not zero: `updateUserRewards`
+  /// doubles coin rewards once a user's derived level (from `totalExp`)
+  /// reaches 100, so unbounded XP inflation still has a downstream economic
+  /// effect. Recommend a dedicated, bounded `GamificationRepository` method
+  /// once the intended source/cap for bonus XP is decided.
   Future<void> _onAddXp(
     ProgressionAddXpRequested event,
     Emitter<ProgressionState> emit,

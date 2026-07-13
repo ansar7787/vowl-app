@@ -21,8 +21,8 @@ class SignUpNameInput extends StatelessWidget {
       builder: (context, state) {
         final contrastColor = MeshGradientBackground.getContrastColor(context);
         return Semantics(
-          label: 'Full name',
-          hint: 'Enter your full name',
+          label: context.tr('auth.name_field_label'),
+          hint: context.tr('auth.name_field_hint'),
           textField: true,
           child: TextFormField(
             key: fieldKey,
@@ -30,10 +30,10 @@ class SignUpNameInput extends StatelessWidget {
             onChanged: (name) => context.read<SignUpCubit>().nameChanged(name),
             validator: (value) {
               if (value == null || value.trim().isEmpty) {
-                return 'Please enter your name';
+                return context.tr('auth.validation_name_required');
               }
               if (value.trim().length < 2) {
-                return 'Name must be at least 2 characters';
+                return context.tr('auth.validation_name_too_short');
               }
               return null;
             },
@@ -44,7 +44,7 @@ class SignUpNameInput extends StatelessWidget {
             decoration: _buildDecoration(
               context: context,
               contrastColor: contrastColor,
-              hint: 'Full Name',
+              hint: context.tr('auth.name_hint_text'),
               prefixIcon: Icons.person_outline,
             ),
           ),
@@ -64,6 +64,10 @@ class SignUpEmailInput extends StatelessWidget {
 
   const SignUpEmailInput({super.key, this.fieldKey, this.focusNode});
 
+  // Identical pattern also exists (independently — Dart's per-file privacy
+  // means a private static field can't be shared) in login_widgets.dart,
+  // forgot_password_widgets.dart, and all three auth Cubits. Verified
+  // byte-identical across all six.
   static final _emailRegex = RegExp(r'^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$');
 
   @override
@@ -73,8 +77,8 @@ class SignUpEmailInput extends StatelessWidget {
       builder: (context, state) {
         final contrastColor = MeshGradientBackground.getContrastColor(context);
         return Semantics(
-          label: 'Email address',
-          hint: 'Enter your email address',
+          label: context.tr('auth.email_field_label'),
+          hint: context.tr('auth.email_field_hint_generic'),
           textField: true,
           child: TextFormField(
             key: fieldKey,
@@ -83,10 +87,10 @@ class SignUpEmailInput extends StatelessWidget {
                 context.read<SignUpCubit>().emailChanged(email),
             validator: (value) {
               if (value == null || value.trim().isEmpty) {
-                return 'Please enter your email';
+                return context.tr('auth.validation_email_required');
               }
               if (!_emailRegex.hasMatch(value.trim())) {
-                return 'Please enter a valid email';
+                return context.tr('auth.validation_email_invalid');
               }
               return null;
             },
@@ -97,7 +101,7 @@ class SignUpEmailInput extends StatelessWidget {
             decoration: _buildDecoration(
               context: context,
               contrastColor: contrastColor,
-              hint: 'Email',
+              hint: context.tr('auth.email_hint_short'),
               prefixIcon: Icons.email_outlined,
             ),
           ),
@@ -126,8 +130,8 @@ class SignUpPasswordInput extends StatelessWidget {
       builder: (context, state) {
         final contrastColor = MeshGradientBackground.getContrastColor(context);
         return Semantics(
-          label: 'Password',
-          hint: 'Create a password with at least 6 characters',
+          label: context.tr('auth.password_field_label'),
+          hint: context.tr('auth.password_field_hint_signup'),
           textField: true,
           child: TextFormField(
             key: fieldKey,
@@ -136,10 +140,10 @@ class SignUpPasswordInput extends StatelessWidget {
                 context.read<SignUpCubit>().passwordChanged(password),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter your password';
+                return context.tr('auth.validation_password_required');
               }
               if (value.length < 6) {
-                return 'Password must be at least 6 characters';
+                return context.tr('auth.validation_password_too_short');
               }
               return null;
             },
@@ -151,12 +155,12 @@ class SignUpPasswordInput extends StatelessWidget {
             decoration: _buildDecoration(
               context: context,
               contrastColor: contrastColor,
-              hint: 'Password',
+              hint: context.tr('auth.password_hint_text'),
               prefixIcon: Icons.lock_outlined,
               suffixIcon: Semantics(
                 label: state.isPasswordVisible
-                    ? 'Hide password'
-                    : 'Show password',
+                    ? context.tr('auth.hide_password')
+                    : context.tr('auth.show_password'),
                 button: true,
                 child: IconButton(
                   icon: Icon(
@@ -199,7 +203,7 @@ class SignUpButton extends StatelessWidget {
       builder: (context, state) {
         return Semantics(
           button: true,
-          label: 'Create account',
+          label: context.tr('auth.signup'),
           child: ElevatedButton(
             onPressed: state.isSubmitting
                 ? null
@@ -222,7 +226,13 @@ class SignUpButton extends StatelessWidget {
                       strokeWidth: 2,
                     ),
                   )
-                : Text(context.tr('auth.signup')),
+                // maxLines + overflow, not Flexible — see LoginButton's
+                // identical comment for why.
+                : Text(
+                    context.tr('auth.signup'),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
           ),
         );
       },
