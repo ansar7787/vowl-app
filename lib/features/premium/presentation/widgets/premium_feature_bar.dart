@@ -22,7 +22,6 @@ class ModernFeatureBar extends StatelessWidget {
           title: context.tr('premium.feature_translations', fallback: 'Instant AI Translations'),
           subtitle: context.tr('premium.feature_translations_desc', fallback: 'Ad-free, real-time native hints powered by local AI.'),
           isDark: isDark,
-          isHighlight: true,
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -82,9 +81,8 @@ class ModernFeatureBar extends StatelessWidget {
     required String title,
     required String subtitle,
     required bool isDark,
-    bool isHighlight = false,
   }) {
-    final primaryColor = isHighlight ? const Color(0xFF10B981) : const Color(0xFFF59E0B);
+    final primaryColor = const Color(0xFF6366F1); // Indigo
     
     return ClipRRect(
       borderRadius: BorderRadius.circular(20.r),
@@ -93,15 +91,11 @@ class ModernFeatureBar extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
           decoration: BoxDecoration(
-            color: isHighlight
-                ? primaryColor.withValues(alpha: 0.1)
-                : (isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.02)),
+            color: isDark ? primaryColor.withValues(alpha: 0.1) : primaryColor.withValues(alpha: 0.05),
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
-              color: isHighlight
-                  ? primaryColor.withValues(alpha: 0.3)
-                  : (isDark ? Colors.white.withValues(alpha: 0.08) : Colors.black.withValues(alpha: 0.05)),
-              width: isHighlight ? 1.5 : 1,
+              color: primaryColor.withValues(alpha: 0.3),
+              width: 1.5,
             ),
           ),
           child: Row(

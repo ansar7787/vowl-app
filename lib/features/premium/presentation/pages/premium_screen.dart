@@ -240,8 +240,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 right: -100.w,
                 child: StaticGlow(
                   color: isDark
-                      ? const Color(0xFFF59E0B).withValues(alpha: 0.15)
-                      : const Color(0xFFF59E0B).withValues(alpha: 0.08),
+                      ? const Color(0xFF3B82F6).withValues(alpha: 0.15)
+                      : const Color(0xFF3B82F6).withValues(alpha: 0.08),
                   radius: 300,
                 ),
               ),
@@ -250,8 +250,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 left: -100.w,
                 child: StaticGlow(
                   color: isDark
-                      ? const Color(0xFFEA580C).withValues(alpha: 0.15)
-                      : const Color(0xFFEA580C).withValues(alpha: 0.08),
+                      ? const Color(0xFF4F46E5).withValues(alpha: 0.15)
+                      : const Color(0xFF4F46E5).withValues(alpha: 0.08),
                   radius: 250,
                 ),
               ),
@@ -260,8 +260,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 left: -50.w,
                 child: StaticGlow(
                   color: isDark
-                      ? const Color(0xFF8B5CF6).withValues(alpha: 0.1)
-                      : const Color(0xFF8B5CF6).withValues(alpha: 0.05),
+                      ? const Color(0xFF0EA5E9).withValues(alpha: 0.1)
+                      : const Color(0xFF0EA5E9).withValues(alpha: 0.05),
                   radius: 200,
                 ),
               ),
@@ -290,19 +290,19 @@ class _PremiumScreenState extends State<PremiumScreen> {
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                const Color(0xFFF59E0B).withValues(alpha: 0.2),
-                                const Color(0xFFEA580C).withValues(alpha: 0.1),
+                                const Color(0xFF3B82F6).withValues(alpha: 0.2),
+                                const Color(0xFF4F46E5).withValues(alpha: 0.1),
                               ],
                             ),
                             borderRadius: BorderRadius.circular(20.r),
                             border: Border.all(
-                              color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                              color: const Color(0xFF3B82F6).withValues(alpha: 0.3),
                             ),
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Icon(Icons.workspace_premium_rounded, color: const Color(0xFFF59E0B), size: 14.r),
+                              Icon(Icons.workspace_premium_rounded, color: const Color(0xFF3B82F6), size: 14.r),
                               SizedBox(width: 4.w),
                               Text(
                                 context.tr('premium.verified_pro_badge', fallback: 'Verified Pro'),
@@ -336,9 +336,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   numberOfParticles: 50,
                   gravity: 0.1,
                   colors: const [
-                    Color(0xFFF59E0B),
-                    Color(0xFFEA580C),
-                    Color(0xFF10B981),
+                    Color(0xFF3B82F6),
+                    Color(0xFF4F46E5),
+                    Color(0xFF0EA5E9),
                     Color(0xFF6366F1),
                     Color(0xFFF43F5E),
                   ],
@@ -504,7 +504,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
           height: 60.h,
           decoration: BoxDecoration(
             gradient: const LinearGradient(
-              colors: [Color(0xFFFCD34D), Color(0xFFF59E0B), Color(0xFFEA580C)],
+              colors: [Color(0xFF60A5FA), Color(0xFF3B82F6), Color(0xFF4F46E5)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -515,7 +515,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
             ),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFFF59E0B).withValues(alpha: 0.4),
+                color: const Color(0xFF3B82F6).withValues(alpha: 0.4),
                 blurRadius: 25,
                 spreadRadius: 2,
                 offset: const Offset(0, 10),

@@ -20,18 +20,18 @@ class PremiumHero extends StatelessWidget {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             gradient: const LinearGradient(
-              colors: [Color(0xFFF59E0B), Color(0xFFEA580C)],
+              colors: [Color(0xFF3B82F6), Color(0xFF4F46E5)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFFF59E0B).withValues(alpha: 0.4),
+                color: const Color(0xFF3B82F6).withValues(alpha: 0.4),
                 blurRadius: 30,
                 spreadRadius: 10,
               ),
               BoxShadow(
-                color: const Color(0xFFEA580C).withValues(alpha: 0.2),
+                color: const Color(0xFF4F46E5).withValues(alpha: 0.2),
                 blurRadius: 10,
                 spreadRadius: 2,
                 offset: const Offset(0, 10),
@@ -60,7 +60,7 @@ class PremiumHero extends StatelessWidget {
         // Gradient Shader Text for a 2026 ultra-premium feel
         ShaderMask(
           shaderCallback: (bounds) => const LinearGradient(
-            colors: [Color(0xFFFCD34D), Color(0xFFF59E0B), Color(0xFFEA580C)],
+            colors: [Color(0xFF60A5FA), Color(0xFF3B82F6), Color(0xFF4F46E5)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ).createShader(bounds),
