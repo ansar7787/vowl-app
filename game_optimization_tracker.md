@@ -37,7 +37,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Paragraph Summary (`paragraphSummary`)
 - [ ] Reading Inference (`readingInference`)
 - [ ] Reading Conclusion (`readingConclusion`)
-- [ ] Cloze Test (`clozeTest`)
+- [x] ✅ Cloze Test (`clozeTest`)
 - [ ] Skimming/Scanning (`skimmingScanning`)
 
 ## Writing (11)

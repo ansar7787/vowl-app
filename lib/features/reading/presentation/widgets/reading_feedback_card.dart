@@ -74,13 +74,14 @@ class ReadingFeedbackCard extends StatelessWidget {
   bool get _showExplanation =>
       !_success &&
       isFinalFailure &&
-      (currentQuest.correctAnswer?.isNotEmpty ?? false);
+      ((currentQuest.explanation?.isNotEmpty ?? false) ||
+          (currentQuest.correctAnswer?.isNotEmpty ?? false));
 
   String _semanticLabel(BuildContext context) {
     if (_success) return context.tr('games.semantic_correct_continue', fallback: 'Correct. Tap to continue.');
     if (_showExplanation) {
       // _showExplanation guards non-null; ?? keeps the static analyser happy.
-      final answer = currentQuest.correctAnswer ?? '';
+      final answer = currentQuest.explanation ?? currentQuest.correctAnswer ?? '';
       return context.tr(
         'games.semantic_incorrect_explanation', fallback: 'Incorrect. Read explanation.',
         args: [answer, _buttonText(context)],
@@ -124,7 +125,7 @@ class ReadingFeedbackCard extends StatelessWidget {
             if (_showExplanation) ...[
               SizedBox(height: 16.h),
               _ExplanationBox(
-                explanation: currentQuest.correctAnswer!,
+                explanation: currentQuest.explanation ?? currentQuest.correctAnswer!,
                 shadowColor: _shadowColor,
                 isDark: isDark,
                 reduceMotion: reduceMotion,

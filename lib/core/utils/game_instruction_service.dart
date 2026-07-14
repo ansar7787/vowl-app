@@ -564,15 +564,16 @@ class GameInstructionService {
     GameSubtype.clozeTest: GameBriefing(
       title: "Context Mastery",
       icon: Icons.format_color_text_rounded,
-      objective: "Fill the blanks by choosing contextually correct words.",
+      objective:
+          "Drag the correct word into the blank to complete the sentence.",
       rules: [
-        "Read before and after",
-        "Check for collocations",
-        "Ensure logical flow",
+        "Read the full context",
+        "Check the grammar fit",
+        "Dock the word",
       ],
       actionText: "Fill Gaps",
       tip:
-          "PRO TIP: Read the whole sentence first! Surrounding words reveal the needed part of speech.",
+          "PRO TIP: Reading the surrounding words is crucial. Context gives away the required part of speech!",
     ),
     GameSubtype.skimmingScanning: GameBriefing(
       title: "Skim & Scan",

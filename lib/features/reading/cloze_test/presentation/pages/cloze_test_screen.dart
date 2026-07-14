@@ -14,7 +14,7 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_instruction.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_pneumatic_port.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_fuel_cells.dart';
-import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_result.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ClozeTestScreen extends StatefulWidget {
   final int level;
@@ -155,7 +155,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
                         SizedBox(height: 16.h),
                         ClozeTestInstruction(
                           primaryColor: theme.primaryColor,
-                          instruction: quest.instruction,
+                          instruction: context.tr('games.clozeTest_instruction', fallback: 'Complete the sentence by docking the correct word.'),
                         ),
                         SizedBox(height: 32.h),
 
@@ -178,14 +178,6 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
                           dockedOption: _dockedOption,
                         ),
 
-                        if (_isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          ClozeTestResult(
-                            quest: quest,
-                            isCorrect: _isCorrect == true,
-                            isDark: isDark,
-                          ),
-                        ],
                         SizedBox(height: 60.h),
                       ],
                     ),
