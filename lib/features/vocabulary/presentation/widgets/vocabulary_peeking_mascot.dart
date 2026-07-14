@@ -51,7 +51,7 @@ class VocabularyPeekingMascot extends StatelessWidget {
     );
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisSize: MainAxisSize.min,
       children: [
         // Speech bubble — maxWidth clamps on tablets and landscape.
@@ -108,6 +108,6 @@ class VocabularyPeekingMascot extends StatelessWidget {
               .rotate(begin: -0.05, end: 0.05, duration: 2.seconds),
         ),
       ],
-    ).animate().fadeIn().slideY(begin: -0.1, end: 0);
+    ).animate().fadeIn().slideX(begin: 0.1, end: 0);
   }
 }

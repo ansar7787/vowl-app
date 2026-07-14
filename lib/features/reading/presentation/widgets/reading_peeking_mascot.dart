@@ -95,12 +95,12 @@ class ReadingPeekingMascot extends StatelessWidget {
     }
 
     Widget column = Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [bubble, mascot],
     );
 
     if (!reduceMotion) {
-      column = column.animate().fadeIn().slideX(begin: -0.1, end: 0);
+      column = column.animate().fadeIn().slideX(begin: 0.1, end: 0);
     }
 
     return Semantics(

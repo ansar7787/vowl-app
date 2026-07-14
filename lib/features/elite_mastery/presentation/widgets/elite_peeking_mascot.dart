@@ -74,12 +74,12 @@ class ElitePeekingMascot extends StatelessWidget {
           child: RepaintBoundary(
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 _SpeechBubble(message: message),
                 _MascotAvatar(mascotId: mascotId, mascotState: mascotState),
               ],
-            ).animate().fadeIn().slideX(begin: -0.1, end: 0),
+            ).animate().fadeIn().slideX(begin: 0.1, end: 0),
           ),
         );
       },

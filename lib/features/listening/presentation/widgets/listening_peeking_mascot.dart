@@ -56,12 +56,12 @@ class ListeningPeekingMascot extends StatelessWidget {
     // already communicates lives and level to screen readers.
     return ExcludeSemantics(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           _SpeechBubble(message: message),
           _MascotSprite(mascotId: mascotId, mascotState: mascotState),
         ],
-      ).animate().fadeIn().slideY(begin: -0.1, end: 0),
+      ).animate().fadeIn().slideX(begin: 0.1, end: 0),
     );
   }
 }

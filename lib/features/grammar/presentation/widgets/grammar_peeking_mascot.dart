@@ -47,7 +47,7 @@ class GrammarPeekingMascot extends StatelessWidget {
     );
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         _SpeechBubble(message: message),
         VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId)
@@ -59,7 +59,7 @@ class GrammarPeekingMascot extends StatelessWidget {
               curve: Curves.easeInOut,
             ),
       ],
-    ).animate().fadeIn().slideX(begin: -0.1, end: 0);
+    ).animate().fadeIn().slideX(begin: 0.1, end: 0);
   }
 
   // -------------------------------------------------------------------------
