@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 
 /// Bottom-sheet style feedback card shown after the player answers.
 ///
@@ -122,7 +123,12 @@ class ReadingFeedbackCard extends StatelessWidget {
             _buildResultRow(context, reduceMotion),
             if (_showExplanation) ...[
               SizedBox(height: 16.h),
-              _buildExplanationCard(context, reduceMotion),
+              _ExplanationBox(
+                explanation: currentQuest.correctAnswer!,
+                shadowColor: _shadowColor,
+                isDark: isDark,
+                reduceMotion: reduceMotion,
+              ),
             ],
             SizedBox(height: 28.h),
             _buildContinueButton(context, reduceMotion),
@@ -188,68 +194,7 @@ class ReadingFeedbackCard extends StatelessWidget {
     );
   }
 
-  Widget _buildExplanationCard(BuildContext context, bool reduceMotion) {
-    Widget card = Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-      decoration: BoxDecoration(
-        color: _shadowColor.withValues(alpha: 0.08),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: _shadowColor.withValues(alpha: 0.2),
-          width: 1.5,
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              ExcludeSemantics(
-                child: Icon(
-                  Icons.info_outline_rounded,
-                  color: _shadowColor,
-                  size: 14.r,
-                ),
-              ),
-              SizedBox(width: 8.w),
-              Text(
-                context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w800,
-                  color: _shadowColor,
-                  letterSpacing: 1,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 4.h),
-          Text(
-            // Safe: _showExplanation checks correctAnswer?.isNotEmpty before
-            // this widget is built, so the value is guaranteed non-null here.
-            currentQuest.correctAnswer!,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w600,
-              color: isDark ? Colors.white : Colors.black87,
-            ),
-          ),
-        ],
-      ),
-    );
 
-    if (!reduceMotion) {
-      card = card
-          .animate()
-          .fadeIn(delay: 300.ms)
-          .scale(duration: 400.ms, curve: Curves.easeOutBack);
-    }
-
-    return card;
-  }
 
   Widget _buildContinueButton(BuildContext context, bool reduceMotion) {
     Widget button = Semantics(
@@ -302,5 +247,99 @@ class ReadingFeedbackCard extends StatelessWidget {
     }
 
     return button;
+  }
+}
+
+class _ExplanationBox extends StatefulWidget {
+  final String explanation;
+  final Color shadowColor;
+  final bool isDark;
+  final bool reduceMotion;
+
+  const _ExplanationBox({
+    required this.explanation,
+    required this.shadowColor,
+    required this.isDark,
+    required this.reduceMotion,
+  });
+
+  @override
+  State<_ExplanationBox> createState() => _ExplanationBoxState();
+}
+
+class _ExplanationBoxState extends State<_ExplanationBox> {
+  String? _translatedText;
+
+  @override
+  Widget build(BuildContext context) {
+    final displayText = _translatedText ?? widget.explanation;
+
+    Widget card = Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+      decoration: BoxDecoration(
+        color: widget.shadowColor.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: widget.shadowColor.withValues(alpha: 0.2),
+          width: 1.5,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              ExcludeSemantics(
+                child: Icon(
+                  Icons.info_outline_rounded,
+                  color: widget.shadowColor,
+                  size: 14.r,
+                ),
+              ),
+              SizedBox(width: 8.w),
+              Expanded(
+                child: Text(
+                  context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w800,
+                    color: widget.shadowColor,
+                    letterSpacing: 1,
+                  ),
+                ),
+              ),
+              if (_translatedText == null)
+                TranslateButtonWidget(
+                  originalText: widget.explanation,
+                  onTranslationComplete: (translated) {
+                    if (mounted) setState(() => _translatedText = translated);
+                  },
+                ),
+            ],
+          ),
+          SizedBox(height: 4.h),
+          Text(
+            displayText,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w600,
+              color: widget.isDark ? Colors.white : Colors.black87,
+            ),
+          ),
+        ],
+      ),
+    );
+
+    if (!widget.reduceMotion) {
+      card = card
+          .animate()
+          .fadeIn(delay: 300.ms)
+          .scale(duration: 400.ms, curve: Curves.easeOutBack);
+    }
+
+    return card;
   }
 }

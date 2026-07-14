@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 
 class KidsExplanationCard extends StatefulWidget {
   final KidsQuest quest;
@@ -24,6 +25,8 @@ class KidsExplanationCard extends StatefulWidget {
 }
 
 class _KidsExplanationCardState extends State<KidsExplanationCard> {
+  String? _translatedText;
+
   @override
   void initState() {
     super.initState();
@@ -98,11 +101,18 @@ class _KidsExplanationCardState extends State<KidsExplanationCard> {
                   ),
                 ),
               ),
+              if (_translatedText == null)
+                TranslateButtonWidget(
+                  originalText: explanation,
+                  onTranslationComplete: (translated) {
+                    if (mounted) setState(() => _translatedText = translated);
+                  },
+                ),
             ],
           ),
           SizedBox(height: 16.h),
           Text(
-            explanation,
+            _translatedText ?? explanation,
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 16.sp,

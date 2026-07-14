@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 
 /// Bottom-sheet style result card shown after the player submits an answer.
 ///
@@ -229,7 +230,7 @@ class _GradientText extends StatelessWidget {
 // _ExplanationCard
 // ─────────────────────────────────────────────────────────────────────────────
 
-class _ExplanationCard extends StatelessWidget {
+class _ExplanationCard extends StatefulWidget {
   final String explanation;
   final Color shadowColor;
   final bool isDark;
@@ -241,17 +242,26 @@ class _ExplanationCard extends StatelessWidget {
   });
 
   @override
+  State<_ExplanationCard> createState() => _ExplanationCardState();
+}
+
+class _ExplanationCardState extends State<_ExplanationCard> {
+  String? _translatedText;
+
+  @override
   Widget build(BuildContext context) {
+    final displayText = _translatedText ?? widget.explanation;
+
     return Semantics(
-      label: 'Explanation: $explanation',
+      label: 'Explanation: $displayText',
       child: Container(
         width: double.infinity,
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
         decoration: BoxDecoration(
-          color: shadowColor.withValues(alpha: 0.08),
+          color: widget.shadowColor.withValues(alpha: 0.08),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
-            color: shadowColor.withValues(alpha: 0.2),
+            color: widget.shadowColor.withValues(alpha: 0.2),
             width: 1.5,
           ),
         ),
@@ -263,31 +273,40 @@ class _ExplanationCard extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.info_outline_rounded,
-                    color: shadowColor,
+                    color: widget.shadowColor,
                     size: 14.r,
                   ),
                   SizedBox(width: 8.w),
-                  Text(
-                    context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      color: shadowColor,
-                      letterSpacing: 1,
+                  Expanded(
+                    child: Text(
+                      context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w800,
+                        color: widget.shadowColor,
+                        letterSpacing: 1,
+                      ),
                     ),
                   ),
+                  if (_translatedText == null)
+                    TranslateButtonWidget(
+                      originalText: widget.explanation,
+                      onTranslationComplete: (translated) {
+                        if (mounted) setState(() => _translatedText = translated);
+                      },
+                    ),
                 ],
               ),
             ),
             SizedBox(height: 4.h),
             Text(
-              explanation,
+              displayText,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600,
-                color: isDark ? Colors.white : Colors.black87,
+                color: widget.isDark ? Colors.white : Colors.black87,
               ),
             ),
           ],

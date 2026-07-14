@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 
 /// Bottom-sheet card shown when [isAnswered] is true.
 ///
@@ -171,7 +172,7 @@ class _ResultHeader extends StatelessWidget {
 
 // ── ─────────────────────────────────────────────────────────────────────────
 
-class _ExplanationCard extends StatelessWidget {
+class _ExplanationCard extends StatefulWidget {
   const _ExplanationCard({
     required this.explanation,
     required this.shadowColor,
@@ -183,17 +184,26 @@ class _ExplanationCard extends StatelessWidget {
   final bool isDark;
 
   @override
+  State<_ExplanationCard> createState() => _ExplanationCardState();
+}
+
+class _ExplanationCardState extends State<_ExplanationCard> {
+  String? _translatedText;
+
+  @override
   Widget build(BuildContext context) {
+    final displayText = _translatedText ?? widget.explanation;
+
     return Semantics(
-          label: '${context.tr('games.explanation', fallback: 'Explanation')}: $explanation',
+          label: '${context.tr('games.explanation', fallback: 'Explanation')}: $displayText',
           child: Container(
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
             decoration: BoxDecoration(
-              color: shadowColor.withValues(alpha: 0.08),
+              color: widget.shadowColor.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(20.r),
               border: Border.all(
-                color: shadowColor.withValues(alpha: 0.2),
+                color: widget.shadowColor.withValues(alpha: 0.2),
                 width: 1.5,
               ),
             ),
@@ -205,33 +215,42 @@ class _ExplanationCard extends StatelessWidget {
                     ExcludeSemantics(
                       child: Icon(
                         Icons.info_outline_rounded,
-                        color: shadowColor,
+                        color: widget.shadowColor,
                         size: 14.r,
                       ),
                     ),
                     SizedBox(width: 8.w),
-                    ExcludeSemantics(
-                      child: Text(
-                        context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w800,
-                          color: shadowColor,
-                          letterSpacing: 1,
+                    Expanded(
+                      child: ExcludeSemantics(
+                        child: Text(
+                          context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w800,
+                            color: widget.shadowColor,
+                            letterSpacing: 1,
+                          ),
                         ),
                       ),
                     ),
+                    if (_translatedText == null)
+                      TranslateButtonWidget(
+                        originalText: widget.explanation,
+                        onTranslationComplete: (translated) {
+                          if (mounted) setState(() => _translatedText = translated);
+                        },
+                      ),
                   ],
                 ),
                 SizedBox(height: 4.h),
                 Text(
-                  explanation,
+                  displayText,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white : Colors.black87,
+                    color: widget.isDark ? Colors.white : Colors.black87,
                   ),
                 ),
               ],

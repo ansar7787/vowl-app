@@ -10,6 +10,7 @@ import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.
 
 import '../bloc/elite_mastery_bloc.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 
 /// Bottom-sheet feedback card displayed after the player answers a question.
 ///
@@ -333,7 +334,7 @@ class EliteFeedbackCard extends StatelessWidget {
 
 // ── Private sub-widgets ─────────────────────────────────────────────────────
 
-class _ExplanationBox extends StatelessWidget {
+class _ExplanationBox extends StatefulWidget {
   final String text;
   final Color accentColor;
   final bool isDark;
@@ -345,15 +346,24 @@ class _ExplanationBox extends StatelessWidget {
   });
 
   @override
+  State<_ExplanationBox> createState() => _ExplanationBoxState();
+}
+
+class _ExplanationBoxState extends State<_ExplanationBox> {
+  String? _translatedText;
+
+  @override
   Widget build(BuildContext context) {
+    final displayText = _translatedText ?? widget.text;
+
     return Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
           decoration: BoxDecoration(
-            color: accentColor.withValues(alpha: 0.1),
+            color: widget.accentColor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
-              color: accentColor.withValues(alpha: 0.2),
+              color: widget.accentColor.withValues(alpha: 0.2),
               width: 1.5,
             ),
           ),
@@ -364,30 +374,39 @@ class _ExplanationBox extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.info_outline_rounded,
-                    color: accentColor,
+                    color: widget.accentColor,
                     size: 14.r,
                   ),
                   SizedBox(width: 8.w),
-                  Text(
-                    context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      color: accentColor,
-                      letterSpacing: 1,
+                  Expanded(
+                    child: Text(
+                      context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w800,
+                        color: widget.accentColor,
+                        letterSpacing: 1,
+                      ),
                     ),
                   ),
+                  if (_translatedText == null)
+                    TranslateButtonWidget(
+                      originalText: widget.text,
+                      onTranslationComplete: (translated) {
+                        if (mounted) setState(() => _translatedText = translated);
+                      },
+                    ),
                 ],
               ),
               SizedBox(height: 4.h),
               Text(
-                text,
+                displayText,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white : Colors.black87,
+                  color: widget.isDark ? Colors.white : Colors.black87,
                 ),
               ),
             ],
@@ -404,7 +423,7 @@ class _ExplanationBox extends StatelessWidget {
 /// caption from [_ExplanationBox] (which reveals the *correct answer*) so
 /// the two boxes are never visually or semantically conflated even though
 /// they share the same accent-color treatment for visual consistency.
-class _RuleTipBox extends StatelessWidget {
+class _RuleTipBox extends StatefulWidget {
   final String text;
   final Color accentColor;
   final bool isDark;
@@ -416,15 +435,24 @@ class _RuleTipBox extends StatelessWidget {
   });
 
   @override
+  State<_RuleTipBox> createState() => _RuleTipBoxState();
+}
+
+class _RuleTipBoxState extends State<_RuleTipBox> {
+  String? _translatedText;
+
+  @override
   Widget build(BuildContext context) {
+    final displayText = _translatedText ?? widget.text;
+
     return Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
           decoration: BoxDecoration(
-            color: accentColor.withValues(alpha: 0.1),
+            color: widget.accentColor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
-              color: accentColor.withValues(alpha: 0.2),
+              color: widget.accentColor.withValues(alpha: 0.2),
               width: 1.5,
             ),
           ),
@@ -433,28 +461,37 @@ class _RuleTipBox extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(Icons.menu_book_rounded, color: accentColor, size: 14.r),
+                  Icon(Icons.menu_book_rounded, color: widget.accentColor, size: 14.r),
                   SizedBox(width: 8.w),
-                  Text(
-                    context.tr('games.pro_tip_caps', fallback: 'PRO TIP'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      color: accentColor,
-                      letterSpacing: 1,
+                  Expanded(
+                    child: Text(
+                      context.tr('games.pro_tip_caps', fallback: 'PRO TIP'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w800,
+                        color: widget.accentColor,
+                        letterSpacing: 1,
+                      ),
                     ),
                   ),
+                  if (_translatedText == null)
+                    TranslateButtonWidget(
+                      originalText: widget.text,
+                      onTranslationComplete: (translated) {
+                        if (mounted) setState(() => _translatedText = translated);
+                      },
+                    ),
                 ],
               ),
               SizedBox(height: 4.h),
               Text(
-                text,
+                displayText,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white : Colors.black87,
+                  color: widget.isDark ? Colors.white : Colors.black87,
                 ),
               ),
             ],
