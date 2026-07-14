@@ -8,18 +8,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "I saw ___ asteroid flying past.",
-            "sentence": "I saw ___ asteroid flying past.",
+            "question": "My aunt is bringing ___ umbrella today because it might rain.",
+            "sentence": "My aunt is bringing ___ umbrella today because it might rain.",
             "options": [
-                "a",
                 "an",
-                "the",
-                "(no article)"
+                "a",
+                "(no article)",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "an",
-            "hint": "Listen to the first sound in 'asteroid' - it starts with a vowel.",
-            "explanation": "Use 'an' before words starting with a vowel sound. 'Asteroid' begins with the vowel 'a', so write 'an asteroid'.",
+            "hint": "Say the word right after the gap out loud.",
+            "explanation": "'Umbrella' starts with a vowel sound, so it takes 'an'. We say 'an umbrella', not 'a umbrella'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -27,18 +27,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ sun is blazing fiercely today.",
-            "sentence": "___ sun is blazing fiercely today.",
+            "question": "I have a dog and a cat. ___ dog always sleeps on my bed.",
+            "sentence": "I have a dog and a cat. ___ dog always sleeps on my bed.",
             "options": [
                 "an",
                 "the",
-                "(no article)",
-                "a"
+                "a",
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "There is only one sun - use 'the' for unique things.",
-            "explanation": "Use 'the' for nouns that are unique or one-of-a-kind. Because there is only one sun, we always say 'the sun'.",
+            "hint": "This dog was already mentioned once - point back to that same one.",
+            "explanation": "When we mention a noun again, we switch from 'a' to 'the'. Since the dog was already introduced, it becomes 'the dog'.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ titanium is used to make spacecraft.",
-            "sentence": "___ titanium is used to make spacecraft.",
+            "question": "Every evening, my family eats ___ dinner together.",
+            "sentence": "Every evening, my family eats ___ dinner together.",
             "options": [
                 "the",
-                "(no article)",
                 "a",
+                "(no article)",
                 "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "Titanium refers to the material in general - no article needed.",
-            "explanation": "When an uncountable noun (a material, substance, or element) is used in a general statement, it takes no article. We say 'Titanium is strong', not 'A titanium' or 'The titanium'.",
+            "hint": "Meal names like breakfast, lunch, and dinner usually stand alone.",
+            "explanation": "Meal names such as breakfast, lunch, and dinner don't take an article in everyday sentences. We simply say 'eat dinner'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -65,37 +65,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The pilot bought ___ new helmet.",
-            "sentence": "The pilot bought ___ new helmet.",
+            "question": "She adopted ___ energetic puppy from the shelter.",
+            "sentence": "She adopted ___ energetic puppy from the shelter.",
             "options": [
-                "(no article)",
                 "a",
-                "an",
-                "the"
+                "(no article)",
+                "the",
+                "an"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "a",
-            "hint": "The word 'new' begins with the consonant sound 'n'.",
-            "explanation": "Use 'a' before words starting with a consonant sound. 'New' begins with 'n', so we write 'a new helmet'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "an",
+            "hint": "Listen to the first sound in 'energetic'.",
+            "explanation": "'Energetic' begins with a vowel sound, so it takes 'an'. We say 'an energetic puppy'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l2_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Look up at ___ moon tonight.",
-            "sentence": "Look up at ___ moon tonight.",
+            "question": "We saw a rabbit in the yard. ___ rabbit hopped under the fence.",
+            "sentence": "We saw a rabbit in the yard. ___ rabbit hopped under the fence.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "(no article)"
+                "an",
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "There is only one moon orbiting Earth - use 'the'.",
-            "explanation": "Like the sun, the Earth's moon is unique. We always say 'the moon' because there is only one.",
+            "hint": "This is the same rabbit named in the first sentence.",
+            "explanation": "Once something has been introduced with 'a', the next mention uses 'the'. 'The rabbit' points back to that exact rabbit.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ hydrogen is the lightest element.",
-            "sentence": "___ hydrogen is the lightest element.",
+            "question": "___ cats usually sleep for most of the day.",
+            "sentence": "___ cats usually sleep for most of the day.",
             "options": [
                 "an",
-                "the",
                 "(no article)",
-                "a"
+                "a",
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "Hydrogen is a chemical element used here in a general sense.",
-            "explanation": "Chemical elements (hydrogen, oxygen, carbon) used in general statements take no article. We say 'Hydrogen is flammable', not 'A hydrogen' or 'The hydrogen'.",
+            "hint": "This sentence talks about cats in general, not one cat.",
+            "explanation": "To make a general statement about a whole group, use the plain plural noun with no article. 'Cats sleep a lot' means cats in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -122,37 +122,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They deployed ___ auxiliary drone.",
-            "sentence": "They deployed ___ auxiliary drone.",
+            "question": "The teacher gave us ___ short quiz this morning.",
+            "sentence": "The teacher gave us ___ short quiz this morning.",
             "options": [
+                "an",
                 "the",
-                "(no article)",
                 "a",
-                "an"
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "an",
-            "hint": "'Auxiliary' begins with the vowel sound 'aw'.",
-            "explanation": "Use 'an' before vowel sounds. 'Auxiliary' starts with the vowel 'a', so we write 'an auxiliary drone'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "a",
+            "hint": "'Short' starts with a consonant sound.",
+            "explanation": "Use 'a' before a consonant sound. 'Short' begins with 'sh', so we say 'a short quiz'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l3_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They docked at ___ primary station.",
-            "sentence": "They docked at ___ primary station.",
+            "question": "Open ___ window, please - it's warm in here.",
+            "sentence": "Open ___ window, please - it's warm in here.",
             "options": [
-                "(no article)",
                 "a",
                 "an",
+                "(no article)",
                 "the"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "The word 'primary' tells us there is one specific main station.",
-            "explanation": "Use 'the' to refer to a specific, identifiable noun. Here, 'the primary station' means the one known main docking station.",
+            "hint": "You're both in the same room, so it's clear which one you mean.",
+            "explanation": "'The' is used when the situation makes it obvious which one you mean. In a shared room, 'the window' is the one everyone can see.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We breathe ___ oxygen to survive.",
-            "sentence": "We breathe ___ oxygen to survive.",
+            "question": "I walk to ___ school every morning with my neighbor.",
+            "sentence": "I walk to ___ school every morning with my neighbor.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "(no article)"
+                "the"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "Oxygen is a gas used here in a completely general sense.",
-            "explanation": "Uncountable gases and substances used in general statements take no article. 'Oxygen' here refers to the element in general, so no article is needed.",
+            "hint": "Think about school as an activity, not a building here.",
+            "explanation": "'Go to school' (meaning to study) is a fixed expression with no article. Compare this to 'the school', which means the actual building.",
             "grammarRule": "Zero Article"
         },
         {
@@ -179,37 +179,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We need ___ battery replacement.",
-            "sentence": "We need ___ battery replacement.",
+            "question": "My mother cooked ___ omelet for me this morning.",
+            "sentence": "My mother cooked ___ omelet for me this morning.",
             "options": [
+                "a",
                 "an",
-                "the",
                 "(no article)",
-                "a"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "a",
-            "hint": "'Battery' starts with the consonant sound 'b'.",
-            "explanation": "Use 'a' before consonant sounds. 'Battery' begins with 'b', so we write 'a battery replacement'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "an",
+            "hint": "What sound does 'omelet' start with?",
+            "explanation": "'Omelet' starts with a vowel sound, so it needs 'an'. We say 'an omelet', not 'a omelet'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l4_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ captain ordered a silent run.",
-            "sentence": "___ captain ordered a silent run.",
+            "question": "I bought a loaf of bread yesterday. ___ bread is still fresh.",
+            "sentence": "I bought a loaf of bread yesterday. ___ bread is still fresh.",
             "options": [
-                "the",
-                "(no article)",
                 "a",
-                "an"
+                "an",
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The ship has one captain - this refers to the specific person in charge.",
-            "explanation": "Use 'the' to refer to a specific, known person. On a ship there is one captain, so 'the captain' identifies that specific person.",
+            "hint": "The bread here is the exact loaf already mentioned.",
+            "explanation": "Because the bread was already mentioned, the second reference uses 'the'. This shows we mean that specific loaf.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ space is vast and endless.",
-            "sentence": "___ space is vast and endless.",
+            "question": "In our house, we usually drink ___ milk with breakfast.",
+            "sentence": "In our house, we usually drink ___ milk with breakfast.",
             "options": [
-                "(no article)",
-                "a",
                 "an",
-                "the"
+                "the",
+                "a",
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Space' here means the universe in general - not one specific region.",
-            "explanation": "When 'space' refers to outer space as a whole concept, it takes no article. Compare: 'Space is huge' (Ø, general) vs. 'the space between us' (the, specific).",
+            "hint": "Milk can't be counted, so it doesn't need an article here.",
+            "explanation": "Uncountable nouns like milk, water, and juice take no article in general statements. We say 'drink milk', not 'drink a milk'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -236,27 +236,27 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She wants ___ upgrade for her equipment.",
-            "sentence": "She wants ___ upgrade for her equipment.",
+            "question": "It's going to be ___ cold, windy day today.",
+            "sentence": "It's going to be ___ cold, windy day today.",
             "options": [
                 "a",
                 "an",
-                "the",
-                "(no article)"
+                "(no article)",
+                "the"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "'Upgrade' begins with the vowel sound 'uh'.",
-            "explanation": "Use 'an' before vowel sounds. 'Upgrade' starts with the short vowel 'u', so we write 'an upgrade'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "a",
+            "hint": "'Cold' starts with a consonant sound.",
+            "explanation": "Use 'a' before a consonant sound. 'Cold' begins with 'c', so we say 'a cold, windy day'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l5_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Turn on ___ main engine.",
-            "sentence": "Turn on ___ main engine.",
+            "question": "Look outside - ___ sky is full of dark clouds.",
+            "sentence": "Look outside - ___ sky is full of dark clouds.",
             "options": [
                 "an",
                 "the",
@@ -265,8 +265,8 @@
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "There is one main engine - it is a specific, unique system.",
-            "explanation": "Use 'the' to identify a specific, known component. A vehicle or spacecraft has one 'main engine', making it definite.",
+            "hint": "There's only one sky above us.",
+            "explanation": "'The sky' is unique - there's only one, so it always takes 'the', just like 'the sun' and 'the moon'.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He studies ___ stellar physics.",
-            "sentence": "He studies ___ stellar physics.",
+            "question": "In April, we usually get ___ rain almost every day.",
+            "sentence": "In April, we usually get ___ rain almost every day.",
             "options": [
+                "an",
                 "the",
                 "(no article)",
-                "a",
-                "an"
+                "a"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "Academic subjects and fields of study take no article.",
-            "explanation": "Disciplines and subjects of study (physics, chemistry, engineering, medicine) take no article when used in a general sense: 'He studies physics.'",
+            "hint": "Rain is something we can't count.",
+            "explanation": "Uncountable nouns like rain and snow don't take an article in general statements. We say 'get rain', not 'get a rain'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -293,37 +293,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "A droid found ___ capsule in the sand.",
-            "sentence": "A droid found ___ capsule in the sand.",
+            "question": "At recess, we played ___ interesting game with a ball.",
+            "sentence": "At recess, we played ___ interesting game with a ball.",
             "options": [
-                "(no article)",
                 "a",
-                "an",
-                "the"
+                "(no article)",
+                "the",
+                "an"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "a",
-            "hint": "'Capsule' begins with the consonant sound 'c' (like 'k').",
-            "explanation": "Use 'a' before consonant sounds. 'Capsule' starts with 'c' (pronounced 'k'), so we write 'a capsule'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "an",
+            "hint": "Notice the vowel sound at the start of 'interesting'.",
+            "explanation": "'Interesting' begins with a vowel sound, so it takes 'an'. We say 'an interesting game'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l6_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He verified ___ launch coordinates.",
-            "sentence": "He verified ___ launch coordinates.",
+            "question": "That was ___ first game our team won all season.",
+            "sentence": "That was ___ first game our team won all season.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "(no article)"
+                "(no article)",
+                "an",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "These are specific, known coordinates for a particular launch.",
-            "explanation": "Use 'the' to refer to specific, previously identified information. 'The launch coordinates' are the exact ones programmed for that mission.",
+            "hint": "Ordinal numbers like 'first' almost always need this article.",
+            "explanation": "Ordinal numbers such as first, second, and last are usually paired with 'the'. We say 'the first game'.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ data flows through the node.",
-            "sentence": "___ data flows through the node.",
+            "question": "After school, my friends and I usually play ___ soccer in the park.",
+            "sentence": "After school, my friends and I usually play ___ soccer in the park.",
             "options": [
                 "an",
-                "the",
                 "(no article)",
-                "a"
+                "a",
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "'Data' is uncountable - it refers to information in general here.",
-            "explanation": "Uncountable nouns like 'data', 'information', and 'evidence' take no article when used in a general sense.",
+            "hint": "Names of sports don't normally take an article.",
+            "explanation": "Sports and games like soccer, chess, and tennis take no article. We say 'play soccer', not 'play a soccer'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -350,37 +350,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He received ___ encrypted alert.",
-            "sentence": "He received ___ encrypted alert.",
+            "question": "I just bought ___ small lamp for my desk.",
+            "sentence": "I just bought ___ small lamp for my desk.",
             "options": [
                 "the",
-                "(no article)",
+                "an",
                 "a",
-                "an"
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "an",
-            "hint": "'Encrypted' begins with the vowel sound 'en'.",
-            "explanation": "Use 'an' before vowel sounds. 'Encrypted' starts with the vowel 'e', so we write 'an encrypted alert'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "a",
+            "hint": "'Small' starts with a consonant sound.",
+            "explanation": "'Small' begins with a consonant sound, so it takes 'a'. We say 'a small lamp'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l7_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They entered ___ galaxy center.",
-            "sentence": "They entered ___ galaxy center.",
+            "question": "There's a poster on my wall. ___ poster shows my favorite band.",
+            "sentence": "There's a poster on my wall. ___ poster shows my favorite band.",
             "options": [
-                "(no article)",
                 "a",
                 "an",
+                "(no article)",
                 "the"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "A galaxy has one center - it is a specific, unique location.",
-            "explanation": "Use 'the' for locations that are unique within a given context. A galaxy has only one center, so 'the galaxy center' is definite.",
+            "hint": "You already introduced this poster - point back to that same one.",
+            "explanation": "The second time we mention something, we usually switch to 'the'. 'The poster' refers to the exact poster named before.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They trade ___ rare minerals.",
-            "sentence": "They trade ___ rare minerals.",
+            "question": "Before I go to sleep, I always go to ___ bed by ten o'clock.",
+            "sentence": "Before I go to sleep, I always go to ___ bed by ten o'clock.",
             "options": [
-                "a",
+                "(no article)",
                 "an",
-                "the",
-                "(no article)"
+                "a",
+                "the"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "Plural nouns in a general trade context take no article.",
-            "explanation": "Plural nouns used in a general statement take no article. 'They trade rare minerals' means minerals in general, not specific ones.",
+            "hint": "'Go to bed' is an expression about sleeping, not a piece of furniture.",
+            "explanation": "'Go to bed' (meaning to sleep) is a fixed expression with no article, unlike 'the bed', which means the actual piece of furniture.",
             "grammarRule": "Zero Article"
         },
         {
@@ -407,37 +407,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They established ___ frontier base.",
-            "sentence": "They established ___ frontier base.",
+            "question": "My best friend gave me ___ amazing gift for my birthday.",
+            "sentence": "My best friend gave me ___ amazing gift for my birthday.",
             "options": [
+                "a",
                 "an",
                 "the",
-                "(no article)",
-                "a"
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "a",
-            "hint": "'Frontier' begins with the consonant sound 'f'.",
-            "explanation": "Use 'a' before consonant sounds. 'Frontier' starts with 'f', so we write 'a frontier base'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "an",
+            "hint": "Listen for the vowel sound that opens 'amazing'.",
+            "explanation": "'Amazing' starts with a vowel sound, so it takes 'an'. We say 'an amazing gift'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l8_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ shield is holding up.",
-            "sentence": "___ shield is holding up.",
+            "question": "We baked a cake for the party, and ___ cake had chocolate frosting.",
+            "sentence": "We baked a cake for the party, and ___ cake had chocolate frosting.",
             "options": [
-                "the",
                 "(no article)",
-                "a",
-                "an"
+                "an",
+                "the",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "There is one shield on the vessel - it is a known, specific system.",
-            "explanation": "Use 'the' to refer to a specific, known component. 'The shield' identifies the particular active shield everyone on board is aware of.",
+            "hint": "This cake is the very one mentioned earlier in the sentence.",
+            "explanation": "Because the cake was already introduced, we now call it 'the cake'. This shows it's the same one, not a new one.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ code is hard to master.",
-            "sentence": "___ code is hard to master.",
+            "question": "At birthday parties, guests usually sing ___ songs and eat cake.",
+            "sentence": "At birthday parties, guests usually sing ___ songs and eat cake.",
             "options": [
-                "(no article)",
-                "a",
                 "an",
-                "the"
+                "a",
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Code' here refers to programming in general, not one specific program.",
-            "explanation": "When 'code' refers to the concept of programming in general, no article is used. Compare: 'Code is complex' (Ø, general) vs. 'the code I wrote' (the, specific).",
+            "hint": "This is about songs in general, not one specific song.",
+            "explanation": "General statements about plural nouns use no article. 'Sing songs' refers to the activity in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -464,18 +464,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She wore ___ thermal suit.",
-            "sentence": "She wore ___ thermal suit.",
+            "question": "The shop assistant showed me ___ warm winter scarf.",
+            "sentence": "The shop assistant showed me ___ warm winter scarf.",
             "options": [
                 "a",
-                "an",
                 "the",
+                "an",
                 "(no article)"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "a",
-            "hint": "'Thermal' begins with the consonant sound 'th'.",
-            "explanation": "Use 'a' before consonant sounds. 'Thermal' starts with 'th', a consonant, so we write 'a thermal suit'.",
+            "hint": "'Warm' starts with a consonant sound.",
+            "explanation": "Words starting with a consonant sound take 'a'. 'Warm' begins with 'w', so we say 'a warm scarf'.",
             "grammarRule": "Indefinite Article (a)"
         },
         {
@@ -483,8 +483,8 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Check ___ security code on the terminal.",
-            "sentence": "Check ___ security code on the terminal.",
+            "question": "I tried on three jackets, and this red one was ___ nicest.",
+            "sentence": "I tried on three jackets, and this red one was ___ nicest.",
             "options": [
                 "an",
                 "the",
@@ -493,8 +493,8 @@
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "This is a specific security code tied to a particular terminal.",
-            "explanation": "Use 'the' when the noun refers to one specific, known item. 'The security code' is the unique code for that terminal.",
+            "hint": "Comparing this jacket to all the others calls for a superlative.",
+            "explanation": "Superlatives like 'the nicest' or 'the best' always take 'the'. We're comparing this jacket to every other one we tried.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She loves ___ engineering.",
-            "sentence": "She loves ___ engineering.",
+            "question": "On weekends, my mother likes to go ___ shopping downtown.",
+            "sentence": "On weekends, my mother likes to go ___ shopping downtown.",
             "options": [
+                "a",
                 "the",
                 "(no article)",
-                "a",
                 "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "Engineering as a field of study takes no article.",
-            "explanation": "Disciplines and professions used in a general sense take no article: 'She loves engineering', 'He studies medicine', 'They practice law.'",
+            "hint": "'Go shopping' is a fixed expression.",
+            "explanation": "Activities like 'go shopping', 'go swimming', and 'go fishing' are set phrases with no article before the -ing word.",
             "grammarRule": "Zero Article"
         },
         {
@@ -521,18 +521,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ unexpected discovery.",
-            "sentence": "It was ___ unexpected discovery.",
+            "question": "The doctor said I have ___ ear infection.",
+            "sentence": "The doctor said I have ___ ear infection.",
             "options": [
-                "(no article)",
+                "the",
                 "a",
-                "an",
-                "the"
+                "(no article)",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "'Unexpected' begins with the vowel sound 'un'.",
-            "explanation": "Use 'an' before vowel sounds. 'Unexpected' starts with the vowel 'u', so we write 'an unexpected discovery'.",
+            "hint": "What sound does 'ear' start with?",
+            "explanation": "'Ear' starts with a vowel sound, so it takes 'an'. We say 'an ear infection'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -540,18 +540,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ command deck is fully staffed.",
-            "sentence": "___ command deck is fully staffed.",
+            "question": "I have a small cut on my hand. ___ cut isn't too deep.",
+            "sentence": "I have a small cut on my hand. ___ cut isn't too deep.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "(no article)"
+                "(no article)",
+                "an",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The ship has one command deck - it is a specific, unique area.",
-            "explanation": "Use 'the' for a specific, known place. A spacecraft has one command deck, so 'the command deck' is always definite.",
+            "hint": "You're referring back to the exact cut just described.",
+            "explanation": "The second mention of something already introduced takes 'the'. 'The cut' points to that specific cut.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ gravity keeps planets in orbit.",
-            "sentence": "___ gravity keeps planets in orbit.",
+            "question": "To stay healthy, you should drink plenty of ___ water every day.",
+            "sentence": "To stay healthy, you should drink plenty of ___ water every day.",
             "options": [
                 "an",
-                "the",
                 "(no article)",
-                "a"
+                "a",
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "'Gravity' refers to the physical force in general, not a specific gravitational field.",
-            "explanation": "Scientific forces and natural phenomena used as general concepts take no article: 'Gravity is a force', 'Electricity powers our homes'.",
+            "hint": "Water can't be counted, so no article is needed.",
+            "explanation": "Uncountable nouns like water take no article in general advice. We say 'drink water', not 'drink a water'.",
             "grammarRule": "Zero Article"
         }
     ]

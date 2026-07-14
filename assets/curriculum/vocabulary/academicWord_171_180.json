@@ -8,8 +8,8 @@
             "hint": "DEFINITION: Something that causes growth, activity, or a reaction in a person, organism, or system.",
             "options": [
                 "PENALTY",
-                "TAX",
                 "STIMULUS",
+                "TAX",
                 "RESTRICTION"
             ],
             "explanation": "Academic context: The government's tax rebate program was designed as an economic STIMULUS during the recession. Here, \"STIMULUS\" means something intended to encourage growth or activity, the opposite of a punishment, a charge, or a limitation.",
@@ -24,9 +24,9 @@
             "hint": "DEFINITION: Strict, precise, and rigorously enforced.",
             "options": [
                 "LENIENT",
-                "RELAXED",
                 "CASUAL",
-                "STRINGENT"
+                "STRINGENT",
+                "RELAXED"
             ],
             "explanation": "Academic context: Airport security has become far more STRINGENT since the new regulations took effect. Here, \"STRINGENT\" means strict and rigorously enforced, the opposite of being lenient, easygoing, or informal.",
             "passage": "Airport security has become far more [TARGET] since the new regulations took effect",
@@ -39,10 +39,10 @@
             "id": "VOC_ACADEMICWORD_L171_Q3",
             "hint": "DEFINITION: Lower in rank or position; a person under the authority of another.",
             "options": [
+                "EQUAL",
                 "SUBORDINATE",
-                "SUPERIOR",
                 "DOMINANT",
-                "EQUAL"
+                "SUPERIOR"
             ],
             "explanation": "Academic context: As the most junior member of the legal team, she was treated as SUBORDINATE to the senior partners on every major decision. Here, \"SUBORDINATE\" means lower in rank, the opposite of being higher in authority, in control, or on the same level.",
             "passage": "As the most junior member of the legal team, she was treated as [TARGET] to the senior partners on every major decision",
@@ -55,9 +55,9 @@
             "id": "VOC_ACADEMICWORD_L172_Q1",
             "hint": "DEFINITION: Of considerable importance, size, or worth.",
             "options": [
-                "NEGLIGIBLE",
                 "SUBSTANTIAL",
                 "MARGINAL",
+                "NEGLIGIBLE",
                 "INSIGNIFICANT"
             ],
             "explanation": "Academic context: The company reported a SUBSTANTIAL increase in profits after expanding into international markets. Here, \"SUBSTANTIAL\" means considerably large, the opposite of being too small to matter, barely noticeable, or unimportant.",
@@ -72,8 +72,8 @@
             "hint": "DEFINITION: A person or thing that follows and takes the place of another, especially in a position or role.",
             "options": [
                 "PREDECESSOR",
-                "FOUNDER",
                 "SUCCESSOR",
+                "FOUNDER",
                 "RIVAL"
             ],
             "explanation": "Academic context: The retiring CEO personally selected her SUCCESSOR before announcing her departure to the board. Here, \"SUCCESSOR\" means the person who comes next in a role, the opposite of the person who held it before, who started the organization, or who competes against it.",
@@ -87,10 +87,10 @@
             "id": "VOC_ACADEMICWORD_L172_Q3",
             "hint": "DEFINITION: To forcibly put an end to something; to prevent something from being known or expressed.",
             "options": [
-                "PUBLICIZE",
                 "DISTRIBUTE",
                 "BROADCAST",
-                "SUPPRESS"
+                "SUPPRESS",
+                "PUBLICIZE"
             ],
             "explanation": "Academic context: The government was accused of trying to SUPPRESS the journalist's report about corruption. Here, \"SUPPRESS\" means to forcibly hide or stop something from spreading, the opposite of making it widely known, spreading it, or airing it publicly.",
             "passage": "The government was accused of trying to [TARGET] the journalist's report about corruption",
@@ -103,13 +103,13 @@
             "id": "VOC_ACADEMICWORD_L173_Q1",
             "hint": "DEFINITION: To do or be better than someone or something; to exceed.",
             "options": [
-                "SURPASS",
-                "TRAIL",
                 "LAG",
-                "UNDERPERFORM"
+                "SURPASS",
+                "UNDERPERFORM",
+                "TRAIL"
             ],
-            "explanation": "Academic context: The young gymnast's score easily SURPASSed that of the reigning champion. Here, \"SURPASS\" means to exceed in performance, the opposite of falling behind, lagging, or performing worse than someone else.",
-            "passage": "The young gymnast's score easily [TARGET]ed that of the reigning champion",
+            "explanation": "Academic context: The young gymnast's final score was enough to SURPASS that of the reigning champion. Here, \"SURPASS\" means to exceed in performance, the opposite of falling behind, lagging, or performing worse than someone else.",
+            "passage": "The young gymnast's final score was enough to [TARGET] that of the reigning champion",
             "correctAnswer": "SURPASS",
             "instruction": "Drag the correct word to complete the sentence."
         },
@@ -119,10 +119,10 @@
             "id": "VOC_ACADEMICWORD_L173_Q2",
             "hint": "DEFINITION: The combination of separate ideas, elements, or substances to form a coherent whole.",
             "options": [
+                "DIVISION",
                 "FRAGMENTATION",
                 "SYNTHESIS",
-                "SEPARATION",
-                "DIVISION"
+                "SEPARATION"
             ],
             "explanation": "Academic context: Her dissertation offered a fresh SYNTHESIS of economic theory and environmental science. Here, \"SYNTHESIS\" means a unified combination of separate elements, the opposite of breaking something apart, keeping things separate, or dividing them.",
             "passage": "Her dissertation offered a fresh [TARGET] of economic theory and environmental science",
@@ -135,10 +135,10 @@
             "id": "VOC_ACADEMICWORD_L173_Q3",
             "hint": "DEFINITION: Capable of being touched or perceived as real; clear and definite.",
             "options": [
-                "ABSTRACT",
-                "IMAGINARY",
                 "TANGIBLE",
-                "THEORETICAL"
+                "ABSTRACT",
+                "THEORETICAL",
+                "IMAGINARY"
             ],
             "explanation": "Academic context: After months of negotiation, the two countries finally produced a TANGIBLE agreement rather than vague promises. Here, \"TANGIBLE\" means concrete and definite, the opposite of being conceptual, imagined, or existing only as an idea.",
             "passage": "After months of negotiation, the two countries finally produced a [TARGET] agreement rather than vague promises",
@@ -167,10 +167,10 @@
             "id": "VOC_ACADEMICWORD_L174_Q2",
             "hint": "DEFINITION: Concerned with or based on theory rather than practical application or experience.",
             "options": [
-                "THEORETICAL",
                 "EMPIRICAL",
                 "PRACTICAL",
-                "EXPERIMENTAL"
+                "EXPERIMENTAL",
+                "THEORETICAL"
             ],
             "explanation": "Academic context: Her PhD research is entirely THEORETICAL, focused on mathematical models rather than laboratory experiments. Here, \"THEORETICAL\" means based on abstract theory, the opposite of being based on observed evidence, real-world application, or hands-on testing.",
             "passage": "Her PhD research is entirely [TARGET], focused on mathematical models rather than laboratory experiments",
@@ -183,10 +183,10 @@
             "id": "VOC_ACADEMICWORD_L174_Q3",
             "hint": "DEFINITION: The point or level at which something begins or changes; the entrance to a building or room.",
             "options": [
-                "CEILING",
                 "THRESHOLD",
-                "LIMIT",
-                "BOUNDARY"
+                "BOUNDARY",
+                "CEILING",
+                "LIMIT"
             ],
             "explanation": "Academic context: Once sales crossed a certain THRESHOLD, the startup qualified for a lower tax rate. Here, \"THRESHOLD\" specifically marks the entry point where a new condition begins, unlike a term that caps the maximum, restricts the range, or marks an outer edge.",
             "passage": "Once sales crossed a certain [TARGET], the startup qualified for a lower tax rate",
@@ -199,10 +199,10 @@
             "id": "VOC_ACADEMICWORD_L175_Q1",
             "hint": "DEFINITION: The curved path of an object moving through space; the general direction or course of development of something over time.",
             "options": [
-                "REPUTATION",
                 "SALARY",
                 "TRAJECTORY",
-                "SCHEDULE"
+                "SCHEDULE",
+                "REPUTATION"
             ],
             "explanation": "Academic context: Her career TRAJECTORY took a dramatic turn after she switched from law to environmental advocacy. Here, \"TRAJECTORY\" means the overall path or direction something follows over time, a different kind of attribute from how others view someone, their pay, or their timetable.",
             "passage": "Her career [TARGET] took a dramatic turn after she switched from law to environmental advocacy",
@@ -215,9 +215,9 @@
             "id": "VOC_ACADEMICWORD_L175_Q2",
             "hint": "DEFINITION: To go beyond the limits of something, especially an ordinary or expected boundary.",
             "options": [
+                "ACKNOWLEDGE",
                 "RESPECT",
                 "OBSERVE",
-                "ACKNOWLEDGE",
                 "TRANSCEND"
             ],
             "explanation": "Academic context: The best children's books TRANSCEND age, appealing just as much to adults as to kids. Here, \"TRANSCEND\" means to go beyond a usual limit, a different relationship from simply honoring, following, or recognizing it.",
@@ -231,10 +231,10 @@
             "id": "VOC_ACADEMICWORD_L175_Q3",
             "hint": "DEFINITION: The process of changing from one state or condition to another.",
             "options": [
-                "TRANSITION",
-                "STAGNATION",
                 "REGRESSION",
-                "REVERSAL"
+                "REVERSAL",
+                "TRANSITION",
+                "STAGNATION"
             ],
             "explanation": "Academic context: The country's TRANSITION from a paper-based to a fully digital voting system took nearly a decade. Here, \"TRANSITION\" means a gradual process of changing forward, the opposite of staying stuck in place, moving backward, or completely undoing a change.",
             "passage": "The country's [TARGET] from a paper-based to a fully digital voting system took nearly a decade",
@@ -247,10 +247,10 @@
             "id": "VOC_ACADEMICWORD_L176_Q1",
             "hint": "DEFINITION: Capable of working successfully; feasible.",
             "options": [
+                "CONFIRMED",
                 "PROVEN",
-                "VIABLE",
                 "GUARANTEED",
-                "CONFIRMED"
+                "VIABLE"
             ],
             "explanation": "Academic context: After months of testing, the engineers concluded that the design was not VIABLE for mass production. Here, \"VIABLE\" means capable of actually working in practice, a different and more basic claim than being already proven, assured of success, or formally verified.",
             "passage": "After months of testing, the engineers concluded that the design was not [TARGET] for mass production",
@@ -264,9 +264,9 @@
             "hint": "DEFINITION: Departing from an accepted standard; abnormal or atypical.",
             "options": [
                 "TYPICAL",
+                "CONSISTENT",
                 "STANDARD",
-                "ABERRANT",
-                "CONSISTENT"
+                "ABERRANT"
             ],
             "explanation": "Academic context: The scientist flagged the ABERRANT data point as a possible measurement error rather than a real result. Here, \"ABERRANT\" means abnormal and departing from the expected pattern, the opposite of being usual, normal, or matching the rest of the data.",
             "passage": "The scientist flagged the [TARGET] data point as a possible measurement error rather than a real result",
@@ -279,10 +279,10 @@
             "id": "VOC_ACADEMICWORD_L176_Q3",
             "hint": "DEFINITION: To stick firmly to a surface or substance; to follow a rule, belief, or commitment closely.",
             "options": [
-                "VIOLATE",
+                "ADHERE",
                 "DISREGARD",
-                "ABANDON",
-                "ADHERE"
+                "VIOLATE",
+                "ABANDON"
             ],
             "explanation": "Academic context: All contractors on the project must ADHERE to strict safety regulations at all times. Here, \"ADHERE\" means to follow closely and consistently, the opposite of breaking, ignoring, or giving up on a rule.",
             "passage": "All contractors on the project must [TARGET] to strict safety regulations at all times",
@@ -296,8 +296,8 @@
             "hint": "DEFINITION: Having a great deal of money or wealth.",
             "options": [
                 "AFFLUENT",
-                "IMPOVERISHED",
                 "DESTITUTE",
+                "IMPOVERISHED",
                 "PENNILESS"
             ],
             "explanation": "Academic context: The new shopping district was built specifically to attract AFFLUENT tourists looking for luxury brands. Here, \"AFFLUENT\" means wealthy, the opposite of being poor, lacking basic resources, or without any money at all.",
@@ -311,10 +311,10 @@
             "id": "VOC_ACADEMICWORD_L177_Q2",
             "hint": "DEFINITION: To cause someone to feel isolated or estranged from a person or group.",
             "options": [
-                "UNITE",
-                "ALIENATE",
                 "ENGAGE",
-                "WELCOME"
+                "UNITE",
+                "WELCOME",
+                "ALIENATE"
             ],
             "explanation": "Academic context: The CEO's dismissive comments about employee concerns began to ALIENATE much of the workforce. Here, \"ALIENATE\" means to push someone away emotionally, the opposite of bringing people together, involving them, or making them feel included.",
             "passage": "The CEO's dismissive comments about employee concerns began to [TARGET] much of the workforce",
@@ -328,9 +328,9 @@
             "hint": "DEFINITION: Able to express oneself clearly and effectively in speech; to express an idea clearly.",
             "options": [
                 "INCOHERENT",
+                "MUMBLING",
                 "TONGUE-TIED",
-                "ARTICULATE",
-                "MUMBLING"
+                "ARTICULATE"
             ],
             "explanation": "Academic context: Even as a young child, she was remarkably ARTICULATE, able to explain complex feelings in simple words. Here, \"ARTICULATE\" means able to express oneself clearly, the opposite of being unclear, unable to speak fluently, or speaking unclearly.",
             "passage": "Even as a young child, she was remarkably [TARGET], able to explain complex feelings in simple words",
@@ -343,10 +343,10 @@
             "id": "VOC_ACADEMICWORD_L178_Q1",
             "hint": "DEFINITION: A lack of equality or balance between parts of something.",
             "options": [
-                "UNIFORMITY",
                 "SYMMETRY",
-                "BALANCE",
-                "ASYMMETRY"
+                "ASYMMETRY",
+                "UNIFORMITY",
+                "BALANCE"
             ],
             "explanation": "Academic context: Doctors noted a slight facial ASYMMETRY that hadn't been present before the accident. Here, \"ASYMMETRY\" means an imbalance between two sides, the opposite of matching evenness, mirror-image balance, or equal proportion.",
             "passage": "Doctors noted a slight facial [TARGET] that hadn't been present before the accident",
@@ -359,9 +359,9 @@
             "id": "VOC_ACADEMICWORD_L178_Q2",
             "hint": "DEFINITION: Well-meaning and kindly; charitable.",
             "options": [
-                "BENEVOLENT",
-                "MALICIOUS",
                 "HOSTILE",
+                "MALICIOUS",
+                "BENEVOLENT",
                 "SPITEFUL"
             ],
             "explanation": "Academic context: The retired teacher was known throughout the neighborhood as a BENEVOLENT figure who quietly paid for struggling students' school supplies. Here, \"BENEVOLENT\" means kind and well-meaning, the opposite of being cruel, unfriendly, or deliberately harmful.",
@@ -377,8 +377,8 @@
             "options": [
                 "EVASIVE",
                 "CANDID",
-                "DECEPTIVE",
-                "MISLEADING"
+                "MISLEADING",
+                "DECEPTIVE"
             ],
             "explanation": "Academic context: The coach gave the team a CANDID assessment of why they had lost the championship game. Here, \"CANDID\" means honest and direct, the opposite of being avoidant, dishonest, or intentionally confusing.",
             "passage": "The coach gave the team a [TARGET] assessment of why they had lost the championship game",
@@ -391,10 +391,10 @@
             "id": "VOC_ACADEMICWORD_L179_Q1",
             "hint": "DEFINITION: To find a way around an obstacle, rule, or restriction, often cleverly or illegally.",
             "options": [
-                "ENFORCE",
+                "OBSERVE",
                 "UPHOLD",
-                "CIRCUMVENT",
-                "OBSERVE"
+                "ENFORCE",
+                "CIRCUMVENT"
             ],
             "explanation": "Academic context: The company tried to CIRCUMVENT the import tax by routing shipments through a third country. Here, \"CIRCUMVENT\" means to cleverly avoid a rule, the opposite of strictly applying, supporting, or following it.",
             "passage": "The company tried to [TARGET] the import tax by routing shipments through a third country",
@@ -408,9 +408,9 @@
             "hint": "DEFINITION: Having knowledge or awareness of something.",
             "options": [
                 "OBLIVIOUS",
-                "UNAWARE",
                 "IGNORANT",
-                "COGNIZANT"
+                "COGNIZANT",
+                "UNAWARE"
             ],
             "explanation": "Academic context: Managers should remain COGNIZANT of how layoffs affect the morale of remaining employees. Here, \"COGNIZANT\" means aware and informed, the opposite of being unaware, not knowing, or lacking knowledge.",
             "passage": "Managers should remain [TARGET] of how layoffs affect the morale of remaining employees",
@@ -425,8 +425,8 @@
             "options": [
                 "COMPLACENT",
                 "VIGILANT",
-                "CAUTIOUS",
-                "ALERT"
+                "ALERT",
+                "CAUTIOUS"
             ],
             "explanation": "Academic context: After years of strong sales, the company grew COMPLACENT and failed to notice new competitors entering the market. Here, \"COMPLACENT\" means overly self-satisfied and unaware of risk, the opposite of being watchful, careful, or attentive to danger.",
             "passage": "After years of strong sales, the company grew [TARGET] and failed to notice new competitors entering the market",
@@ -439,8 +439,8 @@
             "id": "VOC_ACADEMICWORD_L180_Q1",
             "hint": "DEFINITION: Making a certain outcome likely or possible; favorable to.",
             "options": [
-                "DETRIMENTAL",
                 "CONDUCIVE",
+                "DETRIMENTAL",
                 "UNFAVORABLE",
                 "HOSTILE"
             ],
@@ -455,10 +455,10 @@
             "id": "VOC_ACADEMICWORD_L180_Q2",
             "hint": "DEFINITION: To place something in its appropriate setting or framework in order to understand it better.",
             "options": [
-                "ISOLATE",
-                "FRAGMENT",
+                "DECONTEXTUALIZE",
                 "CONTEXTUALIZE",
-                "DECONTEXTUALIZE"
+                "ISOLATE",
+                "FRAGMENT"
             ],
             "explanation": "Academic context: The museum added historical timelines to help visitors CONTEXTUALIZE the artifacts on display. Here, \"CONTEXTUALIZE\" means to place something within a meaningful framework, the opposite of separating it, breaking it into disconnected pieces, or stripping away its context.",
             "passage": "The museum added historical timelines to help visitors [TARGET] the artifacts on display",
@@ -471,10 +471,10 @@
             "id": "VOC_ACADEMICWORD_L180_Q3",
             "hint": "DEFINITION: Done consciously and intentionally; slow and careful in speech or action.",
             "options": [
-                "UNINTENTIONAL",
                 "ACCIDENTAL",
-                "UNPLANNED",
-                "DELIBERATE"
+                "UNINTENTIONAL",
+                "DELIBERATE",
+                "UNPLANNED"
             ],
             "explanation": "Academic context: Investigators concluded that the fire had been DELIBERATE rather than accidental. Here, \"DELIBERATE\" means done on purpose, the opposite of happening by accident, without intention, or without any plan.",
             "passage": "Investigators concluded that the fire had been [TARGET] rather than accidental",

@@ -8,37 +8,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He caught ___ early morning train to the capital.",
-            "sentence": "He caught ___ early morning train to the capital.",
+            "question": "The startup secured ___ lucrative contract with a major retailer.",
+            "sentence": "The startup secured ___ lucrative contract with a major retailer.",
             "options": [
-                "a",
-                "an",
                 "the",
+                "an",
+                "a",
                 "(no article)"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "'Early' begins with the vowel sound 'ee'.",
-            "explanation": "Use 'an' before vowel sounds. 'Early' starts with the vowel 'e', so we write 'an early morning train'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "a",
+            "hint": "'Lucrative' starts with a consonant sound.",
+            "explanation": "'Lucrative' begins with a consonant sound, so it takes 'a'. We say 'a lucrative contract'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l91_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He missed ___ connecting train due to a delay.",
-            "sentence": "He missed ___ connecting train due to a delay.",
+            "question": "Investors reviewed three proposals, and ___ third proposal offered by far the strongest returns.",
+            "sentence": "Investors reviewed three proposals, and ___ third proposal offered by far the strongest returns.",
             "options": [
                 "an",
-                "the",
                 "(no article)",
-                "a"
+                "a",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "The specific connecting train on his route - a known, identified service.",
-            "explanation": "Use 'the' when the noun refers to a specific, identifiable service or event. 'The connecting train' is the particular one he needed to catch.",
+            "hint": "'Third' is an ordinal number.",
+            "explanation": "Ordinal numbers such as third and second take 'the'. We say 'the third proposal' among several.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ rail travel is one of the most sustainable forms of transport.",
-            "sentence": "___ rail travel is one of the most sustainable forms of transport.",
+            "question": "Financial advisors always emphasize ___ discipline over quick profits.",
+            "sentence": "Financial advisors always emphasize ___ discipline over quick profits.",
             "options": [
-                "the",
                 "(no article)",
                 "a",
-                "an"
+                "an",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "'Rail travel' is an uncountable concept in a general environmental statement.",
-            "explanation": "Transport concepts (rail travel, air travel, road transport, sea freight) take no article in general statements about their characteristics.",
+            "hint": "Discipline, in this sense, is an idea you can't count.",
+            "explanation": "Abstract, uncountable nouns like discipline take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -65,18 +65,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She rented ___ car for the long weekend.",
-            "sentence": "She rented ___ car for the long weekend.",
+            "question": "The team published ___ credible study based on ten years of data.",
+            "sentence": "The team published ___ credible study based on ten years of data.",
             "options": [
-                "(no article)",
+                "the",
                 "a",
-                "an",
-                "the"
+                "(no article)",
+                "an"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "'Car' begins with the consonant sound 'c' (like 'k').",
-            "explanation": "Use 'a' before consonant sounds. 'Car' starts with the 'k' sound, so we write 'a car'.",
+            "hint": "'Credible' starts with a consonant sound.",
+            "explanation": "'Credible' begins with a consonant sound, so it takes 'a'. We say 'a credible study'.",
             "grammarRule": "Indefinite Article (a)"
         },
         {
@@ -84,18 +84,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She returned ___ car to the rental office on Monday.",
-            "sentence": "She returned ___ car to the rental office on Monday.",
+            "question": "___ study that changed the entire field was published almost by accident.",
+            "sentence": "___ study that changed the entire field was published almost by accident.",
             "options": [
-                "a",
                 "an",
+                "a",
                 "the",
                 "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific car she rented - now a known vehicle.",
-            "explanation": "Use 'the' when referring to a specific item already introduced. 'The car' = the rental car she picked up for the long weekend.",
+            "hint": "The phrase 'that changed the entire field' narrows this down to one specific study.",
+            "explanation": "When a descriptive phrase makes a noun specific, we use 'the'. It picks out exactly one study among many.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She usually travels to work by ___ bus.",
-            "sentence": "She usually travels to work by ___ bus.",
+            "question": "Peer reviewers carefully check ___ research methods before approving a paper.",
+            "sentence": "Peer reviewers carefully check ___ research methods before approving a paper.",
             "options": [
-                "an",
                 "the",
-                "(no article)",
-                "a"
+                "an",
+                "a",
+                "(no article)"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "Transport modes after 'by' take no article - it is a fixed expression.",
-            "explanation": "Fixed expressions with 'by' + transport never use an article: by bus, by car, by train, by plane, by bike, by foot. This is a fixed grammatical pattern.",
+            "hint": "This is a general statement about research methods as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Research methods' here means such methods in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -122,18 +122,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She found ___ excellent restaurant near the station.",
-            "sentence": "She found ___ excellent restaurant near the station.",
+            "question": "Her therapist helped her finally accept ___ uncomfortable truth about her work habits.",
+            "sentence": "Her therapist helped her finally accept ___ uncomfortable truth about her work habits.",
             "options": [
-                "the",
+                "an",
                 "(no article)",
-                "a",
-                "an"
+                "the",
+                "a"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "an",
-            "hint": "'Excellent' begins with the vowel sound 'ex'.",
-            "explanation": "Use 'an' before vowel sounds. 'Excellent' starts with the vowel 'e', so we write 'an excellent restaurant'.",
+            "hint": "Listen to the vowel sound in 'uncomfortable'.",
+            "explanation": "'Uncomfortable' starts with a vowel sound, so it takes 'an'. We say 'an uncomfortable truth'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -141,18 +141,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She returned to ___ restaurant the following evening.",
-            "sentence": "She returned to ___ restaurant the following evening.",
+            "question": "She admitted a difficult truth to her therapist, and ___ truth was harder to say than she expected.",
+            "sentence": "She admitted a difficult truth to her therapist, and ___ truth was harder to say than she expected.",
             "options": [
-                "(no article)",
                 "a",
-                "an",
-                "the"
+                "the",
+                "(no article)",
+                "an"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific restaurant she found - now a known place.",
-            "explanation": "After introducing a noun ('an excellent restaurant'), refer to it as 'the restaurant' on the next mention. It is now a known, specific place.",
+            "hint": "This truth was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The truth' refers back to that same admission.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She tried ___ street food at every market she visited.",
-            "sentence": "She tried ___ street food at every market she visited.",
+            "question": "Therapists often say that ___ self-awareness is the first step toward change.",
+            "sentence": "Therapists often say that ___ self-awareness is the first step toward change.",
             "options": [
                 "a",
-                "an",
                 "the",
-                "(no article)"
+                "(no article)",
+                "an"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "'Street food' is an uncountable concept used in a general context.",
-            "explanation": "Uncountable food concepts (street food, fast food, local cuisine, home cooking) take no article when used in a general sense.",
+            "hint": "Self-awareness is an abstract quality, not something countable.",
+            "explanation": "Abstract, uncountable nouns like self-awareness take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -179,8 +179,8 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He bought ___ second-class ticket at the counter.",
-            "sentence": "He bought ___ second-class ticket at the counter.",
+            "question": "The company released ___ seamless update that fixed every major bug.",
+            "sentence": "The company released ___ seamless update that fixed every major bug.",
             "options": [
                 "an",
                 "the",
@@ -189,8 +189,8 @@
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "'Second-class' begins with the consonant sound 's'.",
-            "explanation": "Use 'a' before consonant sounds. 'Second-class' starts with 's', so we write 'a second-class ticket'.",
+            "hint": "'Seamless' starts with a consonant sound.",
+            "explanation": "'Seamless' begins with a consonant sound, so it takes 'a'. We say 'a seamless update'.",
             "grammarRule": "Indefinite Article (a)"
         },
         {
@@ -198,8 +198,8 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The conductor checked ___ ticket and nodded.",
-            "sentence": "The conductor checked ___ ticket and nodded.",
+            "question": "Two updates were released that month, and ___ later update finally fixed the login issue.",
+            "sentence": "Two updates were released that month, and ___ later update finally fixed the login issue.",
             "options": [
                 "the",
                 "(no article)",
@@ -208,8 +208,8 @@
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The specific ticket he just bought - now a known document.",
-            "explanation": "Use 'the' to refer to the specific ticket already introduced. 'The ticket' = the second-class one he purchased.",
+            "hint": "This singles out one of the two updates just mentioned.",
+            "explanation": "'The' can identify a specific item from a group already introduced, like 'the later update' of the two.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ punctuality is especially important in the railway industry.",
-            "sentence": "___ punctuality is especially important in the railway industry.",
+            "question": "Developers must test ___ software updates thoroughly before public release.",
+            "sentence": "Developers must test ___ software updates thoroughly before public release.",
             "options": [
+                "an",
                 "(no article)",
                 "a",
-                "an",
                 "the"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "'Punctuality' as an abstract quality takes no article in a general statement.",
-            "explanation": "Abstract qualities (punctuality, reliability, efficiency, accuracy) take no article in general statements about professional standards.",
+            "hint": "This is a general statement about software updates as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Software updates' here means such updates in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -236,37 +236,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She had ___ unforgettable experience in the old town.",
-            "sentence": "She had ___ unforgettable experience in the old town.",
+            "question": "Researchers described it as ___ systemic problem rather than a personal failure.",
+            "sentence": "Researchers described it as ___ systemic problem rather than a personal failure.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "(no article)"
+                "(no article)",
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "'Unforgettable' begins with the vowel sound 'un'.",
-            "explanation": "Use 'an' before vowel sounds. 'Unforgettable' starts with the vowel 'u', so we write 'an unforgettable experience'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "a",
+            "hint": "'Systemic' starts with a consonant sound.",
+            "explanation": "'Systemic' begins with a consonant sound, so it takes 'a'. We say 'a systemic problem'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l95_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She described ___ experience to everyone who would listen.",
-            "sentence": "She described ___ experience to everyone who would listen.",
+            "question": "___ government introduced new funding to address the shortage of affordable housing.",
+            "sentence": "___ government introduced new funding to address the shortage of affordable housing.",
             "options": [
                 "an",
-                "the",
+                "a",
                 "(no article)",
-                "a"
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "The specific experience she just had - now a known event.",
-            "explanation": "After introducing an experience ('an unforgettable experience'), refer to it as 'the experience' in subsequent sentences. The listener knows which one.",
+            "hint": "A specific, known administration is taking this action.",
+            "explanation": "'The' is used for a specific administration already understood from context, like 'the government' currently in power.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ culture shock is normal when you move to a new country.",
-            "sentence": "___ culture shock is normal when you move to a new country.",
+            "question": "Reformers argue that ___ policies must change before real progress is possible.",
+            "sentence": "Reformers argue that ___ policies must change before real progress is possible.",
             "options": [
-                "the",
                 "(no article)",
                 "a",
-                "an"
+                "an",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "'Culture shock' is an uncountable compound noun in a general statement.",
-            "explanation": "Compound nouns for experiences or phenomena (culture shock, homesickness, jet lag, wanderlust) take no article in general statements.",
+            "hint": "This is a general statement about policies as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Policies' here means such rules in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -293,37 +293,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The driver made ___ wrong turn at the junction.",
-            "sentence": "The driver made ___ wrong turn at the junction.",
-            "options": [
-                "(no article)",
-                "a",
-                "an",
-                "the"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "a",
-            "hint": "'Wrong' begins with the consonant sound 'r'.",
-            "explanation": "Use 'a' before consonant sounds. 'Wrong' starts with 'r', so we write 'a wrong turn'.",
-            "grammarRule": "Indefinite Article (a)"
-        },
-        {
-            "id": "ai_l96_q2",
-            "instruction": "INSERT THE CORRECT ARTICLE",
-            "subtype": "articleInsertion",
-            "interactionType": "Bubble Pop",
-            "question": "He corrected ___ wrong turn before they got too lost.",
-            "sentence": "He corrected ___ wrong turn before they got too lost.",
+            "question": "The region has ___ unforgiving climate that surprises most first-time visitors.",
+            "sentence": "The region has ___ unforgiving climate that surprises most first-time visitors.",
             "options": [
                 "a",
                 "an",
                 "the",
                 "(no article)"
             ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "an",
+            "hint": "'Unforgiving' begins with a vowel sound.",
+            "explanation": "'Unforgiving' starts with a vowel sound, so it takes 'an'. We say 'an unforgiving climate'.",
+            "grammarRule": "Indefinite Article (an)"
+        },
+        {
+            "id": "ai_l96_q2",
+            "instruction": "INSERT THE CORRECT ARTICLE",
+            "subtype": "articleInsertion",
+            "interactionType": "Bubble Pop",
+            "question": "Traders have crossed ___ Sahara for centuries along ancient overland routes.",
+            "sentence": "Traders have crossed ___ Sahara for centuries along ancient overland routes.",
+            "options": [
+                "(no article)",
+                "an",
+                "the",
+                "a"
+            ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific wrong turn just mentioned - now a known event.",
-            "explanation": "Use 'the' to refer to the specific action already described. 'The wrong turn' = the one he made at the junction.",
+            "hint": "Names of deserts usually take this article.",
+            "explanation": "Deserts take 'the' - the Sahara, the Gobi, the Mojave - much like rivers and mountain ranges do.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ navigation has become much easier with GPS technology.",
-            "sentence": "___ navigation has become much easier with GPS technology.",
+            "question": "Travelers are warned to carry extra ___ water when crossing remote desert regions.",
+            "sentence": "Travelers are warned to carry extra ___ water when crossing remote desert regions.",
             "options": [
-                "an",
                 "the",
-                "(no article)",
-                "a"
+                "a",
+                "an",
+                "(no article)"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Navigation' as an uncountable skill or concept takes no article.",
-            "explanation": "Uncountable skills and technologies (navigation, communication, automation) take no article in general statements about their improvement.",
+            "hint": "Think about whether you could count this substance one by one.",
+            "explanation": "Substances you can't count individually, like water or sand, take no article in general advice.",
             "grammarRule": "Zero Article"
         },
         {
@@ -350,37 +350,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She applied for ___ international driving permit.",
-            "sentence": "She applied for ___ international driving permit.",
+            "question": "The board approved ___ calculated risk that ultimately paid off.",
+            "sentence": "The board approved ___ calculated risk that ultimately paid off.",
             "options": [
-                "the",
-                "(no article)",
                 "a",
-                "an"
+                "an",
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "an",
-            "hint": "'International' begins with the vowel sound 'in'.",
-            "explanation": "Use 'an' before vowel sounds. 'International' starts with the vowel 'i', so we write 'an international driving permit'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "a",
+            "hint": "'Calculated' starts with a consonant sound.",
+            "explanation": "'Calculated' begins with a consonant sound, so it takes 'a'. We say 'a calculated risk'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l97_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She kept ___ permit in her wallet at all times.",
-            "sentence": "She kept ___ permit in her wallet at all times.",
+            "question": "Of every decision the board made that year, this was ___ boldest by far.",
+            "sentence": "Of every decision the board made that year, this was ___ boldest by far.",
             "options": [
                 "(no article)",
-                "a",
+                "the",
                 "an",
-                "the"
+                "a"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific driving permit she applied for - now a known document.",
-            "explanation": "Use 'the' to refer to the specific permit already introduced. 'The permit' = the international driving one she applied for.",
+            "hint": "This compares the decision to every other one made that year.",
+            "explanation": "Superlatives like 'the boldest' always take 'the', since they compare one thing to all the rest.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ traffic congestion costs cities billions in lost productivity.",
-            "sentence": "___ traffic congestion costs cities billions in lost productivity.",
+            "question": "Successful strategy often depends on ___ timing as much as on planning.",
+            "sentence": "Successful strategy often depends on ___ timing as much as on planning.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "(no article)"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "'Traffic congestion' is an uncountable compound noun in a general statement.",
-            "explanation": "Compound noun phrases for urban problems (traffic congestion, air pollution, housing shortages) take no article in general statements.",
+            "hint": "Timing, in this sense, is an idea you can't count.",
+            "explanation": "Abstract, uncountable nouns like timing take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -407,27 +407,27 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She booked ___ budget hotel near the conference center.",
-            "sentence": "She booked ___ budget hotel near the conference center.",
+            "question": "Beneath their polite conversation was ___ unspoken tension neither wanted to address.",
+            "sentence": "Beneath their polite conversation was ___ unspoken tension neither wanted to address.",
             "options": [
-                "an",
+                "a",
                 "the",
                 "(no article)",
-                "a"
+                "an"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "a",
-            "hint": "'Budget' begins with the consonant sound 'b'.",
-            "explanation": "Use 'a' before consonant sounds. 'Budget' starts with 'b', so we write 'a budget hotel'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswer": "an",
+            "hint": "'Unspoken' begins with a vowel sound.",
+            "explanation": "'Unspoken' starts with a vowel sound, so it takes 'an'. We say 'an unspoken tension'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l98_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She checked into ___ hotel just before midnight.",
-            "sentence": "She checked into ___ hotel just before midnight.",
+            "question": "They both avoided a difficult topic for weeks, and ___ topic eventually caused a bigger argument.",
+            "sentence": "They both avoided a difficult topic for weeks, and ___ topic eventually caused a bigger argument.",
             "options": [
                 "the",
                 "(no article)",
@@ -436,8 +436,8 @@
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The specific budget hotel she already booked - now a known place.",
-            "explanation": "Use 'the' to refer to the specific hotel already introduced. 'The hotel' = the budget one near the conference center.",
+            "hint": "This topic was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The topic' refers back to that same difficult subject.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ accommodation in popular tourist cities is often overpriced.",
-            "sentence": "___ accommodation in popular tourist cities is often overpriced.",
+            "question": "Healthy relationships almost always require ___ forgiveness from both people involved.",
+            "sentence": "Healthy relationships almost always require ___ forgiveness from both people involved.",
             "options": [
+                "the",
                 "(no article)",
-                "a",
                 "an",
-                "the"
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "'Accommodation' is uncountable and used in a general observation.",
-            "explanation": "Uncountable nouns (accommodation, transport, food, entertainment) take no article in general observations about travel and cities.",
+            "hint": "Forgiveness, in this sense, is an idea you can't count.",
+            "explanation": "Abstract, uncountable nouns like forgiveness take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -464,37 +464,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He undertook ___ east-to-west journey across the continent.",
-            "sentence": "He undertook ___ east-to-west journey across the continent.",
+            "question": "Their campaign had ___ tangible impact on the neighborhood within months.",
+            "sentence": "Their campaign had ___ tangible impact on the neighborhood within months.",
             "options": [
-                "a",
                 "an",
                 "the",
+                "a",
                 "(no article)"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "'East-to-west' begins with the vowel sound 'ee'.",
-            "explanation": "Use 'an' before vowel sounds. 'East-to-west' starts with the vowel 'e', so we write 'an east-to-west journey'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "a",
+            "hint": "'Tangible' starts with a consonant sound.",
+            "explanation": "'Tangible' begins with a consonant sound, so it takes 'a'. We say 'a tangible impact'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l99_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He documented ___ journey in a detailed travel blog.",
-            "sentence": "He documented ___ journey in a detailed travel blog.",
+            "question": "___ campaign's director organized volunteers across the entire city.",
+            "sentence": "___ campaign's director organized volunteers across the entire city.",
             "options": [
-                "an",
-                "the",
                 "(no article)",
-                "a"
+                "a",
+                "an",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "The specific east-to-west journey he undertook - now a known trip.",
-            "explanation": "Use 'the' to refer to the specific journey already introduced. 'The journey' = the east-to-west one across the continent.",
+            "hint": "A possessive like 'campaign's' already makes the role that follows specific.",
+            "explanation": "When a possessive such as 'campaign's' precedes a role, that role becomes specific, so it takes 'the' - 'the director'.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ adventure is what most long-distance travelers are seeking.",
-            "sentence": "___ adventure is what most long-distance travelers are seeking.",
+            "question": "Grassroots campaigns often rely more on ___ volunteers than on paid staff.",
+            "sentence": "Grassroots campaigns often rely more on ___ volunteers than on paid staff.",
             "options": [
-                "the",
                 "(no article)",
                 "a",
+                "the",
                 "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "'Adventure' as an abstract concept takes no article in a general statement.",
-            "explanation": "Abstract nouns used in philosophical statements (adventure, freedom, discovery, excitement) take no article: 'Adventure is calling', 'She seeks adventure'.",
+            "hint": "This is a general statement about volunteers as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Volunteers' here means such people in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -521,27 +521,27 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She purchased ___ comprehensive travel insurance policy.",
-            "sentence": "She purchased ___ comprehensive travel insurance policy.",
+            "question": "Looking back, it had been ___ unmistakable improvement from where they started.",
+            "sentence": "Looking back, it had been ___ unmistakable improvement from where they started.",
             "options": [
                 "(no article)",
-                "a",
                 "an",
-                "the"
+                "the",
+                "a"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "a",
-            "hint": "'Comprehensive' begins with the consonant sound 'c' (like 'k').",
-            "explanation": "Use 'a' before consonant sounds. 'Comprehensive' starts with the 'k' sound, so we write 'a comprehensive travel insurance policy'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswer": "an",
+            "hint": "'Unmistakable' begins with a vowel sound.",
+            "explanation": "'Unmistakable' starts with a vowel sound, so it takes 'an'. We say 'an unmistakable improvement'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l100_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ policy covered all her medical expenses abroad.",
-            "sentence": "___ policy covered all her medical expenses abroad.",
+            "question": "They set a modest goal at the very beginning, and ___ goal grew far bigger than anyone expected.",
+            "sentence": "They set a modest goal at the very beginning, and ___ goal grew far bigger than anyone expected.",
             "options": [
                 "a",
                 "an",
@@ -550,8 +550,8 @@
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific insurance policy she purchased - now a known document.",
-            "explanation": "Use 'the' to refer to the specific policy already mentioned. 'The policy' = the comprehensive travel insurance one she bought.",
+            "hint": "This goal was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The goal' refers back to that same modest starting point.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ travel insurance is strongly recommended for international trips.",
-            "sentence": "___ travel insurance is strongly recommended for international trips.",
+            "question": "Real achievements usually come from ___ small, steady efforts rather than lucky breaks.",
+            "sentence": "Real achievements usually come from ___ small, steady efforts rather than lucky breaks.",
             "options": [
-                "an",
                 "the",
-                "(no article)",
-                "a"
+                "a",
+                "an",
+                "(no article)"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Travel insurance' as a general concept or category takes no article.",
-            "explanation": "When a compound noun refers to a type or category of product (travel insurance, health coverage, car insurance), no article is used in a general recommendation.",
+            "hint": "This is a general statement about efforts as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Small, steady efforts' here means such efforts in general.",
             "grammarRule": "Zero Article"
         }
     ]

@@ -8,27 +8,27 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She was taken to ___ emergency room right away.",
-            "sentence": "She was taken to ___ emergency room right away.",
+            "question": "The dietitian recommended ___ nutritious breakfast full of protein and fiber.",
+            "sentence": "The dietitian recommended ___ nutritious breakfast full of protein and fiber.",
             "options": [
                 "a",
-                "an",
+                "(no article)",
                 "the",
-                "(no article)"
+                "an"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "'Emergency' begins with the vowel sound 'ee'.",
-            "explanation": "Use 'an' before vowel sounds. 'Emergency' starts with the vowel 'e', so we write 'an emergency room'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "a",
+            "hint": "'Nutritious' starts with a consonant sound.",
+            "explanation": "'Nutritious' begins with a consonant sound, so it takes 'a'. We say 'a nutritious breakfast'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l81_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Paramedics rushed her to ___ nearest hospital.",
-            "sentence": "Paramedics rushed her to ___ nearest hospital.",
+            "question": "She skipped a proper breakfast that morning, and ___ decision left her exhausted by noon.",
+            "sentence": "She skipped a proper breakfast that morning, and ___ decision left her exhausted by noon.",
             "options": [
                 "an",
                 "the",
@@ -37,8 +37,8 @@
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "'Nearest' is a superlative modifier - superlatives always take 'the'.",
-            "explanation": "Superlative adjectives (nearest, closest, largest, most advanced) always require 'the' because they identify the unique extreme of a category.",
+            "hint": "This decision was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The decision' refers back to skipping breakfast.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ regular exercise is the best way to maintain good health.",
-            "sentence": "___ regular exercise is the best way to maintain good health.",
+            "question": "Nutritionists agree that ___ vegetables should make up half of every plate.",
+            "sentence": "Nutritionists agree that ___ vegetables should make up half of every plate.",
             "options": [
                 "the",
-                "(no article)",
                 "a",
+                "(no article)",
                 "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "'Regular exercise' as an uncountable concept in a general health statement.",
-            "explanation": "Uncountable health concepts (regular exercise, good nutrition, adequate sleep, stress management) take no article in general health statements.",
+            "hint": "This is a general statement about vegetables as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Vegetables' here means such food in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -65,18 +65,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The patient had ___ severe allergic reaction.",
-            "sentence": "The patient had ___ severe allergic reaction.",
+            "question": "She offered ___ diplomatic response that avoided further conflict.",
+            "sentence": "She offered ___ diplomatic response that avoided further conflict.",
             "options": [
                 "(no article)",
-                "a",
                 "an",
-                "the"
+                "the",
+                "a"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "'Severe' begins with the consonant sound 's'.",
-            "explanation": "Use 'a' before consonant sounds. 'Severe' starts with 's', so we write 'a severe allergic reaction'.",
+            "hint": "'Diplomatic' starts with a consonant sound.",
+            "explanation": "'Diplomatic' begins with a consonant sound, so it takes 'a'. We say 'a diplomatic response'.",
             "grammarRule": "Indefinite Article (a)"
         },
         {
@@ -84,18 +84,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The doctor treated ___ reaction with antihistamines.",
-            "sentence": "The doctor treated ___ reaction with antihistamines.",
+            "question": "The two sides proposed different deadlines, and ___ later deadline was eventually accepted by both.",
+            "sentence": "The two sides proposed different deadlines, and ___ later deadline was eventually accepted by both.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "(no article)"
+                "an",
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The specific allergic reaction already described - now a known medical event.",
-            "explanation": "Use 'the' to refer to the specific condition already introduced. 'The reaction' refers to the severe allergic one mentioned in the previous sentence.",
+            "hint": "This singles out one of the two deadlines just mentioned.",
+            "explanation": "'The' can identify a specific item from a group already introduced, like 'the later deadline' of the two.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ allergies are becoming more prevalent worldwide.",
-            "sentence": "___ allergies are becoming more prevalent worldwide.",
+            "question": "Successful negotiations usually require ___ compromise from both sides.",
+            "sentence": "Successful negotiations usually require ___ compromise from both sides.",
             "options": [
-                "an",
-                "the",
+                "a",
                 "(no article)",
-                "a"
+                "the",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "Plural noun in a general medical or epidemiological statement.",
-            "explanation": "Plural nouns in general medical observations take no article. 'Allergies are becoming more common' refers to allergies as a category, not specific ones.",
+            "hint": "Compromise, in this sense, is an idea you can't count.",
+            "explanation": "Abstract, uncountable nouns like compromise take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -122,37 +122,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He made ___ appointment with his doctor.",
-            "sentence": "He made ___ appointment with his doctor.",
+            "question": "He has been managing ___ chronic condition for over a decade.",
+            "sentence": "He has been managing ___ chronic condition for over a decade.",
             "options": [
-                "the",
                 "(no article)",
+                "an",
                 "a",
-                "an"
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "an",
-            "hint": "'Appointment' begins with the vowel sound 'uh'.",
-            "explanation": "Use 'an' before vowel sounds. 'Appointment' starts with the vowel 'a', so we write 'an appointment'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "a",
+            "hint": "'Chronic' starts with a consonant sound.",
+            "explanation": "'Chronic' begins with a consonant sound, so it takes 'a'. We say 'a chronic condition'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l83_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He arrived a few minutes early for ___ appointment.",
-            "sentence": "He arrived a few minutes early for ___ appointment.",
+            "question": "___ condition that worried doctors most was his steadily rising blood pressure.",
+            "sentence": "___ condition that worried doctors most was his steadily rising blood pressure.",
             "options": [
-                "(no article)",
                 "a",
                 "an",
+                "(no article)",
                 "the"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "The specific appointment he already made - now a known event.",
-            "explanation": "After introducing a noun ('an appointment'), use 'the' in subsequent references ('the appointment'). The reader knows exactly which one.",
+            "hint": "The phrase 'that worried doctors most' narrows this down to one specific condition.",
+            "explanation": "When a descriptive phrase makes a noun specific, we use 'the'. It picks out exactly one condition among several.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ regular medical checkups can detect problems early.",
-            "sentence": "___ regular medical checkups can detect problems early.",
+            "question": "People with this condition are usually advised to avoid ___ excessive salt in their diet.",
+            "sentence": "People with this condition are usually advised to avoid ___ excessive salt in their diet.",
             "options": [
-                "a",
-                "an",
+                "(no article)",
                 "the",
-                "(no article)"
+                "an",
+                "a"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "Plural noun in a general health recommendation.",
-            "explanation": "Plural nouns in general recommendations take no article: 'Regular checkups detect problems', 'Healthy habits prevent illness'.",
+            "hint": "Salt, in this general sense, can't be counted.",
+            "explanation": "Uncountable nouns like salt take no article in general advice. We say 'avoid excessive salt', not 'avoid an excessive salt'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -179,37 +179,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She was prescribed ___ strict low-sodium diet.",
-            "sentence": "She was prescribed ___ strict low-sodium diet.",
+            "question": "Thankfully, it turned out to be ___ uneventful flight with no delays at all.",
+            "sentence": "Thankfully, it turned out to be ___ uneventful flight with no delays at all.",
             "options": [
+                "(no article)",
                 "an",
                 "the",
-                "(no article)",
                 "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "a",
-            "hint": "'Strict' begins with the consonant sound 's'.",
-            "explanation": "Use 'a' before consonant sounds. 'Strict' starts with 's', so we write 'a strict diet'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "an",
+            "hint": "'Uneventful' begins with a vowel sound.",
+            "explanation": "'Uneventful' starts with a vowel sound, so it takes 'an'. We say 'an uneventful flight'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l84_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She followed ___ diet carefully for three months.",
-            "sentence": "She followed ___ diet carefully for three months.",
+            "question": "The airline offered two connecting flights, and ___ first connection left barely enough time to board.",
+            "sentence": "The airline offered two connecting flights, and ___ first connection left barely enough time to board.",
             "options": [
-                "the",
-                "(no article)",
                 "a",
+                "(no article)",
+                "the",
                 "an"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific diet her doctor prescribed - now a known plan.",
-            "explanation": "Use 'the' to refer to the specific diet already introduced. 'The diet' = the strict low-sodium one she was prescribed.",
+            "hint": "An ordering word like 'first' is normally followed by this article.",
+            "explanation": "Ordinal numbers such as first and second take 'the'. We say 'the first connection' of the two.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ good nutrition is essential for long-term health.",
-            "sentence": "___ good nutrition is essential for long-term health.",
+            "question": "Airlines are required to report ___ safety incidents to regulators immediately.",
+            "sentence": "Airlines are required to report ___ safety incidents to regulators immediately.",
             "options": [
-                "(no article)",
                 "a",
                 "an",
-                "the"
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Good nutrition' as an uncountable concept takes no article.",
-            "explanation": "Uncountable health concepts (good nutrition, proper hydration, adequate rest) take no article in general statements about healthy living.",
+            "hint": "This is a general statement about safety incidents as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Safety incidents' here means such events in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -236,18 +236,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She underwent ___ operation on her lower back.",
-            "sentence": "She underwent ___ operation on her lower back.",
+            "question": "Critics called it ___ invasive tracking method hidden inside the app's terms.",
+            "sentence": "Critics called it ___ invasive tracking method hidden inside the app's terms.",
             "options": [
-                "a",
                 "an",
+                "(no article)",
                 "the",
-                "(no article)"
+                "a"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "an",
-            "hint": "'Operation' begins with the vowel sound 'aw'.",
-            "explanation": "Use 'an' before vowel sounds. 'Operation' starts with the vowel 'o', so we write 'an operation'.",
+            "hint": "'Invasive' begins with a vowel sound.",
+            "explanation": "'Invasive' starts with a vowel sound, so it takes 'an'. We say 'an invasive method'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -255,8 +255,8 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She recovered quickly after ___ operation.",
-            "sentence": "She recovered quickly after ___ operation.",
+            "question": "Companies now store enormous amounts of information in ___ cloud rather than on local servers.",
+            "sentence": "Companies now store enormous amounts of information in ___ cloud rather than on local servers.",
             "options": [
                 "an",
                 "the",
@@ -265,8 +265,8 @@
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific operation she already underwent - now a known event.",
-            "explanation": "Use 'the' to refer back to a specific medical event already introduced. 'The operation' = the lower back procedure mentioned earlier.",
+            "hint": "This refers to one familiar, shared system of remote data storage.",
+            "explanation": "'The cloud' is treated as a single, familiar system, so it takes 'the', much like 'the internet'.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ minimally invasive surgery has transformed modern medicine.",
-            "sentence": "___ minimally invasive surgery has transformed modern medicine.",
+            "question": "Cybersecurity experts warn that ___ negligence causes more breaches than skilled hackers do.",
+            "sentence": "Cybersecurity experts warn that ___ negligence causes more breaches than skilled hackers do.",
             "options": [
                 "the",
-                "(no article)",
                 "a",
+                "(no article)",
                 "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "'Minimally invasive surgery' as a medical technique takes no article.",
-            "explanation": "Medical techniques and procedures used as general concepts (minimally invasive surgery, robotic surgery, gene therapy) take no article in general medical statements.",
+            "hint": "Negligence is an abstract idea, not something countable.",
+            "explanation": "Abstract, uncountable nouns like negligence take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -293,37 +293,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He has ___ great family doctor.",
-            "sentence": "He has ___ great family doctor.",
+            "question": "The studio released ___ immersive game praised for its richly detailed world.",
+            "sentence": "The studio released ___ immersive game praised for its richly detailed world.",
             "options": [
-                "(no article)",
                 "a",
-                "an",
-                "the"
+                "(no article)",
+                "the",
+                "an"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "a",
-            "hint": "'Great' begins with the consonant sound 'g'.",
-            "explanation": "Use 'a' before consonant sounds. 'Great' starts with 'g', so we write 'a great family doctor'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "an",
+            "hint": "Check the vowel sound in 'immersive'.",
+            "explanation": "'Immersive' starts with a vowel sound, so it takes 'an'. We say 'an immersive game'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l86_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ doctor advised him to cut back on sugar.",
-            "sentence": "___ doctor advised him to cut back on sugar.",
+            "question": "Of everything the studio has released, this game is ___ most ambitious by far.",
+            "sentence": "Of everything the studio has released, this game is ___ most ambitious by far.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "(no article)"
+                "an",
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The specific doctor he has - already known from the previous sentence.",
-            "explanation": "Use 'the' when referring to a specific, known person. 'The doctor' = his great family doctor mentioned before.",
+            "hint": "This compares the game to everything else the studio has made.",
+            "explanation": "Superlatives like 'the most ambitious' always take 'the', since they compare one thing to all the rest.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ doctors in rural areas often serve many communities.",
-            "sentence": "___ doctors in rural areas often serve many communities.",
+            "question": "Game designers must constantly balance ___ visuals with actual gameplay.",
+            "sentence": "Game designers must constantly balance ___ visuals with actual gameplay.",
             "options": [
-                "an",
-                "the",
+                "a",
                 "(no article)",
-                "a"
+                "the",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "Plural noun in a general statement about doctors as a group.",
-            "explanation": "Plural nouns in general statements take no article. 'Doctors in rural areas' refers to doctors as a professional group in that setting.",
+            "hint": "This is a general statement about visuals as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Visuals' here means such elements in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -350,18 +350,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She takes ___ over-the-counter painkiller for headaches.",
-            "sentence": "She takes ___ over-the-counter painkiller for headaches.",
+            "question": "Meteorologists recorded ___ unprecedented heatwave across the entire region.",
+            "sentence": "Meteorologists recorded ___ unprecedented heatwave across the entire region.",
             "options": [
                 "the",
-                "(no article)",
                 "a",
-                "an"
+                "an",
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "an",
-            "hint": "'Over-the-counter' begins with the vowel sound 'o'.",
-            "explanation": "Use 'an' before vowel sounds. 'Over-the-counter' starts with 'o', a vowel, so we write 'an over-the-counter painkiller'.",
+            "hint": "'Unprecedented' begins with a vowel sound.",
+            "explanation": "'Unprecedented' starts with a vowel sound, so it takes 'an'. We say 'an unprecedented heatwave'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -369,18 +369,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She took ___ painkiller before the long meeting.",
-            "sentence": "She took ___ painkiller before the long meeting.",
+            "question": "___ United Nations issued a new warning about rising global temperatures.",
+            "sentence": "___ United Nations issued a new warning about rising global temperatures.",
             "options": [
                 "(no article)",
-                "a",
                 "an",
+                "a",
                 "the"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "The specific over-the-counter painkiller she takes - now a known item.",
-            "explanation": "Use 'the' to refer to the specific type of painkiller already introduced. 'The painkiller' refers to the one she uses for headaches.",
+            "hint": "Names formed from initials like this almost always take this article.",
+            "explanation": "International bodies known by their initials, like the United Nations or the WHO, take 'the'.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ medication must always be taken as directed.",
-            "sentence": "___ medication must always be taken as directed.",
+            "question": "Scientists say that ___ heatwaves are becoming more frequent worldwide.",
+            "sentence": "Scientists say that ___ heatwaves are becoming more frequent worldwide.",
             "options": [
-                "a",
+                "(no article)",
                 "an",
-                "the",
-                "(no article)"
+                "a",
+                "the"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "'Medication' is uncountable and used in a general safety instruction.",
-            "explanation": "Uncountable nouns for medical substances (medication, antibiotics as a concept, treatment) take no article in general advisory statements.",
+            "hint": "This is a general statement about heatwaves as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Heatwaves' here means such events in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -407,37 +407,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He developed ___ chronic back problem from poor posture.",
-            "sentence": "He developed ___ chronic back problem from poor posture.",
+            "question": "The new teacher prepared ___ insightful lesson on local history.",
+            "sentence": "The new teacher prepared ___ insightful lesson on local history.",
             "options": [
-                "an",
                 "the",
-                "(no article)",
-                "a"
+                "an",
+                "a",
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "a",
-            "hint": "'Chronic' begins with the consonant sound 'k'.",
-            "explanation": "Use 'a' before consonant sounds. 'Chronic' starts with the 'k' sound (cr-), so we write 'a chronic back problem'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "an",
+            "hint": "Listen to the vowel sound in 'insightful'.",
+            "explanation": "'Insightful' starts with a vowel sound, so it takes 'an'. We say 'an insightful lesson'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l88_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He saw a specialist about ___ back problem.",
-            "sentence": "He saw a specialist about ___ back problem.",
+            "question": "She designed a creative group project for her students, and ___ project quickly became everyone's favorite assignment.",
+            "sentence": "She designed a creative group project for her students, and ___ project quickly became everyone's favorite assignment.",
             "options": [
-                "the",
                 "(no article)",
-                "a",
-                "an"
+                "an",
+                "the",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific back problem he developed - now a known condition.",
-            "explanation": "Use 'the' to refer to the specific health problem already introduced. 'The back problem' = the chronic one caused by poor posture.",
+            "hint": "This project was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The project' refers back to that same group project.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ good posture reduces strain on the spine and muscles.",
-            "sentence": "___ good posture reduces strain on the spine and muscles.",
+            "question": "___ teachers often spend their own money on classroom supplies.",
+            "sentence": "___ teachers often spend their own money on classroom supplies.",
             "options": [
-                "(no article)",
                 "a",
                 "an",
-                "the"
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Good posture' as a general health concept takes no article.",
-            "explanation": "Health concepts used as general principles (good posture, proper form, healthy weight) take no article in general health guidance.",
+            "hint": "This is a general statement about teachers as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Teachers' here means such people in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -464,37 +464,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She experienced ___ intense migraine before the exam.",
-            "sentence": "She experienced ___ intense migraine before the exam.",
+            "question": "Even under pressure, they remained ___ resilient team throughout the crisis.",
+            "sentence": "Even under pressure, they remained ___ resilient team throughout the crisis.",
             "options": [
                 "a",
                 "an",
-                "the",
-                "(no article)"
+                "(no article)",
+                "the"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "'Intense' begins with the vowel sound 'in'.",
-            "explanation": "Use 'an' before vowel sounds. 'Intense' starts with the vowel 'i', so we write 'an intense migraine'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "a",
+            "hint": "'Resilient' starts with a consonant sound.",
+            "explanation": "'Resilient' begins with a consonant sound, so it takes 'a'. We say 'a resilient team'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l89_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She spoke to her neurologist about ___ migraine.",
-            "sentence": "She spoke to her neurologist about ___ migraine.",
+            "question": "The company has two regional offices, and ___ smaller office actually hit its targets first.",
+            "sentence": "The company has two regional offices, and ___ smaller office actually hit its targets first.",
             "options": [
-                "an",
+                "a",
                 "the",
-                "(no article)",
-                "a"
+                "an",
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific migraine she experienced - now a known medical event.",
-            "explanation": "Use 'the' to refer to the specific episode already described. 'The migraine' = the intense one she experienced before the exam.",
+            "hint": "This singles out one of the two offices just mentioned.",
+            "explanation": "'The' can identify a specific item from a group already introduced, like 'the smaller office' of the two.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ mental health is just as important as physical health.",
-            "sentence": "___ mental health is just as important as physical health.",
+            "question": "Strong leadership often requires ___ humility, especially during uncertain times.",
+            "sentence": "Strong leadership often requires ___ humility, especially during uncertain times.",
             "options": [
                 "the",
+                "an",
                 "(no article)",
-                "a",
-                "an"
+                "a"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "'Mental health' as an uncountable concept takes no article in a comparison.",
-            "explanation": "Uncountable health concepts (mental health, physical health, emotional well-being) take no article in general comparative or advisory statements.",
+            "hint": "Humility is an abstract quality, not something countable.",
+            "explanation": "Abstract, uncountable nouns like humility take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -521,37 +521,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She joined ___ yoga class at the community center.",
-            "sentence": "She joined ___ yoga class at the community center.",
+            "question": "Her daughter had ___ empathetic teacher who noticed she was struggling.",
+            "sentence": "Her daughter had ___ empathetic teacher who noticed she was struggling.",
             "options": [
-                "(no article)",
                 "a",
-                "an",
-                "the"
+                "the",
+                "(no article)",
+                "an"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "a",
-            "hint": "'Yoga' begins with the consonant sound 'y'.",
-            "explanation": "Use 'a' before consonant sounds. 'Yoga' starts with 'y', which is a consonant sound, so we write 'a yoga class'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "an",
+            "hint": "'Empathetic' begins with a vowel sound.",
+            "explanation": "'Empathetic' starts with a vowel sound, so it takes 'an'. We say 'an empathetic teacher'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l90_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She found ___ class very relaxing and enjoyable.",
-            "sentence": "She found ___ class very relaxing and enjoyable.",
+            "question": "Their son mentioned a small fear about starting school, and ___ fear disappeared after the very first day.",
+            "sentence": "Their son mentioned a small fear about starting school, and ___ fear disappeared after the very first day.",
             "options": [
-                "a",
-                "an",
                 "the",
+                "an",
+                "a",
                 "(no article)"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The specific yoga class she just joined - now a known event.",
-            "explanation": "Use 'the' to refer to the specific class already mentioned. 'The class' = the yoga one at the community center.",
+            "hint": "This fear was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The fear' refers back to that same worry about school.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ yoga has measurable benefits for both mind and body.",
-            "sentence": "___ yoga has measurable benefits for both mind and body.",
+            "question": "Good parenting often depends more on ___ consistency than on strict rules.",
+            "sentence": "Good parenting often depends more on ___ consistency than on strict rules.",
             "options": [
-                "an",
                 "the",
                 "(no article)",
+                "an",
                 "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "'Yoga' as a practice or discipline takes no article in a general statement.",
-            "explanation": "Activities and practices used as general concepts (yoga, meditation, swimming, running) take no article when you talk about them in general: 'Yoga is beneficial', 'She practices meditation'.",
+            "hint": "Consistency is an abstract quality, not something countable.",
+            "explanation": "Abstract, uncountable nouns like consistency take no article in general statements.",
             "grammarRule": "Zero Article"
         }
     ]

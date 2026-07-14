@@ -7,13 +7,13 @@
             "id": "VOC_ACADEMICWORD_L181_Q1",
             "hint": "DEFINITION: To state something as fact without yet offering proof, especially in a legal or formal context.",
             "options": [
-                "ALLEGE",
-                "VERIFY",
+                "DOCUMENT",
                 "CONFIRM",
-                "DOCUMENT"
+                "VERIFY",
+                "ALLEGE"
             ],
-            "explanation": "Academic context: The lawsuit ALLEGEs that the factory knowingly dumped toxic waste into the river for over a decade. Here, \"ALLEGE\" means to claim without yet proving, the opposite of establishing something as factually verified, confirmed, or formally recorded as true.",
-            "passage": "The lawsuit [TARGET]s that the factory knowingly dumped toxic waste into the river for over a decade",
+            "explanation": "Academic context: The lawsuit goes on to ALLEGE that the factory knowingly dumped toxic waste into the river for over a decade. Here, \"ALLEGE\" means to claim without yet proving, the opposite of establishing something as factually verified, confirmed, or formally documented as true.",
+            "passage": "The lawsuit goes on to [TARGET] that the factory knowingly dumped toxic waste into the river for over a decade",
             "correctAnswer": "ALLEGE",
             "instruction": "Drag the correct word to complete the sentence."
         },
@@ -23,10 +23,10 @@
             "id": "VOC_ACADEMICWORD_L181_Q2",
             "hint": "DEFINITION: To combine or unite to form a single organization, structure, or substance.",
             "options": [
-                "FRAGMENT",
                 "AMALGAMATE",
                 "DISINTEGRATE",
-                "SPLINTER"
+                "SPLINTER",
+                "FRAGMENT"
             ],
             "explanation": "Academic context: The two small credit unions decided to AMALGAMATE into one larger institution to cut costs. Here, \"AMALGAMATE\" means to merge into one unified whole, the opposite of breaking apart, falling into pieces, or splitting into smaller factions.",
             "passage": "The two small credit unions decided to [TARGET] into one larger institution to cut costs",
@@ -39,10 +39,10 @@
             "id": "VOC_ACADEMICWORD_L181_Q3",
             "hint": "DEFINITION: Something that deviates from what is standard, normal, or expected.",
             "options": [
-                "NORM",
                 "REGULARITY",
                 "ANOMALY",
-                "CONVENTION"
+                "CONVENTION",
+                "NORM"
             ],
             "explanation": "Academic context: Astronomers noticed an ANOMALY in the star's brightness that no existing theory could fully explain. Here, \"ANOMALY\" means an unexpected deviation, the opposite of something that follows the usual pattern, occurs predictably, or matches accepted practice.",
             "passage": "Astronomers noticed an [TARGET] in the star's brightness that no existing theory could fully explain",
@@ -55,13 +55,13 @@
             "id": "VOC_ACADEMICWORD_L182_Q1",
             "hint": "DEFINITION: A thing or event that existed or occurred before another, especially one that influenced it; a word to which a pronoun refers.",
             "options": [
-                "CONSEQUENCE",
-                "AFTERMATH",
                 "RESULT",
-                "ANTECEDENT"
+                "CONSEQUENCE",
+                "ANTECEDENT",
+                "AFTERMATH"
             ],
-            "explanation": "Academic context: Historians trace several direct ANTECEDENTs of the modern labor movement back to nineteenth-century factory strikes. Here, \"ANTECEDENT\" means something that came before and influenced a later event, the opposite of an outcome that follows from it.",
-            "passage": "Historians trace several direct [TARGET]s of the modern labor movement back to nineteenth-century factory strikes",
+            "explanation": "Academic context: Historians trace one direct ANTECEDENT of the modern labor movement back to nineteenth-century factory strikes. Here, \"ANTECEDENT\" means something that came before and influenced a later event, the opposite of an outcome that follows from it.",
+            "passage": "Historians trace one direct [TARGET] of the modern labor movement back to nineteenth-century factory strikes",
             "correctAnswer": "ANTECEDENT",
             "instruction": "Drag the correct word to complete the sentence."
         },
@@ -71,10 +71,10 @@
             "id": "VOC_ACADEMICWORD_L182_Q2",
             "hint": "DEFINITION: A person or thing that is the exact opposite of another.",
             "options": [
-                "ANTITHESIS",
-                "EMBODIMENT",
                 "REFLECTION",
-                "ECHO"
+                "EMBODIMENT",
+                "ECHO",
+                "ANTITHESIS"
             ],
             "explanation": "Academic context: Her calm, methodical leadership style was the complete ANTITHESIS of her predecessor's chaotic management. Here, \"ANTITHESIS\" means the direct opposite of something, the reverse relationship from being a perfect example of it, a mirror of it, or a faint trace of it.",
             "passage": "Her calm, methodical leadership style was the complete [TARGET] of her predecessor's chaotic management",
@@ -87,10 +87,10 @@
             "id": "VOC_ACADEMICWORD_L182_Q3",
             "hint": "DEFINITION: To find out or establish something with certainty, often through careful investigation.",
             "options": [
-                "SPECULATE",
-                "ASCERTAIN",
                 "ASSUME",
-                "CONJECTURE"
+                "SPECULATE",
+                "CONJECTURE",
+                "ASCERTAIN"
             ],
             "explanation": "Academic context: Investigators worked for months to ASCERTAIN exactly what had caused the bridge to collapse. Here, \"ASCERTAIN\" means to determine with certainty through investigation, a much weaker and less rigorous process than guessing, presuming, or forming an unproven theory.",
             "passage": "Investigators worked for months to [TARGET] exactly what had caused the bridge to collapse",
@@ -103,10 +103,10 @@
             "id": "VOC_ACADEMICWORD_L183_Q1",
             "hint": "DEFINITION: To absorb and integrate ideas, people, or culture fully into a wider group; to take in and digest information.",
             "options": [
-                "ALIENATE",
                 "SEGREGATE",
+                "OSTRACIZE",
                 "ASSIMILATE",
-                "OSTRACIZE"
+                "ALIENATE"
             ],
             "explanation": "Academic context: Many immigrant families work hard to ASSIMILATE into their new community while still preserving their own traditions. Here, \"ASSIMILATE\" means to become fully integrated into a group, the opposite of being pushed away from it, kept separate from it, or excluded by it.",
             "passage": "Many immigrant families work hard to [TARGET] into their new community while still preserving their own traditions",
@@ -119,9 +119,9 @@
             "id": "VOC_ACADEMICWORD_L183_Q2",
             "hint": "DEFINITION: To reduce the force, effect, or value of something; to make something thinner or weaker.",
             "options": [
-                "PRESERVE",
                 "MAINTAIN",
                 "SUSTAIN",
+                "PRESERVE",
                 "ATTENUATE"
             ],
             "explanation": "Academic context: Thick concrete walls can significantly ATTENUATE the sound of traffic from a nearby highway. Here, \"ATTENUATE\" means to weaken or reduce, the opposite of keeping something at full strength, unchanged, or continuing at the same level.",
@@ -135,10 +135,10 @@
             "id": "VOC_ACADEMICWORD_L183_Q3",
             "hint": "DEFINITION: To make something greater by adding to it; to increase.",
             "options": [
-                "AUGMENT",
                 "DEPLETE",
-                "REDUCE",
-                "DIMINISH"
+                "DIMINISH",
+                "AUGMENT",
+                "REDUCE"
             ],
             "explanation": "Academic context: The museum used digital projections to AUGMENT the physical exhibits with interactive historical footage. Here, \"AUGMENT\" means to add to and increase, the opposite of using up, lessening, or making something smaller.",
             "passage": "The museum used digital projections to [TARGET] the physical exhibits with interactive historical footage",
@@ -151,10 +151,10 @@
             "id": "VOC_ACADEMICWORD_L184_Q1",
             "hint": "DEFINITION: A statement or proposition regarded as self-evidently true and accepted without proof.",
             "options": [
-                "HYPOTHESIS",
                 "AXIOM",
-                "THEORY",
-                "CONJECTURE"
+                "CONJECTURE",
+                "HYPOTHESIS",
+                "THEORY"
             ],
             "explanation": "Academic context: \"Honesty is the best policy\" is often treated as a moral AXIOM, rarely questioned even though it isn't always true in practice. Here, \"AXIOM\" means a statement accepted as self-evidently true without needing proof, unlike an idea still requiring testing, a system needing evidence, or an unproven guess.",
             "passage": "\"Honesty is the best policy\" is often treated as a moral [TARGET], rarely questioned even though it isn't always true in practice",
@@ -167,10 +167,10 @@
             "id": "VOC_ACADEMICWORD_L184_Q2",
             "hint": "DEFINITION: Gentle, kindly, and not harmful; not cancerous, in a medical context.",
             "options": [
-                "MALIGNANT",
+                "HARMFUL",
                 "HOSTILE",
-                "BENIGN",
-                "HARMFUL"
+                "MALIGNANT",
+                "BENIGN"
             ],
             "explanation": "Academic context: After the biopsy, doctors confirmed that the small lump was BENIGN and posed no serious health risk. Here, \"BENIGN\" means harmless, the opposite of being cancerous and dangerous, openly aggressive, or damaging.",
             "passage": "After the biopsy, doctors confirmed that the small lump was [TARGET] and posed no serious health risk",
@@ -184,9 +184,9 @@
             "hint": "DEFINITION: A person or thing that causes an important change or event to happen.",
             "options": [
                 "OBSTACLE",
-                "DETERRENT",
+                "CATALYST",
                 "HINDRANCE",
-                "CATALYST"
+                "DETERRENT"
             ],
             "explanation": "Academic context: The viral video of the incident became the CATALYST for a nationwide conversation about workplace safety. Here, \"CATALYST\" means something that triggers change, the opposite of something that blocks, discourages, or gets in the way of it.",
             "passage": "The viral video of the incident became the [TARGET] for a nationwide conversation about workplace safety",
@@ -200,8 +200,8 @@
             "hint": "DEFINITION: The action of causing something; the relationship between cause and effect.",
             "options": [
                 "CAUSATION",
-                "COINCIDENCE",
                 "CORRELATION",
+                "COINCIDENCE",
                 "ASSOCIATION"
             ],
             "explanation": "Academic context: Researchers were careful to point out that the study showed only a correlation, not CAUSATION, between the two trends. Here, \"CAUSATION\" means a direct cause-and-effect relationship, a much stronger claim than two things simply happening together, being statistically linked, or being loosely connected.",
@@ -231,10 +231,10 @@
             "id": "VOC_ACADEMICWORD_L185_Q3",
             "hint": "DEFINITION: The action or fact of forming a unified whole; unity, especially within a group.",
             "options": [
-                "FRAGMENTATION",
-                "DIVISION",
                 "COHESION",
-                "DISUNITY"
+                "DISUNITY",
+                "DIVISION",
+                "FRAGMENTATION"
             ],
             "explanation": "Academic context: The team's strong COHESION was obvious in how naturally the players passed the ball to one another. Here, \"COHESION\" means unity and a strong bond holding a group together, the opposite of being broken apart, split, or lacking unity.",
             "passage": "The team's strong [TARGET] was obvious in how naturally the players passed the ball to one another",
@@ -264,9 +264,9 @@
             "hint": "DEFINITION: Naturally accompanying or following something, occurring at the same time.",
             "options": [
                 "CONCOMITANT",
+                "INDEPENDENT",
                 "UNRELATED",
-                "SEPARATE",
-                "INDEPENDENT"
+                "SEPARATE"
             ],
             "explanation": "Academic context: Rapid economic growth often comes with CONCOMITANT increases in pollution and traffic congestion. Here, \"CONCOMITANT\" means naturally occurring together with something else, the opposite of being disconnected, distinct, or unrelated to it.",
             "passage": "Rapid economic growth often comes with [TARGET] increases in pollution and traffic congestion",
@@ -279,10 +279,10 @@
             "id": "VOC_ACADEMICWORD_L186_Q3",
             "hint": "DEFINITION: An idea or feeling that a word invokes in addition to its literal meaning.",
             "options": [
-                "DEFINITION",
-                "CONNOTATION",
+                "PRONUNCIATION",
                 "SPELLING",
-                "PRONUNCIATION"
+                "CONNOTATION",
+                "DEFINITION"
             ],
             "explanation": "Academic context: The word \"home\" carries a warm CONNOTATION of comfort and belonging that the more neutral word \"house\" lacks. Here, \"CONNOTATION\" means the emotional association beyond a word's literal meaning, a completely different linguistic concept from its dictionary meaning, how it's written, or how it's spoken.",
             "passage": "The word \"home\" carries a warm [TARGET] of comfort and belonging that the more neutral word \"house\" lacks",
@@ -295,13 +295,13 @@
             "id": "VOC_ACADEMICWORD_L187_Q1",
             "hint": "DEFINITION: To interpret a word, statement, or action in a particular way.",
             "options": [
-                "DICTATE",
                 "PROCLAIM",
+                "DECREE",
                 "CONSTRUE",
-                "DECREE"
+                "DICTATE"
             ],
-            "explanation": "Academic context: Her silence during the meeting was CONSTRUEd by some colleagues as disagreement, though she had simply been deep in thought. Here, \"CONSTRUE\" means to interpret something in a certain way, a very different and more passive process than formally ordering, announcing, or officially declaring something.",
-            "passage": "Her silence during the meeting was [TARGET]d by some colleagues as disagreement, though she had simply been deep in thought",
+            "explanation": "Academic context: Some colleagues were quick to CONSTRUE her silence during the meeting as disagreement, though she had simply been deep in thought. Here, \"CONSTRUE\" means to interpret something in a certain way, a very different and more informal process than formally ordering, announcing, or officially declaring something.",
+            "passage": "Some colleagues were quick to [TARGET] her silence during the meeting as disagreement, though she had simply been deep in thought",
             "correctAnswer": "CONSTRUE",
             "instruction": "Drag the correct word to complete the sentence."
         },
@@ -328,12 +328,12 @@
             "hint": "DEFINITION: To confirm or give support to a statement, theory, or finding, usually with additional evidence.",
             "options": [
                 "CORROBORATE",
-                "CONTRADICT",
                 "UNDERMINE",
+                "CONTRADICT",
                 "DISCREDIT"
             ],
-            "explanation": "Academic context: Two independent witnesses CORROBORATEd the driver's account of how the accident happened. Here, \"CORROBORATE\" means to support with additional evidence, the opposite of opposing, weakening, or casting doubt on a claim.",
-            "passage": "Two independent witnesses [TARGET]d the driver's account of how the accident happened",
+            "explanation": "Academic context: Two independent witnesses now CORROBORATE the driver's account of how the accident happened. Here, \"CORROBORATE\" means to support with additional evidence, the opposite of opposing, weakening, or casting doubt on a claim.",
+            "passage": "Two independent witnesses now [TARGET] the driver's account of how the accident happened",
             "correctAnswer": "CORROBORATE",
             "instruction": "Drag the correct word to complete the sentence."
         },
@@ -343,10 +343,10 @@
             "id": "VOC_ACADEMICWORD_L188_Q1",
             "hint": "DEFINITION: A tendency to believe things too readily, often without sufficient evidence.",
             "options": [
-                "SKEPTICISM",
                 "CREDULITY",
+                "DOUBT",
                 "SUSPICION",
-                "DOUBT"
+                "SKEPTICISM"
             ],
             "explanation": "Academic context: The con artist relied entirely on the elderly couple's CREDULITY to convince them to hand over their savings. Here, \"CREDULITY\" means an excessive willingness to believe, the opposite of questioning claims, being wary of them, or remaining uncertain about them.",
             "passage": "The con artist relied entirely on the elderly couple's [TARGET] to convince them to hand over their savings",
@@ -359,13 +359,13 @@
             "id": "VOC_ACADEMICWORD_L188_Q2",
             "hint": "DEFINITION: To describe, outline, or indicate the precise boundaries or nature of something.",
             "options": [
-                "OBSCURE",
-                "BLUR",
                 "DELINEATE",
-                "MUDDLE"
+                "MUDDLE",
+                "OBSCURE",
+                "BLUR"
             ],
-            "explanation": "Academic context: The new contract carefully DELINEATEs each party's responsibilities to avoid any future confusion. Here, \"DELINEATE\" means to define clearly and precisely, the opposite of making something unclear, vague, or confusing.",
-            "passage": "The new contract carefully [TARGET]s each party's responsibilities to avoid any future confusion",
+            "explanation": "Academic context: The new contract was written to carefully DELINEATE each party's responsibilities and avoid any future confusion. Here, \"DELINEATE\" means to define clearly and precisely, the opposite of making something unclear, vague, or confusing.",
+            "passage": "The new contract was written to carefully [TARGET] each party's responsibilities and avoid any future confusion",
             "correctAnswer": "DELINEATE",
             "instruction": "Drag the correct word to complete the sentence."
         },
@@ -375,10 +375,10 @@
             "id": "VOC_ACADEMICWORD_L188_Q3",
             "hint": "DEFINITION: Relating to the structure of a population, such as age, income, or education; a particular sector of a population.",
             "options": [
-                "GEOGRAPHIC",
-                "CLIMATIC",
                 "SEASONAL",
-                "DEMOGRAPHIC"
+                "GEOGRAPHIC",
+                "DEMOGRAPHIC",
+                "CLIMATIC"
             ],
             "explanation": "Academic context: The streaming service tailors its advertising to a specific DEMOGRAPHIC of viewers between eighteen and thirty-four. Here, \"DEMOGRAPHIC\" means relating to population characteristics like age or income, a different category of classification from location, weather, or time of year.",
             "passage": "The streaming service tailors its advertising to a specific [TARGET] of viewers between eighteen and thirty-four",
@@ -391,13 +391,13 @@
             "id": "VOC_ACADEMICWORD_L189_Q1",
             "hint": "DEFINITION: To use up the supply or resources of something, often to a damagingly low level.",
             "options": [
-                "DEPLETE",
                 "REPLENISH",
-                "RESTORE",
-                "REGENERATE"
+                "REGENERATE",
+                "DEPLETE",
+                "RESTORE"
             ],
-            "explanation": "Academic context: Decades of overfishing have severely DEPLETEd the cod population in the North Atlantic. Here, \"DEPLETE\" means to use up to a damaging degree, the opposite of refilling, restoring, or allowing something to regrow.",
-            "passage": "Decades of overfishing have severely [TARGET]d the cod population in the North Atlantic",
+            "explanation": "Academic context: Decades of overfishing continue to severely DEPLETE the cod population in the North Atlantic. Here, \"DEPLETE\" means to use up to a damaging degree, the opposite of refilling, restoring, or allowing something to regrow.",
+            "passage": "Decades of overfishing continue to severely [TARGET] the cod population in the North Atlantic",
             "correctAnswer": "DEPLETE",
             "instruction": "Drag the correct word to complete the sentence."
         },
@@ -407,13 +407,13 @@
             "id": "VOC_ACADEMICWORD_L189_Q2",
             "hint": "DEFINITION: To represent or show something in a picture, words, or other artistic form.",
             "options": [
-                "CONCEAL",
-                "DEPICT",
                 "DISTORT",
-                "OBSCURE"
+                "DEPICT",
+                "OBSCURE",
+                "CONCEAL"
             ],
-            "explanation": "Academic context: The mural DEPICTs the city's history, from its founding as a fishing village to its growth into a major port. Here, \"DEPICT\" means to visually represent something accurately, the opposite of hiding, twisting, or making it unclear.",
-            "passage": "The mural [TARGET]s the city's history, from its founding as a fishing village to its growth into a major port",
+            "explanation": "Academic context: The new mural aims to DEPICT the city's history, from its founding as a fishing village to its growth into a major port. Here, \"DEPICT\" means to visually represent something accurately, the opposite of hiding, twisting, or making it unclear.",
+            "passage": "The new mural aims to [TARGET] the city's history, from its founding as a fishing village to its growth into a major port",
             "correctAnswer": "DEPICT",
             "instruction": "Drag the correct word to complete the sentence."
         },
@@ -423,10 +423,10 @@
             "id": "VOC_ACADEMICWORD_L189_Q3",
             "hint": "DEFINITION: Harm or damage caused to someone or something.",
             "options": [
-                "BENEFIT",
-                "ADVANTAGE",
                 "DETRIMENT",
-                "GAIN"
+                "BENEFIT",
+                "GAIN",
+                "ADVANTAGE"
             ],
             "explanation": "Academic context: He spent so much time at work, to the DETRIMENT of his relationships with his own children. Here, \"DETRIMENT\" means harm or damage, the opposite of a positive benefit, advantage, or gain.",
             "passage": "He spent so much time at work, to the [TARGET] of his relationships with his own children",
@@ -439,10 +439,10 @@
             "id": "VOC_ACADEMICWORD_L190_Q1",
             "hint": "DEFINITION: A division or contrast between two things that are represented as being opposed or entirely different.",
             "options": [
-                "SIMILARITY",
+                "DICHOTOMY",
                 "ALIGNMENT",
-                "UNITY",
-                "DICHOTOMY"
+                "SIMILARITY",
+                "UNITY"
             ],
             "explanation": "Academic context: The film explores the DICHOTOMY between the characters' public personas and their private struggles. Here, \"DICHOTOMY\" means a sharp division between two contrasting things, the opposite of likeness, agreement, or oneness between them.",
             "passage": "The film explores the [TARGET] between the characters' public personas and their private struggles",
@@ -455,10 +455,10 @@
             "id": "VOC_ACADEMICWORD_L190_Q2",
             "hint": "DEFINITION: To perceive or recognize something, especially something not immediately obvious.",
             "options": [
-                "DISCERN",
+                "IGNORE",
                 "OVERLOOK",
-                "MISS",
-                "IGNORE"
+                "DISCERN",
+                "MISS"
             ],
             "explanation": "Academic context: It took years of training before the young sommelier could DISCERN the subtle differences between similar wines. Here, \"DISCERN\" means to perceive subtle distinctions, the opposite of failing to notice, missing, or disregarding them.",
             "passage": "It took years of training before the young sommelier could [TARGET] the subtle differences between similar wines",
@@ -471,9 +471,9 @@
             "id": "VOC_ACADEMICWORD_L190_Q3",
             "hint": "DEFINITION: Written or spoken communication or debate, especially formal discussion of a particular topic.",
             "options": [
-                "SILENCE",
                 "DISCOURSE",
                 "SECRECY",
+                "SILENCE",
                 "SOLITUDE"
             ],
             "explanation": "Academic context: Public DISCOURSE about climate policy has shifted noticeably over the past ten years. Here, \"DISCOURSE\" means ongoing public communication and debate, the opposite of an absence of talk, concealment, or being alone.",

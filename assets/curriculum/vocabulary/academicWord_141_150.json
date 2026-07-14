@@ -7,10 +7,10 @@
             "id": "VOC_ACADEMICWORD_L141_Q1",
             "hint": "DEFINITION: Having previously been a particular thing; relating to the past, especially the recent past.",
             "options": [
-                "FORMER",
-                "CURRENT",
+                "FUTURE",
                 "UPCOMING",
-                "FUTURE"
+                "CURRENT",
+                "FORMER"
             ],
             "explanation": "Academic context: The FORMER mayor still attends every town council meeting even though he left office years ago. Here, \"FORMER\" means someone who held the role in the past, the opposite of someone presently in office, about to take office, or yet to take office.",
             "passage": "The [TARGET] mayor still attends every town council meeting even though he left office years ago",
@@ -23,9 +23,9 @@
             "id": "VOC_ACADEMICWORD_L141_Q2",
             "hint": "DEFINITION: A sum of money saved or made available for a particular purpose; to provide money for something.",
             "options": [
-                "EXHAUST",
-                "FUND",
                 "WITHHOLD",
+                "FUND",
+                "EXHAUST",
                 "CONFISCATE"
             ],
             "explanation": "Academic context: The university relies on private donations to FUND its scholarship program. Here, \"FUND\" means to provide money for a purpose, the opposite of using funds up, refusing to give money, or seizing it.",
@@ -39,10 +39,10 @@
             "id": "VOC_ACADEMICWORD_L141_Q3",
             "hint": "DEFINITION: Forming a necessary base or core; of central importance.",
             "options": [
-                "PERIPHERAL",
-                "OPTIONAL",
+                "SECONDARY",
                 "FUNDAMENTAL",
-                "SECONDARY"
+                "OPTIONAL",
+                "PERIPHERAL"
             ],
             "explanation": "Academic context: Trust is FUNDAMENTAL to any successful long-term business partnership. Here, \"FUNDAMENTAL\" means forming an essential core, the opposite of being marginal, not required, or of lesser importance.",
             "passage": "Trust is [TARGET] to any successful long-term business partnership",
@@ -56,9 +56,9 @@
             "hint": "DEFINITION: The state of being male, female, or another identity, often considered in relation to social and cultural roles rather than biology alone.",
             "options": [
                 "NATIONALITY",
+                "GENDER",
                 "ELEVATION",
-                "TEMPERATURE",
-                "GENDER"
+                "TEMPERATURE"
             ],
             "explanation": "Academic context: The survey asked respondents to identify their age, GENDER, and occupation. Here, \"GENDER\" means a category of personal identity, a completely unrelated kind of information from someone's country of origin, height above sea level, or the weather.",
             "passage": "The survey asked respondents to identify their age, [TARGET], and occupation",
@@ -71,8 +71,8 @@
             "id": "VOC_ACADEMICWORD_L142_Q2",
             "hint": "DEFINITION: For this reason; as a consequence of this.",
             "options": [
-                "HENCE",
                 "HOWEVER",
+                "HENCE",
                 "MEANWHILE",
                 "OTHERWISE"
             ],
@@ -87,8 +87,8 @@
             "id": "VOC_ACADEMICWORD_L142_Q3",
             "hint": "DEFINITION: A system in which people or things are ranked one above another according to status or authority.",
             "options": [
-                "PARTNERSHIP",
                 "HIERARCHY",
+                "PARTNERSHIP",
                 "COLLABORATION",
                 "COOPERATIVE"
             ],
@@ -103,10 +103,10 @@
             "id": "VOC_ACADEMICWORD_L143_Q1",
             "hint": "DEFINITION: Based on a suggested idea or theory rather than known facts; imagined as a possibility.",
             "options": [
+                "HISTORICAL",
                 "DOCUMENTED",
                 "VERIFIED",
-                "HYPOTHETICAL",
-                "HISTORICAL"
+                "HYPOTHETICAL"
             ],
             "explanation": "Academic context: The professor posed a HYPOTHETICAL situation to see how students would respond under pressure. Here, \"HYPOTHETICAL\" means an imagined possibility, the opposite of something recorded as fact, confirmed as true, or drawn from actual past events.",
             "passage": "The professor posed a [TARGET] situation to see how students would respond under pressure",
@@ -120,12 +120,12 @@
             "hint": "DEFINITION: To come to live permanently in a foreign country.",
             "options": [
                 "VACATION",
-                "COMMUTE",
                 "TRAVEL",
+                "COMMUTE",
                 "IMMIGRATE"
             ],
-            "explanation": "Academic context: Her grandparents IMMIGRATEd from Italy in the 1950s in search of better job opportunities. Here, \"IMMIGRATE\" means to move permanently to a new country, a different and much more temporary kind of movement than a short trip, a daily journey to work, or general travel.",
-            "passage": "Her grandparents [TARGET]d from Italy in the 1950s in search of better job opportunities",
+            "explanation": "Academic context: Her grandparents were among the many who chose to IMMIGRATE from Italy in the 1950s in search of better job opportunities. Here, \"IMMIGRATE\" means to move permanently to a new country, a different and much more temporary kind of movement than a short vacation, a daily commute, or general travel.",
+            "passage": "Her grandparents were among the many who chose to [TARGET] from Italy in the 1950s in search of better job opportunities",
             "correctAnswer": "IMMIGRATE",
             "instruction": "Drag the correct word to complete the sentence."
         },
@@ -135,10 +135,10 @@
             "id": "VOC_ACADEMICWORD_L143_Q3",
             "hint": "DEFINITION: To show or suggest that someone is involved in a crime or wrongdoing.",
             "options": [
-                "IMPLICATE",
                 "EXONERATE",
-                "ACQUIT",
-                "CLEAR"
+                "CLEAR",
+                "IMPLICATE",
+                "ACQUIT"
             ],
             "explanation": "Academic context: New evidence from the security footage began to IMPLICATE the store manager in the theft. Here, \"IMPLICATE\" means to suggest involvement in wrongdoing, the opposite of freeing someone from blame, declaring them not guilty, or proving their innocence.",
             "passage": "New evidence from the security footage began to [TARGET] the store manager in the theft",
@@ -151,10 +151,10 @@
             "id": "VOC_ACADEMICWORD_L144_Q1",
             "hint": "DEFINITION: Implied though not directly stated.",
             "options": [
-                "EXPLICIT",
-                "IMPLICIT",
                 "WRITTEN",
-                "FORMAL"
+                "IMPLICIT",
+                "FORMAL",
+                "EXPLICIT"
             ],
             "explanation": "Academic context: There was an IMPLICIT understanding between the neighbors that loud music after ten o'clock was unacceptable. Here, \"IMPLICIT\" means understood without being directly stated, the opposite of something stated outright, put in writing, or made official.",
             "passage": "There was an [TARGET] understanding between the neighbors that loud music after ten o'clock was unacceptable",
@@ -167,10 +167,10 @@
             "id": "VOC_ACADEMICWORD_L144_Q2",
             "hint": "DEFINITION: To lean toward a particular opinion or course of action; to slope.",
             "options": [
-                "RESIST",
-                "OPPOSE",
                 "INCLINE",
-                "REJECT"
+                "RESIST",
+                "REJECT",
+                "OPPOSE"
             ],
             "explanation": "Academic context: After hearing both arguments, the judge began to INCLINE toward the defense's position. Here, \"INCLINE\" means to lean toward favoring something, the opposite of pushing back against, standing against, or refusing it.",
             "passage": "After hearing both arguments, the judge began to [TARGET] toward the defense's position",
@@ -183,10 +183,10 @@
             "id": "VOC_ACADEMICWORD_L144_Q3",
             "hint": "DEFINITION: Unable to coexist or work together due to fundamental differences.",
             "options": [
-                "HARMONIOUS",
+                "INCOMPATIBLE",
                 "AGREEABLE",
                 "SUITED",
-                "INCOMPATIBLE"
+                "HARMONIOUS"
             ],
             "explanation": "Academic context: The two roommates turned out to be INCOMPATIBLE and decided to live separately after just one semester. Here, \"INCOMPATIBLE\" means unable to coexist well, the opposite of getting along smoothly, being easygoing together, or being a good match.",
             "passage": "The two roommates turned out to be [TARGET] and decided to live separately after just one semester",
@@ -199,9 +199,9 @@
             "id": "VOC_ACADEMICWORD_L145_Q1",
             "hint": "DEFINITION: Not staying the same throughout; containing contradictory elements.",
             "options": [
+                "STEADY",
                 "INCONSISTENT",
                 "UNIFORM",
-                "STEADY",
                 "RELIABLE"
             ],
             "explanation": "Academic context: The witness's INCONSISTENT statements made the jury doubt her credibility. Here, \"INCONSISTENT\" means containing contradictions, the opposite of being the same throughout, dependable, or trustworthy.",
@@ -215,10 +215,10 @@
             "id": "VOC_ACADEMICWORD_L145_Q2",
             "hint": "DEFINITION: To deduce or conclude something from evidence and reasoning rather than from explicit statements.",
             "options": [
-                "ANNOUNCE",
-                "INFER",
+                "PROCLAIM",
                 "DECLARE",
-                "PROCLAIM"
+                "INFER",
+                "ANNOUNCE"
             ],
             "explanation": "Academic context: From her tense expression, he could INFER that the meeting had not gone well. Here, \"INFER\" means to draw a conclusion indirectly through reasoning, a different and much more direct action than stating something openly.",
             "passage": "From her tense expression, he could [TARGET] that the meeting had not gone well",
@@ -231,10 +231,10 @@
             "id": "VOC_ACADEMICWORD_L145_Q3",
             "hint": "DEFINITION: The basic physical systems of a country or organization, such as roads, bridges, and utilities.",
             "options": [
-                "CURRICULUM",
                 "FOLKLORE",
-                "INFRASTRUCTURE",
-                "ETIQUETTE"
+                "CURRICULUM",
+                "ETIQUETTE",
+                "INFRASTRUCTURE"
             ],
             "explanation": "Academic context: The earthquake severely damaged the city's INFRASTRUCTURE, leaving many neighborhoods without electricity or running water. Here, \"INFRASTRUCTURE\" means physical systems like roads and utilities, a completely unrelated category from a course of study, traditional stories, or rules of polite behavior.",
             "passage": "The earthquake severely damaged the city's [TARGET], leaving many neighborhoods without electricity or running water",
@@ -247,10 +247,10 @@
             "id": "VOC_ACADEMICWORD_L146_Q1",
             "hint": "DEFINITION: Existing as a natural and permanent part of something; intrinsic.",
             "options": [
-                "ACCIDENTAL",
+                "INHERENT",
                 "TEMPORARY",
                 "AVOIDABLE",
-                "INHERENT"
+                "ACCIDENTAL"
             ],
             "explanation": "Academic context: Risk is INHERENT in any kind of investing, no matter how careful you are. Here, \"INHERENT\" means a natural, built-in part of something, the opposite of being unintentional, short-lived, or something that can be sidestepped.",
             "passage": "Risk is [TARGET] in any kind of investing, no matter how careful you are",
@@ -265,8 +265,8 @@
             "options": [
                 "INSPECT",
                 "IGNORE",
-                "ASSEMBLE",
-                "ADVERTISE"
+                "ADVERTISE",
+                "ASSEMBLE"
             ],
             "explanation": "Academic context: Before buying the used car, she hired a mechanic to INSPECT it thoroughly. Here, \"INSPECT\" means to examine closely, a different action from disregarding it, putting it together, or promoting it for sale.",
             "passage": "Before buying the used car, she hired a mechanic to [TARGET] it thoroughly",
@@ -279,10 +279,10 @@
             "id": "VOC_ACADEMICWORD_L146_Q3",
             "hint": "DEFINITION: An example or single occurrence of something.",
             "options": [
+                "ANOMALY",
                 "EXCEPTION",
-                "INSTANCE",
                 "RARITY",
-                "ANOMALY"
+                "INSTANCE"
             ],
             "explanation": "Academic context: This is not the first INSTANCE of the software crashing during a live presentation. Here, \"INSTANCE\" means a specific occurrence of a recurring problem, a different idea from a case explicitly outside the pattern, something unusual, or an irregular deviation.",
             "passage": "This is not the first [TARGET] of the software crashing during a live presentation",
@@ -296,9 +296,9 @@
             "hint": "DEFINITION: Necessary to make a whole complete; essential.",
             "options": [
                 "OPTIONAL",
-                "SUPPLEMENTARY",
                 "INTEGRAL",
-                "DECORATIVE"
+                "DECORATIVE",
+                "SUPPLEMENTARY"
             ],
             "explanation": "Academic context: Clear communication is INTEGRAL to running any successful team. Here, \"INTEGRAL\" means essential to completeness, the opposite of being optional, extra, or merely ornamental.",
             "passage": "Clear communication is [TARGET] to running any successful team",
@@ -313,8 +313,8 @@
             "options": [
                 "CONTINUATION",
                 "EXTENSION",
-                "OVERLAP",
-                "INTERVAL"
+                "INTERVAL",
+                "OVERLAP"
             ],
             "explanation": "Academic context: There was a fifteen-minute INTERVAL between the two halves of the play. Here, \"INTERVAL\" means a gap between events, a different relationship from something continuing without a break, being lengthened, or coinciding with another event.",
             "passage": "There was a fifteen-minute [TARGET] between the two halves of the play",
@@ -327,10 +327,10 @@
             "id": "VOC_ACADEMICWORD_L147_Q3",
             "hint": "DEFINITION: To become involved in a situation, especially to prevent or alter a result.",
             "options": [
-                "INTERVENE",
-                "WITHDRAW",
                 "RETREAT",
-                "DISENGAGE"
+                "DISENGAGE",
+                "INTERVENE",
+                "WITHDRAW"
             ],
             "explanation": "Academic context: Teachers had to INTERVENE before the disagreement between the two students turned physical. Here, \"INTERVENE\" means to actively step into a situation, the opposite of pulling back, retreating, or staying uninvolved.",
             "passage": "Teachers had to [TARGET] before the disagreement between the two students turned physical",
@@ -343,10 +343,10 @@
             "id": "VOC_ACADEMICWORD_L148_Q1",
             "hint": "DEFINITION: Belonging naturally to someone or something; essential to its basic nature.",
             "options": [
-                "ACQUIRED",
+                "IMPOSED",
                 "INTRINSIC",
                 "LEARNED",
-                "IMPOSED"
+                "ACQUIRED"
             ],
             "explanation": "Academic context: Curiosity seems to be an INTRINSIC trait in almost every young child. Here, \"INTRINSIC\" means a natural and inborn trait, the opposite of one that is picked up over time, taught, or forced upon someone.",
             "passage": "Curiosity seems to be an [TARGET] trait in almost every young child",
@@ -360,9 +360,9 @@
             "hint": "DEFINITION: To cite or appeal to something, such as a law or principle, as a justification; to call upon a higher power for assistance.",
             "options": [
                 "IGNORE",
+                "ABANDON",
                 "VIOLATE",
-                "INVOKE",
-                "ABANDON"
+                "INVOKE"
             ],
             "explanation": "Academic context: The senator chose to INVOKE an obscure procedural rule to delay the vote. Here, \"INVOKE\" means to formally appeal to a rule for support, a different action from disregarding it, breaking it, or giving it up.",
             "passage": "The senator chose to [TARGET] an obscure procedural rule to delay the vote",
@@ -375,10 +375,10 @@
             "id": "VOC_ACADEMICWORD_L148_Q3",
             "hint": "DEFINITION: To set someone or something apart from others; to cause to be alone.",
             "options": [
-                "INTEGRATE",
-                "SOCIALIZE",
                 "COMBINE",
-                "ISOLATE"
+                "ISOLATE",
+                "INTEGRATE",
+                "SOCIALIZE"
             ],
             "explanation": "Academic context: Doctors decided to ISOLATE the patient to prevent the infection from spreading to others on the ward. Here, \"ISOLATE\" means to keep separate from others, the opposite of bringing someone into the group, encouraging interaction, or merging things together.",
             "passage": "Doctors decided to [TARGET] the patient to prevent the infection from spreading to others on the ward",
@@ -391,9 +391,9 @@
             "id": "VOC_ACADEMICWORD_L149_Q1",
             "hint": "DEFINITION: A daily record of events or thoughts; a scholarly publication containing articles on a particular subject.",
             "options": [
-                "JOURNAL",
                 "BROCHURE",
                 "FLYER",
+                "JOURNAL",
                 "ADVERTISEMENT"
             ],
             "explanation": "Academic context: Her research was published in a respected scientific JOURNAL read by experts worldwide. Here, \"JOURNAL\" means a serious publication for recording research or events, a different and far less substantial kind of printed material than a short promotional pamphlet, a single-page handout, or a paid promotion.",
@@ -407,10 +407,10 @@
             "id": "VOC_ACADEMICWORD_L149_Q2",
             "hint": "DEFINITION: To show or prove that something is right or reasonable.",
             "options": [
+                "QUESTION",
                 "CRITICIZE",
                 "JUSTIFY",
-                "UNDERMINE",
-                "QUESTION"
+                "UNDERMINE"
             ],
             "explanation": "Academic context: She struggled to JUSTIFY the high price of the renovation to her skeptical husband. Here, \"JUSTIFY\" means to provide reasons that something is right, a different stance from attacking it, weakening its credibility, or doubting it.",
             "passage": "She struggled to [TARGET] the high price of the renovation to her skeptical husband",
@@ -424,12 +424,12 @@
             "hint": "DEFINITION: A sheet, quantity, or thickness of material covering a surface; a level within a system.",
             "options": [
                 "INGREDIENT",
+                "UTENSIL",
                 "GARNISH",
-                "LAYER",
-                "UTENSIL"
+                "LAYER"
             ],
-            "explanation": "Academic context: The cake had three LAYERs of sponge separated by raspberry jam. Here, \"LAYER\" means a distinct horizontal section stacked within something, a different kind of baking-related concept from a component mixed in, a decoration on top, or a tool used to make it.",
-            "passage": "The cake had three [TARGET]s of sponge separated by raspberry jam",
+            "explanation": "Academic context: The bottom LAYER of the wedding cake was made from a completely different flavor than the top. Here, \"LAYER\" means one section stacked within something, a different kind of baking-related idea from a component mixed in, a decoration on top, or a tool used to make it.",
+            "passage": "The bottom [TARGET] of the wedding cake was made from a completely different flavor than the top",
             "correctAnswer": "LAYER",
             "instruction": "Drag the correct word to complete the sentence."
         },
@@ -439,10 +439,10 @@
             "id": "VOC_ACADEMICWORD_L150_Q1",
             "hint": "DEFINITION: An official document or permission granting the right to do, use, or own something.",
             "options": [
-                "CERTIFICATE",
+                "LICENSE",
                 "DIPLOMA",
-                "TRANSCRIPT",
-                "LICENSE"
+                "CERTIFICATE",
+                "TRANSCRIPT"
             ],
             "explanation": "Academic context: You need a valid LICENSE before you're legally allowed to drive on public roads. Here, \"LICENSE\" specifically grants ongoing legal permission to act, unlike a document that merely confirms completion of a course, a degree, or an academic record.",
             "passage": "You need a valid [TARGET] before you're legally allowed to drive on public roads",
@@ -455,10 +455,10 @@
             "id": "VOC_ACADEMICWORD_L150_Q2",
             "hint": "DEFINITION: To discover the exact place or position of something; to situate or place something in a particular spot.",
             "options": [
+                "TRANSPORT",
                 "LOCATE",
                 "EVACUATE",
-                "TREAT",
-                "TRANSPORT"
+                "TREAT"
             ],
             "explanation": "Academic context: Rescue teams used heat-sensing drones to LOCATE survivors trapped beneath the rubble. Here, \"LOCATE\" means to find the precise position of something, a different and later step in a rescue from removing someone, giving medical care, or moving them.",
             "passage": "Rescue teams used heat-sensing drones to [TARGET] survivors trapped beneath the rubble",
@@ -471,10 +471,10 @@
             "id": "VOC_ACADEMICWORD_L150_Q3",
             "hint": "DEFINITION: The amount by which something exceeds or falls short of another amount; blank space at the edge of a page; the difference between cost and selling price.",
             "options": [
-                "CATEGORY",
                 "MARGIN",
+                "BRACKET",
                 "DIVISION",
-                "BRACKET"
+                "CATEGORY"
             ],
             "explanation": "Academic context: The team won the championship by a narrow MARGIN of just two points. Here, \"MARGIN\" means the numerical gap between two scores, a different kind of grouping concept from a class of competition, a section of a tournament, or a ranked group.",
             "passage": "The team won the championship by a narrow [TARGET] of just two points",

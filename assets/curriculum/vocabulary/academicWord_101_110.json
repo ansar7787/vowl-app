@@ -7,10 +7,10 @@
             "id": "VOC_ACADEMICWORD_L101_Q1",
             "hint": "DEFINITION: Following as a result or effect of something.",
             "options": [
-                "CONSEQUENT",
-                "UNRELATED",
                 "UNEXPECTED",
-                "PREVIOUS"
+                "CONSEQUENT",
+                "PREVIOUS",
+                "UNRELATED"
             ],
             "explanation": "Academic context: Heavy rain and the CONSEQUENT flooding forced dozens of families to evacuate their homes. Here, \"CONSEQUENT\" means following directly as a result, a different relationship than something unconnected, surprising on its own, or happening beforehand.",
             "passage": "Heavy rain and the [TARGET] flooding forced dozens of families to evacuate their homes",
@@ -23,10 +23,10 @@
             "id": "VOC_ACADEMICWORD_L101_Q2",
             "hint": "DEFINITION: The amount of space occupied by a substance or object; the loudness of a sound; the number or amount of something.",
             "options": [
-                "QUALITY",
-                "VOLUME",
+                "VARIETY",
                 "PRICE",
-                "VARIETY"
+                "QUALITY",
+                "VOLUME"
             ],
             "explanation": "Academic context: The store had to hire extra staff to handle the sudden increase in VOLUME of online orders during the holiday season. Here, \"VOLUME\" means the quantity or amount being processed, not how good the orders are, what they cost, or how many different types there are.",
             "passage": "The store had to hire extra staff to handle the sudden increase in [TARGET] of online orders during the holiday season",
@@ -39,10 +39,10 @@
             "id": "VOC_ACADEMICWORD_L101_Q3",
             "hint": "DEFINITION: In contrast or comparison with the fact that; while on the contrary.",
             "options": [
-                "MOREOVER",
                 "THEREFORE",
+                "LIKEWISE",
                 "WHEREAS",
-                "LIKEWISE"
+                "MOREOVER"
             ],
             "explanation": "Academic context: Coastal cities tend to have mild winters, WHEREAS inland regions often experience freezing temperatures. Here, \"WHEREAS\" introduces a contrast between two facts, unlike words that add information, show a result, or indicate similarity.",
             "passage": "Coastal cities tend to have mild winters, [TARGET] inland regions often experience freezing temperatures",
@@ -55,10 +55,10 @@
             "id": "VOC_ACADEMICWORD_L102_Q1",
             "hint": "DEFINITION: Found or distributed over a large area or among many people.",
             "options": [
-                "LOCALIZED",
                 "OCCASIONAL",
-                "MINOR",
-                "WIDESPREAD"
+                "WIDESPREAD",
+                "LOCALIZED",
+                "MINOR"
             ],
             "explanation": "Academic context: The power outage caused WIDESPREAD disruption across the entire metropolitan area. Here, \"WIDESPREAD\" means spread broadly across a large area, the opposite of being confined to one spot, happening rarely, or being small in scale.",
             "passage": "The power outage caused [TARGET] disruption across the entire metropolitan area",
@@ -71,10 +71,10 @@
             "id": "VOC_ACADEMICWORD_L102_Q2",
             "hint": "DEFINITION: To give up on something completely, often suddenly; to leave a person or place permanently.",
             "options": [
-                "ABANDON",
-                "RESUME",
                 "INTENSIFY",
-                "EXTEND"
+                "EXTEND",
+                "RESUME",
+                "ABANDON"
             ],
             "explanation": "Academic context: Rescue crews had to ABANDON the search after nightfall made the mountain too dangerous to navigate. Here, \"ABANDON\" means to give up entirely, the opposite of starting again, increasing effort, or continuing longer.",
             "passage": "Rescue crews had to [TARGET] the search after nightfall made the mountain too dangerous to navigate",
@@ -87,10 +87,10 @@
             "id": "VOC_ACADEMICWORD_L102_Q3",
             "hint": "DEFINITION: Existing as an idea or quality rather than a physical, concrete object.",
             "options": [
-                "TANGIBLE",
-                "ABSTRACT",
                 "VISIBLE",
-                "PHYSICAL"
+                "PHYSICAL",
+                "TANGIBLE",
+                "ABSTRACT"
             ],
             "explanation": "Academic context: Concepts like justice and freedom are ABSTRACT and can be difficult for young children to fully grasp. Here, \"ABSTRACT\" means existing only as an idea, the opposite of being something that can be touched, seen, or physically handled.",
             "passage": "Concepts like justice and freedom are [TARGET] and can be difficult for young children to fully grasp",
@@ -103,10 +103,10 @@
             "id": "VOC_ACADEMICWORD_L103_Q1",
             "hint": "DEFINITION: A school or college for specialized training, or a society dedicated to the promotion of art, literature, or science.",
             "options": [
-                "WAREHOUSE",
-                "FACTORY",
                 "ACADEMY",
-                "WORKSHOP"
+                "WORKSHOP",
+                "WAREHOUSE",
+                "FACTORY"
             ],
             "explanation": "Academic context: She trained for six years at a prestigious ballet ACADEMY before joining a professional company. Here, \"ACADEMY\" means an institution for specialized education, a different kind of place from one focused on storage, manufacturing, or short practical sessions.",
             "passage": "She trained for six years at a prestigious ballet [TARGET] before joining a professional company",
@@ -119,9 +119,9 @@
             "id": "VOC_ACADEMICWORD_L103_Q2",
             "hint": "DEFINITION: The means or opportunity to approach, enter, or make use of something.",
             "options": [
-                "OWNERSHIP",
                 "SUPERVISION",
                 "DISCOUNT",
+                "OWNERSHIP",
                 "ACCESS"
             ],
             "explanation": "Academic context: Rural communities often have limited ACCESS to high-speed internet. Here, \"ACCESS\" means the ability to reach or use something, a different idea from possessing it outright, overseeing it, or paying less for it.",
@@ -136,9 +136,9 @@
             "hint": "DEFINITION: To provide lodging or sufficient space for someone or something; to adapt to fit someone's needs.",
             "options": [
                 "ACCOMMODATE",
-                "REJECT",
                 "DENY",
-                "IGNORE"
+                "IGNORE",
+                "REJECT"
             ],
             "explanation": "Academic context: The hotel agreed to ACCOMMODATE the family's request for a room on the ground floor. Here, \"ACCOMMODATE\" means to fulfill a need or request, the opposite of refusing, denying, or disregarding it.",
             "passage": "The hotel agreed to [TARGET] the family's request for a room on the ground floor",
@@ -152,9 +152,9 @@
             "hint": "DEFINITION: To go somewhere with someone, or to occur or exist alongside something else.",
             "options": [
                 "REPLACE",
-                "ACCOMPANY",
+                "SILENCE",
                 "OUTPERFORM",
-                "SILENCE"
+                "ACCOMPANY"
             ],
             "explanation": "Academic context: A small orchestra will ACCOMPANY the singers during tomorrow night's performance. Here, \"ACCOMPANY\" means to perform alongside someone, a different relationship than substituting for them, surpassing them, or quieting them.",
             "passage": "A small orchestra will [TARGET] the singers during tomorrow night's performance",
@@ -168,12 +168,12 @@
             "hint": "DEFINITION: To gradually gather or build up a quantity of something over time.",
             "options": [
                 "VANISH",
-                "DISSOLVE",
+                "SHRINK",
                 "ACCUMULATE",
-                "SHRINK"
+                "DISSOLVE"
             ],
-            "explanation": "Academic context: Years of unpaid parking tickets had ACCUMULATEed into a debt of several thousand dollars. Here, \"ACCUMULATE\" means to gradually build up, the opposite of disappearing, dissolving away, or becoming smaller.",
-            "passage": "Years of unpaid parking tickets had [TARGET]ed into a debt of several thousand dollars",
+            "explanation": "Academic context: Unpaid parking tickets can quickly ACCUMULATE into a debt of several thousand dollars. Here, \"ACCUMULATE\" means to gradually build up, the opposite of disappearing, dissolving away, or becoming smaller.",
+            "passage": "Unpaid parking tickets can quickly [TARGET] into a debt of several thousand dollars",
             "correctAnswer": "ACCUMULATE",
             "instruction": "Drag the correct word to complete the sentence."
         },
@@ -184,8 +184,8 @@
             "hint": "DEFINITION: Correct in all details; exact.",
             "options": [
                 "VAGUE",
-                "OUTDATED",
                 "BIASED",
+                "OUTDATED",
                 "ACCURATE"
             ],
             "explanation": "Academic context: Weather forecasts have become far more ACCURATE thanks to advances in satellite technology. Here, \"ACCURATE\" means precisely correct, a different quality from being unclear, old, or unfairly skewed.",
@@ -199,13 +199,13 @@
             "id": "VOC_ACADEMICWORD_L105_Q1",
             "hint": "DEFINITION: To accept or admit the existence or truth of something; to express recognition of something.",
             "options": [
-                "ACKNOWLEDGE",
-                "DENY",
+                "CONCEAL",
                 "DISGUISE",
-                "CONCEAL"
+                "ACKNOWLEDGE",
+                "DENY"
             ],
-            "explanation": "Academic context: The company finally ACKNOWLEDGEd that its product had a serious safety defect. Here, \"ACKNOWLEDGE\" means to openly admit something, the opposite of denying, disguising, or hiding it.",
-            "passage": "The company finally [TARGET]d that its product had a serious safety defect",
+            "explanation": "Academic context: The company was finally forced to ACKNOWLEDGE that its product had a serious safety defect. Here, \"ACKNOWLEDGE\" means to openly admit something, the opposite of denying, disguising, or hiding it.",
+            "passage": "The company was finally forced to [TARGET] that its product had a serious safety defect",
             "correctAnswer": "ACKNOWLEDGE",
             "instruction": "Drag the correct word to complete the sentence."
         },
@@ -216,8 +216,8 @@
             "hint": "DEFINITION: To make something suitable for a new use or purpose, or to adjust to new conditions.",
             "options": [
                 "RESIST",
-                "ADAPT",
                 "REJECT",
+                "ADAPT",
                 "IGNORE"
             ],
             "explanation": "Academic context: Desert animals have had to ADAPT to surviving with very little water. Here, \"ADAPT\" means to adjust successfully to new conditions, the opposite of resisting, refusing, or disregarding them.",
@@ -231,10 +231,10 @@
             "id": "VOC_ACADEMICWORD_L105_Q3",
             "hint": "DEFINITION: Satisfactory or acceptable in quality or quantity; enough for a purpose.",
             "options": [
-                "EXCESSIVE",
                 "SURPLUS",
                 "ADEQUATE",
-                "UNLIMITED"
+                "UNLIMITED",
+                "EXCESSIVE"
             ],
             "explanation": "Academic context: The shelter struggled to provide ADEQUATE food and blankets for everyone displaced by the storm. Here, \"ADEQUATE\" means just enough to meet a need, a different amount than having far more than necessary.",
             "passage": "The shelter struggled to provide [TARGET] food and blankets for everyone displaced by the storm",
@@ -247,10 +247,10 @@
             "id": "VOC_ACADEMICWORD_L106_Q1",
             "hint": "DEFINITION: Next to or adjoining something else.",
             "options": [
+                "ADJACENT",
                 "DISTANT",
                 "OPPOSITE",
-                "SCATTERED",
-                "ADJACENT"
+                "SCATTERED"
             ],
             "explanation": "Academic context: The new coffee shop is ADJACENT to the train station, making it convenient for commuters. Here, \"ADJACENT\" means immediately next to something, the opposite of being far away, across from it, or spread out in different places.",
             "passage": "The new coffee shop is [TARGET] to the train station, making it convenient for commuters",
@@ -263,10 +263,10 @@
             "id": "VOC_ACADEMICWORD_L106_Q2",
             "hint": "DEFINITION: To alter or move something slightly to achieve the desired fit, appearance, or result.",
             "options": [
+                "DUPLICATE",
                 "ADJUST",
                 "DISCARD",
-                "REPLACE",
-                "DUPLICATE"
+                "REPLACE"
             ],
             "explanation": "Academic context: The tailor had to ADJUST the hem so the dress wouldn't drag on the floor. Here, \"ADJUST\" means to make a small corrective change, a different action from throwing something out, swapping it entirely, or copying it.",
             "passage": "The tailor had to [TARGET] the hem so the dress wouldn't drag on the floor",
@@ -279,10 +279,10 @@
             "id": "VOC_ACADEMICWORD_L106_Q3",
             "hint": "DEFINITION: To publicly support or recommend a particular cause or policy; a person who supports a cause.",
             "options": [
-                "OPPONENT",
                 "ADVOCATE",
-                "CRITIC",
-                "SKEPTIC"
+                "OPPONENT",
+                "SKEPTIC",
+                "CRITIC"
             ],
             "explanation": "Academic context: The retired teacher became a passionate ADVOCATE for smaller class sizes in public schools. Here, \"ADVOCATE\" means a public supporter of a cause, the opposite of someone who opposes, criticizes, or doubts it.",
             "passage": "The retired teacher became a passionate [TARGET] for smaller class sizes in public schools",
@@ -327,10 +327,10 @@
             "id": "VOC_ACADEMICWORD_L107_Q3",
             "hint": "DEFINITION: To distribute resources or duties for a particular purpose.",
             "options": [
-                "ALLOCATE",
-                "WITHHOLD",
+                "WASTE",
                 "CONFISCATE",
-                "WASTE"
+                "WITHHOLD",
+                "ALLOCATE"
             ],
             "explanation": "Academic context: The city council had to decide how to ALLOCATE funding between schools and road repairs. Here, \"ALLOCATE\" means to distribute resources purposefully, the opposite of holding them back, seizing them, or squandering them.",
             "passage": "The city council had to decide how to [TARGET] funding between schools and road repairs",
@@ -343,10 +343,10 @@
             "id": "VOC_ACADEMICWORD_L108_Q1",
             "hint": "DEFINITION: Available as another possibility or choice; a different option from the one already stated.",
             "options": [
-                "IDENTICAL",
-                "ALTERNATIVE",
                 "MANDATORY",
-                "ORIGINAL"
+                "IDENTICAL",
+                "ORIGINAL",
+                "ALTERNATIVE"
             ],
             "explanation": "Academic context: Many commuters are switching to electric bikes as an ALTERNATIVE to sitting in traffic every day. Here, \"ALTERNATIVE\" means a different available option, a different idea from something that is the same, required, or the very first choice.",
             "passage": "Many commuters are switching to electric bikes as an [TARGET] to sitting in traffic every day",
@@ -359,10 +359,10 @@
             "id": "VOC_ACADEMICWORD_L108_Q2",
             "hint": "DEFINITION: Open to more than one interpretation; unclear or inexact in meaning.",
             "options": [
-                "PRECISE",
-                "EXPLICIT",
                 "AMBIGUOUS",
-                "DEFINITIVE"
+                "PRECISE",
+                "DEFINITIVE",
+                "EXPLICIT"
             ],
             "explanation": "Academic context: The contract's AMBIGUOUS wording led to a lengthy legal dispute between the two companies. Here, \"AMBIGUOUS\" means open to multiple interpretations, the opposite of being exact, stated plainly, or completely conclusive.",
             "passage": "The contract's [TARGET] wording led to a lengthy legal dispute between the two companies",
@@ -375,10 +375,10 @@
             "id": "VOC_ACADEMICWORD_L108_Q3",
             "hint": "DEFINITION: To make minor changes to a text or law in order to improve or correct it.",
             "options": [
-                "ENFORCE",
                 "REPEAL",
-                "IGNORE",
-                "AMEND"
+                "ENFORCE",
+                "AMEND",
+                "IGNORE"
             ],
             "explanation": "Academic context: Lawmakers voted to AMEND the outdated regulation so it would apply to electric scooters as well. Here, \"AMEND\" means to revise and improve, a different action from strictly applying, completely canceling, or disregarding a law.",
             "passage": "Lawmakers voted to [TARGET] the outdated regulation so it would apply to electric scooters as well",
@@ -392,12 +392,12 @@
             "hint": "DEFINITION: To expect or predict that something will happen and prepare for it.",
             "options": [
                 "ANTICIPATE",
-                "FORGET",
+                "DISMISS",
                 "DOUBT",
-                "DISMISS"
+                "FORGET"
             ],
-            "explanation": "Academic context: Event organizers ANTICIPATEd a large crowd and arranged for extra security and parking. Here, \"ANTICIPATE\" means to expect and prepare for something, the opposite of forgetting about it, doubting it will happen, or dismissing the possibility.",
-            "passage": "Event organizers [TARGET]d a large crowd and arranged for extra security and parking",
+            "explanation": "Academic context: Event organizers always ANTICIPATE a large crowd and arrange for extra security and parking. Here, \"ANTICIPATE\" means to expect and prepare for something, the opposite of forgetting about it, doubting it will happen, or dismissing the possibility.",
+            "passage": "Event organizers always [TARGET] a large crowd and arrange for extra security and parking",
             "correctAnswer": "ANTICIPATE",
             "instruction": "Drag the correct word to complete the sentence."
         },
@@ -407,10 +407,10 @@
             "id": "VOC_ACADEMICWORD_L109_Q2",
             "hint": "DEFINITION: A section of additional material at the end of a book or document.",
             "options": [
-                "PROLOGUE",
-                "APPENDIX",
                 "FOREWORD",
-                "PREFACE"
+                "APPENDIX",
+                "PREFACE",
+                "PROLOGUE"
             ],
             "explanation": "Academic context: The full survey questions can be found in the APPENDIX at the back of the report. Here, \"APPENDIX\" means supplementary material placed at the end, the opposite of introductory material placed at the beginning.",
             "passage": "The full survey questions can be found in the [TARGET] at the back of the report",
@@ -425,8 +425,8 @@
             "options": [
                 "DONATE",
                 "DISCARD",
-                "APPRAISE",
-                "REPLACE"
+                "REPLACE",
+                "APPRAISE"
             ],
             "explanation": "Academic context: A professional was hired to APPRAISE the antique furniture before the estate sale. Here, \"APPRAISE\" means to formally evaluate something's worth, a different action from giving it away, throwing it out, or substituting it.",
             "passage": "A professional was hired to [TARGET] the antique furniture before the estate sale",
@@ -439,9 +439,9 @@
             "id": "VOC_ACADEMICWORD_L110_Q1",
             "hint": "DEFINITION: Based on random choice or personal whim, rather than reason or system.",
             "options": [
+                "JUSTIFIED",
                 "SYSTEMATIC",
                 "CONSISTENT",
-                "JUSTIFIED",
                 "ARBITRARY"
             ],
             "explanation": "Academic context: Employees complained that the new dress code seemed ARBITRARY and inconsistently enforced. Here, \"ARBITRARY\" means based on whim rather than reason, the opposite of being methodical, consistent, or well justified.",
@@ -456,9 +456,9 @@
             "hint": "DEFINITION: Made by humans, often as an imitation of something natural.",
             "options": [
                 "ARTIFICIAL",
-                "NATURAL",
+                "GENUINE",
                 "ORGANIC",
-                "GENUINE"
+                "NATURAL"
             ],
             "explanation": "Academic context: The dessert's bright pink color came from an ARTIFICIAL dye rather than any real fruit. Here, \"ARTIFICIAL\" means man-made, the opposite of being naturally occurring, grown without chemicals, or truly authentic.",
             "passage": "The dessert's bright pink color came from an [TARGET] dye rather than any real fruit",
@@ -471,10 +471,10 @@
             "id": "VOC_ACADEMICWORD_L110_Q3",
             "hint": "DEFINITION: A physical or violent attack; to attack someone violently.",
             "options": [
-                "CEREMONY",
-                "ASSAULT",
                 "FESTIVAL",
-                "REUNION"
+                "ASSAULT",
+                "REUNION",
+                "CEREMONY"
             ],
             "explanation": "Academic context: Witnesses described seeing the ASSAULT from across the street and immediately called the police. Here, \"ASSAULT\" means a violent attack, a completely different kind of event from a formal occasion, celebration, or gathering of family.",
             "passage": "Witnesses described seeing the [TARGET] from across the street and immediately called the police",

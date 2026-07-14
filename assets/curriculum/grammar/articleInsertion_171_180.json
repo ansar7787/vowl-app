@@ -8,18 +8,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The lab team made ___ accidental but significant discovery.",
-            "sentence": "The lab team made ___ accidental but significant discovery.",
+            "question": "Some critics offered ___ overzealous interpretation of what the brain scans actually showed.",
+            "sentence": "Some critics offered ___ overzealous interpretation of what the brain scans actually showed.",
             "options": [
                 "a",
+                "(no article)",
                 "an",
-                "the",
-                "(no article)"
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "an",
-            "hint": "'Accidental' begins with the vowel sound 'ac'.",
-            "explanation": "Use 'an' before vowel sounds. 'Accidental' starts with the vowel 'a', so we write 'an accidental but significant discovery'.",
+            "hint": "'Overzealous' begins with a vowel sound.",
+            "explanation": "'Overzealous' starts with a vowel sound, so it takes 'an'. We say 'an overzealous interpretation'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -27,18 +27,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ discovery overturned decades of accepted scientific thinking.",
-            "sentence": "___ discovery overturned decades of accepted scientific thinking.",
+            "question": "The lab published one striking interpretation of the scan results, and ___ interpretation was later walked back after further review.",
+            "sentence": "The lab published one striking interpretation of the scan results, and ___ interpretation was later walked back after further review.",
             "options": [
-                "an",
-                "the",
+                "a",
                 "(no article)",
-                "a"
+                "an",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "The specific discovery the lab team made - now a known scientific event.",
-            "explanation": "Use 'the' to refer to the specific discovery already introduced. 'The discovery' = the accidental one that challenged established scientific consensus.",
+            "hint": "This interpretation was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The interpretation' refers back to that same striking claim.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ scientific progress depends on the freedom to question existing assumptions.",
-            "sentence": "___ scientific progress depends on the freedom to question existing assumptions.",
+            "question": "Cognitive scientists caution that ___ scans alone cannot explain complex behavior.",
+            "sentence": "Cognitive scientists caution that ___ scans alone cannot explain complex behavior.",
             "options": [
-                "the",
                 "(no article)",
-                "a",
-                "an"
+                "the",
+                "an",
+                "a"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "'Scientific progress' as an uncountable concept takes no article.",
-            "explanation": "Compound uncountable concepts related to knowledge (scientific progress, medical advancement, technological innovation) take no article in general philosophical statements about what drives them.",
+            "hint": "This is a general statement about scans as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Scans' here means such images in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -65,37 +65,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She led ___ interdisciplinary research project on climate modelling.",
-            "sentence": "She led ___ interdisciplinary research project on climate modelling.",
+            "question": "The team could not publish until they obtained ___ reproducible result across multiple independent labs.",
+            "sentence": "The team could not publish until they obtained ___ reproducible result across multiple independent labs.",
             "options": [
                 "(no article)",
                 "a",
                 "an",
                 "the"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "an",
-            "hint": "'Interdisciplinary' begins with the vowel sound 'in'.",
-            "explanation": "Use 'an' before vowel sounds. 'Interdisciplinary' starts with the vowel 'i', so we write 'an interdisciplinary research project'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "a",
+            "hint": "'Reproducible' starts with a consonant sound.",
+            "explanation": "'Reproducible' begins with a consonant sound, so it takes 'a'. We say 'a reproducible result'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l172_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ project published its findings in three peer-reviewed journals.",
-            "sentence": "___ project published its findings in three peer-reviewed journals.",
+            "question": "Of every trial run that year, this result was ___ most consistent across every single lab.",
+            "sentence": "Of every trial run that year, this result was ___ most consistent across every single lab.",
             "options": [
+                "(no article)",
                 "a",
-                "an",
                 "the",
-                "(no article)"
+                "an"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific interdisciplinary project she led - now a known research initiative.",
-            "explanation": "Use 'the' to refer to the specific project already introduced. 'The project' = the interdisciplinary climate modelling one she led.",
+            "hint": "This compares the result to every other trial run that year.",
+            "explanation": "Superlatives like 'the most consistent' always take 'the', since they compare one thing to all the rest.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ peer review is the cornerstone of credible scientific publishing.",
-            "sentence": "___ peer review is the cornerstone of credible scientific publishing.",
+            "question": "Good statisticians insist on ___ results that other teams can replicate.",
+            "sentence": "Good statisticians insist on ___ results that other teams can replicate.",
             "options": [
-                "an",
                 "the",
-                "(no article)",
-                "a"
+                "an",
+                "a",
+                "(no article)"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Peer review' as an academic process takes no article.",
-            "explanation": "Academic and scientific processes (peer review, double-blind testing, meta-analysis, replication) take no article in general statements about their role in research.",
+            "hint": "This is a general statement about results as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Results' here means such findings in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -122,18 +122,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He wrote ___ in-depth analysis of quantum entanglement.",
-            "sentence": "He wrote ___ in-depth analysis of quantum entanglement.",
+            "question": "The disaster caused ___ unquantifiable loss that no compensation could ever fully address.",
+            "sentence": "The disaster caused ___ unquantifiable loss that no compensation could ever fully address.",
             "options": [
+                "an",
                 "the",
-                "(no article)",
                 "a",
-                "an"
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "an",
-            "hint": "'In-depth' begins with the vowel sound 'in'.",
-            "explanation": "Use 'an' before vowel sounds. 'In-depth' starts with the vowel 'i', so we write 'an in-depth analysis'.",
+            "hint": "'Unquantifiable' begins with a vowel sound.",
+            "explanation": "'Unquantifiable' starts with a vowel sound, so it takes 'an'. We say 'an unquantifiable loss'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -141,18 +141,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ analysis was cited by researchers across four continents.",
-            "sentence": "___ analysis was cited by researchers across four continents.",
+            "question": "___ loss that no compensation could address was the sense of safety the community once had.",
+            "sentence": "___ loss that no compensation could address was the sense of safety the community once had.",
             "options": [
                 "(no article)",
+                "the",
                 "a",
-                "an",
-                "the"
+                "an"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific in-depth analysis he wrote - now a known academic work.",
-            "explanation": "Use 'the' to refer to the specific document already introduced. 'The analysis' = the in-depth quantum entanglement paper he wrote.",
+            "hint": "The phrase 'that no compensation could address' narrows this down to one specific loss.",
+            "explanation": "When a descriptive phrase makes a noun specific, we use 'the'. It picks out exactly one loss among many.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ quantum physics challenges our most basic intuitions about reality.",
-            "sentence": "___ quantum physics challenges our most basic intuitions about reality.",
+            "question": "Moral philosophy often grapples with ___ suffering that resists simple measurement.",
+            "sentence": "Moral philosophy often grapples with ___ suffering that resists simple measurement.",
             "options": [
-                "a",
                 "an",
-                "the",
-                "(no article)"
+                "a",
+                "(no article)",
+                "the"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "'Quantum physics' as an academic discipline takes no article.",
-            "explanation": "Scientific disciplines (quantum physics, molecular biology, astrophysics, neuroscience) take no article when referred to as fields in general statements.",
+            "hint": "Suffering is an abstract idea, not something countable.",
+            "explanation": "Abstract, uncountable nouns like suffering take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -179,18 +179,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The institute launched ___ open-access database of rare genetic data.",
-            "sentence": "The institute launched ___ open-access database of rare genetic data.",
+            "question": "Even conservative models predict ___ unforeseeable consequence once certain tipping points are crossed.",
+            "sentence": "Even conservative models predict ___ unforeseeable consequence once certain tipping points are crossed.",
             "options": [
-                "an",
+                "a",
                 "the",
                 "(no article)",
-                "a"
+                "an"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "'Open-access' begins with the vowel sound 'o'.",
-            "explanation": "Use 'an' before vowel sounds. 'Open-access' starts with the vowel 'o', so we write 'an open-access database'.",
+            "hint": "'Unforeseeable' begins with a vowel sound.",
+            "explanation": "'Unforeseeable' starts with a vowel sound, so it takes 'an'. We say 'an unforeseeable consequence'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -198,18 +198,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ database is now used by researchers in over sixty countries.",
-            "sentence": "___ database is now used by researchers in over sixty countries.",
+            "question": "Of every tipping point scientists have modeled, ice sheet collapse remains ___ most unpredictable by far.",
+            "sentence": "Of every tipping point scientists have modeled, ice sheet collapse remains ___ most unpredictable by far.",
             "options": [
                 "the",
-                "(no article)",
+                "an",
                 "a",
-                "an"
+                "(no article)"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The specific open-access database the institute launched - now a known resource.",
-            "explanation": "Use 'the' to refer to the specific database already introduced. 'The database' = the open-access genetic one the institute launched.",
+            "hint": "This compares ice sheet collapse to every other tipping point scientists have modeled.",
+            "explanation": "Superlatives like 'the most unpredictable' always take 'the', since they compare one thing to all the rest.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ open access to scientific data accelerates discovery across all disciplines.",
-            "sentence": "___ open access to scientific data accelerates discovery across all disciplines.",
+            "question": "Climate researchers must plan around ___ uncertainty that current models cannot yet resolve.",
+            "sentence": "Climate researchers must plan around ___ uncertainty that current models cannot yet resolve.",
             "options": [
+                "the",
                 "(no article)",
-                "a",
                 "an",
-                "the"
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "'Open access' as a principle takes no article in a general statement.",
-            "explanation": "Principles and practices used in general statements about academic culture (open access, peer collaboration, transparent methodology) take no article.",
+            "hint": "Uncertainty, in this sense, is an abstract idea, not something countable.",
+            "explanation": "Abstract, uncountable nouns like uncertainty take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -236,18 +236,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She developed ___ algorithm that could detect early signs of Alzheimer's.",
-            "sentence": "She developed ___ algorithm that could detect early signs of Alzheimer's.",
+            "question": "Some economists have proposed ___ overarching theory to explain rising inequality across very different countries.",
+            "sentence": "Some economists have proposed ___ overarching theory to explain rising inequality across very different countries.",
             "options": [
                 "a",
+                "(no article)",
                 "an",
-                "the",
-                "(no article)"
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "an",
-            "hint": "'Algorithm' begins with the vowel sound 'al'.",
-            "explanation": "Use 'an' before vowel sounds. 'Algorithm' starts with the vowel 'a', so we write 'an algorithm'.",
+            "hint": "'Overarching' begins with a vowel sound.",
+            "explanation": "'Overarching' starts with a vowel sound, so it takes 'an'. We say 'an overarching theory'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -255,18 +255,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ algorithm was tested on a dataset of over one million patient records.",
-            "sentence": "___ algorithm was tested on a dataset of over one million patient records.",
+            "question": "One influential theory dominated the field for nearly thirty years, and ___ theory is only now being seriously questioned.",
+            "sentence": "One influential theory dominated the field for nearly thirty years, and ___ theory is only now being seriously questioned.",
             "options": [
-                "an",
-                "the",
+                "a",
                 "(no article)",
-                "a"
+                "an",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "The specific algorithm she developed - now a known computational tool.",
-            "explanation": "Use 'the' to refer to the specific algorithm already introduced. 'The algorithm' = the early Alzheimer's-detection one she developed.",
+            "hint": "This theory was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The theory' refers back to that same influential idea.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ artificial intelligence is transforming diagnostic medicine worldwide.",
-            "sentence": "___ artificial intelligence is transforming diagnostic medicine worldwide.",
+            "question": "Political economists compare how ___ systems distribute wealth differently across nations.",
+            "sentence": "Political economists compare how ___ systems distribute wealth differently across nations.",
             "options": [
-                "the",
                 "(no article)",
-                "a",
-                "an"
+                "an",
+                "the",
+                "a"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "'Artificial intelligence' as a broad technological field takes no article.",
-            "explanation": "Broad technological fields (artificial intelligence, machine learning, bioinformatics, nanotechnology) take no article in general statements about their impact.",
+            "hint": "This is a general statement about systems as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Systems' here means such structures in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -293,37 +293,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He published ___ extensive meta-analysis of clinical trial data.",
-            "sentence": "He published ___ extensive meta-analysis of clinical trial data.",
+            "question": "The professor pointed out that the argument relied on ___ circular argument disguised as independent evidence.",
+            "sentence": "The professor pointed out that the argument relied on ___ circular argument disguised as independent evidence.",
             "options": [
-                "(no article)",
-                "a",
                 "an",
-                "the"
+                "a",
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "an",
-            "hint": "'Extensive' begins with the vowel sound 'ex'.",
-            "explanation": "Use 'an' before vowel sounds. 'Extensive' starts with the vowel 'e', so we write 'an extensive meta-analysis'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "a",
+            "hint": "'Circular' starts with a consonant sound.",
+            "explanation": "'Circular' begins with a consonant sound, so it takes 'a'. We say 'a circular argument'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l176_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ meta-analysis revealed a pattern that single studies had failed to detect.",
-            "sentence": "___ meta-analysis revealed a pattern that single studies had failed to detect.",
+            "question": "___ argument that collapsed under scrutiny had simply assumed the very thing it claimed to prove.",
+            "sentence": "___ argument that collapsed under scrutiny had simply assumed the very thing it claimed to prove.",
             "options": [
-                "a",
                 "an",
+                "(no article)",
                 "the",
-                "(no article)"
+                "a"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific meta-analysis he published - now a known research document.",
-            "explanation": "Use 'the' to refer to the specific analysis already introduced. 'The meta-analysis' = the extensive clinical trial one he published.",
+            "hint": "The phrase 'that collapsed under scrutiny' narrows this down to one specific argument.",
+            "explanation": "When a descriptive phrase makes a noun specific, we use 'the'. It picks out exactly one argument among many.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ evidence-based medicine has transformed how doctors make clinical decisions.",
-            "sentence": "___ evidence-based medicine has transformed how doctors make clinical decisions.",
+            "question": "Sound reasoning depends on ___ logic that doesn't quietly assume its own conclusion.",
+            "sentence": "Sound reasoning depends on ___ logic that doesn't quietly assume its own conclusion.",
             "options": [
-                "an",
+                "a",
                 "the",
-                "(no article)",
-                "a"
+                "an",
+                "(no article)"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Evidence-based medicine' as a medical approach takes no article.",
-            "explanation": "Compound medical approaches and philosophies (evidence-based medicine, precision medicine, holistic care) take no article in general statements about their impact.",
+            "hint": "Logic, in this sense, is an abstract idea, not something countable.",
+            "explanation": "Abstract, uncountable nouns like logic take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -350,37 +350,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She presented ___ unorthodox hypothesis at the annual symposium.",
-            "sentence": "She presented ___ unorthodox hypothesis at the annual symposium.",
+            "question": "Her lawyer constructed ___ tenable defense despite the overwhelming evidence against her client.",
+            "sentence": "Her lawyer constructed ___ tenable defense despite the overwhelming evidence against her client.",
             "options": [
-                "the",
-                "(no article)",
                 "a",
-                "an"
+                "an",
+                "(no article)",
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "an",
-            "hint": "'Unorthodox' begins with the vowel sound 'un'.",
-            "explanation": "Use 'an' before vowel sounds. 'Unorthodox' starts with the vowel 'u', so we write 'an unorthodox hypothesis'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "a",
+            "hint": "'Tenable' starts with a consonant sound.",
+            "explanation": "'Tenable' begins with a consonant sound, so it takes 'a'. We say 'a tenable defense'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l177_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ hypothesis she presented divided opinion in the scientific community.",
-            "sentence": "___ hypothesis she presented divided opinion in the scientific community.",
+            "question": "Of every defense strategy the firm considered, this was ___ most tenable given the evidence available.",
+            "sentence": "Of every defense strategy the firm considered, this was ___ most tenable given the evidence available.",
             "options": [
-                "(no article)",
                 "a",
-                "an",
-                "the"
+                "the",
+                "(no article)",
+                "an"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific hypothesis she presented - identified by 'she presented'.",
-            "explanation": "A defining clause ('she presented') specifies exactly which hypothesis. 'The hypothesis she presented' = the unorthodox one she put forward at the symposium.",
+            "hint": "This compares the strategy to every other one the firm considered.",
+            "explanation": "Superlatives like 'the most tenable' always take 'the', since they compare one thing to all the rest.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ scientific consensus, though valuable, must always remain open to revision.",
-            "sentence": "___ scientific consensus, though valuable, must always remain open to revision.",
+            "question": "Defense attorneys must anticipate ___ objections before they ever reach the courtroom.",
+            "sentence": "Defense attorneys must anticipate ___ objections before they ever reach the courtroom.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "(no article)"
+                "an",
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "'Scientific consensus' as a concept in a nuanced philosophical statement takes no article.",
-            "explanation": "Abstract scientific concepts used in philosophical statements (scientific consensus, empirical truth, theoretical models) take no article when discussing their nature or limitations.",
+            "hint": "This is a general statement about objections as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Objections' here means such challenges in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -407,18 +407,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The experiment produced ___ unanticipated set of results.",
-            "sentence": "The experiment produced ___ unanticipated set of results.",
+            "question": "The philosopher proposed ___ unexplored dimension of consciousness that traditional theories had overlooked entirely.",
+            "sentence": "The philosopher proposed ___ unexplored dimension of consciousness that traditional theories had overlooked entirely.",
             "options": [
-                "an",
+                "a",
                 "the",
                 "(no article)",
-                "a"
+                "an"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "'Unanticipated' begins with the vowel sound 'un'.",
-            "explanation": "Use 'an' before vowel sounds. 'Unanticipated' starts with the vowel 'u', so we write 'an unanticipated set of results'.",
+            "hint": "'Unexplored' begins with a vowel sound.",
+            "explanation": "'Unexplored' starts with a vowel sound, so it takes 'an'. We say 'an unexplored dimension'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -426,8 +426,8 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ results prompted the team to redesign the entire study.",
-            "sentence": "___ results prompted the team to redesign the entire study.",
+            "question": "One overlooked dimension of experience had puzzled thinkers for centuries, and ___ dimension finally gained serious attention in the twentieth century.",
+            "sentence": "One overlooked dimension of experience had puzzled thinkers for centuries, and ___ dimension finally gained serious attention in the twentieth century.",
             "options": [
                 "the",
                 "(no article)",
@@ -436,8 +436,8 @@
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The specific unanticipated results from the experiment - now a known set of data.",
-            "explanation": "Use 'the' to refer to the specific results already introduced. 'The results' = the unanticipated ones that prompted a redesign.",
+            "hint": "This dimension was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The dimension' refers back to that same overlooked aspect.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -445,65 +445,8 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ experimental failure is often as informative as success.",
-            "sentence": "___ experimental failure is often as informative as success.",
-            "options": [
-                "(no article)",
-                "a",
-                "an",
-                "the"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "(no article)",
-            "hint": "'Experimental failure' as a concept in a philosophical statement about science takes no article.",
-            "explanation": "Concepts in philosophical statements about science (experimental failure, scientific uncertainty, controlled error) take no article when making general claims about their value.",
-            "grammarRule": "Zero Article"
-        },
-        {
-            "id": "ai_l179_q1",
-            "instruction": "INSERT THE CORRECT ARTICLE",
-            "subtype": "articleInsertion",
-            "interactionType": "Bubble Pop",
-            "question": "He secured ___ unprecedented research grant from a global foundation.",
-            "sentence": "He secured ___ unprecedented research grant from a global foundation.",
-            "options": [
-                "a",
-                "an",
-                "the",
-                "(no article)"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "'Unprecedented' begins with the vowel sound 'un'.",
-            "explanation": "Use 'an' before vowel sounds. 'Unprecedented' starts with the vowel 'u', so we write 'an unprecedented research grant'.",
-            "grammarRule": "Indefinite Article (an)"
-        },
-        {
-            "id": "ai_l179_q2",
-            "instruction": "INSERT THE CORRECT ARTICLE",
-            "subtype": "articleInsertion",
-            "interactionType": "Bubble Pop",
-            "question": "___ grant allowed him to expand the project for a further decade.",
-            "sentence": "___ grant allowed him to expand the project for a further decade.",
-            "options": [
-                "an",
-                "the",
-                "(no article)",
-                "a"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "the",
-            "hint": "The specific unprecedented research grant he secured - now a known financial award.",
-            "explanation": "Use 'the' to refer to the specific grant already introduced. 'The grant' = the unprecedented one he secured from the global foundation.",
-            "grammarRule": "Definite Article (the)"
-        },
-        {
-            "id": "ai_l179_q3",
-            "instruction": "INSERT THE CORRECT ARTICLE",
-            "subtype": "articleInsertion",
-            "interactionType": "Bubble Pop",
-            "question": "___ funding for basic research has declined in many high-income countries.",
-            "sentence": "___ funding for basic research has declined in many high-income countries.",
+            "question": "Philosophy of mind continues to wrestle with ___ subjectivity that resists any purely physical explanation.",
+            "sentence": "Philosophy of mind continues to wrestle with ___ subjectivity that resists any purely physical explanation.",
             "options": [
                 "the",
                 "(no article)",
@@ -512,8 +455,65 @@
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "'Funding for basic research' as an uncountable resource topic takes no article.",
-            "explanation": "Uncountable resource nouns (funding, investment, support, access) take no article when used in general statements about their availability or allocation.",
+            "hint": "Subjectivity is an abstract idea, not something countable.",
+            "explanation": "Abstract, uncountable nouns like subjectivity take no article in general statements.",
+            "grammarRule": "Zero Article"
+        },
+        {
+            "id": "ai_l179_q1",
+            "instruction": "INSERT THE CORRECT ARTICLE",
+            "subtype": "articleInsertion",
+            "interactionType": "Bubble Pop",
+            "question": "The lab quietly published ___ unheralded discovery that only years later reshaped the entire field.",
+            "sentence": "The lab quietly published ___ unheralded discovery that only years later reshaped the entire field.",
+            "options": [
+                "a",
+                "the",
+                "an",
+                "(no article)"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "an",
+            "hint": "'Unheralded' begins with a vowel sound.",
+            "explanation": "'Unheralded' starts with a vowel sound, so it takes 'an'. We say 'an unheralded discovery'.",
+            "grammarRule": "Indefinite Article (an)"
+        },
+        {
+            "id": "ai_l179_q2",
+            "instruction": "INSERT THE CORRECT ARTICLE",
+            "subtype": "articleInsertion",
+            "interactionType": "Bubble Pop",
+            "question": "___ discovery that reshaped the field had originally been buried in a footnote nobody read.",
+            "sentence": "___ discovery that reshaped the field had originally been buried in a footnote nobody read.",
+            "options": [
+                "an",
+                "(no article)",
+                "a",
+                "the"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "the",
+            "hint": "The phrase 'that reshaped the field' narrows this down to one specific discovery.",
+            "explanation": "When a descriptive phrase makes a noun specific, we use 'the'. It picks out exactly one discovery among many.",
+            "grammarRule": "Definite Article (the)"
+        },
+        {
+            "id": "ai_l179_q3",
+            "instruction": "INSERT THE CORRECT ARTICLE",
+            "subtype": "articleInsertion",
+            "interactionType": "Bubble Pop",
+            "question": "Science journalists must translate ___ findings for audiences without technical training.",
+            "sentence": "Science journalists must translate ___ findings for audiences without technical training.",
+            "options": [
+                "(no article)",
+                "the",
+                "an",
+                "a"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "(no article)",
+            "hint": "This is a general statement about findings as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Findings' here means such results in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -521,18 +521,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She authored ___ influential paper that reshaped the field.",
-            "sentence": "She authored ___ influential paper that reshaped the field.",
+            "question": "Their research made ___ immeasurable difference to how the entire discipline understands the problem today.",
+            "sentence": "Their research made ___ immeasurable difference to how the entire discipline understands the problem today.",
             "options": [
-                "(no article)",
                 "a",
                 "an",
-                "the"
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "an",
-            "hint": "'Influential' begins with the vowel sound 'in'.",
-            "explanation": "Use 'an' before vowel sounds. 'Influential' starts with the vowel 'i', so we write 'an influential paper'.",
+            "hint": "'Immeasurable' begins with a vowel sound.",
+            "explanation": "'Immeasurable' starts with a vowel sound, so it takes 'an'. We say 'an immeasurable difference'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -540,18 +540,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ paper has been cited over eight thousand times since publication.",
-            "sentence": "___ paper has been cited over eight thousand times since publication.",
+            "question": "They pursued one unlikely question that everyone else had dismissed, and ___ question eventually redefined the whole field.",
+            "sentence": "They pursued one unlikely question that everyone else had dismissed, and ___ question eventually redefined the whole field.",
             "options": [
-                "a",
                 "an",
+                "(no article)",
                 "the",
-                "(no article)"
+                "a"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific influential paper she authored - now a widely known academic work.",
-            "explanation": "Use 'the' to refer to the specific paper already introduced. 'The paper' = the influential one she authored that reshaped her field.",
+            "hint": "You're pointing back to the exact question raised a moment before.",
+            "explanation": "The second mention of a noun takes 'the'. 'The question' refers back to that same unlikely pursuit.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ academic publishing is undergoing a fundamental transformation in the digital era.",
-            "sentence": "___ academic publishing is undergoing a fundamental transformation in the digital era.",
+            "question": "True intellectual progress usually depends on ___ curiosity that refuses to accept easy answers.",
+            "sentence": "True intellectual progress usually depends on ___ curiosity that refuses to accept easy answers.",
             "options": [
-                "an",
                 "the",
-                "(no article)",
-                "a"
+                "a",
+                "an",
+                "(no article)"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Academic publishing' as a system and concept takes no article.",
-            "explanation": "Systems and industries used in general statements (academic publishing, the music industry, traditional journalism) take no article when you describe their overall direction or state.",
+            "hint": "Curiosity is an abstract quality, not something countable.",
+            "explanation": "Abstract, uncountable nouns like curiosity take no article in general statements.",
             "grammarRule": "Zero Article"
         }
     ]

@@ -8,37 +8,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She enrolled in ___ undergraduate degree program.",
-            "sentence": "She enrolled in ___ undergraduate degree program.",
+            "question": "Her essay presented ___ persuasive argument backed by solid evidence.",
+            "sentence": "Her essay presented ___ persuasive argument backed by solid evidence.",
             "options": [
-                "a",
                 "an",
-                "the",
-                "(no article)"
+                "(no article)",
+                "a",
+                "the"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "'Undergraduate' begins with the vowel sound 'un'.",
-            "explanation": "Use 'an' before vowel sounds. 'Undergraduate' starts with the vowel 'u', so we write 'an undergraduate degree program'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "a",
+            "hint": "'Persuasive' starts with a consonant sound.",
+            "explanation": "'Persuasive' begins with a consonant sound, so it takes 'a'. We say 'a persuasive argument'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l111_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She chose ___ program that focused on environmental science.",
-            "sentence": "She chose ___ program that focused on environmental science.",
+            "question": "She raised two arguments in her essay, and ___ second argument was far more convincing.",
+            "sentence": "She raised two arguments in her essay, and ___ second argument was far more convincing.",
             "options": [
-                "an",
-                "the",
                 "(no article)",
-                "a"
+                "a",
+                "an",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "The relative clause 'that focused on environmental science' specifies which program.",
-            "explanation": "A defining relative clause makes a noun definite. 'The program that focused on environmental science' identifies the specific one she selected.",
+            "hint": "A position word like 'second' calls for this article.",
+            "explanation": "Ordinal numbers such as second and third take 'the'. We say 'the second argument' among several.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ higher education is essential for career development in many fields.",
-            "sentence": "___ higher education is essential for career development in many fields.",
+            "question": "Strong essays usually rely on ___ evidence rather than opinion alone.",
+            "sentence": "Strong essays usually rely on ___ evidence rather than opinion alone.",
             "options": [
-                "the",
                 "(no article)",
                 "a",
+                "the",
                 "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "'Higher education' as an institutional concept takes no article.",
-            "explanation": "Educational institutions and systems (higher education, secondary education, vocational training) take no article when used in a general statement about their role or value.",
+            "hint": "Evidence, in this general sense, can't be counted.",
+            "explanation": "Uncountable nouns like evidence take no article in general statements. We say 'rely on evidence', not 'an evidence'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -65,18 +65,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He borrowed ___ library book on quantum mechanics.",
-            "sentence": "He borrowed ___ library book on quantum mechanics.",
+            "question": "The panel discussed ___ contentious debate about free will and responsibility.",
+            "sentence": "The panel discussed ___ contentious debate about free will and responsibility.",
             "options": [
                 "(no article)",
                 "a",
-                "an",
-                "the"
+                "the",
+                "an"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "'Library' begins with the consonant sound 'l'.",
-            "explanation": "Use 'a' before consonant sounds. 'Library' starts with 'l', so we write 'a library book'.",
+            "hint": "'Contentious' starts with a consonant sound.",
+            "explanation": "'Contentious' begins with a consonant sound, so it takes 'a'. We say 'a contentious debate'.",
             "grammarRule": "Indefinite Article (a)"
         },
         {
@@ -84,18 +84,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He returned ___ book three days before the due date.",
-            "sentence": "He returned ___ book three days before the due date.",
+            "question": "Philosophers have argued about this question for centuries, and ___ debate still has no clear resolution.",
+            "sentence": "Philosophers have argued about this question for centuries, and ___ debate still has no clear resolution.",
             "options": [
-                "a",
+                "(no article)",
                 "an",
                 "the",
-                "(no article)"
+                "a"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific library book he borrowed - now a known item.",
-            "explanation": "Use 'the' to refer to the specific book already mentioned. 'The book' = the quantum mechanics library book he borrowed.",
+            "hint": "This debate was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The debate' refers back to that same centuries-old question.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ physics is considered one of the most challenging school subjects.",
-            "sentence": "___ physics is considered one of the most challenging school subjects.",
+            "question": "Philosophy encourages students to question ___ assumptions they usually take for granted.",
+            "sentence": "Philosophy encourages students to question ___ assumptions they usually take for granted.",
             "options": [
                 "an",
                 "the",
-                "(no article)",
-                "a"
+                "a",
+                "(no article)"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Physics' is an academic discipline - no article needed.",
-            "explanation": "Academic disciplines and school subjects take no article: physics, chemistry, mathematics, biology, history, geography.",
+            "hint": "This is a general statement about assumptions as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Assumptions' here means such beliefs in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -122,37 +122,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The university offers ___ exchange program with partner colleges.",
-            "sentence": "The university offers ___ exchange program with partner colleges.",
+            "question": "The analysis revealed ___ cumulative effect that only appeared after several years.",
+            "sentence": "The analysis revealed ___ cumulative effect that only appeared after several years.",
             "options": [
-                "the",
-                "(no article)",
                 "a",
-                "an"
+                "an",
+                "(no article)",
+                "the"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "an",
-            "hint": "'Exchange' begins with the vowel sound 'ex'.",
-            "explanation": "Use 'an' before vowel sounds. 'Exchange' starts with the vowel 'e', so we write 'an exchange program'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "a",
+            "hint": "'Cumulative' starts with a consonant sound.",
+            "explanation": "'Cumulative' begins with a consonant sound, so it takes 'a'. We say 'a cumulative effect'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l113_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She applied for ___ exchange program in her second year.",
-            "sentence": "She applied for ___ exchange program in her second year.",
+            "question": "___ effect that surprised researchers most was how small daily changes added up over time.",
+            "sentence": "___ effect that surprised researchers most was how small daily changes added up over time.",
             "options": [
-                "(no article)",
-                "a",
                 "an",
-                "the"
+                "the",
+                "a",
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific exchange program the university offers - already known.",
-            "explanation": "Use 'the' when the noun refers to a specific, previously identified program. Both the student and the reader know which exchange program is meant.",
+            "hint": "The phrase 'that surprised researchers most' narrows this down to one specific effect.",
+            "explanation": "When a descriptive phrase makes a noun specific, we use 'the'. It picks out exactly one effect among many.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ international experience broadens students' academic and personal horizons.",
-            "sentence": "___ international experience broadens students' academic and personal horizons.",
+            "question": "Statisticians must always account for ___ outliers that can distort an entire dataset.",
+            "sentence": "Statisticians must always account for ___ outliers that can distort an entire dataset.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "(no article)"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "'International experience' as an uncountable concept takes no article.",
-            "explanation": "Abstract, uncountable concepts related to learning (international experience, cultural awareness, critical thinking) take no article in general educational statements.",
+            "hint": "This is a general statement about outliers as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Outliers' here means such data points in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -179,18 +179,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He won ___ scholarship to study medicine abroad.",
-            "sentence": "He won ___ scholarship to study medicine abroad.",
+            "question": "Lawmakers proposed ___ comprehensive plan to expand access to affordable care.",
+            "sentence": "Lawmakers proposed ___ comprehensive plan to expand access to affordable care.",
             "options": [
+                "(no article)",
                 "an",
                 "the",
-                "(no article)",
                 "a"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "'Scholarship' begins with the consonant sound 's'.",
-            "explanation": "Use 'a' before consonant sounds. 'Scholarship' starts with 's', so we write 'a scholarship'.",
+            "hint": "'Comprehensive' starts with a consonant sound.",
+            "explanation": "'Comprehensive' begins with a consonant sound, so it takes 'a'. We say 'a comprehensive plan'.",
             "grammarRule": "Indefinite Article (a)"
         },
         {
@@ -198,18 +198,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ scholarship covered all his tuition and living costs.",
-            "sentence": "___ scholarship covered all his tuition and living costs.",
+            "question": "Two healthcare plans were debated in parliament, and ___ cheaper plan excluded several essential treatments.",
+            "sentence": "Two healthcare plans were debated in parliament, and ___ cheaper plan excluded several essential treatments.",
             "options": [
                 "the",
-                "(no article)",
+                "an",
                 "a",
-                "an"
+                "(no article)"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The specific scholarship he won - now a known financial award.",
-            "explanation": "Use 'the' to refer to the specific scholarship already mentioned. 'The scholarship' = the one he won to study medicine abroad.",
+            "hint": "This singles out one of the two plans just mentioned.",
+            "explanation": "'The' can identify a specific item from a group already introduced, like 'the cheaper plan' of the two.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ scholarships allow talented students from all backgrounds to succeed.",
-            "sentence": "___ scholarships allow talented students from all backgrounds to succeed.",
+            "question": "Public health systems depend heavily on ___ funding from taxpayers.",
+            "sentence": "Public health systems depend heavily on ___ funding from taxpayers.",
             "options": [
-                "(no article)",
-                "a",
                 "an",
-                "the"
+                "(no article)",
+                "the",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "Plural noun in a general statement about scholarships as a system.",
-            "explanation": "Plural nouns in general statements take no article. 'Scholarships allow talented students' refers to all scholarships in general.",
+            "hint": "Funding, in this general sense, isn't treated as countable.",
+            "explanation": "Uncountable nouns like funding take no article in general statements. We say 'depend on funding', not 'a funding'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -236,37 +236,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She gave ___ excellent speech at the graduation ceremony.",
-            "sentence": "She gave ___ excellent speech at the graduation ceremony.",
+            "question": "The documentary tackled ___ polarizing topic that divided audiences immediately.",
+            "sentence": "The documentary tackled ___ polarizing topic that divided audiences immediately.",
             "options": [
-                "a",
+                "(no article)",
                 "an",
-                "the",
-                "(no article)"
+                "a",
+                "the"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "'Excellent' begins with the vowel sound 'ex'.",
-            "explanation": "Use 'an' before vowel sounds. 'Excellent' starts with the vowel 'e', so we write 'an excellent speech'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "a",
+            "hint": "'Polarizing' starts with a consonant sound.",
+            "explanation": "'Polarizing' begins with a consonant sound, so it takes 'a'. We say 'a polarizing topic'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l115_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Everyone rose to applaud ___ speech at the end.",
-            "sentence": "Everyone rose to applaud ___ speech at the end.",
+            "question": "Of every topic the documentary explored, this was ___ most divisive by far.",
+            "sentence": "Of every topic the documentary explored, this was ___ most divisive by far.",
             "options": [
-                "an",
-                "the",
+                "a",
                 "(no article)",
-                "a"
+                "an",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "The specific speech she gave at the ceremony - now a known event.",
-            "explanation": "Use 'the' to refer to the specific speech already described. 'The speech' = the excellent graduation one she delivered.",
+            "hint": "This compares the topic to everything else the documentary covered.",
+            "explanation": "Superlatives like 'the most divisive' always take 'the', since they compare one thing to all the rest.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ public speaking is a skill that can be learned and improved.",
-            "sentence": "___ public speaking is a skill that can be learned and improved.",
+            "question": "Media literacy teaches people to question ___ sources before sharing information.",
+            "sentence": "Media literacy teaches people to question ___ sources before sharing information.",
             "options": [
-                "the",
                 "(no article)",
-                "a",
-                "an"
+                "an",
+                "the",
+                "a"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "'Public speaking' as an uncountable skill takes no article.",
-            "explanation": "Uncountable skills (public speaking, active listening, creative writing, critical thinking) take no article in general statements about what they are or how they work.",
+            "hint": "This is a general statement about sources as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Sources' here means such origins in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -293,37 +293,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She was assigned ___ research project on renewable energy.",
-            "sentence": "She was assigned ___ research project on renewable energy.",
+            "question": "For many young families, homeownership has become ___ unattainable goal in this city.",
+            "sentence": "For many young families, homeownership has become ___ unattainable goal in this city.",
             "options": [
-                "(no article)",
-                "a",
+                "the",
                 "an",
-                "the"
+                "a",
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "a",
-            "hint": "'Research' begins with the consonant sound 'r'.",
-            "explanation": "Use 'a' before consonant sounds. 'Research' starts with 'r', so we write 'a research project'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswer": "an",
+            "hint": "'Unattainable' begins with a vowel sound.",
+            "explanation": "'Unattainable' starts with a vowel sound, so it takes 'an'. We say 'an unattainable goal'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l116_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She spent four months completing ___ project.",
-            "sentence": "She spent four months completing ___ project.",
+            "question": "The city set two housing targets, and ___ nearer target already looks unrealistic.",
+            "sentence": "The city set two housing targets, and ___ nearer target already looks unrealistic.",
             "options": [
-                "a",
+                "(no article)",
                 "an",
                 "the",
-                "(no article)"
+                "a"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific research project she was assigned - now a known task.",
-            "explanation": "Use 'the' to refer to the specific project already introduced. 'The project' = the renewable energy research one she was given.",
+            "hint": "This singles out one of the two targets just mentioned.",
+            "explanation": "'The' can identify a specific item from a group already introduced, like 'the nearer target' of the two.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ research on renewable energy is crucial for addressing climate change.",
-            "sentence": "___ research on renewable energy is crucial for addressing climate change.",
+            "question": "Economists warn that ___ rental costs are rising faster than wages in most cities.",
+            "sentence": "Economists warn that ___ rental costs are rising faster than wages in most cities.",
             "options": [
-                "an",
                 "the",
-                "(no article)",
-                "a"
+                "a",
+                "an",
+                "(no article)"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Research' is uncountable and used in a general scientific statement.",
-            "explanation": "Uncountable nouns for academic work (research, study, analysis, investigation) take no article in general statements: 'Research shows', 'Study reveals'.",
+            "hint": "This is a general statement about rental costs as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Rental costs' here means such costs in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -350,18 +350,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He failed ___ important exam and had to resit it.",
-            "sentence": "He failed ___ important exam and had to resit it.",
+            "question": "The architect designed ___ elaborate structure supported by a single central column.",
+            "sentence": "The architect designed ___ elaborate structure supported by a single central column.",
             "options": [
-                "the",
-                "(no article)",
+                "an",
                 "a",
-                "an"
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "an",
-            "hint": "'Important' begins with the vowel sound 'im'.",
-            "explanation": "Use 'an' before vowel sounds. 'Important' starts with the vowel 'i', so we write 'an important exam'.",
+            "hint": "Check the vowel sound in 'elaborate'.",
+            "explanation": "'Elaborate' starts with a vowel sound, so it takes 'an'. We say 'an elaborate structure'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -369,18 +369,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He passed ___ exam with a much higher score the second time.",
-            "sentence": "He passed ___ exam with a much higher score the second time.",
+            "question": "This building reflects ___ architectural style typical of the early twentieth century.",
+            "sentence": "This building reflects ___ architectural style typical of the early twentieth century.",
             "options": [
                 "(no article)",
+                "the",
                 "a",
-                "an",
-                "the"
+                "an"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific exam he failed and had to resit - now a known test.",
-            "explanation": "Use 'the' to refer to the specific exam already introduced. 'The exam' = the important one he originally failed.",
+            "hint": "The phrase 'typical of the early twentieth century' narrows this down to one specific style.",
+            "explanation": "When a descriptive phrase makes a noun specific, we use 'the'. It identifies exactly which style is meant.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ exams test memorisation but not always deep understanding.",
-            "sentence": "___ exams test memorisation but not always deep understanding.",
+            "question": "Architects must constantly balance ___ aesthetics with structural safety.",
+            "sentence": "Architects must constantly balance ___ aesthetics with structural safety.",
             "options": [
                 "a",
                 "an",
-                "the",
-                "(no article)"
+                "(no article)",
+                "the"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "Plural noun in a general observation about the nature of exams.",
-            "explanation": "Plural nouns in general, critical or philosophical statements take no article: 'Exams test memorisation', 'Tests create anxiety', 'Grades motivate some students'.",
+            "hint": "Aesthetics, in this sense, is treated as an abstract idea.",
+            "explanation": "Abstract, uncountable nouns like aesthetics take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -407,18 +407,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The students formed ___ study group to prepare for finals.",
-            "sentence": "The students formed ___ study group to prepare for finals.",
+            "question": "The word carries ___ nuanced meaning that rarely translates well into other languages.",
+            "sentence": "The word carries ___ nuanced meaning that rarely translates well into other languages.",
             "options": [
                 "an",
-                "the",
                 "(no article)",
+                "the",
                 "a"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "'Study' begins with the consonant sound 's'.",
-            "explanation": "Use 'a' before consonant sounds. 'Study' starts with 's', so we write 'a study group'.",
+            "hint": "'Nuanced' starts with a consonant sound.",
+            "explanation": "'Nuanced' begins with a consonant sound, so it takes 'a'. We say 'a nuanced meaning'.",
             "grammarRule": "Indefinite Article (a)"
         },
         {
@@ -426,18 +426,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ group met three times a week in the library.",
-            "sentence": "___ group met three times a week in the library.",
+            "question": "Linguists have long debated why ___ meaning of this word shifted so dramatically over time.",
+            "sentence": "Linguists have long debated why ___ meaning of this word shifted so dramatically over time.",
             "options": [
                 "the",
-                "(no article)",
+                "an",
                 "a",
-                "an"
+                "(no article)"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The specific study group they already formed - now a known entity.",
-            "explanation": "Use 'the' to refer to the specific group already introduced. 'The group' = the study group the students formed.",
+            "hint": "The phrase 'of this word' narrows this down to one specific meaning.",
+            "explanation": "When a descriptive phrase makes a noun specific, we use 'the'. It identifies exactly which meaning is meant.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ teamwork makes learning more effective and enjoyable.",
-            "sentence": "___ teamwork makes learning more effective and enjoyable.",
+            "question": "Linguists study how ___ languages change gradually over centuries.",
+            "sentence": "Linguists study how ___ languages change gradually over centuries.",
             "options": [
-                "(no article)",
-                "a",
                 "an",
-                "the"
+                "(no article)",
+                "the",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "'Teamwork' is an abstract, uncountable concept used in a general statement.",
-            "explanation": "Abstract collaborative concepts (teamwork, cooperation, peer learning, group work) take no article in general educational statements.",
+            "hint": "This is a general statement about languages as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Languages' here means such systems in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -464,37 +464,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She wrote ___ essay on the ethics of genetic engineering.",
-            "sentence": "She wrote ___ essay on the ethics of genetic engineering.",
+            "question": "The lawyer proposed ___ viable alternative that satisfied both parties.",
+            "sentence": "The lawyer proposed ___ viable alternative that satisfied both parties.",
             "options": [
-                "a",
-                "an",
+                "(no article)",
                 "the",
-                "(no article)"
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "'Essay' begins with the vowel sound 'es'.",
-            "explanation": "Use 'an' before vowel sounds. 'Essay' starts with the vowel 'e', so we write 'an essay'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "a",
+            "hint": "'Viable' starts with a consonant sound.",
+            "explanation": "'Viable' begins with a consonant sound, so it takes 'a'. We say 'a viable alternative'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l119_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ essay impressed her professor and earned top marks.",
-            "sentence": "___ essay impressed her professor and earned top marks.",
+            "question": "Two alternatives were on the table, and ___ simpler alternative was signed within a week.",
+            "sentence": "Two alternatives were on the table, and ___ simpler alternative was signed within a week.",
             "options": [
                 "an",
-                "the",
+                "a",
                 "(no article)",
-                "a"
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "The specific essay she wrote - now a known document.",
-            "explanation": "Use 'the' to refer to the specific essay already mentioned. 'The essay' = the one on genetics ethics that she wrote.",
+            "hint": "This singles out one of the two alternatives just mentioned.",
+            "explanation": "'The' can identify a specific item from a group already introduced, like 'the simpler alternative' of the two.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ academic writing requires precision, clarity, and a formal tone.",
-            "sentence": "___ academic writing requires precision, clarity, and a formal tone.",
+            "question": "Contracts should always specify ___ deadlines clearly to avoid future disputes.",
+            "sentence": "Contracts should always specify ___ deadlines clearly to avoid future disputes.",
             "options": [
-                "the",
                 "(no article)",
-                "a",
-                "an"
+                "the",
+                "an",
+                "a"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "'Academic writing' as an uncountable skill takes no article.",
-            "explanation": "Writing types used as uncountable skills or concepts (academic writing, creative writing, technical writing) take no article in general statements.",
+            "hint": "This is a general statement about deadlines as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Deadlines' here means such dates in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -521,37 +521,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He joined ___ debate club to sharpen his argument skills.",
-            "sentence": "He joined ___ debate club to sharpen his argument skills.",
+            "question": "By any measure, it was ___ unparalleled achievement for such a small team.",
+            "sentence": "By any measure, it was ___ unparalleled achievement for such a small team.",
             "options": [
                 "(no article)",
-                "a",
                 "an",
+                "a",
                 "the"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "a",
-            "hint": "'Debate' begins with the consonant sound 'd'.",
-            "explanation": "Use 'a' before consonant sounds. 'Debate' starts with 'd', so we write 'a debate club'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswer": "an",
+            "hint": "'Unparalleled' begins with a vowel sound.",
+            "explanation": "'Unparalleled' starts with a vowel sound, so it takes 'an'. We say 'an unparalleled achievement'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l120_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ club met every week in the school's main hall.",
-            "sentence": "___ club met every week in the school's main hall.",
+            "question": "They had one clear ambition from day one, and ___ ambition never once wavered.",
+            "sentence": "They had one clear ambition from day one, and ___ ambition never once wavered.",
             "options": [
-                "a",
                 "an",
+                "(no article)",
                 "the",
-                "(no article)"
+                "a"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific debate club he just joined - now a known organization.",
-            "explanation": "Use 'the' to refer to the specific club already introduced. 'The club' = the debate one he joined.",
+            "hint": "This ambition was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The ambition' refers back to that same original goal.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ critical thinking is the most transferable skill education can provide.",
-            "sentence": "___ critical thinking is the most transferable skill education can provide.",
+            "question": "Lasting success usually comes from ___ consistent effort rather than sudden breakthroughs.",
+            "sentence": "Lasting success usually comes from ___ consistent effort rather than sudden breakthroughs.",
             "options": [
-                "an",
                 "the",
-                "(no article)",
-                "a"
+                "an",
+                "a",
+                "(no article)"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Critical thinking' as an abstract cognitive skill takes no article.",
-            "explanation": "Abstract cognitive skills (critical thinking, analytical reasoning, problem-solving) take no article in general statements about their value in education.",
+            "hint": "Effort, in this general sense, isn't treated as countable.",
+            "explanation": "Uncountable nouns like effort take no article in general statements. We say 'consistent effort', not 'a consistent effort'.",
             "grammarRule": "Zero Article"
         }
     ]

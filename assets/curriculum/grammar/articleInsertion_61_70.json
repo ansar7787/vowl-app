@@ -8,37 +8,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We just bought ___ old house on Maple Street.",
-            "sentence": "We just bought ___ old house on Maple Street.",
+            "question": "She made ___ thoughtful gesture by cooking dinner for her tired parents.",
+            "sentence": "She made ___ thoughtful gesture by cooking dinner for her tired parents.",
             "options": [
                 "a",
+                "(no article)",
                 "an",
-                "the",
-                "(no article)"
+                "the"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "'Old' begins with the vowel sound 'o'.",
-            "explanation": "Use 'an' before vowel sounds. 'Old' starts with the vowel 'o', so we write 'an old house'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "a",
+            "hint": "'Thoughtful' starts with a consonant sound.",
+            "explanation": "'Thoughtful' begins with a consonant sound, so it takes 'a'. We say 'a thoughtful gesture'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l61_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They renovated ___ kitchen before moving in.",
-            "sentence": "They renovated ___ kitchen before moving in.",
+            "question": "Her mother had mentioned a small wish for her birthday, and ___ wish turned out to be a simple family dinner.",
+            "sentence": "Her mother had mentioned a small wish for her birthday, and ___ wish turned out to be a simple family dinner.",
             "options": [
-                "an",
+                "a",
                 "the",
                 "(no article)",
-                "a"
+                "an"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "A house typically has one kitchen - it is unique and identifiable.",
-            "explanation": "When a noun refers to a unique part of a known whole, use 'the'. A house has one kitchen, one bathroom, one living room - they are all definite: 'the kitchen', 'the bathroom'.",
+            "hint": "This wish was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The wish' refers back to that same small wish.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ home should be a place of safety and warmth.",
-            "sentence": "___ home should be a place of safety and warmth.",
+            "question": "Strong families are usually built on ___ small daily habits, not big gestures.",
+            "sentence": "Strong families are usually built on ___ small daily habits, not big gestures.",
             "options": [
                 "the",
+                "an",
                 "(no article)",
-                "a",
-                "an"
+                "a"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "'Home' as an abstract concept - the ideal, not a specific house.",
-            "explanation": "When 'home' refers to the general concept (not a specific house), no article is used: 'Home is where the heart is', 'Feeling at home', 'Far from home'.",
+            "hint": "This is a general statement about habits as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Small daily habits' here means such habits in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -65,18 +65,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She has ___ apartment overlooking the river.",
-            "sentence": "She has ___ apartment overlooking the river.",
+            "question": "There was ___ awkward silence after he asked about the missed deadline.",
+            "sentence": "There was ___ awkward silence after he asked about the missed deadline.",
             "options": [
-                "(no article)",
                 "a",
-                "an",
-                "the"
+                "the",
+                "(no article)",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "'Apartment' begins with the vowel sound 'uh'.",
-            "explanation": "Use 'an' before vowel sounds. 'Apartment' starts with the vowel 'a', so we write 'an apartment'.",
+            "hint": "'Awkward' begins with a vowel sound.",
+            "explanation": "'Awkward' starts with a vowel sound, so it takes 'an'. We say 'an awkward silence'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -84,18 +84,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She loves ___ view from her living room window.",
-            "sentence": "She loves ___ view from her living room window.",
+            "question": "The team suggested two ways to fix the problem, and ___ simpler solution was approved immediately.",
+            "sentence": "The team suggested two ways to fix the problem, and ___ simpler solution was approved immediately.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "(no article)"
+                "an",
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Her apartment has one view - it is her unique, specific view.",
-            "explanation": "Use 'the' when a noun is unique to a specific person or place. Her apartment has one view, so 'the view from her living room' is naturally definite.",
+            "hint": "This singles out one of the two solutions just mentioned.",
+            "explanation": "'The' can identify a specific item from a group already introduced, like 'the simpler solution' of the two.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ furniture is expensive in this city.",
-            "sentence": "___ furniture is expensive in this city.",
+            "question": "Clear communication requires ___ mutual respect, especially during stressful projects.",
+            "sentence": "Clear communication requires ___ mutual respect, especially during stressful projects.",
             "options": [
-                "an",
-                "the",
+                "a",
                 "(no article)",
-                "a"
+                "an",
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "'Furniture' is uncountable and used here in a general statement.",
-            "explanation": "Uncountable nouns (furniture, equipment, clothing, luggage) take no article in general statements: 'Furniture is expensive', 'Equipment needs maintenance'.",
+            "hint": "Respect, in this sense, is an idea you can't count.",
+            "explanation": "Abstract, uncountable nouns like respect take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -122,37 +122,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Her grandmother is ___ elegant woman in her nineties.",
-            "sentence": "Her grandmother is ___ elegant woman in her nineties.",
+            "question": "It had been ___ stressful week, so she finally took a day off.",
+            "sentence": "It had been ___ stressful week, so she finally took a day off.",
             "options": [
                 "the",
-                "(no article)",
+                "an",
                 "a",
-                "an"
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "an",
-            "hint": "'Elegant' begins with the vowel sound 'el'.",
-            "explanation": "Use 'an' before vowel sounds. 'Elegant' starts with the vowel 'e', so we write 'an elegant woman'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "a",
+            "hint": "'Stressful' starts with a consonant sound.",
+            "explanation": "'Stressful' begins with a consonant sound, so it takes 'a'. We say 'a stressful week'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l63_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She is ___ oldest person in the village.",
-            "sentence": "She is ___ oldest person in the village.",
+            "question": "The clinic offered a free check-up, and ___ check-up revealed nothing serious.",
+            "sentence": "The clinic offered a free check-up, and ___ check-up revealed nothing serious.",
             "options": [
-                "(no article)",
                 "a",
                 "an",
+                "(no article)",
                 "the"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "'Oldest' is a superlative - superlatives always take 'the'.",
-            "explanation": "Superlatives (the oldest, the tallest, the most experienced) always use 'the' because they identify the single most extreme example.",
+            "hint": "This check-up was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The check-up' refers back to that same visit.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ children typically learn languages faster than adults.",
-            "sentence": "___ children typically learn languages faster than adults.",
+            "question": "After the surgery, she had to stay in ___ hospital for three more days.",
+            "sentence": "After the surgery, she had to stay in ___ hospital for three more days.",
             "options": [
-                "a",
-                "an",
+                "(no article)",
                 "the",
-                "(no article)"
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "General plural noun in a scientific observation - children in general.",
-            "explanation": "Plural nouns in general, scientific, or observational statements take no article. 'Children learn languages' means all children in general, not specific ones.",
+            "hint": "Think about the hospital's function here, not the building itself.",
+            "explanation": "'Stay in hospital' (meaning as a patient) is a fixed expression with no article, unlike 'the hospital', which means the actual building.",
             "grammarRule": "Zero Article"
         },
         {
@@ -179,37 +179,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She has ___ sister living in New Zealand.",
-            "sentence": "She has ___ sister living in New Zealand.",
+            "question": "The lead actor gave ___ extraordinary performance that critics still talk about.",
+            "sentence": "The lead actor gave ___ extraordinary performance that critics still talk about.",
             "options": [
+                "a",
                 "an",
                 "the",
-                "(no article)",
-                "a"
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "a",
-            "hint": "'Sister' begins with the consonant sound 's'.",
-            "explanation": "Use 'a' before consonant sounds. 'Sister' starts with 's', so we write 'a sister'. This introduces the sister as new information.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "an",
+            "hint": "Check the vowel sound at the start of 'extraordinary'.",
+            "explanation": "'Extraordinary' starts with a vowel sound, so it takes 'an'. We say 'an extraordinary performance'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l64_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She called ___ sister after hearing the news.",
-            "sentence": "She called ___ sister after hearing the news.",
+            "question": "Of everything the actor has done, this role was ___ most demanding of his career.",
+            "sentence": "Of everything the actor has done, this role was ___ most demanding of his career.",
             "options": [
-                "the",
-                "(no article)",
+                "an",
                 "a",
-                "an"
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific sister already introduced - now a known person.",
-            "explanation": "After introducing someone with 'a sister' (new), refer to her as 'the sister' (known). Both the speaker and listener now know which sister is meant.",
+            "hint": "This compares the role to everything else he has ever done.",
+            "explanation": "Superlatives like 'the most demanding' always take 'the', since they compare one thing to all the rest.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She values ___ family above everything else.",
-            "sentence": "She values ___ family above everything else.",
+            "question": "Good directors know that ___ small details often make the biggest impact.",
+            "sentence": "Good directors know that ___ small details often make the biggest impact.",
             "options": [
-                "(no article)",
                 "a",
+                "the",
                 "an",
-                "the"
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Family' as an abstract concept or value takes no article.",
-            "explanation": "Abstract concepts (family, friendship, love, loyalty) take no article when used in general statements about values: 'Family is everything', 'She values family'.",
+            "hint": "This is a general statement about details as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Small details' here means such details in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -236,37 +236,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He bought ___ interesting book on local history.",
-            "sentence": "He bought ___ interesting book on local history.",
+            "question": "Every volunteer made ___ meaningful contribution to the shelter's renovation.",
+            "sentence": "Every volunteer made ___ meaningful contribution to the shelter's renovation.",
             "options": [
                 "a",
                 "an",
-                "the",
-                "(no article)"
+                "(no article)",
+                "the"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "'Interesting' begins with the vowel sound 'in'.",
-            "explanation": "Use 'an' before vowel sounds. 'Interesting' starts with the vowel 'i', so we write 'an interesting book'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "a",
+            "hint": "'Meaningful' starts with a consonant sound.",
+            "explanation": "'Meaningful' begins with a consonant sound, so it takes 'a'. We say 'a meaningful contribution'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l65_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He gave ___ book to his mother as a gift.",
-            "sentence": "He gave ___ book to his mother as a gift.",
+            "question": "___ committee decided to extend the volunteer program for another year.",
+            "sentence": "___ committee decided to extend the volunteer program for another year.",
             "options": [
                 "an",
                 "the",
-                "(no article)",
-                "a"
+                "a",
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific book he just bought - now a known item.",
-            "explanation": "After a noun is introduced ('he bought an interesting book'), use 'the' for the next mention ('he gave the book to his mother'). This is the a/an → the pattern.",
+            "hint": "A specific, known group is making this decision.",
+            "explanation": "'The' is used for a specific organized group already understood from context, like 'the committee' running the program.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ books are one of humanity's greatest inventions.",
-            "sentence": "___ books are one of humanity's greatest inventions.",
+            "question": "Volunteering builds ___ confidence in ways that few other experiences can.",
+            "sentence": "Volunteering builds ___ confidence in ways that few other experiences can.",
             "options": [
-                "the",
-                "(no article)",
                 "a",
-                "an"
+                "an",
+                "(no article)",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "Plural nouns in a general, philosophical statement take no article.",
-            "explanation": "Plural nouns in universal or philosophical statements take no article: 'Books are important', 'Libraries preserve knowledge', 'Stories connect people'.",
+            "hint": "Confidence is an abstract quality, not something countable.",
+            "explanation": "Abstract, uncountable nouns like confidence take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -293,18 +293,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "My brother is ___ engineer at a tech firm.",
-            "sentence": "My brother is ___ engineer at a tech firm.",
+            "question": "Data leaks have become ___ ongoing concern for major tech companies.",
+            "sentence": "Data leaks have become ___ ongoing concern for major tech companies.",
             "options": [
                 "(no article)",
+                "the",
                 "a",
-                "an",
-                "the"
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
-            "hint": "'Engineer' begins with the vowel sound 'en'.",
-            "explanation": "Use 'an' before vowel sounds. 'Engineer' starts with the vowel 'e', so we write 'an engineer'.",
+            "hint": "'Ongoing' begins with a vowel sound.",
+            "explanation": "'Ongoing' starts with a vowel sound, so it takes 'an'. We say 'an ongoing concern'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -312,18 +312,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He is ___ most talented engineer in his department.",
-            "sentence": "He is ___ most talented engineer in his department.",
+            "question": "___ internet has changed the way we shop, learn, and communicate.",
+            "sentence": "___ internet has changed the way we shop, learn, and communicate.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "(no article)"
+                "(no article)",
+                "an",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "'Most talented' is a superlative - superlatives always take 'the'.",
-            "explanation": "Superlative adjectives always use 'the': the most talented, the best, the most skilled. They identify someone as uniquely the top of their group.",
+            "hint": "There's essentially one global network we all mean by this word.",
+            "explanation": "'The internet' is treated as a single, unique system, so it takes 'the', similar to 'the sun' or 'the sky'.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ technology is changing how families communicate.",
-            "sentence": "___ technology is changing how families communicate.",
+            "question": "Many apps collect more ___ personal data than users realize.",
+            "sentence": "Many apps collect more ___ personal data than users realize.",
             "options": [
-                "an",
-                "the",
+                "a",
                 "(no article)",
-                "a"
+                "the",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "'Technology' is uncountable and used in a general statement.",
-            "explanation": "Uncountable nouns for large abstract concepts (technology, science, medicine, art) take no article when used in general statements about their effect on society.",
+            "hint": "Data, in this general sense, isn't treated as countable.",
+            "explanation": "Uncountable nouns like data take no article in general statements. We say 'personal data', not 'a personal data'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -350,18 +350,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Her father is ___ open-minded person.",
-            "sentence": "Her father is ___ open-minded person.",
+            "question": "She graduated with ___ impressive academic record from a small college.",
+            "sentence": "She graduated with ___ impressive academic record from a small college.",
             "options": [
                 "the",
-                "(no article)",
                 "a",
-                "an"
+                "an",
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "an",
-            "hint": "'Open-minded' begins with the vowel sound 'o'.",
-            "explanation": "Use 'an' before vowel sounds. 'Open-minded' starts with the vowel 'o', so we write 'an open-minded person'.",
+            "hint": "Listen to the vowel sound in 'impressive'.",
+            "explanation": "'Impressive' starts with a vowel sound, so it takes 'an'. We say 'an impressive record'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -369,18 +369,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He is ___ only parent who attended the school meeting.",
-            "sentence": "He is ___ only parent who attended the school meeting.",
+            "question": "She applied to three universities, and ___ first offer arrived within a week.",
+            "sentence": "She applied to three universities, and ___ first offer arrived within a week.",
             "options": [
                 "(no article)",
-                "a",
                 "an",
+                "a",
                 "the"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "'Only' makes the noun unique - there is just one person who attended.",
-            "explanation": "Words like 'only', 'first', and 'last' always trigger 'the' because they indicate a unique, one-of-a-kind entity: the only parent, the first person, the last chance.",
+            "hint": "A word ranking something, like 'first', is normally paired with this article.",
+            "explanation": "Ordinal numbers such as first and second take 'the'. We say 'the first offer' among several.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ parents shape their children's values and outlook.",
-            "sentence": "___ parents shape their children's values and outlook.",
+            "question": "Many students take a gap year before they go to ___ university.",
+            "sentence": "Many students take a gap year before they go to ___ university.",
             "options": [
-                "a",
+                "(no article)",
                 "an",
-                "the",
-                "(no article)"
+                "a",
+                "the"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "Plural noun in a general statement about parents as a group.",
-            "explanation": "Plural nouns in general statements about a group take no article: 'Parents shape children', 'Teachers inspire students', 'Leaders influence societies'.",
+            "hint": "Think about university as an idea here, not a specific campus.",
+            "explanation": "'Go to university' (meaning to study there) is a fixed expression with no article, unlike 'the university', which means a specific campus.",
             "grammarRule": "Zero Article"
         },
         {
@@ -407,18 +407,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She cooked ___ big Sunday roast for the family.",
-            "sentence": "She cooked ___ big Sunday roast for the family.",
+            "question": "The chef prepared ___ well-known regional dish using only local ingredients.",
+            "sentence": "The chef prepared ___ well-known regional dish using only local ingredients.",
             "options": [
-                "an",
                 "the",
+                "a",
                 "(no article)",
-                "a"
+                "an"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "'Big' begins with the consonant sound 'b'.",
-            "explanation": "Use 'a' before consonant sounds. 'Big' starts with 'b', so we write 'a big Sunday roast'.",
+            "hint": "'Well-known' starts with a consonant sound.",
+            "explanation": "'Well-known' begins with a consonant sound, so it takes 'a'. We say 'a well-known dish'.",
             "grammarRule": "Indefinite Article (a)"
         },
         {
@@ -426,18 +426,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Everyone agreed ___ meal was one of the best ever.",
-            "sentence": "Everyone agreed ___ meal was one of the best ever.",
+            "question": "The restaurant served a rare regional specialty, and ___ specialty quickly became its most popular dish.",
+            "sentence": "The restaurant served a rare regional specialty, and ___ specialty quickly became its most popular dish.",
             "options": [
-                "the",
                 "(no article)",
                 "a",
+                "the",
                 "an"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific meal she just cooked - now known and definite.",
-            "explanation": "After a noun is introduced ('a big Sunday roast'), subsequent references use 'the' ('the meal was one of the best'). This is the standard first-mention/second-mention pattern.",
+            "hint": "This specialty was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The specialty' refers back to that same regional dish.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She usually makes ___ dinner on Sunday evenings.",
-            "sentence": "She usually makes ___ dinner on Sunday evenings.",
+            "question": "In this region, most restaurant staff speak ___ French as well as English.",
+            "sentence": "In this region, most restaurant staff speak ___ French as well as English.",
             "options": [
-                "(no article)",
                 "a",
                 "an",
-                "the"
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Dinner' in a habitual routine context takes no article.",
-            "explanation": "Meal names in habitual statements take no article: 'She makes dinner', 'He cooks breakfast', 'They skip lunch'. These refer to the meal category, not a specific event.",
+            "hint": "Language names don't take an article.",
+            "explanation": "Names of languages, like French, Spanish, or Mandarin, take no article. We say 'speak French', not 'speak a French'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -464,18 +464,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He gave his daughter ___ important piece of advice.",
-            "sentence": "He gave his daughter ___ important piece of advice.",
+            "question": "Renewing your passport early is ___ essential step before booking international flights.",
+            "sentence": "Renewing your passport early is ___ essential step before booking international flights.",
             "options": [
-                "a",
                 "an",
                 "the",
-                "(no article)"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "an",
-            "hint": "'Important' begins with the vowel sound 'im'.",
-            "explanation": "Use 'an' before vowel sounds. 'Important' starts with the vowel 'i', so we write 'an important piece of advice'.",
+            "hint": "'Essential' begins with a vowel sound.",
+            "explanation": "'Essential' starts with a vowel sound, so it takes 'an'. We say 'an essential step'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -483,18 +483,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She never forgot ___ advice her father had given her.",
-            "sentence": "She never forgot ___ advice her father had given her.",
+            "question": "The embassy required two documents, and ___ second document took weeks to arrange.",
+            "sentence": "The embassy required two documents, and ___ second document took weeks to arrange.",
             "options": [
-                "an",
-                "the",
                 "(no article)",
-                "a"
+                "the",
+                "a",
+                "an"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific advice already mentioned - now a known piece of guidance.",
-            "explanation": "After introducing the advice ('an important piece of advice'), refer to it as 'the advice' in later sentences. The listener now knows exactly which advice is meant.",
+            "hint": "This singles out one of the two documents just mentioned.",
+            "explanation": "'The' can identify a specific item from a group already introduced, like 'the second document' of the two.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -502,8 +502,65 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ advice from experienced people can be invaluable.",
-            "sentence": "___ advice from experienced people can be invaluable.",
+            "question": "Border officials always check ___ passports carefully before allowing entry.",
+            "sentence": "Border officials always check ___ passports carefully before allowing entry.",
+            "options": [
+                "the",
+                "a",
+                "(no article)",
+                "an"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "(no article)",
+            "hint": "This is a general statement about passports as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Passports' here means such documents in general.",
+            "grammarRule": "Zero Article"
+        },
+        {
+            "id": "ai_l70_q1",
+            "instruction": "INSERT THE CORRECT ARTICLE",
+            "subtype": "articleInsertion",
+            "interactionType": "Bubble Pop",
+            "question": "She filed ___ formal complaint after the store refused to refund her.",
+            "sentence": "She filed ___ formal complaint after the store refused to refund her.",
+            "options": [
+                "(no article)",
+                "the",
+                "an",
+                "a"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "a",
+            "hint": "'Formal' starts with a consonant sound.",
+            "explanation": "'Formal' begins with a consonant sound, so it takes 'a'. We say 'a formal complaint'.",
+            "grammarRule": "Indefinite Article (a)"
+        },
+        {
+            "id": "ai_l70_q2",
+            "instruction": "INSERT THE CORRECT ARTICLE",
+            "subtype": "articleInsertion",
+            "interactionType": "Bubble Pop",
+            "question": "___ complaint that finally got a response was the one she posted publicly online.",
+            "sentence": "___ complaint that finally got a response was the one she posted publicly online.",
+            "options": [
+                "the",
+                "a",
+                "(no article)",
+                "an"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "the",
+            "hint": "The phrase 'that finally got a response' narrows this down to one specific complaint.",
+            "explanation": "When a descriptive phrase makes a noun specific, we use 'the'. It picks out exactly one complaint among many she made.",
+            "grammarRule": "Definite Article (the)"
+        },
+        {
+            "id": "ai_l70_q3",
+            "instruction": "INSERT THE CORRECT ARTICLE",
+            "subtype": "articleInsertion",
+            "interactionType": "Bubble Pop",
+            "question": "Consumers deserve ___ transparency from companies about how products are made.",
+            "sentence": "Consumers deserve ___ transparency from companies about how products are made.",
             "options": [
                 "the",
                 "(no article)",
@@ -512,65 +569,8 @@
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "'Advice' is uncountable and used in a general statement.",
-            "explanation": "Uncountable nouns (advice, information, knowledge, guidance) take no article in general statements: 'Advice is valuable', 'Information is power'.",
-            "grammarRule": "Zero Article"
-        },
-        {
-            "id": "ai_l70_q1",
-            "instruction": "INSERT THE CORRECT ARTICLE",
-            "subtype": "articleInsertion",
-            "interactionType": "Bubble Pop",
-            "question": "She has ___ good relationship with her in-laws.",
-            "sentence": "She has ___ good relationship with her in-laws.",
-            "options": [
-                "(no article)",
-                "a",
-                "an",
-                "the"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "a",
-            "hint": "'Good' begins with the consonant sound 'g'.",
-            "explanation": "Use 'a' before consonant sounds. 'Good' starts with 'g', so we write 'a good relationship'.",
-            "grammarRule": "Indefinite Article (a)"
-        },
-        {
-            "id": "ai_l70_q2",
-            "instruction": "INSERT THE CORRECT ARTICLE",
-            "subtype": "articleInsertion",
-            "interactionType": "Bubble Pop",
-            "question": "She values ___ relationship she has with her neighbors.",
-            "sentence": "She values ___ relationship she has with her neighbors.",
-            "options": [
-                "a",
-                "an",
-                "the",
-                "(no article)"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "the",
-            "hint": "The specific, identified relationship - made definite by 'she has'.",
-            "explanation": "Use 'the' when a noun is made specific by a possessive or relative clause. 'The relationship she has with her neighbors' identifies one particular connection.",
-            "grammarRule": "Definite Article (the)"
-        },
-        {
-            "id": "ai_l70_q3",
-            "instruction": "INSERT THE CORRECT ARTICLE",
-            "subtype": "articleInsertion",
-            "interactionType": "Bubble Pop",
-            "question": "___ relationships need trust and open communication to thrive.",
-            "sentence": "___ relationships need trust and open communication to thrive.",
-            "options": [
-                "an",
-                "the",
-                "(no article)",
-                "a"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "(no article)",
-            "hint": "Plural noun in a general statement about relationships in general.",
-            "explanation": "Plural nouns in general statements take no article. 'Relationships need trust' refers to all relationships in general.",
+            "hint": "Transparency is an abstract idea, not something countable.",
+            "explanation": "Abstract, uncountable nouns like transparency take no article in general statements.",
             "grammarRule": "Zero Article"
         }
     ]

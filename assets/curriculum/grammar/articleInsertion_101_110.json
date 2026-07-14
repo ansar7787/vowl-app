@@ -8,37 +8,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She downloaded ___ app to help manage her budget.",
-            "sentence": "She downloaded ___ app to help manage her budget.",
+            "question": "The department launched ___ rigorous new curriculum for graduate students.",
+            "sentence": "The department launched ___ rigorous new curriculum for graduate students.",
             "options": [
                 "a",
+                "(no article)",
                 "an",
-                "the",
-                "(no article)"
+                "the"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "'App' begins with the vowel sound 'a'.",
-            "explanation": "Use 'an' before vowel sounds. 'App' starts with the short vowel 'a', so we write 'an app'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "a",
+            "hint": "'Rigorous' starts with a consonant sound.",
+            "explanation": "'Rigorous' begins with a consonant sound, so it takes 'a'. We say 'a rigorous curriculum'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l101_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She checked ___ app daily to monitor her spending.",
-            "sentence": "She checked ___ app daily to monitor her spending.",
+            "question": "The university offered two research grants, and ___ larger grant went to a professor studying renewable energy.",
+            "sentence": "The university offered two research grants, and ___ larger grant went to a professor studying renewable energy.",
             "options": [
-                "an",
-                "the",
                 "(no article)",
-                "a"
+                "the",
+                "a",
+                "an"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific app she downloaded - now a known tool.",
-            "explanation": "Use 'the' to refer to the specific app already introduced. 'The app' = the budget management one she downloaded.",
+            "hint": "This singles out one of the two grants just mentioned.",
+            "explanation": "'The' can identify a specific item from a group already introduced, like 'the larger grant' of the two.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ technology is reshaping healthcare around the world.",
-            "sentence": "___ technology is reshaping healthcare around the world.",
+            "question": "Graduate programs typically expect students to complete ___ original research before graduating.",
+            "sentence": "Graduate programs typically expect students to complete ___ original research before graduating.",
             "options": [
-                "the",
-                "(no article)",
+                "an",
                 "a",
-                "an"
+                "(no article)",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "'Technology' as a broad, uncountable concept takes no article.",
-            "explanation": "Broad abstract concepts (technology, science, innovation, medicine) take no article when used in a general statement about their impact on society.",
+            "hint": "Research, in this general sense, isn't treated as countable.",
+            "explanation": "Uncountable nouns like research take no article in general statements. We say 'original research', not 'an original research'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -65,18 +65,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He received ___ software update overnight.",
-            "sentence": "He received ___ software update overnight.",
+            "question": "The startup unveiled ___ groundbreaking product at the industry conference.",
+            "sentence": "The startup unveiled ___ groundbreaking product at the industry conference.",
             "options": [
-                "(no article)",
-                "a",
+                "the",
                 "an",
-                "the"
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "'Software' begins with the consonant sound 's'.",
-            "explanation": "Use 'a' before consonant sounds. 'Software' starts with 's', so we write 'a software update'.",
+            "hint": "'Groundbreaking' starts with a consonant sound.",
+            "explanation": "'Groundbreaking' begins with a consonant sound, so it takes 'a'. We say 'a groundbreaking product'.",
             "grammarRule": "Indefinite Article (a)"
         },
         {
@@ -84,18 +84,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He installed ___ update and restarted his laptop.",
-            "sentence": "He installed ___ update and restarted his laptop.",
+            "question": "Of every product the company has launched, this one was ___ most successful by a wide margin.",
+            "sentence": "Of every product the company has launched, this one was ___ most successful by a wide margin.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "(no article)"
+                "(no article)",
+                "an",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The specific software update he received - now a known item.",
-            "explanation": "Use 'the' to refer to the specific update already mentioned. 'The update' = the software one he received overnight.",
+            "hint": "This compares the product to everything else the company has launched.",
+            "explanation": "Superlatives like 'the most successful' always take 'the', since they compare one thing to all the rest.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ cybersecurity is increasingly critical in the digital age.",
-            "sentence": "___ cybersecurity is increasingly critical in the digital age.",
+            "question": "Investors often say that ___ startups rarely succeed without a clear plan for growth.",
+            "sentence": "Investors often say that ___ startups rarely succeed without a clear plan for growth.",
             "options": [
                 "an",
-                "the",
                 "(no article)",
-                "a"
+                "a",
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "'Cybersecurity' is an uncountable field used in a general statement.",
-            "explanation": "Technical fields and disciplines (cybersecurity, artificial intelligence, cloud computing, data science) take no article in general statements about their importance.",
+            "hint": "This is a general statement about startups as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Startups' here means such companies in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -122,18 +122,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She set up ___ online store for her handmade crafts.",
-            "sentence": "She set up ___ online store for her handmade crafts.",
+            "question": "Researchers finally identified ___ underlying pattern behind the strange readings.",
+            "sentence": "Researchers finally identified ___ underlying pattern behind the strange readings.",
             "options": [
-                "the",
-                "(no article)",
                 "a",
-                "an"
+                "the",
+                "an",
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "an",
-            "hint": "'Online' begins with the vowel sound 'o'.",
-            "explanation": "Use 'an' before vowel sounds. 'Online' starts with the vowel 'o', so we write 'an online store'.",
+            "hint": "'Underlying' begins with a vowel sound.",
+            "explanation": "'Underlying' starts with a vowel sound, so it takes 'an'. We say 'an underlying pattern'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -141,18 +141,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ store she set up became very popular within weeks.",
-            "sentence": "___ store she set up became very popular within weeks.",
+            "question": "___ pattern that explained the data had been hiding in plain sight for years.",
+            "sentence": "___ pattern that explained the data had been hiding in plain sight for years.",
             "options": [
-                "(no article)",
                 "a",
                 "an",
+                "(no article)",
                 "the"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "The specific online store she set up - identified by 'she set up'.",
-            "explanation": "A defining clause ('she set up') makes the noun specific. 'The store she set up' = the one particular online shop she created.",
+            "hint": "The phrase 'that explained the data' narrows this down to one specific pattern.",
+            "explanation": "When a descriptive phrase makes a noun specific, we use 'the'. It picks out exactly one pattern among many.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ e-commerce has fundamentally changed how people shop.",
-            "sentence": "___ e-commerce has fundamentally changed how people shop.",
+            "question": "Physicists often spend years testing ___ theories before publishing their results.",
+            "sentence": "Physicists often spend years testing ___ theories before publishing their results.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "(no article)"
+                "the"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "'E-commerce' as a general digital concept takes no article.",
-            "explanation": "Digital economy concepts (e-commerce, social media, digital marketing, fintech) take no article when used in general statements about how they have changed business or society.",
+            "hint": "This is a general statement about theories as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Theories' here means such ideas in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -179,37 +179,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He posted ___ detailed review of the new smartphone.",
-            "sentence": "He posted ___ detailed review of the new smartphone.",
+            "question": "The case presented ___ ethical dilemma the court had never faced before.",
+            "sentence": "The case presented ___ ethical dilemma the court had never faced before.",
             "options": [
-                "an",
                 "the",
-                "(no article)",
-                "a"
+                "an",
+                "a",
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "a",
-            "hint": "'Detailed' begins with the consonant sound 'd'.",
-            "explanation": "Use 'a' before consonant sounds. 'Detailed' starts with 'd', so we write 'a detailed review'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "an",
+            "hint": "'Ethical' begins with a vowel sound.",
+            "explanation": "'Ethical' starts with a vowel sound, so it takes 'an'. We say 'an ethical dilemma'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l104_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Thousands of buyers read ___ review before purchasing.",
-            "sentence": "Thousands of buyers read ___ review before purchasing.",
+            "question": "Of every case the judge heard that year, this was ___ most difficult by far.",
+            "sentence": "Of every case the judge heard that year, this was ___ most difficult by far.",
             "options": [
-                "the",
-                "(no article)",
+                "an",
                 "a",
-                "an"
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific detailed review he posted - now a known document.",
-            "explanation": "Use 'the' to refer to the specific review already introduced. 'The review' = the detailed smartphone review he posted.",
+            "hint": "This compares the case to every other one the judge heard that year.",
+            "explanation": "Superlatives like 'the most difficult' always take 'the', since they compare one thing to all the rest.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ consumer reviews heavily influence online purchasing decisions.",
-            "sentence": "___ consumer reviews heavily influence online purchasing decisions.",
+            "question": "Courts must sometimes weigh ___ fairness against the strict letter of the law.",
+            "sentence": "Courts must sometimes weigh ___ fairness against the strict letter of the law.",
             "options": [
-                "(no article)",
                 "a",
+                "the",
                 "an",
-                "the"
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "Plural noun in a general statement about consumer behavior.",
-            "explanation": "Plural nouns in general statements about phenomena or behaviors take no article. 'Consumer reviews' here refers to all such reviews in general.",
+            "hint": "Fairness is an abstract quality, not something countable.",
+            "explanation": "Abstract, uncountable nouns like fairness take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -236,18 +236,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She had ___ innovative idea for a productivity app.",
-            "sentence": "She had ___ innovative idea for a productivity app.",
+            "question": "Her therapist explained that this was ___ unfounded fear rooted in childhood experiences.",
+            "sentence": "Her therapist explained that this was ___ unfounded fear rooted in childhood experiences.",
             "options": [
-                "a",
                 "an",
+                "(no article)",
                 "the",
-                "(no article)"
+                "a"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "an",
-            "hint": "'Innovative' begins with the vowel sound 'in'.",
-            "explanation": "Use 'an' before vowel sounds. 'Innovative' starts with the vowel 'i', so we write 'an innovative idea'.",
+            "hint": "'Unfounded' begins with a vowel sound.",
+            "explanation": "'Unfounded' starts with a vowel sound, so it takes 'an'. We say 'an unfounded fear'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -255,18 +255,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She pitched ___ idea to a panel of investors.",
-            "sentence": "She pitched ___ idea to a panel of investors.",
+            "question": "She had carried a quiet fear since childhood, and ___ fear only faded after years of therapy.",
+            "sentence": "She had carried a quiet fear since childhood, and ___ fear only faded after years of therapy.",
             "options": [
-                "an",
-                "the",
                 "(no article)",
+                "the",
+                "an",
                 "a"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific innovative idea she had - now a known concept.",
-            "explanation": "Use 'the' after introducing a noun. 'The idea' = the innovative productivity app idea she came up with.",
+            "hint": "You're returning to the exact fear named earlier in the sentence.",
+            "explanation": "The second mention of a noun takes 'the'. 'The fear' refers back to that same childhood worry.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ innovation is the engine of long-term economic growth.",
-            "sentence": "___ innovation is the engine of long-term economic growth.",
+            "question": "Psychologists generally agree that ___ anxiety often stems from uncertainty rather than real danger.",
+            "sentence": "Psychologists generally agree that ___ anxiety often stems from uncertainty rather than real danger.",
             "options": [
+                "a",
                 "the",
                 "(no article)",
-                "a",
                 "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "'Innovation' as an abstract concept takes no article.",
-            "explanation": "Abstract concepts used in general economic or philosophical statements (innovation, competition, creativity, entrepreneurship) take no article.",
+            "hint": "Anxiety, in this general sense, can't be counted.",
+            "explanation": "Abstract, uncountable nouns like anxiety take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -293,37 +293,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She posted ___ short video about her daily routine.",
-            "sentence": "She posted ___ short video about her daily routine.",
+            "question": "The architect proposed ___ unconventional design that divided public opinion.",
+            "sentence": "The architect proposed ___ unconventional design that divided public opinion.",
             "options": [
-                "(no article)",
                 "a",
-                "an",
-                "the"
+                "the",
+                "(no article)",
+                "an"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "a",
-            "hint": "'Short' begins with the consonant sound 'sh'.",
-            "explanation": "Use 'a' before consonant sounds. 'Short' starts with 'sh' (a consonant), so we write 'a short video'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "an",
+            "hint": "'Unconventional' begins with a vowel sound.",
+            "explanation": "'Unconventional' starts with a vowel sound, so it takes 'an'. We say 'an unconventional design'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l106_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ video went viral and reached millions of viewers.",
-            "sentence": "___ video went viral and reached millions of viewers.",
+            "question": "The city reviewed two competing designs, and ___ bolder design ultimately won approval.",
+            "sentence": "The city reviewed two competing designs, and ___ bolder design ultimately won approval.",
             "options": [
+                "the",
                 "a",
                 "an",
-                "the",
                 "(no article)"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The specific short video she posted - now a known piece of content.",
-            "explanation": "Use 'the' to refer to the specific video already introduced. 'The video' = the short daily-routine one she posted.",
+            "hint": "This singles out one of the two designs just mentioned.",
+            "explanation": "'The' can identify a specific item from a group already introduced, like 'the bolder design' of the two.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ social media has both positive and negative effects on mental health.",
-            "sentence": "___ social media has both positive and negative effects on mental health.",
+            "question": "Modern cities increasingly need ___ affordable housing near public transport.",
+            "sentence": "Modern cities increasingly need ___ affordable housing near public transport.",
             "options": [
-                "an",
                 "the",
                 "(no article)",
+                "an",
                 "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "'Social media' is a collective, uncountable concept used generally.",
-            "explanation": "Social media and mass communication concepts (social media, broadcast media, the internet as concept) take no article in general statements about their effects.",
+            "hint": "Housing, in this general sense, isn't treated as countable.",
+            "explanation": "Uncountable nouns like housing take no article in general statements. We say 'affordable housing', not 'an affordable housing'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -350,18 +350,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He enrolled in ___ online coding boot camp.",
-            "sentence": "He enrolled in ___ online coding boot camp.",
+            "question": "Tourists gathered around ___ iconic landmark to take photographs at sunset.",
+            "sentence": "Tourists gathered around ___ iconic landmark to take photographs at sunset.",
             "options": [
-                "the",
                 "(no article)",
                 "a",
-                "an"
+                "an",
+                "the"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "an",
-            "hint": "'Online' begins with the vowel sound 'o'.",
-            "explanation": "Use 'an' before vowel sounds. 'Online' starts with the vowel 'o', so we write 'an online coding boot camp'.",
+            "hint": "Check the vowel sound in 'iconic'.",
+            "explanation": "'Iconic' starts with a vowel sound, so it takes 'an'. We say 'an iconic landmark'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -369,8 +369,8 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He completed ___ boot camp in just twelve weeks.",
-            "sentence": "He completed ___ boot camp in just twelve weeks.",
+            "question": "No trip to Paris feels complete without a visit to ___ Eiffel Tower.",
+            "sentence": "No trip to Paris feels complete without a visit to ___ Eiffel Tower.",
             "options": [
                 "(no article)",
                 "a",
@@ -379,8 +379,8 @@
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "The specific coding boot camp he enrolled in - now a known course.",
-            "explanation": "Use 'the' to refer to the specific course already introduced. 'The boot camp' = the online coding one he enrolled in.",
+            "hint": "Names of specific famous landmarks like this usually take this article.",
+            "explanation": "Well-known named landmarks take 'the' - the Eiffel Tower, the Great Wall, the Colosseum.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ coding is now considered a foundational skill for the 21st century.",
-            "sentence": "___ coding is now considered a foundational skill for the 21st century.",
+            "question": "Historic landmarks like this attract ___ millions of visitors every single year.",
+            "sentence": "Historic landmarks like this attract ___ millions of visitors every single year.",
             "options": [
-                "a",
+                "(no article)",
                 "an",
-                "the",
-                "(no article)"
+                "a",
+                "the"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "'Coding' as a general digital skill takes no article.",
-            "explanation": "Uncountable skills and activities used as general concepts (coding, programming, design, writing) take no article when you make a general statement about their value.",
+            "hint": "This is a general statement about visitors as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Millions of visitors' here describes people in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -407,37 +407,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She bought ___ wireless keyboard for her home office.",
-            "sentence": "She bought ___ wireless keyboard for her home office.",
+            "question": "Scientists warn that this could cause ___ irreversible change to the coral reef.",
+            "sentence": "Scientists warn that this could cause ___ irreversible change to the coral reef.",
             "options": [
-                "an",
                 "the",
-                "(no article)",
-                "a"
+                "an",
+                "a",
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "a",
-            "hint": "'Wireless' begins with the consonant sound 'w'.",
-            "explanation": "Use 'a' before consonant sounds. 'Wireless' starts with 'w', so we write 'a wireless keyboard'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "an",
+            "hint": "'Irreversible' begins with a vowel sound.",
+            "explanation": "'Irreversible' starts with a vowel sound, so it takes 'an'. We say 'an irreversible change'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l108_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She connected ___ keyboard to her computer instantly.",
-            "sentence": "She connected ___ keyboard to her computer instantly.",
+            "question": "___ change that worried marine biologists most was the sudden rise in ocean temperature.",
+            "sentence": "___ change that worried marine biologists most was the sudden rise in ocean temperature.",
             "options": [
-                "the",
-                "(no article)",
+                "an",
                 "a",
-                "an"
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific wireless keyboard she just bought - now a known item.",
-            "explanation": "Use 'the' to refer to the specific object already mentioned. 'The keyboard' = the wireless one she purchased.",
+            "hint": "The phrase 'that worried marine biologists most' narrows this down to one specific change.",
+            "explanation": "When a descriptive phrase makes a noun specific, we use 'the'. It picks out exactly one change among many.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ artificial intelligence is transforming how businesses operate.",
-            "sentence": "___ artificial intelligence is transforming how businesses operate.",
+            "question": "Governments must act quickly to prevent ___ further damage to fragile ecosystems.",
+            "sentence": "Governments must act quickly to prevent ___ further damage to fragile ecosystems.",
             "options": [
-                "(no article)",
                 "a",
+                "the",
                 "an",
-                "the"
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Artificial intelligence' as a broad technological concept takes no article.",
-            "explanation": "Major technological concepts used in general statements (artificial intelligence, machine learning, automation, robotics) take no article.",
+            "hint": "Damage, in this general sense, isn't treated as countable.",
+            "explanation": "Uncountable nouns like damage take no article in general statements. We say 'further damage', not 'a further damage'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -464,18 +464,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The company launched ___ AI-powered customer support tool.",
-            "sentence": "The company launched ___ AI-powered customer support tool.",
+            "question": "Critics warned that this remains ___ unregulated industry with almost no oversight.",
+            "sentence": "Critics warned that this remains ___ unregulated industry with almost no oversight.",
             "options": [
-                "a",
                 "an",
-                "the",
-                "(no article)"
+                "(no article)",
+                "a",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "an",
-            "hint": "'AI' is read as 'ay-eye' - 'ay' starts with a vowel sound.",
-            "explanation": "For abbreviations, article choice depends on pronunciation. 'AI' is said 'ay-eye', and 'ay' is a vowel sound, so use 'an AI-powered tool', not 'a AI-powered tool'.",
+            "hint": "'Unregulated' begins with a vowel sound.",
+            "explanation": "'Unregulated' starts with a vowel sound, so it takes 'an'. We say 'an unregulated industry'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -483,8 +483,8 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ tool reduced customer wait times by forty per cent.",
-            "sentence": "___ tool reduced customer wait times by forty per cent.",
+            "question": "___ Food and Drug Administration eventually stepped in to regulate the new technology.",
+            "sentence": "___ Food and Drug Administration eventually stepped in to regulate the new technology.",
             "options": [
                 "an",
                 "the",
@@ -493,8 +493,8 @@
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific AI tool the company launched - now a known product.",
-            "explanation": "Use 'the' to refer to the specific tool already introduced. 'The tool' = the AI-powered customer support one.",
+            "hint": "Names of government agencies like this usually take this article.",
+            "explanation": "Government agencies known by their full name or initials, like the Food and Drug Administration, take 'the'.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -502,65 +502,8 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ data privacy is a growing concern for internet users worldwide.",
-            "sentence": "___ data privacy is a growing concern for internet users worldwide.",
-            "options": [
-                "the",
-                "(no article)",
-                "a",
-                "an"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "(no article)",
-            "hint": "'Data privacy' is an uncountable concept in a general digital rights statement.",
-            "explanation": "Digital rights concepts (data privacy, online security, net neutrality, digital access) take no article in general statements.",
-            "grammarRule": "Zero Article"
-        },
-        {
-            "id": "ai_l110_q1",
-            "instruction": "INSERT THE CORRECT ARTICLE",
-            "subtype": "articleInsertion",
-            "interactionType": "Bubble Pop",
-            "question": "She passed ___ difficult IT certification exam on her first attempt.",
-            "sentence": "She passed ___ difficult IT certification exam on her first attempt.",
-            "options": [
-                "(no article)",
-                "a",
-                "an",
-                "the"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "a",
-            "hint": "'Difficult' begins with the consonant sound 'd'.",
-            "explanation": "Use 'a' before consonant sounds. 'Difficult' starts with 'd', so we write 'a difficult exam'.",
-            "grammarRule": "Indefinite Article (a)"
-        },
-        {
-            "id": "ai_l110_q2",
-            "instruction": "INSERT THE CORRECT ARTICLE",
-            "subtype": "articleInsertion",
-            "interactionType": "Bubble Pop",
-            "question": "She was very proud of passing ___ exam first time.",
-            "sentence": "She was very proud of passing ___ exam first time.",
-            "options": [
-                "a",
-                "an",
-                "the",
-                "(no article)"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "the",
-            "hint": "The specific difficult certification exam she already took - now known.",
-            "explanation": "Use 'the' to refer to the specific exam already mentioned. 'The exam' = the difficult IT certification one she passed.",
-            "grammarRule": "Definite Article (the)"
-        },
-        {
-            "id": "ai_l110_q3",
-            "instruction": "INSERT THE CORRECT ARTICLE",
-            "subtype": "articleInsertion",
-            "interactionType": "Bubble Pop",
-            "question": "___ professional certifications are increasingly valued in the tech industry.",
-            "sentence": "___ professional certifications are increasingly valued in the tech industry.",
+            "question": "Automation is expected to replace ___ routine jobs across many industries.",
+            "sentence": "Automation is expected to replace ___ routine jobs across many industries.",
             "options": [
                 "an",
                 "the",
@@ -569,8 +512,65 @@
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "Plural noun in a general statement about the value of certifications.",
-            "explanation": "Plural nouns in general statements take no article. 'Professional certifications' here refers to all such certificates in general.",
+            "hint": "This is a general statement about jobs as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Routine jobs' here means such jobs in general.",
+            "grammarRule": "Zero Article"
+        },
+        {
+            "id": "ai_l110_q1",
+            "instruction": "INSERT THE CORRECT ARTICLE",
+            "subtype": "articleInsertion",
+            "interactionType": "Bubble Pop",
+            "question": "The report revealed ___ unequal pay structure across nearly every department.",
+            "sentence": "The report revealed ___ unequal pay structure across nearly every department.",
+            "options": [
+                "(no article)",
+                "a",
+                "the",
+                "an"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "an",
+            "hint": "'Unequal' begins with a vowel sound.",
+            "explanation": "'Unequal' starts with a vowel sound, so it takes 'an'. We say 'an unequal pay structure'.",
+            "grammarRule": "Indefinite Article (an)"
+        },
+        {
+            "id": "ai_l110_q2",
+            "instruction": "INSERT THE CORRECT ARTICLE",
+            "subtype": "articleInsertion",
+            "interactionType": "Bubble Pop",
+            "question": "Two departments had similar workloads, and ___ smaller department was paid noticeably less.",
+            "sentence": "Two departments had similar workloads, and ___ smaller department was paid noticeably less.",
+            "options": [
+                "the",
+                "an",
+                "a",
+                "(no article)"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "the",
+            "hint": "This singles out one of the two departments just mentioned.",
+            "explanation": "'The' can identify a specific item from a group already introduced, like 'the smaller department' of the two.",
+            "grammarRule": "Definite Article (the)"
+        },
+        {
+            "id": "ai_l110_q3",
+            "instruction": "INSERT THE CORRECT ARTICLE",
+            "subtype": "articleInsertion",
+            "interactionType": "Bubble Pop",
+            "question": "Fair employers regularly review ___ salaries to prevent hidden pay gaps.",
+            "sentence": "Fair employers regularly review ___ salaries to prevent hidden pay gaps.",
+            "options": [
+                "a",
+                "(no article)",
+                "an",
+                "the"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "(no article)",
+            "hint": "This is a general statement about salaries as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Salaries' here means such pay in general.",
             "grammarRule": "Zero Article"
         }
     ]

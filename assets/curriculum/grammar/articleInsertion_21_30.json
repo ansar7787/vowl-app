@@ -8,18 +8,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The pilot spotted ___ active volcano below.",
-            "sentence": "The pilot spotted ___ active volcano below.",
+            "question": "We had ___ early flight to catch, so we left the house at dawn.",
+            "sentence": "We had ___ early flight to catch, so we left the house at dawn.",
             "options": [
-                "a",
                 "an",
+                "a",
                 "the",
                 "(no article)"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "an",
-            "hint": "'Active' begins with the vowel sound 'ac'.",
-            "explanation": "Use 'an' before vowel sounds. 'Active' starts with the vowel 'a', so we write 'an active volcano'.",
+            "hint": "Listen to the sound at the start of 'early'.",
+            "explanation": "'Early' starts with a vowel sound, so it takes 'an'. We say 'an early flight'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -27,18 +27,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We sailed across ___ Pacific Ocean.",
-            "sentence": "We sailed across ___ Pacific Ocean.",
+            "question": "There was a long line at the check-in counter, and ___ line moved very slowly.",
+            "sentence": "There was a long line at the check-in counter, and ___ line moved very slowly.",
             "options": [
-                "an",
-                "the",
                 "(no article)",
+                "the",
+                "an",
                 "a"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Oceans always take 'the' - they are named bodies of water.",
-            "explanation": "All named oceans use 'the': the Pacific Ocean, the Atlantic Ocean, the Indian Ocean. The same rule applies to seas (the Red Sea, the Caribbean Sea).",
+            "hint": "This line was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The line' points back to that same check-in line.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They climbed ___ Mount Everest last spring.",
-            "sentence": "They climbed ___ Mount Everest last spring.",
+            "question": "Most travelers go through ___ security before boarding their flight.",
+            "sentence": "Most travelers go through ___ security before boarding their flight.",
             "options": [
-                "the",
-                "(no article)",
                 "a",
-                "an"
+                "an",
+                "(no article)",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "Single, individually named mountains take no article.",
-            "explanation": "Individual mountains with 'Mount' or 'Mt.' in their name take no article: Mount Everest, Mount Fuji, Mount Kilimanjaro. But mountain ranges take 'the': the Alps, the Himalayas.",
+            "hint": "Think of security as a process here, not a specific place.",
+            "explanation": "Set expressions like 'go through security' or 'go through customs' take no article.",
             "grammarRule": "Zero Article"
         },
         {
@@ -65,37 +65,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They discovered ___ oasis in the desert.",
-            "sentence": "They discovered ___ oasis in the desert.",
+            "question": "They crossed ___ narrow stone bridge over the river.",
+            "sentence": "They crossed ___ narrow stone bridge over the river.",
             "options": [
-                "(no article)",
-                "a",
                 "an",
-                "the"
+                "the",
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "an",
-            "hint": "'Oasis' begins with the vowel sound 'o'.",
-            "explanation": "Use 'an' before vowel sounds. 'Oasis' starts with the vowel 'o', so we write 'an oasis'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "a",
+            "hint": "'Narrow' starts with a consonant sound.",
+            "explanation": "'Narrow' begins with a consonant sound, so it takes 'a'. We say 'a narrow bridge'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l22_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The caravan crossed ___ Sahara Desert.",
-            "sentence": "The caravan crossed ___ Sahara Desert.",
+            "question": "The explorers followed ___ Amazon River deep into the rainforest.",
+            "sentence": "The explorers followed ___ Amazon River deep into the rainforest.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "(no article)"
+                "an",
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "Named deserts take 'the'.",
-            "explanation": "Named deserts always use 'the': the Sahara Desert, the Gobi Desert, the Atacama Desert. They follow the same rule as oceans and mountain ranges.",
+            "hint": "River names usually come with this article.",
+            "explanation": "Rivers, oceans, and seas take 'the' - the Amazon River, the Pacific Ocean. This is different from single mountains or lakes, which usually don't.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She was born in ___ France.",
-            "sentence": "She was born in ___ France.",
+            "question": "Every winter, skiers travel to ___ Switzerland for the mountains.",
+            "sentence": "Every winter, skiers travel to ___ Switzerland for the mountains.",
             "options": [
-                "an",
-                "the",
+                "a",
                 "(no article)",
-                "a"
+                "an",
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "Standard country names take no article.",
-            "explanation": "Most country names take no article: France, Brazil, Japan, Australia, India. Exceptions include countries with 'the' built into their name (the USA, the UK, the Netherlands).",
+            "hint": "Most country names stand alone.",
+            "explanation": "Most country names, including Switzerland, take no article. We say 'to Switzerland', not 'to the Switzerland'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -122,37 +122,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He mapped ___ frozen landscape.",
-            "sentence": "He mapped ___ frozen landscape.",
+            "question": "He scored ___ incredible three-pointer right at the buzzer.",
+            "sentence": "He scored ___ incredible three-pointer right at the buzzer.",
             "options": [
-                "the",
-                "(no article)",
                 "a",
-                "an"
+                "(no article)",
+                "an",
+                "the"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "a",
-            "hint": "'Frozen' begins with the consonant sound 'f'.",
-            "explanation": "Use 'a' before consonant sounds. 'Frozen' starts with 'f', so we write 'a frozen landscape'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswer": "an",
+            "hint": "Check the sound at the start of 'incredible'.",
+            "explanation": "'Incredible' begins with a vowel sound, so it takes 'an'. We say 'an incredible three-pointer'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l23_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We reached ___ highest point on the trail.",
-            "sentence": "We reached ___ highest point on the trail.",
+            "question": "Our team played two games last week, and ___ second game was much closer.",
+            "sentence": "Our team played two games last week, and ___ second game was much closer.",
             "options": [
-                "(no article)",
                 "a",
+                "(no article)",
                 "an",
                 "the"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "Superlatives like 'highest' always take 'the'.",
-            "explanation": "Superlative adjectives (the highest, the deepest, the longest, the best) always use 'the' because they identify something unique - the one that is most extreme.",
+            "hint": "'Second' is an ordinal number.",
+            "explanation": "Ordinal numbers like second, third, and last are almost always paired with 'the'. We say 'the second game'.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They spent the summer in ___ Asia.",
-            "sentence": "They spent the summer in ___ Asia.",
+            "question": "In gym class, we usually play ___ basketball on Fridays.",
+            "sentence": "In gym class, we usually play ___ basketball on Fridays.",
             "options": [
-                "a",
+                "(no article)",
                 "an",
                 "the",
-                "(no article)"
+                "a"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "Continents take no article.",
-            "explanation": "Continents take no article: Asia, Europe, Africa, North America, South America, Australia, Antarctica.",
+            "hint": "Sport names don't take an article.",
+            "explanation": "Sports and games like basketball, soccer, and tennis take no article. We say 'play basketball', not 'play a basketball'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -179,18 +179,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They live in ___ humid climate.",
-            "sentence": "They live in ___ humid climate.",
+            "question": "She has ___ challenging class right after lunch.",
+            "sentence": "She has ___ challenging class right after lunch.",
             "options": [
                 "an",
+                "a",
                 "the",
-                "(no article)",
-                "a"
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "'Humid' begins with the pronounced consonant 'h'.",
-            "explanation": "Use 'a' before consonant sounds. In 'humid', the 'h' is fully pronounced (unlike in 'honest' or 'hour'), so use 'a humid climate'.",
+            "hint": "'Challenging' starts with a consonant sound.",
+            "explanation": "'Challenging' begins with a consonant sound, so it takes 'a'. We say 'a challenging class'.",
             "grammarRule": "Indefinite Article (a)"
         },
         {
@@ -198,18 +198,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They trekked through ___ Alps.",
-            "sentence": "They trekked through ___ Alps.",
+            "question": "Two students helped set up the science fair, and ___ younger one built the volcano model.",
+            "sentence": "Two students helped set up the science fair, and ___ younger one built the volcano model.",
             "options": [
-                "the",
+                "an",
                 "(no article)",
-                "a",
-                "an"
+                "the",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Mountain ranges (plural names) always take 'the'.",
-            "explanation": "Mountain ranges take 'the': the Alps, the Himalayas, the Andes, the Rockies. Individual mountains do not: Mount Everest, Ben Nevis, Kilimanjaro.",
+            "hint": "This picks out one specific person from a pair already introduced.",
+            "explanation": "'The' can point to one specific item from a group already mentioned. 'The younger one' singles out one of the two students.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "A probe was sent to study ___ Mars.",
-            "sentence": "A probe was sent to study ___ Mars.",
+            "question": "This term, we are studying ___ history and geography.",
+            "sentence": "This term, we are studying ___ history and geography.",
             "options": [
-                "(no article)",
-                "a",
                 "an",
-                "the"
+                "a",
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "Individual planet names take no article.",
-            "explanation": "Planets named after classical figures take no article: Mars, Venus, Jupiter, Saturn, Neptune. Note: Earth sometimes uses 'the' (the Earth), but other planets do not.",
+            "hint": "School subject names usually stand alone.",
+            "explanation": "Academic subjects like history, geography, and math take no article when naming what you study.",
             "grammarRule": "Zero Article"
         },
         {
@@ -236,18 +236,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ alpine environment.",
-            "sentence": "It was ___ alpine environment.",
+            "question": "The waiter recommended ___ unusual dish made with local spices.",
+            "sentence": "The waiter recommended ___ unusual dish made with local spices.",
             "options": [
-                "a",
                 "an",
-                "the",
-                "(no article)"
+                "a",
+                "(no article)",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "an",
-            "hint": "'Alpine' begins with the vowel sound 'al'.",
-            "explanation": "Use 'an' before vowel sounds. 'Alpine' starts with the vowel 'a', so we write 'an alpine environment'.",
+            "hint": "Listen to the vowel sound in 'unusual'.",
+            "explanation": "'Unusual' starts with a vowel sound, so it takes 'an'. We say 'an unusual dish'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -255,18 +255,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He explored ___ Amazon River.",
-            "sentence": "He explored ___ Amazon River.",
+            "question": "We ordered two desserts, and ___ chocolate one disappeared first.",
+            "sentence": "We ordered two desserts, and ___ chocolate one disappeared first.",
             "options": [
                 "an",
                 "the",
-                "(no article)",
-                "a"
+                "a",
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Named rivers always take 'the'.",
-            "explanation": "All named rivers use 'the': the Amazon, the Nile, the Thames, the Mississippi, the Danube.",
+            "hint": "This singles out one of the two desserts just mentioned.",
+            "explanation": "'The' can pick out a specific item from a group already introduced. 'The chocolate one' identifies which dessert we mean.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They sailed to ___ Madagascar.",
-            "sentence": "They sailed to ___ Madagascar.",
+            "question": "On Friday nights, my parents enjoy having ___ dinner at their favorite restaurant.",
+            "sentence": "On Friday nights, my parents enjoy having ___ dinner at their favorite restaurant.",
             "options": [
                 "the",
-                "(no article)",
                 "a",
+                "(no article)",
                 "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "Single, individually named islands take no article.",
-            "explanation": "Single named islands take no article: Madagascar, Cuba, Iceland, Greenland, Bali. Island groups (plural) take 'the': the Bahamas, the Philippines, the Maldives.",
+            "hint": "Meal names usually stand alone.",
+            "explanation": "Meal names such as breakfast, lunch, and dinner take no article. We say 'having dinner', not 'having a dinner'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -293,37 +293,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He spotted ___ rocky island ahead.",
-            "sentence": "He spotted ___ rocky island ahead.",
+            "question": "We had ___ unplanned adventure exploring the new bike trail.",
+            "sentence": "We had ___ unplanned adventure exploring the new bike trail.",
             "options": [
-                "(no article)",
                 "a",
-                "an",
-                "the"
+                "the",
+                "(no article)",
+                "an"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "a",
-            "hint": "'Rocky' begins with the consonant sound 'r'.",
-            "explanation": "Use 'a' before consonant sounds. 'Rocky' starts with 'r', so we write 'a rocky island'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "an",
+            "hint": "What sound does 'unplanned' begin with?",
+            "explanation": "'Unplanned' starts with a vowel sound, so it takes 'an'. We say 'an unplanned adventure'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l26_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The ship crossed ___ equator.",
-            "sentence": "The ship crossed ___ equator.",
+            "question": "We visited two new cafes this weekend, and ___ first one had much better coffee.",
+            "sentence": "We visited two new cafes this weekend, and ___ first one had much better coffee.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "(no article)"
+                "an",
+                "(no article)",
+                "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The equator is a unique geographical line - there is only one.",
-            "explanation": "Unique geographical lines and zones take 'the': the equator, the North Pole, the South Pole, the Arctic Circle, the Tropic of Cancer.",
+            "hint": "'First' is an ordinal number.",
+            "explanation": "Ordinal numbers such as first, second, and last take 'the'. We say 'the first one' when comparing two things.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She studied ___ biology.",
-            "sentence": "She studied ___ biology.",
+            "question": "On weekends, my brother likes to go ___ hiking in the hills.",
+            "sentence": "On weekends, my brother likes to go ___ hiking in the hills.",
             "options": [
-                "an",
                 "the",
                 "(no article)",
-                "a"
+                "a",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "Academic disciplines take no article.",
-            "explanation": "Scientific and academic subjects take no article: biology, chemistry, mathematics, history, geography, economics.",
+            "hint": "This is a fixed 'go + activity' expression.",
+            "explanation": "Expressions like 'go hiking', 'go swimming', and 'go fishing' take no article before the activity.",
             "grammarRule": "Zero Article"
         },
         {
@@ -350,37 +350,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They found ___ inland route.",
-            "sentence": "They found ___ inland route.",
+            "question": "I need to mail ___ heavy package to my cousin today.",
+            "sentence": "I need to mail ___ heavy package to my cousin today.",
             "options": [
+                "an",
                 "the",
-                "(no article)",
                 "a",
-                "an"
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "an",
-            "hint": "'Inland' begins with the vowel sound 'in'.",
-            "explanation": "Use 'an' before vowel sounds. 'Inland' starts with the vowel 'i', so we write 'an inland route'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "a",
+            "hint": "'Heavy' starts with a consonant sound.",
+            "explanation": "'Heavy' begins with a consonant sound, so it takes 'a'. We say 'a heavy package'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l27_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The satellite orbited ___ Earth.",
-            "sentence": "The satellite orbited ___ Earth.",
+            "question": "The town built a new library last year, and ___ building has huge glass windows.",
+            "sentence": "The town built a new library last year, and ___ building has huge glass windows.",
             "options": [
-                "(no article)",
                 "a",
+                "(no article)",
                 "an",
                 "the"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "In an astronomical context, Earth is referred to as 'the Earth'.",
-            "explanation": "When 'Earth' is used in an astronomical or scientific context - especially with a verb like 'orbit' - it takes 'the'. Compare: 'Earth is a planet' (no article, planet name) vs. 'orbiting the Earth' (the, referring to our specific world).",
+            "hint": "This building was already mentioned once.",
+            "explanation": "Once something is introduced, later mentions use 'the'. 'The building' refers back to that same library.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ nature has a way of healing itself.",
-            "sentence": "___ nature has a way of healing itself.",
+            "question": "Many people in our town go to ___ work by bicycle.",
+            "sentence": "Many people in our town go to ___ work by bicycle.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "(no article)"
+                "the"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "'Nature' used as a general, abstract concept takes no article.",
-            "explanation": "When 'nature' refers to the natural world in a general, philosophical sense, no article is used: 'Nature is beautiful', 'Respect nature'. Compare: 'the nature of the problem' (the, with a modifier).",
+            "hint": "This is a fixed expression about commuting, not a specific place.",
+            "explanation": "'Go to work' is a set expression with no article, similar to 'go to school' or 'go to bed'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -407,18 +407,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She designed ___ green rooftop garden.",
-            "sentence": "She designed ___ green rooftop garden.",
+            "question": "She painted ___ vivid sunset for the art contest.",
+            "sentence": "She painted ___ vivid sunset for the art contest.",
             "options": [
-                "an",
-                "the",
                 "(no article)",
-                "a"
+                "a",
+                "an",
+                "the"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a",
-            "hint": "'Green' begins with the consonant sound 'g'.",
-            "explanation": "Use 'a' before consonant sounds. 'Green' starts with 'g', so we write 'a green rooftop garden'.",
+            "hint": "'Vivid' starts with a consonant sound.",
+            "explanation": "'Vivid' begins with a consonant sound, so it takes 'a'. We say 'a vivid sunset'.",
             "grammarRule": "Indefinite Article (a)"
         },
         {
@@ -426,18 +426,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "A tanker navigated ___ Suez Canal.",
-            "sentence": "A tanker navigated ___ Suez Canal.",
+            "question": "Of all her paintings, this landscape is ___ most colorful.",
+            "sentence": "Of all her paintings, this landscape is ___ most colorful.",
             "options": [
-                "the",
-                "(no article)",
                 "a",
+                "(no article)",
+                "the",
                 "an"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Named canals always take 'the'.",
-            "explanation": "Named canals take 'the': the Suez Canal, the Panama Canal, the English Channel. They follow the same rule as rivers and oceans.",
+            "hint": "This compares one painting to every other one she has made.",
+            "explanation": "Superlatives like 'the most colorful' or 'the best' always take 'the', since they compare one thing to all the rest.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Tourists often visit ___ Mount Fuji.",
-            "sentence": "Tourists often visit ___ Mount Fuji.",
+            "question": "My uncle spends his weekends painting ___ landscapes of the countryside.",
+            "sentence": "My uncle spends his weekends painting ___ landscapes of the countryside.",
             "options": [
-                "(no article)",
                 "a",
                 "an",
-                "the"
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "Individual mountains with 'Mount' in their name take no article.",
-            "explanation": "No article is used with 'Mount' + proper name: Mount Fuji, Mount Rushmore, Mount Olympus. Remember: mountain ranges take 'the' (the Alps), but individual peaks do not.",
+            "hint": "This is about landscapes in general, not specific ones.",
+            "explanation": "A general statement about plural nouns uses no article. 'Painting landscapes' describes the activity in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -464,37 +464,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "It was ___ enormous challenge.",
-            "sentence": "It was ___ enormous challenge.",
+            "question": "This winter has been ___ remarkably mild one so far.",
+            "sentence": "This winter has been ___ remarkably mild one so far.",
             "options": [
                 "a",
                 "an",
-                "the",
-                "(no article)"
+                "(no article)",
+                "the"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "'Enormous' begins with the vowel sound 'en'.",
-            "explanation": "Use 'an' before vowel sounds. 'Enormous' starts with the vowel 'e', so we write 'an enormous challenge'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "a",
+            "hint": "'Remarkably' starts with a consonant sound.",
+            "explanation": "'Remarkably' begins with a consonant sound, so it takes 'a'. We say 'a remarkably mild winter'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l29_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "We visited ___ Bahamas last winter.",
-            "sentence": "We visited ___ Bahamas last winter.",
+            "question": "Yesterday there was a huge storm, and ___ storm knocked down several trees.",
+            "sentence": "Yesterday there was a huge storm, and ___ storm knocked down several trees.",
             "options": [
-                "an",
-                "the",
                 "(no article)",
-                "a"
+                "the",
+                "a",
+                "an"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "Groups of islands with a plural name take 'the'.",
-            "explanation": "Island groups and archipelagos with plural names take 'the': the Bahamas, the Maldives, the Philippines, the Canary Islands. Single islands do not: Cuba, Iceland, Bali.",
+            "hint": "This storm was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The storm' refers back to that same huge storm.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They camped beside ___ Lake Baikal.",
-            "sentence": "They camped beside ___ Lake Baikal.",
+            "question": "Farmers always welcome ___ rain after a long dry spell.",
+            "sentence": "Farmers always welcome ___ rain after a long dry spell.",
             "options": [
                 "the",
-                "(no article)",
                 "a",
+                "(no article)",
                 "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "Individual lakes named with 'Lake' + proper name take no article.",
-            "explanation": "Individual named lakes take no article when 'Lake' comes first: Lake Baikal, Lake Victoria, Lake Superior. Compare rivers, which always take 'the': the Thames, the Nile.",
+            "hint": "Rain can't be counted, so it needs no article here.",
+            "explanation": "Uncountable nouns like rain take no article in general statements. We say 'welcome rain', not 'welcome a rain'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -521,18 +521,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "This is ___ dry and dusty region.",
-            "sentence": "This is ___ dry and dusty region.",
+            "question": "We boarded ___ crowded train to the coast.",
+            "sentence": "We boarded ___ crowded train to the coast.",
             "options": [
                 "(no article)",
-                "a",
                 "an",
-                "the"
+                "the",
+                "a"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "'Dry' begins with the consonant sound 'd'.",
-            "explanation": "Use 'a' before consonant sounds. 'Dry' starts with 'd', so we write 'a dry and dusty region'.",
+            "hint": "'Crowded' starts with a consonant sound.",
+            "explanation": "'Crowded' begins with a consonant sound, so it takes 'a'. We say 'a crowded train'.",
             "grammarRule": "Indefinite Article (a)"
         },
         {
@@ -540,18 +540,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ North Pole is covered in ice.",
-            "sentence": "___ North Pole is covered in ice.",
+            "question": "Two trains were delayed today, and ___ earlier one was cancelled completely.",
+            "sentence": "Two trains were delayed today, and ___ earlier one was cancelled completely.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "(no article)"
+                "a",
+                "(no article)",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The North Pole is a unique geographical point - there is only one.",
-            "explanation": "Unique geographical poles and extreme points take 'the': the North Pole, the South Pole. They are one-of-a-kind locations.",
+            "hint": "This singles out one of the two trains just mentioned.",
+            "explanation": "'The' can pick out one specific item from a group already introduced. 'The earlier one' identifies which train we mean.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She grew up in ___ London.",
-            "sentence": "She grew up in ___ London.",
+            "question": "Many commuters prefer to travel by ___ train rather than by car.",
+            "sentence": "Many commuters prefer to travel by ___ train rather than by car.",
             "options": [
                 "an",
-                "the",
                 "(no article)",
-                "a"
+                "a",
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "City names take no article.",
-            "explanation": "Cities and towns never take an article: London, Paris, Tokyo, Cairo, Sydney. The same rule applies to villages, towns, and most named settlements.",
+            "hint": "After 'by', a transport word usually stands completely alone.",
+            "explanation": "Modes of transport after 'by' - by train, by car, by plane - take no article.",
             "grammarRule": "Zero Article"
         }
     ]

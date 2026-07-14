@@ -8,18 +8,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She gave ___ honest opinion about the proposal.",
-            "sentence": "She gave ___ honest opinion about the proposal.",
+            "question": "The manager asked the team for ___ unbiased opinion about the new plan.",
+            "sentence": "The manager asked the team for ___ unbiased opinion about the new plan.",
             "options": [
-                "a",
                 "an",
-                "the",
-                "(no article)"
+                "a",
+                "(no article)",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "an",
-            "hint": "The 'h' in 'honest' is silent - it sounds like 'awnest'.",
-            "explanation": "Some 'h' words have a silent 'h': honest, hour, heir, honor. These start with a vowel sound, so use 'an': an honest opinion, an hour, an heir.",
+            "hint": "Listen to the vowel sound in 'unbiased'.",
+            "explanation": "'Unbiased' starts with a vowel sound, so it takes 'an'. We say 'an unbiased opinion'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -27,18 +27,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She was asked to give ___ opinion she truly believed.",
-            "sentence": "She was asked to give ___ opinion she truly believed.",
+            "question": "Everyone in the meeting spoke, but ___ opinion that mattered most was the client's.",
+            "sentence": "Everyone in the meeting spoke, but ___ opinion that mattered most was the client's.",
             "options": [
-                "an",
+                "a",
                 "the",
-                "(no article)",
-                "a"
+                "an",
+                "(no article)"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific opinion being requested - defined by 'she truly believed'.",
-            "explanation": "When a relative clause or modifier identifies exactly which opinion is meant, use 'the': 'the opinion she truly believed' pinpoints one specific view.",
+            "hint": "The phrase 'that mattered most' narrows this down to one specific opinion.",
+            "explanation": "When a phrase like 'that mattered most' makes a noun specific, we use 'the'. It picks out exactly one opinion among many.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -46,18 +46,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ honesty is the foundation of any good relationship.",
-            "sentence": "___ honesty is the foundation of any good relationship.",
+            "question": "Good managers value ___ honesty over comfortable silence.",
+            "sentence": "Good managers value ___ honesty over comfortable silence.",
             "options": [
                 "the",
+                "an",
                 "(no article)",
-                "a",
-                "an"
+                "a"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "'Honesty' is an abstract virtue in a general, philosophical statement.",
-            "explanation": "Abstract nouns representing virtues or qualities (honesty, loyalty, courage, kindness) take no article in general statements about their value.",
+            "hint": "Honesty is an abstract idea, not something you can count.",
+            "explanation": "Abstract, uncountable nouns like honesty take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -65,37 +65,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She enrolled in ___ useful evening course.",
-            "sentence": "She enrolled in ___ useful evening course.",
+            "question": "This internship is ___ ideal opportunity for someone starting their career.",
+            "sentence": "This internship is ___ ideal opportunity for someone starting their career.",
             "options": [
                 "(no article)",
+                "the",
                 "a",
-                "an",
-                "the"
+                "an"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "a",
-            "hint": "'Useful' sounds like 'yoo-ful' - starting with the consonant 'y'.",
-            "explanation": "Although 'useful' begins with the vowel letter 'u', it is pronounced 'YOO-ful'. The consonant sound 'y' at the start means you must use 'a useful', not 'an useful'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "an",
+            "hint": "'Ideal' begins with a vowel sound.",
+            "explanation": "'Ideal' starts with a vowel sound, so it takes 'an'. We say 'an ideal opportunity'.",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l42_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She completed ___ course and earned a certificate.",
-            "sentence": "She completed ___ course and earned a certificate.",
+            "question": "She had two chances to apply, but ___ second one had a much later deadline.",
+            "sentence": "She had two chances to apply, but ___ second one had a much later deadline.",
             "options": [
-                "a",
-                "an",
                 "the",
+                "an",
+                "a",
                 "(no article)"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The specific course she already enrolled in - now a known noun.",
-            "explanation": "After a noun has been introduced with 'a', use 'the' in the next reference. She enrolled in a course (new information), then she completed the course (known information).",
+            "hint": "A number that shows order, like 'second', signals this article.",
+            "explanation": "Ordinal numbers such as second, third, and last take 'the'. We say 'the second one' when comparing two options.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -103,18 +103,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ education opens doors to better opportunities.",
-            "sentence": "___ education opens doors to better opportunities.",
+            "question": "___ opportunities like this rarely come around twice.",
+            "sentence": "___ opportunities like this rarely come around twice.",
             "options": [
-                "an",
                 "the",
                 "(no article)",
+                "an",
                 "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "'Education' is an uncountable concept in a general philosophical statement.",
-            "explanation": "When 'education' refers to the general concept of learning and schooling, no article is used: 'Education is important', 'Access to education', 'She values education'.",
+            "hint": "This is a general statement about opportunities as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Opportunities like this' means such opportunities in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -122,27 +122,27 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The journey takes ___ hour and a half.",
-            "sentence": "The journey takes ___ hour and a half.",
+            "question": "Our neighbor is ___ generous man who always helps with small repairs.",
+            "sentence": "Our neighbor is ___ generous man who always helps with small repairs.",
             "options": [
+                "an",
                 "the",
-                "(no article)",
                 "a",
-                "an"
+                "(no article)"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "an",
-            "hint": "The 'h' in 'hour' is silent - it sounds like 'owr'.",
-            "explanation": "'Hour' has a silent 'h', so it begins with the vowel sound 'ow'. Use 'an': an hour, an hour and a half, an hourly rate. This is one of the most common silent-h words.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "a",
+            "hint": "'Generous' starts with a consonant sound.",
+            "explanation": "'Generous' begins with a consonant sound, so it takes 'a'. We say 'a generous man'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l43_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They spent most of ___ hour discussing the agenda.",
-            "sentence": "They spent most of ___ hour discussing the agenda.",
+            "question": "Our neighbor lent us his ladder last week, and ___ ladder is still in our garage.",
+            "sentence": "Our neighbor lent us his ladder last week, and ___ ladder is still in our garage.",
             "options": [
                 "(no article)",
                 "a",
@@ -151,8 +151,8 @@
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "The specific hour-long meeting that was already mentioned.",
-            "explanation": "Use 'the' when the noun refers to a known, specific period of time. 'The hour' refers to the particular meeting slot they are discussing.",
+            "hint": "This ladder was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The ladder' refers back to that same ladder he lent us.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -160,18 +160,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ punctuality shows respect for other people's time.",
-            "sentence": "___ punctuality shows respect for other people's time.",
+            "question": "Most people try to be good ___ neighbors to the families around them.",
+            "sentence": "Most people try to be good ___ neighbors to the families around them.",
             "options": [
-                "a",
+                "(no article)",
                 "an",
                 "the",
-                "(no article)"
+                "a"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "'Punctuality' is an abstract quality used in a general statement.",
-            "explanation": "Abstract qualities (punctuality, reliability, patience, professionalism) take no article in general statements: 'Punctuality is important', 'Patience is a virtue'.",
+            "hint": "This is a general statement about neighbors as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Good neighbors' here means such neighbors in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -179,37 +179,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He applied for ___ one-year work visa.",
-            "sentence": "He applied for ___ one-year work visa.",
+            "question": "They hired ___ outdated but affordable contractor recommended by a friend.",
+            "sentence": "They hired ___ outdated but affordable contractor recommended by a friend.",
             "options": [
-                "an",
                 "the",
+                "an",
                 "(no article)",
                 "a"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "a",
-            "hint": "'One' is pronounced 'wun' - starting with the consonant 'w'.",
-            "explanation": "Despite starting with the vowel letter 'o', 'one' is pronounced 'wun'. Its initial sound is the consonant 'w', so use 'a one-year visa', not 'an one-year visa'.",
-            "grammarRule": "Indefinite Article (a)"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "an",
+            "hint": "Check the vowel sound at the start of 'outdated'.",
+            "explanation": "'Outdated' starts with a vowel sound, so it takes 'an'. We say 'an outdated contractor' - though not his skills!",
+            "grammarRule": "Indefinite Article (an)"
         },
         {
             "id": "ai_l44_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "He received ___ visa and left for Canada.",
-            "sentence": "He received ___ visa and left for Canada.",
+            "question": "The contractor suggested a full kitchen renovation, and ___ renovation ended up costing much more than planned.",
+            "sentence": "The contractor suggested a full kitchen renovation, and ___ renovation ended up costing much more than planned.",
             "options": [
-                "the",
+                "an",
                 "(no article)",
-                "a",
-                "an"
+                "the",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "The specific visa he just applied for - now a known noun.",
-            "explanation": "Use 'the' after introducing a noun. He applied for a visa (new), then received the visa (known). This is the standard a → the pattern for second mentions.",
+            "hint": "This renovation was already mentioned once.",
+            "explanation": "Once something is introduced, later mentions take 'the'. 'The renovation' refers back to that same project.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -217,18 +217,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ patience is essential when dealing with visa applications.",
-            "sentence": "___ patience is essential when dealing with visa applications.",
+            "question": "Before you renovate, always set aside extra ___ money for surprises.",
+            "sentence": "Before you renovate, always set aside extra ___ money for surprises.",
             "options": [
-                "(no article)",
                 "a",
                 "an",
-                "the"
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Patience' is an abstract quality - no article needed in a general statement.",
-            "explanation": "Abstract qualities (patience, persistence, determination) take no article when used in general advice or observations: 'Patience is a virtue'.",
+            "hint": "Money can't be counted the way individual coins can.",
+            "explanation": "Uncountable nouns like money take no article in general advice. We say 'extra money', not 'an extra money'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -236,18 +236,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She holds ___ MBA from a top business school.",
-            "sentence": "She holds ___ MBA from a top business school.",
+            "question": "She gave ___ effective presentation that convinced the entire board.",
+            "sentence": "She gave ___ effective presentation that convinced the entire board.",
             "options": [
-                "a",
                 "an",
+                "a",
                 "the",
                 "(no article)"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "an",
-            "hint": "Say 'MBA' letter by letter: 'em-bee-ay' - 'em' starts with a vowel.",
-            "explanation": "For abbreviations, article choice depends on pronunciation. 'MBA' is said 'em-BEE-ay'. The first letter sounds like 'em' (a vowel), so use 'an MBA', not 'a MBA'.",
+            "hint": "'Effective' starts with a vowel sound.",
+            "explanation": "'Effective' begins with a vowel sound, so it takes 'an'. We say 'an effective presentation'.",
             "grammarRule": "Indefinite Article (an)"
         },
         {
@@ -255,18 +255,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ MBA she earned helped her secure a leadership role.",
-            "sentence": "___ MBA she earned helped her secure a leadership role.",
+            "question": "She gave two presentations that day, and ___ afternoon presentation went far more smoothly.",
+            "sentence": "She gave two presentations that day, and ___ afternoon presentation went far more smoothly.",
             "options": [
-                "an",
+                "a",
                 "the",
                 "(no article)",
-                "a"
+                "an"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific MBA degree already mentioned - now identified.",
-            "explanation": "Use 'the' to refer to a specific qualification already introduced. 'The MBA she earned' identifies her particular degree.",
+            "hint": "This singles out one specific presentation from the two just mentioned.",
+            "explanation": "'The' can identify one specific item from a group already introduced, such as 'the afternoon presentation' of the two.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -274,18 +274,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ professional qualifications open doors in today's job market.",
-            "sentence": "___ professional qualifications open doors in today's job market.",
+            "question": "In most companies, ___ punctuality is expected at every meeting.",
+            "sentence": "In most companies, ___ punctuality is expected at every meeting.",
             "options": [
+                "a",
                 "the",
                 "(no article)",
-                "a",
                 "an"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "General plural noun in a statement about qualifications in general.",
-            "explanation": "Plural nouns in general statements take no article. 'Professional qualifications' here refers to the category of qualifications in general, not specific ones.",
+            "hint": "Punctuality is an abstract quality, not something countable.",
+            "explanation": "Abstract, uncountable nouns like punctuality take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -293,37 +293,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The city needs ___ efficient public transport network.",
-            "sentence": "The city needs ___ efficient public transport network.",
+            "question": "Her doctor recommended ___ demanding but effective new workout plan.",
+            "sentence": "Her doctor recommended ___ demanding but effective new workout plan.",
             "options": [
-                "(no article)",
-                "a",
                 "an",
-                "the"
+                "(no article)",
+                "the",
+                "a"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "an",
-            "hint": "'Efficient' begins with the vowel sound 'ih'.",
-            "explanation": "Use 'an' before vowel sounds. 'Efficient' starts with the vowel 'e', so we write 'an efficient network'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "a",
+            "hint": "'Demanding' starts with a consonant sound.",
+            "explanation": "'Demanding' begins with a consonant sound, so it takes 'a'. We say 'a demanding workout plan'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l46_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The government upgraded ___ network over three years.",
-            "sentence": "The government upgraded ___ network over three years.",
+            "question": "For most adults, ___ heart is the hardest-working muscle in the body.",
+            "sentence": "For most adults, ___ heart is the hardest-working muscle in the body.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "(no article)"
+                "a",
+                "(no article)",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The specific public transport network already mentioned.",
-            "explanation": "Use 'the' to refer to the specific network that was introduced. After 'a network' (new), it becomes 'the network' (known).",
+            "hint": "We're talking about a body part in a general, familiar way.",
+            "explanation": "Body parts are often referred to with 'the' when speaking generally - 'the heart', 'the brain', 'the liver'.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -331,18 +331,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ traffic congestion is a growing problem in most cities.",
-            "sentence": "___ traffic congestion is a growing problem in most cities.",
+            "question": "Doctors agree that ___ regular exercise lowers the risk of heart disease.",
+            "sentence": "Doctors agree that ___ regular exercise lowers the risk of heart disease.",
             "options": [
-                "an",
                 "the",
                 "(no article)",
+                "an",
                 "a"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "'Traffic congestion' is an uncountable compound noun used generally.",
-            "explanation": "Compound noun phrases used as general concepts (traffic congestion, air pollution, noise pollution) take no article in general statements.",
+            "hint": "Exercise, as a general activity, can't be counted.",
+            "explanation": "Abstract, uncountable nouns like exercise take no article in general statements.",
             "grammarRule": "Zero Article"
         },
         {
@@ -350,18 +350,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She dreamed of becoming ___ successful entrepreneur.",
-            "sentence": "She dreamed of becoming ___ successful entrepreneur.",
+            "question": "She joined ___ relaxing yoga session after work on Thursdays.",
+            "sentence": "She joined ___ relaxing yoga session after work on Thursdays.",
             "options": [
+                "an",
                 "the",
-                "(no article)",
                 "a",
-                "an"
+                "(no article)"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "a",
-            "hint": "'Successful' begins with the consonant sound 's'.",
-            "explanation": "Use 'a' before consonant sounds. 'Successful' starts with 's', so we write 'a successful entrepreneur'.",
+            "hint": "'Relaxing' starts with a consonant sound.",
+            "explanation": "'Relaxing' begins with a consonant sound, so it takes 'a'. We say 'a relaxing yoga session'.",
             "grammarRule": "Indefinite Article (a)"
         },
         {
@@ -369,8 +369,8 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ entrepreneur she met at the conference became her mentor.",
-            "sentence": "___ entrepreneur she met at the conference became her mentor.",
+            "question": "Two instructors teach the class, and ___ newer instructor focuses more on breathing.",
+            "sentence": "Two instructors teach the class, and ___ newer instructor focuses more on breathing.",
             "options": [
                 "(no article)",
                 "a",
@@ -379,8 +379,8 @@
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "the",
-            "hint": "The relative clause 'she met at the conference' identifies which specific person.",
-            "explanation": "A defining relative clause makes a noun definite. 'The entrepreneur she met at the conference' specifies exactly which person - there is only one who fits that description.",
+            "hint": "This singles out one of the two instructors just mentioned.",
+            "explanation": "'The' can identify a specific person from a group already introduced, like 'the newer instructor' of the two.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -388,18 +388,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ hard work and creativity are the keys to success.",
-            "sentence": "___ hard work and creativity are the keys to success.",
+            "question": "She has practiced ___ yoga for over five years.",
+            "sentence": "She has practiced ___ yoga for over five years.",
             "options": [
+                "(no article)",
                 "a",
                 "an",
-                "the",
-                "(no article)"
+                "the"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "(no article)",
-            "hint": "Plural uncountable concepts in a general statement take no article.",
-            "explanation": "Uncountable nouns and abstract concepts (hard work, creativity, talent, passion) take no article in general statements about their importance.",
+            "hint": "Names of disciplines and practices don't usually take an article.",
+            "explanation": "Disciplines like yoga, meditation, and karate take no article. We say 'practiced yoga', not 'practiced a yoga'.",
             "grammarRule": "Zero Article"
         },
         {
@@ -407,37 +407,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "I need ___ umbrella - it is starting to rain.",
-            "sentence": "I need ___ umbrella - it is starting to rain.",
+            "question": "She missed her connection because of ___ delayed train from the suburbs.",
+            "sentence": "She missed her connection because of ___ delayed train from the suburbs.",
             "options": [
-                "an",
                 "the",
-                "(no article)",
-                "a"
+                "a",
+                "an",
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "an",
-            "hint": "'Umbrella' begins with the vowel sound 'um'.",
-            "explanation": "Use 'an' before vowel sounds. 'Umbrella' starts with the short vowel 'u', so we write 'an umbrella'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "a",
+            "hint": "'Delayed' starts with a consonant sound.",
+            "explanation": "'Delayed' begins with a consonant sound, so it takes 'a'. We say 'a delayed train'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l48_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "Could you pass me ___ umbrella by the front door?",
-            "sentence": "Could you pass me ___ umbrella by the front door?",
+            "question": "Her train was delayed by a signal failure, and ___ delay made her miss her connection.",
+            "sentence": "Her train was delayed by a signal failure, and ___ delay made her miss her connection.",
             "options": [
-                "the",
                 "(no article)",
-                "a",
-                "an"
+                "an",
+                "the",
+                "a"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "correctAnswer": "the",
-            "hint": "Both people know which umbrella - the one visible by the front door.",
-            "explanation": "Use 'the' when both the speaker and listener can identify exactly which item is meant. 'The umbrella by the front door' is specific because of the location modifier.",
+            "hint": "This delay was already mentioned once.",
+            "explanation": "The second mention of a noun takes 'the'. 'The delay' refers back to that same signal failure.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -445,18 +445,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ rain in this region falls mostly in winter.",
-            "sentence": "___ rain in this region falls mostly in winter.",
+            "question": "She prefers to commute by ___ train instead of driving into the city.",
+            "sentence": "She prefers to commute by ___ train instead of driving into the city.",
             "options": [
-                "(no article)",
-                "a",
                 "an",
-                "the"
+                "a",
+                "the",
+                "(no article)"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "(no article)",
-            "hint": "'Rain' as a weather phenomenon in a general statement takes no article.",
-            "explanation": "Uncountable weather nouns (rain, snow, fog, sunshine, wind) take no article in general climate statements: 'Rain is common here', 'Snow falls in January'.",
+            "hint": "The word right after 'by' for a mode of transport needs nothing in front of it.",
+            "explanation": "Modes of transport after 'by' - by train, by car, by bus - take no article.",
             "grammarRule": "Zero Article"
         },
         {
@@ -464,37 +464,37 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "The board called for ___ urgent review of the plan.",
-            "sentence": "The board called for ___ urgent review of the plan.",
+            "question": "She downloaded ___ reliable app to help track her monthly spending.",
+            "sentence": "She downloaded ___ reliable app to help track her monthly spending.",
             "options": [
                 "a",
                 "an",
                 "the",
                 "(no article)"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "an",
-            "hint": "'Urgent' begins with the vowel sound 'ur'.",
-            "explanation": "Use 'an' before vowel sounds. 'Urgent' starts with the vowel 'u' (sound 'ur'), so we write 'an urgent review'.",
-            "grammarRule": "Indefinite Article (an)"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "a",
+            "hint": "'Reliable' starts with a consonant sound.",
+            "explanation": "'Reliable' begins with a consonant sound, so it takes 'a'. We say 'a reliable app'.",
+            "grammarRule": "Indefinite Article (a)"
         },
         {
             "id": "ai_l49_q2",
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "They completed ___ review in less than two weeks.",
-            "sentence": "They completed ___ review in less than two weeks.",
+            "question": "She tested two budgeting apps, and ___ simpler app tracked her spending automatically.",
+            "sentence": "She tested two budgeting apps, and ___ simpler app tracked her spending automatically.",
             "options": [
-                "an",
+                "a",
                 "the",
                 "(no article)",
-                "a"
+                "an"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "the",
-            "hint": "The specific review already called for - now a known noun.",
-            "explanation": "Use 'the' after a noun has been introduced. They called for an urgent review (new), then completed the review (known). This is the standard a/an → the pattern.",
+            "hint": "This singles out one of the two apps just mentioned.",
+            "explanation": "'The' can identify a specific item from a group already introduced, like 'the simpler app' of the two.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -502,18 +502,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ feedback from customers guides product improvement.",
-            "sentence": "___ feedback from customers guides product improvement.",
+            "question": "Many people now manage their finances using ___ mobile apps.",
+            "sentence": "Many people now manage their finances using ___ mobile apps.",
             "options": [
-                "the",
-                "(no article)",
+                "an",
                 "a",
-                "an"
+                "(no article)",
+                "the"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "(no article)",
-            "hint": "'Feedback' is uncountable and used here in a general, impersonal sense.",
-            "explanation": "Uncountable nouns like 'feedback', 'advice', 'information', and 'guidance' take no article when used in a general context: 'Feedback is important', 'Advice is valuable'.",
+            "hint": "This is a general statement about apps as a group.",
+            "explanation": "A general statement about a plural noun takes no article. 'Mobile apps' here means such apps in general.",
             "grammarRule": "Zero Article"
         },
         {
@@ -521,18 +521,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She had ___ unique chance to study abroad.",
-            "sentence": "She had ___ unique chance to study abroad.",
+            "question": "Studying in Berlin turned out to be ___ rare chance she almost didn't take.",
+            "sentence": "Studying in Berlin turned out to be ___ rare chance she almost didn't take.",
             "options": [
-                "(no article)",
-                "a",
                 "an",
-                "the"
+                "(no article)",
+                "the",
+                "a"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a",
-            "hint": "'Unique' sounds like 'yoo-NEEK' - starting with the consonant 'y'.",
-            "explanation": "Although 'unique' starts with the vowel letter 'u', it is pronounced 'yoo-NEEK'. The initial sound is the consonant 'y', so use 'a unique chance', not 'an unique chance'.",
+            "hint": "'Rare' starts with a consonant sound.",
+            "explanation": "'Rare' begins with a consonant sound, so it takes 'a'. We say 'a rare chance'.",
             "grammarRule": "Indefinite Article (a)"
         },
         {
@@ -540,18 +540,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "She made the most of ___ chance she had been given.",
-            "sentence": "She made the most of ___ chance she had been given.",
+            "question": "Of all the exchange programs she considered, the one in Berlin was ___ most exciting.",
+            "sentence": "Of all the exchange programs she considered, the one in Berlin was ___ most exciting.",
             "options": [
-                "a",
-                "an",
                 "the",
-                "(no article)"
+                "a",
+                "(no article)",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "the",
-            "hint": "The specific chance already mentioned - now identified and known.",
-            "explanation": "Use 'the' when the noun is already known. 'The chance she had been given' refers back to the unique opportunity introduced in the previous sentence.",
+            "hint": "This compares the program to every other option she considered.",
+            "explanation": "Superlatives like 'the most exciting' always take 'the', since they compare one option to all the rest.",
             "grammarRule": "Definite Article (the)"
         },
         {
@@ -559,18 +559,18 @@
             "instruction": "INSERT THE CORRECT ARTICLE",
             "subtype": "articleInsertion",
             "interactionType": "Bubble Pop",
-            "question": "___ opportunities for growth do not come around often.",
-            "sentence": "___ opportunities for growth do not come around often.",
+            "question": "Studying abroad teaches ___ independence that classrooms rarely can.",
+            "sentence": "Studying abroad teaches ___ independence that classrooms rarely can.",
             "options": [
                 "an",
-                "the",
                 "(no article)",
-                "a"
+                "a",
+                "the"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "(no article)",
-            "hint": "Plural nouns in a general observation take no article.",
-            "explanation": "Plural nouns used in general statements or observations take no article. 'Opportunities' here refers to opportunities in general, not specific ones.",
+            "hint": "Independence is an abstract quality, not something countable.",
+            "explanation": "Abstract, uncountable nouns like independence take no article in general statements.",
             "grammarRule": "Zero Article"
         }
     ]

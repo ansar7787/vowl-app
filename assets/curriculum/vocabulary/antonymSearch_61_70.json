@@ -10,10 +10,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "EXTINGUISH",
             "options": [
+                "LIGHT",
                 "EXTINGUISH",
-                "SPARK",
                 "IGNITE",
-                "LIGHT"
+                "SPARK"
             ]
         },
         {
@@ -27,8 +27,8 @@
             "options": [
                 "PRAISE",
                 "CRITICIZE",
-                "EXTOL",
-                "HONOR"
+                "HONOR",
+                "EXTOL"
             ]
         },
         {
@@ -40,10 +40,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "ENTHUSIASM",
             "options": [
-                "INDIFFERENCE",
+                "LETHARGY",
                 "ENNUI",
                 "ENTHUSIASM",
-                "LETHARGY"
+                "INDIFFERENCE"
             ]
         },
         {
@@ -57,8 +57,8 @@
             "options": [
                 "ENERGY",
                 "VIGOR",
-                "STRENGTH",
-                "FRAGILITY"
+                "FRAGILITY",
+                "STRENGTH"
             ]
         },
         {
@@ -70,9 +70,9 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "ADMIRATION",
             "options": [
-                "ADMIRATION",
                 "HATRED",
                 "SCORN",
+                "ADMIRATION",
                 "DISDAIN"
             ]
         },
@@ -87,23 +87,23 @@
             "options": [
                 "LOUD",
                 "QUIET",
-                "NOISY",
-                "ROWDY"
+                "ROWDY",
+                "NOISY"
             ]
         },
         {
             "id": "VOC_ANTONYMSEARCH_L63_Q1",
             "word": "ADVERSITY",
             "instruction": "Select the antonym for the given word.",
-            "hint": "Focus on success and wealth.",
+            "hint": "Think about a word meaning great success and wealth.",
             "explanation": "Adversity is a state of hardship; prosperity is a state of success.",
             "interactionType": "Polarity Pull",
             "correctAnswer": "PROSPERITY",
             "options": [
-                "HARDSHIP",
-                "MISHAP",
                 "PROSPERITY",
-                "MISFORTUNE"
+                "HARDSHIP",
+                "MISFORTUNE",
+                "MISHAP"
             ]
         },
         {
@@ -115,9 +115,9 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "SOCIABLE",
             "options": [
-                "DETACHED",
                 "COOL",
                 "DISTANT",
+                "DETACHED",
                 "SOCIABLE"
             ]
         },
@@ -130,10 +130,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "HONEST",
             "options": [
-                "HONEST",
                 "WILY",
                 "DECEPTIVE",
-                "DISHONEST"
+                "DISHONEST",
+                "HONEST"
             ]
         },
         {
@@ -145,10 +145,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "THOUGHTLESS",
             "options": [
-                "SOLEMN",
                 "THOUGHTLESS",
-                "DREAMY",
-                "GRAVE"
+                "GRAVE",
+                "SOLEMN",
+                "DREAMY"
             ]
         },
         {
@@ -160,10 +160,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "BLESSING",
             "options": [
-                "TRAGEDY",
+                "DISASTER",
                 "MISFORTUNE",
-                "BLESSING",
-                "DISASTER"
+                "TRAGEDY",
+                "BLESSING"
             ]
         },
         {
@@ -175,10 +175,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "AWKWARD",
             "options": [
-                "SKILLFUL",
                 "ADROIT",
+                "AWKWARD",
                 "NIMBLE",
-                "AWKWARD"
+                "SKILLFUL"
             ]
         },
         {
@@ -190,10 +190,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "REPLENISH",
             "options": [
-                "REPLENISH",
-                "DRAIN",
                 "EMPTY",
-                "EXHAUST"
+                "REPLENISH",
+                "EXHAUST",
+                "DRAIN"
             ]
         },
         {
@@ -205,10 +205,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "ADVANTAGEOUS",
             "options": [
-                "HARMFUL",
-                "ADVANTAGEOUS",
+                "INJURIOUS",
                 "DAMAGING",
-                "INJURIOUS"
+                "HARMFUL",
+                "ADVANTAGEOUS"
             ]
         },
         {
@@ -220,10 +220,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "MELANCHOLY",
             "options": [
-                "CHEERFUL",
                 "HAPPY",
                 "MELANCHOLY",
-                "MERRY"
+                "MERRY",
+                "CHEERFUL"
             ]
         },
         {
@@ -235,9 +235,9 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "SOOTHING",
             "options": [
-                "SHARP",
-                "ACIDIC",
                 "BITING",
+                "ACIDIC",
+                "SHARP",
                 "SOOTHING"
             ]
         },
@@ -250,10 +250,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "HAPHAZARD",
             "options": [
-                "HAPHAZARD",
                 "SYSTEMATIC",
-                "ORDERLY",
-                "ORGANIZED"
+                "HAPHAZARD",
+                "ORGANIZED",
+                "ORDERLY"
             ]
         },
         {
@@ -267,8 +267,8 @@
             "options": [
                 "OUTSTANDING",
                 "DEPLORABLE",
-                "ADMIRABLE",
-                "COMMENDABLE"
+                "COMMENDABLE",
+                "ADMIRABLE"
             ]
         },
         {
@@ -280,10 +280,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "FEEBLE",
             "options": [
+                "FORCEFUL",
                 "ENERGETIC",
                 "ROBUST",
-                "FEEBLE",
-                "FORCEFUL"
+                "FEEBLE"
             ]
         },
         {
@@ -295,10 +295,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "DISAGREEABLE",
             "options": [
-                "FRIENDLY",
+                "DISAGREEABLE",
                 "PLEASANT",
-                "GOOD-NATURED",
-                "DISAGREEABLE"
+                "FRIENDLY",
+                "GOOD-NATURED"
             ]
         },
         {
@@ -310,10 +310,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "CALLOUS",
             "options": [
-                "CALLOUS",
+                "UNDERSTANDING",
                 "COMPASSIONATE",
-                "SYMPATHETIC",
-                "UNDERSTANDING"
+                "CALLOUS",
+                "SYMPATHETIC"
             ]
         },
         {
@@ -325,10 +325,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "EFFORTLESS",
             "options": [
-                "ARDUOUS",
                 "EFFORTLESS",
+                "TAXING",
                 "DEMANDING",
-                "TAXING"
+                "ARDUOUS"
             ]
         },
         {
@@ -340,10 +340,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "SUBMISSIVE",
             "options": [
+                "RESILIENT",
                 "UNYIELDING",
-                "UNCONQUERABLE",
                 "SUBMISSIVE",
-                "RESILIENT"
+                "UNCONQUERABLE"
             ]
         },
         {
@@ -370,9 +370,9 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "ESTEEMED",
             "options": [
-                "ESTEEMED",
-                "NOTORIOUS",
                 "DISREPUTABLE",
+                "NOTORIOUS",
+                "ESTEEMED",
                 "SCANDALOUS"
             ]
         },
@@ -385,10 +385,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "IDEALISTIC",
             "options": [
-                "PRACTICAL",
                 "IDEALISTIC",
-                "SENSIBLE",
-                "REALISTIC"
+                "REALISTIC",
+                "PRACTICAL",
+                "SENSIBLE"
             ]
         },
         {
@@ -400,9 +400,9 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "DYNAMIC",
             "options": [
-                "MOTIONLESS",
                 "STALE",
                 "DYNAMIC",
+                "MOTIONLESS",
                 "INACTIVE"
             ]
         },
@@ -415,10 +415,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "GENTLE",
             "options": [
-                "HARSH",
+                "GENTLE",
                 "CAUSTIC",
                 "BLUNT",
-                "GENTLE"
+                "HARSH"
             ]
         },
         {
@@ -430,9 +430,9 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "SATISFIED",
             "options": [
-                "SATISFIED",
-                "UNQUENCHABLE",
                 "VORACIOUS",
+                "UNQUENCHABLE",
+                "SATISFIED",
                 "RAVENOUS"
             ]
         },
@@ -445,10 +445,10 @@
             "interactionType": "Polarity Pull",
             "correctAnswer": "UNIMPRESSIVE",
             "options": [
-                "IMPOSING",
-                "UNIMPRESSIVE",
+                "DAUNTING",
                 "INTIMIDATING",
-                "DAUNTING"
+                "IMPOSING",
+                "UNIMPRESSIVE"
             ]
         }
     ],

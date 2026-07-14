@@ -7,10 +7,10 @@
             "id": "VOC_ACADEMICWORD_L31_Q1",
             "hint": "DEFINITION: To need something, or to make something necessary.",
             "options": [
-                "PREVENT",
+                "CANCEL",
                 "FORBID",
                 "REQUIRE",
-                "CANCEL"
+                "PREVENT"
             ],
             "explanation": "Academic context: This recipe will REQUIRE at least two hours of chilling time before you can slice the cake. Here, \"REQUIRE\" means to make something necessary, not to stop, ban, or call it off.",
             "passage": "This recipe will [TARGET] at least two hours of chilling time before you can slice the cake",
@@ -23,10 +23,10 @@
             "id": "VOC_ACADEMICWORD_L31_Q2",
             "hint": "DEFINITION: To say or do something as a reaction to what has been said or done.",
             "options": [
+                "RESPOND",
                 "IGNORE",
                 "DELETE",
-                "POSTPONE",
-                "RESPOND"
+                "POSTPONE"
             ],
             "explanation": "Academic context: Customer service is trained to RESPOND to complaints within twenty-four hours. Here, \"RESPOND\" means to react or reply, the opposite of ignoring, erasing, or delaying a complaint.",
             "passage": "Customer service is trained to [TARGET] to complaints within twenty-four hours",
@@ -40,8 +40,8 @@
             "hint": "DEFINITION: A distinct part of an economy, industry, or society.",
             "options": [
                 "SECTOR",
-                "FORECAST",
                 "CALENDAR",
+                "FORECAST",
                 "CEREMONY"
             ],
             "explanation": "Academic context: The technology SECTOR has created millions of new jobs over the past decade. Here, \"SECTOR\" means a branch of the economy, not a prediction, a schedule, or a formal event.",
@@ -55,8 +55,8 @@
             "id": "VOC_ACADEMICWORD_L32_Q1",
             "hint": "DEFINITION: Resembling something without being identical to it.",
             "options": [
-                "OPPOSITE",
                 "SIMILAR",
+                "OPPOSITE",
                 "RANDOM",
                 "FORMER"
             ],
@@ -71,10 +71,10 @@
             "id": "VOC_ACADEMICWORD_L32_Q2",
             "hint": "DEFINITION: Clearly defined, precise, and particular.",
             "options": [
-                "GENERAL",
-                "OPTIONAL",
                 "SPECIFIC",
-                "FORMER"
+                "FORMER",
+                "GENERAL",
+                "OPTIONAL"
             ],
             "explanation": "Academic context: Please give me SPECIFIC instructions instead of a vague overview. Here, \"SPECIFIC\" means precise and detailed, the opposite of broad, non-mandatory, or outdated instructions.",
             "passage": "Please give me [TARGET] instructions instead of a vague overview",
@@ -87,9 +87,9 @@
             "id": "VOC_ACADEMICWORD_L32_Q3",
             "hint": "DEFINITION: To differ in size, amount, or degree; to change from one instance to another.",
             "options": [
-                "FREEZE",
-                "VANISH",
                 "EXPIRE",
+                "VANISH",
+                "FREEZE",
                 "VARY"
             ],
             "explanation": "Academic context: Prices for the same hotel room can VARY greatly depending on the season. Here, \"VARY\" means to change or differ, not to stop moving, disappear, or become invalid.",
@@ -103,13 +103,13 @@
             "id": "VOC_ACADEMICWORD_L33_Q1",
             "hint": "DEFINITION: To successfully reach a desired goal through effort.",
             "options": [
-                "ACHIEVE",
-                "POSTPONE",
+                "REGRET",
                 "ABANDON",
-                "REGRET"
+                "ACHIEVE",
+                "POSTPONE"
             ],
-            "explanation": "Academic context: After years of training, she finally ACHIEVE her dream of running a marathon. Here, \"ACHIEVE\" means to accomplish a goal, the opposite of delaying, giving up on, or feeling sorry about it.",
-            "passage": "After years of training, she finally [TARGET] her dream of running a marathon",
+            "explanation": "Academic context: After years of training, she was finally ready to ACHIEVE her dream of running a marathon. Here, \"ACHIEVE\" means to accomplish a goal, the opposite of delaying, giving up on, or feeling sorry about it.",
+            "passage": "After years of training, she was finally ready to [TARGET] her dream of running a marathon",
             "correctAnswer": "ACHIEVE",
             "instruction": "Drag the correct word to complete the sentence."
         },
@@ -120,9 +120,9 @@
             "hint": "DEFINITION: A person who has reached full physical and mental maturity.",
             "options": [
                 "MEMBER",
-                "ADULT",
+                "GROUP",
                 "ANNUAL",
-                "GROUP"
+                "ADULT"
             ],
             "explanation": "Academic context: The museum offers a discounted ticket price for children, but ADULT visitors pay full price. Here, \"ADULT\" means a grown person, which fits the children-versus-adult pricing contrast better than membership status, frequency, or group size.",
             "passage": "The museum offers a discounted ticket price for children, but [TARGET] visitors pay full price",
@@ -135,10 +135,10 @@
             "id": "VOC_ACADEMICWORD_L33_Q3",
             "hint": "DEFINITION: To change or make different, especially in a small way.",
             "options": [
-                "RETURN",
                 "REFUND",
                 "ALTER",
-                "DONATE"
+                "DONATE",
+                "RETURN"
             ],
             "explanation": "Academic context: The tailor offered to ALTER the suit so it would fit him perfectly for the wedding. Here, \"ALTER\" means to adjust or modify, not to give back, repay, or give away.",
             "passage": "The tailor offered to [TARGET] the suit so it would fit him perfectly for the wedding",
@@ -153,8 +153,8 @@
             "options": [
                 "CRITICIZE",
                 "IGNORE",
-                "FORGET",
-                "APPRECIATE"
+                "APPRECIATE",
+                "FORGET"
             ],
             "explanation": "Academic context: It wasn't until she moved abroad that she truly began to APPRECIATE her mother's cooking. Here, \"APPRECIATE\" means to value something, the opposite of criticizing, ignoring, or forgetting it.",
             "passage": "It wasn't until she moved abroad that she truly began to [TARGET] her mother's cooking",
@@ -167,10 +167,10 @@
             "id": "VOC_ACADEMICWORD_L34_Q2",
             "hint": "DEFINITION: To exchange differing views, often heatedly; to give reasons for or against something.",
             "options": [
-                "ARGUE",
                 "APOLOGIZE",
-                "FORGIVE",
-                "AGREE"
+                "ARGUE",
+                "AGREE",
+                "FORGIVE"
             ],
             "explanation": "Academic context: The siblings began to ARGUE over who would get the last slice of pizza. Here, \"ARGUE\" means to disagree heatedly, the opposite of apologizing, forgiving, or agreeing.",
             "passage": "The siblings began to [TARGET] over who would get the last slice of pizza",
@@ -183,10 +183,10 @@
             "id": "VOC_ACADEMICWORD_L34_Q3",
             "hint": "DEFINITION: To give a task, duty, or responsibility to someone.",
             "options": [
+                "APOLOGIZE",
                 "FORGIVE",
                 "ASSIGN",
-                "COMPLIMENT",
-                "APOLOGIZE"
+                "COMPLIMENT"
             ],
             "explanation": "Academic context: The professor will ASSIGN each student a different country to research for the final project. Here, \"ASSIGN\" means to hand out a task, not to pardon, praise, or express regret.",
             "passage": "The professor will [TARGET] each student a different country to research for the final project",
@@ -199,10 +199,10 @@
             "id": "VOC_ACADEMICWORD_L35_Q1",
             "hint": "DEFINITION: To fasten, join, or connect one thing to another.",
             "options": [
-                "DELETE",
                 "REJECT",
-                "ATTACH",
-                "POSTPONE"
+                "POSTPONE",
+                "DELETE",
+                "ATTACH"
             ],
             "explanation": "Academic context: Please remember to ATTACH your resume before submitting the online job application. Here, \"ATTACH\" means to add a file to something, not to remove, refuse, or delay it.",
             "passage": "Please remember to [TARGET] your resume before submitting the online job application",
@@ -216,9 +216,9 @@
             "hint": "DEFINITION: A settled way of thinking or feeling about something, often shown through behavior.",
             "options": [
                 "EXPERIENCE",
-                "CERTIFICATE",
+                "ATTITUDE",
                 "RESUME",
-                "ATTITUDE"
+                "CERTIFICATE"
             ],
             "explanation": "Academic context: Her positive ATTITUDE helped the whole team stay motivated during the difficult project. Here, \"ATTITUDE\" means a mindset or outlook, not years worked, a qualification document, or a job history summary.",
             "passage": "Her positive [TARGET] helped the whole team stay motivated during the difficult project",
@@ -232,8 +232,8 @@
             "hint": "DEFINITION: Polite and respectful, especially during disagreement; relating to ordinary citizens rather than the military.",
             "options": [
                 "CIVIL",
-                "ABSENT",
                 "EXHAUSTED",
+                "ABSENT",
                 "ANONYMOUS"
             ],
             "explanation": "Academic context: Even though they disagreed strongly, the two debaters remained CIVIL throughout the entire discussion. Here, \"CIVIL\" means polite despite disagreement, not missing, tired, or unnamed.",
@@ -247,10 +247,10 @@
             "id": "VOC_ACADEMICWORD_L36_Q1",
             "hint": "DEFINITION: To make a statement or situation clearer and easier to understand.",
             "options": [
-                "CANCEL",
+                "MEMORIZE",
                 "CLARIFY",
                 "RETRACT",
-                "MEMORIZE"
+                "CANCEL"
             ],
             "explanation": "Academic context: Could you CLARIFY what you meant by that comment? I'm not sure I understood. Here, \"CLARIFY\" means to explain more clearly, not to call off, withdraw, or learn by heart.",
             "passage": "Could you [TARGET] what you meant by that comment? I'm not sure I understood",
@@ -263,8 +263,8 @@
             "id": "VOC_ACADEMICWORD_L36_Q2",
             "hint": "DEFINITION: A remark expressing an opinion or reaction.",
             "options": [
-                "CURFEW",
                 "ERRAND",
+                "CURFEW",
                 "COMMENT",
                 "CHORE"
             ],
@@ -280,8 +280,8 @@
             "hint": "DEFINITION: A sum of money paid to someone for selling something, usually a percentage of the sale.",
             "options": [
                 "SALARY",
-                "PENSION",
                 "BONUS",
+                "PENSION",
                 "COMMISSION"
             ],
             "explanation": "Academic context: Real estate agents typically earn a COMMISSION based on a percentage of the home's sale price. Here, \"COMMISSION\" means pay tied directly to a percentage of sales, unlike a fixed salary, retirement fund, or one-time bonus.",
@@ -295,9 +295,9 @@
             "id": "VOC_ACADEMICWORD_L37_Q1",
             "hint": "DEFINITION: To pledge or bind oneself to a particular course of action.",
             "options": [
-                "COMMIT",
-                "REFUND",
                 "CANCEL",
+                "REFUND",
+                "COMMIT",
                 "POSTPONE"
             ],
             "explanation": "Academic context: Before signing the lease, make sure you're ready to COMMIT to living in this city for at least a year. Here, \"COMMIT\" means to make a firm pledge, the opposite of getting money back, calling off, or delaying a decision.",
@@ -311,10 +311,10 @@
             "id": "VOC_ACADEMICWORD_L37_Q2",
             "hint": "DEFINITION: To give something, especially money, to make up for a loss or inconvenience.",
             "options": [
+                "ACCUSE",
                 "BLAME",
                 "COMPENSATE",
-                "IGNORE",
-                "ACCUSE"
+                "IGNORE"
             ],
             "explanation": "Academic context: The airline agreed to COMPENSATE passengers for the canceled flight with a full refund and a free hotel stay. Here, \"COMPENSATE\" means to make up for a loss, the opposite of blaming, ignoring, or accusing the passengers.",
             "passage": "The airline agreed to [TARGET] passengers for the canceled flight with a full refund and a free hotel stay",
@@ -329,10 +329,10 @@
             "options": [
                 "DEPOSIT",
                 "SUBSCRIPTION",
-                "COMPONENT",
-                "APPOINTMENT"
+                "APPOINTMENT",
+                "COMPONENT"
             ],
-            "explanation": "Academic context: Replacing just one broken COMPONENT fixed the entire washing machine. Here, \"COMPONENT\" means a physical part of a machine, none of which can be physically replaced inside it.",
+            "explanation": "Academic context: Replacing just one broken COMPONENT fixed the entire washing machine. Here, \"COMPONENT\" means a physical part of a machine, unlike a deposit, a subscription, or an appointment, none of which can be physically replaced inside one.",
             "passage": "Replacing just one broken [TARGET] fixed the entire washing machine",
             "correctAnswer": "COMPONENT",
             "instruction": "Drag the correct word to complete the sentence."
@@ -344,9 +344,9 @@
             "hint": "DEFINITION: Permission for something to happen, or agreement to do something.",
             "options": [
                 "PRESCRIPTION",
-                "DIAGNOSIS",
+                "CONSENT",
                 "INSURANCE",
-                "CONSENT"
+                "DIAGNOSIS"
             ],
             "explanation": "Academic context: Doctors must obtain a patient's CONSENT before performing any non-emergency surgery. Here, \"CONSENT\" means permission, which is required before surgery, unlike medication, identifying an illness, or coverage paperwork.",
             "passage": "Doctors must obtain a patient's [TARGET] before performing any non-emergency surgery",
@@ -375,10 +375,10 @@
             "id": "VOC_ACADEMICWORD_L38_Q3",
             "hint": "DEFINITION: To change something from one form or purpose into another.",
             "options": [
-                "DEMOLISH",
+                "INSURE",
                 "CONVERT",
-                "ABANDON",
-                "INSURE"
+                "DEMOLISH",
+                "ABANDON"
             ],
             "explanation": "Academic context: They plan to CONVERT the old barn into a cozy guesthouse for visitors. Here, \"CONVERT\" means to transform something into something new, while tearing it down, leaving it, or insuring it would not turn it into a guesthouse.",
             "passage": "They plan to [TARGET] the old barn into a cozy guesthouse for visitors",
@@ -391,9 +391,9 @@
             "id": "VOC_ACADEMICWORD_L39_Q1",
             "hint": "DEFINITION: To work jointly with others toward a shared goal.",
             "options": [
-                "COMPETE",
-                "ARGUE",
                 "COOPERATE",
+                "ARGUE",
+                "COMPETE",
                 "GAMBLE"
             ],
             "explanation": "Academic context: The two rival companies agreed to COOPERATE on developing a shared safety standard for the industry. Here, \"COOPERATE\" means to work together, the opposite of competing, arguing, or taking risks against each other.",
@@ -407,9 +407,9 @@
             "id": "VOC_ACADEMICWORD_L39_Q2",
             "hint": "DEFINITION: To organize the different parts of an activity so they work together efficiently.",
             "options": [
-                "IGNORE",
                 "ABANDON",
                 "SCATTER",
+                "IGNORE",
                 "COORDINATE"
             ],
             "explanation": "Academic context: Someone needs to COORDINATE the volunteers so they aren't all cleaning the same area twice. Here, \"COORDINATE\" means to organize people so they work well together, the opposite of ignoring, abandoning, or scattering them.",
@@ -423,13 +423,13 @@
             "id": "VOC_ACADEMICWORD_L39_Q3",
             "hint": "DEFINITION: To communicate by regularly exchanging letters or messages; to match or agree with something.",
             "options": [
+                "GAMBLE",
                 "CORRESPOND",
-                "GAMBLED",
-                "COMPETED",
-                "RENOVATED"
+                "COMPETE",
+                "RENOVATE"
             ],
-            "explanation": "Academic context: The two pen pals have CORRESPONDed by letter every month for the past three years. Here, \"CORRESPOND\" means to exchange letters regularly, none of which can sensibly be done \"by letter\".",
-            "passage": "The two pen pals have [TARGET]ed by letter every month for the past three years",
+            "explanation": "Academic context: The two pen pals still CORRESPOND by letter every month, three years after they first met. Here, \"CORRESPOND\" means to exchange letters regularly, not to bet money, compete against someone, or repair a building.",
+            "passage": "The two pen pals still [TARGET] by letter every month, three years after they first met",
             "correctAnswer": "CORRESPOND",
             "instruction": "Drag the correct word to complete the sentence."
         },
@@ -439,10 +439,10 @@
             "id": "VOC_ACADEMICWORD_L40_Q1",
             "hint": "DEFINITION: A standard or principle used as a basis for judging or deciding something.",
             "options": [
+                "VACATION",
                 "SALARY",
                 "CRITERION",
-                "BONUS",
-                "VACATION"
+                "BONUS"
             ],
             "explanation": "Academic context: Punctuality is one important CRITERION the manager uses when evaluating new employees. Here, \"CRITERION\" means a standard used to judge performance, not a form of pay or time off.",
             "passage": "Punctuality is one important [TARGET] the manager uses when evaluating new employees",
@@ -455,12 +455,12 @@
             "id": "VOC_ACADEMICWORD_L40_Q2",
             "hint": "DEFINITION: To obtain or trace something from a particular source; to originate from.",
             "options": [
-                "RECOVER",
                 "RETIRE",
-                "DERIVE",
-                "DEPART"
+                "RECOVER",
+                "DEPART",
+                "DERIVE"
             ],
-            "explanation": "Academic context: Many English words DERIVE from Latin and Greek roots. Here, \"DERIVE\" means to originate from a source, none of which make sense paired with \"from Latin and Greek roots\".",
+            "explanation": "Academic context: Many English words DERIVE from Latin and Greek roots. Here, \"DERIVE\" means to originate from a source, unlike recovering, retiring, or departing, none of which make sense paired with \"from Latin and Greek roots.\"",
             "passage": "Many English words [TARGET] from Latin and Greek roots",
             "correctAnswer": "DERIVE",
             "instruction": "Drag the correct word to complete the sentence."
@@ -473,8 +473,8 @@
             "options": [
                 "FORBID",
                 "CANCEL",
-                "APOLOGIZE",
-                "DEMONSTRATE"
+                "DEMONSTRATE",
+                "APOLOGIZE"
             ],
             "explanation": "Academic context: The science teacher used a simple experiment to DEMONSTRATE how plants absorb water. Here, \"DEMONSTRATE\" means to show proof of how something works, not to ban, call off, or express regret.",
             "passage": "The science teacher used a simple experiment to [TARGET] how plants absorb water",
