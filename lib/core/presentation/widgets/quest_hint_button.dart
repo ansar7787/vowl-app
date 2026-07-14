@@ -53,6 +53,7 @@ class QuestHintButton extends StatelessWidget {
           context: context,
           message: displayText,
           type: CustomSnackBarType.info,
+          duration: const Duration(seconds: 8),
         );
       }
     } else if (!used) {

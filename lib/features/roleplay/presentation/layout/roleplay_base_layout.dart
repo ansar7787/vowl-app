@@ -431,6 +431,7 @@ class _RoleplayBaseLayoutState extends State<RoleplayBaseLayout> {
                           context: context,
                           message: translated,
                           type: CustomSnackBarType.info,
+                        duration: const Duration(seconds: 8),
                         );
                       },
                     ),
