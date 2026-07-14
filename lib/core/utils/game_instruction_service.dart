@@ -835,18 +835,16 @@ class GameInstructionService {
           "PRO TIP: Remember the 'Qu-A-S-V' rule: Question word, Auxiliary, Subject, Verb!",
     ),
     GameSubtype.articleInsertion: GameBriefing(
-      title: "Article Anchor",
-      icon: Icons.anchor_rounded,
-      objective:
-          "Insert the correct article (a, an, the) or choose 'no article'.",
+      title: "Article Orb",
+      icon: Icons.bubble_chart_rounded,
+      objective: "Insert the correct article to complete the sentence structure and specify the noun.",
       rules: [
-        "Check for specificity",
-        "Identify first sounds",
-        "Countable vs Uncountable",
+        "Read the sentence context",
+        "Check if noun is specific",
+        "Pop matching article orb",
       ],
-      actionText: "Insert Articles",
-      tip:
-          "PRO TIP: Use 'The' for specific things we both know about, and 'A/An' for general things.",
+      actionText: "Pop Orb",
+      tip: "PRO TIP: Use 'the' for specific items, 'a/an' for general ones, and listen for vowel sounds!",
     ),
     GameSubtype.modifierPlacement: GameBriefing(
       title: "Modifier Map",

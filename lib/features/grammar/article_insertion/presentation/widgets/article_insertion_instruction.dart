@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ArticleInsertionInstruction extends StatelessWidget {
   final Color primaryColor;
-  const ArticleInsertionInstruction({super.key, required this.primaryColor});
+  final String instruction;
+  const ArticleInsertionInstruction({super.key, required this.primaryColor, required this.instruction});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class ArticleInsertionInstruction extends StatelessWidget {
           Icon(Icons.bubble_chart_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
           Text(
-            "POP THE CORRECT ARTICLE ORB",
+            instruction.toUpperCase(),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 10.sp,
