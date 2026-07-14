@@ -35,7 +35,12 @@ class ClozeTestPneumaticPort extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          const TechPatternOverlay(opacity: 0.05),
+          Positioned.fill(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(24.r),
+              child: const TechPatternOverlay(opacity: 0.05),
+            ),
+          ),
           Padding(
             padding: EdgeInsets.all(16.r),
             child: RichText(
