@@ -186,13 +186,8 @@ class GameDialogHelper {
     VoidCallback? onTutorPass,
   }) {
     if (!context.mounted) return;
-    // BUG FIX: a matching audio cue (SoundService.playWrong(), which
-    // exists specifically for this) was missing here despite showCompletion
-    // playing both sound AND haptics for its equivalent moment - game-over
-    // only fired haptics. Restored to match the established feedback
-    // pattern.
-    _sound.playWrong();
-    _haptic.error();
+    // Removed _sound.playWrong() and _haptic.error() here to prevent double 
+    // negative feedback when transitioning from a wrong answer to Game Over.
 
     final resolvedTitle =
         title ?? context.tr('games.game_over_title', fallback: 'Game Over');
