@@ -8,17 +8,17 @@
             "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "good time",
-            "textToSpeak": "good time",
+            "word": "hard time",
+            "textToSpeak": "hard time",
             "options": [
-                "Assimilation (/d/ becomes /t/)",
+                "Assimilation (/d/ becomes /p/)",
                 "Elision (/d/ disappears)"
             ],
             "correctAnswer": "Elision (/d/ disappears)",
             "correctAnswerIndex": 1,
-            "hint": "Two consonants meet right where 'good' meets 'time'. Pay attention to the /d/ — in fast natural speech, is it dropped rather than pronounced?",
-            "explanation": "Rather than forcing three or four consonants together, speakers quietly drop the /d/ at the end of \"good\". The result, \"good time\", keeps its meaning but loses that one sound.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Listen for the /d/ at the end of \"hard\". With another consonant right before it and another right after (from \"time\"), can a speaker realistically hit all three cleanly?",
+            "explanation": "This is elision: a sound is removed entirely, not changed or weakened. Here, the /d/ at the end of \"hard\" disappears before the consonant that starts \"time\".",
+            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L21_Q2",
@@ -28,14 +28,14 @@
             "word": "intend fully",
             "textToSpeak": "intend fully",
             "options": [
-                "Assimilation (/d/ becomes /f/)",
+                "Assimilation (/d/ becomes /b/)",
                 "Elision (/d/ disappears)"
             ],
             "correctAnswer": "Elision (/d/ disappears)",
             "correctAnswerIndex": 1,
-            "hint": "Two consonants meet right where 'intend' meets 'fully'. Pay attention to the /d/ — in fast natural speech, is it dropped rather than pronounced?",
-            "explanation": "When /d/ sits inside a consonant cluster, speakers usually skip it rather than articulate every sound separately. That's why the /d/ in \"intend\" is left out before \"fully\".",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Try saying \"intend fully\" at a natural conversational pace, not word by word. What happens to the /d/ sound in the middle?",
+            "explanation": "Native speakers rarely pronounce every consonant in a heavy cluster. In \"intend fully\", the /d/ is left out completely, letting the surrounding consonants connect directly.",
+            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L21_Q3",
@@ -46,13 +46,13 @@
             "textToSpeak": "first prize",
             "options": [
                 "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /p/)"
+                "Assimilation (/t/ becomes /m/)"
             ],
             "correctAnswer": "Elision (/t/ disappears)",
             "correctAnswerIndex": 0,
-            "hint": "Two consonants meet right where 'first' meets 'prize'. Pay attention to the /t/ — in fast natural speech, is it dropped rather than pronounced?",
-            "explanation": "Rather than forcing three or four consonants together, speakers quietly drop the /t/ at the end of \"first\". The result, \"first prize\", keeps its meaning but loses that one sound.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Three consonants in a row is hard work for the mouth. Focus on the /t/ where \"first\" meets \"prize\" — does English keep it or drop it?",
+            "explanation": "Because /t/ is squeezed between two other consonants, it gets dropped in fluent speech. Say \"first prize\" aloud and you'll notice the /t/ just isn't there.",
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L22_Q1",
@@ -67,9 +67,9 @@
             ],
             "correctAnswer": "Coalescence (/s/ + /j/ becomes /ʃ/)",
             "correctAnswerIndex": 0,
-            "hint": "The final /s/ in 'miss' runs straight into the /j/ sound that starts 'you'. What single new sound do they fuse into?",
-            "explanation": "Rather than pronouncing /s/ and /j/ separately, speakers merge them into /ʃ/ — a faster, smoother sound typical of natural connected speech in \"miss you\".",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "\"miss\" ends in /s/ and \"you\" begins with a /j/ sound. What single new consonant do the two combine into?",
+            "explanation": "When /s/ meets /j/ across a word boundary, the two often fuse into a single new consonant. In \"miss you\", /s/ + /j/ becomes /ʃ/ — a completely different sound from either original.",
+            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L22_Q2",
@@ -84,9 +84,9 @@
             ],
             "correctAnswer": "Assimilation (/d/ becomes /g/)",
             "correctAnswerIndex": 0,
-            "hint": "The /d/ in 'hard' is about to meet a velar consonant in 'copy'. Does it hold its ground, or shift place to match?",
-            "explanation": "Consonants often borrow the place of articulation of whatever follows them. Here /d/ moves to a velar position, turning \"hard\" into something closer to \"...g\" before \"copy\".",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "The tongue is already anticipating \"copy\"'s velar sound before it even finishes \"hard\". What happens to /d/ as a result?",
+            "explanation": "The change from /d/ to /g/ at the end of \"hard\" happens because the following velar consonant in \"copy\" pulls the place of articulation to match. Nothing is lost here, just reshaped.",
+            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L22_Q3",
@@ -101,9 +101,9 @@
             ],
             "correctAnswer": "Assimilation (/d/ becomes /b/)",
             "correctAnswerIndex": 1,
-            "hint": "Listen to the /d/ at the end of 'good', right where it meets the bilabial sound starting 'morning'. Does the /d/ change to match it, or simply vanish?",
-            "explanation": "This is place assimilation: in \"good\", /d/ adapts to the bilabial consonant beginning \"morning\", surfacing as /b/ in natural, fast speech.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Between \"good\" and \"morning\" sits a consonant under pressure to match its neighbor. What does it become?",
+            "explanation": "This pairing is a classic assimilation example: the /d/ ending \"good\" adopts the bilabial quality of the sound in \"morning\", surfacing as /b/ in natural, connected speech.",
+            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L23_Q1",
@@ -114,13 +114,13 @@
             "textToSpeak": "rent free",
             "options": [
                 "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /fr/)"
+                "Assimilation (/t/ becomes /k/)"
             ],
             "correctAnswer": "Elision (/t/ disappears)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the /t/ sound at the end of 'rent'. With a consonant cluster colliding into 'free', does that /t/ survive, or does it vanish completely?",
-            "explanation": "Native speakers simplify heavy consonant clusters by dropping the sound that's hardest to fit in. In \"rent free\", the /t/ is elided so the phrase flows smoothly into \"free\".",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "In casual speech, does the final /t/ of \"rent\" get pronounced before \"free\", or does it just vanish?",
+            "explanation": "English speakers simplify clusters like this one by deleting a stop consonant rather than forcing it in. The /t/ in \"rent\" is the one that goes missing before \"free\".",
+            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L23_Q2",
@@ -135,9 +135,9 @@
             ],
             "correctAnswer": "Assimilation (/n/ becomes /ŋ/)",
             "correctAnswerIndex": 0,
-            "hint": "Listen to the /n/ at the end of 'seven', right where it meets the velar sound starting 'cans'. Does the /n/ change to match it, or simply vanish?",
-            "explanation": "This is place assimilation: in \"seven\", /n/ adapts to the velar consonant beginning \"cans\", surfacing as /ŋ/ in natural, fast speech.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "This isn't a case of a sound vanishing from \"seven\" — it's still there, just different. What does /n/ turn into before the velar sound in \"cans\"?",
+            "explanation": "Notice that the /n/ ending \"seven\" isn't deleted the way it would be in elision — it survives, just transformed into /ŋ/ to match the velar sound beginning \"cans\".",
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L23_Q3",
@@ -148,13 +148,13 @@
             "textToSpeak": "best wishes",
             "options": [
                 "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /w/)"
+                "Assimilation (/t/ becomes /g/)"
             ],
             "correctAnswer": "Elision (/t/ disappears)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the /t/ sound at the end of 'best'. With a consonant cluster colliding into 'wishes', does that /t/ survive, or does it vanish completely?",
-            "explanation": "In connected speech, /t/ is often dropped when it falls between two other consonants. Here, the /t/ at the end of \"best\" disappears before the consonant that opens \"wishes\", so \"best wishes\" is pronounced without it.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Picture how a native speaker would say \"best wishes\" in a fast, everyday sentence. Is every single consonant still there?",
+            "explanation": "This is a textbook case of consonant-cluster elision: the /t/ between two consonants is dropped to keep speech fluent and effortless in \"best wishes\".",
+            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L24_Q1",
@@ -169,43 +169,43 @@
             ],
             "correctAnswer": "Coalescence (/s/ + /j/ becomes /ʃ/)",
             "correctAnswerIndex": 1,
-            "hint": "Listen for a blend at the boundary of 'this' and 'year' — two separate sounds merging into one.",
-            "explanation": "This blending of /s/ and /j/ into /ʃ/ is called coalescence. It's extremely common wherever a word like \"this\", ending in /s/, is followed by 'year'.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Instead of hearing /s/ and /j/ separately between \"this\" and \"year\", listen for one fused sound. What is it?",
+            "explanation": "This is coalescent assimilation: two adjacent sounds merge into a third sound that resembles neither one alone. Here, /s/ and /j/ combine into /ʃ/ in \"this year\".",
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L24_Q2",
             "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "red light",
-            "textToSpeak": "red light",
+            "word": "background check",
+            "textToSpeak": "background check",
             "options": [
                 "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /l/)"
+                "Assimilation (/d/ becomes /p/)"
             ],
             "correctAnswer": "Elision (/d/ disappears)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the /d/ sound at the end of 'red'. With a consonant cluster colliding into 'light', does that /d/ survive, or does it vanish completely?",
-            "explanation": "Native speakers simplify heavy consonant clusters by dropping the sound that's hardest to fit in. In \"red light\", the /d/ is elided so the phrase flows smoothly into \"light\".",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "The /d/ in \"background\" is trapped between two other consonants right before \"check\". What usually happens to a stop consonant stuck in that position?",
+            "explanation": "Rather than pronounce all three consonants back to back, speakers cut the /d/ from \"background\" entirely. The result flows straight from the first consonant into \"check\".",
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L24_Q3",
             "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "quiet night",
-            "textToSpeak": "quiet night",
+            "word": "last night",
+            "textToSpeak": "last night",
             "options": [
                 "Elision (/t/ disappears)",
-                "Assimilation (/t/ becomes /n/)"
+                "Assimilation (/t/ becomes /b/)"
             ],
             "correctAnswer": "Elision (/t/ disappears)",
             "correctAnswerIndex": 0,
-            "hint": "Listen closely to the /t/ sound at the end of 'quiet'. With a consonant cluster colliding into 'night', does that /t/ survive, or does it vanish completely?",
-            "explanation": "Native speakers simplify heavy consonant clusters by dropping the sound that's hardest to fit in. In \"quiet night\", the /t/ is elided so the phrase flows smoothly into \"night\".",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Listen closely at the boundary of \"last\" and \"night\" — count the consonants stacking up. Does the /t/ still make it into the sentence?",
+            "explanation": "In fast, connected speech, a /t/ wedged between consonants almost always disappears. That's what you'll hear in \"last night\" — the /t/ goes silent.",
+            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L25_Q1",
@@ -220,9 +220,9 @@
             ],
             "correctAnswer": "Elision (/t/ disappears)",
             "correctAnswerIndex": 1,
-            "hint": "Two consonants meet right where 'expect' meets 'more'. Pay attention to the /t/ — in fast natural speech, is it dropped rather than pronounced?",
-            "explanation": "Rather than forcing three or four consonants together, speakers quietly drop the /t/ at the end of \"expect\". The result, \"expect more\", keeps its meaning but loses that one sound.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Say \"expect more\" naturally, without pausing between the words. Is the /t/ audible, or does it disappear into the next consonant?",
+            "explanation": "Elision removes a sound completely rather than merely blending it. Here the /t/ vanishes from \"expect\" so the phrase moves directly into \"more\".",
+            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L25_Q2",
@@ -237,9 +237,9 @@
             ],
             "correctAnswer": "Assimilation (/t/ becomes /p/)",
             "correctAnswerIndex": 0,
-            "hint": "Listen to the /t/ at the end of 'get', right where it meets the bilabial sound starting 'paid'. Does the /t/ change to match it, or simply vanish?",
-            "explanation": "This is place assimilation: in \"get\", /t/ adapts to the bilabial consonant beginning \"paid\", surfacing as /p/ in natural, fast speech.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "The /t/ at the end of \"get\" is about to meet a bilabial sound in \"paid\". Does it hold firm, or shift to match?",
+            "explanation": "Before a bilabial consonant, /t/ commonly shifts to match its place of articulation. In \"get paid\", /t/ becomes /p/ — the sound itself changes, it doesn't disappear.",
+            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L25_Q3",
@@ -249,14 +249,14 @@
             "word": "paint dries",
             "textToSpeak": "paint dries",
             "options": [
-                "Assimilation (/t/ becomes /dr/)",
+                "Assimilation (/t/ becomes /k/)",
                 "Elision (/t/ disappears)"
             ],
             "correctAnswer": "Elision (/t/ disappears)",
             "correctAnswerIndex": 1,
-            "hint": "Two consonants meet right where 'paint' meets 'dries'. Pay attention to the /t/ — in fast natural speech, is it dropped rather than pronounced?",
-            "explanation": "When /t/ sits inside a consonant cluster, speakers usually skip it rather than articulate every sound separately. That's why the /t/ in \"paint\" is left out before \"dries\".",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "This pair, \"paint dries\", creates a tricky consonant sequence. Which sound do fluent speakers simplify away — and is it really gone, or just quieter?",
+            "explanation": "Speakers naturally avoid three consonants in a row, so the /t/ is dropped rather than forced through. That's why \"paint dries\" sounds smoother without it.",
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L26_Q1",
@@ -271,9 +271,9 @@
             ],
             "correctAnswer": "Assimilation (/t/ becomes /k/)",
             "correctAnswerIndex": 0,
-            "hint": "Listen to the /t/ at the end of 'not', right where it meets the velar sound starting 'clear'. Does the /t/ change to match it, or simply vanish?",
-            "explanation": "When /t/ is followed by a velar consonant, speakers often shift its place of articulation to match. That's why the /t/ at the end of \"not\" becomes /k/ before \"clear\".",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Say \"not clear\" at natural speed. Listen right at the boundary — does the /t/ stay a /t/, or does it become something else?",
+            "explanation": "This is regressive assimilation: a sound changes to become more like the sound that follows it. Here, the /t/ ending \"not\" turns into /k/ because \"clear\" begins with a velar consonant.",
+            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L26_Q2",
@@ -288,9 +288,9 @@
             ],
             "correctAnswer": "Assimilation (/n/ becomes /ŋ/)",
             "correctAnswerIndex": 1,
-            "hint": "Listen to the /n/ at the end of 'brown', right where it meets the velar sound starting 'coat'. Does the /n/ change to match it, or simply vanish?",
-            "explanation": "When /n/ is followed by a velar consonant, speakers often shift its place of articulation to match. That's why the /n/ at the end of \"brown\" becomes /ŋ/ before \"coat\".",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "A velar consonant is coming up in \"coat\". What does that do to the /n/ just before it in \"brown\"?",
+            "explanation": "Speakers save effort by letting /n/ anticipate the velar sound ahead. So in \"brown coat\", /n/ is pronounced as /ŋ/ instead.",
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L26_Q3",
@@ -305,26 +305,26 @@
             ],
             "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
             "correctAnswerIndex": 0,
-            "hint": "Listen for a blend at the boundary of 'read' and 'your message' — two separate sounds merging into one.",
-            "explanation": "In \"read your message\", /d/ and /j/ share enough in common that the mouth glides straight from one into the other, producing /dʒ/. That single new sound is the signature of coalescence.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Say \"read your\" quickly and casually. The /d/ and the /j/ in \"your\" don't stay separate — what do they merge into?",
+            "explanation": "Rather than two separate consonants, connected speech blends /d/ and /j/ into /dʒ/. That's why \"read your\" sounds like one smooth unit rather than two words bumping together.",
+            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L27_Q1",
             "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON IN THE PHRASE",
             "subtype": "connectedSpeech",
             "interactionType": "clarity",
-            "word": "bad news",
-            "textToSpeak": "bad news",
+            "word": "hand baggage",
+            "textToSpeak": "hand baggage",
             "options": [
-                "Assimilation (/d/ becomes /n/)",
+                "Assimilation (/d/ becomes /g/)",
                 "Elision (/d/ disappears)"
             ],
             "correctAnswer": "Elision (/d/ disappears)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the /d/ sound at the end of 'bad'. With a consonant cluster colliding into 'news', does that /d/ survive, or does it vanish completely?",
-            "explanation": "In connected speech, /d/ is often dropped when it falls between two other consonants. Here, the /d/ at the end of \"bad\" disappears before the consonant that opens \"news\", so \"bad news\" is pronounced without it.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Fluent speech avoids awkward consonant pile-ups. Where exactly does that simplification happen in \"hand baggage\"?",
+            "explanation": "This cluster is simplified by deleting the /d/ altogether — not weakening it, not shifting it, just leaving it out — which is the defining feature of elision in \"hand baggage\".",
+            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L27_Q2",
@@ -339,9 +339,9 @@
             ],
             "correctAnswer": "Coalescence (/t/ + /j/ becomes /tʃ/)",
             "correctAnswerIndex": 1,
-            "hint": "The final /t/ in 'meet' runs straight into the /j/ sound that starts 'you'. What single new sound do they fuse into?",
-            "explanation": "Rather than pronouncing /t/ and /j/ separately, speakers merge them into /tʃ/ — a faster, smoother sound typical of natural connected speech in \"meet you\".",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "There's a consonant collision at the boundary of \"meet\" and \"you\": /t/ meets /j/. Which single sound comes out the other side?",
+            "explanation": "Coalescence happens when neighboring sounds are so close in the mouth that they collapse into one. /t/ and /j/ become /tʃ/ in \"meet you\" — faster and easier to say than keeping the two sounds apart.",
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L27_Q3",
@@ -351,14 +351,14 @@
             "word": "talked back",
             "textToSpeak": "talked back",
             "options": [
-                "Assimilation (/t/ becomes /b/)",
+                "Assimilation (/t/ becomes /p/)",
                 "Elision (/t/ disappears)"
             ],
             "correctAnswer": "Elision (/t/ disappears)",
             "correctAnswerIndex": 1,
-            "hint": "Listen closely to the /t/ sound at the end of 'talked'. With a consonant cluster colliding into 'back', does that /t/ survive, or does it vanish completely?",
-            "explanation": "Native speakers simplify heavy consonant clusters by dropping the sound that's hardest to fit in. In \"talked back\", the /t/ is elided so the phrase flows smoothly into \"back\".",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Say \"talked\" alone, then \"back\" alone — both consonants are clear. Now blend them at speed. What happens to the /t/ in between?",
+            "explanation": "Notice that nothing replaces the /t/ — it isn't weakened or swapped for another sound, it's simply omitted. That full deletion is what separates elision from assimilation in \"talked back\".",
+            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L28_Q1",
@@ -369,13 +369,13 @@
             "textToSpeak": "behind schedule",
             "options": [
                 "Elision (/d/ disappears)",
-                "Assimilation (/d/ becomes /sk/)"
+                "Assimilation (/d/ becomes /b/)"
             ],
             "correctAnswer": "Elision (/d/ disappears)",
             "correctAnswerIndex": 0,
-            "hint": "Two consonants meet right where 'behind' meets 'schedule'. Pay attention to the /d/ — in fast natural speech, is it dropped rather than pronounced?",
-            "explanation": "When /d/ sits inside a consonant cluster, speakers usually skip it rather than articulate every sound separately. That's why the /d/ in \"behind\" is left out before \"schedule\".",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "A stop consonant squeezed between two other consonants rarely survives in fast speech. Listen for the /d/ in \"behind schedule\" — is it there?",
+            "explanation": "Consonant clusters like this one are common at word boundaries in English, and the middle stop is almost always the casualty. The /d/ drops out of \"behind schedule\" for exactly that reason.",
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L28_Q2",
@@ -390,9 +390,9 @@
             ],
             "correctAnswer": "Coalescence (/s/ + /j/ becomes /ʃ/)",
             "correctAnswerIndex": 0,
-            "hint": "The final /s/ in 'place' runs straight into the /j/ sound that starts 'your order'. What single new sound do they fuse into?",
-            "explanation": "When /s/ meets /j/ across a word boundary, the two sounds often fuse into a single new consonant. /s/ + /j/ merges into /ʃ/, so \"place your order\" sounds like the two words have melted together.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Two consonants become one here. Focus on where \"place\" ends and \"your\" begins — what's the resulting blended sound?",
+            "explanation": "This merge is extremely common wherever a word ending in /s/ meets a \"you\"-type word. In \"place your\", the result is /ʃ/, not /s/ followed by /j/.",
+            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L28_Q3",
@@ -407,9 +407,9 @@
             ],
             "correctAnswer": "Coalescence (/s/ + /j/ becomes /ʃ/)",
             "correctAnswerIndex": 0,
-            "hint": "Listen for a blend at the boundary of 'promise' and 'yourself' — two separate sounds merging into one.",
-            "explanation": "In \"promise yourself\", /s/ and /j/ share enough in common that the mouth glides straight from one into the other, producing /ʃ/. That single new sound is the signature of coalescence.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Rather than pronouncing /s/ then /j/ separately, fluent speakers coalesce them. What do you actually hear in \"promise yourself\"?",
+            "explanation": "Notice that neither the original /s/ nor /j/ survives on its own — they combine into /ʃ/. That fusion is what makes \"promise yourself\" sound natural and fast.",
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L29_Q1",
@@ -424,9 +424,9 @@
             ],
             "correctAnswer": "Assimilation (/n/ becomes /m/)",
             "correctAnswerIndex": 1,
-            "hint": "Listen to the /n/ at the end of 'seven', right where it meets the bilabial sound starting 'points'. Does the /n/ change to match it, or simply vanish?",
-            "explanation": "This is place assimilation: in \"seven\", /n/ adapts to the bilabial consonant beginning \"points\", surfacing as /m/ in natural, fast speech.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Notice how the mouth has to move from the /n/ ending \"seven\" to the bilabial sound that opens \"points\". Does it really make that full move, or take a shortcut?",
+            "explanation": "Unlike elision, nothing is dropped here — the sound simply changes place. /n/ becomes /m/ in \"seven points\" to match the bilabial consonant that follows.",
+            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L29_Q2",
@@ -441,9 +441,9 @@
             ],
             "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
             "correctAnswerIndex": 1,
-            "hint": "The final /d/ in 'should' runs straight into the /j/ sound that starts 'you'. What single new sound do they fuse into?",
-            "explanation": "When /d/ meets /j/ across a word boundary, the two sounds often fuse into a single new consonant. /d/ + /j/ merges into /dʒ/, so \"should you\" sounds like the two words have melted together.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Listen at natural speed: does \"should you\" keep two distinct consonant sounds at the boundary, or blend them into a new one?",
+            "explanation": "In relaxed, natural speech, /d/ and /j/ rarely stay separate at a word boundary like this one. They coalesce into /dʒ/, exactly as in \"should you\".",
+            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L29_Q3",
@@ -458,9 +458,9 @@
             ],
             "correctAnswer": "Coalescence (/t/ + /j/ becomes /tʃ/)",
             "correctAnswerIndex": 0,
-            "hint": "Listen for a blend at the boundary of 'didn't' and 'you' — two separate sounds merging into one.",
-            "explanation": "In \"didn't you\", /t/ and /j/ share enough in common that the mouth glides straight from one into the other, producing /tʃ/. That single new sound is the signature of coalescence.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "The /t/ in \"didn't\" and the /j/ starting \"you\" don't survive as separate sounds in fast speech. What do they turn into together?",
+            "explanation": "This is why \"didn't you\" doesn't sound like two crisp, separate words: the boundary consonant /t/ and the /j/ of \"you\" merge into the single sound /tʃ/.",
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L30_Q1",
@@ -475,9 +475,9 @@
             ],
             "correctAnswer": "Coalescence (/t/ + /j/ becomes /tʃ/)",
             "correctAnswerIndex": 0,
-            "hint": "Listen for a blend at the boundary of 'can't' and 'you' — two separate sounds merging into one.",
-            "explanation": "In \"can't you\", /t/ and /j/ share enough in common that the mouth glides straight from one into the other, producing /tʃ/. That single new sound is the signature of coalescence.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "This is a sound-merging boundary. What new consonant replaces /t/ + /j/ when you say \"can't you\" naturally?",
+            "explanation": "Coalescence is a genuine sound change, not just fast talking — /t/ plus /j/ reliably becomes /tʃ/ in phrases like \"can't you\" across natural English speech.",
+            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L30_Q2",
@@ -492,9 +492,9 @@
             ],
             "correctAnswer": "Assimilation (/n/ becomes /ŋ/)",
             "correctAnswerIndex": 1,
-            "hint": "The /n/ in 'ten' is about to meet a velar consonant in 'girls'. Does it hold its ground, or shift place to match?",
-            "explanation": "Consonants often borrow the place of articulation of whatever follows them. Here /n/ moves to a velar position, turning \"ten\" into something closer to \"...ŋ\" before \"girls\".",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Listen for the consonant joining \"ten\" to \"girls\". Is it still /n/, or has it changed shape to match what follows?",
+            "explanation": "When a word ending in /n/ meets a velar sound, the /n/ shifts to /ŋ/ so both sounds are made in nearly the same place in the mouth. That's what happens in \"ten girls\".",
+            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants."
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L30_Q3",
@@ -509,9 +509,9 @@
             ],
             "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
             "correctAnswerIndex": 0,
-            "hint": "Listen for a blend at the boundary of 'had' and 'your passport' — two separate sounds merging into one.",
-            "explanation": "This blending of /d/ and /j/ into /dʒ/ is called coalescence. It's extremely common wherever a word like \"had\", ending in /d/, is followed by 'your passport'.",
-            "phoneticRule": "In fast speech, native speakers blend and drop sounds to speak more smoothly."
+            "hint": "Try blending \"had\" straight into \"your\" without a pause. The /d/ and /j/ fuse — into what sound?",
+            "explanation": "The two sounds don't just sit next to each other; they blend into /dʒ/. That's the defining feature of coalescence, and it's exactly what happens in \"had your\".",
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
         }
     ]
 }
