@@ -16,7 +16,6 @@ import 'package:vowl/features/accent/connected_speech/presentation/widgets/conne
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_prompt_card.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_pulse_speaker.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_linker_cards.dart';
-import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_explanation_card.dart';
 
 class ConnectedSpeechScreen extends StatefulWidget {
   final int level;
@@ -248,16 +247,6 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                       onSubmitChoice: _submitChoice,
                                       isCompact: isCompact,
                                     ),
-                                    if (_isAnswered) ...[
-                                      SizedBox(height: gapSlider),
-                                      ConnectedSpeechExplanationCard(
-                                        quest: quest,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        isCorrect: _isCorrect,
-                                        isCompact: isCompact,
-                                      ),
-                                    ],
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),

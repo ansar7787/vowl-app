@@ -1208,15 +1208,15 @@ class GameInstructionService {
       title: "Connected Speech",
       icon: Icons.settings_input_composite_rounded,
       objective:
-          "Listen to the audio and select the floating card that perfectly links the words together.",
+          "Native speakers link words together. Listen closely to how the words connect, then choose the card that shows the correct sound change.",
       rules: [
-        "Listen to the connection",
-        "Check the floating cards",
-        "Tap the best link",
+        "Listen to the linked words",
+        "Notice which sound changes or drops",
+        "Select the rule that applies",
       ],
       actionText: "Connect Words",
       tip:
-          "PRO TIP: Words like 'want to' often fuse together into 'wanna' in fast speech.",
+          "PRO TIP: Try saying the words fast yourself! If you force every single letter, it feels unnatural. Real speech takes shortcuts.",
     ),
     GameSubtype.pitchModulation: GameBriefing(
       title: "Voice Emotion",
