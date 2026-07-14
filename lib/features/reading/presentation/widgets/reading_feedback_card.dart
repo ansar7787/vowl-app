@@ -71,17 +71,27 @@ class ReadingFeedbackCard extends StatelessWidget {
 
   // Only show the explanation block when correctAnswer is available.
   // Guards the non-null assertion in _buildExplanationCard.
-  bool get _showExplanation =>
-      !_success &&
-      isFinalFailure &&
-      ((currentQuest.explanation?.isNotEmpty ?? false) ||
-          (currentQuest.correctAnswer?.isNotEmpty ?? false));
+  bool get _showExplanation {
+    final bool showEducationalInfo = _success || isFinalFailure;
+    if (!showEducationalInfo) return false;
+
+    if (_success) {
+      return currentQuest.explanation?.isNotEmpty ?? false;
+    } else {
+      return (currentQuest.explanation?.isNotEmpty ?? false) ||
+          (currentQuest.correctAnswer?.isNotEmpty ?? false);
+    }
+  }
+
+  String get _explanationText {
+    if (_success) return currentQuest.explanation!;
+    return currentQuest.explanation ?? currentQuest.correctAnswer ?? '';
+  }
 
   String _semanticLabel(BuildContext context) {
     if (_success) return context.tr('games.semantic_correct_continue', fallback: 'Correct. Tap to continue.');
     if (_showExplanation) {
-      // _showExplanation guards non-null; ?? keeps the static analyser happy.
-      final answer = currentQuest.explanation ?? currentQuest.correctAnswer ?? '';
+      final answer = _explanationText;
       return context.tr(
         'games.semantic_incorrect_explanation', fallback: 'Incorrect. Read explanation.',
         args: [answer, _buttonText(context)],
@@ -125,7 +135,7 @@ class ReadingFeedbackCard extends StatelessWidget {
             if (_showExplanation) ...[
               SizedBox(height: 16.h),
               _ExplanationBox(
-                explanation: currentQuest.explanation ?? currentQuest.correctAnswer!,
+                explanation: _explanationText,
                 shadowColor: _shadowColor,
                 isDark: isDark,
                 reduceMotion: reduceMotion,
