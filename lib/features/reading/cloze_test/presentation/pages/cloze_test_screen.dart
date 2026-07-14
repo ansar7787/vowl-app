@@ -9,7 +9,6 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_instruction.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_pneumatic_port.dart';
@@ -146,7 +145,11 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
                         SizedBox(height: 16.h),
                         ClozeTestInstruction(
                           primaryColor: theme.primaryColor,
-                          instruction: context.tr('games.clozeTest_instruction', fallback: 'Complete the sentence by docking the correct word.'),
+                          instruction: context.tr(
+                            'games.clozeTest_instruction',
+                            fallback:
+                                'Complete the sentence by docking the correct word.',
+                          ),
                         ),
                         SizedBox(height: 32.h),
 

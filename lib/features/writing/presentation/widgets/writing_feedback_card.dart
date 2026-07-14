@@ -52,7 +52,7 @@ class WritingFeedbackCard extends StatelessWidget {
         ? context.tr('games.excellent', fallback: 'Excellent!')
         : context.tr('games.not_quite', fallback: 'Not Quite');
 
-    final showCorrectAnswer = !success && isFinalFailure;
+    final showExplanation = success || isFinalFailure;
     final buttonText = success
         ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : (isFinalFailure
@@ -61,7 +61,7 @@ class WritingFeedbackCard extends StatelessWidget {
                     : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
               : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
 
-    final String? explanation = showCorrectAnswer
+    final String? explanation = showExplanation
         ? s.currentQuest.explanation
         : null;
 

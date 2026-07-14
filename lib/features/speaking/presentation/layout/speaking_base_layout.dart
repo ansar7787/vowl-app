@@ -320,7 +320,7 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
                       livesRemaining: state.livesRemaining,
                       isFinalFailure: state.isFinalFailure,
                       explanation:
-                          state.isFinalFailure && !(widget.isCorrect ?? false)
+                          (widget.isCorrect ?? false) || state.isFinalFailure
                           ? state.currentQuest.explanation
                           : null,
                       onContinue: widget.onContinue,

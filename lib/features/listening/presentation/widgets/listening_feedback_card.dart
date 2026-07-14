@@ -50,7 +50,7 @@ class ListeningFeedbackCard extends StatelessWidget {
         ? context.tr('games.excellent', fallback: 'Excellent!')
         : context.tr('games.not_quite', fallback: 'Not Quite');
 
-    final showExplanation = !success && state.isFinalFailure;
+    final showExplanation = success || state.isFinalFailure;
     final explanation = showExplanation ? state.currentQuest.explanation : null;
 
     // Overflow-safe button label: Flexible + FittedBox handles long

@@ -56,7 +56,7 @@ class RoleplayFeedbackCard extends StatelessWidget {
                     ? context.tr('games.see_results', fallback: 'See Results')
                     : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
               : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
-    final explanation = (!success && isFinal)
+    final explanation = (success || isFinal)
         ? loadedState?.currentQuest.explanation
         : null;
 
