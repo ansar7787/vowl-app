@@ -102,7 +102,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                         ),
                       ),
                       child: Text(
-                        selected ?? "      ",
+                        selected == null ? "      " : (selected.toLowerCase() == "(no article)" ? "Ø" : selected),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: isCompact ? 18.sp : 22.sp,
