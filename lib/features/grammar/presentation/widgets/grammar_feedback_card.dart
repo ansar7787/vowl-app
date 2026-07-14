@@ -69,18 +69,26 @@ class GrammarFeedbackCard extends StatelessWidget {
                     : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
               : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
 
-    // Build explanation string for mastery-loop failures.
+    // Determine when to show pedagogical fields
+    final bool showEducationalInfo = success || isFinalFailure;
+
     String? explanation;
-    if (!success && isFinalFailure) {
+    String? grammarRule;
+    
+    if (showEducationalInfo) {
       final quest = loaded.currentQuest;
-      explanation =
-          quest.explanation ??
-          (quest.options != null && quest.correctAnswerIndex != null
-              ? quest.options![quest.correctAnswerIndex!]
-              : null);
+      explanation = quest.explanation;
+      
+      // Fallback to showing the correct answer ONLY on final failure
+      if (explanation == null && !success && isFinalFailure) {
+        explanation = (quest.options != null && quest.correctAnswerIndex != null
+            ? quest.options![quest.correctAnswerIndex!]
+            : null);
+      }
+      
+      grammarRule = quest.grammarRule;
     }
 
-    final grammarRule = loaded.currentQuest.grammarRule;
     final hasGrammarRule = grammarRule != null && grammarRule.trim().isNotEmpty;
 
     return ClipRRect(
