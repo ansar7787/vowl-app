@@ -87,7 +87,7 @@ class WritingGameHeader extends StatelessWidget {
                 onHint();
               },
             ),
-            if (quest!.hint != null) ...[
+            if (quest!.hint != null && hintUsed) ...[
               SizedBox(width: 8.w),
               TranslateButtonWidget(
                 originalText: quest!.hint!,

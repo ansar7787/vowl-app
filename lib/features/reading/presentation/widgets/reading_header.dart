@@ -137,7 +137,7 @@ class ReadingHeader extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         button,
-        if (currentQuest?.hint != null) ...[
+        if (currentQuest?.hint != null && hintUsed) ...[
           SizedBox(width: 8.w),
           TranslateButtonWidget(
             originalText: currentQuest!.hint!,

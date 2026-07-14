@@ -422,7 +422,7 @@ class _RoleplayBaseLayoutState extends State<RoleplayBaseLayout> {
                     begin: const Offset(1, 1),
                     end: const Offset(1.1, 1.1),
                   ),
-                  if (quest.hint != null) ...[
+                  if (quest.hint != null && ((state is RoleplayLoaded) ? state.hintUsed : false)) ...[
                     SizedBox(width: 8.w),
                     TranslateButtonWidget(
                       originalText: quest.hint,

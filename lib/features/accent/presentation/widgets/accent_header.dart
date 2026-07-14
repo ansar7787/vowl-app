@@ -100,7 +100,7 @@ class AccentHeader extends StatelessWidget {
                   shouldGlow: hintShouldGlow,
                   onTap: onHintTap,
                 ),
-                if (quest!.hint != null) ...[
+                if (quest!.hint != null && hintUsed) ...[
                   SizedBox(width: 8.w),
                   TranslateButtonWidget(
                     originalText: quest!.hint!,
