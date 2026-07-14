@@ -59,61 +59,6 @@ class ShimmerLoading extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
-// Private shared shimmer-box widget
-// Replaces the per-build local function in GameShimmerLoading to avoid
-// closure re-allocation on every build() call.
-// ---------------------------------------------------------------------------
-
-class _ShimmerBox extends StatelessWidget {
-  final double? width;
-  final double height;
-  final double radius;
-  final BoxShape shape;
-  final Color? accent;
-
-  const _ShimmerBox({
-    this.width,
-    required this.height,
-    this.radius = 12,
-    this.shape = BoxShape.rectangle,
-    this.accent,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final color = accent ?? Colors.grey;
-    final baseColor = isDark
-        ? color.withValues(alpha: 0.08)
-        : color.withValues(alpha: 0.06);
-    final highlightColor = isDark
-        ? color.withValues(alpha: 0.18)
-        : color.withValues(alpha: 0.12);
-
-    return RepaintBoundary(
-      child: Shimmer.fromColors(
-        baseColor: baseColor,
-        highlightColor: highlightColor,
-        period: const Duration(milliseconds: 1800),
-        child: Container(
-          width: width,
-          height: height,
-          decoration: BoxDecoration(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.1)
-                : Colors.grey[200],
-            borderRadius: shape == BoxShape.circle
-                ? null
-                : BorderRadius.circular(radius.r),
-            shape: shape,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// ---------------------------------------------------------------------------
 // Game category shimmer screen
 // ---------------------------------------------------------------------------
 
@@ -136,30 +81,27 @@ class GameShimmerLoading extends StatelessWidget {
             // Header
             Row(
               children: [
-                _ShimmerBox(
+                ShimmerLoading.circular(
                   width: 45.r,
                   height: 45.r,
-                  shape: BoxShape.circle,
-                  accent: accent,
                 ),
                 SizedBox(width: 16.w),
                 Expanded(
-                  child: _ShimmerBox(height: 12.h, radius: 6, accent: accent),
+                  child: ShimmerLoading.rounded(height: 12.h, borderRadius: 6),
                 ),
                 SizedBox(width: 40.w),
-                _ShimmerBox(
+                ShimmerLoading.rounded(
                   width: 80.w,
                   height: 35.h,
-                  radius: 20,
-                  accent: accent,
+                  borderRadius: 20,
                 ),
               ],
             ),
             SizedBox(height: 50.h),
             // Question area
-            _ShimmerBox(width: 250.w, height: 25.h, radius: 12, accent: accent),
+            ShimmerLoading.rounded(width: 250.w, height: 25.h, borderRadius: 12),
             SizedBox(height: 16.h),
-            _ShimmerBox(width: 180.w, height: 20.h, radius: 10, accent: accent),
+            ShimmerLoading.rounded(width: 180.w, height: 20.h, borderRadius: 10),
             SizedBox(height: 60.h),
             // Main content card
             Container(
@@ -176,18 +118,18 @@ class GameShimmerLoading extends StatelessWidget {
                   width: 2,
                 ),
               ),
-              child: _ShimmerBox(height: 320.h, radius: 32, accent: accent),
+              child: ShimmerLoading.rounded(height: 320.h, borderRadius: 32),
             ),
             SizedBox(height: 50.h),
             // Footer buttons
             Row(
               children: [
                 Expanded(
-                  child: _ShimmerBox(height: 60.h, radius: 20, accent: accent),
+                  child: ShimmerLoading.rounded(height: 60.h, borderRadius: 20),
                 ),
                 SizedBox(width: 20.w),
                 Expanded(
-                  child: _ShimmerBox(height: 60.h, radius: 20, accent: accent),
+                  child: ShimmerLoading.rounded(height: 60.h, borderRadius: 20),
                 ),
               ],
             ),
