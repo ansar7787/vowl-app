@@ -288,6 +288,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                 isCorrectAnswer:
                                     article.toLowerCase() ==
                                     correctAnswer.toLowerCase(),
+                                isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
                                 isCompact: isCompact,
                               );
                             }).toList(),

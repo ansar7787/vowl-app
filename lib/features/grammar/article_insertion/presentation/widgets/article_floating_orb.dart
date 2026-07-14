@@ -11,6 +11,7 @@ class ArticleFloatingOrb extends StatefulWidget {
   final bool isAnswered;
   final bool isSelected;
   final bool isCorrectAnswer;
+  final bool isFinalFailure;
 
   final bool isCompact;
 
@@ -24,6 +25,7 @@ class ArticleFloatingOrb extends StatefulWidget {
     required this.isAnswered,
     required this.isSelected,
     required this.isCorrectAnswer,
+    this.isFinalFailure = false,
     this.isCompact = false,
   });
 
@@ -114,7 +116,7 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
             ),
           ];
         }
-      } else if (widget.isCorrectAnswer) {
+      } else if (widget.isCorrectAnswer && widget.isFinalFailure) {
         textColor = Colors.greenAccent;
         borderColor = Colors.greenAccent.withValues(alpha: 0.6);
         gradientColors = [
