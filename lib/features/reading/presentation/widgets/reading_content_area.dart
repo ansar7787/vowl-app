@@ -87,7 +87,7 @@ class ReadingContentArea extends StatelessWidget {
           // animation never invalidates the question content layer.
           Positioned(
             top: -20.h,
-            left: 20.w,
+            right: 20.w,
             child: RepaintBoundary(
               child: ReadingPeekingMascot(
                 lives: lives,

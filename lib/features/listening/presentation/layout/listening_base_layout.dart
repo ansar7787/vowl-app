@@ -488,7 +488,7 @@ class _PhoneLayout extends StatelessWidget {
               ),
               Positioned(
                 top: -30.h,
-                left: 20.w,
+                right: 20.w,
                 child: RepaintBoundary(
                   child: ListeningPeekingMascot(
                     state: state,

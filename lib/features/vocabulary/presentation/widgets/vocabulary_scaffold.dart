@@ -138,7 +138,7 @@ class VocabularyScaffold extends StatelessWidget {
                         ),
                         Positioned(
                           top: -10.h,
-                          left: 20.w,
+                          right: 20.w,
                           child: VocabularyPeekingMascot(
                             state: state,
                             lives: _lives,

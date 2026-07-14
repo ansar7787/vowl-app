@@ -411,7 +411,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                             ),
                             Positioned(
                               top: -10.h,
-                              left: 20.w,
+                              right: 20.w,
                               child: ElitePeekingMascot(
                                 state: state,
                                 lives: lives,

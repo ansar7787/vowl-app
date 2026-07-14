@@ -240,7 +240,7 @@ class _GrammarBaseLayoutState extends State<GrammarBaseLayout> {
                           ),
                           Positioned(
                             top: -20.h,
-                            left: 20.w,
+                            right: 20.w,
                             child: GrammarPeekingMascot(
                               state: state,
                               lives: lives,
