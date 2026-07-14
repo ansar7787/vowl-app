@@ -60,6 +60,9 @@ class GrammarGameHeader extends StatelessWidget {
     final isLoaded = state is GrammarLoaded;
     final hintShouldGlow = lives < 3 && !isAnswered;
     final showActions = quest != null && !isAnswered;
+    final hintUsed = isFinalFailure
+        ? false
+        : (isLoaded ? (state as GrammarLoaded).hintUsed : false);
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 8.w),

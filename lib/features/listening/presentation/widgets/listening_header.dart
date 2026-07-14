@@ -177,7 +177,7 @@ class _HintButton extends StatelessWidget {
                 duration: 1.seconds,
               )
               .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
-          if (quest.hint != null && ((state is ListeningLoaded) ? state.hintUsed : false)) ...[
+          if (quest.hint != null && used) ...[
             SizedBox(width: 8.w),
             TranslateButtonWidget(
               originalText: quest.hint,
