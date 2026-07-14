@@ -8,6 +8,7 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -208,7 +209,10 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                     SizedBox(height: gapTop),
                                     ConnectedSpeechInstruction(
                                       primaryColor: theme.primaryColor,
-                                      instruction: quest.instruction,
+                                      instruction: context.tr(
+                                        'games.connected_speech_instruction', 
+                                        fallback: "SELECT THE CORRECT SOUND CHANGE",
+                                      ),
                                       isCompact: isCompact,
                                     ),
                                     SizedBox(height: gapInstruction),
