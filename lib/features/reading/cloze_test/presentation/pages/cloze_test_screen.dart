@@ -75,15 +75,6 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
         _isCorrect = false;
       });
       context.read<ReadingBloc>().add(SubmitAnswer(false));
-      Future.delayed(1.seconds, () {
-        if (mounted) {
-          setState(() {
-            _dockedOption = null;
-            _isAnswered = false;
-            _isCorrect = null;
-          });
-        }
-      });
     }
   }
 
