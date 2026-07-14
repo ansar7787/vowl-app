@@ -503,7 +503,7 @@ class _RuleTipBoxState extends State<_RuleTipBox> {
   }
 }
 
-class _ShadowingFocusBox extends StatelessWidget {
+class _ShadowingFocusBox extends StatefulWidget {
   final String text;
   final Color accentColor;
   final bool isDark;
@@ -515,15 +515,24 @@ class _ShadowingFocusBox extends StatelessWidget {
   });
 
   @override
+  State<_ShadowingFocusBox> createState() => _ShadowingFocusBoxState();
+}
+
+class _ShadowingFocusBoxState extends State<_ShadowingFocusBox> {
+  String? _translatedText;
+
+  @override
   Widget build(BuildContext context) {
+    final displayText = _translatedText ?? widget.text;
+
     return Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
           decoration: BoxDecoration(
-            color: accentColor.withValues(alpha: 0.1),
+            color: widget.accentColor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
-              color: accentColor.withValues(alpha: 0.2),
+              color: widget.accentColor.withValues(alpha: 0.2),
               width: 1.5,
             ),
           ),
@@ -534,30 +543,39 @@ class _ShadowingFocusBox extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.record_voice_over_rounded,
-                    color: accentColor,
+                    color: widget.accentColor,
                     size: 14.r,
                   ),
                   SizedBox(width: 8.w),
-                  Text(
-                    "SHADOWING FOCUS",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      color: accentColor,
-                      letterSpacing: 1,
+                  Expanded(
+                    child: Text(
+                      "SHADOWING FOCUS",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w800,
+                        color: widget.accentColor,
+                        letterSpacing: 1,
+                      ),
                     ),
                   ),
+                  if (_translatedText == null)
+                    TranslateButtonWidget(
+                      originalText: widget.text,
+                      onTranslationComplete: (translated) {
+                        if (mounted) setState(() => _translatedText = translated);
+                      },
+                    ),
                 ],
               ),
               SizedBox(height: 4.h),
               Text(
-                text,
+                displayText,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white : Colors.black87,
+                  color: widget.isDark ? Colors.white : Colors.black87,
                 ),
               ),
             ],
@@ -569,7 +587,7 @@ class _ShadowingFocusBox extends StatelessWidget {
   }
 }
 
-class _UsageContextBox extends StatelessWidget {
+class _UsageContextBox extends StatefulWidget {
   final String text;
   final Color accentColor;
   final bool isDark;
@@ -581,15 +599,24 @@ class _UsageContextBox extends StatelessWidget {
   });
 
   @override
+  State<_UsageContextBox> createState() => _UsageContextBoxState();
+}
+
+class _UsageContextBoxState extends State<_UsageContextBox> {
+  String? _translatedText;
+
+  @override
   Widget build(BuildContext context) {
+    final displayText = _translatedText ?? widget.text;
+
     return Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
           decoration: BoxDecoration(
-            color: accentColor.withValues(alpha: 0.1),
+            color: widget.accentColor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
-              color: accentColor.withValues(alpha: 0.2),
+              color: widget.accentColor.withValues(alpha: 0.2),
               width: 1.5,
             ),
           ),
@@ -600,30 +627,39 @@ class _UsageContextBox extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.lightbulb_outline_rounded,
-                    color: accentColor,
+                    color: widget.accentColor,
                     size: 14.r,
                   ),
                   SizedBox(width: 8.w),
-                  Text(
-                    "USAGE CONTEXT",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      color: accentColor,
-                      letterSpacing: 1,
+                  Expanded(
+                    child: Text(
+                      "USAGE CONTEXT",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w800,
+                        color: widget.accentColor,
+                        letterSpacing: 1,
+                      ),
                     ),
                   ),
+                  if (_translatedText == null)
+                    TranslateButtonWidget(
+                      originalText: widget.text,
+                      onTranslationComplete: (translated) {
+                        if (mounted) setState(() => _translatedText = translated);
+                      },
+                    ),
                 ],
               ),
               SizedBox(height: 4.h),
               Text(
-                text,
+                displayText,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white : Colors.black87,
+                  color: widget.isDark ? Colors.white : Colors.black87,
                 ),
               ),
             ],
@@ -635,7 +671,7 @@ class _UsageContextBox extends StatelessWidget {
   }
 }
 
-class _SpellingRuleBox extends StatelessWidget {
+class _SpellingRuleBox extends StatefulWidget {
   final String text;
   final Color accentColor;
   final bool isDark;
@@ -647,15 +683,24 @@ class _SpellingRuleBox extends StatelessWidget {
   });
 
   @override
+  State<_SpellingRuleBox> createState() => _SpellingRuleBoxState();
+}
+
+class _SpellingRuleBoxState extends State<_SpellingRuleBox> {
+  String? _translatedText;
+
+  @override
   Widget build(BuildContext context) {
+    final displayText = _translatedText ?? widget.text;
+
     return Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
           decoration: BoxDecoration(
-            color: accentColor.withValues(alpha: 0.1),
+            color: widget.accentColor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
-              color: accentColor.withValues(alpha: 0.2),
+              color: widget.accentColor.withValues(alpha: 0.2),
               width: 1.5,
             ),
           ),
@@ -666,30 +711,39 @@ class _SpellingRuleBox extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.spellcheck_rounded,
-                    color: accentColor,
+                    color: widget.accentColor,
                     size: 14.r,
                   ),
                   SizedBox(width: 8.w),
-                  Text(
-                    "SPELLING PATTERN",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      color: accentColor,
-                      letterSpacing: 1,
+                  Expanded(
+                    child: Text(
+                      "SPELLING PATTERN",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w800,
+                        color: widget.accentColor,
+                        letterSpacing: 1,
+                      ),
                     ),
                   ),
+                  if (_translatedText == null)
+                    TranslateButtonWidget(
+                      originalText: widget.text,
+                      onTranslationComplete: (translated) {
+                        if (mounted) setState(() => _translatedText = translated);
+                      },
+                    ),
                 ],
               ),
               SizedBox(height: 4.h),
               Text(
-                text,
+                displayText,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white : Colors.black87,
+                  color: widget.isDark ? Colors.white : Colors.black87,
                 ),
               ),
             ],
@@ -701,7 +755,7 @@ class _SpellingRuleBox extends StatelessWidget {
   }
 }
 
-class _SequenceLogicBox extends StatelessWidget {
+class _SequenceLogicBox extends StatefulWidget {
   final String text;
   final Color accentColor;
   final bool isDark;
@@ -713,15 +767,24 @@ class _SequenceLogicBox extends StatelessWidget {
   });
 
   @override
+  State<_SequenceLogicBox> createState() => _SequenceLogicBoxState();
+}
+
+class _SequenceLogicBoxState extends State<_SequenceLogicBox> {
+  String? _translatedText;
+
+  @override
   Widget build(BuildContext context) {
+    final displayText = _translatedText ?? widget.text;
+
     return Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
           decoration: BoxDecoration(
-            color: accentColor.withValues(alpha: 0.1),
+            color: widget.accentColor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
-              color: accentColor.withValues(alpha: 0.2),
+              color: widget.accentColor.withValues(alpha: 0.2),
               width: 1.5,
             ),
           ),
@@ -732,30 +795,39 @@ class _SequenceLogicBox extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.account_tree_rounded,
-                    color: accentColor,
+                    color: widget.accentColor,
                     size: 14.r,
                   ),
                   SizedBox(width: 8.w),
-                  Text(
-                    "LOGICAL SEQUENCE",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      color: accentColor,
-                      letterSpacing: 1,
+                  Expanded(
+                    child: Text(
+                      "LOGICAL SEQUENCE",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w800,
+                        color: widget.accentColor,
+                        letterSpacing: 1,
+                      ),
                     ),
                   ),
+                  if (_translatedText == null)
+                    TranslateButtonWidget(
+                      originalText: widget.text,
+                      onTranslationComplete: (translated) {
+                        if (mounted) setState(() => _translatedText = translated);
+                      },
+                    ),
                 ],
               ),
               SizedBox(height: 4.h),
               Text(
-                text,
+                displayText,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white : Colors.black87,
+                  color: widget.isDark ? Colors.white : Colors.black87,
                 ),
               ),
             ],
