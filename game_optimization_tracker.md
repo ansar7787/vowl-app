@@ -24,7 +24,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Emotion Recognition (`emotionRecognition`)
 - [ ] Detail Spotlight (`detailSpotlight`)
 - [ ] Listening Inference (`listeningInference`)
-- [ ] Ambient ID (`ambientId`)
+- [x] ✅ Ambient ID (`ambientId`)
 
 ## Reading (12)
 - [ ] Read and Answer (`readAndAnswer`)

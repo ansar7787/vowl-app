@@ -461,10 +461,10 @@ class GameInstructionService {
       title: "Spatial Anchor",
       icon: Icons.radar_rounded,
       objective:
-          "Listen to the background audio and identify the scenario location.",
-      rules: ["Listen to background", "Scan the radar", "Anchor the location"],
+          "Sharpen your situational awareness by identifying environments solely through their ambient soundscape, essential for real-world immersion.",
+      rules: ["Listen to background noise", "Scan the radar options", "Anchor the correct location"],
       actionText: "Anchor Location",
-      tip: "Focus on ambient sounds like footsteps, echoes, wind, or hums!",
+      tip: "PRO TIP: Close your eyes and visualize the scene! Focus on ambient sounds like footsteps, echoes, wind, or humming machinery.",
     ),
     // 3. Reading
     GameSubtype.readAndAnswer: GameBriefing(

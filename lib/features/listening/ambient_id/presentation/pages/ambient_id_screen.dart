@@ -10,6 +10,7 @@ import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/ambient_id/presentation/widgets/ambient_id_instruction.dart';
 import 'package:vowl/features/listening/ambient_id/presentation/widgets/ambient_id_sonar_field.dart';
@@ -137,7 +138,11 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
           showConfetti: _showConfetti,
           useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
-          onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
+          onHint: () {
+            if (quest != null && quest.hint != null && quest.hint!.isNotEmpty) {
+              GameDialogHelper.showHintDialog(context, hint: quest.hint!);
+            }
+          },
           child: quest == null
               ? const SizedBox()
               : LayoutBuilder(
@@ -183,13 +188,19 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                           fit: BoxFit.scaleDown,
                                           child: AmbientIdInstruction(
                                             color: theme.primaryColor,
-                                            instruction: quest.instruction,
+                                            instruction: context.tr(
+                                              'games.ambientId_instruction',
+                                              fallback: 'Listen to the sounds and find the location.',
+                                            ),
                                           ),
                                         ),
                                       )
                                     : AmbientIdInstruction(
                                         color: theme.primaryColor,
-                                        instruction: quest.instruction,
+                                        instruction: context.tr(
+                                          'games.ambientId_instruction',
+                                          fallback: 'Listen to the sounds and find the location.',
+                                        ),
                                       ),
                                 SizedBox(height: gapInstruction),
                                 isCompact
