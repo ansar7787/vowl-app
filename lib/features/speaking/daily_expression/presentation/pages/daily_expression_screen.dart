@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -81,12 +80,6 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     super.dispose();
   }
 
-  void _triggerAutoPlay(SpeakingQuest quest) {
-    if (quest.expression != null) {
-      _soundService.playTts(quest.expression!);
-    }
-  }
-
   void _startSpeechListening() async {
     if (_isAnswered) return;
     _hapticService.selection();
@@ -107,24 +100,9 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
         if (mounted) setState(() => _isListening = false);
       },
     );
-
-    _scratchTimer = Timer.periodic(const Duration(milliseconds: 30), (timer) {
-      if (!mounted || !_isListening) {
-        timer.cancel();
-        return;
-      }
-      setState(() {
-        if (_scratchProgress < 0.90) {
-          _scratchProgress += 0.012 + (math.Random().nextDouble() * 0.008);
-        } else {
-          _scratchProgress = 0.90 + (math.Random().nextDouble() * 0.02);
-        }
-      });
-    });
   }
 
   void _stopSpeechListening() async {
-    _scratchTimer?.cancel();
     await _speechService.stop();
 
     setState(() {
@@ -134,11 +112,22 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     _verifyExpressionSpoken();
   }
 
+  void _handleScratchUpdate(double delta) {
+    if (_scratchProgress >= 1.0) return;
+    setState(() {
+      _scratchProgress += delta;
+      if (_scratchProgress >= 0.85) {
+        _scratchProgress = 1.0;
+        _hapticService.selection();
+        _soundService.playTts(_targetExpression);
+      }
+    });
+  }
+
   void _verifyExpressionSpoken() {
     if (_spokenText.isEmpty || _spokenText.startsWith("Initializing")) {
       setState(() {
         _spokenText = "Vocal analysis timed out.";
-        _scratchProgress = 0.0;
       });
       _hapticService.error();
       return;
@@ -161,7 +150,6 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
       _attempts++;
       _isAnswered = true;
       _isCorrect = matchFound;
-      _scratchProgress = matchFound ? 1.0 : 0.0;
     });
 
     if (matchFound) {
@@ -207,9 +195,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
               _scratchProgress = 0.0;
               _spokenText = "";
             });
-            Future.delayed(const Duration(milliseconds: 300), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
-            });
+            // Removed Future.delayed auto-play to preserve scratch card mystery
           } else if (state.lastAnswerCorrect == false) {
             setState(() {
               _isCorrect = false;
@@ -392,6 +378,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                             quest.expression ??
                                                                 "",
                                                           ),
+                                                      onScratchUpdate: _handleScratchUpdate,
                                                     ),
                                               ),
                                             ),
@@ -407,6 +394,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                 _soundService.playTts(
                                                   quest.expression ?? "",
                                                 ),
+                                            onScratchUpdate: _handleScratchUpdate,
                                           ),
                                     SizedBox(height: gapScratch),
 
@@ -426,6 +414,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                             primaryColor: theme
                                                                 .primaryColor,
                                                             isDark: isDark,
+                                                            isListening: _isListening,
                                                           ),
                                                     ),
                                                   ),
@@ -438,6 +427,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                   primaryColor:
                                                       theme.primaryColor,
                                                   isDark: isDark,
+                                                  isListening: _isListening,
                                                 )
                                                 .animate()
                                                 .fadeIn(duration: 300.ms)
@@ -462,6 +452,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                       DailyExpressionTelemetryCard(
                                                         spokenText: _spokenText,
                                                         isDark: isDark,
+                                                        primaryColor: theme.primaryColor,
                                                       ),
                                                 ),
                                               ),
@@ -469,11 +460,12 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                           : DailyExpressionTelemetryCard(
                                               spokenText: _spokenText,
                                               isDark: isDark,
+                                              primaryColor: theme.primaryColor,
                                             ),
 
                                     SizedBox(height: gapTelemetry),
 
-                                    if (!_isAnswered)
+                                    if (!_isAnswered && _scratchProgress >= 1.0)
                                       isCompact
                                           ? SizedBox(
                                               height: 70.h,

@@ -13,6 +13,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
   final bool isListening;
   final double timeVal;
   final VoidCallback onPlayTts;
+  final ValueChanged<double> onScratchUpdate;
 
   const DailyExpressionScratchPanel({
     super.key,
@@ -23,6 +24,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
     required this.isListening,
     required this.timeVal,
     required this.onPlayTts,
+    required this.onScratchUpdate,
   });
 
   @override
@@ -48,7 +50,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                     colors: isDark
                         ? [const Color(0xFF1E1E38), const Color(0xFF111124)]
                         : [
-                            Colors.amber.shade50.withValues(alpha: 0.2),
+                            primaryColor.withValues(alpha: 0.2),
                             Colors.white,
                           ],
                     begin: Alignment.topLeft,
@@ -67,7 +69,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'RobotoMono',
                             fontSize: 10.sp,
-                            color: Colors.amberAccent,
+                            color: primaryColor,
                             letterSpacing: 1.5,
                           ),
                         ),
@@ -75,7 +77,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                           onTap: onPlayTts,
                           child: Icon(
                             Icons.volume_up_rounded,
-                            color: Colors.amberAccent,
+                            color: primaryColor,
                             size: 18.r,
                           ),
                         ),
@@ -89,27 +91,39 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 26.sp,
                         fontWeight: FontWeight.w900,
-                        color: Colors.amberAccent,
+                        color: primaryColor,
                         shadows: [
                           Shadow(
-                            color: Colors.amberAccent.withValues(alpha: 0.3),
-                            blurRadius: 10.r,
+                            color: primaryColor.withValues(alpha: isListening ? 0.8 : 0.3),
+                            blurRadius: isListening ? 20.r : 10.r,
                           ),
                         ],
                       ),
-                    ),
+                    ).animate(target: isListening ? 1 : 0).scale(
+                          begin: const Offset(1.0, 1.0),
+                          end: const Offset(1.05, 1.05),
+                          duration: 200.ms,
+                          curve: Curves.easeOutCubic,
+                        ),
                     SizedBox(height: 10.h),
-                    Text(
-                      (quest.meaning ?? "Meaning").toUpperCase(),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.bold,
-                        color: isDark ? Colors.white70 : Colors.black87,
-                        height: 1.3,
+                    Flexible(
+                      child: SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: AnimatedOpacity(
+                          opacity: isListening ? 0.2 : 1.0,
+                          duration: const Duration(milliseconds: 300),
+                          child: Text(
+                            (quest.meaning ?? "Meaning").toUpperCase(),
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.bold,
+                              color: isDark ? Colors.white70 : Colors.black87,
+                              height: 1.3,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                     const Spacer(),
@@ -119,46 +133,58 @@ class DailyExpressionScratchPanel extends StatelessWidget {
             ),
 
             // Scratch Foil Overlay
-            Positioned.fill(
-              child: CustomPaint(
-                painter: ScratchPainter(
-                  progress: scratchProgress,
-                  isListening: isListening,
-                  time: timeVal,
+            if (scratchProgress < 1.0)
+              Positioned.fill(
+                child: GestureDetector(
+                  onPanUpdate: (details) {
+                    final double dx = details.delta.dx;
+                    final double dy = details.delta.dy;
+                    final double dist = (dx.abs() + dy.abs()) / 300.0; // scale distance to 0-1 range
+                    onScratchUpdate(dist);
+                  },
+                  child: CustomPaint(
+                    painter: ScratchPainter(
+                      progress: scratchProgress,
+                      isListening: isListening,
+                      time: timeVal,
+                      primaryColor: primaryColor,
+                    ),
+                  ),
                 ),
               ),
-            ),
 
             // Scratch Instructions Overlay
             if (scratchProgress == 0.0)
               Positioned.fill(
-                child: Container(
-                  color: Colors.black.withValues(alpha: 0.1),
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                              Icons.swipe_rounded,
+                child: IgnorePointer(
+                  child: Container(
+                    color: Colors.black.withValues(alpha: 0.1),
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                                Icons.swipe_rounded,
+                                color: Colors.white,
+                                size: 30.r,
+                              )
+                              .animate(onPlay: (c) => c.repeat())
+                              .shake(hz: 2, curve: Curves.easeInOut)
+                              .then()
+                              .fadeOut(),
+                          SizedBox(height: 8.h),
+                          Text(
+                            "SWIPE TO REVEAL IDIOM",
+                            style: TextStyle(
+                              fontFamily: 'RobotoMono',
+                              fontSize: 10.sp,
                               color: Colors.white,
-                              size: 30.r,
-                            )
-                            .animate(onPlay: (c) => c.repeat())
-                            .shake(hz: 2, curve: Curves.easeInOut)
-                            .then()
-                            .fadeOut(),
-                        SizedBox(height: 8.h),
-                        Text(
-                          "SPOKEN FREQUENCY DISSOLVES FOIL",
-                          style: TextStyle(
-                            fontFamily: 'RobotoMono',
-                            fontSize: 10.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1.0,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.0,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),

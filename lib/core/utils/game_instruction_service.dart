@@ -333,7 +333,7 @@ class GameInstructionService {
       icon: Icons.chat_bubble_rounded,
       objective: "Master common daily idioms to speak naturally and connect with native speakers in real-world conversations.",
       rules: [
-        "Scratch foil with voice",
+        "Swipe to reveal idiom",
         "Listen to expression",
         "Review context & usage",
       ],

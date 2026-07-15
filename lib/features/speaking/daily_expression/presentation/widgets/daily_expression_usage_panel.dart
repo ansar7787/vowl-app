@@ -6,12 +6,14 @@ class DailyExpressionUsagePanel extends StatelessWidget {
   final SpeakingQuest quest;
   final Color primaryColor;
   final bool isDark;
+  final bool isListening;
 
   const DailyExpressionUsagePanel({
     super.key,
     required this.quest,
     required this.primaryColor,
     required this.isDark,
+    this.isListening = false,
   });
 
   @override
@@ -26,40 +28,44 @@ class DailyExpressionUsagePanel extends StatelessWidget {
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: Colors.white10),
       ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.format_quote_rounded,
-                color: Colors.amberAccent,
-                size: 16.r,
-              ),
-              SizedBox(width: 8.w),
-              Text(
-                "CONTEXTUAL SAMPLE USAGE",
-                style: TextStyle(
-                  fontFamily: 'RobotoMono',
-                  fontSize: 10.sp,
-                  color: Colors.grey,
-                  letterSpacing: 1.0,
+      child: AnimatedOpacity(
+        opacity: isListening ? 0.2 : 1.0,
+        duration: const Duration(milliseconds: 300),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.format_quote_rounded,
+                  color: primaryColor,
+                  size: 16.r,
                 ),
-              ),
-            ],
-          ),
-          SizedBox(height: 10.h),
-          Text(
-            "\"${quest.sampleUsage ?? 'Sample usage'}\"",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 16.sp,
-              color: isDark ? Colors.white70 : Colors.black87,
-              height: 1.35,
+                SizedBox(width: 8.w),
+                Text(
+                  "CONTEXTUAL SAMPLE USAGE",
+                  style: TextStyle(
+                    fontFamily: 'RobotoMono',
+                    fontSize: 10.sp,
+                    color: Colors.grey,
+                    letterSpacing: 1.0,
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
+            SizedBox(height: 10.h),
+            Text(
+              "\"${quest.sampleUsage ?? 'Sample usage'}\"",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                color: isDark ? Colors.white70 : Colors.black87,
+                height: 1.35,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

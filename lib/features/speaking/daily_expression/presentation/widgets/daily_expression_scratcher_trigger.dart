@@ -51,7 +51,7 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
                     child:
                         Icon(
                               Icons.star_rounded,
-                              color: Colors.amberAccent.withValues(alpha: 0.8),
+                              color: primaryColor.withValues(alpha: 0.8),
                               size: (12.r + i * 2.r).clamp(10, 24).toDouble(),
                             )
                             .animate(onPlay: (c) => c.repeat())
@@ -77,7 +77,7 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
                       color: Colors.transparent,
                       border: Border.all(
                         color: isListening
-                            ? Colors.amberAccent.withValues(alpha: 0.3)
+                            ? primaryColor.withValues(alpha: 0.3)
                             : primaryColor.withValues(alpha: 0.1),
                         width: 4.r,
                       ),
@@ -101,13 +101,13 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
                     shape: BoxShape.circle,
                     gradient: LinearGradient(
                       colors: isListening
-                          ? [Colors.amber[800]!, Colors.amberAccent]
+                          ? [primaryColor.withValues(alpha: 0.8), primaryColor]
                           : [const Color(0xFF2C3E50), const Color(0xFF000000)],
                     ),
                     boxShadow: isListening
                         ? [
                             BoxShadow(
-                              color: Colors.amberAccent.withValues(alpha: 0.45),
+                              color: primaryColor.withValues(alpha: 0.45),
                               blurRadius: 25.r,
                               spreadRadius: 2.r,
                             ),
@@ -133,8 +133,8 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
           SizedBox(height: 12.h),
           Text(
             isListening
-                ? "RELEASE CAN TO REVEAL CARD"
-                : "HOLD COIN TO VOICE-SCRATCH CARD",
+                ? "RELEASE MIC TO SUBMIT"
+                : "HOLD MIC TO SPEAK",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'RobotoMono',
@@ -160,16 +160,16 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
                           vertical: 10.h,
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.amber.withValues(alpha: 0.2),
+                          color: primaryColor.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(12.r),
-                          border: Border.all(color: Colors.amber, width: 1.5),
+                          border: Border.all(color: primaryColor, width: 1.5),
                         ),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Icon(
                               Icons.auto_awesome_rounded,
-                              color: Colors.amber,
+                              color: primaryColor,
                               size: 18.r,
                             ),
                             SizedBox(width: 8.w),
@@ -179,7 +179,7 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
                                   .toUpperCase(),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                color: Colors.amber,
+                                color: primaryColor,
                                 fontWeight: FontWeight.w900,
                                 fontSize: 12.sp,
                               ),

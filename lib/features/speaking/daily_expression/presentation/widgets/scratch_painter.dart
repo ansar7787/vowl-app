@@ -6,11 +6,13 @@ class ScratchPainter extends CustomPainter {
   final double progress;
   final bool isListening;
   final double time;
+  final Color primaryColor;
 
   ScratchPainter({
     required this.progress,
     required this.isListening,
     required this.time,
+    required this.primaryColor,
   });
 
   @override
@@ -18,6 +20,8 @@ class ScratchPainter extends CustomPainter {
     if (progress >= 0.98) return;
 
     final rect = Rect.fromLTWH(0, 0, size.width, size.height);
+
+    canvas.saveLayer(rect, Paint());
 
     // Draw metallic silver-grey base foil layer
     final Paint foilPaint = Paint()
@@ -72,7 +76,7 @@ class ScratchPainter extends CustomPainter {
 
       // Draw burning neon plasma edge at the scratch boundary
       final Paint boundaryGlow = Paint()
-        ..color = Colors.amberAccent.withValues(alpha: 0.6)
+        ..color = primaryColor.withValues(alpha: 0.6)
         ..style = PaintingStyle.stroke
         ..strokeWidth = 5.w
         ..maskFilter = MaskFilter.blur(BlurStyle.normal, 8.r);
@@ -92,6 +96,8 @@ class ScratchPainter extends CustomPainter {
       canvas.drawPath(boundaryPath, boundaryGlow);
       canvas.drawPath(boundaryPath, boundaryCore);
     }
+    
+    canvas.restore();
   }
 
   @override

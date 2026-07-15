@@ -26,7 +26,7 @@ class DailyExpressionHeader extends StatelessWidget {
           Icon(
             Icons.auto_awesome_rounded,
             size: 14.r,
-            color: Colors.amberAccent,
+            color: primaryColor,
           ),
           SizedBox(width: 8.w),
           Text(
@@ -35,7 +35,7 @@ class DailyExpressionHeader extends StatelessWidget {
               fontFamily: 'RobotoMono',
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,
-              color: Colors.amberAccent,
+              color: primaryColor,
               letterSpacing: 1.5,
             ),
           ),

@@ -6,11 +6,13 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 class DailyExpressionTelemetryCard extends StatelessWidget {
   final String spokenText;
   final bool isDark;
+  final Color primaryColor;
 
   const DailyExpressionTelemetryCard({
     super.key,
     required this.spokenText,
     required this.isDark,
+    required this.primaryColor,
   });
 
   @override
@@ -31,7 +33,7 @@ class DailyExpressionTelemetryCard extends StatelessWidget {
                 hasInput
                     ? Icons.check_circle_rounded
                     : Icons.warning_amber_rounded,
-                color: Colors.amberAccent,
+                color: primaryColor,
                 size: 16.r,
               ),
               SizedBox(width: 8.w),
