@@ -33,7 +33,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
       borderRadius: BorderRadius.circular(28.r),
       child: Container(
         width: 1.sw,
-        height: 190.h,
+        constraints: BoxConstraints(minHeight: 190.h),
         decoration: BoxDecoration(
           color: isDark ? const Color(0xFF131326) : Colors.white,
           borderRadius: BorderRadius.circular(28.r),
@@ -42,9 +42,8 @@ class DailyExpressionScratchPanel extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            // Underlying Revealed Golden Card
-            Positioned.fill(
-              child: Container(
+            // Underlying Revealed Golden Card (Sets the height of the stack)
+            Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: isDark
@@ -83,7 +82,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const Spacer(),
+                    SizedBox(height: 20.h),
                     if (scratchProgress == 1.0)
                       Container(
                         padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
@@ -155,11 +154,12 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Spacer(),
+                      ),
+                    ),
+                    SizedBox(height: 10.h),
                   ],
                 ),
               ),
-            ),
 
             // Scratch Foil Overlay
             if (scratchProgress < 1.0)
