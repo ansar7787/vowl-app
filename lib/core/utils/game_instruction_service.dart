@@ -725,20 +725,6 @@ class GameInstructionService {
       tip: "PRO TIP: Ensure each body paragraph has a clear topic sentence.",
     ),
     // 5. Grammar
-    GameSubtype.branchingDialogue: GameBriefing(
-      title: "Social Simulator",
-      icon: Icons.forum_rounded,
-      objective:
-          "Drag the decision probe to select the most natural, context-appropriate conversational response. Mastering this builds real-world social fluency.",
-      rules: [
-        "Analyze the scene",
-        "Flick decision probe",
-        "React naturally",
-      ],
-      actionText: "Enter Simulation",
-      tip:
-          "PRO TIP: Pay attention to the subtle social cues! Being polite and direct often opens the right doors.",
-    ),
     GameSubtype.grammarQuest: GameBriefing(
       title: "Grammar Core",
       icon: Icons.gavel_rounded,
@@ -1247,14 +1233,18 @@ class GameInstructionService {
     ),
     // 8. Roleplay
     GameSubtype.branchingDialogue: GameBriefing(
-      title: "Choice Navigator",
-      icon: Icons.alt_route_rounded,
+      title: "Social Simulator",
+      icon: Icons.forum_rounded,
       objective:
-          "Make conversational choices that lead to a successful scenario outcome.",
-      rules: ["Listen to prompt", "Evaluate consequences", "Stay on mission"],
-      actionText: "Choose Path",
+          "Drag the decision probe to select the most natural, context-appropriate conversational response. Mastering this builds real-world social fluency.",
+      rules: [
+        "Analyze the scene",
+        "Flick decision probe",
+        "React naturally",
+      ],
+      actionText: "Enter Simulation",
       tip:
-          "PRO TIP: Gauge the speaker's reaction and select the most empathetic reply.",
+          "PRO TIP: Pay attention to the subtle social cues! Being polite and direct often opens the right doors.",
     ),
     GameSubtype.situationalResponse: GameBriefing(
       title: "Reflex Responder",
