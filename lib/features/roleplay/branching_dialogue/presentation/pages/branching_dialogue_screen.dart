@@ -169,7 +169,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     return BlocConsumer<RoleplayBloc, RoleplayState>(
       listener: (context, state) {
         if (state is RoleplayLoaded) {
-          if (state.currentIndex != _lastProcessedIndex) {
+          if (state.currentIndex != _lastProcessedIndex || (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
