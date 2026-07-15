@@ -179,6 +179,32 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
     }
   }
 
+  void _handleNavigation() {
+    HapticFeedback.lightImpact();
+    final title = _hootTitle?.toLowerCase() ?? '';
+    String route = AppRouter.libraryRoute;
+    
+    if (title.contains('vocabulary') || title.contains('word')) {
+      route = '${AppRouter.categoryGamesRoute}?category=vocabulary';
+    } else if (title.contains('grammar')) {
+      route = '${AppRouter.categoryGamesRoute}?category=grammar';
+    } else if (title.contains('reading')) {
+      route = '${AppRouter.categoryGamesRoute}?category=reading';
+    } else if (title.contains('writing')) {
+      route = '${AppRouter.categoryGamesRoute}?category=writing';
+    } else if (title.contains('speaking') || title.contains('speak')) {
+      route = '${AppRouter.categoryGamesRoute}?category=speaking';
+    } else if (title.contains('listening') || title.contains('listen')) {
+      route = '${AppRouter.categoryGamesRoute}?category=listening';
+    } else if (title.contains('accent') || title.contains('pronunciation')) {
+      route = '${AppRouter.categoryGamesRoute}?category=accent';
+    } else if (title.contains('roleplay') || title.contains('conversation')) {
+      route = '${AppRouter.categoryGamesRoute}?category=roleplay';
+    }
+    
+    context.push(route);
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -324,65 +350,80 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
                         opacity: _fadeIn,
                         child: SlideTransition(
                           position: _slideIn,
-                          child: Text(
-                            "\"$_hootText\"",
-                            style: TextStyle(
-                              fontSize: 19.sp,
-                              fontWeight: FontWeight.w800,
-                              fontFamily: 'Outfit',
-                              height: 1.4,
-                              color: isDark
-                                  ? Colors.white
-                                  : const Color(0xFF0F172A),
+                          child: SizedBox(
+                            width: double.infinity,
+                            child: Text(
+                              "$_hootText",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w700,
+                                fontFamily: 'Outfit',
+                                height: 1.5,
+                                color: isDark
+                                    ? Colors.white
+                                    : const Color(0xFF0F172A),
+                              ),
                             ),
                           ),
                         ),
                       ),
                 SizedBox(height: 32.h),
-                Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 14.h),
-                  decoration: BoxDecoration(
-                    color: _VowlCardPalette.indigo,
-                    borderRadius: BorderRadius.circular(16.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: _VowlCardPalette.indigo.withValues(alpha: 0.3),
-                        blurRadius: 12,
-                        offset: const Offset(0, 4),
+                GestureDetector(
+                  onTap: _handleNavigation,
+                  onTapDown: (_) => setState(() => _pressed = true),
+                  onTapUp: (_) => setState(() => _pressed = false),
+                  onTapCancel: () => setState(() => _pressed = false),
+                  child: AnimatedScale(
+                    scale: _pressed ? 0.96 : 1.0,
+                    duration: const Duration(milliseconds: 120),
+                    curve: Curves.easeOut,
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(vertical: 14.h),
+                      decoration: BoxDecoration(
+                        color: _VowlCardPalette.indigo,
+                        borderRadius: BorderRadius.circular(16.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: _VowlCardPalette.indigo.withValues(alpha: 0.3),
+                            blurRadius: 12,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        context.tr(
-                          'home.start_next_task',
-                          fallback: 'Start Next Task',
-                        ),
-                        style: TextStyle(
-                          // Pure white on the indigo fill keeps the same
-                          // ~4.47:1 ratio as the eyebrow label did on
-                          // white. Bumping weight/size alone won't fix
-                          // contrast, so if this button ever needs to
-                          // clear strict AA independently, darken the
-                          // fill toward textSafeIndigo rather than the
-                          // text color.
-                          color: Colors.white,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: 'Outfit',
-                          fontSize: 15.sp,
-                          letterSpacing: 0.5,
-                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            context.tr(
+                              'home.start_next_task',
+                              fallback: 'Start Next Task',
+                            ),
+                            style: TextStyle(
+                              // Pure white on the indigo fill keeps the same
+                              // ~4.47:1 ratio as the eyebrow label did on
+                              // white. Bumping weight/size alone won't fix
+                              // contrast, so if this button ever needs to
+                              // clear strict AA independently, darken the
+                              // fill toward textSafeIndigo rather than the
+                              // text color.
+                              color: Colors.white,
+                              fontWeight: FontWeight.w800,
+                              fontFamily: 'Outfit',
+                              fontSize: 15.sp,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                          SizedBox(width: 8.w),
+                          Icon(
+                            Icons.play_arrow_rounded,
+                            color: Colors.white,
+                            size: 24.r,
+                          ),
+                        ],
                       ),
-                      SizedBox(width: 8.w),
-                      Icon(
-                        Icons.arrow_forward_rounded,
-                        color: Colors.white,
-                        size: 20.r,
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ],
@@ -399,23 +440,10 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
       // the title, date, quote, and streak count as separate stops,
       // repeating everything this label already says.
       excludeSemantics: true,
+      onTap: _handleNavigation,
       label:
           '${_hootTitle ?? 'Daily Wisdom'}. ${_hootText ?? 'Loading...'}. ${widget.streakCount} day streak. Double tap to start next task.',
-      child: GestureDetector(
-        onTap: () {
-          HapticFeedback.lightImpact();
-          context.push(AppRouter.libraryRoute);
-        },
-        onTapDown: (_) => setState(() => _pressed = true),
-        onTapUp: (_) => setState(() => _pressed = false),
-        onTapCancel: () => setState(() => _pressed = false),
-        child: AnimatedScale(
-          scale: _pressed ? 0.98 : 1.0,
-          duration: const Duration(milliseconds: 120),
-          curve: Curves.easeOut,
-          child: card,
-        ),
-      ),
+      child: card,
     );
   }
 

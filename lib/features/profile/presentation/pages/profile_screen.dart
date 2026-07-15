@@ -338,167 +338,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   void _showEditNameSheet(BuildContext context, String currentName) {
-    final TextEditingController nameController = TextEditingController(
-      text: currentName,
-    );
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    // MEMORY LEAK FIX: this controller was never disposed in the original
-    // code - every time the rename sheet was opened, a new
-    // TextEditingController leaked for the remaining lifetime of the app.
-    // `showModalBottomSheet` returns a Future that completes once the
-    // sheet is closed by *any* means (save, swipe-down, tap-outside, back
-    // button), so disposing in `.then()` covers every dismissal path
-    // without needing to restructure the sheet into its own StatefulWidget.
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       useRootNavigator: true,
       backgroundColor: Colors.transparent,
-      builder: (context) => BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-        child: Container(
-          padding: EdgeInsets.only(
-            bottom: MediaQuery.viewInsetsOf(context).bottom,
-          ),
-          decoration: BoxDecoration(
-            color: isDark
-                ? const Color(0xFF1E293B).withValues(alpha: 0.8)
-                : Colors.white.withValues(alpha: 0.8),
-            borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-            border: Border.all(
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.1)
-                  : Colors.black.withValues(alpha: 0.05),
-            ),
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(height: 12.h),
-              Container(
-                width: 40.w,
-                height: 4.h,
-                decoration: BoxDecoration(
-                  color: Colors.grey.withValues(alpha: 0.3),
-                  borderRadius: BorderRadius.circular(2.r),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(32.w),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      context.tr('profile.update_identity_title', fallback: 'Update Identity'),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 24.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
-                        letterSpacing: -0.5,
-                      ),
-                    ),
-                    SizedBox(height: 8.h),
-                    Text(
-                      context.tr('profile.update_identity_subtitle', fallback: 'Change your display name and avatar.'),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        color: isDark ? Colors.white60 : Colors.black54,
-                      ),
-                    ),
-                    SizedBox(height: 32.h),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: isDark
-                            ? Colors.white.withValues(alpha: 0.05)
-                            : Colors.black.withValues(alpha: 0.05),
-                        borderRadius: BorderRadius.circular(24.r),
-                        border: Border.all(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.1)
-                              : Colors.transparent,
-                        ),
-                      ),
-                      child: TextField(
-                        controller: nameController,
-                        autofocus: true,
-                        maxLength: 40,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w600,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
-                        ),
-                        decoration: InputDecoration(
-                          hintText: context.tr('profile.enter_new_name_hint', fallback: 'Enter new name'),
-                          hintStyle: TextStyle(
-                            fontFamily: 'Outfit',
-                            color: Colors.grey,
-                          ),
-                          border: InputBorder.none,
-                          counterText: '',
-                          contentPadding: EdgeInsets.symmetric(
-                            horizontal: 24.w,
-                            vertical: 20.h,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 32.h),
-                    ScaleButton(
-                      onTap: () {
-                        final newName = nameController.text.trim();
-                        if (newName.isNotEmpty && newName != currentName) {
-                          context.read<ProfileBloc>().add(
-                            ProfileUpdateDisplayNameRequested(newName),
-                          );
-                        }
-                        Navigator.pop(context);
-                      },
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(vertical: 20.h),
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
-                          ),
-                          borderRadius: BorderRadius.circular(24.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(
-                                0xFF6366F1,
-                              ).withValues(alpha: 0.3),
-                              blurRadius: 20,
-                              offset: const Offset(0, 10),
-                            ),
-                          ],
-                        ),
-                        child: Center(
-                          child: Text(
-                            context.tr('profile.save_changes_button', fallback: 'Save Changes'),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w800,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 20.h),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ).then((_) => nameController.dispose());
+      builder: (context) => _EditNameSheetContent(currentName: currentName),
+    );
   }
 
   Future<void> _pickImage(ImageSource source) async {
@@ -668,6 +514,180 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class _EditNameSheetContent extends StatefulWidget {
+  final String currentName;
+
+  const _EditNameSheetContent({required this.currentName});
+
+  @override
+  State<_EditNameSheetContent> createState() => _EditNameSheetContentState();
+}
+
+class _EditNameSheetContentState extends State<_EditNameSheetContent> {
+  late final TextEditingController _nameController;
+
+  @override
+  void initState() {
+    super.initState();
+    _nameController = TextEditingController(text: widget.currentName);
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    
+    return BackdropFilter(
+      filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+      child: Container(
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.viewInsetsOf(context).bottom,
+        ),
+        decoration: BoxDecoration(
+          color: isDark
+              ? const Color(0xFF1E293B).withValues(alpha: 0.8)
+              : Colors.white.withValues(alpha: 0.8),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+          border: Border.all(
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.1)
+                : Colors.black.withValues(alpha: 0.05),
+          ),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(height: 12.h),
+            Container(
+              width: 40.w,
+              height: 4.h,
+              decoration: BoxDecoration(
+                color: Colors.grey.withValues(alpha: 0.3),
+                borderRadius: BorderRadius.circular(2.r),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(32.w),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    context.tr('profile.update_identity_title', fallback: 'Update Identity'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      letterSpacing: -0.5,
+                    ),
+                  ),
+                  SizedBox(height: 8.h),
+                  Text(
+                    context.tr('profile.update_identity_subtitle', fallback: 'Change your display name and avatar.'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      color: isDark ? Colors.white60 : Colors.black54,
+                    ),
+                  ),
+                  SizedBox(height: 32.h),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.05)
+                          : Colors.black.withValues(alpha: 0.05),
+                      borderRadius: BorderRadius.circular(24.r),
+                      border: Border.all(
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.1)
+                            : Colors.transparent,
+                      ),
+                    ),
+                    child: TextField(
+                      controller: _nameController,
+                      autofocus: true,
+                      maxLength: 40,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w600,
+                        color: isDark
+                            ? Colors.white
+                            : const Color(0xFF0F172A),
+                      ),
+                      decoration: InputDecoration(
+                        hintText: context.tr('profile.enter_new_name_hint', fallback: 'Enter new name'),
+                        hintStyle: const TextStyle(
+                          fontFamily: 'Outfit',
+                          color: Colors.grey,
+                        ),
+                        border: InputBorder.none,
+                        counterText: '',
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: 24.w,
+                          vertical: 20.h,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 32.h),
+                  ScaleButton(
+                    onTap: () {
+                      final newName = _nameController.text.trim();
+                      if (newName.isNotEmpty && newName != widget.currentName) {
+                        context.read<ProfileBloc>().add(
+                          ProfileUpdateDisplayNameRequested(newName),
+                        );
+                      }
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(vertical: 20.h),
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
+                        ),
+                        borderRadius: BorderRadius.circular(24.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(
+                              0xFF6366F1,
+                            ).withValues(alpha: 0.3),
+                            blurRadius: 20,
+                            offset: const Offset(0, 10),
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Text(
+                          context.tr('profile.save_changes_button', fallback: 'Save Changes'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20.h),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
