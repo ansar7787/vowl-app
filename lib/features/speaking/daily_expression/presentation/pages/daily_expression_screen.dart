@@ -198,11 +198,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
           } else if (state.lastAnswerCorrect == false) {
             setState(() {
               _isCorrect = false;
-              if (state.isFinalFailure || state.livesRemaining <= 0) {
-                _isAnswered = true;
-              } else {
-                _isAnswered = false;
-              }
+              _isAnswered = true;
             });
           }
           _lastLives = state.livesRemaining;
