@@ -29,7 +29,7 @@ class DailyExpressionUsagePanel extends StatelessWidget {
         border: Border.all(color: Colors.white10),
       ),
       child: AnimatedOpacity(
-        opacity: isListening ? 0.2 : 1.0,
+        opacity: 1.0, // Reverted dimming
         duration: const Duration(milliseconds: 300),
         child: Column(
           children: [

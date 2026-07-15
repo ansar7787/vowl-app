@@ -84,6 +84,35 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                       ],
                     ),
                     const Spacer(),
+                    if (scratchProgress == 1.0)
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                        margin: EdgeInsets.only(bottom: 8.h),
+                        decoration: BoxDecoration(
+                          color: primaryColor.withValues(alpha: 0.15),
+                          borderRadius: BorderRadius.circular(20.r),
+                          border: Border.all(color: primaryColor.withValues(alpha: 0.3)),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.mic_rounded, size: 12.r, color: primaryColor)
+                                .animate(onPlay: (c) => c.repeat(reverse: true))
+                                .scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2)),
+                            SizedBox(width: 4.w),
+                            Text(
+                              "SPEAK THIS",
+                              style: TextStyle(
+                                fontFamily: 'RobotoMono',
+                                fontSize: 9.sp,
+                                fontWeight: FontWeight.bold,
+                                color: primaryColor,
+                                letterSpacing: 1.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ).animate().fadeIn().slideY(begin: 0.5),
                     Text(
                       quest.expression ?? "Bite the bullet",
                       textAlign: TextAlign.center,
@@ -110,7 +139,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                       child: SingleChildScrollView(
                         physics: const BouncingScrollPhysics(),
                         child: AnimatedOpacity(
-                          opacity: isListening ? 0.2 : 1.0,
+                          opacity: 1.0, // Reverted dimming so educational context is always visible
                           duration: const Duration(milliseconds: 300),
                           child: Text(
                             (quest.meaning ?? "Meaning").toUpperCase(),
