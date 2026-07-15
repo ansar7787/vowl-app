@@ -16,6 +16,7 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
   final Function(DragStartDetails) onProbeDragStart;
   final Function(DragUpdateDetails, Offset, List<Offset>) onProbeDragUpdate;
   final Function(int) onProbeDragEnd;
+  final Function(int) onOptionTapped;
 
   const BranchingDialogueConsoleBoard({
     super.key,
@@ -30,6 +31,7 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
     required this.onProbeDragStart,
     required this.onProbeDragUpdate,
     required this.onProbeDragEnd,
+    required this.onOptionTapped,
   });
 
   @override
@@ -37,17 +39,7 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
     return Container(
       width: 1.sw,
       height: 400.h,
-      decoration: BoxDecoration(
-        color: isDark
-            ? const Color(0xFF07070F)
-            : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(36.r),
-        border: Border.all(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.03)
-              : Colors.black.withValues(alpha: 0.03),
-        ),
-      ),
+      color: Colors.transparent,
       child: LayoutBuilder(
         builder: (context, constraints) {
           final double width = constraints.maxWidth;
@@ -182,10 +174,16 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
       duration: const Duration(milliseconds: 250),
       left: position.dx - 48.w,
       top: position.dy - 60.h,
-      child: AnimatedOpacity(
-        duration: const Duration(milliseconds: 300),
-        opacity: hideOther ? 0.0 : 1.0,
-        child: Column(
+      child: GestureDetector(
+        onTap: () {
+          if (!isAnswered) {
+            onOptionTapped(index);
+          }
+        },
+        child: AnimatedOpacity(
+          duration: const Duration(milliseconds: 300),
+          opacity: hideOther ? 0.0 : 1.0,
+          child: Column(
           children: [
             Container(
               width: 72.r,

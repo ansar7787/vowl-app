@@ -249,6 +249,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                             onProbeDragStart: _onProbeDragStart,
                             onProbeDragUpdate: _onProbeDragUpdate,
                             onProbeDragEnd: _onProbeDragEnd,
+                            onOptionTapped: (index) => _submitChoice(index, quest.correctAnswerIndex ?? 0),
                           ),
                           SizedBox(
                             height: isCompact ? 40.h : 80.h,
