@@ -14,6 +14,7 @@ import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/utils/text_similarity_helper.dart';
 
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_header.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_scratch_panel.dart';
@@ -132,33 +133,11 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
       return;
     }
 
-    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
-      RegExp(r'[^\w\s]'),
-      '',
-    ).replaceAll(RegExp(r'\s+'), ' ');
-    final String cleanExpression = _targetExpression
-        .trim()
-        .toLowerCase()
-        .replaceAll(RegExp(r'[^\w\s]'), '')
-        .replaceAll(RegExp(r'\s+'), ' ');
-
-    bool matchFound = false;
-    
-    if (cleanSpeech.contains(cleanExpression)) {
-      matchFound = true;
-    } else if (cleanExpression.contains(cleanSpeech) && cleanSpeech.length >= (cleanExpression.length * 0.6)) {
-      matchFound = true;
-    } else {
-      final speechWords = cleanSpeech.split(' ').where((w) => w.isNotEmpty).toList();
-      final targetWords = cleanExpression.split(' ').where((w) => w.isNotEmpty).toList();
-      int matchCount = 0;
-      for (var word in targetWords) {
-        if (speechWords.contains(word)) matchCount++;
-      }
-      if (targetWords.isNotEmpty && matchCount >= (targetWords.length * 0.7).floor()) {
-        matchFound = true;
-      }
-    }
+    bool matchFound = TextSimilarityHelper.isMatch(
+      _spokenText,
+      _targetExpression,
+      threshold: 0.70,
+    );
 
     setState(() {
       _attempts++;

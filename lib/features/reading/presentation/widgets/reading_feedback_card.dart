@@ -72,7 +72,7 @@ class ReadingFeedbackCard extends StatelessWidget {
   // Only show the explanation block when correctAnswer is available.
   // Guards the non-null assertion in _buildExplanationCard.
   bool get _showExplanation {
-    final bool showEducationalInfo = _success || isFinalFailure;
+    final bool showEducationalInfo = true;
     if (!showEducationalInfo) return false;
 
     if (_success) {

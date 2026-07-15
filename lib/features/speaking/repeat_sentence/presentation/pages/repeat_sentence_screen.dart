@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/text_similarity_helper.dart';
 
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_instruction.dart';
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_audition_card.dart';
@@ -121,32 +122,11 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
       return;
     }
 
-    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
-      RegExp(r'[^\w\s]'),
-      '',
+    final bool isCorrect = TextSimilarityHelper.isMatch(
+      _spokenText,
+      expected,
+      threshold: 0.70,
     );
-    final String cleanExpected = expected.trim().toLowerCase().replaceAll(
-      RegExp(r'[^\w\s]'),
-      '',
-    );
-
-    // Similarity calculations: word-level matching
-    final List<String> speechWords = cleanSpeech.split(' ');
-    final List<String> expectedWords = cleanExpected.split(' ');
-
-    int matches = 0;
-    for (var word in speechWords) {
-      if (expectedWords.contains(word)) {
-        matches++;
-      }
-    }
-
-    final double similarity = expectedWords.isNotEmpty
-        ? matches / expectedWords.length
-        : 0.0;
-    final bool isCorrect =
-        similarity >=
-        0.70; // 70% matching word-level accuracy to pass repeat sentence
 
     setState(() {
       _attempts++;
