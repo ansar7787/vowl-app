@@ -725,6 +725,20 @@ class GameInstructionService {
       tip: "PRO TIP: Ensure each body paragraph has a clear topic sentence.",
     ),
     // 5. Grammar
+    GameSubtype.branchingDialogue: GameBriefing(
+      title: "Social Simulator",
+      icon: Icons.forum_rounded,
+      objective:
+          "Drag the decision probe to select the most natural, context-appropriate conversational response. Mastering this builds real-world social fluency.",
+      rules: [
+        "Analyze the scene",
+        "Flick decision probe",
+        "React naturally",
+      ],
+      actionText: "Enter Simulation",
+      tip:
+          "PRO TIP: Pay attention to the subtle social cues! Being polite and direct often opens the right doors.",
+    ),
     GameSubtype.grammarQuest: GameBriefing(
       title: "Grammar Core",
       icon: Icons.gavel_rounded,

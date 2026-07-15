@@ -14,7 +14,6 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_instruction.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_persona_console.dart';
-import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_explanation_card.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_console_board.dart';
 
 class BranchingDialogueScreen extends StatefulWidget {
@@ -249,20 +248,6 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                             onProbeDragStart: _onProbeDragStart,
                             onProbeDragUpdate: _onProbeDragUpdate,
                             onProbeDragEnd: _onProbeDragEnd,
-                          ),
-                          SizedBox(height: isCompact ? 12.h : 20.h),
-
-                          AnimatedCrossFade(
-                            firstChild: const SizedBox(),
-                            secondChild: BranchingDialogueExplanationCard(
-                              quest: quest,
-                              isDark: isDark,
-                              isCorrect: _isCorrect,
-                            ),
-                            crossFadeState: _isAnswered
-                                ? CrossFadeState.showSecond
-                                : CrossFadeState.showFirst,
-                            duration: const Duration(milliseconds: 400),
                           ),
                           SizedBox(
                             height: isCompact ? 40.h : 80.h,

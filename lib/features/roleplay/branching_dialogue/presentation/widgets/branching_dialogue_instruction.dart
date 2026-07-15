@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class BranchingDialogueInstruction extends StatelessWidget {
   final Color primaryColor;
@@ -35,7 +36,7 @@ class BranchingDialogueInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          instruction ?? "Navigate dialogue branches to lock response target",
+          context.tr('games.branchingDialogue_instruction', fallback: "Choose the best response."),
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',

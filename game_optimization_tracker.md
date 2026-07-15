@@ -103,7 +103,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Pitch Modulation (`pitchModulation`)
 
 ## Roleplay (10)
-- [ ] Branching Dialogue (`branchingDialogue`)
+- [x] ✅ Branching Dialogue (`branchingDialogue`)
 - [ ] Situational Response (`situationalResponse`)
 - [ ] Job Interview (`jobInterview`)
 - [ ] Medical Consult (`medicalConsult`)
