@@ -213,8 +213,9 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
           onHint: () => context.read<RoleplayBloc>().add(RoleplayHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
+              : Expanded(
+                  child: LayoutBuilder(
+                    builder: (context, constraints) {
                     final isCompact = constraints.maxHeight < 580;
                     return SingleChildScrollView(
                       physics: const BouncingScrollPhysics(),
@@ -257,6 +258,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                     );
                   },
                 ),
+              ),
         );
       },
     );
