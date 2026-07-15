@@ -135,15 +135,30 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
       RegExp(r'[^\w\s]'),
       '',
-    );
+    ).replaceAll(RegExp(r'\s+'), ' ');
     final String cleanExpression = _targetExpression
         .trim()
         .toLowerCase()
-        .replaceAll(RegExp(r'[^\w\s]'), '');
+        .replaceAll(RegExp(r'[^\w\s]'), '')
+        .replaceAll(RegExp(r'\s+'), ' ');
 
-    final bool matchFound =
-        cleanSpeech.contains(cleanExpression) ||
-        cleanExpression.contains(cleanSpeech);
+    bool matchFound = false;
+    
+    if (cleanSpeech.contains(cleanExpression)) {
+      matchFound = true;
+    } else if (cleanExpression.contains(cleanSpeech) && cleanSpeech.length >= (cleanExpression.length * 0.6)) {
+      matchFound = true;
+    } else {
+      final speechWords = cleanSpeech.split(' ').where((w) => w.isNotEmpty).toList();
+      final targetWords = cleanExpression.split(' ').where((w) => w.isNotEmpty).toList();
+      int matchCount = 0;
+      for (var word in targetWords) {
+        if (speechWords.contains(word)) matchCount++;
+      }
+      if (targetWords.isNotEmpty && matchCount >= (targetWords.length * 0.7).floor()) {
+        matchFound = true;
+      }
+    }
 
     setState(() {
       _attempts++;
