@@ -58,6 +58,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                 ),
                 padding: EdgeInsets.all(22.r),
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Row(
@@ -134,23 +135,18 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                           curve: Curves.easeOutCubic,
                         ),
                     SizedBox(height: 10.h),
-                    Flexible(
-                      child: SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: AnimatedOpacity(
-                          opacity: 1.0, // Reverted dimming so educational context is always visible
-                          duration: const Duration(milliseconds: 300),
-                          child: Text(
-                            (quest.meaning ?? "Meaning").toUpperCase(),
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.bold,
-                              color: isDark ? Colors.white70 : Colors.black87,
-                              height: 1.3,
-                            ),
-                          ),
+                    AnimatedOpacity(
+                      opacity: 1.0, // Reverted dimming so educational context is always visible
+                      duration: const Duration(milliseconds: 300),
+                      child: Text(
+                        (quest.meaning ?? "Meaning").toUpperCase(),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.bold,
+                          color: isDark ? Colors.white70 : Colors.black87,
+                          height: 1.3,
                         ),
                       ),
                     ),
