@@ -241,6 +241,7 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
           ],
         ),
       ),
+      ),
     );
   }
 }
