@@ -10,13 +10,13 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'I've been asked to take command of an operation I believe has insufficient resources to succeed. Do I accept or decline?'",
             "options": [
-                "Accept, but formally document your resource assessment and request before accepting - so that the record shows you accepted knowing the constraints, and that your assessment was heard even if not acted on.",
+                "I'd accept, but only after formally documenting my resource assessment - so there's a clear record that the risk was flagged.",
                 "Decline - no professional should accept a mission they believe is under-resourced.",
                 "Accept and find creative ways to succeed with limited resources - that is what leadership is about."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Accept with documented formal objection - the record of your professional assessment matters.",
-            "explanation": "'Accept but formally document your resource assessment and request before accepting - record shows you accepted knowing the constraints and that your assessment was heard even if not acted on' preserves professional integrity while fulfilling duty. 'Decline - no professional should accept an under-resourced mission' may be appropriate for truly impossible situations but conflates inadequate with impossible. 'Accept and find creative ways' accepts without creating the accountability record.",
+            "hint": "Accept with a formal, documented objection rather than a silent yes or a flat no.",
+            "explanation": "Documenting the assessment before accepting preserves professional integrity while still fulfilling the duty. 'Decline - no professional should accept an under-resourced mission' treats 'inadequate' the same as 'impossible.' 'Accept and find creative ways to succeed' accepts without leaving any record of the risk.",
             "id": "bd_l131_q1"
         },
         {
@@ -26,13 +26,13 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I need to advise a foreign government on their internal security architecture. My government has an interest in the outcome. How do I manage the conflict between my role as an adviser and my government's interests?'",
             "options": [
-                "Disclose the conflict fully and explicitly to the foreign government before beginning: 'My government has interests related to your security architecture, and you should know that before accepting my advice.' If they choose to continue with my involvement after full disclosure, provide the most genuinely useful advice I can. The disclosure protects both parties.",
+                "I'd disclose the conflict fully before starting - they deserve to know my government has an interest before accepting my advice.",
                 "Focus on providing the best professional advice possible and let your government manage their interests separately.",
                 "Consult with your government first to understand the extent of their interest before providing any advice."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Full disclosure of the conflict to the foreign government before beginning is the only ethical starting point.",
-            "explanation": "'Disclose the conflict fully and explicitly to the foreign government before beginning - my government has interests related to your security architecture and you should know that before accepting my advice; if they continue after full disclosure, provide the most genuinely useful advice possible; the disclosure protects both parties' is specific, principled, and treats the foreign government as an equal party. 'Focus on the best professional advice and let government manage interests separately' ignores the disclosure obligation. 'Consult your government first to understand the extent of their interest' makes the conflict management primarily about your government's needs rather than the foreign government's right to know.",
+            "hint": "Disclose the conflict to the foreign government before any advice is given.",
+            "explanation": "Full disclosure treats the foreign government as an equal party with a right to know. 'Focus on the best advice and let your government manage separately' skips the disclosure obligation entirely. 'Consult your government first' centres your own government's interests over the other party's right to know.",
             "id": "bd_l131_q2"
         },
         {
@@ -42,13 +42,13 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I've been asked to create a dish that uses an ingredient that I know is sourced from ecologically destructive practices. The client insists. How do you respond?'",
             "options": [
-                "Decline to use the ingredient and explain why precisely: 'I won't use this ingredient because its sourcing causes ecological damage that I'm not willing to be associated with - not as a moral stance about this client, but as a consistent professional principle. I can offer you an ingredient with similar culinary properties sourced responsibly.' If the client continues to insist, decline the commission.",
+                "I'd decline, explain exactly why, and offer a responsibly-sourced alternative - and if they insist, I'd decline the whole commission.",
                 "Use the ingredient this once as a commercial exception while advocating for change in sourcing practices.",
                 "Raise the sourcing concern with the client and provide information about the ecological impact so they can make an informed decision."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Decline with a specific reason and an alternative - if they insist, decline the commission.",
-            "explanation": "'Decline to use this ingredient because its sourcing causes ecological damage I'm not willing to be associated with - not as a moral stance about this client but as a consistent professional principle; offer an ingredient with similar culinary properties sourced responsibly; if the client continues to insist, decline the commission' is clear, principled, and offers a genuine alternative. 'Use the ingredient this once as a commercial exception while advocating for change' uses the exception to undermine the principle. 'Raise the concern and provide information for an informed decision' transfers the decision rather than taking a professional position.",
+            "hint": "Decline with a clear reason and an alternative, and hold that line if they push back.",
+            "explanation": "A clear decline, a genuine alternative, and a firm line if pushed is principled and consistent. 'Use it this once as an exception' undermines the very principle being claimed. 'Raise the concern and let them decide' hands off a decision that calls for a professional stance.",
             "id": "bd_l131_q3"
         },
         {
@@ -58,13 +58,13 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'A pharmaceutical company is offering a very large donation to our research institute, but only if we commit to using their products in our research. What is the right response?'",
             "options": [
-                "Decline the donation as structured. A commitment to use specific products in research creates exactly the bias that research funding must protect against. You can invite unrestricted donations from the same company - some companies will accept this if asked. But a restricted donation that influences methodology is not compatible with scientific integrity.",
-                "Accept the donation with full disclosure in all publications - transparency mitigates the conflict.",
-                "Seek advice from your ethics committee before deciding."
+                "Seek advice from your ethics committee before deciding.",
+                "I'd decline it as structured - a commitment to specific products creates exactly the bias research funding needs to avoid.",
+                "Accept the donation with full disclosure in all publications - transparency mitigates the conflict."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Decline as structured - a commitment to use specific products in research creates exactly the bias that research funding must protect against.",
-            "explanation": "'Decline the donation as structured; a commitment to use specific products creates exactly the bias research funding must protect against; invite unrestricted donations from the same company - some companies will accept this if asked; but a restricted donation that influences methodology is incompatible with scientific integrity' is specific and offers a constructive alternative. 'Accept with full disclosure - transparency mitigates the conflict' - transparency doesn't eliminate a methodological conflict of interest, it only makes it visible. 'Seek advice from your ethics committee before deciding' is appropriate but shouldn't delay a decision that has a clear ethical answer.",
+            "correctAnswerIndex": 1,
+            "hint": "Decline the restricted structure, since transparency alone doesn't remove a methodological bias.",
+            "explanation": "Naming the exact mechanism of bias, and declining the restricted structure, protects research integrity directly. 'Accept with full disclosure - transparency mitigates the conflict' makes the bias visible without removing it. 'Seek advice from your ethics committee' delays a decision that already has a clear answer.",
             "id": "bd_l132_q1"
         },
         {
@@ -74,13 +74,13 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'A major customer has just told me confidentially that they're planning to move their business to a competitor at contract renewal. I still have six months on the contract. What do you do?'",
             "options": [
-                "Use the six months to understand precisely what is driving the decision, address the genuine concerns where you can, and demonstrate the value they would lose by switching - not with promises but with visible action during the six months. Don't panic-discount. Don't hold them to the contract letter beyond its spirit. Use the six months to either earn the renewal or make the transition as positive as possible.",
                 "Ask them directly what it would take to change their decision and negotiate accordingly.",
-                "Prepare for the loss of the account and begin finding replacement revenue."
+                "Prepare for the loss of the account and begin finding replacement revenue.",
+                "I'd use the six months to understand what's really driving it, address genuine concerns, and demonstrate value through action, not promises."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Use the six months to understand the decision, address genuine concerns with visible action, and earn the renewal without panic-discounting or contract weaponisation.",
-            "explanation": "'Use six months to understand what's driving the decision, address genuine concerns with visible action, demonstrate value they'd lose by switching - not with promises but with visible action; don't panic-discount; don't hold them to the contract letter beyond its spirit; use the six months to either earn the renewal or make the transition as positive as possible' is specific, principled, and strategic. 'Ask what it would take to change their decision and negotiate accordingly' jumps to retention negotiation without first understanding what's driving the decision. 'Prepare for the loss and find replacement revenue' concedes when there are still six months of opportunity.",
+            "correctAnswerIndex": 2,
+            "hint": "Use the remaining time to understand and demonstrate value, not just negotiate or give up.",
+            "explanation": "Understanding the real driver first, then demonstrating value through action, uses the six months strategically. 'Ask what it would take and negotiate accordingly' jumps to negotiation before understanding the actual cause. 'Prepare for the loss and find replacement revenue' concedes while there's still real opportunity left.",
             "id": "bd_l132_q2"
         },
         {
@@ -90,13 +90,13 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'I've been asked to comment publicly on an incident at another airline that I know was handled correctly by the crew but is being misrepresented in the media. What do you do?'",
             "options": [
-                "Speak, specifically and with attribution: 'I'm not commenting on this specific incident, but I can tell you what correct procedure looks like in a situation of this type, because the media description doesn't match it.' This contributes to public understanding and corrects the misleading narrative without commenting on the specific incident.",
                 "Contact the other airline's crew through appropriate channels to offer support, but don't comment publicly.",
+                "I'm not commenting on this specific incident, but I can tell you what correct procedure actually looks like here.",
                 "Comment publicly in defence of the crew - pilots supporting each other in misrepresented incidents is professionally appropriate."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Correct the public understanding of correct procedure without commenting directly on the specific incident.",
-            "explanation": "'I'm not commenting on this specific incident, but I can tell you what correct procedure looks like in a situation of this type, because the media description doesn't match it' corrects the misleading narrative while being specific about what you are and are not commenting on. 'Contact the crew through appropriate channels but don't comment publicly' provides peer support without public correction of the misleading narrative. 'Comment publicly in defence of the crew - pilots supporting each other is professionally appropriate' risks being seen as defending the specific incident rather than correcting the methodology misrepresentation.",
+            "correctAnswerIndex": 1,
+            "hint": "Correct the public record on procedure without commenting on the specific incident.",
+            "explanation": "This corrects the misleading narrative while being explicit about what is and isn't being commented on. 'Contact the crew privately but don't comment publicly' offers peer support without correcting the public record. 'Comment publicly in defence of the crew' risks looking like a defence of this specific incident rather than a correction of the misrepresentation.",
             "id": "bd_l132_q3"
         },
         {
@@ -106,13 +106,13 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'An experienced officer under my command believes I made the wrong tactical call in a recent operation. They've raised this formally. How do you respond?'",
             "options": [
-                "Engage with the formal challenge substantively: review the operation documentation, meet with the officer privately to hear their full argument, and provide a specific response to the specific criticism - not a defence of your position, but a genuine engagement with the question of whether they are right. If they are right, say so and document the learning. If you believe you were right, explain why specifically. A formal challenge deserves a substantive response.",
-                "Acknowledge the formal nature of the challenge and process it through the appropriate review procedures.",
-                "This is healthy - invite the officer to present their case in a team debrief so the learning is shared."
+                "I'd engage with it properly - review the documentation, meet them privately, and give a specific answer to their specific criticism.",
+                "This is healthy - invite the officer to present their case in a team debrief so the learning is shared.",
+                "Acknowledge the formal nature of the challenge and process it through the appropriate review procedures."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Engage substantively with the specific criticism - review, meet, and give a specific response that genuinely considers whether they are right.",
-            "explanation": "'Engage substantively: review the operation documentation, meet with the officer privately to hear their full argument, provide a specific response to the specific criticism - not a defence of your position but a genuine engagement with the question of whether they are right; if they are right, say so and document the learning; if you believe you were right, explain why specifically' is specific, intellectually honest, and treats the challenge with the seriousness it deserves. 'Acknowledge and process through appropriate review procedures' is bureaucratic without the substantive engagement. 'Invite them to present in a team debrief so learning is shared' is only appropriate after the private substantive engagement.",
+            "hint": "Engage substantively with the specific criticism rather than just processing it formally.",
+            "explanation": "Reviewing, meeting privately, and answering specifically shows genuine engagement with whether the criticism is right. 'Acknowledge and process through review procedures' is bureaucratic without substantive engagement. 'Invite them to present in a team debrief' is only appropriate after this private engagement has happened.",
             "id": "bd_l133_q1"
         },
         {
@@ -122,13 +122,13 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I'm developing an assessment tool for identifying future intelligence analysts. What specific qualities most predict long-term excellence in analytical work?'",
             "options": [
-                "Five qualities that predict long-term analytical excellence: first, the ability to hold multiple competing hypotheses simultaneously without prematurely collapsing to a conclusion; second, specific calibration of confidence - analysts who know the difference between seventy percent confident and ninety percent confident; third, intellectual honesty about the limits of their knowledge, including active pursuit of disconfirming evidence; fourth, the ability to write clearly about complex uncertain things - clarity of writing is a proxy for clarity of thinking; fifth, intellectual resilience - they change their mind when the evidence changes and can explain specifically what changed and why.",
-                "Assess analytical reasoning, attention to detail, pattern recognition, and the ability to work under pressure.",
-                "Gather additional intelligence through established channels and conduct a rigorous analytical review before proceeding."
+                "Look for candidates with strong academic credentials and relevant subject-matter expertise.",
+                "I'd look for calibrated confidence, real intellectual honesty about the limits of their knowledge, and the ability to change their mind when evidence changes.",
+                "Assess analytical reasoning, attention to detail, pattern recognition, and the ability to work under pressure."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Five specific qualities: holding multiple hypotheses, calibrated confidence, active pursuit of disconfirming evidence, clear writing as proxy for clear thinking, and intellectual resilience.",
-            "explanation": "'Holding multiple competing hypotheses without prematurely collapsing; calibrated confidence - knowing the difference between seventy percent and ninety percent; intellectual honesty about the limits of knowledge including active pursuit of disconfirming evidence; ability to write clearly about complex uncertain things - clarity of writing is a proxy for clarity of thinking; intellectual resilience - they change their mind when evidence changes and can explain specifically what changed and why' gives five specific, sophisticated qualities. 'Assess analytical reasoning, attention to detail, pattern recognition, and ability to work under pressure' describes the general assessment framework without the specific qualities. 'What qualities predict long-term excellence in analytical work' is the question.",
+            "correctAnswerIndex": 1,
+            "hint": "Name specific, sophisticated qualities rather than a general assessment framework.",
+            "explanation": "Naming specific qualities - calibration, honesty about limits, and updating on evidence - identifies what genuinely predicts excellence. 'Analytical reasoning, attention to detail, pattern recognition' describes a general assessment framework, not the specific predictive qualities. 'Gather additional intelligence and conduct a rigorous review' doesn't answer the question at all.",
             "id": "bd_l133_q2"
         },
         {
@@ -138,13 +138,13 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I want to close the restaurant for a full year while I spend time in different culinary traditions around the world. What are the professional and personal questions I need to answer first?'",
             "options": [
-                "Seven questions: will the restaurant's identity survive a year's absence or will it need to be relaunched on return? Can your key staff be retained on a leave basis or will you lose them permanently? Is your financial position strong enough to carry the building costs for a year without revenue? What is your honest reason for wanting to do this - curiosity, burnout, or creative stagnation - and does a year away address it? What do you plan to do with the learning you bring back - is there a concrete vision for what the restaurant becomes on return? Have you told your most loyal regular guests, and how? And what is your personal relationship with the restaurant - do you need it to be there when you return, or are you open to the possibility that the return may be to something different?",
                 "Research the visa, work permit, and immigration requirements for each country you plan to visit.",
+                "Will the identity survive a year away, can key staff be kept on leave, and what's my honest reason for wanting to do this?",
                 "Study the culinary traditions carefully and consult with authentic practitioners before proceeding."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Seven questions spanning restaurant identity, staff retention, financial sustainability, honest reasons, post-return vision, guest communication, and personal relationship with the restaurant.",
-            "explanation": "'Will the restaurant identity survive a year's absence or need relaunching; can key staff be retained on a leave basis; is your financial position strong enough to carry building costs without revenue; what is your honest reason - curiosity burnout or creative stagnation - and does a year away address it; what do you plan to do with the learning - is there a concrete post-return vision; have you told your most loyal regular guests; what is your personal relationship with the restaurant - do you need it to be there or are you open to the possibility it becomes something different' gives seven specific, important questions. 'Research visa, work permit, and immigration requirements for each country' is an important practical step but not a professional or personal question in the sense the prompt asks. 'The professional and personal questions to answer first' is the question.",
+            "correctAnswerIndex": 1,
+            "hint": "Ask the substantive professional and personal questions, not just the logistics.",
+            "explanation": "These questions get at identity, staff, and honest motivation - the substantive issues behind the decision. 'Research visa and immigration requirements' is an important practical step, not a professional or personal question. 'Study culinary traditions and consult practitioners' addresses the trip's purpose, not the decision to take it.",
             "id": "bd_l133_q3"
         },
         {
@@ -154,13 +154,13 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'I've been asked to give a public lecture on a topic where the science is clear but the policy implications are deeply contested politically. How do you navigate this?'",
             "options": [
-                "Be explicit about the structure of the lecture from the start: 'I will speak clearly about what the science shows, which is settled. I will then speak about the policy implications, where I have views that go beyond the science and where reasonable people disagree. I'll be transparent about which is which throughout.' This doesn't protect you from controversy - it makes your reasoning visible and honest, which is the best protection you have.",
                 "Restrict the lecture to the scientific evidence and decline to comment on policy implications.",
-                "Present the science clearly and frame the policy implications as questions for democratic deliberation rather than as your personal position."
+                "Present the science clearly and frame the policy implications as questions for democratic deliberation rather than as your personal position.",
+                "I'd be explicit about the structure throughout - here's what the science settles, and here's where I have views that go beyond it."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Be explicit about the structure throughout: what the science shows versus where you have views that go beyond the science.",
-            "explanation": "'Be explicit about the structure from the start: I will speak clearly about what the science shows which is settled, then about policy implications where I have views that go beyond the science and where reasonable people disagree; transparent about which is which throughout; this doesn't protect you from controversy - it makes your reasoning visible and honest, which is the best protection you have' is specific, structurally clear, and honest. 'Restrict the lecture to scientific evidence and decline to comment on policy' is one option but abandons a legitimate role for expert input on policy implications. 'Frame policy implications as questions for democratic deliberation rather than your personal position' is a similar approach to the correct answer but less honest - sometimes sharing your view is more valuable than neutrality.",
+            "correctAnswerIndex": 2,
+            "hint": "Make the structure of the talk explicit rather than avoiding the contested part entirely.",
+            "explanation": "Making the science-versus-opinion structure explicit is honest and protects credibility better than avoidance. 'Restrict the lecture to scientific evidence' abandons a legitimate role for expert input on policy. 'Frame implications as questions for deliberation' avoids sharing a genuine view that, clearly labelled, would be more useful.",
             "id": "bd_l134_q1"
         },
         {
@@ -170,13 +170,13 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'I'm in a negotiation where the other party has just threatened to walk away if I don't agree to their last demand. Do I believe them?'",
             "options": [
-                "Three tests to assess the credibility of a walkaway threat: first, what is their BATNA - what is their alternative to a deal with you, and is it genuinely viable? Second, have they made similar threats in this negotiation that they didn't follow through on - pattern is predictive; third, does the body language and communication style suggest a genuine position change or tactical escalation - genuine walkaway threats are usually quieter and more resolute, not louder and more demonstrative.",
-                "Call their bluff - if they want to walk away they will, and no concession at this point is worth it.",
-                "Make a small concession on a low-value item to signal good faith without meeting their full demand."
+                "I'd check their actual alternative to a deal, whether they've made empty threats like this before, and whether their tone sounds genuine or tactical.",
+                "Make a small concession on a low-value item to signal good faith without meeting their full demand.",
+                "Call their bluff - if they want to walk away they will, and no concession at this point is worth it."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Apply three tests: their BATNA viability, their pattern of following through on threats, and whether the threat's character suggests genuine position or tactical escalation.",
-            "explanation": "'Three tests: what is their BATNA and is it genuinely viable; have they made similar threats in this negotiation they didn't follow through on - pattern is predictive; does the body language suggest genuine position change or tactical escalation - genuine walkaway threats are usually quieter and more resolute, not louder and more demonstrative' gives three specific, sophisticated assessment tools. 'Call their bluff - if they want to walk away they will' is a decision to proceed without the assessment. 'Make a small concession to signal good faith without meeting their full demand' makes a decision without the assessment - and if the threat is genuine, a small concession may actually encourage a larger demand.",
+            "hint": "Assess the threat with specific tests before deciding how to respond.",
+            "explanation": "These specific tests - alternative, pattern, and tone - give a real basis for assessing credibility. 'Call their bluff' decides to proceed without any assessment first. 'Make a small concession to signal good faith' also skips the assessment, and risks inviting a bigger demand if the threat is genuine.",
             "id": "bd_l134_q2"
         },
         {
@@ -186,13 +186,13 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'I want to develop a mentoring programme specifically for women pilots in our airline where women are significantly underrepresented. What design considerations matter most?'",
             "options": [
-                "Four design considerations that matter most: first, pair women pilots with mentors who have genuine operational credibility - the programme loses value if it is seen as a soft track rather than a professional development track; second, include specific coaching on navigating gender-specific dynamics in aviation without reducing the programme to a gender-dynamics programme - operational excellence is the primary goal; third, create peer networks within the cohort as well as mentor relationships - isolation compounds the underrepresentation experience and peer networks address this in ways individual mentoring cannot; fourth, gather data on specific career junctures where women leave the aviation pathway and design the programme to address those specific junctures, not to be a general mentoring programme.",
-                "Ensure the programme is visible and endorsed by senior leadership to signal its importance.",
-                "Follow established standard operating procedures and consult the relevant technical documentation before proceeding."
+                "I'd pair them with mentors who have real operational credibility, build peer networks alongside the mentoring, and target the specific points where women leave the pathway.",
+                "Recruit more women into the pilot pipeline through targeted outreach and scholarships.",
+                "Ensure the programme is visible and endorsed by senior leadership to signal its importance."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Four specific design considerations: operational credibility of mentors, balance operational excellence with gender-dynamic navigation, peer networks alongside mentor relationships, data-driven design targeting specific career juncture departure points.",
-            "explanation": "'Pair with mentors who have genuine operational credibility - loses value if seen as a soft track; include specific coaching on navigating gender-specific dynamics without reducing to a gender-dynamics programme - operational excellence is primary; create peer networks within the cohort - isolation compounds underrepresentation and peer networks address this in ways individual mentoring cannot; gather data on specific career junctures where women leave the aviation pathway and design to address those junctures not to be a general mentoring programme' gives four specific, sophisticated design considerations. 'Ensure the programme is visible and endorsed by senior leadership' is one important element but not one of the four most important design considerations. 'Most important design considerations for a women pilots mentoring programme' is the question.",
+            "correctAnswerIndex": 0,
+            "hint": "Give specific design considerations, not just visibility and endorsement.",
+            "explanation": "Naming credibility, peer networks, and data-driven targeting gives real, specific design substance. 'Ensure visibility and senior endorsement' is one useful element, not the most important design consideration. 'Follow SOPs and consult technical documentation' doesn't address programme design at all.",
             "id": "bd_l134_q3"
         },
         {
@@ -202,13 +202,13 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'I've been offered a senior position in a different organisation that would represent a significant career advancement. My current team is in a critical phase of a mission. What do you think about?'",
             "options": [
-                "Think about four things: the career opportunity's specific qualities versus its surface appeal - is it genuinely better work, or is it more senior work, which is not the same thing? The actual impact your departure would have on the team at this specific phase - honest assessment, not flattery to yourself; what you have committed to, explicitly and implicitly, and what departure would mean for those commitments; and whether the timing is within your influence - can you negotiate a start date that respects your current obligations?",
-                "Think about whether the career opportunity aligns with your long-term professional goals.",
-                "Ensure the team has clear objectives and hold regular briefings to maintain alignment and accountability."
+                "I'd weigh whether it's genuinely better work or just more senior work, and honestly assess what my leaving would actually cost the team right now.",
+                "Consider the financial implications of the new role compared to your current position.",
+                "Think about whether the career opportunity aligns with your long-term professional goals."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Four considerations: genuine quality of the opportunity versus surface appeal, honest impact assessment of your departure, explicit and implicit commitments, and whether the timing is within your influence.",
-            "explanation": "'The career opportunity's specific qualities versus surface appeal - is it genuinely better work or just more senior work; honest assessment of actual impact of your departure on the team at this critical phase; what you have committed to explicitly and implicitly; whether the timing is within your influence - can you negotiate a start date that respects current obligations' gives four specific, substantive considerations. 'Think about whether the opportunity aligns with your long-term professional goals' is one dimension - and a relatively self-focused one - without the four dimensions that matter here. 'What to think about when deciding whether to take a career opportunity that would require leaving a team mid-mission' is the question.",
+            "hint": "Weigh the genuine quality of the opportunity against an honest cost to the team.",
+            "explanation": "Distinguishing better work from merely more senior work, plus an honest cost assessment, covers the real substance of this decision. 'Think about long-term professional goals' is one relevant but self-focused dimension. 'Ensure clear objectives and regular briefings' doesn't address the decision being asked about at all.",
             "id": "bd_l135_q1"
         },
         {
@@ -218,13 +218,13 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I need to build public trust in an intelligence organisation that has recently experienced a major scandal. What approach actually works?'",
             "options": [
-                "Three things actually work and three things don't. What doesn't work: communication campaigns, new leadership who promises change, and incremental reforms. What works: specific external accountability mechanisms with real authority and visible outcomes, not advisory committees; the public identification and accountability of the specific failures and the people responsible for them - not managed reputational damage control; and a sustained period where promised changes can be verified by independent external observers before trust is rebuilt. Trust is not rebuilt by claiming it - it is rebuilt by demonstrating it over time through visible, independently verified behaviour change.",
+                "Focus on rebuilding the organisation's public image through consistent, positive messaging over time.",
                 "Appoint a respected independent review panel and implement their recommendations transparently.",
-                "Gather additional intelligence through established channels and conduct a rigorous analytical review before proceeding."
+                "Communication campaigns and promises don't work - what works is real external accountability, and a sustained period where change is independently verified."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "What works: external accountability with real authority and visible outcomes, specific accountability for specific failures, and sustained independently verifiable behaviour change. Communication and new leadership do not work.",
-            "explanation": "'What doesn't work: communication campaigns, new leadership who promises change, incremental reforms; what works: specific external accountability mechanisms with real authority and visible outcomes - not advisory committees; public identification and accountability for specific failures; sustained period where changes are verified by independent external observers before trust is rebuilt; trust is not rebuilt by claiming it - it is rebuilt by demonstrating it over time through visible independently verified behaviour change' is specific and counter-intuitive. 'Appoint a respected independent review panel and implement recommendations transparently' is one element of what works but treats a recommendation-and-implementation process as sufficient, when the sustained independent verification period is the essential element.",
+            "correctAnswerIndex": 2,
+            "hint": "Name what genuinely rebuilds trust versus what only appears to.",
+            "explanation": "Naming what actually works, including sustained independent verification, is the specific and counter-intuitive answer here. 'Appoint an independent review panel and implement recommendations' is one useful element, but treats the process as sufficient on its own. 'Gather additional intelligence and conduct rigorous review' doesn't address rebuilding public trust at all.",
             "id": "bd_l135_q2"
         },
         {
@@ -234,13 +234,13 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I've been offered the opportunity to create a permanent culinary legacy project - something that will outlast my career. What principles guide the design of something meant to endure?'",
             "options": [
-                "Four principles for something meant to endure: first, design for the problem that will still exist when you're gone, not the problem that is fashionable now; second, make it transferable - if it requires your specific presence or genius to function, it is an institution of one and will not outlast you; third, build in genuine institutional humility - design structures that allow the project to be corrected and improved by those who come after, without your approval; fourth, give it to those it serves, not to those who fund it - the governance of a lasting legacy belongs to the community it is designed to serve.",
+                "Draw inspiration from your culinary heritage and contemporary trends to create something distinctive and memorable.",
                 "Create something that represents the best of your culinary vision and can inspire future generations.",
-                "Draw inspiration from your culinary heritage and contemporary trends to create something distinctive and memorable."
+                "Design it to survive without you specifically, build in room for others to correct it later, and hand the governance to the people it serves."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Design for an enduring problem, make it transferable beyond your specific presence, build in institutional humility allowing correction, and give governance to those it serves.",
-            "explanation": "'Design for the problem that will still exist when you're gone not the problem that is fashionable now; make it transferable - if it requires your specific presence to function it is an institution of one and will not outlast you; build in genuine institutional humility - structures that allow correction and improvement by those who come after without your approval; give it to those it serves not to those who fund it - governance of a lasting legacy belongs to the community it is designed to serve' gives four specific, enduring-design principles. 'Create something that represents the best of your culinary vision and can inspire future generations' is about what you create rather than the principles that make it endure. 'Principles for designing something meant to endure' is the question.",
+            "correctAnswerIndex": 2,
+            "hint": "Design for transferability and community governance, not personal vision.",
+            "explanation": "Transferability, room for correction, and community governance are the actual principles that let something outlast its founder. 'Represents the best of your culinary vision' centres the founder rather than what makes something endure. 'Draw inspiration from heritage and trends' describes content, not principles of endurance.",
             "id": "bd_l135_q3"
         },
         {
@@ -250,13 +250,13 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'I want to create a research environment where people feel safe admitting uncertainty and error. What specific behaviours from me as the leader create that environment?'",
             "options": [
-                "Three specific leader behaviours that create psychological safety around uncertainty and error: first, publicly share your own uncertainties and errors with the team, specifically and without excessive self-criticism - not performing vulnerability, but genuine transparency; second, when a team member shares an error, respond with curiosity rather than disappointment - 'what do we learn from this' before any assessment of what should have been done differently; third, never allow the person who identifies an error to carry a disproportionate cost for having identified it - if people learn that identifying errors leads to additional scrutiny or work, they will stop identifying them.",
-                "Create formal processes for error reporting and uncertainty acknowledgment that make them standard practice.",
-                "Conduct a thorough review of the relevant literature and consult with specialist colleagues before proceeding."
+                "Share your own uncertainties publicly and specifically, respond to a shared error with curiosity before judgment, and never let the person who flags it pay a cost for it.",
+                "Publicly reward the team members who never make mistakes to set a clear standard.",
+                "Create formal processes for error reporting and uncertainty acknowledgment that make them standard practice."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Three specific leader behaviours: share your own uncertainties publicly and specifically, respond to errors with curiosity before assessment, never let error identification carry a disproportionate cost.",
-            "explanation": "'Share your own uncertainties and errors publicly, specifically, and without excessive self-criticism; when a team member shares an error, respond with curiosity rather than disappointment - what do we learn from this before any assessment; never let the person who identifies an error carry a disproportionate cost - if identifying errors leads to additional scrutiny, people will stop identifying them' gives three specific, behavioural actions. 'Create formal processes for error reporting and uncertainty acknowledgment' creates systems rather than the leader behaviours that give those systems their meaning. 'What specific leader behaviours create psychological safety around uncertainty and error' is the question.",
+            "hint": "Name specific leader behaviours, not the formal systems around them.",
+            "explanation": "Naming specific behaviours - modelling vulnerability, curiosity first, and no penalty for flagging errors - gives real, actionable leadership practices. 'Create formal processes for error reporting' builds systems without the leader behaviours that give them meaning. 'Conduct a thorough review and consult colleagues' doesn't address leadership behaviour at all.",
             "id": "bd_l136_q1"
         },
         {
@@ -266,13 +266,13 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'I need to expand internationally but I have limited capital and cannot afford to fail. What market entry strategy minimises the risk of a costly failure?'",
             "options": [
-                "A capital-constrained international entry strategy has two non-negotiable characteristics: it must generate positive cash flow before it requires additional capital injection, and it must be designed to test specific assumptions before committing to them. This points to distribution partnerships rather than direct investment, a single market entry with the most conservative market size assumptions, and a clear definition of what evidence would tell you whether to proceed, hold, or exit before committing to the next phase.",
                 "Enter the market with the most potential first to generate the strongest possible return on the initial investment.",
+                "It has to reach positive cash flow before needing more capital, and test the riskiest assumptions early - that points to distribution partnerships, not direct investment.",
                 "Conduct comprehensive market research and develop a well-evidenced strategic response to the competitive challenge."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Two non-negotiable characteristics: positive cash flow before additional capital injection, and designed to test specific assumptions before committing. Points to distribution partnerships, single market entry, and pre-defined evidence thresholds for proceed, hold, or exit.",
-            "explanation": "'Two non-negotiable characteristics: must generate positive cash flow before requiring additional capital; must be designed to test specific assumptions before committing to them; points to distribution partnerships rather than direct investment; single market entry with the most conservative market size assumptions; a clear definition of what evidence would tell you whether to proceed, hold, or exit before committing to the next phase' is specific and gives a complete, capital-constrained strategy. 'Enter the market with the most potential first to generate the strongest return' prioritises upside over downside management - the opposite of what capital constraint requires. 'Market entry strategy that minimises risk of costly failure with limited capital' is the question.",
+            "correctAnswerIndex": 1,
+            "hint": "Prioritise capital discipline and early testing over chasing the biggest opportunity first.",
+            "explanation": "Naming cash-flow discipline and early assumption-testing gives a strategy actually suited to limited capital. 'Enter the market with the most potential first' prioritises upside over the downside protection that capital constraint requires. 'Conduct comprehensive market research' is sound but doesn't name a specific capital-appropriate strategy.",
             "id": "bd_l136_q2"
         },
         {
@@ -282,13 +282,13 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'I've been offered the chance to write the standard operating procedures for a brand new type of aircraft that has never entered commercial service before. What principles guide how you write an SOP for the genuinely unknown?'",
             "options": [
-                "Four principles for writing an SOP for an aircraft where there is no operational experience yet: first, design for the failure modes that the manufacturer's testing identified even if they haven't occurred in operation - the testing data is your best proxy for the unknown; second, write for the scenario where the primary system fails, not just for normal operations - the gaps in safety show up at the boundaries, not in the centre; third, build in explicit review triggers - after the first hundred flights, after the first season, after the first incident; fourth, write the SOP in plain language that works for a pilot under stress, not technical language that works for an engineer reading at a desk.",
-                "Follow established aviation SOP development methodology and consult extensively with the manufacturer and test pilots.",
-                "Follow the published procedures precisely and consult the relevant sections of the flight manual before proceeding."
+                "Follow the published procedures precisely and consult the relevant sections of the flight manual before proceeding.",
+                "I'd design around the manufacturer's test data on failure modes, write for when the primary system fails, and build in review triggers early on.",
+                "Follow established aviation SOP development methodology and consult extensively with the manufacturer and test pilots."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Four principles: design for manufacturer-identified failure modes, write for primary system failure scenarios, build in explicit review triggers, and write for a pilot under stress not an engineer at a desk.",
-            "explanation": "'Design for failure modes the manufacturer's testing identified even if not yet occurring in operation; write for the scenario where the primary system fails not just for normal operations - gaps in safety show up at the boundaries not the centre; build in explicit review triggers after the first hundred flights, season, incident; write in plain language that works for a pilot under stress not technical language for an engineer at a desk' gives four specific, sophisticated principles. 'Follow established SOP development methodology and consult extensively with the manufacturer and test pilots' describes the process without the specific design principles for genuinely unknown operational experience. 'Principles for writing an SOP for a brand new aircraft type with no operational history' is the question.",
+            "hint": "Design specifically for the unknown, using test data and early review points.",
+            "explanation": "Using test data for unknown failure modes, and building in early review triggers, addresses the genuine absence of operational history. 'Follow established SOP methodology and consult the manufacturer' describes the process without these specific design principles. 'Follow published procedures and consult the flight manual' doesn't apply when no such procedures exist yet.",
             "id": "bd_l136_q3"
         },
         {
@@ -298,13 +298,13 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'I need to lead a complex multi-partner operation where each partner has different rules of engagement. How do you create coherent command?'",
             "options": [
-                "Coherent command across partners with different rules of engagement requires making those differences explicit and managed rather than ignored. Before operations begin: map every significant operational scenario against each partner's rules of engagement and identify the points of conflict; establish a clear decision protocol for who has authority when rules of engagement conflict in real time; and ensure every partner understands every other partner's constraints. The operation will then run at the speed of the most constrained partner in the scenarios where their constraints apply, and at the speed of the least constrained in scenarios where they don't.",
+                "Conduct thorough pre-mission planning and ensure all personnel are briefed on their roles and contingencies.",
                 "Establish a unified command structure with clear decision authority at each level.",
-                "Conduct thorough pre-mission planning and ensure all personnel are briefed on their roles and contingencies."
+                "I'd map every scenario against each partner's rules of engagement, find the conflict points, and set a clear protocol for who has authority when they clash."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Map scenarios against each partner's rules of engagement, identify conflict points, establish a real-time decision protocol for conflicts, and ensure all partners understand all constraints.",
-            "explanation": "'Map every significant operational scenario against each partner's rules of engagement; identify the points of conflict; establish a clear decision protocol for who has authority when rules of engagement conflict in real time; ensure every partner understands every other partner's constraints; the operation will run at the speed of the most constrained partner in scenarios where their constraints apply' is specific, practical, and identifies the key insight about operational speed. 'Establish a unified command structure with clear decision authority at each level' is the objective but doesn't address the specific challenge of different rules of engagement. 'How to create coherent command in a multi-partner operation with different rules of engagement' is the question.",
+            "correctAnswerIndex": 2,
+            "hint": "Make the differences between partners explicit and managed, not unified away.",
+            "explanation": "Mapping specific conflicts and setting a real-time authority protocol manages the actual differences rather than ignoring them. 'Establish a unified command structure' is the goal but doesn't address how to handle genuinely different rules of engagement. 'Conduct thorough pre-mission planning and briefing' is a general statement.",
             "id": "bd_l137_q1"
         },
         {
@@ -314,13 +314,13 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I've discovered that an operation I've been running has produced results that my organisation will want to publicise, but the methods used would be controversial if disclosed. How do you handle this tension?'",
             "options": [
-                "The tension between results and methods is one of the most important integrity tests in intelligence work. The correct approach is to be completely transparent about the methods with the appropriate oversight authority - even if not publicly - and allow the oversight authority to make the decision about what is appropriate to publicise and how. Withholding the method from oversight while publicising the result would be a serious breach of professional integrity, regardless of whether the method was within operational guidelines.",
-                "Ensure the results are communicated effectively and let the oversight process handle any concerns about methods in its own time.",
-                "Follow established operational protocols and consult with your handler before taking any significant action."
+                "Prioritise the organisation's interest in publicising the results over procedural formality.",
+                "I'd be completely transparent with oversight about the methods, even if not publicly, and let them decide what's appropriate to publicise.",
+                "Ensure the results are communicated effectively and let the oversight process handle any concerns about methods in its own time."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Be completely transparent about the methods with the appropriate oversight authority - allow them to make the publicisation decision. Withholding method from oversight while publicising result is a serious integrity breach.",
-            "explanation": "'Be completely transparent about methods with the appropriate oversight authority even if not publicly; allow the oversight authority to make the decision about what is appropriate to publicise; withholding the method from oversight while publicising the result would be a serious breach of professional integrity regardless of whether the method was within operational guidelines' is specific, principled, and identifies the critical integrity standard. 'Ensure results are communicated effectively and let the oversight process handle concerns in its own time' delays and potentially sequences the disclosure in a way that pre-empts the oversight decision. 'How to handle the tension between desirable results and controversial methods in intelligence work' is the question.",
+            "correctAnswerIndex": 1,
+            "hint": "Disclose fully to oversight before any decision is made about publicising results.",
+            "explanation": "Full transparency with oversight, ahead of any publicity decision, protects the integrity of the process. 'Communicate the results effectively and let oversight handle concerns in its own time' sequences disclosure in a way that pre-empts the oversight decision. 'Follow established protocols and consult your handler' is a general statement.",
             "id": "bd_l137_q2"
         },
         {
@@ -330,13 +330,13 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I'm being asked to consult on making an historic city's traditional street food culture sustainable in the face of rapid urban development. What framework do you bring to this challenge?'",
             "options": [
-                "A framework with four dimensions: cultural authenticity - who defines it and who doesn't; economic viability - for the vendors themselves, not for the tourism industry or the real estate market; institutional protection mechanisms that don't require the street food culture to become a museum exhibit to survive; and the voices that need to be central to the decision - the vendors, their families, their communities, not the urban planners or the heritage preservation industry. The greatest risk in street food 'preservation' is that the form survives while the living culture dies.",
                 "Document the existing food culture comprehensively and advocate for protected zones where traditional street food can continue to operate.",
-                "Study the culinary traditions carefully and consult with authentic practitioners before proceeding."
+                "Focus on modernising the food stalls and improving hygiene standards to meet contemporary expectations.",
+                "I'd centre the vendors' voices, not the planners - real economic viability for them, not the tourism industry, and protection that doesn't turn it into a museum piece."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Four dimensions: cultural authenticity who defines it, economic viability for the vendors not the tourism industry, protection mechanisms that don't require museum exhibit status, and centring vendor voices not planners.",
-            "explanation": "'Cultural authenticity - who defines it and who doesn't; economic viability for the vendors themselves not the tourism industry or real estate market; institutional protection mechanisms that don't require the culture to become a museum exhibit to survive; the voices that must be central - the vendors, their families, their communities, not urban planners or heritage preservation industry; the greatest risk in street food preservation is that the form survives while the living culture dies' gives a specific four-dimensional framework with a critical insight. 'Document comprehensively and advocate for protected zones' is a valuable tactical approach but not a framework. 'Framework for making historic street food culture sustainable in the face of urban development' is the question.",
+            "correctAnswerIndex": 2,
+            "hint": "Centre vendor voices and economic viability, not documentation or preservation zones alone.",
+            "explanation": "Centring vendor voices and their real economic viability addresses who preservation efforts are actually meant to serve. 'Document comprehensively and advocate for protected zones' is a valuable tactic, not a full framework. 'Study the traditions and consult practitioners' is a reasonable first step but not the framework itself.",
             "id": "bd_l137_q3"
         },
         {
@@ -346,29 +346,29 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'I'm advising a national health authority on a complex ethical question about resource allocation in a context of genuine scarcity. What framework guides this type of advice?'",
             "options": [
-                "Resource allocation in genuine scarcity requires explicit engagement with a set of ethical principles that are in tension with each other: utilitarian maximisation of aggregate outcomes; equity in distribution across different groups; priority to the worst-off; procedural fairness regardless of outcome; and respect for individual autonomy. No framework can eliminate the tension between these. The most honest framework explicitly names the tension, is transparent about which principles are being prioritised and why in this specific context, and includes a genuine process for the affected communities to understand and engage with the basis for the decision.",
                 "Apply established bioethical frameworks such as those used for organ allocation or pandemic triage.",
+                "No framework removes the tension between competing principles here - the honest one names it openly and involves the affected communities in understanding why.",
                 "Follow established professional guidelines and consult with relevant specialists and oversight bodies as appropriate."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Explicit engagement with five ethical principles in tension: utilitarian maximisation, equity, priority to the worst-off, procedural fairness, and individual autonomy. Be transparent about which principles are being prioritised and why, with genuine community engagement.",
-            "explanation": "'Requires explicit engagement with principles in tension: utilitarian maximisation of aggregate outcomes, equity in distribution, priority to the worst-off, procedural fairness regardless of outcome, respect for individual autonomy; no framework can eliminate the tension; the most honest framework explicitly names the tension, is transparent about which principles are being prioritised and why in this specific context, and includes a genuine process for affected communities to understand and engage with the basis for the decision' is specific, philosophically informed, and identifies the key governance requirement. 'Apply established bioethical frameworks such as those used for organ allocation or pandemic triage' is one input but treating existing frameworks as the answer misses the transparency and community engagement obligations of this specific type of advice. 'Framework for advising on complex ethical resource allocation in genuine scarcity' is the question.",
+            "correctAnswerIndex": 1,
+            "hint": "Name the unavoidable tension explicitly rather than presenting a resolved framework.",
+            "explanation": "Naming the tension openly, with genuine community engagement, is the most honest framework for a genuinely contested trade-off. 'Apply established bioethical frameworks' is a useful input but treating it as the whole answer misses the transparency obligation. 'Follow established guidelines and consult specialists' is a general statement.",
             "id": "bd_l138_q1"
         },
         {
             "instruction": "Choose the best response.",
             "subtype": "branchingDialogue",
             "interactionType": "dialogue",
-            "persona": "Agent Nyx",
+            "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'I want to understand why my best people keep leaving and going to my competitor. I've done exit interviews but I don't believe the answers I'm getting. How do you find the truth?'",
             "options": [
-                "Three methods to find the truth that exit interviews can't reach: first, interview people who have already left and who have been gone long enough to no longer feel at risk - six to twelve months after departure, people speak more honestly about what they experienced; second, conduct anonymous surveys of current employees specifically asking about the conditions and experiences that usually drive departure - not satisfaction surveys, but targeted surveys about specific departure drivers; third, and most importantly, ask the people who stayed why they stayed and what almost made them leave - this is the most under-used and most revealing source of departure intelligence.",
                 "Conduct deeper exit interviews using an independent third party who can elicit more honest responses.",
-                "Follow established operational security protocols and consult with your senior officer before proceeding."
+                "Review your compensation and benefits packages to ensure they remain competitive in the market.",
+                "I'd talk to people who left months ago, once they don't feel at risk, and ask the ones who stayed what almost made them leave."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Three methods: interview departed employees after enough time has passed, anonymous surveys targeting specific departure drivers, and asking current employees why they stayed and what almost made them leave.",
-            "explanation": "'Interview people who have left and been gone long enough to not feel at risk - six to twelve months, people speak more honestly; conduct anonymous surveys of current employees asking about specific departure drivers not satisfaction; ask people who stayed why they stayed and what almost made them leave - most under-used and most revealing source of departure intelligence' gives three specific methods. 'Conduct deeper exit interviews using an independent third party' is an improvement on current exit interviews but still asks people at the moment of departure when social considerations still apply. 'How to find the truth about why your best people keep leaving when exit interviews are unreliable' is the question.",
+            "correctAnswerIndex": 2,
+            "hint": "Look beyond the exit interview itself to people who've had time and distance.",
+            "explanation": "Talking to people well after departure, and to those who stayed, reaches honesty that exit interviews rarely get to. 'Deeper exit interviews with an independent third party' still asks people at the moment of departure, when social pressure still applies. 'Review compensation and benefits' assumes the cause without actually investigating it.",
             "id": "bd_l138_q2"
         },
         {
@@ -378,13 +378,13 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I've been asked to advise a government on developing a national culinary identity that can be promoted internationally. What are the most important things to get right?'",
             "options": [
-                "Three things to get right that most national culinary promotion campaigns get wrong: first, resist the temptation to curate - the most powerful national culinary identity is specific and honest, not a greatest hits collection designed for international palatability; second, the identity should be defined and led by the people who make and eat the food every day, not by the tourism ministry, the restaurant industry, or the embassy circuit; third, international culinary promotion that works is built on genuine access - bringing international food professionals and media inside the living culture, not bringing the culture to them in a showcase that they observe from the outside.",
-                "Identify the most distinctive and internationally appealing elements of the national cuisine and develop a comprehensive promotion strategy around them.",
-                "Apply your culinary expertise and professional judgment, consulting with trusted colleagues as appropriate."
+                "Resist curating a 'greatest hits' version, let everyday cooks and eaters lead the identity, not the tourism board, and build on real access, not showcases.",
+                "Partner with well-known chefs and food personalities who can lend international credibility.",
+                "Identify the most distinctive and internationally appealing elements of the national cuisine and develop a comprehensive promotion strategy around them."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Resist curation, define identity with everyday makers and eaters not the tourism industry, and build on genuine access - bringing international professionals inside the living culture.",
-            "explanation": "'Resist curation - the most powerful culinary identity is specific and honest not a greatest hits collection; the identity should be defined and led by the people who make and eat the food every day not the tourism ministry or restaurant industry or embassy circuit; international culinary promotion that works is built on genuine access - bringing international food professionals and media inside the living culture not bringing the culture to them in a showcase they observe from outside' gives three specific, sophisticated principles. 'Identify the most distinctive and internationally appealing elements and develop a comprehensive promotion strategy' is precisely the tourism ministry approach that the answer argues against. 'Most important things to get right in developing a national culinary identity for international promotion' is the question.",
+            "hint": "Resist curation and centre the people who actually live the cuisine daily.",
+            "explanation": "Resisting curation and centring everyday practitioners avoids the sanitised version that most promotion campaigns produce. 'Identify the most appealing elements and develop a promotion strategy' is precisely the curated tourism-board approach this answer warns against. 'Apply your expertise and consult colleagues' is a general statement.",
             "id": "bd_l138_q3"
         },
         {
@@ -394,13 +394,13 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'I've been asked to advise on the design of a health system for a country that has very different cultural values around health, illness, and the doctor-patient relationship from those embedded in the systems I know. How do you approach this?'",
             "options": [
-                "The most important first step is to spend significant time understanding the specific cultural values around health, illness, and the doctor-patient relationship in this country - not from textbooks or comparative health systems literature, but from practitioners and patients in the system itself. The second step is to identify which elements of effective health system design are genuinely universal and which are culturally contingent. Many elements that Western health system designers treat as universal turn out to be culturally specific choices that don't translate. The third step is to hold the cultural values as a design constraint, not as a problem to overcome.",
+                "Prioritise clinical outcomes and international best practice over local custom wherever the two conflict.",
                 "Study the comparative health systems literature and case studies from similar cultural contexts.",
-                "Follow established clinical guidelines and ensure all decisions are documented according to professional standards."
+                "I'd spend real time learning the actual cultural values from practitioners and patients, then treat those values as a design constraint, not a problem to fix."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "First understand the specific cultural values from practitioners and patients in the system, then distinguish genuinely universal from culturally contingent design elements, then hold cultural values as a design constraint not a problem.",
-            "explanation": "'Spend significant time understanding cultural values around health, illness, and doctor-patient relationship from practitioners and patients in the system itself not textbooks; identify which elements of effective health system design are genuinely universal and which are culturally contingent - many elements Western designers treat as universal turn out to be culturally specific; hold the cultural values as a design constraint not a problem to overcome' gives a specific, three-stage approach with a critical insight. 'Study comparative health systems literature and case studies from similar cultural contexts' is a useful step but positions you as studying the system from outside rather than engaging with it from inside. 'How to approach health system design for a country with very different cultural values' is the question.",
+            "correctAnswerIndex": 2,
+            "hint": "Learn from people inside the system, and treat their values as a constraint, not an obstacle.",
+            "explanation": "Learning directly from practitioners and patients, and holding values as a constraint rather than a problem, respects the culture being designed for. 'Study comparative literature and case studies' positions you as studying from outside rather than genuinely engaging. 'Follow established clinical guidelines' is a general statement unrelated to cultural design.",
             "id": "bd_l139_q1"
         },
         {
@@ -410,13 +410,13 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'I'm about to enter a partnership with an organisation whose values I broadly share but where our definitions of success are quite different. How do you design a partnership that can survive this difference?'",
             "options": [
-                "A partnership that can survive different definitions of success must do three things at the design stage: make each party's definition of success explicit - written, specific, and reviewed together before the partnership begins; design governance that gives each party genuine authority over the activities most directly connected to their specific definition of success; and create a regular joint review process that allows the parties to surface tension between their definitions of success before it becomes conflict.",
+                "I'd make each side's definition of success explicit in writing from the start, and build in a regular joint review to surface tension early.",
                 "Develop a shared definition of success that both parties can commit to from the start.",
                 "Ensure all business activities comply with relevant regulations and reflect the organisation's stated values."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Make each definition of success explicit and specific before beginning, design governance giving each party authority over activities connected to their definition of success, and create a regular joint review process.",
-            "explanation": "'Make each party's definition of success explicit - written, specific, reviewed together before the partnership begins; design governance that gives each party genuine authority over activities most directly connected to their specific definition of success; create a regular joint review process that allows parties to surface tension between their definitions of success before it becomes conflict' gives three specific design elements. 'Develop a shared definition of success that both parties can commit to' attempts to eliminate the difference rather than design a partnership that can survive it - and in many cases the difference cannot and should not be eliminated. 'How to design a partnership that can survive different definitions of success' is the question.",
+            "hint": "Design for the difference to survive, rather than trying to eliminate it.",
+            "explanation": "Making each definition explicit, plus a regular review, designs a partnership that can survive a real, lasting difference. 'Develop a shared definition both parties commit to' tries to eliminate a difference that may not be eliminable. 'Ensure compliance and reflect stated values' is a general statement.",
             "id": "bd_l139_q2"
         },
         {
@@ -426,13 +426,13 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'I've been asked to develop a framework for making decisions about deploying autonomous systems in flight operations. What principles should govern when autonomous systems should have decision authority and when humans should retain it?'",
             "options": [
-                "Four principles that should govern the division of decision authority: first, autonomous systems should have authority over decisions that require speed and precision beyond human reaction time - certain envelope protection and collision avoidance decisions; second, humans should retain authority over decisions that require contextual judgment about factors that are not in the system's model - novel situations, ambiguous information, conflicting priorities; third, the boundary between autonomous and human authority must be transparent to the human operator at all times - the human must always know which system is in control of which decision; fourth, degradation modes must default to increased human authority not decreased - as systems fail, humans should gain control, not lose it.",
                 "Adopt a principle of graduated autonomy where autonomous systems advise and humans decide until trust is sufficiently established.",
+                "Autonomous systems should own decisions needing speed beyond human reaction time, humans should own contextual judgment calls, and failures should hand back more control to humans, not less.",
                 "Apply your command authority, consult the relevant documentation, and follow established decision-making frameworks."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Four principles: autonomous authority for speed-beyond-human decisions, human authority for contextual judgment about factors outside the system's model, transparent real-time awareness of which system controls which decision, and degradation defaults to increased human authority.",
-            "explanation": "'Autonomous systems should have authority over decisions requiring speed and precision beyond human reaction time; humans should retain authority over decisions requiring contextual judgment about factors not in the system's model; the boundary between autonomous and human authority must be transparent to the human operator at all times; degradation modes must default to increased human authority not decreased - as systems fail, humans should gain control not lose it' gives four specific, principled criteria. 'Graduated autonomy where autonomous systems advise and humans decide until trust is established' is a process approach rather than principles governing the division of authority. 'Principles for when autonomous systems should have decision authority and when humans should retain it' is the question.",
+            "correctAnswerIndex": 1,
+            "hint": "Give specific criteria for the authority split, including what happens during failure.",
+            "explanation": "Naming specific criteria, including the failure-mode principle, gives a real governing framework for authority division. 'Graduated autonomy where systems advise until trust is established' is a process approach, not principles for dividing authority. 'Apply your command authority and follow established frameworks' is a general statement.",
             "id": "bd_l139_q3"
         },
         {
@@ -442,13 +442,13 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'I've been offered an opportunity to testify before an international tribunal on events I was involved in. Some of what I know would be damaging to my own institution. What is your guidance?'",
             "options": [
-                "Testify truthfully and completely. Your obligation when testifying before an international tribunal is to the truth, not to your institution. This is not a close question. Institutions that ask their members to withhold or shape testimony before international tribunals are asking them to obstruct justice. If your institution is damaged by the truth, the institution should have behaved differently. The professional cost to you of testifying truthfully may be significant. The cost to your own integrity of testifying less than truthfully is permanent and not recoverable.",
                 "Consult with your institution's legal team before testifying to understand what you are and are not obligated to disclose.",
-                "Apply established doctrine and best practices, consulting with relevant specialists as appropriate before acting."
+                "Weigh the potential damage to your institution against the value of your testimony.",
+                "I'd testify truthfully and completely - my obligation is to the truth, not my institution, and this isn't really a close question."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Testify truthfully and completely - your obligation before an international tribunal is to the truth not to your institution. This is not a close question.",
-            "explanation": "'Testify truthfully and completely; your obligation when testifying before an international tribunal is to the truth not to your institution; this is not a close question; institutions that ask members to withhold testimony before international tribunals are asking them to obstruct justice; if your institution is damaged by the truth, the institution should have behaved differently; the professional cost to you may be significant; the cost to your own integrity of testifying less than truthfully is permanent and not recoverable' is specific, unambiguous, and principled. 'Consult with your institution's legal team before testifying to understand what you are and are not obligated to disclose' is appropriate for understanding the legal parameters but frames the question as one of legal obligation rather than ethical obligation. 'Guidance on testifying before an international tribunal when some of what you know would be damaging to your own institution' is the question.",
+            "correctAnswerIndex": 2,
+            "hint": "State the obligation clearly and unambiguously, without treating it as a close call.",
+            "explanation": "Naming the obligation to truth over institution, and treating it as unambiguous, is the specific and principled answer here. 'Consult your institution's legal team first' is useful for legal parameters but frames this as a legal question rather than an ethical one. 'Apply established doctrine and best practices' is a general statement.",
             "id": "bd_l140_q1"
         },
         {
@@ -458,13 +458,13 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I've been asked to help design the operational security architecture for a major international summit. What are the most important things to get right that are commonly got wrong?'",
             "options": [
-                "Four commonly made errors in summit security architecture: first, over-investing in perimeter security and under-investing in insider threat management - the most successful attacks on summits have typically come from inside the security perimeter; second, designing the communications security for the security forces themselves rather than for the principals and their delegations - the high-value targets are the principals and their delegations, not the security personnel; third, treating the summit as a single event rather than as a series of sub-events each with their own threat profile; fourth, failing to stress-test the security plan with the actual conditions it will face rather than with controlled scenarios.",
                 "Conduct a comprehensive threat assessment and design the security architecture to address all identified threat vectors.",
-                "Follow established operational protocols and consult with your handler before taking any significant action."
+                "The common mistakes are over-investing in the perimeter while under-investing in insider threat, and treating the summit as one event instead of many smaller ones.",
+                "Increase the security budget significantly to cover every conceivable threat scenario."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Four commonly made errors: over-investing in perimeter and under-investing in insider threat; designing communications security for security forces not principals; treating the summit as one event not a series of sub-events with different threat profiles; failing to stress-test with actual rather than controlled conditions.",
-            "explanation": "'Over-investing in perimeter security and under-investing in insider threat management - the most successful attacks on summits have typically come from inside the security perimeter; designing communications security for security forces rather than for principals and their delegations - the high-value targets are the principals; treating the summit as a single event rather than as a series of sub-events each with their own threat profile; failing to stress-test the security plan with actual conditions rather than controlled scenarios' gives four specific, sophisticated errors that are commonly made. 'Conduct a comprehensive threat assessment and design the architecture to address all identified threat vectors' is the standard process without the specific errors that process commonly produces. 'Most important things to get right that are commonly got wrong in summit security architecture' is the question.",
+            "correctAnswerIndex": 1,
+            "hint": "Name the specific, commonly made mistakes rather than describing the standard process.",
+            "explanation": "Naming specific, commonly made errors gives real insight beyond the standard security process. 'Conduct a comprehensive threat assessment addressing all threat vectors' is the standard process, which is exactly what commonly produces these errors. 'Follow established protocols and consult your handler' is a general statement.",
             "id": "bd_l140_q2"
         },
         {
@@ -474,13 +474,13 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I've been asked to create a food programme for a conflict-affected community that needs to restore communal bonds as well as provide nutrition. How does food serve this function?'",
             "options": [
-                "Food serves communal restoration through three mechanisms that nutrition programmes typically ignore: first, the act of preparing food together - not delivering food, but cooking together - activates social roles, conversations, and relationships that conflict has disrupted; second, the specific foods of a shared culinary memory reconnect people to a shared identity and shared history that has been damaged or questioned; third, eating together in community reestablishes a basic trust - that what is shared is safe, that the act of sitting together is possible, that the future includes others as well as yourself. A programme that only addresses nutrition misses the most important function food can serve in a post-conflict context.",
                 "Ensure the programme provides culturally appropriate food that respects the community's traditional food practices.",
-                "Apply your culinary expertise and professional judgment, consulting with trusted colleagues as appropriate."
+                "Focus on maximising the nutritional value and caloric content of each meal provided.",
+                "Cooking together, not just delivering food, rebuilds the relationships conflict disrupted - and eating together rebuilds a basic trust that nutrition alone misses."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Three mechanisms: preparing food together activates disrupted social roles and conversations; specific foods of shared culinary memory reconnect people to shared identity and history; eating together reestablishes basic communal trust. Nutrition alone misses the most important function.",
-            "explanation": "'Preparing food together - not delivering food but cooking together - activates social roles, conversations, and relationships that conflict has disrupted; specific foods of shared culinary memory reconnect people to a shared identity and shared history that has been damaged; eating together in community reestablishes a basic trust - that what is shared is safe, that sitting together is possible, that the future includes others as well as yourself; a programme that only addresses nutrition misses the most important function food can serve in a post-conflict context' gives three specific mechanisms with a clear principle. 'Ensure the programme provides culturally appropriate food that respects traditional food practices' is one element without the specific mechanisms. 'How food serves the function of restoring communal bonds in conflict-affected communities' is the question.",
+            "correctAnswerIndex": 2,
+            "hint": "Explain the social mechanism, not just the requirement for culturally appropriate food.",
+            "explanation": "Naming the specific social mechanisms - shared preparation and shared eating - explains how food serves communal restoration beyond nutrition. 'Provide culturally appropriate food respecting traditional practices' is one relevant element, not the specific mechanisms. 'Apply your expertise and consult colleagues' is a general statement.",
             "id": "bd_l140_q3"
         }
     ]

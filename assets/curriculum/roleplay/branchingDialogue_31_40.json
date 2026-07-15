@@ -10,11 +10,11 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'We've received two completely contradictory reports about the target location. What do you make of it?'",
             "options": [
+                "I'd prefer to wait for additional intelligence before forming any assessment.",
                 "Receiving conflicting reports is a very common challenge in fieldwork.",
-                "Based on the source I find most credible, I believe the eastern location is correct - though I'd strongly recommend we verify the other report before committing.",
-                "I'd prefer to wait for additional intelligence before forming any assessment."
+                "Based on the source I find most credible, I believe the eastern location is correct - though I'd strongly recommend we verify the other report before committing."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "hint": "In situations of conflicting information, state your best current assessment and recommend verification.",
             "explanation": "'Based on the most credible source, I believe the eastern location is correct - though I recommend we verify' gives a concrete assessment and a sensible safety step. 'Conflicting reports are common' is a platitude. 'I'd prefer to wait' can be appropriate, but here it fails to give any assessment when one is requested.",
             "id": "bd_l31_q1"
@@ -26,11 +26,11 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'Check into the hotel by 1400 hours. Here is your cover identity documentation.'",
             "options": [
+                "Is a cover identity really strictly necessary for this particular operation?",
                 "Hotel check-ins are conventionally conducted in the afternoon hours.",
-                "Understood. I'll study the cover identity during transit and be in position well before 1400.",
-                "Is a cover identity really strictly necessary for this particular operation?"
+                "Understood. I'll study the cover identity during transit and be in position well before 1400."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "hint": "Confirm mission instructions clearly and describe your preparation steps.",
             "explanation": "'I'll study the cover identity during transit and be in position well before 1400' confirms the instruction and describes concrete preparation steps. 'Hotel check-ins are in the afternoon' is a general statement. 'Is it really necessary?' questions the operation without a valid reason.",
             "id": "bd_l31_q2"
@@ -58,11 +58,11 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'Your blood pressure is slightly elevated today. Have you been under a lot of stress?'",
             "options": [
-                "Work has been particularly intense lately. Could stress genuinely be contributing to this?",
                 "I do exercise almost every single day without fail.",
+                "Work has been particularly intense lately. Could stress genuinely be contributing to this?",
                 "Blood pressure is measured in millimetres of mercury."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "hint": "Connect the medical finding to your personal circumstances honestly and ask a relevant question.",
             "explanation": "'Work has been particularly intense lately. Could stress be contributing to this?' is honest and asks a clinically relevant follow-up question. 'I exercise every day' provides lifestyle information but doesn't address the stress question. 'Blood pressure is measured in mmHg' defines a medical term but doesn't contribute any personal information.",
             "id": "bd_l32_q1"
@@ -75,8 +75,8 @@
             "scene": "Merchant Kael says: 'I can offer you a better deal if you pay the full amount in cash today.'",
             "options": [
                 "How much better a deal are we actually talking about?",
-                "Cash payments are inherently less secure than electronic transfers.",
-                "I'll need a little time to consider whether I want to do that."
+                "I'll need a little time to consider whether I want to do that.",
+                "Cash payments are inherently less secure than electronic transfers."
             ],
             "correctAnswerIndex": 0,
             "hint": "When offered an incentive, ask for specific details before making any decision.",
@@ -90,11 +90,11 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'You have a six-hour layover here. Can I suggest some things worth doing in the city?'",
             "options": [
-                "That would be wonderful! What do you recommend for someone with limited time?",
+                "I'll probably just stay inside the airport terminal.",
                 "Six hours is unfortunately not a very long period of time.",
-                "I'll probably just stay inside the airport terminal."
+                "That would be wonderful! What do you recommend for someone with limited time?"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "hint": "Accept helpful local advice with enthusiasm and clarify your relevant constraints.",
             "explanation": "'That would be wonderful! What do you recommend for someone with limited time?' accepts the offer enthusiastically and provides a practical constraint. 'Six hours is not very long' is a mild complaint rather than engaging with the offer. 'I'll just stay in the terminal' closes down a potentially enriching offer.",
             "id": "bd_l32_q3"
@@ -106,11 +106,11 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'I'm considering promoting you to a more senior role. What are your thoughts on that?'",
             "options": [
-                "I'd be genuinely honoured to take on greater responsibility. I have some ideas about how I could add more value in a senior role.",
                 "Senior roles do come with significantly higher levels of responsibility.",
-                "Are there any other candidates being considered for this position?"
+                "Are there any other candidates being considered for this position?",
+                "I'd be genuinely honoured to take on greater responsibility. I have some ideas about how I could add more value in a senior role."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "hint": "When offered a promotion opportunity, respond with genuine enthusiasm and show readiness.",
             "explanation": "'I'd be genuinely honoured. I have ideas about adding more value in a senior role' expresses enthusiasm and shows forward thinking. 'Senior roles come with greater responsibility' is true but sounds like hesitation. 'Are there other candidates?' focuses on competition rather than the opportunity itself.",
             "id": "bd_l33_q1"
@@ -122,11 +122,11 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I've identified a potential suspect. How do you suggest we proceed from here?'",
             "options": [
-                "Suspects always have to be handled very carefully and precisely.",
                 "Before we approach them, I suggest we gather more corroborating evidence - we need to ensure our case is solid.",
-                "Perhaps we should inform our supervisor before taking any action."
+                "Perhaps we should inform our supervisor before taking any action.",
+                "Suspects always have to be handled very carefully and precisely."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "hint": "When given actionable intelligence, suggest a careful, methodical next step.",
             "explanation": "'Before we approach them, gather more corroborating evidence - ensure our case is solid' is a methodical, defensible approach. 'Suspects have to be handled carefully' is vague. 'We should inform our supervisor' might be appropriate, but gathering evidence first is the most logical operational step.",
             "id": "bd_l33_q2"
@@ -170,11 +170,11 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'This is a limited edition item - once it's gone, it's gone. Are you interested?'",
             "options": [
-                "Limited edition items are popular because of their scarcity by nature.",
                 "Yes, I'm very interested. Tell me more about it - what makes it special?",
-                "I'll think it over and come back to you if I decide I want it."
+                "I'll think it over and come back to you if I decide I want it.",
+                "Limited edition items are popular because of their scarcity by nature."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "hint": "Show genuine interest and ask for more information before committing to a purchase.",
             "explanation": "'Yes, I'm very interested. Tell me more - what makes it special?' shows genuine interest while asking for more detail before committing. 'Limited editions are popular because of scarcity' explains the concept without personally engaging. 'I'll think it over and come back' risks losing the item and doesn't engage with the offer.",
             "id": "bd_l34_q2"
@@ -218,11 +218,11 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'Our window for this operation is shrinking. We need to move now or abort. Your call.'",
             "options": [
-                "Operational windows often close faster than anticipated.",
                 "Given that we have seventy percent of the intelligence we need, I say we move now - waiting will only make it harder.",
+                "Operational windows often close faster than anticipated.",
                 "This is really your decision to make, not mine."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "hint": "When forced to make a binary decision under time pressure, make a clear, reasoned choice.",
             "explanation": "'Given that we have seventy percent of the intelligence, I say we move now' makes a decisive choice and provides a specific reason. 'Operational windows often close fast' is a truism, not a decision. 'This is your decision' abdicates responsibility when you've been explicitly asked for your call.",
             "id": "bd_l35_q2"
@@ -234,11 +234,11 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I've been using this supplier for years, but their quality has declined recently. What would you recommend?'",
             "options": [
-                "Supplier relationships can indeed take years to build up properly.",
                 "I'd start by having a direct conversation with the supplier about the quality issue - give them the chance to address it before looking elsewhere.",
-                "Switching suppliers is always a difficult and disruptive process."
+                "Switching suppliers is always a difficult and disruptive process.",
+                "Supplier relationships can indeed take years to build up properly."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "hint": "When a trusted relationship has a problem, recommend direct communication as the first step.",
             "explanation": "'Have a direct conversation with the supplier - give them the chance to address it first' is a mature, professional approach that preserves a valuable relationship while addressing the issue. 'Supplier relationships take years to build' is true but offers no concrete advice. 'Switching is difficult' acknowledges the challenge without suggesting a solution.",
             "id": "bd_l35_q3"
@@ -250,11 +250,11 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'Our communications systems have gone completely offline. What are your contingency options?'",
             "options": [
+                "I'll need some time to look into what alternatives might be available.",
                 "Communications going down is a recognised major operational risk.",
-                "We have three backup options: the satellite relay on deck four, the emergency radio frequency, or we can send a physical runner to the secondary command post.",
-                "I'll need some time to look into what alternatives might be available."
+                "We have three backup options: the satellite relay on deck four, the emergency radio frequency, or we can send a physical runner to the secondary command post."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "hint": "In a crisis, immediately offer concrete, specific options rather than general observations.",
             "explanation": "'Three backup options: satellite relay, emergency radio frequency, or a physical runner to secondary command' offers specific, immediately actionable alternatives. 'Communications going down is a major risk' is a statement of the problem, not a solution. 'I'll need time to look into it' is too slow for an active emergency.",
             "id": "bd_l36_q1"
@@ -267,10 +267,10 @@
             "scene": "Agent Nyx says: 'I've intercepted a message that appears to be in code. Can you take a look and give me your analysis?'",
             "options": [
                 "Coded messages can use many different types of cipher systems.",
-                "Looking at this carefully... the repeating groups of three digits suggest a numeric substitution cipher. The repetition here could be key.",
-                "I would recommend consulting a proper cryptography expert for this."
+                "I would recommend consulting a proper cryptography expert for this.",
+                "Looking at this carefully... the repeating groups of three digits suggest a numeric substitution cipher. The repetition here could be key."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "hint": "When asked to analyse something unfamiliar, give your best technical interpretation with reasoning.",
             "explanation": "'The repeating groups of three digits suggest a numeric substitution cipher - the repetition could be key' provides a specific, reasoned analysis. 'Coded messages use many cipher systems' is general. 'Consult a cryptography expert' avoids contributing when your input was specifically requested.",
             "id": "bd_l36_q2"
@@ -282,11 +282,11 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I've been offered an opportunity to open a second restaurant, but I'm nervous about the financial risk. What do you think?'",
             "options": [
-                "Restaurant expansions carry significant financial risk, of course.",
                 "It's a big step, but if your current location is consistently profitable and you have an experienced team ready, the fundamentals are strong.",
+                "Restaurant expansions carry significant financial risk, of course.",
                 "I would run the full numbers very carefully before making any commitment."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "hint": "When asked for professional advice on a major decision, give specific, conditional guidance.",
             "explanation": "'If your current location is consistently profitable and you have an experienced team, the fundamentals are strong' gives specific, conditional guidance based on real factors. 'Expansions carry significant financial risk' is a general caution without specific advice. 'Run the numbers carefully' is sound general advice but gives no specific recommendation.",
             "id": "bd_l36_q3"
@@ -298,11 +298,11 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'I need to discuss some difficult news from your test results with you. Are you ready to hear it?'",
             "options": [
+                "Is the news going to be very serious? Can you give me a warning first?",
                 "Yes - please be direct and give me the full picture. I need to understand everything clearly.",
-                "Bad news is always very hard to receive, no matter how it's delivered.",
-                "Is the news going to be very serious? Can you give me a warning first?"
+                "Bad news is always very hard to receive, no matter how it's delivered."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "hint": "When faced with difficult medical news, ask for it directly and clearly.",
             "explanation": "'Please be direct and give me the full picture - I need to understand everything clearly' is mature and practical. It positions you to make informed decisions. 'Bad news is always hard to receive' is an emotional statement that delays the conversation. 'Can you give me a warning first?' is already asking for a warning - the question itself is the warning.",
             "id": "bd_l37_q1"
@@ -315,8 +315,8 @@
             "scene": "Merchant Kael says: 'I need to know whether you're a serious buyer today, or if you're just browsing.'",
             "options": [
                 "I'm a genuinely serious buyer if the right item comes up and the price is reasonable.",
-                "All buyers start out as browsers - that's simply the nature of commerce.",
-                "I find that a bit of a rude question, frankly."
+                "I find that a bit of a rude question, frankly.",
+                "All buyers start out as browsers - that's simply the nature of commerce."
             ],
             "correctAnswerIndex": 0,
             "hint": "In a commercial context, state your buyer status clearly and with appropriate conditions.",
@@ -330,9 +330,9 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'Our routing software has recommended a much longer alternative flight path to avoid storm systems ahead. Do you agree with that recommendation?'",
             "options": [
-                "Weather routing software is generally very reliable in my experience.",
+                "A longer route will increase fuel consumption and delay arrival.",
                 "Let me cross-check the recommendation against current radar data and the latest METAR reports before we commit to the deviation.",
-                "A longer route will increase fuel consumption and delay arrival."
+                "Weather routing software is generally very reliable in my experience."
             ],
             "correctAnswerIndex": 1,
             "hint": "Before accepting a routing change, cross-check with current data to confirm the recommendation.",
@@ -347,10 +347,10 @@
             "scene": "Captain Hektor says: 'One of our best crew members has asked to transfer to another vessel. How should I respond to their request?'",
             "options": [
                 "Crew transfers are a normal part of any vessel's personnel management.",
-                "I'd suggest having an honest conversation with them first - understand their reasons before responding. If it's about growth or opportunities, perhaps there's something we can offer here.",
-                "Strong performers are very difficult to replace in tight labour markets."
+                "Strong performers are very difficult to replace in tight labour markets.",
+                "I'd suggest having an honest conversation with them first - understand their reasons before responding. If it's about growth or opportunities, perhaps there's something we can offer here."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "hint": "When someone valuable asks to leave, understand their reasons before responding or deciding.",
             "explanation": "'Have an honest conversation first - understand their reasons, and explore if there's something we can offer here' addresses the situation constructively. 'Crew transfers are normal' accepts the situation passively. 'Strong performers are hard to replace' states the cost without offering a solution.",
             "id": "bd_l38_q1"
@@ -362,11 +362,11 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I've been monitoring a suspect for three days and I'm not seeing anything incriminating. Should we continue or call it off?'",
             "options": [
+                "We should probably cut our losses and redirect the resources elsewhere.",
                 "Three-day surveillance operations don't always produce immediate results.",
-                "Let's review what we have against the original intelligence that triggered this watch - if the basis was solid, I'd extend to a full week before abandoning it.",
-                "We should probably cut our losses and redirect the resources elsewhere."
+                "Let's review what we have against the original intelligence that triggered this watch - if the basis was solid, I'd extend to a full week before abandoning it."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "hint": "When an operation isn't producing results, evaluate it against the original justification before deciding.",
             "explanation": "'Review the original intelligence basis - if it was solid, extend to a full week before abandoning' is a data-driven, proportionate approach. 'Three-day operations don't always produce immediate results' is a platitude. 'Cut our losses and redirect' is premature without evaluating the original intelligence quality.",
             "id": "bd_l38_q2"
@@ -378,11 +378,11 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'This new dish has received mixed reviews from our test diners. Should I add it to the permanent menu or not?'",
             "options": [
+                "Mixed reviews are quite common for new and experimental dishes.",
                 "Mixed reviews suggest that the dish hasn't yet found its intended audience.",
-                "I wouldn't add it permanently yet. Refine the specific elements that received criticism, run one more taste test, and then decide.",
-                "Mixed reviews are quite common for new and experimental dishes."
+                "I wouldn't add it permanently yet. Refine the specific elements that received criticism, run one more taste test, and then decide."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "hint": "When there are mixed results, recommend a specific improvement cycle before a permanent decision.",
             "explanation": "'Refine the criticised elements, run one more taste test, then decide' is a concrete, improvement-focused approach. 'Mixed reviews suggest it hasn't found its audience' may be true but doesn't give actionable advice. 'Mixed reviews are common for new dishes' is a general reassurance without specific guidance.",
             "id": "bd_l38_q3"
@@ -394,11 +394,11 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'I'm recommending a significant lifestyle change along with your medication. How committed are you to making these changes?'",
             "options": [
-                "I'm completely committed - what specific changes are you recommending?",
                 "Lifestyle changes are always more difficult to sustain than taking medication.",
+                "I'm completely committed - what specific changes are you recommending?",
                 "I'll certainly do my best, though I know these things are challenging."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "hint": "Show full commitment to medical advice and immediately ask for specifics.",
             "explanation": "'I'm completely committed - what specific changes are you recommending?' shows total commitment and moves straight to the actionable detail. 'Lifestyle changes are harder than medication' sounds like it's laying the groundwork for non-compliance. 'I'll do my best, though it's challenging' expresses commitment with excessive qualification.",
             "id": "bd_l39_q1"
@@ -410,11 +410,11 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'I have two items that could both work for you. Would you like me to compare them directly for you?'",
             "options": [
-                "Yes please - a side-by-side comparison would be very helpful.",
+                "I find it difficult to decide between two comparable options.",
                 "Products from the same manufacturer are usually quite similar.",
-                "I find it difficult to decide between two comparable options."
+                "Yes please - a side-by-side comparison would be very helpful."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "hint": "When offered a helpful comparison, accept enthusiastically and let the seller present the information.",
             "explanation": "'Yes please - a side-by-side comparison would be very helpful' accepts the offer and positions you to make an informed decision. 'Products from the same manufacturer are usually similar' is a generalisation that undermines the comparison before it's made. 'I find it difficult to decide between two options' describes the problem rather than seeking the solution.",
             "id": "bd_l39_q2"
@@ -442,11 +442,11 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'I've reviewed your proposal and I have some significant concerns. I think we need to discuss it.'",
             "options": [
-                "I welcome the feedback, Captain. Please walk me through your specific concerns - I want to understand them fully.",
                 "My proposal was based on a thorough analysis of all available data.",
+                "I welcome the feedback, Captain. Please walk me through your specific concerns - I want to understand them fully.",
                 "I can produce a revised version if you feel that would be helpful."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "hint": "Invite specific feedback openly and position yourself to learn from criticism.",
             "explanation": "'I welcome the feedback. Please walk me through your specific concerns - I want to understand them fully' is open, professional, and learning-oriented. 'My proposal was based on thorough analysis' is slightly defensive, though it establishes your process. 'I can produce a revised version' jumps to solutions before understanding the concerns.",
             "id": "bd_l40_q1"
@@ -474,9 +474,9 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I need to adapt our menu for a large private event - twelve guests, all with different dietary requirements. Where do you start?'",
             "options": [
-                "Large private events with complex dietary needs are always a significant challenge.",
+                "I would recommend creating twelve completely separate menus, one for each individual guest.",
                 "First, I'd collect the detailed dietary requirements from all twelve guests, then identify dishes that can be naturally adapted to accommodate as many needs as possible simultaneously.",
-                "I would recommend creating twelve completely separate menus, one for each individual guest."
+                "Large private events with complex dietary needs are always a significant challenge."
             ],
             "correctAnswerIndex": 1,
             "hint": "For a complex planning challenge, start with information gathering and look for efficient, adaptable solutions.",

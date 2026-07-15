@@ -10,13 +10,13 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'Our fuel reserves are at sixty percent. Is that sufficient for the planned route?'",
             "options": [
-                "Sixty percent should be adequate, but I'd recommend filing a fuel top-up request before we depart - I prefer at least seventy-five percent as a safety buffer.",
                 "Fuel reserves are a critical factor in any long-distance operation.",
-                "That depends on the exact distance and conditions we encounter en route."
+                "That really depends on the exact distance and conditions we meet.",
+                "Sixty percent should be enough, but I'd rather top up before we depart, just as a safety buffer."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Give a professional assessment with a specific recommendation and your safety rationale.",
-            "explanation": "'Sixty percent is adequate, but I'd recommend a top-up before we depart - I prefer at least seventy-five percent as a safety buffer' is specific, responsible, and explains the safety reasoning. 'Fuel reserves are critical' is a general statement. 'That depends on conditions' is true but non-committal when a direct assessment was asked for.",
+            "correctAnswerIndex": 2,
+            "hint": "Give a clear recommendation and briefly explain your safety reasoning.",
+            "explanation": "Recommending a top-up as a safety buffer is a specific, responsible answer, not just a yes or no. 'Fuel reserves are a critical factor' states the obvious without answering. 'That depends on conditions' avoids giving the assessment that was asked for.",
             "id": "bd_l51_q1"
         },
         {
@@ -26,13 +26,13 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I need a plausible cover story for why I'm attending this conference. What do you suggest?'",
             "options": [
+                "I'd suggest a variation on your previous cover, to keep things consistent.",
                 "Cover stories need to be grounded in verifiable, consistent details.",
-                "Say you're a research consultant specialising in emerging market analysis - it's broad enough to avoid deep technical questions but specific enough to be credible.",
-                "I'd suggest you use a variation on your previous cover to maintain consistency."
+                "Say you're a research consultant in emerging markets - broad enough to dodge technical questions, specific enough to be believable."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Suggest a specific, credible cover story with a clear rationale for why it works.",
-            "explanation": "'Research consultant in emerging market analysis - broad enough to avoid technical questions but specific enough to be credible' is a specific suggestion with a sound rationale. 'Cover stories need verifiable details' is general advice. 'Use a variation on your previous cover' is vague and could be problematic if the previous cover is known.",
+            "correctAnswerIndex": 2,
+            "hint": "Suggest a specific, credible cover story and briefly explain why it works.",
+            "explanation": "Naming an actual cover and explaining why it's credible is exactly what was asked for. 'Cover stories need verifiable details' is general advice, not a suggestion. 'A variation on your previous cover' is risky if that cover is already known.",
             "id": "bd_l51_q2"
         },
         {
@@ -42,13 +42,13 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'A guest has told us they are coeliac. What dishes on tonight's menu can we safely offer them?'",
             "options": [
+                "The salmon and the roasted vegetable platter are naturally gluten-free - I'll also confirm there's no cross-contamination risk.",
                 "Coeliac guests require completely gluten-free options, of course.",
-                "From tonight's menu, the pan-seared salmon and the roasted vegetable platter are both naturally gluten-free. I'd also confirm with the kitchen that there's no cross-contamination risk.",
-                "We do have several dishes that could possibly be adapted to be gluten-free."
+                "We do have a few dishes that could possibly be adapted."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Know your menu's allergen profile and always address cross-contamination as a professional concern.",
-            "explanation": "'The salmon and roasted vegetable platter are naturally gluten-free - and I'd confirm no cross-contamination risk with the kitchen' is specific, accurate, and professionally responsible about cross-contamination. 'Coeliac guests require gluten-free options' is a general statement. 'Several dishes could possibly be adapted' is vague and does not guarantee safety for a coeliac guest.",
+            "correctAnswerIndex": 0,
+            "hint": "Know your menu's allergen profile and mention cross-contamination as a safety check.",
+            "explanation": "Naming safe dishes and checking cross-contamination is specific and genuinely safe advice for a coeliac guest. 'Coeliac guests require gluten-free options' just restates the problem. 'A few dishes could possibly be adapted' isn't a guarantee of safety.",
             "id": "bd_l51_q3"
         },
         {
@@ -58,13 +58,13 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'I'd like to start you on a new medication. It may cause some mild side effects initially. Are you comfortable with that?'",
             "options": [
-                "I trust your judgment. What side effects should I watch for, and when should I contact you if they concern me?",
-                "All medications carry some risk of side effects by their very nature.",
-                "I'd prefer to try a non-medication approach first, if that's possible."
+                "I'd prefer to try a non-medication approach first, if that's possible.",
+                "I trust your judgment. What side effects should I watch for?",
+                "All medications carry some risk of side effects by their very nature."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Accept medical advice responsibly and ask the two most practical questions about the treatment.",
-            "explanation": "'I trust your judgment. What side effects should I watch for, and when should I contact you if they concern me?' shows trust and asks the two most clinically important follow-up questions. 'All medications have side effects' is a general fact. 'I'd prefer a non-medication approach' challenges the professional recommendation without a medical basis.",
+            "correctAnswerIndex": 1,
+            "hint": "Accept the advice and ask the most useful practical follow-up question.",
+            "explanation": "Trusting the doctor's judgment and asking what to watch for is cooperative and clinically useful. 'All medications carry some risk' is a general fact, not a response. 'I'd prefer a non-medication approach' pushes back without any medical reason.",
             "id": "bd_l52_q1"
         },
         {
@@ -74,13 +74,13 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'I'm prepared to offer you an exclusive distribution deal in your region. This could be transformative for your business.'",
             "options": [
-                "Thank you - I'm genuinely interested. Could you send me the proposed terms in writing so I can review them properly?",
+                "That is a very significant and generous offer.",
                 "Exclusive distribution deals can certainly be very transformative for a business.",
-                "That is a very significant and generous offer."
+                "Thank you - I'm genuinely interested. Could you send the terms in writing so I can review them properly?"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Show genuine interest in a business opportunity while immediately taking the professional step to review it in writing.",
-            "explanation": "'I'm genuinely interested. Could you send me the proposed terms in writing?' shows real interest while taking the correct professional step. 'Exclusive deals can be transformative' is a general statement. 'That is a very significant and generous offer' is an emotional response rather than a business one.",
+            "correctAnswerIndex": 2,
+            "hint": "Show interest, then take the professional step of asking for written terms.",
+            "explanation": "Expressing genuine interest and asking for written terms is the correct professional next step. 'Exclusive deals can be transformative' just restates the pitch back. 'That's a very generous offer' is an emotional reaction, not a business response.",
             "id": "bd_l52_q2"
         },
         {
@@ -91,12 +91,12 @@
             "scene": "Pilot Jax says: 'One of our engines is showing an unusual reading. It may just be a sensor issue, but I want a second opinion.'",
             "options": [
                 "Unusual engine readings should always be taken very seriously.",
-                "Let me look at the data. The reading pattern is consistent with a faulty sensor, but I'd recommend we run the full diagnostic cycle before making any assumptions.",
+                "The pattern looks consistent with a faulty sensor, but let's run the full diagnostic cycle before assuming.",
                 "Sensor malfunctions do occur from time to time in older aircraft."
             ],
             "correctAnswerIndex": 1,
-            "hint": "When asked for a technical second opinion on a safety matter, give a specific analysis and recommend verification.",
-            "explanation": "'The pattern is consistent with a faulty sensor, but I'd recommend running the full diagnostic cycle before making assumptions' gives a specific assessment and a responsible verification step. 'Unusual readings should always be taken seriously' is a general statement. 'Sensor malfunctions occur from time to time' is also general and doesn't help assess this specific reading.",
+            "hint": "Give a specific technical read, then recommend the proper next step.",
+            "explanation": "Giving an actual read on the data, plus recommending full diagnostics before assuming, is exactly the second opinion that was asked for. 'Should always be taken seriously' is a general statement. 'Sensor malfunctions occur sometimes' doesn't address this specific reading.",
             "id": "bd_l52_q3"
         },
         {
@@ -106,13 +106,13 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'I've decided to promote you. This means relocating to our primary base of operations. How do you feel about that?'",
             "options": [
-                "I'm honoured by the promotion, Captain. Could I have a week to make the necessary personal arrangements before confirming the relocation?",
                 "Relocations always involve significant personal and logistical challenges.",
+                "I'm honoured, Captain. Could I have a week to sort out my personal arrangements first?",
                 "That is a major personal and professional decision to process all at once."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Accept a promotion gratefully, then ask for a reasonable amount of time to address the personal implications.",
-            "explanation": "'I'm honoured. Could I have a week to make the necessary personal arrangements before confirming the relocation?' accepts the honour while making a very reasonable personal request. 'Relocations always involve significant challenges' focuses on the difficulty. 'That is a major personal and professional decision' is an observation, not a constructive response.",
+            "correctAnswerIndex": 1,
+            "hint": "Accept gratefully, then ask for reasonable time to handle the personal side.",
+            "explanation": "Accepting the promotion and asking for a reasonable amount of time is both grateful and practical. 'Relocations always involve challenges' just names the difficulty. 'That's a major decision to process' describes your feelings but doesn't respond to the offer.",
             "id": "bd_l53_q1"
         },
         {
@@ -123,12 +123,12 @@
             "scene": "Agent Nyx says: 'I suspect our secure communication channel may have been compromised. What action do you recommend?'",
             "options": [
                 "Compromised communication channels are a very serious security concern.",
-                "Switch to our backup channel immediately, assume all recent communications have been intercepted, and alert the operations centre to conduct a full security audit.",
-                "I'd suggest we run some tests to verify whether it's actually compromised before taking any action."
+                "Switch to the backup channel now, and assume recent messages may have been intercepted.",
+                "I'd suggest we run some tests to check before doing anything."
             ],
             "correctAnswerIndex": 1,
-            "hint": "When a communication channel may be compromised, recommend immediate protective action, not verification testing.",
-            "explanation": "'Switch to the backup channel immediately, assume all recent communications have been intercepted, and alert operations for a full security audit' takes immediate, comprehensive protective action. 'Compromised communication channels are a serious security concern' is a general statement. 'Run tests to verify before acting' risks further exposure if the channel is indeed compromised - act first, verify after.",
+            "hint": "If a channel may be compromised, recommend protecting it first, not testing it first.",
+            "explanation": "Switching to backup immediately and assuming exposure is the safe, decisive response to a suspected breach. 'A very serious security concern' just labels the problem. 'Run tests to check first' risks more exposure while you wait.",
             "id": "bd_l53_q2"
         },
         {
@@ -139,12 +139,12 @@
             "scene": "Chef O-Ring says: 'I'm trying to reduce food waste in my kitchen. What practical steps do you recommend?'",
             "options": [
                 "Food waste is a significant issue throughout the hospitality industry.",
-                "Three immediate steps: implement a daily stock rotation with FIFO, plan your menu around items close to their use-by date, and repurpose vegetable trimmings into stocks and broths.",
-                "Reducing food waste requires a genuine cultural shift in how the whole kitchen thinks."
+                "Reducing food waste really requires a shift in how the whole kitchen thinks.",
+                "Rotate stock daily on a first-in-first-out basis, and turn vegetable trimmings into stocks instead of bins."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Give specific, immediately actionable steps rather than general principles.",
-            "explanation": "'Daily stock rotation with FIFO, menu planning around near-use-by items, and vegetable trimmings into stocks' gives three specific, immediately actionable steps. 'Food waste is a significant issue in hospitality' is a general statement. 'Reducing waste requires a cultural shift' is true but is a long-term aspiration, not an actionable step.",
+            "correctAnswerIndex": 2,
+            "hint": "Give practical, specific steps rather than a general observation.",
+            "explanation": "Naming two concrete daily practices gives the chef something to actually do tomorrow. 'A significant issue in hospitality' just names the problem. 'Requires a shift in how the kitchen thinks' is true but isn't a step.",
             "id": "bd_l53_q3"
         },
         {
@@ -154,13 +154,13 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'You've been referred to me for a second opinion. What specifically concerns you about your current diagnosis?'",
             "options": [
-                "I'm not entirely convinced the current diagnosis explains the full range of my symptoms - particularly the intermittent joint pain, which hasn't been adequately addressed.",
-                "Getting a second medical opinion is a completely reasonable thing to do.",
-                "I just want to make sure that all the possibilities have been properly explored."
+                "I'm not sure the diagnosis explains all my symptoms - especially the joint pain, which nobody's addressed.",
+                "I just want to make sure every possibility has been properly explored.",
+                "Getting a second medical opinion is a completely reasonable thing to do."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Be specific about the clinical gap in your current diagnosis when seeking a second opinion.",
-            "explanation": "'I'm not convinced the diagnosis explains the full range of symptoms - particularly the intermittent joint pain, which hasn't been adequately addressed' is specific and gives the doctor a clear starting point. 'Getting a second opinion is reasonable' is a general statement. 'I want all possibilities explored' is vague - what specific possibilities are you concerned about?",
+            "hint": "Name the specific symptom that concerns you when asking for a second opinion.",
+            "explanation": "Naming the specific unresolved symptom gives the doctor a real starting point. 'A second opinion is reasonable' doesn't say what actually worries you. 'I want every possibility explored' is too vague to act on.",
             "id": "bd_l54_q1"
         },
         {
@@ -170,13 +170,13 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'Our competitor is offering a lower price on this exact product. Why should I buy from you?'",
             "options": [
-                "Price is just one factor in the total cost of ownership - our after-sales support, warranty terms, and delivery reliability consistently make us better value over the full lifetime of the product.",
                 "Our products are widely recognised for their superior quality.",
-                "We've been in business for many more years than our competitors."
+                "We've been in business for many more years than our competitors.",
+                "Price is only one part of the picture - our support and warranty make us better value over time."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "When challenged on price, redirect to total value, not just list price.",
-            "explanation": "'Price is one factor - our after-sales support, warranty terms, and delivery reliability make us better total value' is a sophisticated, evidence-based response. 'Our products are widely recognised for superior quality' is an unsubstantiated claim. 'We've been in business longer' is about longevity, not value.",
+            "correctAnswerIndex": 2,
+            "hint": "When challenged on price, point to overall value, not just the sticker price.",
+            "explanation": "Shifting the conversation to total value is the strongest response to a price objection. 'Widely recognised for superior quality' is an unsupported claim. 'We've been in business longer' talks about history, not value.",
             "id": "bd_l54_q2"
         },
         {
@@ -186,13 +186,13 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'The airport we're landing at has a shorter runway than our aircraft is rated for in standard conditions. How do you assess the risk?'",
             "options": [
-                "A shorter runway is always a risk factor that needs to be taken seriously.",
-                "With our current fuel load and today's temperature and wind conditions, I calculate our landing distance at approximately ninety percent of available runway - within limits, but I'd recommend a full configuration check and briefing the cabin crew for a firm landing.",
-                "I would recommend diverting to an alternate airport with adequate runway length."
+                "Stress is a very common complaint among people in demanding jobs.",
+                "I've been sleeping badly and getting a lot of headaches, actually.",
+                "I suppose things could always be a little better, generally speaking."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Assess the risk with specific calculations and recommend targeted, proportionate mitigations.",
-            "explanation": "'Ninety percent of available runway - within limits, but I'd recommend a full configuration check and briefing the cabin crew for a firm landing' is specific, calculated, and proportionate. 'A shorter runway is always a risk factor' is a general statement. 'Divert to an alternate airport' is a disproportionate response to a risk that is within limits.",
+            "hint": "Give specific, concrete symptoms when a doctor asks how you're doing.",
+            "explanation": "Naming two specific symptoms gives the doctor something useful to work with. 'Stress is common in demanding jobs' is a general observation, not personal information. 'Things could always be a little better' is too vague to be clinically useful.",
             "id": "bd_l54_q3"
         },
         {
@@ -202,13 +202,13 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'Two of our senior officers have a serious interpersonal conflict that is affecting the whole team's performance. How do you recommend I handle it?'",
             "options": [
-                "Interpersonal conflicts between senior officers have a disproportionate impact on team morale.",
-                "I'd start with individual private conversations with each officer - understand both perspectives fully before bringing them together for a facilitated resolution conversation with clear behavioural expectations going forward.",
-                "You may need to consider whether one of them needs to be reassigned."
+                "Given our weight and the conditions today, I'd want an extra margin - let's check the numbers before committing.",
+                "I've landed on shorter runways than this before without any issue.",
+                "A shorter runway is always a risk factor that needs to be taken seriously."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Recommend a structured, fair approach to conflict resolution with clear steps.",
-            "explanation": "'Individual private conversations first, then a facilitated resolution conversation with clear behavioural expectations' is a structured, fair, step-by-step approach. 'Conflicts between senior officers have a disproportionate impact' is a general statement. 'Consider whether one needs to be reassigned' jumps to an extreme solution before attempting resolution.",
+            "correctAnswerIndex": 0,
+            "hint": "Give a specific, numbers-based risk assessment rather than a general statement.",
+            "explanation": "Tying the assessment to actual weight and conditions, and asking to check the numbers, is proper risk analysis. 'Always a risk factor' just states the obvious. 'I've done it before' is not a reason to skip this check.",
             "id": "bd_l55_q1"
         },
         {
@@ -218,13 +218,13 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I've been offered a significant amount of money to share information from this case. What should I do?'",
             "options": [
-                "Report the approach immediately to your supervisor - this is a bribery attempt and potentially an indication that someone is trying to compromise the case from the outside.",
-                "The fact that someone is offering money suggests the case is more significant than we thought.",
-                "Refuse the offer firmly and don't engage any further with the person who made it."
+                "Let's confirm the delivery date is realistic, then I'll personally check on it myself.",
+                "I'd rather under-promise and over-deliver than the other way round.",
+                "A regular client deserves our full attention and best possible service."
             ],
             "correctAnswerIndex": 0,
-            "hint": "When approached with a bribe, both refusing AND reporting are required - not just refusing.",
-            "explanation": "'Report immediately to your supervisor - this is a bribery attempt and possibly indicates an attempt to compromise the case' addresses both the immediate ethical action and the operational intelligence value of the approach. 'The fact that someone offered money suggests the case is significant' is an interesting observation but not an action. 'Refuse and don't engage further' is ethically correct but fails to report an attempt to compromise the investigation.",
+            "hint": "Give a concrete commitment, not just a general principle.",
+            "explanation": "Confirming the date and personally following up is a specific, accountable commitment. 'A regular client deserves our full attention' is a nice sentiment without a plan. 'Under-promise and over-deliver' is a philosophy, not an actual answer to the request.",
             "id": "bd_l55_q2"
         },
         {
@@ -234,13 +234,13 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I'm considering using a molecular gastronomy technique in a new dish. How do you think our clientele would respond?'",
             "options": [
-                "Molecular gastronomy has certainly attracted considerable interest in high-end dining.",
-                "It really depends on our specific clientele profile. For our regular guests who appreciate innovation, it could be exciting - but I'd recommend testing it as a tasting menu option before adding it to the main menu.",
-                "Molecular gastronomy techniques require very specialised equipment and training."
+                "It depends on our guests - I'd trial it as a tasting-menu special before adding it permanently.",
+                "Molecular gastronomy techniques require very specialised equipment and training.",
+                "Molecular gastronomy has certainly attracted considerable interest in high-end dining."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Give a context-specific, nuanced assessment rather than a general statement about the technique.",
-            "explanation": "'It depends on our specific clientele profile - test it as a tasting menu option before adding it to the main menu' is specific to the context and recommends a sensible low-risk testing approach. 'Molecular gastronomy has attracted interest in high-end dining' is a general market observation. 'It requires specialised equipment and training' talks about production challenges, not client response.",
+            "correctAnswerIndex": 0,
+            "hint": "Give a context-specific plan rather than a general statement about the trend.",
+            "explanation": "Suggesting a low-risk trial run is specific and practical for this restaurant. 'Attracted considerable interest' is a market observation, not a recommendation. 'Requires specialised equipment and training' talks about difficulty, not whether to try it.",
             "id": "bd_l55_q3"
         },
         {
@@ -250,13 +250,13 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'I want to discuss the possibility of a surgical option. This carries some risk but could significantly improve your quality of life. What are your initial thoughts?'",
             "options": [
-                "My initial thought is that I'd like to fully understand the risk profile before saying anything more. Could you walk me through the specific risks, the success rate, and what recovery looks like?",
-                "Surgery is always a major decision that requires very careful consideration.",
-                "I'm not sure I'm ready to consider surgery at this point in time."
+                "Weather delays are honestly one of the most frustrating parts of travel.",
+                "There's really nothing anyone can do about the weather, unfortunately.",
+                "I completely understand your frustration. Let me check what other options we have for you."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "When presented with a significant medical option, ask for the complete picture before forming a position.",
-            "explanation": "'I'd like to fully understand the risk profile - specific risks, success rate, and recovery' asks for the three most critical pieces of information needed to make an informed decision. 'Surgery is always a major decision' is true but gives no direction. 'I'm not sure I'm ready' closes off a potentially beneficial option without first getting the full information.",
+            "correctAnswerIndex": 2,
+            "hint": "Acknowledge the frustration, then move straight to offering a solution.",
+            "explanation": "Acknowledging the frustration and immediately offering to check alternatives is helpful customer service. 'One of the most frustrating parts of travel' agrees but offers nothing. 'Nothing anyone can do' shuts the conversation down.",
             "id": "bd_l56_q1"
         },
         {
@@ -266,13 +266,13 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'I want to offer you preferential pricing in exchange for an exclusivity clause in our contract. Is that something you'd be open to discussing?'",
             "options": [
-                "Exclusivity clauses can be quite restrictive for a buyer in a dynamic market.",
-                "I'm open to discussing it, but I'd need to understand the scope of the exclusivity, the duration, and how the preferential pricing compares to the market before committing to anything.",
-                "That's an interesting proposition - I'd need my legal team to review any exclusivity clause."
+                "Lost luggage is unfortunately quite a common issue with connecting flights.",
+                "I'm sure it will turn up again eventually.",
+                "Give me a moment, and I'll check the system for a same-day replacement."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Show openness to a commercial discussion while specifying exactly what you need to know before proceeding.",
-            "explanation": "'I'm open to discussing it, but I need to understand the scope, duration, and how the preferential pricing compares to the market' asks the three right questions before committing. 'Exclusivity clauses can be restrictive' is a general concern without engaging with this specific offer. 'I'd need my legal team to review it' is appropriate but is a step for after you've decided you want to proceed.",
+            "correctAnswerIndex": 2,
+            "hint": "Offer an immediate, concrete action rather than a general comment.",
+            "explanation": "Offering to check for a same-day fix is the specific, helpful response a stranded passenger needs. 'Quite a common issue' is true but unhelpful in the moment. 'I'm sure it will turn up' is a vague reassurance, not action.",
             "id": "bd_l56_q2"
         },
         {
@@ -282,13 +282,13 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'A passenger has become verbally aggressive with a flight attendant. How would you like to handle this?'",
             "options": [
-                "The flight attendant should try harder to de-escalate the situation on their own.",
-                "I'll make a PA announcement reminding all passengers of their obligation to maintain respectful conduct on board. If the behaviour continues, I'm prepared to divert and have the passenger removed by authorities.",
-                "Aggressive behaviour on aircraft is an increasingly common problem in the industry."
+                "Turbulence like this is honestly a normal part of flying at this altitude.",
+                "I'll be honest, it makes me a little nervous too sometimes.",
+                "It's uncomfortable, but the aircraft is built to handle far more than this safely."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Handle an in-flight security situation with a proportionate, sequential approach.",
-            "explanation": "'PA announcement first reminding all passengers of respectful conduct obligations; if it continues, prepared to divert' is proportionate and follows a clear escalation sequence. 'The flight attendant should try harder to de-escalate' puts the burden entirely on the front-line staff member. 'Aggressive behaviour is increasingly common' is a general observation, not an action.",
+            "correctAnswerIndex": 2,
+            "hint": "Reassure with a specific fact about safety margins, not just a general comment.",
+            "explanation": "Explaining that the aircraft is built for far worse conditions gives a concrete, reassuring fact. 'Normal part of flying' is true but less reassuring on its own. 'It makes me nervous too' isn't the professional reassurance a passenger needs.",
             "id": "bd_l56_q3"
         },
         {
@@ -298,13 +298,13 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'We've intercepted intelligence suggesting a possible attack on our position within the next twenty-four hours. How do you prepare?'",
             "options": [
-                "Credible intelligence about an imminent attack requires immediate action.",
-                "Immediately: elevate to full alert status, double the watch, conduct a full equipment and supply audit, brief all personnel, and establish clear command succession in case of casualties.",
-                "We should verify the intelligence before making any significant operational changes."
+                "We should verify the intelligence before making any significant operational changes.",
+                "Elevate to full alert, double the watch, and brief every unit within the hour.",
+                "Credible intelligence about an imminent attack requires immediate action."
             ],
             "correctAnswerIndex": 1,
-            "hint": "In response to credible threat intelligence, list specific, immediate preparedness actions.",
-            "explanation": "'Elevate to full alert, double the watch, full equipment audit, brief all personnel, establish command succession' gives five specific, concrete preparedness actions. 'Credible intelligence requires immediate action' is a general statement. 'Verify before making significant changes' is too slow when the potential threat is only twenty-four hours away.",
+            "hint": "Give the specific, immediate actions the threat calls for.",
+            "explanation": "Naming concrete, time-bound actions is what a credible threat actually requires. 'Requires immediate action' says so without saying what to do. 'Verify before changing anything' is too slow when the threat window is this short.",
             "id": "bd_l57_q1"
         },
         {
@@ -314,13 +314,13 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'My contact has left a message with a location, but no time. How do you interpret that?'",
             "options": [
-                "Missing information in covert messages always needs to be decoded very carefully.",
-                "If the time was deliberately omitted, my interpretation is that they want you to choose a time - which puts you in control of when and potentially signals that they are under observation and couldn't safely be more specific.",
-                "It could simply mean the message was incomplete or that they ran out of time."
+                "If they left out the time on purpose, they're likely putting you in control of it - maybe they're being watched.",
+                "It could simply mean the message was incomplete, or that they ran out of time.",
+                "Missing information in covert messages always needs to be decoded very carefully."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Provide a specific, reasoned interpretation of ambiguous intelligence.",
-            "explanation": "'If the time was deliberately omitted, they want you to choose the time - signals they may be under observation and couldn't safely be more specific' is a specific, reasoned intelligence interpretation. 'Missing information always needs careful decoding' is a general statement. 'It could simply be incomplete' is the obvious explanation - a trained analyst should consider the more operationally significant possibilities.",
+            "correctAnswerIndex": 0,
+            "hint": "Offer a specific, reasoned read on the ambiguity, not just the obvious explanation.",
+            "explanation": "Reading the omission as deliberate, and considering they might be under observation, is the sharper analytical take. 'Always needs careful decoding' is a general statement, not an interpretation. 'Could just be incomplete' is the obvious explanation a trained analyst should look past.",
             "id": "bd_l57_q2"
         },
         {
@@ -330,13 +330,13 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'We've just received a large booking cancellation for Saturday night, leaving us with thirty empty covers. What do you recommend?'",
             "options": [
-                "Last-minute booking cancellations are one of the most challenging aspects of restaurant management.",
-                "Three options: launch an immediate social media promotion with a last-minute deal, call your standby list of regular guests personally, or reach out to a local corporate client who books regularly.",
-                "We should focus on filling those covers as quickly as possible."
+                "Last-minute cancellations are one of the most challenging parts of running a restaurant.",
+                "We should focus on filling those covers as quickly as possible.",
+                "Let's run a quick social media deal and call our regulars on the standby list."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "When facing a specific business problem, provide multiple specific, actionable solutions.",
-            "explanation": "'Three options: social media promotion with a last-minute deal, call standby list of regular guests personally, or reach out to a local corporate client' gives three specific, immediately actionable options. 'Last-minute cancellations are one of the most challenging aspects' is a general statement. 'We should fill those covers as quickly as possible' states the objective but gives no means of achieving it.",
+            "correctAnswerIndex": 2,
+            "hint": "Offer specific, actionable ideas rather than stating the goal.",
+            "explanation": "Naming two concrete actions gives the team something to do right now. 'One of the most challenging parts' just names the problem. 'Focus on filling covers quickly' states the goal without any means of reaching it.",
             "id": "bd_l57_q3"
         },
         {
@@ -346,13 +346,13 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'I want to refer you to a mental health professional to complement your physical treatment. How do you respond to that suggestion?'",
             "options": [
-                "I appreciate you raising this. I've been open to exploring all factors that might be affecting my health - I'm happy to make that appointment.",
                 "Mental health support is widely recognised as part of holistic medical care.",
-                "I'm not sure I see the connection between my mental health and my physical symptoms."
+                "I'm not sure I see the connection to my physical symptoms.",
+                "I appreciate you raising this - I've been open to it, and I'm happy to make that appointment."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Respond to a mental health referral with openness and a willingness to explore it.",
-            "explanation": "'I appreciate you raising this - I'm happy to make that appointment' shows openness and immediate action. 'Mental health support is widely recognised as part of holistic care' is a general statement. 'I'm not sure I see the connection' is resistant to a professional medical recommendation without a valid reason.",
+            "correctAnswerIndex": 2,
+            "hint": "Respond to the referral with openness and a concrete next step.",
+            "explanation": "Accepting the referral and agreeing to book the appointment shows real openness. 'Widely recognised as part of holistic care' is a general fact, not a personal response. 'I'm not sure I see the connection' resists the suggestion without a reason.",
             "id": "bd_l58_q1"
         },
         {
@@ -362,13 +362,13 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'I notice you've visited our showroom three times this week without purchasing. What would it take to earn your business today?'",
             "options": [
-                "I appreciate the directness. The sticking point for me is the warranty terms - if you can offer a three-year guarantee rather than one year, I'm ready to commit today.",
+                "I appreciate the directness. It's the warranty terms - offer three years instead of one, and I'll sign today.",
                 "Shopping around and doing your research before purchasing is simply prudent.",
-                "I need a little more time to make a considered decision of this size."
+                "I need a little more time to make a decision of this size."
             ],
             "correctAnswerIndex": 0,
-            "hint": "When a seller asks what it would take, give them a specific, actionable answer.",
-            "explanation": "'The sticking point is the warranty terms - three-year guarantee instead of one year, and I'm ready to commit today' is specific, actionable, and gives the seller a clear path to closing the deal. 'Shopping around is simply prudent' justifies the behaviour but doesn't move toward a decision. 'I need more time' is a deflection when you've already visited three times.",
+            "hint": "Name the one specific thing that would actually close the deal.",
+            "explanation": "Naming the exact sticking point and the specific fix gives the seller something real to work with. 'Shopping around is prudent' justifies the delay but doesn't answer the question. 'I need more time' avoids it after three visits.",
             "id": "bd_l58_q2"
         },
         {
@@ -378,13 +378,13 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'We've arrived at our destination airport and are number four in the landing queue. I'd like your assessment of our fuel situation.'",
             "options": [
-                "We currently have approximately thirty-two minutes of holding fuel remaining. If our wait exceeds twenty minutes, I recommend declaring minimum fuel and requesting priority landing.",
+                "We have about thirty-two minutes of holding fuel - if the wait goes past twenty, I'd declare minimum fuel.",
                 "Being number four in the landing queue is quite common at busy airports.",
-                "Fuel management during holding patterns is one of the most critical skills in commercial aviation."
+                "Fuel management during holding is one of the most critical skills in aviation."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Give a specific fuel assessment with a clear, conditional decision criterion.",
-            "explanation": "'Thirty-two minutes of holding fuel remaining - if our wait exceeds twenty minutes, I recommend declaring minimum fuel and requesting priority landing' is specific, time-bounded, and gives a clear action trigger. 'Number four in the queue is common at busy airports' is a general statement. 'Fuel management during holding is a critical skill' is true but not a specific assessment.",
+            "hint": "Give a specific number and a clear rule for when to act.",
+            "explanation": "A specific fuel figure plus a clear trigger point is exactly the assessment that was asked for. 'Quite common at busy airports' comments on the queue, not the fuel. 'One of the most critical skills' is true but isn't an assessment.",
             "id": "bd_l58_q3"
         },
         {
@@ -394,13 +394,13 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'I'm considering retiring within the next two years. Who do you think is ready to take over command?'",
             "options": [
+                "Commander Torres, honestly - strong operational record, though I'd test them with one independent command first.",
                 "Succession planning is an absolutely critical part of any leadership transition.",
-                "From my assessment, Lieutenant Commander Torres has the strongest combination of operational experience and leadership ability - though I'd recommend giving them at least one major independent command to test them before the transition.",
-                "This is an important decision that deserves a formal succession assessment process."
+                "This is an important decision that deserves a formal assessment process."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "When asked for a succession opinion, give a specific name with a clear rationale and a development recommendation.",
-            "explanation": "'Lieutenant Commander Torres - strongest combination of operational experience and leadership ability, and I'd recommend one major independent command to test them' is specific with a name, rationale, and development step. 'Succession planning is critical' is a general statement. 'This deserves a formal assessment process' is appropriate as a general recommendation but avoids giving the specific opinion requested.",
+            "correctAnswerIndex": 0,
+            "hint": "Give a specific name and a brief, honest rationale.",
+            "explanation": "Naming a specific person with a clear reason is exactly what was asked for. 'Succession planning is critical' avoids naming anyone. 'Deserves a formal process' is fair advice but dodges the direct question.",
             "id": "bd_l59_q1"
         },
         {
@@ -411,12 +411,12 @@
             "scene": "Agent Nyx says: 'I've been offered a promotion that would take me away from field work and into a management role. What would you consider in my position?'",
             "options": [
                 "Career transitions from field work to management are very significant professional decisions.",
-                "I'd weigh three things: whether you still feel the most alive in field work, whether the management role allows you to multiply your impact by developing other agents, and what your personal five-year vision for your career actually looks like.",
+                "I'd ask whether you still feel most alive in the field, and where you see yourself in five years.",
                 "Management roles offer greater security and influence than field positions."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Give specific, personal criteria to consider rather than generic career advice.",
-            "explanation": "'Weigh whether you still feel most alive in field work, whether management multiplies your impact by developing others, and what your five-year personal vision looks like' gives three specific, personal, meaningful criteria. 'Career transitions from field to management are significant' is a general statement. 'Management offers greater security and influence' presents one side without the complexity of the actual decision.",
+            "hint": "Give personal, reflective questions rather than a general statement.",
+            "explanation": "Asking these two personal questions gives real, useful criteria to think through. 'Very significant professional decisions' just states the obvious. 'Management offers more security and influence' only presents one side of the choice.",
             "id": "bd_l59_q2"
         },
         {
@@ -426,13 +426,13 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'A junior chef has presented me with a dish concept they're very proud of. It's creative but not quite there yet. How should I give feedback?'",
             "options": [
-                "Start by genuinely acknowledging what is original and exciting about the concept - then explain precisely what needs to be refined and why. Be specific about the technical issue, not vague about the overall dish.",
-                "Feedback to junior staff should always be very encouraging and positive.",
-                "Honest feedback, even when difficult to hear, is ultimately the most respectful thing to give."
+                "Honest feedback, even when difficult to hear, is ultimately the most respectful thing to give.",
+                "Start with what's genuinely exciting about the idea, then get specific about what needs work.",
+                "Feedback to junior staff should always be very encouraging and positive."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Describe the specific structure of high-quality, constructive feedback.",
-            "explanation": "'Acknowledge what's original and exciting, then explain precisely what needs to be refined and why - be specific about the technical issue' gives a clear, structured feedback approach. 'Feedback to junior staff should always be encouraging' is an incomplete model - honest feedback, not just encouragement, is what develops chefs. 'Honest feedback is the most respectful thing to give' is a general principle without practical guidance.",
+            "correctAnswerIndex": 1,
+            "hint": "Describe the actual structure of good, specific feedback.",
+            "explanation": "Leading with genuine praise, then giving specific, technical notes, is exactly how good feedback works. 'Should always be encouraging and positive' misses that honesty matters too. 'Honest feedback is the most respectful thing' is a nice principle without any practical structure.",
             "id": "bd_l59_q3"
         },
         {
@@ -442,13 +442,13 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'I'm concerned about your weight, which has increased significantly since your last visit. Can we talk about this?'",
             "options": [
-                "Thank you for raising this directly. I've noticed it myself - my routine has changed significantly in the past year and I'd genuinely welcome your guidance on how to address it.",
                 "Weight management is a very complex issue with many contributing factors.",
+                "Thank you for bringing it up - I've noticed it too, and I'd really welcome your guidance.",
                 "I do think about my weight quite a lot, actually."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Respond to a sensitive health observation with honesty, self-awareness, and openness to guidance.",
-            "explanation": "'Thank you for raising this directly. I've noticed it myself - my routine has changed and I'd welcome your guidance' shows maturity, self-awareness, and genuine openness to help. 'Weight management is a complex issue with many factors' is a general statement that doesn't engage personally. 'I do think about my weight quite a lot' is an observation but doesn't move toward a solution.",
+            "correctAnswerIndex": 1,
+            "hint": "Respond with honesty and openness to the doctor's guidance.",
+            "explanation": "Acknowledging the concern and welcoming guidance shows real self-awareness. 'A very complex issue with many factors' doesn't engage personally. 'I think about it a lot' is an observation, not a step toward a solution.",
             "id": "bd_l60_q1"
         },
         {
@@ -459,12 +459,12 @@
             "scene": "Merchant Kael says: 'A long-term client is asking for a discount that is genuinely beyond what our margin allows. How do you handle this?'",
             "options": [
                 "Long-term client relationships are among the most valuable assets in any business.",
-                "I'd have an honest conversation: acknowledge the value of the relationship, explain our margin reality transparently, and then explore non-price ways to add value - extended warranty, priority delivery, preferential terms on future orders.",
-                "In business, sometimes you need to accept a short-term loss to protect a long-term relationship."
+                "Let's be upfront about our margins, and look at other ways to add value instead - priority delivery, maybe.",
+                "In business, sometimes you need to accept a short-term loss for the relationship."
             ],
             "correctAnswerIndex": 1,
-            "hint": "When a client requests an impossible discount, explore value-add alternatives before accepting a loss.",
-            "explanation": "'Acknowledge the relationship value, explain our margin reality transparently, then explore non-price value-adds - extended warranty, priority delivery, preferential terms' is specific and creative. 'Long-term client relationships are very valuable' is a general statement. 'Sometimes accept a short-term loss for long-term relationship' is a valid principle but accepting margin pressure without exploring alternatives is poor commercial practice.",
+            "hint": "Suggest a specific value-add alternative instead of a straight discount.",
+            "explanation": "Being transparent about margins and offering a concrete alternative is a creative, honest way to handle the request. 'Among the most valuable assets' just states the obvious. 'Accept a short-term loss' skips straight to conceding without exploring options first.",
             "id": "bd_l60_q2"
         },
         {
@@ -474,13 +474,13 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'We're two hours from our destination and a passenger has reported a serious medical situation on board. What is the immediate protocol?'",
             "options": [
-                "Medical situations on board aircraft are always handled as the highest priority.",
-                "First, radio ahead to the destination for a medical team on arrival; ask if any medical professionals are on board; follow the on-board emergency medical protocol; and assess whether the severity warrants diverting to the nearest airport.",
-                "We should ask if there is a doctor on board who can assist."
+                "Radio ahead for a medical team, check for doctors on board, and assess whether we need to divert.",
+                "We should ask if there is a doctor on board who can assist.",
+                "Medical situations on board aircraft are always handled as the highest priority."
             ],
             "correctAnswerIndex": 0,
-            "hint": "Give the complete, multi-step protocol for an in-flight medical emergency.",
-            "explanation": "'Radio ahead to destination for medical team, check for medical professionals on board, follow emergency protocol, assess whether to divert' covers all the key steps in the correct order. 'Medical situations on board are always the highest priority' is a general statement. 'Ask if there is a doctor on board' is one step in the protocol but misses all the others.",
+            "hint": "Give the full, ordered protocol, not just one step of it.",
+            "explanation": "Covering all three steps in order is the complete protocol this situation calls for. 'Always handled as the highest priority' states a principle without a plan. 'Ask if there's a doctor on board' is only one part of the full protocol.",
             "id": "bd_l60_q3"
         }
     ]

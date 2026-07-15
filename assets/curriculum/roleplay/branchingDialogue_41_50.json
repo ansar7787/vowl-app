@@ -11,8 +11,8 @@
             "scene": "Dr. Elara says: 'I'd like to run a second round of tests, as the initial results were inconclusive. How do you feel about that?'",
             "options": [
                 "I completely understand. Whatever tests you think necessary - I'd rather know for certain.",
-                "Inconclusive test results are very common in modern diagnostic medicine.",
-                "I was hoping the first round would have been enough, to be honest."
+                "I was hoping the first round would have been enough, to be honest.",
+                "Inconclusive test results are very common in modern diagnostic medicine."
             ],
             "correctAnswerIndex": 0,
             "hint": "When more medical testing is recommended, express full, calm cooperation.",
@@ -26,11 +26,11 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'This particular piece has attracted interest from several serious collectors. You should act quickly.'",
             "options": [
+                "If other collectors are interested, perhaps the price should reflect that.",
                 "I understand the time pressure, but I still need to verify the provenance documentation before committing.",
-                "Rare pieces do attract a lot of competitive interest from serious collectors.",
-                "If other collectors are interested, perhaps the price should reflect that."
+                "Rare pieces do attract a lot of competitive interest from serious collectors."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "hint": "Under sales pressure, maintain your due diligence standards and state what you need before acting.",
             "explanation": "'I understand the time pressure, but I need to verify the provenance documentation before committing' resists pressure tactics while maintaining legitimate standards. 'Rare pieces attract competitive interest' is a general observation. 'If others are interested the price should reflect that' suggests a price increase, which is the opposite of the buyer's interest.",
             "id": "bd_l41_q2"
@@ -42,11 +42,11 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'We've just crossed into international airspace. Shall I brief the passengers on the current local conditions at our destination?'",
             "options": [
-                "Yes - let them know the local time, current weather conditions, and temperature at the destination.",
                 "Passengers are generally very curious about conditions at their destination.",
-                "Passengers tend to appreciate updates from the flight deck."
+                "Passengers tend to appreciate updates from the flight deck.",
+                "Yes - let them know the local time, current weather conditions, and temperature at the destination."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "hint": "In a professional aviation context, give specific, actionable instructions for passenger communication.",
             "explanation": "'Let them know the local time, current weather, and temperature at the destination' gives three specific, useful items for a passenger briefing. 'Passengers are generally curious about their destination' is true but doesn't give direction. 'Passengers appreciate updates from the flight deck' is a general statement rather than a specific instruction.",
             "id": "bd_l41_q3"
@@ -59,8 +59,8 @@
             "scene": "Captain Hektor says: 'I need someone to lead the new training initiative for the junior crew. Would you be willing to take that on?'",
             "options": [
                 "I'd be glad to. I have some ideas for making the programme more hands-on and practical than the previous one.",
-                "Training initiatives are very important for crew development overall.",
-                "That's quite a significant time commitment on top of my existing responsibilities."
+                "That's quite a significant time commitment on top of my existing responsibilities.",
+                "Training initiatives are very important for crew development overall."
             ],
             "correctAnswerIndex": 0,
             "hint": "Accept a meaningful assignment with enthusiasm and add immediate value with an improvement idea.",
@@ -74,11 +74,11 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I need you to act as a translator in this next meeting. The subject will be sensitive. Can you keep it professional throughout?'",
             "options": [
-                "Without question. I'll translate accurately and with complete discretion, regardless of how sensitive the content becomes.",
                 "Professional translators always maintain strict confidentiality as a matter of course.",
-                "I'll do my best, but I should warn you that I'm not a fully trained professional interpreter."
+                "I'll do my best, but I should warn you that I'm not a fully trained professional interpreter.",
+                "Without question. I'll translate accurately and with complete discretion, regardless of how sensitive the content becomes."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "hint": "Commit fully to a professional task and address any relevant limitations honestly.",
             "explanation": "'I'll translate accurately and with complete discretion, regardless of how sensitive the content becomes' is a full, confident professional commitment. 'Professional translators always maintain confidentiality' speaks about translators in general, not about your specific commitment. 'I'll do my best, but I should warn you I'm not a trained interpreter' is honest about limitations but may undermine confidence in a sensitive situation.",
             "id": "bd_l42_q2"
@@ -90,11 +90,11 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'We've just received a delivery of very high-quality, seasonal truffles. How should we feature them on tonight's menu?'",
             "options": [
+                "Truffles are versatile and can be incorporated across multiple courses.",
                 "Seasonal truffles are a genuinely premium luxury ingredient.",
-                "I'd keep it simple to let the truffle shine - perhaps a delicate tagliatelle or a risotto, finished with fresh shavings at the table for maximum visual impact.",
-                "Truffles are versatile and can be incorporated across multiple courses."
+                "I'd keep it simple to let the truffle shine - perhaps a delicate tagliatelle or a risotto, finished with fresh shavings at the table for maximum visual impact."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "hint": "When given a premium ingredient, recommend a preparation that showcases it at its best.",
             "explanation": "'Keep it simple - tagliatelle or a risotto, finished with fresh shavings at the table' demonstrates real culinary understanding of how to let a premium ingredient shine. 'Truffles are a premium ingredient' is a general statement. 'Truffles are versatile across multiple courses' is true but doesn't give specific menu direction.",
             "id": "bd_l42_q3"
@@ -106,11 +106,11 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'You've mentioned that you've been experiencing dizziness. Is it constant, or does it come and go?'",
             "options": [
-                "It comes and goes - mainly when I stand up too quickly or turn my head suddenly.",
                 "Dizziness can have a wide variety of different causes and triggers.",
+                "It comes and goes - mainly when I stand up too quickly or turn my head suddenly.",
                 "It started about a week ago and has been bothering me since then."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "hint": "Give precise clinical details about the pattern of a symptom - constant vs. intermittent, triggers.",
             "explanation": "'It comes and goes - mainly when I stand up too quickly or turn my head suddenly' gives the pattern (intermittent) and identifies specific triggers, which is exactly the clinical detail needed. 'Dizziness has many causes' is a general fact. 'It started a week ago' gives duration but doesn't answer the constant vs. intermittent question that was asked.",
             "id": "bd_l43_q1"
@@ -123,8 +123,8 @@
             "scene": "Merchant Kael says: 'I notice you've been looking at our premium collection. Those prices reflect exceptional craftsmanship.'",
             "options": [
                 "I can see the quality. What materials and techniques go into this particular piece?",
-                "Premium pricing is only justified when quality is truly exceptional.",
-                "I was actually just looking - I don't usually spend at this level."
+                "I was actually just looking - I don't usually spend at this level.",
+                "Premium pricing is only justified when quality is truly exceptional."
             ],
             "correctAnswerIndex": 0,
             "hint": "Show genuine appreciation for craftsmanship and ask a specific, knowledgeable follow-up question.",
@@ -138,11 +138,11 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'Our estimated arrival has been brought forward by twenty minutes due to strong tailwinds. Would you like me to announce this to the passengers?'",
             "options": [
+                "That's entirely your call to make as captain.",
                 "Yes please - passengers always appreciate good news, especially when it's early arrival.",
-                "Tailwinds are the result of upper-level jet stream patterns at altitude.",
-                "That's entirely your call to make as captain."
+                "Tailwinds are the result of upper-level jet stream patterns at altitude."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "hint": "In a professional context, make a clear decision and give a brief, sound reason.",
             "explanation": "'Yes please - passengers always appreciate good news, especially early arrival' makes a clear, positive decision with a sensible rationale. 'Tailwinds are the result of jet stream patterns' is interesting but not relevant to the question of whether to announce the change. 'That's your call' avoids making a recommendation when one was clearly sought.",
             "id": "bd_l43_q3"
@@ -154,11 +154,11 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'We've identified a potential security vulnerability in our navigation systems. What's the priority here?'",
             "options": [
-                "Security vulnerabilities in navigation systems can have severe operational consequences.",
                 "The immediate priority is to isolate the affected system and prevent any exploitation while we assess the full scope and arrange for a fix.",
-                "I'd recommend bringing in an external cybersecurity specialist to evaluate it."
+                "I'd recommend bringing in an external cybersecurity specialist to evaluate it.",
+                "Security vulnerabilities in navigation systems can have severe operational consequences."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "hint": "When a security vulnerability is identified, state the immediate operational priority clearly.",
             "explanation": "'Isolate the affected system immediately and prevent exploitation while we assess and arrange a fix' identifies the correct immediate priority: contain, assess, then repair. 'Security vulnerabilities can have severe consequences' is a general statement about risk. 'Bring in a cybersecurity specialist' is an important long-term step but not the immediate priority.",
             "id": "bd_l44_q1"
@@ -170,11 +170,11 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'My informant has gone silent. This could mean they've been compromised. How do you assess the risk?'",
             "options": [
-                "Informants going silent is one of the highest-risk signals in any field operation.",
                 "I'd assess the risk as high. We should assume compromise until proven otherwise and immediately review what intelligence the informant had access to.",
+                "Informants going silent is one of the highest-risk signals in any field operation.",
                 "It could also simply mean they've been unable to make contact safely."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "hint": "In a high-stakes security context, assess risk conservatively and state the safest operational assumption.",
             "explanation": "'Assume compromise until proven otherwise and immediately review what intelligence they had access to' takes the safest operational assumption and moves to mitigate the risk. 'Informants going silent is one of the highest-risk signals' is a general statement. 'It could simply mean they couldn't make contact safely' is also true but less actionable as an immediate response.",
             "id": "bd_l44_q2"
@@ -202,11 +202,11 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'Your recovery is ahead of schedule - well done. Are you still following the prescribed exercises?'",
             "options": [
-                "Yes, every day without exception. I've been very motivated, knowing the progress was happening.",
                 "Recovery exercises can be quite tedious over a long period of time.",
-                "I've been doing most of them - perhaps not as consistently as I should be."
+                "I've been doing most of them - perhaps not as consistently as I should be.",
+                "Yes, every day without exception. I've been very motivated, knowing the progress was happening."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "hint": "Confirm compliance with a medical programme honestly and share your motivation.",
             "explanation": "'Yes, every day without exception. I've been very motivated, knowing the progress was happening' confirms full compliance and shares genuine motivation. 'Recovery exercises can be tedious' is a general complaint. 'Most of them - perhaps not as consistently as I should be' is honest but reveals partial non-compliance.",
             "id": "bd_l45_q1"
@@ -218,11 +218,11 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'We're about to close the bidding on this piece. This is your last opportunity.'",
             "options": [
-                "Final bids are always the most pressure-filled part of any auction.",
                 "I'd like to place one final bid at twelve hundred - and that's my absolute ceiling.",
-                "I'll need just two more minutes to make my final decision."
+                "I'll need just two more minutes to make my final decision.",
+                "Final bids are always the most pressure-filled part of any auction."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "hint": "When it's your last chance, commit to a specific final bid or withdraw clearly.",
             "explanation": "'One final bid at twelve hundred - that's my absolute ceiling' is decisive, specific, and sets a clear limit. 'Final bids are always the most pressure-filled' makes a general observation rather than bidding. 'I'll need two more minutes' is a delay when the timing has been explicitly stated.",
             "id": "bd_l45_q2"
@@ -234,11 +234,11 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'I'd like to offer you our complimentary day room while you wait for your connecting flight. It's the least we can do for the inconvenience.'",
             "options": [
-                "That is very generous - thank you so much. I really appreciate that gesture.",
+                "I suppose a day room is better than nothing, at least.",
                 "Day rooms are of course much more comfortable than airport gate areas.",
-                "I suppose a day room is better than nothing, at least."
+                "That is very generous - thank you so much. I really appreciate that gesture."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "hint": "Accept a generous offer with genuine, warm appreciation.",
             "explanation": "'That is very generous - thank you so much. I really appreciate that gesture' accepts the gesture with warmth and genuine gratitude. 'Day rooms are more comfortable than gate areas' makes a comparison rather than a warm acknowledgment. 'A day room is better than nothing' is a barely-concealed complaint that diminishes a generous gesture.",
             "id": "bd_l45_q3"
@@ -266,11 +266,11 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I need you to photograph this document without being seen. Can you do that discreetly?'",
             "options": [
-                "Covert photography requires very specific training and the right equipment.",
                 "Yes. I'll use my phone's silent mode, keep it angled below the desk line, and be ready to cover it instantly if anyone approaches.",
+                "Covert photography requires very specific training and the right equipment.",
                 "I'll do my best, though I've never done anything quite like this before."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "hint": "When given a covert task, describe the specific technique you'll use to execute it successfully.",
             "explanation": "'Silent mode, keep it below the desk line, ready to cover it instantly if anyone approaches' describes a specific, practical covert technique. 'Covert photography requires specific training' is a general statement. 'I'll do my best though I've never done this before' raises doubts about competence at the worst possible moment.",
             "id": "bd_l46_q2"
@@ -282,11 +282,11 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I want to create a tasting menu that tells a story. How would you structure it?'",
             "options": [
-                "Tasting menus are a wonderful format for showcasing a chef's range of technique.",
                 "I'd build it as a seasonal journey - starting light and local in spring, building to rich and complex by the third course, then lifting with a bright, refreshing dessert as a final chapter.",
+                "Tasting menus are a wonderful format for showcasing a chef's range of technique.",
                 "Storytelling through food is one of the most creative forms of culinary expression."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "hint": "Give a specific, structured response that directly addresses the creative brief.",
             "explanation": "'Start light and local, build to rich and complex, then lift with a bright refreshing dessert as a final chapter' provides a specific, vivid structure. 'Tasting menus are wonderful for showcasing range' is a general endorsement. 'Storytelling through food is very creative' is a compliment rather than a structured answer.",
             "id": "bd_l46_q3"
@@ -298,11 +298,11 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'I'd like to explore whether your symptoms could have a psychological component. How do you feel about that possibility?'",
             "options": [
-                "I'm open to exploring all possible causes - I want to understand what's happening to me.",
                 "Psychological factors are increasingly recognised in modern physical medicine.",
+                "I'm open to exploring all possible causes - I want to understand what's happening to me.",
                 "I'd prefer to focus on purely physical causes before considering anything psychological."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "hint": "Respond to a sensitive medical suggestion with openness and a focus on understanding.",
             "explanation": "'I'm open to exploring all possible causes - I want to understand what's happening to me' is the most constructive, open response that serves your health. 'Psychological factors are increasingly recognised in modern medicine' is a general statement. 'I'd prefer to focus on purely physical causes first' creates an artificial barrier to a thorough medical assessment.",
             "id": "bd_l47_q1"
@@ -331,8 +331,8 @@
             "scene": "Pilot Jax says: 'We've just received a slight route adjustment from air traffic control. It'll add about fifteen minutes to our flight time.'",
             "options": [
                 "Roger that. I'll update the fuel calculations and revise our ETA for the destination.",
-                "Route adjustments from ATC are a completely normal part of commercial aviation.",
-                "Will the passengers need to be informed about this change in arrival time?"
+                "Will the passengers need to be informed about this change in arrival time?",
+                "Route adjustments from ATC are a completely normal part of commercial aviation."
             ],
             "correctAnswerIndex": 0,
             "hint": "In a professional aviation context, confirm receipt and immediately describe the next operational steps.",
@@ -346,11 +346,11 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'I want to overhaul our training programme completely. What principles should guide the redesign?'",
             "options": [
+                "I'd start by consulting the crew on what they feel is currently missing from the programme.",
                 "Training programme redesigns generally require careful planning and sufficient resources.",
-                "The redesign should be guided by three principles: relevance to actual operational scenarios, immediate practical application, and regular assessment to measure retention and performance improvement.",
-                "I'd start by consulting the crew on what they feel is currently missing from the programme."
+                "The redesign should be guided by three principles: relevance to actual operational scenarios, immediate practical application, and regular assessment to measure retention and performance improvement."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "hint": "Give clear, specific design principles when asked for strategic guidance on a programme redesign.",
             "explanation": "'Three principles: relevance to operational scenarios, immediate practical application, regular assessment for retention' gives concrete, actionable design criteria. 'Redesigns require careful planning and resources' is a general statement. 'Start by consulting the crew' is a good process step but doesn't answer the question about guiding principles.",
             "id": "bd_l48_q1"
@@ -378,11 +378,11 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I've been approached to appear on a cooking television programme. What are the potential benefits and risks?'",
             "options": [
+                "Many chefs have used television very successfully to grow their restaurants.",
                 "Television appearances can significantly raise a chef's public profile and business visibility.",
-                "The benefits include massive brand exposure and new customer acquisition. The risk is that one poor performance reaches a much larger audience than a quiet bad night in your own restaurant.",
-                "Many chefs have used television very successfully to grow their restaurants."
+                "The benefits include massive brand exposure and new customer acquisition. The risk is that one poor performance reaches a much larger audience than a quiet bad night in your own restaurant."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "hint": "Give a balanced, specific analysis of both the upsides and the genuine risks.",
             "explanation": "'Massive brand exposure and new customer acquisition are the benefits. One poor performance reaching a huge audience is the risk' gives a genuinely balanced, specific analysis. 'Television appearances can significantly raise your profile' describes one upside without addressing any risks. 'Many chefs have used television successfully' is a general example without a balanced assessment.",
             "id": "bd_l48_q3"
@@ -394,11 +394,11 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'I need to discuss your long-term treatment plan with you. Do you have any concerns or questions before we begin?'",
             "options": [
-                "Yes - I'd like to understand the long-term side effects and what success looks like over time.",
+                "I'd like to know if my condition will eventually fully resolve.",
                 "Long-term treatment plans are very important for managing chronic conditions.",
-                "I'd like to know if my condition will eventually fully resolve."
+                "Yes - I'd like to understand the long-term side effects and what success looks like over time."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "hint": "Before entering a complex medical discussion, ask the most clinically important questions upfront.",
             "explanation": "'I'd like to understand the long-term side effects and what success looks like over time' asks the two most practically important questions for managing a long-term treatment. 'Long-term treatment plans are important for managing chronic conditions' is a general fact. 'I'd like to know if my condition will fully resolve' is one important question but misses the equally important side effects question.",
             "id": "bd_l49_q1"
@@ -426,11 +426,11 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'We're approaching our destination. Would you like me to give the cabin crew their final preparation instructions?'",
             "options": [
+                "The cabin crew are experienced professionals who know the landing procedures very well.",
                 "Yes - instruct them to begin the cabin safety check, secure all loose items, and prepare for landing within the next twenty minutes.",
-                "Cabin crew preparation for landing is a critical part of the arrival procedure.",
-                "The cabin crew are experienced professionals who know the landing procedures very well."
+                "Cabin crew preparation for landing is a critical part of the arrival procedure."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "hint": "Give specific, timed instructions to professional crew during a pre-landing sequence.",
             "explanation": "'Begin the cabin safety check, secure all loose items, and prepare for landing in twenty minutes' gives three specific, timed instructions. 'Cabin crew preparation is a critical part of arrival' is true but doesn't give direction. 'The cabin crew are experienced professionals who know the procedures' is also true but delegates without providing specific instruction.",
             "id": "bd_l49_q3"
@@ -442,11 +442,11 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'I need your honest assessment of our readiness for this mission. Hold nothing back.'",
             "options": [
-                "Our core strengths are solid: crew training is at a high level and equipment is fully operational. The primary gap is our limited intelligence on the target area - I'd want at least forty-eight more hours on that before committing.",
+                "Mission readiness involves so many interdependent factors that it's genuinely difficult to give a single assessment.",
                 "I believe the team is as ready as it is ever going to be, Captain.",
-                "Mission readiness involves so many interdependent factors that it's genuinely difficult to give a single assessment."
+                "Our core strengths are solid: crew training is at a high level and equipment is fully operational. The primary gap is our limited intelligence on the target area - I'd want at least forty-eight more hours on that before committing."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "hint": "Give a balanced, honest assessment that identifies both strengths and specific gaps.",
             "explanation": "'Core strengths are solid - training is high, equipment operational. Primary gap is limited intelligence on the target - I'd want forty-eight more hours' gives a specific, balanced, honest assessment. 'The team is as ready as it will ever be' is encouraging but lacks specific analysis. 'Mission readiness is difficult to assess in a single statement' avoids the question when a direct assessment was specifically requested.",
             "id": "bd_l50_q1"
@@ -458,11 +458,11 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'This operation has been authorised at the highest level. Are you fully committed?'",
             "options": [
-                "High-level authorisation significantly increases an operation's legitimacy and resources.",
                 "Completely. I understand the stakes and I'm fully committed to the mission's success.",
-                "I'm committed, though I reserve the right to raise concerns through proper channels if issues arise."
+                "I'm committed, though I reserve the right to raise concerns through proper channels if issues arise.",
+                "High-level authorisation significantly increases an operation's legitimacy and resources."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "hint": "Express full commitment to an authorised mission clearly and without hesitation.",
             "explanation": "'Completely. I understand the stakes and I'm fully committed to the mission's success' is a clear, unambiguous declaration of commitment. 'High-level authorisation increases legitimacy' is an observation about authority, not a personal commitment. 'I'm committed, though I reserve the right to raise concerns' adds an unnecessary qualification at the moment of commitment.",
             "id": "bd_l50_q2"

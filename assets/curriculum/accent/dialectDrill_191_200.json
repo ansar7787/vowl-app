@@ -5,201 +5,21 @@
     "quests": [
         {
             "id": "dialectDrill_l191_q1",
-            "instruction": "Which pronunciation is British?",
+            "instruction": "Which pronunciation is American?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Vinaigrette",
+            "word": "Culture",
             "options": [
-                "vin-ay-GRET (British)",
-                "vin-uh-GRET (American)"
+                "KUL-cher (American)",
+                "KUL-chuh (Australian)"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Don't rely on how \"Vinaigrette\" looks on the page — Borrowed words from French often keep their original final-syllable stress in American English, while British English shifts the stress toward the front.",
-            "explanation": "The correct British pronunciation is 'vin-ay-GRET'. The other option, 'vin-uh-GRET', is the American pronunciation. Don't rely on how \"Vinaigrette\" looks on the page — Borrowed words from French often keep their original final-syllable stress in American English, while British English shifts the stress toward the front.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
+            "hint": "Picture how \"Culture\" is written, then listen past the spelling. Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it. Compare \"KUL-cher\" with \"KUL-chuh\".",
+            "explanation": "\"Culture\" is pronounced \"KUL-cher\" in American English and \"KUL-chuh\" in Australian English, so American is correct here. Focus on the 'r': rhotic accents pronounce it fully, non-rhotic accents let it fade.",
+            "dialectNote": "Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it."
         },
         {
             "id": "dialectDrill_l191_q2",
-            "instruction": "Which pronunciation is American?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Neutral",
-            "options": [
-                "NOO-trul (American)",
-                "NYOO-trul (British)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "\"Neutral\" is a trickier case. After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct American pronunciation is 'NOO-trul'. The other option, 'NYOO-trul', is the British pronunciation. \"Neutral\" is a trickier case. After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l191_q3",
-            "instruction": "Which pronunciation is British?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Voluntarily",
-            "options": [
-                "VOL-un-truh-lee (British)",
-                "vol-un-TAIR-uh-lee (American)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "\"Voluntarily\" is a trickier case. Words like this with '-ary', '-ory', or '-ery' often lose a whole syllable in British English, while American English tends to pronounce every syllable. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct British pronunciation is 'VOL-un-truh-lee'. The other option, 'vol-un-TAIR-uh-lee', is the American pronunciation. \"Voluntarily\" is a trickier case. Words like this with '-ary', '-ory', or '-ery' often lose a whole syllable in British English, while American English tends to pronounce every syllable. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l192_q1",
-            "instruction": "Which pronunciation is British?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Costume",
-            "options": [
-                "KOS-tyoom (British)",
-                "KOS-toom (American)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Don't rely on how \"Costume\" looks on the page — After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it.",
-            "explanation": "The correct British pronunciation is 'KOS-tyoom'. The other option, 'KOS-toom', is the American pronunciation. Don't rely on how \"Costume\" looks on the page — After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l192_q2",
-            "instruction": "Which pronunciation is British?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Derogatory",
-            "options": [
-                "dih-ROG-uh-tree (British)",
-                "duh-ROG-uh-tor-ee (American)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Don't rely on how \"Derogatory\" looks on the page — Words like this with '-ary', '-ory', or '-ery' often lose a whole syllable in British English, while American English tends to pronounce every syllable.",
-            "explanation": "The correct British pronunciation is 'dih-ROG-uh-tree'. The other option, 'duh-ROG-uh-tor-ee', is the American pronunciation. Don't rely on how \"Derogatory\" looks on the page — Words like this with '-ary', '-ory', or '-ery' often lose a whole syllable in British English, while American English tends to pronounce every syllable.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l192_q3",
-            "instruction": "Which pronunciation is British?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Bourgeois",
-            "options": [
-                "BOOR-zhwah (British)",
-                "boorzh-WAH (American)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "\"Bourgeois\" is a trickier case. Borrowed words from French often keep their original final-syllable stress in American English, while British English shifts the stress toward the front. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct British pronunciation is 'BOOR-zhwah'. The other option, 'boorzh-WAH', is the American pronunciation. \"Bourgeois\" is a trickier case. Borrowed words from French often keep their original final-syllable stress in American English, while British English shifts the stress toward the front. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l193_q1",
-            "instruction": "Which pronunciation is British?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Disaster",
-            "options": [
-                "dih-ZAH-ster (British)",
-                "dih-ZASS-ter (American)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Don't rely on how \"Disaster\" looks on the page — Before certain nasal or fricative consonant clusters, British English broadens this vowel toward 'ah', while American English keeps it flat.",
-            "explanation": "The correct British pronunciation is 'dih-ZAH-ster'. The other option, 'dih-ZASS-ter', is the American pronunciation. Don't rely on how \"Disaster\" looks on the page — Before certain nasal or fricative consonant clusters, British English broadens this vowel toward 'ah', while American English keeps it flat.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l193_q2",
-            "instruction": "Which pronunciation is British?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Obscure",
-            "options": [
-                "ob-SKYOOR (American)",
-                "ob-SKYOR (British)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "\"Obscure\" is a trickier case. In many modern British accents, this vowel has merged with the sound in 'shore' or 'more'. American English keeps it as a more distinct 'oor' sound. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct British pronunciation is 'ob-SKYOR'. The other option, 'ob-SKYOOR', is the American pronunciation. \"Obscure\" is a trickier case. In many modern British accents, this vowel has merged with the sound in 'shore' or 'more'. American English keeps it as a more distinct 'oor' sound. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l193_q3",
-            "instruction": "Which pronunciation is British?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Espionage",
-            "options": [
-                "ES-pee-uh-nahzh (American)",
-                "es-PEE-uh-nahzh (British)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "Don't rely on how \"Espionage\" looks on the page — Borrowed words from French often keep their original final-syllable stress in American English, while British English shifts the stress toward the front.",
-            "explanation": "The correct British pronunciation is 'es-PEE-uh-nahzh'. The other option, 'ES-pee-uh-nahzh', is the American pronunciation. Don't rely on how \"Espionage\" looks on the page — Borrowed words from French often keep their original final-syllable stress in American English, while British English shifts the stress toward the front.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l194_q1",
-            "instruction": "Which pronunciation is American?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Numerous",
-            "options": [
-                "NOO-mer-us (American)",
-                "NYOO-mer-us (British)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Don't rely on how \"Numerous\" looks on the page — After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it.",
-            "explanation": "The correct American pronunciation is 'NOO-mer-us'. The other option, 'NYOO-mer-us', is the British pronunciation. Don't rely on how \"Numerous\" looks on the page — After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l194_q2",
-            "instruction": "Which pronunciation is American?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Nuclear",
-            "options": [
-                "NOO-klee-er (American)",
-                "NYOO-klee-er (British)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "\"Nuclear\" is a trickier case. After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct American pronunciation is 'NOO-klee-er'. The other option, 'NYOO-klee-er', is the British pronunciation. \"Nuclear\" is a trickier case. After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l194_q3",
-            "instruction": "Which pronunciation is American?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Avalanche",
-            "options": [
-                "AV-uh-lanch (American)",
-                "AV-uh-lahnsh (British)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "\"Avalanche\" is a trickier case. Before certain nasal or fricative consonant clusters, British English broadens this vowel toward 'ah', while American English keeps it flat. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct American pronunciation is 'AV-uh-lanch'. The other option, 'AV-uh-lahnsh', is the British pronunciation. \"Avalanche\" is a trickier case. Before certain nasal or fricative consonant clusters, British English broadens this vowel toward 'ah', while American English keeps it flat. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l195_q1",
-            "instruction": "Which pronunciation is American?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Injure",
-            "options": [
-                "IN-juh (British)",
-                "IN-joor (American)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "\"Injure\" is a trickier case. In many modern British accents, this vowel has merged with the sound in 'shore' or 'more'. American English keeps it as a more distinct 'oor' sound. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct American pronunciation is 'IN-joor'. The other option, 'IN-juh', is the British pronunciation. \"Injure\" is a trickier case. In many modern British accents, this vowel has merged with the sound in 'shore' or 'more'. American English keeps it as a more distinct 'oor' sound. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l195_q2",
             "instruction": "Which pronunciation is British?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
@@ -209,28 +29,268 @@
                 "TREZH-uh (British)"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Don't rely on how \"Treasure\" looks on the page — American English pronounces the 'r' wherever it's written. British English drops it unless a vowel follows.",
-            "explanation": "The correct British pronunciation is 'TREZH-uh'. The other option, 'TREZH-er', is the American pronunciation. Don't rely on how \"Treasure\" looks on the page — American English pronounces the 'r' wherever it's written. British English drops it unless a vowel follows.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
+            "hint": "Sound \"Treasure\" out syllable by syllable. Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it. Compare \"TREZH-uh\" with \"TREZH-er\".",
+            "explanation": "\"Treasure\" is pronounced \"TREZH-uh\" in British English and \"TREZH-er\" in American English, so British is correct here. Focus on the 'r': rhotic accents pronounce it fully, non-rhotic accents let it fade.",
+            "dialectNote": "Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it."
+        },
+        {
+            "id": "dialectDrill_l191_q3",
+            "instruction": "Which pronunciation is British?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Tour",
+            "options": [
+                "TOOR (American)",
+                "TOR (British)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Read \"Tour\" in your head before you choose. In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate. Compare \"TOR\" with \"TOOR\".",
+            "explanation": "\"Tour\" is pronounced \"TOR\" in British English and \"TOOR\" in American English, so British is correct here. In British speech, this vowel blends into the 'fur' sound; American English keeps it distinct.",
+            "dialectNote": "In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate."
+        },
+        {
+            "id": "dialectDrill_l192_q1",
+            "instruction": "Which pronunciation is British?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Endure",
+            "options": [
+                "en-DOOR (American)",
+                "en-DYOR (British)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Read \"Endure\" in your head before you choose. In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate. Compare \"en-DYOR\" with \"en-DOOR\".",
+            "explanation": "\"Endure\" is pronounced \"en-DYOR\" in British English and \"en-DOOR\" in American English, so British is correct here. In British speech, this vowel blends into the 'fur' sound; American English keeps it distinct.",
+            "dialectNote": "In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate."
+        },
+        {
+            "id": "dialectDrill_l192_q2",
+            "instruction": "Which pronunciation is British?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Demure",
+            "options": [
+                "dih-MYOR (British)",
+                "dih-MYOOR (American)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Picture how \"Demure\" is written, then listen past the spelling. In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate. Compare \"dih-MYOR\" with \"dih-MYOOR\".",
+            "explanation": "\"Demure\" is pronounced \"dih-MYOR\" in British English and \"dih-MYOOR\" in American English, so British is correct here. In British speech, this vowel blends into the 'fur' sound; American English keeps it distinct.",
+            "dialectNote": "In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate."
+        },
+        {
+            "id": "dialectDrill_l192_q3",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Espionage",
+            "options": [
+                "ES-pee-uh-nahzh (American)",
+                "es-PEE-uh-nahzh (British)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Say \"Espionage\" slowly and listen closely. Words borrowed from French often keep their original final-syllable stress in American English, while British English shifts the stress earlier, toward the front of the word. Compare \"ES-pee-uh-nahzh\" with \"es-PEE-uh-nahzh\".",
+            "explanation": "\"Espionage\" is pronounced \"ES-pee-uh-nahzh\" in American English and \"es-PEE-uh-nahzh\" in British English, so American is correct here. As a French loanword, American English keeps the stress at the end, while British English moves it forward.",
+            "dialectNote": "Words borrowed from French often keep their original final-syllable stress in American English, while British English shifts the stress earlier, toward the front of the word."
+        },
+        {
+            "id": "dialectDrill_l193_q1",
+            "instruction": "Which pronunciation is British?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Conjure",
+            "options": [
+                "KON-juh (British)",
+                "KON-joor (American)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Say \"Conjure\" slowly and listen closely. In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate. Compare \"KON-juh\" with \"KON-joor\".",
+            "explanation": "\"Conjure\" is pronounced \"KON-juh\" in British English and \"KON-joor\" in American English, so British is correct here. In British speech, this vowel blends into the 'fur' sound; American English keeps it distinct.",
+            "dialectNote": "In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate."
+        },
+        {
+            "id": "dialectDrill_l193_q2",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Plateau",
+            "options": [
+                "PLAT-oh (British)",
+                "pla-TOH (American)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Sound \"Plateau\" out syllable by syllable. Words borrowed from French often keep their original final-syllable stress in American English, while British English shifts the stress earlier, toward the front of the word. Compare \"pla-TOH\" with \"PLAT-oh\".",
+            "explanation": "\"Plateau\" is pronounced \"pla-TOH\" in American English and \"PLAT-oh\" in British English, so American is correct here. As a French loanword, American English keeps the stress at the end, while British English moves it forward.",
+            "dialectNote": "Words borrowed from French often keep their original final-syllable stress in American English, while British English shifts the stress earlier, toward the front of the word."
+        },
+        {
+            "id": "dialectDrill_l193_q3",
+            "instruction": "Which pronunciation is New Zealand?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Wonder",
+            "options": [
+                "WUN-duh (New Zealand)",
+                "WUN-der (Scottish)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Picture how \"Wonder\" is written, then listen past the spelling. Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it. Compare \"WUN-duh\" with \"WUN-der\".",
+            "explanation": "\"Wonder\" is pronounced \"WUN-duh\" in New Zealand English and \"WUN-der\" in Scottish English, so New Zealand is correct here. Focus on the 'r': rhotic accents pronounce it fully, non-rhotic accents let it fade.",
+            "dialectNote": "Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it."
+        },
+        {
+            "id": "dialectDrill_l194_q1",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Your",
+            "options": [
+                "YOOR (American)",
+                "YOR (British)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Picture how \"Your\" is written, then listen past the spelling. In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate. Compare \"YOOR\" with \"YOR\".",
+            "explanation": "\"Your\" is pronounced \"YOOR\" in American English and \"YOR\" in British English, so American is correct here. In British speech, this vowel blends into the 'fur' sound; American English keeps it distinct.",
+            "dialectNote": "In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate."
+        },
+        {
+            "id": "dialectDrill_l194_q2",
+            "instruction": "Which pronunciation is Australian?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Teacher",
+            "options": [
+                "TEE-chuh (Australian)",
+                "TEE-cher (American)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Picture how \"Teacher\" is written, then listen past the spelling. Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it. Compare \"TEE-chuh\" with \"TEE-cher\".",
+            "explanation": "\"Teacher\" is pronounced \"TEE-chuh\" in Australian English and \"TEE-cher\" in American English, so Australian is correct here. Focus on the 'r': rhotic accents pronounce it fully, non-rhotic accents let it fade.",
+            "dialectNote": "Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it."
+        },
+        {
+            "id": "dialectDrill_l194_q3",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Manure",
+            "options": [
+                "muh-NYOR (British)",
+                "muh-NOOR (American)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Read \"Manure\" in your head before you choose. In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate. Compare \"muh-NOOR\" with \"muh-NYOR\".",
+            "explanation": "\"Manure\" is pronounced \"muh-NOOR\" in American English and \"muh-NYOR\" in British English, so American is correct here. In British speech, this vowel blends into the 'fur' sound; American English keeps it distinct.",
+            "dialectNote": "In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate."
+        },
+        {
+            "id": "dialectDrill_l195_q1",
+            "instruction": "Which pronunciation is British?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Parfait",
+            "options": [
+                "par-FAY (American)",
+                "PAR-fay (British)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Read \"Parfait\" in your head before you choose. Words borrowed from French often keep their original final-syllable stress in American English, while British English shifts the stress earlier, toward the front of the word. Compare \"PAR-fay\" with \"par-FAY\".",
+            "explanation": "\"Parfait\" is pronounced \"PAR-fay\" in British English and \"par-FAY\" in American English, so British is correct here. As a French loanword, American English keeps the stress at the end, while British English moves it forward.",
+            "dialectNote": "Words borrowed from French often keep their original final-syllable stress in American English, while British English shifts the stress earlier, toward the front of the word."
+        },
+        {
+            "id": "dialectDrill_l195_q2",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Cure",
+            "options": [
+                "KYOR (British)",
+                "KYOOR (American)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Sound \"Cure\" out syllable by syllable. In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate. Compare \"KYOOR\" with \"KYOR\".",
+            "explanation": "\"Cure\" is pronounced \"KYOOR\" in American English and \"KYOR\" in British English, so American is correct here. In British speech, this vowel blends into the 'fur' sound; American English keeps it distinct.",
+            "dialectNote": "In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate."
         },
         {
             "id": "dialectDrill_l195_q3",
             "instruction": "Which pronunciation is British?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Attitude",
+            "word": "Brother",
             "options": [
-                "AT-ih-tood (American)",
-                "AT-ih-tyood (British)"
+                "BRUTH-uh (British)",
+                "BRUTH-er (American)"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "\"Attitude\" is a trickier case. After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct British pronunciation is 'AT-ih-tyood'. The other option, 'AT-ih-tood', is the American pronunciation. \"Attitude\" is a trickier case. After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
+            "correctAnswerIndex": 0,
+            "hint": "Say \"Brother\" slowly and listen closely. Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it. Compare \"BRUTH-uh\" with \"BRUTH-er\".",
+            "explanation": "\"Brother\" is pronounced \"BRUTH-uh\" in British English and \"BRUTH-er\" in American English, so British is correct here. Focus on the 'r': rhotic accents pronounce it fully, non-rhotic accents let it fade.",
+            "dialectNote": "Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it."
         },
         {
             "id": "dialectDrill_l196_q1",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Negligee",
+            "options": [
+                "neg-lih-ZHAY (American)",
+                "NEG-lih-zhay (British)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Picture how \"Negligee\" is written, then listen past the spelling. Words borrowed from French often keep their original final-syllable stress in American English, while British English shifts the stress earlier, toward the front of the word. Compare \"neg-lih-ZHAY\" with \"NEG-lih-zhay\".",
+            "explanation": "\"Negligee\" is pronounced \"neg-lih-ZHAY\" in American English and \"NEG-lih-zhay\" in British English, so American is correct here. As a French loanword, American English keeps the stress at the end, while British English moves it forward.",
+            "dialectNote": "Words borrowed from French often keep their original final-syllable stress in American English, while British English shifts the stress earlier, toward the front of the word."
+        },
+        {
+            "id": "dialectDrill_l196_q2",
+            "instruction": "Which pronunciation is Scottish?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Chapter",
+            "options": [
+                "CHAP-ter (Scottish)",
+                "CHAP-tuh (Australian)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Say \"Chapter\" slowly and listen closely. Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it. Compare \"CHAP-ter\" with \"CHAP-tuh\".",
+            "explanation": "\"Chapter\" is pronounced \"CHAP-ter\" in Scottish English and \"CHAP-tuh\" in Australian English, so Scottish is correct here. Focus on the 'r': rhotic accents pronounce it fully, non-rhotic accents let it fade.",
+            "dialectNote": "Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it."
+        },
+        {
+            "id": "dialectDrill_l196_q3",
             "instruction": "Which pronunciation is British?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Measure",
+            "options": [
+                "MEZH-uh (British)",
+                "MEZH-er (Irish)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Say \"Measure\" slowly and listen closely. Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it. Compare \"MEZH-uh\" with \"MEZH-er\".",
+            "explanation": "\"Measure\" is pronounced \"MEZH-uh\" in British English and \"MEZH-er\" in Irish English, so British is correct here. Focus on the 'r': rhotic accents pronounce it fully, non-rhotic accents let it fade.",
+            "dialectNote": "Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it."
+        },
+        {
+            "id": "dialectDrill_l197_q1",
+            "instruction": "Which pronunciation is American?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Poor",
+            "options": [
+                "POR (British)",
+                "POOR (American)"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Sound \"Poor\" out syllable by syllable. In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate. Compare \"POOR\" with \"POR\".",
+            "explanation": "\"Poor\" is pronounced \"POOR\" in American English and \"POR\" in British English, so American is correct here. In British speech, this vowel blends into the 'fur' sound; American English keeps it distinct.",
+            "dialectNote": "In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate."
+        },
+        {
+            "id": "dialectDrill_l197_q2",
+            "instruction": "Which pronunciation is American?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
             "word": "Chauffeur",
@@ -238,220 +298,160 @@
                 "shoh-FUR (American)",
                 "SHOH-fer (British)"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "\"Chauffeur\" is a trickier case. Borrowed words from French often keep their original final-syllable stress in American English, while British English shifts the stress toward the front. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct British pronunciation is 'SHOH-fer'. The other option, 'shoh-FUR', is the American pronunciation. \"Chauffeur\" is a trickier case. Borrowed words from French often keep their original final-syllable stress in American English, while British English shifts the stress toward the front. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l196_q2",
-            "instruction": "Which pronunciation is British?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Elementary",
-            "options": [
-                "el-uh-MEN-tree (British)",
-                "el-uh-MEN-tuh-ree (American)"
-            ],
             "correctAnswerIndex": 0,
-            "hint": "\"Elementary\" is a trickier case. Words like this with '-ary', '-ory', or '-ery' often lose a whole syllable in British English, while American English tends to pronounce every syllable. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct British pronunciation is 'el-uh-MEN-tree'. The other option, 'el-uh-MEN-tuh-ree', is the American pronunciation. \"Elementary\" is a trickier case. Words like this with '-ary', '-ory', or '-ery' often lose a whole syllable in British English, while American English tends to pronounce every syllable. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l196_q3",
-            "instruction": "Which pronunciation is British?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Advantage",
-            "options": [
-                "ad-VAHN-tij (British)",
-                "ad-VAN-tij (American)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Don't rely on how \"Advantage\" looks on the page — Before certain nasal or fricative consonant clusters, British English broadens this vowel toward 'ah', while American English keeps it flat.",
-            "explanation": "The correct British pronunciation is 'ad-VAHN-tij'. The other option, 'ad-VAN-tij', is the American pronunciation. Don't rely on how \"Advantage\" looks on the page — Before certain nasal or fricative consonant clusters, British English broadens this vowel toward 'ah', while American English keeps it flat.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l197_q1",
-            "instruction": "Which pronunciation is American?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Complementary",
-            "options": [
-                "kom-pluh-MEN-tuh-ree (American)",
-                "kom-pluh-MEN-tree (British)"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Don't rely on how \"Complementary\" looks on the page — Words like this with '-ary', '-ory', or '-ery' often lose a whole syllable in British English, while American English tends to pronounce every syllable.",
-            "explanation": "The correct American pronunciation is 'kom-pluh-MEN-tuh-ree'. The other option, 'kom-pluh-MEN-tree', is the British pronunciation. Don't rely on how \"Complementary\" looks on the page — Words like this with '-ary', '-ory', or '-ery' often lose a whole syllable in British English, while American English tends to pronounce every syllable.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l197_q2",
-            "instruction": "Which pronunciation is American?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Frighten",
-            "options": [
-                "FRY-ten (British)",
-                "FRY-en (American)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "\"Frighten\" is a trickier case. Between two vowels, American English often softens this 't' into a quick tap (sometimes close to a 'd'), while British English keeps a crisp 't'. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct American pronunciation is 'FRY-en'. The other option, 'FRY-ten', is the British pronunciation. \"Frighten\" is a trickier case. Between two vowels, American English often softens this 't' into a quick tap (sometimes close to a 'd'), while British English keeps a crisp 't'. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
+            "hint": "Say \"Chauffeur\" slowly and listen closely. Words borrowed from French often keep their original final-syllable stress in American English, while British English shifts the stress earlier, toward the front of the word. Compare \"shoh-FUR\" with \"SHOH-fer\".",
+            "explanation": "\"Chauffeur\" is pronounced \"shoh-FUR\" in American English and \"SHOH-fer\" in British English, so American is correct here. As a French loanword, American English keeps the stress at the end, while British English moves it forward.",
+            "dialectNote": "Words borrowed from French often keep their original final-syllable stress in American English, while British English shifts the stress earlier, toward the front of the word."
         },
         {
             "id": "dialectDrill_l197_q3",
-            "instruction": "Which pronunciation is American?",
+            "instruction": "Which pronunciation is British?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Opportune",
+            "word": "Allure",
             "options": [
-                "op-er-TOON (American)",
-                "op-er-TYOON (British)"
+                "uh-LOOR (American)",
+                "uh-LOR (British)"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "\"Opportune\" is a trickier case. After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct American pronunciation is 'op-er-TOON'. The other option, 'op-er-TYOON', is the British pronunciation. \"Opportune\" is a trickier case. After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
+            "correctAnswerIndex": 1,
+            "hint": "Read \"Allure\" in your head before you choose. In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate. Compare \"uh-LOR\" with \"uh-LOOR\".",
+            "explanation": "\"Allure\" is pronounced \"uh-LOR\" in British English and \"uh-LOOR\" in American English, so British is correct here. In British speech, this vowel blends into the 'fur' sound; American English keeps it distinct.",
+            "dialectNote": "In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate."
         },
         {
             "id": "dialectDrill_l198_q1",
             "instruction": "Which pronunciation is British?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Distance",
+            "word": "Advertisement",
             "options": [
-                "DISS-tanss (American)",
-                "DISS-tahnss (British)"
+                "ad-ver-TYZE-ment (American)",
+                "ad-VER-tiss-ment (British)"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Don't rely on how \"Distance\" looks on the page — Before certain nasal or fricative consonant clusters, British English broadens this vowel toward 'ah', while American English keeps it flat.",
-            "explanation": "The correct British pronunciation is 'DISS-tahnss'. The other option, 'DISS-tanss', is the American pronunciation. Don't rely on how \"Distance\" looks on the page — Before certain nasal or fricative consonant clusters, British English broadens this vowel toward 'ah', while American English keeps it flat.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
+            "hint": "Sound \"Advertisement\" out syllable by syllable. A small group of words simply developed two separate standard pronunciations over time. There is no vowel or consonant rule to apply here — native speakers learn these word by word. Compare \"ad-VER-tiss-ment\" with \"ad-ver-TYZE-ment\".",
+            "explanation": "\"Advertisement\" is pronounced \"ad-VER-tiss-ment\" in British English and \"ad-ver-TYZE-ment\" in American English, so British is correct here. This pair does not follow a pattern — it is simply a fixed difference to memorize.",
+            "dialectNote": "A small group of words simply developed two separate standard pronunciations over time. There is no vowel or consonant rule to apply here — native speakers learn these word by word."
         },
         {
             "id": "dialectDrill_l198_q2",
             "instruction": "Which pronunciation is American?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Laughter",
+            "word": "Mature",
             "options": [
-                "LAF-ter (American)",
-                "LAHF-ter (British)"
+                "muh-TYOR (British)",
+                "muh-TOOR (American)"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "\"Laughter\" is a trickier case. Before certain nasal or fricative consonant clusters, British English broadens this vowel toward 'ah', while American English keeps it flat. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct American pronunciation is 'LAF-ter'. The other option, 'LAHF-ter', is the British pronunciation. \"Laughter\" is a trickier case. Before certain nasal or fricative consonant clusters, British English broadens this vowel toward 'ah', while American English keeps it flat. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
+            "correctAnswerIndex": 1,
+            "hint": "Sound \"Mature\" out syllable by syllable. In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate. Compare \"muh-TOOR\" with \"muh-TYOR\".",
+            "explanation": "\"Mature\" is pronounced \"muh-TOOR\" in American English and \"muh-TYOR\" in British English, so American is correct here. In British speech, this vowel blends into the 'fur' sound; American English keeps it distinct.",
+            "dialectNote": "In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate."
         },
         {
             "id": "dialectDrill_l198_q3",
-            "instruction": "Which pronunciation is American?",
+            "instruction": "Which pronunciation is British?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Entrance",
+            "word": "Lure",
             "options": [
-                "EN-transs (American)",
-                "EN-trahnss (British)"
+                "LOR (British)",
+                "LOOR (American)"
             ],
             "correctAnswerIndex": 0,
-            "hint": "\"Entrance\" is a trickier case. Before certain nasal or fricative consonant clusters, British English broadens this vowel toward 'ah', while American English keeps it flat. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct American pronunciation is 'EN-transs'. The other option, 'EN-trahnss', is the British pronunciation. \"Entrance\" is a trickier case. Before certain nasal or fricative consonant clusters, British English broadens this vowel toward 'ah', while American English keeps it flat. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
+            "hint": "Picture how \"Lure\" is written, then listen past the spelling. In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate. Compare \"LOR\" with \"LOOR\".",
+            "explanation": "\"Lure\" is pronounced \"LOR\" in British English and \"LOOR\" in American English, so British is correct here. In British speech, this vowel blends into the 'fur' sound; American English keeps it distinct.",
+            "dialectNote": "In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate."
         },
         {
             "id": "dialectDrill_l199_q1",
-            "instruction": "Which pronunciation is American?",
+            "instruction": "Which pronunciation is Scottish?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Destitute",
+            "word": "Weather",
             "options": [
-                "DESS-tih-tyoot (British)",
-                "DESS-tih-toot (American)"
+                "WETH-er (Scottish)",
+                "WETH-uh (New Zealand)"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Don't rely on how \"Destitute\" looks on the page — After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it.",
-            "explanation": "The correct American pronunciation is 'DESS-tih-toot'. The other option, 'DESS-tih-tyoot', is the British pronunciation. Don't rely on how \"Destitute\" looks on the page — After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
+            "correctAnswerIndex": 0,
+            "hint": "Say \"Weather\" slowly and listen closely. Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it. Compare \"WETH-er\" with \"WETH-uh\".",
+            "explanation": "\"Weather\" is pronounced \"WETH-er\" in Scottish English and \"WETH-uh\" in New Zealand English, so Scottish is correct here. Focus on the 'r': rhotic accents pronounce it fully, non-rhotic accents let it fade.",
+            "dialectNote": "Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it."
         },
         {
             "id": "dialectDrill_l199_q2",
             "instruction": "Which pronunciation is British?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Substance",
+            "word": "Debutante",
             "options": [
-                "SUB-stanss (American)",
-                "SUB-stahnss (British)"
+                "DEB-yoo-tont (British)",
+                "DEB-yoo-tahnt (American)"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "\"Substance\" is a trickier case. Before certain nasal or fricative consonant clusters, British English broadens this vowel toward 'ah', while American English keeps it flat. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct British pronunciation is 'SUB-stahnss'. The other option, 'SUB-stanss', is the American pronunciation. \"Substance\" is a trickier case. Before certain nasal or fricative consonant clusters, British English broadens this vowel toward 'ah', while American English keeps it flat. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
+            "correctAnswerIndex": 0,
+            "hint": "Picture how \"Debutante\" is written, then listen past the spelling. Words borrowed from French often keep their original final-syllable stress in American English, while British English shifts the stress earlier, toward the front of the word. Compare \"DEB-yoo-tont\" with \"DEB-yoo-tahnt\".",
+            "explanation": "\"Debutante\" is pronounced \"DEB-yoo-tont\" in British English and \"DEB-yoo-tahnt\" in American English, so British is correct here. As a French loanword, American English keeps the stress at the end, while British English moves it forward.",
+            "dialectNote": "Words borrowed from French often keep their original final-syllable stress in American English, while British English shifts the stress earlier, toward the front of the word."
         },
         {
             "id": "dialectDrill_l199_q3",
             "instruction": "Which pronunciation is British?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Forgotten",
+            "word": "Thunder",
             "options": [
-                "fer-GAH-en (American)",
-                "fer-GOT-en (British)"
+                "THUN-duh (British)",
+                "THUN-der (Irish)"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "\"Forgotten\" is a trickier case. Between two vowels, American English often softens this 't' into a quick tap (sometimes close to a 'd'), while British English keeps a crisp 't'. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct British pronunciation is 'fer-GOT-en'. The other option, 'fer-GAH-en', is the American pronunciation. \"Forgotten\" is a trickier case. Between two vowels, American English often softens this 't' into a quick tap (sometimes close to a 'd'), while British English keeps a crisp 't'. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
+            "correctAnswerIndex": 0,
+            "hint": "Picture how \"Thunder\" is written, then listen past the spelling. Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it. Compare \"THUN-duh\" with \"THUN-der\".",
+            "explanation": "\"Thunder\" is pronounced \"THUN-duh\" in British English and \"THUN-der\" in Irish English, so British is correct here. Focus on the 'r': rhotic accents pronounce it fully, non-rhotic accents let it fade.",
+            "dialectNote": "Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it."
         },
         {
             "id": "dialectDrill_l200_q1",
             "instruction": "Which pronunciation is American?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Daughter",
+            "word": "Sure",
             "options": [
-                "DAW-der (American)",
-                "DAW-tuh (British)"
+                "SHOOR (American)",
+                "SHOR (British)"
             ],
             "correctAnswerIndex": 0,
-            "hint": "Don't rely on how \"Daughter\" looks on the page — Between two vowels, American English often softens this 't' into a quick tap (sometimes close to a 'd'), while British English keeps a crisp 't'.",
-            "explanation": "The correct American pronunciation is 'DAW-der'. The other option, 'DAW-tuh', is the British pronunciation. Don't rely on how \"Daughter\" looks on the page — Between two vowels, American English often softens this 't' into a quick tap (sometimes close to a 'd'), while British English keeps a crisp 't'.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
+            "hint": "Say \"Sure\" slowly and listen closely. In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate. Compare \"SHOOR\" with \"SHOR\".",
+            "explanation": "\"Sure\" is pronounced \"SHOOR\" in American English and \"SHOR\" in British English, so American is correct here. In British speech, this vowel blends into the 'fur' sound; American English keeps it distinct.",
+            "dialectNote": "In many modern British accents, this vowel has merged with the sound in 'fur', erasing a distinction that American English still keeps clearly separate."
         },
         {
             "id": "dialectDrill_l200_q2",
-            "instruction": "Which pronunciation is American?",
-            "subtype": "dialectDrill",
-            "interactionType": "choice",
-            "word": "Nuisance",
-            "options": [
-                "NYOO-sance (British)",
-                "NOO-sance (American)"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "\"Nuisance\" is a trickier case. After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it. Listen carefully rather than guessing from the spelling.",
-            "explanation": "The correct American pronunciation is 'NOO-sance'. The other option, 'NYOO-sance', is the British pronunciation. \"Nuisance\" is a trickier case. After 't', 'd', 's', or 'n', American English usually drops the small 'y' glide before 'oo', while British English often keeps it. Listen carefully rather than guessing from the spelling.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
-        },
-        {
-            "id": "dialectDrill_l200_q3",
             "instruction": "Which pronunciation is British?",
             "subtype": "dialectDrill",
             "interactionType": "choice",
-            "word": "Mountain",
+            "word": "Winter",
             "options": [
-                "MOWN-en (American)",
-                "MOWN-tin (British)"
+                "WIN-tuh (British)",
+                "WIN-ter (Irish)"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Don't rely on how \"Mountain\" looks on the page — Between two vowels, American English often softens this 't' into a quick tap (sometimes close to a 'd'), while British English keeps a crisp 't'.",
-            "explanation": "The correct British pronunciation is 'MOWN-tin'. The other option, 'MOWN-en', is the American pronunciation. Don't rely on how \"Mountain\" looks on the page — Between two vowels, American English often softens this 't' into a quick tap (sometimes close to a 'd'), while British English keeps a crisp 't'.",
-            "dialectNote": "British and American English often have distinct vowel sounds and stress patterns."
+            "correctAnswerIndex": 0,
+            "hint": "Say \"Winter\" slowly and listen closely. Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it. Compare \"WIN-tuh\" with \"WIN-ter\".",
+            "explanation": "\"Winter\" is pronounced \"WIN-tuh\" in British English and \"WIN-ter\" in Irish English, so British is correct here. Focus on the 'r': rhotic accents pronounce it fully, non-rhotic accents let it fade.",
+            "dialectNote": "Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it."
+        },
+        {
+            "id": "dialectDrill_l200_q3",
+            "instruction": "Which pronunciation is Scottish?",
+            "subtype": "dialectDrill",
+            "interactionType": "choice",
+            "word": "Monster",
+            "options": [
+                "MON-ster (Scottish)",
+                "MON-stuh (New Zealand)"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Picture how \"Monster\" is written, then listen past the spelling. Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it. Compare \"MON-ster\" with \"MON-stuh\".",
+            "explanation": "\"Monster\" is pronounced \"MON-ster\" in Scottish English and \"MON-stuh\" in New Zealand English, so Scottish is correct here. Focus on the 'r': rhotic accents pronounce it fully, non-rhotic accents let it fade.",
+            "dialectNote": "Rhoticity splits the English-speaking world into two camps: American, Canadian, Scottish, and Irish accents pronounce every 'r'. British, Australian, New Zealand, and South African accents drop the 'r' unless a vowel follows it."
         }
     ]
 }

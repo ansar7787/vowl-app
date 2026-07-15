@@ -10,11 +10,11 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'I need a coffee. Have you seen where the galley is?'",
             "options": [
+                "Coffee is actually quite bad for your health.",
                 "It's at the end of the corridor, third door on the right.",
-                "I don't personally drink coffee myself.",
-                "Coffee is actually quite bad for your health."
+                "I don't personally drink coffee myself."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "hint": "When someone asks for directions to a specific place, direct them there helpfully.",
             "explanation": "'It's at the end of the corridor, third door on the right' directly answers with clear directions. 'I don't drink coffee myself' talks about your own habits. 'Coffee is bad for your health' is unsolicited advice that doesn't help the Captain find the galley.",
             "id": "bd_l11_q1"
@@ -27,10 +27,10 @@
             "scene": "Agent Nyx says: 'Thank you so much for your assistance today.'",
             "options": [
                 "I am generally a very busy person.",
-                "You're welcome - happy to help anytime!",
-                "Helping others is an important virtue in life."
+                "Helping others is an important virtue in life.",
+                "You're welcome - happy to help anytime!"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "hint": "Respond to 'Thank you' with 'You're welcome' and a friendly follow-up.",
             "explanation": "'You're welcome - happy to help anytime!' is warm, natural, and invites future cooperation. 'I am generally a very busy person' is an odd, disconnected non-response to gratitude. 'Helping others is an important virtue' is philosophical, not a natural conversational reply.",
             "id": "bd_l11_q2"
@@ -42,11 +42,11 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I accidentally gave you the wrong dish. I am so sorry - let me bring the correct one right away.'",
             "options": [
-                "Not to worry - mistakes happen! I'll wait for the right one.",
                 "That is completely and utterly unacceptable!",
+                "Not to worry - mistakes happen! I'll wait for the right one.",
                 "I actually ordered this particular dish yesterday too."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "hint": "When someone apologizes for a small, easily corrected mistake, respond with grace.",
             "explanation": "'Not to worry - mistakes happen!' shows graciousness about a minor, easily resolved error. 'That is completely and utterly unacceptable!' is a dramatic overreaction to a simple mix-up. 'I ordered this yesterday too' is confusing and irrelevant.",
             "id": "bd_l11_q3"
@@ -58,11 +58,11 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'Have you eaten anything at all today?'",
             "options": [
-                "Food is, of course, essential for maintaining good health.",
                 "Yes, I had a small bowl of porridge this morning.",
-                "I tend to do all my cooking at home."
+                "I tend to do all my cooking at home.",
+                "Food is, of course, essential for maintaining good health."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "hint": "'Have you eaten today?' is a direct health question. Answer yes/no with specific details.",
             "explanation": "'Yes, I had a small bowl of porridge this morning' directly answers the question and gives medically useful specific information. 'Food is essential for good health' is a general statement. 'I tend to cook at home' describes a habit, not what was eaten today.",
             "id": "bd_l12_q1"
@@ -90,11 +90,11 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'Your boarding pass, please.'",
             "options": [
-                "I actually lost my luggage on a previous trip once.",
                 "I checked in online - is a digital boarding pass acceptable?",
-                "Boarding the plane sounds like an excellent idea."
+                "Boarding the plane sounds like an excellent idea.",
+                "I actually lost my luggage on a previous trip once."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "hint": "When asked for a document, either present it or politely explain your situation.",
             "explanation": "'I checked in online - is a digital boarding pass acceptable?' is clear, explains your situation, and asks a practical clarifying question. 'I lost my luggage on a previous trip' is a different problem entirely. 'Boarding sounds like an excellent idea' is a casual non-answer.",
             "id": "bd_l12_q3"
@@ -106,11 +106,11 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'Attention! We are running an emergency safety drill. Please follow all my instructions carefully.'",
             "options": [
-                "Understood, Captain. Ready and waiting for your instructions.",
                 "I've participated in drills before - they're usually quite quick.",
+                "Understood, Captain. Ready and waiting for your instructions.",
                 "Are safety drills truly necessary, in your opinion?"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "hint": "When given a formal safety instruction, confirm you've understood and show readiness.",
             "explanation": "'Understood, Captain. Ready and waiting for your instructions' confirms you heard the announcement and are prepared to act. 'I've done drills before' doesn't engage with the current one. 'Are drills truly necessary?' questions the Captain's authority unhelpfully.",
             "id": "bd_l13_q1"
@@ -123,10 +123,10 @@
             "scene": "Agent Nyx says: 'I've found a new clue. Could you write it down while I describe it?'",
             "options": [
                 "Writing is a very important form of communication.",
-                "Of course! I'm ready with my notepad - go ahead.",
-                "I've written down many things for you already today."
+                "I've written down many things for you already today.",
+                "Of course! I'm ready with my notepad - go ahead."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "hint": "When asked to do a specific task, confirm you are ready and equipped to do it.",
             "explanation": "'Of course! I'm ready with my notepad - go ahead' confirms readiness and shows you have what you need. 'Writing is an important form of communication' is a platitude that doesn't help. 'I've written many things today' implies fatigue or reluctance.",
             "id": "bd_l13_q2"
@@ -139,8 +139,8 @@
             "scene": "Chef O-Ring says: 'This dish is almost ready. Would you like to try it first and give me your honest opinion?'",
             "options": [
                 "Yes, please! I'd love to try it and give you my thoughts.",
-                "Cooking such a dish takes considerable time and skill.",
-                "I already had quite a large lunch today."
+                "I already had quite a large lunch today.",
+                "Cooking such a dish takes considerable time and skill."
             ],
             "correctAnswerIndex": 0,
             "hint": "When offered a tasting opportunity, accept enthusiastically and show genuine interest.",
@@ -171,8 +171,8 @@
             "scene": "Merchant Kael says: 'This price is completely firm - it is not negotiable. Take it or leave it.'",
             "options": [
                 "Very well, I understand. In that case, I'll take it.",
-                "Everything is negotiable if you approach it correctly.",
-                "I'll come back with my final answer next week."
+                "I'll come back with my final answer next week.",
+                "Everything is negotiable if you approach it correctly."
             ],
             "correctAnswerIndex": 0,
             "hint": "When told a price is final, make a clear decision without arguing unnecessarily.",
@@ -186,11 +186,11 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'Your connecting flight departs in just forty minutes. It's going to be tight. Would you like some assistance?'",
             "options": [
-                "Yes, please! Which gate is it and do I need to clear security again?",
+                "I've managed tight connections before without any difficulty.",
                 "Forty minutes should probably be enough, shouldn't it?",
-                "I've managed tight connections before without any difficulty."
+                "Yes, please! Which gate is it and do I need to clear security again?"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "hint": "When time is short, accept help immediately and ask the two most critical questions.",
             "explanation": "'Yes, please! Which gate and do I need to clear security again?' accepts help and asks the two most essential questions for making a connection. 'Forty minutes should be enough' is uncertain and doesn't move you forward. 'I've managed before' shows past experience but wastes precious time.",
             "id": "bd_l14_q3"
@@ -202,11 +202,11 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'What is your initial impression of our new crew member?'",
             "options": [
-                "They seem very eager and show real potential for growth.",
+                "I honestly haven't had the opportunity to get to know them yet.",
                 "New arrivals can sometimes find it challenging to adapt.",
-                "I honestly haven't had the opportunity to get to know them yet."
+                "They seem very eager and show real potential for growth."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "hint": "When asked for a professional impression, give a constructive, thoughtful observation.",
             "explanation": "'They seem very eager and show real potential for growth' gives a genuine, positive professional observation. 'New arrivals can find it challenging' is vague and doesn't offer an opinion on this specific person. 'I haven't had the opportunity yet' avoids the question - even if true, a first impression could be shared.",
             "id": "bd_l15_q1"
@@ -218,9 +218,9 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I need this information to remain strictly confidential. Can I trust you with it?'",
             "options": [
-                "Confidential information is, by definition, sensitive information.",
+                "That rather depends on what the information actually is.",
                 "Absolutely. You have my complete word on it.",
-                "That rather depends on what the information actually is."
+                "Confidential information is, by definition, sensitive information."
             ],
             "correctAnswerIndex": 1,
             "hint": "Give a firm, clear commitment when asked if you can be trusted.",
@@ -235,8 +235,8 @@
             "scene": "Chef O-Ring says: 'I'm afraid we've run out of the daily special. May I suggest something else from the menu instead?'",
             "options": [
                 "What a shame - but yes, what would you recommend for me?",
-                "How long exactly has the special been listed on the menu?",
-                "In that case, I'll simply have a glass of water."
+                "In that case, I'll simply have a glass of water.",
+                "How long exactly has the special been listed on the menu?"
             ],
             "correctAnswerIndex": 0,
             "hint": "When your first choice is unavailable, accept the offer of a substitute graciously.",
@@ -250,11 +250,11 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'You need to rest completely for the next three days. No work, no physical exertion at all.'",
             "options": [
-                "I understand completely. I'll follow your advice carefully.",
                 "But I genuinely feel absolutely fine right now.",
-                "My job isn't particularly physical in nature anyway."
+                "My job isn't particularly physical in nature anyway.",
+                "I understand completely. I'll follow your advice carefully."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "hint": "Follow medical advice gracefully and confirm you understand the full instructions.",
             "explanation": "'I understand completely. I'll follow your advice carefully' shows respect for the doctor's professional judgment. 'But I genuinely feel fine' challenges medical advice - how you feel doesn't override a clinical judgment. 'My job isn't particularly physical' argues around the instruction rather than following it.",
             "id": "bd_l16_q1"
@@ -266,11 +266,11 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'This is a genuine antique - it is over two hundred years old.'",
             "options": [
-                "That's fascinating! Could you tell me more about its history and provenance?",
                 "Very old objects are not necessarily always valuable, however.",
-                "Two hundred years does sound like rather a long time."
+                "Two hundred years does sound like rather a long time.",
+                "That's fascinating! Could you tell me more about its history and provenance?"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "hint": "When given an interesting fact about an item, show genuine curiosity and ask a relevant follow-up.",
             "explanation": "'That's fascinating! Could you tell me more about its history and provenance?' shows real interest and moves the conversation forward. 'Very old objects are not necessarily valuable' is dismissive and challenges the seller's implication. 'Two hundred years does sound long' just restates the obvious without advancing the conversation.",
             "id": "bd_l16_q2"
@@ -282,11 +282,11 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'Visibility is very poor today due to dense fog. How would you like to proceed?'",
             "options": [
+                "I do generally prefer clear weather conditions for flying.",
                 "Fog is actually quite common in coastal regions.",
-                "Let's review all applicable safety procedures before we make a final decision.",
-                "I do generally prefer clear weather conditions for flying."
+                "Let's review all applicable safety procedures before we make a final decision."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "hint": "When a safety concern is raised, suggest a careful, systematic approach before acting.",
             "explanation": "'Let's review all applicable safety procedures before making a final decision' shows responsible, safety-first professional thinking. 'Fog is common in coastal regions' is a geographic observation that doesn't answer the question. 'I prefer clear weather' states a personal preference but doesn't address the operational decision.",
             "id": "bd_l16_q3"
@@ -298,9 +298,9 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'We appear to be off course. Do you have a bearing?'",
             "options": [
-                "North is in the direction of the North Pole.",
+                "I used to be quite good at navigation at one point.",
                 "I'm not entirely certain, but according to my compass we should bear left - that appears to be north.",
-                "I used to be quite good at navigation at one point."
+                "North is in the direction of the North Pole."
             ],
             "correctAnswerIndex": 1,
             "hint": "Give the most practical and helpful response based on available tools and current information.",
@@ -330,9 +330,9 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I only have very ripe tomatoes today - they're ideal for making sauce, though.'",
             "options": [
-                "Tomatoes do indeed come in many wonderful varieties.",
+                "I was actually hoping for firmer tomatoes to eat fresh.",
                 "Perfect - very ripe tomatoes make the best sauce. I'll take two kilograms.",
-                "I was actually hoping for firmer tomatoes to eat fresh."
+                "Tomatoes do indeed come in many wonderful varieties."
             ],
             "correctAnswerIndex": 1,
             "hint": "When a product's characteristics match a specific need perfectly, show knowledge and make a decisive purchase.",
@@ -347,8 +347,8 @@
             "scene": "Dr. Elara says: 'Your test results have come back. Would you like me to explain them to you now?'",
             "options": [
                 "Yes, please explain everything to me as clearly as you can.",
-                "Medical tests are generally known to be quite stressful.",
-                "How long did it actually take to process the results?"
+                "How long did it actually take to process the results?",
+                "Medical tests are generally known to be quite stressful."
             ],
             "correctAnswerIndex": 0,
             "hint": "When offered important information you need, accept clearly and show you're ready to listen.",
@@ -362,11 +362,11 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'We can offer a fifteen percent discount if you order in larger quantities.'",
             "options": [
+                "Fifteen percent doesn't seem particularly generous, actually.",
                 "How large a quantity would be required to qualify for that discount?",
-                "Discounts are certainly beneficial for any business relationship.",
-                "Fifteen percent doesn't seem particularly generous, actually."
+                "Discounts are certainly beneficial for any business relationship."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "hint": "When an offer has conditions attached, ask for clarification about those conditions first.",
             "explanation": "'How large a quantity would be required to qualify?' is the most practical first question - you need to know the condition before you can make a decision. 'Discounts are beneficial for business' is a vague agreement. 'Fifteen percent doesn't seem generous' jumps to negotiation before you even know the full terms.",
             "id": "bd_l18_q2"
@@ -378,11 +378,11 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'You are cleared to land on runway three. Winds are easterly at twelve knots.'",
             "options": [
-                "Easterly at twelve knots, runway three - understood. Beginning final approach.",
                 "What exactly does twelve knots mean in practical terms?",
+                "Easterly at twelve knots, runway three - understood. Beginning final approach.",
                 "Runway three is on the right side, is that correct?"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "hint": "In professional aviation contexts, always confirm receipt of instructions by repeating key details.",
             "explanation": "'Easterly at twelve knots, runway three - understood. Beginning final approach' uses the standard professional practice of reading back key details and confirms the action. 'What exactly does twelve knots mean?' would be alarming from a pilot. 'Which side is runway three?' is something a pilot should always know.",
             "id": "bd_l18_q3"
@@ -410,11 +410,11 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I need to borrow your phone for just one minute. Is that alright with you?'",
             "options": [
-                "Mobile phones are considered very personal devices.",
                 "Of course - go right ahead. Here it is.",
-                "What exactly do you need to use it for?"
+                "What exactly do you need to use it for?",
+                "Mobile phones are considered very personal devices."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "hint": "When a trusted colleague asks to borrow something for a short time, lend it willingly.",
             "explanation": "'Of course - go right ahead. Here it is' is generous and trusting, appropriate for a colleague. 'Mobile phones are very personal devices' implies reluctance without declining clearly. 'What exactly do you need it for?' questions a simple request and suggests unnecessary distrust.",
             "id": "bd_l19_q2"
@@ -426,11 +426,11 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'What is your absolute favourite dish on our entire menu?'",
             "options": [
-                "I adore the wild mushroom risotto - the texture is always perfectly silky.",
+                "Your menu does offer quite a large number of choices.",
                 "I generally enjoy food that is both tasty and filling.",
-                "Your menu does offer quite a large number of choices."
+                "I adore the wild mushroom risotto - the texture is always perfectly silky."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "hint": "When asked for a specific preference, give a specific, enthusiastic answer with a reason.",
             "explanation": "'I adore the wild mushroom risotto - the texture is always perfectly silky' gives a specific, enthusiastic answer with a sensory reason. 'I generally enjoy tasty and filling food' is a vague non-answer. 'Your menu offers many choices' is an observation about quantity, not a personal preference.",
             "id": "bd_l19_q3"
@@ -443,10 +443,10 @@
             "scene": "Dr. Elara says: 'How has your quality of sleep been recently?'",
             "options": [
                 "Sleep is widely known to be very important for overall health.",
-                "I've been sleeping well - roughly seven to eight hours each night.",
-                "I sleep in quite a comfortable and well-furnished bedroom."
+                "I sleep in quite a comfortable and well-furnished bedroom.",
+                "I've been sleeping well - roughly seven to eight hours each night."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "hint": "When asked about health habits, give specific, quantified information for the best medical value.",
             "explanation": "'I've been sleeping well - roughly seven to eight hours each night' gives both a quality assessment and a specific quantity - both medically useful. 'Sleep is very important for health' is a general fact. 'I sleep in a comfortable bedroom' describes the environment, not the quality or duration.",
             "id": "bd_l20_q1"
@@ -458,11 +458,11 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'I need this entire order delivered no later than Friday. Can you guarantee that?'",
             "options": [
-                "Friday does happen to come directly after Thursday.",
                 "Yes, absolutely - I'll have written confirmation to you within the hour.",
-                "Deliveries from us are generally reliably on time."
+                "Deliveries from us are generally reliably on time.",
+                "Friday does happen to come directly after Thursday."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "hint": "When asked to commit to a deadline, give a direct yes or no and immediately state your next step.",
             "explanation": "'Yes, absolutely - I'll have written confirmation to you within the hour' commits clearly to the deadline and adds a professional follow-up step. 'Friday comes directly after Thursday' is a non-answer. 'Deliveries are generally on time' is vague and doesn't specifically commit to this particular Friday.",
             "id": "bd_l20_q2"
@@ -474,11 +474,11 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'Did you enjoy your journey with us today?'",
             "options": [
-                "Yes - it was extremely smooth and comfortable. The crew were absolutely wonderful.",
+                "I actually booked this particular flight about three months ago.",
                 "Air travel is certainly considerably faster than travelling by road.",
-                "I actually booked this particular flight about three months ago."
+                "Yes - it was extremely smooth and comfortable. The crew were absolutely wonderful."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "hint": "When asked about your experience, give a genuine, specific response that the person will value.",
             "explanation": "'Yes - it was extremely smooth and comfortable. The crew were absolutely wonderful' gives specific, enthusiastic feedback that any airline crew would value. 'Air travel is faster than road travel' makes a general comparison. 'I booked three months ago' gives irrelevant booking history.",
             "id": "bd_l20_q3"

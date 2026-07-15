@@ -11,12 +11,12 @@
             "scene": "Captain Hektor says: 'Our mission timeline has shifted and we're now three weeks behind schedule. I need to know the impact on our overall objectives.'",
             "options": [
                 "Three weeks is a significant delay in any time-sensitive operation.",
-                "A three-week delay has three main impacts: we lose the seasonal weather window we planned around, the intelligence we gathered may become partially outdated, and resupply costs will increase significantly. However, Objective C is still fully achievable within the new timeline.",
+                "We lose the weather window we planned around, and some intelligence may be outdated - but Objective C is still achievable.",
                 "We'll need to do a complete reassessment of our strategic objectives."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Give a specific, multi-dimensional impact assessment rather than a general one.",
-            "explanation": "'Three main impacts: weather window lost, intelligence may be partially outdated, resupply costs increase - however, Objective C is still fully achievable' is specific, multi-dimensional, and includes a positive finding. 'Three weeks is a significant delay' is a general statement. 'We'll need a complete reassessment' is a process recommendation without any actual assessment.",
+            "hint": "Give a specific, multi-part impact assessment, not a general reaction.",
+            "explanation": "Naming the concrete impacts - and the one piece of good news - is the real assessment that was asked for. 'A significant delay' just states the obvious. 'We'll need a complete reassessment' promises a process instead of giving one.",
             "id": "bd_l61_q1"
         },
         {
@@ -26,13 +26,13 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'We have two pieces of intelligence that completely contradict each other. Both sources are considered reliable. How do you resolve this?'",
             "options": [
+                "In my experience, when two reliable sources contradict each other, one of them has been compromised.",
                 "Contradictory intelligence from reliable sources is a genuinely complex analytical problem.",
-                "I'd go back to each source independently to verify whether anything has changed in their environment recently. Contradictions from reliable sources usually mean the situation itself has changed, not that one of them is lying.",
-                "In my experience, when two reliable sources contradict each other, one of them has been compromised."
+                "I'd check with each source separately first - contradictions usually mean the situation changed, not that someone's lying."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "When reliable intelligence contradicts, recommend investigation of whether the situation itself has changed.",
-            "explanation": "'Go back to each source independently to verify whether anything has changed - contradictions from reliable sources usually mean the situation has changed, not that one is lying' is analytically sophisticated and practically sound. 'Contradictory intelligence from reliable sources is complex' is a general observation. 'One of them has been compromised' is one possible explanation but jumps to a conclusion without evidence.",
+            "correctAnswerIndex": 2,
+            "hint": "Recommend checking whether the situation itself changed before assuming a source is wrong.",
+            "explanation": "Reasoning that the situation likely changed, rather than assuming a source is lying, is the sharper analytical move. 'A genuinely complex problem' just names the difficulty. 'One of them has been compromised' jumps to a conclusion without evidence.",
             "id": "bd_l61_q2"
         },
         {
@@ -43,12 +43,12 @@
             "scene": "Chef O-Ring says: 'We have a guest celebrating a very significant anniversary tonight. They've asked for something special but haven't specified what. What do you propose?'",
             "options": [
                 "Special occasion guests always appreciate a personalised dining experience.",
-                "I'd arrange a small surprise: a complimentary amuse-bouche from the chef, a bottle of champagne on arrival, and a custom dessert with a personalised message. I'd also brief their server to speak warmly about the occasion when acknowledging it.",
-                "Perhaps we could ask the guest what they would like us to do for them."
+                "Perhaps we could ask the guest what they would like us to do for them.",
+                "Let's surprise them - a complimentary glass of champagne and a dessert with a personal message on the plate."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "For a VIP guest occasion, propose a specific, multi-element experience proactively.",
-            "explanation": "'Amuse-bouche from the chef, complimentary champagne on arrival, custom dessert with personalised message, and brief the server' is a specific, multi-element, proactive plan. 'Special occasion guests appreciate personalised experiences' is a general statement. 'Ask the guest what they would like' misses the point of creating a genuine surprise - part of what makes a special occasion memorable is being delighted without having to request it.",
+            "correctAnswerIndex": 2,
+            "hint": "Propose a specific surprise rather than asking the guest what they want.",
+            "explanation": "Planning an actual surprise is what makes the occasion memorable - part of the magic is not having to ask for it. 'Guests always appreciate personalised experiences' is a general statement. 'Ask the guest what they'd like' undercuts the whole idea of a surprise.",
             "id": "bd_l61_q3"
         },
         {
@@ -58,13 +58,13 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'I want to make a significant change to your treatment protocol. I should tell you this is a relatively new approach with limited long-term data. What questions do you have?'",
             "options": [
-                "I have three questions: what is the evidence base so far, what are the risks of switching from my current protocol, and is there a way to monitor my response so we can adjust quickly if needed?",
+                "I have three questions: what's the evidence so far, what are the risks of switching, and can we monitor closely so we can adjust quickly?",
                 "New medical approaches are continuously emerging from ongoing research.",
                 "I'd like to know why you think this is better than my current treatment."
             ],
             "correctAnswerIndex": 0,
-            "hint": "When presented with a significant treatment change, ask the three most clinically important questions.",
-            "explanation": "'Evidence base, risks of switching from current protocol, and can we monitor and adjust quickly if needed' asks the three most clinically important questions. 'New approaches are continuously emerging' is a general statement. 'Why do you think this is better?' is a good question but one of three that need to be asked together.",
+            "hint": "Ask the clinically important questions together, not just one of them.",
+            "explanation": "These three questions together cover the evidence, the risk, and the safety net - genuinely useful for an informed decision. 'New approaches are continuously emerging' is a general statement. 'Why do you think this is better?' is a good question, but only one of the three that matter here.",
             "id": "bd_l62_q1"
         },
         {
@@ -74,13 +74,13 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'Our wholesale pricing structure is changing next quarter. How would you like to manage the transition for your existing orders?'",
             "options": [
-                "Pricing structure changes always affect long-term business planning significantly.",
-                "I'd like to understand the new structure first. Then I'd ask to lock in current pricing for any orders I place in the next thirty days, and work on a transition plan for the orders that fall after the change.",
-                "I'll need to review the implications of this change with my procurement team."
+                "Could you walk me through the new structure first? I'd like to lock in current pricing for the next thirty days.",
+                "I'll need to review the implications of this change with my procurement team.",
+                "Pricing structure changes always affect long-term business planning significantly."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "When facing an external pricing change, take a specific, proactive approach to protect your position.",
-            "explanation": "'Understand the new structure first, lock in current pricing for orders placed in the next thirty days, then plan for orders after the change' is a specific, proactive commercial strategy. 'Pricing changes affect long-term planning' is a general statement. 'I'll review with my procurement team' is appropriate but gives no indication of how you plan to manage the transition.",
+            "correctAnswerIndex": 0,
+            "hint": "Ask a specific question, then request a concrete protection for your existing orders.",
+            "explanation": "Asking to understand the change, then requesting a specific window to lock in pricing, is a proactive commercial move. 'Pricing changes always affect long-term planning' is a general statement. 'I'll review with my procurement team' doesn't say what you actually want.",
             "id": "bd_l62_q2"
         },
         {
@@ -91,12 +91,12 @@
             "scene": "Pilot Jax says: 'We're approaching a very busy international airport. Traffic control has asked us to reduce speed significantly. What is your response?'",
             "options": [
                 "Reducing speed at the request of ATC is a standard and mandatory procedure.",
-                "Understood. Reducing to the requested speed now and confirming our approach path. What is our updated position in the landing sequence?",
+                "Understood, reducing speed now. Can you confirm our updated position in the landing sequence?",
                 "I'll acknowledge the speed reduction and ask for an updated estimated landing time."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Respond to ATC instructions with acknowledgment, immediate action, and a relevant follow-up question.",
-            "explanation": "'Understood. Reducing to requested speed now and confirming approach path. What is our updated position in the landing sequence?' acknowledges, acts, confirms, and asks the most operationally relevant follow-up question. 'Reducing speed at ATC request is standard and mandatory' is a general statement. 'I'll acknowledge and ask for an updated landing time' is reasonable but position in the sequence is more immediately useful than just the time.",
+            "hint": "Acknowledge the instruction, confirm you're acting on it, then ask the most useful follow-up.",
+            "explanation": "Acknowledging, confirming action, and asking about sequence position is the most operationally useful response. 'Standard and mandatory procedure' just states a fact. 'Ask for an updated landing time' is reasonable, but position in the sequence matters more right now.",
             "id": "bd_l62_q3"
         },
         {
@@ -106,13 +106,13 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'I need you to lead a difficult conversation with a crew member whose performance has declined significantly. What is your approach?'",
             "options": [
-                "Difficult performance conversations are an essential part of any leadership role.",
-                "I'd start by making the setting private and comfortable, open by acknowledging their past contributions, then address the specific performance issues clearly with examples, invite their perspective on what's driving it, and collaborate on a clear improvement plan with measurable milestones.",
-                "These conversations are always very difficult and emotionally charged."
+                "I'd start privately, acknowledge what they've contributed, then walk through the specific issues with examples.",
+                "These conversations are always very difficult and emotionally charged.",
+                "Difficult performance conversations are an essential part of any leadership role."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Describe the specific, staged structure of a professional performance conversation.",
-            "explanation": "'Private setting, acknowledge past contributions, address specific issues with examples, invite their perspective, collaborate on a measurable improvement plan' is a complete, staged approach. 'Difficult performance conversations are an essential part of leadership' is a general statement. 'These conversations are always very difficult and emotionally charged' is a general observation without structure.",
+            "correctAnswerIndex": 0,
+            "hint": "Describe the actual structure of the conversation, not just its difficulty.",
+            "explanation": "Starting privately, acknowledging contributions, then getting specific with examples is a real, usable structure. 'An essential part of leadership' is a general statement. 'Always difficult and emotionally charged' names the challenge without offering an approach.",
             "id": "bd_l63_q1"
         },
         {
@@ -122,13 +122,13 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'We've been asked to operate in a jurisdiction where local laws conflict with our operating principles. How do you navigate that?'",
             "options": [
-                "Operating across different legal jurisdictions is always a complex challenge.",
-                "This needs to be escalated to legal counsel before we proceed. We need a clear ruling on which law takes precedence and under what legal framework we're operating in that jurisdiction. We cannot act on assumptions in this situation.",
-                "We should follow local laws while operating in that jurisdiction."
+                "This goes to legal counsel before we proceed - we need a clear ruling on which law takes precedence.",
+                "We should follow local laws while operating in that jurisdiction.",
+                "Operating across different legal jurisdictions is always a complex challenge."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "When laws conflict with operating principles, escalate to legal counsel before proceeding.",
-            "explanation": "'Escalate to legal counsel before we proceed - we need a clear ruling on which law takes precedence and under what legal framework we operate. We cannot act on assumptions' is legally sound and responsible. 'Operating across jurisdictions is always complex' is a general statement. 'Follow local laws' is too simple - it ignores the conflict with operating principles, which may themselves be legally binding.",
+            "correctAnswerIndex": 0,
+            "hint": "Escalate to legal counsel before acting, rather than assuming which law applies.",
+            "explanation": "Escalating for a clear ruling is the responsible move when laws and principles conflict. 'Always a complex challenge' is a general statement. 'Follow local laws' ignores that the conflict itself needs resolving first.",
             "id": "bd_l63_q2"
         },
         {
@@ -138,13 +138,13 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'A well-known food blogger with a large following is dining with us tonight and is known for critical reviews. How do you handle service?'",
             "options": [
-                "Food bloggers with large followings can significantly affect a restaurant's reputation.",
-                "We treat them exactly as we treat every guest - with our full and consistent service standard. The moment we change our approach for a blogger, we create two tiers of service, which is both unfair and operationally unsustainable.",
-                "Perhaps we could make a special effort tonight to ensure everything is perfect."
+                "Perhaps we could make a special effort tonight to ensure everything is perfect.",
+                "We treat them exactly like every other guest - the moment we change service for reviewers, we've created two standards.",
+                "Food bloggers with large followings can significantly affect a restaurant's reputation."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Advocate for consistent service standards regardless of who the guest is.",
-            "explanation": "'Treat them exactly as we treat every guest - the moment we change our approach for a blogger, we create two tiers of service, which is both unfair and unsustainable' is principled and operationally sound. 'Food bloggers with large followings can significantly affect reputation' is a general statement. 'Make a special effort tonight to ensure everything is perfect' implicitly creates the two-tier service problem.",
+            "hint": "Advocate for one consistent standard rather than special treatment.",
+            "explanation": "Naming the real risk - creating two tiers of service - is a principled, operationally sound stance. 'Can significantly affect reputation' just states the stakes. 'Make a special effort tonight' quietly does the very thing the response should avoid.",
             "id": "bd_l63_q3"
         },
         {
@@ -154,13 +154,13 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'I'm considering publishing a paper on your case - anonymised, of course. Do you have any concerns?'",
             "options": [
+                "That's fine with me - I'm happy to help advance medical knowledge.",
                 "Medical case studies contribute significantly to the advancement of medical knowledge.",
-                "I appreciate you asking. I'm comfortable with that in principle, provided I see the anonymised version before publication and confirm I'm satisfied that I cannot be identified by any detail in it.",
-                "That's fine with me - I'm happy to help advance medical knowledge."
+                "I appreciate you asking. I'm fine with that, as long as I can see the anonymised version before it's published."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Give conditional, informed consent to a medical publication request.",
-            "explanation": "'Comfortable in principle, provided I see the anonymised version before publication and confirm I cannot be identified' is a mature, properly conditional consent. 'Medical case studies contribute to medical knowledge' is a general statement. 'That's fine - happy to help advance medical knowledge' is unconditional consent without appropriate safeguards.",
+            "correctAnswerIndex": 2,
+            "hint": "Give consent, but attach a specific, reasonable condition.",
+            "explanation": "Agreeing while asking to review the anonymised version first is informed, conditional consent. 'Case studies contribute to medical knowledge' is a general statement. 'That's fine, happy to help' agrees without asking for the one safeguard that actually matters.",
             "id": "bd_l64_q1"
         },
         {
@@ -170,13 +170,13 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'A key supplier has just informed me they're going out of business. How do I mitigate the disruption to my supply chain?'",
             "options": [
-                "Supplier insolvency is a serious supply chain risk that all businesses face.",
-                "Immediate steps: contact your remaining alternative suppliers to increase orders to cover the gap, identify and approach two new potential suppliers this week, and review your current inventory to calculate how long you can sustain current operations without the lost supplier.",
-                "You'll need to find a replacement supplier as quickly as possible."
+                "I'd ask our other suppliers to cover the gap immediately, and start approaching two new suppliers this week.",
+                "You'll need to find a replacement supplier as quickly as possible.",
+                "Supplier insolvency is a serious supply chain risk that all businesses face."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Give specific, sequential steps for managing a supply chain disruption.",
-            "explanation": "'Contact alternative suppliers to increase orders, identify two new suppliers this week, review inventory to calculate the sustainability window' is a specific three-step plan. 'Supplier insolvency is a serious supply chain risk' is a general statement. 'Find a replacement supplier as quickly as possible' states the objective without any specific steps.",
+            "correctAnswerIndex": 0,
+            "hint": "Give concrete, immediate steps rather than stating the general risk.",
+            "explanation": "Naming two specific actions to take this week is an actual mitigation plan. 'A serious supply chain risk' just labels the problem. 'Find a replacement as quickly as possible' states the goal without any steps.",
             "id": "bd_l64_q2"
         },
         {
@@ -186,13 +186,13 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'We've been asked by our airline to reduce our turnaround time at the destination by fifteen minutes. What is your response?'",
             "options": [
+                "I'd want to know exactly which processes they mean - fifteen minutes is fine from catering, not from safety checks.",
                 "Turnaround time reduction requests are common in commercial aviation.",
-                "I'd want to understand which specific ground processes they're asking us to compress. Fifteen minutes is achievable if it comes from faster catering loading and ground service coordination - but not from safety checks or refuelling, which cannot be rushed.",
                 "We can certainly try to accommodate that request."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Accept an operational change request conditionally, specifying exactly what can and cannot be compressed.",
-            "explanation": "'I'd want to understand which processes they're compressing - fifteen minutes is achievable from catering and ground coordination, but not from safety checks or refuelling' sets clear, specific conditions. 'Turnaround reduction requests are common' is a general observation. 'We can certainly try to accommodate that' accepts a change that could involve safety compromises without setting any conditions.",
+            "correctAnswerIndex": 0,
+            "hint": "Accept conditionally, and be specific about what cannot be rushed.",
+            "explanation": "Agreeing conditionally, and naming exactly what can't be compressed, protects safety while staying cooperative. 'Common in commercial aviation' is a general observation. 'We can certainly try to accommodate that' risks agreeing to cut corners on safety checks.",
             "id": "bd_l64_q3"
         },
         {
@@ -202,13 +202,13 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'We've been offered significant additional resources, but only if we take on a mission that isn't strictly within our mandate. What is your advice?'",
             "options": [
+                "The decision depends heavily on the nature and risk level of the additional mission.",
                 "Additional resources are always attractive when operating under constraints.",
-                "I'd advise declining unless the mission has explicit authorisation from above our mandate level. Accepting tasks outside our mandate sets a precedent, creates accountability gaps, and risks mission creep that can compromise our core objectives.",
-                "The decision depends heavily on the nature and risk level of the additional mission."
+                "I'd decline unless it's explicitly authorised above our mandate level - it sets a dangerous precedent otherwise."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Provide a specific, principled recommendation on a governance and mandate question.",
-            "explanation": "'Decline unless explicitly authorised above our mandate level - it sets a precedent, creates accountability gaps, and risks mission creep' is a principled, specific recommendation with clear reasons. 'Additional resources are always attractive under constraints' is a general observation. 'It depends on the nature and risk of the additional mission' is true but avoids giving a clear recommendation on the core mandate question.",
+            "correctAnswerIndex": 2,
+            "hint": "Give a clear recommendation on the mandate question, with your reasoning.",
+            "explanation": "Giving a clear recommendation, with the reasoning behind it, is what advice actually requires. 'Additional resources are always attractive' is a general observation. 'It depends on the nature and risk' avoids answering the actual mandate question.",
             "id": "bd_l65_q1"
         },
         {
@@ -219,12 +219,12 @@
             "scene": "Agent Nyx says: 'We have forty-eight hours to build a case that is solid enough to stand up in court. What is your strategy?'",
             "options": [
                 "Building a court-ready case in forty-eight hours is an extremely demanding challenge.",
-                "Four priorities: secure all physical evidence immediately with proper chain of custody, identify and take statements from the two strongest witnesses, build the documentary timeline from start to finish, and have everything reviewed by legal counsel before the forty-eight hours are up.",
-                "We need to ensure every piece of evidence we gather is properly documented and admissible."
+                "We need to ensure every piece of evidence we gather is properly documented and admissible.",
+                "First, secure all physical evidence with a proper chain of custody, then get statements from our strongest witnesses."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Give a specific, multi-priority strategy for time-critical case building.",
-            "explanation": "'Secure physical evidence with proper chain of custody, take statements from the two strongest witnesses, build the documentary timeline, have legal review before forty-eight hours are up' gives four specific, court-ready priorities. 'Building a court-ready case in forty-eight hours is extremely demanding' is a general observation. 'Ensure all evidence is properly documented and admissible' is one important principle but is not a strategy.",
+            "correctAnswerIndex": 2,
+            "hint": "Give the first concrete priorities, in order, not a general principle.",
+            "explanation": "Naming the first two concrete priorities, in order, is an actual strategy. 'Extremely demanding challenge' just names the difficulty. 'Ensure evidence is properly documented' is a sound principle but not a sequence of actions.",
             "id": "bd_l65_q2"
         },
         {
@@ -234,13 +234,13 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I want to increase our average spend per cover by twenty percent. What's the most effective approach?'",
             "options": [
-                "Increasing average spend per cover is a key revenue metric for any restaurant.",
-                "Three approaches that consistently work: train servers in confident wine pairing recommendations, introduce a premium sharing dish option that two people can add to any order, and design a dessert cart that is presented visually at the table rather than listed in the menu.",
-                "We should focus on upselling and offering premium options to our guests."
+                "We should focus on upselling and offering premium options to our guests.",
+                "Train the servers to recommend wine pairings with confidence, and bring a dessert cart guests can actually see.",
+                "Increasing average spend per cover is a key revenue metric for any restaurant."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Give specific, tested tactics for increasing average spend per cover.",
-            "explanation": "'Train servers in wine pairing, introduce a premium sharing dish option, and present a visual dessert cart at the table' gives three specific, proven tactics with the mechanism of how each one drives spend. 'Increasing average spend per cover is a key revenue metric' is a general statement. 'Focus on upselling and offering premium options' describes the category without giving specific tactics.",
+            "hint": "Name specific tactics rather than the general goal.",
+            "explanation": "Naming two specific, proven tactics gives the team something to actually implement. 'A key revenue metric' just states why it matters. 'Focus on upselling' names the category without any specific tactic.",
             "id": "bd_l65_q3"
         },
         {
@@ -251,12 +251,12 @@
             "scene": "Captain Hektor says: 'I need to present our annual performance review to the senior command council tomorrow. What are the most critical points to make?'",
             "options": [
                 "Annual performance reviews for senior command councils need to be very thorough.",
-                "Three critical points: our operational success rate against defined objectives, the specific capability improvements we've made this year compared to last, and an honest account of the one or two areas where performance fell short and what we're doing about them. Councils respond better to honest assessments than perfect ones.",
+                "Our success rate against objectives, the gains we've made this year, and an honest account of where we fell short.",
                 "I'd focus on our successes and the positive trajectory of the team's development."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Advise on a strategic presentation with specific content points and a key communication principle.",
-            "explanation": "'Operational success rate, capability improvements year-on-year, honest account of shortfalls and remediation actions - councils respond better to honest assessments than perfect ones' gives specific content and an important communication principle. 'Annual reviews for senior councils need to be thorough' is a general statement. 'Focus on successes and positive trajectory' is incomplete - councils need the honest picture.",
+            "hint": "Include an honest account of shortfalls alongside the wins.",
+            "explanation": "Balancing real achievements with an honest account of shortfalls builds more credibility with a council than a polished-only report. 'Need to be very thorough' is a general statement. 'Focus on our successes' leaves out the honest picture councils actually want.",
             "id": "bd_l66_q1"
         },
         {
@@ -266,13 +266,13 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I've been asked to go undercover for a minimum of six months with no contact with my handler. Are you prepared for that?'",
             "options": [
+                "Six months is a very significant personal and professional commitment.",
                 "Long-duration undercover operations are among the most psychologically demanding assignments.",
-                "Before committing, I need to confirm three things: a clear dead-drop protocol for if the situation becomes critical, an agreed signal that the cover has been compromised, and a firm extraction plan. With those in place, yes, I'm prepared.",
-                "Six months is a very significant personal and professional commitment."
+                "Before I agree, I need a clear dead-drop protocol, a signal for if my cover's blown, and a firm extraction plan."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Before committing to a high-risk assignment, specify the operational safeguards you require.",
-            "explanation": "'Three things before committing: dead-drop protocol for critical situations, a compromise signal, and a firm extraction plan - with those in place, yes, I'm prepared' sets specific, professional operational requirements before committing. 'Long-duration undercover operations are psychologically demanding' is a general statement. 'Six months is a very significant commitment' is an observation, not a professional preparation response.",
+            "correctAnswerIndex": 2,
+            "hint": "Name the specific safeguards you need before committing.",
+            "explanation": "Naming the exact safeguards required before agreeing is the professional way to accept a high-risk assignment. 'Among the most psychologically demanding assignments' is a general statement. 'A very significant commitment' is an observation, not a set of conditions.",
             "id": "bd_l66_q2"
         },
         {
@@ -282,13 +282,13 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I'm considering a complete brand repositioning - moving upmarket from casual dining to fine dining. What should I think about before making this decision?'",
             "options": [
+                "Will your current customers actually follow you upmarket? Does your team have the technical skills for fine dining?",
                 "Brand repositioning in the restaurant industry is always a high-risk strategic decision.",
-                "Four critical considerations: whether your current customer base can and will follow you upmarket, whether your team has the technical skills for fine dining service and cuisine, what capital investment is required in the physical space and kitchen, and what the competitive landscape looks like in your target fine dining market.",
                 "This will require significant investment in staff, facilities, and brand identity."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Provide a specific, multi-dimensional set of strategic considerations for a major repositioning decision.",
-            "explanation": "'Current customer base can they follow you upmarket; team technical skills for fine dining; capital investment required; competitive landscape in target market' gives four specific, strategically critical questions. 'Brand repositioning is always high-risk' is a general statement. 'This will require significant investment in staff, facilities, and brand identity' identifies some considerations but misses the customer base and competitive landscape questions.",
+            "correctAnswerIndex": 0,
+            "hint": "Ask the questions that come before the investment question.",
+            "explanation": "These two questions - about customers and skills - come before any investment decision and are the ones most likely to be overlooked. 'Always a high-risk decision' is a general statement. 'Will require significant investment' skips straight to cost without checking whether the move even makes sense first.",
             "id": "bd_l66_q3"
         },
         {
@@ -299,12 +299,12 @@
             "scene": "Dr. Elara says: 'I have a patient who is refusing the treatment I've recommended despite it being clinically necessary. How do you approach this ethically?'",
             "options": [
                 "Patient autonomy is a fundamental principle of modern medical ethics.",
-                "I'd ensure the patient has genuinely understood both the risks of refusing treatment and the benefits of accepting it - not just technically informed, but truly comprehended. If they still refuse after that, their autonomy must be respected unless there is a serious harm to others. I'd also ask a colleague to have a separate conversation, in case a different approach resonates.",
-                "Patients have the right to refuse treatment, even when it's clinically necessary."
+                "Patients have the right to refuse treatment, even when it's clinically necessary.",
+                "I'd make sure they truly understand the risks, not just hear them. If they still refuse, their autonomy has to be respected."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Describe a complete, nuanced ethical approach to patient refusal - information, autonomy, and second opinion.",
-            "explanation": "'Ensure genuine comprehension not just technical information; respect autonomy if they still refuse after true understanding; ask a colleague for a separate conversation in case a different approach resonates' covers the full ethical process. 'Patient autonomy is a fundamental principle' is a general statement. 'Patients have the right to refuse treatment' is correct but incomplete - it misses the duty to ensure genuine comprehension before accepting refusal.",
+            "correctAnswerIndex": 2,
+            "hint": "Cover both genuine understanding and respecting the final decision.",
+            "explanation": "Ensuring true comprehension first, then respecting the decision either way, covers the full ethical process. 'A fundamental principle of medical ethics' is a general statement. 'Patients have the right to refuse' is correct but skips the duty to check they truly understood first.",
             "id": "bd_l67_q1"
         },
         {
@@ -315,12 +315,12 @@
             "scene": "Merchant Kael says: 'A competitor has launched a product nearly identical to ours at a significantly lower price. What is your recommended strategic response?'",
             "options": [
                 "Competitive pricing pressure is one of the most common strategic challenges in any market.",
-                "Don't immediately match the price - that devalues your brand and starts a race to the bottom. Instead, reinforce your product's differentiation through targeted communication, accelerate any pipeline improvements that would justify the price premium, and closely monitor whether the competitor is actually gaining market share.",
-                "We should consider whether a selective price response in specific channels is warranted."
+                "We should consider whether a selective price response in specific channels is warranted.",
+                "Don't match the price immediately - that starts a race to the bottom. Focus on your differentiation instead."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Recommend a multi-layered strategic response to competitive pressure that avoids reactive price-cutting.",
-            "explanation": "'Don't match immediately - reinforce your differentiation, accelerate pipeline improvements, and monitor whether they're actually gaining share' is a sophisticated, multi-layered response. 'Competitive pricing pressure is a common challenge' is a general statement. 'Consider a selective price response in specific channels' is one possible tactic but presented without the broader strategic context.",
+            "correctAnswerIndex": 2,
+            "hint": "Recommend against reflexively matching price, and say what to do instead.",
+            "explanation": "Advising against an immediate price match, and naming the better alternative, is sound competitive strategy. 'One of the most common challenges' is a general statement. 'Consider a selective price response' is a narrower tactic offered without the bigger picture.",
             "id": "bd_l67_q2"
         },
         {
@@ -330,13 +330,13 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'Our airline is considering using advanced AI systems to assist with decision-making in the cockpit. What is your view on this?'",
             "options": [
-                "AI is making significant inroads into many different professional fields.",
-                "AI decision support in the cockpit has genuine potential for increasing safety - particularly in data synthesis and pattern recognition under stress. The key safeguard is that the human pilot must retain final authority on all critical decisions, and the system must be designed to support, not replace, human judgment.",
-                "I'm cautious about AI in safety-critical environments where the consequences of error are severe."
+                "I'm cautious about AI in safety-critical environments where the consequences of error are severe.",
+                "It has real potential, especially for spotting patterns under stress - but the pilot keeps final authority on every call.",
+                "AI is making significant inroads into many different professional fields."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Give a nuanced, principled view on AI in safety-critical professional settings.",
-            "explanation": "'AI has real potential in data synthesis and pattern recognition under stress - key safeguard is human pilot retains final authority; must support not replace human judgment' is specific, balanced, and principled. 'AI is making inroads in many professional fields' is a general observation. 'I'm cautious about AI in safety-critical environments' is a valid stance but doesn't engage with the specific application or articulate a principled approach.",
+            "hint": "Give a balanced view: real benefit, plus the one non-negotiable safeguard.",
+            "explanation": "Naming a genuine benefit alongside the one non-negotiable safeguard is a balanced, principled view. 'Making inroads into many fields' is a general observation. 'I'm cautious about AI in safety-critical environments' is a fair instinct but doesn't engage with this specific use or offer a safeguard.",
             "id": "bd_l67_q3"
         },
         {
@@ -347,12 +347,12 @@
             "scene": "Captain Hektor says: 'We've successfully completed our most challenging mission to date. How do you think we should use this experience going forward?'",
             "options": [
                 "Successfully completing very challenging missions builds team confidence and resilience.",
-                "Three ways to leverage this: run a detailed debrief to capture what worked and systematically embed those practices, use the experience as a case study for training future teams, and recognise the specific contributions of individuals who performed exceptionally - recognition builds the culture that makes the next difficult mission successful.",
-                "We should take the time to celebrate properly before moving on to the next assignment."
+                "We should take the time to celebrate properly before moving on to the next assignment.",
+                "Let's run a proper debrief to capture what worked, and recognise the people who performed exceptionally."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Provide a specific, forward-looking plan for capturing and embedding organisational learning from a major success.",
-            "explanation": "'Detailed debrief to capture what worked, use as a training case study, and recognise individual exceptional contributions - recognition builds the culture for the next difficult mission' gives three specific, forward-looking ways to maximise the value of the experience. 'Successfully completing challenging missions builds team confidence' is a general statement. 'Celebrate properly before moving on' is important but incomplete.",
+            "correctAnswerIndex": 2,
+            "hint": "Give a specific way to capture and reuse the lessons learned.",
+            "explanation": "A debrief plus recognition turns a success into something the team can learn from and repeat. 'Builds team confidence and resilience' is a general statement. 'Celebrate properly first' matters, but on its own it doesn't capture any of the lessons.",
             "id": "bd_l68_q1"
         },
         {
@@ -362,13 +362,13 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I need to interview a reluctant witness who is afraid to speak. What technique do you recommend?'",
             "options": [
-                "Reluctant witnesses can be very challenging to engage effectively in an investigation.",
-                "Start by addressing the fear directly and specifically - ask what they're afraid of and what would make them feel safer. Explain exactly how their information will be used and protected. Never use pressure; build trust incrementally. Often the first meeting is just about establishing enough safety for a second meeting.",
-                "You need to make them understand that speaking is the right thing to do."
+                "You need to make them understand that speaking is the right thing to do.",
+                "I'd start by asking directly what they're afraid of and what would make them feel safer - never pressure them.",
+                "Reluctant witnesses can be very challenging to engage effectively in an investigation."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Provide a specific, trust-building interview technique for reluctant witnesses.",
-            "explanation": "'Address the fear directly and specifically, ask what would make them feel safer, explain exactly how their information will be used and protected, never use pressure, build trust incrementally - the first meeting may just be about a second meeting' is detailed and psychologically sound. 'Reluctant witnesses can be very challenging' is a general observation. 'Make them understand speaking is the right thing to do' is a moralistic approach that is likely to increase resistance.",
+            "hint": "Address the fear directly, and rule out pressure as a tactic.",
+            "explanation": "Asking about the fear directly, and ruling out pressure, is a psychologically sound way to build trust. 'Can be very challenging to engage' is a general observation. 'Make them understand it's the right thing to do' is likely to increase resistance, not reduce it.",
             "id": "bd_l68_q2"
         },
         {
@@ -378,13 +378,13 @@
             "persona": "Chef O-Ring",
             "scene": "Chef O-Ring says: 'I'm designing a new chef development programme for my team. What principles should guide its structure?'",
             "options": [
+                "Build technique before creativity, teach mostly on real service shifts, and pair each chef with a mentor.",
                 "Chef development programmes are a valuable investment in a kitchen team's long-term capability.",
-                "Four guiding principles: build progression from foundational technique before creativity, use real service shifts as the primary learning environment rather than classroom time, pair each developing chef with a senior mentor who is specifically assessed on their teaching quality, and connect every skill development module to a visible improvement in a specific real dish.",
                 "The programme should balance technical skill development with creative expression."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Give specific, pedagogically sound principles for professional chef development.",
-            "explanation": "'Foundational technique before creativity; real service shifts as primary learning environment; senior mentors assessed on teaching quality; connect every skill to visible improvement in a specific real dish' gives four specific, excellent principles. 'Chef development programmes are a valuable investment' is a general statement. 'Balance technical skill with creative expression' is one correct principle but is not a complete set of guiding principles.",
+            "correctAnswerIndex": 0,
+            "hint": "Give specific structural principles rather than a general goal.",
+            "explanation": "Naming the actual structure - sequencing, setting, and mentorship - gives real design principles to build from. 'A valuable investment' just states why it matters. 'Balance skill with creative expression' is one good principle, not a full structure.",
             "id": "bd_l68_q3"
         },
         {
@@ -394,13 +394,13 @@
             "persona": "Dr. Elara",
             "scene": "Dr. Elara says: 'I'd like to try a treatment approach that has very strong evidence in similar cases but has never been used in exactly your specific presentation. How do you feel about that?'",
             "options": [
-                "Applying evidence-based treatments to slightly different presentations is normal medical practice.",
-                "I'm willing to consider it. Could you explain what 'very strong evidence in similar cases' actually means in quantitative terms, and whether my case has been discussed with any colleagues who might have relevant experience?",
-                "I trust your judgment - if you think it's the right approach, I'm willing to try it."
+                "I trust your judgment - if you think it's the right approach, I'm willing to try it.",
+                "I'm open to it. Could you tell me what that evidence actually looks like, and whether you've discussed my case with colleagues?",
+                "Applying evidence-based treatments to slightly different presentations is normal medical practice."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Ask for specific evidence and peer consultation before accepting a novel treatment application.",
-            "explanation": "'What does very strong evidence mean in quantitative terms, and has my case been discussed with colleagues who might have relevant experience?' asks for the specific evidence and appropriate peer review consultation. 'Applying evidence-based treatments to slightly different presentations is normal medical practice' is a general statement. 'I trust your judgment' is an unconditional acceptance of a treatment that has never been used in exactly your presentation.",
+            "hint": "Ask for the specific evidence and whether there's been peer input.",
+            "explanation": "Asking for the actual evidence and whether colleagues have weighed in is informed, engaged consent. 'Normal medical practice' is a general statement. 'I trust your judgment' accepts a genuinely novel application without asking a single question.",
             "id": "bd_l69_q1"
         },
         {
@@ -410,13 +410,13 @@
             "persona": "Merchant Kael",
             "scene": "Merchant Kael says: 'I'm planning to expand into a new geographic market next year. What market entry approach would you recommend?'",
             "options": [
-                "Geographic market expansion is one of the most common and often challenging growth strategies.",
-                "I'd recommend a phased approach: start with a pilot distribution partnership in one city to test demand and operational viability, use that data to refine your pricing and positioning before a full launch, and only commit to significant infrastructure investment once you have actual market data, not projections.",
-                "You'll need to research the new market thoroughly before committing resources."
+                "I'd start small - a pilot partnership in one city to test real demand before any major investment.",
+                "You'll need to research the new market thoroughly before committing resources.",
+                "Geographic market expansion is one of the most common and often challenging growth strategies."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Recommend a specific, phased market entry approach with a clear risk rationale.",
-            "explanation": "'Pilot distribution partnership in one city to test demand and operational viability; use data to refine pricing and positioning; only commit to infrastructure once you have actual market data' is a specific, phased approach with clear risk rationale. 'Geographic market expansion is challenging' is a general statement. 'Research the market thoroughly before committing resources' is sound general advice without a specific approach.",
+            "correctAnswerIndex": 0,
+            "hint": "Recommend a specific, low-risk first step, not just general caution.",
+            "explanation": "Proposing an actual pilot step gives a concrete, low-risk way to test the market. 'One of the most common growth strategies' is a general statement. 'Research the market thoroughly' is sound but vague advice without a specific first move.",
             "id": "bd_l69_q2"
         },
         {
@@ -426,13 +426,13 @@
             "persona": "Pilot Jax",
             "scene": "Pilot Jax says: 'We're flying into a region with very different air traffic control communication conventions. How do you prepare your crew?'",
             "options": [
-                "Air traffic control communication conventions do vary considerably between different regions.",
-                "Three preparation steps: brief the crew on the specific phraseology differences they'll encounter, practice the key non-standard phrases in a simulated exercise before the flight, and designate the more experienced pilot as the primary communicator with ATC for this sector until the crew is fully comfortable.",
-                "You should ensure your crew is thoroughly familiar with international aviation communication standards."
+                "You should ensure your crew is thoroughly familiar with international aviation communication standards.",
+                "I'd brief the crew on the specific phrasing differences beforehand, and have our senior pilot handle ATC at first.",
+                "Air traffic control communication conventions do vary considerably between different regions."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Give specific preparation steps for operating in a region with different ATC communication conventions.",
-            "explanation": "'Brief the crew on specific phraseology differences, practice key non-standard phrases in a simulated exercise, designate the more experienced pilot as primary ATC communicator until comfortable' gives three specific steps. 'ATC conventions vary considerably between regions' is a general observation. 'Ensure crew familiarity with international communication standards' is a general directive rather than a specific preparation approach.",
+            "hint": "Give the specific preparation steps for this particular region.",
+            "explanation": "Briefing on the actual differences, and having the more experienced pilot lead communication, is a concrete plan for this specific region. 'Conventions vary between regions' is a general observation. 'Ensure crew familiarity with international standards' is a general directive, not a plan for this flight.",
             "id": "bd_l69_q3"
         },
         {
@@ -442,13 +442,13 @@
             "persona": "Captain Hektor",
             "scene": "Captain Hektor says: 'One of our key operational assumptions has turned out to be completely wrong. We're now in the middle of the mission. How do you adapt?'",
             "options": [
+                "First, halt anything that depended on that assumption, then work out what's still achievable given the real situation.",
                 "Discovering a fundamental assumption error mid-mission is an extremely critical situation.",
-                "Immediate three steps: halt any actions that were contingent on the false assumption, reassess what objectives are still achievable with the actual situation, and identify the minimum viable version of the mission that can still be accomplished. Never let sunk cost drive decisions when assumptions have fundamentally changed.",
                 "We'll need to think very carefully about how to adapt to this new information."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Provide a specific, principled framework for mid-mission adaptation when a key assumption fails.",
-            "explanation": "'Halt contingent actions; reassess achievable objectives; identify minimum viable mission version; never let sunk cost drive decisions when assumptions have fundamentally changed' is a specific, principled framework. 'Discovering a fundamental assumption error mid-mission is extremely critical' is a general observation. 'We'll need to think very carefully about how to adapt' states the need without the framework.",
+            "correctAnswerIndex": 0,
+            "hint": "Give the first concrete steps, not just a description of the seriousness.",
+            "explanation": "Halting dependent actions and reassessing what's realistically achievable is a real, immediate response. 'Extremely critical situation' just names the stakes. 'Think very carefully about how to adapt' promises reflection without any actual first step.",
             "id": "bd_l70_q1"
         },
         {
@@ -458,13 +458,13 @@
             "persona": "Agent Nyx",
             "scene": "Agent Nyx says: 'I've just discovered that a colleague I've worked with for years has been feeding information to the other side. How do you process this professionally?'",
             "options": [
+                "You should report what you know immediately and let the investigation proceed.",
                 "Betrayal by a trusted colleague is one of the most deeply damaging things that can happen in this work.",
-                "The professional response and the personal response are separate. Professionally: report immediately, secure any information they had access to, and cooperate fully with the internal investigation. Personally: the shock and sense of betrayal are real and valid - but they need to be processed separately and perhaps with professional support.",
-                "You should report what you know immediately and let the investigation proceed."
+                "Professionally, I report this immediately and secure everything they had access to. Personally, it needs to be processed separately."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Distinguish the professional and personal dimensions of a betrayal while giving specific guidance on both.",
-            "explanation": "'Professional response: report immediately, secure information, cooperate with investigation. Personal response: shock and betrayal are real and valid - process them separately, perhaps with professional support' correctly distinguishes both dimensions. 'Betrayal by a trusted colleague is one of the most damaging things' is true but gives no direction. 'Report immediately and let the investigation proceed' addresses only the professional dimension.",
+            "correctAnswerIndex": 2,
+            "hint": "Separate the professional response from the personal one, and address both.",
+            "explanation": "Naming both the professional steps and the personal impact - and treating them separately - is a complete, mature response. 'One of the most deeply damaging things' names the feeling but gives no direction. 'Report immediately and let the investigation proceed' covers only the professional half.",
             "id": "bd_l70_q2"
         },
         {
@@ -475,12 +475,12 @@
             "scene": "Chef O-Ring says: 'A regular guest has written a detailed online review that is factually wrong in several significant ways. How do you respond?'",
             "options": [
                 "Online reviews, whether positive or negative, are very powerful in shaping a restaurant's reputation.",
-                "Respond publicly, professionally, and specifically. Thank them for taking the time to write the review, address each factual inaccuracy once, clearly and without aggression, and invite them back for a complimentary visit to give you the opportunity to show them what your experience is really like.",
+                "I'd respond publicly and calmly - thank them for the feedback, correct the facts, and invite them back to try again.",
                 "You could choose to dispute the review through the platform's formal processes."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Give a specific, professional strategy for responding to a factually incorrect online review.",
-            "explanation": "'Respond publicly, professionally, and specifically - thank them, address each factual inaccuracy clearly and without aggression, and invite them back for a complimentary visit' is a complete, specific, and constructive public response strategy. 'Online reviews are very powerful in shaping reputation' is a general statement. 'Dispute the review through the platform's formal processes' is an option but is adversarial and rarely effective - a public professional response is almost always better.",
+            "hint": "Respond publicly and constructively rather than disputing through a formal process.",
+            "explanation": "A calm public response that corrects the facts and invites them back is constructive and rebuilds trust. 'Very powerful in shaping reputation' just states the stakes. 'Dispute through the platform's formal processes' is adversarial and rarely as effective as a good public response.",
             "id": "bd_l70_q3"
         }
     ]
