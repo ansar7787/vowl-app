@@ -393,7 +393,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                           ),
                                     SizedBox(height: gapScratch),
 
-                                    if (_scratchProgress > 0.3)
+                                    if (_scratchProgress > 0.3 && _spokenText.isEmpty)
                                       isCompact
                                           ? SizedBox(
                                                   height: 80.h,
