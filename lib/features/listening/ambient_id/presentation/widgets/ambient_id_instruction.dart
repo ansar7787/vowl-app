@@ -28,6 +28,7 @@ class AmbientIdInstruction extends StatelessWidget {
           Flexible(
             child: Text(
               instruction.toUpperCase(),
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
