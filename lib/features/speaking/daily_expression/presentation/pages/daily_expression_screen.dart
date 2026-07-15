@@ -86,7 +86,6 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
 
     setState(() {
       _isListening = true;
-      _scratchProgress = 0.05;
       _spokenText = "Initializing vocal frequency analyzer...";
     });
 
