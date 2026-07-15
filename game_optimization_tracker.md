@@ -12,7 +12,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Dialogue Roleplay (`dialogueRoleplay`)
 - [ ] Pronunciation Focus (`pronunciationFocus`)
 - [ ] Speak Opposite (`speakOpposite`)
-- [ ] Daily Expression (`dailyExpression`)
+- [x] ✅ Daily Expression (`dailyExpression`)
 
 ## Listening (10)
 - [ ] Audio Fill Blanks (`audioFillBlanks`)

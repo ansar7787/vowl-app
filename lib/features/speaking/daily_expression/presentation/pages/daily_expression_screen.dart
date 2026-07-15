@@ -13,13 +13,13 @@ import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_header.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_scratch_panel.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_usage_panel.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_telemetry_card.dart';
-import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_explanation_card.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_scratcher_trigger.dart';
 
 class DailyExpressionScreen extends StatefulWidget {
@@ -242,6 +242,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
       },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
+        final hintUsed = (state is SpeakingLoaded) && state.hintUsed;
 
         if (quest != null) {
           _targetExpression = quest.expression ?? "Idiom";
@@ -318,15 +319,55 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                               child: DailyExpressionHeader(
                                                 primaryColor:
                                                     theme.primaryColor,
-                                                instruction: quest.instruction,
+                                                instruction: context.tr(
+                                                  'games.daily_expression_instruction',
+                                                  fallback: 'Speak the daily idiom',
+                                                ),
                                               ),
                                             ),
                                           )
                                         : DailyExpressionHeader(
                                             primaryColor: theme.primaryColor,
-                                            instruction: quest.instruction,
+                                            instruction: context.tr(
+                                              'games.daily_expression_instruction',
+                                              fallback: 'Speak the daily idiom',
+                                            ),
                                           ),
                                     SizedBox(height: gapInstruction),
+
+                                    if (hintUsed && quest.hint != null)
+                                      Container(
+                                        width: double.infinity,
+                                        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                                        margin: EdgeInsets.only(bottom: gapInstruction),
+                                        decoration: BoxDecoration(
+                                          color: theme.primaryColor.withValues(alpha: 0.1),
+                                          borderRadius: BorderRadius.circular(16.r),
+                                          border: Border.all(
+                                            color: theme.primaryColor.withValues(alpha: 0.3),
+                                          ),
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                              Icons.lightbulb_outline_rounded,
+                                              color: theme.primaryColor,
+                                              size: 18.r,
+                                            ),
+                                            SizedBox(width: 8.w),
+                                            Expanded(
+                                              child: Text(
+                                                quest.hint!,
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 14.sp,
+                                                  color: isDark ? Colors.white70 : Colors.black87,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ).animate().fadeIn(duration: 300.ms).slideY(begin: -0.1),
 
                                     isCompact
                                         ? SizedBox(
@@ -430,39 +471,6 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                               isDark: isDark,
                                             ),
 
-                                    AnimatedCrossFade(
-                                      firstChild: const SizedBox(),
-                                      secondChild: isCompact
-                                          ? SizedBox(
-                                              height: 100.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      DailyExpressionExplanationCard(
-                                                        quest: quest,
-                                                        isCorrect:
-                                                            _isCorrect ?? false,
-                                                        isDark: isDark,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : DailyExpressionExplanationCard(
-                                              quest: quest,
-                                              isCorrect: _isCorrect ?? false,
-                                              isDark: isDark,
-                                            ),
-                                      crossFadeState: _isAnswered
-                                          ? CrossFadeState.showSecond
-                                          : CrossFadeState.showFirst,
-                                      duration: const Duration(
-                                        milliseconds: 400,
-                                      ),
-                                    ),
                                     SizedBox(height: gapTelemetry),
 
                                     if (!_isAnswered)

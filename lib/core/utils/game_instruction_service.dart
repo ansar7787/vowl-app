@@ -331,11 +331,11 @@ class GameInstructionService {
     GameSubtype.dailyExpression: GameBriefing(
       title: "Social Fluent",
       icon: Icons.chat_bubble_rounded,
-      objective: "Speak daily expressions with natural, native-like emphasis.",
+      objective: "Master common daily idioms to speak naturally and connect with native speakers in real-world conversations.",
       rules: [
-        "Listen to the model",
-        "Record your expression",
-        "Match social tone",
+        "Scratch foil with voice",
+        "Listen to expression",
+        "Review context & usage",
       ],
       actionText: "Speak Now",
       tip:
