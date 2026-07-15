@@ -1236,7 +1236,7 @@ class GameInstructionService {
       title: "Social Simulator",
       icon: Icons.forum_rounded,
       objective:
-          "Drag the decision probe to select the most natural, context-appropriate conversational response. Mastering this builds real-world social fluency.",
+          "Tap an answer or drag the decision probe to select the most natural, context-appropriate conversational response.",
       rules: [
         "Analyze the scene",
         "Flick decision probe",
