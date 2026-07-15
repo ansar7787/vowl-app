@@ -7,511 +7,481 @@
             "id": "LIS_AMBIENTID_L101_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the near-silent acceleration of trains through a sealed tube above street level.",
-            "explanation": "Near-silent tube-train acceleration identifies a cyber city elevated rail network.",
-            "textToSpeak": "Magnetic rail trains accelerate silently through the elevated tube network above.",
+            "hint": "Listen for steady quiet typing and a rephrased question.",
+            "explanation": "A court reporter's steady typing and a repeatedly rephrased question are familiar sounds of a formal legal questioning session.",
+            "textToSpeak": "A court reporter's keys click in a steady, quiet rhythm as a lawyer rephrases the same question a third different way.",
             "options": [
-                "Construction Site",
-                "Busy Airport",
-                "Train Station",
-                "Cyber City"
+                "Law Firm Deposition Room",
+                "Jury Deliberation Room",
+                "Corporate Legal Archive",
+                "Courtroom During Trial"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L101_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a double owl hoot that silences other forest wildlife momentarily.",
-            "explanation": "A double owl hoot triggering forest silence identifies a dense forest at dusk.",
-            "textToSpeak": "An owl calls twice in the deepening dusk, alerting the forest to the coming night.",
+            "hint": "Listen for a single gavel tap and a rising room.",
+            "explanation": "A single gavel tap and a room rising together are the clearest, most recognizable sounds of a formal trial beginning.",
+            "textToSpeak": "A gavel taps once, calling the room to order, as everyone rises together at the sound of an official's announcement.",
             "options": [
-                "City Park",
-                "Lush Farm",
-                "Dense Forest",
-                "Sandy Beach"
+                "Jury Deliberation Room",
+                "Corporate Legal Archive",
+                "Courtroom During Trial",
+                "Patent Filing Office"
             ],
             "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L101_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a rhythmic rescue beacon signal on the instruments of a spacecraft.",
-            "explanation": "A probe rescue beacon signal on spacecraft instruments identifies outer space.",
-            "textToSpeak": "Emergency beacons on a disabled probe blink their rescue signal into empty space.",
+            "hint": "Listen for a delayed translator's voice through a headset.",
+            "explanation": "A translator's voice trailing just behind a speaker through a headset is the clearest sound of a multilingual meeting.",
+            "textToSpeak": "A translator's voice comes through a headset a half-second behind the speaker, smoothing a sentence into another language.",
             "options": [
-                "Underground Vault",
-                "Orbital Station",
-                "Outer Space",
-                "Deep Ocean"
+                "Law Firm Deposition Room",
+                "Jury Deliberation Room",
+                "Courtroom During Trial",
+                "International Conference Room"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L102_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the metronomic click of precision liquid dispensing in a scientific space.",
-            "explanation": "Automated titration clicking identifies a chemistry or biochemistry laboratory.",
-            "textToSpeak": "Automated titrators drip precise quantities into reaction vials with soft, metronomic clicks.",
+            "hint": "Listen for polite clinking and a careful, measured greeting.",
+            "explanation": "Polite clinking glasses and a careful, formal greeting between diplomats are classic sounds of an official reception.",
+            "textToSpeak": "Glasses clink politely as two diplomats exchange formal greetings in careful, measured English before switching to their own language.",
             "options": [
-                "Military Base",
-                "Cyber City",
-                "Modern Hospital",
-                "Laboratory"
+                "Jury Deliberation Room",
+                "Embassy Reception",
+                "Corporate Legal Archive",
+                "City Council Meeting Hall"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L102_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for intermittent bursts of coded electronic transmission in a monitored communications space.",
-            "explanation": "Encrypted radio transmission bursts identify a military communications room.",
-            "textToSpeak": "Encrypted transmission bursts crackle from the communications room throughout the night.",
+            "hint": "Listen for a whining motor and an adjusted dial.",
+            "explanation": "A whining motor being fine-tuned with a small adjustment is a classic sound of testing an early prototype.",
+            "textToSpeak": "A small motor whines at increasing speed as an engineer notes a reading, then adjusts a single dial slightly.",
             "options": [
-                "Construction Site",
-                "Laboratory",
-                "Military Base",
-                "Train Station"
+                "Engineering Prototype Lab",
+                "Data Center Server Room",
+                "Cybersecurity Operations Center",
+                "Wind Farm Control Room"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L102_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the pressure hull's structural clicking as it adjusts to increasing depth.",
-            "explanation": "Pressure hull adjustment clicks during descent identify a deep-ocean submersible.",
-            "textToSpeak": "The submersible's pressure hull clicks and settles as it descends past a thousand metres.",
+            "hint": "Listen for a flipped contract and a tense, quiet exchange.",
+            "explanation": "Two teams reviewing a contract clause by clause and pausing on a disputed point are classic sounds of a high-stakes negotiation.",
+            "textToSpeak": "Two teams sit across a long table as a lawyer flips through a thick contract, pausing on a clause that sparks a quiet, tense exchange.",
             "options": [
-                "Sandy Beach",
-                "Dense Forest",
-                "Outer Space",
-                "Deep Ocean"
+                "Architecture Design Studio",
+                "Merger Negotiation Room",
+                "Insurance Claims Office",
+                "Embassy Reception"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L103_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the hiss of a pneumatically opened gate following a biometric scan.",
-            "explanation": "A biometric gate hiss after scanning identifies an access-controlled underground vault.",
-            "textToSpeak": "A biometric fingerprint scanner hisses its gate open after a successful verification.",
+            "hint": "Listen for a clipped voice and a creeping radar dot.",
+            "explanation": "A calm, clipped voice confirming a runway and a blinking radar dot are classic sounds of guiding aircraft safely.",
+            "textToSpeak": "A calm, clipped voice repeats a runway number as a blinking dot creeps slowly across a wide radar screen.",
             "options": [
-                "Laboratory",
-                "Underground Vault",
-                "Construction Site",
-                "Military Base"
+                "Air Traffic Control Tower",
+                "Submarine Control Room",
+                "Customs Cargo Inspection Bay",
+                "Ship's Navigation Bridge"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L103_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for brief, well-spaced thruster pulse sounds transmitted through the station structure.",
-            "explanation": "Periodic station-keeping thruster pulses identify an orbital station maintaining position.",
-            "textToSpeak": "Station-keeping thrusters fire in brief pulses to maintain orbital position.",
+            "hint": "Listen for scraping chairs and a long opening silence.",
+            "explanation": "Chairs settling around a table followed by a long silence before anyone speaks reflects the weight of this kind of private discussion.",
+            "textToSpeak": "Chairs scrape as twelve people settle around a table, and a long silence follows before someone finally speaks first.",
             "options": [
-                "Cyber City",
-                "Outer Space",
-                "Busy Airport",
-                "Orbital Station"
+                "Jury Deliberation Room",
+                "Courtroom During Trial",
+                "International Conference Room",
+                "Law Firm Deposition Room"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L103_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the layered, random chiming of metal and wood in a gentle courtyard breeze.",
-            "explanation": "Copper and bamboo wind chimes at dawn in a courtyard identify an ancient temple.",
-            "textToSpeak": "At dawn, temple wind chimes of copper and bamboo layer their notes in the courtyard air.",
+            "hint": "Listen for a crisp bell and raised hands in colored jackets.",
+            "explanation": "A ringing bell and traders in colored jackets signaling with raised hands are classic, visible sounds of an open trading floor.",
+            "textToSpeak": "A bell rings out crisply above a wall of screens as traders in colored jackets raise their hands, signaling orders across the floor.",
             "options": [
-                "City Park",
-                "Mountain Peak",
-                "Lush Farm",
-                "Ancient Temple"
+                "Investment Bank Trading Floor",
+                "Submarine Control Room",
+                "Patent Filing Office",
+                "Stock Exchange Floor"
             ],
             "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L104_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a single, late boarding announcement in a quieter-than-usual terminal.",
-            "explanation": "A late boarding call in a quietened terminal identifies an airport at the end of the day.",
-            "textToSpeak": "A boarding call for the final flight echoes softly through the near-empty late-night terminal.",
+            "hint": "Listen for unrolled paper and a redrawn sketch line.",
+            "explanation": "An unrolled drawing and a redrawn sketch line are classic sounds of shaping an early design idea.",
+            "textToSpeak": "A large sheet of paper is unrolled across a table as a pencil sketches a rough line, then is quickly erased and redrawn.",
             "options": [
-                "Cyber City",
-                "Train Station",
-                "Shopping Mall",
-                "Busy Airport"
+                "Insurance Claims Office",
+                "Architecture Design Studio",
+                "Merger Negotiation Room",
+                "Satellite Uplink Facility"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L104_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for automated door hiss followed by smooth train departure with no wheel screech.",
-            "explanation": "Pneumatic door hiss and quiet train departure identify a metro or underground train station.",
-            "textToSpeak": "Safety doors hiss shut as the underground train pulls smoothly from the platform.",
+            "hint": "Listen for microphone feedback and a podium speaker.",
+            "explanation": "Brief microphone feedback and a resident speaking at a podium are familiar sounds of local public meetings.",
+            "textToSpeak": "A microphone squeals briefly with feedback as a resident steps up to a podium to speak during public comment.",
             "options": [
-                "Military Base",
-                "Busy Airport",
-                "Construction Site",
-                "Train Station"
+                "Corporate Legal Archive",
+                "International Conference Room",
+                "Embassy Reception",
+                "City Council Meeting Hall"
             ],
             "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L104_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the steady hum of a flatbed scanner preserving a historical document.",
-            "explanation": "Archival scanner hum preserving historical documents identifies a public library archive.",
-            "textToSpeak": "An archival scanner hums as it digitizes a fragile century-old newspaper edition.",
+            "hint": "Listen for shifting signal lights and a radioed confirmation.",
+            "explanation": "Shifting signal lights on a board and a radioed confirmation are classic sounds of coordinating trains from a control room.",
+            "textToSpeak": "A wall of small lights shifts from red to green as a dispatcher radios a driver to confirm the next signal is clear.",
             "options": [
-                "Ancient Temple",
-                "Modern Hospital",
-                "Public Library",
-                "Underground Vault"
+                "Freight Rail Yard",
+                "Train Dispatch Control Room",
+                "Air Traffic Control Tower",
+                "Submarine Control Room"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L105_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for abrupt music style changes as you pass between stores in a large indoor space.",
-            "explanation": "Abrupt music-style transitions between adjacent stores identify a shopping mall.",
-            "textToSpeak": "Pop music transitions sharply between stores, each brand maintaining its own sonic identity.",
+            "hint": "Listen for flickering screens, a shouted price, and an opening bell.",
+            "explanation": "Flickering screens of shifting numbers, a shouted price, and a bell marking the market's open are signature sounds of a fast-paced trading floor.",
+            "textToSpeak": "Dozens of monitors flicker with shifting numbers as a trader shouts a price into a headset, and a bell somewhere signals the market has opened.",
             "options": [
-                "Cyber City",
-                "Luxury Restaurant",
-                "Shopping Mall",
-                "Busy Airport"
+                "Investment Bank Trading Floor",
+                "Courtroom During Trial",
+                "Stock Exchange Floor",
+                "Train Dispatch Control Room"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L105_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the pure ring of crystal-on-crystal followed by brief respectful quiet.",
-            "explanation": "Crystal glass ring and quiet identify a luxury restaurant toast.",
-            "textToSpeak": "Crystal glasses are lifted, touched together, and a toast begins the dinner.",
+            "hint": "Listen for a called sonar contact and dim red light.",
+            "explanation": "A called sonar contact and dimmed red lighting for a night watch are signature sounds of operating beneath the surface.",
+            "textToSpeak": "A sonar operator calls out a faint contact softly as the room dims to a low red light for the night watch.",
             "options": [
-                "Luxury Restaurant",
-                "Modern Hospital",
-                "Ancient Temple",
-                "Shopping Mall"
+                "Air Traffic Control Tower",
+                "Train Dispatch Control Room",
+                "Submarine Control Room",
+                "Freight Rail Yard"
             ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L105_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the rhythmic slap of running shoes on hard path surface in an open park.",
-            "explanation": "Running-shoe slap on a tarmac park path identifies a city park morning.",
-            "textToSpeak": "Morning joggers pass with the rhythmic slap of trainers on the park's tarmac path.",
+            "hint": "Listen for a settling compass and a called heading.",
+            "explanation": "A settling compass and a called-out heading are classic sounds of steering a ship on open water.",
+            "textToSpeak": "A compass needle settles slowly as a captain calls out a new heading, and a wheel turns smoothly in response.",
             "options": [
-                "City Park",
-                "Lush Farm",
-                "Sandy Beach",
-                "Dense Forest"
+                "Customs Cargo Inspection Bay",
+                "Train Dispatch Control Room",
+                "Air Traffic Control Tower",
+                "Ship's Navigation Bridge"
             ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L106_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the steady reversing beep of an emergency vehicle entering a large building dock.",
-            "explanation": "Emergency vehicle reversing into a hospital bay identifies a modern hospital.",
-            "textToSpeak": "An ambulance backs carefully into the emergency bay, its reversing alarm insistent.",
+            "hint": "Listen for humming dials and a double-checked reading.",
+            "explanation": "A humming wall of dials and a carefully double-checked reading are classic sounds of monitoring a large power facility.",
+            "textToSpeak": "A wall of dials and gauges hums steadily as an operator logs a reading, then double-checks it against yesterday's numbers.",
             "options": [
-                "Laboratory",
-                "Military Base",
-                "Modern Hospital",
-                "Construction Site"
+                "Power Plant Control Room",
+                "Satellite Uplink Facility",
+                "Cybersecurity Operations Center",
+                "Engineering Prototype Lab"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L106_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for heavy rhythmic ground impact that can be felt through the feet.",
-            "explanation": "Felt-through-feet pile-driver impact identifies an active construction site.",
-            "textToSpeak": "The pile driver descends rhythmically, each impact shaking the earth underfoot.",
+            "hint": "Listen for roaring cooling fans and scanned blinking lights.",
+            "explanation": "Roaring cooling fans and rows of blinking lights being scanned are the unmistakable sounds of a large server room.",
+            "textToSpeak": "Rows of cooling fans roar in a steady wall of white noise as a technician walks a narrow aisle, scanning blinking lights.",
             "options": [
-                "Military Base",
-                "Construction Site",
-                "Train Station",
-                "Cyber City"
+                "Robotics Workshop",
+                "Power Plant Control Room",
+                "Data Center Server Room",
+                "Municipal Water Treatment Plant"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L106_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a specific whistle tone and the sound of a flock of animals changing direction.",
-            "explanation": "A whistle command turning a flock identifies a lush working farm with livestock.",
-            "textToSpeak": "A sheepdog responds to its handler's whistle, turning the flock at the gate.",
+            "hint": "Listen for a released balloon and beeping instruments.",
+            "explanation": "A released weather balloon and beeping instruments recording data are classic sounds of gathering atmospheric readings.",
+            "textToSpeak": "A weather balloon is released with a soft whoosh as instruments beep, recording temperature and pressure as it climbs.",
             "options": [
-                "City Park",
-                "Dense Forest",
-                "Lush Farm",
-                "Mountain Peak"
+                "Wind Farm Control Room",
+                "Weather Observatory",
+                "Cybersecurity Operations Center",
+                "Embassy Reception"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L107_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a helicopter rotor wash that drowns all other sound at a coastal location.",
-            "explanation": "A coast guard helicopter over a beach temporarily silencing surf sounds identifies a sandy beach.",
-            "textToSpeak": "The coast guard helicopter passes low, its rotor wash temporarily silencing beach noise.",
+            "hint": "Listen for whirring servos and a tested movement.",
+            "explanation": "Whirring servos moving into position as code is tested are the clearest sounds of building and debugging a robot.",
+            "textToSpeak": "Small servos whir and click into new positions as a line of code is tested, one careful movement at a time.",
             "options": [
-                "City Park",
-                "Sandy Beach",
-                "Deep Ocean",
-                "Lush Farm"
+                "Robotics Workshop",
+                "Municipal Water Treatment Plant",
+                "Data Center Server Room",
+                "Power Plant Control Room"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L107_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the clear metallic ring of an ice axe on hard glacier ice.",
-            "explanation": "Ice-axe ring on glacier ice identifies a mountain peak climbing environment.",
-            "textToSpeak": "Ice axes ring clearly on glacier ice as the climbing team nears the summit ridge.",
+            "hint": "Listen for scrolling logs and a flagged spike.",
+            "explanation": "Scrolling logs on a wall of monitors and a flagged suspicious spike are signature sounds of monitoring for digital threats.",
+            "textToSpeak": "A wall of monitors glows with scrolling logs as an analyst leans forward suddenly, flagging a suspicious spike in activity.",
             "options": [
-                "Mountain Peak",
-                "Sandy Beach",
-                "Outer Space",
-                "Dense Forest"
+                "Cybersecurity Operations Center",
+                "Engineering Prototype Lab",
+                "Municipal Water Treatment Plant",
+                "Data Center Server Room"
             ],
             "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L107_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the unexpectedly deep resonance of wind through a hollow old tree trunk.",
-            "explanation": "Wind resonating in a hollow tree identifies a dense forest with old-growth trees.",
-            "textToSpeak": "The hollow resonance of a dead tree amplifies the wind passing through it.",
+            "hint": "Listen for a ringing phone and a traced reroute.",
+            "explanation": "A ringing phone and a finger tracing a rerouted path on a map reflect the quick decisions made in this control room.",
+            "textToSpeak": "A phone rings twice as a dispatcher traces a finger along a route map, working out how to reroute a delayed service.",
             "options": [
-                "Dense Forest",
-                "Ancient Temple",
-                "Lush Farm",
-                "City Park"
+                "Submarine Control Room",
+                "Customs Cargo Inspection Bay",
+                "Ship's Navigation Bridge",
+                "Train Dispatch Control Room"
             ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L108_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for an AI-generated guidance voice coordinating complex vehicle movements at a junction.",
-            "explanation": "AI traffic controller voice at an urban intersection identifies a cyber city.",
-            "textToSpeak": "An AI traffic controller's voice guides pod traffic through the city intersection matrix.",
+            "hint": "Listen for a passed calculator and an unspoken figure.",
+            "explanation": "A silently passed calculator recalculating a sensitive figure reflects the careful tension of negotiating a major deal.",
+            "textToSpeak": "A calculator is passed silently down the table as someone recalculates a figure that no one seems willing to say out loud.",
             "options": [
-                "Shopping Mall",
-                "Cyber City",
-                "Construction Site",
-                "Busy Airport"
+                "Insurance Claims Office",
+                "Merger Negotiation Room",
+                "Architecture Design Studio",
+                "Courtroom During Trial"
             ],
             "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L108_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a single sharp ping felt and heard through the structure of a spacecraft.",
-            "explanation": "A micro-meteorite impact ping through a spacecraft frame identifies outer space.",
-            "textToSpeak": "A micro-meteorite strikes the outer hull with a sharp ping that resonates through the frame.",
+            "hint": "Listen for a raised hand and an uneven vote.",
+            "explanation": "An early raised-hand vote with an uneven result is a familiar moment in private group decision-making like this.",
+            "textToSpeak": "A hand is raised for an early vote, followed by a quiet, uneven show of hands around the table.",
             "options": [
-                "Orbital Station",
-                "Underground Vault",
-                "Deep Ocean",
-                "Outer Space"
+                "Corporate Legal Archive",
+                "Jury Deliberation Room",
+                "City Council Meeting Hall",
+                "International Conference Room"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L108_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a continuous uniform spinning hum from a large scientific analysis instrument.",
-            "explanation": "NMR spectrometer spinning hum identifies a chemistry research laboratory.",
-            "textToSpeak": "An NMR spectrometer spins its sample with a steady hum in the corner of the lab.",
+            "hint": "Listen for a sweeping radar beep and a traced chart.",
+            "explanation": "A sweeping radar beep and a finger tracing a route on a chart are familiar sounds of plotting a course.",
+            "textToSpeak": "Radar sweeps with a steady, quiet beep as someone checks a chart, tracing a route with one careful finger.",
             "options": [
-                "Construction Site",
-                "Modern Hospital",
-                "Laboratory",
-                "Military Base"
+                "Air Traffic Control Tower",
+                "Freight Rail Yard",
+                "Customs Cargo Inspection Bay",
+                "Ship's Navigation Bridge"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L109_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a regular radio check-in pattern repeating through the night at a secure facility.",
-            "explanation": "Regular night patrol radio check-ins identify a military base security routine.",
-            "textToSpeak": "Night patrols check in by radio every fifteen minutes through the base's long darkness.",
+            "hint": "Listen for a turned model and a debated angle.",
+            "explanation": "A turned scale model and a debate about an angle are familiar sounds of refining a building design.",
+            "textToSpeak": "A scale model is turned slowly on a table as two designers debate the angle of a proposed rooftop.",
             "options": [
-                "Underground Vault",
-                "Military Base",
-                "Construction Site",
-                "Train Station"
+                "Submarine Control Room",
+                "Insurance Claims Office",
+                "Merger Negotiation Room",
+                "Architecture Design Studio"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L109_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the sonar ping and the unusual return signal from a large unidentified object.",
-            "explanation": "Unusual sonar returns from a large object in the abyss identify the deep ocean.",
-            "textToSpeak": "A sonar sweep detects an unidentified massive shape moving in the abyss below.",
+            "hint": "Listen for a scrolling ticker and sudden applause.",
+            "explanation": "A scrolling ticker and applause marking a first trading day are familiar ceremonial sounds of this kind of venue.",
+            "textToSpeak": "A ticker scrolls endlessly overhead as a sudden wave of applause breaks out, marking a company's first day of public trading.",
             "options": [
-                "Deep Ocean",
-                "Outer Space",
-                "Dense Forest",
-                "Sandy Beach"
+                "Stock Exchange Floor",
+                "Investment Bank Trading Floor",
+                "Ship's Navigation Bridge",
+                "Robotics Workshop"
             ],
             "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L109_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a climate control system activating to regulate humidity in a sealed storage space.",
-            "explanation": "Climate control activating for document humidity in a sealed space identifies an underground vault.",
-            "textToSpeak": "Humidity controls trigger ventilation to protect stored historical documents from damp.",
+            "hint": "Listen for a slow roll call and short replies.",
+            "explanation": "A slow roll call answered with short replies is a classic formal opening of a public government meeting.",
+            "textToSpeak": "A roll call is read slowly through a list of names as each member responds with a simple, brief reply.",
             "options": [
-                "Underground Vault",
-                "Public Library",
-                "Laboratory",
-                "Ancient Temple"
+                "Patent Filing Office",
+                "City Council Meeting Hall",
+                "Embassy Reception",
+                "Courtroom During Trial"
             ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L110_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the soft electronic stream of health monitoring data in a spacecraft setting.",
-            "explanation": "Biosensor data streaming in a spacecraft identifies an orbital station health monitoring routine.",
-            "textToSpeak": "Biosensor data streams across the monitor as the crew member completes her health check.",
+            "hint": "Listen for spinning gauges and a quiet printed reading.",
+            "explanation": "Spinning wind gauges and a quietly printed reading are familiar sounds of preparing a daily weather forecast.",
+            "textToSpeak": "Wind gauges spin rapidly outside as a printer inside quietly produces the latest reading for the morning forecast.",
             "options": [
-                "Busy Airport",
-                "Orbital Station",
-                "Cyber City",
-                "Outer Space"
+                "Freight Rail Yard",
+                "Weather Observatory",
+                "Ship's Navigation Bridge",
+                "Satellite Uplink Facility"
             ],
             "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L110_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the deep footfall and gentle bell chime of large animals on stone paving.",
-            "explanation": "Elephant footfall and ankle bells on stone court identify an ancient temple festival.",
-            "textToSpeak": "Temple elephants walk across the stone court, their ankle bells chiming softly.",
+            "hint": "Listen for rapid typing, a soft alarm, and a quick briefing.",
+            "explanation": "Rapid typing, a soft alarm, and a quick briefing on a possible breach are classic sounds of responding to a security incident.",
+            "textToSpeak": "Keys click rapidly as an alarm chimes softly, and a low voice quickly briefs the team on a possible breach.",
             "options": [
-                "Dense Forest",
-                "Mountain Peak",
-                "Ancient Temple",
-                "City Park"
+                "Wind Farm Control Room",
+                "Cybersecurity Operations Center",
+                "Data Center Server Room",
+                "Power Plant Control Room"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L110_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the quiet, precise movement of dogs and handlers scanning a busy crowd silently.",
-            "explanation": "Drug-detection dogs silently scanning a check-in queue identify a busy airport.",
-            "textToSpeak": "Sniffing dogs and their handlers move between the check-in queues without a word.",
+            "hint": "Listen for a cold rush of air and a sealed door.",
+            "explanation": "A rush of cold air and a heavy sealed door are classic sounds of entering a climate-controlled server facility.",
+            "textToSpeak": "A cold gust of air rushes past as a heavy door seals shut behind a technician carrying a replacement drive.",
             "options": [
-                "Train Station",
-                "Cyber City",
-                "Busy Airport",
-                "Shopping Mall"
+                "Power Plant Control Room",
+                "Robotics Workshop",
+                "Data Center Server Room",
+                "Wind Farm Control Room"
             ],
             "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         }
     ]
 }

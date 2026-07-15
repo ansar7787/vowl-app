@@ -7,511 +7,481 @@
             "id": "LIS_AMBIENTID_L41_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the ambient hum of a recycled-air system near a busy street food area.",
-            "explanation": "Recycled-air circulation and street-stall audio identify a cyber city food district.",
-            "textToSpeak": "The scent of synthetic spices wafts from street stalls as recycled air circulates above.",
+            "hint": "Listen for a sizzling grill and rooftop laughter.",
+            "explanation": "A sizzling grill and laughter carried by an evening breeze are classic sounds of a gathering above the street.",
+            "textToSpeak": "Meat sizzles loudly on a hot grill as laughter drifts across the rooftop in the evening breeze.",
             "options": [
-                "Shopping Mall",
-                "Cyber City",
-                "Laboratory",
-                "Busy Airport"
+                "Rooftop Barbecue",
+                "Bike Repair Shop",
+                "Open-Plan Office",
+                "Driving Range"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L41_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for many bird species calling simultaneously at first light in a forest.",
-            "explanation": "A dawn bird chorus and dripping dew together identify a dense forest at sunrise.",
-            "textToSpeak": "The forest at dawn fills with a chorus of waking birds and the soft drip of dew.",
+            "hint": "Listen for a grinding key machine and a question about screws.",
+            "explanation": "A grinding key-cutting machine is one of the clearest sounds of this kind of shop.",
+            "textToSpeak": "A key-cutting machine grinds loudly while a customer asks an assistant where to find the right screws.",
             "options": [
-                "City Park",
-                "Dense Forest",
-                "Sandy Beach",
-                "Lush Farm"
+                "Hardware Store",
+                "Rush-Hour Train Platform",
+                "Piano Lesson",
+                "Bakery Kitchen"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L41_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for an electronic alert tone as the ship's radiation sensors respond to a solar flare.",
-            "explanation": "Radiation sensor alerts during a solar flare identify a spacecraft in outer space.",
-            "textToSpeak": "A solar flare lights the nebula in shades of pink and gold visible through the viewport.",
+            "hint": "Listen for a thumping printer and a sharp trim.",
+            "explanation": "A thumping printer feeding paper and a sharp trimming sound are classic signs of a busy print shop.",
+            "textToSpeak": "A large printer thumps rhythmically as it feeds paper while a machine trims the edges with a sharp snap.",
             "options": [
-                "Orbital Station",
-                "Deep Ocean",
-                "Outer Space",
-                "Ancient Temple"
+                "Print Shop",
+                "Bakery Kitchen",
+                "Community Pool",
+                "Yoga Studio"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L42_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the sharp hiss of cryogenic gas releasing in a sterile enclosed space.",
-            "explanation": "Liquid nitrogen pressure release in a sterile research hall identifies a laboratory.",
-            "textToSpeak": "A liquid nitrogen tank releases pressure with a hiss that echoes through the sterile hall.",
+            "hint": "Listen for a shuffling crowd and a doors warning.",
+            "explanation": "A shuffling crowd and a warning about closing doors are classic sounds of a packed platform.",
+            "textToSpeak": "A crowd shuffles forward as a recorded voice warns everyone to mind the closing doors.",
             "options": [
-                "Laboratory",
-                "Modern Hospital",
-                "Construction Site",
-                "Cyber City"
+                "Art Class",
+                "Hardware Store",
+                "Rush-Hour Train Platform",
+                "Food Truck"
             ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L42_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for grunting effort and shouted encouragement near a demanding outdoor training area.",
-            "explanation": "Exertion sounds near a muddy outdoor obstacle course identify a military training base.",
-            "textToSpeak": "The scent of mud and sweat is thick near the outdoor military obstacle course.",
+            "hint": "Listen for a whimpering dog and a reassuring voice.",
+            "explanation": "A whimpering pet and a calm, reassuring voice are classic sounds of an animal checkup.",
+            "textToSpeak": "A dog whimpers softly while a calm voice reassures both the pet and its worried owner.",
             "options": [
-                "City Park",
-                "Military Base",
-                "Lush Farm",
-                "Train Station"
+                "Piano Lesson",
+                "Rooftop Barbecue",
+                "Nail Salon",
+                "Veterinary Clinic"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L42_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a sustained, very low roar of water moving in a high-pressure environment.",
-            "explanation": "A low sustained roar of pressurized water movement identifies the deep ocean.",
-            "textToSpeak": "The low roar of a deep-sea current moves tons of cold water through the canyon below.",
+            "hint": "Listen for a calm instructor's voice and gentle chimes.",
+            "explanation": "A calm instructor's voice and soft chimes are classic sounds at the start of a class like this.",
+            "textToSpeak": "An instructor speaks in a calm, steady voice while soft chimes ring gently at the start of class.",
             "options": [
-                "Outer Space",
-                "Deep Ocean",
-                "Sandy Beach",
-                "Dense Forest"
+                "Taxi",
+                "Print Shop",
+                "Daycare Center",
+                "Yoga Studio"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L43_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a sputtering old engine providing light in a dry, enclosed stone passage.",
-            "explanation": "An aging generator providing light in stone corridors identifies an underground vault.",
-            "textToSpeak": "The old generator sputters and hums, providing the only dim light in the dusty corridors.",
+            "hint": "Listen for clattering trays and blended conversation.",
+            "explanation": "Clattering trays and many blended conversations are classic sounds of a shared dining area.",
+            "textToSpeak": "Trays clatter onto tables as dozens of conversations blend together under bright overhead lights.",
             "options": [
-                "Underground Vault",
-                "Public Library",
-                "Construction Site",
-                "Military Base"
+                "Food Court",
+                "Rush-Hour Train Platform",
+                "Locksmith Shop",
+                "Community Pool"
             ],
             "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L43_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a double-chime alert related to an approaching vehicle docking with a station.",
-            "explanation": "Docking approach alerts at a ring identify an orbital space station.",
-            "textToSpeak": "An alert chimes twice as a supply pod approaches the main docking ring of the station.",
+            "hint": "Listen for a slow scale and gentle correction.",
+            "explanation": "A slowly played scale and gentle correction are classic sounds of an early music lesson.",
+            "textToSpeak": "A scale is played slowly, note by note, as a teacher gently corrects the position of small fingers.",
             "options": [
-                "Outer Space",
-                "Cyber City",
-                "Busy Airport",
-                "Orbital Station"
+                "Community Pool",
+                "Piano Lesson",
+                "Open-Plan Office",
+                "Locksmith Shop"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L43_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the soft rustle of a large tree and the near-silence of meditating people.",
-            "explanation": "A banyan tree in a temple courtyard with meditating pilgrims identifies an ancient temple.",
-            "textToSpeak": "A large banyan tree shades the courtyard where pilgrims sit quietly in meditation.",
+            "hint": "Listen for clicking turnstiles and tapped cards.",
+            "explanation": "Rapidly clicking turnstiles are one of the clearest sounds of an underground station during rush hour.",
+            "textToSpeak": "Turnstiles click rapidly as a card is tapped again and again during the morning rush.",
             "options": [
-                "Mountain Peak",
-                "Lush Farm",
-                "City Park",
-                "Ancient Temple"
+                "Veterinary Clinic",
+                "Copy Center",
+                "Subway Station",
+                "Locksmith Shop"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L44_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the background roar of jet engines outside and PA voices inside a departure hall.",
-            "explanation": "Jet engine noise and PA voices in a departure lounge identify a busy airport.",
-            "textToSpeak": "The scent of jet fuel mixes with coffee in the crowded departure lounge.",
+            "hint": "Listen for clattering keyboards and a ringing phone.",
+            "explanation": "Clattering keyboards and a ringing phone answered nearby are common daytime sounds of a busy workplace.",
+            "textToSpeak": "Keyboards clatter steadily across the room as a phone rings twice before someone answers softly.",
             "options": [
-                "Cyber City",
-                "Shopping Mall",
-                "Busy Airport",
-                "Train Station"
+                "Open-Plan Office",
+                "Campus Cafeteria",
+                "Hardware Store",
+                "Daycare Center"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L44_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a near-silent train arrival on a smooth, vibration-free platform.",
-            "explanation": "Near-silent gliding on magnetic rails identifies a modern high-tech train station.",
-            "textToSpeak": "Sleek trains glide in on magnetic rails, their arrival nearly whisper-quiet.",
+            "hint": "Listen for a swishing brush and quiet instruction.",
+            "explanation": "A swishing brush and quiet color suggestions are classic sounds of a painting lesson.",
+            "textToSpeak": "A brush swishes across canvas while an instructor quietly suggests using a lighter shade of blue.",
             "options": [
-                "Military Base",
-                "Construction Site",
-                "Train Station",
-                "Cyber City"
+                "Bike Repair Shop",
+                "Bakery Kitchen",
+                "Art Class",
+                "Dry Cleaner"
             ],
             "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L44_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the faint hum of an old image-projection machine in a very quiet archive room.",
-            "explanation": "Microfilm readers in a quiet archive room identify a public library's historical collection.",
-            "textToSpeak": "Microfilm readers hum in the corner, projecting old newspaper images on their screens.",
+            "hint": "Listen for a clicking meter and a turn to avoid traffic.",
+            "explanation": "A steadily clicking meter is one of the clearest sounds of riding in this kind of vehicle.",
+            "textToSpeak": "A meter clicks steadily as the driver turns down a side street to avoid the traffic ahead.",
             "options": [
-                "Public Library",
-                "Underground Vault",
-                "Ancient Temple",
-                "Modern Hospital"
+                "Storage Facility",
+                "Taxi",
+                "Hardware Store",
+                "Food Truck"
             ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L45_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the combined audio of a food court and the hum of a busy atrium.",
-            "explanation": "Food court sounds and general atrium noise identify a shopping mall.",
-            "textToSpeak": "The scent of cinnamon rolls and perfume drifts through the food court of the mall.",
+            "hint": "Listen for pattering feet and a hummed tune.",
+            "explanation": "Pattering feet and a gentle hummed tune are familiar sounds of a room full of young children.",
+            "textToSpeak": "Small feet patter across a soft mat while a caregiver hums a gentle tune during nap time.",
             "options": [
-                "Busy Airport",
-                "Luxury Restaurant",
-                "Shopping Mall",
-                "Cyber City"
+                "Bakery Kitchen",
+                "Piano Lesson",
+                "Daycare Center",
+                "Tattoo Studio"
             ],
             "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L45_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a single expert voice speaking quietly and knowledgeably about wine near a table.",
-            "explanation": "A sommelier's quiet expertise at a dining table identifies a luxury restaurant.",
-            "textToSpeak": "A sommelier suggests wine pairings in a low, knowledgeable voice at the table.",
+            "hint": "Listen for crashing glass and a rattling belt.",
+            "explanation": "Crashing glass and a rattling conveyor belt are classic sounds of sorting recyclable materials.",
+            "textToSpeak": "Glass bottles crash and shatter into a bin while a conveyor belt rattles steadily nearby.",
             "options": [
-                "Ancient Temple",
-                "Modern Hospital",
-                "Shopping Mall",
-                "Luxury Restaurant"
+                "Art Class",
+                "Recycling Center",
+                "Print Shop",
+                "Subway Station"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L45_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for quiet reading aloud in a peaceful outdoor space with park furniture.",
-            "explanation": "Reading memorial bench inscriptions quietly in a park identifies a city park.",
-            "textToSpeak": "Memorial bench names are read quietly by a couple pausing on their afternoon walk.",
+            "hint": "Listen for sliding trays and loud debate.",
+            "explanation": "Sliding trays and loud debate among groups are familiar sounds of a shared student dining hall.",
+            "textToSpeak": "Trays slide along metal rails as students debate loudly about a class they just left.",
             "options": [
-                "City Park",
-                "Lush Farm",
-                "Dense Forest",
-                "Sandy Beach"
+                "Campus Cafeteria",
+                "Flower Shop",
+                "Auto Repair Garage",
+                "Yoga Studio"
             ],
             "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L46_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a gentle repetitive chime from a patient-summoning device.",
-            "explanation": "A soft rhythmic call bell identifies a hospital patient ward.",
-            "textToSpeak": "A patient's call bell rings softly and rhythmically until a nurse arrives to answer it.",
+            "hint": "Listen for snipping stems and rustling paper.",
+            "explanation": "Snipping stems and rustling wrapping paper are classic sounds of a bouquet being prepared.",
+            "textToSpeak": "Scissors snip through stems quickly as a bouquet is wrapped in crisp, rustling paper.",
             "options": [
-                "Public Library",
-                "Laboratory",
-                "Modern Hospital",
-                "Military Base"
+                "Daycare Center",
+                "Food Court",
+                "Flower Shop",
+                "Storage Facility"
             ],
             "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L46_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a continuous electronic beeping from a reversing vehicle among construction structures.",
-            "explanation": "Reversing backup alarms from vehicles at a site identify an active construction site.",
-            "textToSpeak": "A reversing truck's backup alarm beeps constantly as it maneuvers between site structures.",
+            "hint": "Listen for a sizzling grill and a waiting line.",
+            "explanation": "A sizzling grill and a line of customers waiting outside are classic sounds of this kind of stand.",
+            "textToSpeak": "A grill sizzles loudly as a cook flips a burger while a short line waits along the sidewalk.",
             "options": [
-                "Military Base",
-                "Cyber City",
-                "Construction Site",
-                "Train Station"
+                "Tattoo Studio",
+                "Food Truck",
+                "Art Class",
+                "Auto Repair Garage"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L46_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the combined sounds of multiple harvest machines and working voices in open fields.",
-            "explanation": "Multiple harvest machines and busy workers identify a lush farm during harvest season.",
-            "textToSpeak": "The harvest is in full swing; machines rumble and workers move quickly across the fields.",
+            "hint": "Listen for a scraping file and a drying fan.",
+            "explanation": "A scraping file and a drying fan are classic sounds of a manicure appointment.",
+            "textToSpeak": "A small file scrapes rhythmically while a fan hums softly, drying a fresh coat of polish.",
             "options": [
-                "Dense Forest",
-                "City Park",
-                "Lush Farm",
-                "Mountain Peak"
+                "Recycling Center",
+                "Open-Plan Office",
+                "Veterinary Clinic",
+                "Nail Salon"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L47_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for calm voices and the rhythmic movement of people on water near breaking waves.",
-            "explanation": "Surfers waiting on boards near breaking waves identify a sandy beach surf spot.",
-            "textToSpeak": "Surfers chat quietly as they bob on their boards, waiting for the next set to roll in.",
+            "hint": "Listen for roaring mixers and trays going into ovens.",
+            "explanation": "Roaring industrial mixers and trays going into large ovens are sounds of large-scale baking behind the scenes.",
+            "textToSpeak": "Industrial mixers roar as huge trays of dough are pushed into a wall of hot ovens.",
             "options": [
-                "City Park",
-                "Deep Ocean",
-                "Sandy Beach",
-                "Lush Farm"
+                "Bakery Kitchen",
+                "Campus Cafeteria",
+                "Open-Plan Office",
+                "Tattoo Studio"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L47_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for howling wind and the sharp sound of boots on ice on a high exposed ridge.",
-            "explanation": "Ice underfoot and freezing wind on an exposed ridge identify a mountain peak environment.",
-            "textToSpeak": "On the high ridge, ice and pine scent the freezing air that stings with every inhale.",
+            "hint": "Listen for a whirring wrench and clattering tools.",
+            "explanation": "A whirring air wrench and clattering tools are classic sounds of a car being repaired.",
+            "textToSpeak": "An air wrench whirs sharply as a tire is loosened while metal tools clatter onto a rolling tray.",
             "options": [
-                "Dense Forest",
-                "Outer Space",
-                "Mountain Peak",
-                "Sandy Beach"
+                "Auto Repair Garage",
+                "Bike Repair Shop",
+                "Hardware Store",
+                "Yoga Studio"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L47_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the soft, continuous rustle of fern leaves in a gentle forest-floor breeze.",
-            "explanation": "Fern rustling on a forest floor identifies a dense, shaded forest interior.",
-            "textToSpeak": "The forest floor is a soft carpet of ferns that rustle quietly in the passing air.",
+            "hint": "Listen for scratching charcoal and glancing students.",
+            "explanation": "Scratching charcoal and glancing between a page and a model are familiar sounds of a drawing lesson.",
+            "textToSpeak": "Charcoal scratches roughly against paper as students glance between their page and the model at the front.",
             "options": [
-                "City Park",
-                "Ancient Temple",
-                "Lush Farm",
-                "Dense Forest"
+                "Daycare Center",
+                "Tattoo Studio",
+                "Art Class",
+                "Open-Plan Office"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L48_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a siren that changes pitch as it echoes between tall buildings.",
-            "explanation": "A siren distorted by urban canyon geometry identifies a dense high-rise city like Cyber City.",
-            "textToSpeak": "A distant siren wails and bends in pitch as it reverberates through the city's narrow canyons.",
+            "hint": "Listen for a whirring blender and a slow-moving line.",
+            "explanation": "A whirring blender and a slow line are common sounds of a busy student dining hall at lunchtime.",
+            "textToSpeak": "A blender whirs behind the counter as a long line inches slowly toward the register.",
             "options": [
-                "Cyber City",
-                "Shopping Mall",
-                "Construction Site",
-                "Busy Airport"
+                "Daycare Center",
+                "Community Pool",
+                "Campus Cafeteria",
+                "Tattoo Studio"
             ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L48_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the silence deepening briefly as external light disappears in outer space.",
-            "explanation": "A moon shadow plunging a spacecraft into complete darkness identifies outer space.",
-            "textToSpeak": "The shadow of a moon passes over the ship, plunging the viewport into total darkness.",
+            "hint": "Listen for a rattling mixer and a checked color chart.",
+            "explanation": "A rattling paint mixer and a checked color chart are common sounds of buying paint here.",
+            "textToSpeak": "Paint cans rattle on a mixing machine as a worker checks a color chart against the label.",
             "options": [
-                "Orbital Station",
-                "Outer Space",
-                "Deep Ocean",
-                "Underground Vault"
+                "Rush-Hour Train Platform",
+                "Piano Lesson",
+                "Hardware Store",
+                "Open-Plan Office"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L48_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the high-frequency buzz of high-voltage electrical equipment in an enclosed lab.",
-            "explanation": "The electrical buzz and ozone signature of a particle accelerator identify a physics laboratory.",
-            "textToSpeak": "The scent of ozone lingers near the high-voltage particle accelerator in the lab.",
+            "hint": "Listen for a groaning lift and a mechanic sliding underneath.",
+            "explanation": "A groaning hydraulic lift raising a car is one of the clearest sounds of this kind of workshop.",
+            "textToSpeak": "A hydraulic lift groans upward slowly while a mechanic slides underneath to check the engine below.",
             "options": [
-                "Public Library",
-                "Modern Hospital",
-                "Military Base",
-                "Laboratory"
+                "Rooftop Barbecue",
+                "Community Pool",
+                "Art Class",
+                "Auto Repair Garage"
             ],
             "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L49_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for metal tray clattering and overlapping loud voices in a large communal dining space.",
-            "explanation": "Metal trays and loud communal dining identify a military base mess hall.",
-            "textToSpeak": "Metal trays clatter and loud conversation fills the mess hall during the lunch rush.",
+            "hint": "Listen for a humming cooler and a burst of fragrant air.",
+            "explanation": "A humming cooler releasing fragrant air is a familiar sound of a shop that keeps its stock fresh.",
+            "textToSpeak": "A cooler door hums as it opens, releasing a burst of cool, fragrant air into the shop.",
             "options": [
-                "Military Base",
-                "Underground Vault",
-                "Train Station",
-                "Construction Site"
+                "Bakery Kitchen",
+                "Flower Shop",
+                "Veterinary Clinic",
+                "Auto Repair Garage"
             ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L49_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for strained mechanical joint sounds from robots working under extreme force.",
-            "explanation": "Robot joints whining under great pressure identify a deep-ocean exploration environment.",
-            "textToSpeak": "Exploration robots move with strained joint-whining as they work under extreme pressure.",
+            "hint": "Listen for rustling mats and settling silence.",
+            "explanation": "Rustling mats being unrolled and a settling silence are familiar sounds before a class begins.",
+            "textToSpeak": "Mats unroll with a soft rustle as everyone settles onto the floor in comfortable silence.",
             "options": [
-                "Outer Space",
-                "Deep Ocean",
-                "Dense Forest",
-                "Sandy Beach"
+                "Community Pool",
+                "Recycling Center",
+                "Nail Salon",
+                "Yoga Studio"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L49_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the creak of overloaded metal shelving in a sealed stone chamber.",
-            "explanation": "Metal shelving loaded with historical crates in a sealed stone chamber identifies a vault.",
-            "textToSpeak": "Metal shelving units line the walls, stacked with crates of historical documents.",
+            "hint": "Listen for a hissing cat and gentle hands.",
+            "explanation": "A hissing cat during a gentle examination is a familiar sound of a visit to this kind of clinic.",
+            "textToSpeak": "A cat hisses briefly as gentle hands check its ears while an owner watches anxiously nearby.",
             "options": [
-                "Military Base",
-                "Construction Site",
-                "Train Station",
-                "Underground Vault"
+                "Storage Facility",
+                "Dry Cleaner",
+                "Rush-Hour Train Platform",
+                "Veterinary Clinic"
             ],
             "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L50_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for arrival alarm beeps alongside thruster sounds in a spacecraft setting.",
-            "explanation": "Docking ring alerts and thruster sounds identify an orbital station receiving a supply pod.",
-            "textToSpeak": "Docking ring alarms beep as a supply pod fires final approach thrusters.",
+            "hint": "Listen for clattering cans and a crushing machine.",
+            "explanation": "Clattering cans being crushed flat are a familiar sound of a sorting facility like this.",
+            "textToSpeak": "Aluminum cans clatter loudly as a machine crushes them flat one after another.",
             "options": [
-                "Orbital Station",
-                "Outer Space",
-                "Cyber City",
-                "Busy Airport"
+                "Recycling Center",
+                "Daycare Center",
+                "Bakery Kitchen",
+                "Rush-Hour Train Platform"
             ],
             "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L50_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for footsteps echoing in a large stone space that feels deeply old.",
-            "explanation": "Footsteps echoing in an ancient stone space identify a sacred temple site.",
-            "textToSpeak": "Quiet footsteps on ancient stone echo through a space heavy with tradition.",
+            "hint": "Listen for a whirring printer and murmured conversation.",
+            "explanation": "A whirring printer and murmured conversation over shared work are familiar sounds of an open workspace.",
+            "textToSpeak": "A printer whirs to life in the corner while colleagues murmur over a shared spreadsheet nearby.",
             "options": [
-                "Ancient Temple",
-                "Mountain Peak",
-                "Dense Forest",
-                "City Park"
+                "Art Class",
+                "Open-Plan Office",
+                "Rooftop Barbecue",
+                "Recycling Center"
             ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L50_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for a chorus of different languages overlapping in a large indoor transit space.",
-            "explanation": "Multilingual crowds in a large indoor transit hub identify a busy international airport.",
-            "textToSpeak": "The airport is full of travelers from every part of the world, their voices overlapping.",
+            "hint": "Listen for an echoing guitar and a distant rumble.",
+            "explanation": "An echoing busker and a distant rumble are familiar sounds of an underground station.",
+            "textToSpeak": "A busker's guitar echoes off tiled walls while a train rumbles somewhere deep below the platform.",
             "options": [
-                "Train Station",
-                "Cyber City",
-                "Shopping Mall",
-                "Busy Airport"
+                "Subway Station",
+                "Daycare Center",
+                "Hardware Store",
+                "Recycling Center"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         }
     ]
 }

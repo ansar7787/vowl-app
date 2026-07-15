@@ -7,511 +7,481 @@
             "id": "LIS_AMBIENTID_L191_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for an acoustic that could only have been created by a specific stage of technological civilisation.",
-            "explanation": "A civilisation-stage acoustic artefact identifies a cyber city.",
-            "textToSpeak": "A cyber city's acoustic is an artefact of the civilisation that built it.",
+            "hint": "Listen for a murmured countdown, a silently queued graphic, and a blinking red light.",
+            "explanation": "A murmured countdown paired with a silently queued graphic and a blinking on-air light captures the split-second coordination of live television production.",
+            "textToSpeak": "A countdown is murmured under someone's breath as a graphic is queued silently, and a red light blinks on the instant a host begins speaking.",
             "options": [
-                "Construction Site",
-                "Cyber City",
-                "Shopping Mall",
-                "Busy Airport"
+                "International Space Station Laboratory Module",
+                "Live Television Broadcast Control Room",
+                "Lunar Sample Analysis Lab",
+                "Mars Rover Mission Control"
             ],
             "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L191_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for complexity achieved through evolutionary time rather than deliberate design.",
-            "explanation": "Time-not-design complexity identifies a dense forest.",
-            "textToSpeak": "A dense forest's acoustic achieves complexity through time, not design.",
+            "hint": "Listen for a measured recess request and quietly reorganized evidence binders.",
+            "explanation": "A measured request for recess and evidence binders being reorganized reflect the careful, procedural pacing of a lengthy formal legal proceeding.",
+            "textToSpeak": "A judge requests a brief recess in a measured voice as thick binders of documentary evidence are quietly reorganized on a long counsel table.",
             "options": [
-                "Dense Forest",
-                "Lush Farm",
-                "Sandy Beach",
-                "City Park"
+                "International Arbitration Tribunal",
+                "War Crimes Tribunal Courtroom",
+                "Treaty Signing Ceremony",
+                "Constitutional Court Deliberation"
             ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L191_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for an environment in which sound physics have been replaced by silence physics.",
-            "explanation": "Silence physics replacing sound physics identifies outer space.",
-            "textToSpeak": "In outer space, the physics of sound is replaced by the physics of silence.",
+            "hint": "Listen for a passed draft communiqué collecting scribbled margin objections.",
+            "explanation": "A draft document collecting small handwritten objections as it passes along a table reflects the painstaking line-by-line negotiation typical of a major summit.",
+            "textToSpeak": "A draft communiqué is passed hand to hand along a crowded table, each delegation's aide scribbling a small objection into the margin before it moves on.",
             "options": [
-                "Underground Vault",
-                "Outer Space",
-                "Orbital Station",
-                "Deep Ocean"
+                "Head-of-State Motorcade Departure",
+                "Intelligence Briefing Room",
+                "G20 Economic Summit Negotiation",
+                "Constitutional Court Deliberation"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L192_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the acoustic of the leading edge of human knowledge.",
-            "explanation": "Knowledge frontier acoustic identifies a research laboratory.",
-            "textToSpeak": "The laboratory produces sounds that are the leading edge of humanity's knowledge frontier.",
+            "hint": "Listen for a gently laid ice cylinder and carefully brushed-away shavings.",
+            "explanation": "A fresh ice cylinder handled with visible care reflects the fragile, irreplaceable record of past climate preserved within its layers.",
+            "textToSpeak": "A freshly extracted cylinder of ice is laid gently onto a padded tray as gloved hands brush away shavings, careful not to disturb its layered history.",
             "options": [
-                "Cyber City",
-                "Modern Hospital",
-                "Laboratory",
-                "Military Base"
+                "Antarctic Ozone Monitoring Station",
+                "Presidential Debate Stage Before Broadcast",
+                "Fine Art Forgery Investigation Lab",
+                "Polar Ice Core Drilling Site"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L192_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for an acoustic of individual will subsumed into collective coordinated purpose.",
-            "explanation": "Individual-to-collective purpose acoustic identifies a military base.",
-            "textToSpeak": "Military acoustic space is where individual will is subsumed into collective purpose.",
+            "hint": "Listen for a repeated fanfare adjusted by a fraction until it lands on cue.",
+            "explanation": "A fanfare rehearsed twice and adjusted by a fraction of tempo reflects the exacting precision expected of music prepared for a globally watched ceremony.",
+            "textToSpeak": "A string section runs a fanfare twice at a conductor's request, adjusting the tempo by a fraction until it lands exactly on cue.",
             "options": [
-                "Military Base",
-                "Busy Airport",
-                "Construction Site",
-                "Train Station"
+                "Ballet Gala Opening Night",
+                "Rare Violin Auction",
+                "Symphony Orchestra Recording Session",
+                "Nobel Prize Ceremony Rehearsal"
             ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L192_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for an acoustic environment whose complete mapping remains beyond human achievement.",
-            "explanation": "An unmapped acoustic environment identifies the deep ocean.",
-            "textToSpeak": "The deep ocean is the last large acoustic environment that humans have not yet fully mapped.",
+            "hint": "Listen for a traced ownership history pausing on a murmur-worthy name.",
+            "explanation": "A traced ownership history pausing on a notable name reflects how documented provenance can add significant value to a rare instrument at auction.",
+            "textToSpeak": "A provenance document is unfolded carefully as a specialist traces a line of previous owners aloud, pausing at a name that draws a small, appreciative murmur.",
             "options": [
-                "Sandy Beach",
-                "Deep Ocean",
-                "Dense Forest",
-                "Outer Space"
+                "Rare Violin Auction",
+                "Nobel Prize Ceremony Rehearsal",
+                "Symphony Orchestra Recording Session",
+                "Grand Opera Dress Rehearsal"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L193_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for an acoustic expression of permanent human anxiety about loss and theft.",
-            "explanation": "Permanent anxiety acoustic identifies an underground vault.",
-            "textToSpeak": "The underground vault's acoustic is the sound of human anxiety made permanent.",
+            "hint": "Listen for bursting spray, a slamming hull, and a shouted correction over wind.",
+            "explanation": "Spray, a slamming hull, and a shouted correction over roaring wind capture the physical intensity of racing a yacht in rough conditions.",
+            "textToSpeak": "Spray bursts across the deck as the hull slams down hard, and a helmsman shouts a course correction over the roar of wind in the rigging.",
             "options": [
-                "Underground Vault",
-                "Public Library",
-                "Military Base",
-                "Construction Site"
+                "Chess Grandmaster Championship Match",
+                "Sailing Regatta Race Deck",
+                "Formula One Championship Podium",
+                "Grand Slam Tennis Final Match Point"
             ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L193_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the acoustic of a moment that future generations will consider a turning point.",
-            "explanation": "An era-beginning acoustic identifies an orbital station.",
-            "textToSpeak": "An orbital station's acoustic will one day be considered the beginning of an era.",
+            "hint": "Listen for a long hovering hand withdrawn untouched and hushed commentary.",
+            "explanation": "A hand hovering for a long time before withdrawing untouched reflects the deep calculation and second-guessing common at the highest level of this game.",
+            "textToSpeak": "A hand hovers over a piece for nearly a full minute before withdrawing untouched, and a commentator's hushed voice speculates on a completely different move entirely.",
             "options": [
-                "Cyber City",
-                "Orbital Station",
-                "Busy Airport",
-                "Outer Space"
+                "Chess Grandmaster Championship Match",
+                "Formula One Championship Podium",
+                "Sailing Regatta Race Deck",
+                "Grand Slam Tennis Final Match Point"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L193_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the oldest purposefully shaped human sound environment.",
-            "explanation": "The oldest purposefully shaped human acoustic identifies an ancient temple.",
-            "textToSpeak": "An ancient temple's acoustic is the oldest purposefully shaped human sound environment.",
+            "hint": "Listen for a mid-bar stop by raised hand and a repeated passage.",
+            "explanation": "An orchestra stopped mid-bar by a single raised hand reflects the meticulous, stop-and-start correction typical of a final rehearsal before opening night.",
+            "textToSpeak": "A conductor stops the orchestra mid-bar with a single raised hand, quietly noting a timing issue before waving the same passage to begin again.",
             "options": [
-                "Lush Farm",
-                "City Park",
-                "Dense Forest",
-                "Ancient Temple"
+                "Rare Violin Auction",
+                "Nobel Prize Ceremony Rehearsal",
+                "Grand Opera Dress Rehearsal",
+                "Ballet Gala Opening Night"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L194_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the acoustic of the species-level achievement of controlled flight.",
-            "explanation": "Flight-species acoustic identifies a busy airport.",
-            "textToSpeak": "An airport's acoustic is the sound of the species that invented flight.",
+            "hint": "Listen for a projected exhibit and a paused answer awaiting precise translation.",
+            "explanation": "A paused answer awaiting a precisely translated technical term reflects the careful multilingual precision required in international dispute proceedings.",
+            "textToSpeak": "A translated exhibit is projected onto a screen as a witness pauses mid-answer, waiting for a technical term to be rendered precisely into another language.",
             "options": [
-                "Shopping Mall",
-                "Cyber City",
-                "Train Station",
-                "Busy Airport"
+                "International Arbitration Tribunal",
+                "Head-of-State Motorcade Departure",
+                "G20 Economic Summit Negotiation",
+                "War Crimes Tribunal Courtroom"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L194_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for an industrial revolution acoustic still in daily operation.",
-            "explanation": "Industrial revolution in daily operation acoustic identifies a train station.",
-            "textToSpeak": "A train station's acoustic is the sound of the industrial revolution still operating.",
+            "hint": "Listen for a booming sail snap, a surging boat, and a tense cheer.",
+            "explanation": "A booming sail catching wind and a cheer for gained distance capture a decisive tactical moment during a closely fought sailing race.",
+            "textToSpeak": "A spinnaker fills suddenly with a deep, booming snap as the boat surges forward, and a tense cheer breaks out for gaining a full boat length.",
             "options": [
-                "Modern Hospital",
-                "Train Station",
-                "Construction Site",
-                "Military Base"
+                "Chess Grandmaster Championship Match",
+                "Formula One Championship Podium",
+                "Olympic Photo Finish Review",
+                "Sailing Regatta Race Deck"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L194_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the most inclusive and accessible human-created acoustic environment.",
-            "explanation": "Most democratic human acoustic identifies a public library.",
-            "textToSpeak": "A public library's acoustic is the most democratic human sound environment.",
+            "hint": "Listen for a long-delayed move, a scratching pen, and a struck clock.",
+            "explanation": "A long-delayed move recorded by a scratching pen and a struck clock reflect the formal, closely documented rhythm of a championship-level match.",
+            "textToSpeak": "A single piece is finally moved after a lengthy pause, and a pen scratches quickly on a scoresheet as a clock is struck once more.",
             "options": [
-                "Public Library",
-                "Underground Vault",
-                "Orbital Station",
-                "Ancient Temple"
+                "Chess Grandmaster Championship Match",
+                "Sailing Regatta Race Deck",
+                "Olympic Photo Finish Review",
+                "Grand Slam Tennis Final Match Point"
             ],
             "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L195_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the most deliberately designed commercial acoustic environment.",
-            "explanation": "Deliberately designed commercial acoustic identifies a shopping mall.",
-            "textToSpeak": "A shopping mall's acoustic is capitalism's most deliberate sound installation.",
+            "hint": "Listen for a crackling ground request and a calmly delayed floated reply.",
+            "explanation": "A status request from the ground answered after a brief delay reflects the communication lag inherent in coordinating with a crew far above Earth.",
+            "textToSpeak": "A voice from a ground control center crackles through with a status request, and a reply floats back calmly, slightly delayed by the vast distance involved.",
             "options": [
-                "Cyber City",
-                "Luxury Restaurant",
-                "Shopping Mall",
-                "Busy Airport"
+                "Mars Rover Mission Control",
+                "Live Television Broadcast Control Room",
+                "International Space Station Laboratory Module",
+                "Lunar Sample Analysis Lab"
             ],
             "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L195_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the most carefully calibrated private dining acoustic environment.",
-            "explanation": "Most carefully calibrated private dining acoustic identifies a luxury restaurant.",
-            "textToSpeak": "A luxury restaurant's acoustic is the most carefully calibrated private dining environment.",
+            "hint": "Listen for a slowly read verdict and a hushed gallery's rustling transcript.",
+            "explanation": "A verdict read slowly, clause by clause, to a still, listening gallery reflects the solemn formality of a major legal proceeding reaching its conclusion.",
+            "textToSpeak": "A verdict is read slowly, clause by clause, as a hushed gallery listens in complete stillness, broken only by the soft rustle of a translated transcript.",
             "options": [
-                "Shopping Mall",
-                "Ancient Temple",
-                "Modern Hospital",
-                "Luxury Restaurant"
+                "International Arbitration Tribunal",
+                "Head-of-State Motorcade Departure",
+                "Intelligence Briefing Room",
+                "War Crimes Tribunal Courtroom"
             ],
             "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L195_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the acoustic of nature making its best compromise within urban civilisation.",
-            "explanation": "Nature's urban compromise acoustic identifies a city park.",
-            "textToSpeak": "A city park's acoustic is nature's compromise with urban civilisation.",
+            "hint": "Listen for a waved-away towel and restless bouncing between points.",
+            "explanation": "A dismissed towel and restless movement between points reflect the intense, superstitious focus competitors maintain during a high-stakes match.",
+            "textToSpeak": "A towel is waved away impatiently between points as a competitor bounces on the balls of their feet, replaying the previous point silently in their head.",
             "options": [
-                "Sandy Beach",
-                "Lush Farm",
-                "Dense Forest",
-                "City Park"
+                "Chess Grandmaster Championship Match",
+                "Formula One Qualifying Lap",
+                "Grand Slam Tennis Final Match Point",
+                "Sailing Regatta Race Deck"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L196_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the acoustic of human medicine at the current frontier.",
-            "explanation": "Current medical frontier acoustic identifies a modern hospital.",
-            "textToSpeak": "A hospital's acoustic is the sound of human medicine at its current best.",
+            "hint": "Listen for a silently tested clock and cameras adjusted toward two empty lecterns.",
+            "explanation": "A tested countdown clock and cameras fine-tuned toward a still-empty stage reflect the final technical rehearsal moments before a live broadcast begins.",
+            "textToSpeak": "A countdown clock is tested silently as camera operators adjust a shot by inches, checking a monitor that still shows nothing but two empty lecterns waiting under bright lights.",
             "options": [
-                "Construction Site",
-                "Modern Hospital",
-                "Laboratory",
-                "Military Base"
+                "Presidential Debate Stage Before Broadcast",
+                "Constitutional Court Deliberation",
+                "War Crimes Tribunal Courtroom",
+                "International Arbitration Tribunal"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L196_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for culture making itself physical through sound.",
-            "explanation": "Culture making itself material acoustic identifies a construction site.",
-            "textToSpeak": "A construction site's acoustic is the sound of human culture making itself material.",
+            "hint": "Listen for a swelling crowd roar, a draped flag, and a breathless interview.",
+            "explanation": "A swelling crowd, a draped flag, and a breathless interview together capture the emotional peak of a championship celebration moments after the finish.",
+            "textToSpeak": "A crowd's roar swells beneath the podium as a flag is draped over one shoulder, and a microphone is raised for a breathless post-race interview.",
             "options": [
-                "Construction Site",
-                "Military Base",
-                "Cyber City",
-                "Train Station"
+                "Formula One Championship Podium",
+                "Grand Slam Tennis Final Match Point",
+                "Olympic Photo Finish Review",
+                "Sailing Regatta Race Deck"
             ],
             "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L196_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the acoustic of ten thousand years of continuous agricultural practice.",
-            "explanation": "Ten thousand years of agricultural practice acoustic identifies a lush farm.",
-            "textToSpeak": "A farm's acoustic is the sound of ten thousand years of agricultural civilisation.",
+            "hint": "Listen for wind snapping canvas and a shouted logbook confirmation.",
+            "explanation": "A shouted logbook entry over snapping wind reflects the harsh conditions researchers endure while patiently building a long-term ice core sample.",
+            "textToSpeak": "Wind snaps against a canvas shelter as a logbook entry is shouted over the noise, confirming another meter safely added to the growing core sample.",
             "options": [
-                "Mountain Peak",
-                "Lush Farm",
-                "City Park",
-                "Dense Forest"
+                "Antarctic Ozone Monitoring Station",
+                "Polar Ice Core Drilling Site",
+                "Fine Art Forgery Investigation Lab",
+                "Chess Grandmaster Championship Match"
             ],
             "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L197_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the loudest meeting of geological and biological acoustic processes.",
-            "explanation": "Loudest geological-biological meeting acoustic identifies a sandy beach.",
-            "textToSpeak": "A beach's acoustic is where the geological and the biological meet most loudly.",
+            "hint": "Listen for a final word-for-word check and a restrained wait for a nod.",
+            "explanation": "A last word-for-word check followed by a restrained silent wait reflects the precision demanded before a formal document is finally signed.",
+            "textToSpeak": "A translated copy is checked word for word one last time as two delegations wait in restrained silence for a final, quiet nod of approval.",
             "options": [
-                "Sandy Beach",
-                "Lush Farm",
-                "Deep Ocean",
-                "City Park"
+                "Intelligence Briefing Room",
+                "War Crimes Tribunal Courtroom",
+                "Head-of-State Motorcade Departure",
+                "Treaty Signing Ceremony"
             ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L197_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the oldest physical sound environment in existence.",
-            "explanation": "Oldest physical sound environment identifies a mountain peak.",
-            "textToSpeak": "A mountain's acoustic is the oldest physical acoustic environment on Earth.",
+            "hint": "Listen for a silent raised-eyebrow request and an imperceptible confirming nod.",
+            "explanation": "A silent exchange settling a shared judgment about a dish reflects the wordless, practiced communication used by professional reviewers dining incognito.",
+            "textToSpeak": "A second opinion is requested silently across the table with a single raised eyebrow, and a nearly imperceptible nod confirms the sauce is, in fact, exceptional.",
             "options": [
-                "Outer Space",
-                "Mountain Peak",
-                "Dense Forest",
-                "Sandy Beach"
+                "International Arbitration Tribunal",
+                "Whisky Cask Auction Cellar",
+                "Michelin Inspector's Anonymous Dinner",
+                "Nobel Prize Ceremony Rehearsal"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L197_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the living acoustic archive of billions of years of evolution.",
-            "explanation": "Living evolutionary acoustic archive identifies a dense forest.",
-            "textToSpeak": "A dense forest is the living acoustic archive of evolutionary biological history.",
+            "hint": "Listen for a decisive tap, a long held pause, and released murmured numbers.",
+            "explanation": "A decisive gavel tap followed by a long pause and murmured reactions marks the tense conclusion of bidding on a highly coveted instrument.",
+            "textToSpeak": "A gavel taps decisively as a final bid holds for a long, uninterrupted pause, the room's held breath finally released in a wave of murmured numbers.",
             "options": [
-                "Dense Forest",
-                "City Park",
-                "Ancient Temple",
-                "Lush Farm"
+                "Ballet Gala Opening Night",
+                "Grand Opera Dress Rehearsal",
+                "Rare Violin Auction",
+                "Symphony Orchestra Recording Session"
             ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L198_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for an acoustic representing an entirely new chapter in environmental sound history.",
-            "explanation": "New chapter in acoustic history identifies a cyber city.",
-            "textToSpeak": "The cyber city's acoustic represents a new chapter in Earth's acoustic history.",
+            "hint": "Listen for checked empty chairs, a straightened name card, and quiet footsteps.",
+            "explanation": "Empty chairs checked individually and a name card straightened reflect the exacting final preparations made before a formal ceremony welcomes its guests.",
+            "textToSpeak": "A row of empty chairs is checked one by one as a name card is straightened slightly, the room silent except for quiet footsteps on marble.",
             "options": [
-                "Shopping Mall",
-                "Construction Site",
-                "Busy Airport",
-                "Cyber City"
+                "Ballet Gala Opening Night",
+                "Grand Opera Dress Rehearsal",
+                "Nobel Prize Ceremony Rehearsal",
+                "Rare Violin Auction"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L198_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the origin silence from which all other environmental sound is a departure.",
-            "explanation": "Origin silence from which all sound departs identifies outer space.",
-            "textToSpeak": "Outer space is the acoustic origin: the silence from which all other sound is departure.",
+            "hint": "Listen for a hovering pen and a twice-qualified, carefully worded estimate.",
+            "explanation": "An estimate qualified twice with visibly careful word choice reflects the caution required when describing uncertain, sensitive assessments.",
+            "textToSpeak": "A pen hovers without writing as a briefer qualifies an estimate twice, choosing each word as carefully as the material it describes.",
             "options": [
-                "Outer Space",
-                "Deep Ocean",
-                "Underground Vault",
-                "Orbital Station"
+                "International Arbitration Tribunal",
+                "Head-of-State Motorcade Departure",
+                "Constitutional Court Deliberation",
+                "Intelligence Briefing Room"
             ],
-            "correctAnswerIndex": 0,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 3,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L198_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the acoustic of the universe being systematically questioned.",
-            "explanation": "Universe-questioning acoustic identifies a research laboratory.",
-            "textToSpeak": "A laboratory's acoustic is the sound of the universe being asked questions.",
+            "hint": "Listen for a mid-scene costume adjustment executed without breaking the illusion.",
+            "explanation": "A costume adjusted seamlessly without disrupting the performance reflects the practiced, nearly invisible teamwork behind a polished theatrical production.",
+            "textToSpeak": "A costume is adjusted mid-scene without breaking character, a dresser's hands moving so quickly and quietly that the illusion never once falters.",
             "options": [
-                "Construction Site",
-                "Modern Hospital",
-                "Military Base",
-                "Laboratory"
+                "Ballet Gala Opening Night",
+                "Nobel Prize Ceremony Rehearsal",
+                "Grand Opera Dress Rehearsal",
+                "Rare Violin Auction"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L199_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the most precisely organised human sound environment.",
-            "explanation": "Most precisely organised human acoustic identifies a military base.",
-            "textToSpeak": "A military base's acoustic is the most precisely organised human sound environment.",
+            "hint": "Listen for a cheered wheel confirmation and a finger tracing a planned route.",
+            "explanation": "A cheered confirmation of movement followed by careful route planning reflects the painstaking, deliberate pace of operating machinery on a distant world.",
+            "textToSpeak": "A single wheel's rotation is confirmed by a soft cheer, and an engineer traces a proposed day's route on-screen with a finger, already planning the next careful move.",
             "options": [
-                "Construction Site",
-                "Underground Vault",
-                "Military Base",
-                "Train Station"
+                "Mars Rover Mission Control",
+                "Lunar Sample Analysis Lab",
+                "International Space Station Laboratory Module",
+                "Live Television Broadcast Control Room"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L199_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the planet's own acoustic autobiography.",
-            "explanation": "Earth's own acoustic autobiography identifies the deep ocean.",
-            "textToSpeak": "The deep ocean's acoustic is the Earth's own acoustic autobiography.",
+            "hint": "Listen for a calm cut through overlapping chatter and an instruction to hold on a moment.",
+            "explanation": "A calm instruction cutting through overlapping headset chatter to capture an unscripted moment reflects the quick adaptability required behind a live broadcast.",
+            "textToSpeak": "A producer's voice cuts calmly through a dozen overlapping headset conversations, instructing a single camera to hold steady on an unexpected, unscripted moment.",
             "options": [
-                "Outer Space",
-                "Deep Ocean",
-                "Sandy Beach",
-                "Dense Forest"
+                "International Space Station Laboratory Module",
+                "Mars Rover Mission Control",
+                "Live Television Broadcast Control Room",
+                "Lunar Sample Analysis Lab"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L199_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the acoustic of architectural trust-the sound of protection made permanent.",
-            "explanation": "Trust made architectural acoustic identifies an underground vault.",
-            "textToSpeak": "An underground vault's acoustic is the sound of trust made architectural.",
+            "hint": "Listen for an examined signature and murmured disagreement over a brushstroke's control.",
+            "explanation": "A signature scrutinized for the pressure and control of each stroke, sparking expert disagreement, reflects the subtle forensic detail involved in authenticating artwork.",
+            "textToSpeak": "A signature is examined under a loupe as two experts murmur disagreement over a stroke's pressure, one insisting it's simply too controlled to be genuine.",
             "options": [
-                "Ancient Temple",
-                "Underground Vault",
-                "Construction Site",
-                "Laboratory"
+                "Nobel Prize Ceremony Rehearsal",
+                "Polar Ice Core Drilling Site",
+                "Fine Art Forgery Investigation Lab",
+                "Antarctic Ozone Monitoring Station"
             ],
-            "correctAnswerIndex": 1,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 2,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L200_Q1",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the acoustic of the human species at its physical frontier.",
-            "explanation": "Human species acoustic frontier identifies an orbital station.",
-            "textToSpeak": "An orbital station is the acoustic frontier of the human species.",
+            "hint": "Listen for an ushered-out photographer and a door swallowed by overlapping talk.",
+            "explanation": "A photographer ushered out just as substantive discussion resumes marks the shift from a staged photo opportunity to genuine closed-door negotiation.",
+            "textToSpeak": "A photographer is ushered out briskly the moment substantive talks resume, the click of a closing door swallowed by a dozen quiet, overlapping conversations.",
             "options": [
-                "Busy Airport",
-                "Outer Space",
-                "Cyber City",
-                "Orbital Station"
+                "G20 Economic Summit Negotiation",
+                "Presidential Debate Stage Before Broadcast",
+                "Treaty Signing Ceremony",
+                "Intelligence Briefing Room"
             ],
-            "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 0,
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L200_Q2",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the acoustic of humanity addressing what it holds sacred.",
-            "explanation": "Humanity addressing the sacred acoustic identifies an ancient temple.",
-            "textToSpeak": "An ancient temple's acoustic is the human species talking to what it considers greater than itself.",
+            "hint": "Listen for a measured ruling, a slowly closed binder, and an imperceptible exhale.",
+            "explanation": "A measured ruling met with a slowly closed binder on one side and a quiet exhale on the other captures the restrained emotion of a formal decision.",
+            "textToSpeak": "A ruling is read in a measured, even tone as one side's counsel closes a binder slowly while the other exhales, almost imperceptibly, with relief.",
             "options": [
-                "Mountain Peak",
-                "City Park",
-                "Dense Forest",
-                "Ancient Temple"
+                "Intelligence Briefing Room",
+                "G20 Economic Summit Negotiation",
+                "Constitutional Court Deliberation",
+                "International Arbitration Tribunal"
             ],
             "correctAnswerIndex": 3,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "subtype": "ambientId"
         },
         {
             "id": "LIS_AMBIENTID_L200_Q3",
             "instruction": "Listen to the description and identify the location.",
             "interactionType": "Echo Locator",
-            "hint": "Listen for the acoustic of a species that has made the entire planet its home.",
-            "explanation": "Planetary home species acoustic identifies a busy airport.",
-            "textToSpeak": "An airport is the acoustic signature of a species that has made the entire planet its home.",
+            "hint": "Listen for a slowly lowered baton and a long pause awaiting confirmation.",
+            "explanation": "A long pause after the final chord, waiting for confirmation of a clean take, reflects the exacting standard required of a professional studio recording.",
+            "textToSpeak": "A conductor lowers a baton slowly at the final chord, and for a long moment nobody moves, waiting for a quiet confirmation that the take was clean.",
             "options": [
-                "Cyber City",
-                "Train Station",
-                "Busy Airport",
-                "Shopping Mall"
+                "Rare Violin Auction",
+                "Symphony Orchestra Recording Session",
+                "Ballet Gala Opening Night",
+                "Grand Opera Dress Rehearsal"
             ],
-            "correctAnswerIndex": 2,
-            "subtype": "ambientId",
-            "imageUrl": "https://loremflickr.com/800/600/$keyword/all?lock=${quest['id'].hashCode}"
+            "correctAnswerIndex": 1,
+            "subtype": "ambientId"
         }
     ]
 }
