@@ -36,8 +36,8 @@ class AcademicWordInstruction extends StatelessWidget {
             ),
             child: Text(
               label,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+              textAlign: TextAlign.center,
               style: _labelStyle(color),
             ),
           ),
