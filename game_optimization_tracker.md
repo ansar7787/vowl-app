@@ -90,7 +90,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 
 ## Accent (12)
 - [ ] Minimal Pairs (`minimalPairs`)
-- [ ] Intonation Mimic (`intonationMimic`)
+- [x] ✅ Intonation Mimic (`intonationMimic`)
 - [ ] Syllable Stress (`syllableStress`)
 - [ ] Word Linking (`wordLinking`)
 - [ ] Shadowing Challenge (`shadowingChallenge`)

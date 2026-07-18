@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_instruction.dart';
@@ -39,6 +40,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
 
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  AccentQuest? _lastQuest;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -145,7 +147,10 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          _lastQuest = state.currentQuest;
+          final currentLives = state.livesRemaining;
+          final livesChanged = _lastLives != null && currentLives > _lastLives!;
+          
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
               (state.lastAnswerCorrect == null && _isAnswered)) {
@@ -159,8 +164,8 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
               _isRiding = false;
             });
             // Proactively auto-play sound and trigger ride effect on load
-            final quest = state.currentQuest as AccentQuest?;
-            if (quest != null && quest.textToSpeak != null) {
+            final quest = state.currentQuest;
+            if (quest.textToSpeak != null) {
               Future.delayed(500.milliseconds, () {
                 if (mounted) {
                   _soundService.playTts(quest.textToSpeak!);
@@ -169,7 +174,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
               });
             }
           }
-          _lastLives = state.livesRemaining;
+          _lastLives = currentLives;
         }
         if (state is AccentGameComplete) {
           setState(() => _showConfetti = true);
@@ -180,17 +185,12 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
             title: 'CONTOUR MASTER!',
             enableDoubleUp: true,
           );
-        } else if (state is AccentGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<AccentBloc>().add(RestoreLife()),
-          );
         }
       },
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded)
-            ? state.currentQuest as AccentQuest?
-            : null;
+            ? state.currentQuest
+            : _lastQuest;
         final options = quest?.options ?? ["A", "B"];
         final contour = quest?.intonationMap ?? [1, 2, 1, 0];
         final mediaQuery = MediaQuery.of(context);
@@ -262,7 +262,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                     SizedBox(height: gapTop),
                                     IntonationMimicInstruction(
                                       color: theme.primaryColor,
-                                      instruction: quest.instruction,
+                                      instruction: context.tr('games.intonation_mimic_instruction', fallback: quest.instruction ?? "Identify the intonation"),
                                     ),
                                     SizedBox(height: gapInstruction),
 
@@ -323,7 +323,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                       onSubmitChoice: _submitChoice,
                                       onSliderUpdate: _onSliderUpdate,
                                     ),
-                                    if (_isAnswered) ...[
+                                    if (_isAnswered && (_isCorrect == true || state.livesRemaining == 0)) ...[
                                       SizedBox(height: gapSlider),
                                       IntonationMimicExplanationCard(
                                         quest: quest,
