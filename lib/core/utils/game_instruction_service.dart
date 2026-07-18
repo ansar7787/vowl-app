@@ -1170,18 +1170,18 @@ class GameInstructionService {
           "PRO TIP: Vowels are a spectrum! Slide carefully until you find the exact sound.",
     ),
     GameSubtype.consonantClarity: GameBriefing(
-      title: "Clear Consonants",
+      title: "Crystal Consonants",
       icon: Icons.graphic_eq_rounded,
       objective:
-          "Listen to the sharp consonant sound and tap the correct heavy button on the grid.",
+          "Identify the target consonant to refine your pronunciation and clear up real-world communication.",
       rules: [
-        "Listen for sharp sounds",
-        "Check the buttons",
-        "Tap your choice",
+        "Listen to the target word",
+        "Analyze the mouth position",
+        "Select the precise consonant",
       ],
-      actionText: "Find Sound",
+      actionText: "Analyze Sound",
       tip:
-          "PRO TIP: Consonants are sharp physical clicks! Tap the button that matches the click.",
+          "PRO TIP: Feel where your tongue and lips are placed—physical awareness is key!",
     ),
     GameSubtype.pitchPatternMatch: GameBriefing(
       title: "Musical Melody",

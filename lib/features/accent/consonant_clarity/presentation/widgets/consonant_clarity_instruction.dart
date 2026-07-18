@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ConsonantClarityInstruction extends StatelessWidget {
   final Color primaryColor;
@@ -31,10 +32,12 @@ class ConsonantClarityInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              instruction.trim().isEmpty
-                  ? "TAP THE CORRECT CONSONANT SOUND"
-                  : instruction.toUpperCase(),
+              context.tr(
+                'games.consonantClarity_instruction',
+                fallback: 'Tap the correct consonant sound.',
+              ).toUpperCase(),
               textAlign: TextAlign.center,
+              maxLines: 2,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,

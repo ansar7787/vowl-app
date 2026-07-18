@@ -7,91 +7,42 @@ class ConsonantClarityExplanationCard extends StatelessWidget {
   final AccentQuest quest;
   final Color color;
   final bool isDark;
-  final bool? isCorrect;
 
   const ConsonantClarityExplanationCard({
     super.key,
     required this.quest,
     required this.color,
     required this.isDark,
-    required this.isCorrect,
   });
 
   @override
   Widget build(BuildContext context) {
-    final bool correct = isCorrect == true;
-    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+    if (quest.mouthPosition == null) return const SizedBox();
 
     return Container(
-      padding: EdgeInsets.all(20.r),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: displayColor.withValues(alpha: 0.3),
-          width: 2,
-        ),
+        color: color.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
-      child: Column(
+      child: Row(
         children: [
-          Icon(
-            correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
-            color: displayColor,
-            size: 36.r,
-          ),
-          SizedBox(height: 10.h),
-          Text(
-            correct ? "CORRECT CONSONANT!" : "INCORRECT CONSONANT",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
-            ),
-          ),
-          if (quest.explanation != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
+          Icon(Icons.face_retouching_natural, color: color, size: 24.r),
+          SizedBox(width: 12.w),
+          Expanded(
+            child: Text(
+              quest.mouthPosition!,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
               ),
             ),
-          ],
-          if (quest.mouthPosition != null) ...[
-            SizedBox(height: 10.h),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(color: color.withValues(alpha: 0.3)),
-              ),
-              child: Row(
-                children: [
-                  Icon(Icons.face_retouching_natural, color: color, size: 18.r),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: Text(
-                      quest.mouthPosition!,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.bold,
-                        color: color,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+          ),
         ],
       ),
-    ).animate().shimmer(duration: 2.seconds);
+    ).animate().fadeIn().slideY(begin: 0.2);
   }
 }

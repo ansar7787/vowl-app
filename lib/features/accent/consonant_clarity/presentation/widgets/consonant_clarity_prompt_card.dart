@@ -6,12 +6,14 @@ class ConsonantClarityPromptCard extends StatelessWidget {
   final String word;
   final Color color;
   final bool isDark;
+  final bool isAnswered;
 
   const ConsonantClarityPromptCard({
     super.key,
     required this.word,
     required this.color,
     required this.isDark,
+    required this.isAnswered,
   });
 
   @override
@@ -45,13 +47,13 @@ class ConsonantClarityPromptCard extends StatelessWidget {
                 ),
                 SizedBox(height: 8.h),
                 Text(
-                  word.toUpperCase(),
+                  isAnswered ? word.toUpperCase() : "? ? ?",
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 28.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : Colors.black87,
-                    letterSpacing: 4,
+                    letterSpacing: isAnswered ? 4 : 8,
                   ),
                 ),
               ],

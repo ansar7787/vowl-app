@@ -36,6 +36,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
 
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  AccentQuest? _lastQuest;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -102,12 +103,15 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
-            if (quest != null && quest.textToSpeak != null) {
-              Future.delayed(500.milliseconds, () {
-                if (mounted) {
-                  _soundService.playTts(quest.textToSpeak!);
-                }
-              });
+            if (quest != null) {
+              _lastQuest = quest;
+              if (quest.textToSpeak != null) {
+                Future.delayed(500.milliseconds, () {
+                  if (mounted) {
+                    _soundService.playTts(quest.textToSpeak!);
+                  }
+                });
+              }
             }
           }
           _lastLives = state.livesRemaining;
@@ -131,7 +135,9 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
-            : null;
+            : _lastQuest;
+        final int livesRemaining = (state is AccentLoaded) ? state.livesRemaining : 0;
+        final bool showExplanation = _isCorrect == true || livesRemaining == 0;
         final options = quest?.options ?? ["A", "B"];
         final mediaQuery = MediaQuery.of(context);
 
@@ -210,8 +216,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                                     ConsonantClarityInstruction(
                                                       primaryColor:
                                                           theme.primaryColor,
-                                                      instruction:
-                                                          quest.instruction,
+                                                      instruction: quest.instruction,
                                                     ),
                                               ),
                                             ),
@@ -234,6 +239,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                                       word: quest.word ?? "",
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
+                                                      isAnswered: _isAnswered,
                                                     ),
                                               ),
                                             ),
@@ -242,6 +248,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                             word: quest.word ?? "",
                                             color: theme.primaryColor,
                                             isDark: isDark,
+                                            isAnswered: _isAnswered,
                                           ),
                                     SizedBox(height: gapPrompt),
 
@@ -288,7 +295,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                             selectedIndex: _selectedIndex,
                                             onSubmitChoice: _submitChoice,
                                           ),
-                                    if (_isAnswered) ...[
+                                    if (_isAnswered && showExplanation) ...[
                                       SizedBox(height: gapSlider),
                                       isCompact
                                           ? SizedBox(
@@ -303,7 +310,6 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                                         color:
                                                             theme.primaryColor,
                                                         isDark: isDark,
-                                                        isCorrect: _isCorrect,
                                                       ),
                                                 ),
                                               ),
@@ -312,7 +318,6 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                               quest: quest,
                                               color: theme.primaryColor,
                                               isDark: isDark,
-                                              isCorrect: _isCorrect,
                                             ),
                                     ],
                                     SizedBox(height: gapBottom),

@@ -125,17 +125,19 @@ class EliteGameHeader extends StatelessWidget {
                       hintShouldGlow: hintShouldGlow,
                       onTap: onHint,
                     ),
-                    SizedBox(width: 8.w),
-                    TranslateButtonWidget(
-                      originalText: hintText!,
-                      onTranslationComplete: (translated) {
-                        CustomSnackBar.show(
-                          context: context,
-                          message: translated,
-                          type: CustomSnackBarType.info,
-                        );
-                      },
-                    ),
+                    if (isHintUsed) ...[
+                      SizedBox(width: 8.w),
+                      TranslateButtonWidget(
+                        originalText: hintText!,
+                        onTranslationComplete: (translated) {
+                          CustomSnackBar.show(
+                            context: context,
+                            message: translated,
+                            type: CustomSnackBarType.info,
+                          );
+                        },
+                      ),
+                    ],
                   ],
                 ),
               ),

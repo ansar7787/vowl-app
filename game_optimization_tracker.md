@@ -95,7 +95,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Word Linking (`wordLinking`)
 - [ ] Shadowing Challenge (`shadowingChallenge`)
 - [ ] Vowel Distinction (`vowelDistinction`)
-- [ ] Consonant Clarity (`consonantClarity`)
+- [x] ✅ Consonant Clarity (`consonantClarity`)
 - [ ] Pitch Pattern Match (`pitchPatternMatch`)
 - [ ] Speed Variance (`speedVariance`)
 - [ ] Dialect Drill (`dialectDrill`)
