@@ -224,7 +224,9 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
 
         final isComplete = state is ListeningGameComplete;
         final progress = _resolveProgress(state, isComplete);
-        final lives = state is ListeningLoaded ? state.livesRemaining : 3;
+        final lives = state is ListeningLoaded
+            ? state.livesRemaining
+            : (state is ListeningGameOver ? 0 : 3);
         final currentQuest = state is ListeningLoaded
             ? state.currentQuest
             : null;

@@ -183,7 +183,9 @@ class _GrammarBaseLayoutState extends State<GrammarBaseLayout> {
     final progress = state is GrammarLoaded
         ? (state.currentIndex + 1) / questCount
         : (isComplete ? 1.0 : 0.0);
-    final lives = state is GrammarLoaded ? state.livesRemaining : 3;
+    final lives = state is GrammarLoaded
+        ? state.livesRemaining
+        : (state is GrammarGameOver ? 0 : 3);
     final currentQuest = state is GrammarLoaded ? state.currentQuest : null;
 
     return PopScope(

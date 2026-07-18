@@ -255,7 +255,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
     };
     final lives = state is EliteMasteryLoaded
         ? state.livesRemaining
-        : _kMaxLives;
+        : (state is EliteMasteryGameOver ? 0 : _kMaxLives);
     final quest = state is EliteMasteryLoaded ? state.currentQuest : null;
 
     return Scaffold(

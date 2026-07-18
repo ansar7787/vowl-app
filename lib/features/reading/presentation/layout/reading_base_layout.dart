@@ -206,7 +206,7 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
 
         final lives = isLoaded
             ? state.livesRemaining
-            : ReadingGameConfig.initialLives;
+            : (isGameOver ? 0 : ReadingGameConfig.initialLives);
         final progress = isLoaded
             ? (state.currentIndex + 1) / state.quests.length
             : (isComplete ? 1.0 : 0.0);
