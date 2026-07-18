@@ -34,6 +34,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
 
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  AccentQuest? _lastQuest;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -86,7 +87,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          final livesChanged =
+              _lastLives != null && (state.livesRemaining > _lastLives!);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
               (state.lastAnswerCorrect == null && _isAnswered)) {
@@ -100,6 +102,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
             });
           }
           _lastLives = state.livesRemaining;
+          _lastQuest = state.currentQuest;
         }
         if (state is AccentGameComplete) {
           setState(() => _showConfetti = true);
@@ -110,17 +113,31 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
             title: 'DIALECT EXPERT!',
             enableDoubleUp: true,
           );
-        } else if (state is AccentGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<AccentBloc>().add(RestoreLife()),
-          );
         }
       },
       builder: (context, state) {
-        final quest = (state is AccentLoaded)
+        final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
-            : null;
+            : _lastQuest;
+
+        final bool isHintUnlocked = (state is AccentLoaded) && state.hintUsed;
+
+        String instructionText = quest?.instruction ?? "";
+        if (instructionText.contains(
+          context.tr('games.british', fallback: 'British'),
+        )) {
+          instructionText = context.tr(
+            'games.dialect_drill_instruction_uk',
+            fallback: 'Identify the British pronunciation.',
+          );
+        } else if (instructionText.contains(
+          context.tr('games.american', fallback: 'American'),
+        )) {
+          instructionText = context.tr(
+            'games.dialect_drill_instruction_us',
+            fallback: 'Identify the American pronunciation.',
+          );
+        }
 
         String brPr = "";
         String amPr = "";
@@ -169,7 +186,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     DialectDrillInstruction(
-                                      instruction: quest.instruction,
+                                      instruction: instructionText,
                                       accentColor: theme.primaryColor,
                                     ),
                                     SizedBox(height: 24.h),
@@ -199,10 +216,9 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                           americanPronunciation: amPr.isEmpty
                                               ? (quest.word ?? "")
                                               : amPr,
-                                          hint:
-                                              quest.hint ??
-                                              "Dialect variants represent rich cultural history.",
-                                          dialectNote: quest.dialectNote,
+                                          hint: isHintUnlocked
+                                              ? quest.hint
+                                              : null,
                                           isDark: isDark,
                                           isMidnight: false,
                                           onPlayAudio: (text, locale) {

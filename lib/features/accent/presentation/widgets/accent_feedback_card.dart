@@ -146,6 +146,14 @@ class AccentFeedbackCard extends StatelessWidget {
                 isDark: isDark,
               ),
             ],
+            if (state.currentQuest.dialectNote != null) ...[
+              SizedBox(height: 12.h),
+              _DialectNoteBox(
+                note: state.currentQuest.dialectNote!,
+                shadowColor: shadowColor,
+                isDark: isDark,
+              ),
+            ],
           ],
 
           SizedBox(height: 28.h),
@@ -197,10 +205,7 @@ class AccentFeedbackCard extends StatelessWidget {
           ),
           if (!success && onTutorPass != null) ...[
             SizedBox(height: 12.h),
-            _TutorPassButton(
-              onTap: onTutorPass!,
-              accentColor: shadowColor,
-            ),
+            _TutorPassButton(onTap: onTutorPass!, accentColor: shadowColor),
           ],
         ],
       ),
@@ -435,6 +440,117 @@ class _PhoneticRuleBoxState extends State<_PhoneticRuleBox> {
   }
 }
 
+class _DialectNoteBox extends StatefulWidget {
+  final String note;
+  final Color shadowColor;
+  final bool isDark;
+
+  const _DialectNoteBox({
+    required this.note,
+    required this.shadowColor,
+    required this.isDark,
+  });
+
+  @override
+  State<_DialectNoteBox> createState() => _DialectNoteBoxState();
+}
+
+class _DialectNoteBoxState extends State<_DialectNoteBox> {
+  String? _translatedText;
+
+  @override
+  Widget build(BuildContext context) {
+    final displayText = _translatedText ?? widget.note;
+
+    return Container(
+          width: 342.w,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          decoration: BoxDecoration(
+            color: widget.shadowColor.withValues(
+              alpha: widget.isDark ? 0.08 : 0.05,
+            ),
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: widget.shadowColor.withValues(alpha: 0.2),
+              width: 1,
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  ExcludeSemantics(
+                    child: Icon(
+                      Icons.public,
+                      color: widget.shadowColor,
+                      size: 16.r,
+                    ),
+                  ),
+                  SizedBox(width: 8.w),
+                  Expanded(
+                    child: Text(
+                      context.tr(
+                        'games.dialect_note_caps',
+                        fallback: 'DIALECT NOTE',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w900,
+                        color: widget.shadowColor,
+                        letterSpacing: 1.2,
+                      ),
+                    ),
+                  ),
+                  if (_translatedText == null)
+                    TranslateButtonWidget(
+                      originalText: widget.note,
+                      onTranslationComplete: (translated) {
+                        if (mounted) {
+                          setState(() => _translatedText = translated);
+                        }
+                      },
+                    ),
+                ],
+              ),
+              SizedBox(height: 6.h),
+              ConstrainedBox(
+                constraints: BoxConstraints(maxHeight: 120.h),
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Semantics(
+                    label:
+                        '${context.tr('games.dialect_note', fallback: 'Dialect Note')}: $displayText',
+                    child: Text(
+                      displayText,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
+                        color: widget.isDark
+                            ? Colors.white.withValues(alpha: 0.8)
+                            : const Color(0xFF475569),
+                        height: 1.4,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        )
+        .animate()
+        .fadeIn(delay: 400.ms)
+        .slideY(
+          begin: 0.2,
+          end: 0,
+          duration: 400.ms,
+          curve: Curves.easeOutBack,
+        );
+  }
+}
+
 class _TutorPassButton extends StatelessWidget {
   final VoidCallback onTap;
   final Color accentColor;
@@ -455,18 +571,11 @@ class _TutorPassButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              Icons.auto_awesome_rounded,
-              color: accentColor,
-              size: 14.r,
-            ),
+            Icon(Icons.auto_awesome_rounded, color: accentColor, size: 14.r),
             SizedBox(width: 8.w),
             Text(
               context
-                  .tr(
-                    'games.i_spoke_correctly',
-                    fallback: 'I spoke correctly',
-                  )
+                  .tr('games.i_spoke_correctly', fallback: 'I spoke correctly')
                   .toUpperCase(),
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -482,4 +591,3 @@ class _TutorPassButton extends StatelessWidget {
     );
   }
 }
-

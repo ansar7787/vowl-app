@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -76,13 +77,15 @@ class _DialectDrillHologramConsoleState
                 Icon(Icons.volume_up_rounded, color: widget.color, size: 28.r),
                 SizedBox(width: 8.w),
                 Text(
-                  widget.quest.word ?? "",
+                  context
+                      .tr('games.play_audio', fallback: 'PLAY AUDIO')
+                      .toUpperCase(),
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 28.sp,
+                    fontSize: 22.sp,
                     fontWeight: FontWeight.w900,
                     color: widget.color,
-                    letterSpacing: 1.5,
+                    letterSpacing: 2.0,
                   ),
                 ),
               ],
@@ -174,10 +177,12 @@ class _DialectDrillHologramConsoleState
         setState(() => _hoveredTowerIndex = index); // Lock selection visually
       },
       builder: (context, candidateData, rejectedData) {
-        final label =
+        String label =
             widget.quest.options != null && widget.quest.options!.length > index
             ? widget.quest.options![index]
             : "TRANS 0${index + 1}";
+
+        label = label.replaceAll(RegExp(r'\s*\(American\)|\s*\(British\)'), '');
 
         return DialectDrillTransmissionTower(
           index: index,

@@ -37,10 +37,11 @@ class DialectDrillInstruction extends StatelessWidget {
         Text(
           instruction,
           textAlign: TextAlign.center,
+          maxLines: null,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 20.sp,
-            fontWeight: FontWeight.bold,
+            fontSize: 18.sp,
+            fontWeight: FontWeight.w700,
             letterSpacing: 0.5,
           ),
         ),

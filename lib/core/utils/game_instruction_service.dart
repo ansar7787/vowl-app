@@ -1208,14 +1208,18 @@ class GameInstructionService {
           "PRO TIP: Even when people speak fast, the words still link together smoothly.",
     ),
     GameSubtype.dialectDrill: GameBriefing(
-      title: "Guess Accent",
+      title: "Dialect Drill",
       icon: Icons.public_rounded,
       objective:
-          "Listen to the speaker and identify which global English accent they are using.",
-      rules: ["Listen to the vowels", "Check the options", "Select the accent"],
-      actionText: "Guess Accent",
+          "Identify and distinguish regional pronunciations to master global communication.",
+      rules: [
+        "Listen closely",
+        "Compare pronunciations",
+        "Select region",
+      ],
+      actionText: "Start Drill",
       tip:
-          "PRO TIP: Pay close attention to how they pronounce their 'R' sounds and vowels.",
+          "PRO TIP: Pay attention to vowel shapes! American English often flattens vowels, while British English rounds them.",
     ),
     GameSubtype.connectedSpeech: GameBriefing(
       title: "Connected Speech",
@@ -1403,10 +1407,16 @@ class GameInstructionService {
     GameSubtype.accentShadowing: GameBriefing(
       title: "Accent Shadowing",
       icon: Icons.record_voice_over_rounded,
-      objective: "Speak clearly to match the exact accent and rhythm of the speaker.",
-      rules: ["Listen to the phrase", "Match the exact rhythm", "Speak with clarity"],
+      objective:
+          "Speak clearly to match the exact accent and rhythm of the speaker.",
+      rules: [
+        "Listen to the phrase",
+        "Match the exact rhythm",
+        "Speak with clarity",
+      ],
       actionText: "Start Shadowing",
-      tip: "PRO TIP: Focus on the stressed syllables and connected speech patterns!",
+      tip:
+          "PRO TIP: Focus on the stressed syllables and connected speech patterns!",
     ),
   };
 
