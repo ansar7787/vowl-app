@@ -55,6 +55,8 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
   String? _selectedProjectile;
   bool _showConfetti = false;
 
+  GameQuest? _lastQuest;
+
   @override
   void initState() {
     super.initState();
@@ -158,12 +160,6 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
             title: 'COMPLETION MASTER!',
             enableDoubleUp: true,
           );
-        } else if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<WritingBloc>().add(const RestoreLife()),
-          );
         }
       },
       // PERF FIX: only rebuild when quest changes, not on hint/wrong-count updates.
@@ -177,10 +173,16 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
               prev.lastAnswerCorrect != curr.lastAnswerCorrect),
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
-        final quest = isLoaded ? state.currentQuest : null;
+        if (isLoaded) {
+          _lastQuest = state.currentQuest;
+        }
+
+        final quest = isLoaded ? state.currentQuest : _lastQuest;
         final options = quest?.options ?? const [];
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        final bool isFinalFailure = isLoaded && state.isFinalFailure;
+        final bool showExplanation = isCorrect == true || isFinalFailure;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
@@ -205,6 +207,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
                       selectedProjectile: _selectedProjectile,
                       isAnswered: isAnswered,
                       isCorrect: isCorrect,
+                      showExplanation: showExplanation,
                       theme: _theme,
                       isDark: isDark,
                       onBridgeStart: (pos) => _onBridgeStart(pos, isAnswered),
@@ -256,6 +259,7 @@ class _CompleteSentenceBody extends StatelessWidget {
   final String? selectedProjectile;
   final bool isAnswered;
   final bool? isCorrect;
+  final bool showExplanation;
   final dynamic theme;
   final bool isDark;
   final ValueChanged<Offset> onBridgeStart;
@@ -268,6 +272,7 @@ class _CompleteSentenceBody extends StatelessWidget {
     required this.selectedProjectile,
     required this.isAnswered,
     required this.isCorrect,
+    required this.showExplanation,
     required this.theme,
     required this.isDark,
     required this.onBridgeStart,
@@ -310,6 +315,7 @@ class _CompleteSentenceBody extends StatelessWidget {
               CompleteSentenceExplanationCard(
                 quest: quest,
                 isCorrect: isCorrect == true,
+                showExplanation: showExplanation,
                 primaryColor: theme.primaryColor,
                 isDark: isDark,
               ),

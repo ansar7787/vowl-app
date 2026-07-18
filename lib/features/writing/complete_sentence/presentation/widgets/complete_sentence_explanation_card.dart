@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 class CompleteSentenceExplanationCard extends StatelessWidget {
   final GameQuest quest;
   final bool isCorrect;
+  final bool showExplanation;
   final Color primaryColor;
   final bool isDark;
 
@@ -14,6 +15,7 @@ class CompleteSentenceExplanationCard extends StatelessWidget {
     super.key,
     required this.quest,
     required this.isCorrect,
+    required this.showExplanation,
     required this.primaryColor,
     required this.isDark,
   });
@@ -26,7 +28,7 @@ class CompleteSentenceExplanationCard extends StatelessWidget {
         : (isDark ? Colors.redAccent : const Color(0xFFDC2626));
 
     // FIX: local variable avoids repeated null check and force-unwrap.
-    final explanation = quest.explanation;
+    final explanation = showExplanation ? quest.explanation : null;
 
     final resultLabel = isCorrect
         ? context.tr('games.correct', fallback: 'Correct')

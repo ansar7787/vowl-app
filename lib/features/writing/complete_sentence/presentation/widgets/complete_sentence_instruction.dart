@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class CompleteSentenceInstruction extends StatelessWidget {
   final Color primaryColor;
@@ -40,7 +41,13 @@ class CompleteSentenceInstruction extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  'LAUNCH THE MISSING FRAGMENT',
+                  context
+                      .tr(
+                        'games.completeSentence_instruction',
+                        fallback: 'Complete the sentence.',
+                      )
+                      .toUpperCase(),
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 10.sp,

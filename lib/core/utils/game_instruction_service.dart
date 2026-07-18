@@ -612,7 +612,7 @@ class GameInstructionService {
       title: "Fragment Fixer",
       icon: Icons.healing_rounded,
       objective:
-          "Complete fragments by choosing or writing correct missing parts.",
+          "Launch the missing fragment to complete the sentence. Mastering sentence structure ensures your writing is clear, professional, and easily understood in real-world communication.",
       rules: [
         "Identify missing part",
         "Maintain the tone",
