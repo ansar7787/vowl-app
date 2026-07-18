@@ -159,6 +159,12 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
             title: 'COMPLETION MASTER!',
             enableDoubleUp: true,
           );
+        } else if (state is WritingGameOver) {
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () =>
+                context.read<WritingBloc>().add(const RestoreLife()),
+          );
         }
       },
       // PERF FIX: only rebuild when quest changes, not on hint/wrong-count updates.
