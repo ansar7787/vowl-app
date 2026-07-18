@@ -119,7 +119,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
         _isProcessing = false;
         _paymentCompleted = true;
         _paymentSuccess = false;
-        _errorMessage = context.tr('premium.error_timeout', fallback: 'Request timed out');
+        _errorMessage = context.tr(
+          'premium.error_timeout',
+          fallback: 'Request timed out',
+        );
       });
     }
   }
@@ -173,7 +176,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
           _isProcessing = false;
           _paymentCompleted = true;
           _paymentSuccess = false;
-          _errorMessage = context.tr('premium.error_upgrade_failed', fallback: 'Upgrade Failed');
+          _errorMessage = context.tr(
+            'premium.error_upgrade_failed',
+            fallback: 'Upgrade Failed',
+          );
         });
       }
     }
@@ -190,7 +196,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
         // Razorpay's `response.message` is already a user-safe,
         // gateway-provided description (not a raw exception), so it is
         // fine to surface directly, with a localized fallback.
-        _errorMessage = response.message ?? context.tr('premium.error_generic', fallback: 'An error occurred');
+        _errorMessage =
+            response.message ??
+            context.tr('premium.error_generic', fallback: 'An error occurred');
       });
     }
   }
@@ -273,7 +281,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     pinned: true,
                     centerTitle: false,
                     leading: IconButton(
-                      icon: Icon(Icons.arrow_back_ios_new_rounded, color: isDark ? Colors.white : Colors.black),
+                      icon: Icon(
+                        Icons.arrow_back_ios_new_rounded,
+                        color: isDark ? Colors.white : Colors.black,
+                      ),
                       onPressed: () {
                         if (context.canPop()) {
                           context.pop();
@@ -286,7 +297,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
                       Padding(
                         padding: EdgeInsets.only(right: 16.w),
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 12.w,
+                            vertical: 6.h,
+                          ),
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
@@ -296,16 +310,25 @@ class _PremiumScreenState extends State<PremiumScreen> {
                             ),
                             borderRadius: BorderRadius.circular(20.r),
                             border: Border.all(
-                              color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                              color: const Color(
+                                0xFF6366F1,
+                              ).withValues(alpha: 0.3),
                             ),
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Icon(Icons.workspace_premium_rounded, color: const Color(0xFF6366F1), size: 14.r),
+                              Icon(
+                                Icons.workspace_premium_rounded,
+                                color: const Color(0xFF6366F1),
+                                size: 14.r,
+                              ),
                               SizedBox(width: 4.w),
                               Text(
-                                context.tr('premium.verified_pro_badge', fallback: 'Verified Pro'),
+                                context.tr(
+                                  'premium.verified_pro_badge',
+                                  fallback: 'Verified Pro',
+                                ),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   color: isDark ? Colors.white : Colors.black,
@@ -384,19 +407,19 @@ class _PremiumScreenState extends State<PremiumScreen> {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-                SizedBox(height: 16.h),
-                const PremiumHero(),
-                SizedBox(height: 24.h),
-                _buildPlanList(),
-                SizedBox(height: 24.h),
-                const ModernFeatureBar(),
-                SizedBox(height: 32.h),
-                _buildCTAButton(),
-                SizedBox(height: 20.h),
-                _buildSecureTag(),
-                SizedBox(height: 12.h),
-              ],
-            ),
+          SizedBox(height: 16.h),
+          const PremiumHero(),
+          SizedBox(height: 24.h),
+          _buildPlanList(),
+          SizedBox(height: 24.h),
+          const ModernFeatureBar(),
+          SizedBox(height: 32.h),
+          _buildCTAButton(),
+          SizedBox(height: 20.h),
+          _buildSecureTag(),
+          SizedBox(height: 12.h),
+        ],
+      ),
     );
   }
 
@@ -420,7 +443,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
               Semantics(
                 liveRegion: true,
                 child: Text(
-                  context.tr('premium.processing_title', fallback: 'Processing...'),
+                  context.tr(
+                    'premium.processing_title',
+                    fallback: 'Processing...',
+                  ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     color: Colors.white,
@@ -431,7 +457,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
               ),
               SizedBox(height: 8.h),
               Text(
-                context.tr('premium.processing_subtitle', fallback: 'Please wait while we confirm your purchase.'),
+                context.tr(
+                  'premium.processing_subtitle',
+                  fallback: 'Please wait while we confirm your purchase.',
+                ),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -499,65 +528,68 @@ class _PremiumScreenState extends State<PremiumScreen> {
       label: ctaLabel,
       child: ScaleButton(
         onTap: _isProcessing ? null : _onActivatePressed,
-        child: Container(
-          width: double.infinity,
-          height: 60.h,
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-            borderRadius: BorderRadius.circular(24.r),
-            border: Border.all(
-              color: Colors.white.withValues(alpha: 0.3),
-              width: 1.5,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: const Color(0xFF6366F1).withValues(alpha: 0.4),
-                blurRadius: 25,
-                spreadRadius: 2,
-                offset: const Offset(0, 10),
-              ),
-            ],
-          ),
-          child: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Flexible(
-                  child: Text(
-                    ctaLabel,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: Colors.white,
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 1,
+        child:
+            Container(
+                  width: double.infinity,
+                  height: 60.h,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(24.r),
+                    border: Border.all(
+                      color: Colors.white.withValues(alpha: 0.3),
+                      width: 1.5,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                        blurRadius: 25,
+                        spreadRadius: 2,
+                        offset: const Offset(0, 10),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            ctaLabel,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              color: Colors.white,
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: 1,
+                            ),
+                          ),
+                        ),
+                        if (!_isProcessing) ...[
+                          SizedBox(width: 10.w),
+                          const Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: Colors.white,
+                            size: 16,
+                          ),
+                        ],
+                      ],
                     ),
                   ),
+                )
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .scale(
+                  begin: const Offset(1, 1),
+                  end: const Offset(1.02, 1.02),
+                  duration: 1.5.seconds,
+                  curve: Curves.easeInOut,
                 ),
-                if (!_isProcessing) ...[
-                  SizedBox(width: 10.w),
-                  const Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    color: Colors.white,
-                    size: 16,
-                  ),
-                ],
-              ],
-            ),
-          ),
-        ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-            begin: const Offset(1, 1),
-            end: const Offset(1.02, 1.02),
-            duration: 1.5.seconds,
-            curve: Curves.easeInOut,
-          ),
       ),
     );
   }
@@ -583,7 +615,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
   Widget _buildSecureTag() {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Text(
-      context.tr('premium.secure_transaction_tag', fallback: 'Secure Transaction'),
+      context.tr(
+        'premium.secure_transaction_tag',
+        fallback: 'Secure Transaction',
+      ),
       textAlign: TextAlign.center,
       style: TextStyle(
         fontFamily: 'Outfit',

@@ -10,7 +10,7 @@ class ModernFeatureBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     // An ultra-premium 2026 staggered list of glassmorphic feature cards
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -19,56 +19,100 @@ class ModernFeatureBar extends StatelessWidget {
         _buildFeatureCard(
           context,
           icon: LucideIcons.sparkles,
-          title: context.tr('premium.feature_translations', fallback: 'Instant AI Translations'),
-          subtitle: context.tr('premium.feature_translations_desc', fallback: 'Ad-free, real-time native hints powered by local AI.'),
+          title: context.tr(
+            'premium.feature_translations',
+            fallback: 'Instant AI Translations',
+          ),
+          subtitle: context.tr(
+            'premium.feature_translations_desc',
+            fallback: 'Ad-free, real-time native hints powered by local AI.',
+          ),
           isDark: isDark,
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
           context,
           icon: LucideIcons.shieldCheck,
-          title: context.tr('premium.feature_zero_ads', fallback: 'Zero Interruptions'),
-          subtitle: context.tr('premium.feature_zero_ads_desc', fallback: 'A completely pure, ad-free learning experience.'),
+          title: context.tr(
+            'premium.feature_zero_ads',
+            fallback: 'Zero Interruptions',
+          ),
+          subtitle: context.tr(
+            'premium.feature_zero_ads_desc',
+            fallback: 'A completely pure, ad-free learning experience.',
+          ),
           isDark: isDark,
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
           context,
           icon: LucideIcons.zap,
-          title: context.tr('premium.feature_2x_speed', fallback: '2x Learning Velocity'),
-          subtitle: context.tr('premium.feature_2x_speed_desc', fallback: 'Master concepts twice as fast with advanced XP tracking.'),
+          title: context.tr(
+            'premium.feature_2x_speed',
+            fallback: '2x Learning Velocity',
+          ),
+          subtitle: context.tr(
+            'premium.feature_2x_speed_desc',
+            fallback:
+                'Master concepts twice as fast with advanced XP tracking.',
+          ),
           isDark: isDark,
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
           context,
           icon: LucideIcons.wifiOff,
-          title: context.tr('premium.feature_play_offline', fallback: 'Anywhere Offline Mode'),
-          subtitle: context.tr('premium.feature_play_offline_desc', fallback: 'Download curriculum and learn off the grid.'),
+          title: context.tr(
+            'premium.feature_play_offline',
+            fallback: 'Anywhere Offline Mode',
+          ),
+          subtitle: context.tr(
+            'premium.feature_play_offline_desc',
+            fallback: 'Download curriculum and learn off the grid.',
+          ),
           isDark: isDark,
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
           context,
           icon: LucideIcons.gift,
-          title: context.tr('premium.feature_vip_loot', fallback: 'Daily Elite Loot'),
-          subtitle: context.tr('premium.feature_vip_loot_desc', fallback: 'Claim 100 free bonus coins every single day.'),
+          title: context.tr(
+            'premium.feature_vip_loot',
+            fallback: 'Daily Elite Loot',
+          ),
+          subtitle: context.tr(
+            'premium.feature_vip_loot_desc',
+            fallback: 'Claim 100 free bonus coins every single day.',
+          ),
           isDark: isDark,
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
           context,
           icon: LucideIcons.unlock,
-          title: context.tr('premium.feature_unlimited_levels', fallback: 'Unlimited Vault Access'),
-          subtitle: context.tr('premium.feature_unlimited_levels_desc', fallback: 'Instantly unlock all elite and master difficulty tiers.'),
+          title: context.tr(
+            'premium.feature_unlimited_levels',
+            fallback: 'Unlimited Vault Access',
+          ),
+          subtitle: context.tr(
+            'premium.feature_unlimited_levels_desc',
+            fallback: 'Instantly unlock all elite and master difficulty tiers.',
+          ),
           isDark: isDark,
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
           context,
           icon: LucideIcons.award,
-          title: context.tr('premium.feature_vip_badges', fallback: 'Golden VIP Badges'),
-          subtitle: context.tr('premium.feature_vip_badges_desc', fallback: 'Flaunt your exclusive elite status on the global leaderboards.'),
+          title: context.tr(
+            'premium.feature_vip_badges',
+            fallback: 'Golden VIP Badges',
+          ),
+          subtitle: context.tr(
+            'premium.feature_vip_badges_desc',
+            fallback:
+                'Flaunt your exclusive elite status on the global leaderboards.',
+          ),
           isDark: isDark,
         ),
       ],
@@ -83,7 +127,7 @@ class ModernFeatureBar extends StatelessWidget {
     required bool isDark,
   }) {
     final primaryColor = const Color(0xFF6366F1); // Indigo
-    
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(20.r),
       child: BackdropFilter(
@@ -91,7 +135,9 @@ class ModernFeatureBar extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
           decoration: BoxDecoration(
-            color: isDark ? primaryColor.withValues(alpha: 0.1) : primaryColor.withValues(alpha: 0.05),
+            color: isDark
+                ? primaryColor.withValues(alpha: 0.1)
+                : primaryColor.withValues(alpha: 0.05),
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
               color: primaryColor.withValues(alpha: 0.3),

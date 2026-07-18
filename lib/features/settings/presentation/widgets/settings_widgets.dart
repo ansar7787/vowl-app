@@ -129,7 +129,9 @@ class SettingsTile extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                           color: isDestructive
                               ? Colors.red
-                              : (isDark ? Colors.white : const Color(0xFF0F172A)),
+                              : (isDark
+                                    ? Colors.white
+                                    : const Color(0xFF0F172A)),
                         ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
@@ -343,7 +345,10 @@ class SettingsLogoutButton extends StatelessWidget {
                         SizedBox(width: 16.w),
                         Flexible(
                           child: Text(
-                            context.tr('settings.sign_out', fallback: 'Sign Out'),
+                            context.tr(
+                              'settings.sign_out',
+                              fallback: 'Sign Out',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 14.sp,
@@ -482,7 +487,8 @@ class SettingsProfileSection extends StatelessWidget {
                 children: [
                   Text(
                     // FIX (HIGH-2): Hardcoded 'Explorer' fallback now localised.
-                    currentUser.displayName ?? context.tr('settings.explorer', fallback: 'Explorer'),
+                    currentUser.displayName ??
+                        context.tr('settings.explorer', fallback: 'Explorer'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 22.sp,
@@ -531,8 +537,14 @@ class SettingsProfileSection extends StatelessWidget {
                         Flexible(
                           child: Text(
                             currentUser.isPremium
-                                ? context.tr('settings.premium_quester', fallback: 'Premium Quester')
-                                : context.tr('settings.free_account', fallback: 'Free Account'),
+                                ? context.tr(
+                                    'settings.premium_quester',
+                                    fallback: 'Premium Quester',
+                                  )
+                                : context.tr(
+                                    'settings.free_account',
+                                    fallback: 'Free Account',
+                                  ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,

@@ -157,7 +157,10 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                       }
                       CustomSnackBar.show(
                         context: context,
-                        message: context.tr('adventure.streak_repaired', fallback: 'Streak Repaired!'),
+                        message: context.tr(
+                          'adventure.streak_repaired',
+                          fallback: 'Streak Repaired!',
+                        ),
                         type: CustomSnackBarType.success,
                       );
                     },
@@ -167,7 +170,9 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
         SizedBox(height: 16.h),
         _buildShopItem(
           context,
-          title: context.tr('adventure.streak_shield', fallback: 'Streak Shield').toUpperCase(),
+          title: context
+              .tr('adventure.streak_shield', fallback: 'Streak Shield')
+              .toUpperCase(),
           subtitle: context.tr(
             'streak.shield_subtitle',
             fallback: 'A mystical barrier that prevents streak loss.',
@@ -179,7 +184,10 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
           currentCoins: user.coins,
           onTap: () => _handlePurchase(
             context,
-            name: context.tr('adventure.streak_shield', fallback: 'Streak Shield'),
+            name: context.tr(
+              'adventure.streak_shield',
+              fallback: 'Streak Shield',
+            ),
             cost: 150,
             currentCoins: user.coins,
             action: () => context.read<ProgressionBloc>().add(

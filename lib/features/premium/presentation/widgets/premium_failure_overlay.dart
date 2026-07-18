@@ -48,35 +48,44 @@ class PremiumFailureOverlay extends StatelessWidget {
               children: [
                 Semantics(
                   liveRegion: true,
-                  label: context.tr('premium.failure_title', fallback: 'Payment Failed'),
-                  child: Container(
-                    width: 90.r,
-                    height: 90.r,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFFFB7185), Color(0xFFE11D48)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(0xFFE11D48).withValues(alpha: 0.5),
-                          blurRadius: 20,
-                          offset: const Offset(0, 10),
-                        ),
-                      ],
-                      border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 2),
-                    ),
-                    child: Icon(
-                      LucideIcons.alertTriangle,
-                      color: Colors.white,
-                      size: 44.r,
-                    ),
-                  )
-                  .animate()
-                  .scale(duration: 500.ms, curve: Curves.elasticOut)
-                  .shake(hz: 4, delay: 500.ms, duration: 400.ms),
+                  label: context.tr(
+                    'premium.failure_title',
+                    fallback: 'Payment Failed',
+                  ),
+                  child:
+                      Container(
+                            width: 90.r,
+                            height: 90.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: const LinearGradient(
+                                colors: [Color(0xFFFB7185), Color(0xFFE11D48)],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color(
+                                    0xFFE11D48,
+                                  ).withValues(alpha: 0.5),
+                                  blurRadius: 20,
+                                  offset: const Offset(0, 10),
+                                ),
+                              ],
+                              border: Border.all(
+                                color: Colors.white.withValues(alpha: 0.5),
+                                width: 2,
+                              ),
+                            ),
+                            child: Icon(
+                              LucideIcons.alertTriangle,
+                              color: Colors.white,
+                              size: 44.r,
+                            ),
+                          )
+                          .animate()
+                          .scale(duration: 500.ms, curve: Curves.elasticOut)
+                          .shake(hz: 4, delay: 500.ms, duration: 400.ms),
                 ),
                 SizedBox(height: 28.h),
                 ShaderMask(
@@ -86,7 +95,10 @@ class PremiumFailureOverlay extends StatelessWidget {
                     end: Alignment.bottomRight,
                   ).createShader(bounds),
                   child: Text(
-                    context.tr('premium.failure_title', fallback: 'Payment Failed'),
+                    context.tr(
+                      'premium.failure_title',
+                      fallback: 'Payment Failed',
+                    ),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -127,8 +139,15 @@ class PremiumFailureOverlay extends StatelessWidget {
                   ).animate().fadeIn(delay: 200.ms),
                 Text(
                   errorMessage == null
-                      ? context.tr('premium.failure_body_default', fallback: 'We could not process your payment.')
-                      : context.tr('premium.failure_body_retry_hint', fallback: 'Please check your connection and try again.'),
+                      ? context.tr(
+                          'premium.failure_body_default',
+                          fallback: 'We could not process your payment.',
+                        )
+                      : context.tr(
+                          'premium.failure_body_retry_hint',
+                          fallback:
+                              'Please check your connection and try again.',
+                        ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -151,10 +170,14 @@ class PremiumFailureOverlay extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: Colors.white.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(24.r),
-                              border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
+                              border: Border.all(
+                                color: Colors.white.withValues(alpha: 0.2),
+                              ),
                             ),
                             child: Text(
-                              context.tr('common.close', fallback: 'Close').toUpperCase(),
+                              context
+                                  .tr('common.close', fallback: 'Close')
+                                  .toUpperCase(),
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
@@ -173,7 +196,10 @@ class PremiumFailureOverlay extends StatelessWidget {
                       flex: 2,
                       child: Semantics(
                         button: true,
-                        label: context.tr('premium.retry_button', fallback: 'Retry'),
+                        label: context.tr(
+                          'premium.retry_button',
+                          fallback: 'Retry',
+                        ),
                         child: ScaleButton(
                           onTap: onRetry,
                           child: Container(
@@ -187,14 +213,18 @@ class PremiumFailureOverlay extends StatelessWidget {
                               borderRadius: BorderRadius.circular(24.r),
                               boxShadow: [
                                 BoxShadow(
-                                  color: const Color(0xFFE11D48).withValues(alpha: 0.4),
+                                  color: const Color(
+                                    0xFFE11D48,
+                                  ).withValues(alpha: 0.4),
                                   blurRadius: 15,
                                   offset: const Offset(0, 5),
                                 ),
                               ],
                             ),
                             child: Text(
-                              context.tr('premium.retry_button', fallback: 'Retry').toUpperCase(),
+                              context
+                                  .tr('premium.retry_button', fallback: 'Retry')
+                                  .toUpperCase(),
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
@@ -215,6 +245,10 @@ class PremiumFailureOverlay extends StatelessWidget {
           ),
         ),
       ),
-    ).animate().fade().scale(begin: const Offset(0.95, 0.95), curve: Curves.easeOutBack, duration: 400.ms);
+    ).animate().fade().scale(
+      begin: const Offset(0.95, 0.95),
+      curve: Curves.easeOutBack,
+      duration: 400.ms,
+    );
   }
 }

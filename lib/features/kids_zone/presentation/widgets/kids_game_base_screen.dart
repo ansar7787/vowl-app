@@ -167,7 +167,10 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               _lastLives == 2 && state.livesRemaining == 1;
           if (justDroppedToLastLife && !_hasSpokenNudge) {
             _hasSpokenNudge = true;
-            final nudgeMsg = context.tr('games.kids_nudge', fallback: 'Let\'s go!');
+            final nudgeMsg = context.tr(
+              'games.kids_nudge',
+              fallback: 'Let\'s go!',
+            );
             Future.delayed(const Duration(milliseconds: 1200), () async {
               if (mounted) {
                 final tts = di.sl<KidsTTSService>();
@@ -298,7 +301,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                context.tr('common.next', fallback: 'Next').toUpperCase(),
+                                context
+                                    .tr('common.next', fallback: 'Next')
+                                    .toUpperCase(),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   color: widget.primaryColor,
@@ -392,7 +397,10 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               ).animate().fadeIn().slideY(begin: 0.2),
               SizedBox(height: 12.h),
               Text(
-                context.tr('games.kids_error_body', fallback: 'Something went wrong.'),
+                context.tr(
+                  'games.kids_error_body',
+                  fallback: 'Something went wrong.',
+                ),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -436,7 +444,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                           ),
                           SizedBox(width: 12.w),
                           Text(
-                            context.tr('games.try_again', fallback: 'Try Again').toUpperCase(),
+                            context
+                                .tr('games.try_again', fallback: 'Try Again')
+                                .toUpperCase(),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 16.sp,

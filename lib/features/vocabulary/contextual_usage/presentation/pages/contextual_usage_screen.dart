@@ -105,7 +105,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
             title: 'USAGE EXPERT!',
             enableDoubleUp: true,
           );
-        } 
+        }
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(

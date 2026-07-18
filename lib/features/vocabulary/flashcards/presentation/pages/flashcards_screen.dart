@@ -246,7 +246,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
         title: 'VOCAB MASTERY!',
         enableDoubleUp: true,
       );
-    } 
+    }
   }
 }
 
@@ -291,7 +291,11 @@ class _ErrorScaffold extends StatelessWidget {
               SizedBox(height: 24.h),
               TextButton(
                 onPressed: onRetry,
-                child: Text(context.tr('games.try_again', fallback: 'Try Again').toUpperCase()),
+                child: Text(
+                  context
+                      .tr('games.try_again', fallback: 'Try Again')
+                      .toUpperCase(),
+                ),
               ),
             ],
           ),

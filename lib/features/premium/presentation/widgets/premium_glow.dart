@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class StaticGlow extends StatelessWidget {
   final Color color;
   final double? radius;
-  
+
   const StaticGlow({super.key, required this.color, this.radius});
 
   @override
@@ -15,7 +15,13 @@ class StaticGlow extends StatelessWidget {
       height: size,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        boxShadow: [BoxShadow(color: color, blurRadius: size * 0.25, spreadRadius: size * 0.1)],
+        boxShadow: [
+          BoxShadow(
+            color: color,
+            blurRadius: size * 0.25,
+            spreadRadius: size * 0.1,
+          ),
+        ],
       ),
     );
   }

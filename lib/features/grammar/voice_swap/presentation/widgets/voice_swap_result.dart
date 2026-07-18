@@ -44,7 +44,9 @@ class VoiceSwapResult extends StatelessWidget {
             SizedBox(height: 12.h),
             Text(
               isCorrect
-                  ? context.tr('games.correct', fallback: 'Correct').toUpperCase()
+                  ? context
+                        .tr('games.correct', fallback: 'Correct')
+                        .toUpperCase()
                   : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
               style: TextStyle(
                 fontFamily: 'Outfit',

@@ -102,7 +102,11 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                         ),
                       ),
                       child: Text(
-                        selected == null ? "      " : (selected.toLowerCase() == "(no article)" ? "Ø" : selected),
+                        selected == null
+                            ? "      "
+                            : (selected.toLowerCase() == "(no article)"
+                                  ? "Ø"
+                                  : selected),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: isCompact ? 18.sp : 22.sp,
@@ -215,13 +219,19 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                   fit: BoxFit.scaleDown,
                                   child: ArticleInsertionInstruction(
                                     primaryColor: theme.primaryColor,
-                                    instruction: context.tr('games.article_insertion_instruction', fallback: "Pop the correct article orb"),
+                                    instruction: context.tr(
+                                      'games.article_insertion_instruction',
+                                      fallback: "Pop the correct article orb",
+                                    ),
                                   ),
                                 ),
                               )
                             : ArticleInsertionInstruction(
                                 primaryColor: theme.primaryColor,
-                                instruction: context.tr('games.article_insertion_instruction', fallback: "Pop the correct article orb"),
+                                instruction: context.tr(
+                                  'games.article_insertion_instruction',
+                                  fallback: "Pop the correct article orb",
+                                ),
                               ),
                         SizedBox(height: gapMiddle),
 
@@ -288,7 +298,9 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                 isCorrectAnswer:
                                     article.toLowerCase() ==
                                     correctAnswer.toLowerCase(),
-                                isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
+                                isFinalFailure:
+                                    state is GrammarLoaded &&
+                                    state.isFinalFailure,
                                 isCompact: isCompact,
                               );
                             }).toList(),

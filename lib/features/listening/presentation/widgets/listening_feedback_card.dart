@@ -59,9 +59,15 @@ class ListeningFeedbackCard extends StatelessWidget {
         ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : (state.isFinalFailure
               ? (state.livesRemaining == 0
-                    ? context.tr('common.see_results', fallback: 'See Results').toUpperCase()
-                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
-              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
+                    ? context
+                          .tr('common.see_results', fallback: 'See Results')
+                          .toUpperCase()
+                    : context
+                          .tr('common.continue_text', fallback: 'Continue')
+                          .toUpperCase())
+              : context
+                    .tr('games.try_again', fallback: 'Try Again')
+                    .toUpperCase());
 
     return Semantics(
       container: true,
@@ -279,7 +285,10 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                   SizedBox(width: 8.w),
                   Expanded(
                     child: Text(
-                      context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
+                      context.tr(
+                        'games.explanation_caps',
+                        fallback: 'EXPLANATION',
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
@@ -293,7 +302,8 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                     TranslateButtonWidget(
                       originalText: widget.explanation,
                       onTranslationComplete: (translated) {
-                        if (mounted) setState(() => _translatedText = translated);
+                        if (mounted)
+                          setState(() => _translatedText = translated);
                       },
                     ),
                 ],

@@ -82,7 +82,11 @@ class GameProgressHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  context.tr('game_progress.level_label', fallback: 'Level', args: ['$level']),
+                  context.tr(
+                    'game_progress.level_label',
+                    fallback: 'Level',
+                    args: ['$level'],
+                  ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -131,7 +135,6 @@ class GameProgressHeader extends StatelessWidget {
 // Private sub-widgets
 // ---------------------------------------------------------------------------
 
-
 class _ProgressBar extends StatelessWidget {
   final double progress;
   final bool isDark;
@@ -152,7 +155,8 @@ class _ProgressBar extends StatelessWidget {
 
     return Semantics(
       label: context.tr(
-        'game_progress.progress_label', fallback: 'Progress',
+        'game_progress.progress_label',
+        fallback: 'Progress',
         args: ['$progressPercent'],
       ),
       child: ClipRRect(
@@ -202,7 +206,11 @@ class _LivesBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: context.tr('game_progress.lives_label', fallback: 'Lives', args: ['$lives']),
+      label: context.tr(
+        'game_progress.lives_label',
+        fallback: 'Lives',
+        args: ['$lives'],
+      ),
       child: Container(
         constraints: BoxConstraints(minHeight: 32.h, minWidth: 48.w),
         padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),

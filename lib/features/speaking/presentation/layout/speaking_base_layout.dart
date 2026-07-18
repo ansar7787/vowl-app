@@ -105,7 +105,8 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
   late bool _showBriefing;
   Timer? _nudgeTimer;
 
-  String get _kLastLifeNudge => context.tr('games.kids_nudge', fallback: 'Let\'s go!');
+  String get _kLastLifeNudge =>
+      context.tr('games.kids_nudge', fallback: 'Let\'s go!');
 
   // ---------------------------------------------------------------------------
   // Lifecycle
@@ -319,7 +320,8 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
                       success: widget.isCorrect ?? false,
                       livesRemaining: state.livesRemaining,
                       isFinalFailure: state.isFinalFailure,
-                      explanation: (widget.isCorrect == true || state.isFinalFailure)
+                      explanation:
+                          (widget.isCorrect == true || state.isFinalFailure)
                           ? state.currentQuest.explanation
                           : null,
                       onContinue: widget.onContinue,

@@ -146,7 +146,10 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
         if (state.message == 'auth.email_verification_sent') {
           _startResendCooldown();
           _showSnackBar(
-            context.tr('auth.email_verification_sent', fallback: 'Email verification sent!'),
+            context.tr(
+              'auth.email_verification_sent',
+              fallback: 'Email verification sent!',
+            ),
             CustomSnackBarType.success,
           );
           return;

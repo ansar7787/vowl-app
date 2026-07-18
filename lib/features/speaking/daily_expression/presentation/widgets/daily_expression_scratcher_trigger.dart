@@ -132,9 +132,7 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
           ),
           SizedBox(height: 12.h),
           Text(
-            isListening
-                ? "RELEASE MIC TO SUBMIT"
-                : "HOLD MIC TO SPEAK",
+            isListening ? "RELEASE MIC TO SUBMIT" : "HOLD MIC TO SPEAK",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'RobotoMono',
@@ -148,7 +146,10 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
               padding: EdgeInsets.only(top: 20.h),
               child: Semantics(
                 button: true,
-                hint: context.tr('games.semantic_tutor_pass_hint', fallback: 'Speak now'),
+                hint: context.tr(
+                  'games.semantic_tutor_pass_hint',
+                  fallback: 'Speak now',
+                ),
                 child: ScaleButton(
                   onTap: onTutorPass,
                   child: ConstrainedBox(

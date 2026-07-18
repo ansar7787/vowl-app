@@ -190,7 +190,8 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                             color: theme.primaryColor,
                                             instruction: context.tr(
                                               'games.ambientId_instruction',
-                                              fallback: 'Listen to the sounds and find the location.',
+                                              fallback:
+                                                  'Listen to the sounds and find the location.',
                                             ),
                                           ),
                                         ),
@@ -199,7 +200,8 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                         color: theme.primaryColor,
                                         instruction: context.tr(
                                           'games.ambientId_instruction',
-                                          fallback: 'Listen to the sounds and find the location.',
+                                          fallback:
+                                              'Listen to the sounds and find the location.',
                                         ),
                                       ),
                                 SizedBox(height: gapInstruction),
@@ -225,8 +227,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                                     quest.correctAnswerIndex ??
                                                         0,
                                                   ),
-                                              imageUrl:
-                                                  quest.imageUrl,
+                                              imageUrl: quest.imageUrl,
                                             ),
                                           ),
                                         ),

@@ -207,7 +207,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
             title: 'LEXICAL MASTER!',
             enableDoubleUp: true,
           );
-        } 
+        }
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(

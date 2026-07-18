@@ -230,7 +230,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
             title: 'WORD WARP COMPLETE!',
             enableDoubleUp: true,
           );
-        } 
+        }
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(

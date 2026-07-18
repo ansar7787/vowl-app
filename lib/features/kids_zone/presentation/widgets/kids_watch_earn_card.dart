@@ -79,7 +79,10 @@ class KidsWatchEarnCard extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                context.tr('games.watch_and_earn', fallback: 'Watch & Earn'),
+                                context.tr(
+                                  'games.watch_and_earn',
+                                  fallback: 'Watch & Earn',
+                                ),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 18.sp,

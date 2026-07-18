@@ -181,7 +181,8 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
 
   String _buildSemanticLabel(BuildContext context, bool isCorrectPosition) {
     final position = context.tr(
-      'games.semantic_story_tile_position', fallback: 'Position',
+      'games.semantic_story_tile_position',
+      fallback: 'Position',
       args: [(index + 1).toString()],
     );
     if (isCorrect == true) {

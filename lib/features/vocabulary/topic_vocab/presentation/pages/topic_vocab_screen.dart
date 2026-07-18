@@ -175,7 +175,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
             title: 'TOPIC NEXUS!',
             enableDoubleUp: true,
           );
-        } 
+        }
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(

@@ -36,7 +36,10 @@ class BranchingDialogueInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          context.tr('games.branchingDialogue_instruction', fallback: "Choose the best response."),
+          context.tr(
+            'games.branchingDialogue_instruction',
+            fallback: "Choose the best response.",
+          ),
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',

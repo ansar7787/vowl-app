@@ -154,7 +154,10 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('games.story_master_title', fallback: 'Story Master'),
+            title: context.tr(
+              'games.story_master_title',
+              fallback: 'Story Master',
+            ),
             enableDoubleUp: true,
           );
         } else if (state is EliteMasteryLoaded) {
@@ -213,7 +216,12 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title: quest?.instruction ?? context.tr('games.story_builder_title', fallback: 'Story Builder'),
+          title:
+              quest?.instruction ??
+              context.tr(
+                'games.story_builder_title',
+                fallback: 'Story Builder',
+              ),
           visualConfig: _visualConfig,
           onContinue: () {
             setState(() {
@@ -376,7 +384,10 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
             if (!_isAnswered)
               Semantics(
                 button: true,
-                label: context.tr('games.finalize_story_caps', fallback: 'FINALIZE STORY'),
+                label: context.tr(
+                  'games.finalize_story_caps',
+                  fallback: 'FINALIZE STORY',
+                ),
                 excludeSemantics: true,
                 child: ScaleButton(
                   onTap: () =>
@@ -414,7 +425,10 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                     ),
                     child: Center(
                       child: Text(
-                        context.tr('games.finalize_story_caps', fallback: 'FINALIZE STORY'),
+                        context.tr(
+                          'games.finalize_story_caps',
+                          fallback: 'FINALIZE STORY',
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: isCompact ? 16.sp : 18.sp,

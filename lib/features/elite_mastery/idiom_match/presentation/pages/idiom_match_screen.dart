@@ -157,7 +157,10 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('games.idiom_legend_title', fallback: 'Idiom Legend'),
+            title: context.tr(
+              'games.idiom_legend_title',
+              fallback: 'Idiom Legend',
+            ),
             enableDoubleUp: true,
           );
         } else if (state is EliteMasteryLoaded) {
@@ -227,7 +230,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title: quest?.instruction ?? context.tr('games.idiom_master_title', fallback: 'Idiom Master'),
+          title:
+              quest?.instruction ??
+              context.tr('games.idiom_master_title', fallback: 'Idiom Master'),
           visualConfig: quest?.visualConfig,
           onContinue: () {
             setState(() {

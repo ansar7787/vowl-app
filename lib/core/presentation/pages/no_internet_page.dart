@@ -104,7 +104,10 @@ class _NoInternetPageState extends State<NoInternetPage> {
                         SizedBox(height: 48.h),
 
                         Text(
-                              context.tr('connectivity.title', fallback: 'Connection Lost'),
+                              context.tr(
+                                'connectivity.title',
+                                fallback: 'Connection Lost',
+                              ),
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
@@ -123,7 +126,11 @@ class _NoInternetPageState extends State<NoInternetPage> {
                         SizedBox(height: 16.h),
 
                         Text(
-                          context.tr('connectivity.subtitle', fallback: 'Please check your internet connection and try again.'),
+                          context.tr(
+                            'connectivity.subtitle',
+                            fallback:
+                                'Please check your internet connection and try again.',
+                          ),
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Outfit',
@@ -271,7 +278,10 @@ class _RetryButton extends StatelessWidget {
     return Semantics(
       button: true,
       enabled: !isChecking,
-      label: context.tr('connectivity.retry_label', fallback: 'Retry Connection'),
+      label: context.tr(
+        'connectivity.retry_label',
+        fallback: 'Retry Connection',
+      ),
       child: Listener(
         onPointerDown: (_) => onPointerDown(),
         onPointerUp: (_) => onPointerUp(),
@@ -345,7 +355,10 @@ class _RetryButton extends StatelessWidget {
                                 SizedBox(width: 12.w),
                                 Flexible(
                                   child: Text(
-                                    context.tr('connectivity.retry_button', fallback: 'Retry'),
+                                    context.tr(
+                                      'connectivity.retry_button',
+                                      fallback: 'Retry',
+                                    ),
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       color: Colors.white,

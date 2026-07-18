@@ -166,7 +166,10 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       hasScrollBody: false,
                       child: Center(
                         child: Text(
-                          context.tr('quest_archive.no_results', fallback: 'No quests found.'),
+                          context.tr(
+                            'quest_archive.no_results',
+                            fallback: 'No quests found.',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 16.sp,
@@ -309,7 +312,10 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       SizedBox(width: 8.w),
                       Flexible(
                         child: Text(
-                          context.tr('quest_archive.title', fallback: 'Quest Library'),
+                          context.tr(
+                            'quest_archive.title',
+                            fallback: 'Quest Library',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 14.sp,
@@ -368,7 +374,8 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
 
     return Semantics(
       label: context.tr(
-        'quest_archive.mastery', fallback: 'Mastery',
+        'quest_archive.mastery',
+        fallback: 'Mastery',
         args: [
           (progress * 100).toStringAsFixed(
             progress < 0.01 && progress > 0 ? 2 : 1,
@@ -405,7 +412,10 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            context.tr('quest_archive.global_progress', fallback: 'Global Progress'),
+                            context.tr(
+                              'quest_archive.global_progress',
+                              fallback: 'Global Progress',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
@@ -422,7 +432,8 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                             alignment: AlignmentDirectional.centerStart,
                             child: Text(
                               context.tr(
-                                'quest_archive.mastery', fallback: 'Mastery',
+                                'quest_archive.mastery',
+                                fallback: 'Mastery',
                                 args: [
                                   (progress * 100).toStringAsFixed(
                                     progress < 0.01 && progress > 0 ? 2 : 1,
@@ -456,7 +467,8 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                           fit: BoxFit.scaleDown,
                           child: Text(
                             context.tr(
-                              'quest_archive.levels_cleared', fallback: 'Levels Cleared',
+                              'quest_archive.levels_cleared',
+                              fallback: 'Levels Cleared',
                               args: [
                                 clearedLevels.toString(),
                                 totalLevels.toString(),
@@ -487,7 +499,10 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                     Expanded(
                       child: _buildStatMini(
                         Icons.military_tech_rounded,
-                        context.tr('quest_archive.xp_power', fallback: 'XP Power'),
+                        context.tr(
+                          'quest_archive.xp_power',
+                          fallback: 'XP Power',
+                        ),
                         '${clearedLevels * 10} ${context.tr('common.xp_suffix', fallback: 'XP')}',
                         const Color(0xFF3B82F6),
                         isDark,
@@ -497,7 +512,10 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       child: Center(
                         child: _buildStatMini(
                           Icons.auto_stories_rounded,
-                          context.tr('quest_archive.quests', fallback: 'Quests'),
+                          context.tr(
+                            'quest_archive.quests',
+                            fallback: 'Quests',
+                          ),
                           "${_allSubtypes.length}",
                           const Color(0xFF3B82F6),
                           isDark,
@@ -509,7 +527,10 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                         alignment: AlignmentDirectional.centerEnd,
                         child: _buildStatMini(
                           Icons.stars_rounded,
-                          context.tr('quest_archive.status', fallback: 'Status'),
+                          context.tr(
+                            'quest_archive.status',
+                            fallback: 'Status',
+                          ),
                           _getGlobalStatus(context, progress),
                           const Color(0xFF3B82F6),
                           isDark,
@@ -527,12 +548,27 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   }
 
   String _getGlobalStatus(BuildContext context, double progress) {
-    if (progress <= 0.0) return context.tr('quest_archive.status_initiate', fallback: 'Initiate');
-    if (progress < 0.15) return context.tr('quest_archive.status_explorer', fallback: 'Explorer');
-    if (progress < 0.35) return context.tr('quest_archive.status_adventurer', fallback: 'Adventurer');
-    if (progress < 0.55) return context.tr('quest_archive.status_champion', fallback: 'Champion');
-    if (progress < 0.80) return context.tr('quest_archive.status_conqueror', fallback: 'Conqueror');
-    if (progress < 0.99) return context.tr('quest_archive.status_grandmaster', fallback: 'Grandmaster');
+    if (progress <= 0.0)
+      return context.tr('quest_archive.status_initiate', fallback: 'Initiate');
+    if (progress < 0.15)
+      return context.tr('quest_archive.status_explorer', fallback: 'Explorer');
+    if (progress < 0.35)
+      return context.tr(
+        'quest_archive.status_adventurer',
+        fallback: 'Adventurer',
+      );
+    if (progress < 0.55)
+      return context.tr('quest_archive.status_champion', fallback: 'Champion');
+    if (progress < 0.80)
+      return context.tr(
+        'quest_archive.status_conqueror',
+        fallback: 'Conqueror',
+      );
+    if (progress < 0.99)
+      return context.tr(
+        'quest_archive.status_grandmaster',
+        fallback: 'Grandmaster',
+      );
     return context.tr('quest_archive.status_legendary', fallback: 'Legendary');
   }
 
@@ -612,7 +648,10 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
             color: contentColor,
           ),
           decoration: InputDecoration(
-            hintText: context.tr('quest_archive.search_hint', fallback: 'Search quests...'),
+            hintText: context.tr(
+              'quest_archive.search_hint',
+              fallback: 'Search quests...',
+            ),
             hintStyle: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 18.sp,
@@ -841,7 +880,8 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                             SizedBox(height: 8.h),
                             Text(
                               context.tr(
-                                'quest_archive.completed', fallback: 'Completed',
+                                'quest_archive.completed',
+                                fallback: 'Completed',
                                 args: [completedPercent.toString()],
                               ),
                               style: TextStyle(

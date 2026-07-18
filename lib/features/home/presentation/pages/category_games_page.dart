@@ -305,7 +305,8 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
 
     return Semantics(
       label: context.tr(
-        'category_games.mastery_summary_label', fallback: 'Mastery Summary',
+        'category_games.mastery_summary_label',
+        fallback: 'Mastery Summary',
         args: [percentLabel, clearedLevels.toString(), totalLevels.toString()],
       ),
       child: Padding(
@@ -338,7 +339,10 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            context.tr('category_games.overall_mastery', fallback: 'Overall Mastery'),
+                            context.tr(
+                              'category_games.overall_mastery',
+                              fallback: 'Overall Mastery',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
@@ -355,7 +359,8 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                             alignment: AlignmentDirectional.centerStart,
                             child: Text(
                               context.tr(
-                                'category_games.percent_completed', fallback: 'Completed',
+                                'category_games.percent_completed',
+                                fallback: 'Completed',
                                 args: [percentLabel],
                               ),
                               style: TextStyle(
@@ -385,7 +390,8 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                           fit: BoxFit.scaleDown,
                           child: Text(
                             context.tr(
-                              'category_games.levels_count_short', fallback: 'Levels',
+                              'category_games.levels_count_short',
+                              fallback: 'Levels',
                               args: [
                                 clearedLevels.toString(),
                                 totalLevels.toString(),
@@ -456,14 +462,24 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
   }
 
   String _getRank(double progress) {
-    if (progress <= 0.0) return context.tr('category_games.rank_beginner', fallback: 'Beginner');
-    if (progress < 0.15) return context.tr('category_games.rank_novice', fallback: 'Novice');
-    if (progress < 0.35) return context.tr('category_games.rank_scholar', fallback: 'Scholar');
+    if (progress <= 0.0)
+      return context.tr('category_games.rank_beginner', fallback: 'Beginner');
+    if (progress < 0.15)
+      return context.tr('category_games.rank_novice', fallback: 'Novice');
+    if (progress < 0.35)
+      return context.tr('category_games.rank_scholar', fallback: 'Scholar');
     if (progress < 0.55) {
-      return context.tr('home.discovery_diff_expert', fallback: 'Expert').toUpperCase();
+      return context
+          .tr('home.discovery_diff_expert', fallback: 'Expert')
+          .toUpperCase();
     }
-    if (progress < 0.80) return context.tr('category_games.rank_virtuoso', fallback: 'Virtuoso');
-    if (progress < 0.99) return context.tr('quest_archive.status_grandmaster', fallback: 'Grandmaster');
+    if (progress < 0.80)
+      return context.tr('category_games.rank_virtuoso', fallback: 'Virtuoso');
+    if (progress < 0.99)
+      return context.tr(
+        'quest_archive.status_grandmaster',
+        fallback: 'Grandmaster',
+      );
     return context.tr('quest_archive.status_legendary', fallback: 'Legendary');
   }
 
@@ -584,7 +600,8 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                             SizedBox(height: 8.h),
                             Text(
                               context.tr(
-                                'category_games.mission_progress', fallback: 'Mission Progress',
+                                'category_games.mission_progress',
+                                fallback: 'Mission Progress',
                                 args: [missionPercent.toString()],
                               ),
                               style: TextStyle(

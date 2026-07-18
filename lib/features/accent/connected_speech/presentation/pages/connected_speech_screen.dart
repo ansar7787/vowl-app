@@ -210,8 +210,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                     ConnectedSpeechInstruction(
                                       primaryColor: theme.primaryColor,
                                       instruction: context.tr(
-                                        'games.connected_speech_instruction', 
-                                        fallback: "SELECT THE CORRECT SOUND CHANGE",
+                                        'games.connected_speech_instruction',
+                                        fallback:
+                                            "SELECT THE CORRECT SOUND CHANGE",
                                       ),
                                       isCompact: isCompact,
                                     ),

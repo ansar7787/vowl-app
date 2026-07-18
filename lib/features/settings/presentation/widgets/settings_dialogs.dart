@@ -107,7 +107,10 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 24.h),
                 Text(
-                  context.tr('settings_dialogs.sign_out_title', fallback: 'Sign Out'),
+                  context.tr(
+                    'settings_dialogs.sign_out_title',
+                    fallback: 'Sign Out',
+                  ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 24.sp,
@@ -119,7 +122,10 @@ class SettingsDialogs {
                 SizedBox(height: 16.h),
                 Text(
                   // FIX (HIGH-2): Was hardcoded English. Now localised.
-                  context.tr('settings_dialogs.sign_out_body', fallback: 'Are you sure you want to sign out?'),
+                  context.tr(
+                    'settings_dialogs.sign_out_body',
+                    fallback: 'Are you sure you want to sign out?',
+                  ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -130,7 +136,10 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 32.h),
                 _PrimaryButton(
-                  label: context.tr('settings_dialogs.sign_out_confirm', fallback: 'Sign Out'),
+                  label: context.tr(
+                    'settings_dialogs.sign_out_confirm',
+                    fallback: 'Sign Out',
+                  ),
                   color: Colors.red,
                   onPressed: () {
                     Navigator.pop(dialogContext);
@@ -139,7 +148,10 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 12.h),
                 _SecondaryTextButton(
-                  label: context.tr('settings_dialogs.sign_out_cancel', fallback: 'Cancel'),
+                  label: context.tr(
+                    'settings_dialogs.sign_out_cancel',
+                    fallback: 'Cancel',
+                  ),
                   isDark: isDark,
                   onPressed: () => Navigator.pop(dialogContext),
                 ),
@@ -186,7 +198,10 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 24.h),
                 Text(
-                  context.tr('settings_dialogs.disable_notifications_title', fallback: 'Disable Notifications?'),
+                  context.tr(
+                    'settings_dialogs.disable_notifications_title',
+                    fallback: 'Disable Notifications?',
+                  ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 24.sp,
@@ -198,7 +213,10 @@ class SettingsDialogs {
                 SizedBox(height: 16.h),
                 Text(
                   // FIX (HIGH-2): Was hardcoded English. Now localised.
-                  context.tr('settings_dialogs.disable_notifications_body', fallback: 'You will miss out on daily reminders.'),
+                  context.tr(
+                    'settings_dialogs.disable_notifications_body',
+                    fallback: 'You will miss out on daily reminders.',
+                  ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -209,13 +227,19 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 32.h),
                 _PrimaryButton(
-                  label: context.tr('settings_dialogs.keep_reminders', fallback: 'Keep Reminders'),
+                  label: context.tr(
+                    'settings_dialogs.keep_reminders',
+                    fallback: 'Keep Reminders',
+                  ),
                   color: Colors.blue,
                   onPressed: () => Navigator.pop(dialogContext, false),
                 ),
                 SizedBox(height: 12.h),
                 _DestructiveTextButton(
-                  label: context.tr('settings_dialogs.yes_disable', fallback: 'Yes, Disable'),
+                  label: context.tr(
+                    'settings_dialogs.yes_disable',
+                    fallback: 'Yes, Disable',
+                  ),
                   onPressed: () => Navigator.pop(dialogContext, true),
                 ),
               ],
@@ -257,7 +281,10 @@ class SettingsDialogs {
                 SizedBox(height: 24.h),
                 Text(
                   // FIX (HIGH-2): Was hardcoded 'Mute Game Sounds?'
-                  context.tr('settings_dialogs.disable_sound_title', fallback: 'Disable Sound?'),
+                  context.tr(
+                    'settings_dialogs.disable_sound_title',
+                    fallback: 'Disable Sound?',
+                  ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 24.sp,
@@ -269,7 +296,10 @@ class SettingsDialogs {
                 SizedBox(height: 16.h),
                 Text(
                   // FIX (HIGH-2): Was hardcoded 'Clear audio and guidance...'
-                  context.tr('settings_dialogs.disable_sound_body', fallback: 'This will mute all game sounds.'),
+                  context.tr(
+                    'settings_dialogs.disable_sound_body',
+                    fallback: 'This will mute all game sounds.',
+                  ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -281,13 +311,19 @@ class SettingsDialogs {
                 SizedBox(height: 32.h),
                 // FIX (HIGH-2): 'Keep It On' and 'Mute Anyway' localised.
                 _PrimaryButton(
-                  label: context.tr('settings_dialogs.keep_sound_on', fallback: 'Keep Sound On'),
+                  label: context.tr(
+                    'settings_dialogs.keep_sound_on',
+                    fallback: 'Keep Sound On',
+                  ),
                   color: Colors.blue,
                   onPressed: () => Navigator.pop(dialogContext, false),
                 ),
                 SizedBox(height: 12.h),
                 _DestructiveTextButton(
-                  label: context.tr('settings_dialogs.mute_anyway', fallback: 'Mute Anyway'),
+                  label: context.tr(
+                    'settings_dialogs.mute_anyway',
+                    fallback: 'Mute Anyway',
+                  ),
                   onPressed: () => Navigator.pop(dialogContext, true),
                 ),
               ],
@@ -331,7 +367,10 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 24.h),
                 Text(
-                  context.tr('settings_dialogs.reset_password_title', fallback: 'Reset Password'),
+                  context.tr(
+                    'settings_dialogs.reset_password_title',
+                    fallback: 'Reset Password',
+                  ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 24.sp,
@@ -343,7 +382,8 @@ class SettingsDialogs {
                 Text(
                   // FIX (HIGH-2): Was hardcoded 'We will send a password...'
                   context.tr(
-                    'settings_dialogs.reset_password_body', fallback: 'We will send a reset link to your email.',
+                    'settings_dialogs.reset_password_body',
+                    fallback: 'We will send a reset link to your email.',
                     args: [email],
                   ),
                   textAlign: TextAlign.center,
@@ -356,7 +396,10 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 32.h),
                 _PrimaryButton(
-                  label: context.tr('settings_dialogs.send_link', fallback: 'Send Link'),
+                  label: context.tr(
+                    'settings_dialogs.send_link',
+                    fallback: 'Send Link',
+                  ),
                   color: Colors.blue,
                   onPressed: () {
                     context.read<AuthBloc>().add(
@@ -368,7 +411,8 @@ class SettingsDialogs {
                         context: ctx,
                         // FIX (HIGH-2): Was hardcoded 'Reset link sent to $email'
                         message: context.tr(
-                          'settings_dialogs.reset_link_sent', fallback: 'Reset link sent!',
+                          'settings_dialogs.reset_link_sent',
+                          fallback: 'Reset link sent!',
                           args: [email],
                         ),
                         type: CustomSnackBarType.info,
@@ -423,7 +467,10 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 24.h),
                 Text(
-                  context.tr('settings_dialogs.delete_account_title', fallback: 'Delete Account'),
+                  context.tr(
+                    'settings_dialogs.delete_account_title',
+                    fallback: 'Delete Account',
+                  ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 24.sp,
@@ -433,7 +480,11 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 16.h),
                 Text(
-                  context.tr('settings_dialogs.delete_account_body', fallback: 'This action cannot be undone. All your progress will be lost.'),
+                  context.tr(
+                    'settings_dialogs.delete_account_body',
+                    fallback:
+                        'This action cannot be undone. All your progress will be lost.',
+                  ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -444,7 +495,10 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 32.h),
                 _PrimaryButton(
-                  label: context.tr('settings_dialogs.delete_everything', fallback: 'Delete Everything'),
+                  label: context.tr(
+                    'settings_dialogs.delete_everything',
+                    fallback: 'Delete Everything',
+                  ),
                   color: Colors.red,
                   onPressed: () {
                     Navigator.pop(dialogContext);
@@ -453,7 +507,10 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 12.h),
                 _SecondaryTextButton(
-                  label: context.tr('settings_dialogs.keep_account', fallback: 'Keep Account'),
+                  label: context.tr(
+                    'settings_dialogs.keep_account',
+                    fallback: 'Keep Account',
+                  ),
                   isDark: isDark,
                   onPressed: () => Navigator.pop(dialogContext),
                 ),
@@ -530,7 +587,11 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 24.h),
                 Text(
-                  title ?? context.tr('settings_dialogs.coming_soon_title', fallback: 'Coming Soon!'),
+                  title ??
+                      context.tr(
+                        'settings_dialogs.coming_soon_title',
+                        fallback: 'Coming Soon!',
+                      ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 24.sp,
@@ -540,7 +601,11 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 16.h),
                 Text(
-                  message ?? context.tr('settings_dialogs.coming_soon_body', fallback: 'This feature is currently in development.'),
+                  message ??
+                      context.tr(
+                        'settings_dialogs.coming_soon_body',
+                        fallback: 'This feature is currently in development.',
+                      ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -552,7 +617,10 @@ class SettingsDialogs {
                 SizedBox(height: 32.h),
                 _PrimaryButton(
                   // FIX (HIGH-2): Was hardcoded 'Got it!'
-                  label: context.tr('settings_dialogs.got_it', fallback: 'Got It'),
+                  label: context.tr(
+                    'settings_dialogs.got_it',
+                    fallback: 'Got It',
+                  ),
                   color: Colors.blue,
                   onPressed: () => Navigator.pop(ctx),
                 ),
@@ -730,7 +798,10 @@ class _EditProfileDialogContentState extends State<_EditProfileDialogContent> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            context.tr('settings_dialogs.profile_settings', fallback: 'Profile Settings'),
+            context.tr(
+              'settings_dialogs.profile_settings',
+              fallback: 'Profile Settings',
+            ),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 24.sp,
@@ -833,7 +904,10 @@ class _EditProfileDialogContentState extends State<_EditProfileDialogContent> {
               fontWeight: FontWeight.w600,
             ),
             decoration: InputDecoration(
-              labelText: context.tr('settings_dialogs.display_name', fallback: 'Display Name'),
+              labelText: context.tr(
+                'settings_dialogs.display_name',
+                fallback: 'Display Name',
+              ),
               labelStyle: TextStyle(
                 fontFamily: 'Outfit',
                 color: isDark ? Colors.white38 : Colors.black38,
@@ -956,7 +1030,10 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            context.tr('settings_dialogs.final_warning', fallback: 'Final Warning'),
+            context.tr(
+              'settings_dialogs.final_warning',
+              fallback: 'Final Warning',
+            ),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 24.sp,
@@ -966,7 +1043,10 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
           ),
           SizedBox(height: 16.h),
           Text(
-            context.tr('settings_dialogs.type_delete', fallback: 'Type DELETE to confirm'),
+            context.tr(
+              'settings_dialogs.type_delete',
+              fallback: 'Type DELETE to confirm',
+            ),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
@@ -1001,7 +1081,10 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
           ),
           SizedBox(height: 32.h),
           _PrimaryButton(
-            label: context.tr('settings_dialogs.delete_forever', fallback: 'Delete Forever'),
+            label: context.tr(
+              'settings_dialogs.delete_forever',
+              fallback: 'Delete Forever',
+            ),
             color: Colors.red,
             onPressed: isConfirmed
                 ? () {
@@ -1012,7 +1095,10 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
           ),
           SizedBox(height: 12.h),
           _SecondaryTextButton(
-            label: context.tr('settings_dialogs.nevermind', fallback: 'Nevermind'),
+            label: context.tr(
+              'settings_dialogs.nevermind',
+              fallback: 'Nevermind',
+            ),
             isDark: isDark,
             onPressed: () => Navigator.pop(context),
           ),

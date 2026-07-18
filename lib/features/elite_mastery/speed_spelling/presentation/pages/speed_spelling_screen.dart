@@ -136,7 +136,10 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('games.spelling_legend_title', fallback: 'Spelling Legend'),
+            title: context.tr(
+              'games.spelling_legend_title',
+              fallback: 'Spelling Legend',
+            ),
             enableDoubleUp: true,
           );
         } else if (state is EliteMasteryLoaded) {
@@ -215,7 +218,10 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
           showConfetti: _showConfetti,
           title:
               quest?.instruction ??
-              context.tr('games.speed_spelling_title_fallback', fallback: 'Speed Spelling'),
+              context.tr(
+                'games.speed_spelling_title_fallback',
+                fallback: 'Speed Spelling',
+              ),
           onContinue: () {
             setState(() {
               _isAnswered = false;

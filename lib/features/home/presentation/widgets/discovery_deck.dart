@@ -42,25 +42,46 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
     final discoveryItems = [
       (
         title: context.tr('home.discovery_foryou_title', fallback: 'For You'),
-        subtitle: context.tr('home.discovery_foryou_subtitle', fallback: 'Recommended Quests'),
+        subtitle: context.tr(
+          'home.discovery_foryou_subtitle',
+          fallback: 'Recommended Quests',
+        ),
         icon: Icons.lightbulb_outline_rounded,
         color: const Color(0xFF6366F1),
         quests: 3,
-        difficulty: context.tr('home.discovery_diff_adaptive', fallback: 'Adaptive'),
+        difficulty: context.tr(
+          'home.discovery_diff_adaptive',
+          fallback: 'Adaptive',
+        ),
         onTap: () => widget.onLaunchQuest('smart_recommendation'),
       ),
       (
-        title: context.tr('home.discovery_dailyduo_title', fallback: 'Daily Duo'),
-        subtitle: context.tr('home.discovery_dailyduo_subtitle', fallback: 'Quick Practice'),
+        title: context.tr(
+          'home.discovery_dailyduo_title',
+          fallback: 'Daily Duo',
+        ),
+        subtitle: context.tr(
+          'home.discovery_dailyduo_subtitle',
+          fallback: 'Quick Practice',
+        ),
         icon: Icons.auto_awesome_motion_rounded,
         color: const Color(0xFF6366F1),
         quests: 2,
-        difficulty: context.tr('home.discovery_diff_medium', fallback: 'Medium'),
+        difficulty: context.tr(
+          'home.discovery_diff_medium',
+          fallback: 'Medium',
+        ),
         onTap: () => widget.onLaunchQuest('daily_duo'),
       ),
       (
-        title: context.tr('home.discovery_speedblitz_title', fallback: 'Speed Blitz'),
-        subtitle: context.tr('home.discovery_speedblitz_subtitle', fallback: 'Beat the clock'),
+        title: context.tr(
+          'home.discovery_speedblitz_title',
+          fallback: 'Speed Blitz',
+        ),
+        subtitle: context.tr(
+          'home.discovery_speedblitz_subtitle',
+          fallback: 'Beat the clock',
+        ),
         icon: Icons.bolt_rounded,
         color: const Color(0xFFF97316),
         quests: 3,
@@ -68,12 +89,21 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
         onTap: () => widget.onLaunchQuest('speed_blitz'),
       ),
       (
-        title: context.tr('home.discovery_grammarpro_title', fallback: 'Grammar Pro'),
-        subtitle: context.tr('home.discovery_grammarpro_subtitle', fallback: 'Master the rules'),
+        title: context.tr(
+          'home.discovery_grammarpro_title',
+          fallback: 'Grammar Pro',
+        ),
+        subtitle: context.tr(
+          'home.discovery_grammarpro_subtitle',
+          fallback: 'Master the rules',
+        ),
         icon: Icons.verified_user_rounded,
         color: const Color(0xFF10B981),
         quests: 3,
-        difficulty: context.tr('home.discovery_diff_expert', fallback: 'Expert'),
+        difficulty: context.tr(
+          'home.discovery_diff_expert',
+          fallback: 'Expert',
+        ),
         onTap: () => widget.onLaunchQuest('grammar_pro'),
       ),
     ];
@@ -140,7 +170,8 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
           SizedBox(height: 16.h),
           Semantics(
             label: context.tr(
-              'home.discovery_page_indicator', fallback: 'Page',
+              'home.discovery_page_indicator',
+              fallback: 'Page',
               args: [
                 (_currentPage + 1).toString(),
                 discoveryItems.length.toString(),
@@ -400,7 +431,11 @@ class _DiscoveryCollectionCard extends StatelessWidget {
         ),
         SizedBox(width: 8.w),
         Text(
-          context.tr('home.quests_count', fallback: 'Quests', args: [count.toString()]),
+          context.tr(
+            'home.quests_count',
+            fallback: 'Quests',
+            args: [count.toString()],
+          ),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 10.sp,

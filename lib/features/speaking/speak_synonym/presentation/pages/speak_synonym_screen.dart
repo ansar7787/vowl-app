@@ -160,7 +160,11 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
         if (cleanWord == cleanSyn ||
             cleanWord.contains(cleanSyn) ||
             cleanSyn.contains(cleanWord) ||
-            TextSimilarityHelper.isMatch(cleanWord, cleanSyn, threshold: 0.70)) {
+            TextSimilarityHelper.isMatch(
+              cleanWord,
+              cleanSyn,
+              threshold: 0.70,
+            )) {
           matchFound = true;
           break;
         }

@@ -11,7 +11,7 @@ class TranslationService {
   TranslationService._internal();
 
   static const String _kTargetLangKey = 'translation_target_lang';
-  
+
   final _modelManager = OnDeviceTranslatorModelManager();
   OnDeviceTranslator? _translator;
   TranslateLanguage? _currentTargetLanguage;
@@ -110,7 +110,7 @@ class TranslationService {
   }
 
   /// Translates the given English text to the user's saved target language.
-  /// 
+  ///
   /// Automatically downloads the model if it hasn't finished yet.
   Future<String> translate(String englishText) async {
     if (englishText.isEmpty) return englishText;

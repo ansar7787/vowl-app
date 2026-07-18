@@ -25,7 +25,9 @@ class LeaderboardRankTile extends StatelessWidget {
     final tierColor = rank <= 10
         ? const Color(0xFF3B82F6)
         : const Color(0xFF94A3B8);
-    final displayName = user.displayName ?? context.tr('leaderboard.player', fallback: 'Player');
+    final displayName =
+        user.displayName ??
+        context.tr('leaderboard.player', fallback: 'Player');
 
     return Semantics(
       // FIX (HIGH-5): Full rank information announced for screen readers.
@@ -142,7 +144,10 @@ class LeaderboardRankTile extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(6.r),
                                 ),
                                 child: Text(
-                                  context.tr('leaderboard.you', fallback: 'You'),
+                                  context.tr(
+                                    'leaderboard.you',
+                                    fallback: 'You',
+                                  ),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 7.sp,
@@ -179,7 +184,8 @@ class LeaderboardRankTile extends StatelessWidget {
                 ),
                 child: Text(
                   context.tr(
-                    'leaderboard.lvs', fallback: 'Lvs',
+                    'leaderboard.lvs',
+                    fallback: 'Lvs',
                     args: [levelsCleared.toString()],
                   ),
                   style: TextStyle(

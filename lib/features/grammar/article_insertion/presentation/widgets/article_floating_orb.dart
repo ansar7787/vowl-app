@@ -167,7 +167,9 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
                         ),
                         child: Center(
                           child: Text(
-                            widget.article.toLowerCase() == "(no article)" ? "Ø" : widget.article.toUpperCase(),
+                            widget.article.toLowerCase() == "(no article)"
+                                ? "Ø"
+                                : widget.article.toUpperCase(),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: widget.isCompact ? 14.sp : 18.sp,

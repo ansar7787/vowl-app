@@ -144,7 +144,10 @@ class _GrammarBaseLayoutState extends State<GrammarBaseLayout> {
 
     if (droppedToLast && !_hasSpokenNudge) {
       _hasSpokenNudge = true;
-      final nudgeMessage = context.tr('games.kids_nudge', fallback: 'Let\'s go!');
+      final nudgeMessage = context.tr(
+        'games.kids_nudge',
+        fallback: 'Let\'s go!',
+      );
       Future.delayed(
         const Duration(milliseconds: GrammarConstants.lastLifeNudgeDelayMs),
         () async {

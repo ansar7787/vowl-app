@@ -134,8 +134,6 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
       });
       return;
     }
-
-    
   }
 
   // ── Builder — NO setState() here ─────────────────────────────────────────

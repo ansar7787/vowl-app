@@ -133,7 +133,9 @@ class FlashcardSwipeBack extends StatelessWidget {
                         quest.explanation!.isNotEmpty) ...[
                       SizedBox(height: compact ? 18.h : 24.h),
                       Text(
-                        context.tr('games.explanation', fallback: 'Explanation').toUpperCase(),
+                        context
+                            .tr('games.explanation', fallback: 'Explanation')
+                            .toUpperCase(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Outfit',

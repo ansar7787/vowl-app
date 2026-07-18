@@ -138,7 +138,9 @@ class _KidsExplanationCardState extends State<KidsExplanationCard> {
               ),
               child: Center(
                 child: Text(
-                  context.tr('games.try_again', fallback: 'Try Again').toUpperCase(),
+                  context
+                      .tr('games.try_again', fallback: 'Try Again')
+                      .toUpperCase(),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 18.sp,

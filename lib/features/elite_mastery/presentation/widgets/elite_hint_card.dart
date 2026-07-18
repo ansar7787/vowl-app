@@ -88,13 +88,19 @@ class EliteHintCard extends StatelessWidget {
     final hasRealHint = hintText != null && hintText!.trim().isNotEmpty;
     final resolvedHint = HintUtility.isGenericHint(hintText)
         ? context.tr('games.lifeline_activated', fallback: 'Lifeline Activated')
-        : (hasRealHint ? hintText! : context.tr('games.hint_fallback_default', fallback: 'Use a hint for help.'));
+        : (hasRealHint
+              ? hintText!
+              : context.tr(
+                  'games.hint_fallback_default',
+                  fallback: 'Use a hint for help.',
+                ));
 
     return Semantics(
       // `liveRegion`: announce automatically the moment the hint reveals,
       // since this card can appear without the player re-focusing it.
       liveRegion: true,
-      label: '${context.tr('games.expert_hint', fallback: 'Expert Hint')}. $resolvedHint',
+      label:
+          '${context.tr('games.expert_hint', fallback: 'Expert Hint')}. $resolvedHint',
       excludeSemantics: true,
       child: GlassTile(
         borderRadius: BorderRadius.circular(24.r),

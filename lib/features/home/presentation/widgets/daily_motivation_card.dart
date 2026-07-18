@@ -183,7 +183,7 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
     HapticFeedback.lightImpact();
     final title = _hootTitle?.toLowerCase() ?? '';
     String route = AppRouter.libraryRoute;
-    
+
     if (title.contains('vocabulary') || title.contains('word')) {
       route = '${AppRouter.categoryGamesRoute}?category=vocabulary';
     } else if (title.contains('grammar')) {
@@ -201,7 +201,7 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
     } else if (title.contains('roleplay') || title.contains('conversation')) {
       route = '${AppRouter.categoryGamesRoute}?category=roleplay';
     }
-    
+
     context.push(route);
   }
 
@@ -386,7 +386,9 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
                         borderRadius: BorderRadius.circular(16.r),
                         boxShadow: [
                           BoxShadow(
-                            color: _VowlCardPalette.indigo.withValues(alpha: 0.3),
+                            color: _VowlCardPalette.indigo.withValues(
+                              alpha: 0.3,
+                            ),
                             blurRadius: 12,
                             offset: const Offset(0, 4),
                           ),

@@ -89,7 +89,10 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
           Semantics(
             // Inform screen readers that content is loading.
             liveRegion: true,
-            label: context.tr('loading.synchronizing_title', fallback: 'Synchronizing...'),
+            label: context.tr(
+              'loading.synchronizing_title',
+              fallback: 'Synchronizing...',
+            ),
             child: AbsorbPointer(
               child: Animate(
                 effects: const [
@@ -167,7 +170,9 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                                     Text(
                                           (widget.message ??
                                                   context.tr(
-                                                    'loading.synchronizing_title', fallback: 'Synchronizing...',
+                                                    'loading.synchronizing_title',
+                                                    fallback:
+                                                        'Synchronizing...',
                                                   ))
                                               .toUpperCase(),
                                           style: TextStyle(

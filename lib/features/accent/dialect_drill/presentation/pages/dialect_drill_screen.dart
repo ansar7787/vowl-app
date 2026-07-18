@@ -49,7 +49,9 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
   void _triggerAutoPlay(AccentQuest quest) {
     final instruction = quest.instruction;
     final String targetLocale =
-        instruction.contains(context.tr('games.british', fallback: 'British')) ? "en-GB" : "en-US";
+        instruction.contains(context.tr('games.british', fallback: 'British'))
+        ? "en-GB"
+        : "en-US";
     _soundService.playTts(quest.word ?? "", locale: targetLocale);
   }
 

@@ -50,19 +50,23 @@ class AccentFeedbackCard extends StatelessWidget {
 
     // Explanation is shown on correct answers and on the final failure attempt.
     final showExplanation = success || (!success && state.isFinalFailure);
-    final explanationText = state.currentQuest.explanation ??
+    final explanationText =
+        state.currentQuest.explanation ??
         (success
             ? "Excellent listening! You correctly identified the precise sound."
             : "Keep practicing! Pay close attention to the subtle differences in these sounds.");
-
 
     final buttonText = success
         ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : (state.isFinalFailure
               ? (lives == 0
                     ? context.tr('games.see_results', fallback: 'See Results')
-                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
-              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
+                    : context
+                          .tr('common.continue_text', fallback: 'Continue')
+                          .toUpperCase())
+              : context
+                    .tr('games.try_again', fallback: 'Try Again')
+                    .toUpperCase());
 
     return Container(
       width: 342.w,
@@ -223,87 +227,90 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
     final displayText = _translatedText ?? widget.explanation;
 
     return Container(
-      width: 342.w,
-      padding: EdgeInsets.symmetric(
-        horizontal: 20.w,
-        vertical: 14.h,
-      ),
-      decoration: BoxDecoration(
-        color: widget.shadowColor.withValues(alpha: widget.isDark ? 0.12 : 0.08),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: widget.shadowColor.withValues(alpha: 0.3),
-          width: 1.5,
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              ExcludeSemantics(
-                child: Icon(
-                  Icons.lightbulb_outline_rounded,
-                  color: widget.shadowColor,
-                  size: 16.r,
-                ),
-              ),
-              SizedBox(width: 8.w),
-              Expanded(
-                child: Text(
-                  context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w900,
-                    color: widget.shadowColor,
-                    letterSpacing: 1.2,
-                  ),
-                ),
-              ),
-              if (_translatedText == null)
-                TranslateButtonWidget(
-                  originalText: widget.explanation,
-                  onTranslationComplete: (translated) {
-                    if (mounted) setState(() => _translatedText = translated);
-                  },
-                ),
-            ],
-          ),
-          SizedBox(height: 6.h),
-          ConstrainedBox(
-            constraints: BoxConstraints(maxHeight: 120.h),
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Semantics(
-                label:
-                    '${context.tr('games.explanation', fallback: 'Explanation')}: $displayText',
-                child: Text(
-                  displayText,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w600,
-                    color: widget.isDark
-                        ? Colors.white.withValues(alpha: 0.9)
-                        : const Color(0xFF334155),
-                    height: 1.4,
-                  ),
-                ),
-              ),
+          width: 342.w,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          decoration: BoxDecoration(
+            color: widget.shadowColor.withValues(
+              alpha: widget.isDark ? 0.12 : 0.08,
+            ),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: widget.shadowColor.withValues(alpha: 0.3),
+              width: 1.5,
             ),
           ),
-        ],
-      ),
-    )
-    .animate()
-    .fadeIn(delay: 300.ms)
-    .slideY(
-      begin: 0.2,
-      end: 0,
-      duration: 400.ms,
-      curve: Curves.easeOutBack,
-    );
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  ExcludeSemantics(
+                    child: Icon(
+                      Icons.lightbulb_outline_rounded,
+                      color: widget.shadowColor,
+                      size: 16.r,
+                    ),
+                  ),
+                  SizedBox(width: 8.w),
+                  Expanded(
+                    child: Text(
+                      context.tr(
+                        'games.explanation_caps',
+                        fallback: 'EXPLANATION',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w900,
+                        color: widget.shadowColor,
+                        letterSpacing: 1.2,
+                      ),
+                    ),
+                  ),
+                  if (_translatedText == null)
+                    TranslateButtonWidget(
+                      originalText: widget.explanation,
+                      onTranslationComplete: (translated) {
+                        if (mounted)
+                          setState(() => _translatedText = translated);
+                      },
+                    ),
+                ],
+              ),
+              SizedBox(height: 6.h),
+              ConstrainedBox(
+                constraints: BoxConstraints(maxHeight: 120.h),
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Semantics(
+                    label:
+                        '${context.tr('games.explanation', fallback: 'Explanation')}: $displayText',
+                    child: Text(
+                      displayText,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w600,
+                        color: widget.isDark
+                            ? Colors.white.withValues(alpha: 0.9)
+                            : const Color(0xFF334155),
+                        height: 1.4,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        )
+        .animate()
+        .fadeIn(delay: 300.ms)
+        .slideY(
+          begin: 0.2,
+          end: 0,
+          duration: 400.ms,
+          curve: Curves.easeOutBack,
+        );
   }
 }
 
@@ -330,86 +337,89 @@ class _PhoneticRuleBoxState extends State<_PhoneticRuleBox> {
     final displayText = _translatedText ?? widget.rule;
 
     return Container(
-      width: 342.w,
-      padding: EdgeInsets.symmetric(
-        horizontal: 20.w,
-        vertical: 14.h,
-      ),
-      decoration: BoxDecoration(
-        color: widget.shadowColor.withValues(alpha: widget.isDark ? 0.08 : 0.05),
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: widget.shadowColor.withValues(alpha: 0.2),
-          width: 1,
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              ExcludeSemantics(
-                child: Icon(
-                  Icons.psychology_rounded,
-                  color: widget.shadowColor,
-                  size: 16.r,
-                ),
-              ),
-              SizedBox(width: 8.w),
-              Expanded(
-                child: Text(
-                  context.tr('games.phonetic_rule_caps', fallback: 'PHONETIC RULE'),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w900,
-                    color: widget.shadowColor,
-                    letterSpacing: 1.2,
-                  ),
-                ),
-              ),
-              if (_translatedText == null)
-                TranslateButtonWidget(
-                  originalText: widget.rule,
-                  onTranslationComplete: (translated) {
-                    if (mounted) setState(() => _translatedText = translated);
-                  },
-                ),
-            ],
-          ),
-          SizedBox(height: 6.h),
-          ConstrainedBox(
-            constraints: BoxConstraints(maxHeight: 120.h),
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Semantics(
-                label:
-                    '${context.tr('games.phonetic_rule', fallback: 'Phonetic Rule')}: $displayText',
-                child: Text(
-                  displayText,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                    color: widget.isDark
-                        ? Colors.white.withValues(alpha: 0.8)
-                        : const Color(0xFF475569),
-                    height: 1.4,
-                  ),
-                ),
-              ),
+          width: 342.w,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          decoration: BoxDecoration(
+            color: widget.shadowColor.withValues(
+              alpha: widget.isDark ? 0.08 : 0.05,
+            ),
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: widget.shadowColor.withValues(alpha: 0.2),
+              width: 1,
             ),
           ),
-        ],
-      ),
-    )
-    .animate()
-    .fadeIn(delay: 400.ms)
-    .slideY(
-      begin: 0.2,
-      end: 0,
-      duration: 400.ms,
-      curve: Curves.easeOutBack,
-    );
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  ExcludeSemantics(
+                    child: Icon(
+                      Icons.psychology_rounded,
+                      color: widget.shadowColor,
+                      size: 16.r,
+                    ),
+                  ),
+                  SizedBox(width: 8.w),
+                  Expanded(
+                    child: Text(
+                      context.tr(
+                        'games.phonetic_rule_caps',
+                        fallback: 'PHONETIC RULE',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w900,
+                        color: widget.shadowColor,
+                        letterSpacing: 1.2,
+                      ),
+                    ),
+                  ),
+                  if (_translatedText == null)
+                    TranslateButtonWidget(
+                      originalText: widget.rule,
+                      onTranslationComplete: (translated) {
+                        if (mounted)
+                          setState(() => _translatedText = translated);
+                      },
+                    ),
+                ],
+              ),
+              SizedBox(height: 6.h),
+              ConstrainedBox(
+                constraints: BoxConstraints(maxHeight: 120.h),
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Semantics(
+                    label:
+                        '${context.tr('games.phonetic_rule', fallback: 'Phonetic Rule')}: $displayText',
+                    child: Text(
+                      displayText,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
+                        color: widget.isDark
+                            ? Colors.white.withValues(alpha: 0.8)
+                            : const Color(0xFF475569),
+                        height: 1.4,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        )
+        .animate()
+        .fadeIn(delay: 400.ms)
+        .slideY(
+          begin: 0.2,
+          end: 0,
+          duration: 400.ms,
+          curve: Curves.easeOutBack,
+        );
   }
 }

@@ -46,35 +46,44 @@ class PremiumSuccessOverlay extends StatelessWidget {
               children: [
                 Semantics(
                   liveRegion: true,
-                  label: context.tr('premium.success_title', fallback: 'Welcome to Premium!'),
-                  child: Container(
-                    width: 90.r,
-                    height: 90.r,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(0xFF6366F1).withValues(alpha: 0.5),
-                          blurRadius: 20,
-                          offset: const Offset(0, 10),
-                        ),
-                      ],
-                      border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 2),
-                    ),
-                    child: Icon(
-                      LucideIcons.checkCircle2,
-                      color: Colors.white,
-                      size: 44.r,
-                    ),
-                  )
-                  .animate()
-                  .scale(duration: 600.ms, curve: Curves.elasticOut)
-                  .shimmer(duration: 2.seconds, delay: 500.ms),
+                  label: context.tr(
+                    'premium.success_title',
+                    fallback: 'Welcome to Premium!',
+                  ),
+                  child:
+                      Container(
+                            width: 90.r,
+                            height: 90.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: const LinearGradient(
+                                colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color(
+                                    0xFF6366F1,
+                                  ).withValues(alpha: 0.5),
+                                  blurRadius: 20,
+                                  offset: const Offset(0, 10),
+                                ),
+                              ],
+                              border: Border.all(
+                                color: Colors.white.withValues(alpha: 0.5),
+                                width: 2,
+                              ),
+                            ),
+                            child: Icon(
+                              LucideIcons.checkCircle2,
+                              color: Colors.white,
+                              size: 44.r,
+                            ),
+                          )
+                          .animate()
+                          .scale(duration: 600.ms, curve: Curves.elasticOut)
+                          .shimmer(duration: 2.seconds, delay: 500.ms),
                 ),
                 SizedBox(height: 28.h),
                 ShaderMask(
@@ -84,7 +93,10 @@ class PremiumSuccessOverlay extends StatelessWidget {
                     end: Alignment.bottomRight,
                   ).createShader(bounds),
                   child: Text(
-                    context.tr('premium.success_title', fallback: 'Welcome to Premium!'),
+                    context.tr(
+                      'premium.success_title',
+                      fallback: 'Welcome to Premium!',
+                    ),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -98,7 +110,11 @@ class PremiumSuccessOverlay extends StatelessWidget {
                 ).animate().fadeIn(duration: 500.ms).slideY(begin: 0.2, end: 0),
                 SizedBox(height: 12.h),
                 Text(
-                  context.tr('premium.success_subtitle', fallback: 'Your upgrade was successful. All elite features are now unlocked.'),
+                  context.tr(
+                    'premium.success_subtitle',
+                    fallback:
+                        'Your upgrade was successful. All elite features are now unlocked.',
+                  ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -111,7 +127,10 @@ class PremiumSuccessOverlay extends StatelessWidget {
                   SizedBox(height: 20.h),
                   Container(
                     width: double.infinity,
-                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 12.h,
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.black.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(12.r),
@@ -122,7 +141,10 @@ class PremiumSuccessOverlay extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          context.tr('premium.transaction_id_label', fallback: 'TRANSACTION ID'),
+                          context.tr(
+                            'premium.transaction_id_label',
+                            fallback: 'TRANSACTION ID',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,
@@ -149,7 +171,10 @@ class PremiumSuccessOverlay extends StatelessWidget {
                 SizedBox(height: 32.h),
                 Semantics(
                   button: true,
-                  label: context.tr('premium.begin_adventure_button', fallback: 'Begin Adventure'),
+                  label: context.tr(
+                    'premium.begin_adventure_button',
+                    fallback: 'Begin Adventure',
+                  ),
                   child: ScaleButton(
                     onTap: onBeginAdventure,
                     child: Container(
@@ -164,14 +189,21 @@ class PremiumSuccessOverlay extends StatelessWidget {
                         borderRadius: BorderRadius.circular(24.r),
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                            color: const Color(
+                              0xFF6366F1,
+                            ).withValues(alpha: 0.4),
                             blurRadius: 15,
                             offset: const Offset(0, 5),
                           ),
                         ],
                       ),
                       child: Text(
-                        context.tr('premium.begin_adventure_button', fallback: 'Begin Adventure').toUpperCase(),
+                        context
+                            .tr(
+                              'premium.begin_adventure_button',
+                              fallback: 'Begin Adventure',
+                            )
+                            .toUpperCase(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -189,6 +221,10 @@ class PremiumSuccessOverlay extends StatelessWidget {
           ),
         ),
       ),
-    ).animate().fade().scale(begin: const Offset(0.95, 0.95), curve: Curves.easeOutBack, duration: 400.ms);
+    ).animate().fade().scale(
+      begin: const Offset(0.95, 0.95),
+      curve: Curves.easeOutBack,
+      duration: 400.ms,
+    );
   }
 }

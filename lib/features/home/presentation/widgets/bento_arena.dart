@@ -108,9 +108,14 @@ class _BentoCategoryTile extends StatelessWidget {
 
     // Progress matches the text exactly (total / max)
     final progress = maxLevels > 0 ? (totalCleared / maxLevels) : 0.0;
-    final stepLabel = context.tr('home.step', fallback: 'Step', args: [step.toString()]);
+    final stepLabel = context.tr(
+      'home.step',
+      fallback: 'Step',
+      args: [step.toString()],
+    );
     final levelsLabel = context.tr(
-      'home.levels_cleared_max', fallback: 'Max Levels Cleared',
+      'home.levels_cleared_max',
+      fallback: 'Max Levels Cleared',
       args: [totalCleared.toString(), maxLevels.toString()],
     );
 

@@ -198,7 +198,10 @@ class VowlCoinsScreen extends StatelessWidget {
                                 _buildActionItem(
                                   context,
                                   _ActionItem(
-                                    title: context.tr('adventure.title', fallback: 'Adventure Details'),
+                                    title: context.tr(
+                                      'adventure.title',
+                                      fallback: 'Adventure Details',
+                                    ),
                                     subtitle:
                                         'Buy Masteries, Scroll of Wisdom & more',
                                     icon: Icons.storefront_rounded,
@@ -289,9 +292,13 @@ class VowlCoinsScreen extends StatelessWidget {
       amount: amount,
       titleBuilder: (amount) => amount > 1
           ? context.tr('adventure.hint_pack_elite', fallback: 'Elite Hint Pack')
-          : context.tr('adventure.hint_pack_strategic_singular', fallback: 'Strategic Hint Pack'),
+          : context.tr(
+              'adventure.hint_pack_strategic_singular',
+              fallback: 'Strategic Hint Pack',
+            ),
       bodyBuilder: (cost, amount) => context.tr(
-        'adventure.hint_pack_exchange_body_with_hint', fallback: 'Trade coins for hints.',
+        'adventure.hint_pack_exchange_body_with_hint',
+        fallback: 'Trade coins for hints.',
         args: ['$cost', '$amount'],
       ),
       onConfirm: () {

@@ -145,7 +145,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
             title: 'FORENSIC ANALYSIS COMPLETE!',
             enableDoubleUp: true,
           );
-        } 
+        }
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(

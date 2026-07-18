@@ -81,10 +81,7 @@ class GameShimmerLoading extends StatelessWidget {
             // Header
             Row(
               children: [
-                ShimmerLoading.circular(
-                  width: 45.r,
-                  height: 45.r,
-                ),
+                ShimmerLoading.circular(width: 45.r, height: 45.r),
                 SizedBox(width: 16.w),
                 Expanded(
                   child: ShimmerLoading.rounded(height: 12.h, borderRadius: 6),
@@ -99,9 +96,17 @@ class GameShimmerLoading extends StatelessWidget {
             ),
             SizedBox(height: 50.h),
             // Question area
-            ShimmerLoading.rounded(width: 250.w, height: 25.h, borderRadius: 12),
+            ShimmerLoading.rounded(
+              width: 250.w,
+              height: 25.h,
+              borderRadius: 12,
+            ),
             SizedBox(height: 16.h),
-            ShimmerLoading.rounded(width: 180.w, height: 20.h, borderRadius: 10),
+            ShimmerLoading.rounded(
+              width: 180.w,
+              height: 20.h,
+              borderRadius: 10,
+            ),
             SizedBox(height: 60.h),
             // Main content card
             Container(

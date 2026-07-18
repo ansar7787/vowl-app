@@ -379,7 +379,10 @@ class _AppShell extends StatelessWidget {
               builder: (context, authState) {
                 return LoadingOverlay(
                   isLoading: authState.status == AuthStatus.loggingOut,
-                  message: context.tr('loading_overlay.securing_data', fallback: 'Securing Data...'),
+                  message: context.tr(
+                    'loading_overlay.securing_data',
+                    fallback: 'Securing Data...',
+                  ),
                   child: Container(
                     color: isMidnight
                         ? Colors.black

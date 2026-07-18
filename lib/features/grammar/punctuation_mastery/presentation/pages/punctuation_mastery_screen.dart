@@ -407,7 +407,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
             SizedBox(height: isCompact ? 4.h : 12.h),
             Text(
               correct
-                  ? context.tr('games.correct', fallback: 'Correct').toUpperCase()
+                  ? context
+                        .tr('games.correct', fallback: 'Correct')
+                        .toUpperCase()
                   : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
               style: TextStyle(
                 fontFamily: 'Outfit',

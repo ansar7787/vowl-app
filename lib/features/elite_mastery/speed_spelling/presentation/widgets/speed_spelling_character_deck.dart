@@ -39,8 +39,15 @@ class SpeedSpellingCharacterDeck extends StatelessWidget {
           button: isAvailable,
           enabled: isAvailable,
           label: isAvailable
-              ? context.tr('games.semantic_letter_tile', fallback: 'Letter Tile', args: [char])
-              : context.tr('games.semantic_letter_tile_used', fallback: 'Used Letter Tile'),
+              ? context.tr(
+                  'games.semantic_letter_tile',
+                  fallback: 'Letter Tile',
+                  args: [char],
+                )
+              : context.tr(
+                  'games.semantic_letter_tile_used',
+                  fallback: 'Used Letter Tile',
+                ),
           excludeSemantics: true,
           child: ScaleButton(
             onTap: char == "" ? null : () => onCharTap(char, index),

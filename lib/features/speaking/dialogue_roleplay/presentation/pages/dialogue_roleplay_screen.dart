@@ -134,7 +134,11 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
         '',
       );
       if (cleanSpeech.contains(cleanSub) ||
-          TextSimilarityHelper.isMatch(cleanSpeech, cleanSub, threshold: 0.70)) {
+          TextSimilarityHelper.isMatch(
+            cleanSpeech,
+            cleanSub,
+            threshold: 0.70,
+          )) {
         matchFound = true;
         break;
       }

@@ -21,7 +21,8 @@ class MasteryAvatar extends StatelessWidget {
 
     return Semantics(
       label: context.tr(
-        'home.avatar_progress_label', fallback: 'Avatar Progress',
+        'home.avatar_progress_label',
+        fallback: 'Avatar Progress',
         args: [progressPercent.toString()],
       ),
       image: true,

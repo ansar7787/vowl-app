@@ -119,7 +119,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
             title: 'WORD ARCHITECT!',
             enableDoubleUp: true,
           );
-        } 
+        }
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(

@@ -153,12 +153,8 @@ class _KeyShopContent extends StatelessWidget {
                                 args: [
                                   '$cost',
                                   isKidsMode
-                                      ? context.tr(
-                                          'store.toys_lower',
-                                        )
-                                      : context.tr(
-                                          'store.coins_lower',
-                                        ),
+                                      ? context.tr('store.toys_lower')
+                                      : context.tr('store.coins_lower'),
                                 ],
                                 fallback:
                                     'You need $cost ${isKidsMode ? 'toys' : 'coins'} to get a key!',
@@ -517,9 +513,9 @@ class _KeyShopContent extends StatelessWidget {
                         SizedBox(width: 8.w),
                         Text(
                           context.tr(
-                          'store.get_more_coins_keys',
-                          fallback: 'Get More Coins & Keys',
-                        ),
+                            'store.get_more_coins_keys',
+                            fallback: 'Get More Coins & Keys',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 16.sp,

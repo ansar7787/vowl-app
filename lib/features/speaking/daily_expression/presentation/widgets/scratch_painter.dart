@@ -96,7 +96,7 @@ class ScratchPainter extends CustomPainter {
       canvas.drawPath(boundaryPath, boundaryGlow);
       canvas.drawPath(boundaryPath, boundaryCore);
     }
-    
+
     canvas.restore();
   }
 

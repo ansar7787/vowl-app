@@ -169,11 +169,11 @@ class AppRouter {
       final isKidsRoute = path.startsWith('/kids') || path == kidsZoneRoute;
       // Let them complete onboarding (hatching) or auth if needed.
       // We also allow settingsRoute so they can reset their age if they made a mistake.
-      if (!isKidsRoute && 
-          !isAuthRoute && 
-          path != verifyEmailRoute && 
-          path != splashRoute && 
-          path != ageGateRoute && 
+      if (!isKidsRoute &&
+          !isAuthRoute &&
+          path != verifyEmailRoute &&
+          path != splashRoute &&
+          path != ageGateRoute &&
           path != settingsRoute &&
           path != hatchingRoute) {
         return kidsZoneRoute; // Force into Kids Zone

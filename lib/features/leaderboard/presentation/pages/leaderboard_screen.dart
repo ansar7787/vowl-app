@@ -137,7 +137,10 @@ class _LeaderboardContent extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
               child: Text(
-                context.tr('leaderboard.top_challengers', fallback: 'Top Challengers'),
+                context.tr(
+                  'leaderboard.top_challengers',
+                  fallback: 'Top Challengers',
+                ),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,

@@ -61,7 +61,10 @@ class DialectFeedbackPanel extends StatelessWidget {
                     Text(
                       isCorrect
                           ? context.tr('games.correct', fallback: 'Correct')
-                          : context.tr('games.lets_review', fallback: 'Let\'s Review'),
+                          : context.tr(
+                              'games.lets_review',
+                              fallback: 'Let\'s Review',
+                            ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 22.sp,
@@ -70,7 +73,10 @@ class DialectFeedbackPanel extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      context.tr('games.accent_comparison', fallback: 'Accent Comparison'),
+                      context.tr(
+                        'games.accent_comparison',
+                        fallback: 'Accent Comparison',
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
@@ -216,7 +222,9 @@ class DialectFeedbackPanel extends StatelessWidget {
             children: [
               Expanded(
                 child: _buildAudioButton(
-                  title: context.tr('games.british', fallback: 'British').toUpperCase(),
+                  title: context
+                      .tr('games.british', fallback: 'British')
+                      .toUpperCase(),
                   icon: Icons.record_voice_over_rounded,
                   textToPlay: word,
                   locale: "en-GB",
@@ -230,7 +238,9 @@ class DialectFeedbackPanel extends StatelessWidget {
               SizedBox(width: 16.w),
               Expanded(
                 child: _buildAudioButton(
-                  title: context.tr('games.american', fallback: 'American').toUpperCase(),
+                  title: context
+                      .tr('games.american', fallback: 'American')
+                      .toUpperCase(),
                   icon: Icons.record_voice_over_rounded,
                   textToPlay: word,
                   locale: "en-US",

@@ -109,7 +109,7 @@ class AccentHeader extends StatelessWidget {
                         context: context,
                         message: translated,
                         type: CustomSnackBarType.info,
-                      duration: const Duration(seconds: 8),
+                        duration: const Duration(seconds: 8),
                       );
                     },
                   ),

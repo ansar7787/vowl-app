@@ -62,9 +62,15 @@ class VocabularyFeedbackCard extends StatelessWidget {
         ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : (s.isFinalFailure
               ? (lives == 0
-                    ? context.tr('common.see_results', fallback: 'See Results').toUpperCase()
-                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
-              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
+                    ? context
+                          .tr('common.see_results', fallback: 'See Results')
+                          .toUpperCase()
+                    : context
+                          .tr('common.continue_text', fallback: 'Continue')
+                          .toUpperCase())
+              : context
+                    .tr('games.try_again', fallback: 'Try Again')
+                    .toUpperCase());
 
     final correctAnswerText = showCorrectAnswer
         ? _resolveCorrectAnswer(s)
@@ -295,7 +301,9 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
-          color: widget.isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
+          color: widget.isDark
+              ? Colors.white10
+              : Colors.black.withValues(alpha: 0.05),
         ),
       ),
       child: Row(
@@ -329,7 +337,7 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                 if (mounted) setState(() => _translatedText = translated);
               },
             ),
-          ]
+          ],
         ],
       ),
     ).animate().fadeIn(delay: 500.ms).slideY(begin: 0.1, end: 0);

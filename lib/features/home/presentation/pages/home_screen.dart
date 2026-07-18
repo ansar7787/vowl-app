@@ -216,8 +216,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               SizedBox(height: 25.h),
                               HomeSectionHeader(
-                                title: context.tr('home.kids_zone_title', fallback: 'Kids Zone'),
-                                subtitle: context.tr('home.kids_zone_subtitle', fallback: 'Safe & fun learning'),
+                                title: context.tr(
+                                  'home.kids_zone_title',
+                                  fallback: 'Kids Zone',
+                                ),
+                                subtitle: context.tr(
+                                  'home.kids_zone_subtitle',
+                                  fallback: 'Safe & fun learning',
+                                ),
                                 localizedTitleKey: 'home.kids_zone_title',
                                 localizedSubtitleKey: 'home.kids_zone_subtitle',
                                 categoryColor: const Color(0xFFF43F5E),
@@ -240,9 +246,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               SizedBox(height: 30.h),
                               HomeSectionHeader(
-                                title: context.tr('home.quest_arena_title', fallback: 'Quest Arena'),
+                                title: context.tr(
+                                  'home.quest_arena_title',
+                                  fallback: 'Quest Arena',
+                                ),
                                 subtitle: context.tr(
-                                  'home.quest_arena_subtitle', fallback: 'Test your skills',
+                                  'home.quest_arena_subtitle',
+                                  fallback: 'Test your skills',
                                 ),
                                 localizedTitleKey: 'home.quest_arena_title',
                                 localizedSubtitleKey:
@@ -277,7 +287,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       SizedBox(width: 4.w),
                                       Text(
-                                        context.tr('home.quest_arena_steps', fallback: 'Steps'),
+                                        context.tr(
+                                          'home.quest_arena_steps',
+                                          fallback: 'Steps',
+                                        ),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 8.sp,
@@ -305,9 +318,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             children: [
                               HomeSectionHeader(
-                                title: context.tr('home.elite_companion_title', fallback: 'Elite Companion'),
+                                title: context.tr(
+                                  'home.elite_companion_title',
+                                  fallback: 'Elite Companion',
+                                ),
                                 subtitle: context.tr(
-                                  'home.elite_companion_subtitle', fallback: 'Advanced practice',
+                                  'home.elite_companion_subtitle',
+                                  fallback: 'Advanced practice',
                                 ),
                                 localizedTitleKey: 'home.elite_companion_title',
                                 localizedSubtitleKey:
@@ -326,8 +343,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       // 6. DISCOVERY HUB (Audio Deck)
                       HomeSliverSectionHeader(
-                        title: context.tr('home.discovery_hub_title', fallback: 'Discovery Hub'),
-                        subtitle: context.tr('home.discovery_hub_subtitle', fallback: 'Explore new topics'),
+                        title: context.tr(
+                          'home.discovery_hub_title',
+                          fallback: 'Discovery Hub',
+                        ),
+                        subtitle: context.tr(
+                          'home.discovery_hub_subtitle',
+                          fallback: 'Explore new topics',
+                        ),
                         categoryColor: const Color(0xFF3B82F6),
                       ),
                       SliverToBoxAdapter(
@@ -344,7 +367,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         sliver: SliverList(
                           delegate: SliverChildListDelegate([
                             SizedBox(height: 28.h),
-                            DailyMotivationCard(streakCount: user.currentStreak),
+                            DailyMotivationCard(
+                              streakCount: user.currentStreak,
+                            ),
                             SizedBox(height: 24.h),
                             const AdRewardCard(margin: EdgeInsets.zero),
                             SizedBox(height: 16.h),

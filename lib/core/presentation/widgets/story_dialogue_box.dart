@@ -221,7 +221,9 @@ class StoryDialogueBox extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                context.tr('story.start_journey', fallback: 'Start Journey').toUpperCase(),
+                context
+                    .tr('story.start_journey', fallback: 'Start Journey')
+                    .toUpperCase(),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,

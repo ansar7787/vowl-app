@@ -161,7 +161,11 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
         if (cleanWord == cleanAnt ||
             cleanWord.contains(cleanAnt) ||
             cleanAnt.contains(cleanWord) ||
-            TextSimilarityHelper.isMatch(cleanWord, cleanAnt, threshold: 0.70)) {
+            TextSimilarityHelper.isMatch(
+              cleanWord,
+              cleanAnt,
+              threshold: 0.70,
+            )) {
           matchFound = true;
           break;
         }

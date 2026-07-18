@@ -24,10 +24,11 @@ class StreakMilestoneCalculator {
   static List<StreakMilestone> compute(UserEntity user) {
     // Single Source of Truth: UI now precisely matches the backend rewards.
     // This prevents the bug where UI displayed "350 coins" but backend awarded 100.
-    final milestones = UserGameConstants.kStreakMilestoneRewards.entries
-        .map((e) => StreakMilestone(days: e.key, reward: e.value))
-        .toList()
-      ..sort((a, b) => a.days.compareTo(b.days));
+    final milestones =
+        UserGameConstants.kStreakMilestoneRewards.entries
+            .map((e) => StreakMilestone(days: e.key, reward: e.value))
+            .toList()
+          ..sort((a, b) => a.days.compareTo(b.days));
 
     return milestones;
   }

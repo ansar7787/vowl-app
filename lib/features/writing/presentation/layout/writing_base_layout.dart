@@ -102,7 +102,10 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
 
           if (justDroppedToLastLife && !_hasSpokenNudge) {
             _hasSpokenNudge = true; // Permanent for this session
-            final nudgeMessage = context.tr('games.kids_nudge', fallback: 'Let\'s go!');
+            final nudgeMessage = context.tr(
+              'games.kids_nudge',
+              fallback: 'Let\'s go!',
+            );
             // Delay to allow the "Wrong" sound effect to finish
             Future.delayed(const Duration(milliseconds: 1200), () {
               if (mounted) {
@@ -387,28 +390,29 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   QuestHintButton(
-                    used: (state is WritingLoaded) ? state.hintUsed : false,
-                    primaryColor: theme.primaryColor,
-                    hintText: quest.hint,
-                    soundService: _soundService,
-                    onTap: () {
-                      context.read<WritingBloc>().add(WritingHintUsed());
-                      widget.onHint();
-                    },
-                  )
-                  .animate(
-                    target: hintShouldGlow ? 1 : 0,
-                    onPlay: (c) => c.repeat(reverse: true),
-                  )
-                  .shimmer(
-                    color: Colors.white.withValues(alpha: 0.5),
-                    duration: 1.seconds,
-                  )
-                  .scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.1, 1.1),
-                  ),
-                  if (quest.hint != null && ((state is WritingLoaded) ? state.hintUsed : false)) ...[
+                        used: (state is WritingLoaded) ? state.hintUsed : false,
+                        primaryColor: theme.primaryColor,
+                        hintText: quest.hint,
+                        soundService: _soundService,
+                        onTap: () {
+                          context.read<WritingBloc>().add(WritingHintUsed());
+                          widget.onHint();
+                        },
+                      )
+                      .animate(
+                        target: hintShouldGlow ? 1 : 0,
+                        onPlay: (c) => c.repeat(reverse: true),
+                      )
+                      .shimmer(
+                        color: Colors.white.withValues(alpha: 0.5),
+                        duration: 1.seconds,
+                      )
+                      .scale(
+                        begin: const Offset(1, 1),
+                        end: const Offset(1.1, 1.1),
+                      ),
+                  if (quest.hint != null &&
+                      ((state is WritingLoaded) ? state.hintUsed : false)) ...[
                     SizedBox(width: 8.w),
                     TranslateButtonWidget(
                       originalText: quest.hint,
@@ -417,7 +421,7 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
                           context: context,
                           message: translated,
                           type: CustomSnackBarType.info,
-                        duration: const Duration(seconds: 8),
+                          duration: const Duration(seconds: 8),
                         );
                       },
                     ),
@@ -496,8 +500,6 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
       ],
     ).animate().fadeIn().slideX(begin: 0.1, end: 0);
   }
-
-
 
   VowlMascotState _getMascotState(WritingState state, int lives) {
     if (state is WritingGameComplete) return VowlMascotState.happy;

@@ -162,7 +162,9 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
       mainAxisSize: MainAxisSize.min,
       children: [
         animatedButton,
-        if (currentQuest.hint != null && widget.gameType != GameSubtype.topicVocab && hintUsed) ...[
+        if (currentQuest.hint != null &&
+            widget.gameType != GameSubtype.topicVocab &&
+            hintUsed) ...[
           SizedBox(width: 8.w),
           TranslateButtonWidget(
             originalText: currentQuest.hint!,
@@ -171,7 +173,7 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
                 context: context,
                 message: translated,
                 type: CustomSnackBarType.info,
-              duration: const Duration(seconds: 8),
+                duration: const Duration(seconds: 8),
               );
             },
           ),

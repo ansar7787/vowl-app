@@ -202,7 +202,9 @@ class _RoleplayBaseLayoutState extends State<RoleplayBaseLayout> {
           _nudgeTimer?.cancel();
           _nudgeTimer = Timer(kRoleplayNudgeDelay, () {
             if (mounted) {
-              _ttsService.speak(context.tr('games.kids_nudge', fallback: 'Let\'s go!'));
+              _ttsService.speak(
+                context.tr('games.kids_nudge', fallback: 'Let\'s go!'),
+              );
               _hapticService.warning();
             }
           });
@@ -399,30 +401,31 @@ class _RoleplayBaseLayoutState extends State<RoleplayBaseLayout> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   QuestHintButton(
-                    used: state is RoleplayLoaded ? state.hintUsed : false,
-                    primaryColor: theme.primaryColor,
-                    hintText: quest.hint,
-                    soundService: _soundService,
-                    onTap: () {
-                      context.read<RoleplayBloc>().add(
-                        const RoleplayHintUsed(),
-                      );
-                      widget.onHint();
-                    },
-                  )
-                  .animate(
-                    target: hintShouldGlow ? 1 : 0,
-                    onPlay: (c) => c.repeat(reverse: true),
-                  )
-                  .shimmer(
-                    color: Colors.white.withValues(alpha: 0.5),
-                    duration: 1.seconds,
-                  )
-                  .scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.1, 1.1),
-                  ),
-                  if (quest.hint != null && ((state is RoleplayLoaded) ? state.hintUsed : false)) ...[
+                        used: state is RoleplayLoaded ? state.hintUsed : false,
+                        primaryColor: theme.primaryColor,
+                        hintText: quest.hint,
+                        soundService: _soundService,
+                        onTap: () {
+                          context.read<RoleplayBloc>().add(
+                            const RoleplayHintUsed(),
+                          );
+                          widget.onHint();
+                        },
+                      )
+                      .animate(
+                        target: hintShouldGlow ? 1 : 0,
+                        onPlay: (c) => c.repeat(reverse: true),
+                      )
+                      .shimmer(
+                        color: Colors.white.withValues(alpha: 0.5),
+                        duration: 1.seconds,
+                      )
+                      .scale(
+                        begin: const Offset(1, 1),
+                        end: const Offset(1.1, 1.1),
+                      ),
+                  if (quest.hint != null &&
+                      ((state is RoleplayLoaded) ? state.hintUsed : false)) ...[
                     SizedBox(width: 8.w),
                     TranslateButtonWidget(
                       originalText: quest.hint,
@@ -431,7 +434,7 @@ class _RoleplayBaseLayoutState extends State<RoleplayBaseLayout> {
                           context: context,
                           message: translated,
                           type: CustomSnackBarType.info,
-                        duration: const Duration(seconds: 8),
+                          duration: const Duration(seconds: 8),
                         );
                       },
                     ),

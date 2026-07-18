@@ -93,7 +93,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
             title: 'POLARITY MASTER!',
             enableDoubleUp: true,
           );
-        } 
+        }
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(

@@ -150,7 +150,10 @@ class KidsGameDialogs {
                                 ],
                               ),
                               child: Text(
-                                context.tr('games.kids_level_up', fallback: 'Level Up!'),
+                                context.tr(
+                                  'games.kids_level_up',
+                                  fallback: 'Level Up!',
+                                ),
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
@@ -241,7 +244,10 @@ class KidsGameDialogs {
                                     ),
                                     SizedBox(width: 12.w),
                                     Text(
-                                      context.tr('games.kids_new_sticker', fallback: 'New Sticker!'),
+                                      context.tr(
+                                        'games.kids_new_sticker',
+                                        fallback: 'New Sticker!',
+                                      ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontWeight: FontWeight.w800,
@@ -498,7 +504,10 @@ class KidsGameDialogs {
                   ),
                   SizedBox(height: 12.h),
                   Text(
-                    context.tr('games.kids_game_over_subtitle', fallback: 'Great effort!'),
+                    context.tr(
+                      'games.kids_game_over_subtitle',
+                      fallback: 'Great effort!',
+                    ),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -571,7 +580,10 @@ class KidsGameDialogs {
                       context.pop(); // Pop game screen
                     },
                     child: Text(
-                      context.tr('games.kids_exit_to_map', fallback: 'Exit to Map'),
+                      context.tr(
+                        'games.kids_exit_to_map',
+                        fallback: 'Exit to Map',
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         color: Colors.grey,
@@ -655,7 +667,10 @@ class KidsGameDialogs {
                   SizedBox(height: 12.h),
 
                   Text(
-                    context.tr('games.kids_quit_subtitle', fallback: 'Are you sure you want to quit?'),
+                    context.tr(
+                      'games.kids_quit_subtitle',
+                      fallback: 'Are you sure you want to quit?',
+                    ),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -727,7 +742,12 @@ class KidsGameDialogs {
                             ),
                             child: Center(
                               child: Text(
-                                context.tr('games.kids_play_on', fallback: 'Play On').toUpperCase(),
+                                context
+                                    .tr(
+                                      'games.kids_play_on',
+                                      fallback: 'Play On',
+                                    )
+                                    .toUpperCase(),
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',

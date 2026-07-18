@@ -47,7 +47,10 @@ class AccentShadowingTargetPanel extends StatelessWidget {
         children: [
           Semantics(
             button: true,
-            label: context.tr('games.semantic_listen_example', fallback: 'Listen to Example'),
+            label: context.tr(
+              'games.semantic_listen_example',
+              fallback: 'Listen to Example',
+            ),
             excludeSemantics: true,
             // FIX: at reference scale (12.r padding + 32.r icon ≈ 56
             // logical px) this already clears the 48dp minimum touch
@@ -97,7 +100,8 @@ class AccentShadowingTargetPanel extends StatelessWidget {
       container: true,
       excludeSemantics: true,
       label: context.tr(
-        'games.semantic_target_sentence', fallback: 'Target Sentence',
+        'games.semantic_target_sentence',
+        fallback: 'Target Sentence',
         args: [text, matchedIndices.length.toString(), words.length.toString()],
       ),
       child: Wrap(

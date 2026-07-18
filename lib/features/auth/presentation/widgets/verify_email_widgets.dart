@@ -13,7 +13,10 @@ class VerifyEmailIconHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       image: true,
-      label: context.tr('auth.verify_email_icon_label', fallback: 'Verify Email'),
+      label: context.tr(
+        'auth.verify_email_icon_label',
+        fallback: 'Verify Email',
+      ),
       child: Container(
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
@@ -54,7 +57,11 @@ class VerifyEmailStatusText extends StatelessWidget {
         ),
         SizedBox(height: 16.h),
         Text(
-          context.tr('auth.verify_email_description', fallback: 'We sent a verification link to your email. Please click the link to verify your account.'),
+          context.tr(
+            'auth.verify_email_description',
+            fallback:
+                'We sent a verification link to your email. Please click the link to verify your account.',
+          ),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 15.sp,
@@ -108,7 +115,10 @@ class ResendEmailButton extends StatelessWidget {
     return Semantics(
       button: true,
       label: canResendEmail
-          ? context.tr('auth.resend_verification_email_semantic', fallback: 'Resend verification email')
+          ? context.tr(
+              'auth.resend_verification_email_semantic',
+              fallback: 'Resend verification email',
+            )
           : 'Resend available in $secondsRemaining seconds',
       child: ElevatedButton(
         onPressed: canResendEmail ? onPressed : null,
@@ -151,7 +161,10 @@ class VerifyConfirmationButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: context.tr('auth.verified_confirmation_semantic', fallback: 'Email verified, you can now continue'),
+      label: context.tr(
+        'auth.verified_confirmation_semantic',
+        fallback: 'Email verified, you can now continue',
+      ),
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
@@ -190,7 +203,10 @@ class VerifyLogoutButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: context.tr('auth.cancel_and_logout_semantic', fallback: 'Cancel and log out'),
+      label: context.tr(
+        'auth.cancel_and_logout_semantic',
+        fallback: 'Cancel and log out',
+      ),
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(

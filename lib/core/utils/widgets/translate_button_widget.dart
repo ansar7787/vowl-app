@@ -42,7 +42,7 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
       if (!isConfigured) {
         if (!mounted) return;
         await LanguageSelectionBottomSheet.show(context);
-        
+
         // If they still didn't configure it (dismissed the sheet), abort.
         final recheck = await TranslationService().isLanguageConfigured();
         if (!recheck) {
@@ -68,14 +68,20 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
             );
           }
           // 4. Perform the actual ML Kit translation
-          final translated = await TranslationService().translate(widget.originalText);
+          final translated = await TranslationService().translate(
+            widget.originalText,
+          );
           widget.onTranslationComplete(translated);
         },
       );
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Translation failed. Please check internet connection.')),
+          const SnackBar(
+            content: Text(
+              'Translation failed. Please check internet connection.',
+            ),
+          ),
         );
       }
     } finally {
@@ -92,29 +98,32 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
         width: 32.r,
         height: 32.r,
         decoration: BoxDecoration(
-          color: widget.isKidsZone ? Colors.white24 : Theme.of(context).primaryColor.withValues(alpha: 0.1),
+          color: widget.isKidsZone
+              ? Colors.white24
+              : Theme.of(context).primaryColor.withValues(alpha: 0.1),
           shape: BoxShape.circle,
         ),
         child: Center(
-          child: Icon(
-            LucideIcons.sparkles,
-            size: 18.r,
-            color: widget.isKidsZone ? Colors.white : Theme.of(context).primaryColor,
-          ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-            begin: const Offset(0.8, 0.8),
-            end: const Offset(1.2, 1.2),
-          ),
+          child:
+              Icon(
+                    LucideIcons.sparkles,
+                    size: 18.r,
+                    color: widget.isKidsZone
+                        ? Colors.white
+                        : Theme.of(context).primaryColor,
+                  )
+                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                  .scale(
+                    begin: const Offset(0.8, 0.8),
+                    end: const Offset(1.2, 1.2),
+                  ),
         ),
       );
     }
 
     return IconButton(
       onPressed: _handleTranslatePress,
-      icon: Icon(
-        LucideIcons.languages,
-        size: 24.r,
-        color: Colors.grey,
-      ),
+      icon: Icon(LucideIcons.languages, size: 24.r, color: Colors.grey),
       tooltip: 'Translate',
       constraints: const BoxConstraints(),
       padding: EdgeInsets.zero,

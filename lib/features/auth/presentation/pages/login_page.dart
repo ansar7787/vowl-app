@@ -147,7 +147,10 @@ class _LoginViewState extends State<LoginView> {
 
               return LoadingOverlay(
                 isLoading: state.isSubmitting || state.isSuccess,
-                message: context.tr('auth.preparing_adventure', fallback: 'Preparing your adventure...'),
+                message: context.tr(
+                  'auth.preparing_adventure',
+                  fallback: 'Preparing your adventure...',
+                ),
                 child: Scaffold(
                   backgroundColor: bgColor,
                   resizeToAvoidBottomInset: false,
@@ -219,7 +222,11 @@ class _LoginViewState extends State<LoginView> {
                                           ],
                                         ),
                                         Text(
-                                          context.tr('auth.login_subtitle', fallback: 'Welcome back! Your journey continues here.'),
+                                          context.tr(
+                                            'auth.login_subtitle',
+                                            fallback:
+                                                'Welcome back! Your journey continues here.',
+                                          ),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
                                             fontSize: 15.sp,
@@ -276,7 +283,9 @@ class _LoginViewState extends State<LoginView> {
                                                   ),
                                                   child: Text(
                                                     context.tr(
-                                                      'auth.forgot_password_question', fallback: 'Forgot your password?',
+                                                      'auth.forgot_password_question',
+                                                      fallback:
+                                                          'Forgot your password?',
                                                     ),
                                                     style: const TextStyle(
                                                       fontFamily: 'Outfit',
@@ -332,7 +341,9 @@ class _LoginViewState extends State<LoginView> {
                                             Flexible(
                                               child: Text(
                                                 context.tr(
-                                                  'auth.no_account_prompt', fallback: 'Don\'t have an account?',
+                                                  'auth.no_account_prompt',
+                                                  fallback:
+                                                      'Don\'t have an account?',
                                                 ),
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
@@ -350,7 +361,10 @@ class _LoginViewState extends State<LoginView> {
                                                 minimumSize: const Size(48, 48),
                                               ),
                                               child: Text(
-                                                context.tr('auth.signup', fallback: 'Sign Up'),
+                                                context.tr(
+                                                  'auth.signup',
+                                                  fallback: 'Sign Up',
+                                                ),
                                                 style: const TextStyle(
                                                   fontFamily: 'Outfit',
                                                   color: Color(0xFF6366F1),

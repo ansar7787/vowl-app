@@ -59,8 +59,8 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
               SizedBox(width: 14.w),
               Expanded(
                 child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                     Text(
                       quest.roleName?.toUpperCase() ?? "TELEMETRY AGENT",
                       style: TextStyle(
@@ -74,15 +74,15 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                     SizedBox(height: 4.h),
-                  Text(
-                    "BRANCH COMMS COMMITTED",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      color: Colors.grey.shade500,
-                      fontWeight: FontWeight.bold,
+                    Text(
+                      "BRANCH COMMS COMMITTED",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        color: Colors.grey.shade500,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
                   ],
                 ),
               ),

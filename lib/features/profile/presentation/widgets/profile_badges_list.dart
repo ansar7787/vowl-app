@@ -56,7 +56,10 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
             VowlMascot(state: VowlMascotState.thinking, size: 60.r),
             SizedBox(height: 16.h),
             Text(
-              context.tr('profile.hall_of_fame_vacant', fallback: 'Hall of Fame is Vacant'),
+              context.tr(
+                'profile.hall_of_fame_vacant',
+                fallback: 'Hall of Fame is Vacant',
+              ),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -68,7 +71,10 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
             ),
             SizedBox(height: 8.h),
             Text(
-              context.tr('profile.hall_of_fame_vacant_subtitle', fallback: 'Complete quests to earn badges.'),
+              context.tr(
+                'profile.hall_of_fame_vacant_subtitle',
+                fallback: 'Complete quests to earn badges.',
+              ),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 color: isDark ? Colors.white38 : Colors.black38,
@@ -122,7 +128,8 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                   // shown visually below) are now announced together.
                   Semantics(
                     label: context.tr(
-                      'profile.badge_semantic_label', fallback: 'Badge earned',
+                      'profile.badge_semantic_label',
+                      fallback: 'Badge earned',
                       args: [context.tr(badge.nameKey), '${badge.minLevel}'],
                     ),
                     image: true,
@@ -180,7 +187,8 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                         ),
                         Text(
                           context.tr(
-                            'profile.level_achieved', fallback: 'Level Achieved',
+                            'profile.level_achieved',
+                            fallback: 'Level Achieved',
                             args: ['${badge.minLevel}'],
                           ),
                           maxLines: 1,

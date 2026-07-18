@@ -54,8 +54,12 @@ class RoleplayFeedbackCard extends StatelessWidget {
         : (isFinal
               ? (lives == 0
                     ? context.tr('games.see_results', fallback: 'See Results')
-                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
-              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
+                    : context
+                          .tr('common.continue_text', fallback: 'Continue')
+                          .toUpperCase())
+              : context
+                    .tr('games.try_again', fallback: 'Try Again')
+                    .toUpperCase());
     final explanation = (success || isFinal)
         ? loadedState?.currentQuest.explanation
         : null;
@@ -84,7 +88,10 @@ class RoleplayFeedbackCard extends StatelessWidget {
                       ? context.tr('games.correct', fallback: 'Correct')
                       : (isFinal
                             ? '${context.tr('games.incorrect', fallback: 'Incorrect')} ${explanation != null ? context.tr('games.explanation', fallback: 'Explanation') : ''}'
-                            : context.tr('games.semantic_incorrect_try_again', fallback: 'Incorrect. Tap to try again.')),
+                            : context.tr(
+                                'games.semantic_incorrect_try_again',
+                                fallback: 'Incorrect. Tap to try again.',
+                              )),
                   child: _ResultHeader(
                     icon: icon,
                     title: title,
@@ -195,7 +202,8 @@ class _ExplanationCardState extends State<_ExplanationCard> {
     final displayText = _translatedText ?? widget.explanation;
 
     return Semantics(
-          label: '${context.tr('games.explanation', fallback: 'Explanation')}: $displayText',
+          label:
+              '${context.tr('games.explanation', fallback: 'Explanation')}: $displayText',
           child: Container(
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
@@ -223,7 +231,10 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                     Expanded(
                       child: ExcludeSemantics(
                         child: Text(
-                          context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
+                          context.tr(
+                            'games.explanation_caps',
+                            fallback: 'EXPLANATION',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,
@@ -238,7 +249,8 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                       TranslateButtonWidget(
                         originalText: widget.explanation,
                         onTranslationComplete: (translated) {
-                          if (mounted) setState(() => _translatedText = translated);
+                          if (mounted)
+                            setState(() => _translatedText = translated);
                         },
                       ),
                   ],

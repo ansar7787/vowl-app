@@ -96,7 +96,8 @@ class HomeSectionHeader extends StatelessWidget {
         if (onSeeAll != null)
           Semantics(
             button: true,
-            label: '${context.tr('common.see_all', fallback: 'See All')} $resolvedTitle',
+            label:
+                '${context.tr('common.see_all', fallback: 'See All')} $resolvedTitle',
             child: ScaleButton(
               onTap: onSeeAll,
               child: Container(

@@ -13,7 +13,6 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_instruction.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_target_wall.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_ballista_ammo.dart';
-import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_explanation_card.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_trajectory_painter.dart';
 
 // ---------------------------------------------------------------------------
@@ -207,7 +206,6 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
                       selectedProjectile: _selectedProjectile,
                       isAnswered: isAnswered,
                       isCorrect: isCorrect,
-                      showExplanation: showExplanation,
                       theme: _theme,
                       isDark: isDark,
                       onBridgeStart: (pos) => _onBridgeStart(pos, isAnswered),
@@ -259,7 +257,6 @@ class _CompleteSentenceBody extends StatelessWidget {
   final String? selectedProjectile;
   final bool isAnswered;
   final bool? isCorrect;
-  final bool showExplanation;
   final dynamic theme;
   final bool isDark;
   final ValueChanged<Offset> onBridgeStart;
@@ -272,7 +269,6 @@ class _CompleteSentenceBody extends StatelessWidget {
     required this.selectedProjectile,
     required this.isAnswered,
     required this.isCorrect,
-    required this.showExplanation,
     required this.theme,
     required this.isDark,
     required this.onBridgeStart,
@@ -310,17 +306,9 @@ class _CompleteSentenceBody extends StatelessWidget {
               // FIX: onFire now receives only the fired word.
               onFire: onFire,
             ),
-            if (isAnswered) ...[
-              SizedBox(height: 30.h),
-              CompleteSentenceExplanationCard(
-                quest: quest,
-                isCorrect: isCorrect == true,
-                showExplanation: showExplanation,
-                primaryColor: theme.primaryColor,
-                isDark: isDark,
-              ),
-            ],
-            SizedBox(height: 60.h),
+            SizedBox(
+              height: 160.h,
+            ), // Provide enough bottom padding for the WritingFeedbackCard
           ],
         ),
       ),

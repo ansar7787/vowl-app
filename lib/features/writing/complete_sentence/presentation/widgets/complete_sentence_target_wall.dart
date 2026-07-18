@@ -24,9 +24,11 @@ class CompleteSentenceTargetWall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // FIX: Match any number of consecutive underscores to ensure the blank line
+    // is reliably replaced regardless of curriculum JSON variations.
     final displayText = text.replaceAll(
-      '____',
-      injected?.toUpperCase() ?? '____',
+      RegExp(r'_+'),
+      injected != null ? injected!.toUpperCase() : '____',
     );
 
     return Semantics(

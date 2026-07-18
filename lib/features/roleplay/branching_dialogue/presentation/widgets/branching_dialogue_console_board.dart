@@ -184,63 +184,65 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
           duration: const Duration(milliseconds: 300),
           opacity: hideOther ? 0.0 : 1.0,
           child: Column(
-          children: [
-            Container(
-              width: 72.r,
-              height: 72.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: isHovered
-                    ? color
-                    : (isDark ? const Color(0xFF0F0F1B) : Colors.white),
-                border: Border.all(
-                  color: isSelected ? termColor : color.withValues(alpha: 0.5),
-                  width: isSelected || isHovered ? 3.0 : 1.5,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: (isSelected ? termColor : color).withValues(
-                      alpha: isHovered || isSelected ? 0.35 : 0.1,
-                    ),
-                    blurRadius: 12,
-                    spreadRadius: 1,
-                  ),
-                ],
-              ),
-              child: Icon(
-                isAnswered && isSelected
-                    ? (index == correctIndex
-                          ? Icons.verified_rounded
-                          : Icons.cancel_outlined)
-                    : Icons.alt_route_rounded,
-                color: isHovered || (isAnswered && isSelected)
-                    ? Colors.white
-                    : color,
-                size: 28.r,
-              ),
-            ),
-            SizedBox(height: 8.h),
-            SizedBox(
-              width: 90.w,
-              child: Text(
-                text,
-                textAlign: TextAlign.center,
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.bold,
+            children: [
+              Container(
+                width: 72.r,
+                height: 72.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
                   color: isHovered
                       ? color
-                      : (isDark ? Colors.white70 : Colors.black87),
-                  height: 1.2,
+                      : (isDark ? const Color(0xFF0F0F1B) : Colors.white),
+                  border: Border.all(
+                    color: isSelected
+                        ? termColor
+                        : color.withValues(alpha: 0.5),
+                    width: isSelected || isHovered ? 3.0 : 1.5,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: (isSelected ? termColor : color).withValues(
+                        alpha: isHovered || isSelected ? 0.35 : 0.1,
+                      ),
+                      blurRadius: 12,
+                      spreadRadius: 1,
+                    ),
+                  ],
+                ),
+                child: Icon(
+                  isAnswered && isSelected
+                      ? (index == correctIndex
+                            ? Icons.verified_rounded
+                            : Icons.cancel_outlined)
+                      : Icons.alt_route_rounded,
+                  color: isHovered || (isAnswered && isSelected)
+                      ? Colors.white
+                      : color,
+                  size: 28.r,
                 ),
               ),
-            ),
-          ],
+              SizedBox(height: 8.h),
+              SizedBox(
+                width: 90.w,
+                child: Text(
+                  text,
+                  textAlign: TextAlign.center,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.bold,
+                    color: isHovered
+                        ? color
+                        : (isDark ? Colors.white70 : Colors.black87),
+                    height: 1.2,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
       ),
     );
   }

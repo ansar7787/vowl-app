@@ -49,7 +49,8 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
         } else if (_progress < 0.85) {
           _progress += 0.01; // Medium phase
         } else if (_progress < 0.98) {
-          _progress += 0.001; // Crawl phase (stuck at 98-99% until real task finishes)
+          _progress +=
+              0.001; // Crawl phase (stuck at 98-99% until real task finishes)
         }
       });
     });
@@ -67,7 +68,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
           _isFinished = true;
         });
         _timer?.cancel();
-        
+
         // Wait a tiny bit to let user see 100% and success state
         Future.delayed(const Duration(milliseconds: 600), () {
           if (mounted) {
@@ -87,7 +88,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(32.r),
@@ -118,13 +119,15 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
                     size: 40.r,
                   ).animate().scale(curve: Curves.elasticOut)
                 : Icon(
-                    Icons.cloud_download_rounded,
-                    color: Colors.blueAccent,
-                    size: 40.r,
-                  ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.1, 1.1),
-                  ),
+                        Icons.cloud_download_rounded,
+                        color: Colors.blueAccent,
+                        size: 40.r,
+                      )
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .scale(
+                        begin: const Offset(1, 1),
+                        end: const Offset(1.1, 1.1),
+                      ),
           ),
           SizedBox(height: 24.h),
           Text(
@@ -149,7 +152,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
             ),
           ),
           SizedBox(height: 32.h),
-          
+
           // Progress Bar
           Stack(
             alignment: Alignment.center,
@@ -190,17 +193,19 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
           ),
           SizedBox(height: 16.h),
           Text(
-            '${(_progress * 100).toInt()}%',
-            style: TextStyle(
-              fontFamily: 'RobotoMono',
-              fontSize: 32.sp,
-              fontWeight: FontWeight.w900,
-              foreground: Paint()
-                ..shader = const LinearGradient(
-                  colors: [Colors.cyanAccent, Colors.blueAccent],
-                ).createShader(const Rect.fromLTWH(0, 0, 100, 40)),
-            ),
-          ).animate(key: ValueKey(_progress)).scale(
+                '${(_progress * 100).toInt()}%',
+                style: TextStyle(
+                  fontFamily: 'RobotoMono',
+                  fontSize: 32.sp,
+                  fontWeight: FontWeight.w900,
+                  foreground: Paint()
+                    ..shader = const LinearGradient(
+                      colors: [Colors.cyanAccent, Colors.blueAccent],
+                    ).createShader(const Rect.fromLTWH(0, 0, 100, 40)),
+                ),
+              )
+              .animate(key: ValueKey(_progress))
+              .scale(
                 duration: 100.ms,
                 begin: const Offset(1.05, 1.05),
                 end: const Offset(1, 1),

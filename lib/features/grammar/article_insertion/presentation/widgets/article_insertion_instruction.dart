@@ -4,7 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ArticleInsertionInstruction extends StatelessWidget {
   final Color primaryColor;
   final String instruction;
-  const ArticleInsertionInstruction({super.key, required this.primaryColor, required this.instruction});
+  const ArticleInsertionInstruction({
+    super.key,
+    required this.primaryColor,
+    required this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {

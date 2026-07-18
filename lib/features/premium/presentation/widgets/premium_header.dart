@@ -11,7 +11,7 @@ class PremiumHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       child: Row(
@@ -24,10 +24,14 @@ class PremiumHeader extends StatelessWidget {
               filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
               child: Container(
                 decoration: BoxDecoration(
-                  color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.05)
+                      : Colors.black.withValues(alpha: 0.03),
                   borderRadius: BorderRadius.circular(16.r),
                   border: Border.all(
-                    color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.1)
+                        : Colors.black.withValues(alpha: 0.05),
                   ),
                 ),
                 child: IconButton(
@@ -48,14 +52,17 @@ class PremiumHeader extends StatelessWidget {
               ),
             ),
           ),
-          
+
           Flexible(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(30.r),
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 14.w,
+                    vertical: 8.h,
+                  ),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
@@ -79,7 +86,10 @@ class PremiumHeader extends StatelessWidget {
                       SizedBox(width: 6.w),
                       Flexible(
                         child: Text(
-                          context.tr('premium.verified_pro_badge', fallback: 'Verified Pro'),
+                          context.tr(
+                            'premium.verified_pro_badge',
+                            fallback: 'Verified Pro',
+                          ),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(

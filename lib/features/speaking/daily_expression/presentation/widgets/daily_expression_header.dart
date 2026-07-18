@@ -23,11 +23,7 @@ class DailyExpressionHeader extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            Icons.auto_awesome_rounded,
-            size: 14.r,
-            color: primaryColor,
-          ),
+          Icon(Icons.auto_awesome_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 8.w),
           Text(
             instruction.toUpperCase(),

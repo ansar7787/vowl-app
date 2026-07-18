@@ -76,8 +76,14 @@ class AccentShadowingMicTrigger extends StatelessWidget {
         Semantics(
           button: true,
           label: isListening
-              ? context.tr('games.semantic_mic_stop', fallback: 'Stop Recording')
-              : context.tr('games.semantic_mic_start', fallback: 'Start Recording'),
+              ? context.tr(
+                  'games.semantic_mic_stop',
+                  fallback: 'Stop Recording',
+                )
+              : context.tr(
+                  'games.semantic_mic_start',
+                  fallback: 'Start Recording',
+                ),
           excludeSemantics: true,
           child: animatedMicButton,
         ),
@@ -86,7 +92,10 @@ class AccentShadowingMicTrigger extends StatelessWidget {
             padding: EdgeInsets.only(top: 20.h),
             child: Semantics(
               button: true,
-              hint: context.tr('games.semantic_tutor_pass_hint', fallback: 'Speak now'),
+              hint: context.tr(
+                'games.semantic_tutor_pass_hint',
+                fallback: 'Speak now',
+              ),
               child: ScaleButton(
                 onTap: onTutorPass,
                 // FIX: at 10.h vertical padding plus icon/text content, this
@@ -118,7 +127,12 @@ class AccentShadowingMicTrigger extends StatelessWidget {
                           ),
                           SizedBox(width: 8.w),
                           Text(
-                            context.tr('games.i_spoke_correctly', fallback: 'I spoke correctly').toUpperCase(),
+                            context
+                                .tr(
+                                  'games.i_spoke_correctly',
+                                  fallback: 'I spoke correctly',
+                                )
+                                .toUpperCase(),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               color: Colors.amber,

@@ -121,7 +121,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
             title: 'VAULT CRACKED!',
             enableDoubleUp: true,
           );
-        } 
+        }
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(

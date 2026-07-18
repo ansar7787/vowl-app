@@ -133,8 +133,14 @@ class LeaderboardRankCard extends StatelessWidget {
                       children: [
                         Text(
                           isRanked
-                              ? context.tr('leaderboard.your_standing', fallback: 'Your Standing')
-                              : context.tr('leaderboard.join_competition', fallback: 'Join Competition'),
+                              ? context.tr(
+                                  'leaderboard.your_standing',
+                                  fallback: 'Your Standing',
+                                )
+                              : context.tr(
+                                  'leaderboard.join_competition',
+                                  fallback: 'Join Competition',
+                                ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 8.sp,
@@ -147,7 +153,10 @@ class LeaderboardRankCard extends StatelessWidget {
                         ),
                         Text(
                           currentUser.displayName?.toUpperCase() ??
-                              context.tr('leaderboard.player', fallback: 'Player'),
+                              context.tr(
+                                'leaderboard.player',
+                                fallback: 'Player',
+                              ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 15.sp,
@@ -246,7 +255,8 @@ class LeaderboardRankCard extends StatelessWidget {
                   Flexible(
                     child: Text(
                       context.tr(
-                        'leaderboard.all_quests', fallback: 'All Quests',
+                        'leaderboard.all_quests',
+                        fallback: 'All Quests',
                         args: [(progress * 100).toStringAsFixed(1)],
                       ),
                       style: TextStyle(

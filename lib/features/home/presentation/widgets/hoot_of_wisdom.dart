@@ -95,7 +95,10 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
     final dayStr = DateFormat('dd', locale).format(now);
     final monthStr = DateFormat('MMM', locale).format(now).toUpperCase();
     final resolvedText = _hootText.isEmpty
-        ? context.tr('home.hoot_fallback_msg_2', fallback: 'Keep learning every day!')
+        ? context.tr(
+            'home.hoot_fallback_msg_2',
+            fallback: 'Keep learning every day!',
+          )
         : _hootText;
 
     return GlassTile(
@@ -107,7 +110,10 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
               child: Center(
                 child: CircularProgressIndicator(
                   strokeWidth: 2,
-                  semanticsLabel: context.tr('home.hoot_daily_motivation', fallback: 'Daily Motivation'),
+                  semanticsLabel: context.tr(
+                    'home.hoot_daily_motivation',
+                    fallback: 'Daily Motivation',
+                  ),
                 ),
               ),
             )
@@ -174,7 +180,10 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
                               Flexible(
                                 child: Text(
                                   _hootTitle ??
-                                      context.tr('home.hoot_daily_motivation', fallback: 'Daily Motivation'),
+                                      context.tr(
+                                        'home.hoot_daily_motivation',
+                                        fallback: 'Daily Motivation',
+                                      ),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 10.sp,

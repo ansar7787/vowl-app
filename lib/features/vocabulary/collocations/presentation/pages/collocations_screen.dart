@@ -110,7 +110,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
             title: 'PAIR MASTER!',
             enableDoubleUp: true,
           );
-        } 
+        }
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(

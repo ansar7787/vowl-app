@@ -56,7 +56,10 @@ class ForgotPasswordHeader extends StatelessWidget {
           ],
         ),
         Text(
-          context.tr('auth.recover_account_subtitle', fallback: 'Let\'s get you back on track.'),
+          context.tr(
+            'auth.recover_account_subtitle',
+            fallback: 'Let\'s get you back on track.',
+          ),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 15.sp,
@@ -102,7 +105,10 @@ class ForgotPasswordEmailInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       label: context.tr('auth.email_field_label', fallback: 'Email'),
-      hint: context.tr('auth.email_field_hint_forgot_password', fallback: 'Enter your email address'),
+      hint: context.tr(
+        'auth.email_field_hint_forgot_password',
+        fallback: 'Enter your email address',
+      ),
       textField: true,
       child: TextFormField(
         key: fieldKey,
@@ -112,10 +118,16 @@ class ForgotPasswordEmailInput extends StatelessWidget {
         validator: (value) {
           final trimmed = value?.trim() ?? '';
           if (trimmed.isEmpty) {
-            return context.tr('auth.validation_email_required', fallback: 'Email is required');
+            return context.tr(
+              'auth.validation_email_required',
+              fallback: 'Email is required',
+            );
           }
           if (!_emailRegex.hasMatch(trimmed)) {
-            return context.tr('auth.validation_email_invalid', fallback: 'Invalid email address');
+            return context.tr(
+              'auth.validation_email_invalid',
+              fallback: 'Invalid email address',
+            );
           }
           return null;
         },
@@ -124,7 +136,10 @@ class ForgotPasswordEmailInput extends StatelessWidget {
         autofillHints: const [AutofillHints.email],
         style: TextStyle(color: contrastColor),
         decoration: InputDecoration(
-          hintText: context.tr('auth.email_hint_full', fallback: 'e.g., explorer@vowl.com'),
+          hintText: context.tr(
+            'auth.email_hint_full',
+            fallback: 'e.g., explorer@vowl.com',
+          ),
           hintStyle: TextStyle(color: contrastColor.withValues(alpha: 0.5)),
           errorStyle: TextStyle(
             fontFamily: 'Outfit',
@@ -239,7 +254,10 @@ class RememberPasswordFooter extends StatelessWidget {
         // RenderFlex overflow next to the "Login" button.
         Flexible(
           child: Text(
-            context.tr('auth.remember_password_prompt', fallback: 'Remember your password?'),
+            context.tr(
+              'auth.remember_password_prompt',
+              fallback: 'Remember your password?',
+            ),
             style: TextStyle(
               fontFamily: 'Outfit',
               color: secondaryColor,

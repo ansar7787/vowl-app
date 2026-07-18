@@ -334,8 +334,8 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
             ),
             child: Icon(
               // If they can't leave, show settings icon instead of back
-              AgeGateService.isAdultCached 
-                  ? Icons.arrow_back_ios_new_rounded 
+              AgeGateService.isAdultCached
+                  ? Icons.arrow_back_ios_new_rounded
                   : Icons.settings_rounded,
               color: contrastColor,
               size: 20.sp,

@@ -53,18 +53,24 @@ class EliteFeedbackCard extends StatelessWidget {
   Color get _shadowColor =>
       _success ? const Color(0xFF10B981) : const Color(0xFFE11D48);
 
-  String _title(BuildContext context) =>
-      _success ? context.tr('games.excellent', fallback: 'Excellent!') : context.tr('games.not_quite', fallback: 'Not Quite');
+  String _title(BuildContext context) => _success
+      ? context.tr('games.excellent', fallback: 'Excellent!')
+      : context.tr('games.not_quite', fallback: 'Not Quite');
 
   IconData get _icon =>
       _success ? Icons.check_circle_rounded : Icons.error_rounded;
 
   String _buttonLabel(BuildContext context) {
-    if (_success) return context.tr('common.continue_text', fallback: 'Continue').toUpperCase();
+    if (_success)
+      return context
+          .tr('common.continue_text', fallback: 'Continue')
+          .toUpperCase();
     if (state.isFinalFailure) {
       return state.livesRemaining == 0
           ? context.tr('games.see_results', fallback: 'See Results')
-          : context.tr('common.continue_text', fallback: 'Continue').toUpperCase();
+          : context
+                .tr('common.continue_text', fallback: 'Continue')
+                .toUpperCase();
     }
     return context.tr('games.try_again', fallback: 'Try Again').toUpperCase();
   }
@@ -261,16 +267,27 @@ class EliteFeedbackCard extends StatelessWidget {
   ) {
     final buffer = StringBuffer();
     if (_success) {
-      buffer.write(context.tr('games.semantic_correct_continue', fallback: 'Correct. Tap to continue.'));
+      buffer.write(
+        context.tr(
+          'games.semantic_correct_continue',
+          fallback: 'Correct. Tap to continue.',
+        ),
+      );
     } else if (correctAnswerText != null) {
       buffer.write(
         context.tr(
-          'games.semantic_incorrect_explanation', fallback: 'Incorrect. Read explanation.',
+          'games.semantic_incorrect_explanation',
+          fallback: 'Incorrect. Read explanation.',
           args: [correctAnswerText, _buttonLabel(context)],
         ),
       );
     } else {
-      buffer.write(context.tr('games.semantic_incorrect_try_again', fallback: 'Incorrect. Tap to try again.'));
+      buffer.write(
+        context.tr(
+          'games.semantic_incorrect_try_again',
+          fallback: 'Incorrect. Tap to try again.',
+        ),
+      );
     }
     if (ruleTip != null) {
       // FIX: previously concatenated a raw label + the tip text directly
@@ -281,7 +298,13 @@ class EliteFeedbackCard extends StatelessWidget {
       // order/grammar around an inserted value. NOTE: `games.semantic_pro_tip`
       // is a new localization key needed in the ARB/localization files
       // (outside this feature slice), e.g. English: "Pro tip: {0}".
-      buffer.write(context.tr('games.semantic_pro_tip', fallback: 'Pro tip available', args: [ruleTip]));
+      buffer.write(
+        context.tr(
+          'games.semantic_pro_tip',
+          fallback: 'Pro tip available',
+          args: [ruleTip],
+        ),
+      );
     }
     return buffer.toString();
   }
@@ -380,7 +403,10 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                   SizedBox(width: 8.w),
                   Expanded(
                     child: Text(
-                      context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
+                      context.tr(
+                        'games.explanation_caps',
+                        fallback: 'EXPLANATION',
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
@@ -394,7 +420,8 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                     TranslateButtonWidget(
                       originalText: widget.text,
                       onTranslationComplete: (translated) {
-                        if (mounted) setState(() => _translatedText = translated);
+                        if (mounted)
+                          setState(() => _translatedText = translated);
                       },
                     ),
                 ],
@@ -461,7 +488,11 @@ class _RuleTipBoxState extends State<_RuleTipBox> {
             children: [
               Row(
                 children: [
-                  Icon(Icons.menu_book_rounded, color: widget.accentColor, size: 14.r),
+                  Icon(
+                    Icons.menu_book_rounded,
+                    color: widget.accentColor,
+                    size: 14.r,
+                  ),
                   SizedBox(width: 8.w),
                   Expanded(
                     child: Text(
@@ -479,7 +510,8 @@ class _RuleTipBoxState extends State<_RuleTipBox> {
                     TranslateButtonWidget(
                       originalText: widget.text,
                       onTranslationComplete: (translated) {
-                        if (mounted) setState(() => _translatedText = translated);
+                        if (mounted)
+                          setState(() => _translatedText = translated);
                       },
                     ),
                 ],
@@ -563,7 +595,8 @@ class _ShadowingFocusBoxState extends State<_ShadowingFocusBox> {
                     TranslateButtonWidget(
                       originalText: widget.text,
                       onTranslationComplete: (translated) {
-                        if (mounted) setState(() => _translatedText = translated);
+                        if (mounted)
+                          setState(() => _translatedText = translated);
                       },
                     ),
                 ],
@@ -647,7 +680,8 @@ class _UsageContextBoxState extends State<_UsageContextBox> {
                     TranslateButtonWidget(
                       originalText: widget.text,
                       onTranslationComplete: (translated) {
-                        if (mounted) setState(() => _translatedText = translated);
+                        if (mounted)
+                          setState(() => _translatedText = translated);
                       },
                     ),
                 ],
@@ -731,7 +765,8 @@ class _SpellingRuleBoxState extends State<_SpellingRuleBox> {
                     TranslateButtonWidget(
                       originalText: widget.text,
                       onTranslationComplete: (translated) {
-                        if (mounted) setState(() => _translatedText = translated);
+                        if (mounted)
+                          setState(() => _translatedText = translated);
                       },
                     ),
                 ],
@@ -815,7 +850,8 @@ class _SequenceLogicBoxState extends State<_SequenceLogicBox> {
                     TranslateButtonWidget(
                       originalText: widget.text,
                       onTranslationComplete: (translated) {
-                        if (mounted) setState(() => _translatedText = translated);
+                        if (mounted)
+                          setState(() => _translatedText = translated);
                       },
                     ),
                 ],

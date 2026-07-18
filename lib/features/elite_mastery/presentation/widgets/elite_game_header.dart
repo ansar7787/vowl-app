@@ -90,7 +90,8 @@ class EliteGameHeader extends StatelessWidget {
       // life/lives plural, e.g. via that framework's plural syntax if
       // supported, or two args as used here in the interim.
       label: context.tr(
-        'games.semantic_level_progress', fallback: 'Level Progress',
+        'games.semantic_level_progress',
+        fallback: 'Level Progress',
         args: [level.toString(), lives.toString()],
       ),
       child: Padding(
@@ -163,7 +164,10 @@ class _BriefingButton extends StatelessWidget {
       // the correct side of the button regardless of text direction.
       padding: EdgeInsetsDirectional.only(start: 8.w),
       child: Semantics(
-        label: context.tr('games.semantic_show_instructions', fallback: 'Show Instructions'),
+        label: context.tr(
+          'games.semantic_show_instructions',
+          fallback: 'Show Instructions',
+        ),
         button: true,
         child: ScaleButton(
           onTap: onTap,

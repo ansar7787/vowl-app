@@ -582,8 +582,16 @@ class StoryServiceImpl implements StoryService {
       return StoryBeat(
         title: context.tr('story.new_quest', fallback: 'New Quest'),
         text: isKids
-            ? context.tr('story.fallback_kids', fallback: 'Let\'s go on an adventure!', args: [categoryName])
-            : context.tr('story.fallback_modern', fallback: 'Your mission begins now.', args: [categoryName]),
+            ? context.tr(
+                'story.fallback_kids',
+                fallback: 'Let\'s go on an adventure!',
+                args: [categoryName],
+              )
+            : context.tr(
+                'story.fallback_modern',
+                fallback: 'Your mission begins now.',
+                args: [categoryName],
+              ),
         mascotEmoji: isKids ? "✨" : "🚀",
         themeColor: _getCategoryColor(cleanId),
       );

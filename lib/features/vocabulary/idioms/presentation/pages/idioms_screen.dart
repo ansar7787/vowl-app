@@ -106,7 +106,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
             title: 'EMOJI EXPERT!',
             enableDoubleUp: true,
           );
-        } 
+        }
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(

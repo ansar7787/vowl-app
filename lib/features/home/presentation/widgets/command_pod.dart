@@ -136,7 +136,10 @@ class CommandPod extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12.r),
                         ),
                         child: Text(
-                          context.tr('home.rank_operative', fallback: 'Operative'),
+                          context.tr(
+                            'home.rank_operative',
+                            fallback: 'Operative',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 9.sp,
@@ -179,7 +182,11 @@ class CommandPod extends StatelessWidget {
                   SizedBox(width: 6.w),
                   Flexible(
                     child: Text(
-                      context.tr('home.level', fallback: 'Level', args: [user.level.toString()]),
+                      context.tr(
+                        'home.level',
+                        fallback: 'Level',
+                        args: [user.level.toString()],
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
@@ -198,7 +205,8 @@ class CommandPod extends StatelessWidget {
             ),
             Text(
               context.tr(
-                'home.completed_percent', fallback: 'Completed',
+                'home.completed_percent',
+                fallback: 'Completed',
                 args: [(progress * 100).toInt().toString()],
               ),
               style: TextStyle(
@@ -359,7 +367,10 @@ class CommandPod extends StatelessWidget {
                                   SizedBox(width: 4.w),
                                   Flexible(
                                     child: Text(
-                                      context.tr('home.early_learners', fallback: 'Early Learners'),
+                                      context.tr(
+                                        'home.early_learners',
+                                        fallback: 'Early Learners',
+                                      ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         color: Colors.white,
@@ -376,7 +387,10 @@ class CommandPod extends StatelessWidget {
                             ),
                             SizedBox(height: 8.h),
                             Text(
-                              context.tr('home.junior_adventure', fallback: 'Junior Adventure'),
+                              context.tr(
+                                'home.junior_adventure',
+                                fallback: 'Junior Adventure',
+                              ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 color: Colors.white,
@@ -390,7 +404,10 @@ class CommandPod extends StatelessWidget {
                             ),
                             SizedBox(height: 4.h),
                             Text(
-                              context.tr('home.junior_adventure_subtitle', fallback: 'For younger explorers'),
+                              context.tr(
+                                'home.junior_adventure_subtitle',
+                                fallback: 'For younger explorers',
+                              ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 color: Colors.white.withValues(alpha: 0.9),
@@ -676,7 +693,10 @@ class CommandPod extends StatelessWidget {
     if (hour >= 5 && hour < 12) {
       greeting = context.tr('home.greeting_morning', fallback: 'Good Morning');
     } else if (hour >= 12 && hour < 17) {
-      greeting = context.tr('home.greeting_afternoon', fallback: 'Good Afternoon');
+      greeting = context.tr(
+        'home.greeting_afternoon',
+        fallback: 'Good Afternoon',
+      );
     } else if (hour >= 17 && hour < 22) {
       greeting = context.tr('home.greeting_evening', fallback: 'Good Evening');
     } else {

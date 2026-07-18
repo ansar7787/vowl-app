@@ -109,7 +109,10 @@ class FlashcardView extends StatelessWidget {
                       )
                     : FlashcardCardSide(
                         key: const ValueKey(false),
-                        title: context.tr('categories.vocabulary', fallback: 'Vocabulary'),
+                        title: context.tr(
+                          'categories.vocabulary',
+                          fallback: 'Vocabulary',
+                        ),
                         content: quest.word ?? 'Unknown',
                         color: theme.primaryColor,
                         textColor: Colors.white,

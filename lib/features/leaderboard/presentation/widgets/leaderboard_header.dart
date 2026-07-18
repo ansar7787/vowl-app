@@ -48,7 +48,10 @@ class LeaderboardHeader extends StatelessWidget {
                       children: [
                         Flexible(
                           child: Text(
-                            context.tr('leaderboard.title', fallback: 'Leaderboard'),
+                            context.tr(
+                              'leaderboard.title',
+                              fallback: 'Leaderboard',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 22.sp,
@@ -105,7 +108,10 @@ class LeaderboardHeader extends StatelessWidget {
                       ],
                     ),
                     Text(
-                      context.tr('leaderboard.subtitle', fallback: 'See how you rank'),
+                      context.tr(
+                        'leaderboard.subtitle',
+                        fallback: 'See how you rank',
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,
@@ -132,18 +138,21 @@ class LeaderboardHeader extends StatelessWidget {
     }
     if (difference.inMinutes < 60) {
       return context.tr(
-        'leaderboard.mins_ago', fallback: 'mins ago',
+        'leaderboard.mins_ago',
+        fallback: 'mins ago',
         args: [difference.inMinutes.toString()],
       );
     }
     if (difference.inHours < 24) {
       return context.tr(
-        'leaderboard.hours_ago', fallback: 'hours ago',
+        'leaderboard.hours_ago',
+        fallback: 'hours ago',
         args: [difference.inHours.toString()],
       );
     }
     return context.tr(
-      'leaderboard.days_ago', fallback: 'days ago',
+      'leaderboard.days_ago',
+      fallback: 'days ago',
       args: [difference.inDays.toString()],
     );
   }

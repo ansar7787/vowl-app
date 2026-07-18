@@ -296,7 +296,8 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                     theme.primaryColor,
                                                 instruction: context.tr(
                                                   'games.daily_expression_instruction',
-                                                  fallback: 'Speak the daily idiom',
+                                                  fallback:
+                                                      'Speak the daily idiom',
                                                 ),
                                               ),
                                             ),
@@ -312,37 +313,51 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
 
                                     if (hintUsed && quest.hint != null)
                                       Container(
-                                        width: double.infinity,
-                                        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-                                        margin: EdgeInsets.only(bottom: gapInstruction),
-                                        decoration: BoxDecoration(
-                                          color: theme.primaryColor.withValues(alpha: 0.1),
-                                          borderRadius: BorderRadius.circular(16.r),
-                                          border: Border.all(
-                                            color: theme.primaryColor.withValues(alpha: 0.3),
-                                          ),
-                                        ),
-                                        child: Row(
-                                          children: [
-                                            Icon(
-                                              Icons.lightbulb_outline_rounded,
-                                              color: theme.primaryColor,
-                                              size: 18.r,
+                                            width: double.infinity,
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 16.w,
+                                              vertical: 12.h,
                                             ),
-                                            SizedBox(width: 8.w),
-                                            Expanded(
-                                              child: Text(
-                                                quest.hint!,
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 14.sp,
-                                                  color: isDark ? Colors.white70 : Colors.black87,
-                                                ),
+                                            margin: EdgeInsets.only(
+                                              bottom: gapInstruction,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              color: theme.primaryColor
+                                                  .withValues(alpha: 0.1),
+                                              borderRadius:
+                                                  BorderRadius.circular(16.r),
+                                              border: Border.all(
+                                                color: theme.primaryColor
+                                                    .withValues(alpha: 0.3),
                                               ),
                                             ),
-                                          ],
-                                        ),
-                                      ).animate().fadeIn(duration: 300.ms).slideY(begin: -0.1),
+                                            child: Row(
+                                              children: [
+                                                Icon(
+                                                  Icons
+                                                      .lightbulb_outline_rounded,
+                                                  color: theme.primaryColor,
+                                                  size: 18.r,
+                                                ),
+                                                SizedBox(width: 8.w),
+                                                Expanded(
+                                                  child: Text(
+                                                    quest.hint!,
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 14.sp,
+                                                      color: isDark
+                                                          ? Colors.white70
+                                                          : Colors.black87,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          )
+                                          .animate()
+                                          .fadeIn(duration: 300.ms)
+                                          .slideY(begin: -0.1),
 
                                     isCompact
                                         ? SizedBox(
@@ -367,7 +382,8 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                             quest.expression ??
                                                                 "",
                                                           ),
-                                                      onScratchUpdate: _handleScratchUpdate,
+                                                      onScratchUpdate:
+                                                          _handleScratchUpdate,
                                                     ),
                                               ),
                                             ),
@@ -383,11 +399,13 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                 _soundService.playTts(
                                                   quest.expression ?? "",
                                                 ),
-                                            onScratchUpdate: _handleScratchUpdate,
+                                            onScratchUpdate:
+                                                _handleScratchUpdate,
                                           ),
                                     SizedBox(height: gapScratch),
 
-                                    if (_scratchProgress > 0.3 && _spokenText.isEmpty)
+                                    if (_scratchProgress > 0.3 &&
+                                        _spokenText.isEmpty)
                                       isCompact
                                           ? SizedBox(
                                                   height: 80.h,
@@ -403,7 +421,8 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                             primaryColor: theme
                                                                 .primaryColor,
                                                             isDark: isDark,
-                                                            isListening: _isListening,
+                                                            isListening:
+                                                                _isListening,
                                                           ),
                                                     ),
                                                   ),
@@ -441,7 +460,8 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                       DailyExpressionTelemetryCard(
                                                         spokenText: _spokenText,
                                                         isDark: isDark,
-                                                        primaryColor: theme.primaryColor,
+                                                        primaryColor:
+                                                            theme.primaryColor,
                                                       ),
                                                 ),
                                               ),

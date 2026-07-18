@@ -118,7 +118,9 @@ class _RetryButton extends StatelessWidget {
               const Icon(Icons.refresh_rounded, color: Colors.white),
               SizedBox(width: 8.w),
               Text(
-                context.tr('games.try_again', fallback: 'Try Again').toUpperCase(),
+                context
+                    .tr('games.try_again', fallback: 'Try Again')
+                    .toUpperCase(),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,

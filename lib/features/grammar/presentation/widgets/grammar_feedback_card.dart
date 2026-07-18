@@ -65,27 +65,33 @@ class GrammarFeedbackCard extends StatelessWidget {
         ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : (isFinalFailure
               ? (lives == 0
-                    ? context.tr('common.see_results', fallback: 'See Results').toUpperCase()
-                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
-              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
+                    ? context
+                          .tr('common.see_results', fallback: 'See Results')
+                          .toUpperCase()
+                    : context
+                          .tr('common.continue_text', fallback: 'Continue')
+                          .toUpperCase())
+              : context
+                    .tr('games.try_again', fallback: 'Try Again')
+                    .toUpperCase());
 
     // Determine when to show pedagogical fields
     final bool showEducationalInfo = success || isFinalFailure;
 
     String? explanation;
     String? grammarRule;
-    
+
     if (showEducationalInfo) {
       final quest = loaded.currentQuest;
       explanation = quest.explanation;
-      
+
       // Fallback to showing the correct answer ONLY on final failure
       if (explanation == null && !success && isFinalFailure) {
         explanation = (quest.options != null && quest.correctAnswerIndex != null
             ? quest.options![quest.correctAnswerIndex!]
             : null);
       }
-      
+
       grammarRule = quest.grammarRule;
     }
 
@@ -310,62 +316,66 @@ class _ExplanationCardState extends State<_ExplanationCard> {
   Widget build(BuildContext context) {
     final displayText = _translatedText ?? widget.originalExplanation;
     return Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-      decoration: BoxDecoration(
-        color: widget.accentColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: widget.accentColor.withValues(alpha: 0.2),
-          width: 1.5,
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Icon(
-                Icons.info_outline_rounded,
-                color: widget.accentColor,
-                size: 14.r,
-              ),
-              SizedBox(width: 8.w),
-              Text(
-                context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w800,
-                  color: widget.accentColor,
-                  letterSpacing: 1,
-                ),
-              ),
-              const Spacer(),
-              if (_translatedText == null)
-                TranslateButtonWidget(
-                  originalText: widget.originalExplanation,
-                  onTranslationComplete: (translated) {
-                    if (mounted) setState(() => _translatedText = translated);
-                  },
-                ),
-            ],
-          ),
-          SizedBox(height: 4.h),
-          Text(
-            displayText,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w600,
-              color: widget.isDark ? Colors.white : Colors.black87,
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          decoration: BoxDecoration(
+            color: widget.accentColor.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: widget.accentColor.withValues(alpha: 0.2),
+              width: 1.5,
             ),
           ),
-        ],
-      ),
-    )
-    .animate()
-    .fadeIn(delay: 300.ms)
-    .scale(duration: 400.ms, curve: Curves.easeOutBack);
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(
+                    Icons.info_outline_rounded,
+                    color: widget.accentColor,
+                    size: 14.r,
+                  ),
+                  SizedBox(width: 8.w),
+                  Text(
+                    context.tr(
+                      'games.explanation_caps',
+                      fallback: 'EXPLANATION',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w800,
+                      color: widget.accentColor,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                  const Spacer(),
+                  if (_translatedText == null)
+                    TranslateButtonWidget(
+                      originalText: widget.originalExplanation,
+                      onTranslationComplete: (translated) {
+                        if (mounted)
+                          setState(() => _translatedText = translated);
+                      },
+                    ),
+                ],
+              ),
+              SizedBox(height: 4.h),
+              Text(
+                displayText,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w600,
+                  color: widget.isDark ? Colors.white : Colors.black87,
+                ),
+              ),
+            ],
+          ),
+        )
+        .animate()
+        .fadeIn(delay: 300.ms)
+        .scale(duration: 400.ms, curve: Curves.easeOutBack);
   }
 }
