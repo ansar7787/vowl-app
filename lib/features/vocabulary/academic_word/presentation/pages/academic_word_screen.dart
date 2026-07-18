@@ -404,6 +404,7 @@ class _AcademicWordGameBody extends StatelessWidget {
           children: [
             _buildBackground(isDark),
             _buildInstructionLabel(
+              context: context,
               maxHeight: maxHeight,
               isUltraCompact: isUltraCompact,
               isAnyCompact: isAnyCompact,
@@ -438,6 +439,7 @@ class _AcademicWordGameBody extends StatelessWidget {
   }
 
   Widget _buildInstructionLabel({
+    required BuildContext context,
     required double maxHeight,
     required bool isUltraCompact,
     required bool isAnyCompact,
