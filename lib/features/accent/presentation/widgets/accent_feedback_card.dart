@@ -138,30 +138,41 @@ class AccentFeedbackCard extends StatelessWidget {
               shadowColor: shadowColor,
               isDark: isDark,
             ),
-            if (state.currentQuest.phoneticRule != null) ...[
-              SizedBox(height: 12.h),
-              _PhoneticRuleBox(
-                rule: state.currentQuest.phoneticRule!,
+            
+            // Dynamic generation of all possible pedagogical rules.
+            // When new games add new fields, simply add them to this list.
+            ...[
+              if (state.currentQuest.phoneticRule != null)
+                (icon: Icons.psychology_rounded, capsKey: 'games.phonetic_rule_caps', capsFallback: 'PHONETIC RULE', titleKey: 'games.phonetic_rule', titleFallback: 'Phonetic Rule', rule: state.currentQuest.phoneticRule!),
+              if (state.currentQuest.dialectNote != null)
+                (icon: Icons.public, capsKey: 'games.dialect_note_caps', capsFallback: 'DIALECT NOTE', titleKey: 'games.dialect_note', titleFallback: 'Dialect Note', rule: state.currentQuest.dialectNote!),
+              if (state.currentQuest.pitchRule != null)
+                (icon: Icons.show_chart, capsKey: 'games.pitch_rule_caps', capsFallback: 'PITCH RULE', titleKey: 'games.pitch_rule', titleFallback: 'Pitch Rule', rule: state.currentQuest.pitchRule!),
+              if (state.currentQuest.vowelTensionRule != null)
+                (icon: Icons.waves_rounded, capsKey: 'games.vowel_tension_caps', capsFallback: 'VOWEL TENSION', titleKey: 'games.vowel_tension', titleFallback: 'Vowel Tension', rule: state.currentQuest.vowelTensionRule!),
+              if (state.currentQuest.modulationPattern != null)
+                (icon: Icons.graphic_eq_rounded, capsKey: 'games.modulation_pattern_caps', capsFallback: 'MODULATION PATTERN', titleKey: 'games.modulation_pattern', titleFallback: 'Modulation Pattern', rule: state.currentQuest.modulationPattern!),
+              if (state.currentQuest.emphasisRule != null)
+                (icon: Icons.priority_high_rounded, capsKey: 'games.emphasis_rule_caps', capsFallback: 'EMPHASIS RULE', titleKey: 'games.emphasis_rule', titleFallback: 'Emphasis Rule', rule: state.currentQuest.emphasisRule!),
+              if (state.currentQuest.flowRule != null)
+                (icon: Icons.water_drop_rounded, capsKey: 'games.flow_rule_caps', capsFallback: 'FLOW RULE', titleKey: 'games.flow_rule', titleFallback: 'Flow Rule', rule: state.currentQuest.flowRule!),
+              if (state.currentQuest.pacingRule != null)
+                (icon: Icons.speed_rounded, capsKey: 'games.pacing_rule_caps', capsFallback: 'PACING RULE', titleKey: 'games.pacing_rule', titleFallback: 'Pacing Rule', rule: state.currentQuest.pacingRule!),
+              if (state.currentQuest.stressRule != null)
+                (icon: Icons.compress_rounded, capsKey: 'games.stress_rule_caps', capsFallback: 'STRESS RULE', titleKey: 'games.stress_rule', titleFallback: 'Stress Rule', rule: state.currentQuest.stressRule!),
+            ].map((ruleData) => Padding(
+              padding: EdgeInsets.only(top: 12.h),
+              child: _PedagogicalRuleBox(
+                icon: ruleData.icon,
+                capsKey: ruleData.capsKey,
+                capsFallback: ruleData.capsFallback,
+                titleKey: ruleData.titleKey,
+                titleFallback: ruleData.titleFallback,
+                rule: ruleData.rule,
                 shadowColor: shadowColor,
                 isDark: isDark,
               ),
-            ],
-            if (state.currentQuest.dialectNote != null) ...[
-              SizedBox(height: 12.h),
-              _DialectNoteBox(
-                note: state.currentQuest.dialectNote!,
-                shadowColor: shadowColor,
-                isDark: isDark,
-              ),
-            ],
-            if (state.currentQuest.pitchRule != null) ...[
-              SizedBox(height: 12.h),
-              _PitchRuleBox(
-                rule: state.currentQuest.pitchRule!,
-                shadowColor: shadowColor,
-                isDark: isDark,
-              ),
-            ],
+            )),
           ],
 
           SizedBox(height: 28.h),
@@ -337,22 +348,32 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
   }
 }
 
-class _PhoneticRuleBox extends StatefulWidget {
+class _PedagogicalRuleBox extends StatefulWidget {
+  final IconData icon;
+  final String capsKey;
+  final String capsFallback;
+  final String titleKey;
+  final String titleFallback;
   final String rule;
   final Color shadowColor;
   final bool isDark;
 
-  const _PhoneticRuleBox({
+  const _PedagogicalRuleBox({
+    required this.icon,
+    required this.capsKey,
+    required this.capsFallback,
+    required this.titleKey,
+    required this.titleFallback,
     required this.rule,
     required this.shadowColor,
     required this.isDark,
   });
 
   @override
-  State<_PhoneticRuleBox> createState() => _PhoneticRuleBoxState();
+  State<_PedagogicalRuleBox> createState() => _PedagogicalRuleBoxState();
 }
 
-class _PhoneticRuleBoxState extends State<_PhoneticRuleBox> {
+class _PedagogicalRuleBoxState extends State<_PedagogicalRuleBox> {
   String? _translatedText;
 
   @override
@@ -379,7 +400,7 @@ class _PhoneticRuleBoxState extends State<_PhoneticRuleBox> {
                 children: [
                   ExcludeSemantics(
                     child: Icon(
-                      Icons.psychology_rounded,
+                      widget.icon,
                       color: widget.shadowColor,
                       size: 16.r,
                     ),
@@ -388,8 +409,8 @@ class _PhoneticRuleBoxState extends State<_PhoneticRuleBox> {
                   Expanded(
                     child: Text(
                       context.tr(
-                        'games.phonetic_rule_caps',
-                        fallback: 'PHONETIC RULE',
+                        widget.capsKey,
+                        fallback: widget.capsFallback,
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
@@ -418,7 +439,7 @@ class _PhoneticRuleBoxState extends State<_PhoneticRuleBox> {
                   physics: const BouncingScrollPhysics(),
                   child: Semantics(
                     label:
-                        '${context.tr('games.phonetic_rule', fallback: 'Phonetic Rule')}: $displayText',
+                        '${context.tr(widget.titleKey, fallback: widget.titleFallback)}: $displayText',
                     child: Text(
                       displayText,
                       style: TextStyle(
@@ -448,265 +469,3 @@ class _PhoneticRuleBoxState extends State<_PhoneticRuleBox> {
   }
 }
 
-class _DialectNoteBox extends StatefulWidget {
-  final String note;
-  final Color shadowColor;
-  final bool isDark;
-
-  const _DialectNoteBox({
-    required this.note,
-    required this.shadowColor,
-    required this.isDark,
-  });
-
-  @override
-  State<_DialectNoteBox> createState() => _DialectNoteBoxState();
-}
-
-class _DialectNoteBoxState extends State<_DialectNoteBox> {
-  String? _translatedText;
-
-  @override
-  Widget build(BuildContext context) {
-    final displayText = _translatedText ?? widget.note;
-
-    return Container(
-          width: 342.w,
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-          decoration: BoxDecoration(
-            color: widget.shadowColor.withValues(
-              alpha: widget.isDark ? 0.08 : 0.05,
-            ),
-            borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(
-              color: widget.shadowColor.withValues(alpha: 0.2),
-              width: 1,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  ExcludeSemantics(
-                    child: Icon(
-                      Icons.public,
-                      color: widget.shadowColor,
-                      size: 16.r,
-                    ),
-                  ),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: Text(
-                      context.tr(
-                        'games.dialect_note_caps',
-                        fallback: 'DIALECT NOTE',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w900,
-                        color: widget.shadowColor,
-                        letterSpacing: 1.2,
-                      ),
-                    ),
-                  ),
-                  if (_translatedText == null)
-                    TranslateButtonWidget(
-                      originalText: widget.note,
-                      onTranslationComplete: (translated) {
-                        if (mounted) {
-                          setState(() => _translatedText = translated);
-                        }
-                      },
-                    ),
-                ],
-              ),
-              SizedBox(height: 6.h),
-              ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: 120.h),
-                child: SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Semantics(
-                    label:
-                        '${context.tr('games.dialect_note', fallback: 'Dialect Note')}: $displayText',
-                    child: Text(
-                      displayText,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w600,
-                        color: widget.isDark
-                            ? Colors.white.withValues(alpha: 0.8)
-                            : const Color(0xFF475569),
-                        height: 1.4,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        )
-        .animate()
-        .fadeIn(delay: 400.ms)
-        .slideY(
-          begin: 0.2,
-          end: 0,
-          duration: 400.ms,
-          curve: Curves.easeOutBack,
-        );
-  }
-}
-
-class _TutorPassButton extends StatelessWidget {
-  final VoidCallback onTap;
-  final Color accentColor;
-
-  const _TutorPassButton({required this.onTap, required this.accentColor});
-
-  @override
-  Widget build(BuildContext context) {
-    return ScaleButton(
-      onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: accentColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(color: accentColor.withValues(alpha: 0.3)),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(Icons.auto_awesome_rounded, color: accentColor, size: 14.r),
-            SizedBox(width: 8.w),
-            Text(
-              context
-                  .tr('games.i_spoke_correctly', fallback: 'I spoke correctly')
-                  .toUpperCase(),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
-                color: accentColor,
-                letterSpacing: 1,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _PitchRuleBox extends StatefulWidget {
-  final String rule;
-  final Color shadowColor;
-  final bool isDark;
-
-  const _PitchRuleBox({
-    required this.rule,
-    required this.shadowColor,
-    required this.isDark,
-  });
-
-  @override
-  State<_PitchRuleBox> createState() => _PitchRuleBoxState();
-}
-
-class _PitchRuleBoxState extends State<_PitchRuleBox> {
-  String? _translatedText;
-
-  @override
-  Widget build(BuildContext context) {
-    final displayText = _translatedText ?? widget.rule;
-
-    return Container(
-          width: 342.w,
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-          decoration: BoxDecoration(
-            color: widget.shadowColor.withValues(
-              alpha: widget.isDark ? 0.08 : 0.05,
-            ),
-            borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(
-              color: widget.shadowColor.withValues(alpha: 0.2),
-              width: 1,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  ExcludeSemantics(
-                    child: Icon(
-                      Icons.show_chart,
-                      color: widget.shadowColor,
-                      size: 16.r,
-                    ),
-                  ),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: Text(
-                      context.tr(
-                        'games.pitch_rule_caps',
-                        fallback: 'PITCH RULE',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w900,
-                        color: widget.shadowColor,
-                        letterSpacing: 1.2,
-                      ),
-                    ),
-                  ),
-                  if (_translatedText == null)
-                    TranslateButtonWidget(
-                      originalText: widget.rule,
-                      onTranslationComplete: (translated) {
-                        if (mounted) {
-                          setState(() => _translatedText = translated);
-                        }
-                      },
-                    ),
-                ],
-              ),
-              SizedBox(height: 6.h),
-              ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: 120.h),
-                child: SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Semantics(
-                    label:
-                        '${context.tr('games.pitch_rule', fallback: 'Pitch Rule')}: $displayText',
-                    child: Text(
-                      displayText,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w600,
-                        color: widget.isDark
-                            ? Colors.white.withValues(alpha: 0.8)
-                            : const Color(0xFF475569),
-                        height: 1.4,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        )
-        .animate()
-        .fadeIn(delay: 400.ms)
-        .slideY(
-          begin: 0.2,
-          end: 0,
-          duration: 400.ms,
-          curve: Curves.easeOutBack,
-        );
-  }
-}
