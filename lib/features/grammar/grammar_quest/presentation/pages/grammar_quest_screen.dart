@@ -107,12 +107,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
             title: 'SENTINEL!',
             enableDoubleUp: true,
           );
-        } else if (state is GrammarGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<GrammarBloc>().add(RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;

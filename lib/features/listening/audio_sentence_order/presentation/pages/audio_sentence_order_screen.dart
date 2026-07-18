@@ -137,12 +137,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
             title: 'SEQUENCE MASTER!',
             enableDoubleUp: true,
           );
-        } else if (state is ListeningGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<ListeningBloc>().add(RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;

@@ -129,12 +129,7 @@ class _SentenceOrderReadingScreenState
             title: 'LOGIC FLOW EXPERT!',
             enableDoubleUp: true,
           );
-        } else if (state is ReadingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<ReadingBloc>().add(RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)

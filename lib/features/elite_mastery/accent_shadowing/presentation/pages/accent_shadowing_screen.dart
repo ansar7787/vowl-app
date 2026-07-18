@@ -252,14 +252,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
           // `RestoreEliteLife`, and `AddLifeFromAd` from Game Over, all of
           // which already emit with `lastAnswerCorrect` unset) avoids that
           // false trigger entirely.
-        } else if (state is EliteMasteryGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<EliteMasteryBloc>().add(RestoreEliteLife()),
-            onTutorPass: _tutorPass,
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         return EliteBaseLayout(

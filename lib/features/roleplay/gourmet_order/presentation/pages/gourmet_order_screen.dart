@@ -159,12 +159,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
             title: 'CULINARY EXPERT!',
             enableDoubleUp: true,
           );
-        } else if (state is RoleplayGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<RoleplayBloc>().add(RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;

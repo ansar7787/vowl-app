@@ -169,12 +169,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
             title: 'SPEED DEMON!',
             enableDoubleUp: true,
           );
-        } else if (state is ReadingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<ReadingBloc>().add(RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)

@@ -123,12 +123,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
             title: 'LINKAGE MASTER!',
             enableDoubleUp: true,
           );
-        } else if (state is AccentGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<AccentBloc>().add(RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded)

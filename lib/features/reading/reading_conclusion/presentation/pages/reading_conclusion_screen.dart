@@ -152,12 +152,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
             title: 'FINAL VERDICT DELIVERED!',
             enableDoubleUp: true,
           );
-        } else if (state is ReadingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<ReadingBloc>().add(RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)

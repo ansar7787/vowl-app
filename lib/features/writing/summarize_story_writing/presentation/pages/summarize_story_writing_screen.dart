@@ -146,12 +146,7 @@ class _SummarizeStoryWritingScreenState
             title: 'DIGEST MASTER!',
             enableDoubleUp: true,
           );
-        } else if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<WritingBloc>().add(RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;

@@ -119,12 +119,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
             title: 'PHONETIC EXPERT!',
             enableDoubleUp: true,
           );
-        } else if (state is AccentGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<AccentBloc>().add(RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded)

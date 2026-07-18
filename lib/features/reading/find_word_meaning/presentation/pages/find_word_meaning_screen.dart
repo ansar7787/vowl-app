@@ -116,12 +116,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
             title: 'LEXICAL MASTER!',
             enableDoubleUp: true,
           );
-        } else if (state is ReadingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<ReadingBloc>().add(RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)

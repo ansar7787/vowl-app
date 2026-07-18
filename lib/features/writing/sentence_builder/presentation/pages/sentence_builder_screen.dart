@@ -111,13 +111,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
             title: 'SYNTAX ARCHITECT!',
             enableDoubleUp: true,
           );
-        } else if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<WritingBloc>().add(const RestoreLife()),
-          );
-        }
+        } else 
       },
       // PERF FIX: only rebuild when the quest itself changes, not on every
       // hintUsed / wrongCount update (those are handled inside WritingBaseLayout).

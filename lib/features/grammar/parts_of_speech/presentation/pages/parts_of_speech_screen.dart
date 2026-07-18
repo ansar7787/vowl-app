@@ -202,12 +202,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
         title: 'POS PRO!',
         enableDoubleUp: true,
       );
-    } else if (state is GrammarGameOver) {
-      GameDialogHelper.showGameOver(
-        context,
-        onRestore: () => context.read<GrammarBloc>().add(const RestoreLife()),
-      );
-    }
+    } else 
   }
 }
 

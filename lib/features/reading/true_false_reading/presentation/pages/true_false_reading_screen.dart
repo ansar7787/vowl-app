@@ -131,12 +131,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
             title: 'FACT CHECKER!',
             enableDoubleUp: true,
           );
-        } else if (state is ReadingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<ReadingBloc>().add(RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)

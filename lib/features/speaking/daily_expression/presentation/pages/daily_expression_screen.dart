@@ -206,14 +206,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
             title: 'EXPRESSION MASTERED!',
             enableDoubleUp: true,
           );
-        } else if (state is SpeakingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<SpeakingBloc>().add(const RestoreLife()),
-            onTutorPass: _tutorPass,
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;

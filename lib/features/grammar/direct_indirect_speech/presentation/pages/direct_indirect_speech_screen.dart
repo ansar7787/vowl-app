@@ -116,12 +116,7 @@ class _DirectIndirectSpeechScreenState
             title: 'SHADOW MASTER!',
             enableDoubleUp: true,
           );
-        } else if (state is GrammarGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<GrammarBloc>().add(RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final GrammarQuest? quest = (state is GrammarLoaded)

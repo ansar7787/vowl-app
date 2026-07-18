@@ -107,12 +107,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
             title: 'CREATIVE AUTHOR!',
             enableDoubleUp: true,
           );
-        } else if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<WritingBloc>().add(RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;

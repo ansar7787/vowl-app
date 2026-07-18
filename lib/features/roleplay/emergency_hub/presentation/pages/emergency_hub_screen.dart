@@ -159,12 +159,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
             title: 'HERO DISPATCHER!',
             enableDoubleUp: true,
           );
-        } else if (state is RoleplayGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<RoleplayBloc>().add(RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;

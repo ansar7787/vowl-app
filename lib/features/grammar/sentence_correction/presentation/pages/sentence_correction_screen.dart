@@ -213,12 +213,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
             title: 'SYNTAX SURGEON!',
             enableDoubleUp: true,
           );
-        } else if (state is GrammarGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<GrammarBloc>().add(RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;

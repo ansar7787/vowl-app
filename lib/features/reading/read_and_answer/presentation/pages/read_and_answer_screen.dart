@@ -116,13 +116,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
             title: 'ZEN READER!',
             enableDoubleUp: true,
           );
-        } else if (state is ReadingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<ReadingBloc>().add(const RestoreLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         // Derive answer state from the BLoC — no local mirrors needed.

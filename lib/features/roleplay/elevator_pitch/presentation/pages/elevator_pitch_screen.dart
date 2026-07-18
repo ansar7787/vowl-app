@@ -250,14 +250,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
             title: 'CHIEF BRAND PITCHER!',
             enableDoubleUp: true,
           );
-        } else if (state is RoleplayGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<RoleplayBloc>().add(const RestoreLife()),
-            onTutorPass: _tutorPass,
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;

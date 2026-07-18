@@ -195,13 +195,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               }
             });
           }
-        } else if (state is EliteMasteryGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<EliteMasteryBloc>().add(RestoreEliteLife()),
-          );
-        }
+        } else 
       },
       builder: (context, state) {
         final quest = (state is EliteMasteryLoaded) ? state.currentQuest : null;
