@@ -61,10 +61,11 @@ class ReadingFeedbackCard extends StatelessWidget {
       : context.tr('games.not_quite', fallback: 'Not Quite');
 
   String _buttonText(BuildContext context) {
-    if (_success)
+    if (_success) {
       return context
           .tr('common.continue_text', fallback: 'Continue')
           .toUpperCase();
+    }
     if (isFinalFailure) {
       return lives == 0
           ? context.tr('games.see_results', fallback: 'See Results')
@@ -95,11 +96,12 @@ class ReadingFeedbackCard extends StatelessWidget {
   }
 
   String _semanticLabel(BuildContext context) {
-    if (_success)
+    if (_success) {
       return context.tr(
         'games.semantic_correct_continue',
         fallback: 'Correct. Tap to continue.',
       );
+    }
     if (_showExplanation) {
       final answer = _explanationText;
       return context.tr(

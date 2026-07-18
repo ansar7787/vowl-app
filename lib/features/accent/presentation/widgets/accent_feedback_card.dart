@@ -271,8 +271,9 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                     TranslateButtonWidget(
                       originalText: widget.explanation,
                       onTranslationComplete: (translated) {
-                        if (mounted)
+                        if (mounted) {
                           setState(() => _translatedText = translated);
+                        }
                       },
                     ),
                 ],
@@ -381,8 +382,9 @@ class _PhoneticRuleBoxState extends State<_PhoneticRuleBox> {
                     TranslateButtonWidget(
                       originalText: widget.rule,
                       onTranslationComplete: (translated) {
-                        if (mounted)
+                        if (mounted) {
                           setState(() => _translatedText = translated);
+                        }
                       },
                     ),
                 ],

@@ -548,27 +548,33 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   }
 
   String _getGlobalStatus(BuildContext context, double progress) {
-    if (progress <= 0.0)
+    if (progress <= 0.0) {
       return context.tr('quest_archive.status_initiate', fallback: 'Initiate');
-    if (progress < 0.15)
+    }
+    if (progress < 0.15) {
       return context.tr('quest_archive.status_explorer', fallback: 'Explorer');
-    if (progress < 0.35)
+    }
+    if (progress < 0.35) {
       return context.tr(
         'quest_archive.status_adventurer',
         fallback: 'Adventurer',
       );
-    if (progress < 0.55)
+    }
+    if (progress < 0.55) {
       return context.tr('quest_archive.status_champion', fallback: 'Champion');
-    if (progress < 0.80)
+    }
+    if (progress < 0.80) {
       return context.tr(
         'quest_archive.status_conqueror',
         fallback: 'Conqueror',
       );
-    if (progress < 0.99)
+    }
+    if (progress < 0.99) {
       return context.tr(
         'quest_archive.status_grandmaster',
         fallback: 'Grandmaster',
       );
+    }
     return context.tr('quest_archive.status_legendary', fallback: 'Legendary');
   }
 

@@ -462,24 +462,29 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
   }
 
   String _getRank(double progress) {
-    if (progress <= 0.0)
+    if (progress <= 0.0) {
       return context.tr('category_games.rank_beginner', fallback: 'Beginner');
-    if (progress < 0.15)
+    }
+    if (progress < 0.15) {
       return context.tr('category_games.rank_novice', fallback: 'Novice');
-    if (progress < 0.35)
+    }
+    if (progress < 0.35) {
       return context.tr('category_games.rank_scholar', fallback: 'Scholar');
+    }
     if (progress < 0.55) {
       return context
           .tr('home.discovery_diff_expert', fallback: 'Expert')
           .toUpperCase();
     }
-    if (progress < 0.80)
+    if (progress < 0.80) {
       return context.tr('category_games.rank_virtuoso', fallback: 'Virtuoso');
-    if (progress < 0.99)
+    }
+    if (progress < 0.99) {
       return context.tr(
         'quest_archive.status_grandmaster',
         fallback: 'Grandmaster',
       );
+    }
     return context.tr('quest_archive.status_legendary', fallback: 'Legendary');
   }
 

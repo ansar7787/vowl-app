@@ -55,10 +55,11 @@ class SpeakingFeedbackCard extends StatelessWidget {
       : context.tr('games.not_quite', fallback: 'Not Quite');
 
   String _buttonText(BuildContext context) {
-    if (success)
+    if (success) {
       return context
           .tr('common.continue_text', fallback: 'Continue')
           .toUpperCase();
+    }
     if (isFinalFailure) {
       return livesRemaining == 0
           ? context.tr('games.see_results', fallback: 'See Results')
@@ -70,11 +71,12 @@ class SpeakingFeedbackCard extends StatelessWidget {
   }
 
   String _buttonSemanticLabel(BuildContext context) {
-    if (success)
+    if (success) {
       return context.tr(
         'games.semantic_correct_continue',
         fallback: 'Correct. Tap to continue.',
       );
+    }
     if (isFinalFailure) {
       return livesRemaining == 0
           ? context.tr(
@@ -313,8 +315,9 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                         TranslateButtonWidget(
                           originalText: widget.explanation,
                           onTranslationComplete: (translated) {
-                            if (mounted)
+                            if (mounted) {
                               setState(() => _translatedText = translated);
+                            }
                           },
                         ),
                     ],

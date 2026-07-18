@@ -302,8 +302,9 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                     TranslateButtonWidget(
                       originalText: widget.explanation,
                       onTranslationComplete: (translated) {
-                        if (mounted)
+                        if (mounted) {
                           setState(() => _translatedText = translated);
+                        }
                       },
                     ),
                 ],

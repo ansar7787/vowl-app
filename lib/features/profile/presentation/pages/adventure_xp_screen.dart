@@ -932,8 +932,9 @@ class AdventureXPScreen extends StatelessWidget {
   /// screen ("Crash Safety" in the production audit). Now falls back to a
   /// safe localized default instead.
   String _formatRelativeTime(BuildContext context, dynamic timestamp) {
-    if (timestamp == null)
+    if (timestamp == null) {
       return context.tr('adventure.time_now', fallback: 'Just now');
+    }
 
     DateTime? dt;
     try {
@@ -948,8 +949,9 @@ class AdventureXPScreen extends StatelessWidget {
       dt = null;
     }
 
-    if (dt == null)
+    if (dt == null) {
       return context.tr('adventure.time_now', fallback: 'Just now');
+    }
 
     final diff = DateTime.now().difference(dt);
     if (diff.inDays > 0) {

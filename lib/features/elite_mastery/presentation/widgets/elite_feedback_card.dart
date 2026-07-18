@@ -61,10 +61,11 @@ class EliteFeedbackCard extends StatelessWidget {
       _success ? Icons.check_circle_rounded : Icons.error_rounded;
 
   String _buttonLabel(BuildContext context) {
-    if (_success)
+    if (_success) {
       return context
           .tr('common.continue_text', fallback: 'Continue')
           .toUpperCase();
+    }
     if (state.isFinalFailure) {
       return state.livesRemaining == 0
           ? context.tr('games.see_results', fallback: 'See Results')
@@ -420,8 +421,9 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                     TranslateButtonWidget(
                       originalText: widget.text,
                       onTranslationComplete: (translated) {
-                        if (mounted)
+                        if (mounted) {
                           setState(() => _translatedText = translated);
+                        }
                       },
                     ),
                 ],
@@ -510,8 +512,9 @@ class _RuleTipBoxState extends State<_RuleTipBox> {
                     TranslateButtonWidget(
                       originalText: widget.text,
                       onTranslationComplete: (translated) {
-                        if (mounted)
+                        if (mounted) {
                           setState(() => _translatedText = translated);
+                        }
                       },
                     ),
                 ],
@@ -595,8 +598,9 @@ class _ShadowingFocusBoxState extends State<_ShadowingFocusBox> {
                     TranslateButtonWidget(
                       originalText: widget.text,
                       onTranslationComplete: (translated) {
-                        if (mounted)
+                        if (mounted) {
                           setState(() => _translatedText = translated);
+                        }
                       },
                     ),
                 ],
@@ -680,8 +684,9 @@ class _UsageContextBoxState extends State<_UsageContextBox> {
                     TranslateButtonWidget(
                       originalText: widget.text,
                       onTranslationComplete: (translated) {
-                        if (mounted)
+                        if (mounted) {
                           setState(() => _translatedText = translated);
+                        }
                       },
                     ),
                 ],
@@ -765,8 +770,9 @@ class _SpellingRuleBoxState extends State<_SpellingRuleBox> {
                     TranslateButtonWidget(
                       originalText: widget.text,
                       onTranslationComplete: (translated) {
-                        if (mounted)
+                        if (mounted) {
                           setState(() => _translatedText = translated);
+                        }
                       },
                     ),
                 ],
@@ -850,8 +856,9 @@ class _SequenceLogicBoxState extends State<_SequenceLogicBox> {
                     TranslateButtonWidget(
                       originalText: widget.text,
                       onTranslationComplete: (translated) {
-                        if (mounted)
+                        if (mounted) {
                           setState(() => _translatedText = translated);
+                        }
                       },
                     ),
                 ],

@@ -180,8 +180,6 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
         final options = quest?.options ?? const [];
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
-        final bool isFinalFailure = isLoaded && state.isFinalFailure;
-        final bool showExplanation = isCorrect == true || isFinalFailure;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
