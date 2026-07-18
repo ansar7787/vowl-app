@@ -109,6 +109,7 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
 
     return BlocListener<AccentBloc, AccentState>(
       listenWhen: (prev, curr) {
+        if (curr is AccentGameOver) return true;
         if (curr is AccentLoaded) {
           if (prev is! AccentLoaded) return true;
           return prev.currentIndex != curr.currentIndex ||
@@ -117,6 +118,15 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
         return false;
       },
       listener: (context, state) {
+        if (state is AccentGameOver) {
+          GameDialogHelper.showGameOver(
+            context,
+            onRetry: () => context.read<AccentBloc>().add(const RestoreLife()),
+            onQuit: () => Navigator.of(context).pop(),
+          );
+          return;
+        }
+
         if (state is! AccentLoaded) return;
 
         if (state.currentIndex != _lastIndex) {
