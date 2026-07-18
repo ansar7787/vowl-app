@@ -18,7 +18,7 @@ import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/inton
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_rollercoaster.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_pulse_speaker.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_vertical_fader.dart';
-import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_explanation_card.dart';
+
 
 class IntonationMimicScreen extends StatefulWidget {
   final int level;
@@ -323,15 +323,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                       onSubmitChoice: _submitChoice,
                                       onSliderUpdate: _onSliderUpdate,
                                     ),
-                                    if (_isAnswered && (_isCorrect == true || state.livesRemaining == 0)) ...[
-                                      SizedBox(height: gapSlider),
-                                      IntonationMimicExplanationCard(
-                                        quest: quest,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        isCorrect: _isCorrect,
-                                      ),
-                                    ],
+
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
