@@ -118,7 +118,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Story Builder (`storyBuilder`)
 - [ ] Idiom Match (`idiomMatch`)
 - [ ] Speed Spelling (`speedSpelling`)
-- [ ] Accent Shadowing (`accentShadowing`)
+- [x] Accent Shadowing (`accentShadowing`)
 
 ## Kids Curriculum (22)
 - [ ] Alphabet

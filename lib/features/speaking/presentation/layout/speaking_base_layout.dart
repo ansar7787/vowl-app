@@ -52,6 +52,7 @@ class SpeakingBaseLayout extends StatefulWidget {
   /// Optional service overrides — inject mocks in widget tests to avoid
   /// requiring a live DI container. Production code leaves these null and
   /// the State falls back to [di.sl].
+  final VoidCallback? onTutorPass;
   final TtsService? ttsService;
   final SoundService? soundService;
   final HapticService? hapticService;
@@ -64,6 +65,7 @@ class SpeakingBaseLayout extends StatefulWidget {
     required this.isAnswered,
     required this.onContinue,
     required this.onHint,
+    this.onTutorPass,
     this.isCorrect,
     this.isFinalFailure = false,
     this.showConfetti = false,
@@ -326,6 +328,7 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
                           : null,
                       onContinue: widget.onContinue,
                       isDark: isDark,
+                      onTutorPass: widget.onTutorPass,
                     ),
                   ),
 

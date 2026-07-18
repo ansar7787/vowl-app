@@ -1401,20 +1401,13 @@ class GameInstructionService {
           "PRO TIP: Sound the word out slowly in your head before tapping the letters.",
     ),
     GameSubtype.accentShadowing: GameBriefing(
-      title: "Shadow Speaker",
-      icon: Icons.mic_external_on_rounded,
-      objective:
-          "Listen to the speaker and tap the correct dialogue bubble to shadow their voice.",
-      rules: [
-        "Listen to the sentence",
-        "Read the chat bubbles",
-        "Tap the exact match",
-      ],
+      title: "Accent Shadowing",
+      icon: Icons.record_voice_over_rounded,
+      objective: "Speak clearly to match the exact accent and rhythm of the speaker.",
+      rules: ["Listen to the phrase", "Match the exact rhythm", "Speak with clarity"],
       actionText: "Start Shadowing",
-      tip:
-          "PRO TIP: Don't overthink! Pick the sentence that exactly matches the audio.",
+      tip: "PRO TIP: Focus on the stressed syllables and connected speech patterns!",
     ),
-    // Duplicated accentShadowing removed
   };
 
   static GameBriefing? _getKidsBriefing(String category) {

@@ -37,6 +37,7 @@ class AccentBaseLayout extends StatefulWidget {
   final bool? isCorrect;
   final VoidCallback onContinue;
   final VoidCallback onHint;
+  final VoidCallback? onTutorPass;
   final bool showConfetti;
   final String title;
   final String subtitle;
@@ -52,6 +53,7 @@ class AccentBaseLayout extends StatefulWidget {
     this.isCorrect,
     required this.onContinue,
     required this.onHint,
+    this.onTutorPass,
     this.showConfetti = false,
     this.title = 'ACCENT TRAINING',
     this.subtitle = 'Master the Sound',
@@ -290,6 +292,7 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
                         isDark: isDark,
                         isCorrect: widget.isCorrect,
                         onContinue: widget.onContinue,
+                        onTutorPass: widget.onTutorPass,
                       ),
                     ),
 

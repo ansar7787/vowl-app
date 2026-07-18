@@ -238,6 +238,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
           child: SpeakingBaseLayout(
+            onTutorPass: _tutorPass,
             gameType: widget.gameType,
             level: widget.level,
             isAnswered: _isAnswered,
@@ -440,7 +441,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                                         ),
                                                     attempts: _attempts,
                                                     isAnswered: _isAnswered,
-                                                    onTutorPass: _tutorPass,
+                                                    
                                                   ),
                                                 ),
                                               )
@@ -457,7 +458,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                                     ),
                                                 attempts: _attempts,
                                                 isAnswered: _isAnswered,
-                                                onTutorPass: _tutorPass,
+                                                
                                               ),
                                     ],
 

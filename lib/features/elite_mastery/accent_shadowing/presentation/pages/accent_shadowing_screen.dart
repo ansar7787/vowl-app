@@ -262,24 +262,21 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is EliteMasteryLoaded) ? state.currentQuest : null;
-
         return EliteBaseLayout(
+            onTutorPass: _tutorPass,
           gameType: widget.gameType,
           level: widget.level,
           isAnswered: _isAnswered,
           state: state,
           isCorrect: _isCorrect,
-          isFinalFailure: (state is EliteMasteryLoaded)
-              ? (state.isFinalFailure || state.livesRemaining <= 0)
-              : false,
+          isFinalFailure:
+              (state is EliteMasteryLoaded && state.isFinalFailure) ||
+              state.livesRemaining <= 0,
           showConfetti: _showConfetti,
-          title:
-              quest?.instruction ??
-              context.tr(
-                'games.accent_shadowing_title',
-                fallback: 'Accent Shadowing',
-              ),
+          title: context.tr(
+            'games.accent_shadowing_instruction',
+            fallback: 'Listen and repeat the sentence exactly as you hear it.',
+          ),
           onContinue: () {
             setState(() {
               _isAnswered = false;
@@ -368,6 +365,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                     'games.target_text_fallback',
                     fallback: 'Target Text',
                   ),
+              shadowingFocus: quest.shadowingFocus,
               matchedIndices: _matchedIndices,
               isDark: isDark,
               primaryColor: theme.primaryColor,
@@ -423,7 +421,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             AccentShadowingMicTrigger(
               isListening: _isListening,
               onTap: () => _toggleListening(targetText ?? ""),
-              onTutorPass: _tutorPass,
+              
               primaryColor: theme.primaryColor,
               attempts: _attempts,
               isAnswered: _isAnswered,

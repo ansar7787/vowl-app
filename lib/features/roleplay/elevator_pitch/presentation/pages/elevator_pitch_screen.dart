@@ -263,6 +263,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
         return RoleplayBaseLayout(
+          onTutorPass: _tutorPass,
           gameType: widget.gameType,
           level: widget.level,
           isAnswered: _isAnswered,
@@ -318,7 +319,6 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
                               onStopListening: _stopListening,
                               attempts: _attempts,
                               isAnswered: _isAnswered,
-                              onTutorPass: _tutorPass,
                             ),
 
                           // Post-answer explanation cards

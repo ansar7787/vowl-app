@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 class AccentShadowingMicTrigger extends StatelessWidget {
   final bool isListening;
   final VoidCallback onTap;
-  final VoidCallback onTutorPass;
+
   final Color primaryColor;
   final int attempts;
   final bool isAnswered;
@@ -16,7 +16,7 @@ class AccentShadowingMicTrigger extends StatelessWidget {
     super.key,
     required this.isListening,
     required this.onTap,
-    required this.onTutorPass,
+
     required this.primaryColor,
     required this.attempts,
     required this.isAnswered,
@@ -87,67 +87,6 @@ class AccentShadowingMicTrigger extends StatelessWidget {
           excludeSemantics: true,
           child: animatedMicButton,
         ),
-        if (attempts > 0 && !isListening)
-          Padding(
-            padding: EdgeInsets.only(top: 20.h),
-            child: Semantics(
-              button: true,
-              hint: context.tr(
-                'games.semantic_tutor_pass_hint',
-                fallback: 'Speak now',
-              ),
-              child: ScaleButton(
-                onTap: onTutorPass,
-                // FIX: at 10.h vertical padding plus icon/text content, this
-                // button's natural height runs under the 48dp minimum
-                // touch-target recommendation. Constraining the *outer* box
-                // to a 48dp floor (and centering the original,
-                // visually-unchanged content inside it) grows only the
-                // tappable area.
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(minHeight: 48),
-                  child: Center(
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 20.w,
-                        vertical: 10.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.amber.withValues(alpha: 0.2),
-                        borderRadius: BorderRadius.circular(12.r),
-                        border: Border.all(color: Colors.amber, width: 1.5),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            Icons.auto_awesome_rounded,
-                            color: Colors.amber,
-                            size: 18.r,
-                          ),
-                          SizedBox(width: 8.w),
-                          Text(
-                            context
-                                .tr(
-                                  'games.i_spoke_correctly',
-                                  fallback: 'I spoke correctly',
-                                )
-                                .toUpperCase(),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              color: Colors.amber,
-                              fontWeight: FontWeight.w900,
-                              fontSize: 12.sp,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ).animate().fadeIn().shake(),
       ],
     );
   }

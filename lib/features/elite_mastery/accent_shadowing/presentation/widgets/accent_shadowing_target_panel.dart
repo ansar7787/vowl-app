@@ -6,6 +6,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 
 class AccentShadowingTargetPanel extends StatelessWidget {
   final String text;
+  final String? shadowingFocus;
   final Set<int> matchedIndices;
   final bool isDark;
   final Color primaryColor;
@@ -17,6 +18,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
   const AccentShadowingTargetPanel({
     super.key,
     required this.text,
+    this.shadowingFocus,
     required this.matchedIndices,
     required this.isDark,
     required this.primaryColor,
@@ -45,6 +47,19 @@ class AccentShadowingTargetPanel extends StatelessWidget {
           : null,
       child: Column(
         children: [
+          if (shadowingFocus != null && shadowingFocus!.isNotEmpty) ...[
+            Text(
+              shadowingFocus!,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w700,
+                color: isDark ? Colors.white70 : const Color(0xFF1E293B).withValues(alpha: 0.7),
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 16.h),
+          ],
           Semantics(
             button: true,
             label: context.tr(

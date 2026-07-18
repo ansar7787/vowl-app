@@ -32,6 +32,8 @@ class EliteFeedbackCard extends StatelessWidget {
 
   final VoidCallback onContinue;
 
+  final VoidCallback? onTutorPass;
+
   final bool isDark;
 
   const EliteFeedbackCard({
@@ -39,6 +41,7 @@ class EliteFeedbackCard extends StatelessWidget {
     required this.state,
     required this.isCorrect,
     required this.onContinue,
+    this.onTutorPass,
     required this.isDark,
   });
 
@@ -208,6 +211,13 @@ class EliteFeedbackCard extends StatelessWidget {
                     shadowColor: _shadowColor,
                     onTap: onContinue,
                   ),
+                  if (!_success && onTutorPass != null) ...[
+                    SizedBox(height: 12.h),
+                    _TutorPassButton(
+                      onTap: onTutorPass!,
+                      accentColor: _shadowColor,
+                    ),
+                  ],
                 ],
               ),
             ),
@@ -948,6 +958,54 @@ class _ContinueButton extends StatelessWidget {
             duration: 400.ms,
             curve: Curves.elasticOut,
           ),
+    );
+  }
+}
+
+class _TutorPassButton extends StatelessWidget {
+  final VoidCallback onTap;
+  final Color accentColor;
+
+  const _TutorPassButton({required this.onTap, required this.accentColor});
+
+  @override
+  Widget build(BuildContext context) {
+    return ScaleButton(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        decoration: BoxDecoration(
+          color: accentColor.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(12.r),
+          border: Border.all(color: accentColor.withValues(alpha: 0.3)),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              Icons.auto_awesome_rounded,
+              color: accentColor,
+              size: 14.r,
+            ),
+            SizedBox(width: 8.w),
+            Text(
+              context
+                  .tr(
+                    'games.i_spoke_correctly',
+                    fallback: 'I spoke correctly',
+                  )
+                  .toUpperCase(),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: accentColor,
+                letterSpacing: 1,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

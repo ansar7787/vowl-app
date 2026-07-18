@@ -49,7 +49,7 @@ class GameProgressHeader extends StatelessWidget {
         : Icons.arrow_back_ios_new_rounded;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+      padding: EdgeInsets.symmetric(vertical: 10.h),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -98,18 +98,14 @@ class GameProgressHeader extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 4.h),
-                Row(
-                  children: [
-                    Text(
-                      '$progressPercent%',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w900,
-                        color: subColor,
-                      ),
-                    ),
-                  ],
+                Text(
+                  '$progressPercent%',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w900,
+                    color: subColor,
+                  ),
                 ),
                 SizedBox(height: 8.h),
                 _ProgressBar(

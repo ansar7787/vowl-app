@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 
 class DailyExpressionScratcherTrigger extends StatelessWidget {
   final bool isListening;
@@ -14,7 +13,7 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
   final VoidCallback onLongPressEnd;
   final int attempts;
   final bool isAnswered;
-  final VoidCallback onTutorPass;
+  
 
   const DailyExpressionScratcherTrigger({
     super.key,
@@ -26,7 +25,7 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
     required this.onLongPressEnd,
     required this.attempts,
     required this.isAnswered,
-    required this.onTutorPass,
+    
   });
 
   @override
@@ -141,58 +140,7 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
               letterSpacing: 1.5,
             ),
           ),
-          if (attempts > 0 && !isListening)
-            Padding(
-              padding: EdgeInsets.only(top: 20.h),
-              child: Semantics(
-                button: true,
-                hint: context.tr(
-                  'games.semantic_tutor_pass_hint',
-                  fallback: 'Speak now',
-                ),
-                child: ScaleButton(
-                  onTap: onTutorPass,
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(minHeight: 48),
-                    child: Center(
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 20.w,
-                          vertical: 10.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: primaryColor.withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(12.r),
-                          border: Border.all(color: primaryColor, width: 1.5),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              Icons.auto_awesome_rounded,
-                              color: primaryColor,
-                              size: 18.r,
-                            ),
-                            SizedBox(width: 8.w),
-                            Text(
-                              context
-                                  .tr('games.i_spoke_correctly')
-                                  .toUpperCase(),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                color: primaryColor,
-                                fontWeight: FontWeight.w900,
-                                fontSize: 12.sp,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ).animate().fadeIn().shake(),
+          
         ],
       ),
     );

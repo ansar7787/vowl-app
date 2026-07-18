@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.dart';
 import 'package:vowl/core/presentation/painters/visual_config_background.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
@@ -37,6 +38,7 @@ class EliteBaseLayout extends StatefulWidget {
   final bool isFinalFailure;
   final VisualConfig? visualConfig;
   final EliteMasteryState state;
+  final VoidCallback? onTutorPass;
 
   const EliteBaseLayout({
     super.key,
@@ -53,6 +55,7 @@ class EliteBaseLayout extends StatefulWidget {
     required this.title,
     this.subtitle,
     this.visualConfig,
+    this.onTutorPass,
   });
 
   @override
@@ -69,6 +72,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
   int _lastLives = _kMaxLives;
   int _lastIndex = -1;
   late bool _showBriefing;
+  EliteMasteryQuest? _lastQuest;
 
   // ── Theme cache ──────────────────────────────────────────────────────────
   // FIX: previously typed `dynamic` under the assumption that `ThemeResult`
@@ -204,6 +208,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
   void _onBlocStateChange(BuildContext context, EliteMasteryState state) {
     if (state is! EliteMasteryLoaded) return;
     if (state.currentIndex != _lastIndex) _lastIndex = state.currentIndex;
+    _lastQuest = state.currentQuest;
 
     if (_lastLives == 2 && state.livesRemaining == 1 && !_hasSpokenNudge) {
       _hasSpokenNudge = true;
@@ -288,7 +293,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
           // otherwise had no protection against rendering under a notch,
           // status bar, or gesture-navigation inset.
           SafeArea(
-            child: state is EliteMasteryLoading
+            child: (state is EliteMasteryLoading && _lastQuest == null)
                 ? GameShimmerLoading(primaryColor: theme.primaryColor)
                 : Column(
                     children: [
@@ -384,8 +389,6 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                                               child: Text(
                                                 widget.subtitle!,
                                                 textAlign: TextAlign.center,
-                                                maxLines: 2,
-                                                overflow: TextOverflow.ellipsis,
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
                                                   fontSize: 22.sp,
@@ -435,6 +438,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                 isCorrect: widget.isCorrect,
                 onContinue: widget.onContinue,
                 isDark: isDark,
+                onTutorPass: widget.onTutorPass,
               ),
             ),
 

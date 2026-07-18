@@ -268,6 +268,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
           child: SpeakingBaseLayout(
+            onTutorPass: _tutorPass,
             gameType: widget.gameType,
             level: widget.level,
             isAnswered: _isAnswered,
@@ -519,7 +520,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                                           _stopSpeechListening,
                                                       attempts: _attempts,
                                                       isAnswered: _isAnswered,
-                                                      onTutorPass: _tutorPass,
+                                                      
                                                     ),
                                               ),
                                             )
@@ -532,7 +533,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                                   _stopSpeechListening,
                                               attempts: _attempts,
                                               isAnswered: _isAnswered,
-                                              onTutorPass: _tutorPass,
+                                              
                                             ),
                                     SizedBox(height: gapBottom),
                                   ],

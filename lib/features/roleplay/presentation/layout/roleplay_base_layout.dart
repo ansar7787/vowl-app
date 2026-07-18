@@ -41,6 +41,22 @@ import 'package:vowl/core/utils/locale_service.dart';
 /// **No cross-feature coupling** — caller supplies [mascotId] so this widget
 /// does not need to read [AuthBloc] directly.
 class RoleplayBaseLayout extends StatefulWidget {
+  final GameSubtype gameType;
+  final int level;
+  final Widget child;
+  final bool isAnswered;
+  final bool? isCorrect;
+  final bool isFinalFailure;
+  final VoidCallback onContinue;
+  final VoidCallback onHint;
+  final VoidCallback? onTutorPass;
+  final bool showConfetti;
+  final String title;
+  final String subtitle;
+  final ScrollController? scrollController;
+  final bool useScrolling;
+  final bool disablePadding;
+
   const RoleplayBaseLayout({
     super.key,
     required this.gameType,
@@ -52,6 +68,7 @@ class RoleplayBaseLayout extends StatefulWidget {
     this.isFinalFailure = false,
     required this.onContinue,
     required this.onHint,
+    this.onTutorPass,
     this.showConfetti = false,
     this.title = 'SOCIAL SCENARIO',
     this.subtitle = 'Master the Scene',
@@ -59,21 +76,6 @@ class RoleplayBaseLayout extends StatefulWidget {
     this.useScrolling = false,
     this.disablePadding = false,
   });
-
-  final GameSubtype gameType;
-  final int level;
-  final Widget child;
-  final bool isAnswered;
-  final bool? isCorrect;
-  final bool isFinalFailure;
-  final VoidCallback onContinue;
-  final VoidCallback onHint;
-  final bool showConfetti;
-  final String title;
-  final String subtitle;
-  final ScrollController? scrollController;
-  final bool useScrolling;
-  final bool disablePadding;
 
   /// Mascot asset identifier sourced from the player's profile.
   /// Passed in by the screen — keeps this widget free of [AuthBloc] coupling.
@@ -324,6 +326,7 @@ class _RoleplayBaseLayoutState extends State<RoleplayBaseLayout> {
                       isCorrect: widget.isCorrect,
                       isDark: isDark,
                       onContinue: widget.onContinue,
+                      onTutorPass: widget.onTutorPass,
                     ),
                   ),
                 if (widget.showConfetti) const GameConfetti(),
