@@ -215,19 +215,6 @@ class GameInstructionService {
 
   // Large centralized static register matching GameSubtypes to their Briefing parameters.
   static const Map<GameSubtype, GameBriefing> _briefings = {
-    // 1. Accent
-    GameSubtype.intonationMimic: GameBriefing(
-      title: "Intonation Mimic",
-      icon: Icons.waves_rounded,
-      objective: "Listen to the sentence and identify its pitch pattern to master the natural melody of the language, which is highly useful for conveying emotion and intent clearly.",
-      rules: [
-        "Listen to the sentence",
-        "Analyze the pitch direction",
-        "Choose the correct intonation",
-      ],
-      actionText: "Start Mimicking",
-      tip: "PRO TIP: Questions often rise at the end, while statements usually fall. Listen closely to the final word!",
-    ),
     // 2. Speaking
     GameSubtype.repeatSentence: GameBriefing(
       title: "Echo Master",
@@ -1113,18 +1100,18 @@ class GameInstructionService {
       tip: "PRO TIP: Pay attention to how long the vowel sound lasts!",
     ),
     GameSubtype.intonationMimic: GameBriefing(
-      title: "Pitch Mimic",
+      title: "Intonation Mimic",
       icon: Icons.waves_rounded,
       objective:
-          "Listen to the voice and use the vertical fader to match if the pitch goes up or down.",
+          "Listen to the sentence and identify its pitch pattern to master the natural melody of the language, which is highly useful for conveying emotion and intent clearly.",
       rules: [
-        "Listen to the pitch",
-        "Use the vertical fader",
-        "Lock your choice",
+        "Listen to the sentence",
+        "Analyze pitch direction",
+        "Choose correct intonation",
       ],
-      actionText: "Match Pitch",
+      actionText: "Start Mimicking",
       tip:
-          "PRO TIP: Questions usually have a pitch that slides up at the very end!",
+          "PRO TIP: Questions often rise at the end, while statements usually fall. Listen closely to the final word!",
     ),
     GameSubtype.syllableStress: GameBriefing(
       title: "Stress Spotter",

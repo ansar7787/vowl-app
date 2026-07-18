@@ -10,7 +10,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_instruction.dart';
@@ -262,7 +262,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                     SizedBox(height: gapTop),
                                     IntonationMimicInstruction(
                                       color: theme.primaryColor,
-                                      instruction: context.tr('games.intonation_mimic_instruction', fallback: quest.instruction ?? "Identify the intonation"),
+                                      instruction: context.tr('games.intonation_mimic_instruction', fallback: quest.instruction),
                                     ),
                                     SizedBox(height: gapInstruction),
 
