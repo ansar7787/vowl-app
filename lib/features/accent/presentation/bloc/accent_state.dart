@@ -9,6 +9,9 @@ import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 abstract class AccentState extends Equatable {
   const AccentState();
 
+  /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  int get livesRemaining => 3;
+
   @override
   List<Object?> get props => [];
 }
@@ -39,6 +42,7 @@ class AccentLoading extends AccentState {
 class AccentLoaded extends AccentState {
   final List<AccentQuest> quests;
   final int currentIndex;
+  @override
   final int livesRemaining;
 
   /// `null`  = no answer submitted yet for this quest.
@@ -165,6 +169,9 @@ class AccentGameOver extends AccentState {
   final int currentIndex;
   final GameSubtype gameType;
   final int level;
+
+  @override
+  int get livesRemaining => 0;
 
   const AccentGameOver({
     required this.quests,

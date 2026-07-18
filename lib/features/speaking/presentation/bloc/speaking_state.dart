@@ -9,6 +9,9 @@ import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 abstract class SpeakingState extends Equatable {
   const SpeakingState();
 
+  /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  int get livesRemaining => 3;
+
   @override
   List<Object?> get props => [];
 }
@@ -31,6 +34,7 @@ class SpeakingLoading extends SpeakingState {
 class SpeakingLoaded extends SpeakingState {
   final List<SpeakingQuest> quests;
   final int currentIndex;
+  @override
   final int livesRemaining;
 
   /// `null`  → no answer submitted yet (question is active).
@@ -153,6 +157,9 @@ class SpeakingGameOver extends SpeakingState {
   final int currentIndex;
   final GameSubtype gameType;
   final int level;
+
+  @override
+  int get livesRemaining => 0;
 
   const SpeakingGameOver({
     required this.quests,

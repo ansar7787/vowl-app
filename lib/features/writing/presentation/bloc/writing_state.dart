@@ -15,6 +15,9 @@ import '../../domain/entities/writing_quest.dart';
 abstract class WritingState extends Equatable {
   const WritingState();
 
+  /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  int get livesRemaining => 3;
+
   @override
   List<Object?> get props => [];
 }
@@ -33,6 +36,7 @@ class WritingLoading extends WritingState {
 class WritingLoaded extends WritingState {
   final List<WritingQuest> quests;
   final int currentIndex;
+  @override
   final int livesRemaining;
   final bool? lastAnswerCorrect;
   final bool hintUsed;
@@ -144,6 +148,9 @@ class WritingGameOver extends WritingState {
   final int currentIndex;
   final GameSubtype gameType;
   final int level;
+
+  @override
+  int get livesRemaining => 0;
 
   const WritingGameOver({
     required this.quests,

@@ -7,6 +7,9 @@ import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_event.dart
 abstract class VocabularyState extends Equatable {
   const VocabularyState();
 
+  /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  int get livesRemaining => 3;
+
   @override
   List<Object?> get props => [];
 }
@@ -27,6 +30,7 @@ class VocabularyLoading extends VocabularyState {
 class VocabularyLoaded extends VocabularyState {
   final List<VocabularyQuest> quests;
   final int currentIndex;
+  @override
   final int livesRemaining;
 
   /// `true` = last answer correct, `false` = wrong, `null` = no answer yet /
@@ -152,6 +156,9 @@ class VocabularyGameComplete extends VocabularyState {
 class VocabularyGameOver extends VocabularyState {
   final List<VocabularyQuest> quests;
   final int currentIndex;
+
+  @override
+  int get livesRemaining => 0;
 
   const VocabularyGameOver({required this.quests, required this.currentIndex});
 

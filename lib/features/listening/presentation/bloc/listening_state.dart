@@ -5,6 +5,9 @@ import '../../domain/entities/listening_quest.dart';
 abstract class ListeningState extends Equatable {
   const ListeningState();
 
+  /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  int get livesRemaining => 3;
+
   @override
   List<Object?> get props => [];
 }
@@ -23,6 +26,7 @@ class ListeningLoading extends ListeningState {
 class ListeningLoaded extends ListeningState {
   final List<ListeningQuest> quests;
   final int currentIndex;
+  @override
   final int livesRemaining;
 
   /// `null` = unanswered · `true` = correct · `false` = wrong.
@@ -116,6 +120,9 @@ class ListeningGameOver extends ListeningState {
   /// Full (possibly retry-inflated) quest list preserved for life-restore.
   final List<ListeningQuest> quests;
   final int currentIndex;
+
+  @override
+  int get livesRemaining => 0;
 
   const ListeningGameOver({required this.quests, required this.currentIndex});
 

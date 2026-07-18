@@ -46,6 +46,9 @@ enum AnswerStatus {
 abstract class GrammarState extends Equatable {
   const GrammarState();
 
+  /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  int get livesRemaining => 3;
+
   @override
   List<Object?> get props => [];
 }
@@ -61,6 +64,7 @@ class GrammarLoading extends GrammarState {
 class GrammarLoaded extends GrammarState {
   final List<GrammarQuest> quests;
   final int currentIndex;
+  @override
   final int livesRemaining;
 
   /// Status of the most recently submitted answer for the current question.
@@ -158,6 +162,9 @@ class GrammarGameComplete extends GrammarState {
 class GrammarGameOver extends GrammarState {
   final List<GrammarQuest> quests;
   final int currentIndex;
+
+  @override
+  int get livesRemaining => 0;
 
   GrammarGameOver({
     required List<GrammarQuest> quests,

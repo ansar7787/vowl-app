@@ -51,12 +51,7 @@ class VocabularyScaffold extends StatelessWidget {
     return state is VocabularyGameComplete ? 1.0 : 0.0;
   }
 
-  int get _lives {
-    if (state is VocabularyLoaded) {
-      return (state as VocabularyLoaded).livesRemaining;
-    }
-    return VocabularyRewardConstants.initialLives;
-  }
+  int get _lives => state.livesRemaining;
 
   // ── Build ─────────────────────────────────────────────────────────────────
 

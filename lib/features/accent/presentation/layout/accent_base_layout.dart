@@ -173,9 +173,7 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
           }
 
           final isComplete = state is AccentGameComplete;
-          final lives = state is AccentLoaded
-              ? state.livesRemaining
-              : (state is AccentGameOver ? 0 : 3);
+          final lives = state.livesRemaining;
           final progress = state is AccentLoaded
               ? (state.currentIndex + 1) / state.quests.length
               : (isComplete ? 1.0 : 0.0);

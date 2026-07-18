@@ -3,6 +3,9 @@ part of 'elite_mastery_bloc.dart';
 abstract class EliteMasteryState extends Equatable {
   const EliteMasteryState();
 
+  /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  int get livesRemaining => 3;
+
   @override
   List<Object?> get props => [];
 }
@@ -30,6 +33,7 @@ class EliteMasteryLoaded extends EliteMasteryState {
 
   final List<EliteMasteryQuest> quests;
   final int currentIndex;
+  @override
   final int livesRemaining;
   final bool? lastAnswerCorrect;
   final bool isHintVisible;
@@ -200,6 +204,9 @@ class EliteMasteryGameOver extends EliteMasteryState {
 
   final List<EliteMasteryQuest> quests;
   final int currentIndex;
+
+  @override
+  int get livesRemaining => 0;
 
   const EliteMasteryGameOver({
     this.gameType,

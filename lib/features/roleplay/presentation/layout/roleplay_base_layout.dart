@@ -239,9 +239,7 @@ class _RoleplayBaseLayoutState extends State<RoleplayBaseLayout> {
         }
 
         final progress = calculateProgress();
-        final lives = state is RoleplayLoaded
-            ? state.livesRemaining
-            : (state is RoleplayGameOver ? 0 : kRoleplayDefaultLives);
+        final lives = state.livesRemaining;
         final quest = state is RoleplayLoaded ? state.currentQuest : null;
         final isComplete = state is RoleplayGameComplete;
 

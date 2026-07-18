@@ -151,9 +151,7 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
                 final progress = (state is WritingLoaded)
                     ? (state.currentIndex + 1) / state.quests.length
                     : (state is WritingGameComplete ? 1.0 : 0.0);
-                final lives = (state is WritingLoaded)
-                    ? state.livesRemaining
-                    : (state is WritingGameOver ? 0 : 3);
+                final lives = state.livesRemaining;
                 final currentQuest = (state is WritingLoaded)
                     ? state.currentQuest
                     : null;

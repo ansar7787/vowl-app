@@ -182,8 +182,7 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
     return s is SpeakingGameComplete ? 1.0 : 0.0;
   }
 
-  int _lives(SpeakingState s) =>
-      s is SpeakingLoaded ? s.livesRemaining : (s is SpeakingGameOver ? 0 : 3);
+  int _lives(SpeakingState s) => s.livesRemaining;
 
   // ---------------------------------------------------------------------------
   // Build

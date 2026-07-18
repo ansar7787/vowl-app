@@ -17,6 +17,9 @@ const _kCopyWithUndefined = Object();
 abstract class ReadingState extends Equatable {
   const ReadingState();
 
+  /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  int get livesRemaining => 3;
+
   @override
   List<Object?> get props => [];
 }
@@ -39,6 +42,7 @@ class ReadingLoading extends ReadingState {
 class ReadingLoaded extends ReadingState {
   final List<ReadingQuest> quests;
   final int currentIndex;
+  @override
   final int livesRemaining;
 
   /// `null`  — question not yet answered this turn.
@@ -146,6 +150,9 @@ class ReadingGameComplete extends ReadingState {
 class ReadingGameOver extends ReadingState {
   final List<ReadingQuest> quests;
   final int currentIndex;
+
+  @override
+  int get livesRemaining => 0;
 
   const ReadingGameOver({required this.quests, required this.currentIndex});
 

@@ -51,6 +51,9 @@ WrongAnswerResult processWrongAnswer(RoleplayLoaded state) {
 abstract class RoleplayState extends Equatable {
   const RoleplayState();
 
+  /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  int get livesRemaining => kRoleplayDefaultLives;
+
   @override
   List<Object?> get props => [];
 }
@@ -100,6 +103,7 @@ class RoleplayLoaded extends RoleplayState {
   final List<RoleplayQuest> quests;
   final int currentIndex;
   final String? currentNodeId;
+  @override
   final int livesRemaining;
   final bool? lastAnswerCorrect;
   final bool hintUsed;
@@ -191,6 +195,9 @@ class RoleplayGameOver extends RoleplayState {
   final int currentIndex;
   final GameSubtype gameType;
   final int level;
+
+  @override
+  int get livesRemaining => 0;
 
   @override
   List<Object?> get props => [quests, currentIndex, gameType, level];
