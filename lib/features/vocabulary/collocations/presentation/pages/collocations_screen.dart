@@ -110,12 +110,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
             title: 'PAIR MASTER!',
             enableDoubleUp: true,
           );
-        } else if (state is VocabularyGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()),
-          );
-        }
+        } 
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(
@@ -125,6 +120,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
 
         if (state is VocabularyLoading ||
             (state is! VocabularyGameComplete &&
+                _lastQuest == null &&
                 state is! VocabularyLoaded &&
                 state is! VocabularyError)) {
           return Scaffold(

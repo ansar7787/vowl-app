@@ -207,12 +207,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
             title: 'LEXICAL MASTER!',
             enableDoubleUp: true,
           );
-        } else if (state is VocabularyGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()),
-          );
-        }
+        } 
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(
@@ -222,6 +217,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
 
         if (state is VocabularyLoading ||
             (state is! VocabularyGameComplete &&
+                _lastQuest == null &&
                 state is! VocabularyLoaded &&
                 state is! VocabularyError)) {
           return Scaffold(

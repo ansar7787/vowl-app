@@ -106,12 +106,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
             title: 'EMOJI EXPERT!',
             enableDoubleUp: true,
           );
-        } else if (state is VocabularyGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()),
-          );
-        }
+        } 
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(

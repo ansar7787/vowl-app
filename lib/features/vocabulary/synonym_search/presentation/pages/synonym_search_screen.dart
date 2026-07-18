@@ -230,12 +230,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
             title: 'WORD WARP COMPLETE!',
             enableDoubleUp: true,
           );
-        } else if (state is VocabularyGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()),
-          );
-        }
+        } 
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(
@@ -245,6 +240,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
         if (state is VocabularyLoading ||
             (state is! VocabularyGameComplete &&
+                _lastQuest == null &&
                 state is! VocabularyLoaded &&
                 state is! VocabularyError)) {
           return Scaffold(

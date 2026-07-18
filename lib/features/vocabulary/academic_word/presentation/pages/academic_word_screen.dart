@@ -135,17 +135,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
       return;
     }
 
-    if (state is VocabularyGameOver) {
-      if (!mounted) return;
-      GameDialogHelper.showGameOver(
-        context,
-        onRestore: () {
-          if (mounted) {
-            context.read<VocabularyBloc>().add(RestoreLife());
-          }
-        },
-      );
-    }
+    
   }
 
   // ── Builder — NO setState() here ─────────────────────────────────────────

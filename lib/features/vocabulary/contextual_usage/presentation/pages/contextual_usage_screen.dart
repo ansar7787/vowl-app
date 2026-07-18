@@ -105,12 +105,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
             title: 'USAGE EXPERT!',
             enableDoubleUp: true,
           );
-        } else if (state is VocabularyGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()),
-          );
-        }
+        } 
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(

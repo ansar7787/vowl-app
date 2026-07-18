@@ -153,6 +153,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
         // Loading / unknown transient state
         if (state is VocabularyLoading ||
             (state is! VocabularyGameComplete &&
+                _lastQuest == null &&
                 state is! VocabularyLoaded &&
                 state is! VocabularyError)) {
           return Scaffold(
@@ -245,13 +246,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
         title: 'VOCAB MASTERY!',
         enableDoubleUp: true,
       );
-    } else if (state is VocabularyGameOver) {
-      GameDialogHelper.showGameOver(
-        context,
-        onRestore: () =>
-            context.read<VocabularyBloc>().add(const RestoreLife()),
-      );
-    }
+    } 
   }
 }
 

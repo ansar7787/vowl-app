@@ -121,12 +121,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
             title: 'VAULT CRACKED!',
             enableDoubleUp: true,
           );
-        } else if (state is VocabularyGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()),
-          );
-        }
+        } 
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(
@@ -136,6 +131,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
 
         if (state is VocabularyLoading ||
             (state is! VocabularyGameComplete &&
+                _lastQuest == null &&
                 state is! VocabularyLoaded &&
                 state is! VocabularyError)) {
           return Scaffold(

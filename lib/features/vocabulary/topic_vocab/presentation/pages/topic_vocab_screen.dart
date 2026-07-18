@@ -175,12 +175,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
             title: 'TOPIC NEXUS!',
             enableDoubleUp: true,
           );
-        } else if (state is VocabularyGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()),
-          );
-        }
+        } 
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme(
@@ -190,6 +185,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
 
         if (state is VocabularyLoading ||
             (state is! VocabularyGameComplete &&
+                _lastQuest == null &&
                 state is! VocabularyLoaded &&
                 state is! VocabularyError)) {
           return Scaffold(
