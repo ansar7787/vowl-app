@@ -81,7 +81,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Context Clues (`contextClues`)
 - [ ] Phrasal Verbs (`phrasalVerbs`)
 - [ ] Idioms (`idioms`)
-- [ ] Academic Word (`academicWord`)
+- [x] ✅ Academic Word (`academicWord`)
 - [ ] Topic Vocab (`topicVocab`)
 - [ ] Word Formation (`wordFormation`)
 - [ ] Prefix/Suffix (`prefixSuffix`)

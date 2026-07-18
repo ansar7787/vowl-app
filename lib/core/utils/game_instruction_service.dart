@@ -331,7 +331,8 @@ class GameInstructionService {
     GameSubtype.dailyExpression: GameBriefing(
       title: "Social Fluent",
       icon: Icons.chat_bubble_rounded,
-      objective: "Master common daily idioms to speak naturally and connect with native speakers in real-world conversations.",
+      objective:
+          "Master common daily idioms to speak naturally and connect with native speakers in real-world conversations.",
       rules: [
         "Swipe to reveal idiom",
         "Listen to expression",
@@ -462,9 +463,14 @@ class GameInstructionService {
       icon: Icons.radar_rounded,
       objective:
           "Sharpen your situational awareness by identifying environments solely through their ambient soundscape, essential for real-world immersion.",
-      rules: ["Listen to background noise", "Scan the radar options", "Anchor the correct location"],
+      rules: [
+        "Listen to background noise",
+        "Scan the radar options",
+        "Anchor the correct location",
+      ],
       actionText: "Anchor Location",
-      tip: "PRO TIP: Close your eyes and visualize the scene! Focus on ambient sounds like footsteps, echoes, wind, or humming machinery.",
+      tip:
+          "PRO TIP: Close your eyes and visualize the scene! Focus on ambient sounds like footsteps, echoes, wind, or humming machinery.",
     ),
     // 3. Reading
     GameSubtype.readAndAnswer: GameBriefing(
@@ -838,14 +844,16 @@ class GameInstructionService {
     GameSubtype.articleInsertion: GameBriefing(
       title: "Article Orb",
       icon: Icons.bubble_chart_rounded,
-      objective: "Insert the correct article to complete the sentence structure and specify the noun.",
+      objective:
+          "Insert the correct article to complete the sentence structure and specify the noun.",
       rules: [
         "Read the sentence context",
         "Check if noun is specific",
         "Pop matching article orb",
       ],
       actionText: "Pop Orb",
-      tip: "PRO TIP: Use 'the' for specific items, 'a/an' for general ones, and listen for vowel sounds!",
+      tip:
+          "PRO TIP: Use 'the' for specific items, 'a/an' for general ones, and listen for vowel sounds!",
     ),
     GameSubtype.modifierPlacement: GameBriefing(
       title: "Modifier Map",
@@ -1020,10 +1028,16 @@ class GameInstructionService {
     GameSubtype.academicWord: GameBriefing(
       title: "Thesis Thrust",
       icon: Icons.auto_stories_rounded,
-      objective: "Identify advanced academic vocabulary matching the context.",
-      rules: ["Analyze context", "Thrust the correct shard", "3 Hearts left"],
+      objective:
+          "Read the context carefully and select the advanced vocabulary word that fits perfectly.",
+      rules: [
+        "Read the passage",
+        "Analyze the context",
+        "Drag the correct word",
+      ],
       actionText: "Initiate Thrust",
-      tip: "Academic words are highly precise—pay attention to logical hints!",
+      tip:
+          "PRO TIP: Academic words are highly precise—pay attention to logical hints in the surrounding text!",
     ),
     GameSubtype.topicVocab: GameBriefing(
       title: "Topic Nexus",
@@ -1237,11 +1251,7 @@ class GameInstructionService {
       icon: Icons.forum_rounded,
       objective:
           "Tap an answer or drag the decision probe to select the most natural, context-appropriate conversational response.",
-      rules: [
-        "Analyze the scene",
-        "Flick decision probe",
-        "React naturally",
-      ],
+      rules: ["Analyze the scene", "Flick decision probe", "React naturally"],
       actionText: "Enter Simulation",
       tip:
           "PRO TIP: Pay attention to the subtle social cues! Being polite and direct often opens the right doors.",

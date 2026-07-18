@@ -10,6 +10,7 @@ import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart'
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/academic_word/academic_word_constants.dart';
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_painters.dart';
@@ -457,7 +458,10 @@ class _AcademicWordGameBody extends StatelessWidget {
             fit: isAnyCompact ? BoxFit.scaleDown : BoxFit.none,
             child: AcademicWordInstruction(
               color: themeColor,
-              label: quest.instruction,
+              label: context.tr(
+                'games.academic_word_instruction',
+                fallback: "Drag the precise word into the passage.",
+              ),
             ),
           ),
         ),
