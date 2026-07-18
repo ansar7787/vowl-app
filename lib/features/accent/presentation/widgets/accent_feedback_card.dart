@@ -252,6 +252,47 @@ class _ExplanationBox extends StatefulWidget {
   State<_ExplanationBox> createState() => _ExplanationBoxState();
 }
 
+class _TutorPassButton extends StatelessWidget {
+  final VoidCallback onTap;
+  final Color accentColor;
+
+  const _TutorPassButton({required this.onTap, required this.accentColor});
+
+  @override
+  Widget build(BuildContext context) {
+    return ScaleButton(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        decoration: BoxDecoration(
+          color: accentColor.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(12.r),
+          border: Border.all(color: accentColor.withValues(alpha: 0.3)),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.auto_awesome_rounded, color: accentColor, size: 14.r),
+            SizedBox(width: 8.w),
+            Text(
+              context
+                  .tr('games.i_spoke_correctly', fallback: 'I spoke correctly')
+                  .toUpperCase(),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: accentColor,
+                letterSpacing: 1,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class _ExplanationBoxState extends State<_ExplanationBox> {
   String? _translatedText;
 
