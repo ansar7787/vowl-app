@@ -19,14 +19,10 @@ class CompleteSentenceTrajectoryPainter extends CustomPainter {
       ..strokeWidth = 2
       ..style = PaintingStyle.stroke;
 
-    final diff = start - end;
+    // Calculate a control point for a subtle upward curve between start and end.
     final controlPoint = Offset(
-      start.dx + diff.dx,
-      start.dy - diff.dy.abs() * 2,
-    );
-    final targetPoint = Offset(
-      start.dx + diff.dx * 2,
-      start.dy - diff.dy.abs() * 3,
+      (start.dx + end.dx) / 2,
+      (start.dy + end.dy) / 2 - 40.h,
     );
 
     final path = Path()
@@ -34,13 +30,13 @@ class CompleteSentenceTrajectoryPainter extends CustomPainter {
       ..quadraticBezierTo(
         controlPoint.dx,
         controlPoint.dy,
-        targetPoint.dx,
-        targetPoint.dy,
+        end.dx,
+        end.dy,
       );
 
     canvas.drawPath(path, paint);
     canvas.drawCircle(
-      targetPoint,
+      end,
       8.r,
       Paint()..color = color.withValues(alpha: 0.5),
     );
